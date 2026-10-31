@@ -1,15 +1,15 @@
 package org.scilab.forge.jlatexmath;
 
 import a1.g;
-import c3.h0;
-import ic.a;
+import c3.i0;
+import i0.a;
 import java.lang.Character;
 import java.util.HashSet;
 import java.util.Set;
 import org.scilab.forge.jlatexmath.TeXFormula;
 import ru.noties.jlatexmath.awt.Color;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public class TeXParser {
     private static final char BACKPRIME = 8245;
@@ -148,7 +148,7 @@ public class TeXParser {
         return (char) i10;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:21:0x05a4  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x059f  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -220,9 +220,9 @@ public class TeXParser {
                         optsArgs[0] = command;
                         try {
                             this.parseString.replace(i14, this.pos, (String) macroInfo.invoke(this, optsArgs));
-                        } catch (ParseException e10) {
+                        } catch (ParseException e7) {
                             if (!this.isPartial) {
-                                throw e10;
+                                throw e7;
                             }
                             i14 += command.length() + 1;
                         }
@@ -251,9 +251,9 @@ public class TeXParser {
                                 this.parseString.replace(i14, this.pos, str + "{" + group + "}\\makeatother}");
                                 this.len = this.parseString.length();
                                 this.pos = i14;
-                            } catch (ParseException e11) {
+                            } catch (ParseException e10) {
                                 if (!this.isPartial) {
-                                    throw e11;
+                                    throw e10;
                                 }
                             }
                         } else if (!this.isPartial) {
@@ -660,7 +660,7 @@ public class TeXParser {
                 if (this.isPartial) {
                     return new ColorAtom(new RomanAtom(new TeXFormula("\\backslash ".concat(command)).root), (Color) null, Color.RED);
                 }
-                throw new ParseException(g.p("Unknown symbol or command or predefined TeXFormula: '", command, "'"));
+                throw new ParseException(g.n("Unknown symbol or command or predefined TeXFormula: '", command, "'"));
             }
         } catch (FormulaNotFoundException unused2) {
             return SymbolAtom.get(command);
@@ -1398,7 +1398,7 @@ public class TeXParser {
             if (this.isPartial) {
                 return stringBuffer.toString();
             }
-            throw new ParseException(h0.m("The token ", str, " must be closed by ", str2));
+            throw new ParseException(i0.n("The token ", str, " must be closed by ", str2));
         }
         return stringBuffer.substring(0, (stringBuffer.length() - this.pos) + i12);
     }

@@ -1,10 +1,9 @@
 package com.google.android.recaptcha.internal;
 
-import androidx.car.app.navigation.model.Maneuver;
 import java.util.List;
-import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.zs;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class zzzu extends zzsn implements zztt {
     private static final zzzu zzb;
@@ -172,10 +171,10 @@ public final class zzzu extends zzsn implements zztt {
             case 29:
                 i10 = 31;
                 break;
-            case MessageObject.TYPE_GIFT_STARS /* 30 */:
+            case zs.T /* 30 */:
                 i10 = 32;
                 break;
-            case MessageObject.TYPE_GIFT_THEME_UPDATE /* 31 */:
+            case zs.U /* 31 */:
                 i10 = 33;
                 break;
             case 32:
@@ -199,13 +198,13 @@ public final class zzzu extends zzsn implements zztt {
             case 38:
                 i10 = 40;
                 break;
-            case Maneuver.TYPE_DESTINATION /* 39 */:
+            case 39:
                 i10 = 41;
                 break;
-            case Maneuver.TYPE_DESTINATION_STRAIGHT /* 40 */:
+            case 40:
                 i10 = 42;
                 break;
-            case Maneuver.TYPE_DESTINATION_LEFT /* 41 */:
+            case 41:
                 i10 = 43;
                 break;
             default:

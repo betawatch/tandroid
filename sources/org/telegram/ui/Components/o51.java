@@ -1,35 +1,26 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.RectF;
-import org.telegram.messenger.AndroidUtilities;
+import android.graphics.drawable.ColorDrawable;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class o51 extends xh.n {
-    public final org.telegram.ui.y10 U;
-    public final /* synthetic */ r51 V;
+public final class o51 extends ColorDrawable {
+    public final int a;
+    public final org.telegram.ui.ActionBar.p6 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public o51(r51 r51Var, Context context) {
-        super(context);
-        this.V = r51Var;
-        this.U = new org.telegram.ui.y10();
+    public o51(int i10, org.telegram.ui.ActionBar.p6 p6Var) {
+        super(org.telegram.ui.ActionBar.t6.w0(i10, p6Var));
+        this.a = i10;
+        this.b = p6Var;
     }
 
-    @Override // xh.n, android.widget.TextView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        int dp = AndroidUtilities.dp(8.0f) + this.V.d.getWidth();
-        canvas.saveLayerAlpha(getScrollX(), 0.0f, (getWidth() + getScrollX()) - dp, getHeight(), 255, 31);
-        super.onDraw(canvas);
-        canvas.save();
-        canvas.translate(getPaddingLeft(), getPaddingTop());
-        ix0.a(canvas, getLayout());
-        canvas.restore();
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set((getWidth() - dp) - AndroidUtilities.dp(24.0f), 0.0f, getWidth() - dp, getHeight());
-        this.U.b(canvas, rectF, 2, 1.0f);
-        canvas.restore();
+    @Override // android.graphics.drawable.ColorDrawable, android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        int w02 = org.telegram.ui.ActionBar.t6.w0(this.a, this.b);
+        if (getColor() != w02) {
+            setColor(w02);
+        }
+        super.draw(canvas);
     }
 }

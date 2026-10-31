@@ -1,42 +1,18 @@
 package org.telegram.ui;
 
-import android.location.Location;
-import android.location.LocationListener;
-import android.location.LocationManager;
-import android.os.Bundle;
-import org.telegram.messenger.ApplicationLoader;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class ua1 implements LocationListener {
-    public final /* synthetic */ ThemeActivity a;
+public final class ua1 extends s4.x {
+    public final /* synthetic */ pb1 S;
 
-    public ua1(ThemeActivity themeActivity) {
-        this.a = themeActivity;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ua1(pb1 pb1Var, ob1 ob1Var) {
+        super(ob1Var);
+        this.S = pb1Var;
     }
 
-    @Override // android.location.LocationListener
-    public final void onLocationChanged(Location location) {
-        ThemeActivity themeActivity = this.a;
-        if (location == null) {
-            return;
-        }
-        themeActivity.K0 = false;
-        LocationManager locationManager = (LocationManager) ApplicationLoader.applicationContext.getSystemService("location");
-        locationManager.removeUpdates(themeActivity.Q0);
-        locationManager.removeUpdates(themeActivity.R0);
-        themeActivity.C0(location, false);
-    }
-
-    @Override // android.location.LocationListener
-    public final void onProviderDisabled(String str) {
-    }
-
-    @Override // android.location.LocationListener
-    public final void onProviderEnabled(String str) {
-    }
-
-    @Override // android.location.LocationListener
-    public final void onStatusChanged(String str, int i10, Bundle bundle) {
+    @Override // s4.x
+    public final boolean s() {
+        return this.S.y > 0;
     }
 }

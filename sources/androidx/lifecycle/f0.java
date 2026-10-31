@@ -5,7 +5,7 @@ import android.app.FragmentManager;
 import android.os.Build;
 import androidx.lifecycle.h0;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public abstract class f0 {
     /* JADX WARN: Multi-variable type inference failed */
@@ -13,7 +13,7 @@ public abstract class f0 {
         kotlin.jvm.internal.i.e(event, "event");
         if (activity instanceof t) {
             o m10 = ((t) activity).m();
-            if (c3.h0.t(m10)) {
+            if (c3.i0.t(m10)) {
                 ((v) m10).e(event);
             }
         }

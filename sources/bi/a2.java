@@ -1,186 +1,193 @@
 package bi;
 
-import android.text.SpannableStringBuilder;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.wh;
+import android.text.SpannableString;
+import android.view.KeyEvent;
+import android.view.View;
+import java.util.ArrayList;
+import org.telegram.messenger.fj;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.yj0;
-import org.telegram.ui.Components.z00;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ey;
+import org.telegram.ui.Components.vx;
+import org.telegram.ui.Components.w41;
+import org.telegram.ui.StickersActivity;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class a2 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ h7 b;
+public final class a2 implements vx {
+    public final /* synthetic */ k2 a;
 
-    public /* synthetic */ a2(h7 h7Var, int i10) {
-        this.a = i10;
-        this.b = h7Var;
+    public a2(k2 k2Var) {
+        this.a = k2Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        TL_stars.StarGift starGift;
-        TLRPC.Document document;
-        j6 j6Var;
-        String str;
-        int i10 = this.a;
-        h7 h7Var = this.b;
-        switch (i10) {
-            case 0:
-                h7Var.getBulletinFactory().R(R.raw.copy, 36, LocaleController.getString(R.string.WalletAddressCopied)).k(false);
-                break;
-            case 1:
-                h7Var.getBulletinFactory().R(R.raw.copy, 36, LocaleController.getString(R.string.WalletAddressCopied)).k(false);
-                break;
-            case 2:
-                h7Var.getClass();
-                new tg.y0((org.telegram.ui.ActionBar.r2) new v4(h7Var, 0), 12, false).show();
-                break;
-            case 3:
-                h7.t0(h7Var);
-                break;
-            case 4:
-                h7Var.dismiss();
-                break;
-            case 5:
-                new q0(h7Var.getContext()).show();
-                break;
-            case 6:
-                h7.Y(h7Var);
-                break;
-            case 7:
-                h7.Z(h7Var);
-                break;
-            case 8:
-                h7.g1(h7Var);
-                break;
-            case 9:
-                h7Var.k0.setLoading(false);
-                h7Var.U2(0, true, null);
-                break;
-            case 10:
-                new q0(h7Var.getContext()).show();
-                break;
-            case 11:
-                h7.B0(h7Var);
-                break;
-            case 12:
-                h7Var.onBackPressed();
-                break;
-            case 13:
-                h7.U(h7Var);
-                break;
-            case 14:
-                long U1 = h7Var.U1();
-                if (U1 != 0) {
-                    h7Var.u2(U1);
-                    break;
-                }
-                break;
-            case 15:
-                h7.c0(h7Var);
-                break;
-            case 16:
-                h7Var.t2(true);
-                break;
-            case 17:
-                h7Var.p2();
-                break;
-            case 18:
-                h7Var.m2();
-                break;
-            case 19:
-                h7.q0(h7Var);
-                break;
-            case 20:
-                h7Var.dismiss();
-                org.telegram.ui.ActionBar.r2 U = LaunchActivity.U();
-                TL_stars.TL_starGiftUnique e22 = h7Var.e2();
-                if (U != null && e22 != null) {
-                    ey eyVar = new ey(wh.c(4, "onlySelect", "dialogsType", true));
-                    eyVar.C2 = new androidx.car.app.utils.a(h7Var, e22, eyVar, 2);
-                    U.presentFragment(eyVar);
-                    break;
-                }
-                break;
-            case 21:
-                h7Var.w2();
-                break;
-            case 22:
-                h7Var.B2();
-                break;
-            case 23:
-                h7Var.onBackPressed();
-                break;
-            case 24:
-                b7 b7Var = h7Var.f0;
-                fi.d dVar = h7Var.k0;
-                k6 k6Var = h7Var.P0.h;
-                ImageReceiver imageReceiver = (k6Var == null || (j6Var = k6Var.c) == null) ? null : ((m6) j6Var).d;
-                org.telegram.ui.Components.y9 y9Var = b7Var.d[0];
-                if (imageReceiver != null && y9Var != null && y9Var.getImageReceiver() != null) {
-                    yj0 lottieAnimation = imageReceiver.getLottieAnimation();
-                    yj0 lottieAnimation2 = y9Var.getImageReceiver().getLottieAnimation();
-                    if (lottieAnimation2 != null && lottieAnimation != null) {
-                        lottieAnimation2.T(lottieAnimation.t(), false);
-                    } else if (lottieAnimation2 == null && lottieAnimation != null) {
-                        imageReceiver.clearImage();
-                        y9Var.setImageDrawable(lottieAnimation);
-                    }
-                }
-                b7Var.b.setAlpha(1.0f);
-                b7Var.c.setAlpha(0.0f);
-                if (h7Var.r0 && h7Var.Z != null && h7Var.G0 != null && h7Var.a2() >= 0 && h7Var.G0.c(h7Var.a2()) >= 0) {
-                    dVar.setFilled(false);
-                    int c10 = h7Var.G0.c(h7Var.a2());
-                    SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-                    spannableStringBuilder.append((CharSequence) LocaleController.getString(R.string.Gift2UpgradeNext));
-                    Object obj = h7Var.G0.get(c10);
-                    if ((obj instanceof TL_stars.SavedStarGift) && (starGift = ((TL_stars.SavedStarGift) obj).gift) != null && (document = starGift.getDocument()) != null) {
-                        spannableStringBuilder.append((CharSequence) " e");
-                        spannableStringBuilder.setSpan(new org.telegram.ui.Components.c6(document, dVar.getTextPaint().getFontMetricsInt()), spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
-                    }
-                    dVar.i(spannableStringBuilder, true, true);
-                    dVar.g(null, true);
-                    dVar.setOnClickListener(new w2(h7Var, c10, 0));
-                    break;
-                } else {
-                    dVar.setFilled(true);
-                    dVar.i(LocaleController.getString(R.string.OK), true, true);
-                    dVar.g(null, true);
-                    dVar.setOnClickListener(new z1(h7Var, 7));
-                    break;
-                }
-                break;
-            case 25:
-                if (h7Var.V1() != null) {
-                    StringBuilder sb2 = new StringBuilder();
-                    sb2.append(h7Var.V1().title);
-                    sb2.append(" #");
-                    str = org.telegram.messenger.t.i(h7Var.V1().num, ',', sb2);
-                } else {
-                    str = "";
-                }
-                org.telegram.ui.Components.qc M = h7Var.getBulletinFactory().M(LocaleController.getString(R.string.Gift2UpgradedTitle), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2UpgradedText, str)), R.raw.gift_upgrade);
-                M.j = 5000;
-                M.u = true;
-                M.j();
-                z00 z00Var = h7Var.a0;
-                if (z00Var != null) {
-                    z00Var.c(true);
-                    break;
-                }
-                break;
-            default:
-                h7Var.d.v0(((h7) h7Var.T0.d).S0.length - 1);
-                break;
+    @Override // org.telegram.ui.Components.vx
+    public final /* synthetic */ boolean A() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.vx
+    public final /* synthetic */ long a() {
+        return 0L;
+    }
+
+    @Override // org.telegram.ui.Components.vx
+    public final /* synthetic */ boolean b() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.vx
+    public final /* synthetic */ boolean c() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.vx
+    public final /* synthetic */ int f() {
+        return 0;
+    }
+
+    @Override // org.telegram.ui.Components.vx
+    public final /* synthetic */ boolean g() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.vx
+    public final void i(int i10) {
+        n1 focusedEditTextOrNull;
+        k2 k2Var = this.a;
+        if (i10 != 0 && (focusedEditTextOrNull = k2Var.P.getFocusedEditTextOrNull()) != null) {
+            k2Var.R0 = focusedEditTextOrNull;
+            k2Var.S0 = Math.max(0, focusedEditTextOrNull.getSelectionEnd());
         }
+        boolean z10 = i10 != 0;
+        k2Var.C0 = z10;
+        k2Var.i0(z10);
+    }
+
+    @Override // org.telegram.ui.Components.vx
+    public final /* synthetic */ boolean j() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.vx
+    public final boolean k() {
+        n1 e02 = k2.e0(this.a);
+        if (e02 == null || e02.length() == 0) {
+            return false;
+        }
+        e02.dispatchKeyEvent(new KeyEvent(0, 67));
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.vx
+    public final void l(String str) {
+        k2 k2Var = this.a;
+        n1 e02 = k2.e0(k2Var);
+        if (e02 == null) {
+            return;
+        }
+        int f02 = k2.f0(k2Var, e02);
+        try {
+            CharSequence m10 = org.telegram.messenger.k6.m(str, e02.getPaint().getFontMetricsInt(), false, null, 0);
+            e02.setText(e02.getText().insert(f02, m10));
+            int length = f02 + m10.length();
+            e02.setSelection(length, length);
+            if (e02 == k2Var.R0) {
+                k2Var.S0 = length;
+            }
+        } catch (Exception unused) {
+        }
+    }
+
+    @Override // org.telegram.ui.Components.vx
+    public final /* synthetic */ float p() {
+        return 0.0f;
+    }
+
+    @Override // org.telegram.ui.Components.vx
+    public final void t(ArrayList arrayList) {
+        this.a.presentFragment(new StickersActivity(5, arrayList));
+    }
+
+    @Override // org.telegram.ui.Components.vx
+    public final void w() {
+        this.a.presentFragment(new StickersActivity(0, null));
+    }
+
+    @Override // org.telegram.ui.Components.vx
+    public final void x(long j10, TLRPC.Document document, String str, boolean z10) {
+        k2 k2Var = this.a;
+        n1 e02 = k2.e0(k2Var);
+        if (e02 == null) {
+            return;
+        }
+        int f02 = k2.f0(k2Var, e02);
+        try {
+            if (str == null) {
+                str = "😀";
+            }
+            SpannableString spannableString = new SpannableString(str);
+            org.telegram.ui.Components.o5 o5Var = document != null ? new org.telegram.ui.Components.o5(document, e02.getPaint().getFontMetricsInt()) : new org.telegram.ui.Components.o5(j10, e02.getPaint().getFontMetricsInt());
+            o5Var.cacheType = org.telegram.ui.Components.f5.f();
+            spannableString.setSpan(o5Var, 0, spannableString.length(), 33);
+            e02.setText(e02.getText().insert(f02, spannableString));
+            int length = f02 + spannableString.length();
+            e02.setSelection(length, length);
+            if (e02 == k2Var.R0) {
+                k2Var.S0 = length;
+            }
+        } catch (Exception unused) {
+        }
+    }
+
+    @Override // org.telegram.ui.Components.vx
+    public final boolean z() {
+        return this.a.C0;
+    }
+
+    @Override // org.telegram.ui.Components.vx
+    public final /* synthetic */ void n() {
+    }
+
+    @Override // org.telegram.ui.Components.vx
+    public final /* synthetic */ void q() {
+    }
+
+    @Override // org.telegram.ui.Components.vx
+    public final /* synthetic */ void u() {
+    }
+
+    @Override // org.telegram.ui.Components.vx
+    public final /* synthetic */ void h(TLRPC.StickerSetCovered stickerSetCovered) {
+    }
+
+    @Override // org.telegram.ui.Components.vx
+    public final /* synthetic */ void o(w41 w41Var) {
+    }
+
+    @Override // org.telegram.ui.Components.vx
+    public final /* synthetic */ void r(TLRPC.StickerSetCovered stickerSetCovered) {
+    }
+
+    @Override // org.telegram.ui.Components.vx
+    public final /* synthetic */ void s(int i10) {
+    }
+
+    @Override // org.telegram.ui.Components.vx
+    public final /* synthetic */ void y(long j10) {
+    }
+
+    @Override // org.telegram.ui.Components.vx
+    public final /* synthetic */ void m(View view, TLRPC.Document document, String str, Object obj, fj fjVar, boolean z10, int i10) {
+    }
+
+    @Override // org.telegram.ui.Components.vx
+    public final /* synthetic */ void v(View view, Object obj, String str, Object obj2, boolean z10, int i10, int i11) {
+    }
+
+    @Override // org.telegram.ui.Components.vx
+    public final /* synthetic */ void e(Object obj, Object obj2) {
+    }
+
+    @Override // org.telegram.ui.Components.vx
+    public final /* synthetic */ void d(TLRPC.StickerSet stickerSet, TLRPC.InputStickerSet inputStickerSet, boolean z10) {
     }
 }

@@ -5,14 +5,14 @@ import android.content.Context;
 import android.content.res.AssetFileDescriptor;
 import android.net.Uri;
 import android.os.Bundle;
-import e2.n0;
+import e2.l0;
 import j$.util.Objects;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.channels.FileChannel;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class e extends c {
     public final ContentResolver a;
@@ -53,8 +53,8 @@ public final class e extends c {
                         transferEnded();
                     }
                 }
-            } catch (IOException e10) {
-                throw new d(e10, 2000);
+            } catch (IOException e7) {
+                throw new d(e7, 2000);
             }
         } catch (Throwable th2) {
             this.d = null;
@@ -70,8 +70,8 @@ public final class e extends c {
                         transferEnded();
                     }
                     throw th2;
-                } catch (IOException e11) {
-                    throw new d(e11, 2000);
+                } catch (IOException e10) {
+                    throw new d(e10, 2000);
                 }
             } finally {
                 this.c = null;
@@ -89,17 +89,17 @@ public final class e extends c {
     }
 
     @Override // g2.h
-    public final long open(m mVar) {
+    public final long open(n nVar) {
         int i10;
         AssetFileDescriptor openAssetFileDescriptor;
         try {
             try {
-                Uri uri = mVar.a;
-                long j10 = mVar.f;
-                long j11 = mVar.e;
+                Uri uri = nVar.a;
+                long j10 = nVar.f;
+                long j11 = nVar.e;
                 Uri normalizeScheme = uri.normalizeScheme();
                 this.b = normalizeScheme;
-                transferInitializing(mVar);
+                transferInitializing(nVar);
                 boolean equals = Objects.equals(normalizeScheme.getScheme(), "content");
                 ContentResolver contentResolver = this.a;
                 if (equals) {
@@ -157,14 +157,14 @@ public final class e extends c {
                     this.e = j13 == -1 ? j10 : Math.min(j13, j10);
                 }
                 this.f = true;
-                transferStarted(mVar);
+                transferStarted(nVar);
                 return j10 != -1 ? j10 : this.e;
-            } catch (IOException e10) {
-                e = e10;
+            } catch (IOException e7) {
+                e = e7;
                 i10 = 2000;
             }
-        } catch (d e11) {
-            throw e11;
+        } catch (d e10) {
+            throw e10;
         }
     }
 
@@ -183,7 +183,7 @@ public final class e extends c {
                 }
             }
             FileInputStream fileInputStream = this.d;
-            String str = n0.a;
+            String str = l0.a;
             int read = fileInputStream.read(bArr, i10, i11);
             if (read != -1) {
                 long j11 = this.e;

@@ -1,186 +1,108 @@
 package c2;
 
-import a8.me;
-import aa.g2;
-import android.content.pm.ShortcutManager;
-import android.view.WindowManager;
-import android.window.OnBackInvokedDispatcher;
-import com.google.android.gms.tasks.Continuation;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.messaging.FirebaseMessaging;
-import com.google.firebase.messaging.FirebaseMessagingRegistrar;
-import di.o1;
-import fi.o3;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.lang.reflect.Constructor;
-import java.nio.charset.Charset;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.GenericProvider;
-import org.telegram.messenger.LiteMode;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.voip.NativeInstance;
-import org.telegram.ui.ActionBar.b2;
-import org.telegram.ui.ActionBar.e2;
-import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Components.ow0;
-import org.telegram.ui.Components.pw0;
+import e9.n0;
+import java.nio.ByteBuffer;
+import java.util.ArrayList;
+import v7.t6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final /* synthetic */ class i implements Continuation, s9.d, j5.e, e9.k, NativeInstance.AudioLevelsCallback, ow0, pw0, b2, GenericProvider, Utilities.Callback2Return, fh.d {
-    public final /* synthetic */ int a;
+public final class i {
+    public final n0 a;
+    public final ArrayList b = new ArrayList();
+    public ByteBuffer[] c = new ByteBuffer[0];
+    public boolean d;
 
-    public /* synthetic */ i(int i10) {
-        this.a = i10;
+    public i(n0 n0Var) {
+        this.a = n0Var;
+        j jVar = j.e;
+        this.d = false;
     }
 
-    public static /* bridge */ /* synthetic */ ShortcutManager c(Object obj) {
-        return (ShortcutManager) obj;
+    public final void a() {
+        k kVar = k.b;
+        ArrayList arrayList = this.b;
+        arrayList.clear();
+        this.d = false;
+        long j10 = kVar.a;
+        int i10 = 0;
+        while (true) {
+            n0 n0Var = this.a;
+            if (i10 >= n0Var.size()) {
+                break;
+            }
+            m mVar = (m) n0Var.get(i10);
+            mVar.d(new k(j10));
+            if (mVar.isActive()) {
+                j10 = mVar.g(j10);
+                t6.p(j10 >= 0);
+                arrayList.add(mVar);
+            }
+            i10++;
+        }
+        this.c = new ByteBuffer[arrayList.size()];
+        for (int i11 = 0; i11 <= b(); i11++) {
+            this.c[i11] = ((m) arrayList.get(i11)).a();
+        }
     }
 
-    public static /* bridge */ /* synthetic */ OnBackInvokedDispatcher d(Object obj) {
-        return (OnBackInvokedDispatcher) obj;
+    public final int b() {
+        return this.c.length - 1;
     }
 
-    public static /* bridge */ /* synthetic */ Class e() {
-        return ShortcutManager.class;
+    public final boolean c() {
+        return this.d && ((m) this.b.get(b())).c() && !this.c[b()].hasRemaining();
     }
 
-    public Constructor a() {
-        switch (this.a) {
-            case 1:
-                if (Boolean.TRUE.equals(Class.forName("androidx.media3.decoder.flac.FlacLibrary").getMethod("isAvailable", null).invoke(null, null))) {
-                    return Class.forName("androidx.media3.decoder.flac.FlacExtractor").asSubclass(c3.o.class).getConstructor(Integer.TYPE);
+    public final boolean d() {
+        return !this.b.isEmpty();
+    }
+
+    public final void e(ByteBuffer byteBuffer) {
+        boolean z10;
+        for (boolean z11 = true; z11; z11 = z10) {
+            z10 = false;
+            int i10 = 0;
+            while (i10 <= b()) {
+                if (!this.c[i10].hasRemaining()) {
+                    ArrayList arrayList = this.b;
+                    m mVar = (m) arrayList.get(i10);
+                    if (!mVar.c()) {
+                        ByteBuffer byteBuffer2 = i10 > 0 ? this.c[i10 - 1] : byteBuffer.hasRemaining() ? byteBuffer : m.a;
+                        long remaining = byteBuffer2.remaining();
+                        mVar.b(byteBuffer2);
+                        this.c[i10] = mVar.a();
+                        z10 |= remaining - ((long) byteBuffer2.remaining()) > 0 || this.c[i10].hasRemaining();
+                    } else if (!this.c[i10].hasRemaining() && i10 < b()) {
+                        ((m) arrayList.get(i10 + 1)).f();
+                    }
                 }
-                return null;
-            default:
-                return Class.forName("androidx.media3.decoder.midi.MidiExtractor").asSubclass(c3.o.class).getConstructor(null);
+                i10++;
+            }
         }
     }
 
-    @Override // j5.e
-    public Object apply(Object obj) {
-        switch (this.a) {
-            case 8:
-                ya.e eVar = (ya.e) obj;
-                eVar.getClass();
-                k6.c cVar = com.google.firebase.messaging.n.a;
-                cVar.getClass();
-                ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-                try {
-                    cVar.s(eVar, byteArrayOutputStream);
-                } catch (IOException unused) {
-                }
-                return byteArrayOutputStream.toByteArray();
-            case 9:
-                return Integer.valueOf(((d2.b) obj).r);
-            default:
-                ea.a.b.getClass();
-                return ba.a.a.c((g2) obj).getBytes(Charset.forName("UTF-8"));
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-    }
-
-    @Override // org.telegram.ui.Components.pw0
-    public void b(Object obj, float f7) {
-        o1 o1Var = (o1) obj;
-        switch (this.a) {
-            case 12:
-                WindowManager.LayoutParams layoutParams = o1Var.c;
-                o1Var.N = f7;
-                layoutParams.x = (int) f7;
-                AndroidUtilities.updateViewLayout(o1Var.b, o1Var.d, layoutParams);
-                break;
-            default:
-                WindowManager.LayoutParams layoutParams2 = o1Var.c;
-                o1Var.O = f7;
-                layoutParams2.y = (int) f7;
-                AndroidUtilities.updateViewLayout(o1Var.b, o1Var.d, layoutParams2);
-                break;
+        if (!(obj instanceof i)) {
+            return false;
         }
-    }
-
-    @Override // s9.d
-    public Object d1(me meVar) {
-        FirebaseMessaging lambda$getComponents$0;
-        lambda$getComponents$0 = FirebaseMessagingRegistrar.lambda$getComponents$0(meVar);
-        return lambda$getComponents$0;
-    }
-
-    @Override // org.telegram.ui.Components.ow0
-    public float get(Object obj) {
-        o1 o1Var = (o1) obj;
-        switch (this.a) {
-            case 11:
-                return o1Var.N;
-            default:
-                return o1Var.O;
+        n0 n0Var = ((i) obj).a;
+        n0 n0Var2 = this.a;
+        if (n0Var2.size() != n0Var.size()) {
+            return false;
         }
-    }
-
-    @Override // org.telegram.ui.ActionBar.b2
-    public void h(e2 e2Var, int i10) {
-        switch (this.a) {
-            case 15:
-                e2Var.dismiss();
-                break;
-            default:
-                e2Var.dismiss();
-                break;
+        for (int i10 = 0; i10 < n0Var2.size(); i10++) {
+            if (n0Var2.get(i10) != n0Var.get(i10)) {
+                return false;
+            }
         }
+        return true;
     }
 
-    @Override // fh.d
-    public int i(u6 u6Var, boolean z10) {
-        switch (this.a) {
-            case 26:
-                return gh.c.n(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, y6.w0(y6.d6, u6Var), y6.w0(y6.Sd, u6Var));
-            case 27:
-                return y6.o1(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, y6.w0(y6.d6, u6Var));
-            case 28:
-                if (!LiteMode.isEnabled(256)) {
-                    return y6.x0(null, y6.G8, false);
-                }
-                return y6.o1(z10 ? 0.85f : 0.825f, y6.x0(null, y6.G8, false));
-            default:
-                return gh.c.n(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, y6.w0(y6.d6, u6Var), y6.w0(y6.Zk, u6Var));
-        }
-    }
-
-    @Override // org.telegram.messenger.GenericProvider
-    public Object provide(Object obj) {
-        MediaController.AlbumEntry albumEntry = o3.j0;
-        return 0;
-    }
-
-    @Override // org.telegram.messenger.voip.NativeInstance.AudioLevelsCallback
-    public void run(int[] iArr, float[] fArr, boolean[] zArr) {
-    }
-
-    @Override // com.google.android.gms.tasks.Continuation
-    public Object then(Task task) {
-        int i10;
-        switch (this.a) {
-            case 4:
-                i10 = 403;
-                break;
-            default:
-                i10 = -1;
-                break;
-        }
-        return Integer.valueOf(i10);
-    }
-
-    @Override // org.telegram.messenger.Utilities.Callback2Return
-    public Object run(Object obj, Object obj2) {
-        Integer num = (Integer) obj2;
-        if (((Integer) obj).intValue() == 0) {
-            return num.intValue() == 0 ? LocaleController.getString(R.string.LiveStoryPricePerCommentFree) : LocaleController.formatPluralStringComma("Stars", num.intValue());
-        }
-        return "" + num;
+    public final int hashCode() {
+        return this.a.hashCode();
     }
 }

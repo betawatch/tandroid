@@ -1,10 +1,10 @@
 package androidx.datastore.preferences.protobuf;
 
-import com.google.android.gms.internal.cast.u4;
+import com.google.android.gms.internal.cast.v4;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class e implements Iterator {
     public final /* synthetic */ int a = 0;
@@ -12,9 +12,9 @@ public final class e implements Iterator {
     public final int c;
     public final /* synthetic */ Object d;
 
-    public e(u4 u4Var) {
-        this.d = u4Var;
-        this.c = u4Var.n();
+    public e(v4 v4Var) {
+        this.d = v4Var;
+        this.c = v4Var.n();
     }
 
     @Override // java.util.Iterator
@@ -64,7 +64,7 @@ public final class e implements Iterator {
                     throw new NoSuchElementException();
                 }
                 this.b = i11 + 1;
-                return Byte.valueOf(((u4) this.d).m(i11));
+                return Byte.valueOf(((v4) this.d).m(i11));
             case 2:
                 try {
                     com.google.android.gms.internal.clearcut.o oVar = (com.google.android.gms.internal.clearcut.o) this.d;
@@ -94,7 +94,7 @@ public final class e implements Iterator {
                     throw new NoSuchElementException();
                 }
                 this.b = i15 + 1;
-                return Byte.valueOf(((o7.s0) this.d).m(i15));
+                return Byte.valueOf(((n7.s0) this.d).m(i15));
         }
     }
 
@@ -131,7 +131,7 @@ public final class e implements Iterator {
         this.c = q0Var.m();
     }
 
-    public e(o7.s0 s0Var) {
+    public e(n7.s0 s0Var) {
         this.d = s0Var;
         this.c = s0Var.o();
     }

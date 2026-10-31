@@ -1,25 +1,61 @@
 package xh;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.text.style.ReplacementSpan;
-import org.telegram.messenger.Emoji;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes4.dex */
-public final class b extends ReplacementSpan {
-    public final /* synthetic */ Emoji.EmojiSpan a;
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes.dex */
+public final /* synthetic */ class b implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ i b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.x1 c;
 
-    public b(Emoji.EmojiSpan emojiSpan) {
-        this.a = emojiSpan;
+    public /* synthetic */ b(i iVar, org.telegram.ui.ActionBar.x1 x1Var, int i10) {
+        this.a = i10;
+        this.b = iVar;
+        this.c = x1Var;
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
-        return this.a.getSize(paint, charSequence, i10, i11, fontMetricsInt);
-    }
-
-    @Override // android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                final int i10 = 1;
+                final i iVar = this.b;
+                final org.telegram.ui.ActionBar.x1 x1Var = this.c;
+                org.telegram.messenger.i0.g3(new Runnable() { // from class: xh.c
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i10) {
+                            case 0:
+                                i.A0(iVar, x1Var, tLObject, tL_error);
+                                break;
+                            default:
+                                i.B0(iVar, x1Var, tLObject, tL_error);
+                                break;
+                        }
+                    }
+                });
+                break;
+            default:
+                final int i11 = 0;
+                final i iVar2 = this.b;
+                final org.telegram.ui.ActionBar.x1 x1Var2 = this.c;
+                org.telegram.messenger.i0.g3(new Runnable() { // from class: xh.c
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i11) {
+                            case 0:
+                                i.A0(iVar2, x1Var2, tLObject, tL_error);
+                                break;
+                            default:
+                                i.B0(iVar2, x1Var2, tLObject, tL_error);
+                                break;
+                        }
+                    }
+                });
+                break;
+        }
     }
 }

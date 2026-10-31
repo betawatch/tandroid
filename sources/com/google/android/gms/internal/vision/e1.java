@@ -8,8 +8,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeSet;
 import org.scilab.forge.jlatexmath.TeXFormulaSettingsParser;
+import org.telegram.messenger.zs;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public abstract class e1 {
     public static final /* synthetic */ int[] a = {1, 2, 3, 4, 5, 6, 7};
@@ -99,7 +100,7 @@ public abstract class e1 {
     }
 
     public static int d(int i10, byte[] bArr, int i11, com.google.android.gms.internal.clearcut.m mVar) {
-        int i12 = i10 & 127;
+        int i12 = i10 & zs.L1;
         int i13 = i11 + 1;
         byte b10 = bArr[i11];
         if (b10 >= 0) {
@@ -139,17 +140,17 @@ public abstract class e1 {
     }
 
     public static int e(n2 n2Var, int i10, byte[] bArr, int i11, int i12, o1 o1Var, com.google.android.gms.internal.clearcut.m mVar) {
-        int g7 = g(n2Var, bArr, i11, i12, mVar);
+        int g10 = g(n2Var, bArr, i11, i12, mVar);
         o1Var.add(mVar.c);
-        while (g7 < i12) {
-            int j10 = j(bArr, g7, mVar);
+        while (g10 < i12) {
+            int j10 = j(bArr, g10, mVar);
             if (i10 != mVar.a) {
                 break;
             }
-            g7 = g(n2Var, bArr, j10, i12, mVar);
+            g10 = g(n2Var, bArr, j10, i12, mVar);
             o1Var.add(mVar.c);
         }
-        return g7;
+        return g10;
     }
 
     public static int f(n2 n2Var, byte[] bArr, int i10, int i11, int i12, com.google.android.gms.internal.clearcut.m mVar) {
@@ -193,13 +194,13 @@ public abstract class e1 {
     public static String k(q0 q0Var) {
         StringBuilder sb2 = new StringBuilder(q0Var.m());
         for (int i10 = 0; i10 < q0Var.m(); i10++) {
-            byte h = q0Var.h(i10);
-            if (h == 34) {
+            byte l4 = q0Var.l(i10);
+            if (l4 == 34) {
                 sb2.append("\\\"");
-            } else if (h == 39) {
+            } else if (l4 == 39) {
                 sb2.append("\\'");
-            } else if (h != 92) {
-                switch (h) {
+            } else if (l4 != 92) {
+                switch (l4) {
                     case 7:
                         sb2.append("\\a");
                         break;
@@ -222,14 +223,14 @@ public abstract class e1 {
                         sb2.append("\\r");
                         break;
                     default:
-                        if (h < 32 || h > 126) {
+                        if (l4 < 32 || l4 > 126) {
                             sb2.append('\\');
-                            sb2.append((char) (((h >>> 6) & 3) + 48));
-                            sb2.append((char) (((h >>> 3) & 7) + 48));
-                            sb2.append((char) ((h & 7) + 48));
+                            sb2.append((char) (((l4 >>> 6) & 3) + 48));
+                            sb2.append((char) (((l4 >>> 3) & 7) + 48));
+                            sb2.append((char) ((l4 & 7) + 48));
                             break;
                         } else {
-                            sb2.append((char) h);
+                            sb2.append((char) l4);
                             break;
                         }
                         break;
@@ -279,23 +280,23 @@ public abstract class e1 {
         cArr[i10] = (char) (((b10 & 31) << 6) | (b11 & 63));
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:103:0x0217, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:103:0x0216, code lost:
     
         if (((java.lang.Double) r4).doubleValue() == 0.0d) goto L115;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:81:0x01e5, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:81:0x01e4, code lost:
     
         if (((java.lang.Boolean) r4).booleanValue() == false) goto L115;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:91:0x0250, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:91:0x024f, code lost:
     
         r6 = true;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:95:0x01f4, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:95:0x01f3, code lost:
     
         if (((java.lang.Integer) r4).intValue() == 0) goto L115;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:99:0x0205, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:99:0x0204, code lost:
     
         if (((java.lang.Float) r4).floatValue() == 0.0f) goto L115;
      */

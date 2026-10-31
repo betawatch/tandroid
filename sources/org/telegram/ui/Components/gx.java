@@ -1,40 +1,12 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.MotionEvent;
-import android.widget.ImageView;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.View;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class gx extends ImageView {
-    public final /* synthetic */ sz a;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public gx(sz szVar, Context context) {
-        super(context);
-        this.a = szVar;
-    }
-
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        ty tyVar;
-        int action = motionEvent.getAction();
-        sz szVar = this.a;
-        if (action == 0) {
-            szVar.P1 = true;
-            szVar.Q1 = false;
-            AndroidUtilities.runOnUIThread(new h2(szVar, 350, 7), 350);
-        } else if (motionEvent.getAction() == 3 || motionEvent.getAction() == 1) {
-            szVar.P1 = false;
-            if (!szVar.Q1 && (tyVar = szVar.t1) != null && tyVar.k()) {
-                try {
-                    szVar.x.performHapticFeedback(3);
-                } catch (Exception unused) {
-                }
-            }
-        }
-        super.onTouchEvent(motionEvent);
-        return true;
-    }
+public final class gx {
+    public float a;
+    public float b;
+    public long c;
+    public View d;
 }

@@ -1,30 +1,30 @@
 package u2;
 
-import a8.hc;
 import java.util.Arrays;
+import v7.l7;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class l1 implements y2.i {
-    public final g2.m a;
-    public final g2.b0 b;
+    public final g2.n a;
+    public final g2.c0 b;
     public byte[] c;
 
-    public l1(g2.h hVar, g2.m mVar) {
+    public l1(g2.h hVar, g2.n nVar) {
         u.g.getAndIncrement();
-        this.a = mVar;
-        this.b = new g2.b0(hVar);
+        this.a = nVar;
+        this.b = new g2.c0(hVar);
     }
 
     @Override // y2.i
     public final void b() {
-        g2.b0 b0Var = this.b;
-        b0Var.b = 0L;
+        g2.c0 c0Var = this.b;
+        c0Var.b = 0L;
         try {
-            b0Var.open(this.a);
+            c0Var.open(this.a);
             int i10 = 0;
             while (i10 != -1) {
-                int i11 = (int) b0Var.b;
+                int i11 = (int) c0Var.b;
                 byte[] bArr = this.c;
                 if (bArr == null) {
                     this.c = new byte[1024];
@@ -32,16 +32,16 @@ public final class l1 implements y2.i {
                     this.c = Arrays.copyOf(bArr, bArr.length * 2);
                 }
                 byte[] bArr2 = this.c;
-                i10 = b0Var.read(bArr2, i11, bArr2.length - i11);
+                i10 = c0Var.read(bArr2, i11, bArr2.length - i11);
             }
-            hc.a(b0Var);
+            l7.a(c0Var);
         } catch (Throwable th2) {
-            hc.a(b0Var);
+            l7.a(c0Var);
             throw th2;
         }
     }
 
     @Override // y2.i
-    public final void f0() {
+    public final void R1() {
     }
 }

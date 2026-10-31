@@ -1,19 +1,30 @@
 package q7;
 
-import android.os.IBinder;
-import android.os.IInterface;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class a implements IInterface {
-    public final IBinder a;
+public abstract class a {
+    public static final /* synthetic */ int a = 0;
 
-    public a(IBinder iBinder) {
-        this.a = iBinder;
+    static {
+        a.class.getClassLoader();
     }
 
-    @Override // android.os.IInterface
-    public final IBinder asBinder() {
-        return this.a;
+    public static Parcelable a(Parcel parcel, Parcelable.Creator creator) {
+        if (parcel.readInt() == 0) {
+            return null;
+        }
+        return (Parcelable) creator.createFromParcel(parcel);
+    }
+
+    public static void b(Parcel parcel, Parcelable parcelable) {
+        if (parcelable == null) {
+            parcel.writeInt(0);
+        } else {
+            parcel.writeInt(1);
+            parcelable.writeToParcel(parcel, 0);
+        }
     }
 }

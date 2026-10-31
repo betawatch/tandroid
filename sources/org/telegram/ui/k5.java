@@ -1,111 +1,27 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ContactsController;
-import org.telegram.messenger.ImageLoader;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.camera.CameraController;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public abstract class k5 extends androidx.fragment.app.u {
-    public int O = -1;
+public final /* synthetic */ class k5 implements org.telegram.messenger.q20 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ t5 b;
 
-    public final boolean u(int i10, String[] strArr, int[] iArr) {
-        if (iArr == null) {
-            iArr = new int[0];
-        }
-        if (strArr == null) {
-            strArr = new String[0];
-        }
-        boolean z10 = iArr.length > 0 && iArr[0] == 0;
-        if (i10 == 104) {
-            if (!z10) {
-                x(R.raw.permission_request_camera, LocaleController.getString(R.string.VoipNeedCameraPermission));
-                return true;
-            }
-            x50 x50Var = x50.D3;
-            if (x50Var != null) {
-                x50Var.n.callOnClick();
-                return true;
-            }
-        } else {
-            if (i10 == 4 || i10 == 151) {
-                if (z10) {
-                    ImageLoader.getInstance().checkMediaPaths();
-                    return true;
-                }
-                x(R.raw.permission_request_folder, i10 == 151 ? LocaleController.getString(R.string.PermissionNoStorageAvatar) : LocaleController.getString(R.string.PermissionStorageWithHint));
-                return true;
-            }
-            if (i10 == 5) {
-                if (z10) {
-                    ContactsController.getInstance(this.O).forceImportContacts();
-                    return true;
-                }
-                x(R.raw.permission_request_contacts, LocaleController.getString(R.string.PermissionNoContactsSharing));
-                return false;
-            }
-            if (i10 == 3 || i10 == 150) {
-                int min = Math.min(strArr.length, iArr.length);
-                boolean z11 = true;
-                boolean z12 = true;
-                for (int i11 = 0; i11 < min; i11++) {
-                    if ("android.permission.RECORD_AUDIO".equals(strArr[i11])) {
-                        z11 = iArr[i11] == 0;
-                    } else if ("android.permission.CAMERA".equals(strArr[i11])) {
-                        z12 = iArr[i11] == 0;
-                    }
-                }
-                if (i10 == 150 && (!z11 || !z12)) {
-                    x(R.raw.permission_request_camera, LocaleController.getString(R.string.PermissionNoCameraMicVideo));
-                    return true;
-                }
-                if (!z11) {
-                    x(R.raw.permission_request_microphone, LocaleController.getString(R.string.PermissionNoAudioWithHint));
-                    return true;
-                }
-                if (!z12) {
-                    x(R.raw.permission_request_camera, LocaleController.getString(R.string.PermissionNoCameraWithHint));
-                    return true;
-                }
-                if (SharedConfig.inappCamera) {
-                    CameraController.getInstance().initCamera(null);
-                }
-                return false;
-            }
-            if (i10 != 18 && i10 != 19 && i10 != 20 && i10 != 22) {
-                if (i10 == 2) {
-                    NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(z10 ? NotificationCenter.locationPermissionGranted : NotificationCenter.locationPermissionDenied, new Object[0]);
-                    return true;
-                }
-                if (i10 == 211) {
-                    NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(z10 ? NotificationCenter.locationPermissionGranted : NotificationCenter.locationPermissionDenied, 1);
-                    return true;
-                }
-            } else if (!z10) {
-                x(R.raw.permission_request_camera, LocaleController.getString(R.string.PermissionNoCameraWithHint));
-            }
-        }
-        return true;
+    public /* synthetic */ k5(t5 t5Var, int i10) {
+        this.a = i10;
+        this.b = t5Var;
     }
 
-    public final org.telegram.ui.ActionBar.e2 w(int i10, String str) {
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(this);
-        int i11 = org.telegram.ui.ActionBar.y6.L5;
-        alertDialog$Builder.m(i10, 72, org.telegram.ui.ActionBar.y6.x0(null, i11, false), null);
-        alertDialog$Builder.n(i11, null);
-        alertDialog$Builder.a.T = AndroidUtilities.replaceTags(str);
-        alertDialog$Builder.k(LocaleController.getString(R.string.PermissionOpenSettings), new y0(this, 4));
-        alertDialog$Builder.h(LocaleController.getString(R.string.ContactsPermissionAlertNotNow), null);
-        return alertDialog$Builder.a;
-    }
-
-    public final void x(int i10, String str) {
-        w(i10, str).show();
+    @Override // org.telegram.messenger.q20
+    public final void a(Object obj) {
+        switch (this.a) {
+            case 0:
+                this.b.U = (org.telegram.messenger.h3) obj;
+                break;
+            default:
+                org.telegram.messenger.i0.g3(new h0(4, this.b, (TL_stories.TL_premium_boostsStatus) obj));
+                break;
+        }
     }
 }

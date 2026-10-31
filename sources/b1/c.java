@@ -1,12 +1,12 @@
 package b1;
 
-import jd.i;
+import ad.j;
 import kotlin.jvm.internal.p;
-import ud.l;
+import ld.l;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final /* synthetic */ class c implements ud.a {
+public final /* synthetic */ class c implements ld.a {
     public final /* synthetic */ int a;
     public final /* synthetic */ l b;
     public final /* synthetic */ p c;
@@ -17,7 +17,7 @@ public final /* synthetic */ class c implements ud.a {
         this.c = pVar;
     }
 
-    @Override // ud.a
+    @Override // ld.a
     public final Object invoke() {
         switch (this.a) {
             case 0:
@@ -27,6 +27,6 @@ public final /* synthetic */ class c implements ud.a {
                 this.b.invoke(this.c.a);
                 break;
         }
-        return i.a;
+        return j.a;
     }
 }

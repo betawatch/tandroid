@@ -1,43 +1,54 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
 import android.widget.FrameLayout;
-import android.widget.PopupWindow;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class o90 implements PopupWindow.OnDismissListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ FrameLayout b;
-    public final /* synthetic */ View c;
-    public final /* synthetic */ ViewTreeObserver.OnPreDrawListener d;
-    public final /* synthetic */ ViewGroup e;
+public final class o90 extends oh.q {
+    public final /* synthetic */ int E = 1;
+    public final /* synthetic */ Object F;
 
-    public /* synthetic */ o90(ViewGroup viewGroup, View view, FrameLayout frameLayout, ViewTreeObserver.OnPreDrawListener onPreDrawListener, int i10) {
-        this.a = i10;
-        this.e = viewGroup;
-        this.c = view;
-        this.b = frameLayout;
-        this.d = onPreDrawListener;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public o90(kg.q1 q1Var, kg.q1 q1Var2, FrameLayout frameLayout, long j10) {
+        super(q1Var2, frameLayout, j10, true);
+        this.F = q1Var;
     }
 
-    @Override // android.widget.PopupWindow.OnDismissListener
-    public final void onDismiss() {
-        switch (this.a) {
+    @Override // oh.q
+    public final void f(String str, boolean z10, boolean z11) {
+        org.telegram.ui.ActionBar.l lVar;
+        switch (this.E) {
             case 0:
-                ((s90) this.e).s = null;
-                fi.f6 f6Var = (fi.f6) this.c;
-                f6Var.animate().cancel();
-                f6Var.animate().alpha(0.0f).setDuration(150L).setListener(new i10(this, 5));
+                oh.c cVar = (oh.c) this.F;
+                dw0 dw0Var = cVar.N1;
+                if (!this.e.isEmpty()) {
+                    if (!z11) {
+                        super.f(str, z10, z11);
+                        break;
+                    } else {
+                        cVar.s1.J.setText("");
+                        break;
+                    }
+                } else if (dw0Var.getVisibility() != 4) {
+                    dw0Var.setVisibility(4);
+                    break;
+                }
                 break;
             default:
-                ((org.telegram.ui.mz) this.e).x = null;
-                fi.f6 f6Var2 = (fi.f6) this.c;
-                f6Var2.animate().cancel();
-                f6Var2.animate().alpha(0.0f).setDuration(150L).setListener(new i31(this, 28));
-                break;
+                if (!z11) {
+                    super.f(str, z10, z11);
+                    break;
+                } else {
+                    lVar = ((org.telegram.ui.ActionBar.k2) ((kg.q1) this.F)).actionBar;
+                    lVar.setSearchFieldText("");
+                    break;
+                }
         }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public o90(oh.c cVar, org.telegram.ui.ActionBar.k2 k2Var, org.telegram.ui.ActionBar.p2 p2Var, long j10) {
+        super(k2Var, p2Var, j10, false);
+        this.F = cVar;
     }
 }

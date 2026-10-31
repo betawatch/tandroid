@@ -1,25 +1,24 @@
 package androidx.car.app.utils;
 
 import a3.l0;
-import ai.e0;
+import ag.q0;
 import android.os.RemoteException;
 import android.util.Log;
 import androidx.car.app.IOnDoneCallback;
 import androidx.car.app.j;
-import androidx.car.app.k;
 import androidx.lifecycle.o;
 import j$.util.DesugarCollections;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public abstract class h {
     public static IOnDoneCallback a() {
-        final k kVar = null;
-        return new IOnDoneCallback.Stub(kVar) { // from class: androidx.car.app.utils.RemoteUtils$1
-            final /* synthetic */ k val$callback;
+        final j jVar = null;
+        return new IOnDoneCallback.Stub(jVar) { // from class: androidx.car.app.utils.RemoteUtils$1
+            final /* synthetic */ j val$callback;
 
             @Override // androidx.car.app.IOnDoneCallback
             public void onFailure(w.b bVar) {
@@ -34,11 +33,11 @@ public abstract class h {
     }
 
     public static void b(IOnDoneCallback iOnDoneCallback, String str, b bVar) {
-        i.a(new l0(iOnDoneCallback, str, bVar, 4));
+        i.a(new l0(iOnDoneCallback, str, bVar, 10));
     }
 
     public static void c(o oVar, IOnDoneCallback iOnDoneCallback, String str, b bVar) {
-        i.a(new e0(oVar, iOnDoneCallback, str, bVar, 2));
+        i.a(new q0(oVar, iOnDoneCallback, str, bVar, 3));
     }
 
     public static void d(String str, c cVar) {
@@ -57,8 +56,8 @@ public abstract class h {
             cVar.call();
         } catch (SecurityException e) {
             throw e;
-        } catch (RuntimeException e10) {
-            throw new j(a1.g.p("Remote ", str, " call failed"), e10);
+        } catch (RuntimeException e7) {
+            throw new ad.d(a1.g.n("Remote ", str, " call failed"), e7);
         }
     }
 

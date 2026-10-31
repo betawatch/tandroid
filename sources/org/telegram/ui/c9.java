@@ -1,37 +1,33 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import org.telegram.ui.Components.FragmentContextView;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class c9 extends FragmentContextView {
-    public final /* synthetic */ int X0 = 1;
-    public final /* synthetic */ org.telegram.ui.ActionBar.r2 Y0;
+public final class c9 extends org.telegram.ui.Components.op0 {
+    public final /* synthetic */ org.telegram.ui.ActionBar.z2 R2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c9(o9 o9Var, Context context, o9 o9Var2, a9 a9Var, org.telegram.ui.ActionBar.u6 u6Var) {
-        super(context, o9Var2, a9Var, false, u6Var);
-        this.Y0 = o9Var;
+    public c9(Context context, String str, String str2, org.telegram.ui.ActionBar.p6 p6Var, org.telegram.ui.ActionBar.z2 z2Var) {
+        super(context, null, str, false, str2, false, p6Var);
+        this.R2 = z2Var;
     }
 
-    @Override // org.telegram.ui.Components.FragmentContextView, android.view.View
-    public final void setVisibility(int i10) {
-        switch (this.X0) {
-            case 0:
-                o9 o9Var = (o9) this.Y0;
-                o9Var.H.i(o9Var.I, i10 == 0, true);
-                break;
-            default:
-                cf1 cf1Var = (cf1) this.Y0;
-                cf1Var.U0.i(cf1Var.F0, i10 == 0, true);
-                break;
+    @Override // org.telegram.ui.Components.op0
+    public final void R0(a0.h hVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
+        String a02;
+        if (z10) {
+            if (hVar == null || hVar.m() != 1) {
+                a02 = org.telegram.messenger.cd.a0(null, null, 2131749197, org.telegram.messenger.cd.G(hVar == null ? 1 : hVar.m(), "Chats", new Object[0]));
+            } else {
+                long j10 = ((TLRPC.Dialog) hVar.n(0)).id;
+                a02 = (j10 == 0 || j10 == org.telegram.messenger.d20.i(this.a).e()) ? org.telegram.messenger.cd.L0(2131749195, null) : org.telegram.messenger.cd.a0(null, null, 2131749194, org.telegram.messenger.vp.r1(this.a).A1(j10, true));
+            }
+            org.telegram.ui.Components.wb Q = new org.telegram.ui.Components.cc(this.R2.E, this.I0).Q(R.raw.forward, 36, org.telegram.messenger.i0.W2(a02));
+            Q.r = false;
+            Q.j();
         }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c9(cf1 cf1Var, Context context, cf1 cf1Var2) {
-        super(context, cf1Var2, null, false, null);
-        this.Y0 = cf1Var;
     }
 }

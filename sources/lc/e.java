@@ -1,48 +1,188 @@
 package lc;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+import javax.security.auth.x500.X500Principal;
+import org.telegram.messenger.zs;
+
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class e {
-    public final jc.e a;
+    public final String a;
     public final int b;
-    public final int c;
-    public final int d;
-    public final e e;
-    public final int f;
+    public int c;
+    public int d;
+    public int e;
+    public int f;
+    public char[] g;
 
-    public e(c2.b bVar, jc.e eVar, int i10, int i11, int i12, e eVar2, jc.f fVar) {
-        this.a = eVar;
-        this.b = i10;
-        jc.e eVar3 = jc.e.h;
-        int i13 = (eVar == eVar3 || eVar2 == null) ? i11 : eVar2.c;
-        this.c = i13;
-        this.d = i12;
-        this.e = eVar2;
-        boolean z10 = false;
-        int i14 = eVar2 != null ? eVar2.f : 0;
-        if ((eVar == eVar3 && eVar2 == null && i13 != 0) || (eVar2 != null && i13 != eVar2.c)) {
-            z10 = true;
+    public e(X500Principal x500Principal) {
+        String name = x500Principal.getName("RFC2253");
+        this.a = name;
+        this.b = name.length();
+    }
+
+    public final int a(int i10) {
+        int i11;
+        int i12;
+        int i13 = i10 + 1;
+        int i14 = this.b;
+        String str = this.a;
+        if (i13 >= i14) {
+            throw new IllegalStateException("Malformed DN: " + str);
         }
-        int i15 = 4;
-        i14 = (eVar2 == null || eVar != eVar2.a || z10) ? i14 + eVar.a(fVar) + 4 : i14;
-        int ordinal = eVar.ordinal();
-        if (ordinal != 1) {
-            if (ordinal != 2) {
-                if (ordinal == 4) {
-                    i14 += ((String) bVar.b).substring(i10, i12 + i10).getBytes(((fc.d) bVar.c).a[i11].charset()).length * 8;
-                    if (z10) {
-                        i14 += 12;
-                    }
-                } else if (ordinal == 6) {
-                    i14 += 13;
-                }
-                this.f = i14;
+        char[] cArr = this.g;
+        char c10 = cArr[i10];
+        if (c10 >= '0' && c10 <= '9') {
+            i11 = c10 - '0';
+        } else if (c10 >= 'a' && c10 <= 'f') {
+            i11 = c10 - 'W';
+        } else {
+            if (c10 < 'A' || c10 > 'F') {
+                throw new IllegalStateException("Malformed DN: " + str);
             }
-            i15 = i12 == 1 ? 6 : 11;
-        } else if (i12 != 1) {
-            i15 = i12 == 2 ? 7 : 10;
+            i11 = c10 - '7';
         }
-        i14 += i15;
-        this.f = i14;
+        char c11 = cArr[i13];
+        if (c11 >= '0' && c11 <= '9') {
+            i12 = c11 - '0';
+        } else if (c11 >= 'a' && c11 <= 'f') {
+            i12 = c11 - 'W';
+        } else {
+            if (c11 < 'A' || c11 > 'F') {
+                throw new IllegalStateException("Malformed DN: " + str);
+            }
+            i12 = c11 - '7';
+        }
+        return (i11 << 4) + i12;
+    }
+
+    public final char b() {
+        int i10;
+        int i11;
+        int i12 = this.c + 1;
+        this.c = i12;
+        int i13 = this.b;
+        if (i12 == i13) {
+            throw new IllegalStateException("Unexpected end of DN: " + this.a);
+        }
+        char c10 = this.g[i12];
+        if (c10 != ' ' && c10 != '%' && c10 != '\\' && c10 != '_' && c10 != '\"' && c10 != '#') {
+            switch (c10) {
+                default:
+                    switch (c10) {
+                        case zs.w0 /* 59 */:
+                        case zs.x0 /* 60 */:
+                        case zs.y0 /* 61 */:
+                        case zs.z0 /* 62 */:
+                            break;
+                        default:
+                            int a2 = a(i12);
+                            this.c++;
+                            if (a2 < 128) {
+                                return (char) a2;
+                            }
+                            if (a2 < 192 || a2 > 247) {
+                                return '?';
+                            }
+                            if (a2 <= 223) {
+                                i10 = a2 & 31;
+                                i11 = 1;
+                            } else if (a2 <= 239) {
+                                i10 = a2 & 15;
+                                i11 = 2;
+                            } else {
+                                i10 = a2 & 7;
+                                i11 = 3;
+                            }
+                            for (int i14 = 0; i14 < i11; i14++) {
+                                int i15 = this.c;
+                                int i16 = i15 + 1;
+                                this.c = i16;
+                                if (i16 == i13 || this.g[i16] != '\\') {
+                                    return '?';
+                                }
+                                int i17 = i15 + 2;
+                                this.c = i17;
+                                int a10 = a(i17);
+                                this.c++;
+                                if ((a10 & zs.W2) != 128) {
+                                    return '?';
+                                }
+                                i10 = (i10 << 6) + (a10 & 63);
+                            }
+                            return (char) i10;
+                    }
+                case '*':
+                case '+':
+                case ',':
+                    return c10;
+            }
+        }
+        return c10;
+    }
+
+    public final String c() {
+        int i10;
+        int i11;
+        int i12;
+        char c10;
+        int i13;
+        char c11;
+        char c12;
+        while (true) {
+            i10 = this.c;
+            i11 = this.b;
+            if (i10 >= i11 || this.g[i10] != ' ') {
+                break;
+            }
+            this.c = i10 + 1;
+        }
+        if (i10 == i11) {
+            return null;
+        }
+        this.d = i10;
+        this.c = i10 + 1;
+        while (true) {
+            i12 = this.c;
+            if (i12 >= i11 || (c12 = this.g[i12]) == '=' || c12 == ' ') {
+                break;
+            }
+            this.c = i12 + 1;
+        }
+        String str = this.a;
+        if (i12 >= i11) {
+            throw new IllegalStateException("Unexpected end of DN: " + str);
+        }
+        this.e = i12;
+        if (this.g[i12] == ' ') {
+            while (true) {
+                i13 = this.c;
+                if (i13 >= i11 || (c11 = this.g[i13]) == '=' || c11 != ' ') {
+                    break;
+                }
+                this.c = i13 + 1;
+            }
+            if (this.g[i13] != '=' || i13 == i11) {
+                throw new IllegalStateException("Unexpected end of DN: " + str);
+            }
+        }
+        this.c++;
+        while (true) {
+            int i14 = this.c;
+            if (i14 >= i11 || this.g[i14] != ' ') {
+                break;
+            }
+            this.c = i14 + 1;
+        }
+        int i15 = this.e;
+        int i16 = this.d;
+        if (i15 - i16 > 4) {
+            char[] cArr = this.g;
+            if (cArr[i16 + 3] == '.' && (((c10 = cArr[i16]) == 'O' || c10 == 'o') && ((cArr[i16 + 1] == 'I' || cArr[i16 + 1] == 'i') && (cArr[i16 + 2] == 'D' || cArr[i16 + 2] == 'd')))) {
+                this.d = i16 + 4;
+            }
+        }
+        char[] cArr2 = this.g;
+        int i17 = this.d;
+        return new String(cArr2, i17, i15 - i17);
     }
 }

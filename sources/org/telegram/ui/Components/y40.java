@@ -1,87 +1,37 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.AndroidUtilities;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class y40 extends Drawable {
-    public byte[] a;
-    public final Paint b = new Paint();
-    public final int[] c = {-1, -2758925, -13805707, -13657655};
+public final /* synthetic */ class y40 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ d50 b;
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        byte[] bArr = this.a;
-        if (bArr == null) {
-            return;
-        }
-        int length = bArr.length;
-        int[] iArr = this.c;
-        Paint paint = this.b;
-        if (length == 16) {
-            float floor = (float) Math.floor(Math.min(getBounds().width(), getBounds().height()) / 8.0f);
-            float f7 = 8.0f * floor;
-            float max = Math.max(0.0f, (getBounds().width() - f7) / 2.0f);
-            float max2 = Math.max(0.0f, (getBounds().height() - f7) / 2.0f);
-            int i10 = 0;
-            for (int i11 = 0; i11 < 8; i11++) {
-                int i12 = 0;
-                while (i12 < 8) {
-                    int i13 = i10 + 2;
-                    paint.setColor(iArr[Math.abs((this.a[i10 / 8] >> (i10 % 8)) & 3) % 4]);
-                    float f10 = (i12 * floor) + max;
-                    float f11 = i11 * floor;
-                    canvas.drawRect(f10, f11 + max2, f10 + floor, f11 + floor + max2, paint);
-                    i12++;
-                    i10 = i13;
+    public /* synthetic */ y40(d50 d50Var, int i10) {
+        this.a = i10;
+        this.b = d50Var;
+    }
+
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                d50 d50Var = this.b;
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue() * d50Var.getMeasuredHeight() * 0.5f;
+                d50Var.w0 = floatValue;
+                d50Var.s.setTranslationY(floatValue + d50Var.v0);
+                break;
+            default:
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                d50 d50Var2 = this.b;
+                d50Var2.y0 = floatValue2;
+                li.x0 x0Var = d50Var2.O;
+                if (x0Var != null) {
+                    x0Var.x(floatValue2);
+                    break;
                 }
-            }
-            return;
+                break;
         }
-        float floor2 = (float) Math.floor(Math.min(getBounds().width(), getBounds().height()) / 12.0f);
-        float f12 = 12.0f * floor2;
-        float max3 = Math.max(0.0f, (getBounds().width() - f12) / 2.0f);
-        float max4 = Math.max(0.0f, (getBounds().height() - f12) / 2.0f);
-        int i14 = 0;
-        int i15 = 0;
-        while (i15 < 12) {
-            int i16 = i14;
-            for (int i17 = 0; i17 < 12; i17++) {
-                paint.setColor(iArr[Math.abs((this.a[i16 / 8] >> (i16 % 8)) & 3) % 4]);
-                float f13 = (i17 * floor2) + max3;
-                float f14 = i15 * floor2;
-                canvas.drawRect(f13, f14 + max4, f13 + floor2, f14 + floor2 + max4, paint);
-                i16 += 2;
-            }
-            i15++;
-            i14 = i16;
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return AndroidUtilities.dp(32.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return AndroidUtilities.dp(32.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return 0;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

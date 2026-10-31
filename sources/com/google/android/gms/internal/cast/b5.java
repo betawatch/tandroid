@@ -1,62 +1,39 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public abstract class b5 implements Cloneable {
-    public final c5 a;
-    public c5 b;
+public final class b5 implements v5 {
+    public static final b5 b = new b5(0);
+    public final /* synthetic */ int a;
 
-    public b5(c5 c5Var) {
-        this.a = c5Var;
-        if (c5Var.g()) {
-            throw new IllegalArgumentException("Default instance must be immutable.");
-        }
-        this.b = (c5) c5Var.h(4, null);
+    public /* synthetic */ b5(int i10) {
+        this.a = i10;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:8:0x002b, code lost:
-    
-        if (r3 != false) goto L12;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final c5 a() {
-        c5 b10 = b();
-        byte byteValue = ((Byte) b10.h(1, null)).byteValue();
-        if (byteValue != 1) {
-            if (byteValue != 0) {
-                boolean f7 = b6.c.a(b10.getClass()).f(b10);
-                b10.h(2, true == f7 ? b10 : null);
-            }
-            throw new androidx.car.app.j("Message was missing required fields.  (Lite runtime could not determine which fields were missing).");
+    @Override // com.google.android.gms.internal.cast.v5
+    public final e6 zzb(Class cls) {
+        switch (this.a) {
+            case 0:
+                if (!d5.class.isAssignableFrom(cls)) {
+                    throw new IllegalArgumentException("Unsupported message type: ".concat(cls.getName()));
+                }
+                try {
+                    return (e6) d5.k(cls.asSubclass(d5.class)).h(3, null);
+                } catch (Exception e) {
+                    throw new RuntimeException("Unable to get message info for ".concat(cls.getName()), e);
+                }
+            default:
+                throw new IllegalStateException("This should never be called.");
         }
-        return b10;
     }
 
-    public final c5 b() {
-        if (!this.b.g()) {
-            return this.b;
+    @Override // com.google.android.gms.internal.cast.v5
+    public final boolean zzc(Class cls) {
+        switch (this.a) {
+            case 0:
+                return d5.class.isAssignableFrom(cls);
+            default:
+                return false;
         }
-        c5 c5Var = this.b;
-        c5Var.getClass();
-        b6.c.a(c5Var.getClass()).a(c5Var);
-        c5Var.d();
-        return this.b;
-    }
-
-    public final void c() {
-        if (this.b.g()) {
-            return;
-        }
-        c5 c5Var = (c5) this.a.h(4, null);
-        b6.c.a(c5Var.getClass()).d(c5Var, this.b);
-        this.b = c5Var;
-    }
-
-    public final Object clone() {
-        b5 b5Var = (b5) this.a.h(5, null);
-        b5Var.b = b();
-        return b5Var;
     }
 }

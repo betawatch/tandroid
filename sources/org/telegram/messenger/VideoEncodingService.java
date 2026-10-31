@@ -1,130 +1,82 @@
 package org.telegram.messenger;
 
+import android.R;
 import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public class VideoEncodingService extends Service implements NotificationCenter.NotificationCenterDelegate {
-    private static VideoEncodingService instance;
-    private e0.q builder;
-    int currentAccount;
-    private MediaController.VideoConvertMessage currentMessage;
-    String currentPath;
+public class VideoEncodingService extends Service implements us {
+    public static VideoEncodingService e;
+    public e0.r a;
+    public jf b;
+    public int c;
+    public String d;
 
-    public static boolean isRunning() {
-        return instance != null;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$didReceivedNotification$0() {
-        MediaController.VideoConvertMessage currentForegroundConverMessage = MediaController.getInstance().getCurrentForegroundConverMessage();
-        if (currentForegroundConverMessage != null) {
-            setCurrentMessage(currentForegroundConverMessage);
-        } else {
-            stopSelf();
-        }
-    }
-
-    private void setCurrentMessage(MediaController.VideoConvertMessage videoConvertMessage) {
-        MediaController.VideoConvertMessage videoConvertMessage2 = this.currentMessage;
-        if (videoConvertMessage2 == videoConvertMessage) {
+    public final void a(jf jfVar) {
+        jf jfVar2 = this.b;
+        if (jfVar2 == jfVar) {
             return;
         }
-        if (videoConvertMessage2 != null) {
-            NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.fileUploadProgressChanged);
-            NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.fileUploadFailed);
-            NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.fileUploaded);
+        int i10 = zs.U1;
+        int i11 = zs.V1;
+        int i12 = zs.W1;
+        if (jfVar2 != null) {
+            zs.f(this.c).n(this, i12);
+            zs.f(this.c).n(this, i11);
+            zs.f(this.c).n(this, i10);
         }
-        updateBuilderForMessage(videoConvertMessage);
-        this.currentMessage = videoConvertMessage;
-        int i10 = videoConvertMessage.currentAccount;
-        this.currentAccount = i10;
-        this.currentPath = videoConvertMessage.messageObject.messageOwner.attachPath;
-        NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.fileUploadProgressChanged);
-        NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.fileUploadFailed);
-        NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.fileUploaded);
-        if (isRunning()) {
-            updateNotification();
-        }
-    }
-
-    public static void start(boolean z10) {
-        if (instance == null) {
-            try {
-                ApplicationLoader.applicationContext.startService(new Intent(ApplicationLoader.applicationContext, (Class<?>) VideoEncodingService.class));
-                return;
-            } catch (Exception e) {
-                FileLog.e(e);
-                return;
+        if (jfVar != null) {
+            jj jjVar = jfVar.a;
+            boolean z10 = jjVar != null && jj.t3(jjVar.k);
+            if (jfVar.d) {
+                this.a.p(cd.L0(2131751768, null));
+                this.a.f(cd.L0(2131751768, null));
+            } else if (z10) {
+                this.a.p(cd.L0(2131745596, null));
+                this.a.f(cd.L0(2131745596, null));
+            } else {
+                this.a.p(cd.L0(2131745593, null));
+                this.a.f(cd.L0(2131745593, null));
             }
+            e0.r rVar = this.a;
+            rVar.n = 100;
+            rVar.o = 0;
+            rVar.p = true;
         }
-        if (z10) {
-            MediaController.VideoConvertMessage currentForegroundConverMessage = MediaController.getInstance().getCurrentForegroundConverMessage();
-            VideoEncodingService videoEncodingService = instance;
-            if (videoEncodingService.currentMessage != currentForegroundConverMessage) {
-                if (currentForegroundConverMessage != null) {
-                    videoEncodingService.setCurrentMessage(currentForegroundConverMessage);
-                } else {
-                    videoEncodingService.stopSelf();
-                }
-            }
-        }
-    }
-
-    public static void stop() {
-        VideoEncodingService videoEncodingService = instance;
-        if (videoEncodingService != null) {
-            videoEncodingService.stopSelf();
+        this.b = jfVar;
+        int i13 = jfVar.c;
+        this.c = i13;
+        this.d = jfVar.a.k.attachPath;
+        zs.f(i13).b(this, i12);
+        zs.f(this.c).b(this, i11);
+        zs.f(this.c).b(this, i10);
+        if (e != null) {
+            b();
         }
     }
 
-    private void updateBuilderForMessage(MediaController.VideoConvertMessage videoConvertMessage) {
-        if (videoConvertMessage == null) {
-            return;
-        }
-        MessageObject messageObject = videoConvertMessage.messageObject;
-        boolean z10 = messageObject != null && MessageObject.isGifMessage(messageObject.messageOwner);
-        if (videoConvertMessage.foregroundConversion) {
-            this.builder.p(LocaleController.getString(R.string.ConvertingVideo));
-            this.builder.f(LocaleController.getString(R.string.ConvertingVideo));
-        } else if (z10) {
-            this.builder.p(LocaleController.getString(R.string.SendingGif));
-            this.builder.f(LocaleController.getString(R.string.SendingGif));
-        } else {
-            this.builder.p(LocaleController.getString(R.string.SendingVideo));
-            this.builder.f(LocaleController.getString(R.string.SendingVideo));
-        }
-        e0.q qVar = this.builder;
-        qVar.n = 100;
-        qVar.o = 0;
-        qVar.p = true;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public void updateNotification() {
+    public final void b() {
         try {
-            if (MediaController.getInstance().getCurrentForegroundConverMessage() == null) {
+            if (MediaController.B().a0 == null) {
                 return;
             }
-            new e0.j0(ApplicationLoader.applicationContext).e(null, 4, this.builder.b());
+            new e0.k0(w0.b).e(null, 4, this.a.b());
         } catch (Throwable th2) {
-            FileLog.e(th2);
+            f8.g(th2, true);
         }
     }
 
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public void didReceivedNotification(int i10, int i11, Object... objArr) {
+    @Override // org.telegram.messenger.us
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
         String str;
         String str2;
-        if (i10 != NotificationCenter.fileUploadProgressChanged) {
-            if (i10 == NotificationCenter.fileUploaded || i10 == NotificationCenter.fileUploadFailed) {
+        if (i10 != zs.W1) {
+            if (i10 == zs.U1 || i10 == zs.V1) {
                 String str3 = (String) objArr[0];
-                if (i11 == this.currentAccount && (str = this.currentPath) != null && str.equals(str3)) {
-                    AndroidUtilities.runOnUIThread(new xl(this, 0));
+                if (i11 == this.c && (str = this.d) != null && str.equals(str3)) {
+                    i0.g3(new y20(this, 0));
                     return;
                 }
                 return;
@@ -132,70 +84,71 @@ public class VideoEncodingService extends Service implements NotificationCenter.
             return;
         }
         String str4 = (String) objArr[0];
-        if (i11 == this.currentAccount && (str2 = this.currentPath) != null && str2.equals(str4)) {
+        if (i11 == this.c && (str2 = this.d) != null && str2.equals(str4)) {
             float min = Math.min(1.0f, ((Long) objArr[1]).longValue() / ((Long) objArr[2]).longValue());
             int i12 = (int) (min * 100.0f);
-            e0.q qVar = this.builder;
+            e0.r rVar = this.a;
             boolean z10 = i12 == 0;
-            qVar.n = 100;
-            qVar.o = i12;
-            qVar.p = z10;
-            updateNotification();
+            rVar.n = 100;
+            rVar.o = i12;
+            rVar.p = z10;
+            b();
         }
     }
 
     @Override // android.app.Service
-    public IBinder onBind(Intent intent) {
+    public final IBinder onBind(Intent intent) {
         return null;
     }
 
     @Override // android.app.Service
-    public void onDestroy() {
+    public final void onDestroy() {
         super.onDestroy();
-        instance = null;
+        e = null;
         try {
             stopForeground(true);
         } catch (Throwable unused) {
         }
-        new e0.j0(ApplicationLoader.applicationContext).b(4, null);
-        NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.fileUploadProgressChanged);
-        NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.fileUploadFailed);
-        NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.fileUploaded);
-        this.currentMessage = null;
-        if (BuildVars.LOGS_ENABLED) {
-            FileLog.d("VideoEncodingService: destroy video service");
+        new e0.k0(w0.b).b(4, null);
+        zs.f(this.c).n(this, zs.W1);
+        zs.f(this.c).n(this, zs.V1);
+        zs.f(this.c).n(this, zs.U1);
+        this.b = null;
+        if (v2.a) {
+            f8.b("VideoEncodingService: destroy video service");
         }
     }
 
     @Override // android.app.Service
-    public int onStartCommand(Intent intent, int i10, int i11) {
-        MediaController.VideoConvertMessage currentForegroundConverMessage;
-        if (isRunning() || (currentForegroundConverMessage = MediaController.getInstance().getCurrentForegroundConverMessage()) == null) {
+    public final int onStartCommand(Intent intent, int i10, int i11) {
+        jf jfVar;
+        if (e != null || (jfVar = MediaController.B().a0) == null) {
             return 2;
         }
-        instance = this;
-        if (this.builder == null) {
-            NotificationsController.checkOtherNotificationsChannel();
-            e0.q qVar = new e0.q(ApplicationLoader.applicationContext, NotificationsController.OTHER_NOTIFICATIONS_CHANNEL);
-            this.builder = qVar;
-            qVar.F.icon = android.R.drawable.stat_sys_upload;
-            qVar.F.when = System.currentTimeMillis();
-            e0.q qVar2 = this.builder;
-            qVar2.y = NotificationsController.OTHER_NOTIFICATIONS_CHANNEL;
-            qVar2.g(LocaleController.getString(R.string.AppName));
+        e = this;
+        if (this.a == null) {
+            ot.i();
+            e0.r rVar = new e0.r(w0.b, ot.j0);
+            this.a = rVar;
+            rVar.F.icon = R.drawable.stat_sys_upload;
+            rVar.F.when = System.currentTimeMillis();
+            e0.r rVar2 = this.a;
+            rVar2.y = ot.j0;
+            rVar2.g(cd.L0(org.telegram.messenger.beta.R.string.AppName, null));
         }
-        setCurrentMessage(currentForegroundConverMessage);
+        a(jfVar);
+        int i12 = 1;
         try {
-            startForeground(4, this.builder.b());
+            startForeground(4, this.a.b());
         } catch (Throwable th2) {
-            FileLog.e(th2);
+            f8.g(th2, true);
         }
-        AndroidUtilities.runOnUIThread(new xl(this, 1));
+        i0.g3(new y20(this, i12));
         return 2;
     }
 
-    public void onTimeout(int i10, int i11) {
-        FileLog.d("VideoEncodingService timeout, type = " + i11);
+    public final void onTimeout(int i10, int i11) {
+        f8.b("VideoEncodingService timeout, type = " + i11);
         try {
             stopForeground(true);
         } catch (Throwable unused) {

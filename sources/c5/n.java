@@ -1,23 +1,9 @@
 package c5;
 
-import a8.x9;
-import java.lang.reflect.InvocationTargetException;
-import org.chromium.support_lib_boundary.WebViewProviderFactoryBoundaryInterface;
+import java.util.List;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public abstract class n {
-    public static final p a;
-
-    static {
-        p fVar;
-        try {
-            fVar = new a4.l((WebViewProviderFactoryBoundaryInterface) ve.b.a(WebViewProviderFactoryBoundaryInterface.class, x9.a()), 8);
-        } catch (ClassNotFoundException unused) {
-            fVar = new f();
-        } catch (IllegalAccessException | NoSuchMethodException | InvocationTargetException e) {
-            throw new RuntimeException(e);
-        }
-        a = fVar;
-    }
+public interface n {
+    void b(g gVar, List list);
 }

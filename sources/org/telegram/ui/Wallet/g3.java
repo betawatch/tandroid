@@ -1,46 +1,23 @@
 package org.telegram.ui.Wallet;
 
-import android.view.View;
+import org.telegram.ui.TwoStepVerificationActivity;
+import org.telegram.ui.aa0;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class g3 implements o1.g {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ m3 b;
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final class g3 extends TwoStepVerificationActivity {
+    public final /* synthetic */ aa0 d0;
 
-    public /* synthetic */ g3(m3 m3Var, int i10) {
-        this.a = i10;
-        this.b = m3Var;
+    public g3(aa0 aa0Var) {
+        this.d0 = aa0Var;
     }
 
-    @Override // o1.g
-    public final void a(o1.h hVar, float f7, float f10) {
-        switch (this.a) {
-            case 0:
-                m3 m3Var = this.b;
-                m3Var.C = f7;
-                m3Var.a.invalidate();
-                break;
-            case 1:
-                m3 m3Var2 = this.b;
-                m3Var2.c0 = f7;
-                org.telegram.ui.Cells.v0 v0Var = m3Var2.a;
-                v0Var.invalidate();
-                if (v0Var.getParent() instanceof View) {
-                    ((View) v0Var.getParent()).invalidate();
-                    break;
-                }
-                break;
-            default:
-                m3 m3Var3 = this.b;
-                m3Var3.a0 = f7;
-                org.telegram.ui.Cells.v0 v0Var2 = m3Var3.a;
-                v0Var2.invalidate();
-                if (v0Var2.getParent() instanceof View) {
-                    ((View) v0Var2.getParent()).invalidate();
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.TwoStepVerificationActivity, org.telegram.ui.ActionBar.k2
+    public final void onFragmentDestroy() {
+        aa0 aa0Var = this.d0;
+        if (((Runnable) aa0Var.d) != null && !aa0Var.c) {
+            aa0Var.a();
         }
+        super.onFragmentDestroy();
     }
 }

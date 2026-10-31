@@ -1,120 +1,89 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.text.TextUtils;
+import android.view.View;
 import org.telegram.tgnet.tl.TL_chatlists;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class a00 extends j00 {
-    public final /* synthetic */ b00 E;
+public final class a00 extends hg.b {
+    public View.OnClickListener c;
+    public CharSequence d;
+    public String e;
+    public boolean f;
+    public boolean g;
+    public long h;
+    public String i;
+    public int j;
+    public int k;
+    public boolean l;
+    public TL_chatlists.TL_exportedChatlistInvite m;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public a00(b00 b00Var, Context context, int i10, int i11) {
-        super(context, null, i10, i11);
-        this.E = b00Var;
+    public static a00 b(int i10, String str, boolean z10) {
+        a00 a00Var = new a00(4, false);
+        a00Var.k = i10;
+        a00Var.d = str;
+        a00Var.l = z10;
+        return a00Var;
     }
 
-    @Override // org.telegram.ui.j00
-    public final void b(TL_chatlists.TL_exportedChatlistInvite tL_exportedChatlistInvite) {
-        b00 b00Var = this.E;
-        b00Var.d.Z.remove(tL_exportedChatlistInvite);
-        b00Var.d.T();
-        b00Var.d.U(true);
+    public static a00 c(int i10, String str, String str2, boolean z10) {
+        a00 a00Var = new a00(1, false);
+        a00Var.g = z10;
+        a00Var.d = str;
+        a00Var.i = str2;
+        a00Var.j = i10;
+        return a00Var;
     }
 
-    @Override // org.telegram.ui.j00
-    public final void c() {
-        org.telegram.ui.Components.l80 F = org.telegram.ui.Components.l80.F(this.E.d.container, null, this);
-        final int i10 = 0;
-        F.c(R.drawable.msg_copy, LocaleController.getString(R.string.CopyLink), new Runnable(this) { // from class: org.telegram.ui.zz
-            public final /* synthetic */ a00 b;
+    public static a00 d(String str) {
+        a00 a00Var = new a00(TextUtils.isEmpty(str) ? 3 : 6, false);
+        a00Var.d = str;
+        return a00Var;
+    }
 
-            {
-                this.b = this;
+    public final boolean equals(Object obj) {
+        TL_chatlists.TL_exportedChatlistInvite tL_exportedChatlistInvite;
+        TL_chatlists.TL_exportedChatlistInvite tL_exportedChatlistInvite2;
+        if (this != obj) {
+            if (obj == null || a00.class != obj.getClass()) {
+                return false;
             }
-
-            @Override // java.lang.Runnable
-            public final void run() {
-                switch (i10) {
-                    case 0:
-                        a00 a00Var = this.b;
-                        String str = a00Var.x;
-                        if (str != null && AndroidUtilities.addToClipboard(str)) {
-                            new org.telegram.ui.Components.wc(a00Var.E.d.a0, null).k(false).j();
-                            break;
-                        }
-                        break;
-                    case 1:
-                        this.b.d();
-                        break;
-                    default:
-                        this.b.a();
-                        break;
+            a00 a00Var = (a00) obj;
+            int i10 = this.a;
+            if (i10 != a00Var.a) {
+                return false;
+            }
+            if (i10 == 11) {
+                if (!TextUtils.equals(this.d, a00Var.d) || !TextUtils.equals(this.e, a00Var.e)) {
+                    return false;
+                }
+            } else {
+                if ((i10 == 0 || i10 == 1 || i10 == 3 || i10 == 4) && !TextUtils.equals(this.d, a00Var.d)) {
+                    return false;
+                }
+                int i11 = this.a;
+                if (i11 == 0) {
+                    if (this.f != a00Var.f) {
+                        return false;
+                    }
+                } else if (i11 == 1) {
+                    if (this.h != a00Var.h || !TextUtils.equals(this.i, a00Var.i) || this.j != a00Var.j) {
+                        return false;
+                    }
+                } else if (i11 == 7 && (tL_exportedChatlistInvite = this.m) != (tL_exportedChatlistInvite2 = a00Var.m)) {
+                    if (!TextUtils.equals(tL_exportedChatlistInvite.url, tL_exportedChatlistInvite2.url)) {
+                        return false;
+                    }
+                    TL_chatlists.TL_exportedChatlistInvite tL_exportedChatlistInvite3 = this.m;
+                    boolean z10 = tL_exportedChatlistInvite3.revoked;
+                    TL_chatlists.TL_exportedChatlistInvite tL_exportedChatlistInvite4 = a00Var.m;
+                    if (z10 != tL_exportedChatlistInvite4.revoked || !TextUtils.equals(tL_exportedChatlistInvite3.title, tL_exportedChatlistInvite4.title) || this.m.peers.size() != a00Var.m.peers.size()) {
+                        return false;
+                    }
                 }
             }
-        }, false);
-        final int i11 = 1;
-        F.c(R.drawable.msg_qrcode, LocaleController.getString(R.string.GetQRCode), new Runnable(this) { // from class: org.telegram.ui.zz
-            public final /* synthetic */ a00 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // java.lang.Runnable
-            public final void run() {
-                switch (i11) {
-                    case 0:
-                        a00 a00Var = this.b;
-                        String str = a00Var.x;
-                        if (str != null && AndroidUtilities.addToClipboard(str)) {
-                            new org.telegram.ui.Components.wc(a00Var.E.d.a0, null).k(false).j();
-                            break;
-                        }
-                        break;
-                    case 1:
-                        this.b.d();
-                        break;
-                    default:
-                        this.b.a();
-                        break;
-                }
-            }
-        }, false);
-        final int i12 = 2;
-        F.c(R.drawable.msg_delete, LocaleController.getString(R.string.DeleteLink), new Runnable(this) { // from class: org.telegram.ui.zz
-            public final /* synthetic */ a00 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // java.lang.Runnable
-            public final void run() {
-                switch (i12) {
-                    case 0:
-                        a00 a00Var = this.b;
-                        String str = a00Var.x;
-                        if (str != null && AndroidUtilities.addToClipboard(str)) {
-                            new org.telegram.ui.Components.wc(a00Var.E.d.a0, null).k(false).j();
-                            break;
-                        }
-                        break;
-                    case 1:
-                        this.b.d();
-                        break;
-                    default:
-                        this.b.a();
-                        break;
-                }
-            }
-        }, true);
-        if (LocaleController.isRTL) {
-            F.i = 3;
         }
-        F.Z();
+        return true;
     }
 }

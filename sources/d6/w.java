@@ -1,48 +1,7 @@
 package d6;
 
-import a8.df;
-import android.os.Parcel;
-import android.os.Parcelable;
-import java.util.Arrays;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class w extends p6.a {
-    public static final Parcelable.Creator<w> CREATOR = new v(2);
-    public final float a;
-    public final float b;
-    public final float c;
-
-    public w(float f7, float f10, float f11) {
-        this.a = f7;
-        this.b = f10;
-        this.c = f11;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof w)) {
-            return false;
-        }
-        w wVar = (w) obj;
-        return this.a == wVar.a && this.b == wVar.b && this.c == wVar.c;
-    }
-
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{Float.valueOf(this.a), Float.valueOf(this.b), Float.valueOf(this.c)});
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        int q5 = df.q(parcel, 20293);
-        df.s(parcel, 2, 4);
-        parcel.writeFloat(this.a);
-        df.s(parcel, 3, 4);
-        parcel.writeFloat(this.b);
-        df.s(parcel, 4, 4);
-        parcel.writeFloat(this.c);
-        df.r(parcel, q5);
-    }
+public abstract class w extends b8.b implements x {
+    public static final /* synthetic */ int b = 0;
 }

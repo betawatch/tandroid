@@ -1,62 +1,145 @@
 package w7;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import org.telegram.messenger.BuildConfig;
-import org.telegram.ui.Components.b10;
+import android.content.Context;
+import android.opengl.GLES20;
+import android.opengl.GLES30;
+import android.util.AtomicFile;
+import java.io.File;
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public abstract class n {
-    public static String a(String str, Object... objArr) {
-        int length;
-        int length2;
-        int indexOf;
-        String k10;
-        int i10 = 0;
+    /* JADX WARN: Can't wrap try/catch for region: R(10:0|1|(2:5|(9:7|8|(2:11|9)|12|13|(1:15)|16|17|(2:22|23)(1:21)))|(4:(3:72|73|(2:75|43))|34|35|(4:(1:38)|(1:40)|(1:42)|43)(2:45|46))|(1:28)|29|30|31|32|(1:(1:52))) */
+    /* JADX WARN: Code restructure failed: missing block: B:63:0x0134, code lost:
+    
+        r0 = e;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:64:0x0135, code lost:
+    
+        r1 = 0;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:65:0x0131, code lost:
+    
+        r0 = th;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:66:0x0132, code lost:
+    
+        r1 = 0;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:56:0x013f  */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x0144  */
+    /* JADX WARN: Removed duplicated region for block: B:60:? A[SYNTHETIC] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static int a(Context context, String str, String str2) {
+        Throwable th2;
+        int i10;
+        RuntimeException runtimeException;
+        Throwable th3;
+        int a2;
+        int glCreateProgram = GLES20.glCreateProgram();
+        String glGetString = GLES20.glGetString(7938);
         int i11 = 0;
-        while (true) {
-            length = objArr.length;
-            if (i11 >= length) {
-                break;
-            }
-            Object obj = objArr[i11];
-            if (obj == null) {
-                k10 = BuildConfig.BETA_URL;
-            } else {
+        AtomicFile atomicFile = null;
+        if (glGetString != null && glGetString.startsWith("OpenGL ES 3.")) {
+            int[] iArr = new int[1];
+            GLES20.glGetIntegerv(34814, iArr, 0);
+            if (iArr[0] != 0) {
                 try {
-                    k10 = obj.toString();
-                } catch (Exception e) {
-                    String D = a1.g.D(obj.getClass().getName(), "@", Integer.toHexString(System.identityHashCode(obj)));
-                    Logger.getLogger("com.google.common.base.Strings").logp(Level.WARNING, "com.google.common.base.Strings", "lenientToString", "Exception during lenientFormat for ".concat(D), (Throwable) e);
-                    k10 = b10.k("<", D, " threw ", e.getClass().getName(), ">");
+                    MessageDigest messageDigest = MessageDigest.getInstance("SHA-256");
+                    String[] strArr = {"gl-program-v1", "diamond", str, str2, "position", "normal", GLES20.glGetString(7936), GLES20.glGetString(7937), GLES20.glGetString(7938), GLES20.glGetString(35724)};
+                    for (int i12 = 0; i12 < 10; i12++) {
+                        messageDigest.update(strArr[i12].getBytes(StandardCharsets.UTF_8));
+                        messageDigest.update((byte) 0);
+                    }
+                    StringBuilder sb2 = new StringBuilder();
+                    for (byte b10 : messageDigest.digest()) {
+                        sb2.append(Character.forDigit((b10 >> 4) & 15, 16));
+                        sb2.append(Character.forDigit(b10 & 15, 16));
+                    }
+                    File file = new File(context.getCodeCacheDir(), "gl-programs");
+                    if (file.isDirectory() || file.mkdirs()) {
+                        atomicFile = new AtomicFile(new File(file, ((Object) sb2) + ".bin"));
+                    }
+                } catch (Exception unused) {
                 }
             }
-            objArr[i11] = k10;
-            i11++;
         }
-        StringBuilder sb2 = new StringBuilder(str.length() + (length * 16));
-        int i12 = 0;
-        while (true) {
-            length2 = objArr.length;
-            if (i10 >= length2 || (indexOf = str.indexOf("%s", i12)) == -1) {
-                break;
+        try {
+            if (atomicFile != null) {
+                try {
+                    if (o.b(glCreateProgram, atomicFile)) {
+                        return glCreateProgram;
+                    }
+                } catch (RuntimeException e) {
+                    runtimeException = e;
+                    i10 = 0;
+                    try {
+                        GLES20.glDeleteProgram(glCreateProgram);
+                        throw runtimeException;
+                    } catch (Throwable th4) {
+                        th3 = th4;
+                        th2 = th3;
+                        if (i11 != 0) {
+                            GLES20.glDeleteShader(i11);
+                        }
+                        if (i10 == 0) {
+                            throw th2;
+                        }
+                        GLES20.glDeleteShader(i10);
+                        throw th2;
+                    }
+                } catch (Throwable th5) {
+                    th2 = th5;
+                    i10 = 0;
+                    if (i11 != 0) {
+                    }
+                    if (i10 == 0) {
+                    }
+                }
             }
-            sb2.append((CharSequence) str, i12, indexOf);
-            sb2.append(objArr[i10]);
-            i10++;
-            i12 = indexOf + 2;
-        }
-        sb2.append((CharSequence) str, i12, str.length());
-        if (i10 < length2) {
-            sb2.append(" [");
-            sb2.append(objArr[i10]);
-            for (int i13 = i10 + 1; i13 < objArr.length; i13++) {
-                sb2.append(", ");
-                sb2.append(objArr[i13]);
+            GLES20.glAttachShader(glCreateProgram, a2);
+            GLES20.glAttachShader(glCreateProgram, i10);
+            GLES20.glBindAttribLocation(glCreateProgram, 0, "position");
+            GLES20.glBindAttribLocation(glCreateProgram, 1, "normal");
+            GLES20.glLinkProgram(glCreateProgram);
+            int[] iArr2 = new int[1];
+            GLES20.glGetProgramiv(glCreateProgram, 35714, iArr2, 0);
+            if (iArr2[0] == 0) {
+                throw new IllegalStateException(GLES20.glGetProgramInfoLog(glCreateProgram));
             }
-            sb2.append(']');
+            if (atomicFile != null) {
+                o.c(glCreateProgram, atomicFile);
+            }
+            if (a2 != 0) {
+                GLES20.glDeleteShader(a2);
+            }
+            if (i10 != 0) {
+                GLES20.glDeleteShader(i10);
+            }
+            return glCreateProgram;
+        } catch (RuntimeException e7) {
+            e = e7;
+            i11 = a2;
+            runtimeException = e;
+            GLES20.glDeleteProgram(glCreateProgram);
+            throw runtimeException;
+        } catch (Throwable th6) {
+            th3 = th6;
+            i11 = a2;
+            th2 = th3;
+            if (i11 != 0) {
+            }
+            if (i10 == 0) {
+            }
         }
-        return sb2.toString();
+        if (atomicFile != null) {
+            GLES30.glProgramParameteri(glCreateProgram, 33367, 1);
+        }
+        a2 = o.a(35633, str);
+        i10 = o.a(35632, str2);
     }
 }

@@ -1,14 +1,28 @@
 package me;
 
-import java.util.concurrent.Executor;
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import org.chromium.support_lib_boundary.FeatureFlagHolderBoundaryInterface;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class a implements Executor {
-    public static final a a = new a();
+public final class a implements InvocationHandler {
+    public final FeatureFlagHolderBoundaryInterface a;
 
-    @Override // java.util.concurrent.Executor
-    public final void execute(Runnable runnable) {
-        runnable.run();
+    public a(FeatureFlagHolderBoundaryInterface featureFlagHolderBoundaryInterface) {
+        this.a = featureFlagHolderBoundaryInterface;
+    }
+
+    @Override // java.lang.reflect.InvocationHandler
+    public final Object invoke(Object obj, Method method, Object[] objArr) {
+        FeatureFlagHolderBoundaryInterface featureFlagHolderBoundaryInterface = this.a;
+        try {
+            return Class.forName(method.getDeclaringClass().getName(), true, featureFlagHolderBoundaryInterface.getClass().getClassLoader()).getDeclaredMethod(method.getName(), method.getParameterTypes()).invoke(featureFlagHolderBoundaryInterface, objArr);
+        } catch (InvocationTargetException e) {
+            throw e.getTargetException();
+        } catch (ReflectiveOperationException e7) {
+            throw new RuntimeException("Reflection failed for method " + method, e7);
+        }
     }
 }

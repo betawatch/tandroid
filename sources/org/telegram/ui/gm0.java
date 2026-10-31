@@ -1,73 +1,95 @@
 package org.telegram.ui;
 
 import android.text.Editable;
-import android.text.TextUtils;
 import android.text.TextWatcher;
-import j$.util.Objects;
-import java.util.regex.Pattern;
+import java.util.HashMap;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
 public final class gm0 implements TextWatcher {
     public final /* synthetic */ int a;
-    public final Object b;
-    public String c;
-    public final /* synthetic */ Object d;
+    public final /* synthetic */ sm0 b;
 
-    public /* synthetic */ gm0(kn0 kn0Var, EditTextBoldCursor editTextBoldCursor, String str, int i10) {
+    public /* synthetic */ gm0(sm0 sm0Var, int i10) {
         this.a = i10;
-        this.d = kn0Var;
-        this.b = editTextBoldCursor;
-        this.c = str;
+        this.b = sm0Var;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:27:0x00bc  */
     @Override // android.text.TextWatcher
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public final void afterTextChanged(Editable editable) {
-        long parseLong;
-        int i10;
-        switch (this.a) {
+        boolean z10;
+        String str;
+        String str2;
+        int i10 = this.a;
+        sm0 sm0Var = this.b;
+        switch (i10) {
             case 0:
-                kn0.J0((kn0) this.d, (EditTextBoldCursor) this.b, this.c, editable, false);
-                break;
-            case 1:
-                kn0.J0((kn0) this.d, (EditTextBoldCursor) this.b, this.c, editable, false);
+                if (sm0Var.c0 != 0 && editable.length() == sm0Var.c0) {
+                    sm0Var.F0(false);
+                    break;
+                }
                 break;
             default:
-                rg.x xVar = (rg.x) this.d;
-                rg.y yVar = xVar.f;
-                EditTextBoldCursor editTextBoldCursor = xVar.d;
-                if (!xVar.e && this.c != null && editable != null && !TextUtils.isEmpty(editable) && !Objects.equals(this.c.toString(), editable.toString())) {
-                    String obj = editable.toString();
-                    if (obj.length() > 8) {
-                        editTextBoldCursor.setText(obj.substring(2, 8).toUpperCase());
-                        editTextBoldCursor.setSelection(8);
-                        break;
-                    } else if (((Pattern) this.b).matcher(editable).find()) {
-                        int length = obj.length();
-                        if (length != 3) {
-                            if (length == 6) {
-                                i10 = ((int) Long.parseLong(obj, 16)) - 16777216;
-                            } else if (length != 8) {
-                                i10 = yVar.f;
-                            } else {
-                                parseLong = Long.parseLong(obj, 16);
+                HashMap hashMap = sm0Var.c;
+                if (!sm0Var.m0) {
+                    sm0Var.m0 = true;
+                    String d = af.b.d(sm0Var.f[8].getText().toString(), false);
+                    sm0Var.f[8].setText(d);
+                    org.telegram.ui.Components.n30 n30Var = (org.telegram.ui.Components.n30) sm0Var.f[9];
+                    if (d.length() == 0) {
+                        n30Var.setHintText((String) null);
+                        n30Var.setHint(org.telegram.messenger.cd.L0(2131747388, null));
+                    } else {
+                        int i11 = 4;
+                        if (d.length() > 4) {
+                            while (true) {
+                                if (i11 >= 1) {
+                                    String substring = d.substring(0, i11);
+                                    if (((String) hashMap.get(substring)) != null) {
+                                        String str3 = d.substring(i11) + sm0Var.f[9].getText().toString();
+                                        sm0Var.f[8].setText(substring);
+                                        str = str3;
+                                        d = substring;
+                                        z10 = true;
+                                    } else {
+                                        i11--;
+                                    }
+                                } else {
+                                    z10 = false;
+                                    str = null;
+                                }
                             }
-                            if (i10 == yVar.f) {
-                                yVar.m(i10, 5);
-                                break;
+                            if (!z10) {
+                                str = d.substring(1) + sm0Var.f[9].getText().toString();
+                                EditTextBoldCursor editTextBoldCursor = sm0Var.f[8];
+                                d = d.substring(0, 1);
+                                editTextBoldCursor.setText(d);
                             }
                         } else {
-                            parseLong = Long.parseLong("FF" + obj.charAt(0) + obj.charAt(0) + obj.charAt(1) + obj.charAt(1) + obj.charAt(2) + obj.charAt(2), 16);
+                            z10 = false;
+                            str = null;
                         }
-                        i10 = (int) parseLong;
-                        if (i10 == yVar.f) {
+                        String str4 = (String) hashMap.get(d);
+                        if (str4 == null || sm0Var.a.indexOf(str4) == -1 || (str2 = (String) sm0Var.d.get(d)) == null) {
+                            n30Var.setHintText((String) null);
+                            n30Var.setHint(org.telegram.messenger.cd.L0(2131747388, null));
+                        } else {
+                            n30Var.setHintText(str2.replace('X', (char) 8211));
+                            n30Var.setHint((CharSequence) null);
+                        }
+                        if (!z10) {
+                            EditTextBoldCursor editTextBoldCursor2 = sm0Var.f[8];
+                            editTextBoldCursor2.setSelection(editTextBoldCursor2.getText().length());
+                        }
+                        if (str != null) {
+                            n30Var.requestFocus();
+                            n30Var.setText(str);
+                            n30Var.setSelection(n30Var.length());
                         }
                     }
+                    sm0Var.m0 = false;
+                    break;
                 }
                 break;
         }
@@ -75,25 +97,12 @@ public final class gm0 implements TextWatcher {
 
     @Override // android.text.TextWatcher
     public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        switch (this.a) {
-            case 0:
-            case 1:
-                break;
-            default:
-                this.c = charSequence.toString();
-                break;
-        }
+        int i13 = this.a;
     }
 
     @Override // android.text.TextWatcher
     public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
         int i13 = this.a;
-    }
-
-    public gm0(rg.x xVar) {
-        this.a = 2;
-        this.d = xVar;
-        this.b = Pattern.compile("^[0-9a-fA-F]*$");
     }
 
     private final void a(int i10, int i11, int i12, CharSequence charSequence) {
@@ -106,8 +115,5 @@ public final class gm0 implements TextWatcher {
     }
 
     private final void d(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void e(int i10, int i11, int i12, CharSequence charSequence) {
     }
 }

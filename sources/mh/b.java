@@ -1,136 +1,121 @@
 package mh;
 
-import android.content.Context;
-import android.view.View;
-import android.view.ViewGroup;
-import java.util.Iterator;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import k2.c;
-import oe.e;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.wh;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.voip.w2;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.zs;
+import w7.u;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes4.dex */
-public abstract class b extends ViewGroup {
-    public int a;
-    public int b;
-    public final LinkedHashMap c;
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final class b extends Drawable {
+    public final a b;
+    public Bitmap c;
+    public Canvas d;
+    public int e;
+    public float f;
+    public int g;
+    public int h;
+    public final Paint a = new Paint(2);
+    public int i = zs.e4;
 
-    public b(Context context) {
-        super(context);
-        this.c = new LinkedHashMap(16);
+    public b(a aVar) {
+        this.b = aVar;
     }
 
-    public final void a(w2 w2Var) {
-        addView(w2Var);
-        this.c.put(w2Var, new a(w2Var, new c(this, 9)));
-    }
-
-    public final void b(boolean z10, boolean z11) {
-        int min;
-        int i10;
-        e eVar;
-        int measuredWidth;
-        int i11;
-        int measuredWidth2 = getMeasuredWidth();
-        int measuredHeight = getMeasuredHeight();
-        boolean z12 = measuredWidth2 <= measuredHeight;
-        if (measuredWidth2 <= 0 || measuredHeight <= 0) {
-            return;
-        }
-        LinkedHashMap linkedHashMap = this.c;
-        Iterator it = linkedHashMap.values().iterator();
-        int i12 = 0;
-        while (it.hasNext()) {
-            if (((a) it.next()).h) {
-                i12++;
-            }
-        }
-        if (i12 == 0) {
-            i12 = 1;
-        }
-        if (z12) {
-            min = Math.min(AndroidUtilities.dp(50.0f) + Math.max((int) (wh.C(50.0f, i12, measuredHeight) / (i12 + 0.333f)), 0), measuredHeight / i12);
-            i10 = (measuredHeight - (i12 * min)) / 2;
+    public final void a(int i10, int i11, float f7, int i12) {
+        int i13 = i12 * 2;
+        int i14 = (int) ((i10 + i13) / f7);
+        int i15 = (int) ((i11 + i13) / f7);
+        Bitmap bitmap = this.c;
+        if (bitmap != null && bitmap.getWidth() == i14 && this.c.getHeight() == i15) {
+            this.c.eraseColor(0);
         } else {
-            int min2 = Math.min(AndroidUtilities.dp(50.0f) + Math.max((int) (wh.C(50.0f, i12, measuredWidth2) / (i12 + 0.333f)), 0), measuredWidth2 / i12);
-            min = AndroidUtilities.dp(76.0f);
-            i10 = (measuredWidth2 - (i12 * min2)) / 2;
-            measuredWidth2 = min2;
-        }
-        Iterator it2 = linkedHashMap.entrySet().iterator();
-        int i13 = 0;
-        while (it2.hasNext()) {
-            a aVar = (a) ((Map.Entry) it2.next()).getValue();
-            boolean z13 = aVar.h;
-            w2 w2Var = aVar.e;
-            e eVar2 = aVar.b;
-            oe.b bVar = aVar.c;
-            e eVar3 = aVar.a;
-            if (z13) {
-                if (z12) {
-                    measuredWidth = ((measuredWidth2 - w2Var.getMeasuredWidth()) / 2) + (getMeasuredWidth() - measuredWidth2);
-                    i11 = (min * i13) + i10;
-                } else {
-                    measuredWidth = ((measuredWidth2 - w2Var.getMeasuredWidth()) / 2) + (measuredWidth2 * i13) + i10;
-                    i11 = getMeasuredHeight() - AndroidUtilities.dp(76.0f);
-                }
-                if (z11 || !((z10 || eVar3.h) && bVar.f)) {
-                    eVar3.c(measuredWidth);
-                } else {
-                    eVar3.a(measuredWidth);
-                }
-                if (z11 || !((z10 || eVar2.h) && bVar.f)) {
-                    eVar2.c(i11);
-                } else {
-                    eVar2.a(i11);
-                }
-                i13++;
+            Bitmap bitmap2 = this.c;
+            if (bitmap2 != null) {
+                bitmap2.recycle();
             }
-            bVar.a(aVar.h, !z11 && (z10 || ((eVar = bVar.h) != null && eVar.h)));
+            this.c = Bitmap.createBitmap(i14, i15, Bitmap.Config.ARGB_8888);
+            this.d = new Canvas(this.c);
         }
-        invalidate();
+        this.f = f7;
+        this.e = i12;
+        this.d.save();
+        float f10 = i12 / f7;
+        this.d.translate(f10, f10);
+        float f11 = 1.0f / f7;
+        this.d.scale(f11, f11);
+        this.b.s(this.d, zs.e4);
+        Utilities.stackBlurBitmap(this.c, (int) f10);
+        this.d.restore();
     }
 
-    public final void c(w2 w2Var, boolean z10, boolean z11) {
-        a aVar = (a) this.c.get(w2Var);
-        if (aVar == null || aVar.h == z10) {
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        int i10 = this.i;
+        a aVar = this.b;
+        if (i10 == 255) {
+            canvas.save();
+            canvas.translate(this.g, this.h);
+            aVar.s(canvas, zs.e4);
+            canvas.restore();
             return;
         }
-        aVar.h = z10;
-        b(z11, false);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        int childCount = getChildCount();
-        for (int i14 = 0; i14 < childCount; i14++) {
-            View childAt = getChildAt(i14);
-            childAt.layout(0, 0, childAt.getMeasuredWidth(), childAt.getMeasuredHeight());
-        }
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int size = View.MeasureSpec.getSize(i10);
-        int size2 = View.MeasureSpec.getSize(i11);
-        setMeasuredDimension(size, size2);
-        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(76.0f), TLObject.FLAG_30);
-        int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(76.0f), TLObject.FLAG_30);
-        int childCount = getChildCount();
-        for (int i12 = 0; i12 < childCount; i12++) {
-            getChildAt(i12).measure(makeMeasureSpec, makeMeasureSpec2);
-        }
-        if (this.a == size && this.b == size2) {
-            b(true, false);
+        if (i10 == 0) {
             return;
         }
-        b(false, true);
-        this.a = size;
-        this.b = size2;
+        double d = i10 / 255.0d;
+        double d10 = d / ((1.0d - d) * 6.0d);
+        double d11 = 1.0d + d10;
+        double sqrt = ((-d11) + Math.sqrt((d11 * d11) - (((-d10) * 4.0d) * (-d)))) / ((-2.0d) * d10);
+        int b10 = u.b((int) (d10 * sqrt * 255.0d), 0, zs.e4);
+        int b11 = u.b((int) (sqrt * 255.0d), 0, zs.e4);
+        if (b11 > 0 && this.c != null) {
+            Paint paint = this.a;
+            paint.setAlpha(b11);
+            canvas.save();
+            int i11 = this.g;
+            int i12 = this.e;
+            canvas.translate(i11 - i12, this.h - i12);
+            float f7 = this.f;
+            canvas.scale(f7, f7);
+            canvas.drawBitmap(this.c, 0.0f, 0.0f, paint);
+            canvas.restore();
+        }
+        if (b10 > 0) {
+            canvas.save();
+            canvas.translate(this.g, this.h);
+            aVar.s(canvas, b10);
+            canvas.restore();
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getAlpha() {
+        return this.i;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return 0;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        this.i = i10;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setBounds(int i10, int i11, int i12, int i13) {
+        this.g = i10;
+        this.h = i11;
+        super.setBounds(i10, i11, i12, i13);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

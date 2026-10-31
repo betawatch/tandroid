@@ -1,28 +1,26 @@
 package org.telegram.ui.Components.voip;
 
-import a8.fg;
-import org.webrtc.RendererCommon;
+import android.graphics.Canvas;
+import android.view.View;
+import org.telegram.ui.Components.fv0;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes4.dex */
-public final class l2 implements RendererCommon.RendererEvents {
-    public final /* synthetic */ n2 a;
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final class l2 extends View {
+    public fv0 a;
+    public boolean b;
 
-    public l2(n2 n2Var) {
-        this.a = n2Var;
-    }
-
-    @Override // org.webrtc.RendererCommon.RendererEvents
-    public final void onFirstFrameRendered() {
-        n2 n2Var = this.a;
-        fg fgVar = n2Var.S;
-        if (fgVar != null) {
-            fgVar.run();
-            n2Var.S = null;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        fv0 fv0Var;
+        if (this.b || (fv0Var = this.a) == null) {
+            return;
         }
+        fv0Var.b(canvas, this);
     }
 
-    @Override // org.webrtc.RendererCommon.RendererEvents
-    public final void onFrameResolutionChanged(int i10, int i11, int i12) {
+    public void setState(boolean z10) {
+        this.b = z10;
+        invalidate();
     }
 }

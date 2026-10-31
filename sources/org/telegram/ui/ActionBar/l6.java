@@ -1,60 +1,27 @@
 package org.telegram.ui.ActionBar;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class l6 extends Drawable {
-    public final RectF a = new RectF();
-    public final /* synthetic */ View b;
-    public final /* synthetic */ View c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ Paint e;
+public enum l6 {
+    h(t6.og, t6.pg, t6.qg, t6.Dg, t6.Eg, t6.Fg),
+    n(t6.rg, t6.sg, t6.tg, t6.Gg, t6.Hg, t6.Ig),
+    r(t6.ug, t6.vg, t6.wg, t6.Jg, t6.Kg, t6.Lg),
+    s(t6.xg, t6.yg, t6.zg, t6.Mg, t6.Ng, t6.Og),
+    w(t6.Ag, t6.Bg, t6.Cg, t6.Pg, t6.Qg, t6.Rg);
 
-    public l6(View view, View view2, int i10, Paint paint) {
-        this.b = view;
-        this.c = view2;
-        this.d = i10;
-        this.e = paint;
-    }
+    public final int a;
+    public final int b;
+    public final int c;
+    public final int d;
+    public final int e;
+    public final int f;
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        Rect bounds = getBounds();
-        float f7 = bounds.left;
-        float f10 = bounds.top;
-        float f11 = bounds.right;
-        float f12 = bounds.bottom;
-        RectF rectF = this.a;
-        rectF.set(f7, f10, f11, f12);
-        y6.s(this.b, this.c, null);
-        float f13 = this.d;
-        Paint paint = this.e;
-        if (paint == null) {
-            paint = y6.U0("paintChatActionBackground");
-        }
-        canvas.drawRoundRect(rectF, f13, f13, paint);
-        if (y6.c1()) {
-            canvas.drawRoundRect(rectF, f13, f13, y6.U0("paintChatActionBackgroundDarken"));
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    l6(int i10, int i11, int i12, int i13, int i14, int i15) {
+        this.a = i10;
+        this.b = i11;
+        this.c = i12;
+        this.d = i13;
+        this.e = i14;
+        this.f = i15;
     }
 }

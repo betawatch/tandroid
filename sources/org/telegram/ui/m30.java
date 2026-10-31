@@ -1,23 +1,14 @@
 package org.telegram.ui;
 
-import android.view.ViewGroup;
-import androidx.recyclerview.widget.RecyclerView;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class m30 extends s4.u0 {
-    public final /* synthetic */ x50 a;
-
-    public m30(x50 x50Var) {
-        this.a = x50Var;
+public final class m30 extends org.telegram.ui.Components.ac0 {
+    public m30(LaunchActivity launchActivity) {
+        super(launchActivity, null);
     }
 
-    @Override // s4.u0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        ViewGroup viewGroup;
-        x50 x50Var = this.a;
-        viewGroup = ((org.telegram.ui.ActionBar.k3) x50Var).containerView;
-        viewGroup.invalidate();
-        x50Var.a2.invalidate();
+    @Override // org.telegram.ui.Components.ac0
+    public final CharSequence d(int i10) {
+        return org.telegram.messenger.cd.G(i10, "Minutes", new Object[0]);
     }
 }

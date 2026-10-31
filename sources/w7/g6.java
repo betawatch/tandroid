@@ -1,6 +1,31 @@
 package w7;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+import android.content.Context;
+import android.widget.TextView;
+import org.telegram.ui.Components.p80;
+
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public abstract class g6 {
+    public static p80 a(Context context, float f7, int i10, boolean z10, org.telegram.ui.ActionBar.p6 p6Var) {
+        int i11 = org.telegram.ui.ActionBar.t6.Uc;
+        p80 p80Var = new p80(context, null);
+        p80Var.setTextSize(1, f7);
+        org.telegram.ui.ActionBar.a7.V(p80Var, i10, p6Var);
+        org.telegram.ui.ActionBar.a7.H(p80Var, i11, p6Var);
+        if (z10) {
+            p80Var.setTypeface(org.telegram.messenger.i0.o());
+        }
+        return p80Var;
+    }
+
+    public static TextView b(Context context, float f7, int i10, boolean z10, org.telegram.ui.ActionBar.p6 p6Var) {
+        TextView textView = new TextView(context);
+        textView.setTextSize(1, f7);
+        org.telegram.ui.ActionBar.a7.V(textView, i10, p6Var);
+        if (z10) {
+            textView.setTypeface(org.telegram.messenger.i0.o());
+        }
+        return textView;
+    }
 }

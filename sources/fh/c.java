@@ -1,57 +1,79 @@
 package fh;
 
-import b2.e1;
-import e2.j;
-import e2.o;
-import m4.e0;
-import m4.n1;
-import m4.v;
-import org.telegram.ui.ActionBar.u6;
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
+import java.util.HashSet;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.cd;
+import org.telegram.messenger.i0;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.p6;
+import org.telegram.ui.ActionBar.t6;
+import w7.b6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class c implements d, o, e0, j {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final class c extends FrameLayout implements k6 {
+    public final p6 a;
+    public final ImageView b;
+    public final TextView c;
+    public int d;
+    public boolean e;
 
-    public /* synthetic */ c(int i10, int i11, int i12) {
-        this.a = i12;
-        this.b = i10;
-        this.c = i11;
+    public c(Context context, p6 p6Var) {
+        super(context);
+        this.a = p6Var;
+        ImageView imageView = new ImageView(context);
+        this.b = imageView;
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        imageView.setImageResource(R.drawable.msg_arrow_back);
+        addView(imageView, b6.d(48, 48.0f, 8388627, 6.0f, 0.0f, 0.0f, 0.0f));
+        TextView textView = new TextView(context);
+        this.c = textView;
+        textView.setText(cd.L0(2131751167, null));
+        textView.setTextSize(1, 15.0f);
+        textView.setTypeface(i0.o());
+        textView.setSingleLine(true);
+        textView.setEllipsize(TextUtils.TruncateAt.END);
+        addView(textView, b6.d(-2, -2.0f, 8388627, 50.0f, 0.0f, 16.0f, 0.0f));
+        updateColors();
     }
 
-    @Override // e2.j
-    public void accept(Object obj) {
-        switch (this.a) {
-            case 4:
-                ((n1) obj).L(this.b, this.c);
-                break;
-            default:
-                ((n1) obj).s0(this.b, this.c);
-                break;
+    public final int a(float f7) {
+        return i0.b.o(t6.w0(t6.Kl, this.a), (int) (f7 * 255.0f));
+    }
+
+    @Override // org.telegram.ui.ActionBar.k6
+    public final void addColorKeys(HashSet hashSet) {
+        hashSet.add(Integer.valueOf(t6.Kl));
+    }
+
+    public void setOnBackClickListener(View.OnClickListener onClickListener) {
+        this.b.setOnClickListener(onClickListener);
+    }
+
+    @Override // org.telegram.ui.ActionBar.k6
+    public final void updateColors() {
+        this.c.setTextColor(a(0.6f));
+        int a2 = a(1.0f);
+        if (this.e && a2 == this.d) {
+            return;
         }
-    }
-
-    @Override // m4.e0
-    public void d(v vVar, int i10) {
-        vVar.d(i10, this.b, this.c);
-    }
-
-    @Override // fh.d
-    public int i(u6 u6Var, boolean z10) {
-        return z10 ? this.b : this.c;
-    }
-
-    @Override // e2.o
-    public void invoke(Object obj) {
-        switch (this.a) {
-            case 1:
-                ((e1) obj).onSurfaceSizeChanged(this.b, this.c);
-                break;
-            default:
-                ((e1) obj).onSurfaceSizeChanged(this.b, this.c);
-                break;
+        this.e = true;
+        this.d = a2;
+        PorterDuffColorFilter porterDuffColorFilter = new PorterDuffColorFilter(a(0.6f), PorterDuff.Mode.MULTIPLY);
+        ImageView imageView = this.b;
+        imageView.setColorFilter(porterDuffColorFilter);
+        if (imageView.getBackground() != null) {
+            t6.H1(imageView.getBackground(), a(0.1f), true);
+        } else {
+            imageView.setBackground(t6.h0(a(0.1f), 1, -1));
         }
     }
 }

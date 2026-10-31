@@ -1,42 +1,73 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.Drawable;
-import android.text.SpannableStringBuilder;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
 import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
+import java.util.HashSet;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class xr extends t61 {
-    public static final /* synthetic */ int a = 0;
+public final class xr extends View implements org.telegram.ui.ActionBar.k6 {
+    public final fe.b a;
+    public final Paint b;
+    public final RectF c;
+    public final RectF d;
+    public final RectF e;
+    public final ho f;
 
-    static {
-        t61.setup(new xr());
+    public xr(Context context) {
+        super(context);
+        this.a = new fe.b(this, gr.h, 380L);
+        this.b = new Paint(1);
+        this.c = new RectF();
+        this.d = new RectF();
+        this.e = new RectF();
+        this.f = new ho(this, 7);
+        updateColors();
     }
 
-    @Override // org.telegram.ui.Components.t61
-    public final void bindView(View view, u61 u61Var, boolean z10, k71 k71Var, s71 s71Var) {
-        org.telegram.ui.Cells.g9 g9Var = (org.telegram.ui.Cells.g9) view;
-        g9Var.c(u61Var.l, u61Var.n, !u61Var.j);
-        xh.n nVar = g9Var.a;
-        if (u61Var.l instanceof SpannableStringBuilder) {
-            nVar.setTextSize(1, 13.0f);
-            nVar.setTranslationY(AndroidUtilities.dp(2.0f));
-            nVar.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MONO));
-        }
+    @Override // android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        org.telegram.messenger.i0.h3(this.f, 3000L);
     }
 
-    @Override // org.telegram.ui.Components.t61
-    public final View createView(Context context, nm0 nm0Var, int i10, int i11, org.telegram.ui.ActionBar.u6 u6Var) {
-        org.telegram.ui.Cells.g9 g9Var = new org.telegram.ui.Cells.g9(context, u6Var, true);
-        org.telegram.ui.ActionBar.f7.i(org.telegram.ui.ActionBar.y6.d6, g9Var, u6Var);
-        Drawable mutate = context.getDrawable(R.drawable.msg_copy).mutate();
-        org.telegram.ui.ActionBar.f7.y(g9Var, mutate, org.telegram.ui.ActionBar.y6.L6, u6Var, PorterDuff.Mode.MULTIPLY);
-        g9Var.setImage(mutate);
-        g9Var.setImageClickListener(new bi.w0(this, context, g9Var, 22));
-        return g9Var;
+    @Override // android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        org.telegram.messenger.i0.r(this.f);
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        float f7 = this.a.e;
+        RectF rectF = this.d;
+        RectF rectF2 = this.c;
+        RectF rectF3 = this.e;
+        org.telegram.messenger.i0.Z1(rectF, rectF2, f7, rectF3);
+        float W1 = org.telegram.messenger.i0.W1(f7, org.telegram.messenger.i0.L(15.0f), 0);
+        canvas.drawRoundRect(rectF3, W1, W1, this.b);
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        int currentActionBarHeight = org.telegram.ui.ActionBar.l.getCurrentActionBarHeight();
+        int paddingTop = getPaddingTop();
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(paddingTop + currentActionBarHeight, TLObject.FLAG_30));
+        this.c.set(0.0f, 0.0f, getMeasuredWidth(), paddingTop);
+        this.d.set(org.telegram.messenger.i0.L(12.0f), ((currentActionBarHeight / 2) + paddingTop) - org.telegram.messenger.i0.L(15.0f), org.telegram.messenger.i0.L(30.0f) + org.telegram.messenger.i0.L(12.0f), org.telegram.messenger.i0.L(30.0f) + r6);
+    }
+
+    @Override // org.telegram.ui.ActionBar.k6
+    public final void updateColors() {
+        this.b.setColor(org.telegram.ui.ActionBar.t6.x0(null, org.telegram.ui.ActionBar.t6.Vl, false));
+        invalidate();
+    }
+
+    @Override // org.telegram.ui.ActionBar.k6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

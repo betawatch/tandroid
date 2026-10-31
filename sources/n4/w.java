@@ -1,152 +1,106 @@
 package n4;
 
-import android.content.ComponentName;
-import android.content.ContentResolver;
-import android.content.Context;
-import android.content.pm.ApplicationInfo;
-import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
-import android.media.Rating;
-import android.os.Build;
+import android.media.session.PlaybackState;
 import android.os.Bundle;
-import android.os.Process;
-import android.provider.Settings;
-import m4.w1;
+import android.os.Parcel;
+import android.os.Parcelable;
+import android.text.TextUtils;
+import e9.l0;
+import e9.n0;
+import e9.x1;
+import java.util.AbstractCollection;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class w {
-    public static final Object b = new Object();
-    public static volatile w c;
-    public Object a;
+public final class w implements Parcelable {
+    public static final Parcelable.Creator<w> CREATOR = new m8.i(6);
+    public final int a;
+    public final long b;
+    public final long c;
+    public final float d;
+    public final long e;
+    public final int f;
+    public final CharSequence h;
+    public final long n;
+    public final AbstractCollection r;
+    public final long s;
+    public final Bundle w;
+    public PlaybackState x;
 
-    public static w a(Context context) {
-        w wVar;
-        synchronized (b) {
-            try {
-                if (c == null) {
-                    Context applicationContext = context.getApplicationContext();
-                    w wVar2 = new w();
-                    w1 w1Var = new w1(2, (byte) 0);
-                    w1Var.b = applicationContext;
-                    w1Var.c = applicationContext.getContentResolver();
-                    wVar2.a = w1Var;
-                    c = wVar2;
-                }
-                wVar = c;
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
-        return wVar;
+    public w(int i10, long j10, long j11, float f7, long j12, int i11, CharSequence charSequence, long j13, ArrayList arrayList, long j14, Bundle bundle) {
+        this.a = i10;
+        this.b = j10;
+        this.c = j11;
+        this.d = f7;
+        this.e = j12;
+        this.f = i11;
+        this.h = charSequence;
+        this.n = j13;
+        this.r = new ArrayList(arrayList);
+        this.s = j14;
+        this.w = bundle;
     }
 
-    public boolean b(t tVar) {
-        w1 w1Var = (w1) this.a;
-        v vVar = tVar.a;
-        Context context = (Context) w1Var.b;
-        int i10 = vVar.c;
-        String str = vVar.a;
-        try {
-            int i11 = Build.VERSION.SDK_INT;
-            if (i11 == 23 && str.equals("android.media.session.MediaController")) {
-                return true;
-            }
-            ApplicationInfo applicationInfo = context.getPackageManager().getApplicationInfo(str, 0);
-            if (applicationInfo != null) {
-                if (i11 < 28) {
-                    i10 = applicationInfo.uid;
-                }
-                if (i10 == 1000 || i10 == Process.myUid() || context.checkPermission("android.permission.MEDIA_CONTENT_CONTROL", vVar.b, vVar.c) == 0 || w1Var.N(vVar, "android.permission.STATUS_BAR_SERVICE") || w1Var.N(vVar, "android.permission.MEDIA_CONTENT_CONTROL")) {
-                    return true;
-                }
-                String string = Settings.Secure.getString((ContentResolver) w1Var.c, "enabled_notification_listeners");
-                if (string != null) {
-                    for (String str2 : string.split(":")) {
-                        ComponentName unflattenFromString = ComponentName.unflattenFromString(str2);
-                        if (unflattenFromString != null && unflattenFromString.getPackageName().equals(str)) {
-                            return true;
-                        }
-                    }
-                }
-            }
-            return false;
-        } catch (PackageManager.NameNotFoundException unused) {
-            e2.a.b("MediaSessionManager", "Package " + str + " doesn't exist");
-            return false;
-        }
+    @Override // android.os.Parcelable
+    public final int describeContents() {
+        return 0;
     }
 
-    public void c(String str, Bitmap bitmap) {
-        Integer num = (Integer) i.c.get(str);
-        if (num != null && num.intValue() != 2) {
-            throw new IllegalArgumentException(a1.g.p("The ", str, " key cannot be used to put a Bitmap"));
-        }
-        ((Bundle) this.a).putParcelable(str, bitmap);
+    public final String toString() {
+        StringBuilder sb2 = new StringBuilder("PlaybackState {state=");
+        sb2.append(this.a);
+        sb2.append(", position=");
+        sb2.append(this.b);
+        sb2.append(", buffered position=");
+        sb2.append(this.c);
+        sb2.append(", speed=");
+        sb2.append(this.d);
+        sb2.append(", updated=");
+        sb2.append(this.n);
+        sb2.append(", actions=");
+        sb2.append(this.e);
+        sb2.append(", error code=");
+        sb2.append(this.f);
+        sb2.append(", error message=");
+        sb2.append(this.h);
+        sb2.append(", custom actions=");
+        sb2.append(this.r);
+        sb2.append(", active item id=");
+        return a1.g.q(sb2, this.s, "}");
     }
 
-    public void d(long j10, String str) {
-        Integer num = (Integer) i.c.get(str);
-        if (num != null && num.intValue() != 0) {
-            throw new IllegalArgumentException(a1.g.p("The ", str, " key cannot be used to put a long"));
-        }
-        ((Bundle) this.a).putLong(str, j10);
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i10) {
+        parcel.writeInt(this.a);
+        parcel.writeLong(this.b);
+        parcel.writeFloat(this.d);
+        parcel.writeLong(this.n);
+        parcel.writeLong(this.c);
+        parcel.writeLong(this.e);
+        TextUtils.writeToParcel(this.h, parcel, i10);
+        parcel.writeTypedList(this.r);
+        parcel.writeLong(this.s);
+        parcel.writeBundle(this.w);
+        parcel.writeInt(this.f);
     }
 
-    public void e(String str, a0 a0Var) {
-        Rating rating;
-        float f7 = a0Var.b;
-        int i10 = a0Var.a;
-        Integer num = (Integer) i.c.get(str);
-        if (num != null && num.intValue() != 3) {
-            throw new IllegalArgumentException(a1.g.p("The ", str, " key cannot be used to put a Rating"));
+    public w(Parcel parcel) {
+        this.a = parcel.readInt();
+        this.b = parcel.readLong();
+        this.d = parcel.readFloat();
+        this.n = parcel.readLong();
+        this.c = parcel.readLong();
+        this.e = parcel.readLong();
+        this.h = (CharSequence) TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
+        AbstractCollection createTypedArrayList = parcel.createTypedArrayList(v.CREATOR);
+        if (createTypedArrayList == null) {
+            l0 l0Var = n0.b;
+            createTypedArrayList = x1.e;
         }
-        Bundle bundle = (Bundle) this.a;
-        if (a0Var.c == null) {
-            if (a0Var.b()) {
-                switch (i10) {
-                    case 1:
-                        a0Var.c = Rating.newHeartRating(i10 == 1 && f7 == 1.0f);
-                        break;
-                    case 2:
-                        a0Var.c = Rating.newThumbRating(i10 == 2 && f7 == 1.0f);
-                        break;
-                    case 3:
-                    case 4:
-                    case 5:
-                        a0Var.c = Rating.newStarRating(i10, a0Var.a());
-                        break;
-                    case 6:
-                        if (i10 != 6 || !a0Var.b()) {
-                            f7 = -1.0f;
-                        }
-                        a0Var.c = Rating.newPercentageRating(f7);
-                        break;
-                    default:
-                        rating = null;
-                        break;
-                }
-                bundle.putParcelable(str, rating);
-            }
-            a0Var.c = Rating.newUnratedRating(i10);
-        }
-        rating = a0Var.c;
-        bundle.putParcelable(str, rating);
-    }
-
-    public void f(String str, String str2) {
-        Integer num = (Integer) i.c.get(str);
-        if (num != null && num.intValue() != 1) {
-            throw new IllegalArgumentException(a1.g.p("The ", str, " key cannot be used to put a String"));
-        }
-        ((Bundle) this.a).putCharSequence(str, str2);
-    }
-
-    public void g(CharSequence charSequence, String str) {
-        Integer num = (Integer) i.c.get(str);
-        if (num != null && num.intValue() != 1) {
-            throw new IllegalArgumentException(a1.g.p("The ", str, " key cannot be used to put a CharSequence"));
-        }
-        ((Bundle) this.a).putCharSequence(str, charSequence);
+        this.r = createTypedArrayList;
+        this.s = parcel.readLong();
+        this.w = parcel.readBundle(q.class.getClassLoader());
+        this.f = parcel.readInt();
     }
 }

@@ -1,514 +1,68 @@
 package com.google.android.gms.common.api.internal;
 
-import android.content.Context;
-import android.content.IntentFilter;
-import android.os.Bundle;
 import android.os.Looper;
+import android.os.Message;
 import android.util.Log;
-import com.google.android.gms.common.api.Status;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.Map;
-import java.util.Set;
 import java.util.concurrent.locks.ReentrantLock;
-import m.r3;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class i0 extends com.google.android.gms.common.api.m implements u0 {
-    public final a0.f E;
-    public Set F;
-    public final r3 G;
-    public final a0.f H;
-    public final b8.d I;
-    public final za.c J;
-    public final ArrayList K;
-    public Integer L;
-    public final f1 M;
-    public final ReentrantLock b;
-    public final o6.s c;
-    public w0 d;
-    public final int e;
-    public final Context f;
-    public final Looper h;
-    public final LinkedList n;
-    public volatile boolean r;
-    public final long s;
-    public final long v;
-    public final g0 w;
-    public final l6.d x;
-    public t0 y;
+public final class i0 extends com.google.android.gms.internal.cast.z {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public i0(Context context, ReentrantLock reentrantLock, Looper looper, r3 r3Var, a0.f fVar, ArrayList arrayList, ArrayList arrayList2, a0.f fVar2, int i10, ArrayList arrayList3) {
-        l6.d dVar = l6.d.d;
-        b8.d dVar2 = o8.b.a;
-        this.d = null;
-        this.n = new LinkedList();
-        this.s = 120000L;
-        this.v = 5000L;
-        this.F = new HashSet();
-        this.J = new za.c(10);
-        this.L = null;
-        a4.l lVar = new a4.l(this, 9);
-        this.f = context;
-        this.b = reentrantLock;
-        this.c = new o6.s(looper, lVar);
-        this.h = looper;
-        int i11 = 0;
-        this.w = new g0(this, looper, i11);
-        this.x = dVar;
-        this.e = -1;
-        this.H = fVar;
-        this.E = fVar2;
-        this.K = arrayList3;
-        this.M = new f1(0);
-        int size = arrayList.size();
-        int i12 = 0;
-        while (i12 < size) {
-            Object obj = arrayList.get(i12);
-            i12++;
-            com.google.android.gms.common.api.k kVar = (com.google.android.gms.common.api.k) obj;
-            o6.s sVar = this.c;
-            sVar.getClass();
-            o6.l.h(kVar);
-            synchronized (sVar.r) {
-                try {
-                    if (sVar.b.contains(kVar)) {
-                        Log.w("GmsClientEvents", "registerConnectionCallbacks(): listener " + String.valueOf(kVar) + " is already registered");
-                    } else {
-                        sVar.b.add(kVar);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ i0(Object obj, Looper looper, int i10) {
+        super(looper, 2);
+        this.a = i10;
+        this.b = obj;
+    }
+
+    @Override // android.os.Handler
+    public final void handleMessage(Message message) {
+        switch (this.a) {
+            case 0:
+                k0 k0Var = (k0) this.b;
+                int i10 = message.what;
+                if (i10 != 1) {
+                    if (i10 == 2) {
+                        k0.g(k0Var);
+                        return;
                     }
-                } catch (Throwable th2) {
-                    throw th2;
-                }
-            }
-            if (sVar.a.w()) {
-                com.google.android.gms.internal.cast.y yVar = sVar.n;
-                yVar.sendMessage(yVar.obtainMessage(1, kVar));
-            }
-        }
-        int size2 = arrayList2.size();
-        while (i11 < size2) {
-            Object obj2 = arrayList2.get(i11);
-            i11++;
-            this.c.a((com.google.android.gms.common.api.l) obj2);
-        }
-        this.G = r3Var;
-        this.I = dVar2;
-    }
-
-    public static int f(Collection collection, boolean z10) {
-        Iterator it = collection.iterator();
-        boolean z11 = false;
-        boolean z12 = false;
-        while (it.hasNext()) {
-            com.google.android.gms.common.api.c cVar = (com.google.android.gms.common.api.c) it.next();
-            z11 |= cVar.p();
-            z12 |= cVar.a();
-        }
-        if (z11) {
-            return (z12 && z10) ? 2 : 1;
-        }
-        return 3;
-    }
-
-    public static /* bridge */ /* synthetic */ void g(i0 i0Var) {
-        i0Var.b.lock();
-        try {
-            if (i0Var.r) {
-                i0Var.j();
-            }
-        } finally {
-            i0Var.b.unlock();
-        }
-    }
-
-    @Override // com.google.android.gms.common.api.m
-    public final void a() {
-        ReentrantLock reentrantLock = this.b;
-        reentrantLock.lock();
-        try {
-            int i10 = 2;
-            boolean z10 = false;
-            if (this.e >= 0) {
-                o6.l.j("Sign-in mode should have been set explicitly by auto-manage.", this.L != null);
-            } else {
-                Integer num = this.L;
-                if (num == null) {
-                    this.L = Integer.valueOf(f(this.E.values(), false));
-                } else if (num.intValue() == 2) {
-                    throw new IllegalStateException("Cannot call connect() when SignInMode is set to SIGN_IN_MODE_OPTIONAL. Call connect(SIGN_IN_MODE_OPTIONAL) instead.");
-                }
-            }
-            Integer num2 = this.L;
-            o6.l.h(num2);
-            int intValue = num2.intValue();
-            reentrantLock.lock();
-            try {
-                if (intValue == 3 || intValue == 1) {
-                    i10 = intValue;
-                } else if (intValue != 2) {
-                    i10 = intValue;
-                    o6.l.a("Illegal sign-in mode: " + i10, z10);
-                    i(i10);
-                    j();
-                    reentrantLock.unlock();
+                    Log.w("GoogleApiClientImpl", "Unknown message id: " + i10);
                     return;
                 }
-                o6.l.a("Illegal sign-in mode: " + i10, z10);
-                i(i10);
-                j();
-                reentrantLock.unlock();
-                return;
-            } finally {
-                reentrantLock.unlock();
-            }
-            z10 = true;
-        } catch (Throwable th2) {
-            throw th2;
-        }
-    }
-
-    @Override // com.google.android.gms.common.api.m
-    public final void b() {
-        LinkedList<e> linkedList = this.n;
-        ReentrantLock reentrantLock = this.b;
-        reentrantLock.lock();
-        try {
-            this.M.a();
-            w0 w0Var = this.d;
-            if (w0Var != null) {
-                w0Var.e();
-            }
-            Set<p> set = (Set) this.J.b;
-            for (p pVar : set) {
-                pVar.b = null;
-                pVar.c = null;
-            }
-            set.clear();
-            for (e eVar : linkedList) {
-                eVar.g.set(null);
-                eVar.c();
-            }
-            linkedList.clear();
-            if (this.d != null) {
-                h();
-                o6.s sVar = this.c;
-                sVar.e = false;
-                sVar.f.incrementAndGet();
-            }
-            reentrantLock.unlock();
-        } catch (Throwable th2) {
-            reentrantLock.unlock();
-            throw th2;
-        }
-    }
-
-    @Override // com.google.android.gms.common.api.m
-    public final Looper c() {
-        return this.h;
-    }
-
-    @Override // com.google.android.gms.common.api.m
-    public final boolean d(b6.d dVar) {
-        w0 w0Var = this.d;
-        return w0Var != null && w0Var.f(dVar);
-    }
-
-    @Override // com.google.android.gms.common.api.m
-    public final void e() {
-        w0 w0Var = this.d;
-        if (w0Var != null) {
-            w0Var.d();
-        }
-    }
-
-    public final boolean h() {
-        if (!this.r) {
-            return false;
-        }
-        this.r = false;
-        this.w.removeMessages(2);
-        this.w.removeMessages(1);
-        t0 t0Var = this.y;
-        if (t0Var != null) {
-            t0Var.a();
-            this.y = null;
-        }
-        return true;
-    }
-
-    public final void i(int i10) {
-        ReentrantLock reentrantLock;
-        Integer num = this.L;
-        if (num == null) {
-            this.L = Integer.valueOf(i10);
-        } else if (num.intValue() != i10) {
-            int intValue = this.L.intValue();
-            throw new IllegalStateException(a1.g.q(i10 != 1 ? i10 != 2 ? i10 != 3 ? "UNKNOWN" : "SIGN_IN_MODE_NONE" : "SIGN_IN_MODE_OPTIONAL" : "SIGN_IN_MODE_REQUIRED", ". Mode was already set to ", intValue != 1 ? intValue != 2 ? intValue != 3 ? "UNKNOWN" : "SIGN_IN_MODE_NONE" : "SIGN_IN_MODE_OPTIONAL" : "SIGN_IN_MODE_REQUIRED", new StringBuilder("Cannot use sign-in mode: ")));
-        }
-        if (this.d != null) {
-            return;
-        }
-        a0.f fVar = this.E;
-        Iterator it = ((a0.e) fVar.values()).iterator();
-        boolean z10 = false;
-        boolean z11 = false;
-        while (it.hasNext()) {
-            com.google.android.gms.common.api.c cVar = (com.google.android.gms.common.api.c) it.next();
-            z10 |= cVar.p();
-            z11 |= cVar.a();
-        }
-        int intValue2 = this.L.intValue();
-        ArrayList arrayList = this.K;
-        ReentrantLock reentrantLock2 = this.b;
-        if (intValue2 == 1) {
-            reentrantLock = reentrantLock2;
-            if (!z10) {
-                throw new IllegalStateException("SIGN_IN_MODE_REQUIRED cannot be used on a GoogleApiClient that does not contain any authenticated APIs. Use connect() instead.");
-            }
-            if (z11) {
-                throw new IllegalStateException("Cannot use SIGN_IN_MODE_REQUIRED with GOOGLE_SIGN_IN_API. Use connect(SIGN_IN_MODE_OPTIONAL) instead.");
-            }
-        } else {
-            if (intValue2 == 2 && z10) {
-                a0.f fVar2 = new a0.f(0);
-                a0.f fVar3 = new a0.f(0);
-                Iterator it2 = ((a0.a) fVar.entrySet()).iterator();
-                com.google.android.gms.common.api.c cVar2 = null;
-                while (it2.hasNext()) {
-                    Map.Entry entry = (Map.Entry) it2.next();
-                    com.google.android.gms.common.api.c cVar3 = (com.google.android.gms.common.api.c) entry.getValue();
-                    if (true == cVar3.a()) {
-                        cVar2 = cVar3;
+                ReentrantLock reentrantLock = k0Var.b;
+                reentrantLock.lock();
+                try {
+                    if (k0Var.h()) {
+                        k0Var.j();
                     }
-                    if (cVar3.p()) {
-                        fVar2.put((com.google.android.gms.common.api.d) entry.getKey(), cVar3);
-                    } else {
-                        fVar3.put((com.google.android.gms.common.api.d) entry.getKey(), cVar3);
+                    return;
+                } finally {
+                    reentrantLock.unlock();
+                }
+            default:
+                int i11 = message.what;
+                if (i11 != 1) {
+                    if (i11 == 2) {
+                        throw ((RuntimeException) message.obj);
                     }
+                    Log.w("GACStateManager", "Unknown message id: " + i11);
+                    return;
                 }
-                o6.l.j("CompositeGoogleApiClient should not be used without any APIs that require sign-in.", !fVar2.isEmpty());
-                a0.f fVar4 = new a0.f(0);
-                a0.f fVar5 = new a0.f(0);
-                a0.f fVar6 = this.H;
-                Iterator it3 = ((a0.c) fVar6.keySet()).iterator();
-                while (it3.hasNext()) {
-                    com.google.android.gms.common.api.e eVar = (com.google.android.gms.common.api.e) it3.next();
-                    com.google.android.gms.common.api.d dVar = eVar.b;
-                    if (fVar2.containsKey(dVar)) {
-                        fVar4.put(eVar, (Boolean) fVar6.get(eVar));
-                    } else {
-                        if (!fVar3.containsKey(dVar)) {
-                            throw new IllegalStateException("Each API in the isOptionalMap must have a corresponding client in the clients map.");
-                        }
-                        fVar5.put(eVar, (Boolean) fVar6.get(eVar));
+                m0 m0Var = (m0) message.obj;
+                n0 n0Var = (n0) this.b;
+                m0Var.getClass();
+                n0Var.a.lock();
+                try {
+                    if (n0Var.m == m0Var.a) {
+                        m0Var.a();
                     }
+                    return;
+                } finally {
+                    n0Var.a.unlock();
                 }
-                ArrayList arrayList2 = new ArrayList();
-                ArrayList arrayList3 = new ArrayList();
-                int size = arrayList.size();
-                for (int i11 = 0; i11 < size; i11++) {
-                    o1 o1Var = (o1) arrayList.get(i11);
-                    if (fVar4.containsKey(o1Var.a)) {
-                        arrayList2.add(o1Var);
-                    } else {
-                        if (!fVar5.containsKey(o1Var.a)) {
-                            throw new IllegalStateException("Each ClientCallbacks must have a corresponding API in the isOptionalMap");
-                        }
-                        arrayList3.add(o1Var);
-                    }
-                }
-                this.d = new w(this.f, this, reentrantLock2, this.h, this.x, fVar2, fVar3, this.G, this.I, cVar2, arrayList2, arrayList3, fVar4, fVar5);
-                return;
-            }
-            reentrantLock = reentrantLock2;
         }
-        this.d = new l0(this.f, this, reentrantLock, this.h, this.x, this.E, this.G, this.H, this.I, arrayList, this);
-    }
-
-    public final void j() {
-        this.c.e = true;
-        w0 w0Var = this.d;
-        o6.l.h(w0Var);
-        w0Var.a();
-    }
-
-    @Override // com.google.android.gms.common.api.internal.u0
-    public final void p(int i10) {
-        if (i10 == 1) {
-            if (!this.r) {
-                this.r = true;
-                if (this.y == null) {
-                    try {
-                        l6.d dVar = this.x;
-                        Context applicationContext = this.f.getApplicationContext();
-                        h0 h0Var = new h0(this);
-                        dVar.getClass();
-                        IntentFilter intentFilter = new IntentFilter("android.intent.action.PACKAGE_ADDED");
-                        intentFilter.addDataScheme("package");
-                        t0 t0Var = new t0(h0Var);
-                        l7.c.e(applicationContext, t0Var, intentFilter);
-                        t0Var.a = applicationContext;
-                        if (!l6.g.c(applicationContext)) {
-                            h0Var.a();
-                            t0Var.a();
-                            t0Var = null;
-                        }
-                        this.y = t0Var;
-                    } catch (SecurityException unused) {
-                    }
-                }
-                g0 g0Var = this.w;
-                g0Var.sendMessageDelayed(g0Var.obtainMessage(1), this.s);
-                g0 g0Var2 = this.w;
-                g0Var2.sendMessageDelayed(g0Var2.obtainMessage(2), this.v);
-            }
-            i10 = 1;
-        }
-        for (BasePendingResult basePendingResult : (BasePendingResult[]) ((Set) this.M.a).toArray(new BasePendingResult[0])) {
-            basePendingResult.e(f1.c);
-        }
-        o6.s sVar = this.c;
-        if (Looper.myLooper() != sVar.n.getLooper()) {
-            throw new IllegalStateException("onUnintentionalDisconnection must only be called on the Handler thread");
-        }
-        sVar.n.removeMessages(1);
-        synchronized (sVar.r) {
-            try {
-                sVar.h = true;
-                ArrayList arrayList = new ArrayList(sVar.b);
-                int i11 = sVar.f.get();
-                int size = arrayList.size();
-                int i12 = 0;
-                while (i12 < size) {
-                    Object obj = arrayList.get(i12);
-                    i12++;
-                    com.google.android.gms.common.api.k kVar = (com.google.android.gms.common.api.k) obj;
-                    if (!sVar.e || sVar.f.get() != i11) {
-                        break;
-                    } else if (sVar.b.contains(kVar)) {
-                        kVar.onConnectionSuspended(i10);
-                    }
-                }
-                sVar.c.clear();
-                sVar.h = false;
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
-        o6.s sVar2 = this.c;
-        sVar2.e = false;
-        sVar2.f.incrementAndGet();
-        if (i10 == 2) {
-            j();
-        }
-    }
-
-    @Override // com.google.android.gms.common.api.internal.u0
-    public final void s(Bundle bundle) {
-        while (!this.n.isEmpty()) {
-            e eVar = (e) this.n.remove();
-            a0.f fVar = this.E;
-            com.google.android.gms.common.api.e eVar2 = eVar.p;
-            o6.l.a("GoogleApiClient is not configured to use " + (eVar2 != null ? eVar2.c : "the API") + " required for this call.", fVar.containsKey(eVar.o));
-            this.b.lock();
-            try {
-                w0 w0Var = this.d;
-                if (w0Var == null) {
-                    throw new IllegalStateException("GoogleApiClient is not connected yet.");
-                }
-                if (this.r) {
-                    this.n.add(eVar);
-                    while (!this.n.isEmpty()) {
-                        e eVar3 = (e) this.n.remove();
-                        f1 f1Var = this.M;
-                        ((Set) f1Var.a).add(eVar3);
-                        eVar3.g.set((e1) f1Var.b);
-                        eVar3.o(Status.h);
-                    }
-                } else {
-                    w0Var.c(eVar);
-                }
-                this.b.unlock();
-            } catch (Throwable th2) {
-                this.b.unlock();
-                throw th2;
-            }
-        }
-        o6.s sVar = this.c;
-        if (Looper.myLooper() != sVar.n.getLooper()) {
-            throw new IllegalStateException("onConnectionSuccess must only be called on the Handler thread");
-        }
-        synchronized (sVar.r) {
-            try {
-                o6.l.k(!sVar.h);
-                sVar.n.removeMessages(1);
-                sVar.h = true;
-                o6.l.k(sVar.c.isEmpty());
-                ArrayList arrayList = new ArrayList(sVar.b);
-                int i10 = sVar.f.get();
-                int size = arrayList.size();
-                int i11 = 0;
-                while (i11 < size) {
-                    Object obj = arrayList.get(i11);
-                    i11++;
-                    com.google.android.gms.common.api.k kVar = (com.google.android.gms.common.api.k) obj;
-                    if (!sVar.e || !sVar.a.w() || sVar.f.get() != i10) {
-                        break;
-                    } else if (!sVar.c.contains(kVar)) {
-                        kVar.onConnected(bundle);
-                    }
-                }
-                sVar.c.clear();
-                sVar.h = false;
-            } finally {
-            }
-        }
-    }
-
-    @Override // com.google.android.gms.common.api.internal.u0
-    public final void w(l6.a aVar) {
-        l6.d dVar = this.x;
-        Context context = this.f;
-        int i10 = aVar.b;
-        dVar.getClass();
-        int i11 = l6.g.e;
-        if (!(i10 == 18 ? true : i10 == 1 ? l6.g.c(context) : false)) {
-            h();
-        }
-        if (this.r) {
-            return;
-        }
-        o6.s sVar = this.c;
-        if (Looper.myLooper() != sVar.n.getLooper()) {
-            throw new IllegalStateException("onConnectionFailure must only be called on the Handler thread");
-        }
-        sVar.n.removeMessages(1);
-        synchronized (sVar.r) {
-            try {
-                ArrayList arrayList = new ArrayList(sVar.d);
-                int i12 = sVar.f.get();
-                int size = arrayList.size();
-                int i13 = 0;
-                while (i13 < size) {
-                    Object obj = arrayList.get(i13);
-                    i13++;
-                    com.google.android.gms.common.api.l lVar = (com.google.android.gms.common.api.l) obj;
-                    if (sVar.e && sVar.f.get() == i12) {
-                        if (sVar.d.contains(lVar)) {
-                            lVar.onConnectionFailed(aVar);
-                        }
-                    }
-                }
-            } finally {
-            }
-        }
-        o6.s sVar2 = this.c;
-        sVar2.e = false;
-        sVar2.f.incrementAndGet();
     }
 }

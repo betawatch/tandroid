@@ -1,46 +1,16 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.view.ViewParent;
-import android.widget.FrameLayout;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class sm0 extends FrameLayout {
-    public View a;
+public final class sm0 extends s4.j {
+    public final /* synthetic */ org.telegram.ui.kx F;
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        View view = this.a;
-        if (view == null) {
-            ViewParent parent = getParent();
-            while (true) {
-                if (!(parent instanceof View)) {
-                    view = null;
-                    break;
-                } else {
-                    if (parent instanceof RecyclerView) {
-                        view = (RecyclerView) parent;
-                        break;
-                    }
-                    parent = parent.getParent();
-                }
-            }
-        }
-        int max = view != null ? Math.max(0, (view.getMeasuredHeight() - view.getPaddingTop()) - view.getPaddingBottom()) : 0;
-        if (max > 0) {
-            i11 = View.MeasureSpec.makeMeasureSpec(max, TLObject.FLAG_30);
-        }
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
+    public sm0(org.telegram.ui.kx kxVar) {
+        this.F = kxVar;
     }
 
-    public void setViewportView(View view) {
-        if (this.a == view) {
-            return;
-        }
-        this.a = view;
-        requestLayout();
+    @Override // s4.j
+    public final void P(s4.c1 c1Var) {
+        this.F.invalidate();
     }
 }

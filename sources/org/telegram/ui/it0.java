@@ -1,118 +1,77 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.util.Property;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class it0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ PhotoViewer c;
+public final class it0 extends org.telegram.ui.Cells.q1 {
+    public final Path hd;
+    public final Paint id;
+    public final /* synthetic */ byte[] jd;
+    public final /* synthetic */ int kd;
+    public final /* synthetic */ int ld;
+    public final /* synthetic */ kt0 md;
 
-    public /* synthetic */ it0(PhotoViewer photoViewer, boolean z10, int i10) {
-        this.a = i10;
-        this.c = photoViewer;
-        this.b = z10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public it0(kt0 kt0Var, Context context, int i10, org.telegram.ui.ActionBar.p6 p6Var, byte[] bArr, int i11, int i12) {
+        super(context, i10, false, null, p6Var);
+        this.md = kt0Var;
+        this.jd = bArr;
+        this.kd = i11;
+        this.ld = i12;
+        this.hd = new Path();
+        this.id = new Paint(1);
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationCancel(Animator animator) {
-        switch (this.a) {
-            case 1:
-                PhotoViewer photoViewer = this.c;
-                if (animator.equals(photoViewer.w)) {
-                    photoViewer.w = null;
-                    break;
-                }
-                break;
-            case 2:
-                PhotoViewer photoViewer2 = this.c;
-                if (animator.equals(photoViewer2.L)) {
-                    photoViewer2.L = null;
-                    break;
-                }
-                break;
-            case 3:
-                this.c.U7 = null;
-                break;
-            default:
-                super.onAnimationCancel(animator);
-                break;
-        }
+    @Override // org.telegram.ui.Cells.q1
+    public final void h1(Canvas canvas) {
+        this.Q4 = 0;
+        this.R4 = this.O4.size() - 1;
+        this.S4 = (-org.telegram.messenger.i0.L(7.0f)) * this.md.D;
+        super.h1(canvas);
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        int i10 = this.a;
-        boolean z10 = this.b;
-        PhotoViewer photoViewer = this.c;
-        switch (i10) {
-            case 0:
-                if (!z10) {
-                    photoViewer.i3.setVisibility(8);
-                    break;
-                }
-                break;
-            case 1:
-                if (animator.equals(photoViewer.w)) {
-                    if (!z10) {
-                        photoViewer.X0.setVisibility(4);
-                    }
-                    photoViewer.w = null;
-                    break;
-                }
-                break;
-            case 2:
-                if (animator.equals(photoViewer.L)) {
-                    if (!z10) {
-                        photoViewer.F.setVisibility(4);
-                        if (photoViewer.i0.getTag() != null) {
-                            photoViewer.i0.setVisibility(4);
-                        }
-                        if (photoViewer.Q1.getTag() != null) {
-                            photoViewer.Q1.setVisibility(4);
-                        }
-                    }
-                    photoViewer.L = null;
-                    break;
-                }
-                break;
-            default:
-                if (animator.equals(photoViewer.U7)) {
-                    photoViewer.U7 = new AnimatorSet();
-                    if (z10) {
-                        photoViewer.O7.setVisibility(0);
-                        photoViewer.P7.setVisibility(0);
-                        AnimatorSet animatorSet = photoViewer.U7;
-                        uu0 uu0Var = photoViewer.O7;
-                        Property property = View.TRANSLATION_Y;
-                        animatorSet.playTogether(ObjectAnimator.ofFloat(uu0Var, (Property<uu0, Float>) property, 0.0f), ObjectAnimator.ofFloat(photoViewer.P7, (Property<org.telegram.ui.Components.pg0, Float>) property, 0.0f));
-                    } else {
-                        if (photoViewer.S4) {
-                            photoViewer.j0.setVisibility(8);
-                            photoViewer.j0.setAlpha(0.0f);
-                            photoViewer.j0.setBackgroundColor(photoViewer.c2 == 11 ? -16777216 : 2130706432);
-                        }
-                        photoViewer.O7.setVisibility(4);
-                        photoViewer.P7.setVisibility(4);
-                        AnimatorSet animatorSet2 = photoViewer.U7;
-                        bi.j5 j5Var = photoViewer.P0;
-                        Property property2 = View.TRANSLATION_Y;
-                        animatorSet2.playTogether(ObjectAnimator.ofFloat(j5Var, (Property<bi.j5, Float>) property2, 0.0f), ObjectAnimator.ofFloat(photoViewer.P0, (Property<bi.j5, Float>) View.ALPHA, 1.0f), ObjectAnimator.ofFloat(photoViewer.S0, (Property<li.w1, Float>) property2, 0.0f));
-                    }
-                    photoViewer.U7.addListener(new k50(this, 17));
-                    photoViewer.U7.setDuration(200L);
-                    photoViewer.U7.setInterpolator(AndroidUtilities.decelerateInterpolator);
-                    photoViewer.U7.start();
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.Cells.q1, android.view.View
+    public final void onDraw(Canvas canvas) {
+        canvas.save();
+        int T1 = T1(this.jd);
+        float S1 = S1(T1);
+        float R1 = R1(T1);
+        RectF rectF = org.telegram.messenger.i0.P;
+        rectF.set(getPollButtonsLeft(), S1, getPollButtonsRight(), R1);
+        float f7 = rectF.top;
+        float L = org.telegram.messenger.i0.L(3.0f);
+        kt0 kt0Var = this.md;
+        rectF.top = org.telegram.messenger.i0.T1(L, kt0Var.V ? -org.telegram.messenger.i0.L(3.0f) : 0.0f, kt0Var.D) + f7;
+        float f10 = rectF.bottom;
+        boolean z10 = kt0Var.V;
+        float L2 = org.telegram.messenger.i0.L(3.0f);
+        if (!z10) {
+            L2 = org.telegram.messenger.i0.T1(L2, 0.0f, kt0Var.D);
         }
+        rectF.bottom = f10 + L2;
+        Path path = this.hd;
+        path.rewind();
+        path.addRoundRect(rectF, org.telegram.messenger.i0.L(8.0f), org.telegram.messenger.i0.L(8.0f), Path.Direction.CW);
+        Paint paint = this.id;
+        paint.setColor(0);
+        paint.setShadowLayer(org.telegram.messenger.i0.L(2.0f), 0.0f, org.telegram.messenger.i0.L(0.66f), org.telegram.ui.ActionBar.t6.r1(kt0Var.D * 0.2f, -16777216));
+        canvas.drawRoundRect(rectF, org.telegram.messenger.i0.L(8.0f), org.telegram.messenger.i0.L(8.0f), paint);
+        canvas.clipPath(path);
+        b1(canvas);
+        canvas.restore();
+    }
+
+    @Override // org.telegram.ui.Cells.q1, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        setMeasuredDimension(this.kd, this.ld);
+    }
+
+    @Override // org.telegram.ui.Cells.q1, android.view.View
+    public final void setPressed(boolean z10) {
     }
 }

@@ -1,49 +1,49 @@
 package ce;
 
-import java.util.ArrayList;
-import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
-import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
+import td.j2;
+import td.l;
+import td.m;
+import yd.t;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class c extends l1 {
-    public static final /* synthetic */ AtomicReferenceFieldUpdater n = AtomicReferenceFieldUpdater.newUpdater(c.class, Object.class, "_disposer$volatile");
-    private volatile /* synthetic */ Object _disposer$volatile;
-    public final m e;
-    public p0 f;
-    public final /* synthetic */ e h;
+public final class c implements l, j2 {
+    public final m a;
+    public final /* synthetic */ d b;
 
-    public c(e eVar, m mVar) {
-        this.h = eVar;
-        this.e = mVar;
+    public c(d dVar, m mVar) {
+        this.b = dVar;
+        this.a = mVar;
     }
 
-    @Override // ce.e1
-    public final void a(Throwable th2) {
-        m mVar = this.e;
-        if (th2 != null) {
-            mVar.getClass();
-            he.v F = mVar.F(null, new v(th2, false));
-            if (F != null) {
-                mVar.f(F);
-                d dVar = (d) n.get(this);
-                if (dVar != null) {
-                    dVar.b();
-                    return;
-                }
-                return;
-            }
-            return;
+    @Override // td.j2
+    public final void a(t tVar, int i10) {
+        this.a.a(tVar, i10);
+    }
+
+    @Override // td.l
+    public final ea.a d(ld.l lVar, Object obj) {
+        d dVar = this.b;
+        b bVar = new b(dVar, this, 1);
+        ea.a F = this.a.F(bVar, (ad.j) obj);
+        if (F != null) {
+            d.g.set(dVar, null);
         }
-        AtomicIntegerFieldUpdater atomicIntegerFieldUpdater = e.b;
-        e eVar = this.h;
-        if (atomicIntegerFieldUpdater.decrementAndGet(eVar) == 0) {
-            i0[] i0VarArr = eVar.a;
-            ArrayList arrayList = new ArrayList(i0VarArr.length);
-            for (i0 i0Var : i0VarArr) {
-                arrayList.add(i0Var.getCompleted());
-            }
-            mVar.resumeWith(arrayList);
-        }
+        return F;
+    }
+
+    @Override // td.l
+    public final void f(Object obj) {
+        this.a.f(obj);
+    }
+
+    @Override // cd.c
+    public final cd.h getContext() {
+        return this.a.e;
+    }
+
+    @Override // cd.c
+    public final void resumeWith(Object obj) {
+        this.a.resumeWith(obj);
     }
 }

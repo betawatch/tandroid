@@ -1,18 +1,18 @@
 package j4;
 
-import a8.yb;
-import b2.w0;
-import c3.j0;
-import e2.n0;
+import b2.v0;
+import c3.k0;
+import e2.l0;
 import i2.p0;
 import java.util.Collections;
+import v7.t6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class s implements i {
-    public final c0 a;
+    public final d0 a;
     public String b;
-    public j0 c;
+    public k0 c;
     public r d;
     public boolean e;
     public long l;
@@ -25,50 +25,11 @@ public final class s implements i {
     public long m = -9223372036854775807L;
     public final e2.x n = new e2.x();
 
-    public s(c0 c0Var) {
-        this.a = c0Var;
+    public s(d0 d0Var) {
+        this.a = d0Var;
     }
 
-    @Override // j4.i
-    public final void a(e2.x xVar) {
-        int i10;
-        this.c.getClass();
-        String str = n0.a;
-        while (xVar.a() > 0) {
-            int i11 = xVar.b;
-            int i12 = xVar.c;
-            byte[] bArr = xVar.a;
-            this.l += xVar.a();
-            this.c.d(xVar.a(), xVar);
-            while (i11 < i12) {
-                int c10 = f2.q.c(bArr, i11, i12, this.f);
-                if (c10 == i12) {
-                    g(i11, i12, bArr);
-                    return;
-                }
-                int i13 = (bArr[c10 + 3] & 126) >> 1;
-                if (c10 <= 0 || bArr[c10 - 1] != 0) {
-                    i10 = 3;
-                } else {
-                    c10--;
-                    i10 = 4;
-                }
-                int i14 = c10;
-                int i15 = i10;
-                int i16 = i14 - i11;
-                if (i16 > 0) {
-                    g(i11, i14, bArr);
-                }
-                int i17 = i12 - i14;
-                long j10 = this.l - i17;
-                b(j10, i17, i16 < 0 ? -i16 : 0, this.m);
-                h(j10, i17, i13, this.m);
-                i11 = i14 + i15;
-            }
-        }
-    }
-
-    public final void b(long j10, int i10, int i11, long j11) {
+    public final void a(long j10, long j11, int i10, int i11) {
         e2.c cVar = this.a.d;
         r rVar = this.d;
         boolean z10 = this.e;
@@ -106,8 +67,8 @@ public final class s implements i {
                 }
                 b2.w wVar = new b2.w();
                 wVar.a = str;
-                wVar.q = w0.n("video/mp2t");
-                wVar.r = w0.n("video/hevc");
+                wVar.q = v0.n("video/mp2t");
+                wVar.r = v0.n("video/hevc");
                 wVar.j = str2;
                 wVar.y = k10.e;
                 wVar.z = k10.f;
@@ -121,8 +82,8 @@ public final class s implements i {
                 b2.x xVar = new b2.x(wVar);
                 this.c.b(xVar);
                 int i13 = xVar.u;
-                yb.p(i13 != -1);
-                cVar.k(i13);
+                t6.p(i13 != -1);
+                cVar.p(i13);
                 this.e = true;
             }
         }
@@ -142,56 +103,7 @@ public final class s implements i {
         }
     }
 
-    @Override // j4.i
-    public final void c() {
-        this.l = 0L;
-        this.m = -9223372036854775807L;
-        f2.q.b(this.f);
-        this.g.g();
-        this.h.g();
-        this.i.g();
-        this.j.g();
-        this.k.g();
-        this.a.d.c(0);
-        r rVar = this.d;
-        if (rVar != null) {
-            rVar.f = false;
-            rVar.g = false;
-            rVar.h = false;
-            rVar.i = false;
-            rVar.j = false;
-        }
-    }
-
-    @Override // j4.i
-    public final void d(c3.q qVar, f0 f0Var) {
-        f0Var.b();
-        f0Var.c();
-        this.b = (String) f0Var.e;
-        f0Var.c();
-        j0 F1 = qVar.F1(f0Var.c, 2);
-        this.c = F1;
-        this.d = new r(F1);
-        this.a.b(qVar, f0Var);
-    }
-
-    @Override // j4.i
-    public final void e(boolean z10) {
-        this.c.getClass();
-        String str = n0.a;
-        if (z10) {
-            this.a.d.c(0);
-            b(this.l, 0, 0, this.m);
-            h(this.l, 0, 48, this.m);
-        }
-    }
-
-    @Override // j4.i
-    public final void f(int i10, long j10) {
-        this.m = j10;
-    }
-
-    public final void g(int i10, int i11, byte[] bArr) {
+    public final void b(int i10, int i11, byte[] bArr) {
         r rVar = this.d;
         if (rVar.f) {
             int i12 = rVar.d;
@@ -212,7 +124,46 @@ public final class s implements i {
         this.k.a(i10, i11, bArr);
     }
 
-    public final void h(long j10, int i10, int i11, long j11) {
+    @Override // j4.i
+    public final void c(e2.x xVar) {
+        int i10;
+        this.c.getClass();
+        String str = l0.a;
+        while (xVar.a() > 0) {
+            int i11 = xVar.b;
+            int i12 = xVar.c;
+            byte[] bArr = xVar.a;
+            this.l += xVar.a();
+            this.c.d(xVar.a(), xVar);
+            while (i11 < i12) {
+                int c10 = f2.q.c(bArr, i11, i12, this.f);
+                if (c10 == i12) {
+                    b(i11, i12, bArr);
+                    return;
+                }
+                int i13 = (bArr[c10 + 3] & 126) >> 1;
+                if (c10 <= 0 || bArr[c10 - 1] != 0) {
+                    i10 = 3;
+                } else {
+                    c10--;
+                    i10 = 4;
+                }
+                int i14 = c10;
+                int i15 = i10;
+                int i16 = i14 - i11;
+                if (i16 > 0) {
+                    b(i11, i14, bArr);
+                }
+                int i17 = i12 - i14;
+                long j10 = this.l - i17;
+                a(j10, this.m, i17, i16 < 0 ? -i16 : 0);
+                d(j10, this.m, i17, i13);
+                i11 = i14 + i15;
+            }
+        }
+    }
+
+    public final void d(long j10, long j11, int i10, int i11) {
         r rVar = this.d;
         boolean z10 = this.e;
         rVar.g = false;
@@ -242,5 +193,54 @@ public final class s implements i {
         }
         this.j.h(i11);
         this.k.h(i11);
+    }
+
+    @Override // j4.i
+    public final void e() {
+        this.l = 0L;
+        this.m = -9223372036854775807L;
+        f2.q.b(this.f);
+        this.g.g();
+        this.h.g();
+        this.i.g();
+        this.j.g();
+        this.k.g();
+        this.a.d.e(0);
+        r rVar = this.d;
+        if (rVar != null) {
+            rVar.f = false;
+            rVar.g = false;
+            rVar.h = false;
+            rVar.i = false;
+            rVar.j = false;
+        }
+    }
+
+    @Override // j4.i
+    public final void f(c3.q qVar, g0 g0Var) {
+        g0Var.b();
+        g0Var.c();
+        this.b = (String) g0Var.e;
+        g0Var.c();
+        k0 I1 = qVar.I1(g0Var.c, 2);
+        this.c = I1;
+        this.d = new r(I1);
+        this.a.b(qVar, g0Var);
+    }
+
+    @Override // j4.i
+    public final void g(boolean z10) {
+        this.c.getClass();
+        String str = l0.a;
+        if (z10) {
+            this.a.d.e(0);
+            a(this.l, this.m, 0, 0);
+            d(this.l, this.m, 0, 48);
+        }
+    }
+
+    @Override // j4.i
+    public final void h(int i10, long j10) {
+        this.m = j10;
     }
 }

@@ -2,9 +2,9 @@ package v3;
 
 import c3.a0;
 import c3.c0;
-import e2.n0;
+import e2.l0;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class j implements h {
     public final long a;
@@ -34,7 +34,7 @@ public final class j implements h {
         long[] jArr = this.g;
         jArr.getClass();
         double d = (j11 * 256.0d) / this.e;
-        int f7 = n0.f(jArr, (long) d, true);
+        int f7 = l0.f(jArr, (long) d, true);
         long j12 = this.c;
         long j13 = (f7 * j12) / 100;
         long j14 = jArr[f7];
@@ -74,7 +74,7 @@ public final class j implements h {
             c0 c0Var = new c0(0L, j11 + i10);
             return new a0(c0Var, c0Var);
         }
-        long j12 = n0.j(j10, 0L, this.c);
+        long j12 = l0.j(j10, 0L, this.c);
         double d12 = (j12 * 100.0d) / this.c;
         double d13 = 0.0d;
         if (d12 <= 0.0d) {
@@ -97,7 +97,7 @@ public final class j implements h {
             d13 = ((d10 - d14) * (d12 - i11)) + d14;
         }
         long j13 = this.e;
-        c0 c0Var2 = new c0(j12, j11 + n0.j(Math.round((d13 / d) * j13), i10, j13 - 1));
+        c0 c0Var2 = new c0(j12, j11 + l0.j(Math.round((d13 / d) * j13), i10, j13 - 1));
         return new a0(c0Var2, c0Var2);
     }
 

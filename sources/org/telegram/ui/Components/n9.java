@@ -1,56 +1,56 @@
 package org.telegram.ui.Components;
 
-import android.view.ViewGroup;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageReceiver;
+import android.app.Activity;
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class n9 implements oe.h, re.a {
-    public final ImageReceiver a;
-    public final j9 b;
-    public long c;
-    public boolean d;
-    public final /* synthetic */ o9 e;
+public final /* synthetic */ class n9 implements View.OnClickListener {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ o9 b;
 
-    public n9(o9 o9Var, ViewGroup viewGroup) {
-        this.e = o9Var;
-        ImageReceiver imageReceiver = new ImageReceiver(viewGroup);
-        this.a = imageReceiver;
-        imageReceiver.setRoundRadius(o9Var.e / 2);
-        j9 j9Var = new j9((org.telegram.ui.ActionBar.u6) null);
-        this.b = j9Var;
-        j9Var.u(AndroidUtilities.dp(22.0f));
+    public /* synthetic */ n9(o9 o9Var) {
+        this.b = o9Var;
     }
 
-    @Override // re.a
-    public final void a() {
-        if (this.d) {
-            this.d = false;
-            this.a.onDetachedFromWindow();
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        int i10 = this.a;
+        o9 o9Var = this.b;
+        switch (i10) {
+            case 0:
+                int i11 = o9Var.w + 1;
+                o9Var.w = i11;
+                if (i11 >= 10) {
+                    o9Var.setVisibility(8);
+                    org.telegram.messenger.tz.j1 = null;
+                    org.telegram.messenger.tz.y();
+                    break;
+                }
+                break;
+            default:
+                org.telegram.messenger.w0.u();
+                boolean z10 = org.telegram.messenger.v2.a;
+                if (org.telegram.messenger.w0.a.b(o9Var.getContext())) {
+                    TLRPC.TL_help_appUpdate tL_help_appUpdate = o9Var.n;
+                    if (!(tL_help_appUpdate.document instanceof TLRPC.TL_document)) {
+                        if (tL_help_appUpdate.url != null) {
+                            gf.f.r(o9Var.getContext(), o9Var.n.url);
+                            break;
+                        }
+                    } else if (!org.telegram.messenger.w0.a.v((Activity) o9Var.getContext(), o9Var.n.document)) {
+                        org.telegram.messenger.b8.G(o9Var.s).X(o9Var.n.document, "update", 3, 1);
+                        o9Var.a(true);
+                        break;
+                    }
+                }
+                break;
         }
-        this.c = 0L;
     }
 
-    @Override // oe.h
-    public final int b(boolean z10) {
-        if (z10) {
-            return 0;
-        }
-        return -this.e.f;
-    }
-
-    public final boolean equals(Object obj) {
-        return (obj instanceof n9) && this.c == ((n9) obj).c;
-    }
-
-    @Override // oe.h
-    public final int getHeight() {
-        return this.e.e;
-    }
-
-    @Override // oe.h
-    public final int getWidth() {
-        return this.e.e;
+    public /* synthetic */ n9(o9 o9Var, LaunchActivity launchActivity) {
+        this.b = o9Var;
     }
 }

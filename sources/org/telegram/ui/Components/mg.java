@@ -1,103 +1,88 @@
 package org.telegram.ui.Components;
 
-import java.io.File;
-import java.util.ArrayList;
-import org.telegram.messenger.AccountInstance;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessageSuggestionParams;
-import org.telegram.messenger.SendMessageChatArguments;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.messenger.VideoEditedInfo;
+import android.text.TextUtils;
+import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class mg extends org.telegram.ui.iu0 {
-    public boolean a;
-    public final /* synthetic */ MediaController.PhotoEntry b;
-    public final /* synthetic */ File c;
-    public final /* synthetic */ ng d;
+public final /* synthetic */ class mg implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ bi b;
 
-    public mg(ng ngVar, MediaController.PhotoEntry photoEntry, File file) {
-        this.d = ngVar;
-        this.b = photoEntry;
-        this.c = file;
+    public /* synthetic */ mg(bi biVar, int i10) {
+        this.a = i10;
+        this.b = biVar;
     }
 
-    @Override // org.telegram.ui.iu0, org.telegram.ui.qu0
-    public final void G() {
-        if (this.a) {
-            return;
-        }
-        try {
-            this.c.delete();
-        } catch (Throwable unused) {
-        }
-    }
-
-    @Override // org.telegram.ui.iu0, org.telegram.ui.qu0
-    public final boolean g() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.iu0, org.telegram.ui.qu0
-    public final void o(int i10, VideoEditedInfo videoEditedInfo, boolean z10, int i11, int i12, boolean z11) {
-        MessageObject threadMessage;
-        String str;
-        org.telegram.ui.wn wnVar;
-        ChatActivityEnterView chatActivityEnterView = this.d.d;
-        org.telegram.ui.mn mnVar = chatActivityEnterView.V2;
-        if (mnVar != null && (wnVar = chatActivityEnterView.P2) != null && mnVar.f) {
-            wnVar.hc();
-            return;
-        }
-        ArrayList arrayList = new ArrayList();
-        SendMessagesHelper.SendingMediaInfo sendingMediaInfo = new SendMessagesHelper.SendingMediaInfo();
-        MediaController.PhotoEntry photoEntry = this.b;
-        if (photoEntry.isVideo || (str = photoEntry.imagePath) == null) {
-            String str2 = photoEntry.path;
-            if (str2 != null) {
-                sendingMediaInfo.path = str2;
-            }
-        } else {
-            sendingMediaInfo.path = str;
-        }
-        sendingMediaInfo.thumbPath = photoEntry.thumbPath;
-        sendingMediaInfo.isLivePhoto = photoEntry.isLivePhoto();
-        sendingMediaInfo.isVideo = photoEntry.isVideo;
-        sendingMediaInfo.discardLivePhoto = photoEntry.isUnalivePhoto();
-        sendingMediaInfo.livePhotoVideoOffset = photoEntry.livePhotoVideoOffset;
-        sendingMediaInfo.livePhotoTimestampUs = photoEntry.livePhotoTimestampUs;
-        CharSequence charSequence = photoEntry.caption;
-        sendingMediaInfo.caption = charSequence != null ? charSequence.toString() : null;
-        sendingMediaInfo.entities = photoEntry.entities;
-        sendingMediaInfo.masks = photoEntry.stickers;
-        sendingMediaInfo.ttl = photoEntry.ttl;
-        sendingMediaInfo.videoEditedInfo = videoEditedInfo;
-        sendingMediaInfo.canDeleteAfter = true;
-        arrayList.add(sendingMediaInfo);
-        photoEntry.reset();
-        this.a = true;
-        boolean checkUpdateStickersOrder = SendMessagesHelper.checkUpdateStickersOrder(sendingMediaInfo.caption);
-        AccountInstance accountInstance = chatActivityEnterView.R;
-        MessageSuggestionParams messageSuggestionParams = null;
-        long j10 = chatActivityEnterView.Q2;
-        MessageObject messageObject = chatActivityEnterView.T2;
-        threadMessage = chatActivityEnterView.getThreadMessage();
-        org.telegram.ui.mn mnVar2 = chatActivityEnterView.V2;
-        MessageObject messageObject2 = chatActivityEnterView.Z1;
-        org.telegram.ui.wn wnVar2 = chatActivityEnterView.P2;
-        int i13 = wnVar2 == null ? 0 : wnVar2.d4;
-        SendMessageChatArguments O8 = wnVar2 != null ? wnVar2.O8() : null;
-        long sendMonoForumPeerId = chatActivityEnterView.getSendMonoForumPeerId();
-        org.telegram.ui.wn wnVar3 = chatActivityEnterView.P2;
-        if (wnVar3 != null) {
-            messageSuggestionParams = wnVar3.w5;
-        }
-        SendMessagesHelper.prepareSendingMedia(accountInstance, arrayList, j10, messageObject, threadMessage, null, mnVar2, false, false, messageObject2, z10, i11, i12, i13, checkUpdateStickersOrder, null, O8, 0L, false, 0L, sendMonoForumPeerId, messageSuggestionParams);
-        og ogVar = chatActivityEnterView.Z2;
-        if (ogVar != null) {
-            ogVar.A(null, true, i11, i12, 0L);
+    @Override // java.lang.Runnable
+    public final void run() {
+        boolean t12;
+        uh uhVar;
+        jm jmVar;
+        switch (this.a) {
+            case 0:
+                bi biVar = this.b;
+                wt wtVar = biVar.T1 ? biVar.J2 : biVar.y2;
+                biVar.A1(wtVar.getEditText().getLineCount() > 2 && !TextUtils.isEmpty(wtVar.getText().toString().trim()));
+                break;
+            case 1:
+                bi biVar2 = this.b;
+                biVar2.z0 = null;
+                biVar2.A0 = 0;
+                biVar2.L();
+                break;
+            case 2:
+                bi biVar3 = this.b;
+                pe peVar = biVar3.Y1;
+                long j10 = peVar != null ? peVar.j() : 0L;
+                ih ihVar = biVar3.C2;
+                biVar3.H2 = j10;
+                ihVar.setEffect(j10);
+                uh uhVar2 = biVar3.s2;
+                if (uhVar2 == biVar3.a2 || uhVar2 == biVar3.h2) {
+                    t12 = biVar3.t1(false, 0, 0, j10, biVar3.e1());
+                } else {
+                    if (!uhVar2.J(false, 0, 0, j10, biVar3.e1())) {
+                        biVar3.dismiss();
+                    }
+                    t12 = false;
+                }
+                pe peVar2 = biVar3.Y1;
+                if (peVar2 != null) {
+                    peVar2.g(!t12);
+                    biVar3.Y1 = null;
+                    break;
+                }
+                break;
+            case 3:
+                bi biVar4 = this.b;
+                biVar4.a(true);
+                org.telegram.ui.ActionBar.k2 k2Var = biVar4.W1;
+                if (k2Var != null) {
+                    k2Var.presentFragment(new PremiumPreviewFragment(0, "caption_limit"));
+                    break;
+                }
+                break;
+            case 4:
+                this.b.s1();
+                break;
+            default:
+                bi biVar5 = this.b;
+                biVar5.n3 = null;
+                uh uhVar3 = biVar5.s2;
+                if (uhVar3 != biVar5.a2 && (uhVar = biVar5.t2) != (jmVar = biVar5.h2) && uhVar3 != uhVar && uhVar3 != jmVar) {
+                    biVar5.b.removeView(uhVar3);
+                }
+                biVar5.s2.setVisibility(8);
+                biVar5.s2.s();
+                biVar5.t2.H();
+                biVar5.s2 = biVar5.t2;
+                biVar5.t2 = null;
+                int[] iArr = biVar5.V3;
+                iArr[0] = iArr[1];
+                biVar5.u1(biVar5.T1, false);
+                biVar5.K1();
+                break;
         }
     }
 }

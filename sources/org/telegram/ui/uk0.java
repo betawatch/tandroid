@@ -1,41 +1,127 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.view.View;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.RadioButton;
+import android.text.Editable;
+import android.text.TextWatcher;
+import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class uk0 extends FrameLayout {
-    public TextView a;
-    public RadioButton b;
-    public org.telegram.ui.Components.aq c;
-    public boolean d;
-    public tk0 e;
+public final class uk0 implements TextWatcher {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ll0 b;
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        if (this.d) {
-            canvas.drawLine(AndroidUtilities.dp(LocaleController.isRTL ? 0.0f : 60.0f), getHeight() - 1, getMeasuredWidth() - AndroidUtilities.dp(LocaleController.isRTL ? 60.0f : 0.0f), getHeight() - 1, org.telegram.ui.ActionBar.y6.k0);
+    public /* synthetic */ uk0(ll0 ll0Var, int i10) {
+        this.a = i10;
+        this.b = ll0Var;
+    }
+
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        boolean z10;
+        String str;
+        int indexOf;
+        int i10 = this.a;
+        ll0 ll0Var = this.b;
+        switch (i10) {
+            case 0:
+                if (!ll0Var.Z0 && ll0Var.T0 != 0 && ll0Var.Y[0].length() == ll0Var.T0) {
+                    ll0Var.L.callOnClick();
+                    break;
+                }
+                break;
+            default:
+                ArrayList arrayList = ll0Var.U0;
+                HashMap hashMap = ll0Var.W0;
+                if (!ll0Var.Z0) {
+                    ll0Var.Z0 = true;
+                    String d = af.b.d(ll0Var.Y[1].getText().toString(), false);
+                    ll0Var.Y[1].setText(d);
+                    org.telegram.ui.Components.n30 n30Var = (org.telegram.ui.Components.n30) ll0Var.Y[2];
+                    if (d.length() == 0) {
+                        n30Var.setHintText((String) null);
+                        n30Var.setHint(org.telegram.messenger.cd.L0(2131747388, null));
+                        ll0Var.Y[0].setText(org.telegram.messenger.cd.L0(2131752134, null));
+                    } else {
+                        int i11 = 4;
+                        if (d.length() > 4) {
+                            while (true) {
+                                if (i11 >= 1) {
+                                    String substring = d.substring(0, i11);
+                                    if (((String) hashMap.get(substring)) != null) {
+                                        String str2 = d.substring(i11) + ll0Var.Y[2].getText().toString();
+                                        ll0Var.Y[1].setText(substring);
+                                        str = str2;
+                                        d = substring;
+                                        z10 = true;
+                                    } else {
+                                        i11--;
+                                    }
+                                } else {
+                                    z10 = false;
+                                    str = null;
+                                }
+                            }
+                            if (!z10) {
+                                str = d.substring(1) + ll0Var.Y[2].getText().toString();
+                                EditTextBoldCursor editTextBoldCursor = ll0Var.Y[1];
+                                d = d.substring(0, 1);
+                                editTextBoldCursor.setText(d);
+                            }
+                        } else {
+                            z10 = false;
+                            str = null;
+                        }
+                        String str3 = (String) hashMap.get(d);
+                        if (str3 == null || (indexOf = arrayList.indexOf(str3)) == -1) {
+                            n30Var.setHintText((String) null);
+                            n30Var.setHint(org.telegram.messenger.cd.L0(2131747388, null));
+                            ll0Var.Y[0].setText(org.telegram.messenger.cd.L0(2131742884, null));
+                        } else {
+                            ll0Var.Y[0].setText((CharSequence) arrayList.get(indexOf));
+                            String str4 = (String) ll0Var.X0.get(d);
+                            if (str4 != null) {
+                                n30Var.setHintText(str4.replace('X', (char) 8211));
+                                n30Var.setHint((CharSequence) null);
+                            }
+                        }
+                        if (!z10) {
+                            EditTextBoldCursor editTextBoldCursor2 = ll0Var.Y[1];
+                            editTextBoldCursor2.setSelection(editTextBoldCursor2.getText().length());
+                        }
+                        if (str != null) {
+                            n30Var.requestFocus();
+                            n30Var.setText(str);
+                            n30Var.setSelection(n30Var.length());
+                        }
+                    }
+                    ll0Var.Z0 = false;
+                    break;
+                }
+                break;
         }
     }
 
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.setClassName("android.widget.RadioButton");
-        accessibilityNodeInfo.setCheckable(true);
-        accessibilityNodeInfo.setChecked(this.b.f);
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        int i13 = this.a;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLObject.FLAG_30));
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        int i13 = this.a;
+    }
+
+    private final void a(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void b(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void c(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void d(int i10, int i11, int i12, CharSequence charSequence) {
     }
 }

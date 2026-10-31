@@ -1,48 +1,63 @@
 package b2;
 
-import a8.yb;
 import android.os.Bundle;
+import j$.util.Objects;
+import v7.t6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public abstract class h1 {
-    public static final String a;
+public final class h1 extends g1 {
+    public static final String d;
+    public static final String e;
+    public final int b;
+    public final float c;
 
     static {
-        String str = e2.n0.a;
-        a = Integer.toString(0, 36);
+        String str = e2.l0.a;
+        d = Integer.toString(1, 36);
+        e = Integer.toString(2, 36);
     }
 
-    public static h1 a(Bundle bundle) {
-        String str = a;
-        int i10 = bundle.getInt(str, -1);
-        if (i10 == 0) {
-            String str2 = z.d;
-            yb.g(bundle.getInt(str, -1) == 0);
-            return bundle.getBoolean(z.d, false) ? new z(bundle.getBoolean(z.e, false)) : new z();
-        }
-        if (i10 == 1) {
-            String str3 = y0.c;
-            yb.g(bundle.getInt(str, -1) == 1);
-            float f7 = bundle.getFloat(y0.c, -1.0f);
-            return f7 == -1.0f ? new y0() : new y0(f7);
-        }
-        if (i10 != 2) {
-            if (i10 != 3) {
-                throw new IllegalArgumentException(ic.a.i(i10, "Unknown RatingType: "));
-            }
-            String str4 = k1.d;
-            yb.g(bundle.getInt(str, -1) == 3);
-            return bundle.getBoolean(k1.d, false) ? new k1(bundle.getBoolean(k1.e, false)) : new k1();
-        }
-        String str5 = i1.d;
-        yb.g(bundle.getInt(str, -1) == 2);
-        int i11 = bundle.getInt(i1.d, 5);
-        float f10 = bundle.getFloat(i1.e, -1.0f);
-        return f10 == -1.0f ? new i1(i11) : new i1(i11, f10);
+    public h1(int i10) {
+        t6.e("maxStars must be a positive integer", i10 > 0);
+        this.b = i10;
+        this.c = -1.0f;
     }
 
-    public abstract boolean b();
+    @Override // b2.g1
+    public final boolean b() {
+        return this.c != -1.0f;
+    }
 
-    public abstract Bundle c();
+    @Override // b2.g1
+    public final Bundle c() {
+        Bundle bundle = new Bundle();
+        bundle.putInt(g1.a, 2);
+        bundle.putInt(d, this.b);
+        bundle.putFloat(e, this.c);
+        return bundle;
+    }
+
+    public final boolean equals(Object obj) {
+        if (!(obj instanceof h1)) {
+            return false;
+        }
+        h1 h1Var = (h1) obj;
+        return this.b == h1Var.b && this.c == h1Var.c;
+    }
+
+    public final int hashCode() {
+        return Objects.hash(Integer.valueOf(this.b), Float.valueOf(this.c));
+    }
+
+    public h1(int i10, float f7) {
+        boolean z10 = false;
+        t6.e("maxStars must be a positive integer", i10 > 0);
+        if (f7 >= 0.0f && f7 <= i10) {
+            z10 = true;
+        }
+        t6.e("starRating is out of range [0, maxStars]", z10);
+        this.b = i10;
+        this.c = f7;
+    }
 }

@@ -3,9 +3,9 @@ package o1;
 import java.util.ArrayList;
 import org.telegram.ui.Components.AnimatedPhoneNumberEditText;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class d extends i {
+public final class d extends h {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -14,15 +14,15 @@ public final class d extends i {
         this.b = obj;
     }
 
-    @Override // o1.i
+    @Override // o1.h
     public final float a(Object obj) {
         switch (this.a) {
             case 0:
-                return ((ac.a) this.b).a;
+                return ((i) this.b).a;
             default:
                 Integer num = (Integer) obj;
                 int intValue = num.intValue();
-                ArrayList arrayList = ((AnimatedPhoneNumberEditText) this.b).w;
+                ArrayList arrayList = ((AnimatedPhoneNumberEditText) this.b).Q1;
                 if (intValue < arrayList.size()) {
                     return ((Float) arrayList.get(num.intValue())).floatValue() * 100.0f;
                 }
@@ -30,17 +30,17 @@ public final class d extends i {
         }
     }
 
-    @Override // o1.i
+    @Override // o1.h
     public final void b(Object obj, float f7) {
         switch (this.a) {
             case 0:
-                ((ac.a) this.b).a = f7;
+                ((i) this.b).a = f7;
                 break;
             default:
                 Integer num = (Integer) obj;
                 int intValue = num.intValue();
                 AnimatedPhoneNumberEditText animatedPhoneNumberEditText = (AnimatedPhoneNumberEditText) this.b;
-                ArrayList arrayList = animatedPhoneNumberEditText.w;
+                ArrayList arrayList = animatedPhoneNumberEditText.Q1;
                 if (intValue < arrayList.size()) {
                     arrayList.set(num.intValue(), Float.valueOf(f7 / 100.0f));
                     animatedPhoneNumberEditText.invalidate();

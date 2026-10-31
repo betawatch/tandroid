@@ -1,30 +1,12 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class q50 extends org.telegram.ui.Components.voip.l {
-    public final /* synthetic */ r50 h;
+public interface q50 {
+    void e(TLRPC.User user);
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public q50(r50 r50Var, Context context) {
-        super(context, false);
-        this.h = r50Var;
-    }
-
-    @Override // org.telegram.ui.Components.voip.l, android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        x50 x50Var = this.h.M;
-        if (x50Var.Q.getVisibility() == 0 && x50Var.P2) {
-            x50.N(x50Var, this, true);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.voip.l, android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        x50.N(this.h.M, this, false);
-    }
+    void g(int i10, ArrayList arrayList);
 }

@@ -1,11 +1,12 @@
 package c3;
 
-import a8.yb;
-import b2.w0;
-import f9.s1;
+import b2.v0;
+import e9.n0;
+import e9.x1;
 import java.util.List;
+import v7.t6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class d0 implements o {
     public final int a;
@@ -14,7 +15,7 @@ public final class d0 implements o {
     public int d;
     public int e;
     public q f;
-    public j0 g;
+    public k0 g;
 
     public d0(int i10, int i11, String str) {
         this.a = i10;
@@ -26,24 +27,24 @@ public final class d0 implements o {
     public final boolean a(p pVar) {
         int i10 = this.b;
         int i11 = this.a;
-        yb.p((i11 == -1 || i10 == -1) ? false : true);
+        t6.p((i11 == -1 || i10 == -1) ? false : true);
         e2.x xVar = new e2.x(i10);
-        ((l) pVar).h(xVar.a, 0, i10, false);
+        ((l) pVar).j(xVar.a, 0, i10, false);
         return xVar.H() == i11;
     }
 
     @Override // c3.o
     public final void c(q qVar) {
         this.f = qVar;
-        j0 F1 = qVar.F1(1024, 4);
-        this.g = F1;
+        k0 I1 = qVar.I1(1024, 4);
+        this.g = I1;
         b2.w wVar = new b2.w();
         String str = this.c;
-        wVar.q = w0.n(str);
-        wVar.r = w0.n(str);
-        ic.a.u(wVar, F1);
+        wVar.q = v0.n(str);
+        wVar.r = v0.n(str);
+        i0.a.r(wVar, I1);
         this.f.Q0();
-        this.f.D1(new e0());
+        this.f.G1(new e0());
         this.e = 1;
     }
 
@@ -57,8 +58,8 @@ public final class d0 implements o {
 
     @Override // c3.o
     public final List e() {
-        f9.g0 g0Var = f9.i0.b;
-        return s1.e;
+        e9.l0 l0Var = n0.b;
+        return x1.e;
     }
 
     @Override // c3.o
@@ -70,9 +71,9 @@ public final class d0 implements o {
             }
             throw new IllegalStateException();
         }
-        j0 j0Var = this.g;
-        j0Var.getClass();
-        int a2 = j0Var.a(pVar, 1024, true);
+        k0 k0Var = this.g;
+        k0Var.getClass();
+        int a2 = k0Var.a(pVar, 1024, true);
         if (a2 != -1) {
             this.d += a2;
             return 0;

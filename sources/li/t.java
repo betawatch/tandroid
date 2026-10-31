@@ -1,33 +1,34 @@
 package li;
 
-import org.telegram.tgnet.TLRPC;
+import android.graphics.SurfaceTexture;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes4.dex */
-public final class t {
-    public int a = 0;
-    public boolean b;
-    public boolean c;
-    public boolean d;
-    public String e;
-    public float f;
-    public TLRPC.Photo g;
-    public TLRPC.Document h;
-    public TLRPC.Document i;
-    public int j;
-    public int k;
-    public int l;
-    public int m;
-    public boolean n;
+public final /* synthetic */ class t implements SurfaceTexture.OnFrameAvailableListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public final boolean a() {
-        return this.a == 1;
+    public /* synthetic */ t(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    public final boolean b() {
-        if (this.a != 2) {
-            return false;
+    @Override // android.graphics.SurfaceTexture.OnFrameAvailableListener
+    public final void onFrameAvailable(SurfaceTexture surfaceTexture) {
+        switch (this.a) {
+            case 0:
+                ((v) this.b).b(false);
+                return;
+            case 1:
+                ((v) this.b).b(true);
+                return;
+            default:
+                z0 z0Var = (z0) this.b;
+                synchronized (z0Var.b) {
+                    z0Var.m = true;
+                    z0Var.b.notifyAll();
+                }
+                return;
         }
-        return (this.b || this.c || this.d) ? this.h != null : this.g != null;
     }
 }

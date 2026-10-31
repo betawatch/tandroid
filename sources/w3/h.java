@@ -1,21 +1,18 @@
 package w3;
 
-import a8.yb;
 import android.util.Pair;
 import android.util.SparseArray;
 import b2.u0;
+import b2.v0;
 import b2.w;
 import b2.w0;
 import b2.x;
-import b2.x0;
 import c3.b0;
 import c3.f0;
-import c3.j0;
-import e2.k0;
-import e2.n0;
-import f9.g0;
-import f9.i0;
-import f9.s1;
+import c3.k0;
+import e9.l0;
+import e9.n0;
+import e9.x1;
 import j$.util.DesugarCollections;
 import java.math.RoundingMode;
 import java.util.ArrayDeque;
@@ -25,9 +22,11 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.PriorityQueue;
 import java.util.UUID;
+import org.telegram.messenger.zs;
 import org.telegram.tgnet.ConnectionsManager;
+import v7.t6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class h implements c3.o {
     public static final byte[] O = {-94, 57, 79, 82, 90, -101, 79, 20, -94, 68, 108, 66, 124, 100, -115, -12};
@@ -41,8 +40,8 @@ public final class h implements c3.o {
     public boolean G;
     public boolean H;
     public c3.q I;
-    public j0[] J;
-    public j0[] K;
+    public k0[] J;
+    public k0[] K;
     public boolean L;
     public boolean M;
     public long N;
@@ -51,11 +50,11 @@ public final class h implements c3.o {
     public final List c;
     public final byte[] h;
     public final e2.x i;
-    public final k0 j;
+    public final e2.k0 j;
     public final e2.c o;
-    public final j0 p;
+    public final k0 p;
     public final za.c q;
-    public s1 r;
+    public x1 r;
     public int s;
     public int t;
     public long u;
@@ -64,7 +63,7 @@ public final class h implements c3.o {
     public long x;
     public int y;
     public long z;
-    public final m4.c k = new m4.c(2);
+    public final m5.e k = new m5.e(2);
     public final e2.x l = new e2.x(16);
     public final e2.x e = new e2.x(f2.q.a);
     public final e2.x f = new e2.x(6);
@@ -75,29 +74,29 @@ public final class h implements c3.o {
 
     static {
         w wVar = new w();
-        wVar.r = w0.n("application/x-emsg");
+        wVar.r = v0.n("application/x-emsg");
         P = new x(wVar);
     }
 
-    public h(z3.k kVar, int i10, k0 k0Var, List list, l2.n nVar) {
+    public h(z3.k kVar, int i10, e2.k0 k0Var, List list, l2.o oVar) {
         this.a = kVar;
         this.b = i10;
         this.j = k0Var;
         this.c = DesugarCollections.unmodifiableList(list);
-        this.p = nVar;
+        this.p = oVar;
         byte[] bArr = new byte[16];
         this.h = bArr;
         this.i = new e2.x(bArr);
-        g0 g0Var = i0.b;
-        this.r = s1.e;
+        l0 l0Var = n0.b;
+        this.r = x1.e;
         this.A = -9223372036854775807L;
         this.z = -9223372036854775807L;
         this.B = -9223372036854775807L;
         this.I = c3.q.i;
-        this.J = new j0[0];
-        this.K = new j0[0];
+        this.J = new k0[0];
+        this.K = new k0[0];
         this.o = new e2.c(new e(this));
-        this.q = new za.c(8);
+        this.q = new za.c(11);
         this.N = -1L;
     }
 
@@ -116,7 +115,7 @@ public final class h implements c3.o {
                     arrayList = new ArrayList();
                 }
                 byte[] bArr = eVar.c.a;
-                k6.m i11 = p.i(bArr);
+                j6.m i11 = p.i(bArr);
                 UUID uuid = i11 == null ? null : (UUID) i11.b;
                 if (uuid == null) {
                     e2.a.l("FragmentedMp4Extractor", "Skipped pssh atom (failed to extract uuid)");
@@ -136,7 +135,7 @@ public final class h implements c3.o {
         int m10 = xVar.m();
         byte[] bArr = c.a;
         if ((m10 & 1) != 0) {
-            throw x0.c("Overriding TrackEncryptionBox parameters is unsupported.");
+            throw w0.c("Overriding TrackEncryptionBox parameters is unsupported.");
         }
         boolean z10 = (m10 & 2) != 0;
         int E = xVar.E();
@@ -147,9 +146,9 @@ public final class h implements c3.o {
         int i11 = sVar.e;
         e2.x xVar2 = sVar.n;
         if (E != i11) {
-            StringBuilder k10 = ic.a.k(E, "Senc sample count ", " is different from fragment sample count");
-            k10.append(sVar.e);
-            throw x0.a(null, k10.toString());
+            StringBuilder l4 = i0.a.l(E, "Senc sample count ", " is different from fragment sample count");
+            l4.append(sVar.e);
+            throw w0.a(null, l4.toString());
         }
         Arrays.fill(sVar.l, 0, E, z10);
         xVar2.K(xVar.a());
@@ -176,8 +175,8 @@ public final class h implements c3.o {
             G2 = xVar2.G();
         }
         long j11 = G2 + j10;
-        String str = n0.a;
-        long a02 = n0.a0(G, 1000000L, C, RoundingMode.DOWN);
+        String str = e2.l0.a;
+        long a02 = e2.l0.a0(G, 1000000L, C, RoundingMode.DOWN);
         xVar2.O(2);
         int H = xVar2.H();
         int[] iArr = new int[H];
@@ -190,7 +189,7 @@ public final class h implements c3.o {
         while (i10 < H) {
             int m10 = xVar2.m();
             if ((Integer.MIN_VALUE & m10) != 0) {
-                throw x0.a(null, "Unhandled indirect reference");
+                throw w0.a(null, "Unhandled indirect reference");
             }
             long C2 = xVar2.C();
             iArr[i10] = m10 & ConnectionsManager.DEFAULT_DATACENTER_ID;
@@ -199,7 +198,7 @@ public final class h implements c3.o {
             G += C2;
             long[] jArr4 = jArr2;
             long[] jArr5 = jArr3;
-            long a03 = n0.a0(G, 1000000L, C, RoundingMode.DOWN);
+            long a03 = e2.l0.a0(G, 1000000L, C, RoundingMode.DOWN);
             jArr4[i10] = a03 - jArr5[i10];
             xVar2.O(4);
             j12 += iArr[i10];
@@ -215,15 +214,15 @@ public final class h implements c3.o {
 
     @Override // c3.o
     public final boolean a(c3.p pVar) {
-        s1 s1Var;
+        x1 x1Var;
         f0 m10 = p.m(pVar, true, false);
         if (m10 != null) {
-            s1Var = i0.y(m10);
+            x1Var = n0.y(m10);
         } else {
-            g0 g0Var = i0.b;
-            s1Var = s1.e;
+            l0 l0Var = n0.b;
+            x1Var = x1.e;
         }
-        this.r = s1Var;
+        this.r = x1Var;
         return m10 == null;
     }
 
@@ -232,37 +231,37 @@ public final class h implements c3.o {
         int i10;
         int i11 = this.b;
         if ((i11 & 32) == 0) {
-            qVar = new c2.b(qVar, this.a);
+            qVar = new ac.a(qVar, this.a);
         }
         this.I = qVar;
         h();
-        j0[] j0VarArr = new j0[2];
-        this.J = j0VarArr;
+        k0[] k0VarArr = new k0[2];
+        this.J = k0VarArr;
         int i12 = 0;
-        j0 j0Var = this.p;
-        if (j0Var != null) {
-            j0VarArr[0] = j0Var;
+        k0 k0Var = this.p;
+        if (k0Var != null) {
+            k0VarArr[0] = k0Var;
             i10 = 1;
         } else {
             i10 = 0;
         }
         int i13 = 100;
         if ((i11 & 4) != 0) {
-            j0VarArr[i10] = this.I.F1(100, 5);
+            k0VarArr[i10] = this.I.I1(100, 5);
             i13 = 101;
             i10++;
         }
-        j0[] j0VarArr2 = (j0[]) n0.U(i10, this.J);
-        this.J = j0VarArr2;
-        for (j0 j0Var2 : j0VarArr2) {
-            j0Var2.b(P);
+        k0[] k0VarArr2 = (k0[]) e2.l0.U(i10, this.J);
+        this.J = k0VarArr2;
+        for (k0 k0Var2 : k0VarArr2) {
+            k0Var2.b(P);
         }
         List list = this.c;
-        this.K = new j0[list.size()];
+        this.K = new k0[list.size()];
         while (i12 < this.K.length) {
-            j0 F1 = this.I.F1(i13, 3);
-            F1.b((x) list.get(i12));
-            this.K[i12] = F1;
+            k0 I1 = this.I.I1(i13, 3);
+            I1.b((x) list.get(i12));
+            this.K[i12] = I1;
             i12++;
             i13++;
         }
@@ -288,120 +287,120 @@ public final class h implements c3.o {
         return this.r;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:22:0x0677, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:22:0x0674, code lost:
     
-        throw b2.x0.c("Atom size less than header length (unsupported).");
+        throw b2.w0.c("Atom size less than header length (unsupported).");
      */
     /* JADX WARN: Code restructure failed: missing block: B:363:0x00ce, code lost:
     
         r5 = r2.a;
         r6 = r2.b;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:364:0x00dd, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:364:0x00db, code lost:
     
         if (r32.s != 3) goto L89;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:366:0x00e1, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:366:0x00df, code lost:
     
         if (r2.m != false) goto L51;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:367:0x00e3, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:367:0x00e1, code lost:
     
         r9 = r2.d.d[r2.f];
      */
-    /* JADX WARN: Code restructure failed: missing block: B:368:0x00f2, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:368:0x00f0, code lost:
     
         r32.D = r9;
         r9 = r2.d.a.g;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:369:0x0100, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:369:0x00fe, code lost:
     
-        if (j$.util.Objects.equals(r9.s, org.telegram.messenger.MediaController.VIDEO_MIME_TYPE) == false) goto L58;
+        if (j$.util.Objects.equals(r9.s, "video/avc") == false) goto L58;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:371:0x0104, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:371:0x0102, code lost:
     
         if ((r4 & 64) == 0) goto L57;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:372:0x0106, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:372:0x0104, code lost:
     
         r4 = r21;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:373:0x0119, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:373:0x0117, code lost:
     
         r32.G = !r4;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:374:0x0121, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:374:0x011f, code lost:
     
         if (r2.f >= r2.i) goto L81;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:375:0x0123, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:375:0x0121, code lost:
     
-        r33.r(r32.D);
+        r33.q(r32.D);
         r1 = r2.b();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:376:0x012c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:376:0x012a, code lost:
     
         if (r1 != null) goto L68;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:377:0x012f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:377:0x012d, code lost:
     
         r3 = r6.n;
         r1 = r1.d;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:378:0x0133, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:378:0x0131, code lost:
     
         if (r1 == 0) goto L71;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:379:0x0135, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:379:0x0133, code lost:
     
         r3.O(r1);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:380:0x0138, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:380:0x0136, code lost:
     
         r1 = r2.f;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:381:0x013c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:381:0x013a, code lost:
     
         if (r6.k == false) goto L76;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:383:0x0142, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:383:0x0140, code lost:
     
         if (r6.l[r1] == false) goto L76;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:384:0x0144, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:384:0x0142, code lost:
     
         r3.O(r3.H() * 6);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:386:0x0150, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:386:0x014e, code lost:
     
         if (r2.c() != false) goto L79;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:387:0x0152, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:387:0x0150, code lost:
     
         r32.C = null;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:388:0x0155, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:388:0x0153, code lost:
     
         r32.s = 3;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:389:0x0158, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:389:0x0156, code lost:
     
         return 0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:391:0x0161, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:391:0x015f, code lost:
     
         if (r2.d.a.h != r21) goto L84;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:392:0x0163, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:392:0x0161, code lost:
     
         r32.D -= 8;
-        r33.r(r22);
+        r33.q(r22);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:394:0x017c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:394:0x017a, code lost:
     
         if ("audio/ac4".equals(r2.d.a.g.s) == false) goto L87;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:395:0x017e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:395:0x017c, code lost:
     
         r32.E = r2.d(r32.D, 7);
         c3.b.f(r32.D, r8);
@@ -409,68 +408,68 @@ public final class h implements c3.o {
         r32.E += 7;
         r8 = 0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:396:0x01a1, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:396:0x019f, code lost:
     
         r32.D += r32.E;
         r32.s = 4;
         r32.F = r8;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:397:0x0197, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:397:0x0195, code lost:
     
         r8 = 0;
         r32.E = r2.d(r32.D, 0);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:398:0x0109, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:398:0x0107, code lost:
     
         r4 = false;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:400:0x0112, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:400:0x0110, code lost:
     
         if (j$.util.Objects.equals(r9.s, "video/hevc") == false) goto L57;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:402:0x0116, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:402:0x0114, code lost:
     
         if ((r4 & 128) == 0) goto L57;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:403:0x00ec, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:403:0x00ea, code lost:
     
         r9 = r6.h[r2.f];
      */
-    /* JADX WARN: Code restructure failed: missing block: B:404:0x01ac, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:404:0x01aa, code lost:
     
         r4 = r2.d;
         r8 = r4.a;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:405:0x01b2, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:405:0x01b0, code lost:
     
         if (r2.m != false) goto L93;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:406:0x01b4, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:406:0x01b2, code lost:
     
         r15 = r4.f[r2.f];
      */
-    /* JADX WARN: Code restructure failed: missing block: B:407:0x01ba, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:407:0x01b8, code lost:
     
         r12 = r15;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:408:0x01c3, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:408:0x01c1, code lost:
     
         if (r14 == null) goto L96;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:409:0x01c5, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:409:0x01c3, code lost:
     
         r12 = r14.a(r12);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:410:0x01c9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:410:0x01c7, code lost:
     
         r4 = r8.k;
         r8 = r8.g;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:411:0x01cd, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:411:0x01cb, code lost:
     
         if (r4 == 0) goto L173;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:412:0x01cf, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:412:0x01cd, code lost:
     
         r9 = r32.f;
         r15 = r9.a;
@@ -480,45 +479,45 @@ public final class h implements c3.o {
         r6 = 4 - r4;
         r17 = r2;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:413:0x01e1, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:413:0x01df, code lost:
     
         r22 = r4;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:414:0x01e7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:414:0x01e5, code lost:
     
         if (r32.E >= r32.D) goto L526;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:415:0x01e9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:415:0x01e7, code lost:
     
         r2 = r32.F;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:416:0x01eb, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:416:0x01e9, code lost:
     
         if (r2 != 0) goto L157;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:418:0x01f0, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:418:0x01ee, code lost:
     
         if (r32.K.length > 0) goto L107;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:420:0x01f4, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:420:0x01f2, code lost:
     
         if (r32.G != false) goto L110;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:421:0x020b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:421:0x0209, code lost:
     
         r2 = 0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:422:0x020c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:422:0x020a, code lost:
     
         r33.readFully(r15, r6, r22 + r2);
         r9.N(0);
         r19 = r9.m();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:423:0x0219, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:423:0x0217, code lost:
     
         if (r19 < 0) goto L525;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:424:0x021b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:424:0x0219, code lost:
     
         r32.F = r19 - r2;
         r4 = r32.e;
@@ -528,23 +527,23 @@ public final class h implements c3.o {
         r32.E += 4;
         r32.D += r26;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:425:0x0239, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:425:0x0237, code lost:
     
         if (r32.K.length <= 0) goto L145;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:426:0x023b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:426:0x0239, code lost:
     
         if (r2 <= 0) goto L145;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:427:0x023d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:427:0x023b, code lost:
     
         r4 = f2.q.d(r8);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:428:0x0241, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:428:0x023f, code lost:
     
         if (r4 != null) goto L119;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:430:0x0248, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:430:0x0246, code lost:
     
         switch(r4.hashCode()) {
             case -1662541442: goto L130;
@@ -553,11 +552,11 @@ public final class h implements c3.o {
             default: goto L121;
         };
      */
-    /* JADX WARN: Code restructure failed: missing block: B:431:0x024b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:431:0x0249, code lost:
     
         r4 = 65535;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:432:0x026b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:432:0x0268, code lost:
     
         switch(r4) {
             case 0: goto L142;
@@ -566,105 +565,105 @@ public final class h implements c3.o {
             default: goto L145;
         };
      */
-    /* JADX WARN: Code restructure failed: missing block: B:434:0x027a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:434:0x0277, code lost:
     
         if (((r15[5] & 248) >> 3) != 23) goto L145;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:435:0x0297, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:435:0x0294, code lost:
     
         r4 = true;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:436:0x029a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:436:0x0297, code lost:
     
         r32.H = r4;
         r5.d(r2, r9);
         r32.E += r2;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:437:0x02a4, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:437:0x02a1, code lost:
     
         if (r2 <= 0) goto L153;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:439:0x02a8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:439:0x02a5, code lost:
     
         if (r32.G != false) goto L153;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:441:0x02ae, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:441:0x02ab, code lost:
     
         if (f2.q.f(r15, r2, r8) == false) goto L153;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:442:0x02b0, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:442:0x02ad, code lost:
     
         r32.G = true;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:443:0x02b3, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:443:0x02b0, code lost:
     
         r4 = r22;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:445:0x02b5, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:445:0x02b2, code lost:
     
         r6 = r26;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:447:0x0285, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:447:0x0282, code lost:
     
         if ((r15[4] & 31) != 6) goto L145;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:449:0x0295, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:449:0x0292, code lost:
     
         if (((r15[4] & 126) >> 1) != 39) goto L145;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:451:0x0254, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:451:0x0251, code lost:
     
         if (r4.equals("video/vvc") != false) goto L125;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:452:0x0257, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:452:0x0254, code lost:
     
         r4 = r20;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:454:0x025e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:454:0x025b, code lost:
     
-        if (r4.equals(org.telegram.messenger.MediaController.VIDEO_MIME_TYPE) != false) goto L129;
+        if (r4.equals("video/avc") != false) goto L129;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:455:0x0261, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:455:0x025e, code lost:
     
         r4 = 1;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:457:0x0267, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:457:0x0264, code lost:
     
         if (r4.equals("video/hevc") != false) goto L133;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:458:0x026a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:458:0x0267, code lost:
     
         r4 = 0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:459:0x0299, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:459:0x0296, code lost:
     
         r4 = false;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:462:0x02c0, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:462:0x02bd, code lost:
     
-        throw b2.x0.a(null, "Invalid NAL length");
+        throw b2.w0.a(null, "Invalid NAL length");
      */
-    /* JADX WARN: Code restructure failed: missing block: B:463:0x01f6, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:463:0x01f4, code lost:
     
         r2 = f2.q.g(r8);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:464:0x0206, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:464:0x0204, code lost:
     
         if ((r22 + r2) > (r32.D - r32.E)) goto L110;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:465:0x0208, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:465:0x0206, code lost:
     
         r2 = r2;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:466:0x02c1, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:466:0x02be, code lost:
     
         r26 = r6;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:467:0x02c5, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:467:0x02c2, code lost:
     
         if (r32.H == false) goto L171;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:468:0x02c7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:468:0x02c4, code lost:
     
         r4 = r32.g;
         r4.K(r2);
@@ -677,164 +676,164 @@ public final class h implements c3.o {
         r4.M(r2);
         r2 = r8.u;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:469:0x02f0, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:469:0x02ed, code lost:
     
         if (r2 != (-1)) goto L164;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:471:0x02f4, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:471:0x02f1, code lost:
     
         if (r7.a == 0) goto L167;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:472:0x02f6, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:472:0x02f3, code lost:
     
-        r7.k(0);
+        r7.p(0);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:473:0x0301, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:473:0x02fe, code lost:
     
         r7.a(r12, r4);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:474:0x030b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:474:0x0308, code lost:
     
         if ((r17.a() & 4) == 0) goto L170;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:475:0x030d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:475:0x030a, code lost:
     
-        r7.c(0);
+        r7.e(0);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:476:0x0310, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:476:0x030d, code lost:
     
         r2 = r2;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:477:0x031b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:477:0x0318, code lost:
     
         r32.E += r2;
         r32.F -= r2;
         r4 = r22;
         r9 = r25;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:480:0x02fc, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:480:0x02f9, code lost:
     
         if (r7.a == r2) goto L167;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:481:0x02fe, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:481:0x02fb, code lost:
     
-        r7.k(r2);
+        r7.p(r2);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:482:0x0313, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:482:0x0310, code lost:
     
         r25 = r9;
         r2 = r5.a(r33, r2, false);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:484:0x033e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:484:0x033b, code lost:
     
         r1 = r17.a();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:485:0x0344, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:485:0x0341, code lost:
     
         if (r32.G != false) goto L180;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:486:0x0346, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:486:0x0343, code lost:
     
         r1 = r1 | 67108864;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:487:0x0349, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:487:0x0346, code lost:
     
         r28 = r1;
         r1 = r17.b();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:488:0x034f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:488:0x034c, code lost:
     
         if (r1 == null) goto L183;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:489:0x0351, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:489:0x034e, code lost:
     
         r31 = r1.c;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:490:0x0358, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:490:0x0355, code lost:
     
         r26 = r12;
         r5.c(r26, r28, r32.D, 0, r31);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:492:0x0369, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:492:0x0366, code lost:
     
         if (r3.isEmpty() != false) goto L529;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:493:0x036b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:493:0x0368, code lost:
     
         r1 = (w3.f) r3.removeFirst();
         r32.y -= r1.c;
         r4 = r1.a;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:494:0x037c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:494:0x0379, code lost:
     
         if (r1.b == false) goto L190;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:495:0x037e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:495:0x037b, code lost:
     
         r4 = r4 + r26;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:496:0x0380, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:496:0x037d, code lost:
     
         if (r14 == null) goto L192;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:497:0x0382, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:497:0x037f, code lost:
     
         r4 = r14.a(r4);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:498:0x0386, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:498:0x0383, code lost:
     
         r7 = r4;
         r2 = r32.J;
         r4 = r2.length;
         r5 = 0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:500:0x038b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:500:0x0388, code lost:
     
         if (r5 >= r4) goto L532;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:501:0x038d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:501:0x038a, code lost:
     
         r2[r5].c(r7, 1, r1.c, r32.y, null);
         r5 = r5 + 1;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:506:0x039f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:506:0x039c, code lost:
     
         if (r17.c() != false) goto L198;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:507:0x03a1, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:507:0x039e, code lost:
     
         r32.C = null;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:508:0x03a4, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:508:0x03a1, code lost:
     
         r32.s = 3;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:509:0x03a9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:509:0x03a6, code lost:
     
         return 0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:510:0x0356, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:510:0x0353, code lost:
     
         r31 = null;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:511:0x032a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:511:0x0327, code lost:
     
         r17 = r2;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:512:0x032c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:512:0x0329, code lost:
     
         r2 = r32.E;
         r4 = r32.D;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:513:0x0330, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:513:0x032d, code lost:
     
         if (r2 >= r4) goto L533;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:514:0x0332, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:514:0x032f, code lost:
     
         r32.E += r5.a(r33, r4 - r2, false);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:516:0x01bc, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:516:0x01ba, code lost:
     
         r15 = r6.i[r2.f];
      */
@@ -865,7 +864,7 @@ public final class h implements c3.o {
             if (i13 != 0) {
                 ArrayDeque arrayDeque2 = this.n;
                 int i14 = this.b;
-                k0 k0Var = this.j;
+                e2.k0 k0Var = this.j;
                 if (i13 != 1) {
                     long j12 = Long.MAX_VALUE;
                     if (i13 != 2) {
@@ -911,9 +910,9 @@ public final class h implements c3.o {
                         if (gVar2 == null) {
                             int position = (int) (this.x - pVar.getPosition());
                             if (position < 0) {
-                                throw x0.a(null, "Offset to end of mdat was negative.");
+                                throw w0.a(null, "Offset to end of mdat was negative.");
                             }
-                            pVar.r(position);
+                            pVar.q(position);
                             h();
                         } else {
                             int position2 = (int) ((!gVar2.m ? gVar2.d.c[gVar2.f] : gVar2.b.f[gVar2.h]) - pVar.getPosition());
@@ -921,7 +920,7 @@ public final class h implements c3.o {
                                 e2.a.l("FragmentedMp4Extractor", "Ignoring negative offset to sample data.");
                                 position2 = 0;
                             }
-                            pVar.r(position2);
+                            pVar.q(position2);
                             this.C = gVar2;
                             gVar = gVar2;
                         }
@@ -943,9 +942,9 @@ public final class h implements c3.o {
                         } else {
                             int position3 = (int) (j12 - pVar.getPosition());
                             if (position3 < 0) {
-                                throw x0.a(null, "Offset to encryption data was negative.");
+                                throw w0.a(null, "Offset to encryption data was negative.");
                             }
-                            pVar.r(position3);
+                            pVar.q(position3);
                             s sVar4 = gVar4.b;
                             e2.x xVar2 = sVar4.n;
                             pVar.readFully(xVar2.a, 0, xVar2.c);
@@ -964,14 +963,14 @@ public final class h implements c3.o {
                             ((f2.d) arrayDeque.peek()).d.add(eVar);
                         } else if (i18 == 1936286840) {
                             Pair k10 = k(pVar.getPosition(), xVar3);
-                            cVar2.i((c3.j) k10.second);
+                            cVar2.h((c3.j) k10.second);
                             LinkedHashMap linkedHashMap = (LinkedHashMap) cVar2.b;
                             this.B = ((Long) k10.first).longValue();
                             if (this.M) {
                                 i12 = 1;
                             } else {
                                 i12 = 1;
-                                this.I.D1(linkedHashMap.size() == 1 ? (b0) k10.second : cVar2.S());
+                                this.I.G1(linkedHashMap.size() == 1 ? (b0) k10.second : cVar2.s());
                                 this.L = true;
                             }
                             if ((i14 & 256) != 0 && !this.M && linkedHashMap.size() > i12) {
@@ -989,21 +988,21 @@ public final class h implements c3.o {
                                 long C2 = xVar3.C();
                                 long C3 = xVar3.C();
                                 RoundingMode roundingMode = RoundingMode.DOWN;
-                                long a03 = n0.a0(C3, 1000000L, C2, roundingMode);
+                                long a03 = e2.l0.a0(C3, 1000000L, C2, roundingMode);
                                 long j16 = this.B;
                                 long j17 = j16 != -9223372036854775807L ? j16 + a03 : -9223372036854775807L;
                                 j10 = a03;
                                 j11 = j17;
-                                a02 = n0.a0(xVar3.C(), 1000L, C2, roundingMode);
+                                a02 = e2.l0.a0(xVar3.C(), 1000L, C2, roundingMode);
                                 C = xVar3.C();
                             } else if (e != 1) {
-                                a1.g.z(e, "Skipping unsupported emsg version: ", "FragmentedMp4Extractor");
+                                a1.g.w(e, "Skipping unsupported emsg version: ", "FragmentedMp4Extractor");
                             } else {
                                 long C4 = xVar3.C();
                                 long G = xVar3.G();
                                 RoundingMode roundingMode2 = RoundingMode.DOWN;
-                                j11 = n0.a0(G, 1000000L, C4, roundingMode2);
-                                long a04 = n0.a0(xVar3.C(), 1000L, C4, roundingMode2);
+                                j11 = e2.l0.a0(G, 1000000L, C4, roundingMode2);
+                                long a04 = e2.l0.a0(xVar3.C(), 1000L, C4, roundingMode2);
                                 long C5 = xVar3.C();
                                 v = xVar3.v();
                                 v.getClass();
@@ -1017,15 +1016,15 @@ public final class h implements c3.o {
                             String str2 = v10;
                             byte[] bArr = new byte[xVar3.a()];
                             xVar3.k(0, xVar3.a(), bArr);
-                            e2.x xVar4 = new e2.x(this.k.B(new n3.a(str, str2, a02, C, bArr)));
+                            e2.x xVar4 = new e2.x(this.k.G(new n3.a(str, str2, a02, C, bArr)));
                             int a2 = xVar4.a();
-                            j0[] j0VarArr = this.J;
-                            int length = j0VarArr.length;
+                            k0[] k0VarArr = this.J;
+                            int length = k0VarArr.length;
                             int i19 = 0;
                             while (i19 < length) {
-                                j0 j0Var = j0VarArr[i19];
+                                k0 k0Var2 = k0VarArr[i19];
                                 xVar4.N(0);
-                                j0Var.d(a2, xVar4);
+                                k0Var2.d(a2, xVar4);
                                 i19++;
                                 j15 = j15;
                             }
@@ -1040,8 +1039,8 @@ public final class h implements c3.o {
                                     j11 = k0Var.a(j11);
                                 }
                                 long j18 = j11;
-                                for (j0 j0Var2 : this.J) {
-                                    j0Var2.c(j18, 1, a2, 0, null);
+                                for (k0 k0Var3 : this.J) {
+                                    k0Var3.c(j18, 1, a2, 0, null);
                                 }
                             } else {
                                 arrayDeque2.addLast(new f(a2, j11, false));
@@ -1049,7 +1048,7 @@ public final class h implements c3.o {
                             }
                         }
                     } else {
-                        pVar.r(i17);
+                        pVar.q(i17);
                     }
                     l(pVar.getPosition());
                 }
@@ -1057,15 +1056,15 @@ public final class h implements c3.o {
                 int i20 = this.v;
                 e2.x xVar5 = this.l;
                 if (i20 == 0) {
-                    if (!pVar.c(xVar5.a, 0, 8, true)) {
+                    if (!pVar.d(xVar5.a, 0, 8, true)) {
                         long j19 = this.N;
                         if (j19 == -1) {
-                            cVar.c(0);
+                            cVar.e(0);
                             return -1;
                         }
                         sVar.a = j19;
                         this.N = -1L;
-                        this.I.D1(cVar2.S());
+                        this.I.G1(cVar2.s());
                         this.M = true;
                         return 1;
                     }
@@ -1102,16 +1101,16 @@ public final class h implements c3.o {
                         xVar.K((int) this.u);
                         System.arraycopy(xVar5.a, 0, xVar.a, 0, 8);
                         pVar.readFully(xVar.a, 8, (int) (this.u - this.v));
-                        cVar2.i((c3.j) k(pVar.i(), xVar).second);
+                        cVar2.h((c3.j) k(pVar.k(), xVar).second);
                     } else {
-                        pVar.f((int) (this.u - j22), true);
+                        pVar.i((int) (this.u - j22), true);
                     }
                     h();
                 } else {
                     long position4 = pVar.getPosition() - this.v;
                     int i22 = this.t;
                     if ((i22 == 1836019558 || i22 == 1835295092) && !this.L) {
-                        this.I.D1(new c3.t(this.A, position4));
+                        this.I.G1(new c3.t(this.A, position4));
                         this.L = true;
                     }
                     if (this.t == 1836019558) {
@@ -1136,8 +1135,8 @@ public final class h implements c3.o {
                             xVar.K(8);
                             pVar.b(0, 8, xVar.a);
                             c.a(xVar);
-                            pVar.r(xVar.b);
-                            pVar.p();
+                            pVar.q(xVar.b);
+                            pVar.m();
                         }
                         arrayDeque.push(new f2.d(this.t, j24));
                         if (this.u == this.v) {
@@ -1147,10 +1146,10 @@ public final class h implements c3.o {
                         }
                     } else if (i24 == 1751411826 || i24 == 1835296868 || i24 == 1836476516 || i24 == 1936286840 || i24 == 1937011556 || i24 == 1937011827 || i24 == 1668576371 || i24 == 1937011555 || i24 == 1937011578 || i24 == 1937013298 || i24 == 1937007471 || i24 == 1668232756 || i24 == 1937011571 || i24 == 1952867444 || i24 == 1952868452 || i24 == 1953196132 || i24 == 1953654136 || i24 == 1953658222 || i24 == 1886614376 || i24 == 1935763834 || i24 == 1935763823 || i24 == 1936027235 || i24 == 1970628964 || i24 == 1935828848 || i24 == 1936158820 || i24 == 1701606260 || i24 == 1835362404 || i24 == 1701671783 || i24 == 1969517665 || i24 == 1801812339 || i24 == 1768715124) {
                         if (this.v != 8) {
-                            throw x0.c("Leaf atom defines extended atom size (unsupported).");
+                            throw w0.c("Leaf atom defines extended atom size (unsupported).");
                         }
                         if (this.u > 2147483647L) {
-                            throw x0.c("Leaf atom with length > 2147483647 (unsupported).");
+                            throw w0.c("Leaf atom with length > 2147483647 (unsupported).");
                         }
                         e2.x xVar6 = new e2.x((int) this.u);
                         System.arraycopy(xVar5.a, 0, xVar6.a, 0, 8);
@@ -1158,7 +1157,7 @@ public final class h implements c3.o {
                         this.s = 1;
                     } else {
                         if (this.u > 2147483647L) {
-                            throw x0.c("Skipping atom with length > 2147483647 (unsupported).");
+                            throw w0.c("Skipping atom with length > 2147483647 (unsupported).");
                         }
                         this.w = null;
                         this.s = 1;
@@ -1183,7 +1182,7 @@ public final class h implements c3.o {
      */
     /* JADX WARN: Code restructure failed: missing block: B:94:0x042a, code lost:
     
-        if ((e2.n0.a0(r39, 1000000, r7, r45) + e2.n0.a0(r8[0], 1000000, r4.c, r45)) >= r4.e) goto L163;
+        if ((e2.l0.a0(r39, 1000000, r7, r45) + e2.l0.a0(r8[0], 1000000, r4.c, r45)) >= r4.e) goto L163;
      */
     /* JADX WARN: Removed duplicated region for block: B:251:0x0724  */
     /*
@@ -1275,9 +1274,9 @@ public final class h implements c3.o {
                 } else {
                     u0Var = null;
                 }
-                f2.e e10 = dVar4.e(1836476516);
-                e10.getClass();
-                u0 u0Var3 = new u0(c.g(e10.c));
+                f2.e e7 = dVar4.e(1836476516);
+                e7.getClass();
+                u0 u0Var3 = new u0(c.g(e7.c));
                 ArrayList i33 = c.i(dVar4, wVar, j11, i30, (i28 & 16) != 0, false, new e(this), false);
                 int size3 = i33.size();
                 if (sparseArray.size() == 0) {
@@ -1293,11 +1292,11 @@ public final class h implements c3.o {
                         int i37 = size3;
                         String str = b10;
                         long j13 = qVar.e;
-                        j0 F1 = qVar2.F1(i34, i35);
-                        F1.e(j13);
+                        k0 I1 = qVar2.I1(i34, i35);
+                        I1.e(j13);
                         w a2 = xVar3.a();
                         int i38 = i34;
-                        a2.q = w0.n(str);
+                        a2.q = v0.n(str);
                         if (i35 == 1) {
                             int i39 = wVar.a;
                             u0Var2 = u0Var3;
@@ -1321,7 +1320,7 @@ public final class h implements c3.o {
                             dVar = (d) sparseArray2.get(i36);
                             dVar.getClass();
                         }
-                        sparseArray.put(i36, new g(F1, tVar, dVar, new x(a2)));
+                        sparseArray.put(i36, new g(I1, tVar, dVar, new x(a2)));
                         this.A = Math.max(this.A, j13);
                         i34 = i38 + 1;
                         size3 = i37;
@@ -1333,7 +1332,7 @@ public final class h implements c3.o {
                     this.I.Q0();
                 } else {
                     ArrayList arrayList10 = i33;
-                    yb.p(sparseArray.size() == size3);
+                    t6.p(sparseArray.size() == size3);
                     int i40 = 0;
                     while (i40 < size3) {
                         ArrayList arrayList11 = arrayList10;
@@ -1361,10 +1360,10 @@ public final class h implements c3.o {
                 while (i42 < size4) {
                     f2.d dVar5 = (f2.d) arrayList7.get(i42);
                     if (dVar5.b == 1953653094) {
-                        f2.e e11 = dVar5.e(1952868452);
+                        f2.e e10 = dVar5.e(1952868452);
                         ArrayList arrayList12 = dVar5.d;
-                        e11.getClass();
-                        e2.x xVar4 = e11.c;
+                        e10.getClass();
+                        e2.x xVar4 = e10.c;
                         xVar4.N(8);
                         int m10 = xVar4.m();
                         byte[] bArr2 = c.a;
@@ -1407,12 +1406,12 @@ public final class h implements c3.o {
                             boolean z11 = sVar2.q;
                             gVar.e();
                             gVar.m = true;
-                            f2.e e12 = dVar5.e(1952867444);
-                            if (e12 == null || (i28 & 2) != 0) {
+                            f2.e e11 = dVar5.e(1952867444);
+                            if (e11 == null || (i28 & 2) != 0) {
                                 sVar2.p = j14;
                                 sVar2.q = z11;
                             } else {
-                                e2.x xVar5 = e12.c;
+                                e2.x xVar5 = e11.c;
                                 xVar5.N(8);
                                 sVar2.p = c.e(xVar5.m()) == 1 ? xVar5.G() : xVar5.C();
                                 sVar2.q = true;
@@ -1451,7 +1450,7 @@ public final class h implements c3.o {
                                 sVar2.g = new int[i44];
                             }
                             if (sVar2.h.length < i45) {
-                                int i46 = (i45 * 125) / 100;
+                                int i46 = (i45 * zs.J1) / 100;
                                 sVar2.h = new int[i46];
                                 sVar2.i = new long[i46];
                                 sVar2.j = new boolean[i46];
@@ -1474,7 +1473,7 @@ public final class h implements c3.o {
                                         q qVar4 = gVar.d.a;
                                         i19 = i47;
                                         d dVar7 = sVar2.a;
-                                        String str2 = n0.a;
+                                        String str2 = e2.l0.a;
                                         i20 = i42;
                                         sVar2.g[i48] = xVar7.E();
                                         long[] jArr = sVar2.f;
@@ -1527,7 +1526,7 @@ public final class h implements c3.o {
                                             }
                                             boolean z20 = z19;
                                             if (i22 < 0) {
-                                                throw x0.a(null, "Unexpected negative value: " + i22);
+                                                throw w0.a(null, "Unexpected negative value: " + i22);
                                             }
                                             if (z15) {
                                                 i23 = i54;
@@ -1537,7 +1536,7 @@ public final class h implements c3.o {
                                                 i24 = dVar7.c;
                                             }
                                             if (i24 < 0) {
-                                                throw x0.a(null, "Unexpected negative value: " + i24);
+                                                throw w0.a(null, "Unexpected negative value: " + i24);
                                             }
                                             int m14 = z18 ? xVar.m() : (i56 == 0 && z13) ? i53 : dVar7.d;
                                             if (z17) {
@@ -1549,7 +1548,7 @@ public final class h implements c3.o {
                                             }
                                             int i57 = i50;
                                             int i58 = i28;
-                                            long a02 = n0.a0((i25 + j20) - j15, 1000000L, j19, RoundingMode.DOWN);
+                                            long a02 = e2.l0.a0((i25 + j20) - j15, 1000000L, j19, RoundingMode.DOWN);
                                             jArr4[i56] = a02;
                                             if (!sVar2.q) {
                                                 jArr4[i56] = a02 + gVar.d.i;
@@ -1590,10 +1589,10 @@ public final class h implements c3.o {
                                     d dVar8 = sVar2.a;
                                     dVar8.getClass();
                                     r rVar = qVar5.l[dVar8.a];
-                                    f2.e e13 = dVar5.e(1935763834);
-                                    if (e13 != null) {
+                                    f2.e e12 = dVar5.e(1935763834);
+                                    if (e12 != null) {
                                         rVar.getClass();
-                                        e2.x xVar9 = e13.c;
+                                        e2.x xVar9 = e12.c;
                                         int i59 = rVar.d;
                                         xVar9.N(8);
                                         int m15 = xVar9.m();
@@ -1604,9 +1603,9 @@ public final class h implements c3.o {
                                         int A = xVar9.A();
                                         int E2 = xVar9.E();
                                         if (E2 > sVar2.e) {
-                                            StringBuilder k10 = ic.a.k(E2, "Saiz sample count ", " is greater than fragment sample count");
-                                            k10.append(sVar2.e);
-                                            throw x0.a(null, k10.toString());
+                                            StringBuilder l4 = i0.a.l(E2, "Saiz sample count ", " is greater than fragment sample count");
+                                            l4.append(sVar2.e);
+                                            throw w0.a(null, l4.toString());
                                         }
                                         if (A == 0) {
                                             boolean[] zArr2 = sVar2.l;
@@ -1630,9 +1629,9 @@ public final class h implements c3.o {
                                             sVar2.o = true;
                                         }
                                     }
-                                    f2.e e14 = dVar5.e(1935763823);
-                                    if (e14 != null) {
-                                        e2.x xVar10 = e14.c;
+                                    f2.e e13 = dVar5.e(1935763823);
+                                    if (e13 != null) {
+                                        e2.x xVar10 = e13.c;
                                         xVar10.N(8);
                                         int m16 = xVar10.m();
                                         byte[] bArr5 = c.a;
@@ -1641,13 +1640,13 @@ public final class h implements c3.o {
                                         }
                                         int E3 = xVar10.E();
                                         if (E3 != 1) {
-                                            throw x0.a(null, "Unexpected saio entry count: " + E3);
+                                            throw w0.a(null, "Unexpected saio entry count: " + E3);
                                         }
                                         sVar2.c += c.e(m16) == 0 ? xVar10.C() : xVar10.G();
                                     }
-                                    f2.e e15 = dVar5.e(1936027235);
-                                    if (e15 != null) {
-                                        j(e15.c, 0, sVar2);
+                                    f2.e e14 = dVar5.e(1936027235);
+                                    if (e14 != null) {
+                                        j(e14.c, 0, sVar2);
                                     }
                                     String str3 = rVar != null ? rVar.b : null;
                                     e2.x xVar11 = null;
@@ -1670,30 +1669,30 @@ public final class h implements c3.o {
                                     }
                                     if (xVar11 != null && xVar12 != null) {
                                         xVar11.N(8);
-                                        int e16 = c.e(xVar11.m());
+                                        int e15 = c.e(xVar11.m());
                                         xVar11.O(4);
-                                        if (e16 == 1) {
+                                        if (e15 == 1) {
                                             xVar11.O(4);
                                         }
                                         if (xVar11.m() != 1) {
-                                            throw x0.c("Entry count in sbgp != 1 (unsupported).");
+                                            throw w0.c("Entry count in sbgp != 1 (unsupported).");
                                         }
                                         xVar12.N(8);
-                                        int e17 = c.e(xVar12.m());
+                                        int e16 = c.e(xVar12.m());
                                         xVar12.O(4);
-                                        if (e17 == 1) {
+                                        if (e16 == 1) {
                                             if (xVar12.C() == 0) {
-                                                throw x0.c("Variable length description in sgpd found (unsupported)");
+                                                throw w0.c("Variable length description in sgpd found (unsupported)");
                                             }
-                                        } else if (e17 >= 2) {
+                                        } else if (e16 >= 2) {
                                             xVar12.O(4);
                                         }
                                         if (xVar12.C() != 1) {
-                                            throw x0.c("Entry count in sgpd != 1 (unsupported).");
+                                            throw w0.c("Entry count in sgpd != 1 (unsupported).");
                                         }
                                         xVar12.O(1);
                                         int A3 = xVar12.A();
-                                        int i63 = (A3 & 240) >> 4;
+                                        int i63 = (A3 & zs.P3) >> 4;
                                         int i64 = A3 & 15;
                                         boolean z22 = xVar12.A() == 1;
                                         if (z22) {
@@ -1751,7 +1750,7 @@ public final class h implements c3.o {
                         g gVar4 = (g) sparseArray.valueAt(i66);
                         q qVar6 = gVar4.d.a;
                         d dVar9 = gVar4.b.a;
-                        String str4 = n0.a;
+                        String str4 = e2.l0.a;
                         r rVar2 = qVar6.l[dVar9.a];
                         b2.t a10 = i65.a(rVar2 != null ? rVar2.b : null);
                         w a11 = gVar4.j.a();

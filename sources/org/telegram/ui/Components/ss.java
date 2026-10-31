@@ -1,58 +1,72 @@
 package org.telegram.ui.Components;
 
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.text.SpannableStringBuilder;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class ss {
-    public int a;
-    public int b;
-    public r11 c;
-    public int d;
-    public boolean e;
-    public int f;
-    public int g;
+public final class ss implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ts b;
 
-    public static ss b(org.telegram.ui.Cells.p2 p2Var, MessagesController.DialogFilter dialogFilter) {
-        ss ssVar = new ss();
-        ssVar.a = dialogFilter.id;
-        ssVar.b = dialogFilter.color;
-        String str = dialogFilter.name;
-        if (str == null) {
-            str = "";
-        }
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(str.toUpperCase());
-        r11 r11Var = new r11(spannableStringBuilder, 10.0f, AndroidUtilities.bold());
-        r11Var.s(p2Var);
-        ssVar.c = r11Var;
-        ssVar.c.r(MessageObject.replaceAnimatedEmoji(Emoji.replaceEmoji(spannableStringBuilder, r11Var.a.getFontMetricsInt(), false), dialogFilter.entities, ssVar.c.a.getFontMetricsInt()));
-        ssVar.c.p(26);
-        int dp = AndroidUtilities.dp(9.32f);
-        r11 r11Var2 = ssVar.c;
-        ssVar.g = dp + ((int) r11Var2.c);
-        r11Var2.j();
-        int[] iArr = org.telegram.ui.ActionBar.y6.r8;
-        int i10 = iArr[dialogFilter.color % iArr.length];
-        ssVar.f = i10;
-        ssVar.e = true;
-        ssVar.d = org.telegram.ui.ActionBar.y6.x0(null, i10, false);
-        return ssVar;
+    public /* synthetic */ ss(ts tsVar, int i10) {
+        this.a = i10;
+        this.b = tsVar;
     }
 
-    public final void a(Canvas canvas) {
-        if (this.e) {
-            this.d = org.telegram.ui.ActionBar.y6.x0(null, this.f, false);
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10;
+        Bitmap bitmap;
+        switch (this.a) {
+            case 0:
+                ts tsVar = this.b;
+                try {
+                    i10 = tsVar.x + 0;
+                    bitmap = tsVar.b;
+                } catch (Exception e) {
+                    org.telegram.messenger.f8.g(e, true);
+                    tsVar.E = true;
+                }
+                if (bitmap != null) {
+                    if (bitmap.getWidth() == tsVar.y) {
+                        if (tsVar.b.getHeight() != i10) {
+                        }
+                        tsVar.b.eraseColor(0);
+                        tsVar.c.save();
+                        tsVar.c.translate(0.0f, 0);
+                        tsVar.c(tsVar.c);
+                        tsVar.c.restore();
+                        tsVar.b.prepareToDraw();
+                        org.telegram.messenger.i0.g3(tsVar.H);
+                        break;
+                    }
+                }
+                Bitmap bitmap2 = tsVar.b;
+                if (bitmap2 != null) {
+                    bitmap2.recycle();
+                }
+                tsVar.b = Bitmap.createBitmap(tsVar.y, i10, Bitmap.Config.ARGB_8888);
+                tsVar.c = new Canvas(tsVar.b);
+                tsVar.b.eraseColor(0);
+                tsVar.c.save();
+                tsVar.c.translate(0.0f, 0);
+                tsVar.c(tsVar.c);
+                tsVar.c.restore();
+                tsVar.b.prepareToDraw();
+                org.telegram.messenger.i0.g3(tsVar.H);
+            default:
+                ts tsVar2 = this.b;
+                tsVar2.f = false;
+                tsVar2.g();
+                if (!tsVar2.a) {
+                    tsVar2.j();
+                    break;
+                } else if (tsVar2.w == tsVar2.J) {
+                    tsVar2.G = true;
+                    break;
+                }
+                break;
         }
-        org.telegram.ui.ActionBar.y6.A0.setColor(org.telegram.ui.ActionBar.y6.o1(org.telegram.ui.ActionBar.y6.I.q() ? 0.2f : 0.1f, this.d));
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(0.0f, 0.0f, this.g, AndroidUtilities.dp(14.66f));
-        canvas.drawRoundRect(rectF, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), org.telegram.ui.ActionBar.y6.A0);
-        this.c.c(AndroidUtilities.dp(4.66f), AndroidUtilities.dp(14.66f) / 2.0f, 1.0f, this.d, canvas);
     }
 }

@@ -7,21 +7,20 @@ import android.view.Surface;
 import java.nio.ByteBuffer;
 import java.nio.ShortBuffer;
 import java.util.ArrayList;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.MediaController;
+import org.telegram.messenger.f8;
 import org.telegram.messenger.video.MediaCodecVideoConvertor;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public class AudioRecoder {
     private static final int BYTES_PER_SHORT = 2;
-    ArrayList<cg.a> audioInputs;
+    ArrayList<tf.a> audioInputs;
     private final MediaCodec encoder;
     private boolean encoderDone;
     private ByteBuffer[] encoderInputBuffers;
     private ByteBuffer[] encoderOutputBuffers;
     public final MediaFormat format;
-    cg.a mainInput;
+    tf.a mainInput;
     private int sampleRate;
     private long totalDurationUs;
     private final int TIMEOUT_USEC = 2500;
@@ -36,7 +35,7 @@ public class AudioRecoder {
     private int channelCount = 2;
     private long encoderInputPresentationTimeUs = 0;
 
-    public AudioRecoder(ArrayList<cg.a> arrayList, long j10) {
+    public AudioRecoder(ArrayList<tf.a> arrayList, long j10) {
         this.sampleRate = 44100;
         this.audioInputs = arrayList;
         this.totalDurationUs = j10;
@@ -46,9 +45,9 @@ public class AudioRecoder {
                 this.sampleRate = arrayList.get(i10).b();
             }
         }
-        MediaCodec createEncoderByType = MediaCodec.createEncoderByType(MediaController.AUDIO_MIME_TYPE);
+        MediaCodec createEncoderByType = MediaCodec.createEncoderByType("audio/mp4a-latm");
         this.encoder = createEncoderByType;
-        MediaFormat createAudioFormat = MediaFormat.createAudioFormat(MediaController.AUDIO_MIME_TYPE, this.sampleRate, this.channelCount);
+        MediaFormat createAudioFormat = MediaFormat.createAudioFormat("audio/mp4a-latm", this.sampleRate, this.channelCount);
         this.format = createAudioFormat;
         createAudioFormat.setInteger("bitrate", 128000);
         createEncoderByType.configure(createAudioFormat, (Surface) null, (MediaCrypto) null, 1);
@@ -91,7 +90,7 @@ public class AudioRecoder {
                 this.audioInputs.get(i10).d();
             }
         } catch (Exception e) {
-            FileLog.e(e);
+            f8.g(e, true);
         }
     }
 

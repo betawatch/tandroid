@@ -3,7 +3,7 @@ package com.google.android.recaptcha.internal;
 import a1.g;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 final class zzqs extends zzqv {
     private final byte[] zzc;
@@ -15,7 +15,7 @@ final class zzqs extends zzqv {
         int length = bArr.length;
         if (((length - i11) | i11) < 0) {
             Locale locale = Locale.US;
-            throw new IllegalArgumentException(g.l(length, i11, "Array range is invalid. Buffer.length=", ", offset=0, length="));
+            throw new IllegalArgumentException(g.j(length, i11, "Array range is invalid. Buffer.length=", ", offset=0, length="));
         }
         this.zzc = bArr;
         this.zze = 0;
@@ -40,8 +40,8 @@ final class zzqs extends zzqv {
                 i10 = i11;
                 throw new zzqt(i10, this.zzd, 1, e);
             }
-        } catch (IndexOutOfBoundsException e10) {
-            e = e10;
+        } catch (IndexOutOfBoundsException e7) {
+            e = e7;
         }
     }
 
@@ -185,8 +185,8 @@ final class zzqs extends zzqv {
         } catch (zzve e) {
             this.zze = i10;
             zzD(str, e);
-        } catch (IndexOutOfBoundsException e10) {
-            throw new zzqt(e10);
+        } catch (IndexOutOfBoundsException e7) {
+            throw new zzqt(e7);
         }
     }
 
@@ -218,8 +218,8 @@ final class zzqs extends zzqv {
                     i12 = i11;
                     throw new zzqt(i12, this.zzd, 1, indexOutOfBoundsException);
                 }
-            } catch (IndexOutOfBoundsException e10) {
-                indexOutOfBoundsException = e10;
+            } catch (IndexOutOfBoundsException e7) {
+                indexOutOfBoundsException = e7;
                 throw new zzqt(i12, this.zzd, 1, indexOutOfBoundsException);
             }
         }
@@ -255,15 +255,15 @@ final class zzqs extends zzqv {
                         i12 = i13;
                         throw new zzqt(i12, this.zzd, 1, indexOutOfBoundsException);
                     }
-                } catch (IndexOutOfBoundsException e10) {
-                    indexOutOfBoundsException = e10;
+                } catch (IndexOutOfBoundsException e7) {
+                    indexOutOfBoundsException = e7;
                 }
             }
             i10 = i12 + 1;
             try {
                 this.zzc[i12] = (byte) j10;
-            } catch (IndexOutOfBoundsException e11) {
-                indexOutOfBoundsException = e11;
+            } catch (IndexOutOfBoundsException e10) {
+                indexOutOfBoundsException = e10;
                 i12 = i10;
                 throw new zzqt(i12, this.zzd, 1, indexOutOfBoundsException);
             }

@@ -2,18 +2,17 @@ package org.telegram.ui;
 
 import android.graphics.Canvas;
 import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
 public final class k1 extends View {
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        canvas.drawLine(0.0f, 0.0f, getMeasuredWidth(), 0.0f, j4.s1);
+        canvas.drawLine(0.0f, 0.0f, getMeasuredWidth(), 0.0f, h4.s1);
     }
 
     @Override // android.view.View
     public final void onMeasure(int i10, int i11) {
-        setMeasuredDimension(View.MeasureSpec.getSize(i10), AndroidUtilities.dp(4.0f) + 1);
+        setMeasuredDimension(View.MeasureSpec.getSize(i10), org.telegram.messenger.i0.L(4.0f) + 1);
     }
 }

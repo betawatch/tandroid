@@ -1,33 +1,60 @@
 package org.telegram.ui.Wallet;
 
-import org.telegram.messenger.Utilities;
+import java.util.ArrayList;
+import org.telegram.messenger.us;
+import org.telegram.messenger.zs;
+import org.telegram.ui.f70;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes4.dex */
-public final class z implements Runnable {
-    public volatile boolean a;
-    public Runnable b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ String e;
-    public final /* synthetic */ byte[] f;
-    public final /* synthetic */ Utilities.Callback2 h;
-    public final /* synthetic */ l0 n;
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final class z implements Runnable, us {
+    public boolean a;
+    public final /* synthetic */ zs b;
+    public final /* synthetic */ f70 c;
+    public final /* synthetic */ k0 d;
 
-    public z(l0 l0Var, String str, long j10, String str2, byte[] bArr, Utilities.Callback2 callback2) {
-        this.n = l0Var;
-        this.c = str;
-        this.d = j10;
-        this.e = str2;
-        this.f = bArr;
-        this.h = callback2;
+    public z(zs zsVar, f70 f70Var, k0 k0Var) {
+        this.b = zsVar;
+        this.c = f70Var;
+        this.d = k0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final synchronized void run() {
+    public final void a() {
         if (this.a) {
             return;
         }
-        this.b = this.n.b.emulateSend(this.c, this.d, this.e, this.f, new bi.m5(28, this, this.h));
+        k0 k0Var = this.d;
+        if (k0Var.e == null) {
+            return;
+        }
+        ArrayList arrayList = k0Var.G;
+        int size = arrayList.size();
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            if (((g0) obj).d) {
+                return;
+            }
+        }
+        run();
+    }
+
+    @Override // org.telegram.messenger.us
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        if (i10 == zs.a4) {
+            a();
+        }
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        if (this.a) {
+            return;
+        }
+        this.a = true;
+        org.telegram.messenger.i0.r(this);
+        this.b.n(this, zs.a4);
+        this.c.run();
     }
 }

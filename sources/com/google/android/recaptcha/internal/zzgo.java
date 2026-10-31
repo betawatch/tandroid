@@ -1,19 +1,18 @@
 package com.google.android.recaptcha.internal;
 
-import a8.ud;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import bd.i;
+import bd.j;
+import bd.q;
 import java.util.ArrayList;
 import java.util.List;
-import kd.g;
-import kd.o;
 import kotlin.jvm.internal.e;
-import kotlin.jvm.internal.i;
-import ud.l;
+import ld.l;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class zzgo extends SQLiteOpenHelper {
     public static final zzgn zza = new zzgn(null);
@@ -55,8 +54,8 @@ public final class zzgo extends SQLiteOpenHelper {
         if (list.isEmpty()) {
             return 0;
         }
-        return getWritableDatabase().delete("ce", "id IN ".concat(String.valueOf(g.h(list, ", ", "(", ")", new l() { // from class: com.google.android.recaptcha.internal.zzgm
-            @Override // ud.l
+        return getWritableDatabase().delete("ce", "id IN ".concat(String.valueOf(i.h(list, ", ", "(", ")", new l() { // from class: com.google.android.recaptcha.internal.zzgm
+            @Override // ld.l
             public final Object invoke(Object obj) {
                 zzgn zzgnVar = zzgo.zza;
                 return String.valueOf(((zzgp) obj).zza());
@@ -89,10 +88,10 @@ public final class zzgo extends SQLiteOpenHelper {
                     int i10 = query.getInt(query.getColumnIndexOrThrow("id"));
                     String string = query.getString(query.getColumnIndexOrThrow("ss"));
                     long j10 = query.getLong(query.getColumnIndexOrThrow("ts"));
-                    i.b(string);
+                    kotlin.jvm.internal.i.b(string);
                     arrayList.add(new zzgp(string, j10, i10));
                 } catch (Exception unused) {
-                    arrayList = o.a;
+                    arrayList = q.a;
                 }
             } finally {
                 query.close();
@@ -102,6 +101,6 @@ public final class zzgo extends SQLiteOpenHelper {
     }
 
     public final boolean zzf(zzgp zzgpVar) {
-        return zza(ud.a(zzgpVar)) == 1;
+        return zza(j.b(zzgpVar)) == 1;
     }
 }

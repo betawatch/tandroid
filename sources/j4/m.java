@@ -1,12 +1,12 @@
 package j4;
 
-import a8.yb;
-import c3.j0;
+import c3.k0;
+import v7.t6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class m {
-    public final j0 a;
+    public final k0 a;
     public boolean b;
     public boolean c;
     public boolean d;
@@ -15,8 +15,8 @@ public final class m {
     public long g;
     public long h;
 
-    public m(j0 j0Var) {
-        this.a = j0Var;
+    public m(k0 k0Var) {
+        this.a = k0Var;
     }
 
     public final void a(int i10, int i11, byte[] bArr) {
@@ -33,7 +33,7 @@ public final class m {
     }
 
     public final void b(int i10, long j10, boolean z10) {
-        yb.p(this.h != -9223372036854775807L);
+        t6.p(this.h != -9223372036854775807L);
         if (this.e == 182 && z10 && this.b) {
             this.a.c(this.h, this.d ? 1 : 0, (int) (j10 - this.g), i10, null);
         }

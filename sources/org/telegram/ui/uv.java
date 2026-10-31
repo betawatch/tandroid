@@ -1,132 +1,83 @@
 package org.telegram.ui;
 
-import android.content.SharedPreferences;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.ui.Components.UndoView;
+import android.view.View;
+import java.util.ArrayList;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class uv implements Runnable {
+public final /* synthetic */ class uv implements View.OnLongClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ey b;
+    public final /* synthetic */ ay b;
 
-    public /* synthetic */ uv(ey eyVar, int i10) {
+    public /* synthetic */ uv(ay ayVar, int i10) {
         this.a = i10;
-        this.b = eyVar;
+        this.b = ayVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
+    @Override // android.view.View.OnLongClickListener
+    public final boolean onLongClick(View view) {
+        int i10 = this.a;
+        ay ayVar = this.b;
+        switch (i10) {
             case 0:
-                ey eyVar = this.b;
-                mx mxVar = eyVar.C0;
-                if (mxVar != null && mxVar.A0) {
-                    mxVar.R(false);
+                ArrayList arrayList = ayVar.I2;
+                if (ayVar.getParentActivity() == null) {
                     break;
                 } else {
-                    eyVar.X.r.getText().clear();
-                    AndroidUtilities.hideKeyboard(eyVar.X.r);
-                    eyVar.X.r.clearFocus();
-                    eyVar.Y.b(false);
+                    boolean z10 = !arrayList.isEmpty();
+                    boolean z11 = true;
+                    for (int i11 = 0; i11 < arrayList.size(); i11++) {
+                        long longValue = ((Long) arrayList.get(i11)).longValue();
+                        if (z10 && longValue != ayVar.getUserConfig().e()) {
+                            z10 = false;
+                        }
+                        if (org.telegram.messenger.o5.C(longValue)) {
+                            z11 = false;
+                        }
+                        TLRPC.Chat L0 = ayVar.getMessagesController().L0(Long.valueOf(-longValue));
+                        if (L0 != null && !org.telegram.messenger.w3.B(L0)) {
+                            z11 = false;
+                        }
+                    }
+                    boolean z12 = ayVar.l4() && ayVar.w3();
+                    if (z12) {
+                        ArrayList arrayList2 = ayVar.D2;
+                        int size = arrayList2.size();
+                        int i12 = 0;
+                        while (true) {
+                            if (i12 < size) {
+                                Object obj = arrayList2.get(i12);
+                                i12++;
+                                if (((org.telegram.messenger.ef) obj).b()) {
+                                    z12 = false;
+                                }
+                            }
+                        }
+                    }
+                    ArrayList arrayList3 = ayVar.D2;
+                    boolean z13 = arrayList3 != null && arrayList3.size() > 1;
+                    org.telegram.ui.Components.z60 H = org.telegram.ui.Components.z60.H(ayVar, view);
+                    H.l(R.drawable.msg_sendfile, org.telegram.messenger.cd.L0(z13 ? 2131745652 : 2131745653, null), new fv(ayVar, 5), z12);
+                    H.c(R.drawable.input_notify_off, org.telegram.messenger.cd.L0(2131745600, null), new fv(ayVar, 6), false);
+                    H.l(R.drawable.msg_calendar2, org.telegram.messenger.cd.L0(z10 ? 2131745531 : 2131745876, null), new k2.v(26, ayVar, z10), z11);
+                    H.Z();
                     break;
                 }
+                break;
             case 1:
-                ey eyVar2 = this.b;
-                if (eyVar2.R0 != 10) {
-                    eyVar2.k4(false);
-                }
-                if (!eyVar2.L || !eyVar2.f4().I()) {
-                    eyVar2.F4(true, true);
-                    break;
-                } else {
-                    eyVar2.E0.h();
-                    break;
-                }
+                ay ayVar2 = this.b;
+                ayVar2.C4(ayVar2.I2, org.telegram.messenger.zs.p1, true, true, null);
                 break;
             case 2:
-                ey eyVar3 = this.b;
-                jh.f fVar = eyVar3.y1;
-                if (fVar != null) {
-                    fVar.d();
-                }
-                eyVar3.A3();
-                eyVar3.B3();
-                li.w1 w1Var = eyVar3.C1;
-                if (w1Var != null) {
-                    w1Var.setTranslationY(-eyVar3.v.d());
-                    break;
-                }
-                break;
-            case 3:
-                this.b.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.forceImportContactsStart, new Object[0]);
-                break;
-            case 4:
-                this.b.U3();
-                break;
-            case 5:
-                this.b.c5();
-                break;
-            case 6:
-                ey.E0(this.b);
-                break;
-            case 7:
-                MessagesController.getInstance(this.b.currentAccount).getMainSettings().edit().putBoolean("storyhint", false).commit();
-                break;
-            case 8:
-                this.b.getMessagesController().removeSuggestion(0L, "SETUP_LOGIN_EMAIL");
-                break;
-            case 9:
-                ey eyVar4 = this.b;
-                fi.v3 v3Var = eyVar4.q0;
-                if (v3Var != null) {
-                    v3Var.e(true);
-                }
-                eyVar4.presentFragment(new PremiumPreviewFragment(0, "stories"));
-                break;
-            case 10:
-                this.b.e0[0].d.l();
-                break;
-            case 11:
-                ey eyVar5 = this.b;
-                UndoView g42 = eyVar5.g4();
-                if (g42 != null) {
-                    g42.l(0L, 15, null, new ev(eyVar5, 26));
-                    break;
-                }
-                break;
-            case 12:
-                ey eyVar6 = this.b;
-                eyVar6.getClass();
-                SharedPreferences globalMainSettings = MessagesController.getGlobalMainSettings();
-                long j10 = globalMainSettings.getLong("cache_hint_period", 604800000L);
-                if (j10 <= 604800000) {
-                    j10 = 2592000000L;
-                }
-                globalMainSettings.edit().putLong("cache_hint_showafter", System.currentTimeMillis() + j10).putLong("cache_hint_period", j10).apply();
-                eyVar6.c5();
-                break;
-            case 13:
-                ey eyVar7 = this.b;
-                eyVar7.e0[0].a.requestLayout();
-                vw vwVar = eyVar7.G3;
-                cf1 cf1Var = (vwVar == null || !(vwVar.getFragment() instanceof cf1)) ? null : (cf1) eyVar7.G3.getFragment();
-                if (cf1Var != null) {
-                    cf1Var.B0();
-                }
-                eyVar7.O3(false);
-                eyVar7.a5();
-                mx mxVar2 = eyVar7.C0;
-                if (mxVar2 != null) {
-                    mxVar2.invalidate();
-                    break;
-                }
+                ayVar.A4(view);
                 break;
             default:
-                this.b.k5();
+                ayVar.getContactsController().B();
+                ayVar.V4();
                 break;
         }
+        return true;
     }
 }

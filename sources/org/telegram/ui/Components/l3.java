@@ -1,29 +1,22 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Path;
-import android.graphics.Region;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.View;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class l3 extends y9 {
-    public final Path G;
+public final class l3 extends e51 {
+    public final /* synthetic */ AlertDialog$Builder e;
 
-    public l3(Context context) {
-        super(context);
-        this.G = new Path();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public l3(String str, AlertDialog$Builder alertDialog$Builder) {
+        super(str, (yz0) null);
+        this.e = alertDialog$Builder;
     }
 
-    @Override // org.telegram.ui.Components.y9, android.view.View
-    public final void onDraw(Canvas canvas) {
-        canvas.save();
-        Path path = this.G;
-        path.rewind();
-        path.addCircle(AndroidUtilities.dp(54.0f), AndroidUtilities.dp(53.0f), AndroidUtilities.dp(14.0f), Path.Direction.CW);
-        canvas.clipPath(path, Region.Op.DIFFERENCE);
-        super.onDraw(canvas);
-        canvas.restore();
+    @Override // org.telegram.ui.Components.e51, android.text.style.URLSpan, android.text.style.ClickableSpan
+    public final void onClick(View view) {
+        this.e.a.N0.run();
+        super.onClick(view);
     }
 }

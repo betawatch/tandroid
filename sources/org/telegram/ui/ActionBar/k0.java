@@ -1,125 +1,75 @@
 package org.telegram.ui.ActionBar;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.ImageView;
-import java.util.ArrayList;
-import org.telegram.ui.Components.ca0;
-import org.telegram.ui.Components.yq;
-import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.fg1;
-import org.telegram.ui.os0;
+import android.transition.Transition;
+import android.widget.FrameLayout;
+import org.telegram.ui.Components.h10;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class k0 extends ImageView {
+public final class k0 implements Transition.TransitionListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ FrameLayout b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ k0(Object obj, Context context, int i10) {
-        super(context);
+    public /* synthetic */ k0(int i10, FrameLayout frameLayout) {
         this.a = i10;
-        this.b = obj;
+        this.b = frameLayout;
     }
 
-    @Override // android.view.View
-    public void draw(Canvas canvas) {
+    @Override // android.transition.Transition.TransitionListener
+    public final void onTransitionCancel(Transition transition) {
         switch (this.a) {
             case 0:
-                getBackground().draw(canvas);
-                super.draw(canvas);
+                ((t0) this.b).i0.e();
                 break;
             default:
-                super.draw(canvas);
+                ((h10) this.b).E.e();
                 break;
         }
     }
 
-    @Override // android.widget.ImageView, android.view.View
-    public void onDetachedFromWindow() {
+    @Override // android.transition.Transition.TransitionListener
+    public final void onTransitionEnd(Transition transition) {
         switch (this.a) {
             case 0:
-                w0 w0Var = (w0) this.b;
-                super.onDetachedFromWindow();
-                clearAnimation();
-                if (getTag() != null) {
-                    w0Var.s.setAlpha(1.0f);
-                    w0Var.s.setRotation(0.0f);
-                    w0Var.s.setScaleX(1.0f);
-                    w0Var.s.setScaleY(1.0f);
-                    break;
-                } else {
-                    w0Var.s.setVisibility(4);
-                    w0Var.s.setAlpha(0.0f);
-                    w0Var.s.setRotation(45.0f);
-                    w0Var.s.setScaleX(0.0f);
-                    w0Var.s.setScaleY(0.0f);
-                    break;
-                }
+                ((t0) this.b).i0.e();
+                break;
             default:
-                super.onDetachedFromWindow();
+                ((h10) this.b).E.e();
                 break;
         }
     }
 
-    @Override // android.view.View
-    public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+    @Override // android.transition.Transition.TransitionListener
+    public final void onTransitionPause(Transition transition) {
+        int i10 = this.a;
+    }
+
+    @Override // android.transition.Transition.TransitionListener
+    public final void onTransitionResume(Transition transition) {
+        int i10 = this.a;
+    }
+
+    @Override // android.transition.Transition.TransitionListener
+    public final void onTransitionStart(Transition transition) {
         switch (this.a) {
-            case 3:
-                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                accessibilityNodeInfo.setCheckable(true);
-                accessibilityNodeInfo.setChecked(((fg1) this.b).n.getTransformationMethod() == null);
+            case 0:
+                ((t0) this.b).i0.d();
                 break;
             default:
-                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+                ((h10) this.b).E.d();
                 break;
         }
     }
 
-    @Override // android.view.View
-    public void setAlpha(float f7) {
-        switch (this.a) {
-            case 1:
-                super.setAlpha(f7);
-                ((yq) this.b).x.invalidate();
-                break;
-            default:
-                super.setAlpha(f7);
-                break;
-        }
+    private final void a(Transition transition) {
     }
 
-    @Override // android.view.View
-    public void setTranslationY(float f7) {
-        switch (this.a) {
-            case 2:
-                super.setTranslationY(f7);
-                PhotoViewer photoViewer = (PhotoViewer) this.b;
-                ArrayList arrayList = photoViewer.h1;
-                if (arrayList != null) {
-                    int size = arrayList.size();
-                    int i10 = 0;
-                    while (i10 < size) {
-                        Object obj = arrayList.get(i10);
-                        i10++;
-                        ((fi.v3) obj).setTranslationY(f7);
-                    }
-                }
-                os0 os0Var = photoViewer.g1;
-                if (os0Var != null) {
-                    os0Var.setTranslationY(f7);
-                }
-                ca0 ca0Var = photoViewer.f1;
-                if (ca0Var != null) {
-                    ca0Var.setTranslationY(f7);
-                    break;
-                }
-                break;
-            default:
-                super.setTranslationY(f7);
-                break;
-        }
+    private final void b(Transition transition) {
+    }
+
+    private final void c(Transition transition) {
+    }
+
+    private final void d(Transition transition) {
     }
 }

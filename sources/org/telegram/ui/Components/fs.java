@@ -1,46 +1,47 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.GestureDetector;
-import android.view.MotionEvent;
-import android.view.ViewGroup;
-import android.widget.ImageView;
+import java.util.ArrayList;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.tl.TL_bots;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class fs extends ImageView {
-    public final /* synthetic */ int a = 1;
-    public Object b;
-    public final /* synthetic */ ViewGroup c;
+public final class fs {
+    public final int a;
+    public final bs b;
+    public boolean c;
+    public boolean d;
+    public boolean e;
+    public long f;
+    public String g;
+    public final ArrayList h = new ArrayList();
+    public boolean i = false;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public fs(hs hsVar, Context context, jg.s0 s0Var) {
-        super(context);
-        this.c = hsVar;
-        this.b = s0Var;
+    public fs(int i10, bs bsVar) {
+        this.a = i10;
+        this.b = bsVar;
     }
 
-    @Override // android.view.View
-    public boolean onTouchEvent(MotionEvent motionEvent) {
-        switch (this.a) {
-            case 0:
-                hs hsVar = (hs) this.c;
-                if ((motionEvent.getAction() == 1 || motionEvent.getAction() == 3) && (hsVar.n || hsVar.f)) {
-                    hsVar.n = false;
-                    hsVar.f = false;
-                    removeCallbacks(hsVar.r);
-                    removeCallbacks(hsVar.h);
-                }
-                super.onTouchEvent(motionEvent);
-                return ((GestureDetector) ((jg.s0) this.b).b).onTouchEvent(motionEvent);
-            default:
-                return super.onTouchEvent(motionEvent);
+    public final void a() {
+        if (this.c || this.e) {
+            return;
         }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public fs(gl0 gl0Var, Context context) {
-        super(context);
-        this.c = gl0Var;
+        this.c = true;
+        boolean z10 = this.d;
+        int i10 = this.a;
+        if (!z10) {
+            es esVar = new es(this, 0);
+            org.telegram.messenger.hs a02 = org.telegram.messenger.hs.a0(i10);
+            a02.a.c(new jg(this, a02, esVar, 4));
+            return;
+        }
+        TL_bots.getPopularAppBots getpopularappbots = new TL_bots.getPopularAppBots();
+        getpopularappbots.limit = 20;
+        String str = this.g;
+        if (str == null) {
+            str = "";
+        }
+        getpopularappbots.offset = str;
+        ConnectionsManager.getInstance(i10).sendRequest(getpopularappbots, new x1(this, 2));
     }
 }

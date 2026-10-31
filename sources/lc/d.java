@@ -1,357 +1,373 @@
 package lc;
 
-import com.google.firebase.messaging.p;
-import java.util.Arrays;
-import org.telegram.messenger.ImageReceiver;
+import e2.j0;
+import org.telegram.messenger.zs;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public abstract class d {
-    public static final int[][] a = {new int[]{1, 1, 1, 1, 1, 1, 1}, new int[]{1, 0, 0, 0, 0, 0, 1}, new int[]{1, 0, 1, 1, 1, 0, 1}, new int[]{1, 0, 1, 1, 1, 0, 1}, new int[]{1, 0, 1, 1, 1, 0, 1}, new int[]{1, 0, 0, 0, 0, 0, 1}, new int[]{1, 1, 1, 1, 1, 1, 1}};
-    public static final int[][] b = {new int[]{1, 1, 1, 1, 1}, new int[]{1, 0, 0, 0, 1}, new int[]{1, 0, 1, 0, 1}, new int[]{1, 0, 0, 0, 1}, new int[]{1, 1, 1, 1, 1}};
-    public static final int[][] c = {new int[]{-1, -1, -1, -1, -1, -1, -1}, new int[]{6, 18, -1, -1, -1, -1, -1}, new int[]{6, 22, -1, -1, -1, -1, -1}, new int[]{6, 26, -1, -1, -1, -1, -1}, new int[]{6, 30, -1, -1, -1, -1, -1}, new int[]{6, 34, -1, -1, -1, -1, -1}, new int[]{6, 22, 38, -1, -1, -1, -1}, new int[]{6, 24, 42, -1, -1, -1, -1}, new int[]{6, 26, 46, -1, -1, -1, -1}, new int[]{6, 28, 50, -1, -1, -1, -1}, new int[]{6, 30, 54, -1, -1, -1, -1}, new int[]{6, 32, 58, -1, -1, -1, -1}, new int[]{6, 34, 62, -1, -1, -1, -1}, new int[]{6, 26, 46, 66, -1, -1, -1}, new int[]{6, 26, 48, 70, -1, -1, -1}, new int[]{6, 26, 50, 74, -1, -1, -1}, new int[]{6, 30, 54, 78, -1, -1, -1}, new int[]{6, 30, 56, 82, -1, -1, -1}, new int[]{6, 30, 58, 86, -1, -1, -1}, new int[]{6, 34, 62, 90, -1, -1, -1}, new int[]{6, 28, 50, 72, 94, -1, -1}, new int[]{6, 26, 50, 74, 98, -1, -1}, new int[]{6, 30, 54, 78, 102, -1, -1}, new int[]{6, 28, 54, 80, 106, -1, -1}, new int[]{6, 32, 58, 84, 110, -1, -1}, new int[]{6, 30, 58, 86, 114, -1, -1}, new int[]{6, 34, 62, 90, 118, -1, -1}, new int[]{6, 26, 50, 74, 98, 122, -1}, new int[]{6, 30, 54, 78, 102, 126, -1}, new int[]{6, 26, 52, 78, 104, 130, -1}, new int[]{6, 30, 56, 82, 108, 134, -1}, new int[]{6, 34, 60, 86, 112, 138, -1}, new int[]{6, 30, 58, 86, 114, 142, -1}, new int[]{6, 34, 62, 90, 118, 146, -1}, new int[]{6, 30, 54, 78, 102, 126, ImageReceiver.DEFAULT_CROSSFADE_DURATION}, new int[]{6, 24, 50, 76, 102, 128, 154}, new int[]{6, 28, 54, 80, 106, 132, 158}, new int[]{6, 32, 58, 84, 110, 136, 162}, new int[]{6, 26, 54, 82, 110, 138, 166}, new int[]{6, 30, 58, 86, 114, 142, 170}};
-    public static final int[][] d = {new int[]{8, 0}, new int[]{8, 1}, new int[]{8, 2}, new int[]{8, 3}, new int[]{8, 4}, new int[]{8, 5}, new int[]{8, 7}, new int[]{8, 8}, new int[]{7, 8}, new int[]{5, 8}, new int[]{4, 8}, new int[]{3, 8}, new int[]{2, 8}, new int[]{1, 8}, new int[]{0, 8}};
+    public static final int[] a = {16, 17, 18, 0, 8, 7, 9, 6, 10, 5, 11, 4, 12, 3, 13, 2, 14, 1, 15};
+    public static final byte[] b = {65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 43, 47};
 
-    public static int a(b bVar, boolean z10) {
-        int i10 = bVar.b;
-        int i11 = bVar.c;
-        int i12 = z10 ? i11 : i10;
-        if (!z10) {
-            i10 = i11;
+    public static String a(byte[] bArr) {
+        int i10;
+        int i11;
+        int i12;
+        int i13;
+        if (bArr == 0) {
+            return null;
         }
-        byte[][] bArr = bVar.a;
-        int i13 = 0;
-        for (int i14 = 0; i14 < i12; i14++) {
-            byte b10 = -1;
-            int i15 = 0;
-            for (int i16 = 0; i16 < i10; i16++) {
-                byte b11 = z10 ? bArr[i14][i16] : bArr[i16][i14];
-                if (b11 == b10) {
-                    i15++;
-                } else {
-                    if (i15 >= 5) {
-                        i13 += i15 - 2;
+        int length = (((((bArr.length * 8) + 5) / 6) + 3) / 4) * 4;
+        StringBuilder sb2 = new StringBuilder(length);
+        int i14 = 0;
+        while (true) {
+            int i15 = i14 / 8;
+            if (bArr.length <= i15) {
+                i11 = -1;
+            } else {
+                int i16 = bArr.length - 1 == i15 ? 0 : bArr[i15 + 1];
+                int i17 = (i14 % 24) / 6;
+                if (i17 != 0) {
+                    if (i17 == 1) {
+                        i12 = (bArr[i15] << 4) & 48;
+                        i13 = (i16 >> 4) & 15;
+                    } else if (i17 == 2) {
+                        i12 = (bArr[i15] << 2) & 60;
+                        i13 = (i16 >> 6) & 3;
+                    } else if (i17 != 3) {
+                        i11 = 0;
+                    } else {
+                        i10 = bArr[i15];
                     }
-                    i15 = 1;
-                    b10 = b11;
+                    i11 = i12 | i13;
+                } else {
+                    i10 = bArr[i15] >> 2;
                 }
+                i11 = i10 & 63;
             }
-            if (i15 >= 5) {
-                i13 = (i15 - 2) + i13;
+            if (i11 < 0) {
+                break;
             }
+            sb2.append((char) b[i11]);
+            i14 += 6;
         }
-        return i13;
+        for (int length2 = sb2.length(); length2 < length; length2++) {
+            sb2.append('=');
+        }
+        return sb2.toString();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:88:0x022d  */
-    /* JADX WARN: Removed duplicated region for block: B:90:0x0234  */
-    /* JADX WARN: Removed duplicated region for block: B:91:0x0230  */
+    public static boolean b(String str) {
+        if (str == null || str.length() == 0) {
+            return false;
+        }
+        int length = str.length();
+        for (int i10 = 0; i10 < length; i10++) {
+            char charAt = str.charAt(i10);
+            if (charAt != '\t' && charAt != ' ' && charAt != '\"' && charAt != ',' && charAt != '/' && charAt != '{' && charAt != '}' && charAt != '(' && charAt != ')') {
+                switch (charAt) {
+                    case zs.v0 /* 58 */:
+                    case zs.w0 /* 59 */:
+                    case zs.x0 /* 60 */:
+                    case zs.y0 /* 61 */:
+                    case zs.z0 /* 62 */:
+                    case zs.A0 /* 63 */:
+                    case '@':
+                        break;
+                    default:
+                        switch (charAt) {
+                            case zs.c1 /* 91 */:
+                            case zs.d1 /* 92 */:
+                            case zs.e1 /* 93 */:
+                                break;
+                            default:
+                        }
+                }
+            }
+            return false;
+        }
+        return true;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:17:0x0052 A[LOOP:1: B:16:0x0050->B:17:0x0052, LOOP_END] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static void b(fc.a aVar, jc.c cVar, jc.f fVar, int i10, b bVar) {
+    public static void c(c5.x xVar, int[] iArr, int[] iArr2, j0 j0Var) {
+        int i10;
+        int p5;
+        int p9;
         int i11;
-        int i12;
-        byte[][] bArr;
-        int i13;
-        int i14;
-        int i15;
-        int i16;
-        int i17;
-        int i18;
-        int i19;
-        int i20;
-        byte[][] bArr2 = bVar.a;
-        int i21 = bVar.b;
-        int i22 = bVar.c;
-        for (byte[] bArr3 : bArr2) {
-            Arrays.fill(bArr3, (byte) -1);
-        }
-        int length = a[0].length;
-        e(0, 0, bVar);
-        int i23 = i21 - length;
-        e(i23, 0, bVar);
-        e(0, i23, bVar);
-        d(0, 7, bVar);
-        int i24 = i21 - 8;
-        d(i24, 7, bVar);
-        d(0, i24, bVar);
-        f(7, 0, bVar);
-        int i25 = i22 - 8;
-        f(i25, 0, bVar);
-        int i26 = i22 - 7;
-        f(7, i26, bVar);
-        if (bVar.a(8, i25) == 0) {
-            throw new p();
-        }
-        bVar.b(8, i25, 1);
-        int i27 = fVar.a;
-        if (i27 < 2) {
-            i11 = 0;
-            i12 = 1;
-        } else {
-            i11 = 0;
-            int[] iArr = c[i27 - 1];
-            i12 = 1;
-            int length2 = iArr.length;
-            int i28 = 0;
-            while (i28 < length2) {
-                int i29 = iArr[i28];
-                if (i29 >= 0) {
-                    int length3 = iArr.length;
-                    int i30 = 0;
-                    while (i30 < length3) {
-                        int i31 = iArr[i30];
-                        if (i31 >= 0 && g(bVar.a(i31, i29))) {
-                            int i32 = i31 - 2;
-                            int i33 = i29 - 2;
-                            bArr = bArr2;
-                            i13 = i21;
-                            int i34 = 0;
-                            while (true) {
-                                if (i34 >= 5) {
-                                    break;
-                                }
-                                int[] iArr2 = b[i34];
-                                int i35 = i34;
-                                int i36 = 0;
-                                for (int i37 = 5; i36 < i37; i37 = 5) {
-                                    int i38 = i36;
-                                    bVar.b(i32 + i36, i33 + i35, iArr2[i38]);
-                                    i36 = i38 + 1;
-                                    length3 = length3;
-                                }
-                                i34 = i35 + 1;
-                            }
-                        } else {
-                            bArr = bArr2;
-                            i13 = i21;
+        int i12 = 0;
+        while (i12 < iArr2.length) {
+            int m10 = j0Var.m(xVar, iArr);
+            if (m10 < 0 || m10 > 15) {
+                switch (m10) {
+                    case 16:
+                        i10 = iArr2[i12 - 1];
+                        p5 = xVar.p(iArr, 2) + 3;
+                        for (i11 = 0; i11 < p5; i11++) {
+                            iArr2[i12 + i11] = i10;
                         }
-                        i30++;
-                        bArr2 = bArr;
-                        i21 = i13;
-                        length3 = length3;
-                    }
+                        i12 += p5 - 1;
+                        break;
+                    case 17:
+                        p9 = xVar.p(iArr, 3) + 3;
+                        p5 = p9;
+                        i10 = 0;
+                        while (i11 < p5) {
+                        }
+                        i12 += p5 - 1;
+                        break;
+                    case 18:
+                        p9 = xVar.p(iArr, 7) + 11;
+                        p5 = p9;
+                        i10 = 0;
+                        while (i11 < p5) {
+                        }
+                        i12 += p5 - 1;
+                        break;
+                    default:
+                        throw new j6.l(String.format("[%s] Bad code length '%d' at the bit index '%d'.", d.class.getSimpleName(), Integer.valueOf(m10), iArr));
                 }
-                i28++;
-                bArr2 = bArr2;
-                i21 = i21;
-            }
-        }
-        byte[][] bArr4 = bArr2;
-        int i39 = i21;
-        int i40 = 8;
-        while (i40 < i24) {
-            int i41 = i40 + 1;
-            int i42 = i41 % 2;
-            if (g(bVar.a(i40, 6))) {
-                bVar.b(i40, 6, i42);
-            }
-            if (g(bVar.a(6, i40))) {
-                bVar.b(6, i40, i42);
-            }
-            i40 = i41;
-        }
-        fc.a aVar2 = new fc.a();
-        if (i10 < 0 || i10 >= 8) {
-            throw new p("Invalid mask pattern");
-        }
-        int i43 = (cVar.a << 3) | i10;
-        aVar2.b(i43, 5);
-        aVar2.b(c(i43, 1335), 10);
-        fc.a aVar3 = new fc.a();
-        aVar3.b(21522, 15);
-        if (aVar2.b != aVar3.b) {
-            throw new IllegalArgumentException("Sizes don't match");
-        }
-        int i44 = i11;
-        while (true) {
-            int[] iArr3 = aVar2.a;
-            if (i44 >= iArr3.length) {
-                break;
-            }
-            iArr3[i44] = iArr3[i44] ^ aVar3.a[i44];
-            i44++;
-        }
-        if (aVar2.b != 15) {
-            throw new p("should not happen but we got: " + aVar2.b);
-        }
-        int i45 = i11;
-        while (true) {
-            int i46 = aVar2.b;
-            if (i45 >= i46) {
-                break;
-            }
-            boolean d10 = aVar2.d((i46 - 1) - i45);
-            int[] iArr4 = d[i45];
-            int i47 = iArr4[i11];
-            byte[] bArr5 = bArr4[iArr4[i12]];
-            byte b10 = d10 ? (byte) 1 : (byte) 0;
-            bArr5[i47] = b10;
-            if (i45 < 8) {
-                i20 = (i39 - i45) - 1;
-                i19 = 8;
             } else {
-                i19 = (i45 - 8) + i26;
-                i20 = 8;
+                iArr2[i12] = m10;
             }
-            bArr4[i19][i20] = b10;
-            i45++;
-        }
-        if (i27 >= 7) {
-            fc.a aVar4 = new fc.a();
-            aVar4.b(i27, 6);
-            aVar4.b(c(i27, 7973), 12);
-            if (aVar4.b != 18) {
-                throw new p("should not happen but we got: " + aVar4.b);
-            }
-            int i48 = 17;
-            for (int i49 = i11; i49 < 6; i49++) {
-                for (int i50 = i11; i50 < 3; i50++) {
-                    boolean d11 = aVar4.d(i48);
-                    i48--;
-                    int i51 = (i22 - 11) + i50;
-                    byte[] bArr6 = bArr4[i51];
-                    byte b11 = d11 ? (byte) 1 : (byte) 0;
-                    bArr6[i49] = b11;
-                    bArr4[i49][i51] = b11;
-                }
-            }
-        }
-        int i52 = i39 - 1;
-        int i53 = i22 - 1;
-        int i54 = i11;
-        int i55 = -1;
-        while (i52 > 0) {
-            if (i52 == 6) {
-                i52--;
-            }
-            while (i53 >= 0 && i53 < i22) {
-                for (int i56 = i11; i56 < 2; i56++) {
-                    int i57 = i52 - i56;
-                    if (g(bVar.a(i57, i53))) {
-                        if (i54 < aVar.b) {
-                            boolean d12 = aVar.d(i54);
-                            i54++;
-                            i14 = d12;
-                        } else {
-                            i14 = i11;
-                        }
-                        if (i10 != -1) {
-                            switch (i10) {
-                                case 0:
-                                    i15 = i53 + i57;
-                                    i16 = i15 & 1;
-                                    if ((i16 != 0 ? i12 : i11) != 0) {
-                                        i14 = ~i14;
-                                        break;
-                                    }
-                                    break;
-                                case 1:
-                                    i16 = i53 & 1;
-                                    if ((i16 != 0 ? i12 : i11) != 0) {
-                                    }
-                                    break;
-                                case 2:
-                                    i16 = i57 % 3;
-                                    if ((i16 != 0 ? i12 : i11) != 0) {
-                                    }
-                                    break;
-                                case 3:
-                                    i16 = (i53 + i57) % 3;
-                                    if ((i16 != 0 ? i12 : i11) != 0) {
-                                    }
-                                    break;
-                                case 4:
-                                    i16 = ((i57 / 3) + (i53 / 2)) & 1;
-                                    if ((i16 != 0 ? i12 : i11) != 0) {
-                                    }
-                                    break;
-                                case 5:
-                                    int i58 = i53 * i57;
-                                    i16 = (i58 % 3) + (i58 & 1);
-                                    if ((i16 != 0 ? i12 : i11) != 0) {
-                                    }
-                                    break;
-                                case 6:
-                                    int i59 = i53 * i57;
-                                    i17 = i59 & 1;
-                                    i18 = i59 % 3;
-                                    i15 = i18 + i17;
-                                    i16 = i15 & 1;
-                                    if ((i16 != 0 ? i12 : i11) != 0) {
-                                    }
-                                    break;
-                                case 7:
-                                    i18 = (i53 * i57) % 3;
-                                    i17 = (i53 + i57) & 1;
-                                    i15 = i18 + i17;
-                                    i16 = i15 & 1;
-                                    if ((i16 != 0 ? i12 : i11) != 0) {
-                                    }
-                                    break;
-                                default:
-                                    throw new IllegalArgumentException(ic.a.i(i10, "Invalid mask pattern: "));
-                            }
-                        }
-                        bArr4[i53][i57] = (byte) i14;
-                    }
-                }
-                i53 += i55;
-            }
-            i55 = -i55;
-            i53 += i55;
-            i52 -= 2;
-        }
-        if (i54 == aVar.b) {
-            return;
-        }
-        throw new p("Not all bits consumed: " + i54 + '/' + aVar.b);
-    }
-
-    public static int c(int i10, int i11) {
-        if (i11 == 0) {
-            throw new IllegalArgumentException("0 polynomial");
-        }
-        int numberOfLeadingZeros = Integer.numberOfLeadingZeros(i11);
-        int i12 = 32 - numberOfLeadingZeros;
-        int i13 = i10 << (31 - numberOfLeadingZeros);
-        while (32 - Integer.numberOfLeadingZeros(i13) >= i12) {
-            i13 ^= i11 << ((32 - Integer.numberOfLeadingZeros(i13)) - i12);
-        }
-        return i13;
-    }
-
-    public static void d(int i10, int i11, b bVar) {
-        for (int i12 = 0; i12 < 8; i12++) {
-            int i13 = i10 + i12;
-            if (!g(bVar.a(i13, i11))) {
-                throw new p();
-            }
-            bVar.b(i13, i11, 0);
+            i12++;
         }
     }
 
-    public static void e(int i10, int i11, b bVar) {
-        for (int i12 = 0; i12 < 7; i12++) {
-            int[] iArr = a[i12];
-            for (int i13 = 0; i13 < 7; i13++) {
-                bVar.b(i10 + i13, i11 + i12, iArr[i13]);
-            }
+    public static int d(c5.x xVar, int[] iArr, j0 j0Var) {
+        int i10;
+        int m10 = j0Var.m(xVar, iArr);
+        int i11 = 2;
+        int i12 = 5;
+        switch (m10) {
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+                return m10 + 1;
+            case 4:
+                i11 = 1;
+                return xVar.p(iArr, i11) + i12;
+            case 5:
+                i11 = 1;
+                i12 = 7;
+                return xVar.p(iArr, i11) + i12;
+            case 6:
+                i12 = 9;
+                return xVar.p(iArr, i11) + i12;
+            case 7:
+                i12 = 13;
+                return xVar.p(iArr, i11) + i12;
+            case 8:
+                i12 = 17;
+                i11 = 3;
+                return xVar.p(iArr, i11) + i12;
+            case 9:
+                i12 = 25;
+                i11 = 3;
+                return xVar.p(iArr, i11) + i12;
+            case 10:
+                i12 = 33;
+                i11 = 4;
+                return xVar.p(iArr, i11) + i12;
+            case 11:
+                i12 = 49;
+                i11 = 4;
+                return xVar.p(iArr, i11) + i12;
+            case 12:
+                i10 = 65;
+                i11 = 5;
+                i12 = i10;
+                return xVar.p(iArr, i11) + i12;
+            case 13:
+                i10 = 97;
+                i11 = 5;
+                i12 = i10;
+                return xVar.p(iArr, i11) + i12;
+            case 14:
+                i12 = zs.N1;
+                i11 = 6;
+                return xVar.p(iArr, i11) + i12;
+            case 15:
+                i12 = zs.X2;
+                i11 = 6;
+                return xVar.p(iArr, i11) + i12;
+            case 16:
+                i12 = zs.g4;
+                i11 = 7;
+                return xVar.p(iArr, i11) + i12;
+            case 17:
+                i12 = 385;
+                i11 = 7;
+                return xVar.p(iArr, i11) + i12;
+            case 18:
+                i12 = 513;
+                i11 = 8;
+                return xVar.p(iArr, i11) + i12;
+            case 19:
+                i12 = 769;
+                i11 = 8;
+                return xVar.p(iArr, i11) + i12;
+            case 20:
+                i12 = 1025;
+                i11 = 9;
+                return xVar.p(iArr, i11) + i12;
+            case 21:
+                i12 = 1537;
+                i11 = 9;
+                return xVar.p(iArr, i11) + i12;
+            case 22:
+                i12 = 2049;
+                i11 = 10;
+                return xVar.p(iArr, i11) + i12;
+            case 23:
+                i12 = 3073;
+                i11 = 10;
+                return xVar.p(iArr, i11) + i12;
+            case 24:
+                i12 = 4097;
+                i11 = 11;
+                return xVar.p(iArr, i11) + i12;
+            case 25:
+                i12 = 6145;
+                i11 = 11;
+                return xVar.p(iArr, i11) + i12;
+            case 26:
+                i12 = 8193;
+                i11 = 12;
+                return xVar.p(iArr, i11) + i12;
+            case 27:
+                i12 = 12289;
+                i11 = 12;
+                return xVar.p(iArr, i11) + i12;
+            case 28:
+                i12 = 16385;
+                i11 = 13;
+                return xVar.p(iArr, i11) + i12;
+            case 29:
+                i12 = 24577;
+                i11 = 13;
+                return xVar.p(iArr, i11) + i12;
+            default:
+                throw new j6.l(String.format("[%s] Bad distance code '%d' at the bit index '%d'.", d.class.getSimpleName(), Integer.valueOf(m10), Integer.valueOf(iArr[0])));
         }
     }
 
-    public static void f(int i10, int i11, b bVar) {
-        for (int i12 = 0; i12 < 7; i12++) {
-            int i13 = i11 + i12;
-            if (!g(bVar.a(i10, i13))) {
-                throw new p();
-            }
-            bVar.b(i10, i13, 0);
+    public static void e(c5.x xVar, int[] iArr, j0[] j0VarArr) {
+        int p5 = xVar.p(iArr, 5) + zs.g4;
+        int p9 = xVar.p(iArr, 5) + 1;
+        int p10 = xVar.p(iArr, 4) + 4;
+        int[] iArr2 = new int[19];
+        for (int i10 = 0; i10 < p10; i10++) {
+            iArr2[a[i10]] = (byte) xVar.p(iArr, 3);
         }
+        j0 j0Var = new j0(iArr2);
+        int[] iArr3 = new int[p5];
+        c(xVar, iArr, iArr3, j0Var);
+        j0 j0Var2 = new j0(iArr3);
+        int[] iArr4 = new int[p9];
+        c(xVar, iArr, iArr4, j0Var);
+        j0 j0Var3 = new j0(iArr4);
+        j0VarArr[0] = j0Var2;
+        j0VarArr[1] = j0Var3;
     }
 
-    public static boolean g(int i10) {
-        return i10 == -1;
+    public static int f(c5.x xVar, int[] iArr, int i10) {
+        int i11;
+        int i12 = 1;
+        switch (i10) {
+            case zs.g4 /* 257 */:
+            case zs.h4 /* 258 */:
+            case zs.i4 /* 259 */:
+            case zs.j4 /* 260 */:
+            case zs.k4 /* 261 */:
+            case zs.l4 /* 262 */:
+            case zs.m4 /* 263 */:
+            case zs.n4 /* 264 */:
+                return i10 - 254;
+            case zs.o4 /* 265 */:
+                i11 = 11;
+                return xVar.p(iArr, i12) + i11;
+            case zs.p4 /* 266 */:
+                i11 = 13;
+                return xVar.p(iArr, i12) + i11;
+            case zs.q4 /* 267 */:
+                i11 = 15;
+                return xVar.p(iArr, i12) + i11;
+            case zs.r4 /* 268 */:
+                i11 = 17;
+                return xVar.p(iArr, i12) + i11;
+            case zs.s4 /* 269 */:
+                i11 = 19;
+                i12 = 2;
+                return xVar.p(iArr, i12) + i11;
+            case zs.t4 /* 270 */:
+                i11 = 23;
+                i12 = 2;
+                return xVar.p(iArr, i12) + i11;
+            case zs.u4 /* 271 */:
+                i11 = 27;
+                i12 = 2;
+                return xVar.p(iArr, i12) + i11;
+            case zs.v4 /* 272 */:
+                i11 = 31;
+                i12 = 2;
+                return xVar.p(iArr, i12) + i11;
+            case zs.w4 /* 273 */:
+                i11 = 35;
+                i12 = 3;
+                return xVar.p(iArr, i12) + i11;
+            case zs.x4 /* 274 */:
+                i11 = 43;
+                i12 = 3;
+                return xVar.p(iArr, i12) + i11;
+            case zs.y4 /* 275 */:
+                i11 = 51;
+                i12 = 3;
+                return xVar.p(iArr, i12) + i11;
+            case zs.z4 /* 276 */:
+                i11 = 59;
+                i12 = 3;
+                return xVar.p(iArr, i12) + i11;
+            case zs.A4 /* 277 */:
+                i11 = 67;
+                i12 = 4;
+                return xVar.p(iArr, i12) + i11;
+            case zs.B4 /* 278 */:
+                i11 = 83;
+                i12 = 4;
+                return xVar.p(iArr, i12) + i11;
+            case zs.C4 /* 279 */:
+                i11 = 99;
+                i12 = 4;
+                return xVar.p(iArr, i12) + i11;
+            case zs.D4 /* 280 */:
+                i11 = zs.A1;
+                i12 = 4;
+                return xVar.p(iArr, i12) + i11;
+            case zs.E4 /* 281 */:
+                i11 = zs.P1;
+                i12 = 5;
+                return xVar.p(iArr, i12) + i11;
+            case zs.F4 /* 282 */:
+                i11 = zs.t2;
+                i12 = 5;
+                return xVar.p(iArr, i12) + i11;
+            case zs.G4 /* 283 */:
+                i11 = zs.Z2;
+                i12 = 5;
+                return xVar.p(iArr, i12) + i11;
+            case zs.H4 /* 284 */:
+                i11 = 227;
+                i12 = 5;
+                return xVar.p(iArr, i12) + i11;
+            case zs.I4 /* 285 */:
+                return zs.h4;
+            default:
+                throw new j6.l(String.format("[%s] Bad literal/length code '%d' at the bit index '%d'.", d.class.getSimpleName(), Integer.valueOf(i10), Integer.valueOf(iArr[0])));
+        }
     }
 }

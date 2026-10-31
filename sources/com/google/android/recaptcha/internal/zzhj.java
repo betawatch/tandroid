@@ -1,13 +1,13 @@
 package com.google.android.recaptcha.internal;
 
-import a8.jd;
-import jd.i;
-import ld.c;
-import md.a;
+import ad.j;
+import cd.c;
+import dd.a;
+import l9.b;
+import ld.p;
 import org.telegram.tgnet.TLObject;
-import ud.p;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class zzhj {
     public static final Object zza(zzhh zzhhVar, p pVar, c cVar) {
@@ -31,9 +31,9 @@ public final class zzhj {
                 Object obj = zzhiVar.zza;
                 Object obj2 = a.a;
                 i10 = zzhiVar.zzb;
-                i iVar = i.a;
+                j jVar = j.a;
                 if (i10 != 0) {
-                    jd.b(obj);
+                    b.b(obj);
                     zzhiVar.zzb = 1;
                     if (zzhfVar.zza(zzhkVar, zzhiVar) == obj2) {
                         return obj2;
@@ -42,24 +42,24 @@ public final class zzhj {
                     if (i10 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    jd.b(obj);
+                    b.b(obj);
                 }
-                return iVar;
+                return jVar;
             }
         }
         zzhiVar = new zzhi(cVar);
         Object obj3 = zzhiVar.zza;
         Object obj22 = a.a;
         i10 = zzhiVar.zzb;
-        i iVar2 = i.a;
+        j jVar2 = j.a;
         if (i10 != 0) {
         }
-        return iVar2;
+        return jVar2;
     }
 
     public static final Object zzc(zzgr zzgrVar, zzhg zzhgVar, c cVar) {
         Object zza = zzhgVar.zza(zzgrVar.zza(), cVar);
-        return zza == a.a ? zza : i.a;
+        return zza == a.a ? zza : j.a;
     }
 
     public static final Object zzd(int i10, int i11, p pVar, c cVar) {

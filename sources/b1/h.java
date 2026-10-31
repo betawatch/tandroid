@@ -1,18 +1,18 @@
 package b1;
 
-import v0.i;
+import w0.i;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class h implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ i b;
-    public final /* synthetic */ w0.i c;
+    public final /* synthetic */ v0.h b;
+    public final /* synthetic */ i c;
 
-    public /* synthetic */ h(i iVar, w0.i iVar2, int i10) {
+    public /* synthetic */ h(v0.h hVar, i iVar, int i10) {
         this.a = i10;
-        this.b = iVar;
-        this.c = iVar2;
+        this.b = hVar;
+        this.c = iVar;
     }
 
     @Override // java.lang.Runnable
@@ -21,12 +21,12 @@ public final /* synthetic */ class h implements Runnable {
             case 0:
                 Object obj = this.c;
                 if (obj == null) {
-                    obj = new w0.h("No provider data returned", 2);
+                    obj = new w0.h(2, "No provider data returned");
                 }
-                this.b.onError(obj);
+                this.b.g(obj);
                 break;
             default:
-                this.b.onError(this.c);
+                this.b.g(this.c);
                 break;
         }
     }

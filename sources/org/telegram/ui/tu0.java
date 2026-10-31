@@ -1,58 +1,112 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.graphics.Canvas;
+import android.graphics.Shader;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.GradientDrawable;
+import android.view.MotionEvent;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class tu0 extends org.telegram.ui.Components.v60 {
-    public final /* synthetic */ uu0 d;
+public final class tu0 extends FrameLayout {
+    public org.telegram.ui.Components.e9 a;
+    public org.telegram.ui.Cells.q1 b;
+    public Drawable c;
+    public Drawable d;
+    public org.telegram.ui.Components.q30 e;
+    public org.telegram.messenger.jj f;
 
-    public tu0(uu0 uu0Var) {
-        this.d = uu0Var;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        this.e.e(this.b, null, 0, 0, false);
     }
 
-    @Override // org.telegram.ui.Components.kp0
-    public final CharSequence d() {
-        StringBuilder sb2 = new StringBuilder();
-        sb2.append(LocaleController.getString("AccDescrVideoQuality", R.string.AccDescrVideoQuality));
-        if (this.d.s.Z7 > 0) {
-            sb2.append(", ");
-            sb2.append(this.d.s.Y7 + 1);
-            sb2.append(" / ");
-            sb2.append(this.d.s.Z7);
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        return false;
+    }
+
+    @Override // android.view.View
+    public final void invalidate() {
+        super.invalidate();
+        this.b.invalidate();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        org.telegram.ui.Components.e9 e9Var = this.a;
+        if (e9Var != null) {
+            e9Var.dispose();
+            this.a = null;
         }
-        sb2.append(", ");
-        sb2.append(this.d.h);
-        sb2.append(" – ");
-        sb2.append(this.d.n);
-        return sb2.toString();
     }
 
-    @Override // org.telegram.ui.Components.v60
-    public final int i() {
-        return Math.max(0, this.d.s.Z7 - 1);
-    }
-
-    @Override // org.telegram.ui.Components.v60
-    public final int j() {
-        return this.d.s.Y7;
-    }
-
-    @Override // org.telegram.ui.Components.v60
-    public final void k(int i10) {
-        int max;
-        if (this.d.s.Z7 > 0 && (max = Math.max(0, Math.min(this.d.s.Z7 - 1, i10))) != this.d.s.Y7) {
-            uu0 uu0Var = this.d;
-            uu0Var.r = uu0Var.s.Y7;
-            this.d.s.Y7 = max;
-            this.d.s.S0();
-            this.d.invalidate();
-            int i11 = this.d.s.Y7;
-            uu0 uu0Var2 = this.d;
-            if (i11 != uu0Var2.r) {
-                uu0Var2.s.s2(1);
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        Drawable drawable = this.d;
+        Drawable t02 = org.telegram.ui.ActionBar.t6.t0();
+        if (t02 != null && this.c != t02) {
+            org.telegram.ui.Components.e9 e9Var = this.a;
+            if (e9Var != null) {
+                e9Var.dispose();
+                this.a = null;
             }
+            this.c = t02;
         }
+        Drawable drawable2 = this.c;
+        if ((drawable2 instanceof ColorDrawable) || (drawable2 instanceof GradientDrawable) || (drawable2 instanceof org.telegram.ui.Components.jb0)) {
+            drawable2.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
+            Drawable drawable3 = this.c;
+            if (drawable3 instanceof org.telegram.ui.Components.f9) {
+                this.a = ((org.telegram.ui.Components.f9) drawable3).c(canvas, this);
+            } else {
+                drawable3.draw(canvas);
+            }
+        } else if (drawable2 instanceof BitmapDrawable) {
+            if (((BitmapDrawable) drawable2).getTileModeX() == Shader.TileMode.REPEAT) {
+                canvas.save();
+                float f7 = 2.0f / org.telegram.messenger.i0.p;
+                canvas.scale(f7, f7);
+                this.c.setBounds(0, 0, (int) Math.ceil(getMeasuredWidth() / f7), (int) Math.ceil(getMeasuredHeight() / f7));
+            } else {
+                int measuredHeight = getMeasuredHeight();
+                float max = Math.max(getMeasuredWidth() / this.c.getIntrinsicWidth(), measuredHeight / this.c.getIntrinsicHeight());
+                int ceil = (int) Math.ceil(this.c.getIntrinsicWidth() * max);
+                int ceil2 = (int) Math.ceil(this.c.getIntrinsicHeight() * max);
+                int measuredWidth = (getMeasuredWidth() - ceil) / 2;
+                int i10 = (measuredHeight - ceil2) / 2;
+                canvas.save();
+                canvas.clipRect(0, 0, ceil, getMeasuredHeight());
+                this.c.setBounds(measuredWidth, i10, ceil + measuredWidth, ceil2 + i10);
+            }
+            this.c.draw(canvas);
+            canvas.restore();
+        } else {
+            super.onDraw(canvas);
+        }
+        if ((getParent() instanceof org.telegram.ui.Components.tk0) && ((org.telegram.ui.Components.tk0) getParent()).b1()) {
+            return;
+        }
+        drawable.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
+        drawable.draw(canvas);
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        return false;
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        return false;
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchSetPressed(boolean z10) {
     }
 }

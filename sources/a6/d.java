@@ -1,22 +1,94 @@
 package a6;
 
-import com.google.android.gms.common.api.Scope;
-import java.util.Comparator;
+import android.os.AsyncTask;
+import com.google.android.gms.auth.api.signin.internal.SignInHubActivity;
+import java.util.Set;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Semaphore;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final /* synthetic */ class d implements Comparator {
-    public static final /* synthetic */ d b = new d(0);
-    public final /* synthetic */ int a;
+public final class d {
+    public w1.a a;
+    public boolean b = false;
+    public boolean c = false;
+    public boolean d = true;
+    public boolean e = false;
+    public Executor f;
+    public volatile x1.a g;
+    public volatile x1.a h;
+    public final Semaphore i;
+    public final Set j;
 
-    public /* synthetic */ d(int i10) {
-        this.a = i10;
+    public d(SignInHubActivity signInHubActivity, Set set) {
+        signInHubActivity.getApplicationContext();
+        this.i = new Semaphore(0);
+        this.j = set;
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        switch (this.a) {
+    public final void a() {
+        if (this.g != null) {
+            boolean z10 = this.b;
+            if (!z10) {
+                if (z10) {
+                    c();
+                } else {
+                    this.e = true;
+                }
+            }
+            if (this.h != null) {
+                this.g.getClass();
+                this.g = null;
+                return;
+            }
+            this.g.getClass();
+            x1.a aVar = this.g;
+            aVar.c.set(true);
+            if (aVar.a.cancel(false)) {
+                this.h = this.g;
+            }
+            this.g = null;
         }
-        return ((Scope) obj).b.compareTo(((Scope) obj2).b);
+    }
+
+    public final void b() {
+        if (this.h != null || this.g == null) {
+            return;
+        }
+        this.g.getClass();
+        if (this.f == null) {
+            this.f = AsyncTask.THREAD_POOL_EXECUTOR;
+        }
+        x1.a aVar = this.g;
+        Executor executor = this.f;
+        if (aVar.b == 1) {
+            aVar.b = 2;
+            executor.execute(aVar.a);
+            return;
+        }
+        int c10 = m1.j.c(aVar.b);
+        if (c10 == 1) {
+            throw new IllegalStateException("Cannot execute task: the task is already running.");
+        }
+        if (c10 == 2) {
+            throw new IllegalStateException("Cannot execute task: the task has already been executed (a task can be executed only once)");
+        }
+        throw new IllegalStateException("We should never reach this state");
+    }
+
+    public final void c() {
+        a();
+        this.g = new x1.a(this);
+        b();
+    }
+
+    public final String toString() {
+        StringBuilder sb2 = new StringBuilder(64);
+        Class<?> cls = getClass();
+        sb2.append(cls.getSimpleName());
+        sb2.append("{");
+        sb2.append(Integer.toHexString(System.identityHashCode(cls)));
+        sb2.append(" id=0}");
+        return sb2.toString();
     }
 }

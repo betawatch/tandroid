@@ -1,165 +1,175 @@
 package org.telegram.ui.Components;
 
-import android.text.TextUtils;
-import java.util.TreeSet;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_bots;
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.view.View;
+import android.view.ViewConfiguration;
+import android.view.ViewGroup;
+import android.widget.EditText;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class lr implements Runnable {
-    public final /* synthetic */ h2 E;
-    public final /* synthetic */ org.telegram.ui.ActionBar.k3 F;
-    public final /* synthetic */ boolean[] a;
-    public final /* synthetic */ int[] b;
-    public final /* synthetic */ ai.h1 c;
-    public final /* synthetic */ String[] d;
-    public final /* synthetic */ fi.d e;
-    public final /* synthetic */ org.telegram.ui.Cells.g3 f;
-    public final /* synthetic */ TreeSet h;
-    public final /* synthetic */ kg n;
-    public final /* synthetic */ org.telegram.ui.Cells.i9 r;
-    public final /* synthetic */ org.telegram.ui.ActionBar.u6 s;
-    public final /* synthetic */ int[] v;
-    public final /* synthetic */ Runnable[] w;
-    public final /* synthetic */ int[] x;
-    public final /* synthetic */ int y;
+public final class lr extends ViewGroup {
+    public static final /* synthetic */ int x = 0;
+    public final ir a;
+    public EditText b;
+    public final View[] c;
+    public View d;
+    public boolean e;
+    public boolean f;
+    public final hr h;
+    public boolean n;
+    public final hr r;
+    public int s;
+    public int w;
 
-    public /* synthetic */ lr(boolean[] zArr, int[] iArr, ai.h1 h1Var, String[] strArr, fi.d dVar, org.telegram.ui.Cells.g3 g3Var, TreeSet treeSet, kg kgVar, org.telegram.ui.Cells.i9 i9Var, org.telegram.ui.ActionBar.u6 u6Var, int[] iArr2, Runnable[] runnableArr, int[] iArr3, int i10, h2 h2Var, org.telegram.ui.ActionBar.k3 k3Var) {
-        this.a = zArr;
-        this.b = iArr;
-        this.c = h1Var;
-        this.d = strArr;
-        this.e = dVar;
-        this.f = g3Var;
-        this.h = treeSet;
-        this.n = kgVar;
-        this.r = i9Var;
-        this.s = u6Var;
-        this.v = iArr2;
-        this.w = runnableArr;
-        this.x = iArr3;
-        this.y = i10;
-        this.E = h2Var;
-        this.F = k3Var;
+    public lr(Context context) {
+        super(context);
+        String str;
+        this.c = new View[12];
+        int i10 = 0;
+        this.h = new hr(this, 0);
+        this.r = new hr(this, 1);
+        int i11 = 0;
+        while (i11 < 11) {
+            if (i11 != 9) {
+                switch (i11) {
+                    case 1:
+                        str = "ABC";
+                        break;
+                    case 2:
+                        str = "DEF";
+                        break;
+                    case 3:
+                        str = "GHI";
+                        break;
+                    case 4:
+                        str = "JKL";
+                        break;
+                    case 5:
+                        str = "MNO";
+                        break;
+                    case 6:
+                        str = "PQRS";
+                        break;
+                    case 7:
+                        str = "TUV";
+                        break;
+                    case 8:
+                        str = "WXYZ";
+                        break;
+                    case 9:
+                    default:
+                        str = "";
+                        break;
+                    case 10:
+                        str = "+";
+                        break;
+                }
+                String valueOf = String.valueOf(i11 != 10 ? i11 + 1 : 0);
+                this.c[i11] = new kr(context, valueOf, str);
+                this.c[i11].setOnClickListener(new org.telegram.ui.ud(28, this, valueOf));
+                addView(this.c[i11]);
+            }
+            i11++;
+        }
+        ir irVar = new ir(this, context, new m2.t(context, new jr(this, ViewConfiguration.get(context).getScaledTouchSlop(), i10)));
+        this.a = irVar;
+        irVar.setImageResource(R.drawable.msg_clear_input);
+        org.telegram.ui.ActionBar.a7.t(irVar, org.telegram.ui.ActionBar.t6.G6, null, PorterDuff.Mode.SRC_ATOP);
+        int L = org.telegram.messenger.i0.L(11.0f);
+        irVar.setPadding(L, L, L, L);
+        irVar.setOnClickListener(new bh.c(7));
+        this.c[11] = irVar;
+        addView(irVar);
+        while (true) {
+            View[] viewArr = this.c;
+            if (i10 >= viewArr.length) {
+                return;
+            }
+            View view = viewArr[i10];
+            if (view != null) {
+                w7.e6.b(view, 0.02f, 1.2f);
+                a(i10, view);
+            }
+            i10++;
+        }
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        final boolean[] zArr = this.a;
-        if (zArr[0] || this.b[0] >= 0) {
-            return;
+    public static void a(int i10, View view) {
+        boolean z10 = i10 < 3;
+        int i11 = i10 % 3;
+        boolean z11 = i11 == 0;
+        boolean z12 = i11 == 2;
+        boolean z13 = i10 > 8;
+        int i12 = org.telegram.ui.ActionBar.t6.i6;
+        int x02 = org.telegram.ui.ActionBar.t6.x0(null, i12, false);
+        int o10 = i0.b.o(org.telegram.ui.ActionBar.t6.x0(null, i12, false), 30);
+        float f7 = 12.0f;
+        int L = org.telegram.messenger.i0.L((z11 && z10) ? 24.0f : 12.0f);
+        int L2 = org.telegram.messenger.i0.L((z12 && z10) ? 24.0f : 12.0f);
+        int L3 = org.telegram.messenger.i0.L((z12 && z13) ? 24.0f : 12.0f);
+        if (z11 && z13) {
+            f7 = 24.0f;
         }
-        this.c.run();
-        final String[] strArr = this.d;
-        strArr[0] = null;
-        final fi.d dVar = this.e;
-        dVar.setLoading(false);
-        dVar.setEnabled(false);
-        String charSequence = this.f.getText().toString();
-        StringBuilder u10 = a1.g.u(charSequence);
-        boolean a2 = pr.a(charSequence, "bot");
-        final TreeSet treeSet = this.h;
-        u10.append((a2 || pr.c(charSequence, treeSet) != null) ? "" : "bot");
-        final String sb2 = u10.toString();
-        boolean isEmpty = TextUtils.isEmpty(charSequence);
-        final kg kgVar = this.n;
-        if (isEmpty) {
-            kgVar.run();
-            return;
-        }
-        int length = sb2.length();
-        final org.telegram.ui.Cells.i9 i9Var = this.r;
-        final org.telegram.ui.ActionBar.u6 u6Var = this.s;
-        if (length < 4 || sb2.length() > 32) {
-            i9Var.setText(LocaleController.getString(sb2.length() < 4 ? R.string.UsernameInvalidShort : R.string.UsernameInvalidLong));
-            org.telegram.ui.ActionBar.f7.V(i9Var.getTextView(), org.telegram.ui.ActionBar.y6.q7, u6Var);
-            return;
-        }
-        i9Var.setText(LocaleController.getString(R.string.UsernameChecking));
-        org.telegram.ui.ActionBar.f7.V(i9Var.getTextView(), org.telegram.ui.ActionBar.y6.B6, u6Var);
-        final int[] iArr = this.v;
-        final int i10 = iArr[0];
-        final Runnable[] runnableArr = this.w;
-        final int[] iArr2 = this.x;
-        final int i11 = this.y;
-        final h2 h2Var = this.E;
-        final org.telegram.ui.ActionBar.k3 k3Var = this.F;
-        Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.ir
-            @Override // java.lang.Runnable
-            public final void run() {
-                runnableArr[0] = null;
-                final boolean[] zArr2 = zArr;
-                if (zArr2[0]) {
-                    return;
-                }
-                final int[] iArr3 = iArr;
-                int i12 = iArr3[0];
-                final int i13 = i10;
-                if (i13 != i12) {
-                    return;
-                }
-                TL_bots.checkUsername checkusername = new TL_bots.checkUsername();
-                final String str = sb2;
-                checkusername.username = str;
-                final int i14 = i11;
-                ConnectionsManager connectionsManager = ConnectionsManager.getInstance(i14);
-                org.telegram.messenger.a aVar = new org.telegram.messenger.a();
-                final int[] iArr4 = iArr2;
-                final String[] strArr2 = strArr;
-                final fi.d dVar2 = dVar;
-                final kg kgVar2 = kgVar;
-                final TreeSet treeSet2 = treeSet;
-                final h2 h2Var2 = h2Var;
-                final org.telegram.ui.ActionBar.u6 u6Var2 = u6Var;
-                final org.telegram.ui.Cells.i9 i9Var2 = i9Var;
-                final org.telegram.ui.ActionBar.k3 k3Var2 = k3Var;
-                iArr4[0] = connectionsManager.sendRequestTyped(checkusername, aVar, new Utilities.Callback2() { // from class: org.telegram.ui.Components.kr
-                    @Override // org.telegram.messenger.Utilities.Callback2
-                    public final void run(Object obj, Object obj2) {
-                        TLRPC.Bool bool = (TLRPC.Bool) obj;
-                        TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
-                        if (zArr2[0]) {
-                            return;
-                        }
-                        if (i13 != iArr3[0]) {
-                            return;
-                        }
-                        iArr4[0] = -1;
-                        boolean z10 = bool instanceof TLRPC.TL_boolTrue;
-                        String str2 = str;
-                        fi.d dVar3 = dVar2;
-                        if (z10) {
-                            strArr2[0] = str2;
-                            dVar3.setEnabled(true);
-                            kgVar2.run();
-                            return;
-                        }
-                        String str3 = tL_error == null ? "USERNAME_OCCUPIED" : tL_error.text;
-                        int i15 = i14;
-                        TreeSet treeSet3 = treeSet2;
-                        h2 h2Var3 = h2Var2;
-                        org.telegram.ui.ActionBar.u6 u6Var3 = u6Var2;
-                        CharSequence d = pr.d(i15, str2, treeSet3, str3, h2Var3, u6Var3);
-                        CharSequence string = d != null ? d : LocaleController.getString(R.string.CreateManagedBotUsernameCheckFailed);
-                        org.telegram.ui.Cells.i9 i9Var3 = i9Var2;
-                        i9Var3.setText(string);
-                        org.telegram.ui.ActionBar.f7.V(i9Var3.getTextView(), org.telegram.ui.ActionBar.y6.q7, u6Var3);
-                        if (d != null || tL_error == null) {
-                            return;
-                        }
-                        dVar3.setEnabled(true);
-                        org.telegram.ui.d3.t(k3Var2.topBulletinContainer, u6Var3, tL_error, false);
-                    }
-                });
+        org.telegram.ui.Cells.y k02 = org.telegram.ui.ActionBar.t6.k0(L, L2, L3, org.telegram.messenger.i0.L(f7), x02, o10, o10);
+        org.telegram.ui.ActionBar.w6 N = org.telegram.ui.ActionBar.a7.N(i12);
+        org.telegram.ui.ActionBar.w6 h = org.telegram.ui.ActionBar.a7.h(i12, 30);
+        view.setBackground(k02);
+        org.telegram.ui.ActionBar.a7.k(view, k02, N, h, null);
+    }
+
+    @Override // android.view.View
+    public final boolean canScrollHorizontally(int i10) {
+        return true;
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        int y3 = org.telegram.messenger.z20.y(32.0f, getWidth(), 3);
+        int y10 = org.telegram.messenger.z20.y(42.0f, getHeight(), 4);
+        int i14 = 0;
+        while (true) {
+            View[] viewArr = this.c;
+            if (i14 >= viewArr.length) {
+                return;
             }
-        };
-        runnableArr[0] = runnable;
-        AndroidUtilities.runOnUIThread(runnable, 300L);
+            int L = org.telegram.messenger.i0.L(6.0f) + y3;
+            int L2 = org.telegram.messenger.i0.L(10.0f) + (L * (i14 % 3));
+            int L3 = org.telegram.messenger.i0.L(6.0f) + y10;
+            int L4 = org.telegram.messenger.i0.L(10.0f) + (L3 * (i14 / 3));
+            View view = viewArr[i14];
+            if (view != null) {
+                view.layout(L2, L4, L2 + y3, L4 + y10);
+            }
+            i14++;
+        }
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        setMeasuredDimension(View.MeasureSpec.getSize(i10), View.MeasureSpec.getSize(i11));
+        int y3 = org.telegram.messenger.z20.y(32.0f, getWidth(), 3);
+        int y10 = org.telegram.messenger.z20.y(42.0f, getHeight(), 4);
+        for (View view : this.c) {
+            if (view != null) {
+                view.measure(View.MeasureSpec.makeMeasureSpec(y3, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(y10, TLObject.FLAG_30));
+            }
+        }
+    }
+
+    public void setDispatchBackWhenEmpty(boolean z10) {
+        this.e = z10;
+    }
+
+    public void setEditText(EditText editText) {
+        this.b = editText;
+        this.e = false;
+    }
+
+    public void setViewToFindFocus(View view) {
+        this.d = view;
     }
 }

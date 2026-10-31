@@ -1,47 +1,32 @@
 package org.telegram.messenger;
 
-import java.text.Collator;
-import java.util.Comparator;
-import org.telegram.messenger.ContactsController;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final /* synthetic */ class q1 implements Comparator {
+public final /* synthetic */ class q1 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Collator b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.x1[] b;
 
-    public /* synthetic */ q1(Collator collator, int i10) {
+    public /* synthetic */ q1(org.telegram.ui.ActionBar.x1[] x1VarArr, int i10) {
         this.a = i10;
-        this.b = collator;
+        this.b = x1VarArr;
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        int lambda$buildContactsSectionsArrays$44;
-        int lambda$mergePhonebookAndTelegramContacts$38;
-        int lambda$mergePhonebookAndTelegramContacts$39;
-        int lambda$processLoadedContacts$31;
-        int lambda$processLoadedContacts$32;
-        int lambda$updateUnregisteredContacts$42;
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                lambda$buildContactsSectionsArrays$44 = ContactsController.lambda$buildContactsSectionsArrays$44(this.b, (String) obj, (String) obj2);
-                return lambda$buildContactsSectionsArrays$44;
-            case 1:
-                lambda$mergePhonebookAndTelegramContacts$38 = ContactsController.lambda$mergePhonebookAndTelegramContacts$38(this.b, obj, obj2);
-                return lambda$mergePhonebookAndTelegramContacts$38;
-            case 2:
-                lambda$mergePhonebookAndTelegramContacts$39 = ContactsController.lambda$mergePhonebookAndTelegramContacts$39(this.b, (String) obj, (String) obj2);
-                return lambda$mergePhonebookAndTelegramContacts$39;
-            case 3:
-                lambda$processLoadedContacts$31 = ContactsController.lambda$processLoadedContacts$31(this.b, (String) obj, (String) obj2);
-                return lambda$processLoadedContacts$31;
-            case 4:
-                lambda$processLoadedContacts$32 = ContactsController.lambda$processLoadedContacts$32(this.b, (String) obj, (String) obj2);
-                return lambda$processLoadedContacts$32;
+                org.telegram.ui.ActionBar.x1[] x1VarArr = this.b;
+                org.telegram.ui.ActionBar.x1 x1Var = new org.telegram.ui.ActionBar.x1(3, w0.b, null);
+                x1VarArr[0] = x1Var;
+                x1Var.r(500L);
+                break;
             default:
-                lambda$updateUnregisteredContacts$42 = ContactsController.lambda$updateUnregisteredContacts$42(this.b, (ContactsController.Contact) obj, (ContactsController.Contact) obj2);
-                return lambda$updateUnregisteredContacts$42;
+                org.telegram.ui.ActionBar.x1 x1Var2 = this.b[0];
+                if (x1Var2 != null) {
+                    x1Var2.dismiss();
+                    break;
+                }
+                break;
         }
     }
 }

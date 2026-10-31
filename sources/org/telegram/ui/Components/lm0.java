@@ -1,32 +1,64 @@
 package org.telegram.ui.Components;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import org.telegram.tgnet.TLObject;
+
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class lm0 {
-    public static final lm0 a;
-    public static final lm0 b;
-    public static final /* synthetic */ lm0[] c;
+public final class lm0 extends EditTextBoldCursor {
+    public final w4 G1;
+    public int H1;
+    public final e6 I1;
+    public final /* synthetic */ org.telegram.ui.ActionBar.p6 J1;
 
-    /* JADX INFO: Fake field, exist only in values array */
-    lm0 EF0;
-
-    static {
-        lm0 lm0Var = new lm0("FULL_BACKGROUND", 0);
-        lm0 lm0Var2 = new lm0("SECTION_COLOR_BACKGROUND", 1);
-        lm0 lm0Var3 = new lm0("OPTIMIZED_BACKGROUND", 2);
-        a = lm0Var3;
-        lm0 lm0Var4 = new lm0("DRAW_VERTICES", 3);
-        b = lm0Var4;
-        c = new lm0[]{lm0Var, lm0Var2, lm0Var3, lm0Var4};
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public lm0(Context context, org.telegram.ui.ActionBar.p6 p6Var) {
+        super(context);
+        this.J1 = p6Var;
+        this.G1 = new w4(this);
+        e6 e6Var = new e6(false, true, true);
+        this.I1 = e6Var;
+        e6Var.n(0.2f, 160L, gr.h);
+        e6Var.w(org.telegram.messenger.i0.L(15.33f));
+        e6Var.setCallback(this);
+        e6Var.b = 5;
     }
 
-    public static lm0 valueOf(String str) {
-        return (lm0) Enum.valueOf(lm0.class, str);
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        int a2 = this.G1.a(org.telegram.ui.ActionBar.t6.w0(this.H1 < 0 ? org.telegram.ui.ActionBar.t6.p7 : org.telegram.ui.ActionBar.t6.P5, this.J1), false);
+        e6 e6Var = this.I1;
+        e6Var.u(a2);
+        e6Var.setBounds(getScrollX(), 0, getWidth() + getScrollX(), getHeight());
+        e6Var.draw(canvas);
     }
 
-    public static lm0[] values() {
-        return (lm0[]) c.clone();
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.i0.L(36.0f), TLObject.FLAG_30));
+    }
+
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.qt, android.widget.TextView
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        super.onTextChanged(charSequence, i10, i11, i12);
+        e6 e6Var = this.I1;
+        if (e6Var != null) {
+            this.H1 = 12 - charSequence.length();
+            e6Var.a();
+            String str = "";
+            if (this.H1 <= 4) {
+                str = "" + this.H1;
+            }
+            e6Var.t(str, true, true);
+        }
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public final boolean verifyDrawable(Drawable drawable) {
+        return drawable == this.I1 || super.verifyDrawable(drawable);
     }
 }

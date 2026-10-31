@@ -1,32 +1,17 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-import org.telegram.messenger.MediaDataController;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final /* synthetic */ class k7 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ MediaDataController.KeywordResultCallback b;
-    public final /* synthetic */ ArrayList c;
-    public final /* synthetic */ String d;
+public final class k7 {
+    public long a;
+    public long b;
 
-    public /* synthetic */ k7(MediaDataController.KeywordResultCallback keywordResultCallback, ArrayList arrayList, String str, int i10) {
-        this.a = i10;
-        this.b = keywordResultCallback;
-        this.c = arrayList;
-        this.d = str;
+    public k7(long j10, long j11) {
+        this.a = j10;
+        this.b = j11;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.run(this.c, this.d);
-                break;
-            default:
-                this.b.run(this.c, this.d);
-                break;
-        }
+    public final String toString() {
+        return "Range{start=" + this.a + ", end=" + this.b + '}';
     }
 }

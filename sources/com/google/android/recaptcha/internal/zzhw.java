@@ -1,14 +1,14 @@
 package com.google.android.recaptcha.internal;
 
-import a8.jd;
-import ld.c;
-import md.a;
-import nd.i;
-import ud.p;
+import cd.c;
+import dd.a;
+import ed.j;
+import l9.b;
+import ld.p;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-final class zzhw extends i implements p {
+final class zzhw extends j implements p {
     Object zza;
     int zzb;
     final /* synthetic */ zzib zzc;
@@ -24,16 +24,16 @@ final class zzhw extends i implements p {
         this.zze = str2;
     }
 
-    @Override // nd.a
+    @Override // ed.a
     public final c create(Object obj, c cVar) {
         zzhw zzhwVar = new zzhw(this.zzc, this.zzd, this.zze, cVar);
         zzhwVar.zzf = obj;
         return zzhwVar;
     }
 
-    @Override // ud.p
+    @Override // ld.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzhw) create((zzhk) obj, (c) obj2)).invokeSuspend(jd.i.a);
+        return ((zzhw) create((zzhk) obj, (c) obj2)).invokeSuspend(ad.j.a);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:35:0x0087, code lost:
@@ -51,7 +51,7 @@ final class zzhw extends i implements p {
     /* JADX WARN: Type inference failed for: r1v2, types: [java.lang.Object] */
     /* JADX WARN: Type inference failed for: r1v25 */
     /* JADX WARN: Type inference failed for: r1v26 */
-    @Override // nd.a
+    @Override // ed.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -66,7 +66,7 @@ final class zzhw extends i implements p {
         a aVar = a.a;
         ?? r12 = this.zzb;
         if (r12 == 0) {
-            jd.b(obj);
+            b.b(obj);
             zzhk zzhkVar6 = (zzhk) this.zzf;
             zzib zzibVar = this.zzc;
             String str2 = this.zzd;
@@ -82,14 +82,14 @@ final class zzhw extends i implements p {
         if (r12 != 1) {
             if (r12 == 2) {
                 zzhk zzhkVar7 = (zzhk) this.zzf;
-                jd.b(obj);
+                b.b(obj);
                 r12 = zzhkVar7;
                 return (String) obj;
             }
             if (r12 == 3) {
                 zzhk zzhkVar8 = (zzhk) this.zza;
                 zzhkVar = (zzhk) this.zzf;
-                jd.b(obj);
+                b.b(obj);
                 zzhkVar2 = zzhkVar8;
                 this.zzf = zzhkVar;
                 this.zza = null;
@@ -111,19 +111,19 @@ final class zzhw extends i implements p {
             if (r12 != 4) {
                 if (r12 != 5) {
                     String str5 = (String) this.zzf;
-                    jd.b(obj);
+                    b.b(obj);
                     return str5;
                 }
                 zzhkVar3 = (zzhk) this.zza;
                 str = (String) this.zzf;
-                jd.b(obj);
+                b.b(obj);
                 this.zzf = str;
                 this.zza = null;
                 this.zzb = 6;
                 return zzhj.zzb(zzhkVar3, (zzhf) obj, this) == aVar ? str : aVar;
             }
             zzhkVar3 = (zzhk) this.zzf;
-            jd.b(obj);
+            b.b(obj);
             zzib zzibVar22 = this.zzc;
             String str32 = this.zzd;
             String str42 = (String) obj;
@@ -144,7 +144,7 @@ final class zzhw extends i implements p {
         zzhk zzhkVar9 = (zzhk) this.zza;
         zzhk zzhkVar10 = (zzhk) this.zzf;
         try {
-            jd.b(obj);
+            b.b(obj);
             zzhkVar4 = zzhkVar9;
             zzhkVar5 = zzhkVar10;
         } catch (Exception unused) {

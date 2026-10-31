@@ -1,37 +1,13 @@
 package l5;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class b implements ka.d {
+public final class b implements ja.d {
     public static final b a = new b();
-    public static final ka.c b = ka.c.c("sdkVersion");
-    public static final ka.c c = ka.c.c("model");
-    public static final ka.c d = ka.c.c("hardware");
-    public static final ka.c e = ka.c.c("device");
-    public static final ka.c f = ka.c.c("product");
-    public static final ka.c g = ka.c.c("osBuild");
-    public static final ka.c h = ka.c.c("manufacturer");
-    public static final ka.c i = ka.c.c("fingerprint");
-    public static final ka.c j = ka.c.c("locale");
-    public static final ka.c k = ka.c.c("country");
-    public static final ka.c l = ka.c.c("mccMnc");
-    public static final ka.c m = ka.c.c("applicationBuild");
+    public static final ja.c b = new ja.c("storageMetrics", i0.a.o(i0.a.n(ma.e.class, new ma.a(1))));
 
-    @Override // ka.a
+    @Override // ja.a
     public final void a(Object obj, Object obj2) {
-        ka.e eVar = (ka.e) obj2;
-        h hVar = (h) ((a) obj);
-        eVar.a(b, hVar.a);
-        eVar.a(c, hVar.b);
-        eVar.a(d, hVar.c);
-        eVar.a(e, hVar.d);
-        eVar.a(f, hVar.e);
-        eVar.a(g, hVar.f);
-        eVar.a(h, hVar.g);
-        eVar.a(i, hVar.h);
-        eVar.a(j, hVar.i);
-        eVar.a(k, hVar.j);
-        eVar.a(l, hVar.k);
-        eVar.a(m, hVar.l);
+        ((ja.e) obj2).d(b, ((o5.b) obj).a);
     }
 }

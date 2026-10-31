@@ -1,35 +1,47 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.view.ViewPropertyAnimator;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class ps extends ig.t1 {
-    public final /* synthetic */ ContactsActivity K;
+public final /* synthetic */ class ps implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ContactsActivity b;
 
-    public ps(ContactsActivity contactsActivity, Context context, a0.h hVar, boolean z10, boolean z11, boolean z12) {
-        this.K = contactsActivity;
-        this.d = new ArrayList();
-        this.e = new ArrayList();
-        this.H = new ArrayList();
-        this.c = context;
-        this.h = hVar;
-        this.r = z10;
-        this.s = z11;
-        this.x = 0;
-        this.v = z12;
-        this.w = true;
-        ig.a2 a2Var = new ig.a2(true);
-        this.f = a2Var;
-        a2Var.a = new ig.q1(this);
+    public /* synthetic */ ps(ContactsActivity contactsActivity, int i10) {
+        this.a = i10;
+        this.b = contactsActivity;
     }
 
-    @Override // ig.t1
-    public final void F() {
-        if (this.y || this.f.e() || h() != 0) {
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                ContactsActivity contactsActivity = this.b;
+                fe.f fVar = contactsActivity.a;
+                fVar.c(contactsActivity.r ? 0.0f : 1.0f);
+                ss ssVar = contactsActivity.b;
+                float f7 = fVar.f;
+                ArrayList arrayList = ssVar.N;
+                ssVar.L = f7;
+                for (int i10 = 0; i10 < arrayList.size(); i10++) {
+                    ((org.telegram.ui.Cells.u4) arrayList.get(i10)).setLetterProgress(f7);
+                }
+                contactsActivity.b.Y(contactsActivity.r ? 1 : 2, false);
+                contactsActivity.d.v0(0);
+                ViewPropertyAnimator withEndAction = contactsActivity.d.animate().alpha(1.0f).setDuration(220L).setInterpolator(org.telegram.ui.Components.gr.h).withEndAction(new ps(contactsActivity, 1));
+                contactsActivity.e0 = withEndAction;
+                withEndAction.start();
+                if (contactsActivity.r) {
+                    fVar.e = 80L;
+                    fVar.a(1.0f);
+                    break;
+                }
+                break;
+            default:
+                this.b.e0 = null;
+                break;
         }
-        this.K.c.e(false, true);
     }
 }

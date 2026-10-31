@@ -1,69 +1,54 @@
 package org.telegram.ui.Wallet;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
-import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.wc;
-import org.telegram.ui.wn;
+import android.content.Context;
+import android.text.SpannableStringBuilder;
+import android.view.View;
+import android.widget.TextView;
+import org.telegram.messenger.cd;
+import org.telegram.ui.Components.a51;
+import org.telegram.ui.Components.p51;
+import org.telegram.ui.Components.tk0;
+import org.telegram.ui.Components.u51;
+import org.telegram.ui.Components.u80;
+import org.telegram.ui.Components.z41;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class r8 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ i9 b;
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final class r8 extends z41 {
+    public static final /* synthetic */ int b = 0;
 
-    public /* synthetic */ r8(i9 i9Var, int i10) {
-        this.a = i10;
-        this.b = i9Var;
+    static {
+        z41.h(new r8());
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        EditTextBoldCursor editTextBoldCursor;
-        switch (this.a) {
-            case 0:
-                i9 i9Var = this.b;
-                if (i9Var.I && (editTextBoldCursor = i9Var.H) != null && editTextBoldCursor.isAttachedToWindow() && i9Var.H.hasWindowFocus()) {
-                    i9Var.H.requestFocus();
-                    if (AndroidUtilities.showKeyboard(i9Var.H)) {
-                        i9Var.I = false;
-                        break;
-                    }
-                }
-                break;
-            case 1:
-                i9 i9Var2 = this.b;
-                float f7 = i9Var2.b0;
-                if (f7 < 1.0f && i9Var2.a0 == null) {
-                    o1.j jVar = new o1.j(new ac.a(f7));
-                    i9Var2.a0 = jVar;
-                    o1.k kVar = new o1.k(1.0f);
-                    kVar.a(0.55f);
-                    kVar.b(65.0f);
-                    jVar.u = kVar;
-                    i9Var2.a0.e(0.001f);
-                    i9Var2.a0.b(new z2(i9Var2, 2));
-                    i9Var2.a0.a(new h6(i9Var2, 1));
-                    i9Var2.a0.h();
-                    break;
-                }
-                break;
-            case 2:
-                this.b.d0.setLoading(false);
-                break;
-            case 3:
-                this.b.d0.setLoading(false);
-                break;
-            case 4:
-                this.b.s0();
-                break;
-            case 5:
-                i9 i9Var3 = this.b;
-                i9Var3.presentFragment(wn.ea(i9Var3.f.id));
-                break;
-            default:
-                org.telegram.messenger.t.q(R.string.WalletAddressCopiedBulletin, wc.b0(this.b), R.raw.copy, 36);
-                break;
+    @Override // org.telegram.ui.Components.z41
+    public final void b(View view, a51 a51Var, boolean z10, p51 p51Var, u51 u51Var) {
+        s8 s8Var = (s8) view;
+        String charSequence = a51Var.l.toString();
+        long j10 = a51Var.B;
+        int i10 = a51Var.z;
+        boolean z11 = a51Var.q;
+        TextView textView = s8Var.c;
+        TextView textView2 = s8Var.b;
+        textView2.setText(k8.b0(charSequence));
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
+        if (j10 < 0) {
+            spannableStringBuilder.append((CharSequence) cd.L0(2131748789, null));
+            spannableStringBuilder.setSpan(new u80(org.telegram.messenger.i0.L(35.0f), textView), 0, spannableStringBuilder.length(), 33);
+        } else {
+            spannableStringBuilder.append((CharSequence) k0.s(j10, false));
         }
+        if (i10 > 0) {
+            spannableStringBuilder = new SpannableStringBuilder(cd.V(null, null, 2131743076, spannableStringBuilder, cd.Q(i10)));
+        }
+        textView.setText(spannableStringBuilder);
+        textView2.setAlpha(z11 ? 0.5f : 1.0f);
+        textView.setAlpha(z11 ? 0.5f : 1.0f);
+        s8Var.d.setAlpha(z11 ? 0.5f : 1.0f);
+    }
+
+    @Override // org.telegram.ui.Components.z41
+    public final View d(Context context, tk0 tk0Var, int i10, org.telegram.ui.ActionBar.p6 p6Var) {
+        return new s8(context, p6Var);
     }
 }

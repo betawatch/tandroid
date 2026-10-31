@@ -1,45 +1,41 @@
 package w7;
 
-import java.util.Iterator;
-import java.util.Map;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class a extends l9 {
-    public final transient a8.m c;
-    public final transient Object[] d;
-    public final transient int e = 1;
+public final class a implements d {
+    public final int a;
 
-    public a(a8.m mVar, Object[] objArr) {
-        this.c = mVar;
-        this.d = objArr;
+    public a(int i10) {
+        this.a = i10;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean contains(Object obj) {
-        if (obj instanceof Map.Entry) {
-            Map.Entry entry = (Map.Entry) obj;
-            Object key = entry.getKey();
-            Object value = entry.getValue();
-            if (value != null && value.equals(this.c.get(key))) {
-                return true;
-            }
+    @Override // java.lang.annotation.Annotation
+    public final Class annotationType() {
+        return d.class;
+    }
+
+    @Override // java.lang.annotation.Annotation
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        return false;
+        if (!(obj instanceof d)) {
+            return false;
+        }
+        if (this.a != ((a) ((d) obj)).a) {
+            return false;
+        }
+        Object obj2 = c.a;
+        return obj2.equals(obj2);
     }
 
-    @Override // w7.h9
-    public final int h(Object[] objArr) {
-        return p().h(objArr);
+    @Override // java.lang.annotation.Annotation
+    public final int hashCode() {
+        return (this.a ^ 14552422) + (c.a.hashCode() ^ 2041407134);
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
-    public final /* synthetic */ Iterator iterator() {
-        return p().listIterator(0);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final int size() {
-        return this.e;
+    @Override // java.lang.annotation.Annotation
+    public final String toString() {
+        return "@com.google.firebase.encoders.proto.Protobuf(tag=" + this.a + "intEncoding=" + c.a + ')';
     }
 }

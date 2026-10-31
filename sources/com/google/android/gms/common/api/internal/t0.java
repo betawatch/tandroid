@@ -1,39 +1,32 @@
 package com.google.android.gms.common.api.internal;
 
-import a8.ba;
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
+import java.util.Set;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class t0 extends BroadcastReceiver {
-    public Context a;
-    public final ba b;
+public final class t0 implements n6.b {
+    public final com.google.android.gms.common.api.c a;
+    public final b b;
+    public n6.h c = null;
+    public Set d = null;
+    public boolean e = false;
+    public final /* synthetic */ h f;
 
-    public t0(ba baVar) {
-        this.b = baVar;
+    public t0(h hVar, com.google.android.gms.common.api.c cVar, b bVar) {
+        this.f = hVar;
+        this.a = cVar;
+        this.b = bVar;
     }
 
-    public final synchronized void a() {
-        try {
-            Context context = this.a;
-            if (context != null) {
-                context.unregisterReceiver(this);
-            }
-            this.a = null;
-        } catch (Throwable th2) {
-            throw th2;
-        }
+    @Override // n6.b
+    public final void a(k6.a aVar) {
+        this.f.y.post(new s0(this, aVar, 0));
     }
 
-    @Override // android.content.BroadcastReceiver
-    public final void onReceive(Context context, Intent intent) {
-        Uri data = intent.getData();
-        if ("com.google.android.gms".equals(data != null ? data.getSchemeSpecificPart() : null)) {
-            this.b.a();
-            a();
+    public final void b(k6.a aVar) {
+        q0 q0Var = (q0) this.f.s.get(this.b);
+        if (q0Var != null) {
+            q0Var.n(aVar);
         }
     }
 }

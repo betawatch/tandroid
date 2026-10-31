@@ -2,16 +2,16 @@ package c1;
 
 import w0.i;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ e b;
+    public final /* synthetic */ d b;
     public final /* synthetic */ i c;
 
-    public /* synthetic */ a(e eVar, i iVar, int i10) {
+    public /* synthetic */ a(d dVar, i iVar, int i10) {
         this.a = i10;
-        this.b = eVar;
+        this.b = dVar;
         this.c = iVar;
     }
 
@@ -19,13 +19,13 @@ public final /* synthetic */ class a implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.e().onError(this.c);
+                this.b.e().g(this.c);
                 break;
             case 1:
-                this.b.e().onError(this.c);
+                this.b.e().g(this.c);
                 break;
             default:
-                this.b.e().onError(this.c);
+                this.b.e().g(this.c);
                 break;
         }
     }

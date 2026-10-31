@@ -2,10 +2,10 @@ package f2;
 
 import e2.x;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class a implements hb.n {
-    public final String a;
+public final class a {
+    public String a;
 
     public /* synthetic */ a(String str) {
         this.a = str;
@@ -27,16 +27,11 @@ public final class a implements hb.n {
             }
             str = "dav1";
         }
-        StringBuilder u10 = a1.g.u(str);
-        u10.append(i10 < 10 ? ".0" : ".");
-        u10.append(i10);
-        u10.append(A2 < 10 ? ".0" : ".");
-        u10.append(A2);
-        return new a(u10.toString());
-    }
-
-    @Override // hb.n
-    public Object U1() {
-        throw new fb.j(this.a);
+        StringBuilder t10 = a1.g.t(str);
+        t10.append(i10 < 10 ? ".0" : ".");
+        t10.append(i10);
+        t10.append(A2 < 10 ? ".0" : ".");
+        t10.append(A2);
+        return new a(t10.toString());
     }
 }

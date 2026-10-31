@@ -1,66 +1,168 @@
 package sg;
 
-import org.telegram.ui.pt0;
-import org.telegram.ui.zq0;
+import android.animation.ValueAnimator;
+import android.content.Context;
+import android.graphics.Paint;
+import android.os.Build;
+import android.text.InputFilter;
+import android.text.SpannableStringBuilder;
+import android.view.ActionMode;
+import android.view.GestureDetector;
+import android.view.Menu;
+import android.view.MotionEvent;
+import bi.g6;
+import java.util.HashSet;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.cd;
+import org.telegram.messenger.f8;
+import org.telegram.messenger.zs;
+import org.telegram.ui.ActionBar.a7;
+import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.p6;
+import org.telegram.ui.ActionBar.t6;
+import org.telegram.ui.Components.mt;
+import org.telegram.ui.ns0;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class d0 implements rg.b1 {
-    public final /* synthetic */ zq0 a;
-    public final /* synthetic */ pt0 b;
+public abstract class d0 extends mt implements k6 {
+    public final p6 Y1;
+    public final m2.t Z1;
+    public Runnable a2;
+    public int b2;
 
-    public d0(pt0 pt0Var, zq0 zq0Var) {
-        this.b = pt0Var;
-        this.a = zq0Var;
+    public d0(int i10, Context context, p6 p6Var) {
+        super(context, p6Var);
+        this.Y1 = p6Var;
+        this.Z1 = new m2.t(getContext(), new c0());
+        setBackground(null);
+        setIncludeFontPadding(true);
+        int i11 = Build.VERSION.SDK_INT;
+        setShowSoftInputOnFocus(false);
+        setSingleLine(false);
+        setMaxLines(50);
+        this.b2 = i10;
+        setFilters(new InputFilter[]{new InputFilter.LengthFilter(i10)});
+        setTextSize(1, 22.0f);
+        setGravity(80);
+        setPadding(org.telegram.messenger.i0.L(18.0f), org.telegram.messenger.i0.L(4.0f), org.telegram.messenger.i0.L(18.0f), org.telegram.messenger.i0.L(12.0f));
+        a7.V(this, t6.Ie, p6Var);
+        a7.H(this, t6.Vc, p6Var);
+        a7.D(this, t6.ig, p6Var);
+        int i12 = t6.Je;
+        a7.m(this, 34, i12, p6Var);
+        a7.E(this, i12, p6Var);
+        a7.m(this, 30, t6.Ke, p6Var);
+        a7.m(this, 36, t6.jg, p6Var);
+        if (i11 >= 28) {
+            setFallbackLineSpacing(false);
+        }
+        setOnFocusChangeListener(new g6((l) this, 7));
+        setTextIsSelectable(true);
+        setLongClickable(false);
+        setFocusableInTouchMode(false);
     }
 
-    @Override // rg.b1
-    public final void a() {
-        this.a.run();
-    }
-
-    @Override // rg.b1
-    public final void b() {
-        e0 e0Var = this.b.M0;
-        if (e0Var != null) {
-            e0Var.invalidate();
+    public final void I() {
+        setLongClickable(false);
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(getText());
+        if (((b[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), b.class)).length == 0) {
+            SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder("x");
+            b bVar = new b(this.Y1);
+            ValueAnimator ofInt = ValueAnimator.ofInt(bVar.f, zs.e4);
+            ofInt.addUpdateListener(new a(bVar, this, 0));
+            ofInt.setDuration(200L);
+            ofInt.start();
+            spannableStringBuilder2.setSpan(bVar, 0, spannableStringBuilder2.length(), 33);
+            setText(getText().append((CharSequence) spannableStringBuilder2));
         }
     }
 
-    @Override // rg.b1
-    public final void c() {
-        pt0 pt0Var = this.b;
-        if (pt0Var.Z0) {
-            pt0Var.Z0 = false;
-        } else {
-            pt0Var.i1.b(1);
-            pt0Var.i((rg.m) rg.m.a.get(0));
+    public final void J(boolean z10) {
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(getText());
+        for (b bVar : (b[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), b.class)) {
+            rh.o oVar = new rh.o(24, this, bVar);
+            if (z10) {
+                setCursorVisible(false);
+                ValueAnimator ofInt = ValueAnimator.ofInt(bVar.f, 0);
+                ofInt.addUpdateListener(new a(bVar, this, 1));
+                ofInt.addListener(new ns0(oVar, 28));
+                ofInt.setDuration(200L);
+                ofInt.start();
+            } else {
+                oVar.run();
+            }
         }
     }
 
-    @Override // rg.b1
-    public final boolean d() {
-        pt0 pt0Var = this.b;
-        boolean z10 = pt0Var.H0 == null;
-        if (!z10) {
-            pt0Var.q0(null, true);
+    @Override // org.telegram.ui.Components.qt, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        if (!((GestureDetector) this.Z1.b).onTouchEvent(motionEvent) || isLongClickable()) {
+            return super.dispatchTouchEvent(motionEvent);
         }
-        return z10;
+        return false;
     }
 
-    @Override // rg.b1
-    public final void e() {
-        pt0 pt0Var = this.b;
-        pt0Var.u0.a.a();
-        pt0Var.a1.setViewHidden(false);
+    public int getEditTextSelectionEnd() {
+        int selectionEnd = getSelectionEnd();
+        if (selectionEnd < 0) {
+            return 0;
+        }
+        return selectionEnd;
     }
 
-    @Override // rg.b1
-    public final void f() {
-        pt0 pt0Var = this.b;
-        if (pt0Var.H0 != null) {
-            pt0Var.q0(null, true);
+    public int getEditTextSelectionStart() {
+        int selectionStart = getSelectionStart();
+        if (selectionStart < 0) {
+            return 0;
         }
-        pt0Var.a1.setViewHidden(true);
+        return selectionStart;
+    }
+
+    public Paint.FontMetricsInt getFontMetricsInt() {
+        return getPaint().getFontMetricsInt();
+    }
+
+    @Override // org.telegram.ui.Components.EditTextBoldCursor
+    public final void o(ActionMode actionMode, Menu menu) {
+        menu.clear();
+        menu.add(R.id.menu_delete, R.id.menu_delete, 0, cd.L0(2131751599, null));
+    }
+
+    @Override // org.telegram.ui.Components.qt, android.widget.TextView
+    public final void onSelectionChanged(int i10, int i11) {
+        super.onSelectionChanged(i10, i11);
+        if (!hasSelection() || ((b[]) getText().getSpans(i10, i11, b.class)).length == 0) {
+            return;
+        }
+        setSelection(i10, i11 - 1);
+    }
+
+    public void setMaxLength(int i10) {
+        if (this.b2 != i10) {
+            this.b2 = i10;
+            setFilters(new InputFilter[]{new InputFilter.LengthFilter(i10)});
+        }
+    }
+
+    public void setOnFocused(Runnable runnable) {
+        this.a2 = runnable;
+    }
+
+    @Override // org.telegram.ui.ActionBar.k6
+    public final void updateColors() {
+        p6 p6Var = this.Y1;
+        try {
+            setHintColor(t6.w0(t6.Je, p6Var));
+            setCursorColor(t6.w0(t6.Ke, p6Var));
+            setHandlesColor(t6.w0(t6.jg, p6Var));
+            invalidate();
+        } catch (Exception e) {
+            f8.g(e, true);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.k6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

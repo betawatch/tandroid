@@ -1,89 +1,21 @@
 package org.telegram.ui.Components;
 
-import android.util.Property;
+import android.view.ViewTreeObserver;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class je extends Property {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ChatActivityEnterView b;
+public final class je implements ViewTreeObserver.OnDrawListener {
+    public final /* synthetic */ lu0 a;
+    public final /* synthetic */ bo0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public je(ChatActivityEnterView chatActivityEnterView, int i10) {
-        super(Float.class, "emoji_button_scale");
-        this.a = i10;
-        switch (i10) {
-            case 1:
-                this.b = chatActivityEnterView;
-                super(Float.class, "attach_scale");
-                break;
-            case 2:
-                this.b = chatActivityEnterView;
-                super(Float.class, "emoji_button_alpha");
-                break;
-            case 3:
-                this.b = chatActivityEnterView;
-                super(Float.class, "attach_layout_translation_x");
-                break;
-            case 4:
-                this.b = chatActivityEnterView;
-                super(Float.class, "message_text_translation_x");
-                break;
-            default:
-                this.b = chatActivityEnterView;
-                break;
-        }
+    public je(lu0 lu0Var, bo0 bo0Var) {
+        this.a = lu0Var;
+        this.b = bo0Var;
     }
 
-    @Override // android.util.Property
-    public final Object get(Object obj) {
-        switch (this.a) {
-            case 0:
-                return Float.valueOf(this.b.h);
-            case 1:
-                return Float.valueOf(this.b.E);
-            case 2:
-                return Float.valueOf(this.b.n);
-            case 3:
-                return Float.valueOf(this.b.x);
-            default:
-                return Float.valueOf(this.b.G);
-        }
-    }
-
-    @Override // android.util.Property
-    public final void set(Object obj, Object obj2) {
-        switch (this.a) {
-            case 0:
-                float floatValue = ((Float) obj2).floatValue();
-                ChatActivityEnterView chatActivityEnterView = this.b;
-                chatActivityEnterView.h = floatValue;
-                chatActivityEnterView.C1();
-                break;
-            case 1:
-                float floatValue2 = ((Float) obj2).floatValue();
-                ChatActivityEnterView chatActivityEnterView2 = this.b;
-                chatActivityEnterView2.E = floatValue2;
-                chatActivityEnterView2.x1();
-                break;
-            case 2:
-                float floatValue3 = ((Float) obj2).floatValue();
-                ChatActivityEnterView chatActivityEnterView3 = this.b;
-                chatActivityEnterView3.n = floatValue3;
-                chatActivityEnterView3.C1();
-                break;
-            case 3:
-                float floatValue4 = ((Float) obj2).floatValue();
-                ChatActivityEnterView chatActivityEnterView4 = this.b;
-                chatActivityEnterView4.x = floatValue4;
-                chatActivityEnterView4.x1();
-                break;
-            default:
-                float floatValue5 = ((Float) obj2).floatValue();
-                ChatActivityEnterView chatActivityEnterView5 = this.b;
-                chatActivityEnterView5.G = floatValue5;
-                chatActivityEnterView5.G1();
-                break;
-        }
+    @Override // android.view.ViewTreeObserver.OnDrawListener
+    public final void onDraw() {
+        lu0 lu0Var = this.a;
+        lu0Var.post(new li.s(this, lu0Var, this.b, 27));
     }
 }

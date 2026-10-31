@@ -1,253 +1,140 @@
 package org.telegram.ui.Components;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.app.Activity;
-import android.content.SharedPreferences;
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
-import android.util.Property;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.WindowManager;
-import android.view.animation.DecelerateInterpolator;
-import android.widget.FrameLayout;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessageObject;
+import android.graphics.ColorMatrixColorFilter;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.RectF;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class vg0 extends FrameLayout {
-    public float a;
-    public float b;
-    public boolean c;
-    public boolean d;
-    public final /* synthetic */ PipRoundVideoView e;
+public final class vg0 implements xg0 {
+    public Bitmap a;
+    public Canvas b;
+    public final Paint c;
+    public final Paint d;
+    public int e;
+    public int f;
+    public int g;
+    public int h;
+    public final /* synthetic */ yg0 i;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public vg0(PipRoundVideoView pipRoundVideoView, Activity activity) {
-        super(activity);
-        this.e = pipRoundVideoView;
+    public vg0(yg0 yg0Var) {
+        this.i = yg0Var;
+        Paint paint = new Paint();
+        this.c = paint;
+        Paint paint2 = new Paint();
+        this.d = paint2;
+        paint.setFlags(7);
+        paint.setFilterBitmap(true);
+        paint2.setFlags(7);
+        paint2.setFilterBitmap(true);
+        paint2.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_ATOP));
+        paint.setColorFilter(new ColorMatrixColorFilter(new float[]{0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 60.0f, -7500.0f}));
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        fi.u3 u3Var = org.telegram.ui.ActionBar.y6.k3;
-        if (u3Var != null) {
-            u3Var.setAlpha((int) (getAlpha() * 255.0f));
-            org.telegram.ui.ActionBar.y6.k3.setBounds(AndroidUtilities.dp(1.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(125.0f), AndroidUtilities.dp(125.0f));
-            org.telegram.ui.ActionBar.y6.k3.draw(canvas);
-            org.telegram.ui.ActionBar.y6.S1.setColor(org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.ra, false));
-            org.telegram.ui.ActionBar.y6.S1.setAlpha((int) (getAlpha() * 255.0f));
-            canvas.drawCircle(AndroidUtilities.dp(63.0f), AndroidUtilities.dp(63.0f), AndroidUtilities.dp(59.5f), org.telegram.ui.ActionBar.y6.S1);
+    @Override // org.telegram.ui.Components.xg0
+    public final void b(px pxVar, Canvas canvas) {
+        Canvas canvas2;
+        int i10;
+        int i11;
+        yg0 yg0Var = (yg0) pxVar.b;
+        yg0 yg0Var2 = this.i;
+        Paint paint = yg0Var2.a;
+        Bitmap bitmap = this.a;
+        if (bitmap == null || bitmap.isRecycled()) {
+            return;
         }
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        if (motionEvent.getAction() == 0) {
-            this.a = motionEvent.getRawX();
-            this.b = motionEvent.getRawY();
-            this.d = true;
-        }
-        return true;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:68:0x0212  */
-    /* JADX WARN: Removed duplicated region for block: B:83:0x027d  */
-    /* JADX WARN: Removed duplicated region for block: B:92:0x02ba A[ORIG_RETURN, RETURN] */
-    @Override // android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        float f7;
-        boolean z10;
-        ArrayList arrayList;
-        boolean z11;
-        boolean z12;
-        MessageObject playingMessageObject;
-        if (!this.d && !this.c) {
-            return false;
-        }
-        float rawX = motionEvent.getRawX();
-        float rawY = motionEvent.getRawY();
-        int action = motionEvent.getAction();
-        float f10 = 1.0f;
-        PipRoundVideoView pipRoundVideoView = this.e;
-        if (action == 2) {
-            float f11 = rawX - this.a;
-            float f12 = rawY - this.b;
-            if (this.d) {
-                if (Math.abs(f11) < AndroidUtilities.getPixelsInCM(0.3f, true) && Math.abs(f12) < AndroidUtilities.getPixelsInCM(0.3f, false)) {
-                    return true;
-                }
-                this.c = true;
-                this.d = false;
-                return true;
-            }
-            if (!this.c) {
-                return true;
-            }
-            WindowManager.LayoutParams layoutParams = pipRoundVideoView.v;
-            int i10 = (int) (layoutParams.x + f11);
-            layoutParams.x = i10;
-            layoutParams.y = (int) (layoutParams.y + f12);
-            int i11 = pipRoundVideoView.h / 2;
-            int i12 = -i11;
-            if (i10 < i12) {
-                layoutParams.x = i12;
-            } else {
-                int i13 = (AndroidUtilities.displaySize.x - layoutParams.width) + i11;
-                if (i10 > i13) {
-                    layoutParams.x = i13;
-                }
-            }
-            int i14 = layoutParams.x;
-            if (i14 < 0) {
-                f10 = a1.g.c(i14, i11, 0.5f, 1.0f);
-            } else {
-                if (i14 > AndroidUtilities.displaySize.x - layoutParams.width) {
-                    f10 = org.telegram.messenger.wh.w((i14 - r11) + r10, i11, 0.5f, 1.0f);
-                }
-            }
-            if (pipRoundVideoView.a.getAlpha() != f10) {
-                pipRoundVideoView.a.setAlpha(f10);
-            }
-            WindowManager.LayoutParams layoutParams2 = pipRoundVideoView.v;
-            int i15 = layoutParams2.y;
-            if (i15 < 0) {
-                layoutParams2.y = 0;
-            } else {
-                int i16 = AndroidUtilities.displaySize.y - layoutParams2.height;
-                if (i15 > i16) {
-                    layoutParams2.y = i16;
-                }
-            }
-            pipRoundVideoView.w.updateViewLayout(pipRoundVideoView.a, layoutParams2);
-            this.a = rawX;
-            this.b = rawY;
-            return true;
-        }
-        if (motionEvent.getAction() != 1) {
-            return true;
-        }
-        if (this.d && !this.c && (playingMessageObject = MediaController.getInstance().getPlayingMessageObject()) != null) {
-            if (MediaController.getInstance().isMessagePaused()) {
-                MediaController.getInstance().playMessage(playingMessageObject);
-            } else {
-                MediaController.getInstance().lambda$startAudioAgain$7(playingMessageObject);
-            }
-        }
-        this.c = false;
-        this.d = false;
-        int b10 = PipRoundVideoView.b(0.0f, 0, pipRoundVideoView.h, true);
-        int b11 = PipRoundVideoView.b(0.0f, 1, pipRoundVideoView.h, true);
-        int b12 = PipRoundVideoView.b(0.0f, 0, pipRoundVideoView.n, false);
-        int b13 = PipRoundVideoView.b(0.0f, 1, pipRoundVideoView.n, false);
-        SharedPreferences.Editor edit = pipRoundVideoView.x.edit();
-        int dp = AndroidUtilities.dp(20.0f);
-        int abs = Math.abs(b10 - pipRoundVideoView.v.x);
-        Property property = View.ALPHA;
-        if (abs > dp) {
-            int i17 = pipRoundVideoView.v.x;
-            f7 = 1.0f;
-            if (i17 >= 0 || i17 <= (-pipRoundVideoView.h) / 4) {
-                if (Math.abs(b11 - i17) > dp) {
-                    int i18 = pipRoundVideoView.v.x;
-                    int i19 = AndroidUtilities.displaySize.x;
-                    z12 = false;
-                    int i20 = pipRoundVideoView.h;
-                    if (i18 <= i19 - i20 || i18 >= i19 - ((i20 / 4) * 3)) {
-                        if (pipRoundVideoView.a.getAlpha() != 1.0f) {
-                            arrayList = new ArrayList();
-                            if (pipRoundVideoView.v.x < 0) {
-                                arrayList.add(ObjectAnimator.ofInt(pipRoundVideoView, "x", -pipRoundVideoView.h));
-                            } else {
-                                arrayList.add(ObjectAnimator.ofInt(pipRoundVideoView, "x", AndroidUtilities.displaySize.x));
-                            }
-                            z10 = true;
-                            if (!z10) {
-                                if (Math.abs(b12 - pipRoundVideoView.v.y) <= dp || pipRoundVideoView.v.y <= org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) {
-                                    if (arrayList == null) {
-                                        arrayList = new ArrayList();
-                                    }
-                                    edit.putInt("sidey", 0);
-                                    arrayList.add(ObjectAnimator.ofInt(pipRoundVideoView, "y", b12));
-                                } else if (Math.abs(b13 - pipRoundVideoView.v.y) <= dp) {
-                                    if (arrayList == null) {
-                                        arrayList = new ArrayList();
-                                    }
-                                    edit.putInt("sidey", 1);
-                                    arrayList.add(ObjectAnimator.ofInt(pipRoundVideoView, "y", b13));
-                                } else {
-                                    edit.putFloat("py", (pipRoundVideoView.v.y - b12) / (b13 - b12));
-                                    edit.putInt("sidey", 2);
-                                }
-                                edit.commit();
-                            }
-                            if (arrayList != null) {
-                                return true;
-                            }
-                            if (pipRoundVideoView.y == null) {
-                                pipRoundVideoView.y = new DecelerateInterpolator();
-                            }
-                            AnimatorSet animatorSet = new AnimatorSet();
-                            animatorSet.setInterpolator(pipRoundVideoView.y);
-                            animatorSet.setDuration(150L);
-                            if (z10) {
-                                z11 = true;
-                                arrayList.add(ObjectAnimator.ofFloat(pipRoundVideoView.a, (Property<vg0, Float>) property, 0.0f));
-                                animatorSet.addListener(new xg0(pipRoundVideoView, 1));
-                            } else {
-                                z11 = true;
-                            }
-                            animatorSet.playTogether(arrayList);
-                            animatorSet.start();
-                            return z11;
-                        }
-                        edit.putFloat("px", (pipRoundVideoView.v.x - b10) / (b11 - b10));
-                        edit.putInt("sidex", 2);
-                        arrayList = null;
-                        z10 = z12;
-                        if (!z10) {
-                        }
-                        if (arrayList != null) {
-                        }
-                    }
+        int a2 = (int) ((1.0f - ((w7.u.a(yg0Var2.f, 0.2f, 0.3f) - 0.2f) / 0.10000001f)) * 255.0f);
+        float width = (yg0Var2.getWidth() - this.f) / 2.0f;
+        canvas.save();
+        canvas.translate(0.0f, -org.telegram.messenger.i0.L(32.0f));
+        if (a2 != 255) {
+            this.a.eraseColor(0);
+            this.b.save();
+            this.b.scale(this.a.getWidth() / this.g, this.a.getHeight() / this.h);
+            float f7 = -width;
+            this.b.translate(f7, 0.0f);
+            yg0.a(yg0Var, this.b);
+            this.b.restore();
+            this.b.save();
+            this.b.scale(this.a.getWidth() / this.g, this.a.getHeight() / this.h);
+            if (yg0Var2.n != null) {
+                this.b.save();
+                this.b.translate(f7, org.telegram.messenger.i0.L(32.0f));
+                org.telegram.messenger.ks ksVar = yg0Var2.n;
+                if (ksVar.c) {
+                    float min = Math.min(ksVar.e.width(), yg0Var2.n.e.height()) / 2.0f;
+                    Canvas canvas3 = this.b;
+                    float centerX = yg0Var2.n.e.centerX();
+                    RectF rectF = yg0Var2.n.e;
+                    canvas3.drawCircle(centerX, rectF.bottom - (rectF.width() / 2.0f), min, paint);
+                } else if (ksVar.b) {
+                    this.b.drawPath(ksVar.d, paint);
                 } else {
-                    z12 = false;
+                    float max = Math.max(ksVar.e.width(), yg0Var2.n.e.height()) / 2.0f;
+                    this.b.drawRoundRect(yg0Var2.n.e, max, max, paint);
                 }
-                arrayList = new ArrayList();
-                edit.putInt("sidex", 1);
-                if (pipRoundVideoView.a.getAlpha() != 1.0f) {
-                    vg0 vg0Var = pipRoundVideoView.a;
-                    float[] fArr = new float[1];
-                    fArr[z12 ? 1 : 0] = 1.0f;
-                    arrayList.add(ObjectAnimator.ofFloat(vg0Var, (Property<vg0, Float>) property, fArr));
-                }
-                arrayList.add(ObjectAnimator.ofInt(pipRoundVideoView, "x", b11));
-                z10 = z12;
-                if (!z10) {
-                }
-                if (arrayList != null) {
-                }
+                this.b.restore();
+            } else {
+                this.b.drawRect(0.0f, 0.0f, this.f, org.telegram.messenger.i0.L(32.0f), paint);
             }
+            this.b.restore();
+            Utilities.stackBlurBitmap(this.a, (int) ((yg0Var2.d * 2.0f) / 6.0f));
+            canvas.save();
+            canvas.translate(width, 0.0f);
+            i10 = 255;
+            canvas2 = canvas;
+            canvas2.saveLayer(0.0f, 0.0f, this.g, this.h, null);
+            canvas2.scale(this.g / this.a.getWidth(), this.h / this.a.getHeight());
+            canvas2.drawBitmap(this.a, 0.0f, 0.0f, this.c);
+            canvas2.drawBitmap(this.a, 0.0f, 0.0f, this.d);
+            canvas2.restore();
+            canvas2.restore();
         } else {
-            f7 = 1.0f;
+            canvas2 = canvas;
+            i10 = 255;
         }
-        ArrayList arrayList2 = new ArrayList();
-        edit.putInt("sidex", 0);
-        if (pipRoundVideoView.a.getAlpha() != f7) {
-            arrayList2.add(ObjectAnimator.ofFloat(pipRoundVideoView.a, (Property<vg0, Float>) property, f7));
+        if (a2 != 0) {
+            if (a2 != i10) {
+                i11 = a2;
+                canvas2.saveLayerAlpha(width, 0.0f, width + this.f, this.e, i11);
+            } else {
+                i11 = a2;
+            }
+            yg0.a(yg0Var, canvas2);
+            if (i11 != i10) {
+                canvas2.restore();
+            }
         }
-        arrayList2.add(ObjectAnimator.ofInt(pipRoundVideoView, "x", b10));
-        arrayList = arrayList2;
-        z10 = false;
-        if (!z10) {
+        canvas2.restore();
+    }
+
+    @Override // org.telegram.ui.Components.xg0
+    public final void d(int i10, int i11) {
+        Bitmap bitmap = this.a;
+        if (bitmap != null) {
+            bitmap.recycle();
+            this.a = null;
         }
-        if (arrayList != null) {
-        }
+        this.f = Math.min(org.telegram.messenger.i0.L(120.0f), i10);
+        int min = Math.min(org.telegram.messenger.i0.L(220.0f), i11);
+        this.e = min;
+        this.g = this.f;
+        int L = org.telegram.messenger.i0.L(32.0f) + min;
+        this.h = L;
+        this.a = Bitmap.createBitmap((int) (this.g / 6.0f), (int) (L / 6.0f), Bitmap.Config.ARGB_8888);
+        this.b = new Canvas(this.a);
+    }
+
+    @Override // org.telegram.ui.Components.xg0
+    public final /* synthetic */ void a(float f7) {
+    }
+
+    @Override // org.telegram.ui.Components.xg0
+    public final /* synthetic */ void c(float f7) {
     }
 }

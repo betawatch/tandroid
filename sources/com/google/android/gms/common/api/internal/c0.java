@@ -1,133 +1,82 @@
 package com.google.android.gms.common.api.internal;
 
-import android.content.Context;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
-import java.util.concurrent.locks.Lock;
-import m.r3;
-import m4.w1;
+import android.os.IBinder;
+import android.os.IInterface;
+import android.util.Log;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class c0 implements Runnable {
-    public final /* synthetic */ f0 a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ f0 c;
-    public final Object d;
+public final class c0 extends m0 {
+    public final /* synthetic */ int b = 0;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ c0(f0 f0Var, Object obj, int i10) {
-        this.b = i10;
-        this.c = f0Var;
-        this.a = f0Var;
-        this.d = obj;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public c0(d0 d0Var, l0 l0Var, k6.a aVar) {
+        super(l0Var);
+        this.d = d0Var;
+        this.c = aVar;
     }
 
+    @Override // com.google.android.gms.common.api.internal.m0
     public final void a() {
-        p8.a aVar;
-        Set set;
-        switch (this.b) {
+        n6.h l0Var;
+        int i10 = this.b;
+        Object obj = this.d;
+        Object obj2 = this.c;
+        switch (i10) {
             case 0:
-                f0 f0Var = this.c;
-                l0 l0Var = f0Var.a;
-                Context context = f0Var.c;
-                w1 w1Var = new w1(f0Var.d);
-                ArrayList arrayList = new ArrayList();
-                ArrayList arrayList2 = new ArrayList();
-                HashMap hashMap = (HashMap) this.d;
-                for (com.google.android.gms.common.api.c cVar : hashMap.keySet()) {
-                    if (!cVar.k() || ((a0) hashMap.get(cVar)).c) {
-                        arrayList2.add(cVar);
-                    } else {
-                        arrayList.add(cVar);
-                    }
-                }
-                int i10 = 0;
-                int i11 = -1;
-                if (arrayList.isEmpty()) {
-                    int size = arrayList2.size();
-                    while (i10 < size) {
-                        i11 = w1Var.T(context, (com.google.android.gms.common.api.c) arrayList2.get(i10));
-                        i10++;
-                        if (i11 == 0) {
-                        }
-                    }
-                } else {
-                    int size2 = arrayList.size();
-                    while (i10 < size2) {
-                        i11 = w1Var.T(context, (com.google.android.gms.common.api.c) arrayList.get(i10));
-                        i10++;
-                        if (i11 != 0) {
-                        }
-                    }
-                }
-                if (i11 != 0) {
-                    b0 b0Var = new b0(this, f0Var, new l6.a(i11, null));
-                    g0 g0Var = l0Var.e;
-                    g0Var.sendMessage(g0Var.obtainMessage(1, b0Var));
-                    return;
-                }
-                if (f0Var.x && (aVar = f0Var.v) != null) {
-                    aVar.G();
-                }
-                for (com.google.android.gms.common.api.c cVar2 : hashMap.keySet()) {
-                    o6.b bVar = (o6.b) hashMap.get(cVar2);
-                    if (!cVar2.k() || w1Var.T(context, cVar2) == 0) {
-                        cVar2.h(bVar);
-                    } else {
-                        y yVar = new y(f0Var, bVar);
-                        g0 g0Var2 = l0Var.e;
-                        g0Var2.sendMessage(g0Var2.obtainMessage(1, yVar));
-                    }
-                }
-                return;
+                ((d0) obj).c.d((k6.a) obj2);
+                break;
             default:
-                f0 f0Var2 = this.c;
-                l0 l0Var2 = f0Var2.a;
-                i0 i0Var = l0Var2.o;
-                r3 r3Var = f0Var2.H;
-                if (r3Var == null) {
-                    set = Collections.EMPTY_SET;
-                } else {
-                    HashSet hashSet = new HashSet((Set) r3Var.a);
-                    Map map = (Map) r3Var.c;
-                    for (com.google.android.gms.common.api.e eVar : map.keySet()) {
-                        if (!l0Var2.i.containsKey(eVar.b)) {
-                            map.get(eVar).getClass();
-                            throw new ClassCastException();
+                g0 g0Var = (g0) obj2;
+                o8.h hVar = (o8.h) obj;
+                if (g0Var.g(0)) {
+                    k6.a aVar = hVar.b;
+                    if (!aVar.c()) {
+                        if (g0Var.x && !aVar.b()) {
+                            g0Var.a();
+                            g0Var.f();
+                            break;
+                        } else {
+                            g0Var.d(aVar);
+                            break;
+                        }
+                    } else {
+                        n6.v vVar = hVar.c;
+                        n6.l.g(vVar);
+                        k6.a aVar2 = vVar.c;
+                        if (!aVar2.c()) {
+                            Log.wtf("GACConnecting", "Sign-in succeeded with resolve account failure: ".concat(String.valueOf(aVar2)), new Exception());
+                            g0Var.d(aVar2);
+                            break;
+                        } else {
+                            g0Var.D = true;
+                            IBinder iBinder = vVar.b;
+                            if (iBinder == null) {
+                                l0Var = null;
+                            } else {
+                                int i11 = n6.a.b;
+                                IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.common.internal.IAccountAccessor");
+                                l0Var = queryLocalInterface instanceof n6.h ? (n6.h) queryLocalInterface : new n6.l0(iBinder, "com.google.android.gms.common.internal.IAccountAccessor", 7);
+                            }
+                            n6.l.g(l0Var);
+                            g0Var.E = l0Var;
+                            g0Var.F = vVar.d;
+                            g0Var.G = vVar.e;
+                            g0Var.f();
+                            break;
                         }
                     }
-                    set = hashSet;
                 }
-                i0Var.F = set;
-                ArrayList arrayList3 = (ArrayList) this.d;
-                int size3 = arrayList3.size();
-                for (int i12 = 0; i12 < size3; i12++) {
-                    ((com.google.android.gms.common.api.c) arrayList3.get(i12)).j(f0Var2.E, l0Var2.o.F);
-                }
-                return;
+                break;
         }
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        f0 f0Var = this.a;
-        Lock lock = f0Var.b;
-        lock.lock();
-        try {
-            try {
-                if (!Thread.interrupted()) {
-                    a();
-                }
-            } catch (RuntimeException e) {
-                g0 g0Var = f0Var.a.e;
-                g0Var.sendMessage(g0Var.obtainMessage(2, e));
-            }
-        } finally {
-            lock.unlock();
-        }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public c0(g0 g0Var, g0 g0Var2, o8.h hVar) {
+        super(g0Var);
+        this.c = g0Var2;
+        this.d = hVar;
     }
 }

@@ -2,29 +2,29 @@ package p4;
 
 import android.os.Bundle;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class n {
     public final Bundle a;
-    public r b;
+    public s b;
 
-    public n(r rVar, boolean z10) {
-        if (rVar == null) {
+    public n(s sVar, boolean z10) {
+        if (sVar == null) {
             throw new IllegalArgumentException("selector must not be null");
         }
         Bundle bundle = new Bundle();
         this.a = bundle;
-        this.b = rVar;
-        bundle.putBundle("selector", rVar.a);
+        this.b = sVar;
+        bundle.putBundle("selector", sVar.a);
         bundle.putBoolean("activeScan", z10);
     }
 
     public final void a() {
         if (this.b == null) {
-            r b10 = r.b(this.a.getBundle("selector"));
+            s b10 = s.b(this.a.getBundle("selector"));
             this.b = b10;
             if (b10 == null) {
-                this.b = r.c;
+                this.b = s.c;
             }
         }
     }
@@ -37,9 +37,9 @@ public final class n {
         if (obj instanceof n) {
             n nVar = (n) obj;
             a();
-            r rVar = this.b;
+            s sVar = this.b;
             nVar.a();
-            if (rVar.equals(nVar.b) && b() == nVar.b()) {
+            if (sVar.equals(nVar.b) && b() == nVar.b()) {
                 return true;
             }
         }

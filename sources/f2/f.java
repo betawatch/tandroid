@@ -1,6 +1,8 @@
 package f2;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+import org.telegram.messenger.zs;
+
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public abstract class f {
     public final /* synthetic */ int a;
@@ -12,7 +14,7 @@ public abstract class f {
     }
 
     public static String a(int i10) {
-        return "" + ((char) ((i10 >> 24) & 255)) + ((char) ((i10 >> 16) & 255)) + ((char) ((i10 >> 8) & 255)) + ((char) (i10 & 255));
+        return "" + ((char) ((i10 >> 24) & zs.e4)) + ((char) ((i10 >> 16) & zs.e4)) + ((char) ((i10 >> 8) & zs.e4)) + ((char) (i10 & zs.e4));
     }
 
     public static void c(StringBuilder sb2) {

@@ -1,44 +1,61 @@
 package h7;
 
-import a8.df;
-import android.os.Bundle;
-import android.os.Parcel;
-import android.os.Parcelable;
-import android.os.ResultReceiver;
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.tasks.TaskCompletionSource;
+import g7.l;
+import g7.q;
+import kotlin.jvm.internal.i;
+import v7.i5;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class f extends p6.a {
-    public static final Parcelable.Creator<f> CREATOR = new f6.i(17);
-    public final String a;
-    public final Bundle b;
-    public final Bundle c;
-    public final String d;
-    public final String e;
-    public final ResultReceiver f;
+public final class f extends b8.b implements a {
+    public final /* synthetic */ int b;
+    public final /* synthetic */ TaskCompletionSource c;
 
-    public f(String type, Bundle credentialData, Bundle candidateQueryData, String str, String str2, ResultReceiver resultReceiver) {
-        kotlin.jvm.internal.i.e(type, "type");
-        kotlin.jvm.internal.i.e(credentialData, "credentialData");
-        kotlin.jvm.internal.i.e(candidateQueryData, "candidateQueryData");
-        this.a = type;
-        this.b = credentialData;
-        this.c = candidateQueryData;
-        this.d = str;
-        this.e = str2;
-        this.f = resultReceiver;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public f(int i10, TaskCompletionSource taskCompletionSource) {
+        super(8);
+        this.b = i10;
+        this.c = taskCompletionSource;
+        attachInterface(this, "com.google.android.gms.identitycredentials.internal.IIdentityCredentialCallbacks");
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel dest, int i10) {
-        kotlin.jvm.internal.i.e(dest, "dest");
-        int q5 = df.q(dest, 20293);
-        df.l(dest, 1, this.a);
-        df.b(dest, 2, this.b);
-        df.b(dest, 3, this.c);
-        df.l(dest, 4, this.d);
-        df.l(dest, 5, this.e);
-        df.k(dest, 6, this.f, i10);
-        df.r(dest, q5);
+    @Override // h7.a
+    public void F0(Status status, l lVar) {
+        switch (this.b) {
+            case 1:
+                i.e(status, "status");
+                i5.a(status, lVar, this.c);
+                return;
+            default:
+                i.e(status, "status");
+                throw new UnsupportedOperationException();
+        }
+    }
+
+    @Override // h7.a
+    public void c0(Status status, g7.b bVar) {
+        i.e(status, "status");
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // h7.a
+    public void q0(Status status, g7.e eVar) {
+        switch (this.b) {
+            case 0:
+                i.e(status, "status");
+                i5.a(status, eVar, this.c);
+                return;
+            default:
+                i.e(status, "status");
+                throw new UnsupportedOperationException();
+        }
+    }
+
+    @Override // h7.a
+    public void s(Status status, q qVar) {
+        i.e(status, "status");
+        throw new UnsupportedOperationException();
     }
 }

@@ -1,36 +1,107 @@
 package hi;
 
-import android.app.Activity;
-import android.view.ViewGroup;
-import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Components.k71;
-import org.telegram.ui.Components.nm0;
-import org.telegram.ui.Components.wl0;
+import android.graphics.Canvas;
+import android.graphics.RecordingCanvas;
+import android.graphics.RenderEffect;
+import android.graphics.RenderNode;
+import android.graphics.Shader;
+import android.os.Build;
+import android.support.v4.media.session.w;
+import tg.h;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes4.dex */
-public final class f extends k71 {
-    public final /* synthetic */ k P;
+public final class f implements a, tg.a {
+    public final a a;
+    public h c;
+    public tg.f d;
+    public int e;
+    public a f;
+    public ei.d h;
+    public boolean n;
+    public boolean r;
+    public RecordingCanvas s;
+    public final je.b w = new je.b();
+    public final RenderNode b = w.n();
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f(k kVar, nm0 nm0Var, Activity activity, int i10, int i11, ai.e eVar, u6 u6Var) {
-        super(nm0Var, activity, i10, i11, true, eVar, u6Var);
-        this.P = kVar;
+    public f(a aVar) {
+        this.a = aVar;
     }
 
-    @Override // org.telegram.ui.Components.k71, s4.h0
-    public final s4.e1 x(ViewGroup viewGroup, int i10) {
-        u6 u6Var;
-        if (i10 != 42) {
-            return super.x(viewGroup, i10);
+    @Override // tg.a
+    public final vg.f a() {
+        vg.f fVar = new vg.f(this);
+        this.w.add(fVar);
+        return fVar;
+    }
+
+    public final RecordingCanvas b(int i10, int i11) {
+        if (this.r) {
+            throw new IllegalStateException();
         }
-        k kVar = this.P;
-        Activity parentActivity = kVar.getParentActivity();
-        int i11 = y6.L6;
-        u6Var = ((org.telegram.ui.ActionBar.r2) kVar).resourceProvider;
-        org.telegram.ui.Cells.q4 q4Var = new org.telegram.ui.Cells.q4(parentActivity, i11, 21, 0, false, u6Var);
-        q4Var.setHeight(25);
-        return new wl0(q4Var);
+        this.r = true;
+        this.b.setPosition(0, 0, i10, i11);
+        RecordingCanvas beginRecording = this.b.beginRecording(i10, i11);
+        this.s = beginRecording;
+        return beginRecording;
+    }
+
+    public final void c() {
+        if (!this.r) {
+            throw new IllegalStateException();
+        }
+        this.b.endRecording();
+        this.r = false;
+        this.s = null;
+    }
+
+    public final boolean d(int i10, int i11) {
+        return (this.b.hasDisplayList() && this.b.getWidth() == i10 && this.b.getHeight() == i11) ? false : true;
+    }
+
+    @Override // hi.a
+    public final void e(Canvas canvas, float f7, float f10, float f11, float f12) {
+        tg.f fVar;
+        ei.d dVar;
+        if (!canvas.isHardwareAccelerated()) {
+            a aVar = this.a;
+            if (aVar != null) {
+                aVar.e(canvas, f7, f10, f11, f12);
+                return;
+            }
+            return;
+        }
+        if (this.r) {
+            throw new IllegalStateException();
+        }
+        a aVar2 = this.f;
+        if (aVar2 != null) {
+            aVar2.e(canvas, f7, f10, f11, f12);
+        }
+        canvas.save();
+        if (!this.n) {
+            canvas.clipRect(f7, f10, f11, f12);
+        }
+        int i10 = Build.VERSION.SDK_INT;
+        if (i10 >= 31 && (dVar = this.h) != null) {
+            dVar.e(canvas, f7, f10, f11, f12);
+        } else if (i10 < 31 || (fVar = this.d) == null) {
+            canvas.drawRenderNode(this.b);
+        } else {
+            fVar.c(canvas, this.e);
+        }
+        canvas.restore();
+    }
+
+    public final void f(float f7) {
+        this.b.setRenderEffect(f7 > 0.0f ? RenderEffect.createBlurEffect(f7, f7, Shader.TileMode.CLAMP) : null);
+    }
+
+    public final void g(float f7, RenderEffect renderEffect) {
+        this.b.setRenderEffect(RenderEffect.createChainEffect(RenderEffect.createBlurEffect(f7, f7, Shader.TileMode.CLAMP), renderEffect));
+    }
+
+    public final void h(int i10, int i11) {
+        this.b.setPosition(0, 0, i10, i11);
     }
 }

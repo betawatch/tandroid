@@ -1,264 +1,107 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.Drawable;
-import android.text.TextPaint;
-import android.text.style.ReplacementSpan;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
+import android.text.SpannableStringBuilder;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public class zq extends ReplacementSpan {
-    public static final int ALIGN_BASELINE = 1;
-    public static final int ALIGN_CENTER = 2;
-    public static final int ALIGN_DEFAULT = 0;
-    private float alpha;
-    private Runnable checkColorDelegate;
-    int colorKey;
-    public boolean draw;
-    public Drawable drawable;
-    int drawableColor;
-    private Paint.FontMetricsInt fontMetrics;
-    private boolean isRelativeSize;
-    private int overrideColor;
-    public boolean recolorDrawable;
-    public float rotate;
-    private float scaleX;
-    private float scaleY;
-    private int size;
-    private int sizeWidth;
-    public float spaceScaleX;
-    private int topOffset;
-    public float translateX;
-    public float translateY;
-    public boolean useLinkPaintColor;
-    boolean usePaintColor;
-    private final int verticalAlignment;
+public final /* synthetic */ class zq implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ cr b;
+    public final /* synthetic */ vh.d c;
 
-    public zq(int i10) {
-        this(i10, 0);
+    public /* synthetic */ zq(cr crVar, vh.d dVar, int i10) {
+        this.a = i10;
+        this.b = crVar;
+        this.c = dVar;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:11:0x0056  */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0065  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x00a3  */
-    /* JADX WARN: Removed duplicated region for block: B:41:0x005d  */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x003d  */
-    @Override // android.text.style.ReplacementSpan
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
-        boolean z10;
-        int i15;
-        if (this.draw) {
-            Runnable runnable = this.checkColorDelegate;
-            if (runnable != null) {
-                runnable.run();
-            } else if (this.recolorDrawable) {
-                int i16 = this.overrideColor;
-                if (i16 == 0) {
-                    if (this.useLinkPaintColor && (paint instanceof TextPaint)) {
-                        i16 = ((TextPaint) paint).linkColor;
-                    } else {
-                        if (this.usePaintColor) {
-                            i16 = paint.getColor();
-                            z10 = true;
-                            if (this.drawableColor != i16) {
-                                this.drawableColor = i16;
-                                this.drawable.setColorFilter(new PorterDuffColorFilter(this.drawableColor, PorterDuff.Mode.SRC_IN));
-                            }
-                            canvas.save();
-                            Drawable drawable = this.drawable;
-                            int i17 = i14 - (drawable != null ? drawable.getBounds().bottom : i14);
-                            i15 = this.verticalAlignment;
-                            if (i15 != 1) {
-                                if (i15 == 2) {
-                                    int A = ic.a.A(i14, i12, 2, i12);
-                                    Drawable drawable2 = this.drawable;
-                                    i17 = A - (drawable2 != null ? drawable2.getBounds().height() / 2 : 0);
-                                } else if (i15 == 0) {
-                                    int i18 = i14 - i12;
-                                    int i19 = this.size;
-                                    if (i19 == 0) {
-                                        i19 = this.drawable.getIntrinsicHeight();
-                                    }
-                                    i17 = ic.a.A(i18, i19, 2, i12) + AndroidUtilities.dp(this.topOffset);
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(final TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                final int i10 = 0;
+                final cr crVar = this.b;
+                final vh.d dVar = this.c;
+                org.telegram.messenger.i0.g3(new Runnable() { // from class: org.telegram.ui.Components.ar
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i10) {
+                            case 0:
+                                cr crVar2 = crVar;
+                                crVar2.getClass();
+                                dVar.setLoading(false);
+                                TLObject tLObject2 = tLObject;
+                                if (tLObject2 != null && (tLObject2 instanceof TL_phone.groupCallStreamRtmpUrl)) {
+                                    TL_phone.groupCallStreamRtmpUrl groupcallstreamrtmpurl = (TL_phone.groupCallStreamRtmpUrl) tLObject2;
+                                    crVar2.T1 = groupcallstreamrtmpurl.url;
+                                    crVar2.U1 = groupcallstreamrtmpurl.key;
+                                    crVar2.V1 = new SpannableStringBuilder(crVar2.U1);
+                                    crVar2.W1.O(true);
+                                    break;
                                 }
-                            }
-                            canvas.translate(f7 + this.translateX, i17 + this.translateY);
-                            if (this.drawable != null) {
-                                float f10 = this.scaleX;
-                                if (f10 != 1.0f || this.scaleY != 1.0f) {
-                                    canvas.scale(f10, this.scaleY, 0.0f, r5.getBounds().centerY());
+                                break;
+                            default:
+                                cr crVar3 = crVar;
+                                crVar3.getClass();
+                                dVar.setLoading(false);
+                                TLObject tLObject3 = tLObject;
+                                if (tLObject3 instanceof TL_phone.groupCallStreamRtmpUrl) {
+                                    TL_phone.groupCallStreamRtmpUrl groupcallstreamrtmpurl2 = (TL_phone.groupCallStreamRtmpUrl) tLObject3;
+                                    crVar3.T1 = groupcallstreamrtmpurl2.url;
+                                    crVar3.U1 = groupcallstreamrtmpurl2.key;
+                                    crVar3.V1 = new SpannableStringBuilder(crVar3.U1);
+                                    crVar3.W1.O(true);
+                                    break;
                                 }
-                                float f11 = this.rotate;
-                                if (f11 != 1.0f) {
-                                    canvas.rotate(f11, this.drawable.getBounds().centerX(), this.drawable.getBounds().centerY());
-                                }
-                                if (z10) {
-                                    this.drawable.setAlpha((int) ((paint.getAlpha() / Color.alpha(this.drawableColor)) * this.alpha * 255.0f));
-                                } else {
-                                    this.drawable.setAlpha((int) (paint.getAlpha() * this.alpha));
-                                }
-                                this.drawable.draw(canvas);
-                            }
-                            canvas.restore();
+                                break;
                         }
-                        i16 = org.telegram.ui.ActionBar.y6.x0(null, this.colorKey, false);
                     }
-                }
-                z10 = false;
-                if (this.drawableColor != i16) {
-                }
-                canvas.save();
-                Drawable drawable3 = this.drawable;
-                int i172 = i14 - (drawable3 != null ? drawable3.getBounds().bottom : i14);
-                i15 = this.verticalAlignment;
-                if (i15 != 1) {
-                }
-                canvas.translate(f7 + this.translateX, i172 + this.translateY);
-                if (this.drawable != null) {
-                }
-                canvas.restore();
-            }
-            z10 = false;
-            canvas.save();
-            Drawable drawable32 = this.drawable;
-            int i1722 = i14 - (drawable32 != null ? drawable32.getBounds().bottom : i14);
-            i15 = this.verticalAlignment;
-            if (i15 != 1) {
-            }
-            canvas.translate(f7 + this.translateX, i1722 + this.translateY);
-            if (this.drawable != null) {
-            }
-            canvas.restore();
+                });
+                break;
+            default:
+                final int i11 = 1;
+                final cr crVar2 = this.b;
+                final vh.d dVar2 = this.c;
+                org.telegram.messenger.i0.g3(new Runnable() { // from class: org.telegram.ui.Components.ar
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i11) {
+                            case 0:
+                                cr crVar22 = crVar2;
+                                crVar22.getClass();
+                                dVar2.setLoading(false);
+                                TLObject tLObject2 = tLObject;
+                                if (tLObject2 != null && (tLObject2 instanceof TL_phone.groupCallStreamRtmpUrl)) {
+                                    TL_phone.groupCallStreamRtmpUrl groupcallstreamrtmpurl = (TL_phone.groupCallStreamRtmpUrl) tLObject2;
+                                    crVar22.T1 = groupcallstreamrtmpurl.url;
+                                    crVar22.U1 = groupcallstreamrtmpurl.key;
+                                    crVar22.V1 = new SpannableStringBuilder(crVar22.U1);
+                                    crVar22.W1.O(true);
+                                    break;
+                                }
+                                break;
+                            default:
+                                cr crVar3 = crVar2;
+                                crVar3.getClass();
+                                dVar2.setLoading(false);
+                                TLObject tLObject3 = tLObject;
+                                if (tLObject3 instanceof TL_phone.groupCallStreamRtmpUrl) {
+                                    TL_phone.groupCallStreamRtmpUrl groupcallstreamrtmpurl2 = (TL_phone.groupCallStreamRtmpUrl) tLObject3;
+                                    crVar3.T1 = groupcallstreamrtmpurl2.url;
+                                    crVar3.U1 = groupcallstreamrtmpurl2.key;
+                                    crVar3.V1 = new SpannableStringBuilder(crVar3.U1);
+                                    crVar3.W1.O(true);
+                                    break;
+                                }
+                                break;
+                        }
+                    }
+                });
+                break;
         }
-    }
-
-    @Override // android.text.style.ReplacementSpan
-    public int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
-        if (!this.isRelativeSize || this.fontMetrics == null) {
-            if (this.sizeWidth != 0) {
-                return (int) (Math.abs(this.scaleX) * this.sizeWidth);
-            }
-            float abs = Math.abs(this.spaceScaleX) * Math.abs(this.scaleX);
-            int i12 = this.size;
-            if (i12 == 0) {
-                i12 = this.drawable.getIntrinsicWidth();
-            }
-            return (int) (abs * i12);
-        }
-        if (fontMetricsInt == null) {
-            fontMetricsInt = new Paint.FontMetricsInt();
-        }
-        Paint.FontMetricsInt fontMetricsInt2 = this.fontMetrics;
-        fontMetricsInt.ascent = fontMetricsInt2.ascent;
-        fontMetricsInt.descent = fontMetricsInt2.descent;
-        fontMetricsInt.top = fontMetricsInt2.top;
-        fontMetricsInt.bottom = fontMetricsInt2.bottom;
-        return (int) (Math.abs(this.spaceScaleX) * Math.abs(this.scaleX) * this.size);
-    }
-
-    public void rotate(float f7) {
-        this.rotate = f7;
-    }
-
-    public void setAlpha(float f7) {
-        this.alpha = f7;
-    }
-
-    public void setCheckColorDelegate(Runnable runnable) {
-        this.checkColorDelegate = runnable;
-    }
-
-    public zq setColorKey(int i10) {
-        this.colorKey = i10;
-        this.usePaintColor = i10 < 0;
-        return this;
-    }
-
-    public zq setOverrideColor(int i10) {
-        this.overrideColor = i10;
-        return this;
-    }
-
-    public void setRelativeSize(Paint.FontMetricsInt fontMetricsInt) {
-        this.isRelativeSize = true;
-        this.fontMetrics = fontMetricsInt;
-        if (fontMetricsInt != null) {
-            setSize(Math.abs(this.fontMetrics.ascent) + Math.abs(fontMetricsInt.descent));
-            if (this.size == 0) {
-                setSize(AndroidUtilities.dp(20.0f));
-            }
-        }
-    }
-
-    public zq setScale(float f7) {
-        this.scaleX = f7;
-        return this;
-    }
-
-    public void setSize(int i10) {
-        this.size = i10;
-        this.drawable.setBounds(0, 0, i10, i10);
-    }
-
-    public void setTopOffset(int i10) {
-        this.topOffset = i10;
-    }
-
-    public void setTranslateX(float f7) {
-        this.translateX = f7;
-    }
-
-    public void setTranslateY(float f7) {
-        this.translateY = f7;
-    }
-
-    public void setWidth(int i10) {
-        this.sizeWidth = i10;
-    }
-
-    public zq translate(float f7, float f10) {
-        this.translateX = f7;
-        this.translateY = f10;
-        return this;
-    }
-
-    public zq(Drawable drawable) {
-        this(0, drawable);
-    }
-
-    public zq setScale(float f7, float f10) {
-        this.scaleX = f7;
-        this.scaleY = f10;
-        return this;
-    }
-
-    public zq(int i10, int i11) {
-        this(i11, ApplicationLoader.applicationContext.getDrawable(i10).mutate());
-    }
-
-    public zq(int i10, Drawable drawable) {
-        this.draw = true;
-        this.recolorDrawable = true;
-        this.usePaintColor = true;
-        this.useLinkPaintColor = false;
-        this.topOffset = 0;
-        this.alpha = 1.0f;
-        this.spaceScaleX = 1.0f;
-        this.scaleX = 1.0f;
-        this.scaleY = 1.0f;
-        this.drawable = drawable;
-        if (drawable != null) {
-            drawable.setBounds(0, 0, drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight());
-        }
-        this.verticalAlignment = i10;
     }
 }

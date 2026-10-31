@@ -1,15 +1,16 @@
 package androidx.emoji2.text;
 
-import a8.mf;
 import android.view.MotionEvent;
 import android.view.ViewGroup;
-import com.google.android.gms.common.api.internal.o0;
+import com.google.android.gms.common.api.internal.q0;
 import java.util.ArrayList;
 import java.util.List;
-import org.telegram.ui.Cells.r7;
+import org.telegram.messenger.MediaController;
+import org.telegram.ui.Cells.o7;
 import org.telegram.ui.Cells.z;
+import w7.q6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class j implements Runnable {
     public final /* synthetic */ int a;
@@ -42,16 +43,18 @@ public final class j implements Runnable {
                     break;
                 }
             case 1:
-                ((o0) this.c).g(this.b);
+                ((q0) this.c).g(this.b);
                 break;
             case 2:
-                ((h6.v) this.c).W.b(this.b);
+                ((g6.v) this.c).W.b(this.b);
                 break;
             case 3:
+                break;
+            case 4:
                 z zVar = (z) this.c;
                 if (zVar.a && zVar.getParent() != null && this.b == zVar.c) {
                     zVar.a = false;
-                    if (zVar.l()) {
+                    if (zVar.r()) {
                         try {
                             zVar.performHapticFeedback(0);
                         } catch (Exception unused) {
@@ -64,19 +67,19 @@ public final class j implements Runnable {
                 }
                 break;
             default:
-                r7 r7Var = (r7) this.c;
-                if (r7Var.a && r7Var.getParent() != null && this.b == r7Var.c) {
-                    r7Var.a = false;
+                o7 o7Var = (o7) this.c;
+                if (o7Var.a && o7Var.getParent() != null && this.b == o7Var.c) {
+                    o7Var.a = false;
                     try {
-                        r7Var.performHapticFeedback(0);
+                        o7Var.performHapticFeedback(0);
                     } catch (Exception unused2) {
                     }
-                    int i11 = r7Var.h;
+                    int i11 = o7Var.h;
                     if (i11 >= 0) {
-                        r7Var.x.a(((CharSequence) r7Var.E.get(i11)).toString(), true);
+                        o7Var.y.a(((CharSequence) o7Var.E.get(i11)).toString(), true);
                     }
                     MotionEvent obtain2 = MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0);
-                    r7Var.onTouchEvent(obtain2);
+                    o7Var.onTouchEvent(obtain2);
                     obtain2.recycle();
                     break;
                 }
@@ -90,9 +93,15 @@ public final class j implements Runnable {
         this.b = i10;
     }
 
+    public j(MediaController mediaController) {
+        this.a = 3;
+        this.c = mediaController;
+        this.b = 0;
+    }
+
     public j(List list, int i10, Throwable th2) {
         this.a = 0;
-        mf.a(list, "initCallbacks cannot be null");
+        q6.a(list, "initCallbacks cannot be null");
         this.c = new ArrayList(list);
         this.b = i10;
     }

@@ -1,16 +1,11 @@
 package e0;
 
 import android.app.Notification;
-import android.app.Person;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public abstract class t {
-    public static Notification.MessagingStyle a(Person person) {
-        return new Notification.MessagingStyle(person);
-    }
-
-    public static Notification.MessagingStyle b(Notification.MessagingStyle messagingStyle, boolean z10) {
-        return messagingStyle.setGroupConversation(z10);
+    public static Notification.MessagingStyle a(Notification.MessagingStyle messagingStyle, Notification.MessagingStyle.Message message) {
+        return messagingStyle.addHistoricMessage(message);
     }
 }

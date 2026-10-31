@@ -1,43 +1,41 @@
 package jg;
 
+import android.content.Context;
+import android.graphics.Canvas;
 import android.view.View;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.u61;
+import org.telegram.messenger.zs;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class m1 implements Utilities.Callback5, Utilities.Callback5Return {
-    public final /* synthetic */ z1 a;
+public final class m1 extends View {
+    public int a;
+    public float b;
+    public final /* synthetic */ n1 c;
 
-    public /* synthetic */ m1(z1 z1Var) {
-        this.a = z1Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public m1(n1 n1Var, Context context) {
+        super(context);
+        this.c = n1Var;
+        setPadding(org.telegram.messenger.i0.L(4.0f), org.telegram.messenger.i0.L(4.0f), org.telegram.messenger.i0.L(4.0f), org.telegram.messenger.i0.L(4.0f));
+        setLayoutParams(new s4.o0(-2, 0));
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback5
-    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        ((Integer) obj3).getClass();
-        ((Float) obj4).getClass();
-        ((Float) obj5).getClass();
-        z1.X(this.a, (u61) obj, (View) obj2);
-    }
-
-    @Override // org.telegram.messenger.Utilities.Callback5Return
-    public Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        boolean z10;
-        u61 u61Var = (u61) obj;
-        View view = (View) obj2;
-        ((Integer) obj3).getClass();
-        ((Float) obj4).getClass();
-        ((Float) obj5).getClass();
-        if (u61Var.a == 16) {
-            Object obj6 = u61Var.G;
-            if (!(obj6 instanceof b2) || !((b2) obj6).g) {
-                this.a.f0(u61Var, view);
-                z10 = true;
-                return Boolean.valueOf(z10);
-            }
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        n1 n1Var = this.c;
+        n1Var.e3.setColor(this.a);
+        float min = Math.min((getWidth() - getPaddingLeft()) - getPaddingRight(), (getHeight() - getPaddingTop()) - getPaddingBottom()) / 2.0f;
+        if (this.b != 0.0f) {
+            min -= (n1Var.f3.getStrokeWidth() + org.telegram.messenger.i0.L(3.0f)) * this.b;
         }
-        z10 = false;
-        return Boolean.valueOf(z10);
+        float width = ((getWidth() / 2.0f) + getPaddingLeft()) - getPaddingRight();
+        float height = ((getHeight() / 2.0f) + getPaddingTop()) - getPaddingBottom();
+        n1.A1(width, height, min, this.a, canvas);
+        if (this.b != 0.0f) {
+            n1Var.f3.setColor(this.a);
+            n1Var.f3.setAlpha(zs.e4);
+            canvas.drawCircle(width, height, (Math.min((getWidth() - getPaddingLeft()) - getPaddingRight(), (getHeight() - getPaddingTop()) - getPaddingBottom()) / 2.0f) - org.telegram.messenger.i0.L(2.0f), n1Var.f3);
+        }
     }
 }

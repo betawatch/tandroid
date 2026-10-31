@@ -1,15 +1,14 @@
 package org.telegram.utils.recorder.audio;
 
-import a1.g;
-import bi.y2;
+import a3.i0;
+import ag.a3;
 import java.io.File;
 import java.nio.ByteBuffer;
-import org.telegram.ui.dc0;
-import org.telegram.ui.ko;
-import ui.i;
-import ui.o;
+import ki.g;
+import ki.j;
+import ki.k;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -17,9 +16,9 @@ public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
 
-    public /* synthetic */ b(long j10, i iVar, o oVar) {
-        this.c = oVar;
-        this.d = iVar;
+    public /* synthetic */ b(long j10, j jVar, k kVar) {
+        this.c = kVar;
+        this.d = jVar;
         this.b = j10;
     }
 
@@ -31,8 +30,8 @@ public final /* synthetic */ class b implements Runnable {
             case 0:
                 d dVar = (d) this.c;
                 Exception exc = (Exception) this.d;
-                dc.e eVar = dVar.g;
-                ui.b bVar = dVar.f;
+                g gVar = dVar.g;
+                ki.b bVar = dVar.f;
                 File file = dVar.a;
                 ByteBuffer byteBuffer = dVar.s;
                 if (dVar.w) {
@@ -93,33 +92,33 @@ public final /* synthetic */ class b implements Runnable {
                 }
                 Exception exc3 = exc2;
                 long j10 = this.b;
-                StringBuilder t10 = g.t(j10, "capture stopped: samples=", ", durationMs=");
-                t10.append((1000 * j10) / 48000);
-                t10.append(", bytes=");
-                t10.append(length);
-                t10.append(", maxQueuedChunks=");
-                t10.append(dVar.y);
-                bVar.b(t10.toString());
+                StringBuilder s10 = a1.g.s(j10, "capture stopped: samples=", ", durationMs=");
+                s10.append((1000 * j10) / 48000);
+                s10.append(", bytes=");
+                s10.append(length);
+                s10.append(", maxQueuedChunks=");
+                s10.append(dVar.y);
+                bVar.b(s10.toString());
                 if (exc3 == null) {
-                    o oVar = (o) eVar.c;
-                    oVar.a((i) eVar.b, length);
-                    oVar.i.post(new ko(eVar, eVar.a, j10, 3));
+                    k kVar = (k) gVar.c;
+                    kVar.a((j) gVar.b, length);
+                    kVar.i.post(new ki.d(gVar, gVar.a, j10, 1));
                 } else {
-                    ((o) eVar.c).i.post(new dc0(eVar, eVar.a, exc3, 3));
+                    ((k) gVar.c).i.post(new i0(gVar, gVar.a, exc3, 2));
                 }
                 dVar.j.quitSafely();
                 dVar.l.clear();
                 return;
             default:
-                o oVar2 = (o) this.c;
-                i iVar = (i) this.d;
+                k kVar2 = (k) this.c;
+                j jVar = (j) this.d;
                 try {
-                    bArr = AudioRecorderNative.e(iVar.b.getAbsolutePath());
+                    bArr = AudioRecorderNative.e(jVar.b.getAbsolutePath());
                 } catch (Throwable th4) {
-                    oVar2.h.a("final waveform extraction failed", th4);
+                    kVar2.h.a("final waveform extraction failed", th4);
                     bArr = null;
                 }
-                oVar2.i.post(new y2(oVar2, iVar, this.b, bArr, 27));
+                kVar2.i.post(new a3(kVar2, jVar, this.b, bArr, 2));
                 return;
         }
     }

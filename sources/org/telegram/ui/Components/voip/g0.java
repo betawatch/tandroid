@@ -1,47 +1,46 @@
 package org.telegram.ui.Components.voip;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.drawable.ShapeDrawable;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.m9;
-import org.telegram.ui.o30;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes4.dex */
-public final class g0 extends FrameLayout {
-    public final /* synthetic */ ShapeDrawable a;
-    public final /* synthetic */ o30 b;
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final class g0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ l0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g0(o30 o30Var, Context context, ShapeDrawable shapeDrawable) {
-        super(context);
-        this.b = o30Var;
-        this.a = shapeDrawable;
+    public /* synthetic */ g0(l0 l0Var, int i10) {
+        this.a = i10;
+        this.b = l0Var;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        o30 o30Var = this.b;
-        m9 m9Var = o30Var.J;
-        TextView textView = o30Var.K;
-        float f7 = o30Var.O;
-        ShapeDrawable shapeDrawable = this.a;
-        if (f7 == 1.0f) {
-            shapeDrawable.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
-            m9Var.setTranslationX(0.0f);
-            textView.setTranslationX(0.0f);
-        } else {
-            float interpolation = 1.0f - ds.f.getInterpolation(f7);
-            float left = (o30Var.P - getLeft()) * interpolation;
-            float left2 = (o30Var.Q - textView.getLeft()) * interpolation;
-            shapeDrawable.setBounds((int) left, 0, getMeasuredWidth() + ((int) ((o30Var.R - getRight()) * interpolation)), getMeasuredHeight());
-            m9Var.setTranslationX(left);
-            textView.setTranslationX(-left2);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                super.onAnimationEnd(animator);
+                l0 l0Var = this.b;
+                if (l0Var.getParent() != null) {
+                    ((ViewGroup) l0Var.getParent()).removeView(l0Var);
+                    break;
+                }
+                break;
+            case 1:
+                l0 l0Var2 = this.b;
+                if (l0Var2.getParent() != null) {
+                    ((ViewGroup) l0Var2.getParent()).removeView(l0Var2);
+                    break;
+                }
+                break;
+            default:
+                super.onAnimationEnd(animator);
+                l0 l0Var3 = this.b;
+                if (l0Var3.getParent() != null) {
+                    ((ViewGroup) l0Var3.getParent()).removeView(l0Var3);
+                    break;
+                }
+                break;
         }
-        shapeDrawable.draw(canvas);
-        super.dispatchDraw(canvas);
     }
 }

@@ -1,14 +1,14 @@
 package com.google.android.gms.internal.play_billing;
 
-import a8.bb;
-import com.google.android.gms.internal.cast.w4;
+import com.google.android.gms.internal.cast.x4;
 import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import v7.k6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class m1 extends bb {
+public final class m1 extends k6 {
     public static final Logger e = Logger.getLogger(m1.class.getName());
     public static final boolean f = c3.e;
     public i2 a;
@@ -20,7 +20,7 @@ public final class m1 extends bb {
         int length = bArr.length;
         if (((length - i10) | i10) < 0) {
             Locale locale = Locale.US;
-            throw new IllegalArgumentException(a1.g.l(length, i10, "Array range is invalid. Buffer.length=", ", offset=0, length="));
+            throw new IllegalArgumentException(a1.g.j(length, i10, "Array range is invalid. Buffer.length=", ", offset=0, length="));
         }
         this.b = bArr;
         this.d = 0;
@@ -49,8 +49,8 @@ public final class m1 extends bb {
         try {
             System.arraycopy(bArr, 0, this.b, this.d, i10);
             this.d += i10;
-        } catch (IndexOutOfBoundsException e10) {
-            throw new w4(this.d, this.c, i10, e10);
+        } catch (IndexOutOfBoundsException e7) {
+            throw new x4(this.d, this.c, i10, e7);
         }
     }
 
@@ -74,8 +74,8 @@ public final class m1 extends bb {
             bArr[i11 + 2] = (byte) (i10 >> 16);
             bArr[i11 + 3] = (byte) (i10 >> 24);
             this.d = i11 + 4;
-        } catch (IndexOutOfBoundsException e10) {
-            throw new w4(i11, this.c, 4, e10);
+        } catch (IndexOutOfBoundsException e7) {
+            throw new x4(i11, this.c, 4, e7);
         }
     }
 
@@ -97,8 +97,8 @@ public final class m1 extends bb {
             bArr[i10 + 6] = (byte) (j10 >> 48);
             bArr[i10 + 7] = (byte) (j10 >> 56);
             this.d = i10 + 8;
-        } catch (IndexOutOfBoundsException e10) {
-            throw new w4(i10, this.c, 8, e10);
+        } catch (IndexOutOfBoundsException e7) {
+            throw new x4(i10, this.c, 8, e7);
         }
     }
 
@@ -135,19 +135,19 @@ public final class m1 extends bb {
                 o((b12 - i11) - b11);
                 this.d = b12;
             }
-        } catch (d3 e10) {
+        } catch (d3 e7) {
             this.d = i11;
-            e.logp(Level.WARNING, "com.google.protobuf.CodedOutputStream", "inefficientWriteStringNoTag", "Converting ill-formed UTF-16. Your Protocol Buffer will not round trip correctly!", (Throwable) e10);
+            e.logp(Level.WARNING, "com.google.protobuf.CodedOutputStream", "inefficientWriteStringNoTag", "Converting ill-formed UTF-16. Your Protocol Buffer will not round trip correctly!", (Throwable) e7);
             byte[] bytes = str.getBytes(a2.a);
             try {
                 int length = bytes.length;
                 o(length);
                 d(length, bytes);
-            } catch (IndexOutOfBoundsException e11) {
-                throw new w4(e11);
+            } catch (IndexOutOfBoundsException e10) {
+                throw new x4(e10);
             }
-        } catch (IndexOutOfBoundsException e12) {
-            throw new w4(e12);
+        } catch (IndexOutOfBoundsException e11) {
+            throw new x4(e11);
         }
     }
 
@@ -177,11 +177,11 @@ public final class m1 extends bb {
                     bArr[i12] = (byte) (i10 | 128);
                     i10 >>>= 7;
                     i12 = i11;
-                } catch (IndexOutOfBoundsException e10) {
-                    throw new w4(i11, this.c, 1, e10);
+                } catch (IndexOutOfBoundsException e7) {
+                    throw new x4(i11, this.c, 1, e7);
                 }
             }
-            throw new w4(i11, this.c, 1, e10);
+            throw new x4(i11, this.c, 1, e7);
         }
     }
 
@@ -204,8 +204,8 @@ public final class m1 extends bb {
                     bArr[i11] = (byte) (((int) j11) | 128);
                     j11 >>>= 7;
                     i11 = i10;
-                } catch (IndexOutOfBoundsException e10) {
-                    throw new w4(i10, i12, 1, e10);
+                } catch (IndexOutOfBoundsException e7) {
+                    throw new x4(i10, i12, 1, e7);
                 }
             }
             i10 = i11 + 1;

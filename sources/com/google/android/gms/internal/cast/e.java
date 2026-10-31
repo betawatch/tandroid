@@ -5,21 +5,21 @@ import j$.util.DesugarCollections;
 import java.util.ArrayList;
 import java.util.List;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class e {
     public final Context a;
     public final String b;
-    public final e6.j c;
-    public final e6.b d;
-    public final p e;
+    public final d6.j c;
+    public final d6.b d;
+    public final q e;
 
-    public e(Context context, e6.b bVar, p pVar) {
-        String K;
+    public e(Context context, d6.b bVar, q qVar) {
+        String I;
         ArrayList arrayList = bVar.b;
         String str = bVar.a;
         if (DesugarCollections.unmodifiableList(arrayList).isEmpty()) {
-            K = d6.y.a(str);
+            I = c6.y.a(str);
         } else {
             List unmodifiableList = DesugarCollections.unmodifiableList(bVar.b);
             if (str == null) {
@@ -28,13 +28,13 @@ public final class e {
             if (unmodifiableList == null) {
                 throw new IllegalArgumentException("namespaces cannot be null");
             }
-            K = n4.s.K(new n4.s(13, str, unmodifiableList));
+            I = n4.q.I(new n4.q(str, unmodifiableList));
         }
-        this.c = new e6.j(this);
+        this.c = new d6.j(this);
         this.a = context.getApplicationContext();
-        o6.l.f(K);
-        this.b = K;
+        n6.l.e(I);
+        this.b = I;
         this.d = bVar;
-        this.e = pVar;
+        this.e = qVar;
     }
 }

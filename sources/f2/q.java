@@ -1,11 +1,10 @@
 package f2;
 
-import a8.yb;
 import b2.x;
-import f9.c0;
-import f9.f0;
-import f9.i0;
-import f9.s1;
+import e9.h0;
+import e9.k0;
+import e9.n0;
+import e9.x1;
 import j$.util.Objects;
 import java.lang.reflect.Array;
 import java.math.RoundingMode;
@@ -14,9 +13,10 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.ArrayList;
 import java.util.Arrays;
-import org.telegram.messenger.MediaController;
+import org.telegram.messenger.zs;
+import v7.t6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public abstract class q {
     public static final byte[] a = {0, 0, 0, 1};
@@ -40,7 +40,7 @@ public abstract class q {
 
     public static int c(byte[] bArr, int i10, int i11, boolean[] zArr) {
         int i12 = i11 - i10;
-        yb.p(i12 >= 0);
+        t6.p(i12 >= 0);
         if (i12 == 0) {
             return i11;
         }
@@ -81,7 +81,7 @@ public abstract class q {
         String str2 = xVar.k;
         if (Objects.equals(str, "video/dolby-vision") && str2 != null) {
             if (str2.startsWith("dva1") || str2.startsWith("dvav")) {
-                return MediaController.VIDEO_MIME_TYPE;
+                return "video/avc";
             }
             if (str2.startsWith("dvh1") || str2.startsWith("dvhe")) {
                 return "video/hevc";
@@ -108,7 +108,7 @@ public abstract class q {
 
     public static boolean f(byte[] bArr, int i10, x xVar) {
         int i11;
-        if (Objects.equals(xVar.s, MediaController.VIDEO_MIME_TYPE)) {
+        if (Objects.equals(xVar.s, "video/avc")) {
             byte b10 = bArr[4];
             if (((b10 & 96) >> 5) == 0 && ((i11 = b10 & 31) == 1 || i11 == 9 || i11 == 14)) {
                 return false;
@@ -128,7 +128,7 @@ public abstract class q {
 
     public static int g(x xVar) {
         String d10 = d(xVar);
-        if (Objects.equals(d10, MediaController.VIDEO_MIME_TYPE)) {
+        if (Objects.equals(d10, "video/avc")) {
             return 1;
         }
         return (Objects.equals(d10, "video/hevc") || Objects.equals(d10, "video/vvc")) ? 2 : 0;
@@ -175,7 +175,7 @@ public abstract class q {
                 i12 = 0;
                 i13 = 0;
                 z11 = false;
-                int e10 = uVar.e(8);
+                int e7 = uVar.e(8);
                 int i18 = 0;
                 for (int i19 = 0; i19 < i10; i19++) {
                     if (uVar.d()) {
@@ -189,7 +189,7 @@ public abstract class q {
                 if (i10 > 0) {
                     uVar.j((8 - i10) * 2);
                 }
-                return new j(i11, i12, i13, e10, z11, iArr);
+                return new j(i11, i12, i13, e7, z11, iArr);
             }
             int i20 = jVar.a;
             z12 = jVar.b;
@@ -202,17 +202,17 @@ public abstract class q {
         z11 = z12;
         i12 = i14;
         i13 = i15;
-        int e102 = uVar.e(8);
+        int e72 = uVar.e(8);
         int i182 = 0;
         while (i19 < i10) {
         }
         uVar.j(i182);
         if (i10 > 0) {
         }
-        return new j(i11, i12, i13, e102, z11, iArr);
+        return new j(i11, i12, i13, e72, z11, iArr);
     }
 
-    public static ag.j j(int i10, int i11, byte[] bArr) {
+    public static ae.j j(int i10, int i11, byte[] bArr) {
         byte b10;
         int i12 = i10 + 2;
         do {
@@ -230,17 +230,17 @@ public abstract class q {
             int e = uVar.e(8);
             int i13 = 0;
             while (e == 255) {
-                i13 += 255;
+                i13 += zs.e4;
                 e = uVar.e(8);
             }
             int i14 = i13 + e;
-            int e10 = uVar.e(8);
+            int e7 = uVar.e(8);
             int i15 = 0;
-            while (e10 == 255) {
-                i15 += 255;
-                e10 = uVar.e(8);
+            while (e7 == 255) {
+                i15 += zs.e4;
+                e7 = uVar.e(8);
             }
-            int i16 = i15 + e10;
+            int i16 = i15 + e7;
             if (i16 == 0 || !uVar.b(i16)) {
                 return null;
             }
@@ -253,23 +253,23 @@ public abstract class q {
                 for (int i18 = 0; i18 <= f11; i18++) {
                     i17 = uVar.f();
                     uVar.f();
-                    int e11 = uVar.e(6);
-                    if (e11 == 63) {
+                    int e10 = uVar.e(6);
+                    if (e10 == 63) {
                         return null;
                     }
-                    uVar.e(e11 == 0 ? Math.max(0, f7 - 30) : Math.max(0, (e11 + f7) - 31));
+                    uVar.e(e10 == 0 ? Math.max(0, f7 - 30) : Math.max(0, (e10 + f7) - 31));
                     if (d10) {
-                        int e12 = uVar.e(6);
-                        if (e12 == 63) {
+                        int e11 = uVar.e(6);
+                        if (e11 == 63) {
                             return null;
                         }
-                        uVar.e(e12 == 0 ? Math.max(0, f10 - 30) : Math.max(0, (e12 + f10) - 31));
+                        uVar.e(e11 == 0 ? Math.max(0, f10 - 30) : Math.max(0, (e11 + f10) - 31));
                     }
                     if (uVar.d()) {
                         uVar.j(10);
                     }
                 }
-                return new ag.j(i17);
+                return new ae.j(i17);
             }
             uVar.j(i16 * 8);
         }
@@ -291,7 +291,7 @@ public abstract class q {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static m k(byte[] bArr, int i10, int i11, com.google.firebase.messaging.q qVar) {
+    public static m k(byte[] bArr, int i10, int i11, xa.n nVar) {
         int i12;
         int i13;
         int i14;
@@ -319,7 +319,7 @@ public abstract class q {
         int i31;
         int i32;
         int i33;
-        n4.s sVar;
+        n4.q qVar;
         a3.l h = h(new u(bArr, i10, i11));
         u uVar = new u(bArr, i10 + 2, i11);
         int i34 = 4;
@@ -327,21 +327,21 @@ public abstract class q {
         int e = uVar.e(3);
         int i35 = h.b;
         boolean z10 = i35 != 0 && e == 7;
-        if (qVar != null) {
-            i0 i0Var = (i0) qVar.a;
-            if (!i0Var.isEmpty()) {
-                i12 = ((i) i0Var.get(Math.min(i35, i0Var.size() - 1))).a;
+        if (nVar != null) {
+            n0 n0Var = (n0) nVar.a;
+            if (!n0Var.isEmpty()) {
+                i12 = ((i) n0Var.get(Math.min(i35, n0Var.size() - 1))).a;
                 j jVar2 = null;
                 if (z10) {
                     uVar.i();
                     jVar2 = i(uVar, true, e, null);
-                } else if (qVar != null) {
-                    k kVar2 = (k) qVar.b;
+                } else if (nVar != null) {
+                    k kVar2 = (k) nVar.b;
                     int[] iArr = kVar2.b;
-                    i0 i0Var2 = kVar2.a;
+                    n0 n0Var2 = kVar2.a;
                     int i36 = iArr[i12];
-                    if (i0Var2.size() > i36) {
-                        jVar2 = (j) i0Var2.get(i36);
+                    if (n0Var2.size() > i36) {
+                        jVar2 = (j) n0Var2.get(i36);
                     }
                 }
                 uVar.f();
@@ -370,14 +370,14 @@ public abstract class q {
                     i17 = f14;
                     i18 = f13;
                 } else {
-                    int e10 = uVar.d() ? uVar.e(8) : -1;
-                    if (qVar != null && (sVar = (n4.s) qVar.c) != null) {
-                        i0 i0Var3 = (i0) sVar.b;
-                        if (e10 == -1) {
-                            e10 = ((int[]) sVar.c)[i12];
+                    int e7 = uVar.d() ? uVar.e(8) : -1;
+                    if (nVar != null && (qVar = (n4.q) nVar.c) != null) {
+                        n0 n0Var3 = (n0) qVar.a;
+                        if (e7 == -1) {
+                            e7 = ((int[]) qVar.b)[i12];
                         }
-                        if (e10 != -1 && i0Var3.size() > e10) {
-                            l lVar = (l) i0Var3.get(e10);
+                        if (e7 != -1 && n0Var3.size() > e7) {
+                            l lVar = (l) n0Var3.get(e7);
                             int i37 = lVar.a;
                             i16 = lVar.d;
                             int i38 = lVar.e;
@@ -567,17 +567,17 @@ public abstract class q {
                     i27 = -1;
                 } else {
                     if (uVar.d()) {
-                        int e11 = uVar.e(8);
-                        if (e11 == 255) {
+                        int e10 = uVar.e(8);
+                        if (e10 == 255) {
+                            int e11 = uVar.e(16);
                             int e12 = uVar.e(16);
-                            int e13 = uVar.e(16);
-                            if (e12 != 0 && e13 != 0) {
-                                f23 = e12 / e13;
+                            if (e11 != 0 && e12 != 0) {
+                                f23 = e11 / e12;
                             }
-                        } else if (e11 < 17) {
-                            f23 = b[e11];
+                        } else if (e10 < 17) {
+                            f23 = b[e10];
                         } else {
-                            a1.g.z(e11, "Unexpected aspect_ratio_idc value: ", "NalUnitUtil");
+                            a1.g.w(e10, "Unexpected aspect_ratio_idc value: ", "NalUnitUtil");
                         }
                     }
                     if (uVar.d()) {
@@ -587,24 +587,24 @@ public abstract class q {
                         uVar.j(3);
                         i30 = uVar.d() ? 1 : 2;
                         if (uVar.d()) {
+                            int e13 = uVar.e(8);
                             int e14 = uVar.e(8);
-                            int e15 = uVar.e(8);
                             uVar.j(8);
-                            i28 = b2.o.f(e14);
-                            i29 = b2.o.g(e15);
+                            i28 = b2.o.f(e13);
+                            i29 = b2.o.g(e14);
                         } else {
                             i28 = -1;
                             i29 = -1;
                         }
                     } else {
-                        if (qVar != null && (kVar = (k) qVar.d) != null) {
-                            i0 i0Var4 = kVar.a;
+                        if (nVar != null && (kVar = (k) nVar.d) != null) {
+                            n0 n0Var4 = kVar.a;
                             int i66 = kVar.b[i64];
-                            if (i0Var4.size() > i66) {
-                                n nVar = (n) i0Var4.get(i66);
-                                int i67 = nVar.a;
-                                int i68 = nVar.b;
-                                i29 = nVar.c;
+                            if (n0Var4.size() > i66) {
+                                n nVar2 = (n) n0Var4.get(i66);
+                                int i67 = nVar2.a;
+                                int i68 = nVar2.b;
+                                i29 = nVar2.c;
                                 i28 = i67;
                                 i30 = i68;
                             }
@@ -677,7 +677,7 @@ public abstract class q {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static com.google.firebase.messaging.q l(int i10, int i11, byte[] bArr) {
+    public static xa.n l(int i10, int i11, byte[] bArr) {
         int[] iArr;
         int[] iArr2;
         k kVar;
@@ -686,7 +686,7 @@ public abstract class q {
         int i14;
         boolean z10;
         int i15;
-        s1 s1Var;
+        x1 x1Var;
         boolean[][] zArr;
         int i16;
         boolean[][] zArr2;
@@ -711,25 +711,25 @@ public abstract class q {
         boolean d13 = uVar.d();
         int e = uVar.e(6);
         int i24 = e + 1;
-        int e10 = uVar.e(3);
+        int e7 = uVar.e(3);
         uVar.j(17);
-        j i25 = i(uVar, true, e10, null);
-        for (int i26 = uVar.d() ? 0 : e10; i26 <= e10; i26++) {
+        j i25 = i(uVar, true, e7, null);
+        for (int i26 = uVar.d() ? 0 : e7; i26 <= e7; i26++) {
             uVar.f();
             uVar.f();
             uVar.f();
         }
-        int e11 = uVar.e(6);
+        int e10 = uVar.e(6);
         int f7 = uVar.f() + 1;
         int i27 = 6;
         int i28 = 1;
-        k kVar2 = new k(i0.y(i25), new int[1], 0);
+        k kVar2 = new k(n0.y(i25), new int[1], 0);
         boolean z14 = i24 >= 2 && f7 >= 2;
         boolean z15 = d12 && d13;
-        int i29 = e11 + 1;
+        int i29 = e10 + 1;
         boolean z16 = i29 >= i24;
         if (!z14 || !z15 || !z16) {
-            return new com.google.firebase.messaging.q((s1) null, kVar2, (n4.s) null, (k) null);
+            return new xa.n((x1) null, kVar2, (n4.q) null, (k) null);
         }
         Class cls = Integer.TYPE;
         int[][] iArr5 = (int[][]) Array.newInstance((Class<?>) cls, f7, i29);
@@ -740,7 +740,7 @@ public abstract class q {
         iArr7[0] = 0;
         for (int i30 = 1; i30 < f7; i30++) {
             int i31 = 0;
-            for (int i32 = 0; i32 <= e11; i32++) {
+            for (int i32 = 0; i32 <= e10; i32++) {
                 if (uVar.d()) {
                     iArr5[i30][i31] = i32;
                     iArr7[i30] = i32;
@@ -776,7 +776,7 @@ public abstract class q {
                         i20 = d14;
                         i19 = d15;
                         i21 = 0;
-                        while (i21 <= e10) {
+                        while (i21 <= e7) {
                             boolean d16 = uVar.d();
                             if (!d16) {
                                 d16 = uVar.d();
@@ -827,7 +827,7 @@ public abstract class q {
                 i20 = z13;
                 i19 = z12;
                 i21 = 0;
-                while (i21 <= e10) {
+                while (i21 <= e7) {
                 }
                 i33++;
             }
@@ -835,13 +835,13 @@ public abstract class q {
         int[][] iArr10 = iArr5;
         int[] iArr11 = iArr7;
         if (!uVar.d()) {
-            return new com.google.firebase.messaging.q((s1) null, kVar2, (n4.s) null, (k) null);
+            return new xa.n((x1) null, kVar2, (n4.q) null, (k) null);
         }
         int i38 = uVar.d;
         if (i38 > 0) {
             uVar.j(8 - i38);
         }
-        j i39 = i(uVar, false, e10, i25);
+        j i39 = i(uVar, false, e7, i25);
         boolean d17 = uVar.d();
         boolean[] zArr3 = new boolean[16];
         int i40 = 0;
@@ -853,7 +853,7 @@ public abstract class q {
             }
         }
         if (i40 == 0 || !zArr3[1]) {
-            return new com.google.firebase.messaging.q((s1) null, kVar2, (n4.s) null, (k) null);
+            return new xa.n((x1) null, kVar2, (n4.q) null, (k) null);
         }
         int[] iArr12 = new int[i40];
         for (int i42 = 0; i42 < i40 - (d17 ? 1 : 0); i42++) {
@@ -944,25 +944,25 @@ public abstract class q {
             i28 = 1;
         }
         int[] iArr19 = iArr17;
-        int e12 = uVar.e(4);
-        if (i49 < 2 || e12 == 0) {
-            return new com.google.firebase.messaging.q((s1) null, kVar2, (n4.s) null, (k) null);
+        int e11 = uVar.e(4);
+        if (i49 < 2 || e11 == 0) {
+            return new xa.n((x1) null, kVar2, (n4.q) null, (k) null);
         }
         int[] iArr20 = new int[i49];
         for (int i55 = 0; i55 < i49; i55++) {
-            iArr20[i55] = uVar.e(e12);
+            iArr20[i55] = uVar.e(e11);
         }
         int[] iArr21 = new int[i29];
         int i56 = 0;
         while (i56 < i24) {
-            iArr21[Math.min(iArr16[i56], e11)] = i56;
+            iArr21[Math.min(iArr16[i56], e10)] = i56;
             i56++;
             iArr20 = iArr20;
         }
         int[] iArr22 = iArr20;
-        f0 t10 = i0.t();
+        k0 t10 = n0.t();
         int i57 = 0;
-        while (i57 <= e11) {
+        while (i57 <= e10) {
             int i58 = i49;
             int[] iArr23 = iArr16;
             int min = Math.min(iArr19[i57], i58 - 1);
@@ -974,13 +974,13 @@ public abstract class q {
             iArr16 = iArr23;
         }
         int[] iArr25 = iArr16;
-        s1 f11 = t10.f();
+        x1 f11 = t10.f();
         if (((i) f11.get(0)).b == -1) {
-            return new com.google.firebase.messaging.q((s1) null, kVar2, (n4.s) null, (k) null);
+            return new xa.n((x1) null, kVar2, (n4.q) null, (k) null);
         }
         int i59 = 1;
         while (true) {
-            if (i59 > e11) {
+            if (i59 > e10) {
                 i59 = -1;
                 break;
             }
@@ -990,7 +990,7 @@ public abstract class q {
             i59++;
         }
         if (i59 == -1) {
-            return new com.google.firebase.messaging.q((s1) null, kVar2, (n4.s) null, (k) null);
+            return new xa.n((x1) null, kVar2, (n4.q) null, (k) null);
         }
         Class cls2 = Boolean.TYPE;
         boolean[][] zArr4 = (boolean[][]) Array.newInstance((Class<?>) cls2, i24, i24);
@@ -1044,7 +1044,7 @@ public abstract class q {
             }
         }
         if (i68 > 1) {
-            return new com.google.firebase.messaging.q((s1) null, kVar2, (n4.s) null, (k) null);
+            return new xa.n((x1) null, kVar2, (n4.q) null, (k) null);
         }
         int[] iArr27 = new int[i24];
         int[] iArr28 = new int[f7];
@@ -1058,7 +1058,7 @@ public abstract class q {
             }
         } else {
             iArr2 = iArr26;
-            Arrays.fill(iArr27, 0, i24, e10);
+            Arrays.fill(iArr27, 0, i24, e7);
         }
         int i72 = 0;
         while (i72 < f7) {
@@ -1095,21 +1095,21 @@ public abstract class q {
         }
         uVar.i();
         int f12 = uVar.f() + 1;
-        f0 t11 = i0.t();
+        k0 t11 = n0.t();
         t11.c(i25);
         if (f12 > 1) {
             t11.c(i39);
             for (int i79 = 2; i79 < f12; i79++) {
-                i39 = i(uVar, uVar.d(), e10, i39);
+                i39 = i(uVar, uVar.d(), e7, i39);
                 t11.c(i39);
             }
         }
-        s1 f13 = t11.f();
+        x1 f13 = t11.f();
         int f14 = uVar.f() + f7;
         if (f14 > f7) {
-            return new com.google.firebase.messaging.q((s1) null, kVar2, (n4.s) null, (k) null);
+            return new xa.n((x1) null, kVar2, (n4.q) null, (k) null);
         }
-        int e13 = uVar.e(2);
+        int e12 = uVar.e(2);
         boolean[][] zArr13 = (boolean[][]) Array.newInstance((Class<?>) cls2, f14, i29);
         int[] iArr32 = new int[f14];
         int i80 = 0;
@@ -1118,7 +1118,7 @@ public abstract class q {
         while (i81 < f7) {
             iArr32[i81] = i80;
             iArr33[i81] = iArr11[i81];
-            if (e13 == 0) {
+            if (e12 == 0) {
                 i16 = i81;
                 zArr2 = zArr13;
                 iArr3 = iArr32;
@@ -1130,7 +1130,7 @@ public abstract class q {
                 zArr2 = zArr13;
                 iArr3 = iArr32;
                 iArr4 = iArr6;
-                if (e13 == 1) {
+                if (e12 == 1) {
                     int i82 = iArr11[i16];
                     for (int i83 = 0; i83 < iArr4[i16]; i83++) {
                         zArr2[i16][i83] = iArr10[i16][i83] == i82;
@@ -1164,7 +1164,7 @@ public abstract class q {
         int i85 = 1;
         int i86 = 0;
         while (i85 < f14) {
-            if (e13 == i84) {
+            if (e12 == i84) {
                 for (int i87 = 0; i87 < iArr35[i85]; i87++) {
                     zArr14[i85][i87] = uVar.d();
                     int i88 = iArr34[i85];
@@ -1191,10 +1191,10 @@ public abstract class q {
             while (i90 < iArr35[i85]) {
                 if (f12 > 1) {
                     zArr15[i85][i90] = zArr14[i85][i90];
-                    s1Var = f13;
+                    x1Var = f13;
                     zArr = zArr15;
                     RoundingMode roundingMode = RoundingMode.CEILING;
-                    int c10 = h9.c.c(f12);
+                    int c10 = g9.c.c(f12);
                     if (!zArr[i85][i90]) {
                         int i91 = ((i) f11.get(iArr10[i85][i90])).a;
                         int i92 = i15;
@@ -1218,32 +1218,32 @@ public abstract class q {
                         }
                     }
                 } else {
-                    s1Var = f13;
+                    x1Var = f13;
                     zArr = zArr15;
                 }
                 i90++;
-                f13 = s1Var;
+                f13 = x1Var;
                 zArr15 = zArr;
             }
-            s1 s1Var2 = f13;
+            x1 x1Var2 = f13;
             boolean[][] zArr16 = zArr15;
             if (iArr34[i85] == 1 && iArr2[iArr33[i85]] > 0) {
                 uVar.i();
             }
             i85++;
-            f13 = s1Var2;
+            f13 = x1Var2;
             zArr15 = zArr16;
             i84 = 2;
         }
-        s1 s1Var3 = f13;
+        x1 x1Var3 = f13;
         boolean[][] zArr17 = zArr15;
         if (i86 == 0) {
-            return new com.google.firebase.messaging.q((s1) null, kVar2, (n4.s) null, (k) null);
+            return new xa.n((x1) null, kVar2, (n4.q) null, (k) null);
         }
         int f15 = uVar.f();
         int i94 = f15 + 1;
-        f9.o.f(i94, "expectedSize");
-        f9.o.f(i94, "initialCapacity");
+        e9.s.f(i94, "expectedSize");
+        e9.s.f(i94, "initialCapacity");
         int[] iArr38 = new int[i24];
         Object[] objArr = new Object[i94];
         int i95 = 0;
@@ -1251,8 +1251,8 @@ public abstract class q {
         boolean z18 = false;
         while (i95 < i94) {
             int i97 = i95;
+            int e13 = uVar.e(16);
             int e14 = uVar.e(16);
-            int e15 = uVar.e(16);
             boolean z19 = z18;
             if (uVar.d()) {
                 i12 = uVar.e(2);
@@ -1271,11 +1271,11 @@ public abstract class q {
                 int f17 = uVar.f();
                 int f18 = uVar.f();
                 int f19 = uVar.f();
-                e14 -= (f16 + f17) * ((i12 == 1 || i12 == 2) ? 2 : 1);
-                e15 -= (f18 + f19) * (i12 == 1 ? 2 : 1);
+                e13 -= (f16 + f17) * ((i12 == 1 || i12 == 2) ? 2 : 1);
+                e14 -= (f18 + f19) * (i12 == 1 ? 2 : 1);
             }
-            l lVar = new l(i12, i13, i14, e14, e15);
-            int b10 = c0.b(objArr.length, i96 + 1);
+            l lVar = new l(i12, i13, i14, e13, e14);
+            int b10 = h0.b(objArr.length, i96 + 1);
             if (b10 > objArr.length || z19) {
                 objArr = Arrays.copyOf(objArr, b10);
                 z10 = false;
@@ -1293,12 +1293,15 @@ public abstract class q {
             }
         } else {
             RoundingMode roundingMode2 = RoundingMode.CEILING;
-            int c11 = h9.c.c(i94);
+            int c11 = g9.c.c(i94);
             for (int i99 = 1; i99 < i24; i99++) {
                 iArr38[i99] = uVar.e(c11);
             }
         }
-        n4.s sVar = new n4.s(i0.s(i96, objArr), iArr38);
+        x1 s10 = n0.s(i96, objArr);
+        n4.q qVar = new n4.q();
+        qVar.a = n0.u(s10);
+        qVar.b = iArr38;
         uVar.j(2);
         for (int i100 = 1; i100 < i24; i100++) {
             if (iArr2[iArr25[i100]] == 0) {
@@ -1362,23 +1365,23 @@ public abstract class q {
                 }
             }
             boolean d26 = uVar.d();
-            int e16 = d26 ? uVar.e(4) + 1 : i24;
-            f9.o.f(e16, "expectedSize");
-            f9.o.f(e16, "initialCapacity");
+            int e15 = d26 ? uVar.e(4) + 1 : i24;
+            e9.s.f(e15, "expectedSize");
+            e9.s.f(e15, "initialCapacity");
             int[] iArr39 = new int[i24];
-            Object[] objArr2 = new Object[e16];
+            Object[] objArr2 = new Object[e15];
             int i110 = 0;
             int i111 = 0;
             boolean z20 = false;
-            while (i110 < e16) {
+            while (i110 < e15) {
                 uVar.j(3);
                 int i112 = uVar.d() ? 1 : 2;
                 int f22 = b2.o.f(uVar.e(8));
                 boolean z21 = d26;
-                int g7 = b2.o.g(uVar.e(8));
+                int g10 = b2.o.g(uVar.e(8));
                 uVar.j(8);
-                n nVar = new n(f22, i112, g7);
-                int b11 = c0.b(objArr2.length, i111 + 1);
+                n nVar = new n(f22, i112, g10);
+                int b11 = h0.b(objArr2.length, i111 + 1);
                 if (b11 > objArr2.length || z20) {
                     objArr2 = Arrays.copyOf(objArr2, b11);
                     z20 = false;
@@ -1389,16 +1392,16 @@ public abstract class q {
                 d26 = z21;
                 z20 = z20;
             }
-            if (d26 && e16 > 1) {
+            if (d26 && e15 > 1) {
                 for (int i113 = 0; i113 < i24; i113++) {
                     iArr39[i113] = uVar.e(4);
                 }
             }
-            kVar = new k(i0.s(i111, objArr2), iArr39, 1);
+            kVar = new k(n0.s(i111, objArr2), iArr39, 1);
         } else {
             kVar = null;
         }
-        return new com.google.firebase.messaging.q(f11, new k(s1Var3, iArr36, 0), sVar, kVar);
+        return new xa.n(f11, new k(x1Var3, iArr36, 0), qVar, kVar);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:101:0x0261  */
@@ -1443,8 +1446,8 @@ public abstract class q {
         int i27;
         u uVar = new u(bArr, i10 + 1, i11);
         int e = uVar.e(8);
+        int e7 = uVar.e(8);
         int e10 = uVar.e(8);
-        int e11 = uVar.e(8);
         int f12 = uVar.f();
         if (e == 100 || e == 110 || e == 122 || e == 244 || e == 44 || e == 83 || e == 86 || e == 118 || e == 128 || e == 138) {
             f7 = uVar.f();
@@ -1535,7 +1538,7 @@ public abstract class q {
                 int i39 = i38;
                 int i40 = i37;
                 int i41 = i14;
-                int i42 = ((i41 != 44 || i41 == 86 || i41 == 100 || i41 == 110 || i41 == 122 || i41 == 244) && (e10 & 16) != 0) ? 0 : i12;
+                int i42 = ((i41 != 44 || i41 == 86 || i41 == 100 || i41 == 110 || i41 == 122 || i41 == 244) && (e7 & 16) != 0) ? 0 : i12;
                 int i43 = -1;
                 float f23 = 1.0f;
                 if (uVar.d()) {
@@ -1549,19 +1552,19 @@ public abstract class q {
                     i24 = -1;
                 } else {
                     if (uVar.d()) {
-                        int e12 = uVar.e(8);
-                        if (e12 == 255) {
+                        int e11 = uVar.e(8);
+                        if (e11 == 255) {
                             int i44 = i12;
+                            int e12 = uVar.e(i44);
                             int e13 = uVar.e(i44);
-                            int e14 = uVar.e(i44);
-                            if (e13 != 0 && e14 != 0) {
-                                f23 = e13 / e14;
+                            if (e12 != 0 && e13 != 0) {
+                                f23 = e12 / e13;
                             }
-                        } else if (e12 < 17) {
-                            f23 = b[e12];
+                        } else if (e11 < 17) {
+                            f23 = b[e11];
                         } else {
                             i18 = f14;
-                            a1.g.z(e12, "Unexpected aspect_ratio_idc value: ", "NalUnitUtil");
+                            a1.g.w(e11, "Unexpected aspect_ratio_idc value: ", "NalUnitUtil");
                             if (uVar.d()) {
                                 uVar.i();
                             }
@@ -1572,11 +1575,11 @@ public abstract class q {
                                 uVar.j(3);
                                 i25 = uVar.d() ? 1 : 2;
                                 if (uVar.d()) {
+                                    int e14 = uVar.e(8);
                                     int e15 = uVar.e(8);
-                                    int e16 = uVar.e(8);
                                     uVar.j(8);
-                                    i43 = b2.o.f(e15);
-                                    i26 = b2.o.g(e16);
+                                    i43 = b2.o.f(e14);
+                                    i26 = b2.o.g(e15);
                                 } else {
                                     i26 = -1;
                                 }
@@ -1649,7 +1652,7 @@ public abstract class q {
                     i19 = i16;
                     i20 = i42;
                 }
-                return new p(i41, e10, e11, f12, i40, i39, f11, i13, i19, z10, d10, i18, i15, i23, z11, i24, i21, i22, i20);
+                return new p(i41, e7, e10, f12, i40, i39, f11, i13, i19, z10, d10, i18, i15, i23, z11, i24, i21, i22, i20);
             }
             i14 = e;
             i15 = f15;
@@ -1680,7 +1683,7 @@ public abstract class q {
         float f232 = 1.0f;
         if (uVar.d()) {
         }
-        return new p(i412, e10, e11, f12, i402, i392, f11, i13, i19, z10, d10, i18, i15, i23, z11, i24, i21, i22, i20);
+        return new p(i412, e7, e10, f12, i402, i392, f11, i13, i19, z10, d10, i18, i15, i23, z11, i24, i21, i22, i20);
     }
 
     public static void n(u uVar) {

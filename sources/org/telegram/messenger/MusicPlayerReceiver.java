@@ -5,11 +5,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.view.KeyEvent;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public class MusicPlayerReceiver extends BroadcastReceiver {
     @Override // android.content.BroadcastReceiver
-    public void onReceive(Context context, Intent intent) {
+    public final void onReceive(Context context, Intent intent) {
         KeyEvent keyEvent;
         if (intent.getAction().equals("android.intent.action.MEDIA_BUTTON")) {
             if (intent.getExtras() == null || (keyEvent = (KeyEvent) intent.getExtras().get("android.intent.extra.KEY_EVENT")) == null || keyEvent.getAction() != 0) {
@@ -17,59 +17,59 @@ public class MusicPlayerReceiver extends BroadcastReceiver {
             }
             int keyCode = keyEvent.getKeyCode();
             if (keyCode == 79 || keyCode == 85) {
-                if (MediaController.getInstance().isMessagePaused()) {
-                    MediaController.getInstance().playMessage(MediaController.getInstance().getPlayingMessageObject());
+                if (MediaController.B().H()) {
+                    MediaController.B().S(MediaController.B().u0);
                     return;
                 } else {
-                    MediaController.getInstance().lambda$startAudioAgain$7(MediaController.getInstance().getPlayingMessageObject());
+                    MediaController.B().R(MediaController.B().u0, true);
                     return;
                 }
             }
             if (keyCode == 87) {
-                MediaController.getInstance().playNextMessage();
+                MediaController.B().U(false);
                 return;
             }
             if (keyCode == 88) {
-                MediaController.getInstance().playPreviousMessage();
+                MediaController.B().V();
                 return;
             } else if (keyCode == 126) {
-                MediaController.getInstance().playMessage(MediaController.getInstance().getPlayingMessageObject());
+                MediaController.B().S(MediaController.B().u0);
                 return;
             } else {
                 if (keyCode != 127) {
                     return;
                 }
-                MediaController.getInstance().lambda$startAudioAgain$7(MediaController.getInstance().getPlayingMessageObject());
+                MediaController.B().R(MediaController.B().u0, true);
             }
         }
         String action = intent.getAction();
         action.getClass();
         switch (action) {
             case "org.telegram.android.musicplayer.repeat":
-                SharedConfig.setRepeatMode((SharedConfig.repeatMode + 1) % 3);
+                tz.E((tz.S0 + 1) % 3);
                 break;
             case "org.telegram.android.musicplayer.close":
-                MediaController.getInstance().cleanupPlayer(true, true);
+                MediaController.B().q(true, true, false, false);
                 break;
             case "org.telegram.android.musicplayer.pause":
             case "android.media.AUDIO_BECOMING_NOISY":
-                MediaController.getInstance().lambda$startAudioAgain$7(MediaController.getInstance().getPlayingMessageObject());
+                MediaController.B().R(MediaController.B().u0, true);
                 break;
             case "org.telegram.android.musicplayer.next":
-                MediaController.getInstance().playNextMessage();
+                MediaController.B().U(false);
                 break;
             case "org.telegram.android.musicplayer.play":
-                MediaController.getInstance().playMessage(MediaController.getInstance().getPlayingMessageObject());
+                MediaController.B().S(MediaController.B().u0);
                 break;
             case "org.telegram.android.musicplayer.previous":
-                MediaController.getInstance().playPreviousMessage();
+                MediaController.B().V();
                 break;
             case "org.telegram.android.musicplayer.shuffle":
-                if (!SharedConfig.shuffleMusic) {
-                    MediaController.getInstance().setPlaybackOrderType(2);
+                if (!tz.N0) {
+                    MediaController.B().l0(2);
                     break;
                 } else {
-                    MediaController.getInstance().setPlaybackOrderType(0);
+                    MediaController.B().l0(0);
                     break;
                 }
         }

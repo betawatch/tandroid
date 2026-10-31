@@ -1,36 +1,32 @@
 package d2;
 
-import android.os.Bundle;
-import android.text.Spanned;
-import e2.n0;
+import e9.l0;
+import e9.n0;
+import e9.r;
+import e9.s1;
+import e9.x1;
+import java.util.List;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public abstract class d {
-    public static final String a;
-    public static final String b;
-    public static final String c;
-    public static final String d;
+public final class d {
+    public static final r c = new r(new c(0), s1.b);
+    public static final d d;
     public static final String e;
+    public static final String f;
+    public final x1 a;
+    public final long b;
 
     static {
-        String str = n0.a;
-        a = Integer.toString(0, 36);
-        b = Integer.toString(1, 36);
-        c = Integer.toString(2, 36);
-        d = Integer.toString(3, 36);
-        e = Integer.toString(4, 36);
+        l0 l0Var = n0.b;
+        d = new d(0L, x1.e);
+        String str = e2.l0.a;
+        e = Integer.toString(0, 36);
+        f = Integer.toString(1, 36);
     }
 
-    public static Bundle a(Spanned spanned, Object obj, int i10, Bundle bundle) {
-        Bundle bundle2 = new Bundle();
-        bundle2.putInt(a, spanned.getSpanStart(obj));
-        bundle2.putInt(b, spanned.getSpanEnd(obj));
-        bundle2.putInt(c, spanned.getSpanFlags(obj));
-        bundle2.putInt(d, i10);
-        if (bundle != null) {
-            bundle2.putBundle(e, bundle);
-        }
-        return bundle2;
+    public d(long j10, List list) {
+        this.a = n0.A(c, list);
+        this.b = j10;
     }
 }

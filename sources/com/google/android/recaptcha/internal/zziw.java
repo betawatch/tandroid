@@ -1,12 +1,12 @@
 package com.google.android.recaptcha.internal;
 
+import bd.q;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.List;
-import kd.o;
 import kotlin.jvm.internal.i;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class zziw extends zzit {
     private final zziv zza;
@@ -29,7 +29,7 @@ public final class zziw extends zzit {
             list = Arrays.asList(objArr);
             i.d(list, "asList(...)");
         } else {
-            list = o.a;
+            list = q.a;
         }
         zzivVar.zzb(list);
         return true;

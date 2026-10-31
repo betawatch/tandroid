@@ -1,50 +1,57 @@
 package j5;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+import i5.c;
+import j$.util.DesugarCollections;
+import java.nio.charset.Charset;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.regex.Pattern;
+import l5.k;
+import v7.m8;
+
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class a {
-    public final Integer a;
-    public final Object b;
-    public final d c;
-    public final b d;
+public final class a implements k {
+    public static final String c;
+    public static final Set d;
+    public static final a e;
+    public static final a f;
+    public final String a;
+    public final String b;
 
-    public a(Integer num, Object obj, d dVar, b bVar) {
-        this.a = num;
-        if (obj == null) {
-            throw new NullPointerException("Null payload");
-        }
-        this.b = obj;
-        this.c = dVar;
-        this.d = bVar;
+    static {
+        String a2 = m8.a("hts/frbslgiggolai.o/0clgbthfra=snpoo", "tp:/ieaeogn.ogepscmvc/o/ac?omtjo_rt3");
+        c = a2;
+        String a10 = m8.a("hts/frbslgigp.ogepscmv/ieo/eaybtho", "tp:/ieaeogn-agolai.o/1frlglgc/aclg");
+        String a11 = m8.a("AzSCki82AwsLzKd5O8zo", "IayckHiZRO1EFl1aGoK");
+        d = DesugarCollections.unmodifiableSet(new HashSet(Arrays.asList(new c("proto"), new c("json"))));
+        e = new a(a2, null);
+        f = new a(a10, a11);
     }
 
-    public final boolean equals(Object obj) {
-        b bVar;
-        if (obj == this) {
-            return true;
-        }
-        if (obj instanceof a) {
-            a aVar = (a) obj;
-            b bVar2 = aVar.d;
-            Integer num = aVar.a;
-            Integer num2 = this.a;
-            if (num2 != null ? num2.equals(num) : num == null) {
-                if (this.b.equals(aVar.b) && this.c.equals(aVar.c) && ((bVar = this.d) != null ? bVar.equals(bVar2) : bVar2 == null)) {
-                    return true;
-                }
-            }
-        }
-        return false;
+    public a(String str, String str2) {
+        this.a = str;
+        this.b = str2;
     }
 
-    public final int hashCode() {
-        Integer num = this.a;
-        int hashCode = ((((((num == null ? 0 : num.hashCode()) ^ 1000003) * 1000003) ^ this.b.hashCode()) * 1000003) ^ this.c.hashCode()) * 1000003;
-        b bVar = this.d;
-        return (bVar != null ? bVar.hashCode() : 0) ^ hashCode;
-    }
-
-    public final String toString() {
-        return "Event{code=" + this.a + ", payload=" + this.b + ", priority=" + this.c + ", productData=" + this.d + "}";
+    public static a a(byte[] bArr) {
+        String str = new String(bArr, Charset.forName("UTF-8"));
+        if (!str.startsWith("1$")) {
+            throw new IllegalArgumentException("Version marker missing from extras");
+        }
+        String[] split = str.substring(2).split(Pattern.quote("\\"), 2);
+        if (split.length != 2) {
+            throw new IllegalArgumentException("Extra is not a valid encoded LegacyFlgDestination");
+        }
+        String str2 = split[0];
+        if (str2.isEmpty()) {
+            throw new IllegalArgumentException("Missing endpoint in CCTDestination extras");
+        }
+        String str3 = split[1];
+        if (str3.isEmpty()) {
+            str3 = null;
+        }
+        return new a(str2, str3);
     }
 }

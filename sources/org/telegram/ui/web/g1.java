@@ -1,60 +1,52 @@
 package org.telegram.ui.web;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.os.AsyncTask;
-import java.io.BufferedInputStream;
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.util.HashMap;
-import java.util.Map;
-import org.telegram.messenger.SvgHelper;
+import java.util.ArrayList;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.cd;
+import org.telegram.messenger.tz;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes4.dex */
-public final class g1 extends AsyncTask {
-    public final HashMap a = new HashMap();
-    public final org.telegram.ui.Wallet.s b;
-    public Exception c;
+public final class g1 {
+    public static ArrayList d;
+    public final String a;
+    public final String b;
+    public final String c;
 
-    public g1(org.telegram.ui.Wallet.s sVar) {
-        this.b = sVar;
+    public g1(String str, String str2, String str3) {
+        this.a = str;
+        this.b = str2;
+        this.c = str3;
     }
 
-    @Override // android.os.AsyncTask
-    public final Object doInBackground(Object[] objArr) {
-        try {
-            HttpURLConnection httpURLConnection = (HttpURLConnection) new URL(((String[]) objArr)[0]).openConnection();
-            for (Map.Entry entry : this.a.entrySet()) {
-                if (entry.getKey() != null && entry.getValue() != null) {
-                    httpURLConnection.setRequestProperty((String) entry.getKey(), (String) entry.getValue());
+    public static g1 a() {
+        ArrayList b10 = b();
+        return b10.isEmpty() ? new g1("Google", "https://www.google.com/search?q=", "https://suggestqueries.google.com/complete/search?client=chrome&amp;q=") : (g1) b10.get(Utilities.j(tz.p0, b10.size() - 1, 0));
+    }
+
+    public static ArrayList b() {
+        if (d == null) {
+            d = new ArrayList();
+            int i10 = 1;
+            while (true) {
+                String c10 = c(cd.M0("SearchEngine" + i10 + "Name"));
+                if (c10 == null) {
+                    break;
                 }
+                String c11 = c(cd.M0("SearchEngine" + i10 + "SearchURL"));
+                String c12 = c(cd.M0("SearchEngine" + i10 + "AutocompleteURL"));
+                c(cd.M0("SearchEngine" + i10 + "PrivacyPolicyURL"));
+                d.add(new g1(c10, c11, c12));
+                i10++;
             }
-            httpURLConnection.setRequestMethod("GET");
-            httpURLConnection.setDoInput(true);
-            int responseCode = httpURLConnection.getResponseCode();
-            if (responseCode >= 200 && responseCode < 300) {
-                return (httpURLConnection.getContentType() == null || !httpURLConnection.getContentType().contains("svg")) ? BitmapFactory.decodeStream(new BufferedInputStream(httpURLConnection.getInputStream())) : SvgHelper.getBitmap((InputStream) new BufferedInputStream(httpURLConnection.getInputStream()), 64, 64, false);
-            }
-            httpURLConnection.disconnect();
-            return null;
-        } catch (Exception e) {
-            this.c = e;
-            return null;
         }
+        return d;
     }
 
-    @Override // android.os.AsyncTask
-    public final void onPostExecute(Object obj) {
-        Bitmap bitmap = (Bitmap) obj;
-        org.telegram.ui.Wallet.s sVar = this.b;
-        if (sVar != null) {
-            if (this.c == null) {
-                sVar.run(bitmap);
-            } else {
-                sVar.run(null);
-            }
+    public static String c(String str) {
+        if (str == null || str.startsWith("LOC_ERR") || "reserved".equals(str)) {
+            return null;
         }
+        return str;
     }
 }

@@ -1,29 +1,34 @@
 package jc;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+import f5.f;
+import java.util.ArrayList;
+import java.util.regex.Pattern;
+
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public enum e {
-    c(new int[]{0, 0, 0}, 0),
-    d(new int[]{10, 12, 14}, 1),
-    e(new int[]{9, 11, 13}, 2),
-    f(new int[]{0, 0, 0}, 3),
-    h(new int[]{8, 16, 16}, 4),
-    n(new int[]{0, 0, 0}, 7),
-    r(new int[]{8, 10, 12}, 8),
-    s(new int[]{0, 0, 0}, 5),
-    v(new int[]{0, 0, 0}, 9),
-    w(new int[]{8, 10, 12}, 13);
-
-    public final int[] a;
-    public final int b;
-
-    e(int[] iArr, int i10) {
-        this.a = iArr;
-        this.b = i10;
+public abstract class e {
+    static {
+        Pattern.compile("(....|\\.\\.)(\\[(.*)\\])?");
     }
 
-    public final int a(f fVar) {
-        int i10 = fVar.a;
-        return this.a[i10 <= 9 ? (char) 0 : i10 <= 26 ? (char) 1 : (char) 2];
+    public static String a(f5.b bVar, String str) {
+        f parent = bVar.getParent();
+        ArrayList arrayList = ((com.googlecode.mp4parser.e) parent).b;
+        int size = arrayList.size();
+        int i10 = 0;
+        int i11 = 0;
+        while (i11 < size) {
+            Object obj = arrayList.get(i11);
+            i11++;
+            f5.b bVar2 = (f5.b) obj;
+            if (bVar2.getType().equals(bVar.getType())) {
+                if (bVar2 == bVar) {
+                    break;
+                }
+                i10++;
+            }
+        }
+        String str2 = String.format("/%s[%d]", bVar.getType(), Integer.valueOf(i10)) + str;
+        return parent instanceof f5.b ? a((f5.b) parent, str2) : str2;
     }
 }

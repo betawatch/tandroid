@@ -1,307 +1,122 @@
 package kg;
 
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
+import android.graphics.RectF;
+import android.text.Layout;
+import android.text.StaticLayout;
 import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class n extends h {
-    @Override // kg.h
-    public final mg.f h(lg.a aVar) {
-        return new mg.f(aVar, false, null);
+public final class n {
+    public boolean a;
+    public float b;
+    public float c;
+    public int d;
+    public StaticLayout e;
+    public Bitmap f;
+    public int g;
+    public int h;
+    public int i;
+    public long j;
+    public float k;
+    public float l;
+    public final /* synthetic */ o m;
+
+    public n(o oVar) {
+        this.m = oVar;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:46:0x0161  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x016e  */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x0173  */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x0167  */
-    @Override // kg.h
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void k(Canvas canvas) {
-        boolean z10;
-        float f7;
-        float f10;
-        float f11;
-        float f12;
-        int i10;
-        float f13;
-        float f14;
-        float f15;
-        int i11;
-        int i12;
-        if (this.h0 == null) {
-            return;
-        }
-        float f16 = this.F0;
-        k kVar = this.g0;
-        float f17 = kVar.l;
-        float f18 = kVar.k;
-        float f19 = f16 / (f17 - f18);
-        float f20 = h.k1;
-        float f21 = (f18 * f19) - f20;
-        int i13 = 0;
-        int i14 = 0;
-        while (true) {
-            ArrayList arrayList = this.d;
-            if (i14 >= arrayList.size()) {
-                return;
-            }
-            mg.f fVar = (mg.f) arrayList.get(i14);
-            boolean z11 = fVar.n;
-            float[] fArr = fVar.k;
-            Path path = fVar.f;
-            Paint paint = fVar.c;
-            if (z11 || fVar.o != 0.0f) {
-                float[] fArr2 = this.h0.b;
-                float f22 = fArr2.length < 2 ? 0.0f : fArr2[1] * f19;
-                long[] jArr = fVar.a.a;
-                int i15 = ((int) (f20 / f22)) + 1;
-                path.reset();
-                int max = Math.max(i13, this.F - i15);
-                int min = Math.min(this.h0.b.length - 1, this.G + i15);
-                boolean z12 = true;
-                int i16 = 0;
-                while (true) {
-                    z10 = h.A1;
-                    if (max > min) {
-                        break;
-                    }
-                    int i17 = i16;
-                    long j10 = jArr[max];
-                    if (j10 < 0) {
-                        f13 = f19;
-                        f14 = f21;
-                        f15 = f20;
-                        i11 = min;
-                    } else {
-                        f13 = f19;
-                        float f23 = (this.h0.b[max] * f13) - f21;
-                        float f24 = this.w;
-                        f14 = f21;
-                        float f25 = (j10 - f24) / (this.v - f24);
-                        float strokeWidth = paint.getStrokeWidth() / 2.0f;
-                        f15 = f20;
-                        i11 = min;
-                        float d = ic.a.d((getMeasuredHeight() - this.s) - h.n1, strokeWidth, f25, (getMeasuredHeight() - this.s) - strokeWidth);
-                        if (z10) {
-                            if (i17 == 0) {
-                                fArr[i17] = f23;
-                                i12 = i17 + 2;
-                                fArr[i17 + 1] = d;
-                            } else {
-                                fArr[i17] = f23;
-                                fArr[i17 + 1] = d;
-                                fArr[i17 + 2] = f23;
-                                i12 = i17 + 4;
-                                fArr[i17 + 3] = d;
-                            }
-                            i16 = i12;
-                        } else if (z12) {
-                            path.moveTo(f23, d);
-                            i16 = i17;
-                            z12 = false;
-                        } else {
-                            path.lineTo(f23, d);
-                        }
-                        max++;
-                        f19 = f13;
-                        f21 = f14;
-                        f20 = f15;
-                        min = i11;
-                    }
-                    i16 = i17;
-                    max++;
-                    f19 = f13;
-                    f21 = f14;
-                    f20 = f15;
-                    min = i11;
-                }
-                f7 = f19;
-                f10 = f21;
-                f11 = f20;
-                int i18 = i16;
-                canvas.save();
-                int i19 = this.y0;
-                float f26 = 1.0f;
-                if (i19 == 2) {
-                    mg.j jVar = this.z0;
-                    float f27 = jVar.f;
-                    f12 = f27 > 0.5f ? 0.0f : 1.0f - (f27 * 2.0f);
-                    canvas.scale((f27 * 2.0f) + 1.0f, 1.0f, jVar.d, jVar.e);
-                } else if (i19 == 1) {
-                    float f28 = this.z0.f;
-                    f12 = f28 < 0.3f ? 0.0f : f28;
-                    canvas.save();
-                    mg.j jVar2 = this.z0;
-                    float f29 = jVar2.f;
-                    canvas.scale(f29, f29, jVar2.d, jVar2.e);
-                } else {
-                    if (i19 == 3) {
-                        f26 = this.z0.f;
-                    }
-                    paint.setAlpha((int) (fVar.o * 255.0f * f26));
-                    if (this.G - this.F <= 100) {
-                        paint.setStrokeCap(Paint.Cap.SQUARE);
-                    } else {
-                        paint.setStrokeCap(Paint.Cap.ROUND);
-                    }
-                    if (z10) {
-                        canvas.drawPath(path, paint);
-                        i10 = 0;
-                    } else {
-                        i10 = 0;
-                        canvas.drawLines(fArr, 0, i18, paint);
-                    }
-                    canvas.restore();
-                }
-                f26 = f12;
-                paint.setAlpha((int) (fVar.o * 255.0f * f26));
-                if (this.G - this.F <= 100) {
-                }
-                if (z10) {
-                }
-                canvas.restore();
-            } else {
-                f7 = f19;
-                f10 = f21;
-                f11 = f20;
-                i10 = i13;
-            }
-            i14++;
-            i13 = i10;
-            f19 = f7;
-            f21 = f10;
-            f20 = f11;
-        }
-    }
-
-    @Override // kg.h
-    public final void n(Canvas canvas) {
-        boolean z10;
+    public final void a(int i10, boolean z10) {
         ArrayList arrayList;
-        int i10;
-        ArrayList arrayList2;
-        int i11;
-        int i12;
-        Paint paint;
-        float f7;
-        float f10;
-        getMeasuredHeight();
-        getMeasuredHeight();
-        ArrayList arrayList3 = this.d;
-        int size = arrayList3.size();
-        if (this.h0 != null) {
-            int i13 = 0;
-            while (i13 < size) {
-                mg.f fVar = (mg.f) arrayList3.get(i13);
-                boolean z11 = fVar.n;
-                Paint paint2 = fVar.b;
-                float[] fArr = fVar.l;
-                Path path = fVar.e;
-                float f11 = 0.0f;
-                if (z11 || fVar.o != 0.0f) {
-                    path.reset();
-                    int length = this.h0.b.length;
-                    long[] jArr = fVar.a.a;
-                    fVar.f.reset();
-                    int i14 = 0;
-                    int i15 = 0;
-                    while (true) {
-                        z10 = h.A1;
-                        if (i14 >= length) {
-                            break;
-                        }
-                        float f12 = f11;
-                        long[] jArr2 = jArr;
-                        long j10 = jArr2[i14];
-                        if (j10 < 0) {
-                            arrayList2 = arrayList3;
-                            i11 = size;
-                            i12 = length;
-                        } else {
-                            lg.b bVar = this.h0;
-                            arrayList2 = arrayList3;
-                            float f13 = this.C0 * bVar.b[i14];
-                            boolean z12 = h.B1;
-                            i11 = size;
-                            if (z12) {
-                                i12 = length;
-                                f7 = this.j0;
-                                paint = paint2;
-                            } else {
-                                i12 = length;
-                                paint = paint2;
-                                f7 = bVar.e;
-                            }
-                            if (z12) {
-                                f10 = this.k0;
-                                paint2 = paint;
-                            } else {
-                                paint2 = paint;
-                                f10 = bVar.f;
-                            }
-                            float f14 = (1.0f - ((j10 - f10) / (f7 - f10))) * this.B0;
-                            if (z10) {
-                                if (i15 == 0) {
-                                    int i16 = i15 + 1;
-                                    fArr[i15] = f13;
-                                    i15 += 2;
-                                    fArr[i16] = f14;
-                                } else {
-                                    fArr[i15] = f13;
-                                    fArr[i15 + 1] = f14;
-                                    int i17 = i15 + 3;
-                                    fArr[i15 + 2] = f13;
-                                    i15 += 4;
-                                    fArr[i17] = f14;
-                                }
-                            } else if (i14 == 0) {
-                                path.moveTo(f13, f14);
-                            } else {
-                                path.lineTo(f13, f14);
-                            }
-                        }
-                        i14++;
-                        f11 = f12;
-                        jArr = jArr2;
-                        arrayList3 = arrayList2;
-                        size = i11;
-                        length = i12;
-                    }
-                    arrayList = arrayList3;
-                    i10 = size;
-                    float f15 = f11;
-                    fVar.j = i15;
-                    if (fVar.n || fVar.o != f15) {
-                        Paint paint3 = paint2;
-                        paint3.setAlpha((int) (fVar.o * 255.0f));
-                        if (z10) {
-                            canvas.drawLines(fArr, 0, fVar.j, paint3);
-                        } else {
-                            canvas.drawPath(path, paint3);
-                        }
-                        i13++;
-                        arrayList3 = arrayList;
-                        size = i10;
+        o oVar = this.m;
+        ArrayList arrayList2 = oVar.e;
+        HashMap hashMap = (HashMap) oVar.f;
+        RectF rectF = (RectF) oVar.g;
+        d5.a aVar = Utilities.c;
+        this.j = Math.abs(aVar.nextLong() % 2250) + 2250;
+        this.k = (Math.abs(aVar.nextFloat()) * 0.45f) + 0.6f;
+        String str = p.a[Math.abs(((int) aVar.nextLong()) % 49)];
+        if (str.length() > 7) {
+            this.k *= 0.6f;
+        } else if (str.length() > 5) {
+            this.k *= 0.75f;
+        }
+        StaticLayout staticLayout = new StaticLayout(str, oVar.d, org.telegram.messenger.i0.q.x, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+        this.e = staticLayout;
+        if (staticLayout.getLineCount() <= 0) {
+            this.i = 0;
+            this.h = 0;
+            this.g = 0;
+        } else {
+            this.g = (int) this.e.getLineLeft(0);
+            this.h = (int) this.e.getLineWidth(0);
+            this.i = this.e.getHeight();
+        }
+        Bitmap bitmap = (Bitmap) hashMap.get(str);
+        this.f = bitmap;
+        if (bitmap == null) {
+            this.f = Bitmap.createBitmap(Math.max(1, this.h - Math.max(0, this.g)), Math.max(1, this.i), Bitmap.Config.ARGB_8888);
+            Canvas canvas = new Canvas(this.f);
+            canvas.translate(-this.g, 0.0f);
+            this.e.draw(canvas);
+            hashMap.put(str, this.f);
+        }
+        float f7 = this.h / 4.0f;
+        float f10 = rectF.left + f7;
+        float f11 = rectF.right - f7;
+        if (i10 % 2 == 0) {
+            f11 = rectF.centerX() - (this.h / 2.0f);
+        } else {
+            f10 = rectF.centerX() + (this.h / 2.0f);
+        }
+        float f12 = f11 - f10;
+        float abs = Math.abs(((int) aVar.nextLong()) % f12) + f10;
+        float abs2 = Math.abs(((int) aVar.nextLong()) % rectF.height()) + rectF.top;
+        int i11 = 0;
+        float f13 = 0.0f;
+        while (i11 < 10) {
+            d5.a aVar2 = Utilities.c;
+            float abs3 = Math.abs(((int) aVar2.nextLong()) % f12) + f10;
+            float abs4 = Math.abs(((int) aVar2.nextLong()) % rectF.height()) + rectF.top;
+            float f14 = 2.14748365E9f;
+            int i12 = 0;
+            while (i12 < arrayList2.size()) {
+                n nVar = (n) arrayList2.get(i12);
+                if (nVar.a) {
+                    arrayList = arrayList2;
+                    float min = Math.min(Math.abs(((((this.k / oVar.a) * nVar.h) * 1.1f) + nVar.b) - abs3), Math.abs(nVar.b - abs3));
+                    float f15 = nVar.c - abs4;
+                    float f16 = (f15 * f15) + (min * min);
+                    if (f16 < f14) {
+                        f14 = f16;
                     }
                 } else {
-                    arrayList = arrayList3;
-                    i10 = size;
+                    arrayList = arrayList2;
                 }
-                i13++;
-                arrayList3 = arrayList;
-                size = i10;
+                i12++;
+                arrayList2 = arrayList;
             }
+            ArrayList arrayList3 = arrayList2;
+            if (f14 > f13) {
+                abs2 = abs4;
+                f13 = f14;
+                abs = abs3;
+            }
+            i11++;
+            arrayList2 = arrayList3;
         }
-    }
-
-    @Override // kg.h
-    public final void t() {
-        this.P0 = true;
-        super.t();
+        this.b = abs;
+        this.c = abs2;
+        double atan2 = Math.atan2(abs - rectF.centerX(), this.c - rectF.centerY());
+        Math.sin(atan2);
+        Math.cos(atan2);
+        d5.a aVar3 = Utilities.c;
+        this.d = (int) (((aVar3.nextInt(50) + 50) / 100.0f) * 255.0f);
+        this.l = z10 ? Math.abs((aVar3.nextFloat() % 1.0f) * 0.9f) : 0.0f;
+        this.a = true;
     }
 }

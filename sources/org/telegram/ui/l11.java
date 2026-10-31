@@ -1,35 +1,37 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class l11 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ n11 b;
-    public final /* synthetic */ int c;
+import java.util.ArrayList;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.tl.TL_account;
 
-    public /* synthetic */ l11(n11 n11Var, int i10, int i11) {
-        this.a = i11;
-        this.b = n11Var;
-        this.c = i10;
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class l11 implements org.telegram.ui.ActionBar.u1, org.telegram.ui.Components.uj0 {
+    public final /* synthetic */ i31 a;
+
+    public /* synthetic */ l11(i31 i31Var) {
+        this.a = i31Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                n11 n11Var = this.b;
-                org.telegram.ui.Components.u91 u91Var = n11Var.b;
-                m11 m11Var = n11Var.d;
-                int i10 = this.c;
-                u91Var.d(i10, m11Var.i(i10));
-                break;
-            default:
-                n11 n11Var2 = this.b;
-                org.telegram.ui.Components.u91 u91Var2 = n11Var2.b;
-                m11 m11Var2 = n11Var2.d;
-                int i11 = this.c;
-                u91Var2.d(i11, m11Var2.i(i11));
-                break;
+    @Override // org.telegram.ui.Components.uj0
+    public void g() {
+        this.a.m();
+    }
+
+    @Override // org.telegram.ui.ActionBar.u1
+    public void h(org.telegram.ui.ActionBar.x1 x1Var, int i10) {
+        i31 i31Var = this.a;
+        int i11 = i31Var.V;
+        ConnectionsManager.getInstance(i11).sendRequest(new TL_account.clearRecentEmojiStatuses(), null);
+        org.telegram.messenger.ui b02 = org.telegram.messenger.ui.b0(i11);
+        ArrayList[] arrayListArr = b02.E0;
+        ArrayList arrayList = arrayListArr[0];
+        if (arrayList != null) {
+            arrayList.clear();
         }
+        b02.D0[0] = 0;
+        b02.getMessagesStorage().a.c(new org.telegram.messenger.eg(b02, 8));
+        ArrayList arrayList2 = arrayListArr[0];
+        i31Var.B(false, true, true);
     }
 }

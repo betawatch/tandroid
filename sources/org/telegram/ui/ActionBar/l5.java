@@ -1,846 +1,231 @@
 package org.telegram.ui.ActionBar;
 
-import a8.yc;
-import android.graphics.Bitmap;
-import android.graphics.BitmapShader;
+import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.ColorFilter;
-import android.graphics.LinearGradient;
-import android.graphics.Matrix;
 import android.graphics.Paint;
-import android.graphics.Path;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.Rect;
 import android.graphics.RectF;
-import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
-import android.graphics.drawable.NinePatchDrawable;
-import java.lang.reflect.Array;
-import java.util.Arrays;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.vc0;
+import android.text.TextPaint;
+import android.text.TextUtils;
+import android.view.View;
+import org.telegram.messenger.beta.R;
+import org.telegram.ui.Components.gr;
+import org.telegram.ui.Components.kp;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public class l5 extends Drawable {
-    public static final vc0[] S = new vc0[3];
-    public NinePatchDrawable F;
-    public int G;
-    public boolean I;
-    public l5 J;
-    public float K;
-    public boolean L;
-    public boolean M;
-    public Bitmap N;
-    public BitmapShader O;
-    public m.d3 P;
-    public int Q;
-    public float R;
-    public Shader a;
-    public int b;
-    public int e;
-    public int f;
-    public int g;
-    public int h;
-    public boolean i;
-    public final int l;
-    public final boolean m;
-    public u6 p;
-    public final boolean q;
-    public int r;
-    public boolean s;
-    public boolean t;
-    public boolean u;
-    public boolean v;
-    public final Paint c = new Paint(1);
-    public final RectF j = new RectF();
-    public final Matrix k = new Matrix();
-    public final Rect o = new Rect();
-    public Integer w = null;
-    public boolean x = true;
-    public final int[] y = {-1, -1, -1, -1};
-    public final Bitmap[] z = new Bitmap[4];
-    public final Drawable[] A = new Drawable[4];
-    public final int[] B = {-1, -1, -1, -1};
-    public final int[][] C = {new int[]{-1, -1, -1, -1}, new int[]{-1, -1, -1, -1}, new int[]{-1, -1, -1, -1}, new int[]{-1, -1, -1, -1}};
-    public final Drawable[][] D = (Drawable[][]) Array.newInstance((Class<?>) Drawable.class, 4, 4);
-    public final int[][] E = {new int[]{-1, -1, -1, -1}, new int[]{-1, -1, -1, -1}, new int[]{-1, -1, -1, -1}, new int[]{-1, -1, -1, -1}};
-    public final Path n = new Path();
-    public final Paint d = new Paint(1);
-    public int H = 255;
+public final class l5 extends View implements fe.e {
+    public int D;
+    public int E;
+    public int F;
+    public final i5 a;
+    public final int b;
+    public final k5 c;
+    public final j5 d;
+    public final Drawable e;
+    public final kp f;
+    public final TextPaint h;
+    public final Paint n;
+    public final RectF r;
+    public CharSequence s;
+    public float w;
+    public final fe.b x;
+    public final fe.b y;
 
-    public l5(int i10, boolean z10, boolean z11, u6 u6Var) {
-        this.p = u6Var;
-        this.q = z10;
-        this.l = i10;
-        this.m = z11;
+    public l5(Context context, i5 i5Var, CharSequence charSequence) {
+        super(context);
+        TextPaint textPaint = new TextPaint(1);
+        this.h = textPaint;
+        this.n = new Paint(1);
+        this.r = new RectF();
+        gr grVar = gr.h;
+        this.x = new fe.b(0, this, grVar, 380L, true);
+        this.y = new fe.b(1, this, grVar, 250L, false);
+        this.a = i5Var;
+        this.b = 1;
+        this.c = (k5) mi.e.k.a();
+        this.d = (j5) mi.e.l.a();
+        this.s = charSequence;
+        this.e = context.getDrawable(R.drawable.ic_ab_done).mutate();
+        kp kpVar = new kp(org.telegram.messenger.i0.L(18.0f), org.telegram.messenger.i0.L(2.0f), -1);
+        this.f = kpVar;
+        kpVar.setCallback(this);
+        textPaint.setTypeface(org.telegram.messenger.i0.o());
+        textPaint.setTextSize(org.telegram.messenger.i0.L(15.0f));
+        c();
+        CharSequence charSequence2 = this.s;
+        this.w = charSequence2 != null ? textPaint.measureText(charSequence2, 0, charSequence2.length()) : 0.0f;
+        setContentDescription(charSequence);
+        setOnClickListener(new ag.g(this, 19));
     }
 
-    public final void a() {
-        Bitmap bitmap;
-        if (this.a instanceof BitmapShader) {
-            boolean z10 = this.L;
-            Matrix matrix = this.k;
-            vc0[] vc0VarArr = S;
-            int i10 = this.l;
-            char c10 = 2;
-            if (z10 && (bitmap = this.N) != null) {
-                char c11 = i10 == 2 ? (char) 1 : (char) 0;
-                float min = 1.0f / Math.min(bitmap.getWidth() / vc0VarArr[c11].getBounds().width(), this.N.getHeight() / vc0VarArr[c11].getBounds().height());
-                matrix.postScale(min, min);
-            } else {
-                if (!this.v) {
-                    c10 = i10 == 2 ? (char) 1 : (char) 0;
-                }
-                Bitmap bitmap2 = vc0VarArr[c10].k;
-                float min2 = 1.0f / Math.min(bitmap2.getWidth() / vc0VarArr[c10].getBounds().width(), bitmap2.getHeight() / vc0VarArr[c10].getBounds().height());
-                matrix.postScale(min2, min2);
-            }
-        }
-    }
-
-    public final int b(float f7) {
-        return this.l == 2 ? (int) Math.ceil(f7 * 3.0f) : AndroidUtilities.dp(f7);
-    }
-
-    public final void c(Canvas canvas, Paint paint) {
-        int b10;
-        Path path;
-        boolean z10;
-        l5 l5Var;
-        Path path2;
-        Drawable f7;
-        Rect bounds = getBounds();
-        Paint paint2 = this.c;
-        if (paint == null && paint2.getStyle() == Paint.Style.FILL && this.a == null && this.Q == 0 && this.R <= 0.0f && (f7 = f()) != null) {
-            f7.setBounds(bounds);
-            f7.draw(canvas);
+    public final void a(boolean z10, boolean z11) {
+        fe.f fVar;
+        fe.b bVar = this.x;
+        if (bVar.f == z10 && (z11 || (fVar = bVar.h) == null || !fVar.h)) {
             return;
         }
-        int b11 = b(2.0f);
-        int i10 = this.Q;
-        if (i10 != 0) {
-            b10 = i10;
-        } else if (this.R > 0.0f) {
-            i10 = AndroidUtilities.lerp(b(SharedConfig.bubbleRadius), Math.min(bounds.width(), bounds.height()) / 2, this.R);
-            b10 = AndroidUtilities.lerp(b(Math.min(6, SharedConfig.bubbleRadius)), Math.min(bounds.width(), bounds.height()) / 2, this.R);
-        } else if (this.l == 2) {
-            i10 = b(6.0f);
-            b10 = b(6.0f);
-        } else {
-            i10 = b(SharedConfig.bubbleRadius);
-            b10 = b(Math.min(6, SharedConfig.bubbleRadius));
+        i5 i5Var = this.a;
+        bVar.a(z10, z11 && i5Var.t());
+        v(0, bVar.e, 0.0f, null);
+        i5Var.requestLayout();
+    }
+
+    public final void b(boolean z10) {
+        this.y.a(z10, this.a.t());
+        invalidate();
+    }
+
+    public final void c() {
+        i5 i5Var = this.a;
+        p6 p6Var = i5Var.a;
+        this.D = t6.w0(t6.Ci, p6Var);
+        this.E = i0.b.f(0.5f, t6.w0(t6.a7, p6Var), this.D);
+        int w02 = t6.w0(t6.Gi, p6Var);
+        this.F = w02;
+        int i10 = i5Var.f0;
+        k5 k5Var = this.c;
+        k5 k5Var2 = k5.b;
+        if (k5Var != k5Var2) {
+            w02 = i10;
         }
-        int b12 = b(6.0f);
-        Paint paint3 = paint == null ? paint2 : paint;
-        if (paint == null && this.a != null) {
-            Matrix matrix = this.k;
-            matrix.reset();
-            a();
-            matrix.postTranslate(0.0f, -this.r);
-            this.a.setLocalMatrix(matrix);
+        this.e.setColorFilter(new PorterDuffColorFilter(w02, PorterDuff.Mode.SRC_IN));
+        this.f.b(w02);
+        this.h.setColor(w02);
+        setBackground(t6.a0(k5Var == k5Var2 ? t6.r1(0.2f, this.F) : i5Var.h0, org.telegram.messenger.i0.L(23.0f), org.telegram.messenger.i0.L(23.0f)));
+        invalidate();
+    }
+
+    public int getButtonId() {
+        return this.b;
+    }
+
+    public int getButtonWidth() {
+        if (this.d == j5.a || TextUtils.isEmpty(this.s)) {
+            return org.telegram.messenger.i0.L(46.0f);
         }
-        int max = Math.max(bounds.top, 0);
-        if (this.P != null) {
-            bounds.height();
-            int i11 = this.b;
+        return org.telegram.messenger.m5.b(32.0f, (int) Math.ceil(this.w), org.telegram.messenger.i0.L(46.0f));
+    }
+
+    public j5 getShape() {
+        return this.d;
+    }
+
+    public k5 getStyle() {
+        return this.c;
+    }
+
+    public float getTargetVisibleFactor() {
+        return (this.c == k5.b || this.x.f) ? 1.0f : 0.0f;
+    }
+
+    public float getVisibleFactor() {
+        if (this.c == k5.b) {
+            return 1.0f;
         }
-        m.d3 d3Var = this.P;
-        boolean z11 = true;
-        if (d3Var != null) {
-            path = (Path) d3Var.c;
-            z10 = d3Var.a(bounds, true, true);
-        } else {
-            path = this.n;
-            z10 = true;
+        return this.x.e;
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        float f7;
+        float width = getWidth();
+        float height = getHeight();
+        if (this.c == k5.b) {
+            int f10 = i0.b.f(this.x.e, this.E, this.D);
+            Paint paint = this.n;
+            paint.setColor(f10);
+            RectF rectF = this.r;
+            rectF.set(0.0f, 0.0f, width, height);
+            float f11 = height / 2.0f;
+            canvas.drawRoundRect(rectF, f11, f11, paint);
         }
-        if (z10 || this.Q != 0) {
-            if (paint == null) {
-                z11 = false;
+        float f12 = this.y.e;
+        if (f12 < 1.0f) {
+            float T1 = org.telegram.messenger.i0.T1(1.0f, 0.6f, f12);
+            canvas.save();
+            canvas.scale(T1, T1, width / 2.0f, height / 2.0f);
+            float f13 = 1.0f - f12;
+            int i10 = (int) (f13 * 255.0f);
+            if (this.d == j5.a || TextUtils.isEmpty(this.s)) {
+                f7 = 0.0f;
+                Drawable drawable = this.e;
+                float intrinsicWidth = drawable.getIntrinsicWidth();
+                float intrinsicHeight = drawable.getIntrinsicHeight();
+                drawable.setBounds((int) ((width - intrinsicWidth) / 2.0f), (int) ((height - intrinsicHeight) / 2.0f), (int) ((intrinsicWidth + width) / 2.0f), (int) ((intrinsicHeight + height) / 2.0f));
+                drawable.setAlpha(i10);
+                drawable.draw(canvas);
+            } else {
+                TextPaint textPaint = this.h;
+                int alpha = textPaint.getAlpha();
+                textPaint.setAlpha((int) (alpha * f13));
+                float descent = ((height - textPaint.descent()) - textPaint.ascent()) / 2.0f;
+                CharSequence charSequence = this.s;
+                f7 = 0.0f;
+                canvas.drawText(charSequence, 0, charSequence.length(), (width - this.w) / 2.0f, descent, textPaint);
+                textPaint.setAlpha(alpha);
             }
-            l5Var = this;
-            path2 = path;
-            l5Var.e(path2, bounds, b11, i10, b12, b10, max, true, true, z11);
+            canvas.restore();
         } else {
-            l5Var = this;
-            path2 = path;
+            f7 = 0.0f;
         }
-        canvas.drawPath(path2, paint3);
-        if (l5Var.a != null && l5Var.m && paint == null) {
-            int o10 = i0.a.o(g(y6.bc), (int) ((Color.alpha(r15) * l5Var.H) / 255.0f));
-            Paint paint4 = l5Var.d;
-            paint4.setColor(o10);
-            canvas.drawPath(path2, paint4);
-        }
-    }
-
-    public final void d(Canvas canvas, m.d3 d3Var, Paint paint) {
-        this.P = d3Var;
-        l5 l5Var = this.J;
-        if (l5Var != null) {
-            l5Var.P = d3Var;
-        }
-        c(canvas, paint);
-        this.P = null;
-        l5 l5Var2 = this.J;
-        if (l5Var2 != null) {
-            l5Var2.P = null;
+        if (f12 > f7) {
+            float T12 = org.telegram.messenger.i0.T1(0.6f, 1.0f, f12);
+            canvas.save();
+            canvas.scale(T12, T12, width / 2.0f, height / 2.0f);
+            kp kpVar = this.f;
+            kpVar.setBounds(0, 0, (int) width, (int) height);
+            kpVar.setAlpha((int) (f12 * 255.0f));
+            kpVar.draw(canvas);
+            canvas.restore();
         }
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        l5 l5Var = this.J;
-        if (l5Var == null) {
-            c(canvas, null);
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        setMeasuredDimension(getButtonWidth(), org.telegram.messenger.i0.L(46.0f));
+    }
+
+    public void setText(CharSequence charSequence) {
+        float f7;
+        if (TextUtils.equals(this.s, charSequence)) {
             return;
         }
-        l5Var.draw(canvas);
-        setAlpha((int) (this.K * 255.0f));
-        c(canvas, null);
-        setAlpha(255);
-    }
-
-    public final void e(Path path, Rect rect, int i10, int i11, int i12, int i13, int i14, boolean z10, boolean z11, boolean z12) {
-        path.rewind();
-        int height = (rect.height() - i10) >> 1;
-        int i15 = i11;
-        if (i15 > height) {
-            i15 = height;
-        }
-        boolean z13 = this.q;
-        int i16 = this.l;
-        RectF rectF = this.j;
-        if (z13) {
-            if (this.I || i16 == 2 || z12 || z10) {
-                int i17 = this.u ? i13 : i15;
-                if (i16 == 1) {
-                    path.moveTo((rect.right - b(8.0f)) - i17, rect.bottom - i10);
-                } else {
-                    path.moveTo(rect.right - b(2.6f), rect.bottom - i10);
-                }
-                path.lineTo(rect.left + i10 + i17, rect.bottom - i10);
-                int i18 = i17 * 2;
-                rectF.set(rect.left + i10, r13 - i18, r10 + i18, rect.bottom - i10);
-                path.arcTo(rectF, 90.0f, 90.0f, false);
-            } else {
-                path.moveTo(rect.right - b(8.0f), (i14 - this.r) + this.b);
-                path.lineTo(rect.left + i10, (i14 - this.r) + this.b);
-            }
-            if (this.I || i16 == 2 || z12 || z11) {
-                path.lineTo(rect.left + i10, rect.top + i10 + i15);
-                int i19 = i15 * 2;
-                rectF.set(rect.left + i10, rect.top + i10, r3 + i19, r10 + i19);
-                path.arcTo(rectF, 180.0f, 90.0f, false);
-                int i20 = this.s ? i13 : i15;
-                if (i16 == 1) {
-                    path.lineTo((rect.right - i10) - i20, rect.top + i10);
-                    int i21 = rect.right - i10;
-                    int i22 = i20 * 2;
-                    rectF.set(i21 - i22, rect.top + i10, i21, r11 + i22);
-                } else {
-                    path.lineTo((rect.right - b(8.0f)) - i20, rect.top + i10);
-                    int i23 = i20 * 2;
-                    rectF.set((rect.right - b(8.0f)) - i23, rect.top + i10, rect.right - b(8.0f), rect.top + i10 + i23);
-                }
-                path.arcTo(rectF, 270.0f, 90.0f, false);
-            } else {
-                path.lineTo(rect.left + i10, (i14 - this.r) - b(2.0f));
-                if (i16 == 1) {
-                    path.lineTo(rect.right - i10, (i14 - this.r) - b(2.0f));
-                } else {
-                    path.lineTo(rect.right - b(8.0f), (i14 - this.r) - b(2.0f));
-                }
-            }
-            if (i16 == 1) {
-                if (z12 || z10) {
-                    if (this.t) {
-                        i15 = i13;
-                    }
-                    path.lineTo(rect.right - i10, (rect.bottom - i10) - i15);
-                    int i24 = i15 * 2;
-                    rectF.set(r3 - i24, r2 - i24, rect.right - i10, rect.bottom - i10);
-                    path.arcTo(rectF, 0.0f, 90.0f, false);
-                } else {
-                    path.lineTo(rect.right - i10, (i14 - this.r) + this.b);
-                }
-            } else if (this.I || i16 == 2 || z12 || z10) {
-                path.lineTo(rect.right - b(8.0f), ((rect.bottom - i10) - i12) - b(3.0f));
-                int i25 = i12 * 2;
-                rectF.set(rect.right - b(8.0f), ((rect.bottom - i10) - i25) - b(9.0f), (rect.right - b(7.0f)) + i25, (rect.bottom - i10) - b(1.0f));
-                path.arcTo(rectF, 180.0f, -83.0f, false);
-            } else {
-                path.lineTo(rect.right - b(8.0f), (i14 - this.r) + this.b);
-            }
+        this.s = charSequence;
+        setContentDescription(charSequence);
+        CharSequence charSequence2 = this.s;
+        if (charSequence2 != null) {
+            f7 = this.h.measureText(charSequence2, 0, charSequence2.length());
         } else {
-            if (this.I || i16 == 2 || z12 || z10) {
-                int i26 = this.u ? i13 : i15;
-                if (i16 == 1) {
-                    path.moveTo(b(8.0f) + rect.left + i26, rect.bottom - i10);
-                } else {
-                    path.moveTo(b(2.6f) + rect.left, rect.bottom - i10);
-                }
-                path.lineTo((rect.right - i10) - i26, rect.bottom - i10);
-                int i27 = i26 * 2;
-                rectF.set(r10 - i27, r13 - i27, rect.right - i10, rect.bottom - i10);
-                path.arcTo(rectF, 90.0f, -90.0f, false);
-            } else {
-                path.moveTo(b(8.0f) + rect.left, (i14 - this.r) + this.b);
-                path.lineTo(rect.right - i10, (i14 - this.r) + this.b);
-            }
-            if (this.I || i16 == 2 || z12 || z11) {
-                path.lineTo(rect.right - i10, rect.top + i10 + i15);
-                int i28 = rect.right - i10;
-                int i29 = i15 * 2;
-                rectF.set(i28 - i29, rect.top + i10, i28, r13 + i29);
-                path.arcTo(rectF, 0.0f, -90.0f, false);
-                int i30 = this.s ? i13 : i15;
-                if (i16 == 1) {
-                    path.lineTo(rect.left + i10 + i30, rect.top + i10);
-                    int i31 = i30 * 2;
-                    rectF.set(rect.left + i10, rect.top + i10, r10 + i31, r13 + i31);
-                } else {
-                    path.lineTo(b(8.0f) + rect.left + i30, rect.top + i10);
-                    int i32 = i30 * 2;
-                    rectF.set(b(8.0f) + rect.left, rect.top + i10, b(8.0f) + rect.left + i32, rect.top + i10 + i32);
-                }
-                path.arcTo(rectF, 270.0f, -90.0f, false);
-            } else {
-                path.lineTo(rect.right - i10, (i14 - this.r) - b(2.0f));
-                if (i16 == 1) {
-                    path.lineTo(rect.left + i10, (i14 - this.r) - b(2.0f));
-                } else {
-                    path.lineTo(b(8.0f) + rect.left, (i14 - this.r) - b(2.0f));
-                }
-            }
-            if (i16 == 1) {
-                if (z12 || z10) {
-                    if (this.t || this.u) {
-                        i15 = i13;
-                    }
-                    path.lineTo(rect.left + i10, (rect.bottom - i10) - i15);
-                    int i33 = i15 * 2;
-                    rectF.set(rect.left + i10, r2 - i33, r3 + i33, rect.bottom - i10);
-                    path.arcTo(rectF, 180.0f, -90.0f, false);
-                } else {
-                    path.lineTo(rect.left + i10, (i14 - this.r) + this.b);
-                }
-            } else if (this.I || i16 == 2 || z12 || z10) {
-                path.lineTo(b(8.0f) + rect.left, ((rect.bottom - i10) - i12) - b(3.0f));
-                int i34 = i12 * 2;
-                rectF.set((b(7.0f) + rect.left) - i34, ((rect.bottom - i10) - i34) - b(9.0f), b(8.0f) + rect.left, (rect.bottom - i10) - b(1.0f));
-                path.arcTo(rectF, 0.0f, 83.0f, false);
-            } else {
-                path.lineTo(b(8.0f) + rect.left, (i14 - this.r) + this.b);
-            }
+            f7 = 0.0f;
         }
-        path.close();
+        this.w = f7;
+        requestLayout();
+        this.a.requestLayout();
     }
 
-    public final Drawable f() {
-        int g7;
-        int i10;
-        Drawable[][] drawableArr;
-        int[][] iArr;
-        int i11;
-        int i12;
-        Rect rect = this.o;
-        int i13 = this.Q;
-        if (i13 == 0) {
-            i13 = this.R > 0.0f ? 0 : b(SharedConfig.bubbleRadius);
-        }
-        boolean z10 = this.s;
-        char c10 = (z10 && this.t) ? (char) 3 : z10 ? (char) 2 : this.t ? (char) 1 : (char) 0;
-        boolean z11 = this.m;
-        char c11 = (z11 && this.u) ? (char) 3 : z11 ? (char) 1 : this.u ? (char) 2 : (char) 0;
-        Integer num = this.w;
-        boolean z12 = this.q;
-        if (num != null) {
-            g7 = num.intValue();
-        } else if (z11) {
-            g7 = g(z12 ? y6.Ba : y6.dc);
-        } else {
-            g7 = g(z12 ? y6.Aa : y6.ra);
-        }
-        boolean z13 = this.x && this.a == null && !z11 && !this.L;
-        int g10 = g(z12 ? y6.Ca : y6.ta);
-        boolean z14 = this.M;
-        Drawable[][] drawableArr2 = this.D;
-        int[][] iArr2 = this.E;
-        int[] iArr3 = this.B;
-        int[][] iArr4 = this.C;
-        if (z14 != z13 || iArr4[c11][c10] != i13 || ((z13 && iArr3[c10] != g10) || iArr2[c11][c10] != g7)) {
-            iArr4[c11][c10] = i13;
-            try {
-                Bitmap createBitmap = Bitmap.createBitmap(b(50.0f), b(40.0f), Bitmap.Config.ARGB_8888);
-                Canvas canvas = new Canvas(createBitmap);
-                rect.set(getBounds());
-                if (z13) {
-                    iArr3[c10] = g10;
-                    Paint paint = new Paint(1);
-                    i10 = 1;
-                    paint.setShader(new LinearGradient(0.0f, 0.0f, 0.0f, b(40.0f), new int[]{358573417, 694117737}, (float[]) null, Shader.TileMode.CLAMP));
-                    paint.setColorFilter(new PorterDuffColorFilter(g10, PorterDuff.Mode.MULTIPLY));
-                    paint.setShadowLayer(2.0f, 0.0f, 1.0f, -1);
-                    if (AndroidUtilities.density > 1.0f) {
-                        setBounds(-1, -1, createBitmap.getWidth() + 1, createBitmap.getHeight() + 1);
-                        i12 = 0;
-                    } else {
-                        i12 = 0;
-                        setBounds(0, 0, createBitmap.getWidth(), createBitmap.getHeight());
-                    }
-                    c(canvas, paint);
-                    if (AndroidUtilities.density > 1.0f) {
-                        paint.setColor(i12);
-                        paint.setShadowLayer(0.0f, 0.0f, 0.0f, i12);
-                        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
-                        setBounds(0, 0, createBitmap.getWidth(), createBitmap.getHeight());
-                        c(canvas, paint);
-                    }
-                } else {
-                    i10 = 1;
-                }
-                Paint paint2 = new Paint(i10);
-                paint2.setColor(g7);
-                setBounds(0, 0, createBitmap.getWidth(), createBitmap.getHeight());
-                c(canvas, paint2);
-                drawableArr = drawableArr2;
-                iArr = iArr2;
-                i11 = g7;
-                try {
-                    drawableArr2[c11][c10] = new NinePatchDrawable(createBitmap, yc.c((createBitmap.getWidth() / 2) - 1, (createBitmap.getWidth() / 2) + 1, (createBitmap.getHeight() / 2) - 1, (createBitmap.getHeight() / 2) + 1, 0, 0, 0, 0, i11).array(), new Rect(), null);
-                    setBounds(rect);
-                } catch (Throwable unused) {
-                }
-            } catch (Throwable unused2) {
-            }
-            this.M = z13;
-            iArr[c11][c10] = i11;
-            return drawableArr[c11][c10];
-        }
-        i11 = g7;
-        drawableArr = drawableArr2;
-        iArr = iArr2;
-        this.M = z13;
-        iArr[c11][c10] = i11;
-        return drawableArr[c11][c10];
+    @Override // android.view.View
+    public void setTranslationX(float f7) {
+        super.setTranslationX(f7);
+        this.a.invalidate();
     }
 
-    public final void finalize() {
-        super.finalize();
-        Bitmap[] bitmapArr = this.z;
-        for (Bitmap bitmap : bitmapArr) {
-            if (bitmap != null) {
-                bitmap.recycle();
-            }
+    @Override // fe.e
+    public final void v(int i10, float f7, float f10, fe.f fVar) {
+        if (i10 == 0) {
+            this.a.g();
         }
-        Arrays.fill(bitmapArr, (Object) null);
-        Arrays.fill(this.A, (Object) null);
-        Arrays.fill(this.y, -1);
+        invalidate();
     }
 
-    public int g(int i10) {
-        if (this.l == 2) {
-            return y6.x0(null, i10, false);
-        }
-        u6 u6Var = this.p;
-        return u6Var != null ? u6Var.g(i10) : y6.x0(null, i10, false);
+    @Override // android.view.View
+    public final boolean verifyDrawable(Drawable drawable) {
+        return drawable == this.f || super.verifyDrawable(drawable);
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    public int h(int i10) {
-        if (this.l == 2) {
-            return y6.x0(null, i10, false);
-        }
-        u6 u6Var = this.p;
-        return u6Var != null ? u6Var.i(i10) : y6.ul.get(i10);
-    }
-
-    public final vc0 i() {
-        boolean z10 = this.v;
-        vc0[] vc0VarArr = S;
-        if (z10) {
-            return vc0VarArr[2];
-        }
-        return vc0VarArr[this.l == 2 ? (char) 1 : (char) 0];
-    }
-
-    public final Drawable j() {
-        int i10;
-        if (this.L || (this.a == null && !this.m && this.J == null)) {
-            return null;
-        }
-        int b10 = b(SharedConfig.bubbleRadius);
-        boolean z10 = this.s;
-        boolean z11 = false;
-        char c10 = (z10 && this.t) ? (char) 3 : z10 ? (char) 2 : this.t ? (char) 1 : (char) 0;
-        int[] iArr = this.y;
-        int i11 = iArr[c10];
-        Drawable[] drawableArr = this.A;
-        if (i11 != b10) {
-            iArr[c10] = b10;
-            Bitmap[] bitmapArr = this.z;
-            Bitmap bitmap = bitmapArr[c10];
-            if (bitmap != null) {
-                bitmap.recycle();
-            }
-            try {
-                Bitmap createBitmap = Bitmap.createBitmap(b(50.0f), b(40.0f), Bitmap.Config.ARGB_8888);
-                Canvas canvas = new Canvas(createBitmap);
-                Paint paint = new Paint(1);
-                paint.setShader(new LinearGradient(0.0f, 0.0f, 0.0f, b(40.0f), new int[]{358573417, 694117737}, (float[]) null, Shader.TileMode.CLAMP));
-                paint.setShadowLayer(2.0f, 0.0f, 1.0f, -1);
-                if (AndroidUtilities.density > 1.0f) {
-                    setBounds(-1, -1, createBitmap.getWidth() + 1, createBitmap.getHeight() + 1);
-                } else {
-                    setBounds(0, 0, createBitmap.getWidth(), createBitmap.getHeight());
-                }
-                c(canvas, paint);
-                if (AndroidUtilities.density > 1.0f) {
-                    paint.setColor(0);
-                    paint.setShadowLayer(0.0f, 0.0f, 0.0f, 0);
-                    paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
-                    setBounds(0, 0, createBitmap.getWidth(), createBitmap.getHeight());
-                    c(canvas, paint);
-                    i10 = 0;
-                } else {
-                    i10 = 1;
-                }
-                bitmapArr[c10] = createBitmap;
-                drawableArr[c10] = new NinePatchDrawable(createBitmap, yc.c((createBitmap.getWidth() / 2) - 1, (createBitmap.getWidth() / 2) + 1, (createBitmap.getHeight() / 2) - 1, (createBitmap.getHeight() / 2) + 1, 0, 0, 0, 0, i10).array(), new Rect(), null);
-                z11 = true;
-            } catch (Throwable unused) {
-            }
-        }
-        int g7 = g(this.q ? y6.Ca : y6.ta);
-        Drawable drawable = drawableArr[c10];
-        if (drawable != null) {
-            int[] iArr2 = this.B;
-            if (iArr2[c10] != g7 || z11) {
-                drawable.setColorFilter(new PorterDuffColorFilter(g7, PorterDuff.Mode.MULTIPLY));
-                iArr2[c10] = g7;
-            }
-        }
-        return drawableArr[c10];
-    }
-
-    public final boolean k() {
-        return this.a != null && y6.wl;
-    }
-
-    public final Path l() {
-        int b10;
-        int i10;
-        boolean z10;
-        boolean z11;
-        Path path;
-        m.d3 d3Var = this.P;
-        Rect bounds = getBounds();
-        int b11 = b(2.0f);
-        int i11 = this.Q;
-        int i12 = this.l;
-        if (i11 != 0) {
-            i10 = i11;
-        } else {
-            if (this.R > 0.0f) {
-                i11 = AndroidUtilities.lerp(b(SharedConfig.bubbleRadius), Math.min(bounds.width(), bounds.height()) / 2, this.R);
-                b10 = AndroidUtilities.lerp(b(Math.min(6, SharedConfig.bubbleRadius)), Math.min(bounds.width(), bounds.height()) / 2, this.R);
-            } else if (i12 == 2) {
-                i11 = b(6.0f);
-                b10 = b(6.0f);
-            } else {
-                i11 = b(SharedConfig.bubbleRadius);
-                b10 = b(Math.min(6, SharedConfig.bubbleRadius));
-            }
-            i10 = b10;
-        }
-        int b12 = b(6.0f);
-        int max = Math.max(bounds.top, 0);
-        boolean z12 = true;
-        if (d3Var == null || bounds.height() >= this.b) {
-            z10 = i12 != 1 ? (this.r + bounds.bottom) - i11 < this.b : (this.r + bounds.bottom) - (b12 * 2) < this.b;
-            z11 = (i11 * 2) + this.r >= 0;
-        } else {
-            z10 = true;
-            z11 = true;
-        }
-        if (d3Var != null) {
-            path = (Path) d3Var.c;
-            z12 = d3Var.a(bounds, z10, z11);
-        } else {
-            path = this.n;
-        }
-        if (!z12 && this.Q == 0) {
-            return path;
-        }
-        boolean z13 = z10;
-        Path path2 = path;
-        e(path2, bounds, b11, i11, b12, i10, max, z13, z11, true);
-        return path2;
-    }
-
-    public void m(int i10, int i11, int i12) {
-        n(i10, i11, i12, i12, 0, 0, false, false);
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:12:0x0076  */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x00ac A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:41:0x020f  */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x0223  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x021a  */
-    /* JADX WARN: Removed duplicated region for block: B:63:0x0149  */
-    /* JADX WARN: Removed duplicated region for block: B:93:0x01fc  */
-    /* JADX WARN: Removed duplicated region for block: B:99:0x0078  */
-    /* JADX WARN: Removed duplicated region for block: B:9:0x0069  */
-    /* JADX WARN: Type inference failed for: r11v14 */
-    /* JADX WARN: Type inference failed for: r11v6 */
-    /* JADX WARN: Type inference failed for: r11v7 */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public void n(int i10, int i11, int i12, int i13, int i14, int i15, boolean z10, boolean z11) {
-        int i16;
-        int i17;
-        int g7;
-        int h;
-        int h10;
-        int h11;
-        boolean z12;
-        boolean z13;
-        char c10;
-        boolean z14;
-        int i18;
-        ?? r11;
-        boolean z15;
-        l5 l5Var = this.J;
-        if (l5Var != null) {
-            i16 = i12;
-            i17 = i14;
-            l5Var.n(i10, i11, i16, i13, i17, i15, z10, z11);
-        } else {
-            i16 = i12;
-            i17 = i14;
-        }
-        Integer num = this.w;
-        if (num != null) {
-            g7 = num.intValue();
-        } else {
-            boolean z16 = this.q;
-            boolean z17 = this.m;
-            if (z16) {
-                g7 = g(z17 ? y6.Ba : y6.Aa);
-                h = h(y6.Da);
-                h10 = h(y6.Ea);
-                h11 = h(y6.Fa);
-                z12 = h(y6.ac) != 0;
-                if (h != 0) {
-                    g7 = g(y6.Aa);
-                }
-                boolean z18 = this.v;
-                int i19 = this.l;
-                char c11 = !z18 ? (char) 2 : i19 == 2 ? (char) 1 : (char) 0;
-                z13 = this.L;
-                vc0[] vc0VarArr = S;
-                if (z13 && h10 != 0 && z12) {
-                    c10 = 3;
-                    vc0 vc0Var = vc0VarArr[c11];
-                    if (vc0Var != null) {
-                        int[] iArr = vc0Var.a;
-                        z14 = true;
-                        this.e = iArr[0];
-                        this.f = iArr[1];
-                        this.g = iArr[2];
-                        this.h = iArr[3];
-                        Paint paint = this.c;
-                        if (!z13 && h10 != 0 && z12) {
-                            if (i16 != this.b || this.O == null || this.e != g7 || this.f != h || this.g != h10 || this.h != h11 || this.i != z12) {
-                                if (this.N == null) {
-                                    Bitmap createBitmap = Bitmap.createBitmap(60, 80, Bitmap.Config.ARGB_8888);
-                                    this.N = createBitmap;
-                                    createBitmap.setHasAlpha(false);
-                                    Bitmap bitmap = this.N;
-                                    Shader.TileMode tileMode = Shader.TileMode.CLAMP;
-                                    this.O = new BitmapShader(bitmap, tileMode, tileMode);
-                                }
-                                if (vc0VarArr[c11] == null) {
-                                    vc0 vc0Var2 = new vc0();
-                                    vc0VarArr[c11] = vc0Var2;
-                                    if (i19 != 2) {
-                                        boolean z19 = z14;
-                                        vc0Var2.t = z19;
-                                        z15 = z19;
-                                    } else {
-                                        z15 = z14;
-                                    }
-                                    vc0Var2.v(b(1.0f));
-                                    r11 = z15;
-                                } else {
-                                    r11 = z14;
-                                }
-                                vc0 vc0Var3 = vc0VarArr[c11];
-                                Bitmap bitmap2 = this.N;
-                                int[] iArr2 = vc0Var3.a;
-                                iArr2[0] = g7;
-                                iArr2[r11] = h;
-                                iArr2[2] = h10;
-                                iArr2[c10] = h11;
-                                Utilities.generateGradient(bitmap2, vc0Var3.i, vc0Var3.e.getInterpolation(vc0Var3.h), iArr2);
-                                this.O.setLocalMatrix(this.k);
-                            }
-                            BitmapShader bitmapShader = this.O;
-                            this.a = bitmapShader;
-                            paint.setShader(bitmapShader);
-                            paint.setColor(-1);
-                            this.e = g7;
-                            this.i = z12;
-                            this.f = h;
-                            this.g = h10;
-                            this.h = h11;
-                        } else if (h == 0 && (this.a == null || i16 != this.b || this.e != g7 || this.f != h || this.g != h10 || this.h != h11 || this.i != z12)) {
-                            if (h10 != 0 && z12) {
-                                if (vc0VarArr[c11] == null) {
-                                    vc0 vc0Var4 = new vc0();
-                                    vc0VarArr[c11] = vc0Var4;
-                                    if (i19 != 2) {
-                                        vc0Var4.t = true;
-                                    }
-                                    vc0Var4.v(b(1.0f));
-                                }
-                                vc0VarArr[c11].n(g7, h, h10, h11);
-                                this.a = vc0VarArr[c11].v;
-                            } else if (h10 == 0) {
-                                this.a = new LinearGradient(0.0f, i17, 0.0f, i16, new int[]{h, g7}, (float[]) null, Shader.TileMode.CLAMP);
-                            } else if (h11 != 0) {
-                                this.a = new LinearGradient(0.0f, i17, 0.0f, i16, new int[]{h11, h10, h, g7}, (float[]) null, Shader.TileMode.CLAMP);
-                            } else {
-                                this.a = new LinearGradient(0.0f, i17, 0.0f, i16, new int[]{h10, h, g7}, (float[]) null, Shader.TileMode.CLAMP);
-                            }
-                            paint.setShader(this.a);
-                            this.e = g7;
-                            this.i = z12;
-                            this.f = h;
-                            this.g = h10;
-                            this.h = h11;
-                            paint.setColor(-1);
-                        } else if (h == 0) {
-                            if (this.a != null) {
-                                this.a = null;
-                                paint.setShader(null);
-                            }
-                            paint.setColor(g7);
-                        }
-                        if (this.a instanceof BitmapShader) {
-                            i18 = 0;
-                            vc0VarArr[c11].setBounds(0, i17, i11, i16 - i13);
-                        } else {
-                            i18 = 0;
-                        }
-                        this.b = i16;
-                        if (this.a instanceof BitmapShader) {
-                            i18 = i13;
-                        }
-                        this.r = i10 - i18;
-                        this.s = z10;
-                        this.t = z11;
-                    }
-                } else {
-                    c10 = 3;
-                }
-                z14 = true;
-                Paint paint2 = this.c;
-                if (!z13) {
-                }
-                if (h == 0) {
-                }
-                if (h == 0) {
-                }
-                if (this.a instanceof BitmapShader) {
-                }
-                this.b = i16;
-                if (this.a instanceof BitmapShader) {
-                }
-                this.r = i10 - i18;
-                this.s = z10;
-                this.t = z11;
-            }
-            g7 = g(z17 ? y6.dc : y6.ra);
-        }
-        h = 0;
-        h10 = 0;
-        h11 = 0;
-        z12 = false;
-        if (h != 0) {
-        }
-        boolean z182 = this.v;
-        int i192 = this.l;
-        if (!z182) {
-        }
-        z13 = this.L;
-        vc0[] vc0VarArr2 = S;
-        if (z13) {
-        }
-        c10 = 3;
-        z14 = true;
-        Paint paint22 = this.c;
-        if (!z13) {
-        }
-        if (h == 0) {
-        }
-        if (h == 0) {
-        }
-        if (this.a instanceof BitmapShader) {
-        }
-        this.b = i16;
-        if (this.a instanceof BitmapShader) {
-        }
-        this.r = i10 - i18;
-        this.s = z10;
-        this.t = z11;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        int i11 = this.H;
-        Paint paint = this.c;
-        if (i11 != i10 || paint.getAlpha() != i10) {
-            this.H = i10;
-            paint.setAlpha(i10);
-            if (this.q) {
-                this.d.setAlpha((int) ((i10 / 255.0f) * Color.alpha(g(y6.bc))));
-            }
-        }
-        if (this.a == null) {
-            Drawable f7 = f();
-            if (f7.getAlpha() != i10) {
-                f7.setAlpha(i10);
-            }
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setBounds(int i10, int i11, int i12, int i13) {
-        super.setBounds(i10, i11, i12, i13);
-        l5 l5Var = this.J;
-        if (l5Var != null) {
-            l5Var.setBounds(i10, i11, i12, i13);
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(int i10, PorterDuff.Mode mode) {
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    @Override // fe.e
+    public final /* synthetic */ void E(float f7, int i10) {
     }
 }

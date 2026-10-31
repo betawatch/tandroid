@@ -1,30 +1,52 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Typeface;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.LaunchActivity;
+import android.widget.FrameLayout;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class w6 extends nb {
-    public w6(LaunchActivity launchActivity, org.telegram.ui.ua0 ua0Var) {
-        super(launchActivity, null);
-        org.telegram.ui.Cells.q qVar = new org.telegram.ui.Cells.q(getContext());
-        TextView textView = new TextView(getContext());
-        addView(qVar, kb1.m(30.0f, 30.0f, 8388627, 12.0f, 8.0f, 12.0f, 8.0f));
-        textView.setGravity(8388611);
-        textView.setPadding(0, AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f));
-        org.telegram.ui.ActionBar.f7.V(textView, org.telegram.ui.ActionBar.y6.Hi, null);
-        textView.setTextSize(1, 15.0f);
-        textView.setTypeface(Typeface.SANS_SERIF);
-        addView(textView, kb1.m(-1.0f, -2.0f, 8388627, 56.0f, 0.0f, 16.0f, 0.0f));
-        qVar.setImageDrawable(launchActivity.getDrawable(ua0Var.b));
-        qVar.setOuterPadding(AndroidUtilities.dp(8.0f));
-        qVar.setBackgroundOuterPadding(AndroidUtilities.dp(24.0f));
-        qVar.setForeground(ua0Var.c);
-        org.telegram.messenger.wh.o(R.string.AppIconChangedTo, new Object[]{LocaleController.getString(ua0Var.d)}, textView);
+public final /* synthetic */ class w6 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ w7 b;
+    public final /* synthetic */ z60 c;
+
+    public /* synthetic */ w6(w7 w7Var, z60 z60Var, int i10) {
+        this.a = i10;
+        this.b = w7Var;
+        this.c = z60Var;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        z60 z60Var = this.c;
+        w7 w7Var = this.b;
+        switch (i10) {
+            case 0:
+                w7Var.getClass();
+                z60Var.u();
+                w7Var.P0(1);
+                break;
+            case 1:
+                w7Var.getClass();
+                z60Var.u();
+                w7Var.P0(2);
+                break;
+            case 2:
+                w7Var.getClass();
+                z60Var.u();
+                w7Var.P0(4);
+                break;
+            case 3:
+                w7Var.getClass();
+                z60Var.u();
+                w7Var.P0(7);
+                break;
+            default:
+                w7Var.U0(true);
+                org.telegram.messenger.m5.n(null, 2131753912, new cc((FrameLayout) w7Var.b, w7Var.I0), R.raw.saved_messages, 36);
+                z60Var.u();
+                break;
+        }
     }
 }

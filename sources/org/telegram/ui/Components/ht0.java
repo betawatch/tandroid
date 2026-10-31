@@ -1,39 +1,38 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Rect;
-import android.view.View;
+import android.content.Context;
 import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class ht0 extends s4.n0 {
-    public final /* synthetic */ bt0 a;
+public final class ht0 extends org.telegram.ui.Cells.v2 {
+    public final /* synthetic */ it0 a5;
 
-    public ht0(bt0 bt0Var) {
-        this.a = bt0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ht0(it0 it0Var, Context context) {
+        super(context, true);
+        this.a5 = it0Var;
     }
 
-    @Override // s4.n0
-    public final void d(Rect rect, View view, RecyclerView recyclerView, s4.b1 b1Var) {
-        if (!(view instanceof org.telegram.ui.Cells.w7)) {
-            rect.left = 0;
-            rect.top = 0;
-            rect.bottom = 0;
-            rect.right = 0;
-            return;
+    @Override // org.telegram.ui.Cells.v2
+    public final boolean X() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Cells.v2
+    public final boolean getIsPinned() {
+        it0 it0Var = this.a5;
+        ArrayList arrayList = it0Var.f;
+        rs0 rs0Var = it0Var.s;
+        if (rs0Var == null || rs0Var.getAdapter() != it0Var) {
+            return false;
         }
-        org.telegram.ui.Cells.w7 w7Var = (org.telegram.ui.Cells.w7) view;
-        bt0 bt0Var = this.a;
-        bt0Var.n.getClass();
-        int R = RecyclerView.R(w7Var);
-        int i10 = bt0Var.r.J;
-        w7Var.a0 = R < i10;
-        int i11 = R % i10;
-        w7Var.V = i11 == 0;
-        w7Var.W = i11 == i10 - 1;
-        rect.left = 0;
-        rect.top = 0;
-        rect.bottom = 0;
-        rect.right = 0;
+        it0Var.s.getClass();
+        int R = RecyclerView.R(this);
+        if (R < 0 || R >= arrayList.size()) {
+            return false;
+        }
+        return ((org.telegram.messenger.fw) arrayList.get(R)).b;
     }
 }

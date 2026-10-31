@@ -1,13 +1,11 @@
 package m4;
 
-import a8.ge;
-import a8.je;
-import a8.yb;
 import android.os.Bundle;
 import android.os.Parcel;
 import j$.util.Objects;
+import v7.t6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class e1 implements v {
     public final m a;
@@ -31,7 +29,7 @@ public final class e1 implements v {
         try {
             obtain.writeInterfaceToken("androidx.media3.session.IMediaController");
             obtain.writeInt(i10);
-            ge.a(obtain, bundle);
+            w7.w.a(obtain, bundle);
             lVar.a.transact(3003, obtain, null, 1);
         } finally {
             obtain.recycle();
@@ -53,15 +51,15 @@ public final class e1 implements v {
     }
 
     @Override // m4.v
-    public final void c(int i10, b2.c1 c1Var) {
-        Bundle b10 = c1Var.b();
+    public final void c(int i10, b2.b1 b1Var) {
+        Bundle b10 = b1Var.b();
         l lVar = (l) this.a;
         lVar.getClass();
         Parcel obtain = Parcel.obtain();
         try {
             obtain.writeInterfaceToken("androidx.media3.session.IMediaController");
             obtain.writeInt(i10);
-            ge.a(obtain, b10);
+            w7.w.a(obtain, b10);
             lVar.a.transact(3009, obtain, null, 1);
         } finally {
             obtain.recycle();
@@ -94,8 +92,8 @@ public final class e1 implements v {
         try {
             obtain.writeInterfaceToken("androidx.media3.session.IMediaController");
             obtain.writeInt(i10);
-            ge.a(obtain, a2);
-            ge.a(obtain, bundle);
+            w7.w.a(obtain, a2);
+            w7.w.a(obtain, bundle);
             lVar.a.transact(3005, obtain, null, 1);
         } finally {
             obtain.recycle();
@@ -121,7 +119,7 @@ public final class e1 implements v {
         try {
             obtain.writeInterfaceToken("androidx.media3.session.IMediaController");
             obtain.writeInt(i10);
-            ge.a(obtain, b10);
+            w7.w.a(obtain, b10);
             lVar.a.transact(3008, obtain, null, 1);
         } finally {
             obtain.recycle();
@@ -130,7 +128,7 @@ public final class e1 implements v {
 
     @Override // m4.v
     public final void g() {
-        je.a(this.a);
+        w7.z.a(this.a);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -138,29 +136,29 @@ public final class e1 implements v {
     /* JADX WARN: Type inference failed for: r3v3, types: [boolean, int] */
     /* JADX WARN: Type inference failed for: r3v6 */
     @Override // m4.v
-    public final void h(int i10, l1 l1Var, b2.c1 c1Var, boolean z10, boolean z11) {
+    public final void h(int i10, l1 l1Var, b2.b1 b1Var, boolean z10, boolean z11) {
         Parcel obtain;
         int i11 = this.b;
-        yb.p(i11 != 0);
-        ?? r32 = (z10 || !c1Var.a(17)) ? 1 : 0;
-        boolean z12 = z11 || !c1Var.a(30);
+        t6.p(i11 != 0);
+        ?? r32 = (z10 || !b1Var.a(17)) ? 1 : 0;
+        boolean z12 = z11 || !b1Var.a(30);
         m mVar = this.a;
         if (i11 < 2) {
-            Bundle f7 = l1Var.e(c1Var, z10, true).f(i11);
+            Bundle f7 = l1Var.e(b1Var, z10, true).f(i11);
             l lVar = (l) mVar;
             lVar.getClass();
             obtain = Parcel.obtain();
             try {
                 obtain.writeInterfaceToken("androidx.media3.session.IMediaController");
                 obtain.writeInt(i10);
-                ge.a(obtain, f7);
+                w7.w.a(obtain, f7);
                 obtain.writeInt(r32);
                 lVar.a.transact(3007, obtain, null, 1);
                 return;
             } finally {
             }
         }
-        Bundle f10 = l1Var.e(c1Var, z10, z11).f(i11);
+        Bundle f10 = l1Var.e(b1Var, z10, z11).f(i11);
         Bundle bundle = new Bundle();
         bundle.putBoolean(k1.a, r32);
         bundle.putBoolean(k1.b, z12);
@@ -170,8 +168,8 @@ public final class e1 implements v {
         try {
             obtain.writeInterfaceToken("androidx.media3.session.IMediaController");
             obtain.writeInt(i10);
-            ge.a(obtain, f10);
-            ge.a(obtain, bundle);
+            w7.w.a(obtain, f10);
+            w7.w.a(obtain, bundle);
             lVar2.a.transact(3013, obtain, null, 1);
         } finally {
         }
@@ -197,7 +195,7 @@ public final class e1 implements v {
         try {
             obtain.writeInterfaceToken("androidx.media3.session.IMediaController");
             obtain.writeInt(i10);
-            ge.a(obtain, bundle);
+            w7.w.a(obtain, bundle);
             lVar.a.transact(3002, obtain, null, 1);
         } finally {
             obtain.recycle();

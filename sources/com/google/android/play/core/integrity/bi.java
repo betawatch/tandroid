@@ -1,11 +1,12 @@
 package com.google.android.play.core.integrity;
 
+import a9.a0;
 import android.os.Bundle;
 import com.google.android.gms.tasks.TaskCompletionSource;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-class bi extends b9.y {
+class bi extends a0 {
     final TaskCompletionSource a;
     final /* synthetic */ bn b;
 
@@ -16,22 +17,22 @@ class bi extends b9.y {
         this.a = taskCompletionSource;
     }
 
-    @Override // b9.z
+    @Override // a9.b0
     public final void b(Bundle bundle) {
         this.b.a.d(this.a);
     }
 
-    @Override // b9.z
+    @Override // a9.b0
     public void c(Bundle bundle) {
         this.b.a.d(this.a);
     }
 
-    @Override // b9.z
+    @Override // a9.b0
     public final void d(Bundle bundle) {
         this.b.a.d(this.a);
     }
 
-    @Override // b9.z
+    @Override // a9.b0
     public void e(Bundle bundle) {
         this.b.a.d(this.a);
     }

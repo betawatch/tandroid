@@ -1,59 +1,60 @@
 package org.telegram.ui.Components;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.util.Property;
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
+import android.graphics.Canvas;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public abstract class mr0 extends FrameLayout {
-    public View a;
-    public org.telegram.ui.ActionBar.b6 b;
-    public org.telegram.ui.ActionBar.b6 c;
-    public bi.cc d;
-    public int e;
-    public AnimatorSet f;
-    public Paint h;
-    public RectF n;
+public final class mr0 extends zz {
+    public final /* synthetic */ ar0 U;
+    public final /* synthetic */ zt0 V;
 
-    public final void a(int i10) {
-        if (this.e == i10) {
-            return;
-        }
-        this.e = i10;
-        AnimatorSet animatorSet = this.f;
-        if (animatorSet != null) {
-            animatorSet.cancel();
-        }
-        AnimatorSet animatorSet2 = new AnimatorSet();
-        this.f = animatorSet2;
-        animatorSet2.playTogether(ObjectAnimator.ofFloat(this.d, (Property<bi.cc, Float>) View.TRANSLATION_X, this.e == 0 ? 0.0f : r0.getMeasuredWidth()));
-        this.f.setDuration(180L);
-        this.f.setInterpolator(ds.g);
-        this.f.addListener(new i10(this, 20));
-        this.f.start();
-        ((zq0) this).r.c1();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public mr0(zt0 zt0Var, Context context, ar0 ar0Var) {
+        super(context, null);
+        this.V = zt0Var;
+        this.U = ar0Var;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int size = (View.MeasureSpec.getSize(i10) - AndroidUtilities.dp(28.0f)) / 2;
-        ((FrameLayout.LayoutParams) this.c.getLayoutParams()).width = size;
-        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.b.getLayoutParams();
-        layoutParams.width = size;
-        layoutParams.leftMargin = AndroidUtilities.dp(14.0f) + size;
-        bi.cc ccVar = this.d;
-        ((FrameLayout.LayoutParams) ccVar.getLayoutParams()).width = size;
-        AnimatorSet animatorSet = this.f;
-        if (animatorSet != null) {
-            animatorSet.cancel();
+    @Override // org.telegram.ui.Components.zz
+    public final int getColumnsCount() {
+        return this.V.o1[zt0.x0(this.U.E) ? 1 : 0];
+    }
+
+    @Override // org.telegram.ui.Components.zz
+    public final int getViewType() {
+        setIsSingleCell(false);
+        int i10 = this.U.E;
+        if (i10 == 0 || i10 == 5) {
+            return 2;
         }
-        ccVar.setTranslationX(this.e == 0 ? 0.0f : r2.width);
-        super.onMeasure(i10, i11);
+        if (i10 == 1) {
+            return 3;
+        }
+        if (i10 != 2 && i10 != 4) {
+            if (i10 == 3) {
+                return 5;
+            }
+            if (i10 != 7) {
+                if (i10 == 6) {
+                    if (this.V.K0.getTabsCount() == 1) {
+                        setIsSingleCell(true);
+                        return 1;
+                    }
+                } else if (zt0.x0(i10)) {
+                    return 27;
+                }
+                return 1;
+            }
+        }
+        return 6;
+    }
+
+    @Override // org.telegram.ui.Components.zz, android.view.View
+    public final void onDraw(Canvas canvas) {
+        zt0 zt0Var = this.V;
+        zt0Var.V0.setColor(zt0Var.q0(org.telegram.ui.ActionBar.t6.d6));
+        canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), zt0Var.V0);
+        super.onDraw(canvas);
     }
 }

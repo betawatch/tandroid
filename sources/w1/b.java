@@ -1,15 +1,14 @@
 package w1;
 
 import a0.m;
+import a6.d;
 import androidx.lifecycle.p0;
 import b2.u;
-import b6.d;
-import u7.s;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public class b extends p0 {
-    public static final s f = new s(25);
+    public static final jb.b f = new jb.b(25);
     public final m d = new m();
     public boolean e = false;
 

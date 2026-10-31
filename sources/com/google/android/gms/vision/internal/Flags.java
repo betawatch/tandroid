@@ -1,11 +1,10 @@
 package com.google.android.gms.vision.internal;
 
-import e7.a;
-import e7.b;
-import e7.c;
-import java.util.ArrayList;
+import d7.a;
+import d7.b;
+import d7.c;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public class Flags {
     private static final b zza;
@@ -17,7 +16,7 @@ public class Flags {
         synchronized (c.class) {
             cVar = c.b;
         }
-        ((ArrayList) cVar.a.b).add(aVar);
+        cVar.a.a.add(aVar);
         zza = aVar;
     }
 

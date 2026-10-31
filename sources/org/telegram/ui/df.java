@@ -1,41 +1,68 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
 import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class df implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class df implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ wn b;
-    public final /* synthetic */ View c;
+    public final /* synthetic */ un b;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ df(wn wnVar, org.telegram.ui.Cells.v0 v0Var, int i10) {
-        this.a = i10;
-        this.b = wnVar;
-        this.c = v0Var;
+    public /* synthetic */ df(un unVar, int i10, int i11) {
+        this.a = i11;
+        this.b = unVar;
+        this.c = i10;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        org.telegram.ui.Cells.q1 q1Var;
+        org.telegram.messenger.jj messageObject;
         switch (this.a) {
             case 0:
-                wn wnVar = this.b;
-                wnVar.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                wnVar.Q9 = AndroidUtilities.dp(30.0f) * floatValue;
-                wnVar.A9();
-                this.c.setAlpha(floatValue);
+                this.b.getConnectionsManager().cancelRequest(this.c, true);
+                break;
+            case 1:
+                this.b.k(this.c, 0, false, 0, true, 0);
+                break;
+            case 2:
+                this.b.getConnectionsManager().cancelRequest(this.c, true);
+                break;
+            case 3:
+                un unVar = this.b;
+                vj vjVar = unVar.z0;
+                if (vjVar != null) {
+                    int childCount = vjVar.getChildCount();
+                    for (int i10 = 0; i10 < childCount; i10++) {
+                        View childAt = unVar.z0.getChildAt(i10);
+                        if ((childAt instanceof org.telegram.ui.Cells.q1) && (messageObject = (q1Var = (org.telegram.ui.Cells.q1) childAt).getMessageObject()) != null && messageObject.T(unVar.U3)) {
+                            q1Var.C3(this.c, true, true);
+                        }
+                    }
+                }
+                unVar.U3 = null;
+                break;
+            case 4:
+                this.b.actionBar.getActionBarMenuOnItemClick().b(this.c);
+                break;
+            case 5:
+                this.b.getConnectionsManager().cancelRequest(this.c, true);
+                break;
+            case 6:
+                un.e0(this.b, this.c);
+                break;
+            case 7:
+                this.b.actionBar.setSubtitle(org.telegram.messenger.cd.G(this.c, "messages", new Object[0]));
+                break;
+            case 8:
+                this.b.getConnectionsManager().cancelRequest(this.c, true);
+                break;
+            case 9:
+                un.m1(this.b, this.c);
                 break;
             default:
-                wn wnVar2 = this.b;
-                wnVar2.getClass();
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                wnVar2.Q9 = AndroidUtilities.dp(30.0f) * floatValue2;
-                wnVar2.A9();
-                wnVar2.C9();
-                this.c.setAlpha(floatValue2);
+                un.z0(this.b, this.c);
                 break;
         }
     }

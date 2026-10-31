@@ -1,12 +1,22 @@
 package org.telegram.ui;
 
-import android.graphics.Color;
+import android.content.Context;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class l5 extends org.telegram.ui.ActionBar.k3 {
-    public static float c = 1.0f;
-    public static float d = 1.0f;
-    public static float e = 1.0f - (Color.alpha(org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.xf, false)) / 255.0f);
-    public org.telegram.ui.Components.ww0 b;
+public final class l5 extends org.telegram.ui.Cells.b5 {
+    public final /* synthetic */ int f;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ l5(Context context, int i10) {
+        super(context);
+        this.f = i10;
+    }
+
+    @Override // org.telegram.ui.Cells.b5
+    public final int getFullHeight() {
+        switch (this.f) {
+        }
+        return org.telegram.messenger.i0.L(50.0f);
+    }
 }

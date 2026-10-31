@@ -3,18 +3,18 @@ package android.support.v4.media.session;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class MediaSessionCompat$Token implements Parcelable {
-    public static final Parcelable.Creator<MediaSessionCompat$Token> CREATOR = new a0(2);
+    public static final Parcelable.Creator<MediaSessionCompat$Token> CREATOR = new z(2);
     public final Object b;
     public d c;
     public final Object a = new Object();
-    public z4.d d = null;
+    public y4.d d = null;
 
-    public MediaSessionCompat$Token(Object obj, u uVar) {
+    public MediaSessionCompat$Token(Object obj, t tVar) {
         this.b = obj;
-        this.c = uVar;
+        this.c = tVar;
     }
 
     public final d a() {
@@ -31,7 +31,7 @@ public final class MediaSessionCompat$Token implements Parcelable {
         }
     }
 
-    public final void c(z4.d dVar) {
+    public final void c(y4.d dVar) {
         synchronized (this.a) {
             this.d = dVar;
         }

@@ -1,9 +1,9 @@
 package b2;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class s1 {
-    public static final s1 d = new s1(new ag.g(1));
+    public static final s1 d = new s1(new r1(0));
     public static final String e;
     public static final String f;
     public static final String g;
@@ -12,16 +12,16 @@ public final class s1 {
     public final boolean c;
 
     static {
-        String str = e2.n0.a;
+        String str = e2.l0.a;
         e = Integer.toString(1, 36);
         f = Integer.toString(2, 36);
         g = Integer.toString(3, 36);
     }
 
-    public s1(ag.g gVar) {
-        this.a = gVar.a;
-        this.b = gVar.b;
-        this.c = gVar.c;
+    public s1(r1 r1Var) {
+        this.a = r1Var.a;
+        this.b = r1Var.b;
+        this.c = r1Var.c;
     }
 
     public final boolean equals(Object obj) {

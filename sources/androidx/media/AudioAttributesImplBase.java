@@ -1,9 +1,10 @@
 package androidx.media;
 
-import ic.a;
+import i0.a;
 import java.util.Arrays;
+import org.telegram.messenger.zs;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public class AudioAttributesImplBase implements AudioAttributesImpl {
     public int a = 0;
@@ -71,7 +72,7 @@ public class AudioAttributesImplBase implements AudioAttributesImpl {
             } else if (i10 == 7) {
                 i12 |= 1;
             }
-            if (i11 == (i12 & 273) && this.a == audioAttributesImplBase.a && this.d == i13) {
+            if (i11 == (i12 & zs.w4) && this.a == audioAttributesImplBase.a && this.d == i13) {
                 return true;
             }
         }

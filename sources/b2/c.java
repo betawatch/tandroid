@@ -2,7 +2,7 @@ package b2;
 
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class c {
     public static final c c = new c(new a[0]);
@@ -27,7 +27,7 @@ public final class c {
         String[] strArr = (String[]) Arrays.copyOf(aVar.g, 0);
         b[] bVarArr = aVar.h;
         d = new a(0, aVar.b, copyOf, p0VarArr, copyOf2, strArr, (b[]) Arrays.copyOf(bVarArr, Math.max(0, bVarArr.length)));
-        String str = e2.n0.a;
+        String str = e2.l0.a;
         e = Integer.toString(1, 36);
         Integer.toString(2, 36);
         Integer.toString(3, 36);

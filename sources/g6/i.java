@@ -1,41 +1,6 @@
 package g6;
 
-import android.os.Parcel;
-import android.os.RemoteException;
-import android.util.Log;
-import f6.p;
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public abstract class i {
-    public static final h6.b a = new h6.b("MediaSessionUtils", null);
-
-    public static ArrayList a(p pVar) {
-        try {
-            Parcel P0 = pVar.P0(pVar.N0(), 3);
-            ArrayList createTypedArrayList = P0.createTypedArrayList(f6.d.CREATOR);
-            P0.recycle();
-            return createTypedArrayList;
-        } catch (RemoteException e) {
-            Object[] objArr = {"getNotificationActions", p.class.getSimpleName()};
-            h6.b bVar = a;
-            Log.e(bVar.a, bVar.d("Unable to call %s on %s.", objArr), e);
-            return null;
-        }
-    }
-
-    public static int[] b(p pVar) {
-        try {
-            Parcel P0 = pVar.P0(pVar.N0(), 4);
-            int[] createIntArray = P0.createIntArray();
-            P0.recycle();
-            return createIntArray;
-        } catch (RemoteException e) {
-            Object[] objArr = {"getCompactViewActionIndices", p.class.getSimpleName()};
-            h6.b bVar = a;
-            Log.e(bVar.a, bVar.d("Unable to call %s on %s.", objArr), e);
-            return null;
-        }
-    }
+public final class i extends a9.a {
 }

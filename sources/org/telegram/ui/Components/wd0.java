@@ -1,38 +1,39 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import android.widget.TextView;
+import android.graphics.Path;
+import android.graphics.RectF;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class wd0 extends TextView {
-    public final /* synthetic */ xd0 a;
+public final class wd0 extends Path {
+    public int a;
+    public int b;
+    public int c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public wd0(xd0 xd0Var, Context context, int i10) {
-        super(context);
-        this.a = xd0Var;
-    }
-
-    @Override // android.widget.TextView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        xd0 xd0Var = this.a;
-        if (xd0Var.e.getAdapter() instanceof vd0) {
-            ((vd0) xd0Var.e.getAdapter()).getClass();
+    public final void a(int i10, int i11, int i12) {
+        if (this.a == i10 && this.b == i11 && this.c == i12) {
+            return;
         }
-    }
-
-    @Override // android.widget.TextView, android.view.View
-    public final void setSelected(boolean z10) {
-        super.setSelected(z10);
-        Drawable background = getBackground();
-        xd0 xd0Var = this.a;
-        if (background != null) {
-            org.telegram.ui.ActionBar.y6.E1(background, xd0Var.c(z10 ? 0.1f : 0.05f), true);
-        }
-        setTextColor(xd0Var.c(z10 ? 0.8f : 0.6f));
+        rewind();
+        RectF rectF = org.telegram.messenger.i0.P;
+        float f7 = i10 - i12;
+        float f10 = i11 + i12;
+        rectF.set(f7, i11 - i12, i10 + i12, f10);
+        arcTo(rectF, -180.0f, 270.0f, false);
+        float f11 = i12 / 81.0f;
+        float f12 = i10;
+        float f13 = f10 - (3.0f * f11);
+        cubicTo(f12 - (13.0f * f11), f10, f12 - (25.0f * f11), f13, f12 - (36.0f * f11), f10 - (8.42f * f11));
+        float f14 = f10 - f11;
+        cubicTo(f12 - (52.0f * f11), f14, f12 - (56.5f * f11), f14, f12 - (78.02f * f11), f14);
+        cubicTo(f12 - (80.0f * f11), f14, f12 - (81.0f * f11), f13, f12 - (79.52f * f11), f10 - (4.5f * f11));
+        float f15 = f12 - (63.73f * f11);
+        cubicTo(f12 - (78.0f * f11), f10 - (6.0f * f11), f15, f10 - (15.0f * f11), f15, f10 - (31.0f * f11));
+        float f16 = i11;
+        cubicTo(f12 - (74.5f * f11), f10 - (44.75f * f11), f7, (f11 * 18.87f) + f16, f7, f16);
+        close();
+        this.a = i10;
+        this.b = i11;
+        this.c = i12;
     }
 }

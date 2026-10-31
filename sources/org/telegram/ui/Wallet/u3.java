@@ -1,32 +1,67 @@
 package org.telegram.ui.Wallet;
 
-import android.animation.ValueAnimator;
+import android.content.Context;
+import android.view.View;
+import org.telegram.tgnet.tl.TL_wallet;
+import org.telegram.ui.Components.a51;
+import org.telegram.ui.Components.p51;
+import org.telegram.ui.Components.tk0;
+import org.telegram.ui.Components.u51;
+import org.telegram.ui.Components.z41;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class u3 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ m5 b;
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final class u3 extends z41 {
+    public static final /* synthetic */ int b = 0;
 
-    public /* synthetic */ u3(m5 m5Var, int i10) {
-        this.a = i10;
-        this.b = m5Var;
+    static {
+        z41.h(new u3());
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                m5 m5Var = this.b;
-                m5Var.getClass();
-                m5Var.I0(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
-            default:
-                m5 m5Var2 = this.b;
-                m5Var2.getClass();
-                m5Var2.H0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                m5Var2.P0();
-                break;
+    public static boolean i(TL_wallet.walletTransaction wallettransaction, TL_wallet.walletTransaction wallettransaction2) {
+        TL_wallet.walletTransaction wallettransaction3 = wallettransaction instanceof t3 ? ((t3) wallettransaction).a : wallettransaction;
+        TL_wallet.walletTransaction wallettransaction4 = wallettransaction2 instanceof t3 ? ((t3) wallettransaction2).a : wallettransaction2;
+        return wallettransaction3 == wallettransaction4 || k0.i0(wallettransaction, wallettransaction2) || k0.i0(wallettransaction3, wallettransaction4);
+    }
+
+    @Override // org.telegram.ui.Components.z41
+    public final void b(View view, a51 a51Var, boolean z10, p51 p51Var, u51 u51Var) {
+        ((w3) view).g((TL_wallet.walletTransaction) a51Var.G, (v3) a51Var.H, z10);
+    }
+
+    @Override // org.telegram.ui.Components.z41
+    public final boolean c(a51 a51Var, a51 a51Var2) {
+        Object obj = a51Var.G;
+        if (!(obj instanceof TL_wallet.walletTransaction)) {
+            return false;
         }
+        Object obj2 = a51Var2.G;
+        if (obj2 instanceof TL_wallet.walletTransaction) {
+            return ((TL_wallet.walletTransaction) obj).equals((TL_wallet.walletTransaction) obj2);
+        }
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.z41
+    public final View d(Context context, tk0 tk0Var, int i10, org.telegram.ui.ActionBar.p6 p6Var) {
+        return new w3(i10, context, p6Var);
+    }
+
+    @Override // org.telegram.ui.Components.z41
+    public final boolean e(a51 a51Var, a51 a51Var2) {
+        Object obj = a51Var.G;
+        if (!(obj instanceof TL_wallet.walletTransaction)) {
+            return false;
+        }
+        Object obj2 = a51Var2.G;
+        if (obj2 instanceof TL_wallet.walletTransaction) {
+            return i((TL_wallet.walletTransaction) obj, (TL_wallet.walletTransaction) obj2);
+        }
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.z41
+    public final boolean f() {
+        return true;
     }
 }

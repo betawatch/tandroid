@@ -1,22 +1,21 @@
 package xd;
 
-import a8.kf;
-import java.util.Iterator;
+import bb.u;
+import java.util.concurrent.CancellationException;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public abstract class a implements Iterable {
-    public final char a;
-    public final char b;
-    public final int c = 1;
+public final class a extends CancellationException {
+    public final transient u a;
 
-    public a(char c10, char c11) {
-        this.a = c10;
-        this.b = (char) kf.a(c10, c11, 1);
+    public a(u uVar) {
+        super("Flow was aborted, no more elements needed");
+        this.a = uVar;
     }
 
-    @Override // java.lang.Iterable
-    public final Iterator iterator() {
-        return new b(this.a, this.b, this.c);
+    @Override // java.lang.Throwable
+    public final Throwable fillInStackTrace() {
+        setStackTrace(new StackTraceElement[0]);
+        return this;
     }
 }

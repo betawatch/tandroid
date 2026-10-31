@@ -1,118 +1,180 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.text.Layout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
+import android.graphics.Bitmap;
+import android.text.TextUtils;
+import java.io.IOException;
+import java.io.RandomAccessFile;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class zh0 {
-    public int a;
-    public final xc b;
-    public final h6 e;
-    public Drawable i;
-    public Drawable j;
-    public yj0 k;
-    public r11 l;
-    public ea0 r;
-    public boolean s;
-    public boolean t;
-    public int u;
-    public long w;
-    public int x;
-    public final /* synthetic */ ci0 y;
-    public final RectF c = new RectF();
-    public final RectF d = new RectF();
-    public final RectF f = new RectF();
-    public final RectF g = new RectF();
-    public final Rect h = new Rect();
-    public float m = 1.0f;
-    public boolean n = false;
-    public boolean o = false;
-    public boolean p = false;
-    public final float q = 1.0f;
-    public int v = 0;
+public class zh0 extends bi0 {
+    public volatile RLottieNative U0;
+    public boolean V0;
+    public boolean W0;
+    public volatile boolean X0;
+    public boolean Y0;
+    public final int Z0;
+    public int a1;
 
-    public zh0(ci0 ci0Var) {
-        this.y = ci0Var;
-        this.b = new xc(ci0Var);
-        this.e = new h6(ci0Var, 0L, 250L, ds.f);
+    public zh0(String str, int i10, int i11) {
+        super(i10, i11);
+        String y22;
+        this.Z0 = -1;
+        this.J = 1;
+        if ("🎲".equals(str)) {
+            y22 = org.telegram.messenger.i0.y2(null, R.raw.diceloop);
+            this.Z0 = 60;
+        } else {
+            y22 = "🎯".equals(str) ? org.telegram.messenger.i0.y2(null, R.raw.dartloop) : null;
+        }
+        getPaint().setFlags(2);
+        if (TextUtils.isEmpty(y22)) {
+            return;
+        }
+        this.m0 = RLottieNative.b(y22, this.e, null, null);
     }
 
-    public final void a() {
-        float d = this.e.d(1.0f, false);
-        if (d == 1.0f) {
-            this.n = false;
-            if (this.o) {
-                this.p = true;
-                return;
+    @Override // org.telegram.ui.Components.bi0
+    public int B(Bitmap bitmap, boolean z10) {
+        RLottieNative rLottieNative;
+        int i10 = this.J;
+        if (i10 == 1) {
+            rLottieNative = this.m0;
+        } else if (i10 == 2) {
+            rLottieNative = this.U0;
+            if (this.X0) {
+                this.a0 = this.a1 - 1;
+            }
+        } else {
+            rLottieNative = this.m0;
+        }
+        return rLottieNative.c(this.a0, bitmap, z10) < 0 ? 2 : 1;
+    }
+
+    @Override // org.telegram.ui.Components.bi0
+    public void C(boolean z10) {
+        this.k0 = false;
+        this.l0 = true;
+        n();
+        l();
+        if (this.Y0 || this.V0) {
+            this.W0 = true;
+            return;
+        }
+        if (this.P != null || this.x0) {
+            this.V = true;
+            return;
+        }
+        D(z10);
+        rf.e eVar = this.B0;
+        if (eVar != null) {
+            RandomAccessFile randomAccessFile = eVar.s;
+            if (randomAccessFile != null) {
+                try {
+                    randomAccessFile.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                eVar.s = null;
+            }
+            eVar.r = true;
+            this.B0 = null;
+        }
+        E();
+    }
+
+    @Override // org.telegram.ui.Components.bi0
+    public final void D(boolean z10) {
+        RLottieNative rLottieNative = this.m0;
+        RLottieNative rLottieNative2 = this.U0;
+        this.m0 = null;
+        this.U0 = null;
+        if (rLottieNative == null && rLottieNative2 == null) {
+            return;
+        }
+        at atVar = new at(29, rLottieNative, rLottieNative2);
+        if (z10) {
+            org.telegram.messenger.t5.a(atVar);
+        } else {
+            Utilities.e.c(atVar);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.bi0
+    public void i() {
+        int i10 = this.J;
+        if (i10 != 1) {
+            if (i10 == 2) {
+                int i11 = this.a0 + 1;
+                if (i11 < this.a1) {
+                    this.a0 = i11;
+                    return;
+                } else {
+                    this.N = true;
+                    this.M++;
+                    return;
+                }
             }
             return;
         }
-        RectF rectF = this.g;
-        float f7 = rectF.left;
-        RectF rectF2 = this.f;
-        float lerp = AndroidUtilities.lerp(f7, rectF2.left, d);
-        RectF rectF3 = this.d;
-        rectF3.left = lerp;
-        rectF3.right = AndroidUtilities.lerp(rectF.right, rectF2.right, d);
-    }
-
-    public final float b() {
-        boolean z10 = this.o;
-        h6 h6Var = this.e;
-        if (z10) {
-            return 1.0f - h6Var.d(1.0f, false);
+        int i12 = this.a0 + 1;
+        int i13 = this.Z0;
+        if (i13 == -1) {
+            i13 = this.e[0];
         }
-        if (this.n) {
-            return h6Var.d(1.0f, false);
+        if (i12 < i13) {
+            this.a0 = i12;
+            return;
         }
-        return 1.0f;
-    }
-
-    public final void c(String str) {
-        r11 r11Var = new r11(str, 11.0f, AndroidUtilities.bold());
-        r11Var.n(3);
-        Layout.Alignment alignment = Layout.Alignment.ALIGN_CENTER;
-        r11Var.a();
-        this.l = r11Var;
-    }
-
-    public final void d(int i10, int i11, int i12) {
-        ci0 ci0Var = this.y;
-        if (i10 != 0) {
-            yj0 yj0Var = new yj0(i10, AndroidUtilities.dp(56.0f), AndroidUtilities.dp(56.0f), false, null);
-            yj0Var.R(ci0Var);
-            yj0Var.start();
-            this.k = yj0Var;
-        } else {
-            this.k = null;
+        this.a0 = 0;
+        this.N = false;
+        if (this.U0 != null) {
+            this.J = 2;
         }
-        this.i = i11 != 0 ? ci0Var.getResources().getDrawable(i11).mutate() : null;
-        this.j = i12 != 0 ? ci0Var.getResources().getDrawable(i12).mutate() : null;
-        yj0 yj0Var2 = this.k;
-        Rect rect = this.h;
-        if (yj0Var2 != null) {
-            yj0Var2.setBounds(rect);
-        }
-        Drawable drawable = this.i;
-        if (drawable != null) {
-            drawable.setBounds(rect);
-        }
-        Drawable drawable2 = this.j;
-        if (drawable2 != null) {
-            drawable2.setBounds(rect);
+        if (this.D) {
+            this.y = null;
+            this.D = false;
         }
     }
 
-    public zh0(ci0 ci0Var, ai0 ai0Var) {
-        this.y = ci0Var;
-        this.b = new xc(ci0Var);
-        this.e = new h6(ci0Var, 0L, 250L, ds.f);
-        d(0, ai0Var.b, ai0Var.c);
-        c(LocaleController.getString(ai0Var.a));
+    @Override // org.telegram.ui.Components.bi0
+    public int j() {
+        if (this.l0) {
+            return 3;
+        }
+        return (this.m0 == null || (this.J == 2 && this.U0 == null)) ? 2 : 1;
+    }
+
+    @Override // org.telegram.ui.Components.bi0
+    public void p() {
+        if (this.V) {
+            n();
+            if (this.P == null && this.m0 != null) {
+                D(true);
+            }
+        }
+        if (this.m0 == null && this.U0 == null && this.B0 == null) {
+            E();
+            return;
+        }
+        this.T = true;
+        if (!v()) {
+            stop();
+        }
+        if (this.k0) {
+            I();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.bi0
+    public final boolean w() {
+        return this.Y0;
+    }
+
+    @Override // org.telegram.ui.Components.bi0
+    public final boolean z() {
+        return false;
     }
 }

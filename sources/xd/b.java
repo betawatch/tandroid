@@ -1,85 +1,27 @@
 package xd;
 
-import java.util.Iterator;
-import java.util.NoSuchElementException;
+import wd.o;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class b implements Iterator {
-    public final /* synthetic */ int a = 0;
-    public final int b;
-    public final int c;
-    public boolean d;
-    public int e;
+public abstract class b {
+    public o[] a;
+    public int b;
+    public int c;
 
-    public b(char c10, char c11, int i10) {
-        boolean z10 = false;
-        this.b = i10;
-        this.c = c11;
-        if (i10 <= 0 ? c10 >= c11 : c10 < c11 || c10 == c11) {
-            z10 = true;
-        }
-        this.d = z10;
-        this.e = z10 ? c10 : c11;
-    }
-
-    @Override // java.util.Iterator
-    public final boolean hasNext() {
-        switch (this.a) {
-        }
-        return this.d;
-    }
-
-    @Override // java.util.Iterator
-    public final Object next() {
-        switch (this.a) {
-            case 0:
-                int i10 = this.e;
-                if (i10 != this.c) {
-                    this.e = this.b + i10;
-                } else {
-                    if (!this.d) {
-                        throw new NoSuchElementException();
-                    }
-                    this.d = false;
+    public final void a(o oVar) {
+        synchronized (this) {
+            try {
+                int i10 = this.b - 1;
+                this.b = i10;
+                if (i10 == 0) {
+                    this.c = 0;
                 }
-                return Character.valueOf((char) i10);
-            default:
-                return Integer.valueOf(nextInt());
+                kotlin.jvm.internal.i.c(oVar, "null cannot be cast to non-null type kotlinx.coroutines.flow.internal.AbstractSharedFlowSlot<kotlin.Any>");
+                oVar.a.set(null);
+            } catch (Throwable th2) {
+                throw th2;
+            }
         }
-    }
-
-    public int nextInt() {
-        int i10 = this.e;
-        if (i10 != this.c) {
-            this.e = this.b + i10;
-            return i10;
-        }
-        if (!this.d) {
-            throw new NoSuchElementException();
-        }
-        this.d = false;
-        return i10;
-    }
-
-    @Override // java.util.Iterator
-    public final void remove() {
-        switch (this.a) {
-            case 0:
-                throw new UnsupportedOperationException("Operation is not supported for read-only collection");
-            default:
-                throw new UnsupportedOperationException("Operation is not supported for read-only collection");
-        }
-    }
-
-    public b(int i10, int i11, int i12) {
-        this.b = i12;
-        this.c = i11;
-        boolean z10 = false;
-        if (i12 <= 0 ? i10 >= i11 : i10 <= i11) {
-            z10 = true;
-        }
-        this.d = z10;
-        this.e = z10 ? i10 : i11;
     }
 }

@@ -1,57 +1,60 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import org.telegram.ui.WallpapersListActivity;
-import org.telegram.ui.fi1;
-import org.telegram.ui.gi1;
-import org.telegram.ui.vc1;
+import java.io.File;
+import java.util.Comparator;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class hj extends org.telegram.ui.Cells.fb {
-    public final /* synthetic */ int w;
-    public final /* synthetic */ mm0 x;
+public final /* synthetic */ class hj implements Comparator {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ xj b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ hj(mm0 mm0Var, Context context, int i10) {
-        super(context, 5);
-        this.w = i10;
-        this.x = mm0Var;
+    public /* synthetic */ hj(xj xjVar, int i10) {
+        this.a = i10;
+        this.b = xjVar;
     }
 
-    @Override // org.telegram.ui.Cells.fb
-    public final void a(int i10, Object obj) {
-        switch (this.w) {
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        qj qjVar = (qj) obj;
+        qj qjVar2 = (qj) obj2;
+        switch (this.a) {
             case 0:
-                q0.a aVar = ((ij) ((za) this.x).f).x;
-                if (aVar != null) {
-                    aVar.accept(obj);
-                    break;
+                xj xjVar = this.b;
+                xjVar.getClass();
+                File file = qjVar.f;
+                if (file != null) {
+                    if (qjVar2.f != null) {
+                        boolean isDirectory = file.isDirectory();
+                        if (isDirectory != qjVar2.f.isDirectory()) {
+                            if (isDirectory) {
+                            }
+                        } else if (isDirectory || xjVar.c0) {
+                            break;
+                        } else {
+                            long lastModified = qjVar.f.lastModified();
+                            long lastModified2 = qjVar2.f.lastModified();
+                            if (lastModified != lastModified2) {
+                                if (lastModified > lastModified2) {
+                                }
+                            }
+                        }
+                    }
                 }
                 break;
-            case 1:
-                WallpapersListActivity.s0(((fi1) this.x).d, this, obj, i10);
-                break;
             default:
-                ((gi1) this.x).E.presentFragment(new vc1(obj, null, true));
+                if (this.b.c0) {
+                    break;
+                } else {
+                    long lastModified3 = qjVar.f.lastModified();
+                    long lastModified4 = qjVar2.f.lastModified();
+                    if (lastModified3 != lastModified4) {
+                        if (lastModified3 > lastModified4) {
+                        }
+                    }
+                }
                 break;
         }
-    }
-
-    @Override // org.telegram.ui.Cells.fb
-    public boolean b(Object obj, int i10) {
-        switch (this.w) {
-            case 1:
-                return WallpapersListActivity.t0(((fi1) this.x).d, this, obj, i10);
-            default:
-                return super.b(obj, i10);
-        }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public hj(za zaVar, Context context) {
-        super(context, 1);
-        this.w = 0;
-        this.x = zaVar;
+        return qjVar.f.getName().compareToIgnoreCase(qjVar2.f.getName());
     }
 }

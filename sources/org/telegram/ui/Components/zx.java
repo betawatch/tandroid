@@ -1,780 +1,420 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Paint;
-import android.graphics.drawable.ShapeDrawable;
-import android.os.SystemClock;
-import android.util.SparseIntArray;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
-import j$.util.Objects;
 import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.EmojiData;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
+import java.util.HashMap;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class zx extends mm0 {
-    public int E;
-    public final /* synthetic */ sz F;
-    public ArrayList h;
-    public int y;
-    public int c = -1;
-    public int d = -1;
-    public int e = -1;
-    public int f = -1;
-    public final ArrayList n = new ArrayList();
-    public final SparseIntArray r = new SparseIntArray();
-    public final SparseIntArray s = new SparseIntArray();
-    public final SparseIntArray v = new SparseIntArray();
-    public final SparseIntArray w = new SparseIntArray();
-    public final ArrayList x = new ArrayList();
+public final class zx extends sk0 {
+    public at E;
+    public boolean F;
+    public int G;
+    public int H;
+    public boolean K;
+    public final /* synthetic */ vy L;
+    public final Context c;
+    public final boolean d;
+    public final cy e;
+    public final int f;
+    public int h;
+    public TLRPC.User n;
+    public String r;
+    public boolean s;
+    public boolean w;
+    public String x;
+    public final ArrayList y = new ArrayList();
+    public final HashMap D = new HashMap();
+    public int I = -1;
+    public int J = -1;
 
-    public zx(sz szVar) {
-        this.F = szVar;
+    public zx(vy vyVar, Context context, boolean z10, int i10) {
+        this.L = vyVar;
+        this.c = context;
+        this.d = z10;
+        this.f = i10;
+        this.e = z10 ? null : new cy(vyVar, context);
     }
 
-    @Override // org.telegram.ui.Components.mm0
-    public final boolean D(s4.e1 e1Var) {
-        int i10 = e1Var.f;
-        return i10 == 0 || i10 == 4 || i10 == 3 || i10 == 6;
+    @Override // org.telegram.ui.Components.sk0
+    public final boolean D(s4.c1 c1Var) {
+        return c1Var.f == 0;
     }
 
-    public final void E(int i10, View view) {
-        sz szVar = this.F;
-        ArrayList arrayList = szVar.q1;
-        int i11 = this.w.get(i10);
-        if (i11 < 0 || i11 >= arrayList.size()) {
+    public final void E(String str, String str2, boolean z10, boolean z11, boolean z12, String str3, TLObject tLObject) {
+        if (str == null || !str.equals(this.x)) {
             return;
         }
-        ey eyVar = (ey) arrayList.get(i11);
-        if (eyVar.h) {
+        this.h = 0;
+        if (z12 && (!(tLObject instanceof TLRPC.messages_BotResults) || ((TLRPC.messages_BotResults) tLObject).results.isEmpty())) {
+            F(str, str2, z10, z11, false);
             return;
         }
-        boolean z10 = i11 + 1 == arrayList.size();
-        int intValue = ((Integer) this.x.get(i11)).intValue();
-        szVar.o1.add(Long.valueOf(eyVar.b.id));
-        boolean z11 = UserConfig.getInstance(szVar.c1).isPremium() || szVar.U0;
-        int i12 = szVar.Q.J * 3;
-        int size = ((eyVar.f && !eyVar.g && (eyVar.e || z11)) || eyVar.h) ? eyVar.c.size() : Math.min(i12, eyVar.c.size());
-        Integer num = null;
-        Integer valueOf = eyVar.c.size() > i12 ? Integer.valueOf(intValue + 1 + size) : null;
-        eyVar.h = true;
-        int size2 = eyVar.c.size() - size;
-        if (size2 > 0) {
-            valueOf = Integer.valueOf(intValue + 1 + size);
-            num = Integer.valueOf(size2);
+        HashMap hashMap = this.D;
+        boolean z13 = this.d;
+        ArrayList arrayList = this.y;
+        vy vyVar = this.L;
+        if (!z13 && TextUtils.isEmpty(str2)) {
+            arrayList.clear();
+            hashMap.clear();
+            vyVar.o0.e(false);
         }
-        G(false);
-        H();
-        if (valueOf == null || num == null) {
-            return;
-        }
-        szVar.s2 = view;
-        szVar.t2 = valueOf.intValue();
-        szVar.u2 = num.intValue() + valueOf.intValue();
-        szVar.v2 = SystemClock.elapsedRealtime();
-        s(valueOf.intValue(), num.intValue());
-        m(valueOf.intValue());
-        if (z10) {
-            szVar.post(new yx(this, num.intValue() > i12 / 2 ? 1.5f : 4.0f, valueOf.intValue(), 0));
-        }
-    }
-
-    public final void F(boolean z10) {
-        sz szVar = this.F;
-        ArrayList arrayList = szVar.n1;
-        if (szVar.T2) {
-            return;
-        }
-        ArrayList arrayList2 = new ArrayList(this.n);
-        MediaDataController mediaDataController = MediaDataController.getInstance(szVar.c1);
-        ArrayList<TLRPC.StickerSetCovered> featuredEmojiSets = mediaDataController.getFeaturedEmojiSets();
-        arrayList.clear();
-        int size = featuredEmojiSets.size();
-        for (int i10 = 0; i10 < size; i10++) {
-            TLRPC.StickerSetCovered stickerSetCovered = featuredEmojiSets.get(i10);
-            if (!mediaDataController.isStickerPackInstalled(stickerSetCovered.set.id) || szVar.p1.contains(Long.valueOf(stickerSetCovered.set.id))) {
-                arrayList.add(stickerSetCovered);
+        if (tLObject instanceof TLRPC.messages_BotResults) {
+            int size = arrayList.size();
+            TLRPC.messages_BotResults messages_botresults = (TLRPC.messages_BotResults) tLObject;
+            HashMap hashMap2 = vyVar.l0;
+            zx zxVar = vyVar.n0;
+            if (!hashMap2.containsKey(str3)) {
+                vyVar.l0.put(str3, messages_botresults);
             }
-        }
-        G(z10);
-        H();
-        qz qzVar = szVar.T;
-        if (qzVar != null) {
-            qzVar.l();
-        }
-        s4.p.c(new ig.h(this, arrayList2, 1), false).c(this);
-    }
-
-    public final void G(boolean z10) {
-        boolean z11;
-        int i10;
-        TLRPC.StickerSet stickerSet;
-        TLRPC.TL_messages_stickerSet groupStickerSetById;
-        sz szVar = this.F;
-        ArrayList arrayList = szVar.n1;
-        ArrayList arrayList2 = szVar.o1;
-        int i11 = szVar.c1;
-        ArrayList arrayList3 = szVar.q1;
-        arrayList3.clear();
-        if (szVar.c2) {
-            MediaDataController mediaDataController = MediaDataController.getInstance(i11);
-            if (z10 || this.h == null) {
-                this.h = new ArrayList(mediaDataController.getStickerSets(5));
+            if (!z12 && messages_botresults.cache_time != 0) {
+                org.telegram.messenger.hs.a0(vyVar.c1).v1(str3, messages_botresults);
             }
-            ArrayList arrayList4 = this.h;
-            boolean z12 = true;
-            boolean z13 = UserConfig.getInstance(i11).isPremium() || szVar.U0;
-            TLRPC.ChatFull chatFull = szVar.J1;
-            if (chatFull != null && (stickerSet = chatFull.emojiset) != null && (groupStickerSetById = mediaDataController.getGroupStickerSetById(stickerSet)) != null) {
-                ey eyVar = new ey();
-                eyVar.b = szVar.J1.emojiset;
-                eyVar.c = new ArrayList(groupStickerSetById.documents);
-                eyVar.e = true;
-                eyVar.f = true;
-                eyVar.g = false;
-                eyVar.h = true;
-                eyVar.i = true;
-                arrayList3.add(eyVar);
-                TLRPC.StickerSet stickerSet2 = eyVar.b;
-                int i12 = 0;
-                while (true) {
-                    if (i12 >= arrayList4.size()) {
-                        break;
-                    }
-                    TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) arrayList4.get(i12);
-                    if (tL_messages_stickerSet != null && tL_messages_stickerSet.set.id == stickerSet2.id) {
-                        arrayList4.remove(i12);
-                        break;
-                    }
-                    i12++;
+            this.r = messages_botresults.next_offset;
+            int i10 = 0;
+            for (int i11 = 0; i11 < messages_botresults.results.size(); i11++) {
+                TLRPC.BotInlineResult botInlineResult = messages_botresults.results.get(i11);
+                if (!hashMap.containsKey(botInlineResult.id)) {
+                    botInlineResult.query_id = messages_botresults.query_id;
+                    arrayList.add(botInlineResult);
+                    hashMap.put(botInlineResult.id, botInlineResult);
+                    i10++;
                 }
             }
-            if (!z13) {
-                int i13 = 0;
-                while (i13 < arrayList4.size()) {
-                    TLRPC.TL_messages_stickerSet tL_messages_stickerSet2 = (TLRPC.TL_messages_stickerSet) arrayList4.get(i13);
-                    if (tL_messages_stickerSet2 != null && !MessageObject.isPremiumEmojiPack(tL_messages_stickerSet2)) {
-                        ey eyVar2 = new ey();
-                        eyVar2.b = tL_messages_stickerSet2.set;
-                        eyVar2.c = new ArrayList(tL_messages_stickerSet2.documents);
-                        eyVar2.e = true;
-                        eyVar2.f = mediaDataController.isStickerPackInstalled(tL_messages_stickerSet2.set.id);
-                        eyVar2.g = false;
-                        eyVar2.h = true;
-                        arrayList3.add(eyVar2);
-                        arrayList4.remove(i13);
-                        i13--;
-                    }
-                    i13++;
-                }
-            }
-            int i14 = 0;
-            while (i14 < arrayList4.size()) {
-                TLRPC.TL_messages_stickerSet tL_messages_stickerSet3 = (TLRPC.TL_messages_stickerSet) arrayList4.get(i14);
-                if (z13) {
-                    ey eyVar3 = new ey();
-                    TLRPC.StickerSet stickerSet3 = tL_messages_stickerSet3.set;
-                    eyVar3.b = stickerSet3;
-                    eyVar3.c = tL_messages_stickerSet3.documents;
-                    eyVar3.e = false;
-                    eyVar3.f = mediaDataController.isStickerPackInstalled(stickerSet3.id);
-                    eyVar3.g = false;
-                    eyVar3.h = z12;
-                    arrayList3.add(eyVar3);
-                    i10 = i14;
+            this.s = size == arrayList.size() || TextUtils.isEmpty(this.r);
+            if (i10 != 0) {
+                if (z11 && size == 0) {
+                    f();
                 } else {
-                    ArrayList arrayList5 = new ArrayList();
-                    ArrayList arrayList6 = new ArrayList();
-                    if (tL_messages_stickerSet3 != null && tL_messages_stickerSet3.documents != null) {
-                        for (int i15 = 0; i15 < tL_messages_stickerSet3.documents.size(); i15++) {
-                            if (MessageObject.isFreeEmoji(tL_messages_stickerSet3.documents.get(i15))) {
-                                arrayList5.add(tL_messages_stickerSet3.documents.get(i15));
-                            } else {
-                                arrayList6.add(tL_messages_stickerSet3.documents.get(i15));
-                            }
+                    I();
+                    if (!z13) {
+                        if (size != 0) {
+                            g(size);
                         }
-                    }
-                    if (arrayList5.size() > 0) {
-                        ey eyVar4 = new ey();
-                        eyVar4.b = tL_messages_stickerSet3.set;
-                        eyVar4.c = new ArrayList(arrayList5);
-                        eyVar4.e = z12;
-                        i10 = i14;
-                        eyVar4.f = mediaDataController.isStickerPackInstalled(tL_messages_stickerSet3.set.id);
-                        eyVar4.g = false;
-                        eyVar4.h = true;
-                        arrayList3.add(eyVar4);
+                        zxVar.getClass();
+                        o(size, i10);
+                    } else if (size != 0) {
+                        int i12 = this.H;
+                        zxVar.getClass();
+                        g(i12 + size);
+                        int i13 = this.H;
+                        zxVar.getClass();
+                        o(i13 + size + 1, i10);
                     } else {
-                        i10 = i14;
-                    }
-                    if (arrayList6.size() > 0) {
-                        ey eyVar5 = new ey();
-                        eyVar5.b = tL_messages_stickerSet3.set;
-                        eyVar5.c = new ArrayList(arrayList6);
-                        eyVar5.e = false;
-                        eyVar5.f = mediaDataController.isStickerPackInstalled(tL_messages_stickerSet3.set.id);
-                        eyVar5.g = false;
-                        eyVar5.h = arrayList2.contains(Long.valueOf(eyVar5.b.id));
-                        arrayList3.add(eyVar5);
+                        int i14 = this.H;
+                        zxVar.getClass();
+                        o(i14, i10 + 1);
                     }
                 }
-                i14 = i10 + 1;
-                z12 = true;
+            } else if (arrayList.isEmpty()) {
+                f();
             }
-            for (int i16 = 0; i16 < arrayList.size(); i16++) {
-                TLRPC.StickerSetCovered stickerSetCovered = (TLRPC.StickerSetCovered) arrayList.get(i16);
-                ey eyVar6 = new ey();
-                eyVar6.f = mediaDataController.isStickerPackInstalled(stickerSetCovered.set.id);
-                TLRPC.StickerSet stickerSet4 = stickerSetCovered.set;
-                eyVar6.b = stickerSet4;
-                if (stickerSetCovered instanceof TLRPC.TL_stickerSetFullCovered) {
-                    eyVar6.c = ((TLRPC.TL_stickerSetFullCovered) stickerSetCovered).documents;
-                } else if (stickerSetCovered instanceof TLRPC.TL_stickerSetNoCovered) {
-                    TLRPC.TL_messages_stickerSet stickerSet5 = mediaDataController.getStickerSet(MediaDataController.getInputStickerSet(stickerSet4), Integer.valueOf(stickerSetCovered.set.hash), true);
-                    if (stickerSet5 != null) {
-                        eyVar6.c = stickerSet5.documents;
-                    } else {
-                        eyVar6.d = MediaDataController.getInputStickerSet(stickerSetCovered.set);
-                    }
-                } else {
-                    eyVar6.c = stickerSetCovered.covers;
-                }
-                ArrayList arrayList7 = eyVar6.c;
-                if (arrayList7 != null && !arrayList7.isEmpty()) {
-                    int i17 = 0;
-                    while (true) {
-                        if (i17 >= eyVar6.c.size()) {
-                            z11 = false;
-                            break;
-                        } else {
-                            if (!MessageObject.isFreeEmoji((TLRPC.Document) eyVar6.c.get(i17))) {
-                                z11 = true;
-                                break;
-                            }
-                            i17++;
-                        }
-                    }
-                    eyVar6.e = !z11;
-                    eyVar6.h = arrayList2.contains(Long.valueOf(eyVar6.b.id));
-                    eyVar6.g = true;
-                    arrayList3.add(eyVar6);
-                }
-            }
-            ux uxVar = szVar.I;
-            if (uxVar != null) {
-                uxVar.p(szVar.getEmojipacks());
-            }
-        }
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:38:0x010a, code lost:
-    
-        if (r10.M == 1) goto L49;
-     */
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:118:0x02eb A[ORIG_RETURN, RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x00c3  */
-    /* JADX WARN: Removed duplicated region for block: B:46:0x012a A[LOOP:0: B:44:0x0123->B:46:0x012a, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x014b A[EDGE_INSN: B:47:0x014b->B:48:0x014b BREAK  A[LOOP:0: B:44:0x0123->B:46:0x012a], SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x0152  */
-    /* JADX WARN: Removed duplicated region for block: B:57:0x01a1 A[EDGE_INSN: B:57:0x01a1->B:58:0x01a1 BREAK  A[LOOP:1: B:49:0x014d->B:56:0x019c], SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:60:0x01b0  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void H() {
-        int i10;
-        ArrayList<String> recentEmoji;
-        ux uxVar;
-        int i11;
-        int i12;
-        int i13;
-        int i14;
-        String[][] strArr;
-        int i15;
-        boolean z10;
-        SparseIntArray sparseIntArray = this.r;
-        sparseIntArray.clear();
-        SparseIntArray sparseIntArray2 = this.s;
-        sparseIntArray2.clear();
-        this.v.clear();
-        SparseIntArray sparseIntArray3 = this.w;
-        sparseIntArray3.clear();
-        ArrayList arrayList = this.x;
-        arrayList.clear();
-        ArrayList arrayList2 = this.n;
-        arrayList2.clear();
-        boolean z11 = false;
-        this.y = 0;
-        sz szVar = this.F;
-        boolean z12 = szVar.d0;
-        ArrayList arrayList3 = szVar.q1;
-        ArrayList arrayList4 = szVar.n1;
-        int i16 = szVar.c1;
-        Object[] objArr = UserConfig.getInstance(i16).isPremium() || szVar.U0;
-        if (z12) {
-            this.y++;
-            arrayList2.add(-1);
-        }
-        int i17 = 3;
-        if (!objArr == true || !szVar.c2 || arrayList4.size() <= 0 || ((TLRPC.StickerSetCovered) arrayList4.get(0)).set == null) {
-            i10 = -1;
         } else {
-            if (MessagesController.getEmojiSettings(i16).getLong("emoji_featured_hidden", 0L) != ((TLRPC.StickerSetCovered) arrayList4.get(0)).set.id && z12) {
-                int i18 = this.y;
-                this.c = i18;
-                this.d = i18 + 1;
-                this.y = i18 + 3;
-                this.f = i18 + 2;
-                arrayList2.add(324953);
-                arrayList2.add(123342);
-                arrayList2.add(929132);
-                recentEmoji = szVar.getRecentEmoji();
-                uxVar = szVar.I;
-                if (uxVar != null) {
-                    boolean isEmpty = recentEmoji.isEmpty();
-                    boolean z13 = !isEmpty;
-                    gw gwVar = uxVar.y;
-                    if (uxVar.W != z13) {
-                        uxVar.W = z13;
-                        if (uxVar.V) {
-                            gwVar.setAlpha(isEmpty ? 0.0f : 1.0f);
-                        } else {
-                            gwVar.animate().alpha(isEmpty ? 0.0f : 1.0f).setDuration(200L).setInterpolator(ds.h).start();
-                        }
-                        if (!isEmpty || uxVar.M != 0) {
-                            z10 = isEmpty ? true : true;
-                            uxVar.b.requestLayout();
-                            uxVar.V = false;
-                        }
-                        uxVar.j(0, uxVar.V ^ z10);
-                        uxVar.b.requestLayout();
-                        uxVar.V = false;
-                    }
+            f();
+        }
+        if (z13) {
+            return;
+        }
+        if (vyVar.h0.getAdapter() != this) {
+            vyVar.h0.setAdapter(this);
+        }
+        if (z11 && !TextUtils.isEmpty(str) && TextUtils.isEmpty(str2)) {
+            vyVar.i0.h1(0, 0);
+            vyVar.G(2);
+        }
+    }
+
+    public final void F(final String str, final String str2, final boolean z10, final boolean z11, final boolean z12) {
+        int i10 = this.h;
+        vy vyVar = this.L;
+        if (i10 != 0) {
+            if (i10 >= 0) {
+                ConnectionsManager.getInstance(vyVar.c1).cancelRequest(this.h, true);
+            }
+            this.h = 0;
+        }
+        this.x = str;
+        this.w = z11;
+        cy cyVar = this.e;
+        if (cyVar != null) {
+            cyVar.a(z11);
+        }
+        int i11 = vyVar.c1;
+        HashMap hashMap = vyVar.l0;
+        wv wvVar = vyVar.h0;
+        yv yvVar = vyVar.o0;
+        int i12 = vyVar.c1;
+        TLObject e22 = org.telegram.messenger.vp.r1(i11).e2(org.telegram.messenger.vp.r1(i12).M3);
+        boolean z13 = e22 instanceof TLRPC.User;
+        boolean z14 = this.d;
+        if (!z13) {
+            if (z10) {
+                if (!this.F) {
+                    this.F = true;
+                    TLRPC.TL_contacts_resolveUsername tL_contacts_resolveUsername = new TLRPC.TL_contacts_resolveUsername();
+                    tL_contacts_resolveUsername.username = org.telegram.messenger.vp.r1(i12).M3;
+                    ConnectionsManager.getInstance(i12).sendRequest(tL_contacts_resolveUsername, new x1(this, 4));
                 }
-                this.y = recentEmoji.size() + this.y;
-                i11 = 0;
-                while (true) {
-                    i12 = 2;
-                    if (i11 < recentEmoji.size()) {
-                        break;
-                    }
-                    arrayList2.add(Integer.valueOf(Objects.hash(-43263, recentEmoji.get(i11))));
-                    i11++;
-                }
-                i13 = 0;
-                i14 = 0;
-                while (true) {
-                    strArr = EmojiData.dataColored;
-                    if (i13 < strArr.length) {
-                        break;
-                    }
-                    sparseIntArray.put(this.y, i14);
-                    sparseIntArray2.put(i14, this.y);
-                    this.y = strArr[i13].length + 1 + this.y;
-                    arrayList2.add(Integer.valueOf(Objects.hash(43245, Integer.valueOf(i13))));
-                    int i19 = 0;
-                    while (true) {
-                        String[] strArr2 = EmojiData.dataColored[i13];
-                        if (i19 < strArr2.length) {
-                            arrayList2.add(Integer.valueOf(strArr2[i19].hashCode()));
-                            i19++;
-                        }
-                    }
-                    i13++;
-                    i14++;
-                }
-                int i20 = szVar.Q.J * 3;
-                this.E = this.y;
-                this.e = -1;
-                if (arrayList3 == null) {
-                    int i21 = 0;
-                    while (i21 < arrayList3.size()) {
-                        sparseIntArray.put(this.y, i14);
-                        sparseIntArray2.put(i14, this.y);
-                        arrayList.add(Integer.valueOf(this.y));
-                        ey eyVar = (ey) arrayList3.get(i21);
-                        boolean z14 = eyVar.g;
-                        if (z14 && this.e < 0) {
-                            this.e = this.y;
-                        }
-                        int size = ((eyVar.f && !z14 && (eyVar.e || objArr == true)) || eyVar.h) ? eyVar.c.size() : Math.min(i20, eyVar.c.size());
-                        int i22 = 1 + size;
-                        boolean z15 = z11;
-                        if (eyVar.h || eyVar.c.size() <= i20) {
-                            size = i22;
-                        }
-                        Integer valueOf = Integer.valueOf(eyVar.g ? 56345 : -495231);
-                        TLRPC.StickerSet stickerSet = eyVar.b;
-                        int i23 = i12;
-                        int i24 = size;
-                        Long valueOf2 = Long.valueOf(stickerSet == null ? i21 : stickerSet.id);
-                        Boolean valueOf3 = Boolean.valueOf(eyVar.i);
-                        int i25 = i17;
-                        SparseIntArray sparseIntArray4 = sparseIntArray;
-                        Object[] objArr2 = new Object[i25];
-                        objArr2[z15 ? 1 : 0] = valueOf;
-                        objArr2[1] = valueOf2;
-                        objArr2[i23] = valueOf3;
-                        arrayList2.add(Integer.valueOf(Objects.hash(objArr2)));
-                        int i26 = 1;
-                        while (i26 < i24) {
-                            Integer valueOf4 = Integer.valueOf(eyVar.g ? 3442 : -9964);
-                            Long valueOf5 = Long.valueOf(((TLRPC.Document) eyVar.c.get(i26 - 1)).id);
-                            Object[] objArr3 = new Object[i23];
-                            objArr3[z15 ? 1 : 0] = valueOf4;
-                            objArr3[1] = valueOf5;
-                            arrayList2.add(Integer.valueOf(Objects.hash(objArr3)));
-                            i26++;
-                            sparseIntArray2 = sparseIntArray2;
-                            i23 = 2;
-                        }
-                        SparseIntArray sparseIntArray5 = sparseIntArray2;
-                        this.y += i24;
-                        if (eyVar.h || eyVar.c.size() <= i20) {
-                            i15 = 2;
-                        } else {
-                            sparseIntArray3.put(this.y, i21);
-                            Integer valueOf6 = Integer.valueOf(eyVar.g ? -65174 : 92242);
-                            Long valueOf7 = Long.valueOf(eyVar.b.id);
-                            i15 = 2;
-                            Object[] objArr4 = new Object[2];
-                            objArr4[z15 ? 1 : 0] = valueOf6;
-                            objArr4[1] = valueOf7;
-                            arrayList2.add(Integer.valueOf(Objects.hash(objArr4)));
-                            this.y++;
-                        }
-                        i21++;
-                        i14++;
-                        i12 = i15;
-                        sparseIntArray2 = sparseIntArray5;
-                        sparseIntArray = sparseIntArray4;
-                        z11 = z15 ? 1 : 0;
-                        i17 = 3;
-                    }
+                if (z14) {
                     return;
                 }
+                yvVar.e(true);
                 return;
             }
-            i10 = -1;
+            return;
         }
-        this.c = i10;
-        this.d = i10;
-        this.f = i10;
-        recentEmoji = szVar.getRecentEmoji();
-        uxVar = szVar.I;
-        if (uxVar != null) {
+        if (!z14 && TextUtils.isEmpty(str2)) {
+            yvVar.e(true);
         }
-        this.y = recentEmoji.size() + this.y;
-        i11 = 0;
-        while (true) {
-            i12 = 2;
-            if (i11 < recentEmoji.size()) {
+        this.n = (TLRPC.User) e22;
+        final String n10 = c3.i0.n("gif_search_", str, "_", str2);
+        RequestDelegate requestDelegate = new RequestDelegate() { // from class: org.telegram.ui.Components.xx
+            @Override // org.telegram.tgnet.RequestDelegate
+            public final void run(final TLObject tLObject, TLRPC.TL_error tL_error) {
+                final zx zxVar = zx.this;
+                final String str3 = str;
+                final String str4 = str2;
+                final boolean z15 = z10;
+                final boolean z16 = z11;
+                final boolean z17 = z12;
+                final String str5 = n10;
+                org.telegram.messenger.i0.g3(new Runnable() { // from class: org.telegram.ui.Components.yx
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        zx.this.E(str3, str4, z15, z16, z17, str5, tLObject);
+                    }
+                });
             }
-            arrayList2.add(Integer.valueOf(Objects.hash(-43263, recentEmoji.get(i11))));
-            i11++;
-        }
-        i13 = 0;
-        i14 = 0;
-        while (true) {
-            strArr = EmojiData.dataColored;
-            if (i13 < strArr.length) {
+        };
+        if (!z12 && !z14 && z11 && TextUtils.isEmpty(str2)) {
+            this.y.clear();
+            this.D.clear();
+            if (wvVar.getAdapter() != this) {
+                wvVar.setAdapter(this);
             }
-            i13++;
-            i14++;
+            f();
+            vyVar.i0.h1(0, 0);
+            vyVar.G(2);
         }
-        int i202 = szVar.Q.J * 3;
-        this.E = this.y;
-        this.e = -1;
-        if (arrayList3 == null) {
+        if (z12 && hashMap.containsKey(n10)) {
+            E(str, str2, z10, z11, true, n10, (TLObject) hashMap.get(n10));
+            return;
+        }
+        if (vyVar.k0.a.contains(n10)) {
+            return;
+        }
+        if (z12) {
+            this.h = -1;
+            org.telegram.messenger.hs.a0(i12).M(n10, requestDelegate);
+            return;
+        }
+        TLRPC.TL_messages_getInlineBotResults tL_messages_getInlineBotResults = new TLRPC.TL_messages_getInlineBotResults();
+        if (str == null) {
+            str = "";
+        }
+        tL_messages_getInlineBotResults.query = str;
+        tL_messages_getInlineBotResults.bot = org.telegram.messenger.vp.r1(i12).p1(this.n);
+        tL_messages_getInlineBotResults.offset = str2;
+        tL_messages_getInlineBotResults.peer = new TLRPC.TL_inputPeerEmpty();
+        this.h = ConnectionsManager.getInstance(i12).sendRequest(tL_messages_getInlineBotResults, requestDelegate);
+    }
+
+    public final void G(String str, boolean z10) {
+        if (this.d) {
+            return;
+        }
+        int i10 = this.h;
+        vy vyVar = this.L;
+        if (i10 != 0) {
+            if (i10 >= 0) {
+                ConnectionsManager.getInstance(vyVar.c1).cancelRequest(this.h, true);
+            }
+            this.h = 0;
+        }
+        this.w = false;
+        cy cyVar = this.e;
+        if (cyVar != null) {
+            cyVar.a(false);
+        }
+        at atVar = this.E;
+        if (atVar != null) {
+            org.telegram.messenger.i0.r(atVar);
+        }
+        if (!TextUtils.isEmpty(str)) {
+            String lowerCase = str.toLowerCase();
+            this.x = lowerCase;
+            if (TextUtils.isEmpty(lowerCase)) {
+                return;
+            }
+            at atVar2 = new at(8, this, str);
+            this.E = atVar2;
+            org.telegram.messenger.i0.h3(atVar2, z10 ? 300L : 0L);
+            return;
+        }
+        this.x = null;
+        if (this.K) {
+            F("", "", true, true, true);
+            return;
+        }
+        cx cxVar = vyVar.p0;
+        wv wvVar = vyVar.h0;
+        int currentPosition = cxVar.getCurrentPosition();
+        if (currentPosition != vyVar.r0 && currentPosition != vyVar.s0) {
+            H((String) org.telegram.messenger.vp.r1(vyVar.c1).d4.get(currentPosition - vyVar.t0));
+            return;
+        }
+        s4.g0 adapter = wvVar.getAdapter();
+        zx zxVar = vyVar.n0;
+        if (adapter != zxVar) {
+            wvVar.setAdapter(zxVar);
         }
     }
 
-    @Override // s4.h0
-    public final int h() {
-        return this.y;
+    public final void H(String str) {
+        if (this.w && TextUtils.equals(this.x, str)) {
+            this.L.i0.h1(0, 0);
+        } else {
+            F(str, "", true, true, true);
+        }
     }
 
-    @Override // s4.h0
-    public final long i(int i10) {
-        return i10;
+    public final void I() {
+        this.I = -1;
+        this.J = -1;
+        this.G = 0;
+        boolean z10 = this.d;
+        if (z10) {
+            this.G = this.H;
+        }
+        ArrayList arrayList = this.y;
+        if (arrayList.isEmpty()) {
+            if (z10) {
+                return;
+            }
+            this.G++;
+            return;
+        }
+        if (z10 && this.H > 0) {
+            int i10 = this.G;
+            this.G = i10 + 1;
+            this.I = i10;
+        }
+        int i11 = this.G;
+        this.J = i11;
+        this.G = arrayList.size() + i11;
     }
 
-    @Override // s4.h0
-    public final int j(int i10) {
-        if (i10 == this.d) {
-            return 4;
-        }
-        if (i10 == this.c || i10 == this.f) {
-            return 1;
-        }
-        SparseIntArray sparseIntArray = this.r;
-        if (sparseIntArray.indexOfKey(i10) >= 0) {
-            return sparseIntArray.get(i10) >= EmojiData.dataColored.length ? 5 : 1;
-        }
-        if (this.F.d0 && i10 == 0) {
+    @Override // s4.g0
+    public final int b() {
+        return this.G;
+    }
+
+    @Override // s4.g0
+    public final int d(int i10) {
+        boolean z10 = this.d;
+        if (z10 && i10 == this.I) {
             return 2;
         }
-        if (this.v.indexOfKey(i10) >= 0) {
-            return 3;
-        }
-        return this.w.indexOfKey(i10) >= 0 ? 6 : 0;
+        return (z10 || !this.y.isEmpty()) ? 0 : 3;
     }
 
-    @Override // s4.h0
-    public final void l() {
-        F(false);
-    }
-
-    @Override // s4.h0
-    public final void v(s4.e1 e1Var, int i10) {
-        String str;
-        String str2;
-        Long l4;
-        TLRPC.Document document;
-        int i11;
-        int i12 = i10;
-        sz szVar = this.F;
-        String[] strArr = szVar.a1;
-        qx qxVar = szVar.Q;
-        int i13 = szVar.c1;
-        ArrayList arrayList = szVar.q1;
-        int i14 = e1Var.f;
-        View view = e1Var.a;
-        boolean z10 = true;
-        ey eyVar = null;
-        if (i14 != 0) {
-            SparseIntArray sparseIntArray = this.r;
-            if (i14 == 1) {
-                org.telegram.ui.Cells.s8 s8Var = (org.telegram.ui.Cells.s8) view;
-                s8Var.getClass();
-                int i15 = sparseIntArray.get(i12);
-                if (i12 == this.c) {
-                    s8Var.b(LocaleController.getString(R.string.FeaturedEmojiPacks), R.drawable.msg_close, LocaleController.getString(R.string.AccDescrCloseTrendingEmoji), 0, 0);
-                    return;
-                }
-                if (i12 == this.f) {
-                    s8Var.a(0, LocaleController.getString(R.string.RecentlyUsed));
-                    return;
-                } else {
-                    if (i15 < strArr.length) {
-                        s8Var.a(0, strArr[i15]);
-                        return;
-                    }
-                    try {
-                        s8Var.a(0, ((ey) arrayList.get(i15 - strArr.length)).b.title);
-                        return;
-                    } catch (Exception unused) {
-                        s8Var.a(0, "");
-                        return;
-                    }
-                }
-            }
-            if (i14 != 5) {
-                if (i14 != 6) {
-                    return;
-                }
-                gy gyVar = (gy) view;
-                int i16 = this.w.get(i12);
-                int i17 = qxVar.J * 3;
-                if (i16 >= 0 && i16 < arrayList.size()) {
-                    eyVar = (ey) arrayList.get(i16);
-                }
-                if (eyVar != null) {
-                    gyVar.a.setText("+" + ((eyVar.c.size() - i17) + 1));
-                    return;
-                }
-                return;
-            }
-            iy iyVar = (iy) view;
-            int length = sparseIntArray.get(i12) - strArr.length;
-            ey eyVar2 = (ey) arrayList.get(length);
-            int i18 = length - 1;
-            ey eyVar3 = i18 >= 0 ? (ey) arrayList.get(i18) : null;
-            if (eyVar2 == null || !eyVar2.g || (eyVar3 != null && !eyVar3.e && eyVar3.f && !UserConfig.getInstance(i13).isPremium())) {
-                z10 = false;
-            }
-            if (eyVar2 != null && eyVar2.d != null) {
-                MediaDataController.getInstance(i13).getStickerSet(eyVar2.d, false);
-                eyVar2.d = null;
-            }
-            tg.p0 p0Var = iyVar.r;
-            if (eyVar2 == null) {
-                return;
-            }
-            iyVar.w = eyVar2;
-            iyVar.x = z10;
-            iyVar.d.l(eyVar2.b.title, false);
-            iyVar.e.setVisibility(eyVar2.i ? 0 : 8);
-            if (!eyVar2.f || eyVar2.b.official) {
-                p0Var.a(LocaleController.getString(R.string.Unlock), new hy(iyVar, 6), false);
+    @Override // s4.g0
+    public final void f() {
+        int i10;
+        if (this.d && (i10 = this.f) != 0) {
+            vy vyVar = this.L;
+            if (i10 == Integer.MAX_VALUE) {
+                this.H = vyVar.i1.size();
             } else {
-                p0Var.a(LocaleController.getString(R.string.Restore), new hy(iyVar, 5), false);
+                wv wvVar = vyVar.h0;
+                ay ayVar = vyVar.i0;
+                if (wvVar.getMeasuredWidth() != 0) {
+                    int measuredWidth = vyVar.h0.getMeasuredWidth();
+                    int i11 = ayVar.J;
+                    int L = org.telegram.messenger.i0.L(100.0f);
+                    this.H = 0;
+                    int size = vyVar.i1.size();
+                    int i12 = i11;
+                    int i13 = 0;
+                    int i14 = 0;
+                    for (int i15 = 0; i15 < size; i15++) {
+                        TLRPC.Document document = (TLRPC.Document) vyVar.i1.get(i15);
+                        pu0 C1 = yy.C1(ayVar.F1(document, document.attributes));
+                        int min = Math.min(i11, (int) Math.floor((((C1.a / C1.b) * L) / measuredWidth) * i11));
+                        if (i12 < min) {
+                            this.H += i13;
+                            i14++;
+                            if (i14 == i10) {
+                                break;
+                            }
+                            i12 = i11;
+                            i13 = 0;
+                        }
+                        i13++;
+                        i12 -= min;
+                    }
+                    if (i14 < i10) {
+                        this.H += i13;
+                    }
+                }
             }
-            iyVar.a(false);
+        }
+        I();
+        super.f();
+    }
+
+    @Override // s4.g0
+    public final void t(s4.c1 c1Var, int i10) {
+        if (c1Var.f != 0) {
             return;
         }
-        bz bzVar = (bz) view;
-        bzVar.a = i12;
-        bzVar.e = null;
-        if (szVar.d0) {
-            i12--;
+        org.telegram.ui.Cells.h2 h2Var = (org.telegram.ui.Cells.h2) c1Var.a;
+        int i11 = this.J;
+        if (i11 >= 0 && i10 >= i11) {
+            h2Var.e((TLRPC.BotInlineResult) this.y.get(i10 - i11), this.n, true, false, false, true);
+            return;
         }
-        if (this.f >= 0) {
-            i12--;
-        }
-        if (this.d >= 0) {
-            i12 -= 2;
-        }
-        int size = szVar.getRecentEmoji().size();
-        if (i12 < size) {
-            String str3 = szVar.getRecentEmoji().get(i12);
-            if (str3 != null && str3.startsWith("animated_")) {
-                try {
-                    l4 = Long.valueOf(Long.parseLong(str3.substring(9)));
-                    str = null;
-                } catch (Exception unused2) {
-                }
-                str2 = str;
-                document = null;
-            }
-            str = str3;
-            l4 = null;
-            str2 = str;
-            document = null;
-        } else {
-            int i19 = 0;
-            while (true) {
-                String[][] strArr2 = EmojiData.dataColored;
-                if (i19 >= strArr2.length) {
-                    str = null;
-                    break;
-                }
-                String[] strArr3 = strArr2[i19];
-                int length2 = strArr3.length + 1;
-                int i20 = (i12 - size) - 1;
-                if (i20 < 0 || i12 >= size + length2) {
-                    size += length2;
-                    i19++;
-                } else {
-                    String str4 = strArr3[i20];
-                    String str5 = Emoji.emojiColor.get(str4);
-                    if (str5 != null) {
-                        str = sz.g(str4, str5);
-                        str2 = str4;
-                    } else {
-                        str = str4;
-                    }
-                }
-            }
-            str2 = str;
-            if (str2 == null) {
-                boolean isPremium = UserConfig.getInstance(i13).isPremium();
-                int i21 = qxVar.J * 3;
-                int i22 = 0;
-                while (true) {
-                    ArrayList arrayList2 = this.x;
-                    if (i22 >= arrayList2.size()) {
-                        break;
-                    }
-                    ey eyVar4 = (ey) arrayList.get(i22);
-                    int intValue = ((Integer) arrayList2.get(i22)).intValue() + 1;
-                    int size2 = ((eyVar4.f && !eyVar4.g && (eyVar4.e || isPremium)) || eyVar4.h) ? eyVar4.c.size() : Math.min(i21, eyVar4.c.size());
-                    int i23 = bzVar.a;
-                    if (i23 < intValue || (i11 = i23 - intValue) >= size2) {
-                        i22++;
-                    } else {
-                        bzVar.e = eyVar4;
-                        TLRPC.Document document2 = (TLRPC.Document) eyVar4.c.get(i11);
-                        document = document2;
-                        l4 = document2 == null ? null : Long.valueOf(document2.id);
-                    }
-                }
-            }
-            l4 = null;
-            document = null;
-            z10 = false;
-        }
-        if (l4 != null) {
-            bzVar.setPadding(AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f));
-        } else {
-            bzVar.setPadding(0, 0, 0, 0);
-        }
-        if (l4 != null) {
-            bzVar.a(null, z10);
-            if (bzVar.getSpan() == null || bzVar.getSpan().getDocumentId() != l4.longValue()) {
-                if (document != null) {
-                    bzVar.setSpan(new c6(document, (Paint.FontMetricsInt) null));
-                } else {
-                    bzVar.setSpan(new c6(l4.longValue(), (Paint.FontMetricsInt) null));
-                }
-            }
-        } else {
-            bzVar.a(Emoji.getEmojiBigDrawable(str), z10);
-            bzVar.setSpan(null);
-        }
-        bzVar.setTag(str2);
-        bzVar.setContentDescription(str);
+        TLRPC.Document document = (TLRPC.Document) this.L.i1.get(i10);
+        h2Var.getClass();
+        h2Var.d(0, "gif" + document, document);
     }
 
-    @Override // s4.h0
-    public final s4.e1 x(ViewGroup viewGroup, int i10) {
+    @Override // s4.g0
+    public final s4.c1 w(ViewGroup viewGroup, int i10) {
         View view;
-        sz szVar = this.F;
-        if (i10 == 0) {
-            view = new bz(szVar.getContext());
-        } else if (i10 == 1) {
-            org.telegram.ui.Cells.s8 s8Var = new org.telegram.ui.Cells.s8(szVar.getContext(), true, false, szVar.Z1, szVar.i2);
-            s8Var.setOnIconClickListener(new f0(this, 13));
-            view = s8Var;
-        } else if (i10 == 3) {
-            view = new fy(szVar, szVar.getContext());
-        } else if (i10 == 4) {
-            Context context = szVar.getContext();
-            qz qzVar = new qz(szVar, true);
-            szVar.T = qzVar;
-            bi.r1 r1Var = new bi.r1(szVar, context, qzVar);
-            r1Var.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(8.0f), 0);
-            r1Var.setClipToPadding(false);
-            r1Var.i(new di.l(3));
-            r1Var.setOnItemClickListener(new j(this, 5));
-            view = r1Var;
-        } else if (i10 == 5) {
-            view = new iy(szVar, szVar.getContext());
-        } else if (i10 != 6) {
-            View view2 = new View(szVar.getContext());
-            view2.setLayoutParams(new s4.q0(-1, szVar.b1));
-            view = view2;
+        if (i10 != 0) {
+            vy vyVar = this.L;
+            if (i10 == 1) {
+                View view2 = new View(vyVar.getContext());
+                view2.setLayoutParams(new s4.o0(-1, vyVar.b1));
+                view = view2;
+            } else if (i10 != 2) {
+                ViewGroup.LayoutParams o0Var = new s4.o0(-1, -2);
+                View view3 = this.e;
+                view3.setLayoutParams(o0Var);
+                view = view3;
+            } else {
+                org.telegram.ui.Cells.n8 n8Var = new org.telegram.ui.Cells.n8(this.c, false, false, vyVar.Z1, vyVar.i2);
+                n8Var.a(0, org.telegram.messenger.cd.L0(2131750835, null));
+                s4.o0 o0Var2 = new s4.o0(-1, -2);
+                ((ViewGroup.MarginLayoutParams) o0Var2).topMargin = org.telegram.messenger.i0.L(2.5f);
+                ((ViewGroup.MarginLayoutParams) o0Var2).bottomMargin = org.telegram.messenger.i0.L(5.5f);
+                n8Var.setLayoutParams(o0Var2);
+                view = n8Var;
+            }
         } else {
-            Context context2 = szVar.getContext();
-            org.telegram.ui.ActionBar.u6 u6Var = szVar.Z1;
-            gy gyVar = new gy(context2);
-            TextView textView = new TextView(context2);
-            gyVar.a = textView;
-            textView.setTextSize(1, 13.0f);
-            org.telegram.ui.ActionBar.f7.V(textView, org.telegram.ui.ActionBar.y6.d6, u6Var);
-            int dp = AndroidUtilities.dp(11.0f);
-            int i11 = org.telegram.ui.ActionBar.y6.Te;
-            ShapeDrawable c02 = org.telegram.ui.ActionBar.y6.c0(dp, i0.a.o(org.telegram.ui.ActionBar.y6.w0(i11, u6Var), 99));
-            org.telegram.ui.ActionBar.b7 h = org.telegram.ui.ActionBar.f7.h(i11, 99);
-            textView.setBackground(c02);
-            org.telegram.ui.ActionBar.f7.k(textView, c02, h, null, u6Var);
-            textView.setTypeface(AndroidUtilities.bold());
-            textView.setPadding(AndroidUtilities.dp(6.0f), AndroidUtilities.dp(1.66f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(2.0f));
-            gyVar.addView(textView, kb1.i(-2, -2, 17));
-            view = gyVar;
+            org.telegram.ui.Cells.h2 h2Var = new org.telegram.ui.Cells.h2(this.c);
+            h2Var.setIsKeyboard(true);
+            h2Var.setCanPreviewGif(true);
+            view = h2Var;
         }
-        return new wl0(view);
+        return new ck0(view);
     }
 }

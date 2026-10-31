@@ -2,7 +2,7 @@ package androidx.datastore.preferences.protobuf;
 
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
 /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class c0 {
     public static final c0 a;
@@ -15,7 +15,7 @@ public final class c0 {
     public static final c0 n;
     public static final c0 r;
     public static final c0 s;
-    public static final /* synthetic */ c0[] v;
+    public static final /* synthetic */ c0[] w;
 
     static {
         c0 c0Var = new c0("VOID", 0);
@@ -39,7 +39,7 @@ public final class c0 {
         r = c0Var9;
         c0 c0Var10 = new c0("MESSAGE", 9);
         s = c0Var10;
-        v = new c0[]{c0Var, c0Var2, c0Var3, c0Var4, c0Var5, c0Var6, c0Var7, c0Var8, c0Var9, c0Var10};
+        w = new c0[]{c0Var, c0Var2, c0Var3, c0Var4, c0Var5, c0Var6, c0Var7, c0Var8, c0Var9, c0Var10};
     }
 
     public static c0 valueOf(String str) {
@@ -47,6 +47,6 @@ public final class c0 {
     }
 
     public static c0[] values() {
-        return (c0[]) v.clone();
+        return (c0[]) w.clone();
     }
 }

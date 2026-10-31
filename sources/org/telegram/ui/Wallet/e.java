@@ -3,13 +3,10 @@ package org.telegram.ui.Wallet;
 import java.io.InputStream;
 import java.util.ArrayList;
 import org.json.JSONObject;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.FileLog;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes4.dex */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
 public final /* synthetic */ class e implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ f b;
@@ -23,23 +20,26 @@ public final /* synthetic */ class e implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
+        int i10;
         switch (this.a) {
             case 0:
                 f fVar = this.b;
                 TL_wallet.currencyRates currencyrates = this.c;
                 boolean z10 = true;
-                if (currencyrates != null && currencyrates.rates != null) {
+                if (currencyrates == null || currencyrates.rates == null) {
+                    i10 = 1;
+                } else {
                     try {
-                        InputStream open = ApplicationLoader.applicationContext.getAssets().open("currencies.json");
+                        InputStream open = org.telegram.messenger.w0.b.getAssets().open("currencies.json");
                         try {
-                            String str = e2.n0.a;
-                            JSONObject jSONObject = new JSONObject(new String(g9.f.b(open), e9.j.a));
+                            String str = e2.l0.a;
+                            JSONObject jSONObject = new JSONObject(new String(f9.f.b(open), d9.j.a));
                             ArrayList<TL_wallet.currencyRate> arrayList = currencyrates.rates;
                             int size = arrayList.size();
-                            int i10 = 0;
-                            while (i10 < size) {
-                                TL_wallet.currencyRate currencyrate = arrayList.get(i10);
-                                i10++;
+                            int i11 = 0;
+                            while (i11 < size) {
+                                TL_wallet.currencyRate currencyrate = arrayList.get(i11);
+                                i11++;
                                 TL_wallet.currencyRate currencyrate2 = currencyrate;
                                 if (currencyrate2 != null) {
                                     JSONObject optJSONObject = jSONObject.optJSONObject(currencyrate2.currency);
@@ -71,13 +71,15 @@ public final /* synthetic */ class e implements Runnable {
                                 }
                             }
                             open.close();
+                            i10 = 1;
                         } finally {
                         }
                     } catch (Exception e) {
-                        FileLog.e(e);
+                        i10 = 1;
+                        org.telegram.messenger.f8.g(e, true);
                     }
                 }
-                AndroidUtilities.runOnUIThread(new e(fVar, currencyrates, 1));
+                org.telegram.messenger.i0.g3(new e(fVar, currencyrates, i10));
                 return;
             default:
                 f fVar2 = this.b;

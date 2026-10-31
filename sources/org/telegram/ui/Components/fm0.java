@@ -2,54 +2,27 @@ package org.telegram.ui.Components;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class fm0 implements Runnable {
-    public final /* synthetic */ View a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ float d;
-    public final /* synthetic */ gm0 e;
+public final class fm0 implements View.OnClickListener {
+    public final /* synthetic */ kg.f a;
 
-    public fm0(gm0 gm0Var, View view, int i10, float f7, float f10) {
-        this.e = gm0Var;
-        this.a = view;
-        this.b = i10;
-        this.c = f7;
-        this.d = f10;
+    public fm0(kg.f fVar) {
+        this.a = fVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        hm0 hm0Var = this.e.b;
-        nm0 nm0Var = (nm0) hm0Var.b;
-        if (this == nm0Var.Q1) {
-            nm0Var.Q1 = null;
-        }
-        View view = this.a;
-        if (view != null) {
-            nm0Var.k1(view, 0.0f, 0.0f, false);
-            if (((nm0) hm0Var.b).P1) {
-                return;
-            }
-            try {
-                view.playSoundEffect(0);
-            } catch (Exception unused) {
-            }
-            view.sendAccessibilityEvent(1);
-            int i10 = this.b;
-            if (i10 != -1) {
-                nm0 nm0Var2 = (nm0) hm0Var.b;
-                am0 am0Var = nm0Var2.T0;
-                if (am0Var != null) {
-                    am0Var.c(i10, view);
-                    return;
-                }
-                bm0 bm0Var = nm0Var2.U0;
-                if (bm0Var != null) {
-                    bm0Var.e(this.c - view.getX(), this.d - view.getY(), i10, view);
-                }
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        gm0 gm0Var = (gm0) this.a.d;
+        for (int i10 = 0; i10 < gm0Var.e.size(); i10++) {
+            org.telegram.messenger.jj jjVar = (org.telegram.messenger.jj) gm0Var.e.get(i10);
+            if (gm0Var.H) {
+                org.telegram.messenger.b8.G(org.telegram.messenger.c.a(org.telegram.messenger.d20.s0).a).f(jjVar.F0());
+            } else {
+                org.telegram.messenger.b8.G(org.telegram.messenger.c.a(org.telegram.messenger.d20.s0).a).X(jjVar.F0(), jjVar, 0, 0);
+                org.telegram.messenger.b6.q(gm0Var.d).y();
             }
         }
+        gm0Var.d(true);
     }
 }

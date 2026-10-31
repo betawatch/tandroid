@@ -1,23 +1,55 @@
 package org.telegram.ui;
 
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class ur {
-    public ActionBarPopupWindow$ActionBarPopupWindowLayout a;
-    public org.telegram.ui.ActionBar.c1 b;
-    public org.telegram.ui.ActionBar.g1[] c;
+public final class ur implements Drawable.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Drawable b;
 
-    public final void a(float f7, boolean z10) {
-        org.telegram.ui.ActionBar.g1[] g1VarArr = this.c;
-        for (int i10 = 0; i10 < g1VarArr.length; i10++) {
-            if (!z10 || ((i10 != 0 || Math.abs(f7 - 0.2f) >= 0.01f) && ((i10 != 1 || Math.abs(f7 - 0.5f) >= 0.1f) && ((i10 != 2 || Math.abs(f7 - 1.0f) >= 0.1f) && ((i10 != 3 || Math.abs(f7 - 1.5f) >= 0.1f) && (i10 != 4 || Math.abs(f7 - 2.0f) >= 0.1f)))))) {
-                g1VarArr[i10].d(-328966, -328966);
-            } else {
-                g1VarArr[i10].d(-9718023, -9718023);
-            }
+    public /* synthetic */ ur(int i10, Drawable drawable) {
+        this.a = i10;
+        this.b = drawable;
+    }
+
+    @Override // android.graphics.drawable.Drawable.Callback
+    public final void invalidateDrawable(Drawable drawable) {
+        switch (this.a) {
+            case 0:
+                ((vr) this.b).invalidateSelf();
+                break;
+            default:
+                org.telegram.ui.Cells.s0 s0Var = ((iy0) this.b).h;
+                if (s0Var != null) {
+                    s0Var.invalidate();
+                    break;
+                }
+                break;
         }
-        this.b.e(f7, true);
+    }
+
+    @Override // android.graphics.drawable.Drawable.Callback
+    public final void scheduleDrawable(Drawable drawable, Runnable runnable, long j10) {
+        switch (this.a) {
+            case 0:
+                ((vr) this.b).scheduleSelf(runnable, j10);
+                break;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable.Callback
+    public final void unscheduleDrawable(Drawable drawable, Runnable runnable) {
+        switch (this.a) {
+            case 0:
+                ((vr) this.b).unscheduleSelf(runnable);
+                break;
+        }
+    }
+
+    private final void b(Drawable drawable, Runnable runnable) {
+    }
+
+    private final void a(Drawable drawable, Runnable runnable, long j10) {
     }
 }

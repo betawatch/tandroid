@@ -6,9 +6,9 @@ import android.media.MediaExtractor;
 import android.media.MediaFormat;
 import android.view.Surface;
 import java.nio.ByteBuffer;
-import org.telegram.messenger.FileLog;
+import org.telegram.messenger.f8;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public class AudioDecoder {
     private static final int TIMEOUT_USEC = 0;
@@ -22,7 +22,7 @@ public class AudioDecoder {
     private long startTimeUs;
     private int trackIndex;
 
-    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+    /* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
     public static class DecodedBufferData {
         public ByteBuffer byteBuffer = null;
         public int index = -1;
@@ -50,7 +50,7 @@ public class AudioDecoder {
         try {
             this.endTimeUs = this.extractor.getTrackFormat(this.trackIndex).getLong("durationUs");
         } catch (Exception e) {
-            FileLog.e(e);
+            f8.g(e, true);
             this.endTimeUs = -1L;
         }
     }
@@ -150,11 +150,11 @@ public class AudioDecoder {
         try {
             return getOutputMediaFormat().getInteger("channel-count");
         } catch (Exception e) {
-            FileLog.e(e);
+            f8.g(e, true);
             try {
                 return getInputMediaFormat().getInteger("channel-count");
-            } catch (Exception e10) {
-                FileLog.e(e10);
+            } catch (Exception e7) {
+                f8.g(e7, true);
                 return -1;
             }
         }
@@ -164,11 +164,11 @@ public class AudioDecoder {
         try {
             return getOutputMediaFormat().getLong("durationUs");
         } catch (Exception e) {
-            FileLog.e(e);
+            f8.g(e, true);
             try {
                 return getInputMediaFormat().getLong("durationUs");
-            } catch (Exception e10) {
-                FileLog.e(e10);
+            } catch (Exception e7) {
+                f8.g(e7, true);
                 return -1L;
             }
         }
@@ -182,7 +182,7 @@ public class AudioDecoder {
         try {
             return this.extractor.getTrackFormat(this.trackIndex);
         } catch (Exception e) {
-            FileLog.e(e);
+            f8.g(e, true);
             return null;
         }
     }
@@ -191,7 +191,7 @@ public class AudioDecoder {
         try {
             return getOutputMediaFormat() != null ? getOutputMediaFormat() : getInputMediaFormat();
         } catch (Exception e) {
-            FileLog.e(e);
+            f8.g(e, true);
             return null;
         }
     }
@@ -200,7 +200,7 @@ public class AudioDecoder {
         try {
             return this.decoder.getOutputFormat();
         } catch (Exception e) {
-            FileLog.e(e);
+            f8.g(e, true);
             return null;
         }
     }
@@ -209,11 +209,11 @@ public class AudioDecoder {
         try {
             return getOutputMediaFormat().getInteger("sample-rate");
         } catch (Exception e) {
-            FileLog.e(e);
+            f8.g(e, true);
             try {
                 return getInputMediaFormat().getInteger("sample-rate");
-            } catch (Exception e10) {
-                FileLog.e(e10);
+            } catch (Exception e7) {
+                f8.g(e7, true);
                 return -1;
             }
         }
@@ -271,7 +271,7 @@ public class AudioDecoder {
             StringBuilder sb2 = new StringBuilder("StartTimeUs(");
             sb2.append(this.startTimeUs);
             sb2.append(") must be less than or equal to EndTimeUs(");
-            throw new RuntimeException(a1.g.r(sb2, this.endTimeUs, ")"));
+            throw new RuntimeException(a1.g.q(sb2, this.endTimeUs, ")"));
         }
         this.extractor.seekTo(j10, 0);
         this.decoder.start();

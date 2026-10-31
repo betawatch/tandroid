@@ -1,79 +1,23 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.view.View;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.NotificationCenter;
+import android.app.Activity;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class ru implements View.OnClickListener {
-    public final /* synthetic */ Context a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.r2 b;
-    public final /* synthetic */ tu c;
+public final class ru extends org.telegram.ui.Components.op0 {
+    public final /* synthetic */ su R2;
 
-    public ru(tu tuVar, Context context, org.telegram.ui.ActionBar.r2 r2Var) {
-        this.c = tuVar;
-        this.a = context;
-        this.b = r2Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ru(su suVar, Activity activity, String str) {
+        super(activity, null, str, false, null, false, null);
+        this.R2 = suVar;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:24:0x0078  */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x0089  */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x008f  */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x007e  */
-    @Override // android.view.View.OnClickListener
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void onClick(View view) {
-        if (ey.y4) {
-            return;
+    @Override // org.telegram.ui.Components.op0
+    public final void R0(a0.h hVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
+        if (z10) {
+            org.telegram.messenger.i0.h3(new xs(this, hVar, i10), 250L);
         }
-        int x02 = org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.a7, false);
-        ey.y4 = true;
-        SharedPreferences sharedPreferences = ApplicationLoader.applicationContext.getSharedPreferences("themeconfig", 0);
-        String str = "Blue";
-        String string = sharedPreferences.getString("lastDayTheme", "Blue");
-        if (org.telegram.ui.ActionBar.y6.P0(string) == null || org.telegram.ui.ActionBar.y6.P0(string).q()) {
-            string = "Blue";
-        }
-        String str2 = "Dark Blue";
-        String string2 = sharedPreferences.getString("lastDarkTheme", "Dark Blue");
-        if (org.telegram.ui.ActionBar.y6.P0(string2) == null || !org.telegram.ui.ActionBar.y6.P0(string2).q()) {
-            string2 = "Dark Blue";
-        }
-        org.telegram.ui.ActionBar.x6 x6Var = org.telegram.ui.ActionBar.y6.I;
-        if (!string.equals(string2)) {
-            str2 = string2;
-        } else if (x6Var.q() || string.equals("Dark Blue") || string.equals("Night")) {
-            str2 = string2;
-            boolean q5 = org.telegram.ui.ActionBar.y6.I.q();
-            String str3 = str2;
-            boolean z10 = !q5;
-            org.telegram.ui.ActionBar.x6 P0 = q5 ? org.telegram.ui.ActionBar.y6.P0(str3) : org.telegram.ui.ActionBar.y6.P0(str);
-            org.telegram.ui.Components.yj0 yj0Var = this.c.d;
-            yj0Var.P(q5 ? yj0Var.e[0] - 1 : 0);
-            this.c.e.getImageView().d();
-            int[] iArr = {(this.c.e.getImageView().getMeasuredWidth() / 2) + r2, org.telegram.messenger.t.D(3.0f, this.c.e.getImageView().getMeasuredHeight() / 2, r2)};
-            this.c.e.getImageView().getLocationInWindow(iArr);
-            int i10 = iArr[0];
-            int i11 = iArr[1];
-            NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needSetDayNightTheme, P0, Boolean.FALSE, iArr, -1, Boolean.valueOf(z10), this.c.e.getImageView(), this.c.e, new bi.db(this, this.a, x02, z10, this.b, 5));
-        }
-        str = string;
-        boolean q52 = org.telegram.ui.ActionBar.y6.I.q();
-        String str32 = str2;
-        boolean z102 = !q52;
-        org.telegram.ui.ActionBar.x6 P02 = q52 ? org.telegram.ui.ActionBar.y6.P0(str32) : org.telegram.ui.ActionBar.y6.P0(str);
-        org.telegram.ui.Components.yj0 yj0Var2 = this.c.d;
-        yj0Var2.P(q52 ? yj0Var2.e[0] - 1 : 0);
-        this.c.e.getImageView().d();
-        int[] iArr2 = {(this.c.e.getImageView().getMeasuredWidth() / 2) + i10, org.telegram.messenger.t.D(3.0f, this.c.e.getImageView().getMeasuredHeight() / 2, i11)};
-        this.c.e.getImageView().getLocationInWindow(iArr2);
-        int i102 = iArr2[0];
-        int i112 = iArr2[1];
-        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needSetDayNightTheme, P02, Boolean.FALSE, iArr2, -1, Boolean.valueOf(z102), this.c.e.getImageView(), this.c.e, new bi.db(this, this.a, x02, z102, this.b, 5));
     }
 }

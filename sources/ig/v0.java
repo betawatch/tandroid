@@ -1,34 +1,68 @@
 package ig;
 
-import java.util.ArrayList;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.ui.Components.cb0;
+import android.graphics.PointF;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class v0 implements MediaDataController.KeywordResultCallback, org.telegram.ui.Cells.c2 {
-    public final /* synthetic */ j1 a;
+public final class v0 {
+    public float a;
+    public float b;
+    public float c;
+    public float d;
+    public float e;
+    public float f;
+    public double g;
+    public int h;
+    public int i;
+    public ByteBuffer j;
 
-    public /* synthetic */ v0(j1 j1Var) {
-        this.a = j1Var;
+    public final boolean a(PointF pointF, float f7, float f10, float f11, int i10) {
+        if ((i10 != -1 && i10 >= this.i) || this.j.position() == this.j.limit()) {
+            d();
+            return false;
+        }
+        if (i10 != -1) {
+            this.j.position(i10 * 20);
+        }
+        this.j.putFloat(pointF.x);
+        this.j.putFloat(pointF.y);
+        this.j.putFloat(f7);
+        this.j.putFloat(f10);
+        this.j.putFloat(f11);
+        return true;
     }
 
-    @Override // org.telegram.messenger.MediaDataController.KeywordResultCallback
-    public void run(ArrayList arrayList, String str) {
-        j1 j1Var = this.a;
-        j1Var.N = arrayList;
-        j1Var.I = null;
-        j1Var.A0 = null;
-        j1Var.x = null;
-        j1Var.y = null;
-        j1Var.J = null;
-        j1Var.Q = null;
-        j1Var.M = null;
-        j1Var.K = null;
-        j1Var.P = null;
-        j1Var.l();
-        cb0 cb0Var = j1Var.V;
-        ArrayList arrayList2 = j1Var.N;
-        cb0Var.a((arrayList2 == null || arrayList2.isEmpty()) ? false : true);
+    public final void b(int i10) {
+        int i11 = this.h + i10;
+        if (i11 > this.i || this.j == null) {
+            d();
+        }
+        this.h = i11;
+    }
+
+    public final void c() {
+        this.h = 0;
+        if (this.j != null) {
+            return;
+        }
+        this.i = 256;
+        ByteBuffer allocateDirect = ByteBuffer.allocateDirect(256 * 5 * 4);
+        this.j = allocateDirect;
+        allocateDirect.order(ByteOrder.nativeOrder());
+        this.j.position(0);
+    }
+
+    public final void d() {
+        if (this.j != null) {
+            this.j = null;
+        }
+        int max = Math.max(this.i * 2, 256);
+        this.i = max;
+        ByteBuffer allocateDirect = ByteBuffer.allocateDirect(max * 20);
+        this.j = allocateDirect;
+        allocateDirect.order(ByteOrder.nativeOrder());
+        this.j.position(0);
     }
 }

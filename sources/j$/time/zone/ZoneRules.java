@@ -18,7 +18,6 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.TimeZone;
-import org.telegram.messenger.MediaDataController;
 
 /* loaded from: classes2.dex */
 public final class ZoneRules implements Serializable {
@@ -109,7 +108,7 @@ public final class ZoneRules implements Serializable {
     }
 
     public static ZoneOffset h(int i10) {
-        return ZoneOffset.O(i10 / MediaDataController.MAX_STYLE_RUNS_COUNT);
+        return ZoneOffset.O(i10 / 1000);
     }
 
     private void readObject(ObjectInputStream objectInputStream) {

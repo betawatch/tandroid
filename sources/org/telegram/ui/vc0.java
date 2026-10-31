@@ -1,31 +1,29 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class vc0 implements org.telegram.ui.ActionBar.b2 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ig0 b;
+import android.content.Context;
+import android.view.View;
+import android.widget.ViewSwitcher;
+import org.telegram.tgnet.TLObject;
 
-    public /* synthetic */ vc0(ig0 ig0Var, int i10) {
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final class vc0 extends ViewSwitcher {
+    public final /* synthetic */ int a;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ vc0(Context context, int i10) {
+        super(context);
         this.a = i10;
-        this.b = ig0Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.b2
-    public final void h(org.telegram.ui.ActionBar.e2 e2Var, int i10) {
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
         switch (this.a) {
             case 0:
-                ig0 ig0Var = this.b;
-                ig0Var.b[ig0Var.a].d();
-                ig0Var.p1(true, true);
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.i0.L(100.0f), TLObject.FLAG_31));
                 break;
             default:
-                ig0 ig0Var2 = this.b;
-                ig0Var2.l0 = true;
-                if (ig0Var2.a != 0) {
-                    ig0Var2.z1(0, true, null, true);
-                    break;
-                }
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.i0.L(100.0f), TLObject.FLAG_31));
                 break;
         }
     }

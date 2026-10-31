@@ -4,15 +4,16 @@ import a3.l0;
 import android.graphics.Rect;
 import androidx.car.app.IOnDoneCallback;
 import androidx.car.app.ISurfaceCallback;
+import androidx.car.app.n;
 import androidx.lifecycle.o;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 class RemoteUtils$SurfaceCallbackStub extends ISurfaceCallback.Stub {
     private final o mLifecycle;
-    private final androidx.car.app.o mSurfaceCallback;
+    private final n mSurfaceCallback;
 
-    public RemoteUtils$SurfaceCallbackStub(o oVar, androidx.car.app.o oVar2) {
+    public RemoteUtils$SurfaceCallbackStub(o oVar, n nVar) {
         this.mLifecycle = oVar;
     }
 
@@ -58,12 +59,12 @@ class RemoteUtils$SurfaceCallbackStub extends ISurfaceCallback.Stub {
 
     @Override // androidx.car.app.ISurfaceCallback
     public void onClick(float f7, float f10) {
-        i.a(new l0(this.mLifecycle, new e(this, f7, f10, 0), "onClick", 3));
+        i.a(new l0(this.mLifecycle, new e(this, f7, f10, 0), "onClick", 9));
     }
 
     @Override // androidx.car.app.ISurfaceCallback
     public void onFling(float f7, float f10) {
-        i.a(new l0(this.mLifecycle, new e(this, f7, f10, 2), "onFling", 3));
+        i.a(new l0(this.mLifecycle, new e(this, f7, f10, 2), "onFling", 9));
     }
 
     @Override // androidx.car.app.ISurfaceCallback
@@ -75,12 +76,12 @@ class RemoteUtils$SurfaceCallbackStub extends ISurfaceCallback.Stub {
                 lambda$onScale$6 = RemoteUtils$SurfaceCallbackStub.this.lambda$onScale$6(f7, f10, f11);
                 return lambda$onScale$6;
             }
-        }, "onScale", 3));
+        }, "onScale", 9));
     }
 
     @Override // androidx.car.app.ISurfaceCallback
     public void onScroll(float f7, float f10) {
-        i.a(new l0(this.mLifecycle, new e(this, f7, f10, 1), "onScroll", 3));
+        i.a(new l0(this.mLifecycle, new e(this, f7, f10, 1), "onScroll", 9));
     }
 
     @Override // androidx.car.app.ISurfaceCallback

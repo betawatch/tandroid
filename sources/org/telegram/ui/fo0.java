@@ -1,41 +1,57 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
+import android.view.View;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class fo0 implements po0 {
-    public final /* synthetic */ ro0 a;
+public final class fo0 implements org.telegram.ui.ActionBar.q0, org.telegram.ui.Components.wk0 {
+    public final /* synthetic */ lo0 a;
 
-    public fo0(ro0 ro0Var) {
-        this.a = ro0Var;
+    public /* synthetic */ fo0(lo0 lo0Var) {
+        this.a = lo0Var;
     }
 
-    @Override // org.telegram.ui.po0
-    public final void a(TL_account.Password password) {
-        this.a.a0 = password;
-    }
-
-    @Override // org.telegram.ui.po0
-    public final void b() {
-        this.a.f0 = null;
-    }
-
-    @Override // org.telegram.ui.po0
-    public final boolean c(String str, String str2, boolean z10, TLRPC.TL_inputPaymentCredentialsGooglePay tL_inputPaymentCredentialsGooglePay, TLRPC.TL_paymentSavedCredentialsCard tL_paymentSavedCredentialsCard) {
-        ro0 ro0Var = this.a;
-        po0 po0Var = ro0Var.T;
-        if (po0Var != null) {
-            po0Var.c(str, str2, z10, tL_inputPaymentCredentialsGooglePay, tL_paymentSavedCredentialsCard);
+    @Override // org.telegram.ui.Components.wk0
+    public void b(boolean z10) {
+        org.telegram.ui.ActionBar.z4 z4Var;
+        lo0 lo0Var = this.a;
+        lo0Var.W = z10 ? 1 : 0;
+        if (z10) {
+            z4Var = ((org.telegram.ui.ActionBar.k2) lo0Var).parentLayout;
+            z4Var.getView().requestDisallowInterceptTouchEvent(true);
         }
-        if (ro0Var.S0) {
-            ro0Var.removeSelfFromStack();
-        }
-        return ro0Var.T != null;
+        lo0Var.K.d1(true);
     }
 
-    @Override // org.telegram.ui.po0
-    public final /* synthetic */ void d(TLRPC.TL_payments_validateRequestedInfo tL_payments_validateRequestedInfo) {
+    @Override // org.telegram.ui.Components.wk0
+    public boolean d(int i10) {
+        return this.a.L.d(i10) == 0;
+    }
+
+    @Override // org.telegram.ui.ActionBar.q0
+    public void e() {
+        lo0 lo0Var = this.a;
+        lo0Var.Q.setText(org.telegram.messenger.cd.L0(lo0Var.Y ? 2131745364 : 2131745363, null));
+        lo0Var.Q.setIcon(lo0Var.Y ? R.drawable.msg_media : R.drawable.msg_list);
+    }
+
+    @Override // org.telegram.ui.Components.wk0
+    public void h(View view, boolean z10) {
+        if (z10 == this.a.X && (view instanceof org.telegram.ui.Cells.v5)) {
+            org.telegram.ui.Cells.v5 v5Var = (org.telegram.ui.Cells.v5) view;
+            v5Var.x.d(v5Var);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.wk0
+    public boolean j(int i10) {
+        lo0 lo0Var = this.a;
+        org.telegram.messenger.we weVar = lo0Var.J;
+        return lo0Var.b.containsKey(weVar != null ? Integer.valueOf(((org.telegram.messenger.ef) weVar.e.get(i10)).C) : ((org.telegram.messenger.hf) lo0Var.f.get(i10)).B);
+    }
+
+    @Override // org.telegram.ui.ActionBar.q0
+    public void a() {
     }
 }

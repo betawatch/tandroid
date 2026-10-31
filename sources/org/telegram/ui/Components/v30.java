@@ -1,64 +1,86 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SvgHelper;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class v30 extends a5.a {
-    public final /* synthetic */ org.telegram.ui.w40 c;
+public final class v30 extends Drawable {
+    public byte[] a;
+    public final Paint b = new Paint();
+    public final int[] c = {-1, -2758925, -13805707, -13657655};
 
-    public v30(org.telegram.ui.w40 w40Var) {
-        this.c = w40Var;
-    }
-
-    @Override // a5.a
-    public final void a(a5.m mVar, Object obj) {
-        mVar.removeView((View) obj);
-    }
-
-    @Override // a5.a
-    public final int b() {
-        return this.c.e.length;
-    }
-
-    @Override // a5.a
-    public final Object e(a5.m mVar, int i10) {
-        u30 u30Var = new u30(this, this.c.getContext(), i10, 0);
-        u30Var.setOnClickListener(new ai.w(this, i10, 14));
-        u30Var.setFocusable(true);
-        u30Var.setTag(Integer.valueOf(i10));
-        u30Var.setPadding(AndroidUtilities.dp(18.0f), 0, AndroidUtilities.dp(18.0f), 0);
-        u30Var.setScaleType(ImageView.ScaleType.FIT_XY);
-        u30Var.setLayoutParams(new ViewGroup.LayoutParams(AndroidUtilities.dp(200.0f), -1));
-        if (i10 == 0) {
-            u30Var.setContentDescription(LocaleController.getString(R.string.VoipRecordAudio));
-        } else if (i10 == 1) {
-            u30Var.setContentDescription(LocaleController.getString(R.string.VoipRecordPortrait));
-        } else {
-            u30Var.setContentDescription(LocaleController.getString(R.string.VoipRecordLandscape));
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        byte[] bArr = this.a;
+        if (bArr == null) {
+            return;
         }
-        SvgHelper.SvgDrawable drawable = SvgHelper.getDrawable(AndroidUtilities.readRes(i10 == 0 ? R.raw.record_audio : i10 == 1 ? R.raw.record_video_p : R.raw.record_video_l));
-        drawable.setAspectFill(false);
-        u30Var.setImageDrawable(drawable);
-        if (u30Var.getParent() != null) {
-            ((ViewGroup) u30Var.getParent()).removeView(u30Var);
+        int length = bArr.length;
+        int[] iArr = this.c;
+        Paint paint = this.b;
+        if (length == 16) {
+            float floor = (float) Math.floor(Math.min(getBounds().width(), getBounds().height()) / 8.0f);
+            float f7 = 8.0f * floor;
+            float max = Math.max(0.0f, (getBounds().width() - f7) / 2.0f);
+            float max2 = Math.max(0.0f, (getBounds().height() - f7) / 2.0f);
+            int i10 = 0;
+            for (int i11 = 0; i11 < 8; i11++) {
+                int i12 = 0;
+                while (i12 < 8) {
+                    int i13 = i10 + 2;
+                    paint.setColor(iArr[Math.abs((this.a[i10 / 8] >> (i10 % 8)) & 3) % 4]);
+                    float f10 = (i12 * floor) + max;
+                    float f11 = i11 * floor;
+                    canvas.drawRect(f10, f11 + max2, f10 + floor, f11 + floor + max2, paint);
+                    i12++;
+                    i10 = i13;
+                }
+            }
+            return;
         }
-        mVar.addView(u30Var, 0);
-        return u30Var;
+        float floor2 = (float) Math.floor(Math.min(getBounds().width(), getBounds().height()) / 12.0f);
+        float f12 = 12.0f * floor2;
+        float max3 = Math.max(0.0f, (getBounds().width() - f12) / 2.0f);
+        float max4 = Math.max(0.0f, (getBounds().height() - f12) / 2.0f);
+        int i14 = 0;
+        int i15 = 0;
+        while (i15 < 12) {
+            int i16 = i14;
+            for (int i17 = 0; i17 < 12; i17++) {
+                paint.setColor(iArr[Math.abs((this.a[i16 / 8] >> (i16 % 8)) & 3) % 4]);
+                float f13 = (i17 * floor2) + max3;
+                float f14 = i15 * floor2;
+                canvas.drawRect(f13, f14 + max4, f13 + floor2, f14 + floor2 + max4, paint);
+                i16 += 2;
+            }
+            i15++;
+            i14 = i16;
+        }
     }
 
-    @Override // a5.a
-    public final boolean f(View view, Object obj) {
-        return view.equals(obj);
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return org.telegram.messenger.i0.L(32.0f);
     }
 
-    @Override // a5.a
-    public final void h(int i10) {
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return org.telegram.messenger.i0.L(32.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return 0;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

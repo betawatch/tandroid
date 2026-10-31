@@ -1,48 +1,49 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class cd implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ nd b;
+import android.view.View;
 
-    public /* synthetic */ cd(nd ndVar, int i10) {
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class cd implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ kd b;
+
+    public /* synthetic */ cd(kd kdVar, int i10) {
         this.a = i10;
-        this.b = ndVar;
+        this.b = kdVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                this.b.i0(true);
+                kd.b0(this.b, view);
                 break;
             case 1:
-                nd ndVar = this.b;
-                ndVar.k0 = true;
-                ndVar.j0();
+                kd kdVar = this.b;
+                kdVar.x.n(kdVar.D != null, new ad(kdVar, 2), new q5(kdVar, 2), 0);
+                kdVar.K.M(0);
+                kdVar.K.P(43);
+                kdVar.n.d();
                 break;
             case 2:
-                nd ndVar2 = this.b;
-                ndVar2.y = null;
-                ndVar2.E = null;
-                ndVar2.m0 = null;
-                ndVar2.n0 = null;
-                ndVar2.p0 = null;
-                ndVar2.o0 = null;
-                ndVar2.q0 = 0.0d;
-                ndVar2.g0(false, true);
-                ndVar2.f.h(null, null, ndVar2.v, null);
-                ndVar2.n.setAnimation(ndVar2.K);
-                ndVar2.K.M(0);
+                kd kdVar2 = this.b;
+                if (!kdVar2.k0) {
+                    kdVar2.k0();
+                    break;
+                } else if (kdVar2.b0) {
+                    kdVar2.b0 = false;
+                    kdVar2.m0();
+                    break;
+                }
                 break;
             default:
-                nd ndVar3 = this.b;
-                ndVar3.k0 = true;
-                if (ndVar3.x.length() > 0) {
-                    ndVar3.f0(ndVar3.x.getText().toString());
+                kd kdVar3 = this.b;
+                if (!kdVar3.b0) {
+                    kdVar3.b0 = true;
+                    kdVar3.m0();
+                    break;
                 }
-                ndVar3.j0();
                 break;
         }
     }

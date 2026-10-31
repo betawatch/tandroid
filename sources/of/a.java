@@ -1,34 +1,27 @@
 package of;
 
-import java.io.FilterInputStream;
+import org.telegram.messenger.zs;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public abstract class a extends mf.a {
-    public static String b(int i10, int i11, byte[] bArr) {
-        try {
-            String str = new String(bArr, i10, i11, "ISO-8859-1");
-            int indexOf = str.indexOf(0);
-            return indexOf < 0 ? str : str.substring(0, indexOf);
-        } catch (Exception unused) {
-            return "";
-        }
+public final /* synthetic */ class a implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ c b;
+
+    public /* synthetic */ a(c cVar, int i10) {
+        this.a = i10;
+        this.b = cVar;
     }
 
-    public static boolean c(FilterInputStream filterInputStream) {
-        boolean z10;
-        filterInputStream.mark(3);
-        try {
-            if (filterInputStream.read() == 84 && filterInputStream.read() == 65) {
-                if (filterInputStream.read() == 71) {
-                    z10 = true;
-                    return z10;
-                }
-            }
-            z10 = false;
-            return z10;
-        } finally {
-            filterInputStream.reset();
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.g(false);
+                break;
+            default:
+                zs.f(this.b.c).k(zs.e5, new Object[0]);
+                break;
         }
     }
 }

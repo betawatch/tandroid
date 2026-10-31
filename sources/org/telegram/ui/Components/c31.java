@@ -1,129 +1,106 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.RadialGradient;
-import android.graphics.RectF;
-import android.graphics.Shader;
-import android.graphics.drawable.Animatable;
-import android.graphics.drawable.Drawable;
-import android.widget.ImageView;
-import java.util.Arrays;
+import android.net.Uri;
+import android.util.Log;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URI;
+import org.json.JSONArray;
+import org.json.JSONTokener;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class c31 extends ImageView {
-    public static final org.telegram.ui.Cells.b1 w = new org.telegram.ui.Cells.b1(Float.class, "radius", 3);
-    public final Paint a;
-    public final Matrix b;
-    public RadialGradient c;
-    public boolean d;
-    public float e;
-    public float f;
-    public float h;
-    public bk0 n;
-    public ColorFilter r;
-    public final int[] s;
-    public final int[] v;
+public final class c31 extends Thread {
+    public final /* synthetic */ String a;
+    public final /* synthetic */ String b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ org.telegram.messenger.j20 d;
 
-    public c31(Context context) {
-        super(context);
-        this.a = new Paint(1);
-        this.b = new Matrix();
-        this.s = new int[2];
-        this.v = new int[2];
+    public c31(String str, String str2, String str3, org.telegram.messenger.j20 j20Var) {
+        this.a = str;
+        this.b = str2;
+        this.c = str3;
+        this.d = j20Var;
     }
 
-    public static void a(Bitmap bitmap, org.telegram.ui.ActionBar.d4 d4Var, bk0 bk0Var) {
-        Drawable drawable = bk0Var.getDrawable();
-        if (drawable != null && bk0Var.isAttachedToWindow() && bitmap.isMutable()) {
-            int[] iArr = new int[2];
-            RectF rectF = new RectF(drawable.getBounds());
-            bk0Var.getImageMatrix().mapRect(rectF);
-            bk0Var.getLocationInWindow(iArr);
-            rectF.offset(bk0Var.getPaddingLeft() + iArr[0], bk0Var.getPaddingTop() + iArr[1]);
-            if (d4Var != null) {
-                d4Var.getLocationInWindow(iArr);
-                rectF.offset(-iArr[0], -iArr[1]);
-            }
-            int max = Math.max(1, ((int) Math.floor(rectF.left)) - 1);
-            int min = Math.min(bitmap.getWidth(), ((int) Math.ceil(rectF.right)) + 1);
-            int max2 = Math.max(0, ((int) Math.floor(rectF.top)) - 1);
-            int min2 = Math.min(bitmap.getHeight(), ((int) Math.ceil(rectF.bottom)) + 1);
-            if (max >= min || max2 >= min2) {
-                return;
-            }
-            int i10 = min - max;
-            int[] iArr2 = new int[i10];
-            for (int i11 = max2; i11 < min2; i11++) {
-                Arrays.fill(iArr2, bitmap.getPixel(max - 1, i11));
-                bitmap.setPixels(iArr2, 0, i10, max, i11, i10, 1);
-            }
+    @Override // java.lang.Thread, java.lang.Runnable
+    public final void run() {
+        HttpURLConnection httpURLConnection;
+        String str;
+        org.telegram.messenger.j20 j20Var = this.d;
+        String str2 = this.c;
+        boolean z10 = false;
+        try {
+            httpURLConnection = (HttpURLConnection) new URI(("https://translate.googleapis.com/translate_a/single?client=gtx&sl=" + Uri.encode(this.a) + "&tl=" + Uri.encode(this.b) + "&dt=t&ie=UTF-8&oe=UTF-8&otf=1&ssel=0&tsel=0&kc=7&dt=at&dt=bd&dt=ex&dt=ld&dt=md&dt=qca&dt=rw&dt=rm&dt=ss&q=") + str2).toURL().openConnection();
+        } catch (Exception e) {
+            e = e;
+            httpURLConnection = null;
         }
-    }
-
-    public final void b(float f7, float f10, boolean z10) {
-        this.e = f7;
-        this.f = f10;
-        this.d = z10;
-        RadialGradient radialGradient = this.c;
-        Paint paint = this.a;
-        if (radialGradient == null) {
-            RadialGradient radialGradient2 = new RadialGradient(0.0f, 0.0f, 100.0f, new int[]{-16777216, -16777216, 0}, new float[]{0.0f, 0.6f, 1.0f}, Shader.TileMode.CLAMP);
-            this.c = radialGradient2;
-            paint.setShader(radialGradient2);
-        }
-        paint.setXfermode(new PorterDuffXfermode(z10 ? PorterDuff.Mode.DST_OUT : PorterDuff.Mode.DST_IN));
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // android.widget.ImageView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        if (this.c == null) {
-            super.onDraw(canvas);
-            return;
-        }
-        if (this.h >= 1.0f || this.d) {
-            int saveLayer = canvas.saveLayer(0.0f, 0.0f, getWidth(), getHeight(), null);
-            super.onDraw(canvas);
-            bk0 bk0Var = this.n;
-            Drawable drawable = bk0Var != null ? bk0Var.getDrawable() : 0;
-            if (drawable != 0 && this.n.isAttachedToWindow()) {
-                this.n.getLocationInWindow(this.s);
-                getLocationInWindow(this.v);
-                ColorFilter colorFilter = drawable.getColorFilter();
-                canvas.save();
-                canvas.translate(this.n.getPaddingLeft() + (r4[0] - r3[0]), this.n.getPaddingTop() + (r4[1] - r3[1]));
-                canvas.concat(this.n.getImageMatrix());
-                drawable.setColorFilter(this.r);
-                drawable.draw(canvas);
-                drawable.setColorFilter(colorFilter);
-                canvas.restore();
-                if ((drawable instanceof Animatable) && ((Animatable) drawable).isRunning()) {
-                    invalidate();
+        try {
+            httpURLConnection.setRequestMethod("GET");
+            httpURLConnection.setRequestProperty("User-Agent", m31.O1[(int) Math.round(Math.random() * 5)]);
+            httpURLConnection.setRequestProperty("Content-Type", "application/json");
+            StringBuilder sb2 = new StringBuilder();
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(httpURLConnection.getInputStream(), d9.j.a));
+            while (true) {
+                try {
+                    int read = bufferedReader.read();
+                    if (read == -1) {
+                        break;
+                    } else {
+                        sb2.append((char) read);
+                    }
+                } finally {
                 }
             }
-            float f7 = this.h;
-            if (f7 >= 1.0f) {
-                float f10 = f7 / 100.0f;
-                Matrix matrix = this.b;
-                matrix.setScale(f10, f10);
-                matrix.postTranslate(this.e, this.f);
-                this.c.setLocalMatrix(matrix);
-                canvas.drawRect(0.0f, 0.0f, getWidth(), getHeight(), this.a);
+            bufferedReader.close();
+            JSONArray jSONArray = new JSONArray(new JSONTokener(sb2.toString()));
+            JSONArray jSONArray2 = jSONArray.getJSONArray(0);
+            try {
+                str = jSONArray.getString(2);
+            } catch (Exception unused) {
+                str = null;
             }
-            canvas.restoreToCount(saveLayer);
+            if (str != null && str.contains("-")) {
+                str.substring(0, str.indexOf("-"));
+            }
+            String str3 = "";
+            for (int i10 = 0; i10 < jSONArray2.length(); i10++) {
+                String string = jSONArray2.getJSONArray(i10).getString(0);
+                if (string != null && !string.equals("null")) {
+                    str3 = str3 + string;
+                }
+            }
+            if (str2.length() > 0 && str2.charAt(0) == '\n') {
+                str3 = "\n" + str3;
+            }
+            org.telegram.messenger.i0.g3(new b31(str3, 0, j20Var));
+        } catch (Exception e7) {
+            e = e7;
+            try {
+                StringBuilder sb3 = new StringBuilder();
+                sb3.append("failed to translate a text ");
+                sb3.append(httpURLConnection != null ? Integer.valueOf(httpURLConnection.getResponseCode()) : null);
+                sb3.append(" ");
+                sb3.append(httpURLConnection != null ? httpURLConnection.getResponseMessage() : null);
+                Log.e("translate", sb3.toString());
+            } catch (IOException e10) {
+                e10.printStackTrace();
+            }
+            e.printStackTrace();
+            if (httpURLConnection != null) {
+                try {
+                    if (httpURLConnection.getResponseCode() == 429) {
+                        z10 = true;
+                    }
+                } catch (Exception unused2) {
+                    org.telegram.messenger.i0.g3(new uo0(j20Var, 24));
+                    return;
+                }
+            }
+            org.telegram.messenger.i0.g3(new k2.v(24, j20Var, z10));
         }
-    }
-
-    public void setRadius(float f7) {
-        this.h = f7;
-        invalidate();
     }
 }

@@ -1,687 +1,538 @@
 package rf;
 
-import a8.lg;
-import android.net.Uri;
-import android.os.Trace;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.accessibility.AccessibilityManager;
-import androidx.recyclerview.widget.RecyclerView;
-import j$.util.DesugarCollections;
-import java.io.Serializable;
-import java.lang.ref.WeakReference;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import b2.r1;
+import bi.t6;
+import j$.util.Comparator$-CC;
+import j$.util.concurrent.ConcurrentHashMap;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.RandomAccessFile;
+import java.nio.ByteBuffer;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.WeakHashMap;
-import jg.s0;
-import r0.i0;
-import s4.b1;
-import s4.e1;
-import s4.h0;
-import s4.m0;
-import s4.p0;
-import s4.q0;
-import s4.v0;
-import s4.w0;
+import java.util.Collections;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicInteger;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.b8;
+import org.telegram.messenger.f8;
+import org.telegram.messenger.i0;
+import org.telegram.messenger.rr;
+import org.telegram.messenger.tz;
+import org.telegram.messenger.v2;
+import org.telegram.ui.Components.bi0;
+import org.telegram.ui.Components.ew;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class e {
-    public int a;
-    public int b;
-    public final Serializable c;
-    public Serializable d;
-    public Serializable e;
-    public Object f;
-    public Object g;
-    public Object h;
+    public static int A;
+    public static a5.a B;
+    public static boolean v;
+    public static volatile boolean x;
+    public static ThreadPoolExecutor z;
+    public final BitmapDrawable a;
+    public final int b;
+    public final int c;
+    public final AtomicInteger d = new AtomicInteger(0);
+    public final ArrayList e;
+    public final boolean f;
+    public byte[] g;
+    public final Object h;
+    public int i;
+    public boolean j;
+    public volatile boolean k;
+    public final int l;
+    public final File m;
+    public int n;
+    public final AtomicBoolean o;
+    public final ew p;
+    public volatile boolean q;
+    public volatile boolean r;
+    public RandomAccessFile s;
+    public BitmapFactory.Options t;
+    public Bitmap u;
+    public static final ConcurrentHashMap w = new ConcurrentHashMap();
+    public static final int y = Utilities.j(Runtime.getRuntime().availableProcessors() - 2, 6, 1);
 
-    public e(Uri uri, String str, String str2) {
-        this.c = str;
-        this.g = uri;
-        this.d = str2;
-    }
-
-    public void a(e1 e1Var, boolean z10) {
-        RecyclerView.m(e1Var);
-        if (e1Var.e(16384)) {
-            e1Var.p(0, 16384);
-            i0.k(e1Var.a, null);
+    /* JADX WARN: Multi-variable type inference failed */
+    public e(File file, c cVar, r1 r1Var, int i10, int i11, boolean z10, int i12) {
+        RandomAccessFile randomAccessFile;
+        ArrayList arrayList = new ArrayList();
+        this.e = arrayList;
+        this.h = new Object();
+        this.o = new AtomicBoolean(false);
+        this.p = new ew(this, 24);
+        this.a = (BitmapDrawable) cVar;
+        this.b = i10;
+        this.c = i11;
+        this.l = r1Var.a;
+        String name = file.getName();
+        if (z == null) {
+            int i13 = y;
+            z = new ThreadPoolExecutor(i13, i13, 60L, TimeUnit.SECONDS, new LinkedBlockingQueue());
         }
-        if (z10) {
-            RecyclerView recyclerView = (RecyclerView) this.h;
-            h0 h0Var = recyclerView.w;
-            if (h0Var != null) {
-                h0Var.A(e1Var);
-            }
-            if (recyclerView.u0 != null) {
-                recyclerView.f.z0(e1Var);
-            }
+        File file2 = new File(b8.j(4), "acache");
+        if (!v) {
+            file2.mkdir();
+            v = true;
         }
-        e1Var.t = null;
-        w0 c10 = c();
-        c10.getClass();
-        int i10 = e1Var.f;
-        ArrayList arrayList = c10.b(i10).a;
-        if (((v0) c10.a.get(i10)).b <= arrayList.size()) {
+        StringBuilder sb2 = new StringBuilder();
+        sb2.append(name);
+        sb2.append("_");
+        sb2.append(i10);
+        sb2.append("_");
+        sb2.append(i11);
+        sb2.append(z10 ? "_nolimit" : " ");
+        File file3 = new File(file2, a1.g.r(sb2, i12 != 0 ? i0.a.i(i12, "_fitz") : "", ".pcache2"));
+        this.m = file3;
+        this.f = i10 < i0.L(60.0f) && i11 < i0.L(60.0f);
+        if (tz.o() < 2) {
+            this.k = false;
+            this.q = false;
             return;
         }
-        e1Var.o();
-        arrayList.add(e1Var);
-    }
-
-    public int b(int i10) {
-        RecyclerView recyclerView = (RecyclerView) this.h;
-        if (i10 >= 0 && i10 < recyclerView.u0.b()) {
-            return !recyclerView.u0.g ? i10 : recyclerView.d.g(i10, 0);
-        }
-        StringBuilder k10 = ic.a.k(i10, "invalid position ", ". State item count is ");
-        k10.append(recyclerView.u0.b());
-        k10.append(recyclerView.C());
-        throw new IndexOutOfBoundsException(k10.toString());
-    }
-
-    public w0 c() {
-        if (((w0) this.g) == null) {
-            this.g = new w0();
-        }
-        return (w0) this.g;
-    }
-
-    public void d(h0 h0Var, h0 h0Var2) {
-        ((ArrayList) this.c).clear();
-        e();
-        w0 c10 = c();
-        if (h0Var != null) {
-            c10.b--;
-        }
-        if (c10.b == 0) {
-            c10.a();
-        }
-        if (h0Var2 != null) {
-            c10.b++;
-        } else {
-            c10.getClass();
-        }
-    }
-
-    public void e() {
-        ArrayList arrayList = (ArrayList) this.e;
-        for (int size = arrayList.size() - 1; size >= 0; size--) {
-            f(size);
-        }
-        arrayList.clear();
-        int[] iArr = RecyclerView.Q0;
-        e2.f fVar = ((RecyclerView) this.h).t0;
-        int[] iArr2 = (int[]) fVar.c;
-        if (iArr2 != null) {
-            Arrays.fill(iArr2, -1);
-        }
-        fVar.d = 0;
-    }
-
-    public void f(int i10) {
-        ArrayList arrayList = (ArrayList) this.e;
-        a((e1) arrayList.get(i10), true);
-        arrayList.remove(i10);
-    }
-
-    public void g(View view) {
-        RecyclerView recyclerView = (RecyclerView) this.h;
-        e1 U = RecyclerView.U(view);
-        if (U.l()) {
-            recyclerView.removeDetachedView(view, false);
-        }
-        if (U.k()) {
-            U.p.k(U);
-        } else if (U.s()) {
-            U.l &= -33;
-        }
-        h(U);
-        if (recyclerView.c0 == null || U.i()) {
-            return;
-        }
-        recyclerView.c0.f(U);
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:45:0x009a, code lost:
-    
-        r4 = r4 - 1;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x003f  */
-    /* JADX WARN: Removed duplicated region for block: B:66:0x00b0  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public void h(e1 e1Var) {
-        boolean z10;
-        boolean z11;
-        ArrayList arrayList = (ArrayList) this.e;
-        RecyclerView recyclerView = (RecyclerView) this.h;
-        e2.f fVar = recyclerView.t0;
-        boolean k10 = e1Var.k();
-        View view = e1Var.a;
-        boolean z12 = true;
-        if (k10 || view.getParent() != null) {
-            StringBuilder sb2 = new StringBuilder("Scrapped or attached views may not be recycled. isScrap:");
-            sb2.append(e1Var.k());
-            sb2.append(" isAttached:");
-            sb2.append(view.getParent() != null);
-            sb2.append(recyclerView.C());
-            throw new IllegalArgumentException(sb2.toString());
-        }
-        if (e1Var.l()) {
-            throw new IllegalArgumentException("Tmp detached view should be removed from RecyclerView before it can be recycled: " + e1Var + recyclerView.C());
-        }
-        if (e1Var.r()) {
-            throw new IllegalArgumentException("Trying to recycle an ignored view holder. You should first call stopIgnoringView(view) before calling recycle." + recyclerView.C());
-        }
-        if ((e1Var.l & 16) == 0) {
-            WeakHashMap weakHashMap = i0.a;
-            if (view.hasTransientState()) {
-                z10 = true;
-                if (e1Var.i()) {
-                    z12 = false;
-                } else {
-                    if (this.b <= 0 || e1Var.e(526)) {
-                        z11 = false;
-                    } else {
-                        int size = arrayList.size();
-                        if (size >= this.b && size > 0) {
-                            f(0);
-                            size--;
-                        }
-                        int[] iArr = RecyclerView.Q0;
-                        if (size > 0) {
-                            int i10 = e1Var.c;
-                            if (((int[]) fVar.c) != null) {
-                                int i11 = fVar.d * 2;
-                                for (int i12 = 0; i12 < i11; i12 += 2) {
-                                    if (((int[]) fVar.c)[i12] == i10) {
-                                        break;
-                                    }
-                                }
-                            }
-                            int i13 = size - 1;
-                            loop1: while (i13 >= 0) {
-                                int i14 = ((e1) arrayList.get(i13)).c;
-                                if (((int[]) fVar.c) == null) {
-                                    break;
-                                }
-                                int i15 = fVar.d * 2;
-                                for (int i16 = 0; i16 < i15; i16 += 2) {
-                                    if (((int[]) fVar.c)[i16] == i14) {
-                                        break;
-                                    }
-                                }
-                                break loop1;
-                            }
-                            size = i13 + 1;
-                        }
-                        arrayList.add(size, e1Var);
-                        z11 = true;
-                    }
-                    if (z11) {
-                        z12 = false;
-                    } else {
-                        a(e1Var, true);
-                    }
-                    r5 = z11;
-                }
-                recyclerView.f.z0(e1Var);
-                if (r5 && !z12 && z10) {
-                    e1Var.t = null;
-                    return;
-                }
+        this.k = file3.exists();
+        try {
+            if (!this.k) {
                 return;
             }
-        }
-        z10 = false;
-        if (e1Var.i()) {
-        }
-        recyclerView.f.z0(e1Var);
-        if (r5) {
-        }
-    }
-
-    public void i(View view) {
-        m0 m0Var;
-        RecyclerView recyclerView = (RecyclerView) this.h;
-        e1 U = RecyclerView.U(view);
-        if (!U.e(12) && U.m() && (m0Var = recyclerView.c0) != null && !m0Var.c(U, U.d())) {
-            if (((ArrayList) this.d) == null) {
-                this.d = new ArrayList();
+            try {
+                randomAccessFile = new RandomAccessFile(file3, "r");
+                try {
+                    this.q = randomAccessFile.readBoolean();
+                    if (this.q && arrayList.isEmpty()) {
+                        randomAccessFile.seek(randomAccessFile.readInt());
+                        int readInt = randomAccessFile.readInt();
+                        d(randomAccessFile, readInt > 10000 ? 0 : readInt);
+                        if (arrayList.size() == 0) {
+                            this.q = false;
+                            this.k = false;
+                            file3.delete();
+                        } else {
+                            if (this.s != randomAccessFile) {
+                                a();
+                            }
+                            this.s = randomAccessFile;
+                        }
+                    }
+                    if (this.s != randomAccessFile) {
+                        randomAccessFile.close();
+                    }
+                } catch (Throwable th2) {
+                    th = th2;
+                    try {
+                        th.printStackTrace();
+                        this.m.delete();
+                        this.k = false;
+                        if (this.s == randomAccessFile || randomAccessFile == null) {
+                            return;
+                        }
+                        randomAccessFile.close();
+                    } finally {
+                    }
+                }
+            } catch (Throwable th3) {
+                th = th3;
+                randomAccessFile = null;
             }
-            U.p = this;
-            U.q = true;
-            ((ArrayList) this.d).add(U);
-            return;
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        if (U.h() && !U.j() && !recyclerView.w.b) {
-            throw new IllegalArgumentException("Called scrap view with an invalid view. Invalid views cannot be reused from scrap, they should rebound from recycler pool." + recyclerView.C());
-        }
-        U.p = this;
-        U.q = false;
-        ((ArrayList) this.c).add(U);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:242:0x041b, code lost:
+    public static void c() {
+        int i10 = A - 1;
+        A = i10;
+        if (i10 <= 0) {
+            A = 0;
+            bi0.T0.postRunnable(new r5.a(1));
+        }
+    }
+
+    public final void a() {
+        RandomAccessFile randomAccessFile = this.s;
+        if (randomAccessFile != null) {
+            try {
+                randomAccessFile.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:108:0x006f, code lost:
     
-        if (r12.h() == false) goto L230;
+        if (r16.s != r0) goto L107;
      */
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:223:0x050c  */
-    /* JADX WARN: Removed duplicated region for block: B:226:0x052c A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:231:0x0516  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x00f3 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x00ef A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x01b8 A[Catch: all -> 0x0057, IOException -> 0x005a, FileNotFoundException -> 0x005d, TRY_LEAVE, TryCatch #12 {FileNotFoundException -> 0x005d, IOException -> 0x005a, blocks: (B:3:0x0002, B:97:0x004a, B:107:0x006d, B:116:0x007b, B:6:0x0082, B:8:0x008f, B:9:0x0098, B:10:0x00c8, B:79:0x00cc, B:12:0x00d4, B:14:0x00dc, B:16:0x00e4, B:52:0x00ef, B:28:0x00f6, B:30:0x00fa, B:33:0x00fe, B:36:0x0106, B:38:0x0103, B:42:0x0109, B:43:0x012b, B:45:0x0131, B:47:0x014e, B:20:0x0189, B:23:0x01a3, B:56:0x01aa, B:57:0x01b4, B:59:0x01b8, B:71:0x01bc, B:61:0x01c4, B:74:0x01c1, B:76:0x01ce, B:82:0x00d1), top: B:2:0x0002, outer: #9 }] */
+    /* JADX WARN: Removed duplicated region for block: B:78:0x00cc A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x008f A[Catch: all -> 0x0057, IOException -> 0x005a, FileNotFoundException -> 0x005d, TryCatch #12 {FileNotFoundException -> 0x005d, IOException -> 0x005a, blocks: (B:3:0x0002, B:97:0x004a, B:107:0x006d, B:116:0x007b, B:6:0x0082, B:8:0x008f, B:9:0x0098, B:10:0x00c8, B:79:0x00cc, B:12:0x00d4, B:14:0x00dc, B:16:0x00e4, B:52:0x00ef, B:28:0x00f6, B:30:0x00fa, B:33:0x00fe, B:36:0x0106, B:38:0x0103, B:42:0x0109, B:43:0x012b, B:45:0x0131, B:47:0x014e, B:20:0x0189, B:23:0x01a3, B:56:0x01aa, B:57:0x01b4, B:59:0x01b8, B:71:0x01bc, B:61:0x01c4, B:74:0x01c1, B:76:0x01ce, B:82:0x00d1), top: B:2:0x0002, outer: #9 }] */
+    /* JADX WARN: Type inference failed for: r0v16, types: [android.graphics.drawable.BitmapDrawable, rf.c] */
+    /* JADX WARN: Type inference failed for: r0v24, types: [android.graphics.drawable.BitmapDrawable, rf.c] */
+    /* JADX WARN: Type inference failed for: r0v29, types: [android.graphics.drawable.BitmapDrawable, rf.c] */
+    /* JADX WARN: Type inference failed for: r0v3, types: [android.graphics.drawable.BitmapDrawable, rf.c] */
+    /* JADX WARN: Type inference failed for: r2v0, types: [android.graphics.drawable.BitmapDrawable, rf.c] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public e1 j(int i10, long j10) {
+    public final void b() {
+        int i10;
+        RandomAccessFile randomAccessFile;
+        Bitmap[] bitmapArr;
+        CountDownLatch[] countDownLatchArr;
         int i11;
-        int i12;
-        e1 e1Var;
-        r0.b bVar;
-        long j11;
-        long j12;
-        boolean z10;
-        int i13;
-        int i14;
-        ViewGroup.LayoutParams layoutParams;
-        q0 q0Var;
-        e1 e1Var2;
-        char c10;
-        View view;
-        e1 e1Var3;
-        int i15;
-        int size;
-        int g7;
-        ArrayList arrayList = (ArrayList) this.c;
-        ArrayList arrayList2 = (ArrayList) this.e;
-        RecyclerView recyclerView = (RecyclerView) this.h;
-        b1 b1Var = recyclerView.u0;
-        if (i10 < 0 || i10 >= b1Var.b()) {
-            StringBuilder n10 = c3.h0.n("Invalid item position ", i10, "(", i10, "). Item count:");
-            n10.append(b1Var.b());
-            n10.append(recyclerView.C());
-            throw new IndexOutOfBoundsException(n10.toString());
+        CountDownLatch countDownLatch;
+        int a2;
+        try {
+            try {
+            } finally {
+                this.a.c();
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e7) {
+            e7.printStackTrace();
         }
-        if (b1Var.g) {
-            ArrayList arrayList3 = (ArrayList) this.d;
-            if (arrayList3 != null && (size = arrayList3.size()) != 0) {
-                int i16 = 0;
-                while (true) {
-                    if (i16 < size) {
-                        e1Var = (e1) ((ArrayList) this.d).get(i16);
-                        if (!e1Var.s() && e1Var.c() == i10) {
-                            e1Var.a(32);
-                            i11 = 1;
-                            break;
-                        }
-                        i16++;
-                    } else if (recyclerView.w.b && (g7 = recyclerView.d.g(i10, 0)) > 0 && g7 < recyclerView.w.h()) {
-                        long i17 = recyclerView.w.i(g7);
-                        for (int i18 = 0; i18 < size; i18++) {
-                            e1 e1Var4 = (e1) ((ArrayList) this.d).get(i18);
-                            i11 = 1;
-                            if (!e1Var4.s() && e1Var4.e == i17) {
-                                e1Var4.a(32);
-                                e1Var = e1Var4;
-                                break;
-                            }
-                        }
+        if (this.m.exists()) {
+            try {
+                randomAccessFile = new RandomAccessFile(this.m, "r");
+            } catch (Throwable unused) {
+                randomAccessFile = null;
+            }
+            try {
+                this.q = randomAccessFile.readBoolean();
+            } catch (Throwable unused2) {
+                try {
+                    this.m.delete();
+                } catch (Throwable unused3) {
+                }
+                if (this.s != randomAccessFile && randomAccessFile != null) {
+                    try {
+                        randomAccessFile.close();
+                    } catch (Throwable unused4) {
                     }
                 }
-            }
-            i11 = 1;
-            e1Var = null;
-            i12 = e1Var != null ? i11 : 0;
-        } else {
-            i11 = 1;
-            i12 = 0;
-            e1Var = null;
-        }
-        if (e1Var == null) {
-            int size2 = arrayList.size();
-            for (int i19 = 0; i19 < size2; i19++) {
-                e1Var3 = (e1) arrayList.get(i19);
-                if (!e1Var3.s() && e1Var3.c() == i10 && !e1Var3.h() && (b1Var.g || !e1Var3.j())) {
-                    e1Var3.a(32);
-                    break;
+                RandomAccessFile randomAccessFile2 = new RandomAccessFile(this.m, "rw");
+                if (B == null) {
                 }
-            }
-            ArrayList arrayList4 = (ArrayList) recyclerView.e.d;
-            int size3 = arrayList4.size();
-            int i20 = 0;
-            while (true) {
-                if (i20 >= size3) {
-                    view = null;
-                    break;
-                }
-                view = (View) arrayList4.get(i20);
-                e1 U = RecyclerView.U(view);
-                if (U.c() == i10 && !U.h() && !U.j()) {
-                    break;
-                }
-                i20++;
-            }
-            if (view == null) {
-                int size4 = arrayList2.size();
-                int i21 = 0;
+                B.a(this.c, this.b);
+                a5.a aVar = B;
+                bitmapArr = (Bitmap[]) aVar.d;
+                x[] xVarArr = (x[]) aVar.c;
+                countDownLatchArr = new CountDownLatch[y];
+                ArrayList arrayList = new ArrayList();
+                randomAccessFile2.writeBoolean(false);
+                randomAccessFile2.writeInt(0);
+                AtomicBoolean atomicBoolean = new AtomicBoolean(false);
+                this.a.b();
+                i11 = 0;
+                int i12 = 0;
                 while (true) {
-                    if (i21 >= size4) {
-                        e1Var3 = null;
+                    countDownLatch = countDownLatchArr[i11];
+                    if (countDownLatch != null) {
+                    }
+                    if (!this.o.get()) {
                         break;
                     }
-                    e1Var3 = (e1) arrayList2.get(i21);
-                    if (!e1Var3.h() && e1Var3.c() == i10 && !e1Var3.f()) {
-                        arrayList2.remove(i21);
-                        break;
+                    a2 = this.a.a(bitmapArr[i11]);
+                    if (a2 != -1) {
                     }
-                    i21++;
                 }
-            } else {
-                e1 U2 = RecyclerView.U(view);
-                s4.d dVar = recyclerView.e;
-                lg lgVar = (lg) dVar.c;
-                int indexOfChild = ((RecyclerView) ((s0) dVar.b).b).indexOfChild(view);
-                if (indexOfChild < 0) {
-                    throw new IllegalArgumentException("view is not a child, cannot hide " + view);
+                boolean z10 = v2.a;
+                f8.b("cancelled cache generation");
+                atomicBoolean.set(true);
+                while (i10 < y) {
                 }
-                if (!lgVar.B(indexOfChild)) {
-                    throw new RuntimeException("trying to unhide a view that was not hidden" + view);
-                }
-                lgVar.x(indexOfChild);
-                dVar.u(view);
-                s4.d dVar2 = recyclerView.e;
-                lg lgVar2 = (lg) dVar2.c;
-                int indexOfChild2 = ((RecyclerView) ((s0) dVar2.b).b).indexOfChild(view);
-                int y3 = (indexOfChild2 == -1 || lgVar2.B(indexOfChild2)) ? -1 : indexOfChild2 - lgVar2.y(indexOfChild2);
-                if (y3 == -1) {
-                    throw new IllegalStateException("layout index should not be -1 after unhiding a view:" + U2 + recyclerView.C());
-                }
-                recyclerView.e.i(y3);
-                i(view);
-                U2.a(8224);
-                e1Var3 = U2;
+                randomAccessFile2.close();
+                this.a.c();
             }
-            if (e1Var3 != null) {
-                if (e1Var3.j()) {
-                    i15 = b1Var.g;
-                } else {
-                    int i22 = e1Var3.c;
-                    if (i22 < 0 || i22 >= recyclerView.w.h()) {
-                        throw new IndexOutOfBoundsException("Inconsistency detected. Invalid view holder adapter position" + e1Var3 + recyclerView.C());
+            if (this.q) {
+                this.e.clear();
+                randomAccessFile.seek(randomAccessFile.readInt());
+                int readInt = randomAccessFile.readInt();
+                if (readInt > 10000) {
+                    readInt = 0;
+                }
+                if (readInt > 0) {
+                    d(randomAccessFile, readInt);
+                    randomAccessFile.seek(0L);
+                    if (this.s != randomAccessFile) {
+                        a();
                     }
-                    if (b1Var.g || recyclerView.w.j(e1Var3.c) == e1Var3.f) {
-                        h0 h0Var = recyclerView.w;
-                        if (!h0Var.b || e1Var3.e == h0Var.i(e1Var3.c)) {
-                            i15 = i11;
+                    this.s = randomAccessFile;
+                    this.k = true;
+                    if (this.s != randomAccessFile) {
+                        try {
+                            randomAccessFile.close();
+                        } catch (Throwable unused5) {
                         }
                     }
-                    i15 = 0;
                 }
-                if (i15 == 0) {
-                    e1Var3.a(4);
-                    if (e1Var3.k()) {
-                        recyclerView.removeDetachedView(e1Var3.a, false);
-                        e1Var3.p.k(e1Var3);
-                    } else if (e1Var3.s()) {
-                        e1Var3.l &= -33;
-                    }
-                    h(e1Var3);
-                    e1Var = null;
-                } else {
-                    e1Var = e1Var3;
-                    i12 = i11;
-                }
-            } else {
-                e1Var = e1Var3;
+                this.k = false;
+                this.q = false;
+            }
+            if (!this.q) {
+                this.m.delete();
             }
         }
-        if (e1Var == null) {
-            j11 = 3;
-            int g10 = recyclerView.d.g(i10, 0);
-            if (g10 < 0 || g10 >= recyclerView.w.h()) {
-                StringBuilder n11 = c3.h0.n("Inconsistency detected. Invalid item position ", i10, "(offset:", g10, ").state:");
-                n11.append(b1Var.b());
-                n11.append(recyclerView.C());
-                throw new IndexOutOfBoundsException(n11.toString());
+        RandomAccessFile randomAccessFile22 = new RandomAccessFile(this.m, "rw");
+        if (B == null) {
+            B = new a5.a(19, (byte) 0);
+        }
+        B.a(this.c, this.b);
+        a5.a aVar2 = B;
+        bitmapArr = (Bitmap[]) aVar2.d;
+        x[] xVarArr2 = (x[]) aVar2.c;
+        countDownLatchArr = new CountDownLatch[y];
+        ArrayList arrayList2 = new ArrayList();
+        randomAccessFile22.writeBoolean(false);
+        randomAccessFile22.writeInt(0);
+        AtomicBoolean atomicBoolean2 = new AtomicBoolean(false);
+        this.a.b();
+        i11 = 0;
+        int i122 = 0;
+        while (true) {
+            countDownLatch = countDownLatchArr[i11];
+            if (countDownLatch != null) {
+                try {
+                    countDownLatch.await();
+                } catch (InterruptedException e10) {
+                    e10.printStackTrace();
+                }
             }
-            int j13 = recyclerView.w.j(g10);
-            j12 = 4;
-            h0 h0Var2 = recyclerView.w;
-            if (h0Var2.b) {
-                long i23 = h0Var2.i(g10);
-                int size5 = arrayList.size() - 1;
-                while (true) {
-                    if (size5 >= 0) {
-                        e1 e1Var5 = (e1) arrayList.get(size5);
-                        long j14 = e1Var5.e;
-                        View view2 = e1Var5.a;
-                        if (j14 != i23 || e1Var5.s()) {
-                            c10 = ' ';
-                        } else if (j13 == e1Var5.f) {
-                            e1Var5.a(32);
-                            if (e1Var5.j() && !b1Var.g) {
-                                e1Var5.p(2, 14);
-                            }
-                            e1Var = e1Var5;
-                        } else {
-                            c10 = ' ';
-                            arrayList.remove(size5);
-                            recyclerView.removeDetachedView(view2, false);
-                            e1 U3 = RecyclerView.U(view2);
-                            U3.p = null;
-                            U3.q = false;
-                            U3.l &= -33;
-                            h(U3);
+            if (!this.o.get() || atomicBoolean2.get()) {
+                break;
+                break;
+            }
+            a2 = this.a.a(bitmapArr[i11]);
+            if (a2 != -1) {
+                atomicBoolean2.set(true);
+            } else if (a2 != 1) {
+                for (int i13 = 0; i13 < y; i13++) {
+                    CountDownLatch countDownLatch2 = countDownLatchArr[i13];
+                    if (countDownLatch2 != null) {
+                        try {
+                            countDownLatch2.await();
+                        } catch (InterruptedException e11) {
+                            e11.printStackTrace();
                         }
-                        size5--;
-                    } else {
-                        int size6 = arrayList2.size() - 1;
-                        while (true) {
-                            if (size6 < 0) {
-                                break;
+                    }
+                }
+                int length = (int) randomAccessFile22.length();
+                Collections.sort(arrayList2, Comparator$-CC.comparingInt(new t6(13)));
+                xVarArr2[0].b();
+                int size = arrayList2.size();
+                xVarArr2[0].c(size);
+                for (int i14 = 0; i14 < arrayList2.size(); i14++) {
+                    xVarArr2[0].c(((d) arrayList2.get(i14)).c);
+                    xVarArr2[0].c(((d) arrayList2.get(i14)).b);
+                }
+                randomAccessFile22.write(xVarArr2[0].a, 0, (size * 8) + 4);
+                xVarArr2[0].b();
+                randomAccessFile22.seek(0L);
+                randomAccessFile22.writeBoolean(true);
+                randomAccessFile22.writeInt(length);
+                atomicBoolean2.set(true);
+                randomAccessFile22.close();
+                this.e.clear();
+                this.e.addAll(arrayList2);
+                a();
+                this.s = new RandomAccessFile(this.m, "r");
+                this.q = true;
+                this.k = true;
+            } else {
+                countDownLatchArr[i11] = new CountDownLatch(1);
+                z.execute(new rr(this, atomicBoolean2, bitmapArr, i11, xVarArr2, i122, randomAccessFile22, arrayList2, countDownLatchArr));
+                i11++;
+                i122++;
+                if (i11 >= y) {
+                    i11 = 0;
+                }
+                this.d.set(i122);
+            }
+        }
+        boolean z102 = v2.a;
+        f8.b("cancelled cache generation");
+        atomicBoolean2.set(true);
+        for (i10 = 0; i10 < y; i10++) {
+            CountDownLatch countDownLatch3 = countDownLatchArr[i10];
+            if (countDownLatch3 != null) {
+                try {
+                    countDownLatch3.await();
+                } catch (InterruptedException e12) {
+                    e12.printStackTrace();
+                }
+            }
+            Bitmap bitmap = bitmapArr[i10];
+            if (bitmap != null) {
+                try {
+                    bitmap.recycle();
+                } catch (Exception unused6) {
+                }
+            }
+        }
+        randomAccessFile22.close();
+        this.a.c();
+    }
+
+    public final void d(RandomAccessFile randomAccessFile, int i10) {
+        if (i10 == 0) {
+            return;
+        }
+        byte[] bArr = new byte[i10 * 8];
+        randomAccessFile.read(bArr);
+        ByteBuffer wrap = ByteBuffer.wrap(bArr);
+        for (int i11 = 0; i11 < i10; i11++) {
+            d dVar = new d(i11);
+            dVar.c = wrap.getInt();
+            dVar.b = wrap.getInt();
+            this.e.add(dVar);
+        }
+    }
+
+    public final byte[] e(d dVar) {
+        boolean z10 = this.f && Thread.currentThread().getName().startsWith("DispatchQueuePoolThreadSafety_");
+        byte[] bArr = z10 ? (byte[]) w.get(Thread.currentThread()) : this.g;
+        if (bArr != null && bArr.length >= dVar.b) {
+            return bArr;
+        }
+        byte[] bArr2 = new byte[(int) (dVar.b * 1.3f)];
+        if (!z10) {
+            this.g = bArr2;
+            return bArr2;
+        }
+        w.put(Thread.currentThread(), bArr2);
+        if (!x) {
+            x = true;
+            i0.h3(this.p, 5000L);
+        }
+        return bArr2;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:53:0x011a A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x0112  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final int f(Bitmap bitmap, int i10) {
+        RandomAccessFile randomAccessFile;
+        int i11;
+        if (!this.j) {
+            RandomAccessFile randomAccessFile2 = null;
+            try {
+                if (this.q || this.k) {
+                    if (!this.q || (randomAccessFile = this.s) == null) {
+                        randomAccessFile = new RandomAccessFile(this.m, "r");
+                        try {
+                            this.q = randomAccessFile.readBoolean();
+                            if (this.q && this.e.isEmpty()) {
+                                randomAccessFile.seek(randomAccessFile.readInt());
+                                d(randomAccessFile, randomAccessFile.readInt());
                             }
-                            e1 e1Var6 = (e1) arrayList2.get(size6);
-                            if (e1Var6.e != i23 || e1Var6.f()) {
-                                size6--;
-                            } else if (j13 == e1Var6.f) {
-                                arrayList2.remove(size6);
-                                e1Var = e1Var6;
+                            if (this.e.size() == 0) {
+                                this.q = false;
+                            }
+                            if (!this.q) {
+                                randomAccessFile.close();
+                                return -1;
+                            }
+                        } catch (FileNotFoundException unused) {
+                            if (this.j) {
+                            }
+                            return -1;
+                        } catch (Throwable th2) {
+                            th = th2;
+                            f8.g(th, false);
+                            i11 = this.n + 1;
+                            this.n = i11;
+                            if (i11 > 10) {
+                            }
+                            if (this.j) {
+                            }
+                            return -1;
+                        }
+                    }
+                    try {
+                        if (this.e.size() != 0) {
+                            d dVar = (d) this.e.get(Utilities.j(i10, this.e.size() - 1, 0));
+                            randomAccessFile.seek(dVar.c);
+                            byte[] e = e(dVar);
+                            randomAccessFile.readFully(e, 0, dVar.b);
+                            if (this.r) {
+                                this.s = null;
+                                randomAccessFile.close();
                             } else {
-                                f(size6);
+                                if (this.s != randomAccessFile) {
+                                    a();
+                                }
+                                this.s = randomAccessFile;
+                            }
+                            if (this.t == null) {
+                                this.t = new BitmapFactory.Options();
+                            }
+                            boolean z10 = bitmap.getConfig() == Bitmap.Config.ALPHA_8;
+                            if (z10) {
+                                Bitmap bitmap2 = this.u;
+                                if (bitmap2 == null || bitmap2.getWidth() != bitmap.getWidth() || this.u.getHeight() != bitmap.getHeight()) {
+                                    this.u = Bitmap.createBitmap(bitmap.getWidth(), bitmap.getHeight(), Bitmap.Config.ARGB_8888);
+                                }
+                                this.t.inBitmap = this.u;
+                            } else {
+                                this.t.inBitmap = bitmap;
+                            }
+                            BitmapFactory.decodeByteArray(e, 0, dVar.b, this.t);
+                            if (z10) {
+                                Utilities.extractAlpha(this.u, bitmap);
+                            }
+                            this.t.inBitmap = null;
+                            return 0;
+                        }
+                    } catch (FileNotFoundException unused2) {
+                        randomAccessFile2 = randomAccessFile;
+                        randomAccessFile = randomAccessFile2;
+                        if (this.j && randomAccessFile != null) {
+                            try {
+                                randomAccessFile.close();
+                            } catch (IOException e7) {
+                                e7.printStackTrace();
                             }
                         }
-                        e1Var = null;
-                    }
-                }
-                if (e1Var != null) {
-                    e1Var.c = g10;
-                    i12 = i11;
-                }
-            }
-            if (e1Var == null) {
-                v0 v0Var = (v0) c().a.get(j13);
-                if (v0Var != null) {
-                    ArrayList arrayList5 = v0Var.a;
-                    if (!arrayList5.isEmpty()) {
-                        for (int size7 = arrayList5.size() - 1; size7 >= 0; size7--) {
-                            if (!((e1) arrayList5.get(size7)).f()) {
-                                e1Var2 = (e1) arrayList5.remove(size7);
-                                break;
-                            }
+                        return -1;
+                    } catch (Throwable th3) {
+                        th = th3;
+                        randomAccessFile2 = randomAccessFile;
+                        randomAccessFile = randomAccessFile2;
+                        f8.g(th, false);
+                        i11 = this.n + 1;
+                        this.n = i11;
+                        if (i11 > 10) {
+                            this.j = true;
                         }
+                        if (this.j) {
+                            randomAccessFile.close();
+                        }
+                        return -1;
                     }
                 }
-                e1Var2 = null;
-                if (e1Var2 != null) {
-                    e1Var2.o();
-                    int[] iArr = RecyclerView.Q0;
-                }
-                e1Var = e1Var2;
-            }
-            if (e1Var == null) {
-                long nanoTime = recyclerView.getNanoTime();
-                if (j10 != Long.MAX_VALUE) {
-                    long j15 = ((w0) this.g).b(j13).c;
-                    if (((j15 == 0 || j15 + nanoTime < j10) ? i11 : 0) == 0) {
-                        return null;
-                    }
-                }
-                bVar = null;
-                e1Var = recyclerView.w.g(recyclerView, j13);
-                int[] iArr2 = RecyclerView.Q0;
-                RecyclerView J = RecyclerView.J(e1Var.a);
-                if (J != null) {
-                    e1Var.b = new WeakReference(J);
-                }
-                long nanoTime2 = recyclerView.getNanoTime() - nanoTime;
-                v0 b10 = ((w0) this.g).b(j13);
-                long j16 = b10.c;
-                if (j16 != 0) {
-                    nanoTime2 = (nanoTime2 / 4) + ((j16 / 4) * 3);
-                }
-                b10.c = nanoTime2;
-            } else {
-                bVar = null;
-            }
-        } else {
-            bVar = null;
-            j11 = 3;
-            j12 = 4;
-        }
-        View view3 = e1Var.a;
-        if (i12 != 0 && !b1Var.g && e1Var.e(8192)) {
-            e1Var.p(0, 8192);
-            if (b1Var.j) {
-                recyclerView.o0(e1Var, recyclerView.c0.l(b1Var, e1Var, m0.b(e1Var) | 4096, e1Var.d()));
+            } catch (FileNotFoundException unused3) {
+            } catch (Throwable th4) {
+                th = th4;
             }
         }
-        if (!b1Var.g || !e1Var.g()) {
-            if (e1Var.g()) {
-                if (((e1Var.l & 2) != 0 ? i11 : 0) == 0) {
-                }
-            }
-            z10 = false;
-            int g11 = recyclerView.d.g(i10, 0);
-            e1Var.t = recyclerView;
-            int i24 = e1Var.f;
-            long nanoTime3 = recyclerView.getNanoTime();
-            if (j10 != Long.MAX_VALUE) {
-                long j17 = ((w0) this.g).b(i24).d;
-                if (j17 != 0 && j17 + nanoTime3 >= j10) {
-                    i14 = 0;
-                    i13 = i11;
-                    layoutParams = view3.getLayoutParams();
-                    if (layoutParams == null) {
-                        q0Var = (q0) recyclerView.generateDefaultLayoutParams();
-                        view3.setLayoutParams(q0Var);
-                    } else if (recyclerView.checkLayoutParams(layoutParams)) {
-                        q0Var = (q0) layoutParams;
-                    } else {
-                        q0Var = (q0) recyclerView.generateLayoutParams(layoutParams);
-                        view3.setLayoutParams(q0Var);
-                    }
-                    q0Var.a = e1Var;
-                    q0Var.d = (i12 != 0 || i14 == 0) ? z10 : i13;
-                    return e1Var;
-                }
-            }
-            h0 h0Var3 = recyclerView.w;
-            h0Var3.getClass();
-            e1Var.c = g11;
-            if (h0Var3.b) {
-                e1Var.e = h0Var3.i(g11);
-            }
-            e1Var.p(i11, 519);
-            int i25 = n0.g.a;
-            Trace.beginSection("RV OnBindView");
-            h0Var3.w(e1Var, g11, e1Var.d());
-            ArrayList arrayList6 = e1Var.m;
-            if (arrayList6 != null) {
-                arrayList6.clear();
-            }
-            e1Var.l &= -1025;
-            ViewGroup.LayoutParams layoutParams2 = view3.getLayoutParams();
-            if (layoutParams2 instanceof q0) {
-                ((q0) layoutParams2).c = true;
-            }
-            Trace.endSection();
-            long nanoTime4 = recyclerView.getNanoTime() - nanoTime3;
-            v0 b11 = ((w0) this.g).b(e1Var.f);
-            long j18 = b11.d;
-            if (j18 != 0) {
-                nanoTime4 = (nanoTime4 / j12) + ((j18 / j12) * j11);
-            }
-            b11.d = nanoTime4;
-            AccessibilityManager accessibilityManager = recyclerView.O;
-            if (accessibilityManager != null && accessibilityManager.isEnabled()) {
-                WeakHashMap weakHashMap = i0.a;
-                i13 = 1;
-                if (view3.getImportantForAccessibility() == 0) {
-                    view3.setImportantForAccessibility(1);
-                }
-                View.AccessibilityDelegate d = i0.d(view3);
-                r0.b bVar2 = d == null ? bVar : d instanceof r0.a ? ((r0.a) d).a : new r0.b(d);
-                if (bVar2 == null || bVar2.getClass().equals(r0.b.class)) {
-                    e1Var.a(16384);
-                    i0.k(view3, recyclerView.B0.e);
-                }
-            } else {
-                i13 = 1;
-            }
-            if (b1Var.g) {
-                e1Var.g = i10;
-            }
-            i14 = i13;
-            layoutParams = view3.getLayoutParams();
-            if (layoutParams == null) {
-            }
-            q0Var.a = e1Var;
-            q0Var.d = (i12 != 0 || i14 == 0) ? z10 : i13;
-            return e1Var;
-        }
-        e1Var.g = i10;
-        i13 = i11;
-        i14 = 0;
-        z10 = false;
-        layoutParams = view3.getLayoutParams();
-        if (layoutParams == null) {
-        }
-        q0Var.a = e1Var;
-        q0Var.d = (i12 != 0 || i14 == 0) ? z10 : i13;
-        return e1Var;
+        return -1;
     }
 
-    public void k(e1 e1Var) {
-        if (e1Var.q) {
-            ((ArrayList) this.d).remove(e1Var);
-        } else {
-            ((ArrayList) this.c).remove(e1Var);
-        }
-        e1Var.p = null;
-        e1Var.q = false;
-        e1Var.l &= -33;
-    }
-
-    public void l() {
-        ArrayList arrayList = (ArrayList) this.e;
-        p0 p0Var = ((RecyclerView) this.h).x;
-        this.b = this.a + (p0Var != null ? p0Var.i : 0);
-        for (int size = arrayList.size() - 1; size >= 0 && arrayList.size() > this.b; size--) {
-            f(size);
-        }
-    }
-
-    public e(RecyclerView recyclerView) {
-        this.h = recyclerView;
-        ArrayList arrayList = new ArrayList();
-        this.c = arrayList;
-        this.d = null;
-        this.e = new ArrayList();
-        this.f = DesugarCollections.unmodifiableList(arrayList);
-        this.a = 2;
-        this.b = 2;
+    public final boolean g() {
+        return (this.q && this.k) ? false : true;
     }
 }

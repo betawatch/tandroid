@@ -1,27 +1,55 @@
 package org.telegram.ui;
 
-import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
-import org.telegram.messenger.AndroidUtilities;
+import android.animation.ValueAnimator;
+import java.util.HashSet;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class p40 implements ViewTreeObserver.OnPreDrawListener {
-    public final /* synthetic */ x50 a;
+public final class p40 extends s4.j {
+    public float F;
+    public ValueAnimator G;
+    public final HashSet H = new HashSet();
+    public final HashSet I = new HashSet();
+    public float J;
+    public float K;
+    public final /* synthetic */ b50 L;
 
-    public p40(x50 x50Var) {
-        this.a = x50Var;
+    public p40(b50 b50Var) {
+        this.L = b50Var;
     }
 
-    @Override // android.view.ViewTreeObserver.OnPreDrawListener
-    public final boolean onPreDraw() {
-        ViewGroup viewGroup;
-        x50 x50Var = this.a;
-        x50Var.Q.getViewTreeObserver().removeOnPreDrawListener(this);
-        x50Var.a2.j(null);
-        AndroidUtilities.updateVisibleRows(x50Var.m2);
-        viewGroup = ((org.telegram.ui.ActionBar.k3) x50Var).containerView;
-        viewGroup.requestLayout();
-        return false;
+    @Override // s4.j, s4.l0
+    public final void g() {
+        super.g();
+        this.I.clear();
+        this.H.clear();
+        this.K = Float.MAX_VALUE;
+        this.L.H1.invalidate();
+    }
+
+    @Override // s4.j, s4.l0
+    public final void m() {
+        boolean isEmpty = this.p.isEmpty();
+        boolean isEmpty2 = this.r.isEmpty();
+        boolean isEmpty3 = this.q.isEmpty();
+        ValueAnimator valueAnimator = this.G;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+            this.G = null;
+        }
+        if (!isEmpty || !isEmpty2 || !isEmpty3) {
+            this.F = 0.0f;
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+            this.G = ofFloat;
+            ofFloat.addUpdateListener(new a3(this, 14));
+            this.G.addListener(new org.telegram.ui.Components.voip.h2(this, 12));
+            this.G.setDuration(350L);
+            this.G.setInterpolator(org.telegram.ui.Components.gr.f);
+            this.G.start();
+            b50 b50Var = this.L;
+            b50Var.H1.invalidate();
+            b50Var.R3.invalidate();
+        }
+        super.m();
     }
 }

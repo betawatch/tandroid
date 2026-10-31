@@ -1,35 +1,48 @@
 package c5;
 
-import a8.v1;
+import java.util.ArrayList;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class l extends b {
-    public final /* synthetic */ int e;
+public final class l {
+    public final String a;
+    public final k b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ l(int i10, String str, String str2) {
-        super(2, str, str2);
-        this.e = i10;
-    }
-
-    @Override // c5.c
-    public final boolean b() {
-        switch (this.e) {
-            case 0:
-                if (!super.b() || !v1.a("MULTI_PROCESS")) {
-                    return false;
-                }
-                boolean z10 = b5.a.a;
-                if (m.b.b()) {
-                    return n.a.getStatics().isMultiProcessEnabled();
-                }
-                throw new UnsupportedOperationException("This method is not supported by the current version of the framework and the current WebView APK");
-            default:
-                if (v1.a("MULTI_PROFILE")) {
-                    return super.b();
-                }
-                return false;
+    public l(JSONObject jSONObject) {
+        jSONObject.optString("basePlanId");
+        jSONObject.optString("offerId").getClass();
+        this.a = jSONObject.getString("offerIdToken");
+        this.b = new k(jSONObject.getJSONArray("pricingPhases"));
+        JSONObject optJSONObject = jSONObject.optJSONObject("installmentPlanDetails");
+        if (optJSONObject != null) {
+            optJSONObject.getInt("commitmentPaymentsCount");
+            optJSONObject.optInt("subsequentCommitmentPaymentsCount");
+        }
+        JSONObject optJSONObject2 = jSONObject.optJSONObject("transitionPlanDetails");
+        if (optJSONObject2 != null) {
+            optJSONObject2.getString("productId");
+            optJSONObject2.optString("title");
+            optJSONObject2.optString("name");
+            optJSONObject2.optString("description");
+            optJSONObject2.optString("basePlanId");
+            JSONObject optJSONObject3 = optJSONObject2.optJSONObject("pricingPhase");
+            if (optJSONObject3 != null) {
+                optJSONObject3.optString("billingPeriod");
+                optJSONObject3.optString("priceCurrencyCode");
+                optJSONObject3.optString("formattedPrice");
+                optJSONObject3.optLong("priceAmountMicros");
+                optJSONObject3.optInt("recurrenceMode");
+                optJSONObject3.optInt("billingCycleCount");
+            }
+        }
+        ArrayList arrayList = new ArrayList();
+        JSONArray optJSONArray = jSONObject.optJSONArray("offerTags");
+        if (optJSONArray != null) {
+            for (int i10 = 0; i10 < optJSONArray.length(); i10++) {
+                arrayList.add(optJSONArray.getString(i10));
+            }
         }
     }
 }

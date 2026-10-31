@@ -1,43 +1,44 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import org.telegram.messenger.AndroidUtilities;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class k40 implements ValueAnimator.AnimatorUpdateListener {
+public final class k40 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ m40 b;
+    public final /* synthetic */ e50 b;
 
-    public /* synthetic */ k40(m40 m40Var, int i10) {
+    public /* synthetic */ k40(e50 e50Var, int i10) {
         this.a = i10;
-        this.b = m40Var;
+        this.b = e50Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        org.telegram.ui.xn xnVar;
-        bi.r1 r1Var;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                m40 m40Var = this.b;
-                m40Var.w = floatValue;
-                m40Var.e.setTranslationY(floatValue * AndroidUtilities.dp(48.0f));
-                m40Var.e.setPadding(0, 0, 0, (int) (m40Var.w * AndroidUtilities.dp(48.0f)));
+                e50 e50Var = this.b;
+                if (animator.equals(e50Var.K)) {
+                    e50Var.K = null;
+                    break;
+                }
+                break;
+            case 1:
+                e50 e50Var2 = this.b;
+                if (e50Var2.k1 != null) {
+                    e50Var2.k1 = null;
+                    break;
+                }
                 break;
             default:
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                m40 m40Var2 = this.b;
-                m40Var2.E = floatValue2;
-                m40Var2.n.setScaleX(AndroidUtilities.lerp(0.95f, 1.0f, floatValue2));
-                m40Var2.n.setScaleY(AndroidUtilities.lerp(0.95f, 1.0f, m40Var2.E));
-                org.telegram.ui.ek ekVar = m40Var2.f;
-                if (ekVar != null && (xnVar = ekVar.a) != null && (r1Var = xnVar.X3) != null) {
-                    r1Var.setScaleX(AndroidUtilities.lerp(1.0f, 0.95f, m40Var2.E));
-                    m40Var2.f.a.X3.setScaleY(AndroidUtilities.lerp(1.0f, 0.95f, m40Var2.E));
+                e50 e50Var3 = this.b;
+                if (animator.equals(e50Var3.d0)) {
+                    e50Var3.c(true);
+                    e50Var3.f1 = false;
+                    e50Var3.setVisibility(4);
+                    break;
                 }
-                m40Var2.h.setAlpha(m40Var2.E);
                 break;
         }
     }

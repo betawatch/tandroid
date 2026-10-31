@@ -1,28 +1,50 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
+import java.util.ArrayList;
+import java.util.Comparator;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class jl extends s4.d0 {
-    public final /* synthetic */ jg.e0 r;
+public final /* synthetic */ class jl implements Comparator {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public jl(jg.e0 e0Var, Context context) {
-        super(context);
-        this.r = e0Var;
+    public /* synthetic */ jl(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // s4.d0
-    public final int k(int i10, View view) {
-        int k10 = super.k(i10, view);
-        sl slVar = (sl) this.r.V;
-        return k10 - (slVar.N.getPaddingTop() - (slVar.x0 - slVar.w0));
-    }
-
-    @Override // s4.d0
-    public final int m(int i10) {
-        return super.m(i10) * 4;
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        int indexOf;
+        int indexOf2;
+        int i10 = this.a;
+        Object obj3 = this.b;
+        switch (i10) {
+            case 0:
+                ArrayList arrayList = (ArrayList) obj3;
+                org.telegram.messenger.we weVar = (org.telegram.messenger.we) obj;
+                org.telegram.messenger.we weVar2 = (org.telegram.messenger.we) obj2;
+                boolean z10 = ChatAttachAlertPhotoLayout.q1;
+                int i11 = weVar.a;
+                if (i11 != 0 || weVar2.a == 0) {
+                    if ((i11 != 0 && weVar2.a == 0) || (indexOf = arrayList.indexOf(weVar)) > (indexOf2 = arrayList.indexOf(weVar2))) {
+                        return 1;
+                    }
+                    if (indexOf >= indexOf2) {
+                        return 0;
+                    }
+                }
+                return -1;
+            default:
+                vy vyVar = ((gw) obj3).G0;
+                int indexOf3 = vyVar.d1.indexOf((TLRPC.TL_messages_stickerSet) obj);
+                int indexOf4 = vyVar.d1.indexOf((TLRPC.TL_messages_stickerSet) obj2);
+                if (indexOf3 < 0 || indexOf4 < 0) {
+                    return 0;
+                }
+                return indexOf3 - indexOf4;
+        }
     }
 }

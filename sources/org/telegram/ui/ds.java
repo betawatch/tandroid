@@ -1,54 +1,33 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ds implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ls b;
-    public final /* synthetic */ TLRPC.User c;
+    public final /* synthetic */ ns b;
 
-    public /* synthetic */ ds(ls lsVar, TLRPC.User user, int i10) {
+    public /* synthetic */ ds(ns nsVar, int i10) {
         this.a = i10;
-        this.b = lsVar;
-        this.c = user;
+        this.b = nsVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        String str;
         switch (this.a) {
             case 0:
-                ls lsVar = this.b;
-                TLRPC.User user = this.c;
-                if (user != null && lsVar.M == null && lsVar.N == null) {
-                    if (user.phone == null && (str = lsVar.L) != null) {
-                        user.phone = kf.b.d(str, false);
-                    }
-                    lsVar.b.setText(user.first_name);
-                    org.telegram.ui.Cells.e3 e3Var = lsVar.b.d;
-                    e3Var.setSelection(e3Var.length());
-                    lsVar.c.setText(user.last_name);
-                }
-                TLRPC.UserFull userFull = lsVar.getMessagesController().getUserFull(lsVar.H);
-                if (userFull != null) {
-                    TLRPC.TL_textWithEntities tL_textWithEntities = userFull.note;
-                    if (tL_textWithEntities != null) {
-                        lsVar.d.setText(tL_textWithEntities);
-                    } else {
-                        lsVar.d.setText("");
-                    }
-                }
-                if (lsVar.J) {
-                    lsVar.d.d.requestFocus();
-                    AndroidUtilities.showKeyboard(lsVar.d.d);
+                ns.c0(this.b);
+                break;
+            case 1:
+                ns nsVar = this.b;
+                if (nsVar.J) {
+                    nsVar.d.d.requestFocus();
+                    org.telegram.messenger.i0.J3(nsVar.d.d);
                     break;
                 }
                 break;
             default:
-                ls.W(this.b, this.c);
+                ns nsVar2 = this.b;
+                nsVar2.presentFragment(un.ha(nsVar2.H), true);
                 break;
         }
     }

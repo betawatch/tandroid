@@ -1,93 +1,29 @@
 package f4;
 
-import android.text.Layout;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class f {
-    public String a;
-    public int b;
-    public boolean c;
-    public int d;
-    public boolean e;
-    public float k;
-    public String l;
-    public Layout.Alignment o;
-    public Layout.Alignment p;
-    public b r;
-    public String t;
-    public String u;
-    public int f = -1;
-    public int g = -1;
-    public int h = -1;
-    public int i = -1;
-    public int j = -1;
-    public int m = -1;
-    public int n = -1;
-    public int q = -1;
-    public float s = Float.MAX_VALUE;
+    public final String a;
+    public final float b;
+    public final float c;
+    public final int d;
+    public final int e;
+    public final float f;
+    public final float g;
+    public final int h;
+    public final float i;
+    public final int j;
 
-    public final void a(f fVar) {
-        int i10;
-        Layout.Alignment alignment;
-        Layout.Alignment alignment2;
-        String str;
-        if (fVar != null) {
-            if (!this.c && fVar.c) {
-                this.b = fVar.b;
-                this.c = true;
-            }
-            if (this.h == -1) {
-                this.h = fVar.h;
-            }
-            if (this.i == -1) {
-                this.i = fVar.i;
-            }
-            if (this.a == null && (str = fVar.a) != null) {
-                this.a = str;
-            }
-            if (this.f == -1) {
-                this.f = fVar.f;
-            }
-            if (this.g == -1) {
-                this.g = fVar.g;
-            }
-            if (this.n == -1) {
-                this.n = fVar.n;
-            }
-            if (this.o == null && (alignment2 = fVar.o) != null) {
-                this.o = alignment2;
-            }
-            if (this.p == null && (alignment = fVar.p) != null) {
-                this.p = alignment;
-            }
-            if (this.q == -1) {
-                this.q = fVar.q;
-            }
-            if (this.j == -1) {
-                this.j = fVar.j;
-                this.k = fVar.k;
-            }
-            if (this.r == null) {
-                this.r = fVar.r;
-            }
-            if (this.s == Float.MAX_VALUE) {
-                this.s = fVar.s;
-            }
-            if (this.t == null) {
-                this.t = fVar.t;
-            }
-            if (this.u == null) {
-                this.u = fVar.u;
-            }
-            if (!this.e && fVar.e) {
-                this.d = fVar.d;
-                this.e = true;
-            }
-            if (this.m != -1 || (i10 = fVar.m) == -1) {
-                return;
-            }
-            this.m = i10;
-        }
+    public f(String str, float f7, float f10, int i10, int i11, float f11, float f12, int i12, float f13, int i13) {
+        this.a = str;
+        this.b = f7;
+        this.c = f10;
+        this.d = i10;
+        this.e = i11;
+        this.f = f11;
+        this.g = f12;
+        this.h = i12;
+        this.i = f13;
+        this.j = i13;
     }
 }

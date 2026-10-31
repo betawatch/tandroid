@@ -1,17 +1,27 @@
 package y8;
 
-import android.content.ComponentName;
-import android.content.ServiceConnection;
-import android.os.IBinder;
+import android.os.Parcel;
+import android.os.ParcelFileDescriptor;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class p implements ServiceConnection {
-    @Override // android.content.ServiceConnection
-    public final void onServiceDisconnected(ComponentName componentName) {
+public final class p extends o6.a {
+    public static final Parcelable.Creator<p> CREATOR = new c(13);
+    public final int a;
+    public final ParcelFileDescriptor b;
+
+    public p(int i10, ParcelFileDescriptor parcelFileDescriptor) {
+        this.a = i10;
+        this.b = parcelFileDescriptor;
     }
 
-    @Override // android.content.ServiceConnection
-    public final void onServiceConnected(ComponentName componentName, IBinder iBinder) {
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i10) {
+        int q6 = w7.h0.q(parcel, 20293);
+        w7.h0.s(parcel, 2, 4);
+        parcel.writeInt(this.a);
+        w7.h0.k(parcel, 3, this.b, i10);
+        w7.h0.r(parcel, q6);
     }
 }

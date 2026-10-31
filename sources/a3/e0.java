@@ -5,19 +5,19 @@ import android.os.Handler;
 import android.view.Choreographer;
 import android.view.Choreographer$VsyncCallback;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class e0 extends c0 implements Choreographer$VsyncCallback {
     public final Handler e;
 
     public e0(Choreographer choreographer, DisplayManager displayManager) {
         super(choreographer, displayManager);
-        this.e = e2.n0.q(null);
+        this.e = e2.l0.q(null);
     }
 
     @Override // a3.c0
     public final void a() {
-        this.b.registerDisplayListener(this, e2.n0.q(null));
+        this.b.registerDisplayListener(this, e2.l0.q(null));
         this.a.postVsyncCallback(this);
     }
 

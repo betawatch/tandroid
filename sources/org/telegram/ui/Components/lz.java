@@ -1,83 +1,33 @@
 package org.telegram.ui.Components;
 
-import android.text.TextUtils;
-import android.util.LongSparseArray;
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.Utilities;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class lz implements gz {
-    public String a;
-    public int b;
-    public final ArrayList c = new ArrayList();
-    public final HashMap d = new HashMap();
-    public final HashMap e = new HashMap();
-    public final HashMap f = new HashMap();
-    public final ArrayList h = new ArrayList();
-    public final ArrayList n = new ArrayList();
-    public final ArrayList r = new ArrayList(0);
-    public final ArrayList s = new ArrayList(0);
-    public final LongSparseArray v = new LongSparseArray(0);
-    public final /* synthetic */ nz w;
+public final /* synthetic */ class lz implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ rz b;
 
-    public lz(nz nzVar) {
-        this.w = nzVar;
+    public /* synthetic */ lz(rz rzVar, int i10) {
+        this.a = i10;
+        this.b = rzVar;
     }
 
-    public final boolean a() {
-        return this.w.Q.G0.F;
-    }
-
-    public final void b(Runnable runnable, boolean z10) {
-        String[] currentKeyboardLanguage = AndroidUtilities.getCurrentKeyboardLanguage();
-        MediaDataController.getInstance(this.w.Q.c1).searchStickers(false, (currentKeyboardLanguage == null || currentKeyboardLanguage.length == 0) ? "" : currentKeyboardLanguage[0], this.a, new fi.kc(this, z10, runnable, 2), z10);
-    }
-
-    @Override // org.telegram.ui.Components.gz
-    public final void e() {
-        if (a()) {
-            return;
-        }
-        this.w.Q.G0.e(true);
-        Utilities.raceCallbacks(new cp(this, 18), new kz(this, 0));
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        nz nzVar = this.w;
-        sz szVar = nzVar.Q;
-        if (TextUtils.isEmpty(nzVar.N)) {
-            s4.h0 adapter = szVar.D0.getAdapter();
-            jz jzVar = szVar.y0;
-            if (adapter != jzVar) {
-                szVar.D0.setAdapter(jzVar);
-            }
-            nzVar.l();
-            return;
-        }
-        int i10 = 1;
-        int i11 = nzVar.M + 1;
-        nzVar.M = i11;
-        this.b = i11;
-        this.a = nzVar.N;
-        nzVar.y = false;
-        this.c.clear();
-        this.d.clear();
-        this.e.clear();
-        this.f.clear();
-        this.h.clear();
-        this.r.clear();
-        this.s.clear();
-        this.v.clear();
-        szVar.G0.e(true);
-        if ("premium".equalsIgnoreCase(this.a)) {
-            Utilities.raceCallbacks(new cp(this, 18), new kz(this, i10));
-        } else {
-            Utilities.raceCallbacks(new cp(this, 18), new kz(this, 2), new kz(this, 3), new kz(this, 4), new kz(this, 5), new kz(this, 6), new kz(this, 7));
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                rz rzVar = this.b;
+                rzVar.y = floatValue;
+                rzVar.invalidate();
+                break;
+            default:
+                rz rzVar2 = this.b;
+                rzVar2.getClass();
+                rzVar2.D = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                rzVar2.invalidate();
+                break;
         }
     }
 }

@@ -1,8 +1,9 @@
 package com.google.android.gms.internal.vision;
 
 import java.util.logging.Logger;
+import org.telegram.messenger.zs;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class r0 extends e1 {
     public static final Logger f = Logger.getLogger(r0.class.getName());
@@ -44,7 +45,7 @@ public final class r0 extends e1 {
     public static int J(int i10, q0 q0Var) {
         int T = T(i10 << 3);
         int m10 = q0Var.m();
-        return c3.h0.v(m10, m10, T);
+        return c3.i0.v(m10, m10, T);
     }
 
     public static int N(int i10, long j10) {
@@ -146,7 +147,7 @@ public final class r0 extends e1 {
             while ((j10 & (-128)) != 0) {
                 int i10 = this.e;
                 this.e = i10 + 1;
-                x2.e(bArr, i10, (byte) ((((int) j10) & 127) | 128));
+                x2.e(bArr, i10, (byte) ((((int) j10) & zs.L1) | 128));
                 j10 >>>= 7;
             }
             int i11 = this.e;
@@ -158,7 +159,7 @@ public final class r0 extends e1 {
             try {
                 int i12 = this.e;
                 this.e = i12 + 1;
-                bArr[i12] = (byte) ((((int) j10) & 127) | 128);
+                bArr[i12] = (byte) ((((int) j10) & zs.L1) | 128);
                 j10 >>>= 7;
             } catch (IndexOutOfBoundsException e) {
                 throw new s0(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.e), Integer.valueOf(this.d), 1), e);
@@ -181,7 +182,7 @@ public final class r0 extends e1 {
                 try {
                     int i11 = this.e;
                     this.e = i11 + 1;
-                    bArr[i11] = (byte) ((i10 & 127) | 128);
+                    bArr[i11] = (byte) ((i10 & zs.L1) | 128);
                     i10 >>>= 7;
                 } catch (IndexOutOfBoundsException e) {
                     throw new s0(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.e), Integer.valueOf(this.d), 1), e);

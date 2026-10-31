@@ -1,12 +1,45 @@
 package org.telegram.ui.Cells;
 
-import org.telegram.messenger.Emoji;
+import android.view.View;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class e8 extends org.telegram.ui.ActionBar.b6 {
-    @Override // org.telegram.ui.ActionBar.b6
-    public final boolean k(CharSequence charSequence) {
-        return l(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), false), false);
+public final /* synthetic */ class e8 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ k8 b;
+
+    public /* synthetic */ e8(k8 k8Var, int i10) {
+        this.a = i10;
+        this.b = k8Var;
+    }
+
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                this.b.getClass();
+                break;
+            default:
+                k8 k8Var = this.b;
+                TextView textView = k8Var.E;
+                TextView textView2 = k8Var.D;
+                kg.x0 x0Var = k8Var.F;
+                if (x0Var.getVisibility() != 0 || !x0Var.w.isEnabled()) {
+                    if (textView2.getVisibility() != 0 || !textView2.isEnabled()) {
+                        if (textView.getVisibility() == 0 && textView.isEnabled()) {
+                            textView.performClick();
+                            break;
+                        }
+                    } else {
+                        textView2.performClick();
+                        break;
+                    }
+                } else {
+                    x0Var.performClick();
+                    break;
+                }
+                break;
+        }
     }
 }

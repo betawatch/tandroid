@@ -1,17 +1,30 @@
 package w7;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes.dex */
-public final class n6 {
-    public final h8 a;
-    public final m6 b;
-    public final k6 c;
-    public final k7 d;
+import android.os.Build;
+import android.util.Log;
 
-    public /* synthetic */ n6(ti.e eVar) {
-        this.a = (h8) eVar.b;
-        this.b = (m6) eVar.c;
-        this.c = (k6) eVar.d;
-        this.d = (k7) eVar.e;
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes.dex */
+public abstract class n6 {
+    public static void a(Object obj, String str, String str2) {
+        String c10 = c(str);
+        if (Log.isLoggable(c10, 3)) {
+            Log.d(c10, String.format(str2, obj));
+        }
+    }
+
+    public static void b(String str, String str2, Exception exc) {
+        String c10 = c(str);
+        if (Log.isLoggable(c10, 6)) {
+            Log.e(c10, str2, exc);
+        }
+    }
+
+    public static String c(String str) {
+        if (Build.VERSION.SDK_INT >= 26) {
+            return "TRuntime.".concat(str);
+        }
+        String concat = "TRuntime.".concat(str);
+        return concat.length() > 23 ? concat.substring(0, 23) : concat;
     }
 }

@@ -1,31 +1,29 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.util.Pair;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class ey0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ fy0 b;
+public final class ey0 extends ArrayList {
+    public final Class a;
+    public final Class b;
 
-    public /* synthetic */ ey0(fy0 fy0Var, int i10) {
-        this.a = i10;
-        this.b = fy0Var;
+    public ey0(Class cls, Class cls2) {
+        this.a = cls;
+        this.b = cls2;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                this.b.s.setVisibility(8);
-                break;
-            case 1:
-                this.b.s.setVisibility(8);
-                break;
-            default:
-                this.b.s.setVisibility(8);
-                break;
+    /* JADX WARN: Multi-variable type inference failed */
+    public final li.k l() {
+        int size = size();
+        Object[] objArr = (Object[]) Array.newInstance((Class<?>) this.a, size);
+        Object[] objArr2 = (Object[]) Array.newInstance((Class<?>) this.b, size);
+        for (int i10 = 0; i10 < size; i10++) {
+            objArr[i10] = ((Pair) get(i10)).first;
+            objArr2[i10] = ((Pair) get(i10)).second;
         }
+        return new li.k(objArr, objArr2);
     }
 }

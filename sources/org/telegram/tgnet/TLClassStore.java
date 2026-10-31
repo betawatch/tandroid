@@ -3,13 +3,13 @@ package org.telegram.tgnet;
 import android.util.SparseArray;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes.dex */
 public class TLClassStore {
     static TLClassStore store;
     private final SparseArray<TLObjectFactory> classStore;
 
-    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+    /* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
     public interface TLObjectFactory {
         TLObject create();
     }
@@ -18,7 +18,7 @@ public class TLClassStore {
         SparseArray<TLObjectFactory> sparseArray = new SparseArray<>();
         this.classStore = sparseArray;
         final int i10 = 0;
-        sparseArray.put(TLRPC.TL_error.constructor, new TLObjectFactory() { // from class: org.telegram.tgnet.l
+        sparseArray.put(TLRPC.TL_error.constructor, new TLObjectFactory() { // from class: org.telegram.tgnet.m
             @Override // org.telegram.tgnet.TLClassStore.TLObjectFactory
             public final TLObject create() {
                 switch (i10) {
@@ -50,7 +50,7 @@ public class TLClassStore {
             }
         });
         final int i11 = 6;
-        sparseArray.put(TLRPC.TL_decryptedMessageService.constructor, new TLObjectFactory() { // from class: org.telegram.tgnet.l
+        sparseArray.put(TLRPC.TL_decryptedMessageService.constructor, new TLObjectFactory() { // from class: org.telegram.tgnet.m
             @Override // org.telegram.tgnet.TLClassStore.TLObjectFactory
             public final TLObject create() {
                 switch (i11) {
@@ -82,7 +82,7 @@ public class TLClassStore {
             }
         });
         final int i12 = 7;
-        sparseArray.put(TLRPC.TL_decryptedMessage.constructor, new TLObjectFactory() { // from class: org.telegram.tgnet.l
+        sparseArray.put(TLRPC.TL_decryptedMessage.constructor, new TLObjectFactory() { // from class: org.telegram.tgnet.m
             @Override // org.telegram.tgnet.TLClassStore.TLObjectFactory
             public final TLObject create() {
                 switch (i12) {
@@ -114,7 +114,7 @@ public class TLClassStore {
             }
         });
         final int i13 = 8;
-        sparseArray.put(TLRPC.TL_decryptedMessageLayer.constructor, new TLObjectFactory() { // from class: org.telegram.tgnet.l
+        sparseArray.put(TLRPC.TL_decryptedMessageLayer.constructor, new TLObjectFactory() { // from class: org.telegram.tgnet.m
             @Override // org.telegram.tgnet.TLClassStore.TLObjectFactory
             public final TLObject create() {
                 switch (i13) {
@@ -146,7 +146,7 @@ public class TLClassStore {
             }
         });
         final int i14 = 7;
-        sparseArray.put(TLRPC.TL_decryptedMessage_layer17.constructor, new TLObjectFactory() { // from class: org.telegram.tgnet.l
+        sparseArray.put(TLRPC.TL_decryptedMessage_layer17.constructor, new TLObjectFactory() { // from class: org.telegram.tgnet.m
             @Override // org.telegram.tgnet.TLClassStore.TLObjectFactory
             public final TLObject create() {
                 switch (i14) {
@@ -178,7 +178,7 @@ public class TLClassStore {
             }
         });
         final int i15 = 9;
-        sparseArray.put(TLRPC.TL_decryptedMessage_layer45.constructor, new TLObjectFactory() { // from class: org.telegram.tgnet.l
+        sparseArray.put(TLRPC.TL_decryptedMessage_layer45.constructor, new TLObjectFactory() { // from class: org.telegram.tgnet.m
             @Override // org.telegram.tgnet.TLClassStore.TLObjectFactory
             public final TLObject create() {
                 switch (i15) {
@@ -210,7 +210,7 @@ public class TLClassStore {
             }
         });
         final int i16 = 10;
-        sparseArray.put(TLRPC.TL_decryptedMessageService_layer8.constructor, new TLObjectFactory() { // from class: org.telegram.tgnet.l
+        sparseArray.put(TLRPC.TL_decryptedMessageService_layer8.constructor, new TLObjectFactory() { // from class: org.telegram.tgnet.m
             @Override // org.telegram.tgnet.TLClassStore.TLObjectFactory
             public final TLObject create() {
                 switch (i16) {
@@ -242,7 +242,7 @@ public class TLClassStore {
             }
         });
         final int i17 = 11;
-        sparseArray.put(TLRPC.TL_decryptedMessage_layer8.constructor, new TLObjectFactory() { // from class: org.telegram.tgnet.l
+        sparseArray.put(TLRPC.TL_decryptedMessage_layer8.constructor, new TLObjectFactory() { // from class: org.telegram.tgnet.m
             @Override // org.telegram.tgnet.TLClassStore.TLObjectFactory
             public final TLObject create() {
                 switch (i17) {
@@ -274,7 +274,7 @@ public class TLClassStore {
             }
         });
         final int i18 = 1;
-        sparseArray.put(TLRPC.TL_message_secret.constructor, new TLObjectFactory() { // from class: org.telegram.tgnet.l
+        sparseArray.put(TLRPC.TL_message_secret.constructor, new TLObjectFactory() { // from class: org.telegram.tgnet.m
             @Override // org.telegram.tgnet.TLClassStore.TLObjectFactory
             public final TLObject create() {
                 switch (i18) {
@@ -306,7 +306,7 @@ public class TLClassStore {
             }
         });
         final int i19 = 2;
-        sparseArray.put(TLRPC.TL_message_secret_layer72.constructor, new TLObjectFactory() { // from class: org.telegram.tgnet.l
+        sparseArray.put(TLRPC.TL_message_secret_layer72.constructor, new TLObjectFactory() { // from class: org.telegram.tgnet.m
             @Override // org.telegram.tgnet.TLClassStore.TLObjectFactory
             public final TLObject create() {
                 switch (i19) {
@@ -338,7 +338,7 @@ public class TLClassStore {
             }
         });
         final int i20 = 3;
-        sparseArray.put(TLRPC.TL_message_secret_old.constructor, new TLObjectFactory() { // from class: org.telegram.tgnet.l
+        sparseArray.put(TLRPC.TL_message_secret_old.constructor, new TLObjectFactory() { // from class: org.telegram.tgnet.m
             @Override // org.telegram.tgnet.TLClassStore.TLObjectFactory
             public final TLObject create() {
                 switch (i20) {
@@ -370,7 +370,7 @@ public class TLClassStore {
             }
         });
         final int i21 = 4;
-        sparseArray.put(TLRPC.TL_messageEncryptedAction.constructor, new TLObjectFactory() { // from class: org.telegram.tgnet.l
+        sparseArray.put(TLRPC.TL_messageEncryptedAction.constructor, new TLObjectFactory() { // from class: org.telegram.tgnet.m
             @Override // org.telegram.tgnet.TLClassStore.TLObjectFactory
             public final TLObject create() {
                 switch (i21) {
@@ -402,7 +402,7 @@ public class TLClassStore {
             }
         });
         final int i22 = 5;
-        sparseArray.put(TLRPC.TL_null.constructor, new TLObjectFactory() { // from class: org.telegram.tgnet.l
+        sparseArray.put(TLRPC.TL_null.constructor, new TLObjectFactory() { // from class: org.telegram.tgnet.m
             @Override // org.telegram.tgnet.TLClassStore.TLObjectFactory
             public final TLObject create() {
                 switch (i22) {

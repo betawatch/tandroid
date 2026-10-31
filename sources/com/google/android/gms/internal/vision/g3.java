@@ -1,14 +1,14 @@
 package com.google.android.gms.internal.vision;
 
-import a8.uf;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.os.RemoteException;
 import android.util.Log;
 import j$.util.Objects;
+import w7.s6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public abstract class g3 {
     public final Context a;
@@ -52,19 +52,19 @@ public abstract class g3 {
     public abstract void f(p4.n nVar);
 
     public void g(b2.u uVar) {
-        p4.x.b();
+        p4.y.b();
         if (((b2.u) this.n) != uVar) {
             this.n = uVar;
             if (this.c) {
                 return;
             }
             this.c = true;
-            ((androidx.mediarouter.app.c) this.e).sendEmptyMessage(1);
+            ((android.support.v4.media.session.q) this.e).sendEmptyMessage(1);
         }
     }
 
     public void h(p4.n nVar) {
-        p4.x.b();
+        p4.y.b();
         if (Objects.equals((p4.n) this.h, nVar)) {
             return;
         }
@@ -73,10 +73,10 @@ public abstract class g3 {
             return;
         }
         this.b = true;
-        ((androidx.mediarouter.app.c) this.e).sendEmptyMessage(2);
+        ((android.support.v4.media.session.q) this.e).sendEmptyMessage(2);
     }
 
-    public abstract Object i(z6.e eVar, Context context);
+    public abstract Object i(y6.e eVar, Context context);
 
     public abstract void j();
 
@@ -98,23 +98,23 @@ public abstract class g3 {
     }
 
     public Object m() {
-        z6.e eVar;
+        y6.e eVar;
         synchronized (this.d) {
             Object obj = this.e;
             if (obj != null) {
                 return obj;
             }
             try {
-                eVar = z6.e.c(this.a, z6.e.c, (String) this.h);
-            } catch (z6.b unused) {
+                eVar = y6.e.c(this.a, y6.e.c, (String) this.h);
+            } catch (y6.b unused) {
                 String str = "com.google.android.gms.vision." + ((String) this.n);
                 if (Log.isLoggable("Vision", 3)) {
                     Log.d("Vision", "Cannot load thick client module, fall back to load optional module " + str);
                 }
                 try {
-                    eVar = z6.e.c(this.a, z6.e.b, str);
-                } catch (z6.b e) {
-                    uf.a(e, "Error loading optional module %s", str);
+                    eVar = y6.e.c(this.a, y6.e.b, str);
+                } catch (y6.b e) {
+                    s6.a(e, "Error loading optional module %s", str);
                     if (!this.b) {
                         String str2 = (String) this.n;
                         if (Log.isLoggable("Vision", 3)) {
@@ -134,8 +134,8 @@ public abstract class g3 {
             if (eVar != null) {
                 try {
                     this.e = i(eVar, this.a);
-                } catch (RemoteException | z6.b e10) {
-                    Log.e((String) this.f, "Error creating remote native handle", e10);
+                } catch (RemoteException | y6.b e7) {
+                    Log.e((String) this.f, "Error creating remote native handle", e7);
                 }
             }
             boolean z10 = this.c;
@@ -149,15 +149,15 @@ public abstract class g3 {
         }
     }
 
-    public g3(Context context, li.e3 e3Var) {
-        this.e = new androidx.mediarouter.app.c(this, 11);
+    public g3(Context context, l2.f fVar) {
+        this.e = new android.support.v4.media.session.q(this, 13);
         if (context != null) {
             this.a = context;
-            if (e3Var == null) {
-                this.d = new li.e3(new ComponentName(context, getClass()), 14);
+            if (fVar == null) {
+                this.d = new l2.f(new ComponentName(context, getClass()), 22);
                 return;
             } else {
-                this.d = e3Var;
+                this.d = fVar;
                 return;
             }
         }

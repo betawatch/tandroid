@@ -8,7 +8,7 @@ import android.view.ViewTreeObserver;
 import android.widget.ListAdapter;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class m0 extends d2 implements o0 {
     public CharSequence S;
@@ -29,22 +29,22 @@ public final class m0 extends d2 implements o0 {
     }
 
     @Override // m.o0
-    public final CharSequence d() {
+    public final CharSequence e() {
         return this.S;
     }
 
     @Override // m.o0
-    public final void g(CharSequence charSequence) {
+    public final void i(CharSequence charSequence) {
         this.S = charSequence;
     }
 
     @Override // m.o0
-    public final void k(int i10) {
+    public final void l(int i10) {
         this.V = i10;
     }
 
     @Override // m.o0
-    public final void l(int i10, int i11) {
+    public final void m(int i10, int i11) {
         ViewTreeObserver viewTreeObserver;
         x xVar = this.O;
         boolean isShowing = xVar.isShowing();
@@ -68,14 +68,14 @@ public final class m0 extends d2 implements o0 {
         if (isShowing || (viewTreeObserver = p0Var.getViewTreeObserver()) == null) {
             return;
         }
-        androidx.mediarouter.app.j jVar = new androidx.mediarouter.app.j(this, 4);
-        viewTreeObserver.addOnGlobalLayoutListener(jVar);
-        xVar.setOnDismissListener(new l0(this, jVar));
+        androidx.mediarouter.app.i iVar = new androidx.mediarouter.app.i(this, 4);
+        viewTreeObserver.addOnGlobalLayoutListener(iVar);
+        xVar.setOnDismissListener(new l0(this, iVar));
     }
 
     @Override // m.d2, m.o0
-    public final void n(ListAdapter listAdapter) {
-        super.n(listAdapter);
+    public final void o(ListAdapter listAdapter) {
+        super.o(listAdapter);
         this.T = (j0) listAdapter;
     }
 
@@ -87,7 +87,7 @@ public final class m0 extends d2 implements o0 {
         Drawable background = xVar.getBackground();
         if (background != null) {
             background.getPadding(rect);
-            i10 = u3.a(p0Var) ? rect.right : -rect.left;
+            i10 = s3.a(p0Var) ? rect.right : -rect.left;
         } else {
             i10 = 0;
             rect.right = 0;
@@ -103,12 +103,12 @@ public final class m0 extends d2 implements o0 {
             if (a2 > i12) {
                 a2 = i12;
             }
-            p(Math.max(a2, (width - paddingLeft) - paddingRight));
+            q(Math.max(a2, (width - paddingLeft) - paddingRight));
         } else if (i11 == -1) {
-            p((width - paddingLeft) - paddingRight);
+            q((width - paddingLeft) - paddingRight);
         } else {
-            p(i11);
+            q(i11);
         }
-        this.f = u3.a(p0Var) ? (((width - paddingRight) - this.e) - this.V) + i10 : paddingLeft + this.V + i10;
+        this.f = s3.a(p0Var) ? (((width - paddingRight) - this.e) - this.V) + i10 : paddingLeft + this.V + i10;
     }
 }

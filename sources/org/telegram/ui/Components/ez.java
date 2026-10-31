@@ -1,44 +1,60 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import org.telegram.messenger.LiteMode;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class ez extends cy0 {
-    public final /* synthetic */ int H3;
-    public final /* synthetic */ fz I3;
+public final /* synthetic */ class ez implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ Object e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ez(fz fzVar, Context context, int i10, org.telegram.ui.ActionBar.u6 u6Var, int i11) {
-        super(context, i10, u6Var);
-        this.I3 = fzVar;
-        this.H3 = i11;
+    public /* synthetic */ ez(Object obj, boolean z10, boolean z11, boolean z12, int i10) {
+        this.a = i10;
+        this.e = obj;
+        this.b = z10;
+        this.c = z11;
+        this.d = z12;
     }
 
-    @Override // org.telegram.ui.Components.cy0
-    public final boolean G1() {
-        return LiteMode.isEnabled(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
-    }
-
-    @Override // org.telegram.ui.Components.cy0
-    public final void K1(int i10) {
-        dx dxVar;
-        ux uxVar;
-        super.K1(i10);
-        fz fzVar = this.I3;
-        sz szVar = fzVar.G;
-        ez ezVar = fzVar.r;
-        boolean z10 = ezVar.getSelectedCategory() == null;
-        int i11 = sz.U2;
-        szVar.N(z10);
-        int i12 = this.H3;
-        if (i12 == 1 && (uxVar = szVar.I) != null) {
-            uxVar.n(ezVar.getSelectedCategory() == null);
-        } else if (i12 == 0 && (dxVar = szVar.B0) != null) {
-            dxVar.o0 = ezVar.getSelectedCategory() == null;
-            dxVar.invalidate();
+    @Override // java.lang.Runnable
+    public final void run() {
+        org.telegram.utils.twidget.w wVar;
+        q81 q81Var;
+        switch (this.a) {
+            case 0:
+                gz gzVar = (gz) this.e;
+                boolean z10 = this.b;
+                boolean z11 = this.c;
+                boolean z12 = this.d;
+                if (z10) {
+                    jz jzVar = gzVar.J;
+                    jzVar.a = true;
+                    jzVar.b = true;
+                }
+                if (z11) {
+                    gzVar.y = true;
+                }
+                long currentTimeMillis = System.currentTimeMillis();
+                if (z12 || Math.abs(gzVar.a0 - currentTimeMillis) > 30) {
+                    gzVar.a0 = currentTimeMillis;
+                    gzVar.d0.run();
+                    break;
+                }
+                break;
+            case 1:
+                ((org.telegram.ui.hf0) this.e).E1(this.b, this.c, this.d);
+                break;
+            default:
+                org.telegram.utils.twidget.k0 k0Var = (org.telegram.utils.twidget.k0) this.e;
+                boolean z13 = this.b;
+                boolean z14 = this.c;
+                boolean z15 = this.d;
+                if (!k0Var.u && (wVar = k0Var.J) != null && (q81Var = wVar.h) != null && q81Var.w && !q81Var.x) {
+                    q81Var.l(z13, z14, z15);
+                    break;
+                }
+                break;
         }
-        fzVar.g(false);
     }
 }

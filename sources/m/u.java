@@ -1,7 +1,5 @@
 package m;
 
-import a8.kc;
-import a8.ng;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.graphics.Bitmap;
@@ -12,26 +10,27 @@ import android.net.Uri;
 import android.util.AttributeSet;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import v7.r7;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public class u extends ImageButton {
     public final e2.c a;
-    public final ng b;
+    public final a5.a b;
     public boolean c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public u(Context context, AttributeSet attributeSet, int i10) {
         super(context, attributeSet, i10);
-        c3.a(context);
+        b3.a(context);
         this.c = false;
-        b3.a(this, getContext());
+        a3.a(this, getContext());
         e2.c cVar = new e2.c(this);
         this.a = cVar;
-        cVar.f(attributeSet, i10);
-        ng ngVar = new ng(this);
-        this.b = ngVar;
-        ngVar.t(attributeSet, i10);
+        cVar.k(attributeSet, i10);
+        a5.a aVar = new a5.a(this);
+        this.b = aVar;
+        aVar.t(attributeSet, i10);
     }
 
     @Override // android.widget.ImageView, android.view.View
@@ -41,16 +40,16 @@ public class u extends ImageButton {
         if (cVar != null) {
             cVar.b();
         }
-        ng ngVar = this.b;
-        if (ngVar != null) {
-            ngVar.b();
+        a5.a aVar = this.b;
+        if (aVar != null) {
+            aVar.c();
         }
     }
 
     public ColorStateList getSupportBackgroundTintList() {
         e2.c cVar = this.a;
         if (cVar != null) {
-            return cVar.d();
+            return cVar.i();
         }
         return null;
     }
@@ -58,27 +57,27 @@ public class u extends ImageButton {
     public PorterDuff.Mode getSupportBackgroundTintMode() {
         e2.c cVar = this.a;
         if (cVar != null) {
-            return cVar.e();
+            return cVar.j();
         }
         return null;
     }
 
     public ColorStateList getSupportImageTintList() {
-        d3 d3Var;
-        ng ngVar = this.b;
-        if (ngVar == null || (d3Var = (d3) ngVar.d) == null) {
+        c3 c3Var;
+        a5.a aVar = this.b;
+        if (aVar == null || (c3Var = (c3) aVar.d) == null) {
             return null;
         }
-        return (ColorStateList) d3Var.c;
+        return (ColorStateList) c3Var.c;
     }
 
     public PorterDuff.Mode getSupportImageTintMode() {
-        d3 d3Var;
-        ng ngVar = this.b;
-        if (ngVar == null || (d3Var = (d3) ngVar.d) == null) {
+        c3 c3Var;
+        a5.a aVar = this.b;
+        if (aVar == null || (c3Var = (c3) aVar.d) == null) {
             return null;
         }
-        return (PorterDuff.Mode) d3Var.d;
+        return (PorterDuff.Mode) c3Var.d;
     }
 
     @Override // android.widget.ImageView, android.view.View
@@ -91,7 +90,7 @@ public class u extends ImageButton {
         super.setBackgroundDrawable(drawable);
         e2.c cVar = this.a;
         if (cVar != null) {
-            cVar.g();
+            cVar.l();
         }
     }
 
@@ -100,34 +99,34 @@ public class u extends ImageButton {
         super.setBackgroundResource(i10);
         e2.c cVar = this.a;
         if (cVar != null) {
-            cVar.h(i10);
+            cVar.m(i10);
         }
     }
 
     @Override // android.widget.ImageView
     public void setImageBitmap(Bitmap bitmap) {
         super.setImageBitmap(bitmap);
-        ng ngVar = this.b;
-        if (ngVar != null) {
-            ngVar.b();
+        a5.a aVar = this.b;
+        if (aVar != null) {
+            aVar.c();
         }
     }
 
     @Override // android.widget.ImageView
     public void setImageDrawable(Drawable drawable) {
-        ng ngVar = this.b;
-        if (ngVar != null && drawable != null && !this.c) {
-            ngVar.b = drawable.getLevel();
+        a5.a aVar = this.b;
+        if (aVar != null && drawable != null && !this.c) {
+            aVar.b = drawable.getLevel();
         }
         super.setImageDrawable(drawable);
-        if (ngVar != null) {
-            ngVar.b();
+        if (aVar != null) {
+            aVar.c();
             if (this.c) {
                 return;
             }
-            ImageView imageView = (ImageView) ngVar.c;
+            ImageView imageView = (ImageView) aVar.c;
             if (imageView.getDrawable() != null) {
-                imageView.getDrawable().setLevel(ngVar.b);
+                imageView.getDrawable().setLevel(aVar.b);
             }
         }
     }
@@ -140,10 +139,10 @@ public class u extends ImageButton {
 
     @Override // android.widget.ImageView
     public void setImageResource(int i10) {
-        ng ngVar = this.b;
-        ImageView imageView = (ImageView) ngVar.c;
+        a5.a aVar = this.b;
+        ImageView imageView = (ImageView) aVar.c;
         if (i10 != 0) {
-            Drawable b10 = kc.b(imageView.getContext(), i10);
+            Drawable b10 = r7.b(imageView.getContext(), i10);
             if (b10 != null) {
                 l1.a(b10);
             }
@@ -151,55 +150,55 @@ public class u extends ImageButton {
         } else {
             imageView.setImageDrawable(null);
         }
-        ngVar.b();
+        aVar.c();
     }
 
     @Override // android.widget.ImageView
     public void setImageURI(Uri uri) {
         super.setImageURI(uri);
-        ng ngVar = this.b;
-        if (ngVar != null) {
-            ngVar.b();
+        a5.a aVar = this.b;
+        if (aVar != null) {
+            aVar.c();
         }
     }
 
     public void setSupportBackgroundTintList(ColorStateList colorStateList) {
         e2.c cVar = this.a;
         if (cVar != null) {
-            cVar.l(colorStateList);
+            cVar.q(colorStateList);
         }
     }
 
     public void setSupportBackgroundTintMode(PorterDuff.Mode mode) {
         e2.c cVar = this.a;
         if (cVar != null) {
-            cVar.m(mode);
+            cVar.r(mode);
         }
     }
 
     public void setSupportImageTintList(ColorStateList colorStateList) {
-        ng ngVar = this.b;
-        if (ngVar != null) {
-            if (((d3) ngVar.d) == null) {
-                ngVar.d = new d3();
+        a5.a aVar = this.b;
+        if (aVar != null) {
+            if (((c3) aVar.d) == null) {
+                aVar.d = new c3();
             }
-            d3 d3Var = (d3) ngVar.d;
-            d3Var.c = colorStateList;
-            d3Var.b = true;
-            ngVar.b();
+            c3 c3Var = (c3) aVar.d;
+            c3Var.c = colorStateList;
+            c3Var.b = true;
+            aVar.c();
         }
     }
 
     public void setSupportImageTintMode(PorterDuff.Mode mode) {
-        ng ngVar = this.b;
-        if (ngVar != null) {
-            if (((d3) ngVar.d) == null) {
-                ngVar.d = new d3();
+        a5.a aVar = this.b;
+        if (aVar != null) {
+            if (((c3) aVar.d) == null) {
+                aVar.d = new c3();
             }
-            d3 d3Var = (d3) ngVar.d;
-            d3Var.d = mode;
-            d3Var.a = true;
-            ngVar.b();
+            c3 c3Var = (c3) aVar.d;
+            c3Var.d = mode;
+            c3Var.a = true;
+            aVar.c();
         }
     }
 }

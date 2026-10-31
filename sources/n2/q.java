@@ -3,36 +3,35 @@ package n2;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import li.e3;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public interface q {
-    void E(byte[] bArr, byte[] bArr2);
+    void B0(byte[] bArr);
 
-    void H(byte[] bArr);
+    byte[] P0(byte[] bArr, byte[] bArr2);
 
-    byte[] R(byte[] bArr, byte[] bArr2);
+    h2.b X(byte[] bArr);
 
-    void T(e3 e3Var);
+    void X0(byte[] bArr);
 
-    void U(byte[] bArr);
+    o Y0(byte[] bArr, List list, int i10, HashMap hashMap);
 
-    o Y(byte[] bArr, List list, int i10, HashMap hashMap);
+    byte[] b0();
 
-    Map b(byte[] bArr);
+    int d1();
 
-    void e(byte[] bArr, j2.j jVar);
+    Map k(byte[] bArr);
 
-    int i0();
+    void p(byte[] bArr, j2.l lVar);
 
-    p k();
-
-    boolean p0(String str, byte[] bArr);
+    void q0(byte[] bArr, byte[] bArr2);
 
     void release();
 
-    h2.b y(byte[] bArr);
+    p u();
 
-    byte[] z();
+    boolean x1(String str, byte[] bArr);
+
+    void y(m2.t tVar);
 }

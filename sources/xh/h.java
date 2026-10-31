@@ -1,55 +1,54 @@
 package xh;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapShader;
-import android.graphics.Canvas;
-import m4.w1;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import org.telegram.messenger.z20;
+import org.telegram.ui.ActionBar.a7;
+import org.telegram.ui.ActionBar.p6;
+import org.telegram.ui.ActionBar.t6;
+import w7.b6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class h implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ i b;
-    public final /* synthetic */ int c;
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes.dex */
+public final class h extends FrameLayout {
+    public final ImageView a;
+    public final TextView b;
+    public final TextView c;
 
-    public /* synthetic */ h(i iVar, int i10, int i11) {
-        this.a = i11;
-        this.b = iVar;
-        this.c = i10;
+    public h(Context context, p6 p6Var, boolean z10) {
+        super(context);
+        ImageView imageView = new ImageView(context);
+        this.a = imageView;
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        int i10 = t6.G6;
+        a7.t(imageView, i10, p6Var, PorterDuff.Mode.SRC_IN);
+        addView(imageView, b6.d(24, 24.0f, 51, 20.0f, 11.46f, 0.0f, 0.0f));
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setOrientation(1);
+        addView(linearLayout, b6.d(-1, -2.0f, 23, 64.0f, z10 ? 2.0f : 9.8f, 24.0f, z10 ? 4.0f : 9.8f));
+        TextView textView = new TextView(context);
+        this.b = textView;
+        a7.V(textView, i10, p6Var);
+        textView.setTypeface(org.telegram.messenger.i0.o());
+        textView.setTextSize(1, 14.0f);
+        TextView f7 = z20.f(linearLayout, textView, b6.t(-1, -2, 55, 0, 0, 0, 1), context);
+        this.c = f7;
+        a7.V(f7, t6.z6, p6Var);
+        f7.setTextSize(1, 14.0f);
+        linearLayout.addView(f7, b6.t(-1, -2, 55, 0, 0, 0, 0));
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                i iVar = this.b;
-                int i10 = iVar.k;
-                w1[] w1VarArr = iVar.c;
-                int i11 = this.c;
-                if (w1VarArr[i11] == null) {
-                    w1VarArr[i11] = new w1(i10);
-                }
-                Bitmap bitmap = iVar.e;
-                if (bitmap == null) {
-                    iVar.e = Bitmap.createBitmap(i10, i10, Bitmap.Config.ALPHA_8);
-                    iVar.f = new Canvas(iVar.e);
-                } else {
-                    bitmap.eraseColor(0);
-                }
-                iVar.a(iVar.f, iVar.o);
-                Utilities.copyBitmaps(iVar.e, (Bitmap) w1VarArr[i11].b);
-                AndroidUtilities.runOnUIThread(new h(iVar, i11, 1));
-                break;
-            default:
-                i iVar2 = this.b;
-                int i12 = this.c;
-                iVar2.d = i12;
-                iVar2.g.setShader((BitmapShader) iVar2.c[i12].c);
-                iVar2.j = false;
-                iVar2.p = true;
-                break;
-        }
+    public final void a(int i10, CharSequence charSequence, CharSequence charSequence2) {
+        this.a.setImageResource(i10);
+        this.b.setText(charSequence);
+        this.c.setText(charSequence2);
+    }
+
+    public void setText(CharSequence charSequence) {
+        this.c.setText(charSequence);
     }
 }

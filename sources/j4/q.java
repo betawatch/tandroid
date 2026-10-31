@@ -1,23 +1,22 @@
 package j4;
 
 import android.util.SparseArray;
-import b2.w0;
-import c3.j0;
-import e2.n0;
+import b2.v0;
+import c3.k0;
+import e2.l0;
 import i2.p0;
 import java.util.ArrayList;
 import java.util.Arrays;
-import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class q implements i {
-    public final c0 a;
+    public final d0 a;
     public final boolean b;
     public final boolean c;
     public long g;
     public String i;
-    public j0 j;
+    public k0 j;
     public p k;
     public boolean l;
     public boolean n;
@@ -28,84 +27,49 @@ public final class q implements i {
     public long m = -9223372036854775807L;
     public final e2.x o = new e2.x();
 
-    public q(c0 c0Var, boolean z10, boolean z11) {
-        this.a = c0Var;
+    public q(d0 d0Var, boolean z10, boolean z11) {
+        this.a = d0Var;
         this.b = z10;
         this.c = z11;
     }
 
-    @Override // j4.i
-    public final void a(e2.x xVar) {
-        int i10;
-        this.j.getClass();
-        String str = n0.a;
-        int i11 = xVar.b;
-        int i12 = xVar.c;
-        byte[] bArr = xVar.a;
-        this.g += xVar.a();
-        this.j.d(xVar.a(), xVar);
-        while (true) {
-            int c10 = f2.q.c(bArr, i11, i12, this.h);
-            if (c10 == i12) {
-                g(i11, i12, bArr);
-                return;
-            }
-            int i13 = bArr[c10 + 3] & 31;
-            if (c10 <= 0 || bArr[c10 - 1] != 0) {
-                i10 = 3;
-            } else {
-                c10--;
-                i10 = 4;
-            }
-            int i14 = c10 - i11;
-            if (i14 > 0) {
-                g(i11, c10, bArr);
-            }
-            int i15 = i12 - c10;
-            long j10 = this.g - i15;
-            b(j10, i15, i14 < 0 ? -i14 : 0, this.m);
-            h(i13, j10, this.m);
-            i11 = c10 + i10;
-        }
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:28:0x01cd, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:28:0x01cb, code lost:
     
         if (r3.j == r4.j) goto L46;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:32:0x01d7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:32:0x01d5, code lost:
     
         if (r8 != 0) goto L50;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:39:0x01e9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:39:0x01e7, code lost:
     
         if (r3.n == r4.n) goto L57;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:46:0x01fa, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:46:0x01f8, code lost:
     
         if (r3.p == r4.p) goto L64;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:51:0x0208, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:51:0x0206, code lost:
     
         if (r3.l == r4.l) goto L79;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:65:0x0265, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:65:0x0263, code lost:
     
         if (r3 == 1) goto L98;
      */
-    /* JADX WARN: Removed duplicated region for block: B:11:0x0190  */
-    /* JADX WARN: Removed duplicated region for block: B:54:0x0246  */
-    /* JADX WARN: Removed duplicated region for block: B:63:0x0262  */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x0275  */
+    /* JADX WARN: Removed duplicated region for block: B:11:0x018e  */
+    /* JADX WARN: Removed duplicated region for block: B:54:0x0244  */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x0260  */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x0273  */
     /* JADX WARN: Removed duplicated region for block: B:72:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:74:0x026a  */
-    /* JADX WARN: Removed duplicated region for block: B:76:0x0259  */
-    /* JADX WARN: Removed duplicated region for block: B:82:0x0222  */
-    /* JADX WARN: Removed duplicated region for block: B:8:0x016a  */
+    /* JADX WARN: Removed duplicated region for block: B:74:0x0268  */
+    /* JADX WARN: Removed duplicated region for block: B:76:0x0257  */
+    /* JADX WARN: Removed duplicated region for block: B:82:0x0220  */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x0168  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void b(long j10, int i10, int i11, long j11) {
+    public final void a(long j10, long j11, int i10, int i11) {
         int i12;
         boolean z10;
         p0 p0Var;
@@ -129,7 +93,7 @@ public final class q implements i {
                 z10 = false;
                 if (p0Var2.d) {
                     f2.p m10 = f2.q.m(3, p0Var2.e, (byte[]) p0Var2.f);
-                    cVar.k(m10.s);
+                    cVar.p(m10.s);
                     this.k.d.append(m10.d, m10);
                     p0Var2.g();
                 } else if (p0Var3.d) {
@@ -158,11 +122,11 @@ public final class q implements i {
                 int i18 = m11.c;
                 byte[] bArr = e2.g.a;
                 String format = String.format("avc1.%02X%02X%02X", Integer.valueOf(i16), Integer.valueOf(i17), Integer.valueOf(i18));
-                j0 j0Var = this.j;
+                k0 k0Var = this.j;
                 b2.w wVar = new b2.w();
                 wVar.a = this.i;
-                wVar.q = w0.n("video/mp2t");
-                wVar.r = w0.n(MediaController.VIDEO_MIME_TYPE);
+                wVar.q = v0.n("video/mp2t");
+                wVar.r = v0.n("video/avc");
                 wVar.j = format;
                 wVar.y = m11.e;
                 wVar.z = m11.f;
@@ -170,9 +134,9 @@ public final class q implements i {
                 wVar.E = m11.g;
                 wVar.u = arrayList;
                 wVar.t = i15;
-                ic.a.u(wVar, j0Var);
+                i0.a.r(wVar, k0Var);
                 this.l = true;
-                cVar.k(i15);
+                cVar.p(i15);
                 this.k.d.append(m11.d, m11);
                 this.k.e.append(f11, oVar);
                 p0Var2.g();
@@ -180,10 +144,10 @@ public final class q implements i {
             }
             p0Var = this.f;
             if (p0Var.e(i11)) {
-                int p10 = f2.q.p(p0Var.e, (byte[]) p0Var.f);
+                int p5 = f2.q.p(p0Var.e, (byte[]) p0Var.f);
                 byte[] bArr2 = (byte[]) p0Var.f;
                 e2.x xVar = this.o;
-                xVar.L(p10, bArr2);
+                xVar.L(p5, bArr2);
                 xVar.N(4);
                 cVar.a(j11, xVar);
             }
@@ -326,56 +290,6 @@ public final class q implements i {
         }
     }
 
-    @Override // j4.i
-    public final void c() {
-        this.g = 0L;
-        this.n = false;
-        this.m = -9223372036854775807L;
-        f2.q.b(this.h);
-        this.d.g();
-        this.e.g();
-        this.f.g();
-        this.a.d.c(0);
-        p pVar = this.k;
-        if (pVar != null) {
-            pVar.k = false;
-            pVar.o = false;
-            o oVar = pVar.n;
-            oVar.b = false;
-            oVar.a = false;
-        }
-    }
-
-    @Override // j4.i
-    public final void d(c3.q qVar, f0 f0Var) {
-        f0Var.b();
-        f0Var.c();
-        this.i = (String) f0Var.e;
-        f0Var.c();
-        j0 F1 = qVar.F1(f0Var.c, 2);
-        this.j = F1;
-        this.k = new p(F1, this.b, this.c);
-        this.a.b(qVar, f0Var);
-    }
-
-    @Override // j4.i
-    public final void e(boolean z10) {
-        this.j.getClass();
-        String str = n0.a;
-        if (z10) {
-            this.a.d.c(0);
-            b(this.g, 0, 0, this.m);
-            h(9, this.g, this.m);
-            b(this.g, 0, 0, this.m);
-        }
-    }
-
-    @Override // j4.i
-    public final void f(int i10, long j10) {
-        this.m = j10;
-        this.n = ((i10 & 2) != 0) | this.n;
-    }
-
     /* JADX WARN: Removed duplicated region for block: B:46:0x0104  */
     /* JADX WARN: Removed duplicated region for block: B:48:0x0109  */
     /* JADX WARN: Removed duplicated region for block: B:53:0x011a  */
@@ -385,7 +299,7 @@ public final class q implements i {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void g(int i10, int i11, byte[] bArr) {
+    public final void b(int i10, int i11, byte[] bArr) {
         boolean z10;
         boolean z11;
         boolean z12;
@@ -458,7 +372,7 @@ public final class q implements i {
                                 }
                             }
                             if (uVar.b(i23)) {
-                                int e10 = uVar.e(i23);
+                                int e7 = uVar.e(i23);
                                 if (pVar2.k) {
                                     z10 = false;
                                     z11 = false;
@@ -496,9 +410,9 @@ public final class q implements i {
                                             } else {
                                                 if (i13 == 1 && !pVar2.o) {
                                                     if (uVar.c()) {
-                                                        int g7 = uVar.g();
+                                                        int g10 = uVar.g();
                                                         if (!z14 || z10) {
-                                                            i17 = g7;
+                                                            i17 = g10;
                                                             i14 = 0;
                                                             i15 = 0;
                                                         } else {
@@ -506,7 +420,7 @@ public final class q implements i {
                                                                 return;
                                                             }
                                                             i15 = uVar.g();
-                                                            i17 = g7;
+                                                            i17 = g10;
                                                             i14 = 0;
                                                         }
                                                         i16 = 0;
@@ -514,7 +428,7 @@ public final class q implements i {
                                                         oVar3.c = pVar2;
                                                         oVar3.d = e;
                                                         oVar3.e = f7;
-                                                        oVar3.f = e10;
+                                                        oVar3.f = e7;
                                                         oVar3.g = f10;
                                                         oVar3.h = z10;
                                                         oVar3.i = z12;
@@ -540,7 +454,7 @@ public final class q implements i {
                                             oVar32.c = pVar2;
                                             oVar32.d = e;
                                             oVar32.e = f7;
-                                            oVar32.f = e10;
+                                            oVar32.f = e7;
                                             oVar32.g = f10;
                                             oVar32.h = z10;
                                             oVar32.i = z12;
@@ -572,7 +486,7 @@ public final class q implements i {
                                 oVar322.c = pVar2;
                                 oVar322.d = e;
                                 oVar322.e = f7;
-                                oVar322.f = e10;
+                                oVar322.f = e7;
                                 oVar322.g = f10;
                                 oVar322.h = z10;
                                 oVar322.i = z12;
@@ -594,7 +508,44 @@ public final class q implements i {
         }
     }
 
-    public final void h(int i10, long j10, long j11) {
+    @Override // j4.i
+    public final void c(e2.x xVar) {
+        int i10;
+        this.j.getClass();
+        String str = l0.a;
+        int i11 = xVar.b;
+        int i12 = xVar.c;
+        byte[] bArr = xVar.a;
+        this.g += xVar.a();
+        this.j.d(xVar.a(), xVar);
+        while (true) {
+            int c10 = f2.q.c(bArr, i11, i12, this.h);
+            if (c10 == i12) {
+                b(i11, i12, bArr);
+                return;
+            }
+            int i13 = bArr[c10 + 3] & 31;
+            if (c10 <= 0 || bArr[c10 - 1] != 0) {
+                i10 = 3;
+            } else {
+                c10--;
+                i10 = 4;
+            }
+            int i14 = c10;
+            int i15 = i10;
+            int i16 = i14 - i11;
+            if (i16 > 0) {
+                b(i11, i14, bArr);
+            }
+            int i17 = i12 - i14;
+            long j10 = this.g - i17;
+            a(j10, this.m, i17, i16 < 0 ? -i16 : 0);
+            d(j10, i13, this.m);
+            i11 = i14 + i15;
+        }
+    }
+
+    public final void d(long j10, int i10, long j11) {
         if (!this.l || this.k.c) {
             this.d.h(i10);
             this.e.h(i10);
@@ -621,5 +572,55 @@ public final class q implements i {
         oVar.a = false;
         pVar.h = 0;
         pVar.k = true;
+    }
+
+    @Override // j4.i
+    public final void e() {
+        this.g = 0L;
+        this.n = false;
+        this.m = -9223372036854775807L;
+        f2.q.b(this.h);
+        this.d.g();
+        this.e.g();
+        this.f.g();
+        this.a.d.e(0);
+        p pVar = this.k;
+        if (pVar != null) {
+            pVar.k = false;
+            pVar.o = false;
+            o oVar = pVar.n;
+            oVar.b = false;
+            oVar.a = false;
+        }
+    }
+
+    @Override // j4.i
+    public final void f(c3.q qVar, g0 g0Var) {
+        g0Var.b();
+        g0Var.c();
+        this.i = (String) g0Var.e;
+        g0Var.c();
+        k0 I1 = qVar.I1(g0Var.c, 2);
+        this.j = I1;
+        this.k = new p(I1, this.b, this.c);
+        this.a.b(qVar, g0Var);
+    }
+
+    @Override // j4.i
+    public final void g(boolean z10) {
+        this.j.getClass();
+        String str = l0.a;
+        if (z10) {
+            this.a.d.e(0);
+            a(this.g, this.m, 0, 0);
+            d(this.g, 9, this.m);
+            a(this.g, this.m, 0, 0);
+        }
+    }
+
+    @Override // j4.i
+    public final void h(int i10, long j10) {
+        this.m = j10;
+        this.n = ((i10 & 2) != 0) | this.n;
     }
 }

@@ -1,80 +1,19 @@
 package s4;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.View;
-import android.view.ViewPropertyAnimator;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class i extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ j b;
-    public final /* synthetic */ ViewPropertyAnimator c;
-    public final /* synthetic */ View d;
-    public final /* synthetic */ l e;
+public class i {
+    public final c1 a;
+    public final int b;
+    public final int c;
+    public final int d;
+    public final int e;
 
-    public /* synthetic */ i(l lVar, j jVar, ViewPropertyAnimator viewPropertyAnimator, View view, int i10) {
-        this.a = i10;
-        this.e = lVar;
-        this.b = jVar;
-        this.c = viewPropertyAnimator;
-        this.d = view;
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                this.c.setListener(null);
-                View view = this.d;
-                view.setAlpha(1.0f);
-                l lVar = this.e;
-                if (lVar.A(view) > 0.0f) {
-                    view.setScaleX(1.0f);
-                    view.setScaleY(1.0f);
-                }
-                view.setTranslationX(0.0f);
-                view.setTranslationY(0.0f);
-                j jVar = this.b;
-                e1 e1Var = jVar.a;
-                lVar.O();
-                lVar.d(jVar.a);
-                lVar.B.remove(jVar.a);
-                lVar.G();
-                break;
-            default:
-                this.c.setListener(null);
-                View view2 = this.d;
-                view2.setAlpha(1.0f);
-                l lVar2 = this.e;
-                if (lVar2.A(view2) > 0.0f) {
-                    view2.setScaleX(1.0f);
-                    view2.setScaleY(1.0f);
-                }
-                view2.setTranslationX(0.0f);
-                view2.setTranslationY(0.0f);
-                j jVar2 = this.b;
-                e1 e1Var2 = jVar2.b;
-                lVar2.O();
-                lVar2.d(jVar2.b);
-                lVar2.B.remove(jVar2.b);
-                lVar2.G();
-                break;
-        }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationStart(Animator animator) {
-        switch (this.a) {
-            case 0:
-                e1 e1Var = this.b.a;
-                this.e.getClass();
-                break;
-            default:
-                e1 e1Var2 = this.b.b;
-                this.e.getClass();
-                break;
-        }
+    public i(c1 c1Var, int i10, int i11, int i12, int i13) {
+        this.a = c1Var;
+        this.b = i10;
+        this.c = i11;
+        this.d = i12;
+        this.e = i13;
     }
 }

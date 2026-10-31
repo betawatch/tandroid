@@ -1,33 +1,48 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class kc0 extends ig.t0 {
-    public final /* synthetic */ rc0 N;
+public final /* synthetic */ class kc0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ wd0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public kc0(rc0 rc0Var, Context context, org.telegram.ui.ActionBar.u6 u6Var, boolean z10) {
-        super(context, u6Var, false, z10);
-        this.N = rc0Var;
+    public /* synthetic */ kc0(wd0 wd0Var, int i10) {
+        this.a = i10;
+        this.b = wd0Var;
     }
 
-    @Override // s4.h0
-    public final void l() {
-        rc0 rc0Var = this.N;
-        org.telegram.ui.ActionBar.w0 w0Var = rc0Var.w;
-        if (w0Var != null) {
-            w0Var.setShowSearchProgress(rc0Var.W.J);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.L.m();
+                break;
+            case 1:
+                wd0 wd0Var = this.b;
+                wd0Var.M = null;
+                wd0Var.N = null;
+                wd0Var.o(true);
+                wd0Var.e.j(null, null, wd0Var.f, null);
+                hd hdVar = wd0Var.n;
+                org.telegram.ui.Components.bi0 bi0Var = wd0Var.I;
+                hdVar.setAnimation(bi0Var);
+                bi0Var.M(0);
+                wd0Var.K = true;
+                break;
+            case 2:
+                this.b.K = true;
+                break;
+            default:
+                EditTextBoldCursor editTextBoldCursor = this.b.c;
+                if (editTextBoldCursor != null) {
+                    editTextBoldCursor.requestFocus();
+                    editTextBoldCursor.setSelection(editTextBoldCursor.length());
+                    org.telegram.messenger.i0.J3(editTextBoldCursor);
+                    break;
+                }
+                break;
         }
-        TextView textView = rc0Var.r;
-        if (textView != null) {
-            textView.setText(AndroidUtilities.replaceTags(LocaleController.formatString("NoPlacesFoundInfo", R.string.NoPlacesFoundInfo, rc0Var.W.x)));
-        }
-        super.l();
     }
 }

@@ -1,53 +1,49 @@
 package di;
 
-import android.view.ViewGroup;
-import org.telegram.ui.Components.wl0;
-import org.telegram.ui.sw;
+import java.util.concurrent.ThreadFactory;
+import org.telegram.ui.Components.bi0;
+import org.telegram.ui.Wallet.WalletEngine2;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes4.dex */
-public final class n extends qg.b {
-    public final boolean d;
-    public final /* synthetic */ sw e;
+public final /* synthetic */ class n implements ThreadFactory {
+    public final /* synthetic */ int a;
 
-    public n(sw swVar, boolean z10) {
-        this.e = swVar;
-        this.d = z10;
+    public /* synthetic */ n(int i10) {
+        this.a = i10;
     }
 
-    @Override // org.telegram.ui.Components.mm0
-    public final boolean D(s4.e1 e1Var) {
-        return false;
-    }
-
-    @Override // s4.h0
-    public final int h() {
-        boolean z10 = this.d;
-        sw swVar = this.e;
-        return (z10 ? swVar.y : swVar.x).size();
-    }
-
-    @Override // s4.h0
-    public final void v(s4.e1 e1Var, int i10) {
-        q qVar = (q) e1Var.a;
-        qVar.b = i10;
-        boolean z10 = this.d;
-        sw swVar = this.e;
-        if (z10) {
-            qVar.setDialogId(((o) swVar.y.get(i10)).c);
-        } else {
-            qVar.setDialogId(((o) swVar.x.get(i10)).c);
+    @Override // java.util.concurrent.ThreadFactory
+    public final Thread newThread(Runnable runnable) {
+        Thread lambda$new$0;
+        switch (this.a) {
+            case 0:
+                Thread thread = new Thread(runnable, "PrismaHighlight");
+                thread.setDaemon(true);
+                return thread;
+            case 1:
+                return new Thread(runnable, "ExoPlayer:AudioTrackReleaseThread");
+            case 2:
+                return new Thread(runnable, "AudioRecorderFiles");
+            case 3:
+                return new Thread(runnable, "AudioRecorderOutput");
+            case 4:
+                return new Thread(runnable, "RoundVideoFiles");
+            case 5:
+                return new Thread(runnable, "RoundVideoOutput");
+            case 6:
+                return new Thread(runnable, "Lottie-" + bi0.P0.getAndIncrement());
+            case 7:
+                return new Thread(runnable, "LottieLow-" + bi0.Q0.getAndIncrement());
+            case 8:
+                return new Thread(runnable, "GramWalletStorage");
+            case 9:
+                lambda$new$0 = WalletEngine2.lambda$new$0(runnable);
+                return lambda$new$0;
+            default:
+                Thread thread2 = new Thread(new org.telegram.utils.twidget.l(runnable, 3), "widget-sandbox-io");
+                thread2.setDaemon(true);
+                return thread2;
         }
-    }
-
-    @Override // s4.h0
-    public final s4.e1 x(ViewGroup viewGroup, int i10) {
-        q qVar = new q(this.e, viewGroup.getContext());
-        boolean z10 = this.d;
-        qVar.N = z10;
-        if (z10) {
-            qVar.d(1.0f, 1.0f, 0.0f, false);
-        }
-        return new wl0(qVar);
     }
 }

@@ -1,53 +1,54 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import android.text.SpannableStringBuilder;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class wr implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
+public final class wr {
+    public int a;
+    public int b;
+    public qz0 c;
+    public int d;
+    public boolean e;
+    public int f;
+    public int g;
 
-    public /* synthetic */ wr(Object obj, Object obj2, Object obj3, long j10, int i10) {
-        this.a = i10;
-        this.c = obj;
-        this.d = obj2;
-        this.e = obj3;
-        this.b = j10;
-    }
-
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                zr.S((zr) this.c, (Context) this.d, (fi.d) this.e, this.b);
-                break;
-            case 1:
-                org.telegram.ui.ey eyVar = (org.telegram.ui.ey) this.c;
-                MessagesController.DialogFilter dialogFilter = (MessagesController.DialogFilter) this.d;
-                TLRPC.Dialog dialog = (TLRPC.Dialog) this.e;
-                eyVar.finishPreviewFragment();
-                AndroidUtilities.runOnUIThread(new bi.y2(eyVar, dialogFilter, dialog, this.b, 19), 100L);
-                break;
-            default:
-                vg.a0.P((vg.a0) this.c, (TL_stories.PrepaidGiveaway) this.d, this.b, (org.telegram.ui.ActionBar.r2) this.e);
-                break;
+    public static wr b(org.telegram.ui.Cells.v2 v2Var, org.telegram.messenger.ap apVar) {
+        wr wrVar = new wr();
+        wrVar.a = apVar.a;
+        wrVar.b = apVar.m;
+        String str = apVar.b;
+        if (str == null) {
+            str = "";
         }
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(str.toUpperCase());
+        qz0 qz0Var = new qz0(spannableStringBuilder, 10.0f, org.telegram.messenger.i0.o());
+        qz0Var.r(v2Var);
+        wrVar.c = qz0Var;
+        wrVar.c.q(org.telegram.messenger.jj.A5(org.telegram.messenger.k6.m(spannableStringBuilder, qz0Var.a.getFontMetricsInt(), false, null, 0), apVar.c, wrVar.c.a.getFontMetricsInt(), false));
+        wrVar.c.o(26);
+        int L = org.telegram.messenger.i0.L(9.32f);
+        qz0 qz0Var2 = wrVar.c;
+        wrVar.g = L + ((int) qz0Var2.c);
+        qz0Var2.i();
+        int[] iArr = org.telegram.ui.ActionBar.t6.r8;
+        int i10 = iArr[apVar.m % iArr.length];
+        wrVar.f = i10;
+        wrVar.e = true;
+        wrVar.d = org.telegram.ui.ActionBar.t6.x0(null, i10, false);
+        return wrVar;
     }
 
-    public /* synthetic */ wr(vg.a0 a0Var, TL_stories.PrepaidGiveaway prepaidGiveaway, long j10, org.telegram.ui.ActionBar.r2 r2Var) {
-        this.a = 2;
-        this.c = a0Var;
-        this.d = prepaidGiveaway;
-        this.b = j10;
-        this.e = r2Var;
+    public final void a(Canvas canvas) {
+        if (this.e) {
+            this.d = org.telegram.ui.ActionBar.t6.x0(null, this.f, false);
+        }
+        org.telegram.ui.ActionBar.t6.A0.setColor(org.telegram.ui.ActionBar.t6.r1(org.telegram.ui.ActionBar.t6.I.q() ? 0.2f : 0.1f, this.d));
+        RectF rectF = org.telegram.messenger.i0.P;
+        rectF.set(0.0f, 0.0f, this.g, org.telegram.messenger.i0.L(14.66f));
+        canvas.drawRoundRect(rectF, org.telegram.messenger.i0.L(4.0f), org.telegram.messenger.i0.L(4.0f), org.telegram.ui.ActionBar.t6.A0);
+        this.c.c(org.telegram.messenger.i0.L(4.66f), org.telegram.messenger.i0.L(14.66f) / 2.0f, 1.0f, this.d, canvas);
     }
 }

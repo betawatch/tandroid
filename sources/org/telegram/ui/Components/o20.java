@@ -1,34 +1,27 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import org.telegram.messenger.NotificationCenter;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class o20 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ p20 b;
+public final class o20 implements z4.e {
+    public final /* synthetic */ org.telegram.ui.b40 a;
 
-    public /* synthetic */ o20(p20 p20Var, int i10) {
-        this.a = i10;
-        this.b = p20Var;
+    public o20(org.telegram.ui.b40 b40Var) {
+        this.a = b40Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                p20 p20Var = this.b;
-                NotificationCenter.getInstance(p20Var.r.a).onAnimationFinish(p20Var.f);
-                p20Var.requestLayout();
-                break;
-            default:
-                p20 p20Var2 = this.b;
-                p20Var2.d = null;
-                p20Var2.a = null;
-                p20Var2.b = false;
-                break;
-        }
+    @Override // z4.e
+    public final void b(float f7, int i10, int i11) {
+        org.telegram.ui.b40 b40Var = this.a;
+        b40Var.n1 = i10;
+        b40Var.m1 = f7;
+        r20.I0(b40Var);
+    }
+
+    @Override // z4.e
+    public final void a(int i10) {
+    }
+
+    @Override // z4.e
+    public final void c(int i10) {
     }
 }

@@ -1,112 +1,37 @@
 package org.telegram.messenger;
 
-import android.content.Context;
-import java.io.File;
-import java.util.ArrayList;
-import java.util.concurrent.CountDownLatch;
-import org.telegram.messenger.BirthdayController;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
+import android.content.SharedPreferences;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.tgnet.tl.TL_bots;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final /* synthetic */ class l0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
+public final class l0 implements m0 {
+    public final String a;
+    public final int b;
+    public int c;
 
-    public /* synthetic */ l0(Object obj, int i10, Object obj2, Object obj3, int i11) {
-        this.a = i11;
-        this.c = obj;
+    public l0(String str, int i10) {
+        this.a = str;
         this.b = i10;
-        this.d = obj2;
-        this.e = obj3;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                ((BirthdayController) this.c).lambda$new$1(this.b, (ArrayList) this.d, (BirthdayController.TL_birthdays) this.e);
-                break;
-            case 1:
-                ((MessagesController) this.c).lambda$checkChatlistFolderUpdate$483((TLObject) this.d, this.b, (MessagesController.ChatlistUpdatesStat) this.e);
-                break;
-            case 2:
-                ((ContactsController) this.c).lambda$loadPrivacySettings$64((TLRPC.TL_error) this.d, (TLObject) this.e, this.b);
-                break;
-            case 3:
-                ((ContactsController) this.c).lambda$processLoadedContacts$37((ArrayList) this.d, this.b, (ArrayList) this.e);
-                break;
-            case 4:
-                ((ImageLoader) this.c).lambda$fileDidLoaded$11((String) this.d, this.b, (File) this.e);
-                break;
-            case 5:
-                ((LocaleController) this.c).lambda$applyLanguage$7((LocaleController.LocaleInfo) this.d, this.b, (Runnable) this.e);
-                break;
-            case 6:
-                ((MediaDataController) this.c).lambda$loadArchivedStickersCount$71((TLRPC.TL_error) this.d, (TLObject) this.e, this.b);
-                break;
-            case 7:
-                ((MediaDataController) this.c).lambda$loadBotInfo$198((Utilities.Callback) this.d, (TL_bots.BotInfo) this.e, this.b);
-                break;
-            case 8:
-                ((MediaDataController) this.c).lambda$putDiceStickersToCache$90((TLRPC.TL_messages_stickerSet) this.d, (String) this.e, this.b);
-                break;
-            case 9:
-                ((MessagesController) this.c).lambda$loadMessagesInternal$176(this.b, (TLRPC.TL_messages_getSavedHistory) this.d, (TLRPC.TL_error) this.e);
-                break;
-            case 10:
-                ((MessagesController) this.c).lambda$processLoadedDeleteTask$87((a0.h) this.d, (a0.h) this.e, this.b);
-                break;
-            case 11:
-                ((MessagesController) this.c).lambda$loadFullUser$69((TLRPC.UserFull) this.d, (TLRPC.User) this.e, this.b);
-                break;
-            case 12:
-                ((MessagesController) this.c).lambda$loadMessagesInternal$181(this.b, (TLRPC.TL_messages_getPeerDialogs) this.d, (TLRPC.TL_error) this.e);
-                break;
-            case 13:
-                ((MessagesController) this.c).lambda$loadMessagesInternal$178(this.b, (TLRPC.TL_messages_getReplies) this.d, (TLRPC.TL_error) this.e);
-                break;
-            case 14:
-                ((MessagesController) this.c).lambda$loadMessagesInternal$183(this.b, (TLRPC.TL_messages_getHistory) this.d, (TLRPC.TL_error) this.e);
-                break;
-            case 15:
-                ((MessagesStorage) this.c).lambda$hasAuthMessage$180(this.b, (boolean[]) this.d, (CountDownLatch) this.e);
-                break;
-            case 16:
-                ((MessagesStorage) this.c).lambda$getBotCache$131(this.b, (String) this.d, (RequestDelegate) this.e);
-                break;
-            case 17:
-                PasskeysController.lambda$create$6((Context) this.c, this.b, (TL_account.registerPasskey) this.d, (Utilities.Callback2) this.e);
-                break;
-            default:
-                ((SecretChatHelper) this.c).lambda$performSendEncryptedRequest$5((TLRPC.Message) this.d, (TLRPC.messages_SentEncryptedMessage) this.e, this.b);
-                break;
+    @Override // org.telegram.messenger.m0
+    public final boolean a(SharedPreferences.Editor editor, TLRPC.JSONValue jSONValue) {
+        if (!(jSONValue instanceof TLRPC.TL_jsonNumber)) {
+            return false;
         }
+        double d = ((TLRPC.TL_jsonNumber) jSONValue).value;
+        if (d == this.c) {
+            return false;
+        }
+        int i10 = (int) d;
+        this.c = i10;
+        editor.putInt(this.a, i10);
+        return true;
     }
 
-    public /* synthetic */ l0(Object obj, Object obj2, int i10, Object obj3, int i11) {
-        this.a = i11;
-        this.c = obj;
-        this.d = obj2;
-        this.b = i10;
-        this.e = obj3;
-    }
-
-    public /* synthetic */ l0(BaseController baseController, Object obj, Object obj2, int i10, int i11) {
-        this.a = i11;
-        this.c = baseController;
-        this.d = obj;
-        this.e = obj2;
-        this.b = i10;
+    @Override // org.telegram.messenger.m0
+    public final void b(SharedPreferences sharedPreferences) {
+        this.c = sharedPreferences.getInt(this.a, this.b);
     }
 }

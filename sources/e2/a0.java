@@ -1,72 +1,73 @@
 package e2;
 
 import android.os.SystemClock;
-import b2.p1;
+import b2.o1;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class a0 {
-    public final int a;
-    public Object b;
-    public int c;
+    public long a;
+    public long b;
+    public long c;
     public int d;
-    public long e;
-    public long f;
-    public boolean g;
-    public long h;
-    public final /* synthetic */ e0 i;
+    public boolean e;
+    public int f;
+    public int g;
+    public Object h;
+    public final Object i;
 
     public a0(e0 e0Var, int i10) {
         this.i = e0Var;
-        this.a = i10;
+        this.d = i10;
     }
 
-    public final void a() {
-        Object obj;
-        e0 e0Var = this.i;
+    public void a() {
+        int i10 = this.d;
+        e0 e0Var = (e0) this.i;
         i0 i0Var = e0Var.f;
-        i2.j0 j0Var = e0Var.a;
-        if (j0Var.d() != 2 || !j0Var.t() || j0Var.w0() != 0) {
-            if (this.g) {
+        i2.i0 i0Var2 = e0Var.a;
+        if (i0Var2.h() != 2 || !i0Var2.t() || i0Var2.w0() != 0) {
+            if (this.e) {
                 i0Var.e(1);
             }
-            this.g = false;
+            this.e = false;
             return;
         }
-        p1 y02 = j0Var.y0();
-        Object l4 = y02.p() ? null : y02.l(j0Var.A());
-        int m0 = j0Var.m0();
-        int N = j0Var.N();
-        long d02 = j0Var.d0();
-        long max = Math.max(0L, j0Var.q() - Math.max(0L, d02 - j0Var.M0()));
-        if (l4 != null && m0 == -1) {
-            d02 -= n0.h0(y02.g(l4, e0Var.e).e);
+        o1 y02 = i0Var2.y0();
+        Object l4 = y02.p() ? null : y02.l(i0Var2.A());
+        int l02 = i0Var2.l0();
+        int N = i0Var2.N();
+        long c02 = i0Var2.c0();
+        long max = Math.max(0L, i0Var2.q() - Math.max(0L, c02 - i0Var2.M0()));
+        if (l4 != null && l02 == -1) {
+            c02 -= l0.h0(y02.g(l4, e0Var.e).e);
         }
         e0Var.d.getClass();
         long elapsedRealtime = SystemClock.elapsedRealtime();
-        boolean z10 = this.g;
-        int i10 = this.a;
-        if (z10 && Objects.equals(l4, this.b) && m0 == this.c && N == this.d) {
-            obj = l4;
-            if (d02 == this.e && max == this.f) {
-                if (elapsedRealtime - this.h >= i10) {
-                    e0Var.c.a.A1(new i2.m(2, new f0(1, i10), 1003));
-                    return;
-                }
+        if (this.e && Objects.equals(l4, this.h) && l02 == this.f && N == this.g && c02 == this.a && max == this.b) {
+            if (elapsedRealtime - this.c >= i10) {
+                e0Var.c.a.A1(new i2.l(2, new f0(1, i10), 1003));
                 return;
             }
-        } else {
-            obj = l4;
+            return;
         }
-        this.g = true;
-        this.h = elapsedRealtime;
-        this.b = obj;
-        this.c = m0;
-        this.d = N;
-        this.e = d02;
-        this.f = max;
+        this.e = true;
+        this.c = elapsedRealtime;
+        this.h = l4;
+        this.f = l02;
+        this.g = N;
+        this.a = c02;
+        this.b = max;
         i0Var.e(1);
         i0Var.a.sendEmptyMessageDelayed(1, i10);
+    }
+
+    public a0(String str, long j10, long j11, long j12, zf.e0 e0Var) {
+        this.i = e0Var;
+        this.h = str;
+        this.a = j10;
+        this.b = j11;
+        this.c = j12;
     }
 }

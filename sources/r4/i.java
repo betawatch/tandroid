@@ -7,27 +7,27 @@ import c0.m;
 import java.io.File;
 import java.io.IOException;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public abstract class i {
     public static final m a = new m();
     public static final Object b = new Object();
-    public static tb.a c = null;
+    public static kb.a c = null;
 
     public static long a(Context context) {
         PackageManager packageManager = context.getApplicationContext().getPackageManager();
         return Build.VERSION.SDK_INT >= 33 ? g.a(packageManager, context).lastUpdateTime : packageManager.getPackageInfo(context.getPackageName(), 0).lastUpdateTime;
     }
 
-    public static tb.a b() {
-        tb.a aVar = new tb.a(21);
+    public static kb.a b() {
+        kb.a aVar = new kb.a(19);
         c = aVar;
         a.k(aVar);
         return c;
     }
 
     /* JADX WARN: Can't wrap try/catch for region: R(21:14|(1:80)(1:18)|19|(1:79)(1:23)|24|25|26|(2:64|65)(1:28)|29|(9:36|(1:40)|(1:47)|48|(2:56|57)|52|53|54|55)|(1:63)|(1:40)|(3:42|45|47)|48|(1:50)|56|57|52|53|54|55) */
-    /* JADX WARN: Code restructure failed: missing block: B:61:0x00a1, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:61:0x009e, code lost:
     
         r6 = 1;
      */
@@ -79,7 +79,7 @@ public abstract class i {
                             if (a2 != null && a2.b == 2 && i12 == 1 && length < a2.d) {
                                 i12 = 3;
                             }
-                            hVar = new h(a10, 1, i12, length2);
+                            hVar = new h(a10, length2, 1, i12);
                             if (a2 != null || !a2.equals(hVar)) {
                                 hVar.b(file3);
                             }
@@ -95,7 +95,7 @@ public abstract class i {
                         if (a2 != null) {
                             i12 = 3;
                         }
-                        hVar = new h(a10, 1, i12, length2);
+                        hVar = new h(a10, length2, 1, i12);
                         if (a2 != null) {
                         }
                         hVar.b(file3);

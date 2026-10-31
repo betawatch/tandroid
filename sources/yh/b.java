@@ -1,26 +1,25 @@
 package yh;
 
-import org.telegram.ui.ActionBar.r2;
-import org.telegram.ui.Components.wa0;
+import java.io.Serializable;
+import org.telegram.messenger.fs;
+import org.telegram.messenger.o20;
+import org.telegram.ui.Components.a51;
+import rh.e3;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes4.dex */
-public final class b extends wa0 {
-    public final /* synthetic */ d b0;
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes.dex */
+public final /* synthetic */ class b implements o20, fs {
+    public final /* synthetic */ e a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b(d dVar, r2 r2Var, long j10) {
-        super(r2Var, j10);
-        this.b0 = dVar;
+    @Override // org.telegram.messenger.fs
+    public void a(String str) {
+        e eVar = this.a;
+        eVar.getMessagesController().L0(Long.valueOf(-eVar.b));
+        eVar.showDialog(new ai.a(eVar.getParentActivity(), null, eVar.b, new e3(16, eVar, str)));
     }
 
-    @Override // org.telegram.ui.Components.c81, org.telegram.ui.ActionBar.k3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.n2
-    public final void dismiss() {
-        d dVar = this.b0;
-        b bVar = dVar.i;
-        if (bVar != null && !bVar.U.b) {
-            dVar.i = null;
-        }
-        super.dismiss();
+    @Override // org.telegram.messenger.o20
+    public void k(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
+        e.Y(this.a, (a51) obj);
     }
 }

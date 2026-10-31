@@ -1,47 +1,45 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.UnconfirmedAuthController;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.ResultCallback;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.tgnet.tl.TL_agent;
-import org.telegram.tgnet.tl.TL_payments;
+import android.content.SharedPreferences;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final /* synthetic */ class c implements Utilities.Callback2 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
+public final class c {
+    public static volatile c[] b = new c[4];
+    public int a;
 
-    public /* synthetic */ c(int i10, Object obj, Object obj2) {
-        this.a = i10;
-        this.b = obj;
-        this.c = obj2;
+    public static c a(int i10) {
+        c cVar;
+        c cVar2 = b[i10];
+        if (cVar2 != null) {
+            return cVar2;
+        }
+        synchronized (c.class) {
+            try {
+                cVar = b[i10];
+                if (cVar == null) {
+                    c[] cVarArr = b;
+                    c cVar3 = new c();
+                    cVar3.a = i10;
+                    cVarArr[i10] = cVar3;
+                    cVar = cVar3;
+                }
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+        return cVar;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback2
-    public final void run(Object obj, Object obj2) {
-        switch (this.a) {
-            case 0:
-                ((AgentController) this.b).lambda$connect$2((Utilities.Callback) this.c, (TL_agent.settings) obj, (TLRPC.TL_error) obj2);
-                break;
-            case 1:
-                ((ChatThemeController) this.b).lambda$requestNextChatThemes$21((ResultCallback) this.c, (TL_account.ChatThemes) obj, (TLRPC.TL_error) obj2);
-                break;
-            case 2:
-                ((GiftAuctionController) this.b).lambda$requestGiftAuctionInternal$4((Utilities.Callback2) this.c, (TL_payments.TL_StarGiftAuctionState) obj, (TLRPC.TL_error) obj2);
-                break;
-            case 3:
-                ((MessagesController) this.b).lambda$fetchJoinedCommunities$250((Utilities.Callback) this.c, (TLRPC.messages_Chats) obj, (TLRPC.TL_error) obj2);
-                break;
-            case 4:
-                PasskeysController.lambda$create$4((org.telegram.ui.ActionBar.e2) this.b, (Utilities.Callback2) this.c, (TL_account.Passkey) obj, (TLRPC.TL_error) obj2);
-                break;
-            default:
-                ((UnconfirmedAuthController.UnconfirmedAuth) this.b).lambda$confirm$0((Utilities.Callback) this.c, (TLRPC.Bool) obj, (TLRPC.TL_error) obj2);
-                break;
-        }
+    public final zs b() {
+        return zs.f(this.a);
+    }
+
+    public final SharedPreferences c() {
+        return vp.r1(this.a).e7;
+    }
+
+    public final d20 d() {
+        return d20.i(this.a);
     }
 }

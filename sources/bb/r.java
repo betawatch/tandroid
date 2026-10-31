@@ -8,7 +8,7 @@ import android.os.Process;
 import java.util.ArrayList;
 import java.util.List;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public abstract class r {
     public static ArrayList a(Context context) {
@@ -19,9 +19,9 @@ public abstract class r {
         ActivityManager activityManager = systemService instanceof ActivityManager ? (ActivityManager) systemService : null;
         List<ActivityManager.RunningAppProcessInfo> runningAppProcesses = activityManager != null ? activityManager.getRunningAppProcesses() : null;
         if (runningAppProcesses == null) {
-            runningAppProcesses = kd.o.a;
+            runningAppProcesses = bd.q.a;
         }
-        ArrayList f7 = kd.g.f(runningAppProcesses);
+        ArrayList f7 = bd.i.f(runningAppProcesses);
         ArrayList arrayList = new ArrayList();
         int size = f7.size();
         int i11 = 0;
@@ -33,7 +33,7 @@ public abstract class r {
                 arrayList.add(obj);
             }
         }
-        ArrayList arrayList2 = new ArrayList(kd.i.d(arrayList));
+        ArrayList arrayList2 = new ArrayList(bd.k.d(arrayList));
         int size2 = arrayList.size();
         while (i11 < size2) {
             Object obj2 = arrayList.get(i11);
@@ -41,7 +41,7 @@ public abstract class r {
             ActivityManager.RunningAppProcessInfo runningAppProcessInfo = (ActivityManager.RunningAppProcessInfo) obj2;
             String str2 = runningAppProcessInfo.processName;
             kotlin.jvm.internal.i.d(str2, "runningAppProcessInfo.processName");
-            arrayList2.add(new q(str2, runningAppProcessInfo.pid, runningAppProcessInfo.importance, kotlin.jvm.internal.i.a(runningAppProcessInfo.processName, str)));
+            arrayList2.add(new q(runningAppProcessInfo.pid, runningAppProcessInfo.importance, str2, kotlin.jvm.internal.i.a(runningAppProcessInfo.processName, str)));
         }
         return arrayList2;
     }
@@ -65,7 +65,7 @@ public abstract class r {
             }
         }
         q qVar = (q) obj;
-        return qVar == null ? new q(c(), myPid, 0, false) : qVar;
+        return qVar == null ? new q(myPid, 0, c(), false) : qVar;
     }
 
     public static String c() {
@@ -79,7 +79,7 @@ public abstract class r {
         if (i10 >= 28 && (processName = Application.getProcessName()) != null) {
             return processName;
         }
-        String a2 = v6.d.a();
+        String a2 = u6.d.a();
         return a2 != null ? a2 : "";
     }
 }

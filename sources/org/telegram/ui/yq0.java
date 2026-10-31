@@ -1,104 +1,55 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.Crop.CropAreaView;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class yq0 implements ValueAnimator.AnimatorUpdateListener {
+public final class yq0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ PhotoViewer b;
+    public final /* synthetic */ zq0 b;
 
-    public /* synthetic */ yq0(PhotoViewer photoViewer, int i10) {
+    public yq0(zq0 zq0Var, int i10) {
+        this.b = zq0Var;
         this.a = i10;
-        this.b = photoViewer;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        int i10 = this.a;
-        PhotoViewer photoViewer = this.b;
-        switch (i10) {
-            case 0:
-                Drawable[] drawableArr = PhotoViewer.U8;
-                photoViewer.getClass();
-                photoViewer.i3.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
-            case 1:
-                CropAreaView cropAreaView = photoViewer.C1.b.a;
-                float lerp = AndroidUtilities.lerp(photoViewer.a6, photoViewer.e6, photoViewer.l6);
-                float lerp2 = AndroidUtilities.lerp(photoViewer.X5, photoViewer.c6, photoViewer.l6);
-                float lerp3 = AndroidUtilities.lerp(photoViewer.Y5, photoViewer.d6, photoViewer.l6);
-                cropAreaView.n0 = 0.0f;
-                cropAreaView.o0 = lerp;
-                cropAreaView.p0 = lerp2;
-                cropAreaView.q0 = lerp3;
-                cropAreaView.invalidate();
-                break;
-            case 2:
-                photoViewer.L1.s0(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
-            case 3:
-                photoViewer.L1.setOffsetTranslationX(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
-            case 4:
-                Drawable[] drawableArr2 = PhotoViewer.U8;
-                photoViewer.getClass();
-                photoViewer.m6 = 1.0f - ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                break;
-            case 5:
-                Drawable[] drawableArr3 = PhotoViewer.U8;
-                photoViewer.v3();
-                break;
-            case 6:
-                photoViewer.L1.s0(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
-            case 7:
-                photoViewer.L1.setOffsetTranslationX(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
-            case 8:
-                pt0 pt0Var = photoViewer.L1;
-                if (pt0Var != null) {
-                    pt0Var.S0.invalidate();
-                    break;
-                }
-                break;
-            case 9:
-                Drawable[] drawableArr4 = PhotoViewer.U8;
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                photoViewer.Z5 = floatValue;
-                pt0 pt0Var2 = photoViewer.L1;
-                if (pt0Var2 != null && Math.abs(floatValue - pt0Var2.M1) > 0.1f) {
-                    pt0Var2.M1 = floatValue;
-                    pt0Var2.u0(pt0Var2.x0, pt0Var2.y0, pt0Var2.z0, pt0Var2.C0, pt0Var2.D0);
-                }
-                photoViewer.e0.invalidate();
-                break;
-            case 10:
-                Drawable[] drawableArr5 = PhotoViewer.U8;
-                photoViewer.m6 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                photoViewer.I1();
-                break;
-            case 11:
-                Drawable[] drawableArr6 = PhotoViewer.U8;
-                photoViewer.getClass();
-                photoViewer.m6 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                break;
-            case 12:
-                Drawable[] drawableArr7 = PhotoViewer.U8;
-                photoViewer.getClass();
-                photoViewer.m6 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                break;
-            case 13:
-                photoViewer.W0[0].e(1, ((Float) valueAnimator.getAnimatedValue()).floatValue(), false);
-                break;
-            default:
-                Drawable[] drawableArr8 = PhotoViewer.U8;
-                photoViewer.getClass();
-                photoViewer.m6 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                break;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        if (this.b.b.k8) {
+            PhotoViewer photoViewer = this.b.b;
+            if (photoViewer.r1) {
+                photoViewer.E3();
+            }
+        }
+        if (this.a == 3) {
+            PhotoViewer photoViewer2 = this.b.b;
+            photoViewer2.J2(photoViewer2.P4, false, true, true);
+        }
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationStart(Animator animator) {
+        PhotoViewer photoViewer = this.b.b;
+        photoViewer.P0.setVisibility(0);
+        if (photoViewer.H3()) {
+            photoViewer.n0.setVisibility(0);
+        } else {
+            photoViewer.S0.setVisibility(0);
+        }
+        photoViewer.F.setVisibility(0);
+        if (photoViewer.i2) {
+            wr0 wr0Var = photoViewer.Q1;
+            wr0Var.setVisibility(wr0Var.getTag() != null ? 0 : 4);
+        }
+        if (photoViewer.d2 || photoViewer.e2) {
+            return;
+        }
+        int i10 = photoViewer.c2;
+        if ((i10 == 0 || i10 == 4 || ((i10 == 2 || i10 == 5) && photoViewer.g7.size() > 1)) && !photoViewer.f4) {
+            photoViewer.N0.setVisibility(0);
+            photoViewer.O0.setVisibility(0);
+            photoViewer.v3();
         }
     }
 }

@@ -1,45 +1,83 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.AndroidUtilities;
+import android.view.View;
+import java.util.ArrayList;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class cb0 {
-    public final /* synthetic */ org.telegram.ui.ActionBar.r2 a;
-    public final /* synthetic */ hb0 b;
+public final /* synthetic */ class cb0 implements View.OnClickListener {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    public cb0(hb0 hb0Var, org.telegram.ui.ActionBar.r2 r2Var) {
-        this.b = hb0Var;
-        this.a = r2Var;
+    public /* synthetic */ cb0(n2.u uVar, boolean z10, Runnable runnable) {
+        this.d = uVar;
+        this.b = z10;
+        this.c = runnable;
     }
 
-    public final void a(boolean z10) {
-        hb0 hb0Var = this.b;
-        if (hb0Var.getNeededLayoutManager() != hb0Var.getCurrentLayoutManager() && hb0Var.a()) {
-            if (hb0Var.f.M0 > 0) {
-                hb0Var.N = true;
-                hb0Var.o(false);
-                return;
-            }
-            hb0Var.b.setLayoutManager(hb0Var.getNeededLayoutManager());
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                org.telegram.ui.p6 p6Var = (org.telegram.ui.p6) this.d;
+                Runnable runnable = (Runnable) this.c;
+                org.telegram.ui.ActionBar.k2 Q = LaunchActivity.Q();
+                if (Q != null) {
+                    Q.presentFragment(new PremiumPreviewFragment(0, this.b ? "lastseen" : "readtime"));
+                    p6Var.dismiss();
+                    if (runnable != null) {
+                        runnable.run();
+                        break;
+                    }
+                }
+                break;
+            case 1:
+                n2.u uVar = (n2.u) this.d;
+                Runnable runnable2 = (Runnable) this.c;
+                if (this.b) {
+                    ((zt0) uVar.b).I.o();
+                }
+                runnable2.run();
+                break;
+            default:
+                org.telegram.ui.gt gtVar = (org.telegram.ui.gt) this.d;
+                ArrayList arrayList = (ArrayList) this.c;
+                org.telegram.ui.lt ltVar = gtVar.a;
+                if (ltVar.w != null && ltVar.l != null) {
+                    int intValue = ((Integer) arrayList.get(((Integer) view.getTag()).intValue())).intValue();
+                    if (intValue == 0) {
+                        ltVar.l.A(ltVar.W);
+                    } else if (intValue == 1) {
+                        ltVar.l.t(ltVar.W);
+                    } else if (intValue == 2) {
+                        ltVar.l.t(null);
+                    } else if (intValue == 3) {
+                        ltVar.l.G(ltVar.W);
+                    } else if (intValue == 4) {
+                        ltVar.l.p(ltVar.W);
+                    } else if (intValue == 5) {
+                        org.telegram.messenger.ui.b0(ltVar.r).d(2, ltVar.b0, ltVar.W, (int) (System.currentTimeMillis() / 1000), this.b);
+                    }
+                    ltVar.o();
+                    break;
+                }
+                break;
         }
-        if (z10 && !hb0Var.a()) {
-            z10 = false;
-        }
-        hb0Var.o((!z10 || hb0Var.f.K() > 0) ? z10 : false);
     }
 
-    public final void b(boolean z10) {
-        this.b.l(z10);
+    public /* synthetic */ cb0(org.telegram.ui.gt gtVar, ArrayList arrayList, boolean z10) {
+        this.d = gtVar;
+        this.c = arrayList;
+        this.b = z10;
     }
 
-    public final void c() {
-        hb0 hb0Var = this.b;
-        xa0 xa0Var = hb0Var.J;
-        if (hb0Var.b.getLayoutManager() == hb0Var.d || !hb0Var.I) {
-            return;
-        }
-        AndroidUtilities.cancelRunOnUIThread(xa0Var);
-        AndroidUtilities.runOnUIThread(xa0Var, this.a.getFragmentBeginToShow() ? 0L : 100L);
+    public /* synthetic */ cb0(boolean z10, org.telegram.ui.p6 p6Var, Runnable runnable) {
+        this.b = z10;
+        this.d = p6Var;
+        this.c = runnable;
     }
 }

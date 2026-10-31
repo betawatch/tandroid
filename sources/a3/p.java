@@ -5,7 +5,7 @@ import android.graphics.SurfaceTexture;
 import android.os.Build;
 import android.view.Surface;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class p extends Surface {
     public static int d;
@@ -20,8 +20,8 @@ public final class p extends Surface {
         this.a = z10;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:13:0x0048 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:7:0x003a A[Catch: m -> 0x0046, TRY_LEAVE, TryCatch #0 {m -> 0x0046, blocks: (B:3:0x0001, B:7:0x003a, B:16:0x000d, B:18:0x0018, B:22:0x0025, B:25:0x0032), top: B:2:0x0001 }] */
+    /* JADX WARN: Removed duplicated region for block: B:13:0x0047 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:7:0x0039 A[Catch: m -> 0x0045, TRY_LEAVE, TryCatch #0 {m -> 0x0045, blocks: (B:3:0x0001, B:7:0x0039, B:16:0x000d, B:18:0x0017, B:22:0x0024, B:25:0x0031), top: B:2:0x0001 }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -39,8 +39,8 @@ public final class p extends Surface {
             d10 = false;
             if (d10) {
             }
-        } catch (e2.m e10) {
-            e2.a.c("PlaceholderSurface", "Failed to determine secure mode due to GL error: " + e10.getMessage());
+        } catch (e2.m e7) {
+            e2.a.c("PlaceholderSurface", "Failed to determine secure mode due to GL error: " + e7.getMessage());
             return 0;
         }
     }

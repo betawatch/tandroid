@@ -1,10 +1,10 @@
 package com.google.android.recaptcha.internal;
 
-import a8.id;
-import jd.c;
-import jd.g;
+import ad.c;
+import ad.h;
+import ib.a;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class zzad implements zzar {
     private final c zza;
@@ -12,12 +12,12 @@ public final class zzad implements zzar {
 
     public zzad() {
         int i10 = zzby.zza;
-        this.zza = id.a(zzac.zza);
+        this.zza = a.a(zzac.zza);
         this.zzb = true;
     }
 
     public static final /* synthetic */ zzci zzb(zzad zzadVar) {
-        return (zzci) ((g) zzadVar.zza).a();
+        return (zzci) ((h) zzadVar.zza).a();
     }
 
     @Override // com.google.android.recaptcha.internal.zzar
@@ -26,29 +26,29 @@ public final class zzad implements zzar {
     }
 
     @Override // com.google.android.recaptcha.internal.zzar
-    public final /* synthetic */ Object zzc(String str, ld.c cVar) {
+    public final /* synthetic */ Object zzc(String str, cd.c cVar) {
         return zzam.zza(this, str, cVar);
     }
 
     @Override // com.google.android.recaptcha.internal.zzar
-    public final /* synthetic */ Object zzd(zzxp zzxpVar, ld.c cVar) {
+    public final /* synthetic */ Object zzd(zzxp zzxpVar, cd.c cVar) {
         Object zzd;
         zzd = zzhj.zzd(36, zza(), new zzap(this, zzxpVar, null), cVar);
         return zzd;
     }
 
     @Override // com.google.android.recaptcha.internal.zzar
-    public final Object zze(String str, ld.c cVar) {
+    public final Object zze(String str, cd.c cVar) {
         return new zzhg(new zzaa(this, null));
     }
 
     @Override // com.google.android.recaptcha.internal.zzar
-    public final Object zzf(zzxp zzxpVar, ld.c cVar) {
+    public final Object zzf(zzxp zzxpVar, cd.c cVar) {
         return new zzhg(new zzab(zzxpVar, this, null));
     }
 
     @Override // com.google.android.recaptcha.internal.zzar
-    public final /* synthetic */ Object zzg(Exception exc, ld.c cVar) {
+    public final /* synthetic */ Object zzg(Exception exc, cd.c cVar) {
         return zzam.zzd(this, exc, cVar);
     }
 

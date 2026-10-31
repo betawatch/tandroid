@@ -1,49 +1,112 @@
 package gi;
 
-import org.telegram.ui.Components.iw0;
+import android.graphics.RectF;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class a implements oe.d, iw0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ h b;
+public final class a {
+    public final ArrayList a = new ArrayList();
+    public int b;
 
-    public /* synthetic */ a(h hVar, int i10) {
-        this.a = i10;
-        this.b = hVar;
+    public final RectF a(float f7, float f10, float f11, float f12) {
+        RectF rectF;
+        int i10 = this.b;
+        ArrayList arrayList = this.a;
+        if (i10 < arrayList.size()) {
+            rectF = (RectF) arrayList.get(this.b);
+            rectF.set(f7, f10, f11, f12);
+        } else {
+            rectF = new RectF(f7, f10, f11, f12);
+            arrayList.add(rectF);
+        }
+        this.b++;
+        return rectF;
     }
 
-    @Override // oe.d
-    public void E(int i10, float f7, float f10, oe.e eVar) {
-        switch (this.a) {
-            case 0:
-                this.b.E0();
-                break;
-            case 1:
-                this.b.E0();
-                break;
-            default:
-                this.b.W.setAlpha(f7);
-                break;
+    public final void b(float f7, float f10, float f11) {
+        int i10 = 0;
+        while (i10 < this.b) {
+            RectF rectF = (RectF) this.a.get(i10);
+            float f12 = rectF.right;
+            if (f12 > 0.0f) {
+                float f13 = rectF.bottom;
+                if (f13 > f7) {
+                    float f14 = rectF.left;
+                    if (f14 < f10) {
+                        float f15 = rectF.top;
+                        if (f15 < f11) {
+                            if (f14 < 0.0f) {
+                                rectF.left = 0.0f;
+                            }
+                            if (f15 < f7) {
+                                rectF.top = f7;
+                            }
+                            if (f12 > f10) {
+                                rectF.right = f10;
+                            }
+                            if (f13 > f11) {
+                                rectF.bottom = f11;
+                            }
+                            i10++;
+                        }
+                    }
+                }
+            }
+            d(i10);
         }
     }
 
-    @Override // org.telegram.ui.Components.iw0
-    public int c() {
-        return this.b.a0;
+    public final RectF c(int i10) {
+        if (i10 >= 0 && i10 < this.b) {
+            return (RectF) this.a.get(i10);
+        }
+        StringBuilder l4 = i0.a.l(i10, "index=", ", size=");
+        l4.append(this.b);
+        throw new IndexOutOfBoundsException(l4.toString());
     }
 
-    @Override // oe.d
-    public /* synthetic */ void z(float f7, int i10) {
-        int i11 = this.a;
+    public final void d(int i10) {
+        int i11;
+        if (i10 < 0 || i10 >= (i11 = this.b)) {
+            StringBuilder l4 = i0.a.l(i10, "index=", ", size=");
+            l4.append(this.b);
+            throw new IndexOutOfBoundsException(l4.toString());
+        }
+        int i12 = i11 - 1;
+        ArrayList arrayList = this.a;
+        RectF rectF = (RectF) arrayList.get(i10);
+        if (i10 != i12) {
+            arrayList.set(i10, (RectF) arrayList.get(i12));
+            arrayList.set(i12, rectF);
+        }
+        this.b = i12;
     }
 
-    private final /* synthetic */ void a(float f7, int i10) {
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof a)) {
+            return false;
+        }
+        a aVar = (a) obj;
+        if (this.b != aVar.b) {
+            return false;
+        }
+        for (int i10 = 0; i10 < this.b; i10++) {
+            if (!((RectF) this.a.get(i10)).equals(aVar.a.get(i10))) {
+                return false;
+            }
+        }
+        return true;
     }
 
-    private final /* synthetic */ void b(float f7, int i10) {
-    }
-
-    private final /* synthetic */ void d(float f7, int i10) {
+    public final int hashCode() {
+        int i10 = 1;
+        for (int i11 = 0; i11 < this.b; i11++) {
+            i10 = (i10 * 31) + ((RectF) this.a.get(i11)).hashCode();
+        }
+        return i10;
     }
 }

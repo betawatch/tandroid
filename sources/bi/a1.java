@@ -1,36 +1,46 @@
 package bi;
 
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.view.View;
+import java.util.HashSet;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes4.dex */
-public final class a1 implements TextWatcher {
-    public final /* synthetic */ b1 a;
+public final class a1 extends View implements org.telegram.ui.ActionBar.k6 {
+    public final org.telegram.ui.ActionBar.p6 a;
+    public final Paint b;
+    public a c;
 
-    public a1(b1 b1Var) {
-        this.a = b1Var;
+    public a1(Context context, org.telegram.ui.ActionBar.p6 p6Var) {
+        super(context);
+        this.b = new Paint();
+        this.a = p6Var;
+        updateColors();
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        String obj;
-        int indexOf;
-        boolean z10 = editable == null || editable.toString().isEmpty() || ".".equals(editable.toString());
-        if (!z10 && (indexOf = (obj = editable.toString()).indexOf(46)) >= 0 && (obj.length() - indexOf) - 1 > 2) {
-            editable.delete(indexOf + 3, obj.length());
-        }
-        b1 b1Var = this.a;
-        b1Var.U(!z10 ? bg.a.h(editable.toString(), b1Var.n0.a) : bg.a.i(0L, b1Var.n0.a), false, false, true);
-        b1Var.d0.c(b1Var.e0.isFocused(), true ^ TextUtils.isEmpty(b1Var.e0.getText()));
+    @Override // org.telegram.ui.ActionBar.k6
+    public final void addColorKeys(HashSet hashSet) {
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.t6.tl));
     }
 
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    public a getRow() {
+        return this.c;
     }
 
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        canvas.drawRect(0.0f, org.telegram.messenger.i0.L(6.0f), getMeasuredWidth(), org.telegram.messenger.i0.L(6.0f) + 1, this.b);
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        setMeasuredDimension(View.MeasureSpec.getSize(i10), org.telegram.messenger.i0.L(6.0f) + 1);
+    }
+
+    @Override // org.telegram.ui.ActionBar.k6
+    public final void updateColors() {
+        this.b.setColor(org.telegram.ui.ActionBar.t6.w0(org.telegram.ui.ActionBar.t6.tl, this.a));
     }
 }

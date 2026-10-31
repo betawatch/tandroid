@@ -1,12 +1,52 @@
 package org.telegram.ui;
 
-import android.view.View;
+import android.content.Context;
+import android.widget.LinearLayout;
+import java.util.HashSet;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class d51 extends s4.l {
-    @Override // s4.l
-    public final float A(View view) {
-        return view instanceof j51 ? 0.6f : 0.0f;
+public final class d51 extends LinearLayout implements org.telegram.ui.ActionBar.k6 {
+    public final org.telegram.ui.ActionBar.p6 a;
+    public final org.telegram.ui.Components.p80 b;
+    public final org.telegram.ui.Components.p80 c;
+    public final vh.d d;
+    public final vh.d e;
+
+    public d51(Context context, org.telegram.ui.ActionBar.p6 p6Var) {
+        super(context);
+        this.a = p6Var;
+        setOrientation(1);
+        int i10 = org.telegram.ui.ActionBar.t6.G6;
+        org.telegram.ui.Components.p80 a2 = w7.g6.a(context, 15.0f, i10, true, p6Var);
+        this.b = a2;
+        a2.setGravity(17);
+        addView(a2, w7.b6.t(-1, -2, 55, 32, 20, 32, 0));
+        org.telegram.ui.Components.p80 a10 = w7.g6.a(context, 13.0f, i10, false, p6Var);
+        this.c = a10;
+        a10.setGravity(17);
+        addView(a10, w7.b6.s(-1, -2, 55, 32.0f, 9.33f, 32.0f, 0.0f));
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setOrientation(0);
+        vh.d i11 = org.telegram.messenger.z20.i(24, context, p6Var, true);
+        this.d = i11;
+        vh.d i12 = org.telegram.messenger.z20.i(24, context, p6Var, true);
+        this.e = i12;
+        linearLayout.addView(i11, w7.b6.q(0, 42, 1.0f, org.telegram.messenger.zs.x1, 0, 0, 12, 0));
+        linearLayout.addView(i12, w7.b6.q(0, 42, 1.0f, org.telegram.messenger.zs.x1, 0, 0, 0, 0));
+        addView(linearLayout, w7.b6.t(-1, -2, 55, 24, 18, 24, 16));
+    }
+
+    @Override // org.telegram.ui.ActionBar.k6
+    public final void addColorKeys(HashSet hashSet) {
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.t6.G6));
+    }
+
+    @Override // org.telegram.ui.ActionBar.k6
+    public final void updateColors() {
+        int i10 = org.telegram.ui.ActionBar.t6.G6;
+        org.telegram.ui.ActionBar.p6 p6Var = this.a;
+        this.b.setTextColor(org.telegram.ui.ActionBar.t6.w0(i10, p6Var));
+        this.c.setTextColor(org.telegram.ui.ActionBar.t6.w0(i10, p6Var));
     }
 }

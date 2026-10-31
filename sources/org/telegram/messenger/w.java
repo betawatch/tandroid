@@ -1,73 +1,72 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.text.TextPaint;
+import android.text.style.ClickableSpan;
+import android.view.View;
+import org.telegram.ui.Components.uz0;
+import org.telegram.ui.m60;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final /* synthetic */ class w implements Runnable {
+public final class w extends ClickableSpan {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ w(int i10, int i11, long j10, ArrayList arrayList, MessagesStorage messagesStorage) {
-        this.a = 4;
-        this.b = messagesStorage;
-        this.d = j10;
-        this.f = arrayList;
-        this.c = i10;
-        this.e = i11;
+    public /* synthetic */ w(Object obj, Object obj2, Object obj3, int i10) {
+        this.a = i10;
+        this.b = obj;
+        this.c = obj2;
+        this.d = obj3;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.text.style.ClickableSpan
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                AutoMessageHeardReceiver.lambda$onReceive$0((AccountInstance) this.b, (TLRPC.User) this.f, this.c, this.d, this.e);
+                Runnable runnable = (Runnable) this.b;
+                if (runnable != null) {
+                    runnable.run();
+                }
+                gf.f.r(w0.b, (String) this.c);
                 break;
             case 1:
-                AutoMessageHeardReceiver.lambda$onReceive$2((AccountInstance) this.b, (TLRPC.Chat) this.f, this.c, this.d, this.e);
-                break;
-            case 2:
-                ((MediaDataController) this.b).lambda$putStickersToCache$102((ArrayList) this.f, this.c, this.e, this.d);
-                break;
-            case 3:
-                ((MessagesStorage) this.b).lambda$updateTopicData$52(this.c, (TLRPC.TL_forumTopic) this.f, this.d, this.e);
+                ((m60) this.b).a((org.telegram.ui.f4) this.c, (uz0) this.d);
                 break;
             default:
-                ((MessagesStorage) this.b).lambda$markMessagesContentAsRead$222(this.d, (ArrayList) this.f, this.c, this.e);
+                org.telegram.ui.ActionBar.x1 x1Var = ((org.telegram.ui.ActionBar.x1[]) this.b)[0];
+                if (x1Var != null) {
+                    x1Var.dismiss();
+                }
+                gf.f.r((Context) this.d, "https://t.me/" + ((String) this.c));
                 break;
         }
     }
 
-    public /* synthetic */ w(AccountInstance accountInstance, TLObject tLObject, int i10, long j10, int i11, int i12) {
-        this.a = i12;
-        this.b = accountInstance;
-        this.f = tLObject;
-        this.c = i10;
-        this.d = j10;
-        this.e = i11;
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public void updateDrawState(TextPaint textPaint) {
+        switch (this.a) {
+            case 0:
+                textPaint.setColor(org.telegram.ui.ActionBar.t6.w0(org.telegram.ui.ActionBar.t6.Uc, (org.telegram.ui.ActionBar.p6) this.d));
+                textPaint.setUnderlineText(false);
+                break;
+            case 1:
+            default:
+                super.updateDrawState(textPaint);
+                break;
+            case 2:
+                super.updateDrawState(textPaint);
+                textPaint.setUnderlineText(false);
+                break;
+        }
     }
 
-    public /* synthetic */ w(MediaDataController mediaDataController, ArrayList arrayList, int i10, int i11, long j10) {
+    public w(org.telegram.ui.ActionBar.x1[] x1VarArr, Context context, String str) {
         this.a = 2;
-        this.b = mediaDataController;
-        this.f = arrayList;
-        this.c = i10;
-        this.e = i11;
-        this.d = j10;
-    }
-
-    public /* synthetic */ w(MessagesStorage messagesStorage, int i10, TLRPC.TL_forumTopic tL_forumTopic, long j10, int i11) {
-        this.a = 3;
-        this.b = messagesStorage;
-        this.c = i10;
-        this.f = tL_forumTopic;
-        this.d = j10;
-        this.e = i11;
+        this.b = x1VarArr;
+        this.d = context;
+        this.c = str;
     }
 }

@@ -3,12 +3,12 @@ package g2;
 import android.content.Context;
 import android.content.res.AssetManager;
 import android.net.Uri;
-import e2.n0;
+import e2.l0;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class b extends c {
     public final AssetManager a;
@@ -49,10 +49,10 @@ public final class b extends c {
     }
 
     @Override // g2.h
-    public final long open(m mVar) {
+    public final long open(n nVar) {
         try {
-            Uri uri = mVar.a;
-            long j10 = mVar.e;
+            Uri uri = nVar.a;
+            long j10 = nVar.e;
             this.b = uri;
             String path = uri.getPath();
             path.getClass();
@@ -61,13 +61,13 @@ public final class b extends c {
             } else if (path.startsWith("/")) {
                 path = path.substring(1);
             }
-            transferInitializing(mVar);
+            transferInitializing(nVar);
             InputStream open = this.a.open(path, 1);
             this.c = open;
             if (open.skip(j10) < j10) {
                 throw new a(null, 2008);
             }
-            long j11 = mVar.f;
+            long j11 = nVar.f;
             if (j11 != -1) {
                 this.d = j11;
             } else {
@@ -78,12 +78,12 @@ public final class b extends c {
                 }
             }
             this.e = true;
-            transferStarted(mVar);
+            transferStarted(nVar);
             return this.d;
         } catch (a e) {
             throw e;
-        } catch (IOException e10) {
-            throw new a(e10, e10 instanceof FileNotFoundException ? 2005 : 2000);
+        } catch (IOException e7) {
+            throw new a(e7, e7 instanceof FileNotFoundException ? 2005 : 2000);
         }
     }
 
@@ -102,7 +102,7 @@ public final class b extends c {
                 }
             }
             InputStream inputStream = this.c;
-            String str = n0.a;
+            String str = l0.a;
             int read = inputStream.read(bArr, i10, i11);
             if (read != -1) {
                 long j11 = this.d;

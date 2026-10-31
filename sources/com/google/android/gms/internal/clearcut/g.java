@@ -8,29 +8,29 @@ import java.io.IOException;
 public final class g extends d {
     public final Object i;
     public String j;
-    public s1 k;
+    public u1 k;
 
-    public g(i iVar, String str, s1 s1Var) {
-        super(iVar, str, s1Var);
+    public g(i iVar, String str, u1 u1Var) {
+        super(iVar, str, u1Var);
         this.i = new Object();
     }
 
     @Override // com.google.android.gms.internal.clearcut.d
     public final Object d(String str) {
-        s1 s1Var;
+        u1 u1Var;
         try {
             synchronized (this.i) {
                 try {
                     if (!str.equals(this.j)) {
-                        s1 g7 = s1.g(Base64.decode(str, 3));
+                        u1 g10 = u1.g(Base64.decode(str, 3));
                         this.j = str;
-                        this.k = g7;
+                        this.k = g10;
                     }
-                    s1Var = this.k;
+                    u1Var = this.k;
                 } finally {
                 }
             }
-            return s1Var;
+            return u1Var;
         } catch (IOException | IllegalArgumentException unused) {
             String str2 = this.b;
             StringBuilder sb2 = new StringBuilder(String.valueOf(str).length() + String.valueOf(str2).length() + 27);

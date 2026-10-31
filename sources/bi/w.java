@@ -1,52 +1,33 @@
 package bi;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.Components.n91;
-import org.telegram.ui.Components.pm0;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes4.dex */
-public final class w extends n91 {
-    public final x[] a = new x[3];
-    public final /* synthetic */ Context b;
-    public final /* synthetic */ pm0 c;
-    public final /* synthetic */ y d;
+public final class w {
+    public int a = 0;
+    public boolean b;
+    public boolean c;
+    public boolean d;
+    public String e;
+    public float f;
+    public TLRPC.Photo g;
+    public TLRPC.Document h;
+    public TLRPC.Document i;
+    public int j;
+    public int k;
+    public int l;
+    public int m;
+    public boolean n;
 
-    public w(y yVar, Context context, pm0 pm0Var) {
-        this.d = yVar;
-        this.b = context;
-        this.c = pm0Var;
+    public final boolean a() {
+        return this.a == 1;
     }
 
-    @Override // org.telegram.ui.Components.n91
-    public final void b(View view, int i10, int i11) {
-        this.c.L(view);
-    }
-
-    @Override // org.telegram.ui.Components.n91
-    public final View d(int i10) {
-        x[] xVarArr = this.a;
-        if (xVarArr[i10] == null) {
-            xVarArr[i10] = new x(this.d, this.b, i10);
+    public final boolean b() {
+        if (this.a != 2) {
+            return false;
         }
-        return xVarArr[i10];
-    }
-
-    @Override // org.telegram.ui.Components.n91
-    public final int e() {
-        return this.a.length;
-    }
-
-    @Override // org.telegram.ui.Components.n91
-    public final CharSequence g(int i10) {
-        return LocaleController.getString(i10 == 1 ? R.string.StarsTransactionsIncoming : i10 == 2 ? R.string.StarsTransactionsOutgoing : R.string.StarsTransactionsAll);
-    }
-
-    @Override // org.telegram.ui.Components.n91
-    public final int h(int i10) {
-        return i10;
+        return (this.b || this.c || this.d) ? this.h != null : this.g != null;
     }
 }

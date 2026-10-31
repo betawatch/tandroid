@@ -7,7 +7,7 @@ import java.util.Collection;
 import java.util.RandomAccess;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 final class zzth extends zzpz implements RandomAccess, zzst, zzub {
     private static final long[] zza;
@@ -34,7 +34,7 @@ final class zzth extends zzpz implements RandomAccess, zzst, zzub {
     }
 
     private final String zzj(int i10) {
-        return g.l(i10, this.zzd, "Index:", ", Size:");
+        return g.j(i10, this.zzd, "Index:", ", Size:");
     }
 
     private final void zzk(int i10) {

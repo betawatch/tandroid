@@ -1,30 +1,21 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final /* synthetic */ class e2 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ DownloadController b;
-    public final /* synthetic */ MessageObject c;
+public final class e2 {
+    public final long a;
+    public final int b;
+    public boolean c;
+    public boolean d;
+    public boolean e;
+    public Runnable f;
+    public TLRPC.TL_textWithEntities g;
+    public jj h;
 
-    public /* synthetic */ e2(DownloadController downloadController, MessageObject messageObject, int i10) {
-        this.a = i10;
-        this.b = downloadController;
-        this.c = messageObject;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.lambda$startDownloadFile$4(this.c);
-                break;
-            case 1:
-                this.b.lambda$onDownloadFail$9(this.c);
-                break;
-            default:
-                this.b.lambda$onDownloadComplete$6(this.c);
-                break;
-        }
+    public e2(long j10, int i10) {
+        this.a = j10;
+        this.b = i10;
     }
 }

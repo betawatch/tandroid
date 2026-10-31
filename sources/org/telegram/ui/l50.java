@@ -1,55 +1,36 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import java.util.HashSet;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class l50 extends s4.l {
-    public float F;
-    public ValueAnimator G;
-    public final HashSet H = new HashSet();
-    public final HashSet I = new HashSet();
-    public float J;
-    public float K;
-    public final /* synthetic */ x50 L;
+public final /* synthetic */ class l50 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ v50 b;
 
-    public l50(x50 x50Var) {
-        this.L = x50Var;
+    public /* synthetic */ l50(v50 v50Var, int i10) {
+        this.a = i10;
+        this.b = v50Var;
     }
 
-    @Override // s4.l, s4.m0
-    public final void g() {
-        super.g();
-        this.I.clear();
-        this.H.clear();
-        this.K = Float.MAX_VALUE;
-        this.L.Q.invalidate();
-    }
-
-    @Override // s4.l, s4.m0
-    public final void m() {
-        boolean isEmpty = this.p.isEmpty();
-        boolean isEmpty2 = this.r.isEmpty();
-        boolean isEmpty3 = this.q.isEmpty();
-        ValueAnimator valueAnimator = this.G;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-            this.G = null;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.finishFragment();
+                break;
+            case 1:
+                v50 v50Var = this.b;
+                v50Var.m0();
+                v50Var.i0();
+                break;
+            case 2:
+                v50 v50Var2 = this.b;
+                v50Var2.getClass();
+                v50Var2.presentFragment(new PremiumPreviewFragment(0, "noncontacts"));
+                break;
+            default:
+                v50 v50Var3 = this.b;
+                v50Var3.n.postOnAnimation(new l50(v50Var3, 1));
+                break;
         }
-        if (!isEmpty || !isEmpty2 || !isEmpty3) {
-            this.F = 0.0f;
-            ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-            this.G = ofFloat;
-            ofFloat.addUpdateListener(new b3(this, 15));
-            this.G.addListener(new k50(this, 0));
-            this.G.setDuration(350L);
-            this.G.setInterpolator(org.telegram.ui.Components.ds.f);
-            this.G.start();
-            x50 x50Var = this.L;
-            x50Var.Q.invalidate();
-            x50Var.a2.invalidate();
-        }
-        super.m();
     }
 }

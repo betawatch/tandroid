@@ -1,74 +1,15 @@
 package lb;
 
-import fb.g;
-import fb.j;
-import fb.u;
-import fb.v;
-import java.sql.Time;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.TimeZone;
+import androidx.lifecycle.b0;
+import androidx.lifecycle.m;
+import androidx.lifecycle.s;
+import com.google.android.gms.common.api.n;
+import java.io.Closeable;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class b extends u {
-    public static final a b = new a();
-    public final SimpleDateFormat a;
-
-    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-    public class a implements v {
-        @Override // fb.v
-        public final u create(g gVar, mb.a aVar) {
-            if (aVar.a == Time.class) {
-                return new b(0);
-            }
-            return null;
-        }
-    }
-
-    public /* synthetic */ b(int i10) {
-        this();
-    }
-
-    @Override // fb.u
-    public final Object read(nb.a aVar) {
-        Time time;
-        if (aVar.x() == 9) {
-            aVar.t();
-            return null;
-        }
-        String v = aVar.v();
-        synchronized (this) {
-            TimeZone timeZone = this.a.getTimeZone();
-            try {
-                try {
-                    time = new Time(this.a.parse(v).getTime());
-                } catch (ParseException e) {
-                    throw new j("Failed parsing '" + v + "' as SQL Time; at path " + aVar.j(), e);
-                }
-            } finally {
-                this.a.setTimeZone(timeZone);
-            }
-        }
-        return time;
-    }
-
-    @Override // fb.u
-    public final void write(nb.b bVar, Object obj) {
-        String format;
-        Time time = (Time) obj;
-        if (time == null) {
-            bVar.i();
-            return;
-        }
-        synchronized (this) {
-            format = this.a.format((Date) time);
-        }
-        bVar.r(format);
-    }
-
-    private b() {
-        this.a = new SimpleDateFormat("hh:mm:ss a");
-    }
+public interface b extends Closeable, s, n {
+    @Override // java.io.Closeable, java.lang.AutoCloseable
+    @b0(m.ON_DESTROY)
+    void close();
 }

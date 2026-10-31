@@ -4,19 +4,19 @@ import android.media.MediaCodec;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.HandlerThread;
-import e2.n0;
+import e2.l0;
 import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class e implements m {
     public static final ArrayDeque h = new ArrayDeque();
     public static final Object n = new Object();
     public final MediaCodec a;
     public final HandlerThread b;
-    public androidx.mediarouter.app.c c;
+    public android.support.v4.media.session.q c;
     public final AtomicReference d;
     public final e2.i e;
     public boolean f;
@@ -29,7 +29,7 @@ public final class e implements m {
         this.d = new AtomicReference();
     }
 
-    public static d a() {
+    public static d c() {
         ArrayDeque arrayDeque = h;
         synchronized (arrayDeque) {
             try {
@@ -43,7 +43,7 @@ public final class e implements m {
         }
     }
 
-    public static void b(d dVar) {
+    public static void d(d dVar) {
         ArrayDeque arrayDeque = h;
         synchronized (arrayDeque) {
             arrayDeque.add(dVar);
@@ -51,35 +51,27 @@ public final class e implements m {
     }
 
     @Override // r2.m
-    public final void N() {
-        RuntimeException runtimeException = (RuntimeException) this.d.getAndSet(null);
-        if (runtimeException != null) {
-            throw runtimeException;
-        }
+    public final void a(int i10, int i11, int i12, long j10) {
+        x();
+        d c10 = c();
+        c10.a = i10;
+        c10.b = i11;
+        c10.d = j10;
+        c10.e = i12;
+        android.support.v4.media.session.q qVar = this.c;
+        String str = l0.a;
+        qVar.obtainMessage(1, c10).sendToTarget();
     }
 
     @Override // r2.m
-    public final void d(long j10, int i10, int i11, int i12) {
-        N();
-        d a2 = a();
-        a2.a = i10;
-        a2.b = i11;
-        a2.d = j10;
-        a2.e = i12;
-        androidx.mediarouter.app.c cVar = this.c;
-        String str = n0.a;
-        cVar.obtainMessage(1, a2).sendToTarget();
-    }
-
-    @Override // r2.m
-    public final void e(int i10, h2.d dVar, long j10, int i11) {
-        N();
-        d a2 = a();
-        a2.a = i10;
-        a2.b = 0;
-        a2.d = j10;
-        a2.e = i11;
-        MediaCodec.CryptoInfo cryptoInfo = a2.c;
+    public final void b(int i10, h2.d dVar, long j10, int i11) {
+        x();
+        d c10 = c();
+        c10.a = i10;
+        c10.b = 0;
+        c10.d = j10;
+        c10.e = i11;
+        MediaCodec.CryptoInfo cryptoInfo = c10.c;
         cryptoInfo.numSubSamples = dVar.f;
         int[] iArr = dVar.d;
         int[] iArr2 = cryptoInfo.numBytesOfClearData;
@@ -127,25 +119,25 @@ public final class e implements m {
         if (Build.VERSION.SDK_INT >= 24) {
             cryptoInfo.setPattern(new MediaCodec.CryptoInfo.Pattern(dVar.g, dVar.h));
         }
-        androidx.mediarouter.app.c cVar = this.c;
-        String str = n0.a;
-        cVar.obtainMessage(2, a2).sendToTarget();
+        android.support.v4.media.session.q qVar = this.c;
+        String str = l0.a;
+        qVar.obtainMessage(2, c10).sendToTarget();
     }
 
     @Override // r2.m
     public final void flush() {
         if (this.f) {
             try {
-                androidx.mediarouter.app.c cVar = this.c;
-                cVar.getClass();
-                cVar.removeCallbacksAndMessages(null);
+                android.support.v4.media.session.q qVar = this.c;
+                qVar.getClass();
+                qVar.removeCallbacksAndMessages(null);
                 e2.i iVar = this.e;
                 synchronized (iVar) {
                     iVar.b = false;
                 }
-                androidx.mediarouter.app.c cVar2 = this.c;
-                cVar2.getClass();
-                cVar2.obtainMessage(3).sendToTarget();
+                android.support.v4.media.session.q qVar2 = this.c;
+                qVar2.getClass();
+                qVar2.obtainMessage(3).sendToTarget();
                 iVar.a();
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
@@ -156,10 +148,10 @@ public final class e implements m {
 
     @Override // r2.m
     public final void setParameters(Bundle bundle) {
-        N();
-        androidx.mediarouter.app.c cVar = this.c;
-        String str = n0.a;
-        cVar.obtainMessage(4, bundle).sendToTarget();
+        x();
+        android.support.v4.media.session.q qVar = this.c;
+        String str = l0.a;
+        qVar.obtainMessage(4, bundle).sendToTarget();
     }
 
     @Override // r2.m
@@ -178,7 +170,15 @@ public final class e implements m {
         }
         HandlerThread handlerThread = this.b;
         handlerThread.start();
-        this.c = new androidx.mediarouter.app.c(this, handlerThread.getLooper(), 12);
+        this.c = new android.support.v4.media.session.q(this, handlerThread.getLooper(), 14);
         this.f = true;
+    }
+
+    @Override // r2.m
+    public final void x() {
+        RuntimeException runtimeException = (RuntimeException) this.d.getAndSet(null);
+        if (runtimeException != null) {
+            throw runtimeException;
+        }
     }
 }

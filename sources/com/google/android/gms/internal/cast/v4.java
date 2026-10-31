@@ -1,269 +1,120 @@
 package com.google.android.gms.internal.cast;
 
-import a8.ma;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.io.Serializable;
+import java.nio.charset.Charset;
+import java.util.Iterator;
+import java.util.Locale;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class v4 extends ma {
-    public static final Logger e = Logger.getLogger(v4.class.getName());
-    public static final boolean f = p6.e;
-    public r5 a;
+public class v4 implements Iterable, Serializable {
+    public static final v4 c = new v4(j5.b);
+    public int a = 0;
     public final byte[] b;
-    public final int c;
-    public int d;
 
-    public v4(byte[] bArr, int i10) {
-        int length = bArr.length;
-        if (((length - i10) | i10) < 0) {
-            throw new IllegalArgumentException(String.format("Array range is invalid. Buffer.length=%d, offset=%d, length=%d", Integer.valueOf(length), 0, Integer.valueOf(i10)));
-        }
+    static {
+        int i10 = t4.a;
+    }
+
+    public v4(byte[] bArr) {
+        bArr.getClass();
         this.b = bArr;
-        this.d = 0;
-        this.c = i10;
     }
 
-    public static int m(int i10) {
-        if (i10 >= 0) {
-            return o(i10);
+    public static void o(int i10) {
+        if (((i10 - 47) | 47) < 0) {
+            throw new IndexOutOfBoundsException(i0.a.i(i10, "End index: 47 >= "));
         }
-        return 10;
     }
 
-    public static int n(String str) {
-        int length;
-        try {
-            length = r6.c(str);
-        } catch (q6 unused) {
-            length = str.getBytes(i5.a).length;
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
         }
-        return o(length) + length;
+        if ((obj instanceof v4) && n() == ((v4) obj).n()) {
+            if (n() == 0) {
+                return true;
+            }
+            if (!(obj instanceof v4)) {
+                return obj.equals(this);
+            }
+            v4 v4Var = (v4) obj;
+            int i10 = this.a;
+            int i11 = v4Var.a;
+            if (i10 == 0 || i11 == 0 || i10 == i11) {
+                int n10 = n();
+                if (n10 > v4Var.n()) {
+                    throw new IllegalArgumentException("Length too large: " + n10 + n());
+                }
+                if (n10 > v4Var.n()) {
+                    throw new IllegalArgumentException(a1.g.j(n10, v4Var.n(), "Ran off end of other: 0, ", ", "));
+                }
+                byte[] bArr = v4Var.b;
+                int i12 = 0;
+                int i13 = 0;
+                while (i12 < n10) {
+                    if (this.b[i12] == bArr[i13]) {
+                        i12++;
+                        i13++;
+                    }
+                }
+                return true;
+            }
+        }
+        return false;
     }
 
-    public static int o(int i10) {
-        if ((i10 & (-128)) == 0) {
-            return 1;
+    public final int hashCode() {
+        int i10 = this.a;
+        if (i10 != 0) {
+            return i10;
         }
-        if ((i10 & (-16384)) == 0) {
-            return 2;
+        int n10 = n();
+        Charset charset = j5.a;
+        int i11 = n10;
+        for (int i12 = 0; i12 < n10; i12++) {
+            i11 = (i11 * 31) + this.b[i12];
         }
-        if (((-2097152) & i10) == 0) {
-            return 3;
+        if (i11 == 0) {
+            i11 = 1;
         }
-        return (i10 & (-268435456)) == 0 ? 4 : 5;
+        this.a = i11;
+        return i11;
     }
 
-    public static int p(long j10) {
-        int i10;
-        if (((-128) & j10) == 0) {
-            return 1;
-        }
-        if (j10 < 0) {
-            return 10;
-        }
-        if (((-34359738368L) & j10) != 0) {
-            j10 >>>= 28;
-            i10 = 6;
+    @Override // java.lang.Iterable
+    public final /* synthetic */ Iterator iterator() {
+        return new androidx.datastore.preferences.protobuf.e(this);
+    }
+
+    public byte l(int i10) {
+        return this.b[i10];
+    }
+
+    public byte m(int i10) {
+        return this.b[i10];
+    }
+
+    public int n() {
+        return this.b.length;
+    }
+
+    public final String toString() {
+        String concat;
+        Locale locale = Locale.ROOT;
+        String hexString = Integer.toHexString(System.identityHashCode(this));
+        int n10 = n();
+        if (n() <= 50) {
+            concat = v7.v5.a(this);
         } else {
-            i10 = 2;
+            o(n());
+            concat = v7.v5.a(new u4(this.b)).concat("...");
         }
-        if (((-2097152) & j10) != 0) {
-            j10 >>>= 14;
-            i10 += 2;
-        }
-        return (j10 & (-16384)) != 0 ? i10 + 1 : i10;
-    }
-
-    public final void a(byte b10) {
-        try {
-            byte[] bArr = this.b;
-            int i10 = this.d;
-            this.d = i10 + 1;
-            bArr[i10] = b10;
-        } catch (IndexOutOfBoundsException e10) {
-            throw new w4(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.d), Integer.valueOf(this.c), 1), e10);
-        }
-    }
-
-    public final void b(int i10, byte[] bArr) {
-        try {
-            System.arraycopy(bArr, 0, this.b, this.d, i10);
-            this.d += i10;
-        } catch (IndexOutOfBoundsException e10) {
-            throw new w4(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.d), Integer.valueOf(this.c), Integer.valueOf(i10)), e10);
-        }
-    }
-
-    public final void c(int i10, u4 u4Var) {
-        j((i10 << 3) | 2);
-        j(u4Var.n());
-        b(u4Var.n(), u4Var.b);
-    }
-
-    public final void d(int i10, int i11) {
-        j((i10 << 3) | 5);
-        e(i11);
-    }
-
-    public final void e(int i10) {
-        try {
-            byte[] bArr = this.b;
-            int i11 = this.d;
-            int i12 = i11 + 1;
-            this.d = i12;
-            bArr[i11] = (byte) (i10 & 255);
-            int i13 = i11 + 2;
-            this.d = i13;
-            bArr[i12] = (byte) ((i10 >> 8) & 255);
-            int i14 = i11 + 3;
-            this.d = i14;
-            bArr[i13] = (byte) ((i10 >> 16) & 255);
-            this.d = i11 + 4;
-            bArr[i14] = (byte) ((i10 >> 24) & 255);
-        } catch (IndexOutOfBoundsException e10) {
-            throw new w4(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.d), Integer.valueOf(this.c), 1), e10);
-        }
-    }
-
-    public final void f(int i10, long j10) {
-        j((i10 << 3) | 1);
-        g(j10);
-    }
-
-    public final void g(long j10) {
-        try {
-            byte[] bArr = this.b;
-            int i10 = this.d;
-            int i11 = i10 + 1;
-            this.d = i11;
-            bArr[i10] = (byte) (((int) j10) & 255);
-            int i12 = i10 + 2;
-            this.d = i12;
-            bArr[i11] = (byte) (((int) (j10 >> 8)) & 255);
-            int i13 = i10 + 3;
-            this.d = i13;
-            bArr[i12] = (byte) (((int) (j10 >> 16)) & 255);
-            int i14 = i10 + 4;
-            this.d = i14;
-            bArr[i13] = (byte) (((int) (j10 >> 24)) & 255);
-            int i15 = i10 + 5;
-            this.d = i15;
-            bArr[i14] = (byte) (((int) (j10 >> 32)) & 255);
-            int i16 = i10 + 6;
-            this.d = i16;
-            bArr[i15] = (byte) (((int) (j10 >> 40)) & 255);
-            int i17 = i10 + 7;
-            this.d = i17;
-            bArr[i16] = (byte) (((int) (j10 >> 48)) & 255);
-            this.d = i10 + 8;
-            bArr[i17] = (byte) (((int) (j10 >> 56)) & 255);
-        } catch (IndexOutOfBoundsException e10) {
-            throw new w4(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.d), Integer.valueOf(this.c), 1), e10);
-        }
-    }
-
-    public final void h(int i10, String str) {
-        j((i10 << 3) | 2);
-        int i11 = this.d;
-        try {
-            int o10 = o(str.length() * 3);
-            int o11 = o(str.length());
-            int i12 = this.c;
-            byte[] bArr = this.b;
-            if (o11 != o10) {
-                j(r6.c(str));
-                int i13 = this.d;
-                this.d = r6.b(str, bArr, i13, i12 - i13);
-            } else {
-                int i14 = i11 + o11;
-                this.d = i14;
-                int b10 = r6.b(str, bArr, i14, i12 - i14);
-                this.d = i11;
-                j((b10 - i11) - o11);
-                this.d = b10;
-            }
-        } catch (q6 e10) {
-            this.d = i11;
-            e.logp(Level.WARNING, "com.google.protobuf.CodedOutputStream", "inefficientWriteStringNoTag", "Converting ill-formed UTF-16. Your Protocol Buffer will not round trip correctly!", (Throwable) e10);
-            byte[] bytes = str.getBytes(i5.a);
-            try {
-                int length = bytes.length;
-                j(length);
-                b(length, bytes);
-            } catch (IndexOutOfBoundsException e11) {
-                throw new w4(e11);
-            }
-        } catch (IndexOutOfBoundsException e12) {
-            throw new w4(e12);
-        }
-    }
-
-    public final void i(int i10, int i11) {
-        j((i10 << 3) | i11);
-    }
-
-    public final void j(int i10) {
-        while (true) {
-            int i11 = i10 & (-128);
-            byte[] bArr = this.b;
-            if (i11 == 0) {
-                int i12 = this.d;
-                this.d = i12 + 1;
-                bArr[i12] = (byte) i10;
-                return;
-            } else {
-                try {
-                    int i13 = this.d;
-                    this.d = i13 + 1;
-                    bArr[i13] = (byte) ((i10 & 127) | 128);
-                    i10 >>>= 7;
-                } catch (IndexOutOfBoundsException e10) {
-                    throw new w4(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.d), Integer.valueOf(this.c), 1), e10);
-                }
-            }
-            throw new w4(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.d), Integer.valueOf(this.c), 1), e10);
-        }
-    }
-
-    public final void k(int i10, long j10) {
-        j(i10 << 3);
-        l(j10);
-    }
-
-    public final void l(long j10) {
-        boolean z10 = f;
-        int i10 = this.c;
-        byte[] bArr = this.b;
-        if (!z10 || i10 - this.d < 10) {
-            while ((j10 & (-128)) != 0) {
-                try {
-                    int i11 = this.d;
-                    this.d = i11 + 1;
-                    bArr[i11] = (byte) ((((int) j10) & 127) | 128);
-                    j10 >>>= 7;
-                } catch (IndexOutOfBoundsException e10) {
-                    throw new w4(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.d), Integer.valueOf(i10), 1), e10);
-                }
-            }
-            int i12 = this.d;
-            this.d = i12 + 1;
-            bArr[i12] = (byte) j10;
-            return;
-        }
-        while (true) {
-            int i13 = (int) j10;
-            if ((j10 & (-128)) == 0) {
-                int i14 = this.d;
-                this.d = i14 + 1;
-                p6.c.d(bArr, p6.f + i14, (byte) i13);
-                return;
-            } else {
-                int i15 = this.d;
-                this.d = i15 + 1;
-                p6.c.d(bArr, p6.f + i15, (byte) ((i13 & 127) | 128));
-                j10 >>>= 7;
-            }
-        }
+        StringBuilder sb2 = new StringBuilder("<ByteString@");
+        sb2.append(hexString);
+        sb2.append(" size=");
+        sb2.append(n10);
+        sb2.append(" contents=\"");
+        return a1.g.r(sb2, concat, "\">");
     }
 }

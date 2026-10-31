@@ -1,60 +1,41 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.Path;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class cu0 extends sg.d2 {
-    public final Path r0;
-    public boolean s0;
-    public final org.telegram.ui.Components.h6 t0;
-    public final /* synthetic */ PhotoViewer u0;
+public final class cu0 extends org.telegram.ui.Components.sk0 {
+    public final /* synthetic */ Context c;
+    public final /* synthetic */ du0 d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public cu0(PhotoViewer photoViewer) {
-        super(photoViewer.p5, photoViewer.E, photoViewer.v2, photoViewer.b0);
-        this.u0 = photoViewer;
-        this.r0 = new Path();
-        this.t0 = new org.telegram.ui.Components.h6(this, 0L, 420L, org.telegram.ui.Components.ds.h);
+    public cu0(du0 du0Var, Context context) {
+        this.d = du0Var;
+        this.c = context;
     }
 
-    public final void m(boolean z10, boolean z11) {
-        this.s0 = z10;
-        if (!z11) {
-            this.t0.f(z10, true);
-        }
-        invalidate();
+    @Override // org.telegram.ui.Components.sk0
+    public final boolean D(s4.c1 c1Var) {
+        return !((fu0) this.d.n.d.get(c1Var.b())).a.current;
     }
 
-    @Override // sg.d2, fi.d, android.view.View
-    public final void onDraw(Canvas canvas) {
-        canvas.save();
-        Path path = this.r0;
-        path.rewind();
-        path.addRoundRect(this.l0, AndroidUtilities.dp(this.p0), AndroidUtilities.dp(this.p0), Path.Direction.CW);
-        canvas.clipPath(path);
-        canvas.translate(-getX(), -getY());
-        PhotoViewer photoViewer = this.u0;
-        if (this == photoViewer.v5 || this == photoViewer.w5) {
-            canvas.translate(-photoViewer.u5.getX(), -photoViewer.u5.getY());
-        }
-        photoViewer.U0(canvas, this.k0, -13948117, 855638016, false, true, false);
-        float e = this.t0.e(this.s0);
-        if (e > 0.0f) {
-            canvas.drawColor(org.telegram.ui.ActionBar.y6.o1(e, -1));
-        }
-        setTextColor(i0.a.f(e, -1, -16777216));
-        canvas.restore();
-        super.onDraw(canvas);
+    @Override // s4.g0
+    public final int b() {
+        return this.d.n.d.size();
     }
 
-    @Override // android.view.View
-    public final void onDrawForeground(Canvas canvas) {
-        canvas.save();
-        canvas.clipPath(this.r0);
-        super.onDrawForeground(canvas);
-        canvas.restore();
+    @Override // s4.g0
+    public final void t(s4.c1 c1Var, int i10) {
+        kg.a2 a2Var = (kg.a2) c1Var.a;
+        PremiumPreviewFragment premiumPreviewFragment = this.d.n;
+        a2Var.a((fu0) premiumPreviewFragment.d.get(i10), i10 != b() - 1);
+        a2Var.c(premiumPreviewFragment.e == i10, false);
+    }
+
+    @Override // s4.g0
+    public final s4.c1 w(ViewGroup viewGroup, int i10) {
+        bu0 bu0Var = new bu0(this, this.c);
+        bu0Var.setCirclePaintProvider(new ep0(6, this, bu0Var));
+        return new org.telegram.ui.Components.ck0(bu0Var);
     }
 }

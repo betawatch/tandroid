@@ -1,39 +1,13 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ia implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ Runnable d;
+public final /* synthetic */ class ia {
+    public final /* synthetic */ bh.d a;
+    public final /* synthetic */ q0.a b;
 
-    public /* synthetic */ ia(long j10, Runnable runnable, MessagesController messagesController) {
-        this.a = 0;
-        this.b = messagesController;
-        this.d = runnable;
-        this.c = j10;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.lambda$setCustomChatReactions$473(this.d, this.c);
-                break;
-            case 1:
-                this.b.lambda$setUserAdminRole$104(this.c, this.d);
-                break;
-            default:
-                this.b.lambda$setUserAdminRole$98(this.c, this.d);
-                break;
-        }
-    }
-
-    public /* synthetic */ ia(MessagesController messagesController, long j10, Runnable runnable, int i10) {
-        this.a = i10;
-        this.b = messagesController;
-        this.c = j10;
-        this.d = runnable;
+    public /* synthetic */ ia(bh.d dVar, q0.a aVar) {
+        this.a = dVar;
+        this.b = aVar;
     }
 }

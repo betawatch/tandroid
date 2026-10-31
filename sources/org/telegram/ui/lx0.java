@@ -1,41 +1,40 @@
 package org.telegram.ui;
 
-import android.content.ClipData;
-import android.content.ClipboardManager;
-import android.text.style.ClickableSpan;
 import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class lx0 extends ClickableSpan {
-    public final /* synthetic */ String a;
-    public final /* synthetic */ mx0 b;
+public final /* synthetic */ class lx0 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ xx0 b;
 
-    public lx0(mx0 mx0Var, String str) {
-        this.b = mx0Var;
-        this.a = str;
+    public /* synthetic */ lx0(xx0 xx0Var, int i10) {
+        this.a = i10;
+        this.b = xx0Var;
     }
 
-    @Override // android.text.style.ClickableSpan
+    @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
-        org.telegram.ui.Components.qc b10;
-        ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", this.a));
-        org.telegram.ui.Components.wc b02 = org.telegram.ui.Components.wc.b0(this.b.d);
-        String string = LocaleController.getString(R.string.LinkCopied);
-        org.telegram.ui.ActionBar.u6 resourceProvider = this.b.d.getResourceProvider();
-        b02.getClass();
-        if (AndroidUtilities.shouldShowClipboardToast()) {
-            org.telegram.ui.Components.yb ybVar = new org.telegram.ui.Components.yb(b02.X(), resourceProvider);
-            ybVar.c(R.raw.voip_invite, 36, 36, "Wibe", "Circle");
-            ybVar.b.setText(string);
-            b10 = b02.b(ybVar, 1500);
-        } else {
-            b10 = new org.telegram.ui.Components.pb();
+        switch (this.a) {
+            case 0:
+                ProfileActivity profileActivity = this.b.e;
+                profileActivity.getMessagesController().u3(profileActivity, profileActivity.getMessagesController().Z1(Long.valueOf(profileActivity.d1)), null, profileActivity.getClassGuid(), null, false, false);
+                break;
+            default:
+                ProfileActivity profileActivity2 = this.b.e;
+                profileActivity2.O4 = !profileActivity2.O4;
+                if (!profileActivity2.N4) {
+                    profileActivity2.N4 = true;
+                }
+                profileActivity2.S4();
+                view.requestLayout();
+                profileActivity2.d.g(profileActivity2.N3);
+                int i10 = profileActivity2.j6;
+                if (i10 >= 0) {
+                    profileActivity2.c.h1(i10, profileActivity2.k6 - profileActivity2.a.getPaddingTop());
+                    break;
+                }
+                break;
         }
-        b10.j();
     }
 }

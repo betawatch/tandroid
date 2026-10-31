@@ -1,82 +1,118 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Rect;
-import android.view.KeyEvent;
-import org.telegram.ui.Components.AnimatedPhoneNumberEditText;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class oj0 extends AnimatedPhoneNumberEditText {
-    public final /* synthetic */ int G;
-    public final /* synthetic */ Object H;
+public final class oj0 extends org.telegram.ui.Components.uu0 {
+    public final /* synthetic */ int f0;
+    public final /* synthetic */ FrameLayout g0;
+    public final /* synthetic */ org.telegram.ui.ActionBar.k2 h0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ oj0(Object obj, Context context, int i10) {
-        super(context);
-        this.G = i10;
-        this.H = obj;
+    public /* synthetic */ oj0(org.telegram.ui.ActionBar.k2 k2Var, Context context, FrameLayout frameLayout, int i10) {
+        super(context, null);
+        this.f0 = i10;
+        this.h0 = k2Var;
+        this.g0 = frameLayout;
     }
 
-    @Override // org.telegram.ui.Components.q40, org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.lu, android.widget.TextView, android.view.View
-    public void onDraw(Canvas canvas) {
-        switch (this.G) {
-            case 1:
-                this.b.setColor(org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.H6, false));
-                super.onDraw(canvas);
+    @Override // org.telegram.ui.Components.uu0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        int measuredHeight;
+        org.telegram.ui.ActionBar.i5 i5Var;
+        int measuredHeight2;
+        switch (this.f0) {
+            case 0:
+                PasscodeActivity passcodeActivity = (PasscodeActivity) this.h0;
+                int visibility = passcodeActivity.w.getVisibility();
+                FrameLayout frameLayout = this.g0;
+                if (visibility == 8 || Q() < org.telegram.messenger.i0.L(20.0f)) {
+                    if (passcodeActivity.w.getVisibility() != 8) {
+                        int measuredWidth = getMeasuredWidth();
+                        measuredHeight = getMeasuredHeight() - org.telegram.messenger.i0.L(230.0f);
+                        frameLayout.layout(0, 0, measuredWidth, measuredHeight);
+                    } else {
+                        int measuredWidth2 = getMeasuredWidth();
+                        measuredHeight = getMeasuredHeight();
+                        frameLayout.layout(0, 0, measuredWidth2, measuredHeight);
+                    }
+                } else if (passcodeActivity.p0()) {
+                    int measuredWidth3 = getMeasuredWidth();
+                    measuredHeight = Q() + (getMeasuredHeight() - org.telegram.messenger.i0.L(230.0f));
+                    frameLayout.layout(0, 0, measuredWidth3, measuredHeight);
+                } else {
+                    int measuredWidth4 = getMeasuredWidth();
+                    measuredHeight = getMeasuredHeight();
+                    frameLayout.layout(0, 0, measuredWidth4, measuredHeight);
+                }
+                i5Var = ((org.telegram.ui.ActionBar.k2) passcodeActivity).simpleActionBar;
+                View view = i5Var != null ? ((org.telegram.ui.ActionBar.k2) passcodeActivity).simpleActionBar : ((org.telegram.ui.ActionBar.k2) passcodeActivity).actionBar;
+                if (view != null && view.getParent() == this) {
+                    view.layout(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight());
+                }
+                passcodeActivity.w.layout(0, measuredHeight, getMeasuredWidth(), org.telegram.messenger.i0.L(230.0f) + measuredHeight);
+                R();
                 break;
             default:
-                super.onDraw(canvas);
+                uc1 uc1Var = (uc1) this.g0;
+                tc1 tc1Var = (tc1) this.h0;
+                if (tc1Var.e0.getVisibility() == 8 || Q() < org.telegram.messenger.i0.L(20.0f)) {
+                    if (tc1Var.e0.getVisibility() != 8) {
+                        int measuredWidth5 = getMeasuredWidth();
+                        measuredHeight2 = getMeasuredHeight() - org.telegram.messenger.i0.L(230.0f);
+                        uc1Var.layout(0, 0, measuredWidth5, measuredHeight2);
+                    } else {
+                        int measuredWidth6 = getMeasuredWidth();
+                        measuredHeight2 = getMeasuredHeight();
+                        uc1Var.layout(0, 0, measuredWidth6, measuredHeight2);
+                    }
+                } else if (tc1Var.z0()) {
+                    int measuredWidth7 = getMeasuredWidth();
+                    measuredHeight2 = Q() + (getMeasuredHeight() - org.telegram.messenger.i0.L(230.0f));
+                    uc1Var.layout(0, 0, measuredWidth7, measuredHeight2);
+                } else {
+                    int measuredWidth8 = getMeasuredWidth();
+                    measuredHeight2 = getMeasuredHeight();
+                    uc1Var.layout(0, 0, measuredWidth8, measuredHeight2);
+                }
+                tc1Var.e0.layout(0, measuredHeight2, getMeasuredWidth(), org.telegram.messenger.i0.L(230.0f) + measuredHeight2);
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
-    public final void onFocusChanged(boolean z10, int i10, Rect rect) {
-        switch (this.G) {
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        org.telegram.ui.ActionBar.i5 i5Var;
+        switch (this.f0) {
             case 0:
-                super.onFocusChanged(z10, i10, rect);
-                qj0 qj0Var = (qj0) this.H;
-                org.telegram.ui.Components.sd0 sd0Var = qj0Var.r;
-                float f7 = (z10 || qj0Var.P.isFocused()) ? 1.0f : 0.0f;
-                sd0Var.b(f7, f7, true);
-                break;
-            case 1:
-                super.onFocusChanged(z10, i10, rect);
-                qj0 qj0Var2 = (qj0) this.H;
-                org.telegram.ui.Components.sd0 sd0Var2 = qj0Var2.r;
-                float f10 = (z10 || qj0Var2.N.isFocused()) ? 1.0f : 0.0f;
-                sd0Var2.b(f10, f10, true);
-                break;
-            default:
-                super.onFocusChanged(z10, i10, rect);
-                hg0 hg0Var = (hg0) this.H;
-                org.telegram.ui.Components.sd0 sd0Var3 = hg0Var.f;
-                float f11 = (z10 || hg0Var.b.isFocused()) ? 1.0f : 0.0f;
-                sd0Var3.b(f11, f11, true);
-                if (z10) {
-                    hg0Var.a0.c.setEditText(this);
+                int size = View.MeasureSpec.getSize(i10);
+                int size2 = View.MeasureSpec.getSize(i11);
+                setMeasuredDimension(size, size2);
+                PasscodeActivity passcodeActivity = (PasscodeActivity) this.h0;
+                this.g0.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((passcodeActivity.w.getVisibility() == 8 || Q() >= org.telegram.messenger.i0.L(20.0f)) ? size2 : size2 - org.telegram.messenger.i0.L(230.0f), TLObject.FLAG_30));
+                passcodeActivity.w.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.i0.L(230.0f), TLObject.FLAG_30));
+                i5Var = ((org.telegram.ui.ActionBar.k2) passcodeActivity).simpleActionBar;
+                View view = i5Var != null ? ((org.telegram.ui.ActionBar.k2) passcodeActivity).simpleActionBar : ((org.telegram.ui.ActionBar.k2) passcodeActivity).actionBar;
+                if (view != null && view.getParent() == this) {
+                    view.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_31));
                     break;
                 }
                 break;
-        }
-    }
-
-    @Override // android.widget.TextView, android.view.View, android.view.KeyEvent.Callback
-    public boolean onKeyDown(int i10, KeyEvent keyEvent) {
-        switch (this.G) {
-            case 1:
-                qj0 qj0Var = (qj0) this.H;
-                if (i10 == 67 && qj0Var.P.length() == 0) {
-                    qj0Var.N.requestFocus();
-                    oj0 oj0Var = qj0Var.N;
-                    oj0Var.setSelection(oj0Var.length());
-                    qj0Var.N.dispatchKeyEvent(keyEvent);
-                }
-                return super.onKeyDown(i10, keyEvent);
             default:
-                return super.onKeyDown(i10, keyEvent);
+                int size3 = View.MeasureSpec.getSize(i10);
+                int size4 = View.MeasureSpec.getSize(i11);
+                setMeasuredDimension(size3, size4);
+                tc1 tc1Var = (tc1) this.h0;
+                if (tc1Var.e0.getVisibility() != 8 && Q() < org.telegram.messenger.i0.L(20.0f)) {
+                    size4 -= org.telegram.messenger.i0.L(230.0f);
+                }
+                ((uc1) this.g0).measure(View.MeasureSpec.makeMeasureSpec(size3, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size4, TLObject.FLAG_30));
+                tc1Var.e0.measure(View.MeasureSpec.makeMeasureSpec(size3, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.i0.L(230.0f), TLObject.FLAG_30));
+                break;
         }
     }
 }

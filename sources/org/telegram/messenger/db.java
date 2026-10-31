@@ -1,51 +1,7 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.ui.Components.ChatActivityEnterView;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final /* synthetic */ class db implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ boolean f;
-
-    public /* synthetic */ db(int i10, int i11, int i12, long j10, MessagesController messagesController, boolean z10) {
-        this.a = i12;
-        this.b = messagesController;
-        this.c = j10;
-        this.d = i10;
-        this.e = i11;
-        this.f = z10;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        NotificationCenter.NotificationCenterDelegate notificationCenterDelegate = this.b;
-        switch (i10) {
-            case 0:
-                ((MessagesController) notificationCenterDelegate).lambda$markDialogAsRead$240(this.c, this.d, this.e, this.f);
-                break;
-            case 1:
-                ((MessagesController) notificationCenterDelegate).lambda$markDialogAsRead$241(this.c, this.d, this.e, this.f);
-                break;
-            default:
-                int i11 = ChatActivityEnterView.r5;
-                ((ChatActivityEnterView) notificationCenterDelegate).Q0(this.d, this.f, this.e, false, this.c);
-                break;
-        }
-    }
-
-    public /* synthetic */ db(ChatActivityEnterView chatActivityEnterView, boolean z10, int i10, int i11, long j10) {
-        this.a = 2;
-        this.b = chatActivityEnterView;
-        this.f = z10;
-        this.d = i10;
-        this.e = i11;
-        this.c = j10;
-    }
+public interface db {
+    void d(int i10);
 }

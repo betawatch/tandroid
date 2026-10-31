@@ -1,71 +1,74 @@
 package org.telegram.ui.Components;
 
-import android.os.Bundle;
-import android.view.View;
-import android.view.accessibility.AccessibilityNodeInfo;
+import android.graphics.Paint;
+import android.graphics.Path;
+import java.util.ArrayList;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public abstract class d10 extends kp0 {
-    public final boolean d;
+public final class d10 {
+    public c10[] a;
+    public c10 b;
+    public c10 c;
+    public c10 d;
+    public float e;
+    public float f;
+    public float g;
+    public float h;
+    public float i;
+    public long j;
+    public float k;
+    public ArrayList l;
+    public Paint m;
+    public Path n;
 
-    public d10(boolean z10) {
-        this.d = z10;
+    public final void a(float f7) {
+        this.g = f7;
+        float f10 = this.e;
+        this.h = (f7 - f10) / 250.0f;
+        this.i = (f7 - f10) / 120.0f;
     }
 
-    @Override // org.telegram.ui.Components.kp0
-    public final boolean a() {
-        return k() > j();
+    public final void b(int i10, boolean z10) {
+        c10 c10Var = this.b;
+        if (c10Var == null || c10Var.i != i10) {
+            if (VoIPService.getSharedInstance() == null && this.b == null) {
+                this.b = this.d;
+                return;
+            }
+            c10 c10Var2 = z10 ? this.b : null;
+            this.c = c10Var2;
+            this.b = this.a[i10];
+            if (c10Var2 != null) {
+                this.k = 0.0f;
+            } else {
+                this.k = 1.0f;
+            }
+        }
     }
 
-    @Override // org.telegram.ui.Components.kp0
-    public final boolean b() {
-        return k() < i();
-    }
-
-    @Override // org.telegram.ui.Components.kp0
     public final void c(boolean z10) {
-        float h = h();
-        if (z10) {
-            h *= -1.0f;
+        VoIPService sharedInstance = VoIPService.getSharedInstance();
+        if (sharedInstance != null) {
+            int callState = sharedInstance.getCallState();
+            if (!sharedInstance.isSwitchingStream() && (callState == 1 || callState == 2 || callState == 6 || callState == 5)) {
+                b(2, z10);
+                return;
+            }
+            org.telegram.messenger.u3 u3Var = sharedInstance.groupCall;
+            if (u3Var == null) {
+                b(sharedInstance.isMicMute() ? 1 : 0, z10);
+                return;
+            }
+            TLRPC.GroupCallParticipant groupCallParticipant = (TLRPC.GroupCallParticipant) u3Var.d.f(sharedInstance.getSelfId());
+            if ((groupCallParticipant == null || groupCallParticipant.can_self_unmute || !groupCallParticipant.muted || org.telegram.messenger.w3.w(14, sharedInstance.getChat())) && !sharedInstance.groupCall.b.rtmp_stream) {
+                b(sharedInstance.isMicMute() ? 1 : 0, z10);
+            } else {
+                sharedInstance.setMicMute(true, false, false);
+                b(3, z10);
+            }
         }
-        l(Math.min(i(), Math.max(j(), k() + h)));
     }
-
-    @Override // org.telegram.ui.Components.kp0
-    public final void e(View view, AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.e(view, accessibilityNodeInfo);
-        if (this.d) {
-            accessibilityNodeInfo.addAction((AccessibilityNodeInfo.AccessibilityAction) s0.c.j.a);
-            accessibilityNodeInfo.setRangeInfo(AccessibilityNodeInfo.RangeInfo.obtain(1, j(), i(), k()));
-        }
-    }
-
-    @Override // org.telegram.ui.Components.kp0
-    public final boolean g(View view, int i10, Bundle bundle) {
-        if (super.g(view, i10, bundle)) {
-            return true;
-        }
-        if (i10 != s0.c.j.a()) {
-            return false;
-        }
-        l(bundle.getFloat("android.view.accessibility.action.ARGUMENT_PROGRESS_VALUE"));
-        return true;
-    }
-
-    public float h() {
-        return 0.05f;
-    }
-
-    public float i() {
-        return 1.0f;
-    }
-
-    public float j() {
-        return 0.0f;
-    }
-
-    public abstract float k();
-
-    public abstract void l(float f7);
 }

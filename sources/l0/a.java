@@ -3,14 +3,14 @@ package l0;
 import android.content.res.ColorStateList;
 import android.graphics.PorterDuff;
 import android.view.MenuItem;
-import l.n;
+import l.o;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public interface a extends MenuItem {
-    a a(n nVar);
+    a a(o oVar);
 
-    n b();
+    o b();
 
     @Override // android.view.MenuItem
     int getAlphabeticModifiers();

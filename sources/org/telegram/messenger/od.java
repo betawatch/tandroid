@@ -1,75 +1,33 @@
 package org.telegram.messenger;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Set;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.TranslateController;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class od implements Runnable {
-    public final /* synthetic */ int a = 2;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ BaseController d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object h;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ LocationSharingService b;
 
-    public /* synthetic */ od(ChatThemeController chatThemeController, TLObject tLObject, long j10, boolean z10, String str, Runnable runnable) {
-        this.d = chatThemeController;
-        this.e = tLObject;
-        this.b = j10;
-        this.c = z10;
-        this.f = str;
-        this.h = runnable;
+    public /* synthetic */ od(LocationSharingService locationSharingService, int i10) {
+        this.a = i10;
+        this.b = locationSharingService;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                ((MessagesController) this.d).lambda$getSendAsPeers$448((TLRPC.TL_channels_sendAsPeers) this.e, (a0.h) this.f, this.b, (MessagesController.SendAsPeersInfo) this.h, this.c);
-                break;
-            case 1:
-                ((TranslateController) this.d).lambda$pushToTranslate$24((HashMap) this.e, this.b, (TranslateController.PendingTranslation) this.f, this.c, (Set) this.h);
-                break;
-            case 2:
-                ((ChatThemeController) this.d).lambda$setWallpaperToPeer$16((TLObject) this.e, this.b, this.c, (String) this.f, (Runnable) this.h);
+                LocationSharingService locationSharingService = this.b;
+                locationSharingService.b.postDelayed(locationSharingService.c, 1000L);
+                Utilities.d.c(new ag.f3(22));
                 break;
             default:
-                ((TopicsController) this.d).lambda$reloadTopics$15((TLObject) this.e, this.c, this.b, (HashSet) this.f, (Runnable) this.h);
-                break;
+                LocationSharingService locationSharingService2 = this.b;
+                if (!LocationSharingService.a().isEmpty()) {
+                    locationSharingService2.c(true);
+                    break;
+                } else {
+                    locationSharingService2.stopSelf();
+                    break;
+                }
         }
-    }
-
-    public /* synthetic */ od(MessagesController messagesController, TLRPC.TL_channels_sendAsPeers tL_channels_sendAsPeers, a0.h hVar, long j10, MessagesController.SendAsPeersInfo sendAsPeersInfo, boolean z10) {
-        this.d = messagesController;
-        this.e = tL_channels_sendAsPeers;
-        this.f = hVar;
-        this.b = j10;
-        this.h = sendAsPeersInfo;
-        this.c = z10;
-    }
-
-    public /* synthetic */ od(TopicsController topicsController, TLObject tLObject, boolean z10, long j10, HashSet hashSet, Runnable runnable) {
-        this.d = topicsController;
-        this.e = tLObject;
-        this.c = z10;
-        this.b = j10;
-        this.f = hashSet;
-        this.h = runnable;
-    }
-
-    public /* synthetic */ od(TranslateController translateController, HashMap hashMap, long j10, TranslateController.PendingTranslation pendingTranslation, boolean z10, Set set) {
-        this.d = translateController;
-        this.e = hashMap;
-        this.b = j10;
-        this.f = pendingTranslation;
-        this.c = z10;
-        this.h = set;
     }
 }

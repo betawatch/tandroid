@@ -1,65 +1,73 @@
 package org.telegram.ui.Components;
 
-import android.text.Editable;
-import android.text.TextWatcher;
-import org.telegram.messenger.DispatchQueue2;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class lj implements TextWatcher {
-    public final /* synthetic */ xj a;
+public final class lj extends tk0 {
+    public final /* synthetic */ int e3;
+    public final Paint f3;
+    public final /* synthetic */ xj g3;
 
-    public lj(xj xjVar) {
-        this.a = xjVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public lj(xj xjVar, Context context, org.telegram.ui.ActionBar.p6 p6Var, int i10) {
+        super(context, p6Var);
+        this.e3 = i10;
+        switch (i10) {
+            case 1:
+                this.g3 = xjVar;
+                super(context, p6Var);
+                this.f3 = new Paint();
+                break;
+            default:
+                this.g3 = xjVar;
+                this.f3 = new Paint();
+                break;
+        }
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        int currentTop;
-        String obj = editable.toString();
-        if (obj.isEmpty()) {
-            s4.h0 adapter = this.a.s.getAdapter();
-            xj xjVar = this.a;
-            if (adapter != xjVar.E) {
-                currentTop = xjVar.getCurrentTop();
-                this.a.G.setText(LocaleController.getString(R.string.NoContacts));
-                this.a.G.c();
-                xj xjVar2 = this.a;
-                xjVar2.s.setAdapter(xjVar2.E);
-                this.a.E.l();
-                if (currentTop > 0) {
-                    this.a.v.h1(0, -currentTop);
+    @Override // org.telegram.ui.Components.tk0, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        switch (this.e3) {
+            case 0:
+                if (this.g3.n == 2 && getChildCount() > 0) {
+                    float f7 = 2.14748365E9f;
+                    for (int i10 = 0; i10 < getChildCount(); i10++) {
+                        if (getChildAt(i10).getY() < f7) {
+                            f7 = getChildAt(i10).getY();
+                        }
+                    }
+                    this.f3.setColor(org.telegram.ui.ActionBar.t6.x0(null, org.telegram.ui.ActionBar.t6.h5, false));
                 }
-            }
-        } else {
-            uz uzVar = this.a.G;
-            if (uzVar != null) {
-                uzVar.setText(LocaleController.getString(R.string.NoResult));
-            }
-        }
-        tj tjVar = this.a.F;
-        if (tjVar != null) {
-            if (tjVar.f != null) {
-                Utilities.searchQueue.cancelRunnable(tjVar.f);
-                tjVar.f = null;
-            }
-            int i10 = tjVar.h + 1;
-            tjVar.h = i10;
-            DispatchQueue2 dispatchQueue2 = Utilities.searchQueue;
-            sj sjVar = new sj(tjVar, obj, i10, 0);
-            tjVar.f = sjVar;
-            dispatchQueue2.postRunnable(sjVar, 300L);
+                super.dispatchDraw(canvas);
+                break;
+            default:
+                if (this.g3.n == 1 && getChildCount() > 0) {
+                    float f10 = 2.14748365E9f;
+                    for (int i11 = 0; i11 < getChildCount(); i11++) {
+                        if (getChildAt(i11).getY() < f10) {
+                            f10 = getChildAt(i11).getY();
+                        }
+                    }
+                    this.f3.setColor(org.telegram.ui.ActionBar.t6.x0(null, org.telegram.ui.ActionBar.t6.h5, false));
+                }
+                super.dispatchDraw(canvas);
+                break;
         }
     }
 
-    @Override // android.text.TextWatcher
-    public final /* synthetic */ void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final /* synthetic */ void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    @Override // org.telegram.ui.Components.tk0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public boolean onTouchEvent(MotionEvent motionEvent) {
+        switch (this.e3) {
+            case 0:
+                if (this.g3.n == 0) {
+                    break;
+                }
+                break;
+        }
+        return super.onTouchEvent(motionEvent);
     }
 }

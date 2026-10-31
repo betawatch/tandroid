@@ -1,24 +1,26 @@
 package m;
 
-import android.os.Build;
-import java.lang.reflect.Method;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class w2 {
-    public Method a;
-    public Method b;
-    public Method c;
+public final class w2 extends i1.c {
+    public static final Parcelable.Creator<w2> CREATOR = new i1.b(1);
+    public boolean c;
 
-    public w2(Method method, Method method2, Method method3) {
-        this.a = method;
-        this.b = method2;
-        this.c = method3;
+    public w2(Parcel parcel, ClassLoader classLoader) {
+        super(parcel, classLoader);
+        this.c = ((Boolean) parcel.readValue(null)).booleanValue();
     }
 
-    public static void a() {
-        if (Build.VERSION.SDK_INT >= 29) {
-            throw new UnsupportedClassVersionError("This function can only be used for API Level < 29.");
-        }
+    public final String toString() {
+        return "SearchView.SavedState{" + Integer.toHexString(System.identityHashCode(this)) + " isIconified=" + this.c + "}";
+    }
+
+    @Override // i1.c, android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i10) {
+        super.writeToParcel(parcel, i10);
+        parcel.writeValue(Boolean.valueOf(this.c));
     }
 }

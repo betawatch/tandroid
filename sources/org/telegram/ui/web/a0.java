@@ -1,64 +1,66 @@
 package org.telegram.ui.web;
 
-import bi.c3;
-import di.x7;
-import java.io.File;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
+import android.util.SparseIntArray;
+import org.telegram.ui.ActionBar.p6;
+import org.telegram.ui.ActionBar.t6;
+import org.telegram.ui.ActionBar.x4;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class a0 implements Utilities.Callback {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ a1 b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ String d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
+public final class a0 extends x4 {
+    public final /* synthetic */ int d;
 
-    public /* synthetic */ a0(a1 a1Var, x7 x7Var, String str, hi.w1 w1Var, String str2) {
-        this.b = a1Var;
-        this.e = x7Var;
-        this.c = str;
-        this.f = w1Var;
-        this.d = str2;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ a0(int i10, p6 p6Var) {
+        super(1, p6Var);
+        this.d = i10;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        switch (this.a) {
+    @Override // org.telegram.ui.ActionBar.x4
+    public final void k() {
+        switch (this.d) {
             case 0:
-                x7 x7Var = (x7) this.e;
-                hi.w1 w1Var = (hi.w1) this.f;
-                String str = this.d;
-                String str2 = (String) obj;
-                a1 a1Var = this.b;
-                String str3 = this.c;
-                if (str2 == null) {
-                    a1Var.x(x7Var, "secure_storage_failed", a1.B("req_id", str3, "error", "RESTORE_CANCELLED"));
-                    break;
-                } else {
-                    try {
-                        w1Var.j(str2);
-                        a1Var.x(x7Var, "secure_storage_key_restored", a1.B("req_id", str3, "value", (String) w1Var.f(str).first));
-                        break;
-                    } catch (Exception e) {
-                        a1Var.x(x7Var, "secure_storage_failed", a1.B("req_id", str3, "error", e.getMessage()));
-                        return;
-                    }
-                }
+                SparseIntArray sparseIntArray = (SparseIntArray) this.b;
+                sparseIntArray.append(t6.h5, -14803426);
+                sparseIntArray.append(t6.a7, -16777216);
+                break;
+            case 1:
+                SparseIntArray sparseIntArray2 = (SparseIntArray) this.b;
+                sparseIntArray2.append(t6.h5, -14737633);
+                sparseIntArray2.append(t6.a7, -13421773);
+                break;
+            case 2:
+                ((SparseIntArray) this.b).put(t6.wf, -1071635414);
+                break;
+            case 3:
+                SparseIntArray sparseIntArray3 = (SparseIntArray) this.b;
+                sparseIntArray3.put(t6.wf, i0.b.f(0.2f, -16777216, -1));
+                sparseIntArray3.put(t6.Le, i0.b.f(0.5f, -16777216, -1));
+                break;
+            case 4:
+                ((SparseIntArray) this.b).put(t6.wf, i0.b.o(-1, 30));
+                break;
+            case 5:
+                ((SparseIntArray) this.b).put(t6.wf, i0.b.o(-1, 30));
+                break;
+            case 6:
+                SparseIntArray sparseIntArray4 = (SparseIntArray) this.b;
+                sparseIntArray4.append(t6.h5, -14803426);
+                sparseIntArray4.append(t6.a7, -16777216);
+                break;
+            case 7:
+                ((SparseIntArray) this.b).put(t6.wf, i0.b.o(-1, 30));
+                break;
+            case 8:
+                SparseIntArray sparseIntArray5 = (SparseIntArray) this.b;
+                sparseIntArray5.append(t6.h5, -14737633);
+                sparseIntArray5.append(t6.a7, -13421773);
+                break;
             default:
-                a1 a1Var2 = this.b;
-                AndroidUtilities.runOnUIThread(new c3(a1Var2, (File) obj, (org.telegram.ui.ActionBar.e2) this.e, this.c, this.d, (String) this.f, 26));
+                SparseIntArray sparseIntArray6 = (SparseIntArray) this.b;
+                sparseIntArray6.append(t6.h5, -14803426);
+                sparseIntArray6.append(t6.a7, -16777216);
                 break;
         }
-    }
-
-    public /* synthetic */ a0(a1 a1Var, org.telegram.ui.ActionBar.e2 e2Var, String str, String str2, String str3) {
-        this.b = a1Var;
-        this.e = e2Var;
-        this.c = str;
-        this.d = str2;
-        this.f = str3;
     }
 }

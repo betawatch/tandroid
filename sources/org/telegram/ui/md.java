@@ -1,43 +1,66 @@
 package org.telegram.ui;
 
-import android.text.Editable;
-import android.text.TextWatcher;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class md implements TextWatcher {
+public final /* synthetic */ class md implements Runnable {
     public final /* synthetic */ int a;
+    public final /* synthetic */ le b;
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
+    public /* synthetic */ md(le leVar, int i10) {
+        this.a = i10;
+        this.b = leVar;
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // java.lang.Runnable
+    public final void run() {
         int i10 = this.a;
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        int i13 = this.a;
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        int i13 = this.a;
-    }
-
-    private final void a(Editable editable) {
-    }
-
-    private final void b(Editable editable) {
-    }
-
-    private final void c(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void d(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void e(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void f(int i10, int i11, int i12, CharSequence charSequence) {
+        Object[] objArr = 0;
+        le leVar = this.b;
+        switch (i10) {
+            case 0:
+                gf.f.r(leVar.getContext(), org.telegram.messenger.cd.L0(2131748419, null));
+                break;
+            case 1:
+                gf.f.r(leVar.getContext(), org.telegram.messenger.cd.L0(2131748385, null));
+                break;
+            case 2:
+                org.telegram.ui.Components.u51 u51Var = leVar.X0;
+                if (u51Var != null) {
+                    boolean z10 = leVar.e0;
+                    u51Var.f3.O((leVar.R0 != -1) == leVar.a1.a());
+                    if (z10 && leVar.R0 != -1) {
+                        leVar.a();
+                        break;
+                    }
+                }
+                break;
+            case 3:
+                leVar.k1 = leVar.j1;
+                break;
+            case 4:
+                leVar.J0.setLoading(false);
+                break;
+            case 5:
+                leVar.Y0.setVisibility(8);
+                break;
+            case 6:
+                leVar.Y0.setVisibility(8);
+                break;
+            default:
+                int i11 = leVar.o0;
+                org.telegram.messenger.i0.r(leVar.s1);
+                if (leVar.j1 != leVar.k1) {
+                    TLRPC.TL_channels_restrictSponsoredMessages tL_channels_restrictSponsoredMessages = new TLRPC.TL_channels_restrictSponsoredMessages();
+                    tL_channels_restrictSponsoredMessages.channel = org.telegram.messenger.vp.r1(i11).g1(-leVar.p0);
+                    tL_channels_restrictSponsoredMessages.restricted = leVar.j1;
+                    ConnectionsManager.getInstance(i11).sendRequest(tL_channels_restrictSponsoredMessages, new td(leVar, objArr == true ? 1 : 0));
+                    break;
+                }
+                break;
+        }
     }
 }

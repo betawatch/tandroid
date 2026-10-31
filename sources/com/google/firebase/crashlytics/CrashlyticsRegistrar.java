@@ -9,12 +9,12 @@ import com.google.firebase.components.ComponentRegistrar;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
-import m9.h;
-import s0.b;
-import s9.k;
-import w7.p5;
+import l9.h;
+import r9.j;
+import rh.x6;
+import w7.v9;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public class CrashlyticsRegistrar implements ComponentRegistrar {
     public static final /* synthetic */ int a = 0;
@@ -27,21 +27,21 @@ public class CrashlyticsRegistrar implements ComponentRegistrar {
             Log.d("SessionsDependencies", "Dependency " + dVar + " already added.");
             return;
         }
-        map.put(dVar, new a(new le.d(true)));
+        map.put(dVar, new a(new ce.d(true)));
         Log.d("SessionsDependencies", "Dependency to " + dVar + " added.");
     }
 
     @Override // com.google.firebase.components.ComponentRegistrar
     public final List getComponents() {
-        n0 a2 = s9.a.a(u9.c.class);
+        n0 a2 = r9.a.a(t9.c.class);
         a2.d = "fire-cls";
-        a2.a(k.a(h.class));
-        a2.a(k.a(sa.d.class));
-        a2.a(new k(0, 2, v9.a.class));
-        a2.a(new k(0, 2, n9.a.class));
-        a2.a(new k(0, 2, ab.a.class));
-        a2.f = new b(this, 22);
+        a2.a(j.a(h.class));
+        a2.a(j.a(ra.d.class));
+        a2.a(new j(0, 2, u9.a.class));
+        a2.a(new j(0, 2, m9.a.class));
+        a2.a(new j(0, 2, ab.a.class));
+        a2.f = new x6(this, 23);
         a2.c(2);
-        return Arrays.asList(a2.b(), p5.a("fire-cls", "18.6.0"));
+        return Arrays.asList(a2.b(), v9.a("fire-cls", "18.6.0"));
     }
 }

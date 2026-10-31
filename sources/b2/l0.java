@@ -4,10 +4,10 @@ import android.net.Uri;
 import android.os.Bundle;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class l0 {
-    public static final l0 d = new l0(new a8.h0(8, false));
+    public static final l0 d = new l0(new android.support.v4.media.session.a0(4));
     public static final String e;
     public static final String f;
     public static final String g;
@@ -16,16 +16,16 @@ public final class l0 {
     public final Bundle c;
 
     static {
-        String str = e2.n0.a;
+        String str = e2.l0.a;
         e = Integer.toString(0, 36);
         f = Integer.toString(1, 36);
         g = Integer.toString(2, 36);
     }
 
-    public l0(a8.h0 h0Var) {
-        this.a = (Uri) h0Var.b;
-        this.b = (String) h0Var.c;
-        this.c = (Bundle) h0Var.d;
+    public l0(android.support.v4.media.session.a0 a0Var) {
+        this.a = (Uri) a0Var.b;
+        this.b = (String) a0Var.c;
+        this.c = (Bundle) a0Var.d;
     }
 
     public final boolean equals(Object obj) {

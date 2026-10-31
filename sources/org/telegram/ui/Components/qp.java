@@ -1,32 +1,27 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.uc1;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qp implements uc1 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ rp b;
+public final class qp implements xu0 {
+    public final /* synthetic */ op a;
+    public final /* synthetic */ sp b;
 
-    public /* synthetic */ qp(rp rpVar, int i10) {
-        this.a = i10;
-        this.b = rpVar;
+    public qp(sp spVar, op opVar) {
+        this.b = spVar;
+        this.a = opVar;
     }
 
-    @Override // org.telegram.ui.uc1
-    public final void a(TLRPC.TL_wallPaper tL_wallPaper) {
-        switch (this.a) {
-            case 0:
-                zp zpVar = this.b.a;
-                zpVar.X.dismissInternal();
-                zpVar.dismiss();
-                break;
-            default:
-                zp zpVar2 = this.b.a;
-                zpVar2.X.dismissInternal();
-                zpVar2.dismiss();
-                break;
-        }
+    @Override // org.telegram.ui.Components.xu0
+    public final void m(int i10) {
+        sp spVar = this.b;
+        spVar.q1 = i10;
+        spVar.J0(true);
+    }
+
+    @Override // org.telegram.ui.Components.xu0
+    public final void s() {
+        int measuredHeight = this.b.k1.getMeasuredHeight();
+        op opVar = this.a;
+        opVar.z(0 - opVar.getScrollX(), measuredHeight - opVar.getScrollY(), false);
     }
 }

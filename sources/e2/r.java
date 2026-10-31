@@ -1,14 +1,14 @@
 package e2;
 
-import a8.yb;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import java.util.ArrayDeque;
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArraySet;
+import v7.t6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class r {
     public final Thread a;
@@ -41,7 +41,7 @@ public final class r {
 
     public final void b() {
         if (this.i) {
-            yb.p(Thread.currentThread() == this.a);
+            t6.p(Thread.currentThread() == this.a);
         }
         ArrayDeque arrayDeque = this.f;
         if (arrayDeque.isEmpty()) {
@@ -73,14 +73,14 @@ public final class r {
 
     public final void c(int i10, o oVar) {
         if (this.i) {
-            yb.p(Thread.currentThread() == this.a);
+            t6.p(Thread.currentThread() == this.a);
         }
-        this.f.add(new ai.h0(new CopyOnWriteArraySet(this.d), i10, oVar, 9));
+        this.f.add(new ag.o0(new CopyOnWriteArraySet(this.d), i10, oVar, 3));
     }
 
     public final void d() {
         if (this.i) {
-            yb.p(Thread.currentThread() == this.a);
+            t6.p(Thread.currentThread() == this.a);
         }
         synchronized (this.g) {
             this.h = true;
@@ -92,7 +92,7 @@ public final class r {
             qVar.d = true;
             if (pVar != null && qVar.c) {
                 qVar.c = false;
-                pVar.f(qVar.a, qVar.b.d());
+                pVar.c(qVar.a, qVar.b.d());
             }
         }
         this.d.clear();

@@ -1,25 +1,21 @@
 package org.telegram.ui.Components;
 
-import android.util.SparseIntArray;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class a31 extends org.telegram.ui.ActionBar.l5 {
-    public final /* synthetic */ SparseIntArray T;
+public final class a31 extends s4.j {
+    public final /* synthetic */ m31 F;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public a31(boolean z10, SparseIntArray sparseIntArray) {
-        super(2, z10, false, null);
-        this.T = sparseIntArray;
+    public a31(m31 m31Var) {
+        this.F = m31Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.l5
-    public final int g(int i10) {
-        return this.T.get(i10);
+    @Override // s4.j
+    public final void O() {
+        this.F.b.invalidate();
     }
 
-    @Override // org.telegram.ui.ActionBar.l5
-    public final int h(int i10) {
-        return this.T.get(i10);
+    @Override // s4.j
+    public final void P(s4.c1 c1Var) {
+        this.F.b.invalidate();
     }
 }

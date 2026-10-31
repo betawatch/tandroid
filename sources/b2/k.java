@@ -5,7 +5,7 @@ import android.os.SharedMemory;
 import android.system.OsConstants;
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class k {
     public final SharedMemory a;
@@ -28,8 +28,8 @@ public final class k {
             SharedMemory.unmap(mapReadWrite);
             sharedMemory.setProtect(OsConstants.PROT_READ);
             return new k(sharedMemory);
-        } catch (Exception e10) {
-            e = e10;
+        } catch (Exception e7) {
+            e = e7;
             e2.a.m("BundleableByteArray", "Failed to allocate shared memory for byte array, size=" + bArr.length, e);
             if (sharedMemory != null) {
                 sharedMemory.close();
@@ -62,8 +62,8 @@ public final class k {
                     sharedMemory.close();
                     return null;
                 }
-            } catch (Exception e10) {
-                e = e10;
+            } catch (Exception e7) {
+                e = e7;
                 byteBuffer = null;
             } catch (Throwable th2) {
                 th = th2;

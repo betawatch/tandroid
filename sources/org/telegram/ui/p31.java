@@ -1,53 +1,22 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.graphics.Canvas;
-import android.graphics.Path;
-import android.widget.FrameLayout;
-import java.util.HashSet;
-import org.telegram.messenger.AndroidUtilities;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class p31 extends FrameLayout implements org.telegram.ui.ActionBar.p6 {
-    public final Path a;
-    public eh.d b;
+public final class p31 extends s4.s0 {
+    public final /* synthetic */ s31 a;
 
-    public p31(Activity activity) {
-        super(activity);
-        this.a = new Path();
+    public p31(s31 s31Var) {
+        this.a = s31Var;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        canvas.save();
-        canvas.clipPath(this.a);
-        super.dispatchDraw(canvas);
-        canvas.restore();
-    }
-
-    @Override // android.view.View
-    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
-        super.onSizeChanged(i10, i11, i12, i13);
-        Path path = this.a;
-        path.rewind();
-        path.addRoundRect(AndroidUtilities.dp(9.0f), AndroidUtilities.dp(9.0f), i10 - AndroidUtilities.dp(9.0f), i11 - AndroidUtilities.dp(9.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), Path.Direction.CW);
-    }
-
-    public void setBlurredBackground(eh.d dVar) {
-        this.b = dVar;
-        setBackground(dVar);
-    }
-
-    @Override // org.telegram.ui.ActionBar.p6
-    public final void updateColors() {
-        eh.d dVar = this.b;
-        if (dVar != null) {
-            dVar.updateColors();
+    @Override // s4.s0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        s31 s31Var = this.a;
+        if (s31Var.k1.I1) {
+            org.telegram.messenger.i0.v1(s31Var.U1);
         }
-    }
-
-    @Override // org.telegram.ui.ActionBar.p6
-    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
+        s31.d1(s31Var);
     }
 }

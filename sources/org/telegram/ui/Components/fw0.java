@@ -3,249 +3,226 @@ package org.telegram.ui.Components;
 import android.content.Context;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.ShapeDrawable;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.LocationController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class fw0 extends org.telegram.ui.ActionBar.k3 implements NotificationCenter.NotificationCenterDelegate {
-    public final bi.r1 b;
-    public final dw0 c;
-    public final Drawable d;
-    public TextView e;
-    public int f;
-    public boolean h;
-    public final ew0 n;
-    public int r;
-
-    public fw0(Context context, ew0 ew0Var, org.telegram.ui.ActionBar.u6 u6Var) {
-        super(1, context, u6Var, false);
-        NotificationCenter.getGlobalInstance().addWeakObserver(this, NotificationCenter.liveLocationsChanged);
-        this.n = ew0Var;
-        fixNavigationBar();
-        Drawable mutate = context.getResources().getDrawable(R.drawable.sheet_shadow_round).mutate();
-        this.d = mutate;
-        int i10 = org.telegram.ui.ActionBar.y6.h5;
-        mutate.setColorFilter(new PorterDuffColorFilter(getThemedColor(i10), PorterDuff.Mode.MULTIPLY));
-        bh.r rVar = new bh.r(this, context, 23);
-        this.containerView = rVar;
-        rVar.setWillNotDraw(false);
-        ViewGroup viewGroup = this.containerView;
-        int i11 = this.backgroundPaddingLeft;
-        viewGroup.setPadding(i11, 0, i11, 0);
-        bi.r1 r1Var = new bi.r1(this, context, 23);
-        this.b = r1Var;
-        getContext();
-        r1Var.setLayoutManager(new s4.c0(1, false));
-        dw0 dw0Var = new dw0(this, context);
-        this.c = dw0Var;
-        r1Var.setAdapter(dw0Var);
-        r1Var.setVerticalScrollBarEnabled(false);
-        r1Var.setClipToPadding(false);
-        r1Var.setEnabled(true);
-        org.telegram.ui.ActionBar.f7.m(r1Var, 21, org.telegram.ui.ActionBar.y6.A5, u6Var);
-        int i12 = 13;
-        r1Var.setOnScrollListener(new ml(this, i12));
-        r1Var.setOnItemClickListener(new j(this, i12));
-        this.containerView.addView(r1Var, kb1.h(-1, -1.0f, 51, 0.0f, 0.0f, 0.0f, 48.0f));
-        View view = new View(context);
-        view.setBackgroundResource(R.drawable.header_shadow_reverse);
-        this.containerView.addView(view, kb1.h(-1, 3.0f, 83, 0.0f, 0.0f, 0.0f, 48.0f));
-        og0 og0Var = new og0(context);
-        org.telegram.ui.ActionBar.f7.i(org.telegram.ui.ActionBar.y6.d6, og0Var, null);
-        TextView textView = new TextView(context);
-        textView.setTextSize(1, 14.0f);
-        int i13 = org.telegram.ui.ActionBar.y6.ii;
-        org.telegram.ui.ActionBar.f7.V(textView, i13, null);
-        textView.setGravity(17);
-        org.telegram.ui.Cells.y g02 = org.telegram.ui.ActionBar.y6.g0(org.telegram.ui.ActionBar.y6.x0(null, i13, false) & 268435455, 0, -1);
-        org.telegram.ui.ActionBar.b7 h = org.telegram.ui.ActionBar.f7.h(i13, 15);
-        textView.setBackground(g02);
-        org.telegram.ui.ActionBar.f7.k(textView, g02, null, h, null);
-        textView.setPadding(AndroidUtilities.dp(33.0f), 0, AndroidUtilities.dp(33.0f), 0);
-        textView.setText(LocaleController.getString(R.string.Cancel).toUpperCase());
-        textView.setTypeface(AndroidUtilities.bold());
-        og0Var.addView(textView, kb1.i(-2, -1, 51));
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(0);
-        org.telegram.ui.Cells.y g03 = org.telegram.ui.ActionBar.y6.g0(org.telegram.ui.ActionBar.y6.x0(null, i13, false) & 268435455, 0, -1);
-        org.telegram.ui.ActionBar.b7 h10 = org.telegram.ui.ActionBar.f7.h(i13, 15);
-        linearLayout.setBackground(g03);
-        org.telegram.ui.ActionBar.f7.k(linearLayout, g03, null, h10, null);
-        linearLayout.setPadding(AndroidUtilities.dp(33.0f), 0, AndroidUtilities.dp(33.0f), 0);
-        og0Var.addView(linearLayout, kb1.i(-2, -1, 53));
-        TextView textView2 = new TextView(context);
-        org.telegram.messenger.wh.j(13.0f, 1, textView2);
-        org.telegram.ui.ActionBar.f7.V(textView2, org.telegram.ui.ActionBar.y6.li, null);
-        textView2.setGravity(17);
-        int dp = AndroidUtilities.dp(11.0f);
-        int i14 = org.telegram.ui.ActionBar.y6.ki;
-        ShapeDrawable c02 = org.telegram.ui.ActionBar.y6.c0(dp, org.telegram.ui.ActionBar.y6.x0(null, i14, false));
-        org.telegram.ui.ActionBar.b7 N = org.telegram.ui.ActionBar.f7.N(i14);
-        textView2.setBackground(c02);
-        org.telegram.ui.ActionBar.f7.k(textView2, c02, N, null, null);
-        textView2.setMinWidth(AndroidUtilities.dp(23.0f));
-        textView2.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(1.0f));
-        TextView e = org.telegram.messenger.wh.e(linearLayout, textView2, kb1.x(-2, 23, 16, 0, 0, 10, 0), context);
-        e.setTextSize(1, 14.0f);
-        org.telegram.ui.ActionBar.f7.V(e, i13, null);
-        e.setGravity(17);
-        e.setCompoundDrawablePadding(AndroidUtilities.dp(8.0f));
-        e.setText(LocaleController.getString(R.string.Send).toUpperCase());
-        e.setTypeface(AndroidUtilities.bold());
-        linearLayout.addView(e, kb1.u(-2, -2, 16));
-        org.telegram.ui.ActionBar.f7.i(i10, og0Var, u6Var);
-        this.containerView.addView(og0Var, kb1.i(-1, 48, 83));
-        textView.setPadding(AndroidUtilities.dp(18.0f), 0, AndroidUtilities.dp(18.0f), 0);
-        org.telegram.ui.ActionBar.f7.V(textView, org.telegram.ui.ActionBar.y6.q7, u6Var);
-        textView.setText(LocaleController.getString(R.string.StopAllLocationSharings));
-        final int i15 = 0;
-        textView.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.cw0
-            public final /* synthetic */ fw0 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view2) {
-                switch (i15) {
+public final class fw0 extends sb {
+    /* JADX WARN: Removed duplicated region for block: B:109:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:11:0x0085 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:123:0x011b  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x009c  */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x012c  */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x0140  */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x01cc  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x0255  */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x0267  */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x0279  */
+    /* JADX WARN: Removed duplicated region for block: B:65:0x028b  */
+    /* JADX WARN: Removed duplicated region for block: B:81:0x0308  */
+    /* JADX WARN: Removed duplicated region for block: B:93:0x0375  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public fw0(Context context, TLObject tLObject, int i10, int i11, TLRPC.Document document, org.telegram.ui.ActionBar.p6 p6Var) {
+        super(context, p6Var);
+        TLRPC.Document document2;
+        TLRPC.StickerSet stickerSet;
+        TLRPC.TL_stickerSetFullCovered tL_stickerSetFullCovered;
+        ArrayList<TLRPC.Document> arrayList;
+        TLRPC.Document document3;
+        org.telegram.messenger.ic k10;
+        TLRPC.TL_messages_stickerSet m0;
+        boolean z10 = tLObject instanceof TLRPC.TL_messages_stickerSet;
+        if (z10) {
+            TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) tLObject;
+            stickerSet = tL_messages_stickerSet.set;
+            ArrayList<TLRPC.Document> arrayList2 = tL_messages_stickerSet.documents;
+            if (arrayList2 != null && !arrayList2.isEmpty()) {
+                document3 = arrayList2.get(0);
+                document2 = document3;
+                if (stickerSet == null && document2 != null && (m0 = org.telegram.messenger.ui.b0(org.telegram.messenger.d20.s0).m0(org.telegram.messenger.jj.j1(document2), true)) != null) {
+                    stickerSet = m0.set;
+                }
+                TLRPC.StickerSet stickerSet2 = stickerSet;
+                if (document2 == null) {
+                    TLObject w9 = stickerSet2 == null ? null : org.telegram.messenger.b8.w(stickerSet2.thumbs, 90, false, null, false);
+                    w9 = w9 == null ? document2 : w9;
+                    boolean z11 = w9 instanceof TLRPC.Document;
+                    if (z11) {
+                        k10 = org.telegram.messenger.ic.c(org.telegram.messenger.b8.w(document2.thumbs, 90, false, null, false), document2);
+                    } else {
+                        k10 = org.telegram.messenger.ic.k((TLRPC.PhotoSize) w9, document2, tLObject instanceof TLRPC.StickerSetCovered ? ((TLRPC.StickerSetCovered) tLObject).set.thumb_version : z10 ? ((TLRPC.TL_messages_stickerSet) tLObject).set.thumb_version : 0);
+                    }
+                    org.telegram.messenger.ic icVar = k10;
+                    if (z11 && (org.telegram.messenger.jj.K2(document2, true) || org.telegram.messenger.jj.N4(document2) || org.telegram.messenger.jj.s3(document2, false))) {
+                        this.a.l(org.telegram.messenger.ic.b(document2), "50_50", icVar, null, 0, tLObject);
+                    } else if (icVar == null || icVar.p != 1) {
+                        this.a.k(icVar, "50_50", "webp", null, tLObject);
+                    } else {
+                        this.a.k(icVar, "50_50", "tgs", null, tLObject);
+                    }
+                } else {
+                    this.a.k(null, null, "webp", null, tLObject);
+                }
+                if (org.telegram.messenger.jj.C4(document2)) {
+                    this.a.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
+                }
+                switch (i11) {
                     case 0:
-                        int i16 = 0;
-                        while (true) {
-                            fw0 fw0Var = this.b;
-                            if (i16 >= 4) {
-                                fw0Var.dismiss();
-                                break;
+                        if (stickerSet2 != null) {
+                            if (stickerSet2.masks) {
+                                this.b.setText(org.telegram.messenger.cd.L0(2131748687, null));
+                                this.c.setText(org.telegram.messenger.cd.a0("MasksRemovedInfo", null, 2131748686, stickerSet2.title));
+                                return;
                             } else {
-                                fw0Var.getClass();
-                                LocationController.getInstance(i16).removeAllLocationSharings();
-                                i16++;
+                                if (!stickerSet2.emojis) {
+                                    this.b.setText(org.telegram.messenger.cd.L0(2131744871, null));
+                                    this.c.setText(org.telegram.messenger.cd.a0("StickersRemovedInfo", null, 2131744870, stickerSet2.title));
+                                    return;
+                                }
+                                this.b.setText(org.telegram.messenger.cd.L0(2131751172, null));
+                                if (i10 > 1) {
+                                    this.c.setText(org.telegram.messenger.cd.G(i10, "EmojiRemovedMultipleInfo", new Object[0]));
+                                    return;
+                                } else {
+                                    this.c.setText(org.telegram.messenger.cd.a0("EmojiRemovedInfo", null, 2131751171, stickerSet2.title));
+                                    return;
+                                }
                             }
                         }
-                    default:
-                        this.b.dismiss();
-                        break;
-                }
-            }
-        });
-        org.telegram.ui.ActionBar.f7.V(e, org.telegram.ui.ActionBar.y6.n5, u6Var);
-        e.setText(LocaleController.getString(R.string.Close).toUpperCase());
-        linearLayout.setPadding(AndroidUtilities.dp(18.0f), 0, AndroidUtilities.dp(18.0f), 0);
-        final int i16 = 1;
-        linearLayout.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.cw0
-            public final /* synthetic */ fw0 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view2) {
-                switch (i16) {
-                    case 0:
-                        int i162 = 0;
-                        while (true) {
-                            fw0 fw0Var = this.b;
-                            if (i162 >= 4) {
-                                fw0Var.dismiss();
-                                break;
+                        return;
+                    case 1:
+                        if (stickerSet2 != null) {
+                            if (stickerSet2.masks) {
+                                this.b.setText(org.telegram.messenger.cd.L0(2131748693, null));
+                                this.c.setText(org.telegram.messenger.cd.a0("MasksArchivedInfo", null, 2131748692, stickerSet2.title));
+                                return;
+                            } else if (stickerSet2.emojis) {
+                                this.b.setText(org.telegram.messenger.cd.L0(2131751188, null));
+                                this.c.setText(org.telegram.messenger.cd.a0("EmojiArchivedInfo", null, 2131751187, stickerSet2.title));
+                                return;
                             } else {
-                                fw0Var.getClass();
-                                LocationController.getInstance(i162).removeAllLocationSharings();
-                                i162++;
+                                this.b.setText(org.telegram.messenger.cd.L0(2131744886, null));
+                                this.c.setText(org.telegram.messenger.cd.a0("StickersArchivedInfo", null, 2131744885, stickerSet2.title));
+                                return;
                             }
                         }
+                        return;
+                    case 2:
+                        if (stickerSet2 != null) {
+                            if (stickerSet2.masks) {
+                                this.b.setText(org.telegram.messenger.cd.L0(2131754403, null));
+                                this.c.setText(org.telegram.messenger.cd.a0("AddMasksInstalledInfo", null, 2131754402, stickerSet2.title));
+                                return;
+                            } else {
+                                if (!stickerSet2.emojis) {
+                                    this.b.setText(org.telegram.messenger.cd.L0(2131754387, null));
+                                    this.c.setText(org.telegram.messenger.cd.a0("AddStickersInstalledInfo", null, 2131754386, stickerSet2.title));
+                                    return;
+                                }
+                                this.b.setText(org.telegram.messenger.cd.L0(2131754440, null));
+                                if (i10 > 1) {
+                                    this.c.setText(org.telegram.messenger.cd.G(i10, "AddEmojiMultipleInstalledInfo", new Object[0]));
+                                    return;
+                                } else {
+                                    this.c.setText(org.telegram.messenger.cd.a0("AddEmojiInstalledInfo", null, 2131754439, stickerSet2.title));
+                                    return;
+                                }
+                            }
+                        }
+                        return;
+                    case 3:
+                        this.b.setText(org.telegram.messenger.cd.L0(2131746297, null));
+                        this.c.setVisibility(8);
+                        return;
+                    case 4:
+                        this.b.setText(org.telegram.messenger.cd.L0(2131746298, null));
+                        this.c.setVisibility(8);
+                        return;
+                    case 5:
+                        this.b.setText(org.telegram.messenger.cd.L0(2131754354, null));
+                        this.c.setVisibility(8);
+                        return;
+                    case 6:
+                        if (org.telegram.messenger.d20.i(org.telegram.messenger.d20.s0).q() || org.telegram.messenger.vp.r1(org.telegram.messenger.d20.s0).A3()) {
+                            this.b.setText(org.telegram.messenger.cd.a0("LimitReachedFavoriteStickers", null, 2131748976, Integer.valueOf(org.telegram.messenger.vp.r1(org.telegram.messenger.d20.s0).J4)));
+                            this.c.setText(org.telegram.messenger.cd.a0("LimitReachedFavoriteStickersSubtitlePremium", null, 2131748974, new Object[0]));
+                            return;
+                        } else {
+                            this.b.setText(org.telegram.messenger.cd.a0("LimitReachedFavoriteStickers", null, 2131748976, Integer.valueOf(org.telegram.messenger.vp.r1(org.telegram.messenger.d20.s0).I4)));
+                            this.c.setText(org.telegram.messenger.i0.x2(org.telegram.messenger.cd.a0("LimitReachedFavoriteStickersSubtitle", null, 2131748975, Integer.valueOf(org.telegram.messenger.vp.r1(org.telegram.messenger.d20.s0).J4)), new i20(context, 2)));
+                            return;
+                        }
+                    case 7:
+                        boolean q6 = org.telegram.messenger.d20.i(org.telegram.messenger.d20.s0).q();
+                        if (org.telegram.messenger.vp.r1(org.telegram.messenger.d20.s0).A3() || q6) {
+                            this.b.setText(org.telegram.messenger.cd.a0(null, null, 2131748979, Integer.valueOf(q6 ? org.telegram.messenger.vp.r1(org.telegram.messenger.d20.s0).H4 : org.telegram.messenger.vp.r1(org.telegram.messenger.d20.s0).G4)));
+                            this.c.setText(org.telegram.messenger.cd.L0(2131748977, null));
+                            return;
+                        } else {
+                            this.b.setText(org.telegram.messenger.cd.a0(null, null, 2131748979, Integer.valueOf(org.telegram.messenger.vp.r1(org.telegram.messenger.d20.s0).G4)));
+                            this.c.setText(org.telegram.messenger.i0.x2(org.telegram.messenger.cd.a0(null, null, 2131748978, Integer.valueOf(org.telegram.messenger.vp.r1(org.telegram.messenger.d20.s0).H4)), new i20(context, 3)));
+                            return;
+                        }
                     default:
-                        this.b.dismiss();
-                        break;
+                        return;
                 }
             }
-        });
-        textView2.setVisibility(8);
-        dw0Var.l();
-    }
-
-    public static void m(fw0 fw0Var) {
-        bi.r1 r1Var = fw0Var.b;
-        if (r1Var.getChildCount() <= 0) {
-            int paddingTop = r1Var.getPaddingTop();
-            fw0Var.f = paddingTop;
-            r1Var.setTopGlowOffset(paddingTop);
-            fw0Var.containerView.invalidate();
-            return;
-        }
-        int i10 = 0;
-        View childAt = r1Var.getChildAt(0);
-        wl0 wl0Var = (wl0) r1Var.G(childAt);
-        int top = childAt.getTop() - AndroidUtilities.dp(8.0f);
-        if (top > 0 && wl0Var != null && wl0Var.b() == 0) {
-            i10 = top;
-        }
-        if (fw0Var.f != i10) {
-            fw0Var.f = i10;
-            r1Var.setTopGlowOffset(i10);
-            fw0Var.containerView.invalidate();
-        }
-    }
-
-    public static LocationController.SharingLocationInfo q(int i10) {
-        for (int i11 = 0; i11 < 4; i11++) {
-            ArrayList<LocationController.SharingLocationInfo> arrayList = LocationController.getInstance(i11).sharingLocationsUI;
-            if (i10 < arrayList.size()) {
-                return arrayList.get(i10);
+            document3 = document;
+            document2 = document3;
+            if (stickerSet == null) {
+                stickerSet = m0.set;
             }
-            i10 -= arrayList.size();
-        }
-        return null;
-    }
-
-    @Override // org.telegram.ui.ActionBar.k3
-    public final boolean canDismissWithSwipe() {
-        return false;
-    }
-
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if (i10 == NotificationCenter.liveLocationsChanged) {
-            if (LocationController.getLocationsCount() == 0) {
-                dismiss();
+            TLRPC.StickerSet stickerSet22 = stickerSet;
+            if (document2 == null) {
+            }
+            if (org.telegram.messenger.jj.C4(document2)) {
+            }
+            switch (i11) {
+            }
+        } else if (tLObject instanceof TLRPC.StickerSetCovered) {
+            TLRPC.StickerSetCovered stickerSetCovered = (TLRPC.StickerSetCovered) tLObject;
+            stickerSet = stickerSetCovered.set;
+            TLRPC.Document document4 = stickerSetCovered.cover;
+            if (document4 != null) {
+                document3 = document4;
+            } else if (stickerSetCovered.covers.isEmpty()) {
+                if ((stickerSetCovered instanceof TLRPC.TL_stickerSetFullCovered) && (arrayList = (tL_stickerSetFullCovered = (TLRPC.TL_stickerSetFullCovered) stickerSetCovered).documents) != null && !arrayList.isEmpty()) {
+                    document3 = tL_stickerSetFullCovered.documents.get(0);
+                }
+                document3 = document;
             } else {
-                this.c.l();
+                document3 = stickerSetCovered.covers.get(0);
             }
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.k3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.n2
-    public final void dismiss() {
-        super.dismiss();
-        NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.liveLocationsChanged);
-    }
-
-    @Override // org.telegram.ui.ActionBar.k3
-    public final void onThemeColorsChanged() {
-        try {
-            super.onThemeColorsChanged();
-            int themedColor = getThemedColor(org.telegram.ui.ActionBar.y6.h5);
-            Drawable drawable = this.d;
-            if (drawable == null || themedColor == this.r) {
-                return;
+            document2 = document3;
+            if (stickerSet == null) {
             }
-            this.r = themedColor;
-            drawable.setColorFilter(new PorterDuffColorFilter(themedColor, PorterDuff.Mode.MULTIPLY));
-        } catch (Exception e) {
-            FileLog.e(e);
+            TLRPC.StickerSet stickerSet222 = stickerSet;
+            if (document2 == null) {
+            }
+            if (org.telegram.messenger.jj.C4(document2)) {
+            }
+            switch (i11) {
+            }
+        } else {
+            if (document == null && tLObject != null) {
+                boolean z12 = org.telegram.messenger.v2.a;
+                throw new IllegalArgumentException("Invalid type of the given setObject: " + tLObject.getClass());
+            }
+            document2 = document;
+            stickerSet = null;
+            if (stickerSet == null) {
+            }
+            TLRPC.StickerSet stickerSet2222 = stickerSet;
+            if (document2 == null) {
+            }
+            if (org.telegram.messenger.jj.C4(document2)) {
+            }
+            switch (i11) {
+            }
         }
     }
 }

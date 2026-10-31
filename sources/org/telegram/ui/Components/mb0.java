@@ -1,26 +1,49 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Bitmap;
+import android.graphics.BitmapShader;
+import android.graphics.Matrix;
+import android.graphics.Shader;
+import android.os.Build;
+import java.lang.ref.WeakReference;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class mb0 extends c6 {
-    public final /* synthetic */ nb0 a;
+public final class mb0 {
+    public final Shader.TileMode a;
+    public final Matrix b = new Matrix();
+    public boolean c;
+    public BitmapShader d;
+    public WeakReference e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public mb0(nb0 nb0Var, TLRPC.Document document, Paint.FontMetricsInt fontMetricsInt) {
-        super(document, fontMetricsInt);
-        this.a = nb0Var;
+    public mb0(Shader.TileMode tileMode) {
+        this.a = tileMode;
     }
 
-    @Override // org.telegram.ui.Components.c6, android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
-        nb0 nb0Var = this.a;
-        int i15 = nb0Var.y;
-        int i16 = i14 + i12;
-        int i17 = this.measuredSize;
-        nb0Var.c.set((int) f7, ic.a.A(i16, i17, 2, i15), (int) (f7 + i17), ((i16 + i17) / 2) + i15);
+    public final void a(boolean z10) {
+        BitmapShader bitmapShader;
+        if (this.c != z10) {
+            this.c = z10;
+            if (Build.VERSION.SDK_INT < 33 || (bitmapShader = this.d) == null) {
+                return;
+            }
+            bitmapShader.setFilterMode(z10 ? 1 : 2);
+        }
+    }
+
+    public final boolean b(Bitmap bitmap) {
+        WeakReference weakReference = this.e;
+        if (weakReference != null && weakReference.get() == bitmap) {
+            return false;
+        }
+        this.e = new WeakReference(bitmap);
+        Shader.TileMode tileMode = this.a;
+        BitmapShader bitmapShader = new BitmapShader(bitmap, tileMode, tileMode);
+        this.d = bitmapShader;
+        bitmapShader.setLocalMatrix(this.b);
+        if (Build.VERSION.SDK_INT >= 33) {
+            this.d.setFilterMode(this.c ? 1 : 2);
+        }
+        return true;
     }
 }

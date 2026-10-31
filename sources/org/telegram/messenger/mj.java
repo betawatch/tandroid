@@ -1,44 +1,9 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final /* synthetic */ class mj implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ SendMessagesHelper b;
-    public final /* synthetic */ ArrayList c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ TLRPC.Message f;
-    public final /* synthetic */ int h;
-    public final /* synthetic */ TLRPC.Message n;
-    public final /* synthetic */ MessageObject r;
-    public final /* synthetic */ int s;
-
-    public /* synthetic */ mj(SendMessagesHelper sendMessagesHelper, ArrayList arrayList, int i10, int i11, TLRPC.Message message, int i12, TLRPC.Message message2, MessageObject messageObject, int i13, int i14) {
-        this.a = i14;
-        this.b = sendMessagesHelper;
-        this.c = arrayList;
-        this.d = i10;
-        this.e = i11;
-        this.f = message;
-        this.h = i12;
-        this.n = message2;
-        this.r = messageObject;
-        this.s = i13;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.lambda$sendMessage$12(this.c, this.d, this.e, this.f, this.h, this.n, this.r, this.s);
-                break;
-            default:
-                this.b.lambda$sendMessage$13(this.c, this.d, this.e, this.f, this.h, this.n, this.r, this.s);
-                break;
-        }
-    }
+public final class mj extends TLRPC.TL_messageMediaPoll {
+    public int a;
 }

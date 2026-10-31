@@ -1,44 +1,16 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class w extends org.telegram.ui.f61 {
-    public final /* synthetic */ org.telegram.ui.w51[] e2;
-    public final /* synthetic */ y f2;
+public final class w extends s4.j {
+    public final /* synthetic */ z F;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w(y yVar, Context context, Integer num, org.telegram.ui.ActionBar.u6 u6Var, org.telegram.ui.w51[] w51VarArr) {
-        super(null, context, true, num, 15, u6Var);
-        this.f2 = yVar;
-        this.e2 = w51VarArr;
+    public w(z zVar) {
+        this.F = zVar;
     }
 
-    @Override // org.telegram.ui.f61
-    public final boolean F(TL_stars.TL_starGiftUnique tL_starGiftUnique) {
-        int i10;
-        if (tL_starGiftUnique == null) {
-            return true;
-        }
-        i10 = ((org.telegram.ui.ActionBar.k3) this.f2).currentAccount;
-        return bi.ca.y(i10, false).n(tL_starGiftUnique.id) == null || MessagesController.getGlobalMainSettings().getInt("statusgiftpage", 0) >= 2;
-    }
-
-    @Override // org.telegram.ui.f61
-    public final void p(View view, Long l4, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
-        y yVar = this.f2;
-        yVar.h0 = l4;
-        yVar.X();
-        yVar.W();
-        org.telegram.ui.w51 w51Var = this.e2[0];
-        if (w51Var != null) {
-            yVar.i0 = null;
-            w51Var.dismiss();
-        }
+    @Override // s4.j
+    public final void P(s4.c1 c1Var) {
+        this.F.b.invalidate();
     }
 }

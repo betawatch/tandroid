@@ -1,12 +1,12 @@
 package com.google.android.play.core.integrity;
 
-import b9.h0;
+import a9.j0;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class ad implements b9.o {
-    @Override // b9.s
+public final class ad implements a9.q {
+    @Override // a9.u
     public final /* synthetic */ Object a() {
-        return new h0("IntegrityService");
+        return new j0("IntegrityService");
     }
 }

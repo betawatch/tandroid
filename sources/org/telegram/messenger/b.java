@@ -1,35 +1,48 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_agent;
+import android.os.Looper;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final /* synthetic */ class b implements Utilities.Callback2 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ AgentController b;
+public final class b implements org.telegram.ui.Components.m00 {
+    public final Thread c;
+    public final ag.f3 d;
+    public volatile boolean e;
+    public volatile int f;
+    public int g;
+    public volatile boolean i;
+    public final Object a = new Object();
+    public volatile int h = -1;
+    public final android.support.v4.media.session.q b = new android.support.v4.media.session.q(this, Looper.getMainLooper(), 9);
 
-    public /* synthetic */ b(AgentController agentController, int i10) {
-        this.a = i10;
-        this.b = agentController;
+    public b(ag.f3 f3Var) {
+        this.d = f3Var;
+        u0 u0Var = u0.f;
+        this.e = u0Var.a > 0;
+        u0Var.d.add(this);
+        Thread thread = new Thread(new a(this, 0), "ANRDetector");
+        this.c = thread;
+        thread.start();
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback2
-    public final void run(Object obj, Object obj2) {
-        switch (this.a) {
-            case 0:
-                this.b.lambda$loadSettings$1((TL_agent.settings) obj, (TLRPC.TL_error) obj2);
-                break;
-            case 1:
-                this.b.lambda$setActiveProvider$4((TL_agent.settings) obj, (TLRPC.TL_error) obj2);
-                break;
-            case 2:
-                this.b.lambda$disconnect$3((TL_agent.settings) obj, (TLRPC.TL_error) obj2);
-                break;
-            default:
-                this.b.lambda$loadProviders$0((TL_agent.Providers) obj, (TLRPC.TL_error) obj2);
-                break;
+    @Override // org.telegram.ui.Components.m00
+    public final void a() {
+        synchronized (this.a) {
+            this.f++;
+            this.e = false;
         }
+        this.b.removeMessages(1);
+        this.c.interrupt();
+    }
+
+    @Override // org.telegram.ui.Components.m00
+    public final void b() {
+        synchronized (this.a) {
+            this.f++;
+            this.e = true;
+            this.i = false;
+            this.a.notifyAll();
+        }
+        this.c.interrupt();
     }
 }

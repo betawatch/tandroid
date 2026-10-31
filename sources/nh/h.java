@@ -1,225 +1,175 @@
 package nh;
 
+import android.R;
+import android.app.Activity;
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
-import android.graphics.LinearGradient;
 import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.RectF;
-import android.graphics.RenderNode;
-import android.graphics.Shader;
-import android.view.MotionEvent;
+import android.graphics.Point;
 import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import b2.n0;
-import di.l;
-import ig.a0;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.voip.GroupCallMessagesController;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.ds;
-import org.telegram.ui.LaunchActivity;
+import android.view.ViewGroup;
+import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.messenger.i0;
+import org.telegram.messenger.tz;
+import org.telegram.ui.Cells.a5;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes4.dex */
-public final class h extends RecyclerView {
-    public final e S0;
-    public final Paint T0;
-    public RenderNode U0;
-    public float V0;
-    public View W0;
-    public g X0;
-    public a Y0;
-    public int Z0;
-    public int a1;
-    public int b1;
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final class h {
+    public static HashMap n;
+    public final double a;
+    public final double b;
+    public final int c;
+    public final a5 d;
+    public final f e;
+    public g f;
+    public final int g;
+    public final int h;
+    public boolean i;
+    public final ArrayList j = new ArrayList();
+    public final HashMap k = new HashMap();
+    public int l = 0;
+    public final e m = new e(this, 0);
 
-    public h(LaunchActivity launchActivity) {
-        super(launchActivity);
-        Paint paint = new Paint(1);
-        this.T0 = paint;
-        this.a1 = TLObject.FLAG_31;
-        this.b1 = TLObject.FLAG_31;
-        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
-        paint.setShader(new LinearGradient(0.0f, 0.0f, 0.0f, AndroidUtilities.dp(16.0f), 0, -16777216, Shader.TileMode.CLAMP));
-        setLayoutManager(new a0(1, 1 == true ? 1 : 0, 1));
-        i(new l(2));
-        e eVar = new e(this);
-        this.S0 = eVar;
-        setAdapter(eVar);
-        f fVar = new f(this);
-        fVar.m = false;
-        fVar.C = false;
-        fVar.o(ds.h);
-        fVar.n(320L);
-        setItemAnimator(fVar);
+    public h(int i10, a5 a5Var, int i11, int i12) {
+        double d = 1.0d / ((int) i0.r);
+        this.a = d;
+        this.b = d * 4.0d;
+        this.c = i10;
+        this.g = i11;
+        this.h = i12;
+        this.d = a5Var;
+        f fVar = new f(this, a5Var.getContext(), 0);
+        this.e = fVar;
+        fVar.setSurfaceTextureListener(new li.e(this, 1));
+        fVar.setOpaque(false);
+        a5Var.addView(fVar);
     }
 
-    private float getMinChildY() {
-        int childCount = getChildCount();
-        float f7 = 2.14748365E9f;
-        for (int i10 = 0; i10 < childCount; i10++) {
-            View childAt = getChildAt(i10);
-            if (childAt.getVisibility() == 0) {
-                f7 = Math.min(f7, childAt.getY());
+    public static h d(int i10, View view, ViewGroup viewGroup) {
+        int min;
+        if (view == null) {
+            return null;
+        }
+        if (n == null) {
+            n = new HashMap();
+        }
+        h hVar = (h) n.get(Integer.valueOf(i10));
+        if (hVar == null) {
+            int o10 = tz.o();
+            if (o10 == 1) {
+                Point point = i0.q;
+                min = Math.min(900, (int) (((point.x + point.y) / 2.0f) * 0.8f));
+            } else if (o10 != 2) {
+                Point point2 = i0.q;
+                min = Math.min(720, (int) (((point2.x + point2.y) / 2.0f) * 0.7f));
+            } else {
+                Point point3 = i0.q;
+                min = Math.min(1280, (int) (((point3.x + point3.y) / 2.0f) * 1.0f));
+            }
+            if (viewGroup == null) {
+                return null;
+            }
+            HashMap hashMap = n;
+            Integer valueOf = Integer.valueOf(i10);
+            a5 a5Var = new a5(viewGroup.getContext(), 8);
+            viewGroup.addView(a5Var);
+            h hVar2 = new h(i10, a5Var, min, min);
+            hashMap.put(valueOf, hVar2);
+            hVar = hVar2;
+        }
+        hVar.a(view);
+        return hVar;
+    }
+
+    public static h e(View view) {
+        Activity W = i0.W(view.getContext());
+        ViewGroup viewGroup = null;
+        if (W != null) {
+            View rootView = W.findViewById(R.id.content).getRootView();
+            if (rootView instanceof ViewGroup) {
+                viewGroup = (ViewGroup) rootView;
             }
         }
-        return f7;
+        return d(0, view, viewGroup);
     }
 
-    public final void D0(int i10, TLRPC.InputGroupCall inputGroupCall) {
-        int i11;
-        e eVar = this.S0;
-        if (eVar.d && (i11 = eVar.e) != -1 && eVar.f != null) {
-            GroupCallMessagesController.getInstance(i11).unsubscribeFromCallMessages(eVar.f.id, eVar);
-        }
-        eVar.e = i10;
-        eVar.f = inputGroupCall;
-        if (eVar.d) {
-            eVar.c = GroupCallMessagesController.getInstance(i10).getCallMessages(eVar.f.id);
-            eVar.l();
-            GroupCallMessagesController.getInstance(i10).subscribeToCallMessages(eVar.f.id, eVar);
-        }
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        int measuredHeight = getMeasuredHeight() - this.Z0;
-        int dp = AndroidUtilities.dp(16.0f);
-        int i10 = measuredHeight + dp;
-        int measuredHeight2 = getMeasuredHeight();
-        int measuredWidth = getMeasuredWidth();
-        float f7 = i10;
-        if (f7 < getMinChildY()) {
-            super.dispatchDraw(canvas);
+    public static void f(boolean z10) {
+        g gVar;
+        HashMap hashMap = n;
+        if (hashMap == null) {
             return;
         }
-        float f10 = measuredHeight;
-        float f11 = measuredWidth;
-        int saveLayer = canvas.saveLayer(0.0f, f10, f11, f7, null);
-        canvas.clipRect(0, measuredHeight, measuredWidth, i10);
-        this.a1 = measuredHeight;
-        this.b1 = i10;
-        super.dispatchDraw(canvas);
-        canvas.translate(0.0f, f10);
-        canvas.drawRect(0.0f, 0.0f, f11, dp, this.T0);
-        canvas.restoreToCount(saveLayer);
+        for (h hVar : hashMap.values()) {
+            if (hVar.c == 0 && (gVar = hVar.f) != null) {
+                gVar.b = z10;
+            }
+        }
+    }
+
+    public final void a(View view) {
+        if (this.i) {
+            return;
+        }
+        ArrayList arrayList = this.j;
+        if (arrayList.contains(view)) {
+            return;
+        }
+        arrayList.add(view);
+        int i10 = this.l;
+        this.l = i10 + 1;
+        this.k.put(view, Integer.valueOf(i10));
+    }
+
+    public final void b(View view) {
+        this.j.remove(view);
+        this.k.remove(view);
+        if (this.i) {
+            return;
+        }
+        e eVar = this.m;
+        i0.r(eVar);
+        i0.h3(eVar, 30L);
+    }
+
+    public final void c(Canvas canvas, View view, int i10, int i11, float f7, boolean z10) {
+        if (canvas == null || view == null) {
+            return;
+        }
         canvas.save();
-        canvas.clipRect(0, i10, measuredWidth, measuredHeight2);
-        this.a1 = i10;
-        this.b1 = getMeasuredHeight();
-        super.dispatchDraw(canvas);
+        Integer num = (Integer) this.k.get(view);
+        if (num == null) {
+            num = 0;
+        }
+        int i12 = this.g;
+        int i13 = this.h;
+        if (i10 > i12 || i11 > i13) {
+            float max = Math.max(i10 / i12, i11 / i13);
+            canvas.scale(max, max);
+        }
+        if (num.intValue() % 4 == 1) {
+            canvas.rotate(180.0f, i12 / 2.0f, i13 / 2.0f);
+        }
+        if (num.intValue() % 4 == 2) {
+            canvas.scale(-1.0f, 1.0f, i12 / 2.0f, i13 / 2.0f);
+        }
+        if (num.intValue() % 4 == 3) {
+            canvas.scale(1.0f, -1.0f, i12 / 2.0f, i13 / 2.0f);
+        }
+        f fVar = this.e;
+        if (z10) {
+            Bitmap bitmap = fVar.getBitmap();
+            if (bitmap != null) {
+                Paint paint = new Paint(7);
+                paint.setColor(-1);
+                canvas.drawBitmap(bitmap, 0.0f, 0.0f, paint);
+                bitmap.recycle();
+            }
+        } else {
+            fVar.setAlpha(f7);
+            fVar.draw(canvas);
+        }
         canvas.restore();
-        this.a1 = TLObject.FLAG_31;
-        this.b1 = TLObject.FLAG_31;
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        boolean z10;
-        if (motionEvent.getAction() == 0) {
-            int x9 = (int) motionEvent.getX();
-            int y3 = (int) motionEvent.getY();
-            if (y3 < getMeasuredHeight() - this.Z0) {
-                return false;
-            }
-            int childCount = getChildCount();
-            int i10 = 0;
-            while (true) {
-                if (i10 >= childCount) {
-                    z10 = false;
-                    break;
-                }
-                View childAt = getChildAt(i10);
-                if (childAt instanceof c) {
-                    c cVar = (c) childAt;
-                    if (cVar.getVisibility() == 0) {
-                        float x10 = x9 - childAt.getX();
-                        float y10 = y3 - childAt.getY();
-                        n0 n0Var = cVar.w;
-                        if (n0Var == null ? false : ((RectF) n0Var.c).contains(x10, y10)) {
-                            z10 = true;
-                            break;
-                        }
-                    } else {
-                        continue;
-                    }
-                }
-                i10++;
-            }
-            if (!z10) {
-                return false;
-            }
-        }
-        return super.dispatchTouchEvent(motionEvent);
-    }
-
-    @Override // androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j10) {
-        if (this.a1 != Integer.MIN_VALUE && view.getY() + view.getHeight() < this.a1) {
-            return true;
-        }
-        if (this.b1 == Integer.MIN_VALUE || view.getY() <= this.b1) {
-            return super.drawChild(canvas, view, j10);
-        }
-        return true;
-    }
-
-    @Override // androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        e eVar = this.S0;
-        eVar.d = true;
-        int i10 = eVar.e;
-        if (i10 == -1 || eVar.f == null) {
-            return;
-        }
-        eVar.c = GroupCallMessagesController.getInstance(i10).getCallMessages(eVar.f.id);
-        eVar.l();
-        GroupCallMessagesController.getInstance(eVar.e).subscribeToCallMessages(eVar.f.id, eVar);
-    }
-
-    @Override // androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        e eVar = this.S0;
-        eVar.d = false;
-        int i10 = eVar.e;
-        if (i10 == -1 || eVar.f == null) {
-            return;
-        }
-        GroupCallMessagesController.getInstance(i10).unsubscribeFromCallMessages(eVar.f.id, eVar);
-    }
-
-    public void setBlurRoot(View view) {
-        this.W0 = view;
-    }
-
-    public void setClickCellDelegate(a aVar) {
-        this.Y0 = aVar;
-    }
-
-    public void setDelegate(g gVar) {
-        this.X0 = gVar;
-    }
-
-    @Override // android.view.View
-    public void setTranslationY(float f7) {
-        if (getTranslationY() != f7) {
-            super.setTranslationY(f7);
-            invalidate();
-            int childCount = getChildCount();
-            for (int i10 = 0; i10 < childCount; i10++) {
-                getChildAt(i10).invalidate();
-            }
-        }
-    }
-
-    public void setVisibleHeight(int i10) {
-        if (this.Z0 != i10) {
-            this.Z0 = i10;
-            invalidate();
-        }
     }
 }

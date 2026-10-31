@@ -1,33 +1,30 @@
 package org.telegram.ui.Cells;
 
-import android.view.ViewGroup;
+import android.content.Context;
+import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
 public final class v4 extends FrameLayout {
-    public TextView a;
+    public final int a;
 
-    public void setCellHeight(int i10) {
-        setLayoutParams(new ViewGroup.LayoutParams(AndroidUtilities.dp(54.0f), i10));
+    public v4(Context context) {
+        this(context, org.telegram.messenger.i0.L(40.0f), org.telegram.messenger.i0.L(54.0f));
     }
 
-    public void setLetter(String str) {
-        this.a.setText(str.toUpperCase());
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(this.a, TLObject.FLAG_30));
     }
 
-    public void setLetterProgress(float f7) {
-        TextView textView = this.a;
-        textView.setAlpha(f7);
-        float f10 = (0.4f * f7) + 0.6f;
-        textView.setScaleX(f10);
-        textView.setScaleY(f10);
-        textView.setTranslationX((1.0f - f7) * (-AndroidUtilities.dp(10.0f)));
-    }
-
-    public void setLetterTextSize(float f7) {
-        this.a.setTextSize(1, f7);
+    public v4(Context context, int i10, int i11) {
+        super(context);
+        this.a = i11;
+        RadialProgressView radialProgressView = new RadialProgressView(context, null);
+        radialProgressView.setSize(i10);
+        addView(radialProgressView, w7.b6.e(-2, -2, 17));
     }
 }

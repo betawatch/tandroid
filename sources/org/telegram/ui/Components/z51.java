@@ -1,71 +1,67 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
 import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.AndroidUtilities;
+import androidx.core.widget.NestedScrollView;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class z51 extends s4.u0 {
-    public final /* synthetic */ int a = 0;
-    public int b;
-    public final /* synthetic */ Object c;
+public final class z51 extends NestedScrollView {
+    public boolean W;
+    public final /* synthetic */ a61 a0;
 
-    public z51(c61 c61Var) {
-        this.c = c61Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public z51(a61 a61Var, Context context) {
+        super(context);
+        this.a0 = a61Var;
     }
 
-    @Override // s4.u0
-    public final void a(RecyclerView recyclerView, int i10) {
-        org.telegram.ui.Wallet.n8 n8Var;
-        switch (this.a) {
-            case 0:
-                if (i10 == 0) {
-                    this.b = 0;
-                    break;
-                }
-                break;
-            default:
-                if (i10 == 1 && (n8Var = ((org.telegram.ui.Wallet.h4) this.c).b.i0) != null) {
-                    n8Var.a();
-                    break;
-                }
-                break;
+    @Override // androidx.core.widget.NestedScrollView, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        a61.I0(this.a0);
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:4:0x002d, code lost:
+    
+        if (r9 < (org.telegram.messenger.i0.L(90.0f) + (r0 / 2))) goto L6;
+     */
+    @Override // androidx.core.widget.NestedScrollView, android.widget.FrameLayout, android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void onMeasure(int i10, int i11) {
+        int size = View.MeasureSpec.getSize(i11);
+        a61 a61Var = this.a0;
+        measureChildWithMargins(a61Var.m1, i10, 0, i11, 0);
+        int measuredHeight = a61Var.m1.getMeasuredHeight();
+        int i12 = (size / 5) * 2;
+        if (measuredHeight - (size - i12) >= org.telegram.messenger.i0.L(90.0f)) {
         }
-    }
-
-    @Override // s4.u0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        switch (this.a) {
-            case 0:
-                c61 c61Var = (c61) this.c;
-                this.b += i11;
-                if (recyclerView.getScrollState() == 1 && Math.abs(this.b) > AndroidUtilities.dp(96.0f)) {
-                    View findFocus = c61Var.d.findFocus();
-                    if (findFocus == null) {
-                        findFocus = c61Var.d;
-                    }
-                    AndroidUtilities.hideKeyboard(findFocus);
-                }
-                if (i11 != 0) {
-                    c61.m(c61Var);
-                    break;
-                }
-                break;
-            default:
-                org.telegram.ui.Wallet.m5 m5Var = ((org.telegram.ui.Wallet.h4) this.c).b;
-                if (this.b != 0) {
-                    recyclerView.post(new org.telegram.ui.Wallet.o3(m5Var, 14));
-                    break;
-                } else {
-                    m5Var.A0();
-                    break;
-                }
+        i12 = size - measuredHeight;
+        if (i12 < 0) {
+            i12 = 0;
         }
+        if (getPaddingTop() != i12) {
+            this.W = true;
+            setPadding(0, i12, 0, 0);
+            this.W = false;
+        }
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30));
     }
 
-    public z51(org.telegram.ui.Wallet.h4 h4Var, int i10) {
-        this.c = h4Var;
-        this.b = i10;
+    @Override // androidx.core.widget.NestedScrollView, android.view.View
+    public final void onScrollChanged(int i10, int i11, int i12, int i13) {
+        super.onScrollChanged(i10, i11, i12, i13);
+        a61.I0(this.a0);
+    }
+
+    @Override // androidx.core.widget.NestedScrollView, android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.W) {
+            return;
+        }
+        super.requestLayout();
     }
 }

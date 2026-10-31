@@ -1,18 +1,16 @@
 package e0;
 
 import android.content.ComponentName;
-import java.util.ArrayDeque;
+import android.os.IBinder;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class h0 {
     public final ComponentName a;
-    public b.c c;
-    public boolean b = false;
-    public final ArrayDeque d = new ArrayDeque();
-    public int e = 0;
+    public final IBinder b;
 
-    public h0(ComponentName componentName) {
+    public h0(ComponentName componentName, IBinder iBinder) {
         this.a = componentName;
+        this.b = iBinder;
     }
 }

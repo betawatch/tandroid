@@ -4,54 +4,53 @@ import android.os.Bundle;
 import android.view.View;
 import java.util.ArrayList;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
-import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class nv implements org.telegram.ui.Components.am0 {
+public final /* synthetic */ class nv implements org.telegram.ui.Components.gk0 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ey b;
+    public final /* synthetic */ ay b;
 
-    public /* synthetic */ nv(ey eyVar, int i10) {
+    public /* synthetic */ nv(ay ayVar, int i10) {
         this.a = i10;
-        this.b = eyVar;
+        this.b = ayVar;
     }
 
-    @Override // org.telegram.ui.Components.am0
-    public final void c(int i10, View view) {
+    @Override // org.telegram.ui.Components.gk0
+    public final void f(int i10, View view) {
         switch (this.a) {
             case 0:
-                ey eyVar = this.b;
-                Object obj = eyVar.C0.x0.G(i10).G;
-                if (!(obj instanceof MessageObject)) {
-                    if (obj instanceof di.t6) {
-                        di.t6 t6Var = (di.t6) obj;
-                        Bundle g7 = org.telegram.ui.Components.b10.g(3, TeXSymbolParser.TYPE_ATTR);
-                        g7.putString("hashtag", t6Var.C);
-                        g7.putInt("storiesCount", t6Var.J);
-                        eyVar.presentFragment(new org.telegram.ui.Components.ua0(g7, null));
+                ay ayVar = this.b;
+                Object obj = ayVar.C0.x0.G(i10).G;
+                if (!(obj instanceof org.telegram.messenger.jj)) {
+                    if (obj instanceof th.r4) {
+                        th.r4 r4Var = (th.r4) obj;
+                        Bundle i11 = org.telegram.ui.Cells.f1.i(3, TeXSymbolParser.TYPE_ATTR);
+                        i11.putString("hashtag", r4Var.C);
+                        i11.putInt("storiesCount", r4Var.J);
+                        ayVar.presentFragment(new org.telegram.ui.Components.n90(i11, null));
                         break;
                     }
                 } else {
-                    MessageObject messageObject = (MessageObject) obj;
+                    org.telegram.messenger.jj jjVar = (org.telegram.messenger.jj) obj;
                     Bundle bundle = new Bundle();
-                    if (messageObject.getDialogId() >= 0) {
-                        bundle.putLong("user_id", messageObject.getDialogId());
+                    if (org.telegram.messenger.jj.B0(jjVar.k) >= 0) {
+                        bundle.putLong("user_id", org.telegram.messenger.jj.B0(jjVar.k));
                     } else {
-                        bundle.putLong("chat_id", -messageObject.getDialogId());
+                        bundle.putLong("chat_id", -org.telegram.messenger.jj.B0(jjVar.k));
                     }
-                    bundle.putInt("message_id", messageObject.getId());
-                    wn wnVar = new wn(bundle);
-                    ey.l4(wnVar, messageObject);
-                    eyVar.presentFragment(wnVar);
+                    bundle.putInt("message_id", jjVar.f1());
+                    un unVar = new un(bundle);
+                    ay.o4(unVar, jjVar);
+                    ayVar.presentFragment(unVar);
                     break;
                 }
                 break;
             default:
-                ey eyVar2 = this.b;
-                eyVar2.b0.I0(true);
-                ArrayList arrayList = eyVar2.b0.f3;
-                eyVar2.q3(arrayList.isEmpty() ? ig.r0.k3[i10] : (ig.p0) arrayList.get(i10));
+                ay ayVar2 = this.b;
+                ayVar2.b0.I0(true);
+                ArrayList arrayList = ayVar2.b0.e3;
+                ayVar2.s3(arrayList.isEmpty() ? zf.g0.j3[i10] : (zf.e0) arrayList.get(i10));
                 break;
         }
     }

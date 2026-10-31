@@ -1,16 +1,34 @@
 package androidx.biometric;
 
 import android.hardware.biometrics.BiometricPrompt;
-import android.security.identity.IdentityCredential;
+import java.security.Signature;
+import javax.crypto.Cipher;
+import javax.crypto.Mac;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public abstract class b0 {
-    public static BiometricPrompt.CryptoObject a(IdentityCredential identityCredential) {
-        return new BiometricPrompt.CryptoObject(identityCredential);
+    public static BiometricPrompt.CryptoObject a(Signature signature) {
+        return new BiometricPrompt.CryptoObject(signature);
     }
 
-    public static IdentityCredential b(BiometricPrompt.CryptoObject cryptoObject) {
-        return cryptoObject.getIdentityCredential();
+    public static BiometricPrompt.CryptoObject b(Cipher cipher) {
+        return new BiometricPrompt.CryptoObject(cipher);
+    }
+
+    public static BiometricPrompt.CryptoObject c(Mac mac) {
+        return new BiometricPrompt.CryptoObject(mac);
+    }
+
+    public static Cipher d(BiometricPrompt.CryptoObject cryptoObject) {
+        return cryptoObject.getCipher();
+    }
+
+    public static Mac e(BiometricPrompt.CryptoObject cryptoObject) {
+        return cryptoObject.getMac();
+    }
+
+    public static Signature f(BiometricPrompt.CryptoObject cryptoObject) {
+        return cryptoObject.getSignature();
     }
 }

@@ -1,30 +1,33 @@
 package com.google.android.gms.maps.model;
 
-import a8.df;
 import android.os.Parcel;
 import android.os.Parcelable;
 import com.google.android.gms.common.internal.ReflectedParcelable;
-import h8.j;
+import g8.g;
 import java.util.Arrays;
-import m4.w1;
-import o6.l;
-import p6.a;
+import m4.c;
+import n6.l;
+import o6.a;
+import w7.h0;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class LatLngBounds extends a implements ReflectedParcelable {
-    public static final Parcelable.Creator<LatLngBounds> CREATOR = new j(12);
+    public static final Parcelable.Creator<LatLngBounds> CREATOR = new g(11);
     public final LatLng a;
     public final LatLng b;
 
     public LatLngBounds(LatLng latLng, LatLng latLng2) {
-        l.i(latLng, "southwest must not be null.");
-        l.i(latLng2, "northeast must not be null.");
+        l.h(latLng, "southwest must not be null.");
+        l.h(latLng2, "northeast must not be null.");
         double d = latLng2.a;
         double d10 = latLng.a;
-        l.c(d >= d10, "southern latitude exceeds northern latitude (%s > %s)", Double.valueOf(d10), Double.valueOf(d));
-        this.a = latLng;
-        this.b = latLng2;
+        if (d >= d10) {
+            this.a = latLng;
+            this.b = latLng2;
+            return;
+        }
+        throw new IllegalArgumentException("southern latitude exceeds northern latitude (" + d10 + " > " + d + ")");
     }
 
     public final boolean equals(Object obj) {
@@ -43,17 +46,17 @@ public final class LatLngBounds extends a implements ReflectedParcelable {
     }
 
     public final String toString() {
-        w1 w1Var = new w1(this);
-        w1Var.x(this.a, "southwest");
-        w1Var.x(this.b, "northeast");
-        return w1Var.toString();
+        c cVar = new c(this);
+        cVar.u(this.a, "southwest");
+        cVar.u(this.b, "northeast");
+        return cVar.toString();
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q5 = df.q(parcel, 20293);
-        df.k(parcel, 2, this.a, i10);
-        df.k(parcel, 3, this.b, i10);
-        df.r(parcel, q5);
+        int q6 = h0.q(parcel, 20293);
+        h0.k(parcel, 2, this.a, i10);
+        h0.k(parcel, 3, this.b, i10);
+        h0.r(parcel, q6);
     }
 }

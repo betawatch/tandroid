@@ -1,43 +1,86 @@
 package bi;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.wn;
+import android.view.KeyEvent;
+import android.view.View;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class s3 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ h7 b;
-    public final /* synthetic */ wn c;
-    public final /* synthetic */ long d;
+public final class s3 extends w7.x5 {
+    public final /* synthetic */ b4 a;
+    public final /* synthetic */ d4 b;
 
-    public /* synthetic */ s3(h7 h7Var, wn wnVar, long j10, int i10) {
-        this.a = i10;
-        this.b = h7Var;
-        this.c = wnVar;
-        this.d = j10;
+    public s3(d4 d4Var, b4 b4Var) {
+        this.b = d4Var;
+        this.a = b4Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        long j10 = this.d;
-        wn wnVar = this.c;
-        h7 h7Var = this.b;
-        switch (i10) {
-            case 0:
-                org.telegram.ui.Components.qc M = org.telegram.ui.Components.wc.b0(wnVar).M(LocaleController.getString(R.string.Gift2TransferredTitle), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2TransferredText, h7Var.W1(), DialogObject.getShortName(j10))), R.raw.forward);
-                M.u = true;
-                M.j();
-                break;
-            default:
-                org.telegram.ui.Components.qc M2 = org.telegram.ui.Components.wc.b0(wnVar).M(LocaleController.getString(R.string.Gift2TransferredTitle), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2TransferredText, h7Var.W1(), DialogObject.getShortName(j10))), R.raw.forward);
-                M2.u = true;
-                M2.j();
-                break;
+    @Override // w7.x5
+    public final void a(boolean z10) {
+        this.a.r();
+        d4 d4Var = this.b;
+        if (z10) {
+            q3 q3Var = d4Var.u3;
+            d4Var.w3 = q3Var.B0;
+            d4Var.x3 = q3Var.C0;
+            d4Var.y3 = q3Var.D0;
+            d4Var.setEditTextsLocked(true);
+            d4Var.q3();
+            d4Var.Y2();
+            return;
+        }
+        final int i10 = d4Var.w3;
+        final int i11 = d4Var.x3;
+        final int i12 = d4Var.y3;
+        d4Var.w3 = -1;
+        d4Var.x3 = -1;
+        d4Var.y3 = 0;
+        boolean z11 = d4Var.z3;
+        final float f7 = d4Var.A3;
+        final float f10 = d4Var.B3;
+        d4Var.z3 = false;
+        d4Var.setEditTextsLocked(false);
+        d4Var.Y2();
+        if (z11) {
+            d4Var.post(new Runnable() { // from class: bi.r3
+                @Override // java.lang.Runnable
+                public final void run() {
+                    d4 d4Var2 = s3.this.b;
+                    for (int i13 = 0; i13 < d4Var2.getChildCount(); i13++) {
+                        KeyEvent.Callback childAt = d4Var2.getChildAt(i13);
+                        boolean z12 = childAt instanceof q6;
+                        float f11 = f7;
+                        float f12 = f10;
+                        if (z12) {
+                            q6 q6Var = (q6) childAt;
+                            if (d4.k4(q6Var.getEditText(), f11, f12)) {
+                                return;
+                            }
+                            if (q6Var.n() && d4.k4(q6Var.getAuthorEditText(), f11, f12)) {
+                                return;
+                            }
+                        } else if (childAt instanceof o0) {
+                            if (d4.k4(((o0) childAt).getCaptionEditText(), f11, f12)) {
+                                return;
+                            }
+                        } else if ((childAt instanceof y0) && d4.k4(((y0) childAt).getEditText(), f11, f12)) {
+                            return;
+                        }
+                    }
+                    int i14 = i10;
+                    if (i14 >= 0) {
+                        d4.N1(d4Var2, i14, i12, i11);
+                    }
+                }
+            });
+            return;
+        }
+        if (i10 >= 0) {
+            d4Var.post(new b3(this, i10, i12, i11, 1));
+            return;
+        }
+        View findFocus = d4Var.findFocus();
+        if (findFocus instanceof n1) {
+            d4Var.post(new g1((n1) findFocus, 2));
         }
     }
 }

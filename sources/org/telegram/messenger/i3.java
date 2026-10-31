@@ -1,56 +1,33 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.FileLoader;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_bots;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final /* synthetic */ class i3 implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ String b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object h;
-    public final /* synthetic */ Object n;
-    public final /* synthetic */ Object r;
-    public final /* synthetic */ Object s;
+public final class i3 {
+    public final vp a;
+    public final ConnectionsManager b;
 
-    public /* synthetic */ i3(FileLoader.1 r22, boolean z10, String str, boolean z11, TLRPC.InputFile inputFile, TLRPC.InputEncryptedFile inputEncryptedFile, byte[] bArr, byte[] bArr2, FileUploadOperation fileUploadOperation) {
-        this.e = r22;
-        this.c = z10;
-        this.b = str;
-        this.d = z11;
-        this.f = inputFile;
-        this.h = inputEncryptedFile;
-        this.n = bArr;
-        this.r = bArr2;
-        this.s = fileUploadOperation;
+    public i3(int i10) {
+        this.a = vp.r1(i10);
+        this.b = ConnectionsManager.getInstance(i10);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                ((FileLoader.1) this.e).lambda$didFinishUploadingFile$0(this.c, this.b, this.d, (TLRPC.InputFile) this.f, (TLRPC.InputEncryptedFile) this.h, (byte[]) this.n, (byte[]) this.r, (FileUploadOperation) this.s);
-                break;
-            default:
-                ((MessagesController) this.e).lambda$openApp$504((org.telegram.ui.ActionBar.r2) this.f, (qf.c) this.h, (boolean[]) this.n, (TLRPC.User) this.r, this.b, this.c, this.d, (TL_bots.BotInfo[]) this.s);
-                break;
-        }
+    public final void a(long j10, q20 q20Var) {
+        TL_stories.TL_premium_getBoostsStatus tL_premium_getBoostsStatus = new TL_stories.TL_premium_getBoostsStatus();
+        tL_premium_getBoostsStatus.peer = this.a.i1(j10);
+        this.b.sendRequest(tL_premium_getBoostsStatus, new f3(q20Var, 0));
     }
 
-    public /* synthetic */ i3(MessagesController messagesController, org.telegram.ui.ActionBar.r2 r2Var, qf.c cVar, boolean[] zArr, TLRPC.User user, String str, boolean z10, boolean z11, TL_bots.BotInfo[] botInfoArr) {
-        this.e = messagesController;
-        this.f = r2Var;
-        this.h = cVar;
-        this.n = zArr;
-        this.r = user;
-        this.b = str;
-        this.c = z10;
-        this.d = z11;
-        this.s = botInfoArr;
+    public final void b(long j10, TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus, q20 q20Var) {
+        h3 h3Var = new h3();
+        vp vpVar = this.a;
+        vpVar.y1(j10);
+        h3Var.j = j10;
+        h3Var.k = vpVar.L0(Long.valueOf(-j10));
+        g3 g3Var = new g3(h3Var, tL_premium_boostsStatus, q20Var, 0);
+        j1 j1Var = new j1(1, h3Var, q20Var);
+        ConnectionsManager.getInstance(d20.s0).sendRequest(new TL_stories.TL_premium_getMyBoosts(), new ag.p0(j1Var, vp.r1(d20.s0), g3Var, 6));
     }
 }

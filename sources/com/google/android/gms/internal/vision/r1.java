@@ -7,7 +7,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.RandomAccess;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class r1 extends n0 implements t1, RandomAccess {
     public final ArrayList b;
@@ -27,7 +27,7 @@ public final class r1 extends n0 implements t1, RandomAccess {
 
     @Override // java.util.AbstractList, java.util.List
     public final /* synthetic */ void add(int i10, Object obj) {
-        h();
+        l();
         this.b.add(i10, (String) obj);
         ((AbstractList) this).modCount++;
     }
@@ -39,7 +39,7 @@ public final class r1 extends n0 implements t1, RandomAccess {
 
     @Override // com.google.android.gms.internal.vision.n0, java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
     public final void clear() {
-        h();
+        l();
         this.b.clear();
         ((AbstractList) this).modCount++;
     }
@@ -61,23 +61,23 @@ public final class r1 extends n0 implements t1, RandomAccess {
         }
         q0 q0Var = (q0) obj;
         String str2 = q0Var.m() == 0 ? "" : new String(q0Var.b, q0Var.q(), q0Var.m(), j1.a);
-        int q5 = q0Var.q();
-        if (a3.a.s(q5, q0Var.m() + q5, q0Var.b)) {
+        int q6 = q0Var.q();
+        if (a3.a.s(q6, q0Var.m() + q6, q0Var.b)) {
             arrayList.set(i10, str2);
         }
         return str2;
     }
 
     @Override // com.google.android.gms.internal.vision.t1
-    public final void l(q0 q0Var) {
-        h();
+    public final void k(q0 q0Var) {
+        l();
         this.b.add(q0Var);
         ((AbstractList) this).modCount++;
     }
 
     @Override // com.google.android.gms.internal.vision.n0, java.util.AbstractList, java.util.List
     public final Object remove(int i10) {
-        h();
+        l();
         Object remove = this.b.remove(i10);
         ((AbstractList) this).modCount++;
         if (remove instanceof String) {
@@ -92,7 +92,7 @@ public final class r1 extends n0 implements t1, RandomAccess {
 
     @Override // java.util.AbstractList, java.util.List
     public final Object set(int i10, Object obj) {
-        h();
+        l();
         Object obj2 = this.b.set(i10, (String) obj);
         if (obj2 instanceof String) {
             return (String) obj2;
@@ -136,7 +136,7 @@ public final class r1 extends n0 implements t1, RandomAccess {
 
     @Override // com.google.android.gms.internal.vision.n0, java.util.AbstractList, java.util.List
     public final boolean addAll(int i10, Collection collection) {
-        h();
+        l();
         if (collection instanceof t1) {
             collection = ((t1) collection).zzd();
         }

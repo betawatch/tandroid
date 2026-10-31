@@ -1,6 +1,31 @@
 package x7;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public abstract class d7 {
+public enum d7 implements a0 {
+    b(0),
+    c(1),
+    d(2),
+    e(3),
+    f(7),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF9(8),
+    h(4),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF79(5),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF88(6),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF101(9);
+
+    public final int a;
+
+    d7(int i10) {
+        this.a = i10;
+    }
+
+    @Override // x7.a0
+    public final int zza() {
+        return this.a;
+    }
 }

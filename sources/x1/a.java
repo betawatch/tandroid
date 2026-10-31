@@ -1,17 +1,17 @@
 package x1;
 
-import a8.gg;
+import a6.d;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
-import b6.d;
+import c5.t;
 import com.google.android.gms.common.api.m;
 import java.util.Iterator;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
-import t9.i;
+import td.z1;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class a implements Runnable {
     public static Handler f;
@@ -19,7 +19,7 @@ public final class a implements Runnable {
     public volatile int b = 1;
     public final AtomicBoolean c = new AtomicBoolean();
     public final AtomicBoolean d = new AtomicBoolean();
-    public final b a = new b(this, new gg(this, 7));
+    public final b a = new b(this, new t(this, 7));
 
     public a(d dVar) {
         this.e = dVar;
@@ -30,7 +30,7 @@ public final class a implements Runnable {
         Iterator it = dVar.j.iterator();
         int i10 = 0;
         while (it.hasNext()) {
-            if (((m) it.next()).d(dVar)) {
+            if (((m) it.next()).b(dVar)) {
                 i10++;
             }
         }
@@ -54,7 +54,7 @@ public final class a implements Runnable {
                 throw th2;
             }
         }
-        handler.post(new i(6, this, obj));
+        handler.post(new z1(this, obj, false, 7));
     }
 
     @Override // java.lang.Runnable

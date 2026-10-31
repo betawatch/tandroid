@@ -1,48 +1,42 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class i5 extends FrameLayout {
-    public boolean a;
-    public int b;
-    public s6 c;
-    public s6 d;
+public final class i5 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ o5 b;
 
-    public s6 getSubtitleTextView() {
-        return this.d;
+    public /* synthetic */ i5(o5 o5Var, int i10) {
+        this.a = i10;
+        this.b = o5Var;
     }
 
-    public s6 getTitle() {
-        return this.c;
-    }
-
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        s6 s6Var = this.d;
-        s6 s6Var2 = this.c;
-        int B = org.telegram.messenger.wh.B(42.0f, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), 2) + (this.a ? AndroidUtilities.statusBarHeight : 0);
-        int i14 = this.b;
-        if (s6Var.getVisibility() != 8) {
-            s6Var2.layout(i14, (AndroidUtilities.dp(1.0f) + B) - s6Var2.getPaddingTop(), s6Var2.getMeasuredWidth() + i14, s6Var2.getPaddingBottom() + ((AndroidUtilities.dp(1.3f) + (s6Var2.getTextHeight() + B)) - s6Var2.getPaddingTop()));
-        } else {
-            s6Var2.layout(i14, (AndroidUtilities.dp(11.0f) + B) - s6Var2.getPaddingTop(), s6Var2.getMeasuredWidth() + i14, s6Var2.getPaddingBottom() + ((AndroidUtilities.dp(11.0f) + (s6Var2.getTextHeight() + B)) - s6Var2.getPaddingTop()));
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        Runnable runnable;
+        Runnable runnable2;
+        switch (this.a) {
+            case 0:
+                this.b.scaleAnimator = null;
+                boolean unused = o5.lockPositionChanging = false;
+                break;
+            case 1:
+                o5 o5Var = this.b;
+                o5Var.scaleAnimator = null;
+                runnable = o5Var.removedAction;
+                if (runnable != null) {
+                    runnable2 = o5Var.removedAction;
+                    runnable2.run();
+                    o5Var.removedAction = null;
+                    break;
+                }
+                break;
+            default:
+                this.b.moveAnimator = null;
+                break;
         }
-        s6Var.layout(i14, AndroidUtilities.dp(20.0f) + B, s6Var.getMeasuredWidth() + i14, AndroidUtilities.dp(24.0f) + s6Var.getTextHeight() + B);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int size = View.MeasureSpec.getSize(i10);
-        s6 s6Var = this.c;
-        int paddingRight = s6Var.getPaddingRight() + size;
-        int dp = paddingRight - AndroidUtilities.dp(16.0f);
-        s6Var.measure(View.MeasureSpec.makeMeasureSpec(dp, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(s6Var.getPaddingRight() + AndroidUtilities.dp(32.0f), TLObject.FLAG_31));
-        this.d.measure(View.MeasureSpec.makeMeasureSpec(dp, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(20.0f), TLObject.FLAG_31));
-        setMeasuredDimension(paddingRight, View.MeasureSpec.getSize(i11));
     }
 }

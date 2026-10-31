@@ -1,90 +1,113 @@
 package org.telegram.ui.Components;
 
+import android.animation.TimeInterpolator;
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
+import android.text.SpannableStringBuilder;
+import android.text.TextUtils;
 import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
+import android.view.ViewPropertyAnimator;
+import android.widget.ImageView;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class v31 extends s71 {
-    public final org.telegram.ui.y10 n3;
-    public final h6 o3;
-    public Drawable p3;
-    public int q3;
-    public final Paint r3;
-
-    public v31(Context context, int i10, s31 s31Var, n31 n31Var, n31 n31Var2, org.telegram.ui.ActionBar.u6 u6Var) {
-        super(context, i10, 0, false, s31Var, n31Var, n31Var2, u6Var);
-        this.n3 = new org.telegram.ui.y10();
-        this.o3 = new h6(this, 320L, ds.h);
-        this.r3 = new Paint(1);
+public final class v31 extends z41 {
+    static {
+        z41.h(new v31());
     }
 
-    @Override // org.telegram.ui.Components.s71, org.telegram.ui.Components.nm0, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        Canvas canvas2;
-        float e = this.o3.e(canScrollVertically(-1));
-        if (e > 0.0f) {
-            canvas2 = canvas;
-            canvas2.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), 255, 31);
+    public static a51 i(int i10, CharSequence charSequence, boolean z10, View.OnClickListener onClickListener, o80 o80Var, View.OnClickListener onClickListener2) {
+        a51 K = a51.K(v31.class);
+        K.d = i10;
+        K.l = charSequence;
+        K.f = z10;
+        K.t = false;
+        K.D = onClickListener;
+        K.G = o80Var;
+        K.E = onClickListener2;
+        return K;
+    }
+
+    @Override // org.telegram.ui.Components.z41
+    public final void b(View view, a51 a51Var, boolean z10, p51 p51Var, u51 u51Var) {
+        w31 w31Var = (w31) view;
+        CharSequence charSequence = a51Var.l;
+        boolean z11 = a51Var.f;
+        View.OnClickListener onClickListener = a51Var.D;
+        Object obj = a51Var.G;
+        o80 o80Var = obj != null ? (o80) obj : null;
+        boolean z12 = a51Var.t;
+        View.OnClickListener onClickListener2 = a51Var.E;
+        ImageView imageView = w31Var.n;
+        TextView textView = w31Var.d;
+        t31 t31Var = w31Var.c;
+        u31 u31Var = w31Var.f;
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(charSequence == null ? "" : o5.cloneSpans(charSequence));
+        u80[] u80VarArr = (u80[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), u80.class);
+        if (u80VarArr != null) {
+            int i10 = 0;
+            while (i10 < u80VarArr.length) {
+                int spanStart = spannableStringBuilder.getSpanStart(u80VarArr[i10]);
+                int spanEnd = spannableStringBuilder.getSpanEnd(u80VarArr[i10]);
+                boolean z13 = z12;
+                spannableStringBuilder.removeSpan(u80VarArr[i10]);
+                int i11 = i10;
+                u80 u80Var = u80VarArr[i11];
+                u80 u80Var2 = new u80(u31Var, u80Var.a, u80Var.d, null);
+                u80 u80Var3 = u80VarArr[i11];
+                u80Var2.f = u80Var3.f;
+                u80Var2.h = u80Var3.h;
+                u80Var2.n = u80Var3.n;
+                spannableStringBuilder.setSpan(u80Var2, spanStart, spanEnd, 33);
+                i10 = i11 + 1;
+                z12 = z13;
+                onClickListener2 = onClickListener2;
+            }
+        }
+        View.OnClickListener onClickListener3 = onClickListener2;
+        boolean z14 = z12;
+        if (!w31Var.h || z11) {
+            t31Var.setVisibility(z11 ? 0 : 8);
+            u31Var.setVisibility(!z11 ? 0 : 8);
         } else {
-            canvas2 = canvas;
+            t31Var.setVisibility(0);
+            u31Var.setVisibility(0);
+            ViewPropertyAnimator withEndAction = t31Var.animate().alpha(0.0f).withEndAction(new uo0(w31Var, 26));
+            TimeInterpolator timeInterpolator = gr.h;
+            withEndAction.setInterpolator(timeInterpolator).setDuration(320L).start();
+            u31Var.animate().alpha(1.0f).setInterpolator(timeInterpolator).setDuration(320L).start();
         }
-        float height = getHeight();
-        float f7 = 0.0f;
-        for (int i10 = 0; i10 < getChildCount(); i10++) {
-            View childAt = getChildAt(i10);
-            if (childAt instanceof e41) {
-                e41 e41Var = (e41) childAt;
-                if (e41Var.E) {
-                    if (height > e41Var.getY()) {
-                        height = e41Var.getY();
-                        RecyclerView.R(e41Var);
-                    }
-                    if (f7 < e41Var.getY() + e41Var.getHeight()) {
-                        f7 = e41Var.getY() + e41Var.getHeight();
-                        RecyclerView.R(e41Var);
-                    }
-                }
-            }
-        }
-        if (f7 > height) {
-            int i11 = org.telegram.ui.ActionBar.y6.s9;
-            org.telegram.ui.ActionBar.u6 u6Var = this.n2;
-            int w02 = org.telegram.ui.ActionBar.y6.w0(i11, u6Var);
-            Paint paint = this.r3;
-            paint.setColor(w02);
-            RectF rectF = AndroidUtilities.rectTmp;
-            rectF.set((getWidth() - AndroidUtilities.dp(56.0f)) / 2.0f, height, (AndroidUtilities.dp(56.0f) + getWidth()) / 2.0f, f7);
-            canvas2.drawRoundRect(rectF, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), paint);
-            if (this.p3 == null) {
-                this.p3 = getContext().getResources().getDrawable(R.drawable.msg_limit_pin).mutate();
-            }
-            int w03 = org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.b9, u6Var);
-            if (this.q3 != w03) {
-                Drawable drawable = this.p3;
-                this.q3 = w03;
-                drawable.setColorFilter(new PorterDuffColorFilter(w03, PorterDuff.Mode.SRC_IN));
-            }
-            this.p3.setBounds((int) (rectF.left + AndroidUtilities.dp(4.0f)), (int) (rectF.top + AndroidUtilities.dp(2.66f)), (int) (rectF.left + AndroidUtilities.dp(13.66f)), (int) (rectF.top + AndroidUtilities.dp(12.32f)));
-            this.p3.draw(canvas2);
-        }
-        super.dispatchDraw(canvas2);
-        if (e > 0.0f) {
-            canvas2.save();
-            RectF rectF2 = AndroidUtilities.rectTmp;
-            rectF2.set(0.0f, 0.0f, getWidth(), AndroidUtilities.dp(12.0f));
-            this.n3.b(canvas2, rectF2, 1, e);
-            canvas2.restore();
-            canvas2.restore();
-        }
+        w31Var.h = z11;
+        textView.setVisibility(z11 ? 0 : 8);
+        textView.setOnClickListener(onClickListener);
+        w31Var.setClipChildren(z11);
+        t31Var.setText(spannableStringBuilder);
+        u31Var.setText(spannableStringBuilder);
+        u31Var.setTextIsSelectable(!z14 && (u80VarArr == null || u80VarArr.length == 0));
+        u31Var.setOnLinkPressListener(o80Var);
+        imageView.setVisibility(onClickListener3 != null ? 0 : 8);
+        imageView.setOnClickListener(onClickListener3);
+        w31Var.b = z10;
+        w31Var.setWillNotDraw(true ^ z10);
+    }
+
+    @Override // org.telegram.ui.Components.z41
+    public final boolean c(a51 a51Var, a51 a51Var2) {
+        return TextUtils.equals(a51Var.l, a51Var2.l) && a51Var.f == a51Var2.f;
+    }
+
+    @Override // org.telegram.ui.Components.z41
+    public final View d(Context context, tk0 tk0Var, int i10, org.telegram.ui.ActionBar.p6 p6Var) {
+        return new w31(context, p6Var);
+    }
+
+    @Override // org.telegram.ui.Components.z41
+    public final boolean e(a51 a51Var, a51 a51Var2) {
+        return a51Var.d == a51Var2.d;
+    }
+
+    @Override // org.telegram.ui.Components.z41
+    public final boolean f() {
+        return false;
     }
 }

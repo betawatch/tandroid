@@ -1,63 +1,78 @@
 package org.telegram.ui.Wallet;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.text.style.ReplacementSpan;
+import android.text.TextUtils;
+import org.telegram.messenger.j20;
+import org.telegram.tgnet.tl.TL_wallet;
+import org.telegram.ui.Components.ii;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes4.dex */
-public final class e9 extends ReplacementSpan {
-    public final String a;
-    public final String b;
-    public final boolean c;
-    public float d;
-    public int e;
-    public int f;
-    public g9 h;
-    public g9 n;
-    public final /* synthetic */ h9 r;
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class e9 implements j20 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ r9 b;
 
-    public e9(h9 h9Var, String str, boolean z10, boolean z11) {
-        this.r = h9Var;
-        this.a = str;
-        this.b = z10 ? h9Var.P : "";
-        this.c = z11;
+    public /* synthetic */ e9(r9 r9Var, int i10) {
+        this.a = i10;
+        this.b = r9Var;
     }
 
-    public final int a() {
-        return Math.round((h9.S.getInterpolation(this.r.I) * (this.f - r0)) + this.e);
-    }
-
-    @Override // android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
-        Canvas canvas2;
-        Paint paint2;
-        int i15;
-        float textSize = paint.getTextSize();
-        if (this.c) {
-            paint.setTextSize((28.0f * textSize) / 44.0f);
+    @Override // org.telegram.messenger.j20
+    public final void a(Object obj, Object obj2) {
+        switch (this.a) {
+            case 0:
+                r9.f0(this.b, (TL_wallet.walletUserAddress) obj);
+                break;
+            case 1:
+                TL_wallet.walletTransaction wallettransaction = (TL_wallet.walletTransaction) obj;
+                r9 r9Var = this.b;
+                r9Var.getClass();
+                if (wallettransaction != null) {
+                    r9Var.e0 = wallettransaction.fee;
+                    r9Var.C0();
+                    break;
+                }
+                break;
+            case 2:
+                TL_wallet.walletUserAddress walletuseraddress = (TL_wallet.walletUserAddress) obj;
+                r9 r9Var2 = this.b;
+                r9Var2.r = false;
+                if (!TextUtils.equals((String) obj2, "WALLET_USER_UNAVAILABLE")) {
+                    r9Var2.e = walletuseraddress;
+                    if (walletuseraddress != null) {
+                        r9Var2.h = walletuseraddress.address;
+                    }
+                    ii iiVar = r9Var2.a;
+                    if (iiVar != null) {
+                        iiVar.f3.O(true);
+                    }
+                    r9Var2.B0();
+                    r9Var2.s0();
+                    w8 w8Var = r9Var2.w;
+                    if (w8Var != null) {
+                        w8Var.a(r9Var2.h, r9Var2.f);
+                        break;
+                    }
+                } else {
+                    r9Var2.finishFragment();
+                    break;
+                }
+                break;
+            case 3:
+                r9 r9Var3 = this.b;
+                r9Var3.g0 = (String) obj;
+                r9Var3.h0 = ((Boolean) obj2).booleanValue();
+                r9Var3.P.setText(r9Var3.g0);
+                r9Var3.P.setVisibility(TextUtils.isEmpty(r9Var3.g0) ? 8 : 0);
+                r9Var3.D0();
+                break;
+            default:
+                r9 r9Var4 = this.b;
+                r9Var4.g0 = (String) obj;
+                r9Var4.h0 = ((Boolean) obj2).booleanValue();
+                r9Var4.P.setText(r9Var4.g0);
+                r9Var4.P.setVisibility(TextUtils.isEmpty(r9Var4.g0) ? 8 : 0);
+                r9Var4.D0();
+                break;
         }
-        float f10 = f7 - this.d;
-        g9 g9Var = this.n;
-        if (g9Var != null) {
-            paint2 = paint;
-            i15 = i13;
-            canvas2 = canvas;
-            g9Var.b(canvas2, paint2, this.b, f10, i15);
-        } else {
-            canvas2 = canvas;
-            paint2 = paint;
-            i15 = i13;
-        }
-        this.h.b(canvas2, paint2, this.a, f10, i15);
-        paint2.setTextSize(textSize);
-    }
-
-    @Override // android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
-        if (fontMetricsInt != null) {
-            paint.getFontMetricsInt(fontMetricsInt);
-        }
-        return a();
     }
 }

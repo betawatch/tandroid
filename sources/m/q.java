@@ -9,7 +9,7 @@ import android.graphics.drawable.LayerDrawable;
 import android.os.Build;
 import android.util.Log;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class q {
     public static final PorterDuff.Mode b = PorterDuff.Mode.SRC_IN;
@@ -37,12 +37,12 @@ public final class q {
                 q qVar = new q();
                 c = qVar;
                 qVar.a = m2.d();
-                c.a.l(new aa.m0(4));
+                c.a.l(new j2.f(3));
             }
         }
     }
 
-    public static void d(Drawable drawable, d3 d3Var, int[] iArr) {
+    public static void d(Drawable drawable, c3 c3Var, int[] iArr) {
         PorterDuff.Mode mode = m2.h;
         int[] state = drawable.getState();
         int[] iArr2 = l1.a;
@@ -54,11 +54,11 @@ public final class q {
             drawable.setState(new int[0]);
             drawable.setState(state);
         }
-        boolean z10 = d3Var.b;
-        if (z10 || d3Var.a) {
+        boolean z10 = c3Var.b;
+        if (z10 || c3Var.a) {
             PorterDuffColorFilter porterDuffColorFilter = null;
-            ColorStateList colorStateList = z10 ? (ColorStateList) d3Var.c : null;
-            PorterDuff.Mode mode2 = d3Var.a ? (PorterDuff.Mode) d3Var.d : m2.h;
+            ColorStateList colorStateList = z10 ? (ColorStateList) c3Var.c : null;
+            PorterDuff.Mode mode2 = c3Var.a ? (PorterDuff.Mode) c3Var.d : m2.h;
             if (colorStateList != null && mode2 != null) {
                 porterDuffColorFilter = m2.h(colorStateList.getColorForState(iArr, 0), mode2);
             }

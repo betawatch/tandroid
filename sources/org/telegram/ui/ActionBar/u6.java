@@ -1,29 +1,62 @@
 package org.telegram.ui.ActionBar;
 
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.drawable.Drawable;
+import android.graphics.PorterDuff;
+import java.lang.ref.WeakReference;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public interface u6 {
-    boolean a();
+public final class u6 {
+    public int a;
+    public int b = -1;
+    public int c;
+    public float d;
+    public WeakReference e;
+    public p6 f;
+    public int g;
+    public PorterDuff.Mode h;
+    public Object i;
+    public WeakReference j;
+    public boolean k;
+    public int l;
+    public boolean m;
+    public x6 n;
+    public y6 o;
 
-    void b(float f7, float f10, int i10, int i11);
+    public final boolean a() {
+        WeakReference weakReference = this.e;
+        return weakReference != null && weakReference.get() == null;
+    }
 
-    ColorFilter c();
+    public final int b() {
+        int i10 = this.a;
+        int i11 = this.b;
+        int i12 = this.c;
+        float f7 = this.d;
+        p6 p6Var = this.f;
+        if (p6Var == null) {
+            WeakReference weakReference = this.e;
+            p6Var = weakReference != null ? (p6) weakReference.get() : null;
+        }
+        return a7.Q(i10, i11, i12, f7, p6Var);
+    }
 
-    Paint d(String str);
-
-    int e(int i10);
-
-    boolean f();
-
-    int g(int i10);
-
-    Drawable getDrawable(String str);
-
-    void h(int i10, int i11);
-
-    int i(int i10);
+    public final void c(int i10, int i11, int i12, float f7, p6 p6Var) {
+        this.a = i10;
+        this.b = i11;
+        this.c = i12;
+        this.d = f7;
+        if (p6Var == null) {
+            this.e = null;
+            this.f = null;
+            return;
+        }
+        Class<?> cls = p6Var.getClass();
+        if (cls.isSynthetic() || cls.getName().contains("$$Lambda") || cls.getName().contains("$$ExternalSynthetic")) {
+            this.e = null;
+            this.f = p6Var;
+        } else {
+            this.e = new WeakReference(p6Var);
+            this.f = null;
+        }
+    }
 }

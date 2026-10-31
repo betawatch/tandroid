@@ -1,20 +1,19 @@
 package w7;
 
-import org.telegram.ui.Components.b10;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class u2 implements ka.d {
+public final class u2 implements ja.d {
     public static final u2 a = new u2();
-    public static final ka.c b = new ka.c("identifyLanguageConfidenceThreshold", ic.a.m(b10.m(h.class, new e(1))));
-    public static final ka.c c = new ka.c("identifyAllLanguagesConfidenceThreshold", ic.a.m(b10.m(h.class, new e(2))));
-    public static final ka.c d = new ka.c("confidenceThreshold", ic.a.m(b10.m(h.class, new e(3))));
 
-    @Override // ka.a
-    public final void a(Object obj, Object obj2) {
-        ka.e eVar = (ka.e) obj2;
-        eVar.a(b, null);
-        eVar.a(c, null);
-        eVar.a(d, ((i6) obj).a);
+    static {
+        sc.e.v(sc.e.l(d.class, sc.e.q(sc.e.l(d.class, sc.e.q(sc.e.l(d.class, sc.e.q(sc.e.l(d.class, sc.e.q(sc.e.l(d.class, sc.e.q(sc.e.l(d.class, sc.e.q(sc.e.l(d.class, new a(1)), 2)), 3)), 4)), 5)), 6)), 7)));
+    }
+
+    @Override // ja.a
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
+        }
+        throw null;
     }
 }

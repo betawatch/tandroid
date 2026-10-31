@@ -1,45 +1,42 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class lf implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesStorage b;
-    public final /* synthetic */ int c;
+    public final /* synthetic */ ui b;
+    public final /* synthetic */ TLRPC.Document c;
 
-    public /* synthetic */ lf(MessagesStorage messagesStorage, int i10, int i11) {
-        this.a = i11;
-        this.b = messagesStorage;
-        this.c = i10;
+    public /* synthetic */ lf(ui uiVar, TLRPC.Document document, int i10) {
+        this.a = i10;
+        this.b = uiVar;
+        this.c = document;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$readAllDialogs$68(this.c);
-                break;
-            case 1:
-                this.b.lambda$checkIfFolderEmptyInternal$249(this.c);
-                break;
-            case 2:
-                this.b.lambda$clearDownloadQueue$188(this.c);
-                break;
-            case 3:
-                this.b.lambda$putMessagesInternal$200(this.c);
-                break;
-            case 4:
-                this.b.lambda$getDownloadQueue$190(this.c);
-                break;
-            case 5:
-                this.b.lambda$getUnsentMessages$156(this.c);
-                break;
-            case 6:
-                this.b.lambda$checkIfFolderEmpty$250(this.c);
-                break;
+                ui uiVar = this.b;
+                TLRPC.Document document = this.c;
+                try {
+                    uiVar.getMessagesStorage().b.executeFast("DELETE FROM web_recent_v3 WHERE id = '" + document.id + "' AND type = 2").stepThis().dispose();
+                    break;
+                } catch (Exception e) {
+                    f8.g(e, true);
+                    return;
+                }
             default:
-                this.b.lambda$clearWidgetDialogs$171(this.c);
-                break;
+                ui uiVar2 = this.b;
+                TLRPC.Document document2 = this.c;
+                try {
+                    uiVar2.getMessagesStorage().b.executeFast("DELETE FROM web_recent_v3 WHERE id = '" + document2.id + "' AND type = 2").stepThis().dispose();
+                    break;
+                } catch (Exception e7) {
+                    f8.g(e7, true);
+                }
         }
     }
 }

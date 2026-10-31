@@ -1,84 +1,57 @@
 package k2;
 
-import android.content.Context;
-import android.content.IntentFilter;
-import android.media.AudioDeviceInfo;
-import android.net.Uri;
-import android.os.Build;
-import android.os.Handler;
-import android.os.Looper;
-import android.provider.Settings;
-import f9.s1;
-import java.util.List;
-import jg.e1;
+import bi.t6;
+import j$.util.DesugarArrays;
+import j$.util.function.Function$-CC;
+import java.util.function.Function;
+import java.util.regex.Pattern;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.nt;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class f {
-    public final Context a;
-    public final e1 b;
-    public final Handler c;
-    public final d d;
-    public final androidx.mediarouter.app.g e;
-    public final e f;
-    public z2.d g;
-    public b h;
-    public AudioDeviceInfo i;
-    public b2.f j;
-    public boolean k;
+public final /* synthetic */ class f implements Function {
+    public final /* synthetic */ int a;
 
-    public f(Context context, e1 e1Var, b2.f fVar, AudioDeviceInfo audioDeviceInfo) {
-        Context applicationContext = context.getApplicationContext();
-        this.a = applicationContext;
-        this.b = e1Var;
-        this.j = fVar;
-        this.i = audioDeviceInfo;
-        String str = e2.n0.a;
-        Looper myLooper = Looper.myLooper();
-        Handler handler = new Handler(myLooper == null ? Looper.getMainLooper() : myLooper, null);
-        this.c = handler;
-        this.d = new d(this);
-        this.e = new androidx.mediarouter.app.g(this, 5);
-        s1 s1Var = b.e;
-        String str2 = Build.MANUFACTURER;
-        Uri uriFor = (str2.equals("Amazon") || str2.equals("Xiaomi")) ? Settings.Global.getUriFor("external_surround_sound_enabled") : null;
-        this.f = uriFor != null ? new e(this, handler, applicationContext.getContentResolver(), uriFor) : null;
+    public /* synthetic */ f(int i10) {
+        this.a = i10;
     }
 
-    public final List a() {
-        z2.d dVar;
-        if (Build.VERSION.SDK_INT >= 32 && (dVar = this.g) != null) {
-            return dVar.b();
-        }
-        f9.g0 g0Var = f9.i0.b;
-        return s1.e;
+    public /* synthetic */ Function andThen(Function function) {
+        int i10 = this.a;
+        return Function$-CC.$default$andThen(this, function);
     }
 
-    public final void b(b bVar) {
-        if (!this.k || bVar.equals(this.h)) {
-            return;
+    @Override // java.util.function.Function
+    public final Object apply(Object obj) {
+        long j10;
+        int[] array;
+        switch (this.a) {
+            case 1:
+                String str = (String) obj;
+                Pattern pattern = Utilities.a;
+                try {
+                    j10 = Long.parseLong(str);
+                } catch (Exception unused) {
+                    j10 = 0;
+                }
+                break;
+            case 2:
+                array = DesugarArrays.stream(((String) obj).split(",")).mapToInt(new t6(3)).toArray();
+                break;
+            case 9:
+                TLRPC.ChannelParticipant channelParticipant = (TLRPC.ChannelParticipant) obj;
+                if (channelParticipant != null) {
+                    break;
+                }
+                break;
         }
-        this.h = bVar;
-        l0 l0Var = (l0) this.b.b;
-        l0Var.f();
-        b bVar2 = l0Var.h;
-        if (bVar2 == null || bVar.equals(bVar2)) {
-            return;
-        }
-        l0Var.h = bVar;
-        e2.r rVar = l0Var.f;
-        if (rVar != null) {
-            rVar.e(-1, new jh.l(7));
-        }
+        return ((nt) obj).a;
     }
 
-    public final void c() {
-        List a2 = a();
-        b2.f fVar = this.j;
-        AudioDeviceInfo audioDeviceInfo = this.i;
-        s1 s1Var = b.e;
-        IntentFilter intentFilter = new IntentFilter("android.media.action.HDMI_AUDIO_PLUG");
-        Context context = this.a;
-        b(b.b(context, context.registerReceiver(null, intentFilter), fVar, audioDeviceInfo, a2));
+    public /* synthetic */ Function compose(Function function) {
+        int i10 = this.a;
+        return Function$-CC.$default$compose(this, function);
     }
 }

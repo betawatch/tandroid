@@ -2,64 +2,90 @@ package org.telegram.ui.Cells;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.kb1;
+import android.graphics.drawable.Drawable;
+import android.text.SpannableStringBuilder;
+import android.view.ActionMode;
+import android.view.Menu;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.cd;
+import org.telegram.ui.Components.uu0;
+import org.telegram.ui.Components.wt;
+import org.telegram.ui.Components.x41;
+import org.telegram.ui.Components.yz0;
+import org.telegram.ui.Components.zz0;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class h3 extends FrameLayout {
-    public final EditTextBoldCursor a;
+public final class h3 extends wt {
+    public final /* synthetic */ org.telegram.ui.ActionBar.p6 V;
+    public final /* synthetic */ boolean W;
+    public final /* synthetic */ j3 a0;
 
-    public h3(Context context) {
-        super(context);
-        EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(context);
-        this.a = editTextBoldCursor;
-        org.telegram.ui.ActionBar.f7.V(editTextBoldCursor, org.telegram.ui.ActionBar.y6.G6, null);
-        org.telegram.ui.ActionBar.f7.E(editTextBoldCursor, org.telegram.ui.ActionBar.y6.H6, null);
-        editTextBoldCursor.setTextSize(1, 16.0f);
-        editTextBoldCursor.setLines(1);
-        editTextBoldCursor.setMaxLines(1);
-        editTextBoldCursor.setSingleLine(true);
-        editTextBoldCursor.setEllipsize(TextUtils.TruncateAt.END);
-        editTextBoldCursor.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
-        editTextBoldCursor.setBackgroundDrawable(null);
-        editTextBoldCursor.setPadding(0, 0, 0, 0);
-        editTextBoldCursor.setInputType(editTextBoldCursor.getInputType() | 16384);
-        addView(editTextBoldCursor, kb1.h(-1, -1.0f, (LocaleController.isRTL ? 5 : 3) | 48, 21.0f, 0.0f, 21.0f, 0.0f));
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public h3(j3 j3Var, Context context, uu0 uu0Var, org.telegram.ui.ActionBar.p6 p6Var, boolean z10) {
+        super(context, uu0Var, null, 4, true, null);
+        this.a0 = j3Var;
+        this.V = p6Var;
+        this.W = z10;
     }
 
-    public final void a(String str) {
-        EditTextBoldCursor editTextBoldCursor = this.a;
-        editTextBoldCursor.setText("");
-        editTextBoldCursor.setHint(str);
-        setWillNotDraw(true);
+    @Override // org.telegram.ui.Components.wt
+    public final boolean a() {
+        return this.a0.r && super.a();
     }
 
-    public String getText() {
-        return this.a.getText().toString();
+    @Override // org.telegram.ui.Components.wt
+    public final boolean b() {
+        return this.a0.s;
     }
 
-    public EditTextBoldCursor getTextView() {
-        return this.a;
+    @Override // org.telegram.ui.Components.wt
+    public final int h() {
+        return this.a0.a();
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        setMeasuredDimension(View.MeasureSpec.getSize(i10), AndroidUtilities.dp(50.0f));
-        this.a.measure(View.MeasureSpec.makeMeasureSpec(((getMeasuredWidth() - getPaddingLeft()) - getPaddingRight()) - AndroidUtilities.dp(42.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLObject.FLAG_30));
-    }
-
-    public void setTextColor(int i10) {
-        this.a.setTextColor(i10);
+    @Override // org.telegram.ui.Components.wt
+    public final void i(ActionMode actionMode, Menu menu) {
+        if (menu.findItem(R.id.menu_bold) != null) {
+            return;
+        }
+        menu.removeItem(android.R.id.shareText);
+        menu.add(R.id.menu_groupbolditalic, R.id.menu_spoiler, 6, cd.L0(2131745280, null));
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(cd.L0(2131753671, null));
+        spannableStringBuilder.setSpan(new x41(org.telegram.messenger.i0.o()), 0, spannableStringBuilder.length(), 33);
+        menu.add(R.id.menu_groupbolditalic, R.id.menu_bold, 7, spannableStringBuilder);
+        SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(cd.L0(2131749097, null));
+        spannableStringBuilder2.setSpan(new x41(org.telegram.messenger.i0.o1("fonts/rmediumitalic.ttf")), 0, spannableStringBuilder2.length(), 33);
+        menu.add(R.id.menu_groupbolditalic, R.id.menu_italic, 8, spannableStringBuilder2);
+        SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder(cd.L0(2131744463, null));
+        yz0 yz0Var = new yz0();
+        yz0Var.a = 8 | yz0Var.a;
+        spannableStringBuilder3.setSpan(new zz0(yz0Var, 0), 0, spannableStringBuilder3.length(), 33);
+        menu.add(R.id.menu_groupbolditalic, R.id.menu_strike, 9, spannableStringBuilder3);
+        menu.add(R.id.menu_groupbolditalic, R.id.menu_regular, 10, cd.L0(2131746352, null));
     }
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
+        canvas.save();
+        canvas.clipRect(getPaddingLeft() + getScrollX(), 0, (getWidth() + getScrollX()) - getPaddingRight(), getHeight());
+        super.onDraw(canvas);
+        canvas.restore();
+        j3 j3Var = this.a0;
+        org.telegram.ui.Components.e6 e6Var = j3Var.y;
+        org.telegram.ui.Components.w4 w4Var = j3Var.w;
+        if (w4Var != null) {
+            e6Var.u(w4Var.a(org.telegram.ui.ActionBar.t6.w0(j3Var.x <= 0 ? org.telegram.ui.ActionBar.t6.p7 : org.telegram.ui.ActionBar.t6.P5, this.V), false));
+        }
+        int min = Math.min(org.telegram.messenger.i0.L(48.0f), getHeight());
+        boolean z10 = this.W;
+        float f7 = z10 ? 0.0f : -org.telegram.messenger.i0.L(1.0f);
+        e6Var.o(getScrollX(), (getHeight() + f7) - min, (getWidth() + getScrollX()) - org.telegram.messenger.i0.L((z10 ? 0 : 44) + 12), f7 + getHeight());
+        e6Var.draw(canvas);
+    }
+
+    @Override // android.view.View
+    public final boolean verifyDrawable(Drawable drawable) {
+        return drawable == this.a0.y || super.verifyDrawable(drawable);
     }
 }

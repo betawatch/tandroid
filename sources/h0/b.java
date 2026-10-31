@@ -1,6 +1,5 @@
 package h0;
 
-import a8.ng;
 import android.content.res.ColorStateList;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
@@ -17,7 +16,7 @@ import java.util.List;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public abstract class b {
     public static final float[][] a = {new float[]{0.401288f, 0.650173f, -0.051461f}, new float[]{-0.250268f, 1.204414f, 0.045854f}, new float[]{-0.002079f, 0.048952f, 0.953127f}};
@@ -25,26 +24,26 @@ public abstract class b {
     public static final float[] c = {95.047f, 100.0f, 108.883f};
     public static final float[][] d = {new float[]{0.41233894f, 0.35762063f, 0.18051042f}, new float[]{0.2126f, 0.7152f, 0.0722f}, new float[]{0.01932141f, 0.11916382f, 0.9503448f}};
 
-    public static ng a(TypedArray typedArray, XmlPullParser xmlPullParser, Resources.Theme theme, String str, int i10) {
-        ng ngVar;
+    public static a5.a a(TypedArray typedArray, XmlPullParser xmlPullParser, Resources.Theme theme, String str, int i10) {
+        a5.a aVar;
         if (xmlPullParser.getAttributeValue("http://schemas.android.com/apk/res/android", str) != null) {
             TypedValue typedValue = new TypedValue();
             typedArray.getValue(i10, typedValue);
             int i11 = typedValue.type;
             if (i11 >= 28 && i11 <= 31) {
-                return new ng((Shader) null, (ColorStateList) null, typedValue.data);
+                return new a5.a((Shader) null, (ColorStateList) null, typedValue.data);
             }
             try {
-                ngVar = ng.h(typedArray.getResources(), typedArray.getResourceId(i10, 0), theme);
+                aVar = a5.a.j(typedArray.getResources(), typedArray.getResourceId(i10, 0), theme);
             } catch (Exception e) {
                 Log.e("ComplexColorCompat", "Failed to inflate ComplexColor.", e);
-                ngVar = null;
+                aVar = null;
             }
-            if (ngVar != null) {
-                return ngVar;
+            if (aVar != null) {
+                return aVar;
             }
         }
-        return new ng((Shader) null, (ColorStateList) null, 0);
+        return new a5.a((Shader) null, (ColorStateList) null, 0);
     }
 
     public static String b(TypedArray typedArray, XmlPullParser xmlPullParser, String str, int i10) {
@@ -74,7 +73,7 @@ public abstract class b {
             f12 = ((f10 * 116.0f) - 16.0f) / 903.2963f;
         }
         float[] fArr = c;
-        return i0.a.e(f13 * fArr[0], f11 * fArr[1], f12 * fArr[2]);
+        return i0.b.e(f13 * fArr[0], f11 * fArr[1], f12 * fArr[2]);
     }
 
     public static float e(int i10) {

@@ -1,34 +1,44 @@
 package org.telegram.ui.Cells;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.text.style.ReplacementSpan;
+import android.content.Context;
+import android.view.ViewGroup;
+import org.telegram.ui.Components.ep;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class n2 extends ReplacementSpan {
-    public final int a;
+public final class n2 extends ep {
+    public final /* synthetic */ int d;
+    public final /* synthetic */ ViewGroup e;
 
-    public n2(int i10) {
-        this.a = i10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ n2(ViewGroup viewGroup, Context context, org.telegram.ui.ActionBar.p6 p6Var, int i10) {
+        super(21, context, p6Var);
+        this.d = i10;
+        this.e = viewGroup;
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
-        if (fontMetricsInt == null) {
-            fontMetricsInt = paint.getFontMetricsInt();
+    @Override // android.view.View
+    public final void invalidate() {
+        switch (this.d) {
+            case 0:
+                super.invalidate();
+                ((v2) this.e).invalidate();
+                break;
+            case 1:
+                super.invalidate();
+                ((org.telegram.ui.web.g) this.e).invalidate();
+                break;
+            default:
+                super.invalidate();
+                ((vh.h2) this.e).invalidate();
+                break;
         }
-        if (fontMetricsInt != null) {
-            int i12 = 1 - (fontMetricsInt.descent - fontMetricsInt.ascent);
-            fontMetricsInt.descent = i12;
-            fontMetricsInt.bottom = i12;
-            fontMetricsInt.ascent = -1;
-            fontMetricsInt.top = -1;
-        }
-        return this.a;
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public n2(vh.h2 h2Var, Context context, org.telegram.ui.ActionBar.p6 p6Var) {
+        super(24, context, p6Var);
+        this.d = 2;
+        this.e = h2Var;
     }
 }

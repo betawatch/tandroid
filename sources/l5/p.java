@@ -1,28 +1,33 @@
 package l5;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+import android.os.Looper;
+import com.google.android.gms.internal.cast.z;
+import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
+
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class p {
-    public static final p a;
-    public static final /* synthetic */ p[] b;
+public final class p implements Executor {
+    public final /* synthetic */ int a = 1;
+    public final Object b;
 
-    /* JADX INFO: Fake field, exist only in values array */
-    p EF0;
-
-    static {
-        p pVar = new p("UNKNOWN", 0);
-        p pVar2 = new p("ANDROID_FIREBASE", 1);
-        a = pVar2;
-        b = new p[]{pVar, pVar2};
+    public p(Looper looper) {
+        this.b = new z(looper, 4);
     }
 
-    public static p valueOf(String str) {
-        return (p) Enum.valueOf(p.class, str);
+    @Override // java.util.concurrent.Executor
+    public final void execute(Runnable runnable) {
+        switch (this.a) {
+            case 0:
+                ((Executor) this.b).execute(new o(0, runnable));
+                break;
+            default:
+                ((z) this.b).post(runnable);
+                break;
+        }
     }
 
-    public static p[] values() {
-        return (p[]) b.clone();
+    public p(ExecutorService executorService) {
+        this.b = executorService;
     }
 }

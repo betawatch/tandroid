@@ -1,47 +1,37 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class dn0 extends TextView {
+public final /* synthetic */ class dn0 implements Runnable {
     public final /* synthetic */ int a;
+    public final /* synthetic */ nn0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ dn0(Context context, int i10) {
-        super(context);
+    public /* synthetic */ dn0(nn0 nn0Var, int i10) {
         this.a = i10;
+        this.b = nn0Var;
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public CharSequence getAccessibilityClassName() {
-        switch (this.a) {
-            case 3:
-                return Button.class.getName();
-            default:
-                return super.getAccessibilityClassName();
-        }
-    }
-
-    @Override // android.widget.TextView, android.view.View
-    public void onMeasure(int i10, int i11) {
-        switch (this.a) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        nn0 nn0Var = this.b;
+        switch (i10) {
             case 0:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLObject.FLAG_31));
+                if (nn0Var.G) {
+                    nn0Var.b.invalidate();
+                    break;
+                }
                 break;
             case 1:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLObject.FLAG_31));
+                nn0Var.h();
                 break;
             case 2:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(AndroidUtilities.dp(26.0f)), TLObject.FLAG_30));
+                int i11 = nn0.q0;
+                nn0Var.h();
                 break;
             default:
-                super.onMeasure(i10, i11);
+                int i12 = nn0.q0;
+                nn0Var.h();
                 break;
         }
     }

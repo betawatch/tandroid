@@ -3,10 +3,9 @@ package p1;
 import android.os.Build;
 import android.view.View;
 import java.nio.ByteBuffer;
-import r0.i0;
-import u7.s;
+import r0.h0;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public abstract class c {
     public int a;
@@ -15,8 +14,8 @@ public abstract class c {
     public Object d;
 
     public c() {
-        if (s.c == null) {
-            s.c = new s(17);
+        if (hb.a.b == null) {
+            hb.a.b = new hb.a(17);
         }
     }
 
@@ -46,14 +45,14 @@ public abstract class c {
             }
         }
         if (e(tag, obj)) {
-            View.AccessibilityDelegate d = i0.d(view);
+            View.AccessibilityDelegate d = h0.d(view);
             r0.b bVar = d == null ? null : d instanceof r0.a ? ((r0.a) d).a : new r0.b(d);
             if (bVar == null) {
                 bVar = new r0.b();
             }
-            i0.k(view, bVar);
+            h0.j(view, bVar);
             view.setTag(this.a, obj);
-            i0.g(this.c, view);
+            h0.f(this.c, view);
         }
     }
 

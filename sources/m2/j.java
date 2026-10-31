@@ -1,6 +1,6 @@
 package m2;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class j {
     public final long a;
@@ -8,7 +8,7 @@ public final class j {
     public final String c;
     public int d;
 
-    public j(long j10, long j11, String str) {
+    public j(long j10, String str, long j11) {
         this.c = str == null ? "" : str;
         this.a = j10;
         this.b = j11;
@@ -16,29 +16,26 @@ public final class j {
 
     public final j a(j jVar, String str) {
         j jVar2;
-        long j10;
         String f7 = e2.e.f(str, this.c);
         if (jVar != null) {
-            long j11 = jVar.b;
+            long j10 = jVar.b;
             if (f7.equals(e2.e.f(str, jVar.c))) {
-                long j12 = this.b;
-                if (j12 != -1) {
-                    j10 = j11;
-                    long j13 = this.a;
+                long j11 = this.b;
+                if (j11 != -1) {
+                    long j12 = this.a;
                     jVar2 = null;
-                    if (j13 + j12 == jVar.a) {
-                        return new j(j13, j10 != -1 ? j12 + j10 : -1L, f7);
+                    if (j12 + j11 == jVar.a) {
+                        return new j(j12, f7, j10 != -1 ? j11 + j10 : -1L);
                     }
                 } else {
                     jVar2 = null;
-                    j10 = j11;
                 }
                 if (j10 == -1) {
                     return jVar2;
                 }
-                long j14 = jVar.a;
-                if (j14 + j10 == this.a) {
-                    return new j(j14, j12 != -1 ? j10 + j12 : -1L, f7);
+                long j13 = jVar.a;
+                if (j13 + j10 == this.a) {
+                    return new j(j13, f7, j11 != -1 ? j10 + j11 : -1L);
                 }
                 return jVar2;
             }
@@ -72,6 +69,6 @@ public final class j {
         sb2.append(", start=");
         sb2.append(this.a);
         sb2.append(", length=");
-        return a1.g.r(sb2, this.b, ")");
+        return a1.g.q(sb2, this.b, ")");
     }
 }

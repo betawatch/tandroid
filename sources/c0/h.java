@@ -1,6 +1,6 @@
 package c0;
 
-import a8.v9;
+import j9.y;
 import java.util.Locale;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
@@ -12,22 +12,21 @@ import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import java.util.concurrent.locks.LockSupport;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import k9.y;
-import org.telegram.ui.Components.b10;
+import v7.d5;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public abstract class h implements y {
     public static final boolean d = Boolean.parseBoolean(System.getProperty("guava.concurrent.generate_cancellation_cause", "false"));
     public static final Logger e = Logger.getLogger(h.class.getName());
-    public static final v9 f;
+    public static final d5 f;
     public static final Object h;
     public volatile Object a;
     public volatile d b;
     public volatile g c;
 
     static {
-        v9 fVar;
+        d5 fVar;
         try {
             fVar = new e(AtomicReferenceFieldUpdater.newUpdater(g.class, Thread.class, "a"), AtomicReferenceFieldUpdater.newUpdater(g.class, g.class, "b"), AtomicReferenceFieldUpdater.newUpdater(h.class, g.class, "c"), AtomicReferenceFieldUpdater.newUpdater(h.class, d.class, "b"), AtomicReferenceFieldUpdater.newUpdater(h.class, Object.class, "a"));
             th = null;
@@ -85,8 +84,8 @@ public abstract class h implements y {
     public static void f(Runnable runnable, Executor executor) {
         try {
             executor.execute(runnable);
-        } catch (RuntimeException e10) {
-            e.log(Level.SEVERE, "RuntimeException while executing runnable " + runnable + " with executor " + executor, (Throwable) e10);
+        } catch (RuntimeException e7) {
+            e.log(Level.SEVERE, "RuntimeException while executing runnable " + runnable + " with executor " + executor, (Throwable) e7);
         }
     }
 
@@ -128,7 +127,7 @@ public abstract class h implements y {
         return obj;
     }
 
-    @Override // k9.y
+    @Override // j9.y
     public final void a(Runnable runnable, Executor executor) {
         executor.getClass();
         d dVar = this.b;
@@ -155,13 +154,13 @@ public abstract class h implements y {
             sb2.append("]");
         } catch (CancellationException unused) {
             sb2.append("CANCELLED");
-        } catch (RuntimeException e10) {
+        } catch (RuntimeException e7) {
             sb2.append("UNKNOWN, cause=[");
-            sb2.append(e10.getClass());
+            sb2.append(e7.getClass());
             sb2.append(" thrown from get()]");
-        } catch (ExecutionException e11) {
+        } catch (ExecutionException e10) {
             sb2.append("FAILURE, cause=[");
-            sb2.append(e11.getCause());
+            sb2.append(e10.getCause());
             sb2.append("]");
         }
     }
@@ -195,9 +194,9 @@ public abstract class h implements y {
             if (gVar2 != gVar) {
                 g gVar3 = new g();
                 do {
-                    v9 v9Var = f;
-                    v9Var.d(gVar3, gVar2);
-                    if (v9Var.c(this, gVar2, gVar3)) {
+                    d5 d5Var = f;
+                    d5Var.d(gVar3, gVar2);
+                    if (d5Var.c(this, gVar2, gVar3)) {
                         while (true) {
                             LockSupport.parkNanos(this, nanos);
                             if (Thread.interrupted()) {
@@ -237,31 +236,31 @@ public abstract class h implements y {
         String obj4 = timeUnit.toString();
         Locale locale = Locale.ROOT;
         String lowerCase = obj4.toLowerCase(locale);
-        StringBuilder t10 = a1.g.t(j10, "Waited ", " ");
-        t10.append(timeUnit.toString().toLowerCase(locale));
-        String sb2 = t10.toString();
+        StringBuilder s10 = a1.g.s(j10, "Waited ", " ");
+        s10.append(timeUnit.toString().toLowerCase(locale));
+        String sb2 = s10.toString();
         if (nanos + 1000 < 0) {
-            String u10 = b10.u(sb2, " (plus ");
+            String A = sc.e.A(sb2, " (plus ");
             long j11 = -nanos;
             long convert = timeUnit.convert(j11, TimeUnit.NANOSECONDS);
             long nanos2 = j11 - timeUnit.toNanos(convert);
             boolean z10 = convert == 0 || nanos2 > 1000;
             if (convert > 0) {
-                String str = u10 + convert + " " + lowerCase;
+                String str = A + convert + " " + lowerCase;
                 if (z10) {
-                    str = b10.u(str, ",");
+                    str = sc.e.A(str, ",");
                 }
-                u10 = b10.u(str, " ");
+                A = sc.e.A(str, " ");
             }
             if (z10) {
-                u10 = u10 + nanos2 + " nanoseconds ";
+                A = A + nanos2 + " nanoseconds ";
             }
-            sb2 = b10.u(u10, "delay)");
+            sb2 = sc.e.A(A, "delay)");
         }
         if (isDone()) {
-            throw new TimeoutException(b10.u(sb2, " but future completed as timeout expired"));
+            throw new TimeoutException(sc.e.A(sb2, " but future completed as timeout expired"));
         }
-        throw new TimeoutException(a1.g.D(sb2, " for ", hVar));
+        throw new TimeoutException(a1.g.C(sb2, " for ", hVar));
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -339,8 +338,8 @@ public abstract class h implements y {
         } else {
             try {
                 str = i();
-            } catch (RuntimeException e10) {
-                str = "Exception thrown from implementation: " + e10.getClass();
+            } catch (RuntimeException e7) {
+                str = "Exception thrown from implementation: " + e7.getClass();
             }
             if (str != null && !str.isEmpty()) {
                 sb2.append("PENDING, info=[");
@@ -372,9 +371,9 @@ public abstract class h implements y {
             if (gVar2 != gVar) {
                 g gVar3 = new g();
                 do {
-                    v9 v9Var = f;
-                    v9Var.d(gVar3, gVar2);
-                    if (v9Var.c(this, gVar2, gVar3)) {
+                    d5 d5Var = f;
+                    d5Var.d(gVar3, gVar2);
+                    if (d5Var.c(this, gVar2, gVar3)) {
                         do {
                             LockSupport.park(this);
                             if (!Thread.interrupted()) {

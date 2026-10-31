@@ -2,7 +2,7 @@ package m4;
 
 import java.util.List;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class r0 implements f1, g1 {
     public final /* synthetic */ int a;
@@ -16,10 +16,10 @@ public final /* synthetic */ class r0 implements f1, g1 {
     }
 
     @Override // m4.g1
-    public void b(n1 n1Var, w wVar, List list) {
+    public void a(n1 n1Var, w wVar, List list) {
         switch (this.a) {
             case 1:
-                n1Var.b0(this.b.K0(wVar, n1Var, this.c), list);
+                n1Var.a0(this.b.M0(wVar, n1Var, this.c), list);
                 break;
             case 2:
                 j1 j1Var = this.b;
@@ -27,26 +27,26 @@ public final /* synthetic */ class r0 implements f1, g1 {
                 int size = list.size();
                 int i10 = this.c;
                 if (size != 1) {
-                    n1Var.O(j1Var.K0(wVar, n1Var, i10), j1Var.K0(wVar, n1Var, i10 + 1), list);
+                    n1Var.r0(list, j1Var.M0(wVar, n1Var, i10), j1Var.M0(wVar, n1Var, i10 + 1));
                     break;
                 } else {
-                    n1Var.u0((b2.p0) list.get(0), j1Var.K0(wVar, n1Var, i10));
+                    n1Var.q0(j1Var.M0(wVar, n1Var, i10), (b2.p0) list.get(0));
                     break;
                 }
             default:
-                n1Var.b0(this.b.K0(wVar, n1Var, this.c), list);
+                n1Var.a0(this.b.M0(wVar, n1Var, this.c), list);
                 break;
         }
     }
 
     @Override // m4.f1
-    public void e(n1 n1Var, w wVar) {
+    public void g(n1 n1Var, w wVar) {
         switch (this.a) {
             case 0:
-                n1Var.Y(this.b.K0(wVar, n1Var, this.c));
+                n1Var.X(this.b.M0(wVar, n1Var, this.c));
                 break;
             default:
-                n1Var.Q(this.b.K0(wVar, n1Var, this.c));
+                n1Var.P(this.b.M0(wVar, n1Var, this.c));
                 break;
         }
     }

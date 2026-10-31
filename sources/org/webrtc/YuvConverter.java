@@ -3,12 +3,12 @@ package org.webrtc;
 import android.graphics.Matrix;
 import android.opengl.GLES20;
 import java.nio.ByteBuffer;
-import org.telegram.messenger.FileLog;
+import org.telegram.messenger.f8;
 import org.webrtc.GlGenericDrawer;
 import org.webrtc.ThreadUtils;
 import org.webrtc.VideoFrame;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes4.dex */
 public class YuvConverter {
     private static final String FRAGMENT_SHADER = "uniform vec2 xUnit;\nuniform vec4 coeffs;\n\nvoid main() {\n  gl_FragColor.r = coeffs.a + dot(coeffs.rgb,\n      sample(tc - 1.5 * xUnit).rgb);\n  gl_FragColor.g = coeffs.a + dot(coeffs.rgb,\n      sample(tc - 0.5 * xUnit).rgb);\n  gl_FragColor.b = coeffs.a + dot(coeffs.rgb,\n      sample(tc + 0.5 * xUnit).rgb);\n  gl_FragColor.a = coeffs.a + dot(coeffs.rgb,\n      sample(tc + 1.5 * xUnit).rgb);\n}\n";
@@ -18,7 +18,7 @@ public class YuvConverter {
     private final ThreadUtils.ThreadChecker threadChecker;
     private final VideoFrameDrawer videoFrameDrawer;
 
-    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+    /* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
     public static class ShaderCallbacks implements GlGenericDrawer.ShaderCallbacks {
         private float[] coeffs;
         private int coeffsLoc;
@@ -71,6 +71,7 @@ public class YuvConverter {
         ByteBuffer byteBuffer;
         int i11;
         int i12;
+        boolean z10;
         this.threadChecker.checkIsOnValidThread();
         VideoFrame.TextureBuffer textureBuffer2 = (VideoFrame.TextureBuffer) this.videoFrameDrawer.prepareBufferForViewportSize(textureBuffer, textureBuffer.getWidth(), textureBuffer.getHeight());
         int width = textureBuffer2.getWidth();
@@ -104,68 +105,71 @@ public class YuvConverter {
                         e = e;
                         i12 = i14;
                     }
-                } catch (Exception e10) {
-                    e = e10;
+                    try {
+                        byteBuffer = nativeAllocateByteBuffer;
+                    } catch (Exception e7) {
+                        e = e7;
+                        byteBuffer = nativeAllocateByteBuffer;
+                        z10 = true;
+                        f8.g(e, true);
+                        int i17 = i10 * height;
+                        int i18 = i10 / 2;
+                        int i19 = i17 + i18;
+                        byteBuffer.position(i11);
+                        byteBuffer.limit(i17);
+                        ByteBuffer slice = byteBuffer.slice();
+                        byteBuffer.position(i17);
+                        int i20 = ((i12 - 1) * i10) + i18;
+                        byteBuffer.limit(i17 + i20);
+                        ByteBuffer slice2 = byteBuffer.slice();
+                        byteBuffer.position(i19);
+                        byteBuffer.limit(i19 + i20);
+                        ByteBuffer slice3 = byteBuffer.slice();
+                        textureBuffer2.release();
+                        return JavaI420Buffer.wrap(width, height, slice, i10, slice2, i10, slice3, i10, new j(1, byteBuffer));
+                    }
+                    try {
+                        GLES20.glReadPixels(0, 0, this.i420TextureFrameBuffer.getWidth(), this.i420TextureFrameBuffer.getHeight(), 6408, 5121, byteBuffer);
+                        GlUtil.checkNoGLES2Error("YuvConverter.convert");
+                        GLES20.glBindFramebuffer(36160, 0);
+                        z10 = true;
+                    } catch (Exception e10) {
+                        e = e10;
+                        z10 = true;
+                        f8.g(e, true);
+                        int i172 = i10 * height;
+                        int i182 = i10 / 2;
+                        int i192 = i172 + i182;
+                        byteBuffer.position(i11);
+                        byteBuffer.limit(i172);
+                        ByteBuffer slice4 = byteBuffer.slice();
+                        byteBuffer.position(i172);
+                        int i202 = ((i12 - 1) * i10) + i182;
+                        byteBuffer.limit(i172 + i202);
+                        ByteBuffer slice22 = byteBuffer.slice();
+                        byteBuffer.position(i192);
+                        byteBuffer.limit(i192 + i202);
+                        ByteBuffer slice32 = byteBuffer.slice();
+                        textureBuffer2.release();
+                        return JavaI420Buffer.wrap(width, height, slice4, i10, slice22, i10, slice32, i10, new j(1, byteBuffer));
+                    }
+                } catch (Exception e11) {
+                    e = e11;
                     i12 = i14;
                 }
-            } catch (Exception e11) {
-                e = e11;
+            } catch (Exception e12) {
+                e = e12;
                 i10 = i13;
                 i12 = i14;
                 byteBuffer = nativeAllocateByteBuffer;
                 i11 = 0;
             }
-        } catch (Exception e12) {
-            e = e12;
+        } catch (Exception e13) {
+            e = e13;
             i10 = i13;
             byteBuffer = nativeAllocateByteBuffer;
             i11 = 0;
             i12 = i14;
-        }
-        try {
-            byteBuffer = nativeAllocateByteBuffer;
-        } catch (Exception e13) {
-            e = e13;
-            byteBuffer = nativeAllocateByteBuffer;
-            FileLog.e(e);
-            int i17 = i10 * height;
-            int i18 = i10 / 2;
-            int i19 = i17 + i18;
-            byteBuffer.position(i11);
-            byteBuffer.limit(i17);
-            ByteBuffer slice = byteBuffer.slice();
-            byteBuffer.position(i17);
-            int i20 = ((i12 - 1) * i10) + i18;
-            byteBuffer.limit(i17 + i20);
-            ByteBuffer slice2 = byteBuffer.slice();
-            byteBuffer.position(i19);
-            byteBuffer.limit(i19 + i20);
-            ByteBuffer slice3 = byteBuffer.slice();
-            textureBuffer2.release();
-            return JavaI420Buffer.wrap(width, height, slice, i10, slice2, i10, slice3, i10, new j(1, byteBuffer));
-        }
-        try {
-            GLES20.glReadPixels(0, 0, this.i420TextureFrameBuffer.getWidth(), this.i420TextureFrameBuffer.getHeight(), 6408, 5121, byteBuffer);
-            GlUtil.checkNoGLES2Error("YuvConverter.convert");
-            GLES20.glBindFramebuffer(36160, 0);
-        } catch (Exception e14) {
-            e = e14;
-            FileLog.e(e);
-            int i172 = i10 * height;
-            int i182 = i10 / 2;
-            int i192 = i172 + i182;
-            byteBuffer.position(i11);
-            byteBuffer.limit(i172);
-            ByteBuffer slice4 = byteBuffer.slice();
-            byteBuffer.position(i172);
-            int i202 = ((i12 - 1) * i10) + i182;
-            byteBuffer.limit(i172 + i202);
-            ByteBuffer slice22 = byteBuffer.slice();
-            byteBuffer.position(i192);
-            byteBuffer.limit(i192 + i202);
-            ByteBuffer slice32 = byteBuffer.slice();
-            textureBuffer2.release();
-            return JavaI420Buffer.wrap(width, height, slice4, i10, slice22, i10, slice32, i10, new j(1, byteBuffer));
         }
         int i1722 = i10 * height;
         int i1822 = i10 / 2;

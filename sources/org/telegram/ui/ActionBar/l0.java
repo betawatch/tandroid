@@ -1,30 +1,30 @@
 package org.telegram.ui.ActionBar;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.view.ViewTreeObserver;
+import org.telegram.ui.Components.gr;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class l0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ w0 b;
+public final class l0 implements ViewTreeObserver.OnPreDrawListener {
+    public final /* synthetic */ float a;
+    public final /* synthetic */ t0 b;
 
-    public /* synthetic */ l0(w0 w0Var, int i10) {
-        this.a = i10;
-        this.b = w0Var;
+    public l0(t0 t0Var, float f7) {
+        this.b = t0Var;
+        this.a = f7;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                w0 w0Var = this.b;
-                w0Var.s.setVisibility(4);
-                w0Var.v = null;
-                break;
-            default:
-                this.b.v = null;
-                break;
+    @Override // android.view.ViewTreeObserver.OnPreDrawListener
+    public final boolean onPreDraw() {
+        t0 t0Var = this.b;
+        t0Var.e.getViewTreeObserver().removeOnPreDrawListener(this);
+        float x10 = t0Var.e.getX();
+        float f7 = this.a;
+        if (x10 != f7) {
+            n0 n0Var = t0Var.e;
+            n0Var.setTranslationX(f7 - n0Var.getX());
         }
+        t0Var.e.animate().translationX(0.0f).setDuration(250L).setStartDelay(0L).setInterpolator(gr.f).start();
+        return true;
     }
 }

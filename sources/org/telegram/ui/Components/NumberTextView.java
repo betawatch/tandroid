@@ -10,9 +10,8 @@ import android.text.TextPaint;
 import android.view.View;
 import java.util.ArrayList;
 import java.util.Locale;
-import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
 public class NumberTextView extends View {
     public final ArrayList a;
@@ -76,8 +75,8 @@ public class NumberTextView extends View {
         arrayList2.clear();
         if (this.h) {
             Locale locale = Locale.US;
-            sb2 = ic.a.i(this.f, "#");
-            sb3 = ic.a.i(i10, "#");
+            sb2 = i0.a.i(this.f, "#");
+            sb3 = i0.a.i(i10, "#");
         } else {
             Locale locale2 = Locale.US;
             int i12 = this.f;
@@ -127,7 +126,7 @@ public class NumberTextView extends View {
             ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, "progress", z11 ? -1.0f : 1.0f, f11);
             this.d = ofFloat;
             ofFloat.setDuration(this.h ? 180L : 150L);
-            this.d.addListener(new i10(this, 7));
+            this.d.addListener(new t60(this, 5));
             this.d.start();
         }
         invalidate();
@@ -154,7 +153,7 @@ public class NumberTextView extends View {
             return;
         }
         float height = ((StaticLayout) arrayList.get(0)).getHeight();
-        float dp = this.h ? AndroidUtilities.dp(4.0f) : height;
+        float L = this.h ? org.telegram.messenger.i0.L(4.0f) : height;
         if (this.n) {
             f7 = (getMeasuredWidth() - this.r) / 2.0f;
             f10 = ((getMeasuredWidth() - this.s) / 2.0f) - f7;
@@ -178,40 +177,40 @@ public class NumberTextView extends View {
                 if (staticLayout != null) {
                     textPaint.setAlpha((int) (f11 * 255.0f));
                     canvas.save();
-                    canvas.translate(f10, (this.e - 1.0f) * dp);
+                    canvas.translate(f10, (this.e - 1.0f) * L);
                     staticLayout.draw(canvas);
                     canvas.restore();
                     if (staticLayout2 != null) {
                         textPaint.setAlpha((int) ((1.0f - this.e) * 255.0f));
-                        canvas.translate(0.0f, this.e * dp);
+                        canvas.translate(0.0f, this.e * L);
                     }
                 } else {
-                    textPaint.setAlpha(255);
+                    textPaint.setAlpha(org.telegram.messenger.zs.e4);
                 }
             } else if (f11 < 0.0f) {
                 if (staticLayout != null) {
                     textPaint.setAlpha((int) ((-f11) * 255.0f));
                     canvas.save();
-                    canvas.translate(f10, (this.e + 1.0f) * dp);
+                    canvas.translate(f10, (this.e + 1.0f) * L);
                     staticLayout.draw(canvas);
                     canvas.restore();
                 }
                 if (staticLayout2 != null) {
                     if (i10 == max - 1 || staticLayout != null) {
                         textPaint.setAlpha((int) ((this.e + 1.0f) * 255.0f));
-                        canvas.translate(0.0f, this.e * dp);
+                        canvas.translate(0.0f, this.e * L);
                     } else {
-                        textPaint.setAlpha(255);
+                        textPaint.setAlpha(org.telegram.messenger.zs.e4);
                     }
                 }
             } else if (staticLayout2 != null) {
-                textPaint.setAlpha(255);
+                textPaint.setAlpha(org.telegram.messenger.zs.e4);
             }
             if (staticLayout2 != null) {
                 staticLayout2.draw(canvas);
             }
             canvas.restore();
-            canvas.translate(staticLayout2 != null ? staticLayout2.getLineWidth(0) : staticLayout.getLineWidth(0) + AndroidUtilities.dp(1.0f), 0.0f);
+            canvas.translate(staticLayout2 != null ? staticLayout2.getLineWidth(0) : staticLayout.getLineWidth(0) + org.telegram.messenger.i0.L(1.0f), 0.0f);
             if (staticLayout2 != null && staticLayout != null) {
                 f10 = (staticLayout.getLineWidth(0) - staticLayout2.getLineWidth(0)) + f10;
             }
@@ -238,7 +237,7 @@ public class NumberTextView extends View {
     }
 
     public void setTextSize(int i10) {
-        this.c.setTextSize(AndroidUtilities.dp(i10));
+        this.c.setTextSize(org.telegram.messenger.i0.L(i10));
         this.b.clear();
         this.a.clear();
         a(this.f, false);
@@ -251,6 +250,6 @@ public class NumberTextView extends View {
         a(this.f, false);
     }
 
-    public void setOnTextWidthProgressChangedListener(od0 od0Var) {
+    public void setOnTextWidthProgressChangedListener(bc0 bc0Var) {
     }
 }

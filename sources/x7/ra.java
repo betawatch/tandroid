@@ -1,78 +1,129 @@
 package x7;
 
-import java.util.ListIterator;
-import java.util.NoSuchElementException;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class ra extends a8.y implements ListIterator {
-    public final int b;
-    public int c;
-    public final ta d;
+public final class ra extends e9.j2 {
+    public final /* synthetic */ e9.e b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ra(ta taVar, int i10) {
-        super(8);
-        int size = taVar.size();
-        if (i10 < 0 || i10 > size) {
-            throw new IndexOutOfBoundsException(w7.c0.c(i10, size, "index"));
+    public ra(e9.e eVar) {
+        super(1);
+        this.b = eVar;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final void clear() {
+        this.b.clear();
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean contains(Object obj) {
+        Set entrySet = this.b.b.entrySet();
+        entrySet.getClass();
+        try {
+            return entrySet.contains(obj);
+        } catch (ClassCastException | NullPointerException unused) {
+            return false;
         }
-        this.b = size;
-        this.c = i10;
-        this.d = taVar;
     }
 
-    public final Object a(int i10) {
-        return this.d.get(i10);
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean isEmpty() {
+        return this.b.isEmpty();
     }
 
-    @Override // java.util.ListIterator
-    public final void add(Object obj) {
-        throw new UnsupportedOperationException();
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
+    public final Iterator iterator() {
+        return new e9.d(this.b, (byte) 0);
     }
 
-    @Override // java.util.Iterator, java.util.ListIterator
-    public final boolean hasNext() {
-        return this.c < this.b;
-    }
-
-    @Override // java.util.ListIterator
-    public final boolean hasPrevious() {
-        return this.c > 0;
-    }
-
-    @Override // java.util.Iterator, java.util.ListIterator
-    public final Object next() {
-        if (!hasNext()) {
-            throw new NoSuchElementException();
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean remove(Object obj) {
+        Object obj2;
+        if (!contains(obj)) {
+            return false;
         }
-        int i10 = this.c;
-        this.c = i10 + 1;
-        return a(i10);
-    }
-
-    @Override // java.util.ListIterator
-    public final int nextIndex() {
-        return this.c;
-    }
-
-    @Override // java.util.ListIterator
-    public final Object previous() {
-        if (!hasPrevious()) {
-            throw new NoSuchElementException();
+        Map.Entry entry = (Map.Entry) obj;
+        entry.getClass();
+        f fVar = (f) this.b.e;
+        Object key = entry.getKey();
+        j jVar = fVar.c;
+        jVar.getClass();
+        try {
+            obj2 = jVar.remove(key);
+        } catch (ClassCastException | NullPointerException unused) {
+            obj2 = null;
         }
-        int i10 = this.c - 1;
-        this.c = i10;
-        return a(i10);
+        Collection collection = (Collection) obj2;
+        if (collection == null) {
+            return true;
+        }
+        int size = collection.size();
+        collection.clear();
+        fVar.d -= size;
+        return true;
     }
 
-    @Override // java.util.ListIterator
-    public final int previousIndex() {
-        return this.c - 1;
+    @Override // e9.j2, java.util.AbstractSet, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean removeAll(Collection collection) {
+        try {
+            if (collection != null) {
+                return w7.t8.a(this, collection);
+            }
+            throw null;
+        } catch (UnsupportedOperationException unused) {
+            Iterator it = collection.iterator();
+            boolean z10 = false;
+            while (it.hasNext()) {
+                z10 |= remove(it.next());
+            }
+            return z10;
+        }
     }
 
-    @Override // java.util.ListIterator
-    public final void set(Object obj) {
-        throw new UnsupportedOperationException();
+    @Override // e9.j2, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean retainAll(Collection collection) {
+        int ceil;
+        try {
+            if (collection != null) {
+                return super.retainAll(collection);
+            }
+            throw null;
+        } catch (UnsupportedOperationException unused) {
+            int size = collection.size();
+            if (size >= 3) {
+                ceil = size < 1073741824 ? (int) Math.ceil(size / 0.75d) : ConnectionsManager.DEFAULT_DATACENTER_ID;
+            } else {
+                if (size < 0) {
+                    throw new IllegalArgumentException(i0.a.i(size, "expectedSize cannot be negative but was: "));
+                }
+                ceil = size + 1;
+            }
+            HashSet hashSet = new HashSet(ceil);
+            for (Object obj : collection) {
+                if (contains(obj) && (obj instanceof Map.Entry)) {
+                    hashSet.add(((Map.Entry) obj).getKey());
+                }
+            }
+            f fVar = (f) this.b.e;
+            a aVar = fVar.a;
+            if (aVar == null) {
+                aVar = new a(fVar, fVar.c);
+                fVar.a = aVar;
+            }
+            return aVar.retainAll(hashSet);
+        }
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final int size() {
+        return this.b.b.size();
     }
 }

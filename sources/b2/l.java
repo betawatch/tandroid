@@ -4,18 +4,18 @@ import android.os.Bundle;
 import android.os.IBinder;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class l {
     public static final int b = n.a;
     public final i a;
 
     public l(byte[] bArr) {
-        f9.f0 t10 = f9.i0.t();
+        e9.k0 t10 = e9.n0.t();
         int length = bArr.length;
         int i10 = b;
-        int g7 = e2.n0.g(length, i10);
-        for (int i11 = 0; i11 < g7; i11++) {
+        int g10 = e2.l0.g(length, i10);
+        for (int i11 = 0; i11 < g10; i11++) {
             Bundle bundle = new Bundle();
             int i12 = i11 * i10;
             bundle.putByteArray("bytes", Arrays.copyOfRange(bArr, i12, Math.min(i12 + i10, bArr.length)));
@@ -28,11 +28,11 @@ public final class l {
         IBinder binder = bundle.getBinder(m.g);
         if (binder != null) {
             try {
-                f9.i0 a2 = i.a(binder);
+                e9.n0 a2 = i.a(binder);
                 if (a2.isEmpty()) {
-                    return e2.n0.b;
+                    return e2.l0.b;
                 }
-                byte[] byteArray = ((Bundle) f9.o.m(a2)).getByteArray("bytes");
+                byte[] byteArray = ((Bundle) e9.s.m(a2)).getByteArray("bytes");
                 if (byteArray != null) {
                     int size = a2.size() - 1;
                     int i10 = b;

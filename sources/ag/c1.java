@@ -1,16 +1,27 @@
 package ag;
 
-import android.view.Window;
-import java.lang.ref.WeakReference;
+import android.content.Context;
+import android.view.View;
+import org.telegram.messenger.m5;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes.dex */
-public final class c1 {
-    public int a;
-    public boolean b;
-    public final a1.c c;
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final class c1 extends s4.b0 {
+    public final /* synthetic */ d1 r;
 
-    public c1(Window window) {
-        this.c = new a1.c(new WeakReference(window), 2);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public c1(d1 d1Var, Context context) {
+        super(context);
+        this.r = d1Var;
+    }
+
+    @Override // s4.b0
+    public final int k(int i10, View view) {
+        return m5.B(8.0f, ((h1) this.r.V).s.getPaddingTop() - org.telegram.messenger.i0.m, super.k(i10, view));
+    }
+
+    @Override // s4.b0
+    public final int m(int i10) {
+        return super.m(i10) * 2;
     }
 }

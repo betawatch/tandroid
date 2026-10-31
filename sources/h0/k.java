@@ -1,8 +1,8 @@
 package h0;
 
-import c3.h0;
+import c3.i0;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class k {
     public static final k k;
@@ -33,7 +33,7 @@ public final class k {
         float[] fArr5 = fArr2[2];
         float f16 = (f13 * fArr5[2]) + (f11 * fArr5[1]) + (f7 * fArr5[0]);
         float f17 = ((double) 1.0f) >= 0.9d ? 0.69f : 0.655f;
-        float D = h0.D((float) Math.exp(((-j10) - 42.0f) / 92.0f), 0.2777778f, 1.0f, 1.0f);
+        float D = i0.D((float) Math.exp(((-j10) - 42.0f) / 92.0f), 0.2777778f, 1.0f, 1.0f);
         double d = D;
         if (d > 1.0d) {
             D = 1.0f;
@@ -41,7 +41,7 @@ public final class k {
             D = 0.0f;
         }
         float f18 = 1.0f / ((5.0f * j10) + 1.0f);
-        float E = h0.E(f18, f18, f18, f18);
+        float E = i0.E(f18, f18, f18, f18);
         float f19 = 1.0f - E;
         float cbrt = (0.1f * f19 * f19 * ((float) Math.cbrt(j10 * 5.0d))) + (E * j10);
         float j11 = b.j() / fArr[1];
@@ -55,7 +55,7 @@ public final class k {
         float f23 = (f22 * 400.0f) / (f22 + 27.13f);
         float f24 = fArr6[2];
         float[] fArr7 = {f21, f23, (400.0f * f24) / (f24 + 27.13f)};
-        k = new k(j11, h0.C(fArr7[2], 0.05f, (fArr7[0] * 2.0f) + fArr7[1], pow), pow, pow, f17, 1.0f, new float[]{(((100.0f / f14) * D) + 1.0f) - D, (((100.0f / f15) * D) + 1.0f) - D, (((100.0f / f16) * D) + 1.0f) - D}, cbrt, (float) Math.pow(cbrt, 0.25d), sqrt);
+        k = new k(j11, i0.C(fArr7[2], 0.05f, (fArr7[0] * 2.0f) + fArr7[1], pow), pow, pow, f17, 1.0f, new float[]{(((100.0f / f14) * D) + 1.0f) - D, (((100.0f / f15) * D) + 1.0f) - D, (((100.0f / f16) * D) + 1.0f) - D}, cbrt, (float) Math.pow(cbrt, 0.25d), sqrt);
     }
 
     public k(float f7, float f10, float f11, float f12, float f13, float f14, float[] fArr, float f15, float f16, float f17) {

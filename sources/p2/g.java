@@ -1,15 +1,15 @@
 package p2;
 
-import a8.yb;
 import android.net.Uri;
-import f9.i0;
-import f9.s1;
+import e9.n0;
+import e9.x1;
 import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.List;
-import org.telegram.ui.dv;
+import org.telegram.ui.ex0;
+import v7.t6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class g {
     public final String a;
@@ -23,9 +23,9 @@ public final class g {
     public final boolean i;
     public final long j;
     public final long k;
-    public final i0 l;
-    public final i0 m;
-    public final s1 n;
+    public final n0 l;
+    public final n0 m;
+    public final x1 n;
     public final boolean o;
     public final String p;
     public final String q;
@@ -34,7 +34,7 @@ public final class g {
     public final String t;
 
     public g(String str, Uri uri, Uri uri2, long j10, long j11, long j12, long j13, ArrayList arrayList, boolean z10, long j14, long j15, ArrayList arrayList2, ArrayList arrayList3, ArrayList arrayList4, boolean z11, String str2, String str3, long j16, long j17, String str4) {
-        yb.g((uri == null || uri2 == null) && !(uri == null && uri2 == null));
+        t6.f((uri == null || uri2 == null) && !(uri == null && uri2 == null));
         this.a = str;
         this.b = uri;
         this.c = uri2;
@@ -46,9 +46,9 @@ public final class g {
         this.i = z10;
         this.j = j14;
         this.k = j15;
-        this.l = i0.u(arrayList2);
-        this.m = i0.u(arrayList3);
-        this.n = i0.A(new dv(18), arrayList4);
+        this.l = n0.u(arrayList2);
+        this.m = n0.u(arrayList3);
+        this.n = n0.A(new ex0(11), arrayList4);
         this.o = z11;
         this.p = str2;
         this.q = str3;

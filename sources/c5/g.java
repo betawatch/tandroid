@@ -1,76 +1,26 @@
 package c5;
 
-import java.util.Map;
-import java.util.concurrent.Callable;
-import java.util.concurrent.atomic.AtomicMarkableReference;
-import java.util.concurrent.atomic.AtomicReference;
-import m.r3;
-import org.chromium.support_lib_boundary.JsReplyProxyBoundaryInterface;
+import c3.i0;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final /* synthetic */ class g implements Callable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class g {
+    public int a;
+    public int b;
+    public String c;
 
-    public /* synthetic */ g(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public static c3.a a() {
+        c3.a aVar = new c3.a();
+        aVar.c = 0;
+        aVar.a = "";
+        return aVar;
     }
 
-    private final Object a() {
-        boolean z10;
-        String str;
-        r3 r3Var = (r3) this.b;
-        synchronized (((AtomicMarkableReference) r3Var.h)) {
-            try {
-                z10 = false;
-                if (((AtomicMarkableReference) r3Var.h).isMarked()) {
-                    str = (String) ((AtomicMarkableReference) r3Var.h).getReference();
-                    ((AtomicMarkableReference) r3Var.h).set(str, false);
-                    z10 = true;
-                } else {
-                    str = null;
-                }
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
-        if (z10) {
-            ((z9.f) r3Var.a).i((String) r3Var.c, str);
-        }
-        return null;
-    }
-
-    @Override // java.util.concurrent.Callable
-    public final Object call() {
-        Map map;
-        switch (this.a) {
-            case 0:
-                return new h((JsReplyProxyBoundaryInterface) this.b);
-            case 1:
-                return a();
-            default:
-                c2.b bVar = (c2.b) this.b;
-                ((AtomicReference) bVar.c).set(null);
-                synchronized (bVar) {
-                    try {
-                        if (((AtomicMarkableReference) bVar.b).isMarked()) {
-                            map = ((z9.d) ((AtomicMarkableReference) bVar.b).getReference()).a();
-                            AtomicMarkableReference atomicMarkableReference = (AtomicMarkableReference) bVar.b;
-                            atomicMarkableReference.set((z9.d) atomicMarkableReference.getReference(), false);
-                        } else {
-                            map = null;
-                        }
-                    } catch (Throwable th2) {
-                        throw th2;
-                    }
-                }
-                if (map != null) {
-                    r3 r3Var = (r3) bVar.d;
-                    ((z9.f) r3Var.a).g((String) r3Var.c, map, bVar.a);
-                }
-                return null;
-        }
+    public final String toString() {
+        int i10 = this.a;
+        int i11 = com.google.android.gms.internal.play_billing.u.a;
+        com.google.android.gms.internal.play_billing.a0 a0Var = com.google.android.gms.internal.play_billing.j.c;
+        Integer valueOf = Integer.valueOf(i10);
+        return i0.n("Response Code: ", (!a0Var.containsKey(valueOf) ? com.google.android.gms.internal.play_billing.j.b : (com.google.android.gms.internal.play_billing.j) a0Var.get(valueOf)).toString(), ", Debug Message: ", this.c);
     }
 }

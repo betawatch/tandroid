@@ -1,37 +1,39 @@
 package org.telegram.messenger;
 
-import android.app.NotificationChannel;
-import org.telegram.tgnet.InputSerializedData;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.Vector;
-import org.telegram.tgnet.tl.TL_iv;
+import org.telegram.SQLite.SQLitePreparedStatement;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final /* synthetic */ class zg implements Vector.TLDeserializer, org.telegram.ui.ActionBar.b2 {
-    public final /* synthetic */ int a;
+public final /* synthetic */ class zg implements Runnable {
+    public final /* synthetic */ ui a;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ double d;
 
-    public /* synthetic */ zg(int i10) {
-        this.a = i10;
+    public /* synthetic */ zg(ui uiVar, long j10, int i10, double d) {
+        this.a = uiVar;
+        this.b = j10;
+        this.c = i10;
+        this.d = d;
     }
 
-    public static /* bridge */ /* synthetic */ NotificationChannel a(Object obj) {
-        return (NotificationChannel) obj;
-    }
-
-    @Override // org.telegram.tgnet.Vector.TLDeserializer
-    public TLObject deserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
-        switch (this.a) {
-            case 2:
-                return TL_iv.RichText.TLdeserialize(inputSerializedData, i10, z10);
-            default:
-                return TLRPC.PollAnswer.TLdeserialize(inputSerializedData, i10, z10);
+    @Override // java.lang.Runnable
+    public final void run() {
+        ui uiVar = this.a;
+        long j10 = this.b;
+        int i10 = this.c;
+        double d = this.d;
+        try {
+            SQLitePreparedStatement executeFast = uiVar.getMessagesStorage().b.executeFast("REPLACE INTO chat_hints VALUES(?, ?, ?, ?)");
+            executeFast.requery();
+            executeFast.bindLong(1, j10);
+            executeFast.bindInteger(2, i10);
+            executeFast.bindDouble(3, d);
+            executeFast.bindInteger(4, ((int) System.currentTimeMillis()) / 1000);
+            executeFast.step();
+            executeFast.dispose();
+        } catch (Exception e) {
+            f8.g(e, true);
         }
-    }
-
-    @Override // org.telegram.ui.ActionBar.b2
-    public void h(org.telegram.ui.ActionBar.e2 e2Var, int i10) {
-        SharedConfig.lambda$checkSdCard$1(e2Var, i10);
     }
 }

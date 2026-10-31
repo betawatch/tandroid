@@ -5,14 +5,14 @@ import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.telegram.messenger.FileLog;
+import org.telegram.messenger.f8;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes.dex */
 public class TLJsonBuilder {
     private final JSONObject result2 = new JSONObject();
 
-    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+    /* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
     public interface Serializable {
         void serializeToJson(TLJsonBuilder tLJsonBuilder);
     }
@@ -29,7 +29,7 @@ public class TLJsonBuilder {
             serializable.serializeToJson(tLJsonBuilder);
             return tLJsonBuilder.result2;
         } catch (Exception e) {
-            FileLog.e(e);
+            f8.g(e, true);
             return null;
         }
     }
@@ -38,7 +38,7 @@ public class TLJsonBuilder {
         try {
             this.result2.putOpt(str, obj);
         } catch (JSONException e) {
-            FileLog.e(e);
+            f8.g(e, true);
         }
     }
 

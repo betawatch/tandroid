@@ -1,105 +1,57 @@
 package org.telegram.ui;
 
+import android.content.SharedPreferences;
+import android.os.StatFs;
+import java.io.File;
 import java.util.regex.Pattern;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class t80 implements Utilities.Callback {
+public final /* synthetic */ class t80 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ LaunchActivity b;
-    public final /* synthetic */ kz c;
-    public final /* synthetic */ Long d;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ t80(LaunchActivity launchActivity, kz kzVar, Long l4, int i10) {
-        this.a = i10;
+    public /* synthetic */ t80(LaunchActivity launchActivity, int i10, int i11) {
+        this.a = i11;
         this.b = launchActivity;
-        this.c = kzVar;
-        this.d = l4;
+        this.c = i10;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        org.telegram.ui.Components.wc Y;
-        int i10;
-        int i11;
-        org.telegram.ui.Components.wc Y2;
-        int i12;
-        int i13;
-        int i14 = this.a;
-        Long l4 = this.d;
-        kz kzVar = this.c;
+    @Override // java.lang.Runnable
+    public final void run() {
+        File z10;
+        int i10 = this.a;
+        int i11 = this.c;
         LaunchActivity launchActivity = this.b;
-        TL_stories.StoryItem storyItem = (TL_stories.StoryItem) obj;
-        switch (i14) {
+        switch (i10) {
             case 0:
                 Pattern pattern = LaunchActivity.D1;
-                try {
-                    kzVar.run();
-                } catch (Exception e) {
-                    FileLog.e(e);
-                }
-                org.telegram.ui.ActionBar.r2 R = LaunchActivity.R();
-                if (storyItem != null) {
-                    if (!(storyItem instanceof TL_stories.TL_storyItemDeleted)) {
-                        if (R != null) {
-                            storyItem.dialogId = l4.longValue();
-                            di.y9 createOverlayStoryViewer = R.createOverlayStoryViewer();
-                            createOverlayStoryViewer.w();
-                            createOverlayStoryViewer.G(launchActivity, storyItem, null);
-                            break;
-                        }
-                    } else {
-                        Y = org.telegram.ui.Components.wc.Y();
-                        if (Y != null) {
-                            i10 = R.raw.story_bomb1;
-                            i11 = R.string.StoryNotFound;
-                        }
-                    }
-                } else {
-                    Y = org.telegram.ui.Components.wc.Y();
-                    if (Y != null) {
-                        i10 = R.raw.story_bomb2;
-                        i11 = R.string.StoryNotFound;
-                    }
-                }
-                org.telegram.messenger.t.q(i11, Y, i10, 36);
+                ConnectionsManager.getInstance(launchActivity.O).cancelRequest(i11, true);
                 break;
             default:
                 Pattern pattern2 = LaunchActivity.D1;
-                try {
-                    kzVar.run();
-                } catch (Exception e10) {
-                    FileLog.e(e10);
-                }
-                org.telegram.ui.ActionBar.r2 R2 = LaunchActivity.R();
-                if (storyItem != null) {
-                    if (!(storyItem instanceof TL_stories.TL_storyItemDeleted)) {
-                        if (R2 != null) {
-                            storyItem.dialogId = l4.longValue();
-                            di.y9 createOverlayStoryViewer2 = R2.createOverlayStoryViewer();
-                            createOverlayStoryViewer2.w();
-                            createOverlayStoryViewer2.G(launchActivity, storyItem, null);
-                            break;
+                if (org.telegram.messenger.d20.i(launchActivity.O).p()) {
+                    try {
+                        SharedPreferences d12 = org.telegram.messenger.vp.d1();
+                        int i12 = 2;
+                        if ((((i11 == 2 || i11 == 1) && Math.abs(launchActivity.y1 - System.currentTimeMillis()) > 240000) || Math.abs(d12.getLong("last_space_check", 0L) - System.currentTimeMillis()) >= 259200000) && (z10 = org.telegram.messenger.b8.z(4)) != null) {
+                            StatFs statFs = new StatFs(z10.getAbsolutePath());
+                            long availableBlocksLong = statFs.getAvailableBlocksLong() * statFs.getBlockSizeLong();
+                            if (i11 > 0 || availableBlocksLong < 52428800) {
+                                if (i11 > 0) {
+                                    launchActivity.y1 = System.currentTimeMillis();
+                                }
+                                d12.edit().putLong("last_space_check", System.currentTimeMillis()).commit();
+                                org.telegram.messenger.i0.g3(new q70(launchActivity, i12));
+                                break;
+                            }
                         }
-                    } else {
-                        Y2 = org.telegram.ui.Components.wc.Y();
-                        if (Y2 != null) {
-                            i12 = R.raw.story_bomb1;
-                            i13 = R.string.StoryNotFound;
-                        }
-                    }
-                } else {
-                    Y2 = org.telegram.ui.Components.wc.Y();
-                    if (Y2 != null) {
-                        i12 = R.raw.story_bomb2;
-                        i13 = R.string.StoryNotFound;
+                    } catch (Throwable unused) {
+                        return;
                     }
                 }
-                org.telegram.messenger.t.q(i13, Y2, i12, 36);
                 break;
         }
     }

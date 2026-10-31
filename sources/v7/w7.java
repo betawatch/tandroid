@@ -1,0 +1,181 @@
+package v7;
+
+import android.graphics.Path;
+import java.util.ArrayList;
+
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes.dex */
+public abstract class w7 {
+    public static boolean a(i0.e[] eVarArr, i0.e[] eVarArr2) {
+        if (eVarArr == null || eVarArr2 == null || eVarArr.length != eVarArr2.length) {
+            return false;
+        }
+        for (int i10 = 0; i10 < eVarArr.length; i10++) {
+            i0.e eVar = eVarArr[i10];
+            char c10 = eVar.a;
+            i0.e eVar2 = eVarArr2[i10];
+            if (c10 != eVar2.a || eVar.b.length != eVar2.b.length) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static float[] b(int i10, float[] fArr) {
+        if (i10 < 0) {
+            throw new IllegalArgumentException();
+        }
+        int length = fArr.length;
+        if (length < 0) {
+            throw new ArrayIndexOutOfBoundsException();
+        }
+        int min = Math.min(i10, length);
+        float[] fArr2 = new float[i10];
+        System.arraycopy(fArr, 0, fArr2, 0, min);
+        return fArr2;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:17:0x0042  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x0096 A[Catch: NumberFormatException -> 0x00aa, LOOP:3: B:25:0x0068->B:35:0x0096, LOOP_END, TryCatch #0 {NumberFormatException -> 0x00aa, blocks: (B:22:0x0054, B:25:0x0068, B:27:0x006e, B:31:0x007a, B:35:0x0096, B:39:0x009c, B:44:0x00b1, B:56:0x00b4), top: B:21:0x0054 }] */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x0095 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x009c A[Catch: NumberFormatException -> 0x00aa, TryCatch #0 {NumberFormatException -> 0x00aa, blocks: (B:22:0x0054, B:25:0x0068, B:27:0x006e, B:31:0x007a, B:35:0x0096, B:39:0x009c, B:44:0x00b1, B:56:0x00b4), top: B:21:0x0054 }] */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x00ae  */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x00b1 A[Catch: NumberFormatException -> 0x00aa, TryCatch #0 {NumberFormatException -> 0x00aa, blocks: (B:22:0x0054, B:25:0x0068, B:27:0x006e, B:31:0x007a, B:35:0x0096, B:39:0x009c, B:44:0x00b1, B:56:0x00b4), top: B:21:0x0054 }] */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x00d7 A[SYNTHETIC] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static i0.e[] c(String str) {
+        int i10;
+        String trim;
+        float[] fArr;
+        ArrayList arrayList = new ArrayList();
+        int i11 = 0;
+        int i12 = 0;
+        int i13 = 1;
+        while (i13 < str.length()) {
+            while (i13 < str.length()) {
+                char charAt = str.charAt(i13);
+                if ((charAt - 'Z') * (charAt - 'A') > 0) {
+                    if ((charAt - 'z') * (charAt - 'a') > 0) {
+                        continue;
+                        i13++;
+                    }
+                }
+                if (charAt != 'e' && charAt != 'E') {
+                    trim = str.substring(i12, i13).trim();
+                    if (!trim.isEmpty()) {
+                        if (trim.charAt(i11) == 'z' || trim.charAt(i11) == 'Z') {
+                            fArr = new float[i11];
+                        } else {
+                            try {
+                                float[] fArr2 = new float[trim.length()];
+                                int length = trim.length();
+                                int i14 = i11;
+                                int i15 = 1;
+                                while (i15 < length) {
+                                    int i16 = i11;
+                                    int i17 = i16;
+                                    int i18 = i17;
+                                    int i19 = i18;
+                                    for (int i20 = i15; i20 < trim.length(); i20++) {
+                                        char charAt2 = trim.charAt(i20);
+                                        if (charAt2 != ' ') {
+                                            if (charAt2 != 'E' && charAt2 != 'e') {
+                                                switch (charAt2) {
+                                                    case ',':
+                                                        break;
+                                                    case '-':
+                                                        if (i20 != i15 && i16 == 0) {
+                                                            i16 = 0;
+                                                            i18 = 1;
+                                                            i19 = 1;
+                                                            break;
+                                                        }
+                                                        i16 = 0;
+                                                        break;
+                                                    case '.':
+                                                        if (i17 == 0) {
+                                                            i16 = 0;
+                                                            i17 = 1;
+                                                            break;
+                                                        }
+                                                        i16 = 0;
+                                                        i18 = 1;
+                                                        i19 = 1;
+                                                        break;
+                                                    default:
+                                                        i16 = 0;
+                                                        break;
+                                                }
+                                            } else {
+                                                i16 = 1;
+                                            }
+                                            if (i18 == 0) {
+                                                if (i15 < i20) {
+                                                    fArr2[i14] = Float.parseFloat(trim.substring(i15, i20));
+                                                    i14++;
+                                                }
+                                                i15 = i19 == 0 ? i20 : i20 + 1;
+                                                i11 = 0;
+                                            }
+                                        }
+                                        i16 = 0;
+                                        i18 = 1;
+                                        if (i18 == 0) {
+                                        }
+                                    }
+                                    if (i15 < i20) {
+                                    }
+                                    if (i19 == 0) {
+                                    }
+                                    i11 = 0;
+                                }
+                                fArr = b(i14, fArr2);
+                                i11 = 0;
+                            } catch (NumberFormatException e) {
+                                throw new RuntimeException(a1.g.n("error in parsing \"", trim, "\""), e);
+                            }
+                        }
+                        arrayList.add(new i0.e(trim.charAt(i11), fArr));
+                    }
+                    i12 = i13;
+                    i13++;
+                    i11 = 0;
+                }
+                i13++;
+            }
+            trim = str.substring(i12, i13).trim();
+            if (!trim.isEmpty()) {
+            }
+            i12 = i13;
+            i13++;
+            i11 = 0;
+        }
+        if (i13 - i12 != 1 || i12 >= str.length()) {
+            i10 = 0;
+        } else {
+            i10 = 0;
+            arrayList.add(new i0.e(str.charAt(i12), new float[0]));
+        }
+        return (i0.e[]) arrayList.toArray(new i0.e[i10]);
+    }
+
+    public static Path d(String str) {
+        Path path = new Path();
+        try {
+            i0.e.b(c(str), path);
+            return path;
+        } catch (RuntimeException e) {
+            throw new RuntimeException("Error in parsing ".concat(str), e);
+        }
+    }
+
+    public static i0.e[] e(i0.e[] eVarArr) {
+        i0.e[] eVarArr2 = new i0.e[eVarArr.length];
+        for (int i10 = 0; i10 < eVarArr.length; i10++) {
+            eVarArr2[i10] = new i0.e(eVarArr[i10]);
+        }
+        return eVarArr2;
+    }
+}

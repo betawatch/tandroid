@@ -1,240 +1,73 @@
 package org.telegram.ui.Components;
 
-import android.animation.TimeInterpolator;
-import android.animation.ValueAnimator;
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.Typeface;
-import android.graphics.drawable.Drawable;
-import android.text.TextPaint;
-import android.text.TextUtils;
-import android.view.View;
-import android.view.accessibility.AccessibilityNodeInfo;
+import android.os.Bundle;
+import org.telegram.messenger.MediaController;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public class s6 extends View {
-    public boolean a;
-    public Drawable b;
-    public final r6 c;
-    public int d;
-    public int e;
-    public CharSequence f;
-    public boolean h;
-    public boolean n;
-    public boolean r;
+public final /* synthetic */ class s6 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ w7 b;
+    public final /* synthetic */ org.telegram.messenger.jj c;
 
-    public s6(Context context, boolean z10, boolean z11, boolean z12) {
-        this(context, z10, z11, z12, false, false);
+    public /* synthetic */ s6(w7 w7Var, org.telegram.messenger.jj jjVar, int i10) {
+        this.a = i10;
+        this.b = w7Var;
+        this.c = jjVar;
     }
 
-    public final void a() {
-        this.c.a();
-    }
-
-    public final void b(float f7, long j10, TimeInterpolator timeInterpolator) {
-        this.c.n(f7, j10, timeInterpolator);
-    }
-
-    public final void c(CharSequence charSequence, boolean z10, boolean z11) {
-        boolean z12 = !this.r && z10;
-        this.r = false;
-        r6 r6Var = this.c;
-        if (z12 && !TextUtils.equals(charSequence, r6Var.i)) {
-            if (r6Var.J) {
-                ValueAnimator valueAnimator = r6Var.t;
-                if (valueAnimator != null) {
-                    valueAnimator.cancel();
-                    r6Var.t = null;
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        org.telegram.messenger.jj jjVar = this.c;
+        w7 w7Var = this.b;
+        switch (i10) {
+            case 0:
+                org.telegram.messenger.pp ppVar = w7Var.m2;
+                if (ppVar != null) {
+                    TLRPC.Document a2 = ppVar.a();
+                    ppVar.c.remove(jjVar);
+                    if (ppVar.a() != a2) {
+                        ppVar.e();
+                    }
+                    if (!w7Var.m2.c.isEmpty()) {
+                        org.telegram.messenger.zs.f(w7Var.a).k(org.telegram.messenger.zs.T3, w7Var.m2);
+                        break;
+                    } else {
+                        MediaController.B().o();
+                        w7Var.dismiss();
+                        break;
+                    }
                 }
-            } else if (r6Var.h()) {
-                this.f = charSequence;
-                this.h = z11;
-                return;
-            }
+                break;
+            default:
+                LaunchActivity launchActivity = w7Var.w2;
+                int i11 = org.telegram.messenger.d20.s0;
+                int i12 = w7Var.a;
+                if (i11 != i12) {
+                    launchActivity.O0(i12);
+                }
+                Bundle bundle = new Bundle();
+                long B0 = org.telegram.messenger.jj.B0(jjVar.k);
+                if (org.telegram.messenger.o5.C(B0)) {
+                    bundle.putInt("enc_id", (int) (B0 & 4294967295L));
+                } else if (org.telegram.messenger.o5.E(B0)) {
+                    bundle.putLong("user_id", B0);
+                } else {
+                    TLRPC.Chat L0 = org.telegram.messenger.vp.r1(w7Var.a).L0(Long.valueOf(-B0));
+                    if (L0 != null && L0.migrated_to != null) {
+                        bundle.putLong("migrated_to", B0);
+                        B0 = -L0.migrated_to.channel_id;
+                    }
+                    bundle.putLong("chat_id", -B0);
+                }
+                bundle.putInt("message_id", jjVar.f1());
+                org.telegram.messenger.zs.f(w7Var.a).k(4, new Object[0]);
+                launchActivity.u0(new org.telegram.ui.un(bundle), false, false);
+                w7Var.dismiss();
+                break;
         }
-        int e = (int) r6Var.e();
-        r6Var.setBounds(getPaddingLeft(), getPaddingTop(), this.d - getPaddingRight(), getMeasuredHeight() - getPaddingBottom());
-        r6Var.t(charSequence, z12, z11);
-        float f7 = e;
-        if (f7 < r6Var.e() || !(z12 || f7 == r6Var.e())) {
-            requestLayout();
-        }
-    }
-
-    public final int d() {
-        return getPaddingRight() + getPaddingLeft() + ((int) Math.ceil(this.c.c()));
-    }
-
-    public r6 getDrawable() {
-        return this.c;
-    }
-
-    public TextPaint getPaint() {
-        return this.c.a;
-    }
-
-    public float getRightPadding() {
-        return this.c.N;
-    }
-
-    public Drawable getSizeableBackground() {
-        return this.b;
-    }
-
-    public CharSequence getText() {
-        return this.c.i;
-    }
-
-    public int getTextColor() {
-        return this.c.a.getColor();
-    }
-
-    public int getTextHeight() {
-        return getPaint().getFontMetricsInt().descent - getPaint().getFontMetricsInt().ascent;
-    }
-
-    @Override // android.view.View, android.graphics.drawable.Drawable.Callback
-    public final void invalidateDrawable(Drawable drawable) {
-        super.invalidateDrawable(drawable);
-        invalidate();
-    }
-
-    @Override // android.view.View
-    public void onDraw(Canvas canvas) {
-        Drawable drawable = this.b;
-        r6 r6Var = this.c;
-        if (drawable != null && (!this.a || r6Var.i() > 0.0f)) {
-            int c10 = (int) (r6Var.c() + getPaddingLeft() + getPaddingRight());
-            int i10 = r6Var.b & 7;
-            int width = i10 == 5 ? getWidth() - c10 : i10 == 1 ? (getWidth() - c10) / 2 : 0;
-            this.b.setBounds(width, 0, c10 + width, getHeight());
-            this.b.draw(canvas);
-        }
-        r6Var.setBounds(getPaddingLeft(), getPaddingTop(), getMeasuredWidth() - getPaddingRight(), getMeasuredHeight() - getPaddingBottom());
-        r6Var.draw(canvas);
-    }
-
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.setClassName("android.widget.TextView");
-        accessibilityNodeInfo.setText(getText());
-    }
-
-    @Override // android.view.View
-    public void onMeasure(int i10, int i11) {
-        int size = View.MeasureSpec.getSize(i10);
-        int size2 = View.MeasureSpec.getSize(i11);
-        int i12 = this.e;
-        if (i12 > 0) {
-            size = Math.min(size, i12);
-        }
-        int i13 = this.d;
-        r6 r6Var = this.c;
-        if (i13 != size && getLayoutParams().width != 0) {
-            r6Var.setBounds(getPaddingLeft(), getPaddingTop(), size - getPaddingRight(), size2 - getPaddingBottom());
-            r6Var.t(r6Var.i, false, true);
-        }
-        this.d = size;
-        if (this.n && View.MeasureSpec.getMode(i10) == Integer.MIN_VALUE) {
-            size = getPaddingRight() + getPaddingLeft() + ((int) Math.ceil(r6Var.e()));
-        }
-        setMeasuredDimension(size, size2);
-    }
-
-    public void setAllowCancel(boolean z10) {
-        this.c.J = z10;
-    }
-
-    public void setEllipsizeByGradient(boolean z10) {
-        this.c.q(z10);
-    }
-
-    public void setEmojiCacheType(int i10) {
-        this.c.p = i10;
-    }
-
-    public void setEmojiColor(int i10) {
-        r6 r6Var = this.c;
-        if (r6Var.Z != i10) {
-            r6Var.Z = i10;
-            r6Var.a0 = new PorterDuffColorFilter(i10, PorterDuff.Mode.SRC_IN);
-        }
-        invalidate();
-    }
-
-    public void setEmojiColorFilter(ColorFilter colorFilter) {
-        this.c.a0 = colorFilter;
-        invalidate();
-    }
-
-    public void setGravity(int i10) {
-        this.c.b = i10;
-    }
-
-    public void setHideBackgroundIfEmpty(boolean z10) {
-        this.a = z10;
-    }
-
-    public void setIgnoreRTL(boolean z10) {
-        this.c.K = z10;
-    }
-
-    public void setIncludeFontPadding(boolean z10) {
-        this.c.S = z10;
-    }
-
-    public void setMaxWidth(int i10) {
-        this.e = i10;
-    }
-
-    public void setOnWidthUpdatedListener(Runnable runnable) {
-        this.c.b0 = runnable;
-    }
-
-    public void setRightPadding(float f7) {
-        r6 r6Var = this.c;
-        r6Var.N = f7;
-        r6Var.invalidateSelf();
-    }
-
-    public void setScaleProperty(float f7) {
-        this.c.A = f7;
-    }
-
-    public void setSizeableBackground(Drawable drawable) {
-        this.b = drawable;
-        invalidate();
-    }
-
-    public void setText(CharSequence charSequence) {
-        c(charSequence, true, true);
-    }
-
-    public void setTextColor(int i10) {
-        this.c.u(i10);
-        invalidate();
-    }
-
-    public void setTextSize(float f7) {
-        this.c.w(f7);
-    }
-
-    public void setTypeface(Typeface typeface) {
-        this.c.x(typeface);
-    }
-
-    public s6(Context context, boolean z10, boolean z11, boolean z12, boolean z13, boolean z14) {
-        super(context);
-        this.n = true;
-        this.r = true;
-        r6 r6Var = new r6(z10, z11, z12, z13, z14);
-        this.c = r6Var;
-        r6Var.setCallback(this);
-        r6Var.I = new pg(this, 9);
     }
 }

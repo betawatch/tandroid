@@ -117,8 +117,8 @@ public interface Map<K, V> {
                     } catch (IllegalStateException e) {
                         throw new ConcurrentModificationException(e);
                     }
-                } catch (IllegalStateException e10) {
-                    throw new ConcurrentModificationException(e10);
+                } catch (IllegalStateException e7) {
+                    throw new ConcurrentModificationException(e7);
                 }
             }
         }

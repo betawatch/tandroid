@@ -9,7 +9,7 @@ import java.util.Map;
 import java.util.TreeSet;
 import org.scilab.forge.jlatexmath.TeXFormulaSettingsParser;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public abstract class r0 {
     public static final e1 a = new e1();
@@ -171,19 +171,19 @@ public abstract class r0 {
         sb2.append("}");
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:68:0x01ae, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:68:0x01ad, code lost:
     
         if (((java.lang.Integer) r11).intValue() == 0) goto L57;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:69:0x01b0, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:69:0x01af, code lost:
     
         r7 = true;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:74:0x01c2, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:74:0x01c1, code lost:
     
         if (((java.lang.Float) r11).floatValue() == 0.0f) goto L57;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:78:0x01d4, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:78:0x01d3, code lost:
     
         if (((java.lang.Double) r11).doubleValue() == 0.0d) goto L57;
      */

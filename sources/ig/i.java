@@ -1,108 +1,113 @@
 package ig;
 
-import android.content.Context;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.view.View;
-import android.widget.TextView;
-import fi.l5;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.UserConfig;
-import org.telegram.ui.ActionBar.f7;
-import org.telegram.ui.ActionBar.o6;
-import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Cells.z2;
-import org.telegram.ui.Components.kb1;
-import org.telegram.ui.Components.y9;
+import android.animation.ValueAnimator;
+import org.telegram.messenger.f8;
+import org.telegram.messenger.j20;
+import org.telegram.messenger.u1;
+import org.telegram.ui.Components.gr;
+import org.telegram.ui.bk0;
+import org.telegram.ui.er0;
+import ph.g4;
+import ph.w3;
+import vh.b4;
+import vh.n3;
+import vh.s7;
+import xh.c3;
+import xh.i3;
+import xh.m2;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class i extends z2 {
-    public final /* synthetic */ n f;
+public final /* synthetic */ class i implements q0.a {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i(n nVar, Context context) {
-        super(context);
-        this.f = nVar;
-        this.a = UserConfig.selectedAccount;
-        final int i10 = 1;
-        setOrientation(1);
-        f7.i(y6.a7, this, null);
-        l5 l5Var = new l5(context, 3);
-        l5Var.c = new Path();
-        Paint paint = new Paint(1);
-        l5Var.b = paint;
-        final int i11 = 0;
-        paint.setColor(y6.x0(null, y6.d6, false));
-        paint.setShadowLayer(AndroidUtilities.dp(1.33f), 0.0f, AndroidUtilities.dp(0.33f), 503316480);
-        l5Var.setWillNotDraw(false);
-        l5Var.setOrientation(1);
-        l5Var.setPadding(AndroidUtilities.dp(32.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(32.0f), AndroidUtilities.dp(32.0f));
-        y9 y9Var = new y9(context);
-        this.b = y9Var;
-        y9Var.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Cells.y2
-            public final /* synthetic */ ig.i b;
+    public /* synthetic */ i(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
+    }
 
-            {
-                this.b = this;
-            }
-
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                switch (i11) {
-                    case 0:
-                        this.b.b.getImageReceiver().startAnimation();
+    @Override // q0.a
+    public final void accept(Object obj) {
+        int i10 = this.a;
+        int i11 = 1;
+        Object obj2 = this.b;
+        switch (i10) {
+            case 0:
+                androidx.activity.o oVar = (androidx.activity.o) obj2;
+                int intValue = ((Integer) obj).intValue();
+                switch (oVar.a) {
+                    case 3:
+                        er0 er0Var = (er0) oVar.d;
+                        er0Var.v0(false);
+                        s0 s0Var = er0Var.E1;
+                        s0Var.h(intValue, true);
+                        s0Var.g();
+                        er0Var.setNewColor(intValue);
+                        jg.m0 m0Var = er0Var.p1;
+                        m0Var.setSelectedColorIndex(s0Var.d());
+                        m0Var.getAdapter().f();
                         break;
                     default:
-                        this.b.f.L();
+                        s7 s7Var = (s7) oVar.d;
+                        s7Var.F0(false);
+                        s0 s0Var2 = (s0) oVar.c;
+                        s0Var2.h(intValue, true);
+                        s0Var2.g();
+                        s7Var.setNewColor(intValue);
+                        n3 n3Var = s7Var.f1;
+                        n3Var.setSelectedColorIndex(s0Var2.d());
+                        n3Var.getAdapter().f();
                         break;
                 }
-            }
-        });
-        a();
-        l5Var.addView(y9Var, kb1.u(130, 130, 49));
-        TextView textView = new TextView(context);
-        this.c = textView;
-        textView.setGravity(17);
-        textView.setTextSize(1, 18.0f);
-        f7.V(textView, y6.G6, null);
-        textView.setTypeface(AndroidUtilities.bold());
-        l5Var.addView(textView, kb1.x(-1, -2, 49, 0, 6, 0, 0));
-        TextView textView2 = new TextView(context);
-        this.d = textView2;
-        textView2.setGravity(17);
-        textView2.setTextSize(1, 14.0f);
-        f7.V(textView2, y6.y6, null);
-        l5Var.addView(textView2, kb1.x(-1, -2, 49, 0, 7, 0, 0));
-        TextView textView3 = new TextView(context);
-        this.e = textView3;
-        textView3.setGravity(17);
-        textView3.setBackground(o6.f(new float[]{8.0f}, y6.Oh));
-        textView3.setTextSize(1, 14.0f);
-        f7.V(textView3, y6.Sh, null);
-        textView3.setTypeface(AndroidUtilities.bold());
-        textView3.setPadding(AndroidUtilities.dp(14.0f), AndroidUtilities.dp(14.0f), AndroidUtilities.dp(14.0f), AndroidUtilities.dp(14.0f));
-        textView3.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Cells.y2
-            public final /* synthetic */ ig.i b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                switch (i10) {
-                    case 0:
-                        this.b.b.getImageReceiver().startAnimation();
-                        break;
-                    default:
-                        this.b.f.L();
-                        break;
+            case 1:
+                g4 g4Var = (g4) obj2;
+                if (((c5.g) obj).a == 0) {
+                    org.telegram.messenger.i0.g3(new w3(g4Var, i11));
+                    break;
                 }
-            }
-        });
-        l5Var.addView(textView3, kb1.x(-1, -2, 49, 0, 18, 0, 0));
-        addView(l5Var, kb1.r(-1, -2));
-        set(null);
+                break;
+            case 2:
+                j20 j20Var = (j20) obj2;
+                int i12 = ((c5.g) obj).a;
+                boolean z10 = i12 == 0;
+                String j10 = z10 ? null : u1.j(i12);
+                f8.b("StarsController.buy onResult " + z10 + " " + j10);
+                org.telegram.messenger.i0.g3(new bk0(j20Var, z10, j10, 14));
+                break;
+            case 3:
+                b4.Y((s7) obj2, (Integer) obj);
+                break;
+            case 4:
+                m2 m2Var = (m2) obj2;
+                Float f7 = (Float) obj;
+                m2Var.E.setLoadProgressAnimated(f7.floatValue());
+                if (f7.floatValue() == 1.0f) {
+                    ValueAnimator duration = ValueAnimator.ofFloat(1.0f, 0.0f).setDuration(200L);
+                    duration.setInterpolator(gr.f);
+                    duration.addUpdateListener(new xh.p1(m2Var, 1));
+                    duration.addListener(new sg.r(m2Var, 24));
+                    duration.start();
+                    break;
+                }
+                break;
+            case 5:
+                i3 i3Var = (i3) obj2;
+                Float f10 = (Float) obj;
+                i3Var.I.setLoadProgressAnimated(f10.floatValue());
+                if (f10.floatValue() == 1.0f) {
+                    ValueAnimator duration2 = ValueAnimator.ofFloat(1.0f, 0.0f).setDuration(200L);
+                    duration2.setInterpolator(gr.f);
+                    duration2.addUpdateListener(new c3(i3Var, 1));
+                    duration2.addListener(new sg.r(i3Var, 25));
+                    duration2.start();
+                    i3Var.O();
+                    break;
+                }
+                break;
+            default:
+                ((zf.m) obj2).R.K4(((Float) obj).floatValue());
+                break;
+        }
     }
 }

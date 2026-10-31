@@ -1,13 +1,22 @@
 package w7;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+import android.os.Parcel;
+import android.os.Parcelable;
+
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public abstract class e0 {
-    public static xd.e a(int i10, int i11) {
-        if (i11 > Integer.MIN_VALUE) {
-            return new xd.e(i10, i11 - 1, 1);
+    public static Parcelable a(Parcelable parcelable, Parcelable.Creator creator) {
+        if (parcelable == null) {
+            return null;
         }
-        xd.e eVar = xd.e.d;
-        return xd.e.d;
+        Parcel obtain = Parcel.obtain();
+        try {
+            parcelable.writeToParcel(obtain, 0);
+            obtain.setDataPosition(0);
+            return (Parcelable) creator.createFromParcel(obtain);
+        } finally {
+            obtain.recycle();
+        }
     }
 }

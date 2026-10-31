@@ -1,58 +1,88 @@
 package tg;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.widget.FrameLayout;
-import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Components.kb1;
-import org.telegram.ui.Components.nm0;
+import android.view.View;
+import android.view.ViewGroup;
+import ei.q;
+import ei.r;
+import java.lang.ref.WeakReference;
+import java.util.Iterator;
+import org.telegram.ui.web.k0;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes4.dex */
-public abstract class b extends FrameLayout implements l0 {
-    public final u6 a;
-    public final nm0 b;
-    public final s4.c0 c;
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final class b {
+    public final hi.a a;
+    public int b;
+    public int c;
+    public je.b d;
+    public je.b e;
+    public zg.h f;
+    public ViewGroup g;
+    public r h;
+    public boolean i;
 
-    public b(Context context, u6 u6Var) {
-        super(context);
-        this.a = u6Var;
-        nm0 nm0Var = new nm0(context, u6Var);
-        this.b = nm0Var;
-        nm0Var.setNestedScrollingEnabled(true);
-        nm0Var.setAdapter(a());
-        s4.c0 c0Var = new s4.c0(1, false);
-        this.c = c0Var;
-        nm0Var.setLayoutManager(c0Var);
-        nm0Var.setClipToPadding(false);
-        addView(nm0Var, kb1.g(-1.0f, -1));
+    public b(hi.a aVar) {
+        this.a = aVar;
     }
 
-    public abstract s4.h0 a();
+    public final vg.f a(View view) {
+        return c(view, null, false);
+    }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        Paint V0 = y6.V0("paintDivider", this.a);
-        if (V0 == null) {
-            V0 = y6.k0;
+    public final vg.f b(View view, wg.a aVar) {
+        return c(view, aVar, false);
+    }
+
+    public final vg.f c(View view, wg.a aVar, boolean z10) {
+        hi.a aVar2 = this.a;
+        vg.f a2 = aVar2 instanceof a ? ((a) aVar2).a() : new vg.f(aVar2);
+        if (this.i && !a2.S) {
+            a2.S = true;
+            a2.V = true;
         }
-        canvas.drawLine(0.0f, getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight() - 1, V0);
+        a2.o(aVar);
+        int i10 = this.b;
+        int i11 = this.c;
+        a2.H = i10;
+        a2.I = i11;
+        je.b bVar = this.e;
+        if (bVar != null && view != null) {
+            bVar.add(view);
+        }
+        r rVar = this.h;
+        if (rVar != null && view != null) {
+            rVar.c.add(new q(view, a2));
+        }
+        if (this.f != null && this.g != null && view != null) {
+            this.f.d(view, this.g, new k0(17, a2, new WeakReference(view)), z10);
+        }
+        je.b bVar2 = this.d;
+        if (bVar2 != null) {
+            bVar2.add(a2);
+        }
+        return a2;
     }
 
-    @Override // tg.l0
-    public void setOffset(float f7) {
-        if (Math.abs(f7 / getMeasuredWidth()) == 1.0f) {
-            nm0 nm0Var = this.b;
-            if (nm0Var.K(0) == null || nm0Var.K(0).a.getTop() != nm0Var.getPaddingTop()) {
-                nm0Var.v0(0);
+    public final void d() {
+        je.b bVar = this.e;
+        if (bVar != null) {
+            Iterator it = bVar.iterator();
+            while (it.hasNext()) {
+                ((View) it.next()).invalidate();
             }
         }
     }
 
-    public void setTopOffset(int i10) {
-        this.b.setPadding(0, i10, 0, 0);
+    public final void e(r rVar) {
+        this.h = rVar;
+    }
+
+    public final void f(je.b bVar) {
+        this.e = bVar;
+    }
+
+    public final void g(zg.h hVar, ViewGroup viewGroup) {
+        this.f = hVar;
+        this.g = viewGroup;
     }
 }

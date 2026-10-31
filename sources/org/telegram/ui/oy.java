@@ -1,45 +1,27 @@
 package org.telegram.ui;
 
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.MessageObject;
+import android.content.Context;
+import android.view.View;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class oy implements ImageReceiver.ImageReceiverDelegate {
-    public final /* synthetic */ py a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ MessageObject c;
-    public final /* synthetic */ qy d;
+public final class oy extends org.telegram.ui.Components.z41 {
+    public static final /* synthetic */ int b = 0;
 
-    public oy(qy qyVar, py pyVar, boolean z10, MessageObject messageObject) {
-        this.d = qyVar;
-        this.a = pyVar;
-        this.b = z10;
-        this.c = messageObject;
+    static {
+        org.telegram.ui.Components.z41.h(new oy());
     }
 
-    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
-    public final void didSetImage(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
-        py pyVar = this.a;
-        if (pyVar.r.getLottieAnimation() != null) {
-            pyVar.r.getLottieAnimation().N(0, false, true);
-        }
+    @Override // org.telegram.ui.Components.z41
+    public final void b(View view, org.telegram.ui.Components.a51 a51Var, boolean z10, org.telegram.ui.Components.p51 p51Var, org.telegram.ui.Components.u51 u51Var) {
+        py pyVar = (py) view;
+        pyVar.n = (org.telegram.messenger.q20) a51Var.G;
+        pyVar.r = a51Var;
+        pyVar.b(a51Var.z, false);
     }
 
-    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
-    public final /* synthetic */ void didSetImageBitmap(int i10, String str, Drawable drawable) {
-        org.telegram.messenger.p5.a(this, i10, str, drawable);
-    }
-
-    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
-    public final void onAnimationReady(ImageReceiver imageReceiver) {
-        MessageObject messageObject;
-        if (this.b && (messageObject = this.c) != null && messageObject.isAnimatedAnimatedEmoji() && imageReceiver.getLottieAnimation() != null && imageReceiver.getLottieAnimation().x == null) {
-            try {
-                this.d.G.performHapticFeedback(3, 1);
-            } catch (Exception unused) {
-            }
-        }
+    @Override // org.telegram.ui.Components.z41
+    public final View d(Context context, org.telegram.ui.Components.tk0 tk0Var, int i10, org.telegram.ui.ActionBar.p6 p6Var) {
+        return new py(context, p6Var);
     }
 }

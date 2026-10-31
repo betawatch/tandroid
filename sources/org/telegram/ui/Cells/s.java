@@ -7,13 +7,11 @@ import android.graphics.RectF;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import java.util.HashSet;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.ui.Components.ut;
+import org.telegram.ui.Components.vs;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class s extends LinearLayout implements org.telegram.ui.ActionBar.p6 {
+public final class s extends LinearLayout implements org.telegram.ui.ActionBar.k6 {
     public static final /* synthetic */ int h = 0;
     public Paint a;
     public Paint b;
@@ -26,12 +24,12 @@ public final class s extends LinearLayout implements org.telegram.ui.ActionBar.p
         this.e = f7;
         this.f = true;
         TextView textView = this.d;
-        int x02 = org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.G6, false);
-        int i10 = org.telegram.ui.ActionBar.y6.I6;
-        textView.setTextColor(i0.a.f(f7, x02, org.telegram.ui.ActionBar.y6.x0(null, i10, false)));
+        int x02 = org.telegram.ui.ActionBar.t6.x0(null, org.telegram.ui.ActionBar.t6.G6, false);
+        int i10 = org.telegram.ui.ActionBar.t6.I6;
+        textView.setTextColor(i0.b.f(f7, x02, org.telegram.ui.ActionBar.t6.x0(null, i10, false)));
         Paint paint = this.a;
-        paint.setColor(i0.a.f(f7, i0.a.o(org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.M6, false), 63), org.telegram.ui.ActionBar.y6.x0(null, i10, false)));
-        paint.setStrokeWidth(Math.max(2, AndroidUtilities.dp(AndroidUtilities.lerp(0.5f, 2.0f, f7))));
+        paint.setColor(i0.b.f(f7, i0.b.o(org.telegram.ui.ActionBar.t6.x0(null, org.telegram.ui.ActionBar.t6.M6, false), 63), org.telegram.ui.ActionBar.t6.x0(null, i10, false)));
+        paint.setStrokeWidth(Math.max(2, org.telegram.messenger.i0.L(org.telegram.messenger.i0.T1(0.5f, 2.0f, f7))));
         invalidate();
     }
 
@@ -46,7 +44,7 @@ public final class s extends LinearLayout implements org.telegram.ui.ActionBar.p
             return;
         }
         ValueAnimator duration = ValueAnimator.ofFloat(f10, f7).setDuration(250L);
-        duration.setInterpolator(ut.e);
+        duration.setInterpolator(vs.e);
         duration.addUpdateListener(new r(this, 0));
         duration.start();
     }
@@ -55,15 +53,15 @@ public final class s extends LinearLayout implements org.telegram.ui.ActionBar.p
     public final void draw(Canvas canvas) {
         Paint paint = this.a;
         float strokeWidth = paint.getStrokeWidth();
-        RectF rectF = AndroidUtilities.rectTmp;
+        RectF rectF = org.telegram.messenger.i0.P;
         q qVar = this.c;
         rectF.set(qVar.getLeft() + strokeWidth, qVar.getTop() + strokeWidth, qVar.getRight() - strokeWidth, qVar.getBottom() - strokeWidth);
-        canvas.drawRoundRect(rectF, AndroidUtilities.dp(18.0f), AndroidUtilities.dp(18.0f), this.b);
+        canvas.drawRoundRect(rectF, org.telegram.messenger.i0.L(18.0f), org.telegram.messenger.i0.L(18.0f), this.b);
         super.draw(canvas);
-        canvas.drawRoundRect(rectF, AndroidUtilities.dp(18.0f), AndroidUtilities.dp(18.0f), paint);
+        canvas.drawRoundRect(rectF, org.telegram.messenger.i0.L(18.0f), org.telegram.messenger.i0.L(18.0f), paint);
     }
 
-    @Override // org.telegram.ui.ActionBar.p6
+    @Override // org.telegram.ui.ActionBar.k6
     public final void updateColors() {
         try {
             if (!this.f || this.d == null) {
@@ -71,11 +69,11 @@ public final class s extends LinearLayout implements org.telegram.ui.ActionBar.p
             }
             a(this.e);
         } catch (Exception e) {
-            FileLog.e(e);
+            org.telegram.messenger.f8.g(e, true);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.p6
+    @Override // org.telegram.ui.ActionBar.k6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

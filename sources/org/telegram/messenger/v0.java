@@ -1,33 +1,19 @@
 package org.telegram.messenger;
 
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.recaptcha.RecaptchaTasksClient;
-import org.telegram.messenger.CaptchaController;
+import android.net.ConnectivityManager;
+import android.net.Network;
+import android.net.NetworkCapabilities;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final /* synthetic */ class v0 implements OnSuccessListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ String b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ CaptchaController.Request d;
-
-    public /* synthetic */ v0(String str, String str2, CaptchaController.Request request, int i10) {
-        this.a = i10;
-        this.b = str;
-        this.c = str2;
-        this.d = request;
+public final class v0 extends ConnectivityManager.NetworkCallback {
+    @Override // android.net.ConnectivityManager.NetworkCallback
+    public final void onAvailable(Network network) {
+        w0.r = -1;
     }
 
-    @Override // com.google.android.gms.tasks.OnSuccessListener
-    public final void onSuccess(Object obj) {
-        switch (this.a) {
-            case 0:
-                CaptchaController.lambda$request$2(this.b, this.c, this.d, (RecaptchaTasksClient) obj);
-                break;
-            default:
-                CaptchaController.lambda$request$0(this.b, this.c, this.d, (String) obj);
-                break;
-        }
+    @Override // android.net.ConnectivityManager.NetworkCallback
+    public final void onCapabilitiesChanged(Network network, NetworkCapabilities networkCapabilities) {
+        w0.r = -1;
     }
 }

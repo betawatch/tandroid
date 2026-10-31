@@ -8,11 +8,12 @@ import java.util.List;
 import java.util.ListIterator;
 import java.util.RandomAccess;
 import java.util.function.UnaryOperator;
+import w7.z7;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public abstract class d extends a implements List, RandomAccess, j$.util.List {
-    public static final b b = new b(g.e, 0);
+    public static final b b = new b(e.e, 0);
 
     @Override // java.util.List
     public final void add(int i10, Object obj) {
@@ -65,15 +66,6 @@ public abstract class d extends a implements List, RandomAccess, j$.util.List {
         return false;
     }
 
-    @Override // u7.a
-    public int h(Object[] objArr) {
-        int size = size();
-        for (int i10 = 0; i10 < size; i10++) {
-            objArr[i10] = get(i10);
-        }
-        return size;
-    }
-
     @Override // java.util.Collection, java.util.List
     public final int hashCode() {
         int size = size();
@@ -103,6 +95,15 @@ public abstract class d extends a implements List, RandomAccess, j$.util.List {
         return listIterator(0);
     }
 
+    @Override // u7.a
+    public int l(Object[] objArr) {
+        int size = size();
+        for (int i10 = 0; i10 < size; i10++) {
+            objArr[i10] = get(i10);
+        }
+        return size;
+    }
+
     @Override // java.util.List
     public final int lastIndexOf(Object obj) {
         if (obj == null) {
@@ -124,15 +125,18 @@ public abstract class d extends a implements List, RandomAccess, j$.util.List {
     @Override // java.util.List
     /* renamed from: p */
     public d subList(int i10, int i11) {
-        w7.m.c(i10, i11, size());
+        z7.b(i10, i11, size());
         int i12 = i11 - i10;
-        return i12 == size() ? this : i12 == 0 ? g.e : new c(this, i10, i12);
+        return i12 == size() ? this : i12 == 0 ? e.e : new c(this, i10, i12);
     }
 
     @Override // java.util.List
     /* renamed from: q, reason: merged with bridge method [inline-methods] */
     public final b listIterator(int i10) {
-        w7.m.b(i10, size());
+        int size = size();
+        if (i10 < 0 || i10 > size) {
+            throw new IndexOutOfBoundsException(z7.c(i10, size, "index"));
+        }
         return isEmpty() ? b : new b(this, i10);
     }
 

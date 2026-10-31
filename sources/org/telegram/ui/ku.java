@@ -1,44 +1,67 @@
 package org.telegram.ui;
 
+import android.content.res.Configuration;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
 import android.view.View;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import java.util.HashSet;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class ku extends org.telegram.ui.Components.n91 {
-    public final /* synthetic */ nu a;
+public final class ku extends View implements org.telegram.ui.ActionBar.k6 {
+    public Path a;
+    public Paint b;
+    public boolean c;
 
-    public ku(nu nuVar) {
-        this.a = nuVar;
+    @Override // android.view.View
+    public final void onConfigurationChanged(Configuration configuration) {
+        super.onConfigurationChanged(configuration);
+        requestLayout();
     }
 
-    @Override // org.telegram.ui.Components.n91
-    public final void b(View view, int i10, int i11) {
-        ju juVar = (ju) view;
-        juVar.g3 = i10;
-        juVar.n3.clear();
-        juVar.u3 = juVar.C1(6) + juVar.E1(6) <= 0;
-        juVar.F1();
-        juVar.G1(false);
-        juVar.v0(0);
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        canvas.drawPath(this.a, this.b);
     }
 
-    @Override // org.telegram.ui.Components.n91
-    public final View d(int i10) {
-        nu nuVar = this.a;
-        ju juVar = new ju(nuVar, nuVar.getParentActivity());
-        nuVar.e.add(juVar);
-        return juVar;
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.i0.L(13.0f), TLObject.FLAG_30));
+        setTop(this.c);
     }
 
-    @Override // org.telegram.ui.Components.n91
-    public final int e() {
-        return 4;
+    public void setTop(boolean z10) {
+        Path path = this.a;
+        path.rewind();
+        this.c = z10;
+        if (!z10) {
+            float L = org.telegram.messenger.i0.L(8.0f);
+            RectF rectF = org.telegram.messenger.i0.P;
+            rectF.set(0.0f, ((-getMeasuredHeight()) * 2) - org.telegram.messenger.i0.L(4.0f), getMeasuredWidth(), getMeasuredHeight() - org.telegram.messenger.i0.L(4.0f));
+            path.addRoundRect(rectF, L, L, Path.Direction.CW);
+            return;
+        }
+        float L2 = org.telegram.messenger.i0.L(14.0f);
+        RectF rectF2 = org.telegram.messenger.i0.P;
+        rectF2.set(0.0f, org.telegram.messenger.i0.L(4.0f), getMeasuredWidth(), (getMeasuredHeight() * 2) + org.telegram.messenger.i0.L(4.0f));
+        path.addRoundRect(rectF2, L2, L2, Path.Direction.CW);
     }
 
-    @Override // org.telegram.ui.Components.n91
-    public final CharSequence g(int i10) {
-        return i10 != 0 ? i10 != 1 ? i10 != 2 ? i10 != 3 ? "" : LocaleController.getString(R.string.NetworkUsageRoamingTab) : LocaleController.getString(R.string.NetworkUsageWiFiTab) : LocaleController.getString(R.string.NetworkUsageMobileTab) : LocaleController.getString(R.string.NetworkUsageAllTab);
+    @Override // org.telegram.ui.ActionBar.k6
+    public final void updateColors() {
+        try {
+            this.b.setColor(org.telegram.ui.ActionBar.t6.x0(null, org.telegram.ui.ActionBar.t6.d6, false));
+            invalidate();
+        } catch (Exception e) {
+            org.telegram.messenger.f8.g(e, true);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.k6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

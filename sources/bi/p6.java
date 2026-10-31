@@ -1,45 +1,25 @@
 package bi;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes4.dex */
-public final class p6 extends Drawable {
-    public final float a;
-    public final Paint b;
+public final class p6 {
+    public final TL_iv.PageBlock a;
+    public final int b;
+    public final int c;
+    public final boolean d;
+    public final boolean e;
 
-    public p6(float f7, int i10) {
-        Paint paint = new Paint(1);
-        this.b = paint;
-        this.a = f7;
-        paint.setColor(i10);
+    public p6(TL_iv.PageBlock pageBlock, int i10, int i11) {
+        this(pageBlock, i10, i11, false, false);
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(getBounds());
-        Paint paint = this.b;
-        float f7 = this.a;
-        canvas.drawRoundRect(rectF, f7, f7, paint);
-        AndroidUtilities.drawStroke(canvas, rectF, f7);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    public p6(TL_iv.PageBlock pageBlock, int i10, int i11, boolean z10, boolean z11) {
+        this.a = pageBlock;
+        this.b = i10;
+        this.c = i11;
+        this.d = z10;
+        this.e = z11;
     }
 }

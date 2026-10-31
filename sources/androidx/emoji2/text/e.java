@@ -1,28 +1,27 @@
 package androidx.emoji2.text;
 
-import a8.i1;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class e extends i1 {
+public final class e extends v7.t {
     public final /* synthetic */ f a;
 
     public e(f fVar) {
         this.a = fVar;
     }
 
-    @Override // a8.i1
+    @Override // v7.t
     public final void a(Throwable th2) {
         ((l) this.a.b).d(th2);
     }
 
-    @Override // a8.i1
-    public final void b(com.google.firebase.messaging.q qVar) {
-        f fVar = this.a;
-        fVar.c = qVar;
-        fVar.a = new n4.s((com.google.firebase.messaging.q) fVar.c, new pa.d(), ((l) fVar.b).h);
-        l lVar = (l) fVar.b;
+    @Override // v7.t
+    public final void b(ji.f fVar) {
+        f fVar2 = this.a;
+        fVar2.c = fVar;
+        fVar2.a = new hf.b((ji.f) fVar2.c, new hb.a(2), ((l) fVar2.b).h);
+        l lVar = (l) fVar2.b;
         lVar.getClass();
         ArrayList arrayList = new ArrayList();
         lVar.a.writeLock().lock();

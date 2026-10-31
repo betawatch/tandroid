@@ -1,187 +1,90 @@
 package g2;
 
-import a8.yb;
-import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
-import e2.n0;
-import j$.util.Objects;
-import java.util.ArrayList;
-import java.util.Collections;
+import b2.q0;
+import j$.util.DesugarCollections;
+import java.util.HashMap;
 import java.util.Map;
+import v7.t6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class n implements h {
-    public final Context a;
-    public final ArrayList b;
-    public final h c;
-    public t d;
-    public b e;
-    public e f;
-    public h h;
-    public e0 n;
-    public f r;
-    public a0 s;
-    public h v;
+public final class n {
+    public static final /* synthetic */ int i = 0;
+    public final Uri a;
+    public final int b;
+    public final byte[] c;
+    public final Map d;
+    public final long e;
+    public final long f;
+    public final String g;
+    public final int h;
 
-    public n(Context context, h hVar) {
-        this.a = context.getApplicationContext();
-        hVar.getClass();
-        this.c = hVar;
-        this.b = new ArrayList();
+    static {
+        q0.a("media3.datasource");
     }
 
-    public static void e(h hVar, c0 c0Var) {
-        if (hVar != null) {
-            hVar.addTransferListener(c0Var);
+    public n(Uri uri, int i10, byte[] bArr, Map map, long j10, long j11, String str, int i11) {
+        t6.f(j10 >= 0);
+        t6.f(j10 >= 0);
+        t6.f(j11 > 0 || j11 == -1);
+        uri.getClass();
+        this.a = uri;
+        this.b = i10;
+        this.c = (bArr == null || bArr.length == 0) ? null : bArr;
+        this.d = DesugarCollections.unmodifiableMap(new HashMap(map));
+        this.e = j10;
+        this.f = j11;
+        this.g = str;
+        this.h = i11;
+    }
+
+    public final m a() {
+        m mVar = new m();
+        mVar.e = this.a;
+        mVar.a = this.b;
+        mVar.f = this.c;
+        mVar.g = this.d;
+        mVar.b = this.e;
+        mVar.d = this.f;
+        mVar.h = this.g;
+        mVar.c = this.h;
+        return mVar;
+    }
+
+    public final n b(long j10) {
+        long j11 = this.f;
+        long j12 = j11 != -1 ? j11 - j10 : -1L;
+        if (j10 == 0 && j11 == j12) {
+            return this;
         }
+        return new n(this.a, this.b, this.c, this.d, this.e + j10, j12, this.g, this.h);
     }
 
-    public final void a(h hVar) {
-        int i10 = 0;
-        while (true) {
-            ArrayList arrayList = this.b;
-            if (i10 >= arrayList.size()) {
-                return;
-            }
-            hVar.addTransferListener((c0) arrayList.get(i10));
-            i10++;
-        }
-    }
-
-    @Override // g2.h
-    public final void addTransferListener(c0 c0Var) {
-        c0Var.getClass();
-        this.c.addTransferListener(c0Var);
-        this.b.add(c0Var);
-        e(this.d, c0Var);
-        e(this.e, c0Var);
-        e(this.f, c0Var);
-        e(this.h, c0Var);
-        e(this.n, c0Var);
-        e(this.r, c0Var);
-        e(this.s, c0Var);
-    }
-
-    @Override // g2.h
-    public final void close() {
-        h hVar = this.v;
-        if (hVar != null) {
-            try {
-                hVar.close();
-            } finally {
-                this.v = null;
-            }
-        }
-    }
-
-    @Override // g2.h
-    public final Map getResponseHeaders() {
-        h hVar = this.v;
-        return hVar == null ? Collections.EMPTY_MAP : hVar.getResponseHeaders();
-    }
-
-    @Override // g2.h
-    public final Uri getUri() {
-        h hVar = this.v;
-        if (hVar == null) {
-            return null;
-        }
-        return hVar.getUri();
-    }
-
-    @Override // g2.h
-    public final long open(m mVar) {
-        yb.p(this.v == null);
-        Uri uri = mVar.a;
-        String scheme = uri.getScheme();
-        String str = n0.a;
-        String scheme2 = uri.getScheme();
-        boolean isEmpty = TextUtils.isEmpty(scheme2);
-        Context context = this.a;
-        if (isEmpty || Objects.equals(scheme2, "file")) {
-            String path = uri.getPath();
-            if (path == null || !path.startsWith("/android_asset/")) {
-                if (this.d == null) {
-                    t tVar = new t(false);
-                    this.d = tVar;
-                    a(tVar);
-                }
-                this.v = this.d;
-            } else {
-                if (this.e == null) {
-                    b bVar = new b(context);
-                    this.e = bVar;
-                    a(bVar);
-                }
-                this.v = this.e;
-            }
-        } else if ("asset".equals(scheme)) {
-            if (this.e == null) {
-                b bVar2 = new b(context);
-                this.e = bVar2;
-                a(bVar2);
-            }
-            this.v = this.e;
-        } else if ("content".equals(scheme)) {
-            if (this.f == null) {
-                e eVar = new e(context);
-                this.f = eVar;
-                a(eVar);
-            }
-            this.v = this.f;
+    public final String toString() {
+        String str;
+        StringBuilder sb2 = new StringBuilder("DataSpec[");
+        int i10 = this.b;
+        if (i10 == 1) {
+            str = "GET";
+        } else if (i10 == 2) {
+            str = "POST";
         } else {
-            boolean equals = "rtmp".equals(scheme);
-            h hVar = this.c;
-            if (equals) {
-                if (this.h == null) {
-                    try {
-                        h hVar2 = (h) Class.forName("androidx.media3.datasource.rtmp.RtmpDataSource").getConstructor(null).newInstance(null);
-                        this.h = hVar2;
-                        a(hVar2);
-                    } catch (ClassNotFoundException unused) {
-                        e2.a.l("DefaultDataSource", "Attempting to play RTMP stream without depending on the RTMP extension");
-                    } catch (Exception e) {
-                        throw new RuntimeException("Error instantiating RTMP extension", e);
-                    }
-                    if (this.h == null) {
-                        this.h = hVar;
-                    }
-                }
-                this.v = this.h;
-            } else if ("udp".equals(scheme)) {
-                if (this.n == null) {
-                    e0 e0Var = new e0();
-                    this.n = e0Var;
-                    a(e0Var);
-                }
-                this.v = this.n;
-            } else if ("data".equals(scheme)) {
-                if (this.r == null) {
-                    f fVar = new f(false);
-                    this.r = fVar;
-                    a(fVar);
-                }
-                this.v = this.r;
-            } else if ("rawresource".equals(scheme) || "android.resource".equals(scheme)) {
-                if (this.s == null) {
-                    a0 a0Var = new a0(context);
-                    this.s = a0Var;
-                    a(a0Var);
-                }
-                this.v = this.s;
-            } else {
-                this.v = hVar;
+            if (i10 != 3) {
+                throw new IllegalStateException();
             }
+            str = "HEAD";
         }
-        return this.v.open(mVar);
-    }
-
-    @Override // b2.p
-    public final int read(byte[] bArr, int i10, int i11) {
-        h hVar = this.v;
-        hVar.getClass();
-        return hVar.read(bArr, i10, i11);
+        sb2.append(str);
+        sb2.append(" ");
+        sb2.append(this.a);
+        sb2.append(", ");
+        sb2.append(this.e);
+        sb2.append(", ");
+        sb2.append(this.f);
+        sb2.append(", ");
+        sb2.append(this.g);
+        sb2.append(", ");
+        return a1.g.p(sb2, this.h, "]");
     }
 }

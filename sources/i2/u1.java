@@ -1,71 +1,29 @@
 package i2;
 
-import android.os.Handler;
-import android.os.Looper;
-import android.os.SystemClock;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class u1 implements x0 {
-    public long a;
-    public long b;
-    public boolean c;
-    public final Object d;
-    public Object e;
+public final class u1 {
+    public static final u1 b;
+    public final e9.y0 a;
 
-    public u1(org.telegram.ui.web.h1 h1Var) {
-        this.d = new Handler(Looper.getMainLooper());
-        this.e = h1Var;
+    static {
+        a4.l lVar = new a4.l(20);
+        lVar.b = e9.y0.t(2, 1, 5);
+        b = new u1(lVar);
     }
 
-    @Override // i2.x0
-    public long a() {
-        long j10 = this.a;
-        if (!this.c) {
-            return j10;
-        }
-        ((e2.g0) this.d).getClass();
-        long elapsedRealtime = SystemClock.elapsedRealtime() - this.b;
-        return (((b2.a1) this.e).a == 1.0f ? e2.n0.S(elapsedRealtime) : elapsedRealtime * r4.c) + j10;
+    public u1(a4.l lVar) {
+        this.a = (e9.y0) lVar.b;
     }
 
-    @Override // i2.x0
-    public /* synthetic */ boolean b() {
-        return false;
+    public final boolean equals(Object obj) {
+        return (obj instanceof u1) && this.a.equals(((u1) obj).a);
     }
 
-    public void c(long j10) {
-        this.a = j10;
-        if (this.c) {
-            ((e2.g0) this.d).getClass();
-            this.b = SystemClock.elapsedRealtime();
-        }
-    }
-
-    public void d() {
-        if (this.c) {
-            return;
-        }
-        ((e2.g0) this.d).getClass();
-        this.b = SystemClock.elapsedRealtime();
-        this.c = true;
-    }
-
-    @Override // i2.x0
-    public void f(b2.a1 a1Var) {
-        if (this.c) {
-            c(a());
-        }
-        this.e = a1Var;
-    }
-
-    @Override // i2.x0
-    public b2.a1 h() {
-        return (b2.a1) this.e;
-    }
-
-    public u1(e2.g0 g0Var) {
-        this.d = g0Var;
-        this.e = b2.a1.d;
+    public final int hashCode() {
+        Boolean bool = Boolean.TRUE;
+        return Objects.hash(this.a, null, null, bool, bool, bool, bool, bool);
     }
 }

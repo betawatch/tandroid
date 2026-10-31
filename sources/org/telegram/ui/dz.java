@@ -1,20 +1,36 @@
 package org.telegram.ui;
 
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.tgnet.TLObject;
+import android.view.KeyEvent;
+import android.widget.TextView;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class dz extends FrameLayout {
-    public xh.n a;
+public final /* synthetic */ class dz implements TextView.OnEditorActionListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ AlertDialog$Builder b;
 
-    public xh.n getSubtitleTextView() {
-        return this.a;
+    public /* synthetic */ dz(AlertDialog$Builder alertDialog$Builder, int i10) {
+        this.a = i10;
+        this.b = alertDialog$Builder;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
+    @Override // android.widget.TextView.OnEditorActionListener
+    public final boolean onEditorAction(TextView textView, int i10, KeyEvent keyEvent) {
+        switch (this.a) {
+            case 0:
+                org.telegram.messenger.i0.v1(textView);
+                this.b.a.d(-1).callOnClick();
+                break;
+            case 1:
+                org.telegram.messenger.i0.v1(textView);
+                this.b.a.d(-1).callOnClick();
+                break;
+            default:
+                org.telegram.messenger.i0.v1(textView);
+                this.b.a.d(-1).callOnClick();
+                break;
+        }
+        return false;
     }
 }

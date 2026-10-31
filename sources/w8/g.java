@@ -1,37 +1,22 @@
 package w8;
 
-import a8.df;
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.google.android.gms.wallet.wobs.CommonWalletObject;
+import v8.s;
+import w7.h0;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class g extends p6.a {
-    public static final Parcelable.Creator<g> CREATOR = new s(12);
-    public final int a;
-    public final String b;
-    public final CommonWalletObject c;
-
-    public g(int i10, String str, String str2, CommonWalletObject commonWalletObject) {
-        this.a = i10;
-        this.b = str2;
-        if (i10 >= 3) {
-            this.c = commonWalletObject;
-            return;
-        }
-        CommonWalletObject commonWalletObject2 = new CommonWalletObject();
-        commonWalletObject2.a = str;
-        this.c = commonWalletObject2;
-    }
+public final class g extends o6.a {
+    public static final Parcelable.Creator<g> CREATOR = new s(20);
+    public String a;
+    public String b;
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q5 = df.q(parcel, 20293);
-        df.s(parcel, 1, 4);
-        parcel.writeInt(this.a);
-        df.l(parcel, 3, this.b);
-        df.k(parcel, 4, this.c, i10);
-        df.r(parcel, q5);
+        int q6 = h0.q(parcel, 20293);
+        h0.l(parcel, 2, this.a);
+        h0.l(parcel, 3, this.b);
+        h0.r(parcel, q6);
     }
 }

@@ -1,23 +1,19 @@
 package org.telegram.ui.ActionBar;
 
-import android.view.MenuItem;
-import android.view.View;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class v4 implements View.OnClickListener {
-    public final /* synthetic */ a5 a;
+public interface v4 {
+    void a(float f7);
 
-    public v4(a5 a5Var) {
-        this.a = a5Var;
-    }
+    void b(ActionBarLayout actionBarLayout, boolean z10);
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        MenuItem.OnMenuItemClickListener onMenuItemClickListener;
-        if (!(view.getTag() instanceof MenuItem) || (onMenuItemClickListener = this.a.K) == null) {
-            return;
-        }
-        onMenuItemClickListener.onMenuItemClick((MenuItem) view.getTag());
-    }
+    void e(int[] iArr);
+
+    boolean h(k2 k2Var, ActionBarLayout actionBarLayout);
+
+    boolean j();
+
+    boolean k(ActionBarLayout actionBarLayout);
+
+    boolean l(ActionBarLayout actionBarLayout, w4 w4Var);
 }

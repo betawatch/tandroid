@@ -1,9 +1,7 @@
 package db;
 
-import a8.h0;
-import a8.jd;
+import android.support.v4.media.session.a0;
 import android.util.Log;
-import ce.c0;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -11,13 +9,14 @@ import java.io.Serializable;
 import java.net.URLConnection;
 import java.util.Map;
 import javax.net.ssl.HttpsURLConnection;
+import ld.p;
 import org.json.JSONException;
 import org.json.JSONObject;
-import ud.p;
+import td.c0;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class b extends nd.i implements p {
+public final class b extends ed.j implements p {
     public final /* synthetic */ int a = 1;
     public int b;
     public /* synthetic */ Object c;
@@ -26,48 +25,48 @@ public final class b extends nd.i implements p {
     public final /* synthetic */ Object f;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b(h0 h0Var, Map map, b bVar, c cVar, ld.c cVar2) {
+    public b(a0 a0Var, Map map, b bVar, c cVar, cd.c cVar2) {
         super(2, cVar2);
-        this.d = h0Var;
+        this.d = a0Var;
         this.c = map;
         this.e = bVar;
         this.f = cVar;
     }
 
     /* JADX WARN: Type inference failed for: r3v0, types: [java.lang.Object, java.util.Map] */
-    @Override // nd.a
-    public final ld.c create(Object obj, ld.c cVar) {
+    @Override // ed.a
+    public final cd.c create(Object obj, cd.c cVar) {
         switch (this.a) {
             case 0:
                 b bVar = new b((d) this.f, cVar);
                 bVar.c = obj;
                 return bVar;
             default:
-                return new b((h0) this.d, this.c, (b) this.e, (c) this.f, cVar);
+                return new b((a0) this.d, this.c, (b) this.e, (c) this.f, cVar);
         }
     }
 
-    @Override // ud.p
+    @Override // ld.p
     public final Object invoke(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                return ((b) create((JSONObject) obj, (ld.c) obj2)).invokeSuspend(jd.i.a);
+                return ((b) create((JSONObject) obj, (cd.c) obj2)).invokeSuspend(ad.j.a);
             default:
-                return ((b) create((c0) obj, (ld.c) obj2)).invokeSuspend(jd.i.a);
+                return ((b) create((c0) obj, (cd.c) obj2)).invokeSuspend(ad.j.a);
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:109:0x01ca  */
-    /* JADX WARN: Removed duplicated region for block: B:115:0x01e9  */
-    /* JADX WARN: Removed duplicated region for block: B:53:0x028e  */
+    /* JADX WARN: Removed duplicated region for block: B:110:0x01c5  */
+    /* JADX WARN: Removed duplicated region for block: B:116:0x01e4  */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x0289  */
     /* JADX WARN: Removed duplicated region for block: B:55:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x0253  */
-    /* JADX WARN: Removed duplicated region for block: B:67:0x0236  */
-    /* JADX WARN: Removed duplicated region for block: B:72:0x0250  */
-    /* JADX WARN: Removed duplicated region for block: B:76:0x0214  */
-    /* JADX WARN: Removed duplicated region for block: B:85:0x01f2  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x024e  */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x0231  */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x024b  */
+    /* JADX WARN: Removed duplicated region for block: B:76:0x020f  */
+    /* JADX WARN: Removed duplicated region for block: B:85:0x01ed  */
     /* JADX WARN: Type inference failed for: r8v4, types: [java.lang.Object, java.util.Map] */
-    @Override // nd.a
+    @Override // ed.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -81,18 +80,18 @@ public final class b extends nd.i implements p {
         Object obj2;
         Object obj3;
         Object obj4;
-        jd.i iVar;
+        ad.j jVar;
         Object c10;
         switch (this.a) {
             case 0:
                 k kVar = ((d) this.f).c;
-                md.a aVar = md.a.a;
+                dd.a aVar = dd.a.a;
                 int i10 = this.b;
                 n1.d dVar = k.f;
-                jd.i iVar2 = jd.i.a;
+                ad.j jVar2 = ad.j.a;
                 switch (i10) {
                     case 0:
-                        jd.b(obj);
+                        l9.b.b(obj);
                         JSONObject jSONObject = (JSONObject) this.c;
                         Log.d("SessionConfigFetcher", "Fetched settings: " + jSONObject);
                         kotlin.jvm.internal.p pVar6 = new kotlin.jvm.internal.p();
@@ -104,25 +103,25 @@ public final class b extends nd.i implements p {
                             JSONObject jSONObject2 = (JSONObject) obj5;
                             try {
                                 bool = jSONObject2.has("sessions_enabled") ? (Boolean) jSONObject2.get("sessions_enabled") : null;
-                                try {
-                                    if (jSONObject2.has("sampling_rate")) {
-                                        pVar6.a = (Double) jSONObject2.get("sampling_rate");
-                                    }
-                                    if (jSONObject2.has("session_timeout_seconds")) {
-                                        pVar.a = (Integer) jSONObject2.get("session_timeout_seconds");
-                                    }
-                                    if (jSONObject2.has("cache_duration")) {
-                                        pVar7.a = (Integer) jSONObject2.get("cache_duration");
-                                    }
-                                } catch (JSONException e) {
-                                    e = e;
-                                    Log.e("SessionConfigFetcher", "Error parsing the configs remotely fetched: ", e);
-                                    if (bool == null) {
-                                    }
-                                }
-                            } catch (JSONException e10) {
-                                e = e10;
+                            } catch (JSONException e) {
+                                e = e;
                                 bool = null;
+                            }
+                            try {
+                                if (jSONObject2.has("sampling_rate")) {
+                                    pVar6.a = (Double) jSONObject2.get("sampling_rate");
+                                }
+                                if (jSONObject2.has("session_timeout_seconds")) {
+                                    pVar.a = (Integer) jSONObject2.get("session_timeout_seconds");
+                                }
+                                if (jSONObject2.has("cache_duration")) {
+                                    pVar7.a = (Integer) jSONObject2.get("cache_duration");
+                                }
+                            } catch (JSONException e7) {
+                                e = e7;
+                                Log.e("SessionConfigFetcher", "Error parsing the configs remotely fetched: ", e);
+                                if (bool == null) {
+                                }
                             }
                         } else {
                             bool = null;
@@ -133,8 +132,8 @@ public final class b extends nd.i implements p {
                             this.e = pVar7;
                             this.b = 1;
                             Object c11 = kVar.c(k.c, bool, this);
-                            if (c11 != md.a.a) {
-                                c11 = iVar2;
+                            if (c11 != dd.a.a) {
+                                c11 = jVar2;
                             }
                             if (c11 == aVar) {
                                 return aVar;
@@ -151,8 +150,8 @@ public final class b extends nd.i implements p {
                                 this.e = null;
                                 this.b = 2;
                                 Object c12 = kVar.c(k.e, (Integer) obj2, this);
-                                if (c12 != md.a.a) {
-                                    c12 = iVar2;
+                                if (c12 != dd.a.a) {
+                                    c12 = jVar2;
                                 }
                                 if (c12 == aVar) {
                                     return aVar;
@@ -165,8 +164,8 @@ public final class b extends nd.i implements p {
                                 this.e = null;
                                 this.b = 3;
                                 Object c13 = kVar.c(k.d, (Double) obj3, this);
-                                if (c13 != md.a.a) {
-                                    c13 = iVar2;
+                                if (c13 != dd.a.a) {
+                                    c13 = jVar2;
                                 }
                                 if (c13 == aVar) {
                                     return aVar;
@@ -174,8 +173,8 @@ public final class b extends nd.i implements p {
                             }
                             obj4 = pVar3.a;
                             if (((Integer) obj4) == null) {
-                                iVar = null;
-                                if (iVar == null) {
+                                jVar = null;
+                                if (jVar == null) {
                                 }
                                 Long l4 = new Long(System.currentTimeMillis());
                                 this.c = null;
@@ -183,33 +182,33 @@ public final class b extends nd.i implements p {
                                 this.e = null;
                                 this.b = 6;
                                 c10 = kVar.c(k.g, l4, this);
-                                if (c10 != md.a.a) {
+                                if (c10 != dd.a.a) {
                                 }
                                 if (c10 == aVar) {
                                 }
-                                return iVar2;
+                                return jVar2;
                             }
                             this.c = null;
                             this.d = null;
                             this.e = null;
                             this.b = 4;
                             Object c14 = kVar.c(dVar, (Integer) obj4, this);
-                            if (c14 != md.a.a) {
-                                c14 = iVar2;
+                            if (c14 != dd.a.a) {
+                                c14 = jVar2;
                             }
                             if (c14 == aVar) {
                                 return aVar;
                             }
-                            iVar = iVar2;
-                            if (iVar == null) {
+                            jVar = jVar2;
+                            if (jVar == null) {
                                 Integer num = new Integer(86400);
                                 this.c = null;
                                 this.d = null;
                                 this.e = null;
                                 this.b = 5;
                                 Object c15 = kVar.c(dVar, num, this);
-                                if (c15 != md.a.a) {
-                                    c15 = iVar2;
+                                if (c15 != dd.a.a) {
+                                    c15 = jVar2;
                                 }
                                 if (c15 == aVar) {
                                     return aVar;
@@ -221,13 +220,13 @@ public final class b extends nd.i implements p {
                             this.e = null;
                             this.b = 6;
                             c10 = kVar.c(k.g, l42, this);
-                            if (c10 != md.a.a) {
-                                c10 = iVar2;
+                            if (c10 != dd.a.a) {
+                                c10 = jVar2;
                             }
                             if (c10 == aVar) {
                                 return aVar;
                             }
-                            return iVar2;
+                            return jVar2;
                         }
                         pVar2 = pVar6;
                         pVar3 = pVar7;
@@ -244,7 +243,7 @@ public final class b extends nd.i implements p {
                         pVar3 = (kotlin.jvm.internal.p) this.e;
                         pVar5 = (kotlin.jvm.internal.p) this.d;
                         pVar4 = (kotlin.jvm.internal.p) this.c;
-                        jd.b(obj);
+                        l9.b.b(obj);
                         pVar = pVar5;
                         pVar2 = pVar4;
                         obj2 = pVar.a;
@@ -260,7 +259,7 @@ public final class b extends nd.i implements p {
                     case 2:
                         pVar3 = (kotlin.jvm.internal.p) this.d;
                         pVar2 = (kotlin.jvm.internal.p) this.c;
-                        jd.b(obj);
+                        l9.b.b(obj);
                         obj3 = pVar2.a;
                         if (((Double) obj3) != null) {
                         }
@@ -270,15 +269,15 @@ public final class b extends nd.i implements p {
                         break;
                     case 3:
                         pVar3 = (kotlin.jvm.internal.p) this.c;
-                        jd.b(obj);
+                        l9.b.b(obj);
                         obj4 = pVar3.a;
                         if (((Integer) obj4) == null) {
                         }
                         break;
                     case 4:
-                        jd.b(obj);
-                        iVar = iVar2;
-                        if (iVar == null) {
+                        l9.b.b(obj);
+                        jVar = jVar2;
+                        if (jVar == null) {
                         }
                         Long l422 = new Long(System.currentTimeMillis());
                         this.c = null;
@@ -286,39 +285,39 @@ public final class b extends nd.i implements p {
                         this.e = null;
                         this.b = 6;
                         c10 = kVar.c(k.g, l422, this);
-                        if (c10 != md.a.a) {
+                        if (c10 != dd.a.a) {
                         }
                         if (c10 == aVar) {
                         }
-                        return iVar2;
+                        return jVar2;
                     case 5:
-                        jd.b(obj);
+                        l9.b.b(obj);
                         Long l4222 = new Long(System.currentTimeMillis());
                         this.c = null;
                         this.d = null;
                         this.e = null;
                         this.b = 6;
                         c10 = kVar.c(k.g, l4222, this);
-                        if (c10 != md.a.a) {
+                        if (c10 != dd.a.a) {
                         }
                         if (c10 == aVar) {
                         }
-                        return iVar2;
+                        return jVar2;
                     case 6:
-                        jd.b(obj);
-                        return iVar2;
+                        l9.b.b(obj);
+                        return jVar2;
                     default:
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 }
             default:
                 c cVar = (c) this.f;
-                md.a aVar2 = md.a.a;
+                dd.a aVar2 = dd.a.a;
                 int i11 = this.b;
-                jd.i iVar3 = jd.i.a;
+                ad.j jVar3 = ad.j.a;
                 try {
                     if (i11 == 0) {
-                        jd.b(obj);
-                        URLConnection openConnection = h0.f((h0) this.d).openConnection();
+                        l9.b.b(obj);
+                        URLConnection openConnection = a0.b((a0) this.d).openConnection();
                         kotlin.jvm.internal.i.c(openConnection, "null cannot be cast to non-null type javax.net.ssl.HttpsURLConnection");
                         HttpsURLConnection httpsURLConnection = (HttpsURLConnection) openConnection;
                         httpsURLConnection.setRequestMethod("GET");
@@ -349,35 +348,35 @@ public final class b extends nd.i implements p {
                         } else {
                             this.b = 2;
                             cVar.invoke("Bad response code: " + responseCode, this);
-                            if (iVar3 == aVar2) {
+                            if (jVar3 == aVar2) {
                                 return aVar2;
                             }
                         }
                     } else if (i11 == 1 || i11 == 2) {
-                        jd.b(obj);
+                        l9.b.b(obj);
                     } else {
                         if (i11 != 3) {
                             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                         }
-                        jd.b(obj);
+                        l9.b.b(obj);
                     }
-                } catch (Exception e11) {
-                    String message = e11.getMessage();
+                } catch (Exception e10) {
+                    String message = e10.getMessage();
                     if (message == null) {
-                        message = e11.toString();
+                        message = e10.toString();
                     }
                     this.b = 3;
                     cVar.invoke(message, this);
-                    if (iVar3 == aVar2) {
+                    if (jVar3 == aVar2) {
                         return aVar2;
                     }
                 }
-                return iVar3;
+                return jVar3;
         }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b(d dVar, ld.c cVar) {
+    public b(d dVar, cd.c cVar) {
         super(2, cVar);
         this.f = dVar;
     }

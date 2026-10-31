@@ -118,17 +118,17 @@ public class ThreadLocalRandom extends Random {
     }
 
     public final int b(int i10, int i11) {
-        int e10 = e(g());
+        int e7 = e(g());
         if (i10 >= i11) {
-            return e10;
+            return e7;
         }
         int i12 = i11 - i10;
         int i13 = i12 - 1;
         if ((i12 & i13) == 0) {
-            return (e10 & i13) + i10;
+            return (e7 & i13) + i10;
         }
         if (i12 > 0) {
-            int i14 = e10 >>> 1;
+            int i14 = e7 >>> 1;
             while (true) {
                 int i15 = i14 + i13;
                 int i16 = i14 % i12;
@@ -139,10 +139,10 @@ public class ThreadLocalRandom extends Random {
             }
         } else {
             while (true) {
-                if (e10 >= i10 && e10 < i11) {
-                    return e10;
+                if (e7 >= i10 && e7 < i11) {
+                    return e7;
                 }
-                e10 = e(g());
+                e7 = e(g());
             }
         }
     }
@@ -166,19 +166,19 @@ public class ThreadLocalRandom extends Random {
         if (i10 <= 0) {
             throw new IllegalArgumentException("bound must be positive");
         }
-        int e10 = e(g());
+        int e7 = e(g());
         int i11 = i10 - 1;
         if ((i10 & i11) == 0) {
-            return e10 & i11;
+            return e7 & i11;
         }
         while (true) {
-            int i12 = e10 >>> 1;
+            int i12 = e7 >>> 1;
             int i13 = i12 + i11;
             int i14 = i12 % i10;
             if (i13 - i14 >= 0) {
                 return i14;
             }
-            e10 = e(g());
+            e7 = e(g());
         }
     }
 

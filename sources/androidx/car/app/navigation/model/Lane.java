@@ -4,7 +4,7 @@ import j$.util.Objects;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class Lane {
     private final List<LaneDirection> mDirections;
@@ -35,7 +35,7 @@ public final class Lane {
     public String toString() {
         StringBuilder sb2 = new StringBuilder("[direction count: ");
         List<LaneDirection> list = this.mDirections;
-        return a1.g.n(list != null ? list.size() : 0, "]", sb2);
+        return a1.g.p(sb2, list != null ? list.size() : 0, "]");
     }
 
     private Lane() {

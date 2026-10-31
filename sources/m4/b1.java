@@ -1,10 +1,10 @@
 package m4;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b1 implements h {
     @Override // m4.h
-    public final k9.y run() {
-        return k9.w.b;
+    public final j9.y run() {
+        return j9.w.b;
     }
 }

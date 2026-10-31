@@ -1,82 +1,24 @@
 package m;
 
-import android.graphics.Rect;
-import android.view.MotionEvent;
-import android.view.TouchDelegate;
+import android.R;
 import android.view.View;
-import android.view.ViewConfiguration;
+import android.widget.ImageView;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class y2 extends TouchDelegate {
-    public final View a;
-    public final Rect b;
-    public final Rect c;
-    public final Rect d;
-    public final int e;
-    public boolean f;
+public final class y2 {
+    public final TextView a;
+    public final TextView b;
+    public final ImageView c;
+    public final ImageView d;
+    public final ImageView e;
 
-    public y2(Rect rect, Rect rect2, View view) {
-        super(rect, view);
-        int scaledTouchSlop = ViewConfiguration.get(view.getContext()).getScaledTouchSlop();
-        this.e = scaledTouchSlop;
-        Rect rect3 = new Rect();
-        this.b = rect3;
-        Rect rect4 = new Rect();
-        this.d = rect4;
-        Rect rect5 = new Rect();
-        this.c = rect5;
-        rect3.set(rect);
-        rect4.set(rect);
-        int i10 = -scaledTouchSlop;
-        rect4.inset(i10, i10);
-        rect5.set(rect2);
-        this.a = view;
-    }
-
-    @Override // android.view.TouchDelegate
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        boolean z10;
-        boolean z11;
-        int x9 = (int) motionEvent.getX();
-        int y3 = (int) motionEvent.getY();
-        int action = motionEvent.getAction();
-        boolean z12 = true;
-        if (action != 0) {
-            if (action == 1 || action == 2) {
-                z11 = this.f;
-                if (z11 && !this.d.contains(x9, y3)) {
-                    z12 = z11;
-                    z10 = false;
-                }
-            } else {
-                if (action == 3) {
-                    z11 = this.f;
-                    this.f = false;
-                }
-                z10 = true;
-                z12 = false;
-            }
-            z12 = z11;
-            z10 = true;
-        } else {
-            if (this.b.contains(x9, y3)) {
-                this.f = true;
-                z10 = true;
-            }
-            z10 = true;
-            z12 = false;
-        }
-        if (!z12) {
-            return false;
-        }
-        Rect rect = this.c;
-        View view = this.a;
-        if (!z10 || rect.contains(x9, y3)) {
-            motionEvent.setLocation(x9 - rect.left, y3 - rect.top);
-        } else {
-            motionEvent.setLocation(view.getWidth() / 2, view.getHeight() / 2);
-        }
-        return view.dispatchTouchEvent(motionEvent);
+    public y2(View view) {
+        this.a = (TextView) view.findViewById(R.id.text1);
+        this.b = (TextView) view.findViewById(R.id.text2);
+        this.c = (ImageView) view.findViewById(R.id.icon1);
+        this.d = (ImageView) view.findViewById(R.id.icon2);
+        this.e = (ImageView) view.findViewById(org.telegram.messenger.beta.R.id.edit_query);
     }
 }

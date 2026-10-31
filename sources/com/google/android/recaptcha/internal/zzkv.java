@@ -1,10 +1,10 @@
 package com.google.android.recaptcha.internal;
 
+import bd.i;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-import kd.g;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class zzkv implements zzkt {
     private final zzku zza;
@@ -19,7 +19,7 @@ public final class zzkv implements zzkt {
             throw new zzdm(3, 17, null);
         }
         try {
-            long zza = this.zza.zza(g.n(list));
+            long zza = this.zza.zza(i.n(list));
             zzkqVar = zzkr.zza;
             zzkr zzkrVar = new zzkr(zza, 255L, zzkqVar);
             StringBuilder sb2 = new StringBuilder(str.length());

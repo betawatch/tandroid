@@ -1,32 +1,53 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class ti implements NotificationCenter.NotificationCenterDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ai.h1 b;
-    public final /* synthetic */ wn c;
-    public final /* synthetic */ wn d;
+public final class ti extends org.telegram.ui.ActionBar.k1 {
+    public final /* synthetic */ org.telegram.ui.Components.mj0 o;
+    public final /* synthetic */ un p;
 
-    public ti(wn wnVar, int i10, ai.h1 h1Var, wn wnVar2) {
-        this.d = wnVar;
-        this.a = i10;
-        this.b = h1Var;
-        this.c = wnVar2;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ti(un unVar, cb cbVar, org.telegram.ui.Components.mj0 mj0Var) {
+        super(cbVar, -2, -2);
+        this.p = unVar;
+        this.o = mj0Var;
     }
 
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        int i12;
-        int i13 = NotificationCenter.messagesDidLoad;
-        if (i10 == i13 && ((Integer) objArr[10]).intValue() == this.a) {
-            this.b.run();
-            AndroidUtilities.runOnUIThread(new i2.b0(this.c, i10, i11, objArr), 50L);
-            i12 = ((org.telegram.ui.ActionBar.r2) this.d).currentAccount;
-            NotificationCenter.getInstance(i12).removeObserver(this, i13);
+    @Override // org.telegram.ui.ActionBar.k1
+    public final void d(boolean z10) {
+        super.d(z10);
+        org.telegram.ui.Components.mj0 mj0Var = this.o;
+        if (mj0Var != null) {
+            mj0Var.d(z10);
         }
+    }
+
+    @Override // org.telegram.ui.ActionBar.k1, android.widget.PopupWindow
+    public final void dismiss() {
+        d(true);
+        un unVar = this.p;
+        if (unVar.e9 != this) {
+            return;
+        }
+        org.telegram.ui.Components.wb wbVar = org.telegram.ui.Components.wb.w;
+        org.telegram.ui.Components.wb wbVar2 = unVar.B1;
+        if (wbVar == wbVar2 && wbVar2 != null) {
+            wbVar2.b();
+            unVar.B1 = null;
+        }
+        unVar.e9 = null;
+        unVar.h9 = null;
+        unVar.g9 = null;
+        unVar.B0.R = true;
+        if (unVar.f9) {
+            unVar.o8(false, true, 0.0f);
+        } else {
+            unVar.f9 = true;
+        }
+        mk mkVar = unVar.Z;
+        if (mkVar == null || mkVar.getEditField() == null) {
+            return;
+        }
+        unVar.Z.getEditField().setAllowDrawCursor(true);
     }
 }

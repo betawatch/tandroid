@@ -1,22 +1,36 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class y0 {
-    public static final h6.b k = new h6.b("ApplicationAnalyticsSession", null);
-    public static long l = System.currentTimeMillis();
-    public final c a;
-    public String b;
-    public String c;
-    public long d = l;
-    public int e = 1;
-    public String f;
-    public int g;
-    public String h;
-    public boolean i;
-    public int j;
-
-    public y0(c cVar) {
-        this.a = cVar;
-    }
+    public static final y0 a = new y0();
+    public static final y0 b = new y0();
+    public static final y0 c = new y0();
+    public static final y0 d = new y0();
+    public static final y0 e = new y0();
+    public static final y0 f = new y0();
+    public static final y0 g = new y0();
+    public static final y0 h = new y0();
+    public static final y0 i = new y0();
+    public static final y0 j = new y0();
+    public static final y0 k = new y0();
+    public static final y0 l = new y0();
+    public static final y0 m = new y0();
+    public static final y0 n = new y0();
+    public static final y0 o = new y0();
+    public static final y0 p = new y0();
+    public static final y0 q = new y0();
+    public static final y0 r = new y0();
+    public static final y0 s = new y0();
+    public static final y0 t = new y0();
+    public static final y0 u = new y0();
+    public static final y0 v = new y0();
+    public static final y0 w = new y0();
+    public static final y0 x = new y0();
+    public static final y0 y = new y0();
+    public static final y0 z = new y0();
+    public static final y0 A = new y0();
+    public static final y0 B = new y0();
+    public static final y0 C = new y0();
+    public static final y0 D = new y0();
 }

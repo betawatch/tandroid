@@ -1,242 +1,137 @@
 package gh;
 
-import a8.me;
-import a8.yb;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import androidx.car.app.j;
-import b2.e1;
-import com.google.firebase.datatransport.TransportRegistrar;
-import e2.g0;
-import e2.o;
-import e9.k;
-import f9.m1;
-import f9.o1;
-import f9.p0;
-import f9.p1;
-import f9.q0;
-import f9.r0;
-import f9.t0;
-import f9.y1;
-import fh.d;
-import hi.i4;
-import hi.m3;
-import hi.n4;
-import i2.m;
-import j$.util.Objects;
-import j2.e;
-import j5.f;
-import java.util.Collection;
-import java.util.Iterator;
-import org.telegram.messenger.GenericProvider;
-import org.telegram.messenger.LiteMode;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.d7;
-import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Components.ar;
-import org.telegram.ui.Components.ow0;
-import org.telegram.ui.Components.pw0;
-import org.telegram.ui.Components.qw0;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class a implements d, ow0, pw0, GenericProvider, k, o, s9.d, d7 {
-    public final /* synthetic */ int a;
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final class a {
+    public static final a D;
+    public static final a E;
+    public static final a F;
+    public static final a G;
+    public static final a H;
+    public static final a I;
+    public static final a J;
+    public static final a K;
+    public static final a L;
+    public static final a M;
+    public static final a N;
+    public static final a O;
+    public static final a P;
+    public static final a Q;
+    public static final a R;
+    public static final /* synthetic */ a[] S;
+    public static final a f;
+    public static final a h;
+    public static final a n;
+    public static final a r;
+    public static final a s;
+    public static final a w;
+    public static final a x;
+    public static final a y;
+    public final int a;
+    public final int b;
+    public final int c;
+    public final int d;
+    public final int e;
 
-    public /* synthetic */ a(int i10) {
-        this.a = i10;
+    /* JADX INFO: Fake field, exist only in values array */
+    a EF7;
+
+    /* JADX INFO: Fake field, exist only in values array */
+    a EF0;
+
+    static {
+        a aVar = new a("CONTACTS", 0, R.raw.tab_contacts);
+        f = aVar;
+        a aVar2 = new a("CALLS", 1, R.raw.tab_calls);
+        h = aVar2;
+        a aVar3 = new a("CHATS", 2, R.raw.tab_chats);
+        n = aVar3;
+        a aVar4 = new a("SETTINGS", 3, R.raw.tab_settings);
+        r = aVar4;
+        a aVar5 = new a(4, R.raw.tab_checklist, "CHECKLIST", R.raw.tab_checklist_reverse);
+        s = aVar5;
+        a aVar6 = new a(5, R.raw.tab_colors, "COLORS", R.raw.tab_colors_reverse);
+        w = aVar6;
+        a aVar7 = new a(6, R.raw.tab_files, "FILES", R.raw.tab_files_reverse);
+        x = aVar7;
+        a aVar8 = new a(7, R.raw.tab_gallery, "GALLERY", R.raw.tab_gallery_reverse);
+        y = aVar8;
+        a aVar9 = new a(8, R.raw.tab_gift, "GIFT", R.raw.tab_gift_reverse);
+        a aVar10 = new a(9, R.raw.tab_location, "LOCATION", R.raw.tab_location_reverse);
+        D = aVar10;
+        a aVar11 = new a(10, R.raw.tab_sticker, "STICKER", R.raw.tab_sticker_reverse);
+        E = aVar11;
+        a aVar12 = new a(11, R.raw.tab_emoji, "EMOJI", R.raw.tab_emoji_reverse);
+        F = aVar12;
+        a aVar13 = new a(12, R.raw.tab_models, "MODELS", R.raw.tab_models_reverse);
+        G = aVar13;
+        a aVar14 = new a(13, R.raw.tab_music, "MUSIC", R.raw.tab_music_reverse);
+        H = aVar14;
+        a aVar15 = new a(14, R.raw.tab_poll, "POLL", R.raw.tab_poll_reverse);
+        I = aVar15;
+        a aVar16 = new a(15, R.raw.tab_symbols, "SYMBOLS", R.raw.tab_symbols_reverse);
+        J = aVar16;
+        a aVar17 = new a(16, R.raw.tab_reply, "REPLIES", R.raw.tab_reply_reverse);
+        K = aVar17;
+        a aVar18 = new a(17, R.raw.tab_wallet, "WALLET", R.raw.tab_wallet_reverse);
+        a aVar19 = new a();
+        L = aVar19;
+        a aVar20 = new a(19, R.raw.tab_article, "ARTICLE", R.raw.tab_article_reverse);
+        M = aVar20;
+        a aVar21 = new a(20, R.raw.gram, "GRAM", R.raw.gram_reverse);
+        N = aVar21;
+        a aVar22 = new a("BOOSTS", 21, R.raw.boosts, 25, 49);
+        O = aVar22;
+        a aVar23 = new a("MONETIZATION", 22, R.raw.monetize, 19, 45);
+        P = aVar23;
+        a aVar24 = new a("STORIES_SAVED", 23, R.raw.msg_stories_saved, 20, 40);
+        Q = aVar24;
+        a aVar25 = new a("STORIES_ARCHIVE", 24, R.raw.msg_stories_archive);
+        R = aVar25;
+        S = new a[]{aVar, aVar2, aVar3, aVar4, aVar5, aVar6, aVar7, aVar8, aVar9, aVar10, aVar11, aVar12, aVar13, aVar14, aVar15, aVar16, aVar17, aVar18, aVar19, aVar20, aVar21, aVar22, aVar23, aVar24, aVar25};
     }
 
-    @Override // e9.k
-    public Object apply(Object obj) {
-        boolean z10 = true;
-        switch (this.a) {
-            case 23:
-                return new e((g0) obj);
-            case 26:
-                String str = (String) obj;
-                e9.a aVar = i9.a.g;
-                aVar.getClass();
-                int length = str.length() - 1;
-                while (true) {
-                    if (length >= 0) {
-                        if (aVar.c(str.charAt(length))) {
-                            length--;
-                        } else {
-                            z10 = false;
-                        }
-                    }
-                }
-                if (z10 && !str.isEmpty()) {
-                    return str;
-                }
-                StringBuilder sb2 = new StringBuilder(str.length() + 16);
-                sb2.append('\"');
-                while (r1 < str.length()) {
-                    char charAt = str.charAt(r1);
-                    if (charAt == '\r' || charAt == '\\' || charAt == '\"') {
-                        sb2.append('\\');
-                    }
-                    sb2.append(charAt);
-                    r1++;
-                }
-                sb2.append('\"');
-                return sb2.toString();
-            default:
-                Collection collection = (Collection) obj;
-                int i10 = r0.d;
-                if (collection instanceof r0) {
-                    return (r0) collection;
-                }
-                boolean z11 = collection instanceof m1;
-                int size = z11 ? ((q0) ((y1) ((m1) collection)).s()).size() : 11;
-                p0 p0Var = new p0();
-                p0Var.b = false;
-                p1 p1Var = new p1();
-                p1Var.d(size);
-                p0Var.a = p1Var;
-                if (z11) {
-                    m1 m1Var = (m1) collection;
-                    p1 p1Var2 = m1Var instanceof y1 ? ((y1) m1Var).e : null;
-                    if (p1Var2 != null) {
-                        p1Var.a(Math.max(p1Var.c, p1Var2.c));
-                        r1 = p1Var2.c == 0 ? -1 : 0;
-                        while (r1 >= 0) {
-                            yb.j(r1, p1Var2.c);
-                            Object obj2 = p1Var2.a[r1];
-                            yb.j(r1, p1Var2.c);
-                            p0Var.c(p1Var2.b[r1], obj2);
-                            r1++;
-                            if (r1 >= p1Var2.c) {
-                                r1 = -1;
-                            }
-                        }
-                    } else {
-                        r0 r0Var = (r0) m1Var;
-                        t0 t10 = r0Var.t();
-                        p1 p1Var3 = p0Var.a;
-                        p1Var3.a(Math.max(p1Var3.c, t10.size()));
-                        for (o1 o1Var : r0Var.t()) {
-                            p0Var.c(o1Var.a(), o1Var.a);
-                        }
-                    }
-                } else {
-                    Iterator it = collection.iterator();
-                    while (it.hasNext()) {
-                        p0Var.a(it.next());
-                    }
-                }
-                Objects.requireNonNull(p0Var.a);
-                if (p0Var.a.c == 0) {
-                    return y1.n;
-                }
-                p0Var.b = true;
-                return new y1(p0Var.a);
-        }
+    public a(String str, int i10, int i11, int i12, int i13) {
+        this.a = i11;
+        this.b = i11;
+        this.d = i12;
+        this.e = i13;
+        this.c = -1;
     }
 
-    @Override // org.telegram.ui.Components.pw0
-    public void b(Object obj, float f7) {
-        switch (this.a) {
-            case 13:
-                m3 m3Var = (m3) obj;
-                m3Var.c = f7;
-                m3Var.f.invalidate();
-                m3Var.X.setAlpha(f7);
-                m3Var.F();
-                m3Var.D();
-                break;
-            case 14:
-            default:
-                ((n4) obj).setSwipeOffsetY(f7);
-                break;
-            case 15:
-                ((i4) obj).setLoadProgress(f7);
-                break;
-        }
+    public static a valueOf(String str) {
+        return (a) Enum.valueOf(a.class, str);
     }
 
-    @Override // org.telegram.ui.ActionBar.d7
-    public void d(int i10, View view) {
-        Drawable background = view.getBackground();
-        if (background instanceof ar) {
-            Drawable drawable = ((ar) background).a;
-            if (drawable instanceof ColorDrawable) {
-                ((ColorDrawable) drawable).setColor(i10);
-                view.invalidate();
-            }
-        }
+    public static a[] values() {
+        return (a[]) S.clone();
     }
 
-    @Override // s9.d
-    public Object d1(me meVar) {
-        f lambda$getComponents$0;
-        lambda$getComponents$0 = TransportRegistrar.lambda$getComponents$0(meVar);
-        return lambda$getComponents$0;
+    public a() {
+        this.c = R.drawable.tabs_link_24;
+        this.a = -1;
+        this.b = -1;
+        this.d = -1;
+        this.e = -1;
     }
 
-    @Override // org.telegram.ui.Components.ow0
-    public float get(Object obj) {
-        switch (this.a) {
-            case 12:
-                return ((m3) obj).c;
-            case 13:
-            default:
-                return ((n4) obj).getSwipeOffsetY();
-            case 14:
-                return ((i4) obj).c;
-        }
+    public a(String str, int i10, int i11) {
+        this.a = i11;
+        this.b = i11;
+        this.d = -1;
+        this.e = -1;
+        this.c = -1;
     }
 
-    @Override // fh.d
-    public int i(u6 u6Var, boolean z10) {
-        switch (this.a) {
-            case 0:
-                return 855638016;
-            case 1:
-                return y6.o1(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, y6.w0(y6.Fi, u6Var));
-            case 2:
-                return TLObject.FLAG_30;
-            case 3:
-                return y6.o1(0.075f, -16777216);
-            case 4:
-                return y6.o1(0.88f, y6.w0(y6.d6, u6Var));
-            case 5:
-                return y6.o1(z10 ? 0.85f : 0.825f, y6.x0(null, y6.G8, false));
-            case 6:
-                return c.n(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, y6.w0(y6.d6, u6Var), y6.w0(y6.Yk, u6Var));
-            case 7:
-                return y6.o1(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, y6.w0(y6.d6, u6Var));
-            case 8:
-                return c.n(LiteMode.isEnabled(262144) ? 0.85f : 0.8f, y6.w0(y6.a7, u6Var), y6.w0(y6.d6, u6Var));
-            case 9:
-                return y6.o1(0.78f, y6.w0(y6.h5, u6Var));
-            case 10:
-                return y6.o1(0.7f, y6.w0(y6.d6, u6Var));
-            default:
-                LiteMode.isEnabled(262144);
-                return 0;
-        }
-    }
-
-    @Override // e2.o
-    public void invoke(Object obj) {
-        e1 e1Var = (e1) obj;
-        switch (this.a) {
-            case 24:
-                e1Var.onPlayerError(new m(2, new j("Player release timed out."), 1003));
-                break;
-            default:
-                e1Var.onRenderedFirstFrame();
-                break;
-        }
-    }
-
-    @Override // org.telegram.messenger.GenericProvider
-    public Object provide(Object obj) {
-        qw0 qw0Var = n4.b0;
-        return Boolean.FALSE;
+    public a(int i10, int i11, String str, int i12) {
+        this.a = i11;
+        this.b = i12;
+        this.d = -1;
+        this.e = -1;
+        this.c = -1;
     }
 }

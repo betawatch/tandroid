@@ -1,16 +1,16 @@
 package org.webrtc;
 
 import android.view.OrientationEventListener;
-import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.w0;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes4.dex */
 public class OrientationHelper {
     private static final int ORIENTATION_HYSTERESIS = 5;
     public static volatile int cameraOrientation;
     public static volatile int cameraRotation;
     public static volatile boolean cameraRotationDisabled;
-    private OrientationEventListener orientationEventListener = new OrientationEventListener(ApplicationLoader.applicationContext) { // from class: org.webrtc.OrientationHelper.1
+    private OrientationEventListener orientationEventListener = new OrientationEventListener(w0.b) { // from class: org.webrtc.OrientationHelper.1
         @Override // android.view.OrientationEventListener
         public void onOrientationChanged(int i10) {
             if (OrientationHelper.this.orientationEventListener == null || i10 == -1) {

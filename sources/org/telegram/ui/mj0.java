@@ -1,28 +1,41 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.widget.TextView;
-import org.telegram.messenger.NotificationCenter;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class mj0 extends TextView {
-    public final jt a;
+public final /* synthetic */ class mj0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ PasscodeActivity b;
+    public final /* synthetic */ boolean c;
 
-    public mj0(Context context) {
-        super(context);
-        this.a = new jt(1, this);
+    public /* synthetic */ mj0(PasscodeActivity passcodeActivity, boolean z10, int i10) {
+        this.a = i10;
+        this.b = passcodeActivity;
+        this.c = z10;
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        NotificationCenter.getGlobalInstance().addWeakObserver(this.a, NotificationCenter.emojiLoaded);
-    }
-
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        NotificationCenter.getGlobalInstance().removeObserver(this.a, NotificationCenter.emojiLoaded);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                PasscodeActivity passcodeActivity = this.b;
+                passcodeActivity.getMediaDataController().m();
+                if (this.c) {
+                    passcodeActivity.presentFragment(new PasscodeActivity(0), true);
+                    qa0 qa0Var = passcodeActivity.U;
+                    if (qa0Var != null) {
+                        org.telegram.messenger.i0.g3(qa0Var);
+                        passcodeActivity.U = null;
+                    }
+                } else {
+                    passcodeActivity.finishFragment();
+                }
+                org.telegram.messenger.zs.e().k(50, new Object[0]);
+                break;
+            default:
+                PasscodeActivity passcodeActivity2 = this.b;
+                passcodeActivity2.x.e(true, this.c);
+                org.telegram.messenger.i0.r(passcodeActivity2.T);
+                break;
+        }
     }
 }

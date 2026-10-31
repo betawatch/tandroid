@@ -1,31 +1,50 @@
 package org.telegram.messenger.voip;
 
-import android.media.AudioManager;
-import org.telegram.messenger.voip.VoIPService;
+import org.telegram.messenger.voip.Instance;
+import org.telegram.messenger.voip.NativeInstance;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final /* synthetic */ class r0 implements Runnable {
+public final /* synthetic */ class r0 implements NativeInstance.AudioLevelsCallback, NativeInstance.VideoSourcesCallback, NativeInstance.RequestBroadcastPartCallback, NativeInstance.RequestCurrentTimeCallback, Instance.OnStateUpdatedListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ AudioManager b;
+    public final /* synthetic */ VoIPService b;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ r0(AudioManager audioManager, int i10) {
-        this.a = i10;
-        this.b = audioManager;
+    public /* synthetic */ r0(VoIPService voIPService, int i10, int i11) {
+        this.a = i11;
+        this.b = voIPService;
+        this.c = i10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.messenger.voip.Instance.OnStateUpdatedListener
+    public void onStateUpdated(int i10, boolean z10) {
+        this.b.lambda$createGroupInstance$80(this.c, i10, z10);
+    }
+
+    @Override // org.telegram.messenger.voip.NativeInstance.RequestCurrentTimeCallback
+    public void run(long j10) {
+        this.b.lambda$createGroupInstance$79(this.c, j10);
+    }
+
+    @Override // org.telegram.messenger.voip.NativeInstance.RequestBroadcastPartCallback
+    public void run(long j10, long j11, int i10, int i11) {
         switch (this.a) {
-            case 0:
-                VoIPService.1.lambda$run$1(this.b);
-                break;
-            case 1:
-                VoIPService.lambda$onDestroy$98(this.b);
+            case 2:
+                this.b.lambda$createGroupInstance$75(this.c, j10, j11, i10, i11);
                 break;
             default:
-                VoipAudioManager.lambda$stopBluetooth$2(this.b);
+                this.b.lambda$createGroupInstance$77(this.c, j10, j11, i10, i11);
                 break;
         }
+    }
+
+    @Override // org.telegram.messenger.voip.NativeInstance.VideoSourcesCallback
+    public void run(long j10, int[] iArr) {
+        this.b.lambda$createGroupInstance$70(this.c, j10, iArr);
+    }
+
+    @Override // org.telegram.messenger.voip.NativeInstance.AudioLevelsCallback
+    public void run(int[] iArr, float[] fArr, boolean[] zArr) {
+        this.b.lambda$createGroupInstance$68(this.c, iArr, fArr, zArr);
     }
 }

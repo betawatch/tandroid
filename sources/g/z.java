@@ -1,150 +1,53 @@
 package g;
 
-import android.content.Context;
-import android.view.MenuItem;
 import android.view.View;
-import androidx.appcompat.widget.ActionBarContextView;
-import java.lang.ref.WeakReference;
+import androidx.appcompat.widget.ActionBarOverlayLayout;
+import java.util.WeakHashMap;
+import r0.h0;
+import r0.m0;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class z extends k.a implements l.i {
-    public final Context c;
-    public final l.k d;
-    public n4.s e;
-    public WeakReference f;
-    public final /* synthetic */ a0 h;
+public final class z extends m0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ b0 b;
 
-    public z(a0 a0Var, Context context, n4.s sVar) {
-        this.h = a0Var;
-        this.c = context;
-        this.e = sVar;
-        l.k kVar = new l.k(context);
-        kVar.l = 1;
-        this.d = kVar;
-        kVar.e = this;
+    public /* synthetic */ z(b0 b0Var, int i10) {
+        this.a = i10;
+        this.b = b0Var;
     }
 
-    @Override // l.i
-    public final boolean F(l.k kVar, MenuItem menuItem) {
-        n4.s sVar = this.e;
-        if (sVar != null) {
-            return ((ti.e) sVar.b).o(this, menuItem);
-        }
-        return false;
-    }
-
-    @Override // k.a
-    public final void a() {
-        a0 a0Var = this.h;
-        if (a0Var.i != this) {
-            return;
-        }
-        if (a0Var.p) {
-            a0Var.j = this;
-            a0Var.k = this.e;
-        } else {
-            this.e.A(this);
-        }
-        this.e = null;
-        a0Var.a(false);
-        ActionBarContextView actionBarContextView = a0Var.f;
-        if (actionBarContextView.v == null) {
-            actionBarContextView.e();
-        }
-        a0Var.c.setHideOnContentScrollEnabled(a0Var.t);
-        a0Var.i = null;
-    }
-
-    @Override // k.a
-    public final View b() {
-        WeakReference weakReference = this.f;
-        if (weakReference != null) {
-            return (View) weakReference.get();
-        }
-        return null;
-    }
-
-    @Override // k.a
-    public final l.k c() {
-        return this.d;
-    }
-
-    @Override // k.a
-    public final k.h d() {
-        return new k.h(this.c);
-    }
-
-    @Override // k.a
-    public final CharSequence e() {
-        return this.h.f.getSubtitle();
-    }
-
-    @Override // k.a
-    public final CharSequence f() {
-        return this.h.f.getTitle();
-    }
-
-    @Override // k.a
-    public final void g() {
-        if (this.h.i != this) {
-            return;
-        }
-        l.k kVar = this.d;
-        kVar.w();
-        try {
-            this.e.C(this, kVar);
-        } finally {
-            kVar.v();
-        }
-    }
-
-    @Override // k.a
-    public final boolean h() {
-        return this.h.f.I;
-    }
-
-    @Override // k.a
-    public final void i(View view) {
-        this.h.f.setCustomView(view);
-        this.f = new WeakReference(view);
-    }
-
-    @Override // k.a
-    public final void j(int i10) {
-        k(this.h.a.getResources().getString(i10));
-    }
-
-    @Override // k.a
-    public final void k(CharSequence charSequence) {
-        this.h.f.setSubtitle(charSequence);
-    }
-
-    @Override // k.a
-    public final void l(int i10) {
-        m(this.h.a.getResources().getString(i10));
-    }
-
-    @Override // k.a
-    public final void m(CharSequence charSequence) {
-        this.h.f.setTitle(charSequence);
-    }
-
-    @Override // k.a
-    public final void n(boolean z10) {
-        this.b = z10;
-        this.h.f.setTitleOptional(z10);
-    }
-
-    @Override // l.i
-    public final void r(l.k kVar) {
-        if (this.e == null) {
-            return;
-        }
-        g();
-        m.h hVar = this.h.f.d;
-        if (hVar != null) {
-            hVar.l();
+    @Override // r0.l0
+    public final void c() {
+        View view;
+        int i10 = this.a;
+        b0 b0Var = this.b;
+        switch (i10) {
+            case 0:
+                if (b0Var.o && (view = b0Var.g) != null) {
+                    view.setTranslationY(0.0f);
+                    b0Var.d.setTranslationY(0.0f);
+                }
+                b0Var.d.setVisibility(8);
+                b0Var.d.setTransitioning(false);
+                b0Var.s = null;
+                n4.q qVar = b0Var.k;
+                if (qVar != null) {
+                    qVar.B(b0Var.j);
+                    b0Var.j = null;
+                    b0Var.k = null;
+                }
+                ActionBarOverlayLayout actionBarOverlayLayout = b0Var.c;
+                if (actionBarOverlayLayout != null) {
+                    WeakHashMap weakHashMap = h0.a;
+                    r0.x.c(actionBarOverlayLayout);
+                    break;
+                }
+                break;
+            default:
+                b0Var.s = null;
+                b0Var.d.requestLayout();
+                break;
         }
     }
 }

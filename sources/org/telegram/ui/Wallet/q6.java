@@ -1,45 +1,20 @@
 package org.telegram.ui.Wallet;
 
-import org.telegram.messenger.Utilities;
+import android.content.Context;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class q6 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Utilities.Callback2 b;
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final class q6 extends lg.w {
+    public final /* synthetic */ s6 D;
 
-    public /* synthetic */ q6(int i10, Utilities.Callback2 callback2) {
-        this.a = i10;
-        this.b = callback2;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public q6(s6 s6Var, Context context, o6 o6Var) {
+        super(context, o6Var, 2);
+        this.D = s6Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.run(null, "Wallet engine is closed");
-                break;
-            case 1:
-                this.b.run(null, "NO_WALLET_ENGINE");
-                break;
-            case 2:
-                this.b.run(null, "NO_WALLET_ENGINE");
-                break;
-            case 3:
-                this.b.run(null, "Recovery phrase is required");
-                break;
-            case 4:
-                this.b.run(null, "Transaction hash is required");
-                break;
-            case 5:
-                this.b.run(null, "NO_WALLET_ENGINE");
-                break;
-            case 6:
-                this.b.run(null, "NO_WALLET_ENGINE");
-                break;
-            default:
-                this.b.run(null, "NO_WALLET_ENGINE");
-                break;
-        }
+    @Override // lg.w
+    public final void a() {
+        this.D.s = true;
     }
 }

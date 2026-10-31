@@ -1,21 +1,7 @@
 package x7;
 
-import org.telegram.ui.Components.b10;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class k2 implements ka.d {
-    public static final k2 a = new k2();
-
-    static {
-        b10.s(b10.n(d.class, b10.q(10, b10.n(d.class, b10.q(9, b10.n(d.class, b10.q(8, b10.n(d.class, b10.q(7, b10.n(d.class, b10.q(6, b10.n(d.class, b10.q(5, b10.n(d.class, b10.q(4, b10.n(d.class, b10.q(3, b10.n(d.class, b10.q(2, b10.n(d.class, new a(1)))))))))))))))))))));
-    }
-
-    @Override // ka.a
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
-        }
-        throw null;
-    }
+public abstract class k2 extends b8.b implements l3 {
+    public static final /* synthetic */ int b = 0;
 }

@@ -1,25 +1,25 @@
 package org.telegram.ui.ActionBar;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class g5 {
-    public final r2 a;
-    public boolean b;
-    public boolean c;
-    public boolean d = true;
-    public boolean e;
-    public ActionBarPopupWindow$ActionBarPopupWindowLayout f;
-    public boolean g;
+public final /* synthetic */ class g5 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ u5 b;
 
-    public g5(r2 r2Var) {
-        this.a = r2Var;
+    public /* synthetic */ g5(u5 u5Var, int i10) {
+        this.a = i10;
+        this.b = u5Var;
     }
 
-    public final void a() {
-        this.c = true;
-    }
-
-    public final void b(boolean z10) {
-        this.b = z10;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.setVisibility(8);
+                break;
+            default:
+                this.b.setVisibility(8);
+                break;
+        }
     }
 }

@@ -6,7 +6,7 @@ import android.os.IInterface;
 import android.os.ResultReceiver;
 import java.lang.ref.WeakReference;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 class MediaControllerCompat$MediaControllerImplApi21$ExtraBinderRequestResultReceiver extends ResultReceiver {
     public WeakReference a;
@@ -21,7 +21,7 @@ class MediaControllerCompat$MediaControllerImplApi21$ExtraBinderRequestResultRec
         synchronized (hVar.b) {
             MediaSessionCompat$Token mediaSessionCompat$Token = hVar.e;
             IBinder binder = bundle.getBinder("android.support.v4.media.session.EXTRA_BINDER");
-            int i11 = u.b;
+            int i11 = t.b;
             if (binder == null) {
                 dVar = null;
             } else {
@@ -35,7 +35,7 @@ class MediaControllerCompat$MediaControllerImplApi21$ExtraBinderRequestResultRec
                 }
             }
             mediaSessionCompat$Token.b(dVar);
-            hVar.e.c(z4.a.a(bundle));
+            hVar.e.c(y4.a.a(bundle));
             hVar.a();
         }
     }

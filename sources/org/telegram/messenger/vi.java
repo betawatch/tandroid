@@ -1,31 +1,73 @@
 package org.telegram.messenger;
 
+import android.text.TextUtils;
+import android.util.LongSparseArray;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final /* synthetic */ class vi implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ SendMessagesHelper b;
-    public final /* synthetic */ TLRPC.Message c;
-    public final /* synthetic */ int d;
+public final class vi extends f1 {
+    public static final vi[] b = new vi[4];
+    public final LongSparseArray a;
 
-    public /* synthetic */ vi(SendMessagesHelper sendMessagesHelper, TLRPC.Message message, int i10, int i11) {
-        this.a = i11;
-        this.b = sendMessagesHelper;
-        this.c = message;
-        this.d = i10;
+    public vi(int i10) {
+        super(i10);
+        this.a = new LongSparseArray();
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.lambda$performSendMessageRequest$105(this.c, this.d);
-                break;
-            default:
-                this.b.lambda$sendMessage$18(this.c, this.d);
-                break;
+    public static vi b(int i10) {
+        vi viVar;
+        vi[] viVarArr = b;
+        vi viVar2 = viVarArr[i10];
+        if (viVar2 != null) {
+            return viVar2;
+        }
+        synchronized (vi.class) {
+            try {
+                viVar = viVarArr[i10];
+                if (viVar == null) {
+                    viVar = new vi(i10);
+                    viVarArr[i10] = viVar;
+                }
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+        return viVar;
+    }
+
+    public final int a(long j10, String str, TLRPC.TL_chatInviteImporter tL_chatInviteImporter, LongSparseArray longSparseArray, oh.g gVar) {
+        boolean isEmpty = TextUtils.isEmpty(str);
+        TLRPC.TL_messages_getChatInviteImporters tL_messages_getChatInviteImporters = new TLRPC.TL_messages_getChatInviteImporters();
+        tL_messages_getChatInviteImporters.peer = vp.r1(this.currentAccount).i1(-j10);
+        tL_messages_getChatInviteImporters.requested = true;
+        tL_messages_getChatInviteImporters.limit = 30;
+        if (!isEmpty) {
+            tL_messages_getChatInviteImporters.q = str;
+            tL_messages_getChatInviteImporters.flags |= 4;
+        }
+        if (tL_chatInviteImporter == null) {
+            tL_messages_getChatInviteImporters.offset_user = new TLRPC.TL_inputUserEmpty();
+        } else {
+            tL_messages_getChatInviteImporters.offset_user = getMessagesController().p1((TLRPC.User) longSparseArray.get(tL_chatInviteImporter.user_id));
+            tL_messages_getChatInviteImporters.offset_date = tL_chatInviteImporter.date;
+        }
+        return getConnectionsManager().sendRequest(tL_messages_getChatInviteImporters, new b4(this, tL_chatInviteImporter, isEmpty, j10, gVar, 1));
+    }
+
+    public final void c(TL_update.TL_updatePendingJoinRequests tL_updatePendingJoinRequests) {
+        long j10 = -jj.C1(tL_updatePendingJoinRequests.peer);
+        this.a.put(j10, null);
+        TLRPC.ChatFull M0 = getMessagesController().M0(j10);
+        if (M0 != null) {
+            M0.requests_pending = tL_updatePendingJoinRequests.requests_pending;
+            M0.recent_requesters = tL_updatePendingJoinRequests.recent_requesters;
+            M0.flags |= 131072;
+            getMessagesStorage().N1(M0, false);
+            zs notificationCenter = getNotificationCenter();
+            Boolean bool = Boolean.FALSE;
+            notificationCenter.k(zs.T, M0, 0, bool, bool);
         }
     }
 }

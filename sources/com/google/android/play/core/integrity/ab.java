@@ -1,15 +1,15 @@
 package com.google.android.play.core.integrity;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class ab implements b9.o {
-    private final b9.s a;
+public final class ab implements a9.q {
+    private final a9.u a;
 
-    public ab(b9.s sVar) {
-        this.a = sVar;
+    public ab(a9.u uVar) {
+        this.a = uVar;
     }
 
-    @Override // b9.s
+    @Override // a9.u
     public final /* bridge */ /* synthetic */ Object a() {
         return new aa((aj) this.a.a());
     }

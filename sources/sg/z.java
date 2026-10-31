@@ -1,34 +1,37 @@
 package sg;
 
-import android.content.Context;
-import android.graphics.PointF;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.rw0;
-import org.telegram.ui.Components.t81;
-import org.telegram.ui.Components.yj0;
-import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.pt0;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.Components.mj0;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class z extends p2 {
-    public final /* synthetic */ m0 y0;
+public final class z extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ b0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z(m0 m0Var, Context context, PointF pointF, float f7, float f10, rw0 rw0Var, TLRPC.Document document, Object obj) {
-        super(context, pointF, f7, f10, rw0Var, document, obj);
-        this.y0 = m0Var;
+    public /* synthetic */ z(b0 b0Var, int i10) {
+        this.a = i10;
+        this.b = b0Var;
     }
 
-    @Override // sg.p2
-    public final void q(yj0 yj0Var) {
-        PhotoViewer photoViewer = ((pt0) this.y0).d2;
-        t81 t81Var = photoViewer.F2;
-        if (t81Var == null) {
-            return;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                this.b.f();
+                break;
+            default:
+                b0 b0Var = this.b;
+                b0.a(b0Var, false);
+                b0Var.j = 0.0f;
+                mj0 mj0Var = b0Var.n;
+                mj0Var.setCustomEmojiEnterProgress(Utilities.i(0.0f, 1.0f, 0.0f));
+                mj0Var.setSkipDraw(false);
+                b0Var.c.setVisibility(8);
+                b0Var.f();
+                break;
         }
-        long n10 = t81Var.n();
-        long j10 = photoViewer.m8;
-        yj0Var.U(n10 - (j10 > 0 ? j10 / 1000 : 0L));
     }
 }

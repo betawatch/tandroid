@@ -1,27 +1,64 @@
 package sg;
 
-import android.content.Context;
-import android.graphics.Canvas;
 import android.view.View;
-import org.telegram.ui.pt0;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.concurrent.CountDownLatch;
+import org.telegram.messenger.hc;
+import org.telegram.messenger.tz;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class e0 extends View {
-    public final /* synthetic */ pt0 a;
+public abstract class e0 {
+    public static Runnable c;
+    public static Boolean h;
+    public static final HashSet a = new HashSet();
+    public static volatile boolean b = false;
+    public static boolean d = true;
+    public static boolean e = false;
+    public static boolean f = false;
+    public static boolean g = false;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e0(pt0 pt0Var, Context context) {
-        super(context);
-        this.a = pt0Var;
+    public static void a() {
+        com.google.android.gms.internal.cast.c0 c0Var = hc.D().p;
+        CountDownLatch countDownLatch = (CountDownLatch) c0Var.c;
+        if (countDownLatch != null) {
+            countDownLatch.countDown();
+            c0Var.c = null;
+        }
+        b = false;
+        e = false;
+        g = false;
+        c = null;
+        Iterator it = a.iterator();
+        while (it.hasNext()) {
+            ((View) it.next()).invalidate();
+        }
+        a.clear();
     }
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        c0 c0Var = this.a.L0;
-        if (c0Var != null) {
-            c0Var.d(canvas);
+    public static boolean b(View view) {
+        if (b) {
+            a.add(view);
         }
+        return b;
+    }
+
+    public static boolean c(View... viewArr) {
+        if (h == null) {
+            h = Boolean.valueOf(tz.o() != 2);
+        }
+        if (!h.booleanValue()) {
+            return false;
+        }
+        if (b) {
+            a.addAll(Arrays.asList(viewArr));
+        }
+        return b;
+    }
+
+    public static boolean d() {
+        return b || e || g;
     }
 }

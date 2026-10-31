@@ -4,7 +4,7 @@ import b2.q0;
 import b2.x;
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public class h extends a {
     public x a;
@@ -25,7 +25,7 @@ public class h extends a {
         this.n = i11;
     }
 
-    public final ByteBuffer a(int i10) {
+    public final ByteBuffer b(int i10) {
         int i11 = this.h;
         if (i11 == 1) {
             return ByteBuffer.allocate(i10);
@@ -37,11 +37,11 @@ public class h extends a {
         throw new g("Buffer too small (" + (byteBuffer == null ? 0 : byteBuffer.capacity()) + " < " + i10 + ")");
     }
 
-    public final void b(int i10) {
+    public final void c(int i10) {
         int i11 = i10 + this.n;
         ByteBuffer byteBuffer = this.c;
         if (byteBuffer == null) {
-            this.c = a(i11);
+            this.c = b(i11);
             return;
         }
         int capacity = byteBuffer.capacity();
@@ -51,13 +51,13 @@ public class h extends a {
             this.c = byteBuffer;
             return;
         }
-        ByteBuffer a2 = a(i12);
-        a2.order(byteBuffer.order());
+        ByteBuffer b10 = b(i12);
+        b10.order(byteBuffer.order());
         if (position > 0) {
             byteBuffer.flip();
-            a2.put(byteBuffer);
+            b10.put(byteBuffer);
         }
-        this.c = a2;
+        this.c = b10;
     }
 
     @Override // h2.a

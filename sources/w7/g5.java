@@ -1,32 +1,19 @@
 package w7;
 
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.Set;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public abstract class g5 {
-    public static boolean a(a8.x xVar, Collection collection) {
-        collection.getClass();
-        if (collection instanceof y7.q) {
-            collection = ((y7.q) collection).zza();
+public final class g5 implements ja.d {
+    public static final g5 a = new g5();
+
+    static {
+        sc.e.v(sc.e.l(d.class, sc.e.q(sc.e.l(d.class, sc.e.q(sc.e.l(d.class, sc.e.q(sc.e.l(d.class, sc.e.q(sc.e.l(d.class, sc.e.q(sc.e.l(d.class, sc.e.q(sc.e.l(d.class, new a(1)), 2)), 3)), 4)), 5)), 6)), 7)));
+    }
+
+    @Override // ja.a
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
         }
-        boolean z10 = false;
-        if (!(collection instanceof Set) || collection.size() <= xVar.size()) {
-            Iterator it = collection.iterator();
-            while (it.hasNext()) {
-                z10 |= xVar.remove(it.next());
-            }
-            return z10;
-        }
-        Iterator<E> it2 = xVar.iterator();
-        while (it2.hasNext()) {
-            if (collection.contains(it2.next())) {
-                it2.remove();
-                z10 = true;
-            }
-        }
-        return z10;
+        throw null;
     }
 }

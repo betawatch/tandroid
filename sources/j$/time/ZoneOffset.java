@@ -9,7 +9,6 @@ import java.io.DataOutput;
 import java.io.InvalidObjectException;
 import java.io.ObjectInputStream;
 import java.io.Serializable;
-import org.telegram.messenger.RichMessageLayout;
 
 /* loaded from: classes2.dex */
 public final class ZoneOffset extends ZoneId implements j$.time.temporal.l, j$.time.temporal.m, Comparable<ZoneOffset>, Serializable {
@@ -155,7 +154,7 @@ public final class ZoneOffset extends ZoneId implements j$.time.temporal.l, j$.t
         if (i10 < -64800 || i10 > 64800) {
             throw new b("Zone offset not in valid range: -18:00 to +18:00");
         }
-        if (i10 % RichMessageLayout.PART_MAX_HEIGHT_DP == 0) {
+        if (i10 % 900 == 0) {
             Integer valueOf = Integer.valueOf(i10);
             ConcurrentHashMap concurrentHashMap = d;
             ZoneOffset zoneOffset = (ZoneOffset) concurrentHashMap.get(valueOf);
@@ -280,7 +279,7 @@ public final class ZoneOffset extends ZoneId implements j$.time.temporal.l, j$.t
 
     public final void R(DataOutput dataOutput) {
         int i10 = this.b;
-        int i11 = i10 % RichMessageLayout.PART_MAX_HEIGHT_DP == 0 ? i10 / RichMessageLayout.PART_MAX_HEIGHT_DP : 127;
+        int i11 = i10 % 900 == 0 ? i10 / 900 : 127;
         dataOutput.writeByte(i11);
         if (i11 == 127) {
             dataOutput.writeInt(i10);

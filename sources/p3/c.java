@@ -6,14 +6,14 @@ import b2.t0;
 import b2.x;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class c implements t0 {
     public final byte[] a;
     public final String b;
     public final String c;
 
-    public c(String str, String str2, byte[] bArr) {
+    public c(byte[] bArr, String str, String str2) {
         this.a = bArr;
         this.b = str;
         this.c = str2;
@@ -52,6 +52,6 @@ public final class c implements t0 {
     }
 
     public final String toString() {
-        return g.n(this.a.length, "\"", g.w("ICY: title=\"", this.b, "\", url=\"", this.c, "\", rawMetadata.length=\""));
+        return g.p(g.v("ICY: title=\"", this.b, "\", url=\"", this.c, "\", rawMetadata.length=\""), this.a.length, "\"");
     }
 }

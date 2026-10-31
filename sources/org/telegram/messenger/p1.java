@@ -1,33 +1,23 @@
 package org.telegram.messenger;
 
-import java.text.Collator;
-import java.util.Comparator;
-import org.telegram.tgnet.TLRPC;
+import java.util.List;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final /* synthetic */ class p1 implements Comparator {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Collator b;
-    public final /* synthetic */ Object c;
+public final /* synthetic */ class p1 implements t1, c5.n {
+    public final /* synthetic */ u1 a;
 
-    public /* synthetic */ p1(Object obj, Collator collator, int i10) {
-        this.a = i10;
-        this.c = obj;
-        this.b = collator;
+    public /* synthetic */ p1(u1 u1Var) {
+        this.a = u1Var;
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        int lambda$buildContactsSectionsArrays$43;
-        int lambda$processLoadedContacts$30;
-        switch (this.a) {
-            case 0:
-                lambda$buildContactsSectionsArrays$43 = ((ContactsController) this.c).lambda$buildContactsSectionsArrays$43(this.b, (TLRPC.TL_contact) obj, (TLRPC.TL_contact) obj2);
-                return lambda$buildContactsSectionsArrays$43;
-            default:
-                lambda$processLoadedContacts$30 = ContactsController.lambda$processLoadedContacts$30((a0.h) this.c, this.b, (TLRPC.TL_contact) obj, (TLRPC.TL_contact) obj2);
-                return lambda$processLoadedContacts$30;
-        }
+    @Override // org.telegram.messenger.t1
+    public void a(c5.g gVar, List list) {
+        u1.c(this.a, gVar, list);
+    }
+
+    @Override // c5.n
+    public void b(c5.g gVar, List list) {
+        this.a.n(gVar, list, null);
     }
 }

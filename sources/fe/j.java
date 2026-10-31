@@ -1,21 +1,29 @@
 package fe;
 
-import bb.u;
-import kotlin.jvm.internal.p;
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class j extends nd.c {
-    public p a;
-    public u b;
-    public /* synthetic */ Object c;
-    public int d;
+public final class j {
+    public final g a;
+    public final n b = new n(0.0f);
+    public final n c = new n(0.0f);
+    public final n d = new n(0.0f);
+    public final n e = new n(0.0f);
+    public final n f = new n(0.0f);
+    public final n g = new n(0.0f);
 
-    @Override // nd.a
-    public final Object invokeSuspend(Object obj) {
-        this.c = obj;
-        this.d |= TLObject.FLAG_31;
-        return n.b(null, this);
+    public j(k kVar, g gVar) {
+        this.a = gVar;
+    }
+
+    public static void a(j jVar, int i10, boolean z10) {
+        n nVar = jVar.c;
+        n nVar2 = jVar.b;
+        if (z10) {
+            nVar2.c = i10;
+            nVar.c = i10 > 0 ? 1.0f : 0.0f;
+        } else {
+            nVar2.d(i10);
+            nVar.d(i10 > 0 ? 1.0f : 0.0f);
+        }
     }
 }

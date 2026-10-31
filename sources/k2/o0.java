@@ -1,142 +1,133 @@
 package k2;
 
-import android.app.PictureInPictureParams;
-import android.content.Context;
-import android.graphics.Point;
-import android.graphics.Rect;
-import android.media.AudioFormat;
-import android.media.AudioManager;
+import android.media.AudioTrack;
 import android.os.Build;
-import android.util.Rational;
+import android.os.SystemClock;
+import java.lang.reflect.Method;
+import java.math.RoundingMode;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class o0 {
-    public final Object a;
-    public Object b;
+    public boolean A;
+    public long B;
+    public final a4.l a;
+    public final e2.g0 b;
+    public final long[] c;
+    public final AudioTrack d;
+    public final int e;
+    public final long f;
+    public final boolean g;
+    public final d0 h;
+    public float i;
+    public long j;
+    public long k;
+    public long l;
+    public Method m;
+    public long n;
+    public long o;
+    public long p;
+    public long q;
+    public long r;
+    public int s;
+    public int t;
+    public long u;
+    public long v;
+    public long w;
+    public long x;
+    public long y;
+    public long z;
 
-    public o0() {
-        this.a = new Rect();
-        this.b = new Point();
-    }
-
-    public PictureInPictureParams.Builder a() {
-        int i10;
-        Rect rect = (Rect) this.a;
-        PictureInPictureParams.Builder builder = new PictureInPictureParams.Builder();
-        Point point = (Point) this.b;
-        int i11 = point.x;
-        if (i11 <= 0 || (i10 = point.y) <= 0) {
-            builder.setAspectRatio(null);
-            if (Build.VERSION.SDK_INT >= 33) {
-                builder.setExpandedAspectRatio(null);
-            }
-        } else {
-            double d = i11 / i10;
-            Rational rational = d < 0.45d ? new Rational(45, 100) : d > 2.35d ? new Rational(235, 100) : new Rational(point.x, point.y);
-            builder.setAspectRatio(rational);
-            if (Build.VERSION.SDK_INT >= 33) {
-                builder.setExpandedAspectRatio(rational);
-            }
-        }
-        if (rect.isEmpty()) {
-            builder.setSourceRectHint(null);
-            return builder;
-        }
-        builder.setSourceRectHint(rect);
-        return builder;
-    }
-
-    public h b(b2.f fVar, b2.x xVar) {
-        boolean booleanValue;
-        xVar.getClass();
-        int i10 = xVar.L;
-        fVar.getClass();
-        int i11 = Build.VERSION.SDK_INT;
-        if (i11 < 29 || i10 == -1) {
-            return h.d;
-        }
-        Context context = (Context) this.a;
-        Boolean bool = (Boolean) this.b;
-        if (bool != null) {
-            booleanValue = bool.booleanValue();
-        } else {
-            if (context != null) {
-                String parameters = c2.j.e(context).getParameters("offloadVariableRateSupported");
-                this.b = Boolean.valueOf(parameters != null && parameters.equals("offloadVariableRateSupported=1"));
-            } else {
-                this.b = Boolean.FALSE;
-            }
-            booleanValue = ((Boolean) this.b).booleanValue();
-        }
-        String str = xVar.s;
-        str.getClass();
-        int c10 = b2.w0.c(str, xVar.k);
-        if (c10 == 0 || i11 < e2.n0.s(c10)) {
-            return h.d;
-        }
-        int t10 = e2.n0.t(xVar.K);
-        if (t10 == 0) {
-            return h.d;
-        }
+    public o0(a4.l lVar, e2.g0 g0Var, AudioTrack audioTrack, int i10, int i11, int i12) {
+        this.a = lVar;
+        this.b = g0Var;
+        this.d = audioTrack;
         try {
-            AudioFormat build = new AudioFormat.Builder().setSampleRate(i10).setChannelMask(t10).setEncoding(c10).build();
-            if (i11 >= 33) {
-                int directPlaybackSupport = AudioManager.getDirectPlaybackSupport(build, fVar.b());
-                if ((directPlaybackSupport & 1) == 0) {
-                    return h.d;
+            this.m = AudioTrack.class.getMethod("getLatency", null);
+        } catch (NoSuchMethodException unused) {
+        }
+        this.c = new long[10];
+        this.z = -9223372036854775807L;
+        this.y = -9223372036854775807L;
+        this.h = new d0(audioTrack, lVar);
+        int sampleRate = audioTrack.getSampleRate();
+        this.e = sampleRate;
+        boolean M = e2.l0.M(i10);
+        this.g = M;
+        this.f = M ? e2.l0.Y(sampleRate, i12 / i11) : -9223372036854775807L;
+        this.q = 0L;
+        this.r = 0L;
+        this.A = false;
+        this.B = 0L;
+        this.u = -9223372036854775807L;
+        this.v = -9223372036854775807L;
+        this.o = 0L;
+        this.n = 0L;
+        this.i = 1.0f;
+        this.j = -9223372036854775807L;
+    }
+
+    public final long a() {
+        if (this.u != -9223372036854775807L) {
+            return Math.min(this.x, c());
+        }
+        this.b.getClass();
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        if (elapsedRealtime - this.p >= 5) {
+            int playState = this.d.getPlayState();
+            if (playState != 1) {
+                long playbackHeadPosition = r4.getPlaybackHeadPosition() & 4294967295L;
+                if (Build.VERSION.SDK_INT <= 29) {
+                    if (playbackHeadPosition != 0 || this.q <= 0 || playState != 3) {
+                        this.v = -9223372036854775807L;
+                    } else if (this.v == -9223372036854775807L) {
+                        this.v = elapsedRealtime;
+                    }
                 }
-                r4 = (directPlaybackSupport & 3) == 3;
-                cc.d dVar = new cc.d();
-                dVar.a = true;
-                dVar.b = r4;
-                dVar.c = booleanValue;
-                return dVar.a();
-            }
-            if (i11 < 31) {
-                if (!AudioManager.isOffloadedPlaybackSupported(build, fVar.b())) {
-                    return h.d;
+                long j10 = this.q;
+                if (j10 > playbackHeadPosition) {
+                    if (this.A) {
+                        this.B += j10;
+                        this.A = false;
+                    } else {
+                        this.r++;
+                    }
                 }
-                cc.d dVar2 = new cc.d();
-                dVar2.a = true;
-                dVar2.c = booleanValue;
-                return dVar2.a();
+                this.q = playbackHeadPosition;
             }
-            int playbackOffloadSupport = AudioManager.getPlaybackOffloadSupport(build, fVar.b());
-            if (playbackOffloadSupport == 0) {
-                return h.d;
-            }
-            cc.d dVar3 = new cc.d();
-            if (i11 > 32 && playbackOffloadSupport == 2) {
-                r4 = true;
-            }
-            dVar3.a = true;
-            dVar3.b = r4;
-            dVar3.c = booleanValue;
-            return dVar3.a();
-        } catch (IllegalArgumentException unused) {
-            return h.d;
+            this.p = elapsedRealtime;
         }
+        return this.q + this.B + (this.r << 32);
     }
 
-    public boolean c() {
-        if (((Rect) this.a).isEmpty()) {
-            return false;
-        }
-        Point point = (Point) this.b;
-        return point.x > 0 && point.y > 0;
+    public final long b(long j10) {
+        int i10 = this.t;
+        int i11 = this.e;
+        long max = Math.max(0L, (i10 == 0 ? this.u != -9223372036854775807L ? e2.l0.Y(i11, c()) : e2.l0.Y(i11, a()) : e2.l0.B(j10 + this.k, this.i)) - this.n);
+        return this.u != -9223372036854775807L ? Math.min(e2.l0.Y(i11, this.x), max) : max;
     }
 
-    public boolean d(int i10, int i11) {
-        Point point = (Point) this.b;
-        if (point.x == i10 && point.y == i11) {
-            return false;
+    public final long c() {
+        if (this.d.getPlayState() == 2) {
+            return this.w;
         }
-        point.set(i10, i11);
-        return true;
+        this.b.getClass();
+        return this.w + e2.l0.a0(e2.l0.B(e2.l0.S(SystemClock.elapsedRealtime()) - this.u, this.i), this.e, 1000000L, RoundingMode.UP);
     }
 
-    public o0(Context context) {
-        this.a = context == null ? null : context.getApplicationContext();
+    public final void d(long j10) {
+        long j11 = this.j;
+        if (j11 == -9223372036854775807L || j10 < j11) {
+            return;
+        }
+        long F = e2.l0.F(j10 - j11, this.i);
+        this.b.getClass();
+        long currentTimeMillis = System.currentTimeMillis() - e2.l0.h0(F);
+        this.j = -9223372036854775807L;
+        e2.r rVar = ((j0) this.a.b).j;
+        rVar.getClass();
+        if (Thread.currentThread() == rVar.a) {
+            rVar.e(-1, new g0(currentTimeMillis));
+        }
     }
 }

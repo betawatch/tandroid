@@ -1,21 +1,19 @@
 package db;
 
-import a8.jd;
 import bb.l;
-import ce.b1;
-import ce.d0;
-import ce.d2;
-import ce.f0;
-import ce.n0;
-import ce.v;
-import ce.x;
-import ce.x0;
 import java.util.concurrent.locks.LockSupport;
-import org.telegram.messenger.MediaDataController;
+import ld.p;
 import org.telegram.tgnet.TLObject;
-import ud.p;
+import td.a1;
+import td.d0;
+import td.d2;
+import td.e0;
+import td.m0;
+import td.v;
+import td.w0;
+import td.x;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class k {
     public static final n1.d c = new n1.d("firebase_sessions_enabled");
@@ -28,39 +26,39 @@ public final class k {
 
     /* JADX WARN: Multi-variable type inference failed */
     public k(k1.f fVar) {
-        ld.h hVar;
+        cd.h hVar;
         this.a = fVar;
         p lVar = new l(this, 0 == true ? 1 : 0, 3);
         Thread currentThread = Thread.currentThread();
-        x0 a2 = d2.a();
+        w0 a2 = d2.a();
         boolean booleanValue = ((Boolean) a2.fold(Boolean.FALSE, x.d)).booleanValue();
         if (booleanValue) {
-            ld.i iVar = ld.i.a;
-            hVar = (ld.h) (booleanValue ? a2.fold(iVar, x.c) : a2);
+            cd.i iVar = cd.i.a;
+            hVar = (cd.h) (booleanValue ? a2.fold(iVar, x.c) : a2);
             iVar.plus(hVar);
         } else {
             hVar = a2;
         }
-        je.e eVar = n0.a;
-        if (hVar != eVar && hVar.get(ld.d.a) == null) {
+        ae.e eVar = m0.a;
+        if (hVar != eVar && hVar.get(cd.d.a) == null) {
             hVar = hVar.plus(eVar);
         }
-        ce.h hVar2 = new ce.h(hVar, currentThread, a2);
+        td.h hVar2 = new td.h(hVar, currentThread, a2);
         hVar2.L(d0.a, hVar2, lVar);
-        x0 x0Var = hVar2.e;
-        if (x0Var != null) {
-            int i10 = x0.f;
-            x0Var.h(false);
+        w0 w0Var = hVar2.e;
+        if (w0Var != null) {
+            int i10 = w0.f;
+            w0Var.h(false);
         }
         while (!Thread.interrupted()) {
             try {
-                long i11 = x0Var != null ? x0Var.i() : Long.MAX_VALUE;
-                if (!(hVar2.u() instanceof b1)) {
-                    if (x0Var != null) {
-                        int i12 = x0.f;
-                        x0Var.f(false);
+                long i11 = w0Var != null ? w0Var.i() : Long.MAX_VALUE;
+                if (!(hVar2.u() instanceof a1)) {
+                    if (w0Var != null) {
+                        int i12 = w0.f;
+                        w0Var.f(false);
                     }
-                    Object u10 = f0.u(hVar2.u());
+                    Object u10 = e0.u(hVar2.u());
                     v vVar = u10 instanceof v ? (v) u10 : null;
                     if (vVar != null) {
                         throw vVar.a;
@@ -69,9 +67,9 @@ public final class k {
                 }
                 LockSupport.parkNanos(hVar2, i11);
             } catch (Throwable th2) {
-                if (x0Var != null) {
-                    int i13 = x0.f;
-                    x0Var.f(false);
+                if (w0Var != null) {
+                    int i13 = w0.f;
+                    w0Var.f(false);
                 }
                 throw th2;
             }
@@ -95,7 +93,7 @@ public final class k {
         Long l4 = eVar.e;
         if (eVar != null) {
             Integer num = eVar.d;
-            return l4 == null || num == null || (System.currentTimeMillis() - l4.longValue()) / ((long) MediaDataController.MAX_STYLE_RUNS_COUNT) >= ((long) num.intValue());
+            return l4 == null || num == null || (System.currentTimeMillis() - l4.longValue()) / ((long) 1000) >= ((long) num.intValue());
         }
         kotlin.jvm.internal.i.h("sessionConfigs");
         throw null;
@@ -115,7 +113,7 @@ public final class k {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object c(n1.d dVar, Object obj, nd.c cVar) {
+    public final Object c(n1.d dVar, Object obj, ed.c cVar) {
         i iVar;
         int i10;
         if (cVar instanceof i) {
@@ -124,31 +122,31 @@ public final class k {
             if ((i11 & TLObject.FLAG_31) != 0) {
                 iVar.c = i11 - TLObject.FLAG_31;
                 Object obj2 = iVar.a;
-                md.a aVar = md.a.a;
+                dd.a aVar = dd.a.a;
                 i10 = iVar.c;
                 if (i10 != 0) {
-                    jd.b(obj2);
+                    l9.b.b(obj2);
                     k1.f fVar = this.a;
                     j jVar = new j(obj, dVar, this, null);
                     iVar.c = 1;
-                    if (fVar.w(new n1.c(jVar, null, 1), iVar) == aVar) {
+                    if (fVar.d(new n1.c(jVar, null, 1), iVar) == aVar) {
                         return aVar;
                     }
                 } else {
                     if (i10 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    jd.b(obj2);
+                    l9.b.b(obj2);
                 }
-                return jd.i.a;
+                return ad.j.a;
             }
         }
         iVar = new i(this, cVar);
         Object obj22 = iVar.a;
-        md.a aVar2 = md.a.a;
+        dd.a aVar2 = dd.a.a;
         i10 = iVar.c;
         if (i10 != 0) {
         }
-        return jd.i.a;
+        return ad.j.a;
     }
 }

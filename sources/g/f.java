@@ -22,10 +22,10 @@ import androidx.core.widget.NestedScrollView;
 import java.util.WeakHashMap;
 import m.v1;
 import org.telegram.messenger.beta.R;
-import r0.b0;
-import r0.i0;
+import org.telegram.messenger.zs;
+import r0.h0;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public class f extends t implements DialogInterface {
     public final e f;
@@ -36,7 +36,7 @@ public class f extends t implements DialogInterface {
     }
 
     public static int e(Context context, int i10) {
-        if (((i10 >>> 24) & 255) >= 1) {
+        if (((i10 >>> 24) & zs.e4) >= 1) {
             return i10;
         }
         TypedValue typedValue = new TypedValue();
@@ -44,7 +44,7 @@ public class f extends t implements DialogInterface {
         return typedValue.resourceId;
     }
 
-    @Override // g.t, androidx.activity.m, android.app.Dialog
+    @Override // g.t, androidx.activity.n, android.app.Dialog
     public void onCreate(Bundle bundle) {
         int i10;
         ListAdapter listAdapter;
@@ -105,8 +105,8 @@ public class f extends t implements DialogInterface {
         }
         Button button = (Button) b12.findViewById(android.R.id.button1);
         eVar.h = button;
-        androidx.mediarouter.app.x xVar = eVar.A;
-        button.setOnClickListener(xVar);
+        androidx.mediarouter.app.w wVar = eVar.A;
+        button.setOnClickListener(wVar);
         if (TextUtils.isEmpty(null)) {
             eVar.h.setVisibility(8);
             i10 = 0;
@@ -117,7 +117,7 @@ public class f extends t implements DialogInterface {
         }
         Button button2 = (Button) b12.findViewById(android.R.id.button2);
         eVar.i = button2;
-        button2.setOnClickListener(xVar);
+        button2.setOnClickListener(wVar);
         if (TextUtils.isEmpty(eVar.j)) {
             eVar.i.setVisibility(8);
         } else {
@@ -127,7 +127,7 @@ public class f extends t implements DialogInterface {
         }
         Button button3 = (Button) b12.findViewById(android.R.id.button3);
         eVar.l = button3;
-        button3.setOnClickListener(xVar);
+        button3.setOnClickListener(wVar);
         if (TextUtils.isEmpty(null)) {
             eVar.l.setVisibility(8);
         } else {
@@ -220,8 +220,8 @@ public class f extends t implements DialogInterface {
                 int i12 = z12 ? 2 : 0;
                 View findViewById11 = window.findViewById(R.id.scrollIndicatorUp);
                 View findViewById12 = window.findViewById(R.id.scrollIndicatorDown);
-                WeakHashMap weakHashMap = i0.a;
-                b0.b(view2, i11 | i12, 3);
+                WeakHashMap weakHashMap = h0.a;
+                r0.a0.b(view2, i11 | i12, 3);
                 if (findViewById11 != null) {
                     b11.removeView(findViewById11);
                 }

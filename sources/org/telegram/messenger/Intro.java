@@ -2,9 +2,13 @@ package org.telegram.messenger;
 
 import android.graphics.Color;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public class Intro {
+    public static void a(int i10) {
+        setBackgroundColor(Color.red(i10) / 255.0f, Color.green(i10) / 255.0f, Color.blue(i10) / 255.0f, Color.alpha(i10) / 255.0f);
+    }
+
     public static native void onDrawFrame(int i10);
 
     public static native void onSurfaceChanged(int i10, int i11, float f7, int i12);
@@ -12,10 +16,6 @@ public class Intro {
     public static native void onSurfaceCreated();
 
     private static native void setBackgroundColor(float f7, float f10, float f11, float f12);
-
-    public static void setBackgroundColor(int i10) {
-        setBackgroundColor(Color.red(i10) / 255.0f, Color.green(i10) / 255.0f, Color.blue(i10) / 255.0f, Color.alpha(i10) / 255.0f);
-    }
 
     public static native void setDate(float f7);
 

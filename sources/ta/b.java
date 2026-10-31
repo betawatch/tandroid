@@ -1,84 +1,69 @@
 package ta;
 
-import android.content.SharedPreferences;
-import android.util.Base64;
-import android.util.Log;
-import java.security.KeyFactory;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-import java.security.PublicKey;
-import java.security.spec.InvalidKeySpecException;
-import java.security.spec.X509EncodedKeySpec;
-import m9.h;
-import m9.j;
+import m1.j;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class b {
-    public static final String[] c = {"*", "FCM", "GCM", ""};
-    public final SharedPreferences a;
-    public final String b;
+    public final String a;
+    public final long b;
+    public final int c;
 
-    /* JADX WARN: Code restructure failed: missing block: B:11:0x0045, code lost:
-    
-        if (r1.isEmpty() != false) goto L12;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public b(h hVar) {
-        hVar.a();
-        this.a = hVar.a.getSharedPreferences("com.google.android.gms.appid", 0);
-        hVar.a();
-        j jVar = hVar.c;
-        String str = jVar.e;
-        if (str == null) {
-            hVar.a();
-            str = jVar.b;
-            if (str.startsWith("1:") || str.startsWith("2:")) {
-                String[] split = str.split(":");
-                if (split.length == 4) {
-                    str = split[1];
-                }
-                str = null;
-            }
-        }
-        this.b = str;
+    public b(String str, long j10, int i10) {
+        this.a = str;
+        this.b = j10;
+        this.c = i10;
     }
 
-    public final String a() {
-        String string;
-        synchronized (this.a) {
-            string = this.a.getString("|S|id", null);
-        }
-        return string;
+    public static a5.a a() {
+        a5.a aVar = new a5.a((char) 0, 21);
+        aVar.d = 0L;
+        return aVar;
     }
 
-    public final String b() {
-        PublicKey publicKey;
-        synchronized (this.a) {
-            String str = null;
-            String string = this.a.getString("|S||P|", null);
-            if (string == null) {
-                return null;
-            }
-            try {
-                publicKey = KeyFactory.getInstance("RSA").generatePublic(new X509EncodedKeySpec(Base64.decode(string, 8)));
-            } catch (IllegalArgumentException | NoSuchAlgorithmException | InvalidKeySpecException e) {
-                Log.w("ContentValues", "Invalid key stored " + e);
-                publicKey = null;
-            }
-            if (publicKey == null) {
-                return null;
-            }
-            try {
-                byte[] digest = MessageDigest.getInstance("SHA1").digest(publicKey.getEncoded());
-                digest[0] = (byte) (((digest[0] & 15) + 112) & 255);
-                str = Base64.encodeToString(digest, 0, 8, 11);
-            } catch (NoSuchAlgorithmException unused) {
-                Log.w("ContentValues", "Unexpected error, device missing required algorithms");
-            }
-            return str;
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
         }
+        if (!(obj instanceof b)) {
+            return false;
+        }
+        b bVar = (b) obj;
+        int i10 = bVar.c;
+        String str = bVar.a;
+        String str2 = this.a;
+        if (str2 == null) {
+            if (str != null) {
+                return false;
+            }
+        } else if (!str2.equals(str)) {
+            return false;
+        }
+        if (this.b != bVar.b) {
+            return false;
+        }
+        int i11 = this.c;
+        return i11 == 0 ? i10 == 0 : j.b(i11, i10);
+    }
+
+    public final int hashCode() {
+        String str = this.a;
+        int hashCode = str == null ? 0 : str.hashCode();
+        long j10 = this.b;
+        int i10 = (((hashCode ^ 1000003) * 1000003) ^ ((int) (j10 ^ (j10 >>> 32)))) * 1000003;
+        int i11 = this.c;
+        return (i11 != 0 ? j.c(i11) : 0) ^ i10;
+    }
+
+    public final String toString() {
+        StringBuilder sb2 = new StringBuilder("TokenResult{token=");
+        sb2.append(this.a);
+        sb2.append(", tokenExpirationTimestamp=");
+        sb2.append(this.b);
+        sb2.append(", responseCode=");
+        int i10 = this.c;
+        sb2.append(i10 != 1 ? i10 != 2 ? i10 != 3 ? "null" : "AUTH_ERROR" : "BAD_CONFIG" : "OK");
+        sb2.append("}");
+        return sb2.toString();
     }
 }

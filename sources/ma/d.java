@@ -1,73 +1,24 @@
 package ma;
 
-import java.util.Date;
-import java.util.HashMap;
-import ka.g;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class d implements la.a {
-    public static final b f;
-    public static final b h;
-    public final HashMap a;
-    public final HashMap b;
-    public final a c;
-    public boolean d;
-    public static final a e = new a(0);
-    public static final c n = new c();
+public final class d {
+    public static final d a;
+    public static final /* synthetic */ d[] b;
 
-    /* JADX WARN: Type inference failed for: r0v1, types: [ma.b] */
-    /* JADX WARN: Type inference failed for: r0v2, types: [ma.b] */
     static {
-        final int i10 = 0;
-        f = new ka.f() { // from class: ma.b
-            @Override // ka.a
-            public final void a(Object obj, Object obj2) {
-                switch (i10) {
-                    case 0:
-                        ((g) obj2).b((String) obj);
-                        break;
-                    default:
-                        ((g) obj2).c(((Boolean) obj).booleanValue());
-                        break;
-                }
-            }
-        };
-        final int i11 = 1;
-        h = new ka.f() { // from class: ma.b
-            @Override // ka.a
-            public final void a(Object obj, Object obj2) {
-                switch (i11) {
-                    case 0:
-                        ((g) obj2).b((String) obj);
-                        break;
-                    default:
-                        ((g) obj2).c(((Boolean) obj).booleanValue());
-                        break;
-                }
-            }
-        };
+        d dVar = new d("DEFAULT", 0);
+        a = dVar;
+        b = new d[]{dVar, new d("SIGNED", 1), new d("FIXED", 2)};
     }
 
-    public d() {
-        HashMap hashMap = new HashMap();
-        this.a = hashMap;
-        HashMap hashMap2 = new HashMap();
-        this.b = hashMap2;
-        this.c = e;
-        this.d = false;
-        hashMap2.put(String.class, f);
-        hashMap.remove(String.class);
-        hashMap2.put(Boolean.class, h);
-        hashMap.remove(Boolean.class);
-        hashMap2.put(Date.class, n);
-        hashMap.remove(Date.class);
+    public static d valueOf(String str) {
+        return (d) Enum.valueOf(d.class, str);
     }
 
-    @Override // la.a
-    public final la.a d(Class cls, ka.d dVar) {
-        this.a.put(cls, dVar);
-        this.b.remove(cls);
-        return this;
+    public static d[] values() {
+        return (d[]) b.clone();
     }
 }

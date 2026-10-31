@@ -1,42 +1,33 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.AndroidUtilities;
+import java.util.ArrayList;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class jq0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ nr0 b;
+public final /* synthetic */ class jq0 implements org.telegram.ui.ActionBar.u1, org.telegram.messenger.fs {
+    public final /* synthetic */ zt0 a;
+    public final /* synthetic */ TL_stories.StoryItem b;
 
-    public /* synthetic */ jq0(nr0 nr0Var, int i10) {
-        this.a = i10;
-        this.b = nr0Var;
+    public /* synthetic */ jq0(zt0 zt0Var, TL_stories.StoryItem storyItem) {
+        this.a = zt0Var;
+        this.b = storyItem;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                nr0 nr0Var = this.b;
-                nr0Var.B0 = true;
-                m20 m20Var = nr0Var.z0;
-                m20Var.r.setText("");
-                AndroidUtilities.showKeyboard(m20Var.r);
-                break;
-            default:
-                k5 k5Var = new k5(16);
-                nr0 nr0Var2 = this.b;
-                if (!nr0Var2.isKeyboardVisible()) {
-                    k5Var.run();
-                    break;
-                } else {
-                    m20 m20Var2 = nr0Var2.z0;
-                    if (m20Var2 != null) {
-                        AndroidUtilities.hideKeyboard(m20Var2.r);
-                    }
-                    AndroidUtilities.runOnUIThread(k5Var, 300L);
-                    break;
-                }
-        }
+    @Override // org.telegram.messenger.fs
+    public void a(String str) {
+        r0.getStoriesController().r(r0.l1, str, new vg(13, this.a, this.b));
+    }
+
+    @Override // org.telegram.ui.ActionBar.u1
+    public void h(org.telegram.ui.ActionBar.x1 x1Var, int i10) {
+        ArrayList arrayList = new ArrayList(1);
+        arrayList.add(this.b);
+        zt0 zt0Var = this.a;
+        org.telegram.ui.ActionBar.k2 k2Var = zt0Var.x1;
+        k2Var.getMessagesController().O1().s(arrayList, zt0Var.l1);
+        cc.a0(k2Var).Q(R.raw.ic_delete, 36, org.telegram.messenger.cd.G(1, "StoriesDeleted", new Object[0])).j();
+        zt0Var.T(false);
     }
 }

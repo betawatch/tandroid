@@ -1,83 +1,58 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.MotionEvent;
-import android.view.WindowManager;
-import org.telegram.messenger.FileLog;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class zb extends gl0 {
-    public final /* synthetic */ int m1 = 0;
-    public final /* synthetic */ Object n1;
+public final /* synthetic */ class zb implements org.telegram.messenger.q20 {
+    public final /* synthetic */ int a = 2;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ Object d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zb(org.telegram.ui.ht htVar, Context context, int i10, org.telegram.ui.ActionBar.u6 u6Var) {
-        super(4, i10, context, null, u6Var);
-        this.n1 = htVar;
+    public /* synthetic */ zb(int i10, long j10, TLRPC.Document document) {
+        this.c = i10;
+        this.b = j10;
+        this.d = document;
     }
 
-    @Override // org.telegram.ui.Components.gl0, android.view.ViewGroup, android.view.View
-    public boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        qc qcVar;
-        switch (this.m1) {
+    @Override // org.telegram.messenger.q20
+    public final void a(Object obj) {
+        TLRPC.StickerSet stickerSet;
+        int i10 = this.a;
+        int i11 = 2;
+        Object obj2 = this.d;
+        long j10 = this.b;
+        int i12 = this.c;
+        switch (i10) {
             case 0:
-                bc bcVar = (bc) this.n1;
-                if (motionEvent.getAction() == 0) {
-                    qc qcVar2 = bcVar.n;
-                    if (qcVar2 != null) {
-                        qcVar2.i(false);
-                    }
-                } else if (motionEvent.getAction() == 1 && (qcVar = bcVar.n) != null) {
-                    qcVar.i(true);
-                }
+                TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) obj;
+                org.telegram.messenger.i0.h3(new org.telegram.ui.zg(27, (wb) obj2, (tL_messages_stickerSet == null || (stickerSet = tL_messages_stickerSet.set) == null) ? org.telegram.messenger.cd.L0(2131754435, null) : i12 == 1 ? org.telegram.messenger.i0.W2(org.telegram.messenger.cd.a0("TopicContainsEmojiPackSingle", null, 2131744047, stickerSet.title)) : i12 == 2 ? org.telegram.messenger.i0.W2(org.telegram.messenger.cd.a0("StoryContainsEmojiPackSingle", null, 2131744717, stickerSet.title)) : org.telegram.messenger.i0.W2(org.telegram.messenger.cd.a0("MessageContainsEmojiPackSingle", null, 2131748611, stickerSet.title))), Math.max(1L, 750 - (System.currentTimeMillis() - j10)));
                 break;
-        }
-        return super.dispatchTouchEvent(motionEvent);
-    }
-
-    @Override // org.telegram.ui.Components.gl0
-    public void j() {
-        switch (this.m1) {
             case 1:
-                super.j();
-                org.telegram.ui.ht htVar = (org.telegram.ui.ht) this.n1;
-                if (getReactionsWindow() != null) {
-                    WindowManager.LayoutParams layoutParams = htVar.x;
-                    layoutParams.flags &= -131073;
-                    layoutParams.softInputMode = 16;
-                } else {
-                    htVar.x.flags |= 131072;
-                }
-                try {
-                    ((WindowManager) htVar.w.getSystemService("window")).updateViewLayout(htVar.y, htVar.x);
-                    break;
-                } catch (Exception e) {
-                    FileLog.e(e);
-                    return;
-                }
+                ((zt0) obj2).getStoriesController().b(i12, j10, (ArrayList) obj);
+                break;
             default:
-                super.j();
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.gl0
-    public void m() {
-        switch (this.m1) {
-            case 0:
-                qc qcVar = qc.x;
-                if (qcVar != null) {
-                    qcVar.i(false);
+                TLRPC.Document document = (TLRPC.Document) obj2;
+                if (((Boolean) obj).booleanValue()) {
+                    rh.e6.y(i12, false).P(j10);
+                    org.telegram.messenger.i0.g3(new u41(new org.telegram.ui.vl0(j10, i11), document, org.telegram.messenger.cd.L0(2131750111, null), 25));
+                    break;
                 }
-                ((bc) this.n1).d.getReactionsWindow().c.setOnClickListener(new f0(this, 4));
                 break;
         }
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zb(bc bcVar, org.telegram.ui.ActionBar.r2 r2Var, Context context, int i10, org.telegram.ui.ActionBar.u6 u6Var) {
-        super(3, i10, context, r2Var, u6Var);
-        this.n1 = bcVar;
+    public /* synthetic */ zb(int i10, wb wbVar, long j10) {
+        this.c = i10;
+        this.d = wbVar;
+        this.b = j10;
+    }
+
+    public /* synthetic */ zb(zt0 zt0Var, long j10, int i10) {
+        this.d = zt0Var;
+        this.b = j10;
+        this.c = i10;
     }
 }

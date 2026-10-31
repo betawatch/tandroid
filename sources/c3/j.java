@@ -1,9 +1,8 @@
 package c3;
 
-import e2.n0;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class j implements b0 {
     public final int a;
@@ -40,7 +39,7 @@ public final class j implements b0 {
     @Override // c3.b0
     public final a0 f(long j10) {
         long[] jArr = this.e;
-        int f7 = n0.f(jArr, j10, true);
+        int f7 = e2.l0.f(jArr, j10, true);
         long j11 = jArr[f7];
         long[] jArr2 = this.c;
         c0 c0Var = new c0(j11, jArr2[f7]);

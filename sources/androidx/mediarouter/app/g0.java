@@ -1,72 +1,68 @@
 package androidx.mediarouter.app;
 
-import a8.kc;
-import a8.p1;
-import android.content.Context;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import android.widget.ImageButton;
-import org.telegram.messenger.beta.R;
-import s4.e1;
+import android.view.animation.Animation;
+import org.telegram.ui.ActionBar.b2;
+import org.telegram.ui.ActionBar.q4;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public abstract class g0 extends e1 {
-    public p4.v v;
-    public final ImageButton w;
-    public final MediaRouteVolumeSlider x;
-    public final /* synthetic */ o0 y;
+public final class g0 implements Animation.AnimationListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g0(o0 o0Var, View view, ImageButton imageButton, MediaRouteVolumeSlider mediaRouteVolumeSlider) {
-        super(view);
-        int color;
-        int color2;
-        this.y = o0Var;
-        this.w = imageButton;
-        this.x = mediaRouteVolumeSlider;
-        Context context = o0Var.y;
-        Drawable b10 = kc.b(context, R.drawable.mr_cast_mute_button);
-        if (p1.h(context)) {
-            b10.setTint(context.getColor(R.color.mr_dynamic_dialog_icon_light));
-        }
-        imageButton.setImageDrawable(b10);
-        if (p1.h(context)) {
-            color = context.getColor(R.color.mr_cast_progressbar_progress_and_thumb_light);
-            color2 = context.getColor(R.color.mr_cast_progressbar_background_light);
-        } else {
-            color = context.getColor(R.color.mr_cast_progressbar_progress_and_thumb_dark);
-            color2 = context.getColor(R.color.mr_cast_progressbar_background_dark);
-        }
-        mediaRouteVolumeSlider.a(color, color2);
+    public /* synthetic */ g0(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    public final void t(p4.v vVar) {
-        this.v = vVar;
-        int i10 = vVar.p;
-        boolean z10 = i10 == 0;
-        ImageButton imageButton = this.w;
-        imageButton.setActivated(z10);
-        imageButton.setOnClickListener(new x(this, 1));
-        p4.v vVar2 = this.v;
-        MediaRouteVolumeSlider mediaRouteVolumeSlider = this.x;
-        mediaRouteVolumeSlider.setTag(vVar2);
-        mediaRouteVolumeSlider.setMax(vVar.q);
-        mediaRouteVolumeSlider.setProgress(i10);
-        mediaRouteVolumeSlider.setOnSeekBarChangeListener(this.y.K);
+    @Override // android.view.animation.Animation.AnimationListener
+    public final void onAnimationEnd(Animation animation) {
+        switch (this.a) {
+            case 0:
+                o0 o0Var = ((m0) this.b).x;
+                o0Var.O = false;
+                o0Var.o();
+                break;
+            case 1:
+                ((b2) this.b).p1.setAlpha(0.0f);
+                break;
+            default:
+                ((q4) this.b).f.post(new lg.s(this, 25));
+                break;
+        }
     }
 
-    public final void u(boolean z10) {
-        ImageButton imageButton = this.w;
-        if (imageButton.isActivated() == z10) {
-            return;
+    @Override // android.view.animation.Animation.AnimationListener
+    public final void onAnimationRepeat(Animation animation) {
+        int i10 = this.a;
+    }
+
+    @Override // android.view.animation.Animation.AnimationListener
+    public final void onAnimationStart(Animation animation) {
+        switch (this.a) {
+            case 0:
+                ((m0) this.b).x.O = true;
+                break;
+            case 1:
+                break;
+            default:
+                q4 q4Var = (q4) this.b;
+                q4Var.i.setEnabled(false);
+                q4Var.g.setVisibility(0);
+                q4Var.h.setVisibility(0);
+                break;
         }
-        imageButton.setActivated(z10);
-        o0 o0Var = this.y;
-        if (z10) {
-            o0Var.N.put(this.v.c, Integer.valueOf(this.x.getProgress()));
-        } else {
-            o0Var.N.remove(this.v.c);
-        }
+    }
+
+    private final void a(Animation animation) {
+    }
+
+    private final void b(Animation animation) {
+    }
+
+    private final void c(Animation animation) {
+    }
+
+    private final void d(Animation animation) {
     }
 }

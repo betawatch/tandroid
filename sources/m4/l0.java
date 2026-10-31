@@ -10,27 +10,26 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.HashMap;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.IMapsProvider;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.f7;
-import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Cells.y4;
-import org.telegram.ui.Components.kb1;
-import org.telegram.ui.Components.l51;
-import org.telegram.ui.Components.y9;
-import org.telegram.ui.d3;
-import org.telegram.ui.lc0;
-import org.telegram.ui.nc0;
-import org.telegram.ui.oc0;
-import org.telegram.ui.qc0;
-import org.telegram.ui.rc0;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.cd;
+import org.telegram.messenger.eb;
+import org.telegram.messenger.fa;
+import org.telegram.messenger.zs;
+import org.telegram.ui.ActionBar.a7;
+import org.telegram.ui.ActionBar.t6;
+import org.telegram.ui.Cells.x4;
+import org.telegram.ui.Components.g9;
+import org.telegram.ui.Components.xk;
+import org.telegram.ui.sb0;
+import org.telegram.ui.ub0;
+import org.telegram.ui.wu;
+import org.telegram.ui.xb0;
+import org.telegram.ui.yb0;
+import w7.b6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final /* synthetic */ class l0 implements o0, IMapsProvider.OnMarkerClickListener {
+public final /* synthetic */ class l0 implements o0, eb {
     public final /* synthetic */ float a;
     public final /* synthetic */ Object b;
 
@@ -39,102 +38,102 @@ public final /* synthetic */ class l0 implements o0, IMapsProvider.OnMarkerClick
         this.a = f7;
     }
 
-    @Override // m4.o0
-    public void i(w wVar) {
-        ((p0) this.b).g.t.b(this.a);
-    }
-
-    @Override // org.telegram.messenger.IMapsProvider.OnMarkerClickListener
-    public boolean onClick(IMapsProvider.IMarker iMarker) {
-        rc0 rc0Var = (rc0) this.b;
-        ArrayList arrayList = rc0Var.g0;
-        if (iMarker.getTag() instanceof qc0) {
-            rc0Var.X.setVisibility(4);
-            if (!rc0Var.B0) {
-                ImageView imageView = rc0Var.a;
-                int i10 = y6.ui;
-                f7.t(imageView, i10, rc0Var.getResourceProvider(), PorterDuff.Mode.MULTIPLY);
-                rc0Var.a.setTag(Integer.valueOf(i10));
-                rc0Var.B0 = true;
+    @Override // org.telegram.messenger.eb
+    public void a(fa faVar) {
+        yb0 yb0Var = (yb0) this.b;
+        ArrayList arrayList = yb0Var.p0;
+        if (faVar.b() instanceof xb0) {
+            yb0Var.V.setVisibility(4);
+            if (!yb0Var.K0) {
+                ImageView imageView = yb0Var.a;
+                int i10 = t6.ij;
+                a7.t(imageView, i10, yb0Var.getResourceProvider(), PorterDuff.Mode.MULTIPLY);
+                yb0Var.a.setTag(Integer.valueOf(i10));
+                yb0Var.K0 = true;
             }
             int i11 = 0;
             while (true) {
                 if (i11 >= arrayList.size()) {
                     break;
                 }
-                lc0 lc0Var = (lc0) arrayList.get(i11);
-                if (lc0Var == null || lc0Var.e != iMarker) {
+                sb0 sb0Var = (sb0) arrayList.get(i11);
+                if (sb0Var == null || sb0Var.e != faVar) {
                     i11++;
                 } else {
-                    rc0Var.i0 = lc0Var.a;
-                    if (rc0Var.j0) {
-                        rc0Var.j0 = false;
-                        rc0Var.D0();
+                    yb0Var.r0 = sb0Var.a;
+                    if (yb0Var.s0) {
+                        yb0Var.s0 = false;
+                        yb0Var.R0();
                     }
-                    rc0Var.I.animateCamera(ApplicationLoader.getMapsProvider().newCameraUpdateLatLngZoom(lc0Var.e.getPosition(), this.a));
+                    yb0Var.G.b(((t7.u) org.telegram.messenger.w0.k()).newCameraUpdateLatLngZoom(sb0Var.e.a(), this.a));
                 }
             }
-            oc0 oc0Var = rc0Var.x;
-            rc0 rc0Var2 = oc0Var.b;
-            HashMap hashMap = oc0Var.a;
-            qc0 qc0Var = (qc0) iMarker.getTag();
-            if (qc0Var != null && rc0Var2.n0 != qc0Var) {
-                rc0Var2.z0(false);
-                IMapsProvider.IMarker iMarker2 = rc0Var2.m0;
-                if (iMarker2 != null) {
-                    View view = (View) hashMap.get(iMarker2);
-                    if (view != null) {
-                        oc0Var.removeView(view);
-                        hashMap.remove(iMarker2);
-                    }
-                    rc0Var2.m0 = null;
-                }
-                rc0Var2.n0 = qc0Var;
-                rc0Var2.m0 = iMarker;
-                Context context = oc0Var.getContext();
-                FrameLayout frameLayout = new FrameLayout(context);
-                oc0Var.addView(frameLayout, kb1.g(114.0f, -2));
-                FrameLayout frameLayout2 = new FrameLayout(context);
-                rc0Var2.o0 = frameLayout2;
-                frameLayout2.setBackgroundResource(R.drawable.venue_tooltip);
-                FrameLayout frameLayout3 = rc0Var2.o0;
-                f7.y(frameLayout3, frameLayout3.getBackground(), y6.h5, rc0Var2.getResourceProvider(), PorterDuff.Mode.MULTIPLY);
-                frameLayout.addView(rc0Var2.o0, kb1.g(71.0f, -2));
-                rc0Var2.o0.setAlpha(0.0f);
-                rc0Var2.o0.setOnClickListener(new l51(28, oc0Var, qc0Var));
-                TextView textView = new TextView(context);
-                textView.setTextSize(1, 16.0f);
-                textView.setMaxLines(1);
-                TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
-                textView.setEllipsize(truncateAt);
-                textView.setSingleLine(true);
-                f7.V(textView, y6.G6, rc0Var2.getResourceProvider());
-                textView.setTypeface(AndroidUtilities.bold());
-                textView.setGravity(LocaleController.isRTL ? 5 : 3);
-                TextView k10 = d3.k(rc0Var2.o0, textView, kb1.h(-2, -2.0f, (LocaleController.isRTL ? 5 : 3) | 48, 18.0f, 10.0f, 18.0f, 0.0f), context);
-                k10.setTextSize(1, 14.0f);
-                k10.setMaxLines(1);
-                k10.setEllipsize(truncateAt);
-                k10.setSingleLine(true);
-                f7.V(k10, y6.A6, rc0Var2.getResourceProvider());
-                k10.setGravity(LocaleController.isRTL ? 5 : 3);
-                rc0Var2.o0.addView(k10, kb1.h(-2, -2.0f, (LocaleController.isRTL ? 5 : 3) | 48, 18.0f, 32.0f, 18.0f, 0.0f));
-                textView.setText(qc0Var.c.title);
-                k10.setText(LocaleController.getString(R.string.TapToSendLocation));
-                FrameLayout frameLayout4 = new FrameLayout(context);
-                frameLayout4.setBackground(y6.K(AndroidUtilities.dp(36.0f), y4.a(qc0Var.a)));
-                frameLayout.addView(frameLayout4, kb1.h(36, 36.0f, 81, 0.0f, 0.0f, 0.0f, 4.0f));
-                y9 y9Var = new y9(context);
-                y9Var.g(a1.g.s(new StringBuilder("https://ss3.4sqi.net/img/categories_v2/"), qc0Var.c.venue_type, "_64.png"), null, null);
-                frameLayout4.addView(y9Var, kb1.i(30, 30, 17));
-                ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-                ofFloat.addUpdateListener(new nc0(oc0Var, frameLayout4));
-                ofFloat.setDuration(360L);
-                ofFloat.start();
-                hashMap.put(iMarker, frameLayout);
-                rc0Var2.I.animateCamera(ApplicationLoader.getMapsProvider().newCameraUpdateLatLng(iMarker.getPosition()), 300, null);
+            ub0 ub0Var = yb0Var.w;
+            yb0 yb0Var2 = ub0Var.b;
+            HashMap hashMap = ub0Var.a;
+            xb0 xb0Var = (xb0) faVar.b();
+            if (xb0Var == null || yb0Var2.w0 == xb0Var) {
+                return;
             }
+            yb0Var2.M0(false);
+            fa faVar2 = yb0Var2.v0;
+            if (faVar2 != null) {
+                View view = (View) hashMap.get(faVar2);
+                if (view != null) {
+                    ub0Var.removeView(view);
+                    hashMap.remove(faVar2);
+                }
+                yb0Var2.v0 = null;
+            }
+            yb0Var2.w0 = xb0Var;
+            yb0Var2.v0 = faVar;
+            Context context = ub0Var.getContext();
+            FrameLayout frameLayout = new FrameLayout(context);
+            ub0Var.addView(frameLayout, b6.c(114.0f, -2));
+            FrameLayout frameLayout2 = new FrameLayout(context);
+            yb0Var2.x0 = frameLayout2;
+            frameLayout2.setBackgroundResource(R.drawable.venue_tooltip);
+            FrameLayout frameLayout3 = yb0Var2.x0;
+            a7.y(frameLayout3, frameLayout3.getBackground(), t6.h5, yb0Var2.getResourceProvider(), PorterDuff.Mode.MULTIPLY);
+            frameLayout.addView(yb0Var2.x0, b6.c(71.0f, -2));
+            yb0Var2.x0.setAlpha(0.0f);
+            yb0Var2.x0.setOnClickListener(new wu(17, ub0Var, xb0Var));
+            TextView textView = new TextView(context);
+            textView.setTextSize(1, 16.0f);
+            textView.setMaxLines(1);
+            TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
+            textView.setEllipsize(truncateAt);
+            textView.setSingleLine(true);
+            a7.V(textView, t6.G6, yb0Var2.getResourceProvider());
+            textView.setTypeface(org.telegram.messenger.i0.o());
+            textView.setGravity(cd.X ? 5 : 3);
+            TextView l4 = org.telegram.ui.Cells.f1.l(yb0Var2.x0, textView, b6.d(-2, -2.0f, (cd.X ? 5 : 3) | 48, 18.0f, 10.0f, 18.0f, 0.0f), context);
+            l4.setTextSize(1, 14.0f);
+            l4.setMaxLines(1);
+            l4.setEllipsize(truncateAt);
+            l4.setSingleLine(true);
+            a7.V(l4, t6.A6, yb0Var2.getResourceProvider());
+            l4.setGravity(cd.X ? 5 : 3);
+            yb0Var2.x0.addView(l4, b6.d(-2, -2.0f, (cd.X ? 5 : 3) | 48, 18.0f, 32.0f, 18.0f, 0.0f));
+            textView.setText(xb0Var.c.title);
+            l4.setText(cd.L0(2131744280, null));
+            FrameLayout frameLayout4 = new FrameLayout(context);
+            frameLayout4.setBackground(t6.L(org.telegram.messenger.i0.L(36.0f), x4.a(xb0Var.a)));
+            frameLayout.addView(frameLayout4, b6.d(36, 36.0f, 81, 0.0f, 0.0f, 0.0f, 4.0f));
+            g9 g9Var = new g9(context);
+            g9Var.h(a1.g.r(new StringBuilder("https://ss3.4sqi.net/img/categories_v2/"), xb0Var.c.venue_type, "_64.png"), null, null);
+            frameLayout4.addView(g9Var, b6.e(30, 30, 17));
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+            ofFloat.addUpdateListener(new xk(ub0Var, frameLayout4));
+            ofFloat.setDuration(360L);
+            ofFloat.start();
+            hashMap.put(faVar, frameLayout);
+            yb0Var2.G.c(((t7.u) org.telegram.messenger.w0.k()).newCameraUpdateLatLng(faVar.a()), zs.X4);
         }
-        return true;
+    }
+
+    @Override // m4.o0
+    public void b(w wVar) {
+        ((p0) this.b).h.t.b(this.a);
     }
 }

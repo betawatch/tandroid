@@ -1,22 +1,22 @@
 package k3;
 
+import b2.v0;
 import b2.w;
-import b2.w0;
 import b2.x;
 import c3.d0;
-import c3.j0;
+import c3.k0;
 import c3.o;
 import c3.p;
 import c3.q;
 import c3.s;
 import c3.t;
-import f9.g0;
-import f9.i0;
-import f9.s1;
+import e9.l0;
+import e9.n0;
+import e9.x1;
 import java.util.List;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class a implements o {
     public final /* synthetic */ int a = 0;
@@ -53,14 +53,14 @@ public final class a implements o {
                 ((o) this.b).c(qVar);
                 break;
             default:
-                j0 F1 = qVar.F1(0, 3);
-                qVar.D1(new t(-9223372036854775807L));
+                k0 I1 = qVar.I1(0, 3);
+                qVar.G1(new t(-9223372036854775807L));
                 qVar.Q0();
                 x xVar = (x) this.b;
                 w a2 = xVar.a();
-                a2.r = w0.n("text/x-unknown");
+                a2.r = v0.n("text/x-unknown");
                 a2.j = xVar.s;
-                ic.a.u(a2, F1);
+                i0.a.r(a2, I1);
                 break;
         }
     }
@@ -79,8 +79,8 @@ public final class a implements o {
     public final List e() {
         switch (this.a) {
         }
-        g0 g0Var = i0.b;
-        return s1.e;
+        l0 l0Var = n0.b;
+        return x1.e;
     }
 
     @Override // c3.o

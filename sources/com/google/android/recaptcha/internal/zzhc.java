@@ -1,35 +1,34 @@
 package com.google.android.recaptcha.internal;
 
-import a8.id;
+import ad.c;
+import ad.h;
 import android.net.TrafficStats;
 import android.webkit.URLUtil;
-import androidx.car.app.navigation.model.Maneuver;
+import bd.j;
+import ib.a;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.List;
 import javax.net.ssl.HttpsURLConnection;
-import jd.c;
-import jd.g;
-import kd.h;
 import kotlin.jvm.internal.i;
-import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.zs;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class zzhc implements zzha {
     private final c zza;
 
     public zzhc() {
         int i10 = zzby.zza;
-        this.zza = id.a(zzhb.zza);
+        this.zza = a.a(zzhb.zza);
     }
 
     private static final void zzb(byte[] bArr) {
         for (zzwn zzwnVar : zzwq.zzk(bArr).zzl()) {
             String str = "INIT_TOTAL";
-            List c10 = h.c("INIT_TOTAL", "EXECUTE_TOTAL");
+            List c10 = j.c("INIT_TOTAL", "EXECUTE_TOTAL");
             switch (zzwnVar.zzaa()) {
                 case 2:
                     str = "UNKNOWN";
@@ -114,10 +113,10 @@ public final class zzhc implements zzha {
                 case 29:
                     str = "POST_EXECUTE";
                     break;
-                case MessageObject.TYPE_GIFT_STARS /* 30 */:
+                case zs.T /* 30 */:
                     str = "SIGNAL_MANAGER_INITIALIZATION";
                     break;
-                case MessageObject.TYPE_GIFT_THEME_UPDATE /* 31 */:
+                case zs.U /* 31 */:
                     str = "SIGNAL_MANAGER_COLLECT_SIGNALS";
                     break;
                 case 32:
@@ -141,40 +140,40 @@ public final class zzhc implements zzha {
                 case 38:
                     str = "PIA_WARMUP";
                     break;
-                case Maneuver.TYPE_DESTINATION /* 39 */:
+                case 39:
                     str = "GMSCORE_ENGINE_INITIALIZATION";
                     break;
-                case Maneuver.TYPE_DESTINATION_STRAIGHT /* 40 */:
+                case 40:
                     str = "GMSCORE_ENGINE_SIGNAL_COLLECTION";
                     break;
-                case Maneuver.TYPE_DESTINATION_LEFT /* 41 */:
+                case 41:
                     str = "INIT_ATTEMPT";
                     break;
-                case Maneuver.TYPE_DESTINATION_RIGHT /* 42 */:
+                case 42:
                     str = "WEBVIEW_INITIALIZATION";
                     break;
-                case Maneuver.TYPE_ROUNDABOUT_ENTER_CW /* 43 */:
+                case 43:
                     str = "ORCAS_ENGINE_INITIALIZATION";
                     break;
-                case Maneuver.TYPE_ROUNDABOUT_EXIT_CW /* 44 */:
+                case 44:
                     str = "ORCAS_ENGINE_SIGNAL_COLLECTION";
                     break;
-                case Maneuver.TYPE_ROUNDABOUT_ENTER_CCW /* 45 */:
+                case 45:
                     str = "INIT_CLIENT_REUSE";
                     break;
-                case Maneuver.TYPE_ROUNDABOUT_EXIT_CCW /* 46 */:
+                case 46:
                     str = "ORCAS_SIGNAL_COLLECTION";
                     break;
-                case Maneuver.TYPE_FERRY_BOAT_LEFT /* 47 */:
+                case 47:
                     str = "ORCAS_SIGNAL_INITIALIZATION";
                     break;
                 case 48:
                     str = "FETCH_TOKEN_ATTEMPT";
                     break;
-                case Maneuver.TYPE_FERRY_TRAIN_LEFT /* 49 */:
+                case 49:
                     str = "ORCAS_FETCH_VERIFICATION_KEY";
                     break;
-                case Maneuver.TYPE_FERRY_TRAIN_RIGHT /* 50 */:
+                case 50:
                     str = "ORCAS_VALIDATE_SIGNATURE";
                     break;
                 default:
@@ -203,7 +202,7 @@ public final class zzhc implements zzha {
         try {
             TrafficStats.setThreadStatsTag((int) Thread.currentThread().getId());
             zzb(bArr);
-            String zzc = ((zzcy) ((g) this.zza).a()).zzc();
+            String zzc = ((zzcy) ((h) this.zza).a()).zzc();
             if (URLUtil.isHttpUrl(zzc)) {
                 URLConnection openConnection = new URL(zzc).openConnection();
                 i.c(openConnection, "null cannot be cast to non-null type java.net.HttpURLConnection");

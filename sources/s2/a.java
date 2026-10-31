@@ -1,17 +1,17 @@
 package s2;
 
-import a8.wd;
 import b2.x;
-import org.telegram.ui.Components.b10;
-import q3.h;
+import q3.i;
 import s3.c;
+import sc.e;
+import w7.l;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class a {
     public static final a a = new a();
 
-    public final wd a(x xVar) {
+    public final l a(x xVar) {
         String str = xVar.s;
         if (str != null) {
             switch (str) {
@@ -20,14 +20,14 @@ public final class a {
                 case "application/x-icy":
                     return new p3.a();
                 case "application/id3":
-                    return new h(null);
+                    return new i(null);
                 case "application/x-emsg":
                     return new m3.b(1);
                 case "application/x-scte35":
                     return new c();
             }
         }
-        throw new IllegalArgumentException(b10.j("Attempted to create decoder for unsupported MIME type: ", str));
+        throw new IllegalArgumentException(e.h("Attempted to create decoder for unsupported MIME type: ", str));
     }
 
     public final boolean b(x xVar) {

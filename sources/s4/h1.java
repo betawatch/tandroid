@@ -1,41 +1,52 @@
 package s4;
 
-import android.content.Context;
-import android.util.DisplayMetrics;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.ui.Wallet.i5;
+import org.telegram.messenger.zs;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class h1 extends d0 {
-    public final /* synthetic */ i5 r;
+public final class h1 {
+    public int a;
+    public int b;
+    public int c;
+    public int d;
+    public int e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h1(i5 i5Var, Context context) {
-        super(context);
-        this.r = i5Var;
-    }
-
-    @Override // s4.d0, s4.a1
-    public final void g(View view, z0 z0Var) {
-        RecyclerView recyclerView = this.r.a;
-        if (recyclerView == null) {
-            return;
+    public final boolean a() {
+        int i10 = this.a;
+        int i11 = 2;
+        if ((i10 & 7) != 0) {
+            int i12 = this.d;
+            int i13 = this.b;
+            if (((i12 > i13 ? 1 : i12 == i13 ? 2 : 4) & i10) == 0) {
+                return false;
+            }
         }
-        p0 layoutManager = recyclerView.getLayoutManager();
-        layoutManager.getClass();
-        int[] iArr = {0, p0.z(view) - layoutManager.F()};
-        int i10 = iArr[0];
-        int i11 = iArr[1];
-        int m10 = m(Math.max(Math.abs(i10), Math.abs(i11)));
-        if (m10 > 0) {
-            z0Var.b(i10, i11, m10, this.j);
+        if ((i10 & zs.x1) != 0) {
+            int i14 = this.d;
+            int i15 = this.c;
+            if ((((i14 > i15 ? 1 : i14 == i15 ? 2 : 4) << 4) & i10) == 0) {
+                return false;
+            }
         }
-    }
-
-    @Override // s4.d0
-    public final float l(DisplayMetrics displayMetrics) {
-        return 100.0f / displayMetrics.densityDpi;
+        if ((i10 & 1792) != 0) {
+            int i16 = this.e;
+            int i17 = this.b;
+            if ((((i16 > i17 ? 1 : i16 == i17 ? 2 : 4) << 8) & i10) == 0) {
+                return false;
+            }
+        }
+        if ((i10 & 28672) != 0) {
+            int i18 = this.e;
+            int i19 = this.c;
+            if (i18 > i19) {
+                i11 = 1;
+            } else if (i18 != i19) {
+                i11 = 4;
+            }
+            if ((i10 & (i11 << 12)) == 0) {
+                return false;
+            }
+        }
+        return true;
     }
 }

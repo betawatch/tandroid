@@ -1,200 +1,199 @@
 package b2;
 
-import a8.yb;
-import android.util.Pair;
+import android.os.Bundle;
+import android.os.Parcelable;
+import android.text.TextUtils;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import org.telegram.tgnet.TLObject;
+import v7.t6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public abstract class p1 {
-    public static final l1 a = new l1();
-    public static final String b;
-    public static final String c;
-    public static final String d;
+public final class p1 {
+    public static final String f;
+    public static final String g;
+    public final int a;
+    public final String b;
+    public final int c;
+    public final x[] d;
+    public int e;
 
     static {
-        String str = e2.n0.a;
-        b = Integer.toString(0, 36);
-        c = Integer.toString(1, 36);
-        d = Integer.toString(2, 36);
+        String str = e2.l0.a;
+        f = Integer.toString(0, 36);
+        g = Integer.toString(1, 36);
     }
 
-    public int a(boolean z10) {
-        return p() ? -1 : 0;
-    }
-
-    public abstract int b(Object obj);
-
-    public int c(boolean z10) {
-        if (p()) {
-            return -1;
-        }
-        return o() - 1;
-    }
-
-    public final int d(int i10, m1 m1Var, o1 o1Var, int i11, boolean z10) {
-        int i12 = f(i10, m1Var, false).c;
-        if (m(i12, o1Var, 0L).o != i10) {
-            return i10 + 1;
-        }
-        int e = e(i12, i11, z10);
-        if (e == -1) {
-            return -1;
-        }
-        return m(e, o1Var, 0L).n;
-    }
-
-    public int e(int i10, int i11, boolean z10) {
-        if (i11 == 0) {
-            if (i10 == c(z10)) {
-                return -1;
-            }
-            return i10 + 1;
-        }
-        if (i11 == 1) {
-            return i10;
-        }
-        if (i11 == 2) {
-            return i10 == c(z10) ? a(z10) : i10 + 1;
-        }
-        throw new IllegalStateException();
-    }
-
-    public boolean equals(Object obj) {
-        int c10;
-        if (this != obj) {
-            if (obj instanceof p1) {
-                p1 p1Var = (p1) obj;
-                if (p1Var.o() == o() && p1Var.h() == h()) {
-                    o1 o1Var = new o1();
-                    m1 m1Var = new m1();
-                    o1 o1Var2 = new o1();
-                    m1 m1Var2 = new m1();
-                    int i10 = 0;
-                    while (true) {
-                        if (i10 >= o()) {
-                            int i11 = 0;
-                            while (true) {
-                                if (i11 >= h()) {
-                                    int a2 = a(true);
-                                    if (a2 == p1Var.a(true) && (c10 = c(true)) == p1Var.c(true)) {
-                                        while (a2 != c10) {
-                                            int e = e(a2, 0, true);
-                                            if (e == p1Var.e(a2, 0, true)) {
-                                                a2 = e;
-                                            }
-                                        }
-                                    }
-                                } else {
-                                    if (!f(i11, m1Var, true).equals(p1Var.f(i11, m1Var2, true))) {
-                                        break;
-                                    }
-                                    i11++;
-                                }
-                            }
-                        } else {
-                            if (!m(i10, o1Var, 0L).equals(p1Var.m(i10, o1Var2, 0L))) {
-                                break;
-                            }
-                            i10++;
-                        }
-                    }
+    public p1(String str, x... xVarArr) {
+        t6.f(xVarArr.length > 0);
+        this.b = str;
+        this.d = xVarArr;
+        this.a = xVarArr.length;
+        String str2 = xVarArr[0].s;
+        this.c = TextUtils.isEmpty(str2) ? v0.h(xVarArr[0].r) : v0.h(str2);
+        String str3 = xVarArr[0].d;
+        str3 = (str3 == null || str3.equals("und")) ? "" : str3;
+        int i10 = xVarArr[0].f | TLObject.FLAG_14;
+        for (int i11 = 1; i11 < xVarArr.length; i11++) {
+            String str4 = xVarArr[i11].d;
+            if (!str3.equals((str4 == null || str4.equals("und")) ? "" : str4)) {
+                b("languages", i11, xVarArr[0].d, xVarArr[i11].d);
+                return;
+            } else {
+                if (i10 != (xVarArr[i11].f | TLObject.FLAG_14)) {
+                    b("role flags", i11, Integer.toBinaryString(xVarArr[0].f), Integer.toBinaryString(xVarArr[i11].f));
+                    return;
                 }
             }
-            return false;
         }
-        return true;
     }
 
-    public abstract m1 f(int i10, m1 m1Var, boolean z10);
-
-    public m1 g(Object obj, m1 m1Var) {
-        return f(b(obj), m1Var, true);
+    public static void b(String str, int i10, String str2, String str3) {
+        StringBuilder v = a1.g.v("Different ", str, " combined in one TrackGroup: '", str2, "' (track 0) and '");
+        v.append(str3);
+        v.append("' (track ");
+        v.append(i10);
+        v.append(")");
+        e2.a.d("TrackGroup", "", new IllegalStateException(v.toString()));
     }
 
-    public abstract int h();
-
-    public int hashCode() {
-        o1 o1Var = new o1();
-        m1 m1Var = new m1();
-        int o10 = o() + 217;
-        for (int i10 = 0; i10 < o(); i10++) {
-            o10 = (o10 * 31) + m(i10, o1Var, 0L).hashCode();
-        }
-        int h = h() + (o10 * 31);
-        for (int i11 = 0; i11 < h(); i11++) {
-            h = (h * 31) + f(i11, m1Var, true).hashCode();
-        }
-        int a2 = a(true);
-        while (a2 != -1) {
-            h = (h * 31) + a2;
-            a2 = e(a2, 0, true);
-        }
-        return h;
-    }
-
-    public final Pair i(o1 o1Var, m1 m1Var, int i10, long j10) {
-        Pair j11 = j(o1Var, m1Var, i10, j10, 0L);
-        j11.getClass();
-        return j11;
-    }
-
-    public final Pair j(o1 o1Var, m1 m1Var, int i10, long j10, long j11) {
-        yb.j(i10, o());
-        m(i10, o1Var, j11);
-        if (j10 == -9223372036854775807L) {
-            j10 = o1Var.l;
-            if (j10 == -9223372036854775807L) {
-                return null;
-            }
-        }
-        int i11 = o1Var.n;
-        f(i11, m1Var, false);
-        while (i11 < o1Var.o && m1Var.e != j10) {
-            int i12 = i11 + 1;
-            if (f(i12, m1Var, false).e > j10) {
-                break;
-            }
-            i11 = i12;
-        }
-        f(i11, m1Var, true);
-        long j12 = j10 - m1Var.e;
-        long j13 = m1Var.d;
-        if (j13 != -9223372036854775807L) {
-            j12 = Math.min(j12, j13 - 1);
-        }
-        long max = Math.max(0L, j12);
-        Object obj = m1Var.b;
-        obj.getClass();
-        return Pair.create(obj, Long.valueOf(max));
-    }
-
-    public int k(int i10, int i11, boolean z10) {
-        if (i11 == 0) {
-            if (i10 == a(z10)) {
+    public final int a(x xVar) {
+        int i10 = 0;
+        while (true) {
+            x[] xVarArr = this.d;
+            if (i10 >= xVarArr.length) {
                 return -1;
             }
-            return i10 - 1;
+            if (xVar == xVarArr[i10]) {
+                return i10;
+            }
+            i10++;
         }
-        if (i11 == 1) {
-            return i10;
-        }
-        if (i11 == 2) {
-            return i10 == a(z10) ? c(z10) : i10 - 1;
-        }
-        throw new IllegalStateException();
     }
 
-    public abstract Object l(int i10);
-
-    public abstract o1 m(int i10, o1 o1Var, long j10);
-
-    public final void n(int i10, o1 o1Var) {
-        m(i10, o1Var, 0L);
+    public final Bundle c() {
+        Bundle bundle = new Bundle();
+        x[] xVarArr = this.d;
+        ArrayList<? extends Parcelable> arrayList = new ArrayList<>(xVarArr.length);
+        int length = xVarArr.length;
+        int i10 = 0;
+        while (i10 < length) {
+            x xVar = xVarArr[i10];
+            List list = xVar.v;
+            Bundle bundle2 = new Bundle();
+            bundle2.putString(x.W, xVar.a);
+            bundle2.putString(x.X, xVar.b);
+            String str = x.B0;
+            e9.n0 n0Var = xVar.c;
+            ArrayList<? extends Parcelable> arrayList2 = new ArrayList<>(n0Var.size());
+            int size = n0Var.size();
+            int i11 = 0;
+            while (i11 < size) {
+                Object obj = n0Var.get(i11);
+                i11++;
+                b0 b0Var = (b0) obj;
+                b0Var.getClass();
+                Bundle bundle3 = new Bundle();
+                x[] xVarArr2 = xVarArr;
+                String str2 = b0Var.a;
+                int i12 = length;
+                if (str2 != null) {
+                    bundle3.putString(b0.c, str2);
+                }
+                bundle3.putString(b0.d, b0Var.b);
+                arrayList2.add(bundle3);
+                xVarArr = xVarArr2;
+                length = i12;
+            }
+            x[] xVarArr3 = xVarArr;
+            int i13 = length;
+            bundle2.putParcelableArrayList(str, arrayList2);
+            bundle2.putString(x.Y, xVar.d);
+            bundle2.putInt(x.Z, xVar.e);
+            bundle2.putInt(x.a0, xVar.f);
+            int i14 = xVar.g;
+            if (i14 != x.V.g) {
+                bundle2.putInt(x.C0, i14);
+            }
+            bundle2.putInt(x.b0, xVar.h);
+            bundle2.putInt(x.c0, xVar.i);
+            bundle2.putString(x.d0, xVar.k);
+            String str3 = xVar.m;
+            if (str3 != null) {
+                bundle2.putString(x.G0, str3);
+            }
+            bundle2.putString(x.e0, xVar.r);
+            bundle2.putString(x.f0, xVar.s);
+            bundle2.putInt(x.g0, xVar.t);
+            for (int i15 = 0; i15 < list.size(); i15++) {
+                bundle2.putByteArray(x.h0 + "_" + Integer.toString(i15, 36), (byte[]) list.get(i15));
+            }
+            bundle2.putParcelable(x.i0, xVar.w);
+            bundle2.putLong(x.j0, xVar.x);
+            bundle2.putInt(x.k0, xVar.z);
+            bundle2.putInt(x.l0, xVar.A);
+            bundle2.putInt(x.E0, xVar.B);
+            bundle2.putInt(x.F0, xVar.C);
+            bundle2.putFloat(x.m0, xVar.D);
+            bundle2.putInt(x.n0, xVar.E);
+            bundle2.putFloat(x.o0, xVar.F);
+            bundle2.putByteArray(x.p0, xVar.G);
+            bundle2.putInt(x.q0, xVar.H);
+            o oVar = xVar.I;
+            if (oVar != null) {
+                String str4 = x.r0;
+                Bundle bundle4 = new Bundle();
+                bundle4.putInt(o.i, oVar.a);
+                bundle4.putInt(o.j, oVar.b);
+                bundle4.putInt(o.k, oVar.c);
+                bundle4.putByteArray(o.l, oVar.d);
+                bundle4.putInt(o.m, oVar.e);
+                bundle4.putInt(o.n, oVar.f);
+                bundle2.putBundle(str4, bundle4);
+            }
+            bundle2.putInt(x.D0, xVar.J);
+            bundle2.putInt(x.s0, xVar.K);
+            bundle2.putInt(x.t0, xVar.L);
+            bundle2.putInt(x.u0, xVar.M);
+            bundle2.putInt(x.v0, xVar.N);
+            bundle2.putInt(x.w0, xVar.O);
+            bundle2.putInt(x.x0, xVar.P);
+            bundle2.putInt(x.z0, xVar.R);
+            bundle2.putInt(x.A0, xVar.S);
+            bundle2.putInt(x.y0, xVar.T);
+            arrayList.add(bundle2);
+            i10++;
+            xVarArr = xVarArr3;
+            length = i13;
+        }
+        bundle.putParcelableArrayList(f, arrayList);
+        bundle.putString(g, this.b);
+        return bundle;
     }
 
-    public abstract int o();
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && p1.class == obj.getClass()) {
+            p1 p1Var = (p1) obj;
+            if (this.b.equals(p1Var.b) && Arrays.equals(this.d, p1Var.d)) {
+                return true;
+            }
+        }
+        return false;
+    }
 
-    public final boolean p() {
-        return o() == 0;
+    public final int hashCode() {
+        if (this.e == 0) {
+            this.e = Arrays.hashCode(this.d) + a1.g.f(527, 31, this.b);
+        }
+        return this.e;
+    }
+
+    public final String toString() {
+        return this.b + ": " + Arrays.toString(this.d);
     }
 }

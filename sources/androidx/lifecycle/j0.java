@@ -5,9 +5,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
-import li.h5;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public abstract class j0 {
     public static final q0 a = new q0();
@@ -92,7 +91,7 @@ public abstract class j0 {
             return i0Var;
         }
         Class[] clsArr = i0.f;
-        l0Var.b();
+        l0Var.a();
         Bundle bundle2 = l0Var.c;
         Bundle bundle3 = bundle2 != null ? bundle2.getBundle(str) : null;
         Bundle bundle4 = l0Var.c;
@@ -126,10 +125,6 @@ public abstract class j0 {
         kotlin.jvm.internal.i.c(a2, "null cannot be cast to non-null type java.lang.Class<T of kotlin.jvm.JvmClassMappingKt.<get-java>>");
         arrayList.add(new v1.c(a2));
         v1.c[] cVarArr = (v1.c[]) arrayList.toArray(new v1.c[0]);
-        v1.c[] initializers = (v1.c[]) Arrays.copyOf(cVarArr, cVarArr.length);
-        kotlin.jvm.internal.i.e(initializers, "initializers");
-        h5 h5Var = new h5();
-        h5Var.a = initializers;
-        return (m0) new a8.h0(u0Var.f(), h5Var, u0Var instanceof i ? ((i) u0Var).d() : v1.a.b).n(m0.class, "androidx.lifecycle.internal.SavedStateHandlesVM");
+        return (m0) new android.support.v4.media.session.a0(u0Var.f(), new n2.u((v1.c[]) Arrays.copyOf(cVarArr, cVarArr.length)), u0Var instanceof i ? ((i) u0Var).d() : v1.a.b).o(m0.class, "androidx.lifecycle.internal.SavedStateHandlesVM");
     }
 }

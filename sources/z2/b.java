@@ -7,9 +7,9 @@ import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.net.SocketTimeoutException;
 import java.util.Arrays;
-import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.zs;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public abstract class b {
     public static final Object a = new Object();
@@ -25,7 +25,7 @@ public abstract class b {
         try {
             synchronized (b) {
             }
-            datagramSocket.setSoTimeout(MediaDataController.MAX_STYLE_RUNS_COUNT);
+            datagramSocket.setSoTimeout(1000);
             c();
             InetAddress[] allByName = InetAddress.getAllByName("time.android.com");
             int length = allByName.length;
@@ -35,7 +35,7 @@ public abstract class b {
             int i11 = 0;
             while (i10 < length) {
                 byte[] bArr2 = new byte[48];
-                DatagramPacket datagramPacket = new DatagramPacket(bArr2, 48, allByName[i10], 123);
+                DatagramPacket datagramPacket = new DatagramPacket(bArr2, 48, allByName[i10], zs.H1);
                 bArr2[b11] = 27;
                 long currentTimeMillis = System.currentTimeMillis();
                 long elapsedRealtime = SystemClock.elapsedRealtime();
@@ -71,18 +71,18 @@ public abstract class b {
                     byte b12 = bArr3[b10];
                     int i12 = bArr3[1] & 255;
                     long e = e(24, bArr3);
-                    long e10 = e(32, bArr3);
-                    long e11 = e(40, bArr3);
-                    b((byte) ((b12 >> 6) & 3), (byte) (b12 & 7), i12, e11);
-                    long j15 = (j14 + (((e11 - j14) + (e10 - e)) / 2)) - elapsedRealtime2;
+                    long e7 = e(32, bArr3);
+                    long e10 = e(40, bArr3);
+                    b((byte) ((b12 >> 6) & 3), (byte) (b12 & 7), i12, e10);
+                    long j15 = (j14 + (((e10 - j14) + (e7 - e)) / 2)) - elapsedRealtime2;
                     datagramSocket.close();
                     return j15;
-                } catch (SocketTimeoutException e12) {
+                } catch (SocketTimeoutException e11) {
                     if (socketTimeoutException == null) {
-                        socketTimeoutException2 = e12;
+                        socketTimeoutException2 = e11;
                     } else {
                         SocketTimeoutException socketTimeoutException3 = socketTimeoutException;
-                        socketTimeoutException3.addSuppressed(e12);
+                        socketTimeoutException3.addSuppressed(e11);
                         socketTimeoutException2 = socketTimeoutException3;
                     }
                     int i13 = i11 + 1;
@@ -105,10 +105,10 @@ public abstract class b {
             throw new IOException("SNTP: Unsynchronized server");
         }
         if (b11 != 4 && b11 != 5) {
-            throw new IOException(ic.a.i(b11, "SNTP: Untrusted mode: "));
+            throw new IOException(i0.a.i(b11, "SNTP: Untrusted mode: "));
         }
         if (i10 == 0 || i10 > 15) {
-            throw new IOException(ic.a.i(i10, "SNTP: Untrusted stratum: "));
+            throw new IOException(i0.a.i(i10, "SNTP: Untrusted stratum: "));
         }
         if (j10 == 0) {
             throw new IOException("SNTP: Zero transmitTime");
@@ -126,16 +126,16 @@ public abstract class b {
         int i13 = bArr[i10 + 2];
         int i14 = bArr[i10 + 3];
         if ((i11 & 128) == 128) {
-            i11 = (i11 & 127) + 128;
+            i11 = (i11 & zs.L1) + 128;
         }
         if ((i12 & 128) == 128) {
-            i12 = (i12 & 127) + 128;
+            i12 = (i12 & zs.L1) + 128;
         }
         if ((i13 & 128) == 128) {
-            i13 = (i13 & 127) + 128;
+            i13 = (i13 & zs.L1) + 128;
         }
         if ((i14 & 128) == 128) {
-            i14 = (i14 & 127) + 128;
+            i14 = (i14 & zs.L1) + 128;
         }
         return (i11 << 24) + (i12 << 16) + (i13 << 8) + i14;
     }

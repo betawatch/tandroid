@@ -1,36 +1,27 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
+import android.content.Context;
+import android.text.SpannableStringBuilder;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class t50 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ boolean[] a;
-    public final /* synthetic */ p50 b;
-    public final /* synthetic */ p60 c;
+public final class t50 extends j80 {
+    public final /* synthetic */ x50 M;
 
-    public t50(p60 p60Var, boolean[] zArr, p50 p50Var) {
-        this.c = p60Var;
-        this.a = zArr;
-        this.b = p50Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public t50(x50 x50Var, Context context, org.telegram.ui.ActionBar.k2 k2Var, org.telegram.ui.ActionBar.z2 z2Var, boolean z10) {
+        super(context, k2Var, z2Var, false, z10);
+        this.M = x50Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        if (floatValue > 0.5f) {
-            boolean[] zArr = this.a;
-            if (!zArr[0]) {
-                zArr[0] = true;
-                this.b.run();
-            }
-        }
-        if (floatValue >= 0.5f) {
-            floatValue -= 1.0f;
-        }
-        float f7 = floatValue * 180.0f;
-        p60 p60Var = this.c;
-        p60Var.f.setRotationY(f7);
-        p60Var.q0.setRotationY(f7);
+    @Override // org.telegram.ui.Components.j80
+    public final void e(SpannableStringBuilder spannableStringBuilder) {
+        c60 c60Var = this.M.c;
+        org.telegram.ui.ActionBar.p2 p2Var = c60Var.c;
+        int i10 = c60.e2;
+        wb Q = new cc(p2Var, c60Var.I0).Q(R.raw.forward, 36, spannableStringBuilder);
+        Q.r = false;
+        Q.k(true);
     }
 }

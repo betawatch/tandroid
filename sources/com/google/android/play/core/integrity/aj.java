@@ -1,6 +1,10 @@
 package com.google.android.play.core.integrity;
 
-import a8.r9;
+import a9.c0;
+import a9.d0;
+import a9.e0;
+import a9.j0;
+import a9.n0;
 import android.app.Activity;
 import android.content.Context;
 import android.content.pm.PackageManager;
@@ -10,67 +14,62 @@ import android.os.IInterface;
 import android.os.Parcelable;
 import android.util.Base64;
 import android.util.Log;
-import b9.a0;
-import b9.b0;
-import b9.c0;
-import b9.h0;
-import b9.l0;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.gms.tasks.Tasks;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 final class aj {
-    final b9.d a;
-    private final h0 b;
+    final a9.e a;
+    private final j0 b;
     private final String c;
     private final Context d;
     private final at e;
     private final k f;
 
-    public aj(Context context, h0 h0Var, at atVar, k kVar) {
-        h0 h0Var2;
+    public aj(Context context, j0 j0Var, at atVar, k kVar) {
+        j0 j0Var2;
         this.c = context.getPackageName();
-        this.b = h0Var;
+        this.b = j0Var;
         this.e = atVar;
         this.f = kVar;
         this.d = context;
-        h0 h0Var3 = b9.f.a;
+        j0 j0Var3 = a9.g.a;
         try {
             if (context.getPackageManager().getApplicationInfo("com.android.vending", 0).enabled) {
                 try {
-                    if (b9.f.b(context.getPackageManager().getPackageInfo("com.android.vending", 64).signatures)) {
-                        this.a = new b9.d(context, h0Var, "IntegrityService", ak.a, new l0() { // from class: com.google.android.play.core.integrity.ae
-                            @Override // b9.l0
+                    if (a9.g.b(context.getPackageManager().getPackageInfo("com.android.vending", 64).signatures)) {
+                        this.a = new a9.e(context, j0Var, "IntegrityService", ak.a, new n0() { // from class: com.google.android.play.core.integrity.ae
+                            @Override // a9.n0
                             public final Object a(IBinder iBinder) {
-                                int i10 = b0.i;
+                                int i10 = d0.i;
                                 if (iBinder == null) {
                                     return null;
                                 }
                                 IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.play.core.integrity.protocol.IIntegrityService");
-                                return queryLocalInterface instanceof c0 ? (c0) queryLocalInterface : new a0(iBinder, "com.google.android.play.core.integrity.protocol.IIntegrityService", 1);
+                                return queryLocalInterface instanceof e0 ? (e0) queryLocalInterface : new c0(iBinder, "com.google.android.play.core.integrity.protocol.IIntegrityService", 0);
                             }
                         });
                         return;
                     }
                 } catch (PackageManager.NameNotFoundException unused) {
-                    h0Var2 = h0Var;
-                    h0Var3.c("Play Store package is not found.", new Object[0]);
+                    j0Var2 = j0Var;
+                    j0Var3.c("Play Store package is not found.", new Object[0]);
                 }
             } else {
-                h0Var3.c("Play Store package is disabled.", new Object[0]);
+                j0Var3.c("Play Store package is disabled.", new Object[0]);
             }
-            h0Var2 = h0Var;
+            j0Var2 = j0Var;
         } catch (PackageManager.NameNotFoundException unused2) {
-            h0Var2 = h0Var;
-            h0Var3.c("Play Store package is not found.", new Object[0]);
+            j0Var2 = j0Var;
+            j0Var3.c("Play Store package is not found.", new Object[0]);
         }
         Object[] objArr = new Object[0];
-        h0Var2.getClass();
+        j0Var2.getClass();
         if (Log.isLoggable("PlayCore", 6)) {
-            Log.e("PlayCore", h0.d(h0Var2.a, "Phonesky is not installed.", objArr));
+            Log.e("PlayCore", j0.d(j0Var2.a, "Phonesky is not installed.", objArr));
         }
         this.a = null;
     }
@@ -89,8 +88,8 @@ final class aj {
             bundle.putParcelable("network", parcelable);
         }
         ArrayList arrayList = new ArrayList();
-        arrayList.add(new b9.u(3, System.currentTimeMillis()));
-        bundle.putParcelableArrayList("event_timestamps", new ArrayList<>(r9.a(arrayList)));
+        arrayList.add(new a9.w(3, System.currentTimeMillis()));
+        bundle.putParcelableArrayList("event_timestamps", new ArrayList<>(h8.a.a(arrayList)));
         return bundle;
     }
 
@@ -109,7 +108,7 @@ final class aj {
         if (this.a == null) {
             return Tasks.forException(new IntegrityServiceException(-2, null));
         }
-        if (b9.f.a(this.d) < 82380000) {
+        if (a9.g.a(this.d) < 82380000) {
             return Tasks.forException(new IntegrityServiceException(-14, null));
         }
         try {

@@ -1,81 +1,96 @@
 package org.telegram.ui.Cells;
 
-import android.content.DialogInterface;
-import android.text.StaticLayout;
-import android.text.style.CharacterStyle;
-import android.text.style.ClickableSpan;
-import android.text.style.URLSpan;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.Components.ba0;
-import org.telegram.ui.Components.wc;
-import org.telegram.ui.Components.y61;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.ui.Components.t80;
+import org.telegram.ui.Components.tk0;
+import org.telegram.ui.Components.wb;
+import org.telegram.ui.SessionsActivity;
+import org.telegram.ui.ay;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class f implements Runnable {
-    public final /* synthetic */ j a;
+public final /* synthetic */ class f implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public f(j jVar) {
-        this.a = jVar;
+    public /* synthetic */ f(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        j jVar = this.a;
-        ba0 ba0Var = jVar.w;
-        if (ba0Var != null) {
-            CharacterStyle characterStyle = ba0Var.i;
-            final String url = characterStyle instanceof y61 ? ((y61) characterStyle).getURL() : characterStyle instanceof URLSpan ? ((URLSpan) characterStyle).getURL() : characterStyle.toString();
-            try {
-                jVar.performHapticFeedback(0, 2);
-            } catch (Exception unused) {
-            }
-            final StaticLayout staticLayout = jVar.y;
-            final float f7 = jVar.x;
-            if (jVar.getContext() != null) {
-                final ClickableSpan clickableSpan = (ClickableSpan) jVar.w.i;
-                org.telegram.ui.ActionBar.k3 k3Var = new org.telegram.ui.ActionBar.k3(1, jVar.getContext(), (org.telegram.ui.ActionBar.u6) null, false);
-                k3Var.fixNavigationBar();
-                k3Var.title = url;
-                k3Var.bigTitle = false;
-                CharSequence[] charSequenceArr = {LocaleController.getString(R.string.Open), LocaleController.getString(R.string.Copy)};
-                DialogInterface.OnClickListener onClickListener = new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Cells.d
-                    @Override // android.content.DialogInterface.OnClickListener
-                    public final void onClick(DialogInterface dialogInterface, int i10) {
-                        j jVar2 = f.this.a;
-                        org.telegram.ui.ActionBar.r2 r2Var = jVar2.H;
-                        if (i10 == 0) {
-                            jVar2.d(clickableSpan, staticLayout, f7);
-                            return;
+        switch (this.a) {
+            case 0:
+                g gVar = (g) this.b;
+                t80 t80Var = gVar.d;
+                if (t80Var != null) {
+                    gVar.h.E.n(t80Var, true);
+                    break;
+                }
+                break;
+            case 1:
+                l1 l1Var = ((y1) this.b).e;
+                if (l1Var != null) {
+                    l1Var.j();
+                    break;
+                }
+                break;
+            case 2:
+                ((d2) this.b).a();
+                break;
+            case 3:
+                org.telegram.messenger.i0.v1(((ph.b4) this.b).b.getEditText());
+                break;
+            case 4:
+                org.telegram.messenger.i0.v1(((m3) this.b).d);
+                break;
+            case 5:
+                k6 k6Var = (k6) this.b;
+                if (!(k6Var.getParent() instanceof tk0)) {
+                    k6Var.callOnClick();
+                    break;
+                } else {
+                    ((tk0) k6Var.getParent()).getOnItemClickListener().f(RecyclerView.R(k6Var), k6Var);
+                    break;
+                }
+            case 6:
+                ((s7) this.b).h();
+                break;
+            case 7:
+                w9 w9Var = (w9) this.b;
+                w9Var.C.invalidate();
+                w9Var.T();
+                break;
+            case 8:
+                ((w9) ((h9) this.b).c).T();
+                break;
+            case 9:
+                z9 z9Var = (z9) this.b;
+                z9Var.y = -1;
+                int i10 = 0;
+                while (true) {
+                    q1[] q1VarArr = z9Var.n;
+                    if (i10 >= q1VarArr.length) {
+                        break;
+                    } else {
+                        q1 q1Var = q1VarArr[i10];
+                        if (q1Var != null) {
+                            q1Var.invalidate();
                         }
-                        if (i10 == 1) {
-                            String str = url;
-                            AndroidUtilities.addToClipboard(str);
-                            if (AndroidUtilities.shouldShowClipboardToast()) {
-                                if (str.startsWith("@")) {
-                                    org.telegram.messenger.t.q(R.string.UsernameCopied, wc.b0(r2Var), R.raw.copy, 36);
-                                } else if (str.startsWith("#") || str.startsWith("$")) {
-                                    org.telegram.messenger.t.q(R.string.HashtagCopied, wc.b0(r2Var), R.raw.copy, 36);
-                                } else {
-                                    org.telegram.messenger.t.q(R.string.LinkCopied, wc.b0(r2Var), R.raw.copy, 36);
-                                }
-                            }
-                        }
+                        i10++;
                     }
-                };
-                k3Var.items = charSequenceArr;
-                k3Var.onClickListener = onClickListener;
-                k3Var.setOnHideListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.Cells.e
-                    @Override // android.content.DialogInterface.OnDismissListener
-                    public final void onDismiss(DialogInterface dialogInterface) {
-                        f.this.a.e();
-                    }
-                });
-                k3Var.show();
-            }
-            jVar.w = null;
+                }
+            case 10:
+                ay ayVar = (ay) this.b;
+                wb.e();
+                ayVar.presentFragment(new SessionsActivity(0));
+                break;
+            default:
+                org.telegram.ui.ActionBar.z2 z2Var = (org.telegram.ui.ActionBar.z2) this.b;
+                z2Var.b0 = true;
+                z2Var.c0 = true;
+                break;
         }
     }
 }

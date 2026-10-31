@@ -1,75 +1,37 @@
 package jg;
 
-import android.text.TextUtils;
-import org.telegram.tgnet.tl.TL_account;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.view.ViewGroup;
+import org.telegram.ui.er0;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class m0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ t0 b;
+public final class m0 extends n1 {
+    public final Path n3;
+    public final /* synthetic */ er0 o3;
 
-    public /* synthetic */ m0(t0 t0Var, int i10) {
-        this.a = i10;
-        this.b = t0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public m0(er0 er0Var, Context context) {
+        super(context);
+        this.o3 = er0Var;
+        this.n3 = new Path();
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                t0 t0Var = this.b;
-                t0Var.J.manage_stories = !r2.manage_stories;
-                t0Var.c.g3.O(true);
-                t0Var.Z(true);
-                break;
-            case 1:
-                t0 t0Var2 = this.b;
-                TL_account.TL_businessBotRights tL_businessBotRights = t0Var2.J;
-                tL_businessBotRights.transfer_stars = true;
-                tL_businessBotRights.transfer_and_upgrade_gifts = true;
-                tL_businessBotRights.change_gift_settings = true;
-                tL_businessBotRights.sell_gifts = true;
-                tL_businessBotRights.view_gifts = true;
-                t0Var2.c.g3.O(true);
-                t0Var2.Z(true);
-                break;
-            case 2:
-                t0 t0Var3 = this.b;
-                TL_account.TL_businessBotRights tL_businessBotRights2 = t0Var3.J;
-                tL_businessBotRights2.edit_username = true;
-                tL_businessBotRights2.edit_profile_photo = true;
-                tL_businessBotRights2.edit_bio = true;
-                tL_businessBotRights2.edit_name = true;
-                t0Var3.c.g3.O(true);
-                t0Var3.Z(true);
-                break;
-            case 3:
-                t0 t0Var4 = this.b;
-                t0Var4.c.g3.O(true);
-                t0Var4.Z(true);
-                break;
-            default:
-                t0 t0Var5 = this.b;
-                String obj = t0Var5.f.getText().toString();
-                String str = t0Var5.y;
-                if (str == null || !TextUtils.equals(str, obj)) {
-                    t0Var5.x = false;
-                    if (!TextUtils.isEmpty(obj)) {
-                        ig.a2 a2Var = t0Var5.d;
-                        t0Var5.y = obj;
-                        int i10 = t0Var5.E;
-                        t0Var5.E = i10 + 1;
-                        a2Var.h(obj, true, false, true, false, false, 0L, false, 0, i10, 0L, null);
-                        break;
-                    } else {
-                        t0Var5.y = null;
-                        t0Var5.d.b();
-                        t0Var5.c.g3.O(true);
-                        break;
-                    }
-                }
-                break;
-        }
+    @Override // androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final void draw(Canvas canvas) {
+        ViewGroup barView;
+        barView = this.o3.getBarView();
+        RectF rectF = org.telegram.messenger.i0.P;
+        rectF.set(org.telegram.messenger.i0.W1(r0.w1, barView.getLeft() - getLeft(), 0), org.telegram.messenger.i0.W1(r0.w1, barView.getTop() - getTop(), 0), org.telegram.messenger.i0.W1(r0.w1, barView.getRight() - getLeft(), getWidth()), org.telegram.messenger.i0.W1(r0.w1, barView.getBottom() - getTop(), getHeight()));
+        Path path = this.n3;
+        path.rewind();
+        path.addRoundRect(rectF, org.telegram.messenger.i0.L(32.0f), org.telegram.messenger.i0.L(32.0f), Path.Direction.CW);
+        canvas.save();
+        canvas.clipPath(path);
+        super.draw(canvas);
+        canvas.restore();
     }
 }

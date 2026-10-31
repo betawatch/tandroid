@@ -20,7 +20,7 @@ public final class m0 extends LinkedHashMap {
 
     public static int b(Object obj) {
         if (!(obj instanceof byte[])) {
-            if (obj instanceof o1) {
+            if (obj instanceof q1) {
                 throw new UnsupportedOperationException();
             }
             return obj.hashCode();

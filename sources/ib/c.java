@@ -1,71 +1,52 @@
 package ib;
 
-import java.lang.reflect.Type;
-import java.util.Collection;
+import android.os.IBinder;
+import android.os.RemoteException;
+import android.util.Log;
+import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+import y8.u0;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class c extends fb.u {
-    public final /* synthetic */ int a = 0;
-    public final Object b;
-    public final Object c;
+public final class c {
+    public final HashMap a = new HashMap();
 
-    public c(fb.g gVar, Type type, fb.u uVar, hb.n nVar) {
-        this.b = new o(gVar, uVar, type);
-        this.c = nVar;
+    public c() {
     }
 
-    @Override // fb.u
-    public final Object read(nb.a aVar) {
-        switch (this.a) {
-            case 0:
-                if (aVar.x() == 9) {
-                    aVar.t();
-                    return null;
+    public void a(IBinder iBinder) {
+        synchronized (this.a) {
+            if (iBinder != null) {
+                try {
+                    iBinder.queryLocalInterface("com.google.android.gms.wearable.internal.IWearableService");
+                } catch (Throwable th2) {
+                    throw th2;
                 }
-                Collection collection = (Collection) ((hb.n) this.c).U1();
-                aVar.a();
-                while (aVar.k()) {
-                    collection.add(((fb.u) ((o) this.b).c).read(aVar));
+            }
+            new u0();
+            for (Map.Entry entry : this.a.entrySet()) {
+                if (entry.getValue() != null) {
+                    throw new ClassCastException();
                 }
-                aVar.e();
-                return collection;
-            default:
-                Class cls = (Class) this.b;
-                Object read = ((x0) this.c).c.read(aVar);
-                if (read == null || cls.isInstance(read)) {
-                    return read;
+                try {
+                    throw null;
+                } catch (RemoteException unused) {
+                    Log.w("WearableClient", "onPostInitHandler: Didn't add: " + String.valueOf(entry.getKey()) + "/null");
                 }
-                throw new fb.j("Expected a " + cls.getName() + " but was " + read.getClass().getName() + "; at path " + aVar.j());
+            }
         }
     }
 
-    @Override // fb.u
-    public final void write(nb.b bVar, Object obj) {
-        switch (this.a) {
-            case 0:
-                Collection collection = (Collection) obj;
-                if (collection != null) {
-                    bVar.b();
-                    Iterator it = collection.iterator();
-                    while (it.hasNext()) {
-                        ((o) this.b).write(bVar, it.next());
-                    }
-                    bVar.e();
-                    break;
-                } else {
-                    bVar.i();
-                    break;
-                }
-            default:
-                ((x0) this.c).c.write(bVar, obj);
-                break;
+    public c(Set set) {
+        Iterator it = set.iterator();
+        while (it.hasNext()) {
+            b bVar = (b) it.next();
+            HashMap hashMap = this.a;
+            bVar.getClass();
+            hashMap.put(a.class, bVar.a);
         }
-    }
-
-    public c(x0 x0Var, Class cls) {
-        this.c = x0Var;
-        this.b = cls;
     }
 }

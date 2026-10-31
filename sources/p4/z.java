@@ -1,22 +1,18 @@
 package p4;
 
+import android.os.Build;
 import android.os.Bundle;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class z {
-    public final int a;
-    public final boolean b;
-    public final boolean c;
-    public final boolean d;
-    public final Bundle e;
+    public int a = 1;
+    public boolean b;
+    public boolean c;
+    public boolean d;
+    public Bundle e;
 
-    public z(y yVar) {
-        this.a = yVar.a;
-        this.b = yVar.b;
-        this.c = yVar.c;
-        this.d = yVar.d;
-        Bundle bundle = yVar.e;
-        this.e = bundle == null ? Bundle.EMPTY : new Bundle(bundle);
+    public z() {
+        this.b = Build.VERSION.SDK_INT >= 30;
     }
 }

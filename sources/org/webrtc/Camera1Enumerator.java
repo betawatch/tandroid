@@ -4,11 +4,10 @@ import android.hardware.Camera;
 import android.os.SystemClock;
 import java.util.ArrayList;
 import java.util.List;
-import org.telegram.ui.Components.b10;
 import org.webrtc.CameraEnumerationAndroid;
 import org.webrtc.CameraVideoCapturer;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes4.dex */
 public class Camera1Enumerator implements CameraEnumerator {
     private static final String TAG = "Camera1Enumerator";
@@ -64,13 +63,13 @@ public class Camera1Enumerator implements CameraEnumerator {
                     Logging.e(TAG, "getSupportedFormats() failed on camera index " + i10, e);
                 }
                 long elapsedRealtime2 = SystemClock.elapsedRealtime();
-                StringBuilder k10 = ic.a.k(i10, "Get supported formats for camera index ", " done. Time spent: ");
-                k10.append(elapsedRealtime2 - elapsedRealtime);
-                k10.append(" ms.");
-                Logging.d(TAG, k10.toString());
+                StringBuilder l4 = i0.a.l(i10, "Get supported formats for camera index ", " done. Time spent: ");
+                l4.append(elapsedRealtime2 - elapsedRealtime);
+                l4.append(" ms.");
+                Logging.d(TAG, l4.toString());
                 return arrayList;
-            } catch (RuntimeException e10) {
-                Logging.e(TAG, "Open camera failed on camera index " + i10, e10);
+            } catch (RuntimeException e7) {
+                Logging.e(TAG, "Open camera failed on camera index " + i10, e7);
                 ArrayList arrayList2 = new ArrayList();
                 if (camera != null) {
                     camera.release();
@@ -92,7 +91,7 @@ public class Camera1Enumerator implements CameraEnumerator {
                 return i10;
             }
         }
-        throw new IllegalArgumentException(b10.j("No such camera: ", str));
+        throw new IllegalArgumentException(sc.e.h("No such camera: ", str));
     }
 
     private static Camera.CameraInfo getCameraInfo(int i10) {

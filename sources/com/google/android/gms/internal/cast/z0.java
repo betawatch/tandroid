@@ -1,143 +1,166 @@
 package com.google.android.gms.internal.cast;
 
-import a8.ca;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Looper;
+import android.text.TextUtils;
 import android.util.Log;
-import java.math.BigInteger;
-import java.util.Map;
+import com.google.android.gms.cast.CastDevice;
+import org.telegram.messenger.zs;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class z0 {
-    public static final h6.b d = new h6.b("ApplicationAnalyticsUtils", null);
-    public static final String e = "21.4.0";
-    public final String a;
-    public final Map b;
-    public final Map c;
+    public static final g6.b j = new g6.b("ApplicationAnalytics", null);
+    public final o0 a;
+    public final c b;
+    public final b1 c;
+    public final SharedPreferences f;
+    public a1 g;
+    public d6.c h;
+    public boolean i;
+    public final z e = new z(Looper.getMainLooper(), 0);
+    public final v d = new v(this, 1);
 
-    public z0(String str, Bundle bundle) {
-        this.a = str;
-        this.b = ca.a("com.google.android.gms.cast.DICTIONARY_CAST_STATUS_CODES_TO_APP_SESSION_ERROR", bundle);
-        this.c = ca.a("com.google.android.gms.cast.DICTIONARY_CAST_STATUS_CODES_TO_APP_SESSION_CHANGE_REASON", bundle);
+    public z0(SharedPreferences sharedPreferences, o0 o0Var, c cVar, Bundle bundle, String str) {
+        this.f = sharedPreferences;
+        this.a = o0Var;
+        this.b = cVar;
+        this.c = new b1(str, bundle);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:8:0x0039  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final p1 a(y0 y0Var, int i10) {
-        int i11;
-        Map map;
-        int i12;
-        o1 b10 = b(y0Var);
-        j1 m10 = k1.m(b10.d());
-        Map map2 = this.c;
-        if (map2 != null) {
-            Integer valueOf = Integer.valueOf(i10);
-            if (map2.containsKey(valueOf)) {
-                Integer num = (Integer) map2.get(valueOf);
-                o6.l.h(num);
-                i11 = num.intValue();
-                m10.c();
-                k1.r((k1) m10.b, i11);
-                map = this.b;
-                if (map != null) {
-                    Integer valueOf2 = Integer.valueOf(i10);
-                    if (map.containsKey(valueOf2)) {
-                        Integer num2 = (Integer) map.get(valueOf2);
-                        o6.l.h(num2);
-                        i12 = num2.intValue();
-                        m10.c();
-                        k1.s((k1) m10.b, i12);
-                        b10.e((k1) m10.a());
-                        return (p1) b10.a();
-                    }
-                }
-                i12 = i10 + 10000;
-                m10.c();
-                k1.s((k1) m10.b, i12);
-                b10.e((k1) m10.a());
-                return (p1) b10.a();
-            }
+    public static void a(z0 z0Var, int i10) {
+        j.b("log session ended with error = %d", Integer.valueOf(i10));
+        z0Var.c();
+        z0Var.a.a(z0Var.c.a(z0Var.g, i10), zs.E3);
+        z0Var.e.removeCallbacks(z0Var.d);
+        if (z0Var.i) {
+            return;
         }
-        i11 = i10 + 10000;
-        m10.c();
-        k1.r((k1) m10.b, i11);
-        map = this.b;
-        if (map != null) {
-        }
-        i12 = i10 + 10000;
-        m10.c();
-        k1.s((k1) m10.b, i12);
-        b10.e((k1) m10.a());
-        return (p1) b10.a();
+        z0Var.g = null;
     }
 
-    public final o1 b(y0 y0Var) {
-        long j10;
-        o1 m10 = p1.m();
-        long j11 = y0Var.d;
-        m10.c();
-        p1.t((p1) m10.b, j11);
-        int i10 = y0Var.e;
-        y0Var.e = i10 + 1;
-        m10.c();
-        p1.o((p1) m10.b, i10);
-        String str = y0Var.c;
-        if (str != null) {
-            m10.c();
-            p1.y((p1) m10.b, str);
+    public static void b(z0 z0Var) {
+        a1 a1Var = z0Var.g;
+        SharedPreferences sharedPreferences = z0Var.f;
+        a1Var.getClass();
+        if (sharedPreferences == null) {
+            return;
         }
-        String str2 = y0Var.h;
-        if (str2 != null) {
-            m10.c();
-            p1.u((p1) m10.b, str2);
+        a1.k.b("Save the ApplicationAnalyticsSession to SharedPreferences %s", sharedPreferences);
+        SharedPreferences.Editor edit = sharedPreferences.edit();
+        edit.putString("application_id", a1Var.b);
+        edit.putString("receiver_metrics_id", a1Var.c);
+        edit.putLong("analytics_session_id", a1Var.d);
+        edit.putInt("event_sequence_number", a1Var.e);
+        edit.putString("receiver_session_id", a1Var.f);
+        edit.putInt("device_capabilities", a1Var.g);
+        edit.putString("device_model_name", a1Var.h);
+        edit.putInt("analytics_session_start_type", a1Var.j);
+        edit.putBoolean("is_output_switcher_enabled", a1Var.i);
+        edit.apply();
+    }
+
+    public final void c() {
+        CastDevice castDevice;
+        a1 a1Var;
+        if (!f()) {
+            g6.b bVar = j;
+            Log.w(bVar.a, bVar.d("The analyticsSession should not be null for logging. Create a dummy one.", new Object[0]));
+            d();
+            return;
         }
-        h1 l4 = i1.l();
-        l4.c();
-        i1.n((i1) l4.b, e);
-        l4.c();
-        i1.m((i1) l4.b, this.a);
-        i1 i1Var = (i1) l4.a();
-        m10.c();
-        p1.r((p1) m10.b, i1Var);
-        j1 l10 = k1.l();
-        if (y0Var.b != null) {
-            g2 l11 = h2.l();
-            String str3 = y0Var.b;
-            l11.c();
-            h2.m((h2) l11.b, str3);
-            h2 h2Var = (h2) l11.a();
-            l10.c();
-            k1.o((k1) l10.b, h2Var);
+        d6.c cVar = this.h;
+        if (cVar != null) {
+            n6.l.d("Must be called from the main thread.");
+            castDevice = cVar.k;
+        } else {
+            castDevice = null;
         }
-        l10.c();
-        k1.p((k1) l10.b, false);
-        String str4 = y0Var.f;
-        if (str4 != null) {
-            try {
-                String replace = str4.replace("-", "");
-                j10 = new BigInteger(replace.substring(0, Math.min(16, replace.length())), 16).longValue();
-            } catch (NumberFormatException e10) {
-                Object[] objArr = {str4};
-                h6.b bVar = d;
-                Log.w(bVar.a, bVar.d("receiverSessionId %s is not valid for hash", objArr), e10);
-                j10 = 0;
+        if (castDevice != null) {
+            String str = castDevice.x;
+            if (!TextUtils.equals(this.g.c, str) && (a1Var = this.g) != null) {
+                a1Var.c = str;
+                a1Var.g = castDevice.r;
+                a1Var.h = castDevice.e;
             }
-            l10.c();
-            k1.q((k1) l10.b, j10);
         }
-        int i11 = y0Var.g;
-        l10.c();
-        k1.t((k1) l10.b, i11);
-        boolean z10 = y0Var.a.d == 2;
-        l10.c();
-        k1.u((k1) l10.b, z10);
-        boolean z11 = y0Var.i;
-        l10.c();
-        k1.x((k1) l10.b, z11);
-        m10.c();
-        p1.p((p1) m10.b, (k1) l10.a());
-        return m10;
+        n6.l.g(this.g);
+    }
+
+    public final void d() {
+        CastDevice castDevice;
+        a1 a1Var;
+        j.b("Create a new ApplicationAnalyticsSession based on CastSession", new Object[0]);
+        a1 a1Var2 = new a1(this.b);
+        a1.l++;
+        this.g = a1Var2;
+        d6.c cVar = this.h;
+        a1Var2.i = cVar != null && cVar.g.i;
+        g6.b bVar = d6.a.l;
+        n6.l.d("Must be called from the main thread.");
+        d6.a aVar = d6.a.n;
+        n6.l.g(aVar);
+        n6.l.d("Must be called from the main thread.");
+        a1Var2.b = aVar.e.a;
+        d6.c cVar2 = this.h;
+        if (cVar2 == null) {
+            castDevice = null;
+        } else {
+            n6.l.d("Must be called from the main thread.");
+            castDevice = cVar2.k;
+        }
+        if (castDevice != null && (a1Var = this.g) != null) {
+            a1Var.c = castDevice.x;
+            a1Var.g = castDevice.r;
+            a1Var.h = castDevice.e;
+        }
+        a1 a1Var3 = this.g;
+        n6.l.g(a1Var3);
+        d6.c cVar3 = this.h;
+        a1Var3.j = cVar3 != null ? cVar3.e() : 0;
+        n6.l.g(this.g);
+    }
+
+    public final void e() {
+        z zVar = this.e;
+        n6.l.g(zVar);
+        v vVar = this.d;
+        n6.l.g(vVar);
+        zVar.postDelayed(vVar, 300000L);
+    }
+
+    public final boolean f() {
+        String str;
+        g6.b bVar = j;
+        if (this.g == null) {
+            bVar.b("The analytics session is null when matching with application ID.", new Object[0]);
+            return false;
+        }
+        g6.b bVar2 = d6.a.l;
+        n6.l.d("Must be called from the main thread.");
+        d6.a aVar = d6.a.n;
+        n6.l.g(aVar);
+        n6.l.d("Must be called from the main thread.");
+        String str2 = aVar.e.a;
+        if (str2 == null || (str = this.g.b) == null || !TextUtils.equals(str, str2)) {
+            bVar.b("The analytics session doesn't match the application ID %s", str2);
+            return false;
+        }
+        n6.l.g(this.g);
+        return true;
+    }
+
+    public final boolean g(String str) {
+        String str2;
+        if (!f()) {
+            return false;
+        }
+        n6.l.g(this.g);
+        if (str != null && (str2 = this.g.f) != null && TextUtils.equals(str2, str)) {
+            return true;
+        }
+        j.b("The analytics session doesn't match the receiver session ID %s.", str);
+        return false;
     }
 }

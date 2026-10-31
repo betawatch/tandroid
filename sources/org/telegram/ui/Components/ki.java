@@ -1,42 +1,33 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.VideoEditedInfo;
+import android.content.Context;
+import android.view.View;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class ki extends org.telegram.ui.iu0 {
-    public final /* synthetic */ MediaController.PhotoEntry a;
-    public final /* synthetic */ ti b;
+public final class ki extends z41 {
+    public static final /* synthetic */ int b = 0;
 
-    public ki(ti tiVar, MediaController.PhotoEntry photoEntry) {
-        this.b = tiVar;
-        this.a = photoEntry;
+    static {
+        z41.h(new ki());
     }
 
-    @Override // org.telegram.ui.iu0, org.telegram.ui.qu0
-    public final void o(int i10, VideoEditedInfo videoEditedInfo, final boolean z10, final int i11, int i12, final boolean z11) {
-        ti tiVar = this.b;
-        tiVar.y2 = true;
-        if (tiVar.c2 == null) {
-            return;
-        }
-        final MediaController.PhotoEntry photoEntry = this.a;
-        photoEntry.editedInfo = videoEditedInfo;
-        g5.Z(tiVar.M1, tiVar.p1() + 1, 0L, new Utilities.Callback() { // from class: org.telegram.ui.Components.ji
-            @Override // org.telegram.messenger.Utilities.Callback
-            public final void run(Object obj) {
-                ArrayList arrayList = ChatAttachAlertPhotoLayout.t1;
-                arrayList.clear();
-                HashMap hashMap = ChatAttachAlertPhotoLayout.s1;
-                hashMap.clear();
-                arrayList.add(0);
-                hashMap.put(0, photoEntry);
-                ki.this.b.c2.p0(7, true, z10, i11, 0, 0L, false, z11, ((Long) obj).longValue());
-            }
-        });
+    @Override // org.telegram.ui.Components.z41
+    public final void b(View view, a51 a51Var, boolean z10, p51 p51Var, u51 u51Var) {
+        li liVar = (li) view;
+        CharSequence charSequence = a51Var.l;
+        CharSequence charSequence2 = a51Var.m;
+        liVar.b.setText(charSequence);
+        liVar.c.setText(charSequence2);
+    }
+
+    @Override // org.telegram.ui.Components.z41
+    public final View d(Context context, tk0 tk0Var, int i10, org.telegram.ui.ActionBar.p6 p6Var) {
+        return new li(context, p6Var);
+    }
+
+    @Override // org.telegram.ui.Components.z41
+    public final boolean f() {
+        return false;
     }
 }

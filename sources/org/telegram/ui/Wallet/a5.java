@@ -1,154 +1,59 @@
 package org.telegram.ui.Wallet;
 
-import android.animation.ValueAnimator;
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.PathMeasure;
-import android.graphics.RectF;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.InsetDrawable;
+import android.graphics.drawable.ShapeDrawable;
 import android.view.View;
-import android.view.animation.LinearInterpolator;
-import org.telegram.messenger.AndroidUtilities;
+import android.widget.FrameLayout;
+import java.util.ArrayList;
+import org.telegram.tgnet.tl.TL_wallet;
+import org.telegram.ui.Components.o71;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes4.dex */
-public final class a5 extends View {
-    public final Paint a;
-    public final Path b;
-    public final PathMeasure c;
-    public final String d;
-    public final RectF e;
-    public final float[] f;
-    public final float[] h;
-    public String n;
-    public float[] r;
-    public float s;
-    public float v;
-    public float w;
-    public float x;
-    public ValueAnimator y;
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final class a5 extends o71 {
+    public final /* synthetic */ ArrayList a;
+    public final /* synthetic */ Context b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.p6 c;
+    public final /* synthetic */ Rect d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ z2[] f;
 
-    public a5(Context context, String str) {
-        super(context);
-        Paint paint = new Paint(1);
-        this.a = paint;
-        this.b = new Path();
-        this.c = new PathMeasure();
-        this.e = new RectF();
-        this.f = new float[2];
-        this.h = new float[2];
-        this.d = a1.g.s(new StringBuilder(), m5.r0(str.toUpperCase().replace('_', ' ').replace('-', ' ')), "   ·   ");
-        paint.setColor(-16747826);
-        paint.setTextSize(AndroidUtilities.dp(12.0f));
-        paint.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MONO));
+    public a5(ArrayList arrayList, Context context, org.telegram.ui.ActionBar.p6 p6Var, Rect rect, int i10, z2[] z2VarArr) {
+        this.a = arrayList;
+        this.b = context;
+        this.c = p6Var;
+        this.d = rect;
+        this.e = i10;
+        this.f = z2VarArr;
     }
 
-    public final void a() {
-        if (!isAttachedToWindow() || this.w <= 0.0f) {
-            return;
-        }
-        ValueAnimator valueAnimator = this.y;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-        }
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, this.w);
-        this.y = ofFloat;
-        ofFloat.setDuration(Math.max(1L, (long) ((this.w / AndroidUtilities.dp(24.0f)) * 1000.0f)));
-        this.y.setInterpolator(new LinearInterpolator());
-        this.y.setRepeatCount(-1);
-        this.y.addUpdateListener(new a3(this, 1));
-        this.y.start();
+    @Override // org.telegram.ui.Components.o71
+    public final void b(View view, int i10, int i11) {
+        FrameLayout frameLayout = (FrameLayout) view;
+        frameLayout.removeAllViews();
+        frameLayout.addView(b6.s0(this.b, this.e, (TL_wallet.walletTransaction) this.a.get(i10), null, null, null, null, this.c, this.f, true), w7.b6.c(-2.0f, -1));
     }
 
-    @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        a();
+    @Override // org.telegram.ui.Components.o71
+    public final View d(int i10) {
+        FrameLayout frameLayout = new FrameLayout(this.b);
+        int L = org.telegram.messenger.i0.L(20.0f);
+        int i11 = org.telegram.ui.ActionBar.t6.d6;
+        org.telegram.ui.ActionBar.p6 p6Var = this.c;
+        ShapeDrawable e02 = org.telegram.ui.ActionBar.t6.e0(L, 0, org.telegram.ui.ActionBar.t6.w0(i11, p6Var));
+        Rect rect = this.d;
+        InsetDrawable insetDrawable = new InsetDrawable((Drawable) e02, rect.left, 0, rect.right, 0);
+        org.telegram.ui.ActionBar.w6 N = org.telegram.ui.ActionBar.a7.N(i11);
+        frameLayout.setBackground(insetDrawable);
+        org.telegram.ui.ActionBar.a7.k(frameLayout, insetDrawable, N, null, p6Var);
+        return frameLayout;
     }
 
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        ValueAnimator valueAnimator = this.y;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-            this.y = null;
-        }
-        super.onDetachedFromWindow();
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        Canvas canvas2;
-        super.onDraw(canvas);
-        if (this.r == null || this.v <= 0.0f || this.w <= 0.0f) {
-            return;
-        }
-        int i10 = 0;
-        float f7 = 0.0f;
-        while (i10 < this.n.length()) {
-            float f10 = this.r[i10] * this.s;
-            float f11 = ((f10 / 2.0f) + f7) - this.x;
-            float f12 = this.v;
-            float f13 = f11 % f12;
-            if (f13 < 0.0f) {
-                f13 += f12;
-            }
-            if (this.n.charAt(i10) != ' ') {
-                PathMeasure pathMeasure = this.c;
-                float[] fArr = this.f;
-                if (pathMeasure.getPosTan(f13, fArr, this.h)) {
-                    canvas.save();
-                    canvas.translate(fArr[0], fArr[1]);
-                    canvas.rotate((float) Math.toDegrees(Math.atan2(r7[1], r7[0])));
-                    canvas2 = canvas;
-                    canvas2.drawText(this.n, i10, i10 + 1, (-this.r[i10]) / 2.0f, AndroidUtilities.dp(3.0f), this.a);
-                    canvas2.restore();
-                    f7 += f10;
-                    i10++;
-                    canvas = canvas2;
-                }
-            }
-            canvas2 = canvas;
-            f7 += f10;
-            i10++;
-            canvas = canvas2;
-        }
-    }
-
-    @Override // android.view.View
-    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
-        super.onSizeChanged(i10, i11, i12, i13);
-        float dp = AndroidUtilities.dp(12.0f) + AndroidUtilities.dp(266.0f);
-        RectF rectF = this.e;
-        rectF.set(((i10 - AndroidUtilities.dp(212.0f)) / 2.0f) - AndroidUtilities.dp(12.0f), AndroidUtilities.dp(22.0f) - AndroidUtilities.dp(12.0f), ((AndroidUtilities.dp(212.0f) + i10) / 2.0f) + AndroidUtilities.dp(12.0f), dp);
-        Path path = this.b;
-        path.reset();
-        path.addRoundRect(rectF, AndroidUtilities.dp(32.0f), AndroidUtilities.dp(32.0f), Path.Direction.CW);
-        PathMeasure pathMeasure = this.c;
-        pathMeasure.setPath(path, true);
-        this.v = pathMeasure.getLength();
-        Paint paint = this.a;
-        String str = this.d;
-        int max = Math.max(1, Math.round(this.v / paint.measureText(str)));
-        StringBuilder sb2 = new StringBuilder(str.length() * max);
-        int i14 = 0;
-        for (int i15 = 0; i15 < max; i15++) {
-            sb2.append(str);
-        }
-        String sb3 = sb2.toString();
-        this.n = sb3;
-        this.r = new float[sb3.length()];
-        float f7 = 0.0f;
-        while (i14 < this.n.length()) {
-            int i16 = i14 + 1;
-            this.r[i14] = paint.measureText(this.n, i14, i16);
-            f7 += this.r[i14];
-            i14 = i16;
-        }
-        float f10 = this.v;
-        this.s = f10 / f7;
-        this.w = f10 / max;
-        a();
+    @Override // org.telegram.ui.Components.o71
+    public final int e() {
+        return this.a.size();
     }
 }

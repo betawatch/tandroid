@@ -1,81 +1,214 @@
 package u0;
 
-import android.graphics.Rect;
-import android.os.Bundle;
+import android.content.res.Resources;
+import android.view.MotionEvent;
 import android.view.View;
-import android.view.accessibility.AccessibilityEvent;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.ScrollView;
-import androidx.core.widget.NestedScrollView;
+import android.view.ViewConfiguration;
+import android.view.animation.AccelerateInterpolator;
+import android.view.animation.AnimationUtils;
+import java.util.WeakHashMap;
+import m.r1;
+import r0.h0;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class e extends r0.b {
-    @Override // r0.b
-    public final void b(View view, AccessibilityEvent accessibilityEvent) {
-        super.b(view, accessibilityEvent);
-        NestedScrollView nestedScrollView = (NestedScrollView) view;
-        accessibilityEvent.setClassName(ScrollView.class.getName());
-        accessibilityEvent.setScrollable(nestedScrollView.getScrollRange() > 0);
-        accessibilityEvent.setScrollX(nestedScrollView.getScrollX());
-        accessibilityEvent.setScrollY(nestedScrollView.getScrollY());
-        accessibilityEvent.setMaxScrollX(nestedScrollView.getScrollX());
-        accessibilityEvent.setMaxScrollY(nestedScrollView.getScrollRange());
+public final class e implements View.OnTouchListener {
+    public static final int H = ViewConfiguration.getTapTimeout();
+    public boolean D;
+    public boolean E;
+    public boolean F;
+    public final r1 G;
+    public final a a;
+    public final AccelerateInterpolator b;
+    public final r1 c;
+    public b d;
+    public final float[] e;
+    public final float[] f;
+    public final int h;
+    public final int n;
+    public final float[] r;
+    public final float[] s;
+    public final float[] w;
+    public boolean x;
+    public boolean y;
+
+    public e(r1 r1Var) {
+        a aVar = new a();
+        aVar.e = Long.MIN_VALUE;
+        aVar.g = -1L;
+        aVar.f = 0L;
+        this.a = aVar;
+        this.b = new AccelerateInterpolator();
+        float[] fArr = {0.0f, 0.0f};
+        this.e = fArr;
+        float[] fArr2 = {Float.MAX_VALUE, Float.MAX_VALUE};
+        this.f = fArr2;
+        float[] fArr3 = {0.0f, 0.0f};
+        this.r = fArr3;
+        float[] fArr4 = {0.0f, 0.0f};
+        this.s = fArr4;
+        float[] fArr5 = {Float.MAX_VALUE, Float.MAX_VALUE};
+        this.w = fArr5;
+        this.c = r1Var;
+        float f7 = Resources.getSystem().getDisplayMetrics().density;
+        float f10 = ((int) ((1575.0f * f7) + 0.5f)) / 1000.0f;
+        fArr5[0] = f10;
+        fArr5[1] = f10;
+        float f11 = ((int) ((f7 * 315.0f) + 0.5f)) / 1000.0f;
+        fArr4[0] = f11;
+        fArr4[1] = f11;
+        this.h = 1;
+        fArr2[0] = Float.MAX_VALUE;
+        fArr2[1] = Float.MAX_VALUE;
+        fArr[0] = 0.2f;
+        fArr[1] = 0.2f;
+        fArr3[0] = 0.001f;
+        fArr3[1] = 0.001f;
+        this.n = H;
+        aVar.a = 500;
+        aVar.b = 500;
+        this.G = r1Var;
     }
 
-    @Override // r0.b
-    public final void c(View view, s0.d dVar) {
-        int scrollRange;
-        AccessibilityNodeInfo accessibilityNodeInfo = dVar.a;
-        this.a.onInitializeAccessibilityNodeInfo(view, accessibilityNodeInfo);
-        NestedScrollView nestedScrollView = (NestedScrollView) view;
-        dVar.i("android.widget.ScrollView");
-        if (!nestedScrollView.isEnabled() || (scrollRange = nestedScrollView.getScrollRange()) <= 0) {
-            return;
-        }
-        accessibilityNodeInfo.setScrollable(true);
-        if (nestedScrollView.getScrollY() > 0) {
-            dVar.b(s0.c.g);
-            dVar.b(s0.c.h);
-        }
-        if (nestedScrollView.getScrollY() < scrollRange) {
-            dVar.b(s0.c.f);
-            dVar.b(s0.c.i);
-        }
+    public static float b(float f7, float f10, float f11) {
+        return f7 > f11 ? f11 : f7 < f10 ? f10 : f7;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:19:0x0040, code lost:
-    
-        if (r6 != 16908346) goto L30;
-     */
-    @Override // r0.b
+    /* JADX WARN: Removed duplicated region for block: B:7:0x003b A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:9:0x003c  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final boolean d(View view, int i10, Bundle bundle) {
-        if (super.d(view, i10, bundle)) {
-            return true;
-        }
-        NestedScrollView nestedScrollView = (NestedScrollView) view;
-        if (nestedScrollView.isEnabled()) {
-            int height = nestedScrollView.getHeight();
-            Rect rect = new Rect();
-            if (nestedScrollView.getMatrix().isIdentity() && nestedScrollView.getGlobalVisibleRect(rect)) {
-                height = rect.height();
+    public final float a(float f7, float f10, float f11, int i10) {
+        float f12;
+        float interpolation;
+        float b10 = b(this.e[i10] * f10, 0.0f, this.f[i10]);
+        float c10 = c(f10 - f7, b10) - c(f7, b10);
+        AccelerateInterpolator accelerateInterpolator = this.b;
+        if (c10 < 0.0f) {
+            interpolation = -accelerateInterpolator.getInterpolation(-c10);
+        } else {
+            if (c10 <= 0.0f) {
+                f12 = 0.0f;
+                if (f12 != 0.0f) {
+                    return 0.0f;
+                }
+                float f13 = this.r[i10];
+                float f14 = this.s[i10];
+                float f15 = this.w[i10];
+                float f16 = f13 * f11;
+                return f12 > 0.0f ? b(f12 * f16, f14, f15) : -b((-f12) * f16, f14, f15);
             }
-            if (i10 != 4096) {
-                if (i10 == 8192 || i10 == 16908344) {
-                    int max = Math.max(nestedScrollView.getScrollY() - ((height - nestedScrollView.getPaddingBottom()) - nestedScrollView.getPaddingTop()), 0);
-                    if (max != nestedScrollView.getScrollY()) {
-                        nestedScrollView.z(0 - nestedScrollView.getScrollX(), max - nestedScrollView.getScrollY(), true);
-                        return true;
+            interpolation = accelerateInterpolator.getInterpolation(c10);
+        }
+        f12 = b(interpolation, -1.0f, 1.0f);
+        if (f12 != 0.0f) {
+        }
+    }
+
+    public final float c(float f7, float f10) {
+        if (f10 != 0.0f) {
+            int i10 = this.h;
+            if (i10 == 0 || i10 == 1) {
+                if (f7 < f10) {
+                    if (f7 >= 0.0f) {
+                        return 1.0f - (f7 / f10);
+                    }
+                    if (this.E && i10 == 1) {
+                        return 1.0f;
                     }
                 }
+            } else if (i10 == 2 && f7 < 0.0f) {
+                return f7 / (-f10);
             }
-            int min = Math.min(nestedScrollView.getScrollY() + ((height - nestedScrollView.getPaddingBottom()) - nestedScrollView.getPaddingTop()), nestedScrollView.getScrollRange());
-            if (min != nestedScrollView.getScrollY()) {
-                nestedScrollView.z(0 - nestedScrollView.getScrollX(), min - nestedScrollView.getScrollY(), true);
+        }
+        return 0.0f;
+    }
+
+    public final void d() {
+        int i10 = 0;
+        if (this.y) {
+            this.E = false;
+            return;
+        }
+        long currentAnimationTimeMillis = AnimationUtils.currentAnimationTimeMillis();
+        a aVar = this.a;
+        int i11 = (int) (currentAnimationTimeMillis - aVar.e);
+        int i12 = aVar.b;
+        if (i11 > i12) {
+            i10 = i12;
+        } else if (i11 >= 0) {
+            i10 = i11;
+        }
+        aVar.i = i10;
+        aVar.h = aVar.a(currentAnimationTimeMillis);
+        aVar.g = currentAnimationTimeMillis;
+    }
+
+    public final boolean e() {
+        r1 r1Var;
+        int count;
+        a aVar = this.a;
+        float f7 = aVar.d;
+        int abs = (int) (f7 / Math.abs(f7));
+        Math.abs(aVar.c);
+        if (abs != 0 && (count = (r1Var = this.G).getCount()) != 0) {
+            int childCount = r1Var.getChildCount();
+            int firstVisiblePosition = r1Var.getFirstVisiblePosition();
+            int i10 = firstVisiblePosition + childCount;
+            if (abs <= 0 ? !(abs >= 0 || (firstVisiblePosition <= 0 && r1Var.getChildAt(0).getTop() >= 0)) : !(i10 >= count && r1Var.getChildAt(childCount - 1).getBottom() <= r1Var.getHeight())) {
                 return true;
+            }
+        }
+        return false;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:9:0x0014, code lost:
+    
+        if (r0 != 3) goto L30;
+     */
+    @Override // android.view.View.OnTouchListener
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean onTouch(View view, MotionEvent motionEvent) {
+        int i10;
+        int i11 = 0;
+        if (this.F) {
+            int actionMasked = motionEvent.getActionMasked();
+            if (actionMasked != 0) {
+                if (actionMasked != 1) {
+                    if (actionMasked != 2) {
+                    }
+                }
+                d();
+                return false;
+            }
+            this.D = true;
+            this.x = false;
+            float x10 = motionEvent.getX();
+            float width = view.getWidth();
+            r1 r1Var = this.c;
+            float a2 = a(x10, width, r1Var.getWidth(), 0);
+            float a10 = a(motionEvent.getY(), view.getHeight(), r1Var.getHeight(), 1);
+            a aVar = this.a;
+            aVar.c = a2;
+            aVar.d = a10;
+            if (!this.E && e()) {
+                if (this.d == null) {
+                    this.d = new b(this, i11);
+                }
+                this.E = true;
+                this.y = true;
+                if (this.x || (i10 = this.n) <= 0) {
+                    this.d.run();
+                } else {
+                    b bVar = this.d;
+                    long j10 = i10;
+                    WeakHashMap weakHashMap = h0.a;
+                    r1Var.postOnAnimationDelayed(bVar, j10);
+                }
+                this.x = true;
             }
         }
         return false;

@@ -1,53 +1,235 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import java.util.Random;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class x7 extends nm0 {
-    public boolean f3;
-    public final /* synthetic */ m8 g3;
+public final class x7 {
+    public float f;
+    public boolean g;
+    public final Paint h;
+    public org.telegram.ui.Cells.q1 i;
+    public int p;
+    public int q;
+    public float r;
+    public final int[] b = new int[3];
+    public final float[] c = new float[8];
+    public final float[] d = new float[8];
+    public final float[] e = new float[8];
+    public final Random j = new Random();
+    public final float k = org.telegram.messenger.i0.L(6.0f) * 0.33f;
+    public final float l = org.telegram.messenger.i0.L(12.0f) * 0.36f;
+    public final float m = 120.0f;
+    public final int n = 61;
+    public final float[] o = new float[6];
+    public final jp[] a = new jp[2];
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x7(m8 m8Var, Context context) {
-        super(context, null);
-        this.g3 = m8Var;
-    }
-
-    @Override // org.telegram.ui.Components.nm0
-    public final boolean E0(float f7) {
-        m8 m8Var = this.g3;
-        return f7 < m8Var.y.getY() - ((float) m8Var.n.getTop());
-    }
-
-    @Override // org.telegram.ui.Components.nm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        m8 m8Var = this.g3;
-        int i14 = m8Var.r0;
-        if (i14 != -1 && !m8Var.c.n0) {
-            this.f3 = true;
-            m8Var.r.h1(i14, m8Var.s0 - m8Var.n.getPaddingTop());
-            super.onLayout(false, i10, i11, i12, i13);
-            this.f3 = false;
-            m8Var.r0 = -1;
-            return;
+    public x7() {
+        for (int i10 = 0; i10 < 2; i10++) {
+            jp[] jpVarArr = this.a;
+            jp jpVar = new jp();
+            jpVarArr[i10] = jpVar;
+            jpVar.g = org.telegram.messenger.i0.L(24.0f);
+            jpVar.k = 1.0f;
         }
-        if (m8Var.q0) {
-            m8Var.q0 = false;
-            this.f3 = true;
-            if (m8Var.D0(true)) {
-                super.onLayout(false, i10, i11, i12, i13);
+        this.h = new Paint(1);
+    }
+
+    public final void a(float f7, float f10, float f11, int i10, Canvas canvas) {
+        if (org.telegram.messenger.sc.e(32)) {
+            Paint paint = this.h;
+            paint.setColor(i10);
+            paint.setAlpha((int) (this.n * f11));
+            b(canvas, f7, f10);
+        }
+    }
+
+    public final void b(Canvas canvas, float f7, float f10) {
+        float[] fArr;
+        float f11;
+        int[] iArr;
+        if (org.telegram.messenger.sc.e(32)) {
+            int i10 = 0;
+            int i11 = 0;
+            while (true) {
+                fArr = this.d;
+                if (i11 >= 8) {
+                    break;
+                }
+                float[] fArr2 = this.c;
+                float f12 = fArr2[i11];
+                float f13 = fArr[i11];
+                if (f12 != f13) {
+                    float[] fArr3 = this.e;
+                    float f14 = (fArr3[i11] * 16.0f) + f13;
+                    fArr[i11] = f14;
+                    float f15 = fArr3[i11];
+                    if ((f15 > 0.0f && f14 > fArr2[i11]) || (f15 < 0.0f && f14 < fArr2[i11])) {
+                        fArr[i11] = fArr2[i11];
+                    }
+                    this.i.invalidate();
+                }
+                i11++;
             }
-            this.f3 = false;
+            boolean z10 = true;
+            if (this.g) {
+                float f16 = this.f + 0.02f;
+                this.f = f16;
+                if (f16 > 1.0f) {
+                    this.g = false;
+                    this.f = 1.0f;
+                }
+            } else {
+                float f17 = this.f - 0.02f;
+                this.f = f17;
+                if (f17 < 0.0f) {
+                    this.g = true;
+                    this.f = 0.0f;
+                }
+            }
+            float f18 = fArr[7];
+            float f19 = fArr[6] * fArr[0];
+            if (f18 == 0.0f && f19 == 0.0f) {
+                return;
+            }
+            int i12 = 0;
+            while (true) {
+                f11 = this.l;
+                iArr = this.b;
+                if (i12 >= 3) {
+                    break;
+                }
+                iArr[i12] = (int) (fArr[i12] * f11);
+                i12++;
+            }
+            jp[] jpVarArr = this.a;
+            jp jpVar = jpVarArr[0];
+            while (i10 < jpVar.f) {
+                float[] fArr4 = jpVar.j;
+                fArr4[i10] = iArr[i10 / 2];
+                fArr4[i10 + 1] = 0.0f;
+                i10 += 2;
+                z10 = z10;
+            }
+            boolean z11 = z10;
+            for (int i13 = 0; i13 < 3; i13++) {
+                iArr[i13] = (int) (fArr[i13 + 3] * f11);
+            }
+            jp jpVar2 = jpVarArr[z11 ? 1 : 0];
+            for (int i14 = 0; i14 < jpVar2.f; i14 += 2) {
+                float[] fArr5 = jpVar2.j;
+                fArr5[i14] = iArr[i14 / 2];
+                fArr5[i14 + 1] = 0.0f;
+            }
+            float L = (this.k * f18) + (org.telegram.messenger.i0.L(4.0f) * f19) + org.telegram.messenger.i0.L(22.0f);
+            if (L > org.telegram.messenger.i0.L(26.0f)) {
+                L = org.telegram.messenger.i0.L(26.0f);
+            }
+            jp jpVar3 = jpVarArr[0];
+            jpVarArr[z11 ? 1 : 0].g = L;
+            jpVar3.g = L;
+            canvas.save();
+            float f20 = (float) (this.r + 0.6d);
+            this.r = f20;
+            canvas.rotate(f20, f7, f10);
+            canvas.save();
+            float f21 = (this.f * 0.04f) + 1.0f;
+            canvas.scale(f21, f21, f7, f10);
+            jp jpVar4 = jpVarArr[0];
+            Paint paint = this.h;
+            jpVar4.a(f7, f10, canvas, paint);
+            canvas.restore();
+            canvas.rotate(60.0f, f7, f10);
+            float z12 = c3.i0.z(1.0f, this.f, 0.04f, 1.0f);
+            canvas.scale(z12, z12, f7, f10);
+            jpVarArr[z11 ? 1 : 0].a(f7, f10, canvas, paint);
+            canvas.restore();
         }
     }
 
-    @Override // org.telegram.ui.Components.nm0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.f3) {
-            return;
+    public final void c(Canvas canvas, float f7, float f10, boolean z10, float f11, org.telegram.ui.ActionBar.p6 p6Var) {
+        if (org.telegram.messenger.sc.e(32)) {
+            int i10 = this.n;
+            Paint paint = this.h;
+            if (z10) {
+                paint.setColor(org.telegram.ui.ActionBar.t6.w0(org.telegram.ui.ActionBar.t6.Bc, p6Var));
+                paint.setAlpha((int) (i10 * f11));
+            } else {
+                paint.setColor(org.telegram.ui.ActionBar.t6.w0(org.telegram.ui.ActionBar.t6.We, p6Var));
+                paint.setAlpha((int) (i10 * f11));
+            }
+            b(canvas, f7, f10);
         }
-        super.requestLayout();
+    }
+
+    public final void d(org.telegram.ui.Cells.q1 q1Var) {
+        this.i = q1Var;
+    }
+
+    public final void e(boolean z10, float[] fArr) {
+        float[] fArr2;
+        float[] fArr3;
+        float[] fArr4;
+        if (org.telegram.messenger.sc.e(32)) {
+            int i10 = 0;
+            boolean z11 = fArr != null && fArr[6] == 0.0f;
+            float f7 = fArr == null ? 0.0f : fArr[6];
+            float[] fArr5 = this.o;
+            if (fArr == null || f7 <= 0.4d) {
+                this.p = 0;
+            } else {
+                int i11 = this.q;
+                fArr5[i11] = f7;
+                int i12 = i11 + 1;
+                this.q = i12;
+                if (i12 > 5) {
+                    this.q = 0;
+                }
+                this.p++;
+            }
+            if (z11) {
+                for (int i13 = 0; i13 < 6; i13++) {
+                    fArr[i13] = (this.j.nextInt() % 500) / 1000.0f;
+                }
+            }
+            float f10 = this.m;
+            float f11 = z11 ? 2.0f * f10 : f10;
+            if (this.p > 6) {
+                float f12 = 0.0f;
+                for (int i14 = 0; i14 < 6; i14++) {
+                    f12 += fArr5[i14];
+                }
+                float f13 = f12 / 6.0f;
+                if (f13 > 0.52f) {
+                    f11 = sc.e.z(f13, 0.4f, f10, f11);
+                }
+            }
+            while (true) {
+                fArr2 = this.e;
+                fArr3 = this.d;
+                fArr4 = this.c;
+                if (i10 >= 7) {
+                    break;
+                }
+                if (fArr == null) {
+                    fArr4[i10] = 0.0f;
+                } else {
+                    fArr4[i10] = fArr[i10];
+                }
+                if (this.i == null) {
+                    fArr3[i10] = fArr4[i10];
+                } else if (i10 == 6) {
+                    fArr2[i10] = (fArr4[i10] - fArr3[i10]) / (80.0f + f10);
+                } else {
+                    fArr2[i10] = (fArr4[i10] - fArr3[i10]) / f11;
+                }
+                i10++;
+            }
+            float f14 = z10 ? 1.0f : 0.0f;
+            fArr4[7] = f14;
+            fArr2[7] = (f14 - fArr3[7]) / 120.0f;
+        }
     }
 }

@@ -1,9 +1,18 @@
 package t8;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+import java.util.Arrays;
+import java.util.List;
+
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class a {
-    public final Object b = new Object();
-    public long c = Long.MIN_VALUE;
-    public final long a = Math.round(30000.0d);
+    public final int a;
+    public final List b;
+    public final List c;
+
+    public a(int i10, c[] cVarArr, hb.a[] aVarArr) {
+        this.a = i10;
+        this.b = Arrays.asList(cVarArr);
+        this.c = Arrays.asList(aVarArr);
+    }
 }

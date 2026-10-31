@@ -1,157 +1,232 @@
 package org.telegram.ui.ActionBar;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
+import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
-import org.telegram.ui.Components.ds;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import org.telegram.messenger.beta.R;
+import org.telegram.ui.Components.bi0;
+import org.telegram.ui.Components.gr;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class o5 extends View implements oe.d {
-    public Drawable a;
-    public Drawable b;
-    public final Drawable c;
-    public final oe.b d;
-    public final oe.e e;
-    public final /* synthetic */ r5 f;
+public final class o5 extends LinearLayout {
+    public final i5 a;
+    public final boolean b;
+    public final HashMap c;
+    public final ArrayList d;
+    public final fe.k e;
+    public boolean f;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public o5(r5 r5Var, Context context) {
+    public o5(Context context, i5 i5Var, boolean z10) {
         super(context);
-        this.f = r5Var;
-        ds dsVar = ds.h;
-        this.d = new oe.b(0, this, dsVar, 380L, false);
-        this.e = new oe.e(1, this, dsVar, 380L, 1.0f);
-        this.c = context.getDrawable(R.drawable.ic_ab_close).mutate();
-        d();
+        this.c = new HashMap();
+        this.d = new ArrayList();
+        this.e = new fe.k(new m5(this), gr.h, 380L);
+        this.f = true;
+        this.a = i5Var;
+        this.b = z10;
+        setOrientation(0);
+        setGravity(21);
     }
 
-    public static void a(Canvas canvas, Drawable drawable, float f7, float f10, float f11, float f12) {
-        int intrinsicWidth = drawable.getIntrinsicWidth();
-        int intrinsicHeight = drawable.getIntrinsicHeight();
-        if (intrinsicWidth <= 0 || intrinsicHeight <= 0) {
-            intrinsicWidth = AndroidUtilities.dp(24.0f);
-            intrinsicHeight = intrinsicWidth;
+    public static int f(View view) {
+        int measuredWidth;
+        LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) view.getLayoutParams();
+        if (view.getMeasuredWidth() > 0 || (measuredWidth = layoutParams.width) <= 0) {
+            measuredWidth = view.getMeasuredWidth();
         }
-        drawable.setBounds(0, 0, intrinsicWidth, intrinsicHeight);
-        drawable.setAlpha((int) (255.0f * f11));
-        canvas.save();
-        canvas.rotate(f12, f7, f10);
-        float lerp = AndroidUtilities.lerp(0.6f, 1.0f, f11);
-        canvas.scale(lerp, lerp, f7, f10);
-        canvas.translate(f7 - (intrinsicWidth / 2.0f), f10 - (intrinsicHeight / 2.0f));
-        drawable.draw(canvas);
-        canvas.restore();
+        return measuredWidth + layoutParams.leftMargin + layoutParams.rightMargin;
     }
 
-    @Override // oe.d
-    public final void E(int i10, float f7, float f10, oe.e eVar) {
-        invalidate();
+    public static boolean h(View view) {
+        if (view.getVisibility() != 8) {
+            return !(view instanceof p5) || ((p5) view).C0;
+        }
+        return false;
     }
 
-    public final void b(boolean z10, boolean z11) {
-        Drawable drawable = this.a;
-        oe.b bVar = this.d;
-        if (drawable == null) {
-            if (z10) {
-                bVar.a(true, false);
+    public final p5 a() {
+        return b(10, R.drawable.ic_ab_other);
+    }
+
+    public final p5 b(int i10, int i11) {
+        return c(i10, i11, null, null, org.telegram.messenger.i0.L(48.0f), null);
+    }
+
+    public final p5 c(int i10, int i11, String str, Drawable drawable, int i12, CharSequence charSequence) {
+        LinearLayout.LayoutParams layoutParams;
+        Context context = getContext();
+        i5 i5Var = this.a;
+        boolean z10 = this.b;
+        p5 p5Var = new p5(context, this, z10 ? i5Var.i0 : i5Var.h0, z10 ? i5Var.g0 : i5Var.f0, str != null, i5Var.a);
+        p5Var.setTag(Integer.valueOf(i10));
+        if (str != null) {
+            p5Var.E.setText(str);
+            if (i12 == 0) {
+                i12 = -2;
             }
-        } else if (drawable instanceof j2) {
-            ((j2) drawable).c(z10 ? 1.0f : 0.0f, z11);
+            layoutParams = new LinearLayout.LayoutParams(i12, -1);
+            int L = org.telegram.messenger.i0.L(6.0f);
+            layoutParams.rightMargin = L;
+            layoutParams.leftMargin = L;
         } else {
-            bVar.a(z10, z11);
-        }
-    }
-
-    public final void c(Drawable drawable) {
-        oe.e eVar = this.e;
-        eVar.b();
-        eVar.c(1.0f);
-        this.b = null;
-        Drawable drawable2 = this.a;
-        if (drawable2 != null) {
-            drawable2.setCallback(null);
-        }
-        this.a = drawable;
-        if (drawable != null) {
-            drawable.setCallback(this);
-            if (!this.f.G) {
-                this.d.a(false, false);
+            if (drawable instanceof bi0) {
+                p5Var.y.setAnimation((bi0) drawable);
+            } else if (drawable != null) {
+                p5Var.y.setImageDrawable(drawable);
+            } else if (i11 != 0) {
+                p5Var.y.setImageResource(i11);
             }
+            layoutParams = new LinearLayout.LayoutParams(i12, -1);
+            int i13 = -org.telegram.messenger.i0.L(5.0f);
+            layoutParams.rightMargin = i13;
+            layoutParams.leftMargin = i13;
         }
-        d();
-        invalidate();
+        addView(p5Var, -1, layoutParams);
+        p5Var.setOnClickListener(new jg.w1(this, p5Var, i10, 1));
+        if (charSequence != null) {
+            p5Var.setContentDescription(charSequence);
+        }
+        return p5Var;
     }
 
-    public final void d() {
-        r5 r5Var = this.f;
-        setBackground(y6.g0(r5Var.f0, 1, -1));
-        Drawable drawable = this.a;
-        if (drawable instanceof j2) {
-            ((j2) drawable).a(r5Var.d0);
-            ((j2) this.a).b(r5Var.e0);
-        } else if (drawable instanceof k5) {
-            ((k5) drawable).j = r5Var.d0;
-        } else if (drawable != null) {
-            drawable.setColorFilter(new PorterDuffColorFilter(r5Var.d0, PorterDuff.Mode.SRC_IN));
-        }
-        this.c.setColorFilter(new PorterDuffColorFilter(r5Var.e0, PorterDuff.Mode.SRC_IN));
-        invalidate();
+    public final void d(int i10, int i11, String str, int i12) {
+        c(i10, i11, null, null, i12, str);
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        Canvas canvas2;
-        float width = getWidth() / 2.0f;
-        float height = getHeight() / 2.0f;
-        float f7 = this.d.e;
-        float f10 = this.e.f;
-        Drawable drawable = this.b;
-        if (drawable == null || f10 >= 0.5f) {
-            Drawable drawable2 = this.a;
-            if (drawable2 == null || f7 >= 1.0f) {
-                canvas2 = canvas;
+    public final void e() {
+        int i10;
+        Iterator it = this.c.values().iterator();
+        while (true) {
+            i10 = 0;
+            if (!it.hasNext()) {
+                break;
             } else {
-                float f11 = (f10 - 0.5f) * 2.0f;
-                canvas2 = canvas;
-                a(canvas2, drawable2, width, height, Math.min(1.0f, f11 + (drawable == null ? 1.0f : 0.0f)) * (1.0f - f7), f7 * (-90.0f));
+                ((n5) it.next()).b = false;
             }
-        } else {
-            float D = c3.h0.D(f10, 2.0f, 1.0f, 1.0f - f7);
-            canvas2 = canvas;
-            a(canvas2, drawable, width, height, D, 0.0f);
+        }
+        float width = getWidth() - getPaddingRight();
+        fe.k kVar = this.e;
+        float f7 = kVar.d.f.a;
+        float min = Math.min(1.0f, getPillWidth() / org.telegram.messenger.i0.L(46.0f));
+        ArrayList arrayList = kVar.b;
+        int size = arrayList.size();
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            fe.h hVar = (fe.h) obj;
+            n5 n5Var = (n5) hVar.a;
+            View view = n5Var.a;
+            LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) view.getLayoutParams();
+            RectF b10 = hVar.b();
+            n5Var.b = true;
+            view.setTranslationX((((width - Math.max(f7, b10.right)) + b10.left) + layoutParams.leftMargin) - view.getLeft());
+            n5Var.c(hVar.c(), min);
+        }
+    }
+
+    public final void g() {
+        int childCount = getChildCount();
+        for (int i10 = 0; i10 < childCount; i10++) {
+            View childAt = getChildAt(i10);
+            if (childAt instanceof t0) {
+                ((t0) childAt).o();
+            }
+        }
+    }
+
+    public float getPillWidth() {
+        fe.j jVar = this.e.d;
+        return (org.telegram.messenger.i0.L(8.0f) * jVar.c.a) + jVar.f.a;
+    }
+
+    public float getTargetPillWidth() {
+        int childCount = getChildCount();
+        float f7 = 0.0f;
+        for (int i10 = 0; i10 < childCount; i10++) {
+            if (h(getChildAt(i10))) {
+                f7 += f(r4);
+            }
         }
         if (f7 > 0.0f) {
-            a(canvas2, this.c, width, height, f7, (1.0f - f7) * 90.0f);
+            return f7 + org.telegram.messenger.i0.L(8.0f);
+        }
+        return 0.0f;
+    }
+
+    public final void i() {
+        i5 i5Var = this.a;
+        boolean z10 = this.b;
+        int i10 = z10 ? i5Var.g0 : i5Var.f0;
+        int i11 = z10 ? i5Var.i0 : i5Var.h0;
+        int childCount = getChildCount();
+        for (int i12 = 0; i12 < childCount; i12++) {
+            View childAt = getChildAt(i12);
+            if (childAt instanceof t0) {
+                t0 t0Var = (t0) childAt;
+                TextView textView = t0Var.E;
+                t0Var.setIconColor(i10);
+                if (textView != null) {
+                    textView.setTextColor(i10);
+                }
+                t0Var.setBackground(t6.h0(i11, textView != null ? 5 : 1, -1));
+            }
         }
     }
 
-    @Override // android.view.View
-    public final void setAlpha(float f7) {
-        super.setAlpha(f7);
-        this.f.invalidate();
-    }
-
-    @Override // android.view.View
-    public final void setTranslationX(float f7) {
-        super.setTranslationX(f7);
-        this.f.invalidate();
-    }
-
-    @Override // android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return drawable == this.a || drawable == this.b || super.verifyDrawable(drawable);
-    }
-
-    @Override // oe.d
-    public final void z(float f7, int i10) {
-        if (i10 == 1 && f7 == 1.0f) {
-            this.b = null;
+    @Override // android.widget.LinearLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        HashMap hashMap;
+        super.onLayout(z10, i10, i11, i12, i13);
+        ArrayList arrayList = this.d;
+        arrayList.clear();
+        int childCount = getChildCount();
+        int i14 = 0;
+        while (true) {
+            hashMap = this.c;
+            if (i14 >= childCount) {
+                break;
+            }
+            View childAt = getChildAt(i14);
+            n5 n5Var = (n5) hashMap.get(childAt);
+            if (n5Var != null && h(childAt)) {
+                arrayList.add(n5Var);
+            }
+            i14++;
         }
+        this.e.q(arrayList, !this.f && isLaidOut());
+        this.f = false;
+        e();
+        int childCount2 = getChildCount();
+        for (int i15 = 0; i15 < childCount2; i15++) {
+            View childAt2 = getChildAt(i15);
+            n5 n5Var2 = (n5) hashMap.get(childAt2);
+            if (n5Var2 != null && !n5Var2.b && childAt2.getVisibility() != 8 && !h(childAt2)) {
+                if (childAt2 instanceof p5) {
+                    ((p5) childAt2).X();
+                } else {
+                    childAt2.setVisibility(8);
+                }
+            }
+        }
+        this.a.invalidate();
+    }
+
+    @Override // android.view.ViewGroup
+    public final void onViewAdded(View view) {
+        super.onViewAdded(view);
+        this.c.put(view, new n5(view));
+    }
+
+    @Override // android.view.ViewGroup
+    public final void onViewRemoved(View view) {
+        super.onViewRemoved(view);
+        this.c.remove(view);
     }
 }

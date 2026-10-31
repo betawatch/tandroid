@@ -2,7 +2,7 @@ package j$.time.temporal;
 
 import j$.time.DayOfWeek;
 import j$.time.LocalDate;
-import org.telegram.messenger.MessagesStorage;
+import org.telegram.messenger.zs;
 
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
 /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
@@ -218,11 +218,11 @@ public abstract class g implements o {
                 int a2 = a.YEAR.b.a(j10, g.WEEK_BASED_YEAR);
                 LocalDate I = LocalDate.I(temporal);
                 int j11 = I.j(a.DAY_OF_WEEK);
-                int w10 = g.w(I);
-                if (w10 == 53 && g.G(a2) == 52) {
-                    w10 = 52;
+                int w9 = g.w(I);
+                if (w9 == 53 && g.G(a2) == 52) {
+                    w9 = 52;
                 }
-                return temporal.k(LocalDate.of(a2, 1, 4).plusDays(((w10 - 1) * 7) + (j11 - r6.j(r0))));
+                return temporal.k(LocalDate.of(a2, 1, 4).plusDays(((w9 - 1) * 7) + (j11 - r6.j(r0))));
             }
 
             @Override // java.lang.Enum
@@ -232,7 +232,7 @@ public abstract class g implements o {
         };
         WEEK_BASED_YEAR = gVar4;
         b = new g[]{gVar, gVar2, gVar3, gVar4};
-        a = new int[]{0, 90, MessagesStorage.LAST_DB_VERSION, 273, 0, 91, 182, 274};
+        a = new int[]{0, 90, zs.L2, zs.w4, 0, 91, zs.M2, zs.x4};
     }
 
     public static int G(int i10) {
@@ -253,7 +253,7 @@ public abstract class g implements o {
             i12 = i11 + 4;
         }
         if (L < i12) {
-            return (int) s.e(1L, G(y(localDate.X(180).U(-1L)))).d;
+            return (int) s.e(1L, G(y(localDate.X(zs.K2).U(-1L)))).d;
         }
         int i13 = ((L - i12) / 7) + 1;
         if (i13 != 53 || i12 == -3 || (i12 == -2 && localDate.O())) {

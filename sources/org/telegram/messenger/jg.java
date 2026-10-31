@@ -1,31 +1,73 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+import org.telegram.SQLite.SQLiteCursor;
+import org.telegram.tgnet.NativeByteBuffer;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class jg implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesStorage b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ String e;
+    public final /* synthetic */ ui b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ boolean d;
 
-    public /* synthetic */ jg(MessagesStorage messagesStorage, long j10, long j11, String str, int i10) {
+    public /* synthetic */ jg(ui uiVar, String str, boolean z10, int i10) {
         this.a = i10;
-        this.b = messagesStorage;
-        this.c = j10;
-        this.d = j11;
-        this.e = str;
+        this.b = uiVar;
+        this.c = str;
+        this.d = z10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
+        TLRPC.TL_messages_stickerSet tL_messages_stickerSet;
+        SQLiteCursor queryFinalized;
+        int i10 = 0;
         switch (this.a) {
             case 0:
-                this.b.lambda$updateRanksInLastMessages$48(this.c, this.d, this.e);
-                break;
+                this.b.c1(this.c, this.d, false);
+                return;
             default:
-                this.b.lambda$updateRanksInLastMessages$49(this.c, this.d, this.e);
-                break;
+                ui uiVar = this.b;
+                String str = this.c;
+                SQLiteCursor sQLiteCursor = null;
+                r5 = null;
+                r5 = null;
+                TLRPC.TL_messages_stickerSet tL_messages_stickerSet2 = null;
+                try {
+                    queryFinalized = uiVar.getMessagesStorage().b.queryFinalized("SELECT data, date FROM stickers_dice WHERE emoji = ?", str);
+                } catch (Throwable th2) {
+                    th = th2;
+                    tL_messages_stickerSet = null;
+                }
+                try {
+                    if (queryFinalized.next()) {
+                        NativeByteBuffer byteBufferValue = queryFinalized.byteBufferValue(0);
+                        if (byteBufferValue != null) {
+                            tL_messages_stickerSet2 = TLRPC.messages_StickerSet.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(false), false);
+                            byteBufferValue.reuse();
+                        }
+                        i10 = queryFinalized.intValue(1);
+                    }
+                    queryFinalized.dispose();
+                } catch (Throwable th3) {
+                    th = th3;
+                    tL_messages_stickerSet = tL_messages_stickerSet2;
+                    sQLiteCursor = queryFinalized;
+                    try {
+                        f8.g(th, true);
+                        tL_messages_stickerSet2 = tL_messages_stickerSet;
+                        uiVar.s1(str, this.d, tL_messages_stickerSet2, true, i10);
+                        return;
+                    } finally {
+                        if (sQLiteCursor != null) {
+                            sQLiteCursor.dispose();
+                        }
+                    }
+                }
+                uiVar.s1(str, this.d, tL_messages_stickerSet2, true, i10);
+                return;
         }
     }
 }

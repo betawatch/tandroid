@@ -1,11 +1,10 @@
 package m;
 
-import a8.de;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class g extends v implements i {
     public final /* synthetic */ h d;
@@ -18,7 +17,7 @@ public final class g extends v implements i {
         setFocusable(true);
         setVisibility(0);
         setEnabled(true);
-        de.a(this, getContentDescription());
+        w7.t.a(this, getContentDescription());
         setOnTouchListener(new l.b(this, this));
     }
 

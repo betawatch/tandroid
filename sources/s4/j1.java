@@ -1,17 +1,15 @@
 package s4;
 
-import android.view.View;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public interface j1 {
-    int J();
+public final class j1 {
+    public static final c5.x d = new c5.x(20, 14);
+    public int a;
+    public ac.g b;
+    public ac.g c;
 
-    View W(int i10);
-
-    int X(View view);
-
-    int m(View view);
-
-    int s();
+    public static j1 a() {
+        j1 j1Var = (j1) d.b();
+        return j1Var == null ? new j1() : j1Var;
+    }
 }

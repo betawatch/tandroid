@@ -3,17 +3,16 @@ package com.google.android.recaptcha.internal;
 import a1.g;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.telegram.messenger.BuildConfig;
-import org.telegram.ui.Components.b10;
+import org.telegram.ui.Cells.f1;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class zzmg {
     public static String zza(String str, Object... objArr) {
         int length;
         int length2;
         int indexOf;
-        String k10;
+        String o10;
         int i10 = 0;
         int i11 = 0;
         while (true) {
@@ -23,17 +22,17 @@ public final class zzmg {
             }
             Object obj = objArr[i11];
             if (obj == null) {
-                k10 = BuildConfig.BETA_URL;
+                o10 = "null";
             } else {
                 try {
-                    k10 = obj.toString();
+                    o10 = obj.toString();
                 } catch (Exception e) {
-                    String D = g.D(obj.getClass().getName(), "@", Integer.toHexString(System.identityHashCode(obj)));
-                    Logger.getLogger("com.google.common.base.Strings").logp(Level.WARNING, "com.google.common.base.Strings", "lenientToString", "Exception during lenientFormat for ".concat(D), (Throwable) e);
-                    k10 = b10.k("<", D, " threw ", e.getClass().getName(), ">");
+                    String C = g.C(obj.getClass().getName(), "@", Integer.toHexString(System.identityHashCode(obj)));
+                    Logger.getLogger("com.google.common.base.Strings").logp(Level.WARNING, "com.google.common.base.Strings", "lenientToString", "Exception during lenientFormat for ".concat(C), (Throwable) e);
+                    o10 = f1.o("<", C, " threw ", e.getClass().getName(), ">");
                 }
             }
-            objArr[i11] = k10;
+            objArr[i11] = o10;
             i11++;
         }
         StringBuilder sb2 = new StringBuilder(str.length() + (length * 16));

@@ -1,17 +1,17 @@
 package com.google.android.recaptcha.internal;
 
-import ce.f0;
-import ce.i0;
-import ce.s;
-import ce.t;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import td.e0;
+import td.h0;
+import td.s;
+import td.t;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class zzdf {
-    public static final i0 zza(Task task) {
-        final t a2 = f0.a();
+    public static final h0 zza(Task task) {
+        final t a2 = e0.a();
         task.addOnCompleteListener(zzdd.zza, new OnCompleteListener() { // from class: com.google.android.recaptcha.internal.zzdc
             @Override // com.google.android.gms.tasks.OnCompleteListener
             public final void onComplete(Task task2) {

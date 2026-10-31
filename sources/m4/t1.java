@@ -1,11 +1,10 @@
 package m4;
 
-import a8.yb;
 import android.os.Bundle;
 import android.os.SystemClock;
-import org.telegram.messenger.MediaDataController;
+import v7.t6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class t1 {
     public static final String e;
@@ -18,7 +17,7 @@ public final class t1 {
     public final r1 d;
 
     static {
-        String str = e2.n0.a;
+        String str = e2.l0.a;
         e = Integer.toString(0, 36);
         f = Integer.toString(1, 36);
         g = Integer.toString(2, 36);
@@ -32,13 +31,13 @@ public final class t1 {
     public static t1 a(Bundle bundle) {
         r1 r1Var;
         int i10 = bundle.getInt(e, -1);
-        Bundle o10 = e2.n0.o(bundle.getBundle(f));
+        Bundle o10 = e2.l0.o(bundle.getBundle(f));
         long j10 = bundle.getLong(g, SystemClock.elapsedRealtime());
         Bundle bundle2 = bundle.getBundle(h);
         if (bundle2 != null) {
-            int i11 = bundle2.getInt(r1.d, MediaDataController.MAX_STYLE_RUNS_COUNT);
+            int i11 = bundle2.getInt(r1.d, 1000);
             String string = bundle2.getString(r1.e, "");
-            Bundle o11 = e2.n0.o(bundle2.getBundle(r1.f));
+            Bundle o11 = e2.l0.o(bundle2.getBundle(r1.f));
             if (o11 == null) {
                 o11 = Bundle.EMPTY;
             }
@@ -54,7 +53,7 @@ public final class t1 {
     }
 
     public t1(int i10, Bundle bundle, long j10, r1 r1Var) {
-        yb.g(r1Var == null || i10 < 0);
+        t6.f(r1Var == null || i10 < 0);
         this.a = i10;
         this.b = new Bundle(bundle);
         this.c = j10;

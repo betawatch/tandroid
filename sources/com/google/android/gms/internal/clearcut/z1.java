@@ -1,18 +1,13 @@
 package com.google.android.gms.internal.clearcut;
 
-import android.os.IBinder;
-import android.os.IInterface;
-
 /* loaded from: classes.dex */
-public final class z1 implements IInterface {
-    public final IBinder a;
+public final class z1 extends b8.b {
+    public final /* synthetic */ w1 b;
 
-    public z1(IBinder iBinder) {
-        this.a = iBinder;
-    }
-
-    @Override // android.os.IInterface
-    public final IBinder asBinder() {
-        return this.a;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public z1(w1 w1Var) {
+        super(2);
+        this.b = w1Var;
+        attachInterface(this, "com.google.android.gms.clearcut.internal.IClearcutLoggerCallbacks");
     }
 }

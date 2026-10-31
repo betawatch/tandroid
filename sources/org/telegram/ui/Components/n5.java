@@ -1,44 +1,76 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class n5 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ p5 b;
-    public final /* synthetic */ ArrayList c;
-    public final /* synthetic */ HashSet d;
+public class n5 extends TextView {
+    public int a;
+    public PorterDuffColorFilter b;
+    public k5 c;
 
-    public /* synthetic */ n5(p5 p5Var, ArrayList arrayList, HashSet hashSet, int i10) {
-        this.a = i10;
-        this.b = p5Var;
-        this.c = arrayList;
-        this.d = hashSet;
+    public n5(Context context) {
+        super(context);
+        this.a = 0;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                AndroidUtilities.runOnUIThread(new n5(this.b, this.c, this.d, 1));
-                break;
-            default:
-                p5 p5Var = this.b;
-                p5Var.d(this.c);
-                HashSet hashSet = this.d;
-                if (!hashSet.isEmpty()) {
-                    ArrayList<Long> arrayList = new ArrayList<>(hashSet);
-                    TLRPC.TL_messages_getCustomEmojiDocuments tL_messages_getCustomEmojiDocuments = new TLRPC.TL_messages_getCustomEmojiDocuments();
-                    tL_messages_getCustomEmojiDocuments.document_id = arrayList;
-                    ConnectionsManager.getInstance(p5Var.e).sendRequest(tL_messages_getCustomEmojiDocuments, new org.telegram.ui.z7(11, p5Var, arrayList));
-                    break;
-                }
-                break;
+    @Override // android.widget.TextView, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.c = o5.update(this.a, this, this.c, getLayout());
+    }
+
+    @Override // android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        o5.release(this, this.c);
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public void onDraw(Canvas canvas) {
+        Canvas canvas2;
+        super.onDraw(canvas);
+        float height = ((getGravity() & 16) == 0 || getLayout() == null) ? 0.0f : ((((getHeight() - getPaddingTop()) - getPaddingBottom()) - getLayout().getHeight()) / 2.0f) + getPaddingTop();
+        float paddingRight = org.telegram.messenger.cd.X ? getPaddingRight() : getPaddingLeft();
+        if (height == 0.0f && paddingRight == 0.0f) {
+            canvas2 = canvas;
+        } else {
+            canvas.save();
+            canvas2 = canvas;
+            canvas2.translate(paddingRight, height);
         }
+        o5.drawAnimatedEmojis(canvas2, getLayout(), this.c, 0.0f, null, 0.0f, 0.0f, 0.0f, 1.0f, this.b);
+        if (height == 0.0f && paddingRight == 0.0f) {
+            return;
+        }
+        canvas.restore();
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
+        this.c = o5.update(this.a, this, this.c, getLayout());
+    }
+
+    public void setCacheType(int i10) {
+        if (this.a == i10) {
+            return;
+        }
+        this.a = i10;
+        this.c = o5.update(i10, this, this.c, getLayout());
+    }
+
+    public void setEmojiColor(int i10) {
+        this.b = new PorterDuffColorFilter(i10, PorterDuff.Mode.SRC_IN);
+    }
+
+    @Override // android.widget.TextView
+    public final void setText(CharSequence charSequence, TextView.BufferType bufferType) {
+        super.setText(charSequence, bufferType);
+        this.c = o5.update(this.a, this, this.c, getLayout());
     }
 }

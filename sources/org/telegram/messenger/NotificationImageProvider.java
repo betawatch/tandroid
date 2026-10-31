@@ -12,48 +12,31 @@ import java.io.FileNotFoundException;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
-import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public class NotificationImageProvider extends ContentProvider implements NotificationCenter.NotificationCenterDelegate {
-    private static String authority;
-    private static UriMatcher matcher;
-    private HashSet<String> waitingForFiles = new HashSet<>();
-    private final Object sync = new Object();
-    private HashMap<String, Long> fileStartTimes = new HashMap<>();
-
-    public static String getAuthority() {
-        if (authority == null) {
-            authority = ApplicationLoader.getApplicationId() + ".notification_image_provider";
-        }
-        return authority;
-    }
-
-    private static UriMatcher getUriMatcher() {
-        if (matcher == null) {
-            UriMatcher uriMatcher = new UriMatcher(-1);
-            matcher = uriMatcher;
-            uriMatcher.addURI(getAuthority(), "msg_media_raw/#/*", 1);
-        }
-        return matcher;
-    }
+public class NotificationImageProvider extends ContentProvider implements us {
+    public static String d;
+    public static UriMatcher e;
+    public final HashSet a = new HashSet();
+    public final Object b = new Object();
+    public final HashMap c = new HashMap();
 
     @Override // android.content.ContentProvider
-    public int delete(Uri uri, String str, String[] strArr) {
+    public final int delete(Uri uri, String str, String[] strArr) {
         return 0;
     }
 
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if (i10 == NotificationCenter.fileLoaded) {
-            synchronized (this.sync) {
+    @Override // org.telegram.messenger.us
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        if (i10 == zs.Y1) {
+            synchronized (this.b) {
                 try {
                     String str = (String) objArr[0];
-                    if (this.waitingForFiles.remove(str)) {
-                        this.fileStartTimes.remove(str);
-                        this.sync.notifyAll();
+                    if (this.a.remove(str)) {
+                        this.c.remove(str);
+                        this.b.notifyAll();
                     }
                 } catch (Throwable th2) {
                     throw th2;
@@ -63,7 +46,7 @@ public class NotificationImageProvider extends ContentProvider implements Notifi
     }
 
     @Override // android.content.ContentProvider
-    public String[] getStreamTypes(Uri uri, String str) {
+    public final String[] getStreamTypes(Uri uri, String str) {
         if (str.startsWith("*/") || str.startsWith("image/")) {
             return new String[]{"image/jpeg", "image/png", "image/webp"};
         }
@@ -71,29 +54,38 @@ public class NotificationImageProvider extends ContentProvider implements Notifi
     }
 
     @Override // android.content.ContentProvider
-    public String getType(Uri uri) {
+    public final String getType(Uri uri) {
         return null;
     }
 
     @Override // android.content.ContentProvider
-    public Uri insert(Uri uri, ContentValues contentValues) {
+    public final Uri insert(Uri uri, ContentValues contentValues) {
         return null;
     }
 
     @Override // android.content.ContentProvider
-    public boolean onCreate() {
-        for (int i10 = 0; i10 < UserConfig.getActivatedAccountsCount(); i10++) {
-            NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.fileLoaded);
+    public final boolean onCreate() {
+        for (int i10 = 0; i10 < d20.c(); i10++) {
+            zs.f(i10).b(this, zs.Y1);
         }
         return true;
     }
 
     @Override // android.content.ContentProvider
-    public ParcelFileDescriptor openFile(Uri uri, String str) {
+    public final ParcelFileDescriptor openFile(Uri uri, String str) {
         if (!"r".equals(str)) {
             throw new SecurityException("Can only open files for read");
         }
-        if (getUriMatcher().match(uri) != 1) {
+        if (e == null) {
+            UriMatcher uriMatcher = new UriMatcher(-1);
+            e = uriMatcher;
+            if (d == null) {
+                w0.d();
+                d = "org.telegram.messenger.beta.notification_image_provider";
+            }
+            uriMatcher.addURI(d, "msg_media_raw/#/*", 1);
+        }
+        if (e.match(uri) != 1) {
             throw new FileNotFoundException("Invalid URI");
         }
         List<String> pathSegments = uri.getPathSegments();
@@ -102,39 +94,39 @@ public class NotificationImageProvider extends ContentProvider implements Notifi
         String queryParameter = uri.getQueryParameter("final_path");
         String queryParameter2 = uri.getQueryParameter("fallback");
         File file = new File(queryParameter);
-        ApplicationLoader.postInitApplication();
-        if (AndroidUtilities.isInternalUri(Uri.fromFile(file))) {
+        w0.w();
+        if (i0.I1(Uri.fromFile(file), 0)) {
             throw new SecurityException("trying to read internal file");
         }
         if (!file.exists()) {
-            Long l4 = this.fileStartTimes.get(str2);
+            Long l4 = (Long) this.c.get(str2);
             long longValue = l4 != null ? l4.longValue() : System.currentTimeMillis();
             if (l4 == null) {
-                this.fileStartTimes.put(str2, Long.valueOf(longValue));
+                this.c.put(str2, Long.valueOf(longValue));
             }
             while (!file.exists()) {
                 if (System.currentTimeMillis() - longValue >= 3000) {
-                    if (BuildVars.LOGS_ENABLED) {
-                        FileLog.w("Waiting for " + str2 + " to download timed out");
+                    if (v2.a) {
+                        f8.l("Waiting for " + str2 + " to download timed out");
                     }
                     if (TextUtils.isEmpty(queryParameter2)) {
                         throw new FileNotFoundException("Download timed out");
                     }
                     File file2 = new File(queryParameter2);
-                    if (AndroidUtilities.isInternalUri(Uri.fromFile(file2))) {
+                    if (i0.I1(Uri.fromFile(file2), 0)) {
                         throw new SecurityException("trying to read internal file");
                     }
                     return ParcelFileDescriptor.open(file2, TLObject.FLAG_28);
                 }
-                synchronized (this.sync) {
-                    this.waitingForFiles.add(str2);
+                synchronized (this.b) {
+                    this.a.add(str2);
                     try {
-                        this.sync.wait(1000L);
+                        this.b.wait(1000L);
                     } catch (InterruptedException unused) {
                     }
                 }
             }
-            if (AndroidUtilities.isInternalUri(Uri.fromFile(file))) {
+            if (i0.I1(Uri.fromFile(file), 0)) {
                 throw new SecurityException("trying to read internal file");
             }
         }
@@ -142,19 +134,19 @@ public class NotificationImageProvider extends ContentProvider implements Notifi
     }
 
     @Override // android.content.ContentProvider
-    public Cursor query(Uri uri, String[] strArr, String str, String[] strArr2, String str2) {
+    public final Cursor query(Uri uri, String[] strArr, String str, String[] strArr2, String str2) {
         return null;
     }
 
     @Override // android.content.ContentProvider
-    public void shutdown() {
-        for (int i10 = 0; i10 < UserConfig.getActivatedAccountsCount(); i10++) {
-            NotificationCenter.getInstance(i10).removeObserver(this, NotificationCenter.fileLoaded);
+    public final void shutdown() {
+        for (int i10 = 0; i10 < d20.c(); i10++) {
+            zs.f(i10).n(this, zs.Y1);
         }
     }
 
     @Override // android.content.ContentProvider
-    public int update(Uri uri, ContentValues contentValues, String str, String[] strArr) {
+    public final int update(Uri uri, ContentValues contentValues, String str, String[] strArr) {
         return 0;
     }
 }

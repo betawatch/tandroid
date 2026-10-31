@@ -2,26 +2,26 @@ package bb;
 
 import android.os.Build;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class c implements ka.d {
+public final class c implements ja.d {
     public static final c a = new c();
-    public static final ka.c b = ka.c.c("packageName");
-    public static final ka.c c = ka.c.c("versionName");
-    public static final ka.c d = ka.c.c("appBuildVersion");
-    public static final ka.c e = ka.c.c("deviceManufacturer");
-    public static final ka.c f = ka.c.c("currentProcessDetails");
-    public static final ka.c g = ka.c.c("appProcessDetails");
+    public static final ja.c b = ja.c.c("packageName");
+    public static final ja.c c = ja.c.c("versionName");
+    public static final ja.c d = ja.c.c("appBuildVersion");
+    public static final ja.c e = ja.c.c("deviceManufacturer");
+    public static final ja.c f = ja.c.c("currentProcessDetails");
+    public static final ja.c g = ja.c.c("appProcessDetails");
 
-    @Override // ka.a
+    @Override // ja.a
     public final void a(Object obj, Object obj2) {
         a aVar = (a) obj;
-        ka.e eVar = (ka.e) obj2;
-        eVar.a(b, aVar.a);
-        eVar.a(c, aVar.b);
-        eVar.a(d, aVar.c);
-        eVar.a(e, Build.MANUFACTURER);
-        eVar.a(f, aVar.d);
-        eVar.a(g, aVar.e);
+        ja.e eVar = (ja.e) obj2;
+        eVar.d(b, aVar.a);
+        eVar.d(c, aVar.b);
+        eVar.d(d, aVar.c);
+        eVar.d(e, Build.MANUFACTURER);
+        eVar.d(f, aVar.d);
+        eVar.d(g, aVar.e);
     }
 }

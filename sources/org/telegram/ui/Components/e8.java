@@ -1,24 +1,13 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.MotionEvent;
+import android.view.View;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class e8 extends mp0 {
-    public final /* synthetic */ m8 m0;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e8(m8 m8Var, Context context, org.telegram.ui.ActionBar.u6 u6Var) {
-        super(context, u6Var, false);
-        this.m0 = m8Var;
-    }
-
-    @Override // org.telegram.ui.Components.mp0
-    public final boolean d(MotionEvent motionEvent) {
-        if (this.m0.G0 != 0) {
-            return false;
-        }
-        return super.d(motionEvent);
+public final class e8 extends cq {
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.i0.L(300.0f), TLObject.FLAG_30));
     }
 }

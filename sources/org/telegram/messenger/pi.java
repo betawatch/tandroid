@@ -2,32 +2,47 @@ package org.telegram.messenger;
 
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final /* synthetic */ class pi implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ SendMessagesHelper b;
-    public final /* synthetic */ TLRPC.Updates c;
-    public final /* synthetic */ TLRPC.Message d;
-    public final /* synthetic */ boolean e;
+public final class pi {
+    public String a;
+    public long b;
+    public int c;
+    public long d;
+    public long e;
+    public short[] f;
+    public boolean g;
+    public float h = 0.0f;
+    public float i = 1.0f;
 
-    public /* synthetic */ pi(SendMessagesHelper sendMessagesHelper, TLRPC.Updates updates, TLRPC.Message message, boolean z10, int i10) {
-        this.a = i10;
-        this.b = sendMessagesHelper;
-        this.c = updates;
-        this.d = message;
-        this.e = z10;
+    public static pi a(MediaController mediaController, String str, boolean z10) {
+        TLRPC.TL_document tL_document = mediaController.e1;
+        if (tL_document == null) {
+            return null;
+        }
+        pi piVar = new pi();
+        piVar.a = str;
+        piVar.b = mediaController.u1;
+        piVar.c = mediaController.k1;
+        piVar.d = mediaController.j1;
+        piVar.e = tL_document.id;
+        piVar.f = mediaController.t1;
+        piVar.g = z10;
+        piVar.h = 0.0f;
+        piVar.i = 1.0f;
+        return piVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.lambda$performSendMessageRequest$88(this.c, this.d, this.e);
-                break;
-            default:
-                this.b.lambda$performSendMessageRequest$91(this.c, this.d, this.e);
-                break;
+    public final String toString() {
+        char[] cArr = new char[this.f.length];
+        int i10 = 0;
+        while (true) {
+            short[] sArr = this.f;
+            if (i10 >= sArr.length) {
+                return "@" + this.a + "\n" + this.b + "\n" + this.c + "\n" + this.d + "\n" + (this.g ? 1 : 0) + ";" + this.h + ";" + this.i + "\n" + new String(cArr);
+            }
+            cArr[i10] = (char) sArr[i10];
+            i10++;
         }
     }
 }

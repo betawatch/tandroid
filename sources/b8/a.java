@@ -1,21 +1,49 @@
 package b8;
 
-import android.os.Parcel;
-import android.os.Parcelable;
+import android.content.Context;
+import android.os.IBinder;
+import android.os.IInterface;
+import android.os.Looper;
+import com.google.android.gms.common.api.k;
+import com.google.android.gms.common.api.l;
+import m.p3;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public abstract class a {
-    public static final /* synthetic */ int a = 0;
+public final class a extends n6.g {
+    public final Context U;
 
-    static {
-        a.class.getClassLoader();
+    public a(Context context, Looper looper, k kVar, l lVar, p3 p3Var) {
+        super(context, looper, 45, p3Var, kVar, lVar, 0);
+        this.U = context;
     }
 
-    public static Parcelable a(Parcel parcel, Parcelable.Creator creator) {
-        if (parcel.readInt() == 0) {
+    @Override // n6.g
+    public final boolean D() {
+        return true;
+    }
+
+    @Override // n6.g, com.google.android.gms.common.api.c
+    public final int m() {
+        return 12200000;
+    }
+
+    @Override // n6.g
+    public final /* bridge */ /* synthetic */ IInterface r(IBinder iBinder) {
+        if (iBinder == null) {
             return null;
         }
-        return (Parcelable) creator.createFromParcel(parcel);
+        IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.safetynet.internal.ISafetyNetService");
+        return queryLocalInterface instanceof d ? (d) queryLocalInterface : new d(iBinder);
+    }
+
+    @Override // n6.g
+    public final String w() {
+        return "com.google.android.gms.safetynet.internal.ISafetyNetService";
+    }
+
+    @Override // n6.g
+    public final String x() {
+        return "com.google.android.gms.safetynet.service.START";
     }
 }

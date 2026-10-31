@@ -2,7 +2,7 @@ package m4;
 
 import java.util.List;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class q0 implements f1, g1, e2.j {
     public final /* synthetic */ j1 a;
@@ -15,6 +15,12 @@ public final /* synthetic */ class q0 implements f1, g1, e2.j {
         this.c = i11;
     }
 
+    @Override // m4.g1
+    public void a(n1 n1Var, w wVar, List list) {
+        j1 j1Var = this.a;
+        n1Var.r0(list, j1Var.M0(wVar, n1Var, this.b), j1Var.M0(wVar, n1Var, this.c));
+    }
+
     @Override // e2.j
     public void accept(Object obj) {
         j1 j1Var = this.a;
@@ -25,15 +31,9 @@ public final /* synthetic */ class q0 implements f1, g1, e2.j {
         }
     }
 
-    @Override // m4.g1
-    public void b(n1 n1Var, w wVar, List list) {
-        j1 j1Var = this.a;
-        n1Var.O(j1Var.K0(wVar, n1Var, this.b), j1Var.K0(wVar, n1Var, this.c), list);
-    }
-
     @Override // m4.f1
-    public void e(n1 n1Var, w wVar) {
+    public void g(n1 n1Var, w wVar) {
         j1 j1Var = this.a;
-        n1Var.R(j1Var.K0(wVar, n1Var, this.b), j1Var.K0(wVar, n1Var, this.c));
+        n1Var.Q(j1Var.M0(wVar, n1Var, this.b), j1Var.M0(wVar, n1Var, this.c));
     }
 }

@@ -1,12 +1,13 @@
 package com.google.android.recaptcha.internal;
 
-import ic.a;
+import i0.a;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 final class zzqo extends zzqq {
     private final InputStream zzf;
@@ -23,7 +24,7 @@ final class zzqo extends zzqq {
         this.zzm = ConnectionsManager.DEFAULT_DATACENTER_ID;
         byte[] bArr = zzsv.zzb;
         this.zzf = inputStream;
-        this.zzg = new byte[4096];
+        this.zzg = new byte[TLObject.FLAG_12];
         this.zzh = 0;
         this.zzj = 0;
         this.zzl = 0;
@@ -32,7 +33,7 @@ final class zzqo extends zzqq {
     private final List zzL(int i10) {
         ArrayList arrayList = new ArrayList();
         while (i10 > 0) {
-            int min = Math.min(i10, 4096);
+            int min = Math.min(i10, TLObject.FLAG_12);
             byte[] bArr = new byte[min];
             int i11 = 0;
             while (i11 < min) {
@@ -177,9 +178,9 @@ final class zzqo extends zzqq {
                 }
                 this.zzl += read;
                 i15 += read;
-            } catch (zzsx e10) {
-                e10.zza();
-                throw e10;
+            } catch (zzsx e7) {
+                e7.zza();
+                throw e7;
             }
         }
         return bArr;

@@ -1,31 +1,68 @@
 package ig;
 
-import android.location.Location;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.SurfaceTexture;
+import android.view.TextureView;
+import org.telegram.ui.Components.s9;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class y0 implements SendMessagesHelper.LocationProvider.LocationProviderDelegate {
-    public final /* synthetic */ j1 a;
+public final class y0 implements TextureView.SurfaceTextureListener {
+    public final /* synthetic */ s9 a;
+    public final /* synthetic */ c1 b;
 
-    public y0(j1 j1Var) {
-        this.a = j1Var;
+    public y0(c1 c1Var, s9 s9Var) {
+        this.b = c1Var;
+        this.a = s9Var;
     }
 
-    @Override // org.telegram.messenger.SendMessagesHelper.LocationProvider.LocationProviderDelegate
-    public final void onLocationAcquired(Location location) {
-        j1 j1Var = this.a;
-        TLRPC.User user = j1Var.w0;
-        if (user == null || !user.bot_inline_geo) {
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i10, int i11) {
+        if (surfaceTexture != null) {
+            c1 c1Var = this.b;
+            if (c1Var.d != null) {
+                return;
+            }
+            a1 a1Var = new a1(c1Var, surfaceTexture, this.a);
+            c1Var.d = a1Var;
+            a1Var.n = i10;
+            a1Var.r = i11;
+            c1Var.i();
+            c1Var.post(new x0(this, 1));
+            q0 q0Var = c1Var.c;
+            if (q0Var.v) {
+                q0Var.f.f(new n0(q0Var, q0Var.w, 0));
+                q0Var.w = null;
+                q0Var.v = false;
+            }
+        }
+    }
+
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final boolean onSurfaceTextureDestroyed(SurfaceTexture surfaceTexture) {
+        c1 c1Var = this.b;
+        if (c1Var.d != null && !c1Var.D) {
+            q0 q0Var = c1Var.c;
+            q0Var.f.f(new d1.e(17, q0Var, new x0(this, 2)));
+        }
+        return true;
+    }
+
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureSizeChanged(SurfaceTexture surfaceTexture, int i10, int i11) {
+        c1 c1Var = this.b;
+        a1 a1Var = c1Var.d;
+        if (a1Var == null) {
             return;
         }
-        j1Var.z0 = location;
-        j1Var.T(true, user, j1Var.r0, "");
+        a1Var.n = i10;
+        a1Var.r = i11;
+        c1Var.i();
+        a1 a1Var2 = c1Var.d;
+        a1Var2.postRunnable(a1Var2.x);
+        c1Var.d.postRunnable(new x0(this, 0));
     }
 
-    @Override // org.telegram.messenger.SendMessagesHelper.LocationProvider.LocationProviderDelegate
-    public final void onUnableLocationAcquire() {
-        this.a.Q();
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
     }
 }

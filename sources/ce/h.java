@@ -1,26 +1,15 @@
 package ce;
 
-import java.util.concurrent.locks.LockSupport;
+import ld.p;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class h extends a {
-    public final Thread d;
-    public final x0 e;
+public final /* synthetic */ class h extends kotlin.jvm.internal.h implements p {
+    public static final h a = new h(2, j.class, "createSegment", "createSegment(JLkotlinx/coroutines/sync/SemaphoreSegment;)Lkotlinx/coroutines/sync/SemaphoreSegment;", 1);
 
-    public h(ld.h hVar, Thread thread, x0 x0Var) {
-        super(hVar, true);
-        this.d = thread;
-        this.e = x0Var;
-    }
-
-    @Override // ce.v1
-    public final void b(Object obj) {
-        Thread currentThread = Thread.currentThread();
-        Thread thread = this.d;
-        if (kotlin.jvm.internal.i.a(currentThread, thread)) {
-            return;
-        }
-        LockSupport.unpark(thread);
+    @Override // ld.p
+    public final Object invoke(Object obj, Object obj2) {
+        int i10 = j.a;
+        return new k(((Number) obj).longValue(), (k) obj2, 0);
     }
 }

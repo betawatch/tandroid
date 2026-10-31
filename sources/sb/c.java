@@ -1,29 +1,19 @@
 package sb;
 
-import android.content.Context;
-import android.content.pm.PackageManager;
-import android.util.Log;
+import x7.ga;
+import x7.ia;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public abstract class c {
-    public static final d5.a a = new d5.a("CommonUtils", "");
+public final class c {
+    public final d a;
+    public final jb.d b;
+    public final ga c;
 
-    public static String a(Context context) {
-        try {
-            return String.valueOf(context.getPackageManager().getPackageInfo(context.getPackageName(), 0).versionCode);
-        } catch (PackageManager.NameNotFoundException e) {
-            String concat = "Exception thrown when trying to get app version ".concat(e.toString());
-            d5.a aVar = a;
-            if (!Log.isLoggable(aVar.a, 6)) {
-                return "";
-            }
-            String str = aVar.b;
-            if (str != null) {
-                concat = str.concat(concat);
-            }
-            Log.e("CommonUtils", concat);
-            return "";
-        }
+    public c(d dVar, jb.d dVar2) {
+        ga b10 = ia.b();
+        this.a = dVar;
+        this.b = dVar2;
+        this.c = b10;
     }
 }

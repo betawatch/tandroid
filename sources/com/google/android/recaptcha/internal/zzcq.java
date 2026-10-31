@@ -1,19 +1,19 @@
 package com.google.android.recaptcha.internal;
 
-import ae.k;
 import android.content.Context;
+import bd.i;
+import bd.k;
 import java.io.File;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
-import kd.g;
-import kd.i;
-import xd.b;
-import xd.c;
+import od.b;
+import od.c;
+import rd.j;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class zzcq implements zzbt {
     private final Context zza;
@@ -41,7 +41,7 @@ public final class zzcq implements zzbt {
                 ArrayList arrayList = new ArrayList();
                 int i10 = 0;
                 for (File file : listFiles) {
-                    if (k.h(file.getName(), this.zzb)) {
+                    if (j.h(file.getName(), this.zzb)) {
                         arrayList.add(file);
                     }
                 }
@@ -59,15 +59,15 @@ public final class zzcq implements zzbt {
     @Override // com.google.android.recaptcha.internal.zzbt
     public final void zzc(String str, String str2) {
         c cVar = new c('A', 'z');
-        ArrayList arrayList = new ArrayList(i.d(cVar));
+        ArrayList arrayList = new ArrayList(k.d(cVar));
         Iterator it = cVar.iterator();
         while (true) {
             b bVar = (b) it;
             boolean z10 = bVar.d;
             if (!z10) {
-                ArrayList o10 = g.o(arrayList);
+                ArrayList o10 = i.o(arrayList);
                 Collections.shuffle(o10);
-                String h = g.h(o10.subList(0, 8), "", null, null, null, 62);
+                String h = i.h(o10.subList(0, 8), "", null, null, null, 62);
                 Context context = this.zza;
                 String str3 = this.zzb;
                 File file = new File(context.getCacheDir(), str3.concat(String.valueOf(h)));

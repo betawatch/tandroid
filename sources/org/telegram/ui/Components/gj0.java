@@ -1,111 +1,149 @@
 package org.telegram.ui.Components;
 
 import android.animation.ValueAnimator;
+import android.graphics.Paint;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class gj0 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ij0 b;
+public final class gj0 extends s4.s0 {
+    public boolean a;
+    public boolean b;
+    public ValueAnimator c;
+    public ValueAnimator d;
+    public final /* synthetic */ mj0 e;
 
-    public /* synthetic */ gj0(ij0 ij0Var, int i10) {
-        this.a = i10;
-        this.b = ij0Var;
+    public gj0(mj0 mj0Var) {
+        this.e = mj0Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                ij0 ij0Var = this.b;
-                ij0Var.v = floatValue;
-                org.telegram.ui.Cells.p2 p2Var = ij0Var.H;
-                if (p2Var != null) {
-                    p2Var.invalidate();
+    public static ValueAnimator c(float f7, float f10, q0.a aVar, Runnable runnable) {
+        ValueAnimator duration = ValueAnimator.ofFloat(f7, f10).setDuration((long) (Math.abs(f10 - f7) * 150.0f));
+        duration.addUpdateListener(new r60(aVar, 8));
+        duration.addListener(new t60(runnable, 13));
+        duration.start();
+        return duration;
+    }
+
+    @Override // s4.s0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        mj0 mj0Var = this.e;
+        org.telegram.ui.br brVar = mj0Var.W;
+        boolean z10 = brVar.L0() != 0;
+        if (z10 != this.a) {
+            ValueAnimator valueAnimator = this.c;
+            if (valueAnimator != null) {
+                valueAnimator.cancel();
+            }
+            final int i12 = 0;
+            final int i13 = 0;
+            this.c = c(mj0Var.r, z10 ? 1.0f : 0.0f, new q0.a(this) { // from class: org.telegram.ui.Components.ej0
+                public final /* synthetic */ gj0 b;
+
+                {
+                    this.b = this;
                 }
-                nm0 nm0Var = ij0Var.I;
-                if (nm0Var != null) {
-                    nm0Var.invalidate();
-                    break;
+
+                @Override // q0.a
+                public final void accept(Object obj) {
+                    Float f7 = (Float) obj;
+                    switch (i12) {
+                        case 0:
+                            mj0 mj0Var2 = this.b.e;
+                            Paint paint = mj0Var2.h;
+                            float floatValue = f7.floatValue();
+                            mj0Var2.r = floatValue;
+                            paint.setAlpha((int) (floatValue * 255.0f));
+                            mj0Var2.invalidate();
+                            break;
+                        default:
+                            mj0 mj0Var3 = this.b.e;
+                            Paint paint2 = mj0Var3.n;
+                            float floatValue2 = f7.floatValue();
+                            mj0Var3.s = floatValue2;
+                            paint2.setAlpha((int) (floatValue2 * 255.0f));
+                            mj0Var3.invalidate();
+                            break;
+                    }
                 }
-                break;
-            case 1:
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                ij0 ij0Var2 = this.b;
-                ij0Var2.w = floatValue2;
-                org.telegram.ui.Cells.p2 p2Var2 = ij0Var2.H;
-                if (p2Var2 != null) {
-                    p2Var2.invalidate();
+            }, new Runnable(this) { // from class: org.telegram.ui.Components.fj0
+                public final /* synthetic */ gj0 b;
+
+                {
+                    this.b = this;
                 }
-                nm0 nm0Var2 = ij0Var2.I;
-                if (nm0Var2 != null) {
-                    nm0Var2.invalidate();
-                    break;
+
+                @Override // java.lang.Runnable
+                public final void run() {
+                    switch (i13) {
+                        case 0:
+                            this.b.c = null;
+                            break;
+                        default:
+                            this.b.d = null;
+                            break;
+                    }
                 }
-                break;
-            case 2:
-                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                ij0 ij0Var3 = this.b;
-                ij0Var3.p = floatValue3;
-                org.telegram.ui.Cells.p2 p2Var3 = ij0Var3.H;
-                if (p2Var3 != null) {
-                    p2Var3.invalidate();
-                    break;
+            });
+            this.a = z10;
+        }
+        boolean z11 = brVar.N0() != mj0Var.a0.b() - 1;
+        if (z11 != this.b) {
+            ValueAnimator valueAnimator2 = this.d;
+            if (valueAnimator2 != null) {
+                valueAnimator2.cancel();
+            }
+            final int i14 = 1;
+            final int i15 = 1;
+            this.d = c(mj0Var.s, z11 ? 1.0f : 0.0f, new q0.a(this) { // from class: org.telegram.ui.Components.ej0
+                public final /* synthetic */ gj0 b;
+
+                {
+                    this.b = this;
                 }
-                break;
-            case 3:
-                float floatValue4 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                ij0 ij0Var4 = this.b;
-                ij0Var4.o = floatValue4;
-                org.telegram.ui.Cells.p2 p2Var4 = ij0Var4.H;
-                if (p2Var4 != null) {
-                    p2Var4.invalidate();
-                    break;
+
+                @Override // q0.a
+                public final void accept(Object obj) {
+                    Float f7 = (Float) obj;
+                    switch (i14) {
+                        case 0:
+                            mj0 mj0Var2 = this.b.e;
+                            Paint paint = mj0Var2.h;
+                            float floatValue = f7.floatValue();
+                            mj0Var2.r = floatValue;
+                            paint.setAlpha((int) (floatValue * 255.0f));
+                            mj0Var2.invalidate();
+                            break;
+                        default:
+                            mj0 mj0Var3 = this.b.e;
+                            Paint paint2 = mj0Var3.n;
+                            float floatValue2 = f7.floatValue();
+                            mj0Var3.s = floatValue2;
+                            paint2.setAlpha((int) (floatValue2 * 255.0f));
+                            mj0Var3.invalidate();
+                            break;
+                    }
                 }
-                break;
-            case 4:
-                float floatValue5 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                ij0 ij0Var5 = this.b;
-                ij0Var5.x = floatValue5;
-                org.telegram.ui.Cells.p2 p2Var5 = ij0Var5.H;
-                if (p2Var5 != null) {
-                    p2Var5.invalidate();
-                    break;
+            }, new Runnable(this) { // from class: org.telegram.ui.Components.fj0
+                public final /* synthetic */ gj0 b;
+
+                {
+                    this.b = this;
                 }
-                break;
-            case 5:
-                ij0 ij0Var6 = this.b;
-                ij0Var6.getClass();
-                ij0Var6.e(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                org.telegram.ui.Cells.p2 p2Var6 = ij0Var6.H;
-                if (p2Var6 != null) {
-                    p2Var6.invalidate();
-                    break;
+
+                @Override // java.lang.Runnable
+                public final void run() {
+                    switch (i15) {
+                        case 0:
+                            this.b.c = null;
+                            break;
+                        default:
+                            this.b.d = null;
+                            break;
+                    }
                 }
-                break;
-            case 6:
-                ij0 ij0Var7 = this.b;
-                ij0Var7.getClass();
-                ij0Var7.D = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                ij0Var7.F = true;
-                org.telegram.ui.Cells.p2 p2Var7 = ij0Var7.H;
-                if (p2Var7 != null) {
-                    p2Var7.invalidate();
-                    break;
-                }
-                break;
-            default:
-                ij0 ij0Var8 = this.b;
-                ij0Var8.getClass();
-                ij0Var8.D = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                ij0Var8.F = false;
-                org.telegram.ui.Cells.p2 p2Var8 = ij0Var8.H;
-                if (p2Var8 != null) {
-                    p2Var8.invalidate();
-                    break;
-                }
-                break;
+            });
+            this.b = z11;
         }
     }
 }

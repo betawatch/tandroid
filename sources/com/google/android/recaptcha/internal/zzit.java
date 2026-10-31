@@ -1,10 +1,11 @@
 package com.google.android.recaptcha.internal;
 
+import ad.j;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import kotlin.jvm.internal.i;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public abstract class zzit implements InvocationHandler {
     private final Object zza;
@@ -32,13 +33,13 @@ public abstract class zzit implements InvocationHandler {
             return Boolean.valueOf(z10);
         }
         boolean zza = zza(obj, method, objArr);
-        jd.i iVar = jd.i.a;
+        j jVar = j.a;
         if (!zza) {
-            return iVar;
+            return jVar;
         }
         Object obj3 = this.zza;
         if ((obj3 == null && i.a(method.getReturnType(), Void.TYPE)) || (obj3 != null && i.a(zzpu.zza(obj3.getClass()), zzpu.zza(method.getReturnType())))) {
-            return obj3 == null ? iVar : obj3;
+            return obj3 == null ? jVar : obj3;
         }
         throw new IllegalArgumentException(obj3 + " cannot be returned from method with return type " + method.getReturnType());
     }

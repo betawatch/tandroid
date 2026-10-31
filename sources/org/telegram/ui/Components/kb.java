@@ -1,53 +1,12 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
-import android.view.WindowManager;
-import android.widget.FrameLayout;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class kb extends FrameLayout {
-    public final /* synthetic */ lb a;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public kb(lb lbVar, Context context) {
-        super(context);
-        this.a = lbVar;
-    }
-
-    @Override // android.view.ViewGroup
-    public final void addView(View view) {
-        super.addView(view);
-        this.a.show();
-    }
-
-    public WindowManager.LayoutParams getLayout() {
-        return this.a.b;
-    }
-
-    @Override // android.view.ViewGroup, android.view.ViewManager
-    public final void removeView(View view) {
-        lb lbVar = this.a;
-        super.removeView(view);
-        try {
-            lbVar.dismiss();
-        } catch (Exception unused) {
+public final /* synthetic */ class kb implements o1.g {
+    @Override // o1.g
+    public final void a(o1.j jVar, float f7, float f10) {
+        if (f7 <= 0.0f) {
+            jVar.d();
         }
-        qc.h(lbVar.a);
-    }
-
-    public void setTouchable(boolean z10) {
-        lb lbVar = this.a;
-        WindowManager.LayoutParams layoutParams = lbVar.b;
-        if (layoutParams == null) {
-            return;
-        }
-        if (z10) {
-            layoutParams.flags &= -17;
-        } else {
-            layoutParams.flags |= 16;
-        }
-        lbVar.getWindow().setAttributes(lbVar.b);
     }
 }

@@ -1,236 +1,89 @@
 package org.telegram.ui.Components;
 
-import android.animation.ObjectAnimator;
-import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
 import android.view.View;
-import android.widget.FrameLayout;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.bd1;
-import org.telegram.ui.id1;
-import org.telegram.ui.kd1;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class d60 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ Object c;
+public final class d60 extends c61 {
+    public float f;
+    public float h;
+    public final Paint n;
+    public float r;
+    public li.k s;
+    public final /* synthetic */ m60 w;
 
-    public /* synthetic */ d60(int i10, Object obj, boolean z10) {
-        this.a = i10;
-        this.c = obj;
-        this.b = z10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public d60(m60 m60Var, Context context) {
+        super(m60Var, context);
+        this.w = m60Var;
+        this.n = new Paint();
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        CheckBoxBase checkBoxBase;
-        CheckBoxBase[] checkBoxBaseArr;
-        CheckBoxBase checkBoxBase2;
-        int i10 = this.a;
-        yh.e eVar = null;
-        int i11 = 1;
-        boolean z10 = this.b;
-        Object obj = this.c;
-        switch (i10) {
-            case 0:
-                p60 p60Var = ((h60) obj).H0;
-                if (!p60Var.k0) {
-                    try {
-                        p60Var.performHapticFeedback(3, 2);
-                    } catch (Exception unused) {
-                    }
-                    AndroidUtilities.lockOrientation(p60Var.h.getParentActivity());
-                    p60Var.h0 = z10 ? p60Var.j0 : 0L;
-                    p60Var.g0 = System.currentTimeMillis();
-                    p60Var.i0 = true;
-                    p60Var.w();
-                    p60Var.invalidate();
-                    NotificationCenter.getInstance(p60Var.e).lambda$postNotificationNameOnUIThread$1(NotificationCenter.recordStarted, Integer.valueOf(p60Var.U), Boolean.FALSE);
-                    break;
-                }
-                break;
-            case 1:
-                bn0 bn0Var = (bn0) obj;
-                bn0Var.getClass();
-                bn0Var.r(z10 ? "shown after a change away" : "shown, height differs", false);
-                break;
-            case 2:
-                ((do0) obj).G.presentFragment(new PremiumPreviewFragment(0, z10 ? "upload_speed" : "download_speed"));
-                break;
-            case 3:
-                bw0 bw0Var = (bw0) obj;
-                if (!z10) {
-                    bw0Var.o0.setVisibility(8);
-                    break;
-                } else {
-                    bw0Var.getClass();
-                    break;
-                }
-            case 4:
-                ws0 ws0Var = (ws0) obj;
-                if (!z10) {
-                    ws0Var.W.s0.setVisibility(0);
-                    break;
-                } else {
-                    ws0Var.getClass();
-                    break;
-                }
-            case 5:
-                at0 at0Var = (at0) obj;
-                if (!z10) {
-                    at0Var.w.s0.setVisibility(0);
-                    break;
-                } else {
-                    at0Var.getClass();
-                    break;
-                }
-            case 6:
-                ww0 ww0Var = (ww0) obj;
-                ArrayList arrayList = ww0Var.r;
-                vw0 vw0Var = ww0Var.n;
-                if (vw0Var != null) {
-                    vw0Var.I(ww0Var.f, z10);
-                }
-                while (r5 < arrayList.size()) {
-                    ((vw0) arrayList.get(r5)).I(ww0Var.f, z10);
-                    r5++;
-                }
-                break;
-            case 7:
-                xw0 xw0Var = (xw0) obj;
-                ArrayList arrayList2 = xw0Var.r;
-                vw0 vw0Var2 = xw0Var.n;
-                if (vw0Var2 != null) {
-                    vw0Var2.I(xw0Var.n0, z10);
-                }
-                while (r5 < arrayList2.size()) {
-                    ((vw0) arrayList2.get(r5)).I(xw0Var.n0, z10);
-                    r5++;
-                }
-                break;
-            case 8:
-                ((Utilities.Callback2) obj).run(null, Boolean.valueOf(z10));
-                break;
-            case 9:
-                ((k71) obj).Q(z10);
-                break;
-            case 10:
-                org.telegram.ui.ey eyVar = (org.telegram.ui.ey) obj;
-                g5.L(eyVar.getParentActivity(), z10 ? eyVar.getUserConfig().getClientUserId() : -1L, new org.telegram.ui.ix(eyVar), eyVar.getResourceProvider());
-                break;
-            case 11:
-                org.telegram.ui.oz ozVar = (org.telegram.ui.oz) obj;
-                ozVar.a0(ozVar.O, z10);
-                break;
-            case 12:
-                org.telegram.ui.rc0 rc0Var = (org.telegram.ui.rc0) obj;
-                if (!z10) {
-                    rc0Var.b.setVisibility(8);
-                    break;
-                } else {
-                    rc0Var.getClass();
-                    break;
-                }
-            case 13:
-                org.telegram.ui.ig0 ig0Var = (org.telegram.ui.ig0) obj;
-                if (!z10) {
-                    ig0Var.W.setVisibility(8);
-                    break;
-                }
-                break;
-            case 14:
-                PhotoViewer photoViewer = (PhotoViewer) obj;
-                if (!z10) {
-                    photoViewer.V0.setVisibility(8);
-                    break;
-                } else {
-                    Drawable[] drawableArr = PhotoViewer.U8;
-                    photoViewer.getClass();
-                    break;
-                }
-            case 15:
-                int i12 = ProfileActivity.R6;
-                ((ProfileActivity) obj).p5(z10, true);
-                break;
-            case 16:
-                ((FrameLayout) obj).setVisibility(z10 ? 4 : 0);
-                break;
-            case 17:
-                qf.d.r(((org.telegram.ui.l01) obj).e.getParentActivity(), LocaleController.getString(z10 ? R.string.ProfileBotOpenAppInfoOwnerLink : R.string.ProfileBotOpenAppInfoLink));
-                break;
-            case 18:
-                kd1 kd1Var = (kd1) obj;
-                AndroidUtilities.runOnUIThread(new bd1(kd1Var, i11));
-                org.telegram.ui.Cells.s1 s1Var = kd1Var.K;
-                if (s1Var != null) {
-                    s1Var.setVisibility(0);
-                    if (!z10) {
-                        org.telegram.ui.Cells.s1 s1Var2 = kd1Var.K;
-                        int O2 = s1Var2.O2(kd1Var.O);
-                        id1 id1Var = kd1Var.I;
-                        CheckBoxBase[] checkBoxBaseArr2 = s1Var2.R8;
-                        if (checkBoxBaseArr2 != null && O2 >= 0 && O2 < checkBoxBaseArr2.length && (checkBoxBase = checkBoxBaseArr2[O2]) != null && id1Var != null && (checkBoxBaseArr = id1Var.R8) != null && O2 >= 0 && O2 < checkBoxBaseArr.length && (checkBoxBase2 = checkBoxBaseArr[O2]) != null) {
-                            ObjectAnimator objectAnimator = checkBoxBase.p;
-                            if (objectAnimator != null) {
-                                objectAnimator.cancel();
-                                checkBoxBase.p = null;
-                            }
-                            checkBoxBase.setProgress(checkBoxBase2.getProgress());
-                            checkBoxBase.f(-1, checkBoxBase2.q, true);
-                        }
-                    }
-                    org.telegram.ui.Cells.s1 s1Var3 = kd1Var.K;
-                    s1Var3.K7 = -1;
-                    s1Var3.invalidate();
-                }
-                org.telegram.ui.sm smVar = kd1Var.c0;
-                if (smVar != null) {
-                    AndroidUtilities.runOnUIThread(smVar);
-                    kd1Var.c0 = null;
-                    break;
-                }
-                break;
-            case 19:
-                ((View) obj).setVisibility(z10 ? 0 : 8);
-                break;
-            case 20:
-                vi.j jVar = (vi.j) obj;
-                jVar.P = z10;
-                jVar.Q = jVar.F();
-                jVar.R = 0;
-                jVar.S = 0;
-                jVar.j.b("torch requested: enabled=" + z10 + ", available=" + jVar.F() + ", cameraId=" + jVar.o + ", facing=" + jVar.G);
-                jVar.g();
-                break;
-            default:
-                yh.k kVar = (yh.k) obj;
-                ArrayList arrayList3 = kVar.c;
-                boolean isEmpty = TextUtils.isEmpty(kVar.t);
-                String str = kVar.t;
-                kVar.w = true;
-                kVar.A = false;
-                TLRPC.TL_chatInviteImporter tL_chatInviteImporter = (!isEmpty || arrayList3.isEmpty()) ? null : (TLRPC.TL_chatInviteImporter) ic.a.g(1, arrayList3);
-                boolean z11 = tL_chatInviteImporter == null;
-                if (isEmpty && z11 && z10) {
-                    eVar = new yh.e(kVar, 1);
-                }
-                yh.e eVar2 = eVar;
-                if (isEmpty) {
-                    AndroidUtilities.runOnUIThread(eVar2, 300L);
-                }
-                kVar.v = kVar.i.getImporters(kVar.j, str, tL_chatInviteImporter, kVar.d, new bi.s4(kVar, isEmpty, eVar2, str, z11));
-                break;
+    @Override // org.telegram.ui.Components.c61, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        m60 m60Var = this.w;
+        m60Var.M1.setTranslationY(org.telegram.messenger.i0.L(64.0f) + org.telegram.messenger.i0.L(6.0f) + (m60Var.u1 - m60Var.s0));
+        float f7 = m60Var.f2 + m60Var.l2;
+        dw0 dw0Var = m60Var.q1;
+        if (dw0Var.getVisibility() != 0) {
+            this.f = f7;
+            this.h = f7;
+        } else if (this.h != f7) {
+            this.h = f7;
+            this.r = (f7 - this.f) * 0.10666667f;
+        }
+        float f10 = this.f;
+        float f11 = this.h;
+        if (f10 != f11) {
+            float f12 = this.r;
+            float f13 = f10 + f12;
+            this.f = f13;
+            if (f12 > 0.0f && f13 > f11) {
+                this.f = f11;
+            } else if (f12 >= 0.0f || f13 >= f11) {
+                invalidate();
+            } else {
+                this.f = f11;
+            }
+        }
+        dw0Var.setTranslationY(m60Var.u1 + this.f);
+        super.dispatchDraw(canvas);
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j10) {
+        m60 m60Var = this.w;
+        if (view != m60Var.M1) {
+            return super.drawChild(canvas, view, j10);
+        }
+        canvas.save();
+        canvas.clipRect(0.0f, view.getY() - org.telegram.messenger.i0.L(4.0f), getMeasuredWidth(), view.getY() + m60Var.b2 + 1.0f);
+        canvas.drawColor(i0.b.o(org.telegram.ui.ActionBar.t6.x0(null, org.telegram.ui.ActionBar.t6.d6, false), (int) (m60Var.Y1 * 255.0f)));
+        int o10 = i0.b.o(org.telegram.ui.ActionBar.t6.x0(null, org.telegram.ui.ActionBar.t6.d7, false), (int) (m60Var.Y1 * 255.0f));
+        Paint paint = this.n;
+        paint.setColor(o10);
+        canvas.drawRect(0.0f, view.getY() + m60Var.b2, getMeasuredWidth(), view.getY() + m60Var.b2 + 1.0f, paint);
+        boolean drawChild = super.drawChild(canvas, view, j10);
+        canvas.restore();
+        return drawChild;
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        li.k kVar = this.s;
+        if (kVar != null) {
+            ((h61) kVar.b).b = true;
+        }
+    }
+
+    @Override // android.view.ViewGroup
+    public final void onViewAdded(View view) {
+        if (view == this.w.k2 && this.s == null) {
+            this.s = new li.k(view);
         }
     }
 }

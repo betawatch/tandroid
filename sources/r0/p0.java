@@ -1,129 +1,92 @@
 package r0;
 
-import a8.fg;
-import android.animation.ValueAnimator;
-import android.os.Build;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowInsets;
-import j$.util.Objects;
-import java.util.WeakHashMap;
-import m4.w1;
+import android.view.animation.AccelerateInterpolator;
+import android.view.animation.DecelerateInterpolator;
+import android.view.animation.PathInterpolator;
+import java.util.Iterator;
+import java.util.List;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.Components.ml0;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class p0 implements View.OnApplyWindowInsetsListener {
-    public final rh.e a;
-    public k1 b;
+public final class p0 extends t0 {
+    public static final PathInterpolator e = new PathInterpolator(0.0f, 1.1f, 0.0f, 1.0f);
+    public static final u1.a f = new u1.a(u1.a.c);
+    public static final DecelerateInterpolator g = new DecelerateInterpolator(1.5f);
+    public static final AccelerateInterpolator h = new AccelerateInterpolator(1.5f);
 
-    public p0(ViewGroup viewGroup, rh.e eVar) {
-        k1 k1Var;
-        this.a = eVar;
-        WeakHashMap weakHashMap = i0.a;
-        k1 a2 = b0.a(viewGroup);
-        if (a2 != null) {
-            int i10 = Build.VERSION.SDK_INT;
-            k1Var = (i10 >= 34 ? new z0(a2) : i10 >= 30 ? new y0(a2) : i10 >= 29 ? new x0(a2) : new w0(a2)).b();
-        } else {
-            k1Var = null;
+    public static void e(View view, u0 u0Var) {
+        b2.h i10 = i(view);
+        if (i10 != null) {
+            i10.V0();
+            return;
         }
-        this.b = k1Var;
+        if (view instanceof ViewGroup) {
+            ViewGroup viewGroup = (ViewGroup) view;
+            for (int i11 = 0; i11 < viewGroup.getChildCount(); i11++) {
+                e(viewGroup.getChildAt(i11), u0Var);
+            }
+        }
     }
 
-    @Override // android.view.View.OnApplyWindowInsetsListener
-    public final WindowInsets onApplyWindowInsets(View view, WindowInsets windowInsets) {
-        int[] iArr;
-        boolean z10;
-        if (!view.isLaidOut()) {
-            this.b = k1.h(view, windowInsets);
-            return view.getTag(R.id.tag_on_apply_window_listener) != null ? windowInsets : view.onApplyWindowInsets(windowInsets);
-        }
-        k1 h = k1.h(view, windowInsets);
-        h1 h1Var = h.a;
-        if (this.b == null) {
-            WeakHashMap weakHashMap = i0.a;
-            this.b = b0.a(view);
-        }
-        if (this.b == null) {
-            this.b = h;
-            if (view.getTag(R.id.tag_on_apply_window_listener) == null) {
-                return view.onApplyWindowInsets(windowInsets);
-            }
-        } else {
-            b2.h i10 = q0.i(view);
-            if (i10 == null || !Objects.equals((k1) i10.a, h)) {
-                int[] iArr2 = new int[1];
-                int[] iArr3 = new int[1];
-                k1 k1Var = this.b;
-                int i11 = 1;
-                while (i11 <= 512) {
-                    i0.b f7 = h1Var.f(i11);
-                    i0.b f10 = k1Var.a.f(i11);
-                    int i12 = f7.a;
-                    int i13 = f7.d;
-                    int i14 = f7.c;
-                    int i15 = f7.b;
-                    int i16 = f10.a;
-                    int i17 = f10.d;
-                    int i18 = f10.c;
-                    int i19 = f10.b;
-                    if (i12 > i16 || i15 > i19 || i14 > i18 || i13 > i17) {
-                        iArr = iArr2;
-                        z10 = true;
-                    } else {
-                        iArr = iArr2;
-                        z10 = false;
-                    }
-                    if (z10 != (i12 < i16 || i15 < i19 || i14 < i18 || i13 < i17)) {
-                        if (z10) {
-                            iArr[0] = iArr[0] | i11;
-                        } else {
-                            iArr3[0] = iArr3[0] | i11;
-                        }
-                    }
-                    i11 <<= 1;
-                    iArr2 = iArr;
-                }
-                int i20 = iArr2[0];
-                int i21 = iArr3[0];
-                int i22 = i20 | i21;
-                if (i22 == 0) {
-                    this.b = h;
-                    if (view.getTag(R.id.tag_on_apply_window_listener) == null) {
-                        return view.onApplyWindowInsets(windowInsets);
-                    }
-                } else {
-                    k1 k1Var2 = this.b;
-                    v0 v0Var = new v0(i22, (i22 & 8) != 0 ? 160L : 250L, (i20 & 8) != 0 ? q0.e : (i21 & 8) != 0 ? q0.f : (i20 & 519) != 0 ? q0.g : (i21 & 519) != 0 ? q0.h : null);
-                    v0Var.a.d(0.0f);
-                    ValueAnimator duration = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration(v0Var.a.a());
-                    i0.b f11 = h1Var.f(i22);
-                    i0.b f12 = k1Var2.a.f(i22);
-                    int min = Math.min(f11.a, f12.a);
-                    int i23 = f11.b;
-                    int i24 = f12.b;
-                    int min2 = Math.min(i23, i24);
-                    int i25 = f11.c;
-                    int i26 = f12.c;
-                    int min3 = Math.min(i25, i26);
-                    int i27 = f11.d;
-                    int i28 = f12.d;
-                    w1 w1Var = new w1(17, i0.b.b(min, min2, min3, Math.min(i27, i28)), i0.b.b(Math.max(f11.a, f12.a), Math.max(i23, i24), Math.max(i25, i26), Math.max(i27, i28)));
-                    q0.f(view, h, false);
-                    duration.addUpdateListener(new o0(v0Var, h, k1Var2, i22, view));
-                    duration.addListener(new ml0(v0Var, view, 18));
-                    p.a(view, new fg(view, v0Var, w1Var, duration, 5));
-                    this.b = h;
-                    if (view.getTag(R.id.tag_on_apply_window_listener) == null) {
-                        return view.onApplyWindowInsets(windowInsets);
-                    }
-                }
-            } else if (view.getTag(R.id.tag_on_apply_window_listener) == null) {
-                return view.onApplyWindowInsets(windowInsets);
+    public static void f(View view, j1 j1Var, boolean z10) {
+        b2.h i10 = i(view);
+        if (i10 != null) {
+            i10.a = j1Var;
+            if (!z10) {
+                z10 = true;
             }
         }
-        return windowInsets;
+        if (view instanceof ViewGroup) {
+            ViewGroup viewGroup = (ViewGroup) view;
+            for (int i11 = 0; i11 < viewGroup.getChildCount(); i11++) {
+                f(viewGroup.getChildAt(i11), j1Var, z10);
+            }
+        }
+    }
+
+    public static void g(View view, j1 j1Var, List list) {
+        b2.h i10 = i(view);
+        if (i10 != null) {
+            i10.W0(j1Var, list);
+            return;
+        }
+        if (view instanceof ViewGroup) {
+            ViewGroup viewGroup = (ViewGroup) view;
+            for (int i11 = 0; i11 < viewGroup.getChildCount(); i11++) {
+                g(viewGroup.getChildAt(i11), j1Var, list);
+            }
+        }
+    }
+
+    public static void h(View view, u0 u0Var, m5.e eVar) {
+        b2.h i10 = i(view);
+        if (i10 != null) {
+            hh.e eVar2 = (hh.e) i10;
+            if (eVar2.c == 0) {
+                Iterator it = eVar2.d.iterator();
+                while (it.hasNext()) {
+                    ((hh.d) it.next()).w();
+                }
+            }
+            eVar2.c++;
+            return;
+        }
+        if (view instanceof ViewGroup) {
+            ViewGroup viewGroup = (ViewGroup) view;
+            for (int i11 = 0; i11 < viewGroup.getChildCount(); i11++) {
+                h(viewGroup.getChildAt(i11), u0Var, eVar);
+            }
+        }
+    }
+
+    public static b2.h i(View view) {
+        Object tag = view.getTag(R.id.tag_window_insets_animation_callback);
+        if (tag instanceof o0) {
+            return ((o0) tag).a;
+        }
+        return null;
     }
 }

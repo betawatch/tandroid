@@ -1,38 +1,39 @@
 package n4;
 
-import android.os.Build;
 import android.text.TextUtils;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class t {
-    public v a;
+public class t {
+    public final String a;
+    public final int b;
+    public final int c;
 
     public t(String str, int i10, int i11) {
-        if (str == null) {
-            throw new NullPointerException("package shouldn't be null");
-        }
-        if (TextUtils.isEmpty(str)) {
-            throw new IllegalArgumentException("packageName should be nonempty");
-        }
-        if (Build.VERSION.SDK_INT >= 28) {
-            this.a = new u(str, i10, i11);
-        } else {
-            this.a = new v(str, i10, i11);
-        }
+        this.a = str;
+        this.b = i10;
+        this.c = i11;
     }
 
     public final boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
-        if (obj instanceof t) {
-            return this.a.equals(((t) obj).a);
+        if (!(obj instanceof t)) {
+            return false;
         }
-        return false;
+        t tVar = (t) obj;
+        int i10 = tVar.c;
+        String str = tVar.a;
+        int i11 = tVar.b;
+        int i12 = this.c;
+        String str2 = this.a;
+        int i13 = this.b;
+        return (i13 < 0 || i11 < 0) ? TextUtils.equals(str2, str) && i12 == i10 : TextUtils.equals(str2, str) && i13 == i11 && i12 == i10;
     }
 
     public final int hashCode() {
-        return this.a.hashCode();
+        return Objects.hash(this.a, Integer.valueOf(this.c));
     }
 }

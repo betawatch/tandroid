@@ -1,80 +1,53 @@
 package bi;
 
 import android.content.Context;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChannelBoostsController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.tl.TL_payments;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.DataSettingsActivity;
-import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.ax;
-import org.telegram.ui.ef;
-import org.telegram.ui.ey;
-import org.telegram.ui.yt;
+import android.view.View;
+import android.widget.HorizontalScrollView;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class c2 implements Utilities.Callback {
+public final class c2 extends HorizontalScrollView {
     public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
 
-    public /* synthetic */ c2(Object obj, Object obj2, long j10, int i10) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ c2(Context context, int i10) {
+        super(context);
         this.a = i10;
-        this.c = obj;
-        this.d = obj2;
-        this.b = j10;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        int i10;
+    @Override // android.widget.HorizontalScrollView, android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
         switch (this.a) {
             case 0:
-                h7 h7Var = (h7) this.c;
-                MessagesController messagesController = (MessagesController) this.d;
-                TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = (TL_stories.TL_premium_boostsStatus) obj;
-                if (tL_premium_boostsStatus != null && tL_premium_boostsStatus.level < messagesController.channelEmojiStatusLevelMin) {
-                    ChannelBoostsController boostsController = messagesController.getBoostsController();
-                    long j10 = this.b;
-                    boostsController.userCanBoostChannel(j10, tL_premium_boostsStatus, new t2(h7Var, tL_premium_boostsStatus, j10, messagesController, 0));
+                int mode = View.MeasureSpec.getMode(i10);
+                int size = View.MeasureSpec.getSize(i10);
+                if (mode != 1073741824) {
+                    super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, 0), i11);
+                    int measuredWidth = getMeasuredWidth();
+                    if (mode == Integer.MIN_VALUE) {
+                        measuredWidth = Math.min(measuredWidth, size);
+                    }
+                    setMeasuredDimension(measuredWidth, getMeasuredHeight());
                     break;
                 } else {
-                    h7Var.k0.setLoading(false);
-                    h7Var.V2(true);
-                    break;
-                }
-            case 1:
-                DataSettingsActivity dataSettingsActivity = (DataSettingsActivity) this.c;
-                Long l4 = (Long) obj;
-                AndroidUtilities.cancelRunOnUIThread((yt) this.d);
-                dataSettingsActivity.V = dataSettingsActivity.V || System.currentTimeMillis() - this.b > 120;
-                dataSettingsActivity.X = l4.longValue();
-                dataSettingsActivity.W = false;
-                if (dataSettingsActivity.a != null && (i10 = dataSettingsActivity.s) >= 0) {
-                    dataSettingsActivity.o0(i10);
-                    break;
-                }
-                break;
-            case 2:
-                ax axVar = (ax) this.c;
-                Runnable runnable = (Runnable) obj;
-                ((org.telegram.ui.ActionBar.e2) this.d).r(150L);
-                ey eyVar = axVar.b;
-                Boolean bool = eyVar.G.bot_participant;
-                if (bool != null && bool.booleanValue()) {
-                    eyVar.getMessagesController().addUserToChat(this.b, eyVar.getMessagesController().getUser(Long.valueOf(eyVar.H)), 0, null, eyVar, false, runnable, new ef(6, runnable));
-                    break;
-                } else {
-                    runnable.run();
+                    super.onMeasure(i10, i11);
                     break;
                 }
             default:
-                ProfileActivity.Z((ProfileActivity) this.c, (Context) this.d, this.b, (TL_payments.connectedBotStarRef) obj);
-                break;
+                int mode2 = View.MeasureSpec.getMode(i10);
+                int size2 = View.MeasureSpec.getSize(i10);
+                if (mode2 != 1073741824) {
+                    super.onMeasure(View.MeasureSpec.makeMeasureSpec(size2, 0), i11);
+                    int measuredWidth2 = getMeasuredWidth();
+                    if (mode2 == Integer.MIN_VALUE) {
+                        measuredWidth2 = Math.min(measuredWidth2, size2);
+                    }
+                    setMeasuredDimension(measuredWidth2, getMeasuredHeight());
+                    break;
+                } else {
+                    super.onMeasure(i10, i11);
+                    break;
+                }
         }
     }
 }

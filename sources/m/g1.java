@@ -16,8 +16,9 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class g1 {
     public static final RectF l = new RectF();
@@ -86,7 +87,7 @@ public final class g1 {
         }
     }
 
-    public static Object e(Object obj, String str, Object obj2) {
+    public static Object e(String str, Object obj, Object obj2) {
         try {
             return d(str).invoke(obj, null);
         } catch (Exception e) {
@@ -101,7 +102,7 @@ public final class g1 {
                 if (this.i.getMeasuredHeight() <= 0 || this.i.getMeasuredWidth() <= 0) {
                     return;
                 }
-                int measuredWidth = this.k.b(this.i) ? 1048576 : (this.i.getMeasuredWidth() - this.i.getTotalPaddingLeft()) - this.i.getTotalPaddingRight();
+                int measuredWidth = this.k.b(this.i) ? TLObject.FLAG_20 : (this.i.getMeasuredWidth() - this.i.getTotalPaddingLeft()) - this.i.getTotalPaddingRight();
                 int height = (this.i.getHeight() - this.i.getCompoundPaddingBottom()) - this.i.getCompoundPaddingTop();
                 if (measuredWidth <= 0 || height <= 0) {
                     return;
@@ -149,7 +150,7 @@ public final class g1 {
             }
             this.h.set(textView.getPaint());
             this.h.setTextSize(i14);
-            StaticLayout a2 = c1.a(charSequence, (Layout.Alignment) e(textView, "getLayoutAlignment", Layout.Alignment.ALIGN_NORMAL), Math.round(rectF.right), b10, this.i, this.h, this.k);
+            StaticLayout a2 = c1.a(charSequence, (Layout.Alignment) e("getLayoutAlignment", textView, Layout.Alignment.ALIGN_NORMAL), Math.round(rectF.right), b10, this.i, this.h, this.k);
             if ((b10 == -1 || (a2.getLineCount() <= b10 && a2.getLineEnd(a2.getLineCount() - 1) == charSequence.length())) && a2.getHeight() <= rectF.bottom) {
                 int i15 = i13 + 1;
                 i11 = i12;

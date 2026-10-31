@@ -1,167 +1,187 @@
 package org.telegram.ui;
 
-import android.text.TextUtils;
-import android.util.LongSparseArray;
 import android.util.SparseArray;
 import java.util.ArrayList;
 import java.util.Collections;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.tgnet.TLRPC;
+import java.util.HashSet;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class h6 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ c7 b;
-    public final /* synthetic */ ArrayList c;
-    public final /* synthetic */ ArrayList d;
-    public final /* synthetic */ ArrayList e;
-    public final /* synthetic */ ci.b f;
+public final class h6 implements org.telegram.ui.Components.hu0, i7 {
+    public final /* synthetic */ y6 a;
 
-    public /* synthetic */ h6(c7 c7Var, ArrayList arrayList, ArrayList arrayList2, ArrayList arrayList3, ci.b bVar, int i10) {
-        this.a = i10;
-        this.b = c7Var;
-        this.c = arrayList;
-        this.d = arrayList2;
-        this.e = arrayList3;
-        this.f = bVar;
+    public /* synthetic */ h6(y6 y6Var) {
+        this.a = y6Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        boolean z10;
-        boolean z11;
-        switch (this.a) {
-            case 0:
-                c7 c7Var = this.b;
-                ArrayList<Long> arrayList = this.c;
-                ArrayList arrayList2 = this.d;
-                ArrayList arrayList3 = this.e;
-                ci.b bVar = this.f;
-                ArrayList<TLRPC.User> arrayList4 = new ArrayList<>();
-                ArrayList<TLRPC.Chat> arrayList5 = new ArrayList<>();
-                if (!arrayList.isEmpty()) {
-                    try {
-                        c7Var.getMessagesStorage().getUsersInternal(arrayList, arrayList4);
-                    } catch (Exception e) {
-                        FileLog.e(e);
-                    }
-                }
-                if (!arrayList2.isEmpty()) {
-                    try {
-                        c7Var.getMessagesStorage().getChatsInternal(TextUtils.join(",", arrayList2), arrayList5);
-                    } catch (Exception e10) {
-                        FileLog.e(e10);
-                    }
-                }
-                int i10 = 0;
-                while (i10 < arrayList3.size()) {
-                    if (((w6) arrayList3.get(i10)).c <= 0) {
-                        arrayList3.remove(i10);
-                        i10--;
-                    }
-                    i10++;
-                }
-                Collections.sort(arrayList3, new org.telegram.ui.ActionBar.n4(4));
-                AndroidUtilities.runOnUIThread(new h6(c7Var, arrayList4, arrayList5, arrayList3, bVar, 1));
-                break;
-            default:
-                c7 c7Var2 = this.b;
-                ArrayList<TLRPC.User> arrayList6 = this.c;
-                ArrayList<TLRPC.Chat> arrayList7 = this.d;
-                ArrayList arrayList8 = this.e;
-                ci.b bVar2 = this.f;
-                boolean z12 = true;
-                c7Var2.getMessagesController().putUsers(arrayList6, true);
-                c7Var2.getMessagesController().putChats(arrayList7, true);
-                boolean z13 = false;
-                w6 w6Var = null;
-                int i11 = 0;
-                while (i11 < arrayList8.size()) {
-                    w6 w6Var2 = (w6) arrayList8.get(i11);
-                    if (c7Var2.getMessagesController().getUserOrChat(w6Var2.a) == null) {
-                        w6Var2.a = Long.MAX_VALUE;
-                        if (w6Var != null) {
-                            SparseArray sparseArray = w6Var.d;
-                            int i12 = 0;
-                            while (true) {
-                                SparseArray sparseArray2 = w6Var2.d;
-                                if (i12 < sparseArray2.size()) {
-                                    int keyAt = sparseArray2.keyAt(i12);
-                                    x6 x6Var = (x6) sparseArray2.valueAt(i12);
-                                    x6 x6Var2 = (x6) sparseArray.get(keyAt, z13);
-                                    if (x6Var2 == null) {
-                                        x6Var2 = new x6();
-                                        sparseArray.put(keyAt, x6Var2);
-                                    }
-                                    x6Var.getClass();
-                                    w6 w6Var3 = w6Var;
-                                    x6Var2.a += x6Var.a;
-                                    w6Var3.c += x6Var.a;
-                                    x6Var2.b.addAll(x6Var.b);
-                                    i12++;
-                                    w6Var = w6Var3;
-                                    z12 = z12;
-                                    z13 = false;
-                                } else {
-                                    z10 = z12;
-                                    w6Var.b += w6Var2.b;
-                                    arrayList8.remove(i11);
-                                    i11--;
-                                    z11 = z10;
-                                }
-                            }
-                        } else {
-                            z10 = z12;
-                            w6Var = w6Var2;
-                            z11 = false;
-                        }
-                        if (z11) {
-                            Collections.sort(arrayList8, new org.telegram.ui.ActionBar.n4(4));
-                        }
-                    } else {
-                        z10 = z12;
-                    }
-                    i11++;
-                    z12 = z10;
-                    z13 = false;
-                }
-                boolean z14 = z12;
-                bVar2.b = arrayList8;
-                LongSparseArray longSparseArray = bVar2.c;
-                longSparseArray.clear();
-                int size = arrayList8.size();
-                int i13 = 0;
-                while (i13 < size) {
-                    Object obj = arrayList8.get(i13);
-                    i13++;
-                    w6 w6Var4 = (w6) obj;
-                    longSparseArray.put(w6Var4.a, w6Var4);
-                }
-                if (!c7.i0) {
-                    c7Var2.e0 = bVar2;
-                    m6 m6Var = c7Var2.M;
-                    if (m6Var != null) {
-                        m6Var.setCacheModel(bVar2);
-                    }
-                    c7Var2.w0(z14);
-                    c7Var2.u0();
-                    if (c7Var2.X != null && !c7Var2.K && System.currentTimeMillis() - c7Var2.a0 > 120) {
-                        o6 o6Var = c7Var2.X;
-                        long j10 = c7Var2.G;
-                        boolean z15 = j10 > 0 ? z14 : false;
-                        long j11 = c7Var2.H;
-                        float f7 = 0.0f;
-                        float f10 = j11 <= 0 ? 0.0f : j10 / j11;
-                        if (c7Var2.I > 0 && j11 > 0) {
-                            f7 = (j11 - r11) / j11;
-                        }
-                        o6Var.b(f10, f7, z15);
-                        break;
-                    }
-                }
-                break;
+    @Override // org.telegram.ui.Components.hu0
+    public void F(boolean z10) {
+        fe.b bVar = this.a.T;
+        if (bVar == null || bVar.f == z10) {
+            return;
         }
+        bVar.a(z10, true);
+    }
+
+    @Override // org.telegram.ui.i7
+    public void a(s6 s6Var, sh.a aVar, boolean z10) {
+        HashSet hashSet;
+        y6 y6Var = this.a;
+        if (s6Var == null) {
+            if (aVar != null) {
+                y6Var.d0.i(aVar);
+                y6Var.M.e();
+                y6.h0(y6Var);
+                return;
+            }
+            return;
+        }
+        if (y6Var.d0.j.size() > 0 || z10) {
+            sh.b bVar = y6Var.d0;
+            HashSet hashSet2 = bVar.j;
+            HashSet hashSet3 = bVar.l;
+            long j10 = s6Var.a;
+            SparseArray sparseArray = s6Var.d;
+            if (hashSet3.contains(Long.valueOf(j10))) {
+                for (int i10 = 0; i10 < sparseArray.size(); i10++) {
+                    ArrayList arrayList = ((t6) sparseArray.valueAt(i10)).b;
+                    int size = arrayList.size();
+                    int i11 = 0;
+                    while (i11 < size) {
+                        Object obj = arrayList.get(i11);
+                        i11++;
+                        sh.a aVar2 = (sh.a) obj;
+                        if (hashSet2.remove(aVar2)) {
+                            bVar.k -= aVar2.c;
+                        }
+                    }
+                }
+            } else {
+                for (int i12 = 0; i12 < sparseArray.size(); i12++) {
+                    ArrayList arrayList2 = ((t6) sparseArray.valueAt(i12)).b;
+                    int size2 = arrayList2.size();
+                    int i13 = 0;
+                    while (i13 < size2) {
+                        Object obj2 = arrayList2.get(i13);
+                        i13++;
+                        sh.a aVar3 = (sh.a) obj2;
+                        if (hashSet2.add(aVar3)) {
+                            bVar.k += aVar3.c;
+                        }
+                    }
+                }
+            }
+            bVar.c();
+            y6Var.M.e();
+            y6.h0(y6Var);
+            return;
+        }
+        if (y6Var.G <= 0 || y6Var.getParentActivity() == null) {
+            return;
+        }
+        s6Var.getClass();
+        boolean z11 = true;
+        sh.b bVar2 = new sh.b(true);
+        SparseArray sparseArray2 = s6Var.d;
+        Object obj3 = sparseArray2.get(0);
+        ArrayList arrayList3 = bVar2.d;
+        if (obj3 != null) {
+            arrayList3.addAll(((t6) sparseArray2.get(0)).b);
+        }
+        if (sparseArray2.get(1) != null) {
+            arrayList3.addAll(((t6) sparseArray2.get(1)).b);
+        }
+        Object obj4 = sparseArray2.get(2);
+        ArrayList arrayList4 = bVar2.e;
+        if (obj4 != null) {
+            arrayList4.addAll(((t6) sparseArray2.get(2)).b);
+        }
+        Object obj5 = sparseArray2.get(3);
+        ArrayList arrayList5 = bVar2.f;
+        if (obj5 != null) {
+            arrayList5.addAll(((t6) sparseArray2.get(3)).b);
+        }
+        Object obj6 = sparseArray2.get(4);
+        ArrayList arrayList6 = bVar2.g;
+        if (obj6 != null) {
+            arrayList6.addAll(((t6) sparseArray2.get(4)).b);
+        }
+        int i14 = 0;
+        while (true) {
+            int size3 = arrayList3.size();
+            hashSet = bVar2.j;
+            if (i14 >= size3) {
+                break;
+            }
+            hashSet.add((sh.a) arrayList3.get(i14));
+            if (((sh.a) arrayList3.get(i14)).d == 0) {
+                bVar2.r += ((sh.a) arrayList3.get(i14)).c;
+            } else {
+                bVar2.s += ((sh.a) arrayList3.get(i14)).c;
+            }
+            i14++;
+        }
+        for (int i15 = 0; i15 < arrayList4.size(); i15++) {
+            hashSet.add((sh.a) arrayList4.get(i15));
+            bVar2.t += ((sh.a) arrayList4.get(i15)).c;
+        }
+        for (int i16 = 0; i16 < arrayList5.size(); i16++) {
+            hashSet.add((sh.a) arrayList5.get(i16));
+            bVar2.u += ((sh.a) arrayList5.get(i16)).c;
+        }
+        int i17 = 0;
+        while (i17 < arrayList6.size()) {
+            hashSet.add((sh.a) arrayList6.get(i17));
+            bVar2.v += ((sh.a) arrayList6.get(i17)).c;
+            i17++;
+            z11 = true;
+        }
+        bVar2.m = z11;
+        bVar2.n = z11;
+        bVar2.o = z11;
+        bVar2.p = z11;
+        bVar2.q = z11;
+        Collections.sort(arrayList3, new ex0(17));
+        Collections.sort(arrayList4, new ex0(17));
+        Collections.sort(arrayList5, new ex0(17));
+        Collections.sort(arrayList6, new ex0(17));
+        Collections.sort(bVar2.h, new ex0(17));
+        zu zuVar = new zu(y6Var, s6Var, bVar2, new m4.c(13, y6Var, s6Var));
+        y6Var.Z = zuVar;
+        y6Var.showDialog(zuVar);
+    }
+
+    @Override // org.telegram.ui.Components.hu0
+    public float a1() {
+        return i0.a.d(9.66f, ei.b.d(this.a.P), 0);
+    }
+
+    @Override // org.telegram.ui.i7
+    public void clear() {
+        y6.j0(this.a);
+    }
+
+    @Override // org.telegram.ui.i7
+    public void d() {
+        y6 y6Var = this.a;
+        sh.b bVar = y6Var.d0;
+        if (bVar == null || bVar.j.size() <= 0) {
+            return;
+        }
+        y6Var.d0.d();
+        j6 j6Var = y6Var.M;
+        if (j6Var != null) {
+            j6Var.f(false);
+            y6Var.M.e();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.hu0
+    public int g1() {
+        return this.a.Q;
+    }
+
+    @Override // org.telegram.ui.i7
+    public /* synthetic */ void dismiss() {
     }
 }

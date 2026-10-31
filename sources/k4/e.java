@@ -1,11 +1,11 @@
 package k4;
 
 import a1.g;
-import b2.x0;
+import b2.w0;
 import c3.p;
 import e2.x;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public abstract class e {
     public static final byte[] a = {0, 0, 0, 0, 16, 0, Byte.MIN_VALUE, 0, 0, -86, 0, 56, -101, 113};
@@ -34,16 +34,16 @@ public abstract class e {
             if (i11 == i10) {
                 return b10;
             }
-            g.z(i11, "Ignoring unknown WAV chunk: ", "WavHeaderReader");
+            g.w(i11, "Ignoring unknown WAV chunk: ", "WavHeaderReader");
             long j10 = b10.b;
             long j11 = 8 + j10;
             if (j10 % 2 != 0) {
                 j11 = 9 + j10;
             }
             if (j11 > 2147483647L) {
-                throw x0.c("Chunk is too large (~2GB+) to skip; id: " + i11);
+                throw w0.c("Chunk is too large (~2GB+) to skip; id: " + i11);
             }
-            pVar.r((int) j11);
+            pVar.q((int) j11);
             b10 = d.b(pVar, xVar);
         }
     }

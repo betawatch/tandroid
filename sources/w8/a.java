@@ -1,59 +1,22 @@
 package w8;
 
-import android.app.Activity;
-import android.app.FragmentTransaction;
-import android.app.PendingIntent;
-import android.content.Intent;
-import android.os.Bundle;
-import android.os.SystemClock;
-import android.util.Log;
-import com.google.android.gms.tasks.Task;
-import java.util.concurrent.TimeUnit;
-import org.telegram.tgnet.TLObject;
+import android.os.Parcel;
+import android.os.Parcelable;
+import v8.s;
+import w7.h0;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public abstract class a {
-    public static final long a = TimeUnit.MINUTES.toMillis(10);
-    public static final long b = SystemClock.elapsedRealtime();
-    public static final /* synthetic */ int c = 0;
+public final class a extends o6.a {
+    public static final Parcelable.Creator<a> CREATOR = new s(14);
+    public String a;
+    public String b;
 
-    public static void a(Task task, Activity activity) {
-        u uVar = new u();
-        int incrementAndGet = u.f.incrementAndGet();
-        uVar.a = incrementAndGet;
-        u.e.put(incrementAndGet, uVar);
-        u.d.postDelayed(uVar, a);
-        task.addOnCompleteListener(uVar);
-        FragmentTransaction beginTransaction = activity.getFragmentManager().beginTransaction();
-        int i10 = uVar.a;
-        Bundle bundle = new Bundle();
-        bundle.putInt("resolveCallId", i10);
-        bundle.putInt("requestCode", 991);
-        bundle.putLong("initializationElapsedRealtime", b);
-        v vVar = new v();
-        vVar.setArguments(bundle);
-        int i11 = uVar.a;
-        StringBuilder sb2 = new StringBuilder(58);
-        sb2.append("com.google.android.gms.wallet.AutoResolveHelper");
-        sb2.append(i11);
-        beginTransaction.add(vVar, sb2.toString()).commit();
-    }
-
-    public static void b(Activity activity, int i10, int i11, Intent intent) {
-        PendingIntent createPendingResult = activity.createPendingResult(i10, intent, TLObject.FLAG_30);
-        if (createPendingResult == null) {
-            if (Log.isLoggable("AutoResolveHelper", 5)) {
-                Log.w("AutoResolveHelper", "Null pending result returned when trying to deliver task result!");
-            }
-        } else {
-            try {
-                createPendingResult.send(i11);
-            } catch (PendingIntent.CanceledException e) {
-                if (Log.isLoggable("AutoResolveHelper", 6)) {
-                    Log.e("AutoResolveHelper", "Exception sending pending result", e);
-                }
-            }
-        }
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i10) {
+        int q6 = h0.q(parcel, 20293);
+        h0.l(parcel, 2, this.a);
+        h0.l(parcel, 3, this.b);
+        h0.r(parcel, q6);
     }
 }

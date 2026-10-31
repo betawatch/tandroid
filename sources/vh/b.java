@@ -1,41 +1,51 @@
 package vh;
 
-import android.view.View;
-import android.view.WindowInsets;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.n20;
-import r0.k1;
-import r0.n;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class b implements n20, n {
-    public final /* synthetic */ f a;
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class b implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ d b;
 
-    public /* synthetic */ b(f fVar) {
-        this.a = fVar;
+    public /* synthetic */ b(d dVar, int i10) {
+        this.a = i10;
+        this.b = dVar;
     }
 
-    @Override // r0.n
-    public k1 P0(View view, k1 k1Var) {
-        WindowInsets g7 = k1Var.g();
-        f fVar = this.a;
-        fVar.processLegacyContainerInsets(g7);
-        fVar.Y.a(k1Var.a.f(8).d > 0, true);
-        return k1.b;
-    }
-
-    @Override // org.telegram.ui.Components.n20
-    public void a(int i10) {
-        int min = Math.min(i10, AndroidUtilities.dp(144.0f));
-        if (i10 > 0) {
-            min -= AndroidUtilities.dp(8.0f);
-        }
-        f fVar = this.a;
-        if (fVar.l0 != min) {
-            fVar.l0 = min;
-            fVar.X.a(min);
-            fVar.h0.postOnAnimation(new ti.g(fVar, 12));
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                d dVar = this.b;
+                dVar.getClass();
+                dVar.S = Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue());
+                dVar.invalidate();
+                break;
+            case 1:
+                d dVar2 = this.b;
+                dVar2.getClass();
+                dVar2.b0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                dVar2.invalidate();
+                break;
+            case 2:
+                d dVar3 = this.b;
+                dVar3.getClass();
+                dVar3.P = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                dVar3.invalidate();
+                break;
+            case 3:
+                d dVar4 = this.b;
+                dVar4.getClass();
+                dVar4.K = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                dVar4.invalidate();
+                break;
+            default:
+                d dVar5 = this.b;
+                dVar5.getClass();
+                dVar5.K = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                dVar5.invalidate();
+                break;
         }
     }
 }

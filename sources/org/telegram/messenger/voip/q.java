@@ -1,108 +1,55 @@
 package org.telegram.messenger.voip;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class q implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ VoIPService b;
+import java.util.regex.Pattern;
+import org.telegram.messenger.vp;
+import org.telegram.messenger.wd;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.x5;
+import org.telegram.ui.LaunchActivity;
 
-    public /* synthetic */ q(VoIPService voIPService, int i10) {
-        this.a = i10;
-        this.b = voIPService;
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes.dex */
+public final /* synthetic */ class q implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+
+    public /* synthetic */ q(int i10, int i11) {
+        this.a = i11;
+        this.b = i10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        int i10 = this.a;
+        int i11 = this.b;
+        switch (i10) {
             case 0:
-                this.b.lambda$updateConnectionState$83();
+                VoIPGroupNotification.lambda$decline$3(i11, tLObject, tL_error);
                 break;
             case 1:
-                this.b.lambda$playConnectedSound$88();
+                VoIPPreNotificationService.lambda$decline$4(i11, tLObject, tL_error);
                 break;
             case 2:
-                this.b.lambda$playStartRecordSound$120();
+                org.telegram.messenger.i0.g3(new x5(i11, tLObject));
                 break;
             case 3:
-                this.b.lambda$playAllowTalkSound$121();
+                if (tLObject instanceof TLRPC.TL_updates) {
+                    vp.r1(i11).L3((TLRPC.TL_updates) tLObject, false);
+                    break;
+                }
                 break;
             case 4:
-                this.b.lambda$getConnectionAndStartCall$106();
+                Pattern pattern = LaunchActivity.D1;
+                org.telegram.messenger.i0.g3(new x5(i11, 2, tLObject));
                 break;
             case 5:
-                this.b.lambda$callFailed$115();
-                break;
-            case 6:
-                this.b.lambda$callFailed$116();
-                break;
-            case 7:
-                this.b.lambda$callEnded$123();
-                break;
-            case 8:
-                this.b.lambda$callEnded$124();
-                break;
-            case 9:
-                this.b.lambda$callEnded$125();
-                break;
-            case 10:
-                this.b.lambda$callEnded$126();
-                break;
-            case 11:
-                this.b.lambda$onCallUpdated$16();
-                break;
-            case 12:
-                this.b.lambda$onCallUpdated$17();
-                break;
-            case 13:
-                this.b.lambda$onCallUpdated$18();
-                break;
-            case 14:
-                this.b.lambda$setMicMute$0();
-                break;
-            case 15:
-                this.b.lambda$endConnectionServiceCall$127();
-                break;
-            case 16:
-                this.b.lambda$switchToSpeaker$92();
-                break;
-            case 17:
-                this.b.lambda$convertToConferenceCall$30();
-                break;
-            case 18:
-                this.b.lambda$initiateActualEncryptedCall$84();
-                break;
-            case 19:
-                this.b.lambda$loadResources$109();
-                break;
-            case 20:
-                this.b.lambda$setupCaptureDevice$14();
-                break;
-            case 21:
-                this.b.lambda$startOutgoingCall$8();
-                break;
-            case 22:
-                this.b.lambda$onStartCommand$2();
-                break;
-            case 23:
-                this.b.lambda$onStartCommand$3();
-                break;
-            case 24:
-                this.b.lambda$declineIncomingCall$104();
-                break;
-            case 25:
-                this.b.callFailed();
-                break;
-            case 26:
-                this.b.lambda$startGroupCheckShortpoll$65();
-                break;
-            case 27:
-                this.b.lambda$onDestroy$99();
-                break;
-            case 28:
-                this.b.lambda$onConnectionStateChanged$117();
+                Pattern pattern2 = LaunchActivity.D1;
+                org.telegram.messenger.i0.g3(new x5(i11, 1, tLObject));
                 break;
             default:
-                this.b.lambda$startConnectingSound$89();
+                org.telegram.messenger.i0.g3(new wd(i11, 13));
                 break;
         }
     }

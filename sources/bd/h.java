@@ -1,172 +1,100 @@
 package bd;
 
-import j$.util.DesugarTimeZone;
-import java.io.BufferedWriter;
-import java.io.Closeable;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
-import java.io.PrintWriter;
-import java.io.Writer;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Locale;
-import java.util.Map;
-import java.util.logging.Level;
-import java.util.zip.GZIPOutputStream;
+import c3.i0;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import v7.g0;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
-public final class h implements Closeable {
-    public final g a;
-    public final String b;
-    public final InputStream c;
-    public final long d;
-    public final e e = new e(this, 0);
-    public final HashMap f = new HashMap();
-    public int h;
-    public boolean n;
-    public boolean r;
-    public boolean s;
-
-    public h(g gVar, String str, InputStream inputStream, long j10) {
-        this.a = gVar;
-        this.b = str;
-        this.c = inputStream;
-        this.d = j10;
-        this.n = j10 < 0;
-        this.s = true;
-    }
-
-    public static void c(PrintWriter printWriter, String str, String str2) {
-        printWriter.append((CharSequence) str).append(": ").append((CharSequence) str2).append("\r\n");
-    }
-
-    public final String a(String str) {
-        return (String) this.f.get(str.toLowerCase());
-    }
-
-    public final boolean b() {
-        return "close".equals(a("connection"));
-    }
-
-    @Override // java.io.Closeable, java.lang.AutoCloseable
-    public final void close() {
-        InputStream inputStream = this.c;
-        if (inputStream != null) {
-            inputStream.close();
-        }
-    }
-
-    public final void d(OutputStream outputStream) {
-        String str = this.b;
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("E, d MMM yyyy HH:mm:ss 'GMT'", Locale.US);
-        simpleDateFormat.setTimeZone(DesugarTimeZone.getTimeZone("GMT"));
-        g gVar = this.a;
-        try {
-            if (gVar == null) {
-                throw new Error("sendResponse(): Status can't be null.");
-            }
-            String str2 = new b(str).c;
-            if (str2 == null) {
-                str2 = "US-ASCII";
-            }
-            PrintWriter printWriter = new PrintWriter((Writer) new BufferedWriter(new OutputStreamWriter(outputStream, str2)), false);
-            printWriter.append("HTTP/1.1 ").append("" + gVar.a + " " + gVar.b).append(" \r\n");
-            if (str != null) {
-                c(printWriter, "Content-Type", str);
-            }
-            if (a("date") == null) {
-                c(printWriter, "Date", simpleDateFormat.format(new Date()));
-            }
-            for (Map.Entry entry : this.e.entrySet()) {
-                c(printWriter, (String) entry.getKey(), (String) entry.getValue());
-            }
-            if (a("connection") == null) {
-                c(printWriter, "Connection", this.s ? "keep-alive" : "close");
-            }
-            if (a("content-length") != null) {
-                this.r = false;
-            }
-            if (this.r) {
-                c(printWriter, "Content-Encoding", "gzip");
-                this.n = true;
-            }
-            InputStream inputStream = this.c;
-            long j10 = inputStream != null ? this.d : 0L;
-            if (this.h != 5 && this.n) {
-                c(printWriter, "Transfer-Encoding", "chunked");
-            } else if (!this.r) {
-                j10 = f(printWriter, j10);
-            }
-            printWriter.append("\r\n");
-            printWriter.flush();
-            if (this.h != 5 && this.n) {
-                f fVar = new f(outputStream);
-                if (this.r) {
-                    GZIPOutputStream gZIPOutputStream = new GZIPOutputStream(fVar);
-                    e(gZIPOutputStream, -1L);
-                    gZIPOutputStream.finish();
-                } else {
-                    e(fVar, -1L);
+public abstract class h extends g0 {
+    public static boolean a(Object[] objArr, Object obj) {
+        int i10;
+        kotlin.jvm.internal.i.e(objArr, "<this>");
+        if (obj == null) {
+            int length = objArr.length;
+            i10 = 0;
+            while (i10 < length) {
+                if (objArr[i10] == null) {
+                    break;
                 }
-                fVar.a();
-            } else if (this.r) {
-                GZIPOutputStream gZIPOutputStream2 = new GZIPOutputStream(outputStream);
-                e(gZIPOutputStream2, -1L);
-                gZIPOutputStream2.finish();
-            } else {
-                e(outputStream, j10);
+                i10++;
             }
-            outputStream.flush();
-            k.d(inputStream);
-        } catch (IOException e) {
-            k.d.log(Level.SEVERE, "Could not send response to the client", (Throwable) e);
+            i10 = -1;
+        } else {
+            int length2 = objArr.length;
+            for (int i11 = 0; i11 < length2; i11++) {
+                if (obj.equals(objArr[i11])) {
+                    i10 = i11;
+                    break;
+                }
+            }
+            i10 = -1;
         }
+        return i10 >= 0;
     }
 
-    public final void e(OutputStream outputStream, long j10) {
-        byte[] bArr = new byte[(int) 16384];
-        boolean z10 = j10 == -1;
-        while (true) {
-            if (j10 <= 0 && !z10) {
-                return;
-            }
-            int read = this.c.read(bArr, 0, (int) (z10 ? 16384L : Math.min(j10, 16384L)));
-            if (read <= 0) {
-                return;
-            }
-            outputStream.write(bArr, 0, read);
-            if (!z10) {
-                j10 -= read;
-            }
+    public static void b(int i10, int i11, int i12, int[] iArr, int[] destination) {
+        kotlin.jvm.internal.i.e(iArr, "<this>");
+        kotlin.jvm.internal.i.e(destination, "destination");
+        System.arraycopy(iArr, i11, destination, i10, i12 - i11);
+    }
+
+    public static void c(int i10, int i11, int i12, Object[] objArr, Object[] destination) {
+        kotlin.jvm.internal.i.e(objArr, "<this>");
+        kotlin.jvm.internal.i.e(destination, "destination");
+        System.arraycopy(objArr, i11, destination, i10, i12 - i11);
+    }
+
+    public static /* synthetic */ void d(int i10, int i11, int i12, Object[] objArr, Object[] objArr2) {
+        if ((i12 & 4) != 0) {
+            i10 = 0;
         }
+        c(0, i10, i11, objArr, objArr2);
     }
 
-    public final long f(PrintWriter printWriter, long j10) {
-        String a2 = a("content-length");
-        if (a2 != null) {
-            try {
-                j10 = Long.parseLong(a2);
-            } catch (NumberFormatException unused) {
-                k.d.severe("content-length was no number ".concat(a2));
+    public static final void e(int i10, int i11, Object[] objArr) {
+        kotlin.jvm.internal.i.e(objArr, "<this>");
+        Arrays.fill(objArr, i10, i11, (Object) null);
+    }
+
+    public static String f(Object[] objArr) {
+        kotlin.jvm.internal.i.e(objArr, "<this>");
+        StringBuilder sb2 = new StringBuilder();
+        sb2.append((CharSequence) "[");
+        int i10 = 0;
+        for (Object obj : objArr) {
+            i10++;
+            if (i10 > 1) {
+                sb2.append((CharSequence) ",");
             }
+            rd.d.a(sb2, obj, null);
         }
-        printWriter.print("Content-Length: " + j10 + "\r\n");
-        return j10;
+        sb2.append((CharSequence) "]");
+        return sb2.toString();
     }
 
-    public final void g(boolean z10) {
-        this.r = z10;
+    public static List g(long[] jArr) {
+        kotlin.jvm.internal.i.e(jArr, "<this>");
+        int length = jArr.length;
+        if (length == 0) {
+            return q.a;
+        }
+        int i10 = 0;
+        if (length == 1) {
+            return j.b(Long.valueOf(jArr[0]));
+        }
+        ArrayList arrayList = new ArrayList(jArr.length);
+        int length2 = jArr.length;
+        while (i10 < length2) {
+            i10 = i0.k(i10, 1, jArr[i10], arrayList);
+        }
+        return arrayList;
     }
 
-    public final void h(boolean z10) {
-        this.s = z10;
-    }
-
-    public final void i(int i10) {
-        this.h = i10;
+    public static List h(Object[] objArr) {
+        kotlin.jvm.internal.i.e(objArr, "<this>");
+        int length = objArr.length;
+        return length != 0 ? length != 1 ? new ArrayList(new f(objArr, false)) : j.b(objArr[0]) : q.a;
     }
 }

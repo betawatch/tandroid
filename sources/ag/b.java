@@ -1,59 +1,154 @@
 package ag;
 
-import java.io.InputStream;
-import java.util.Iterator;
-import java.util.Map;
-import org.json.JSONObject;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.SerializedData;
-import org.telegram.tgnet.TLRPC;
+import android.os.Bundle;
+import android.view.View;
+import java.io.Serializable;
+import org.telegram.messenger.cd;
+import org.telegram.messenger.o20;
+import org.telegram.ui.Cells.p8;
+import org.telegram.ui.Cells.t8;
+import org.telegram.ui.Components.a51;
+import org.telegram.ui.Components.q4;
+import org.telegram.ui.Components.s4;
+import org.telegram.ui.un;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes.dex */
-public abstract class b {
-    public static void a(Map map) {
-        if (map.isEmpty()) {
-            try {
-                InputStream open = ApplicationLoader.applicationContext.getAssets().open("currencies.json");
-                String str = e2.n0.a;
-                JSONObject jSONObject = new JSONObject(new String(g9.f.b(open), e9.j.a));
-                Iterator<String> keys = jSONObject.keys();
-                while (keys.hasNext()) {
-                    String next = keys.next();
-                    map.put(next, Integer.valueOf(jSONObject.optJSONObject(next).optInt("exp")));
-                }
-                open.close();
-            } catch (Exception e) {
-                FileLog.e(e);
-            }
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class b implements o20, org.telegram.ui.ActionBar.u1 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ f b;
+
+    public /* synthetic */ b(f fVar, int i10) {
+        this.a = i10;
+        this.b = fVar;
+    }
+
+    @Override // org.telegram.ui.ActionBar.u1
+    public void h(org.telegram.ui.ActionBar.x1 x1Var, int i10) {
+        switch (this.a) {
+            case 1:
+                this.b.b0();
+                break;
+            default:
+                this.b.finishFragment();
+                break;
         }
     }
 
-    public static TLRPC.InputStorePaymentPurpose b(String str) {
-        FileLog.d("BillingUtilities.getPurpose " + str);
-        SerializedData serializedData = new SerializedData(Utilities.hexToBytes(str));
-        a a2 = a.a(serializedData, serializedData.readInt32(true));
-        serializedData.cleanup();
-        if (a2.c != null) {
-            FileLog.d("BillingUtilities.getPurpose: got purpose from received obfuscated profile id");
-            return a2.c;
+    @Override // org.telegram.messenger.o20
+    public void k(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
+        a51 a51Var = (a51) obj;
+        final View view = (View) obj2;
+        final f fVar = this.b;
+        if (fVar.c.h(a51Var)) {
+            return;
         }
-        SerializedData serializedData2 = new SerializedData(8);
-        serializedData2.writeInt64(a2.b);
-        String bytesToHex = Utilities.bytesToHex(serializedData2.toByteArray());
-        serializedData2.cleanup();
-        FileLog.d("BillingUtilities.getPurpose: searching purpose under " + bytesToHex);
-        String string = ApplicationLoader.applicationContext.getSharedPreferences("purchases", 0).getString(bytesToHex, null);
-        if (string == null) {
-            FileLog.d("BillingUtilities.getPurpose: purpose under " + bytesToHex + " not found");
-            throw new RuntimeException(a1.g.p("no purpose under ", bytesToHex, " found :("));
+        int i10 = a51Var.d;
+        if (i10 == 2 || a51Var.a == 17) {
+            Bundle bundle = new Bundle();
+            bundle.putLong("user_id", fVar.getUserConfig().e());
+            bundle.putInt("chatMode", 5);
+            bundle.putString("quick_reply", "away");
+            fVar.presentFragment(new un(bundle));
+            return;
         }
-        FileLog.d("BillingUtilities.getPurpose: got {" + string + "} under " + bytesToHex);
-        SerializedData serializedData3 = new SerializedData(Utilities.hexToBytes(string));
-        a a10 = a.a(serializedData3, serializedData3.readInt32(true));
-        serializedData3.cleanup();
-        return a10.c;
+        final int i11 = 1;
+        if (i10 == 1) {
+            fVar.r = !fVar.r;
+            fVar.b.f3.O(true);
+            fVar.Z(true);
+            return;
+        }
+        if (i10 == 6) {
+            x0 x0Var = fVar.c;
+            fVar.s = true;
+            x0Var.h = true;
+            fVar.b.f3.O(true);
+            fVar.Z(true);
+            return;
+        }
+        final int i12 = 0;
+        if (i10 == 7) {
+            x0 x0Var2 = fVar.c;
+            fVar.s = false;
+            x0Var2.h = false;
+            fVar.b.f3.O(true);
+            fVar.Z(true);
+            return;
+        }
+        if (i10 == 3) {
+            fVar.x = 0;
+            fVar.b.f3.O(true);
+            fVar.Z(true);
+            return;
+        }
+        if (i10 == 4) {
+            fVar.x = 1;
+            fVar.b.f3.O(true);
+            fVar.Z(true);
+            return;
+        }
+        if (i10 == 5) {
+            fVar.x = 2;
+            fVar.b.f3.O(true);
+            fVar.Z(true);
+        } else {
+            if (i10 == 8) {
+                s4.x(fVar.getParentActivity(), cd.L0(2131752823, null), cd.L0(2131752825, null), fVar.E, new q4() { // from class: ag.d
+                    @Override // org.telegram.ui.Components.q4
+                    public final void K(int i13, int i14, boolean z10) {
+                        switch (i12) {
+                            case 0:
+                                f fVar2 = fVar;
+                                fVar2.getClass();
+                                p8 p8Var = (p8) view;
+                                fVar2.E = i13;
+                                p8Var.w(cd.Q(i13), true);
+                                fVar2.Z(true);
+                                break;
+                            default:
+                                f fVar3 = fVar;
+                                fVar3.getClass();
+                                p8 p8Var2 = (p8) view;
+                                fVar3.F = i13;
+                                p8Var2.w(cd.Q(i13), true);
+                                fVar3.Z(true);
+                                break;
+                        }
+                    }
+                });
+                return;
+            }
+            if (i10 == 9) {
+                s4.x(fVar.getParentActivity(), cd.L0(2131752826, null), cd.L0(2131752825, null), fVar.F, new q4() { // from class: ag.d
+                    @Override // org.telegram.ui.Components.q4
+                    public final void K(int i13, int i14, boolean z10) {
+                        switch (i11) {
+                            case 0:
+                                f fVar2 = fVar;
+                                fVar2.getClass();
+                                p8 p8Var = (p8) view;
+                                fVar2.E = i13;
+                                p8Var.w(cd.Q(i13), true);
+                                fVar2.Z(true);
+                                break;
+                            default:
+                                f fVar3 = fVar;
+                                fVar3.getClass();
+                                p8 p8Var2 = (p8) view;
+                                fVar3.F = i13;
+                                p8Var2.w(cd.Q(i13), true);
+                                fVar3.Z(true);
+                                break;
+                        }
+                    }
+                });
+            } else if (i10 == 10) {
+                boolean z10 = !fVar.w;
+                fVar.w = z10;
+                ((t8) view).setChecked(z10);
+                fVar.Z(true);
+            }
+        }
     }
 }

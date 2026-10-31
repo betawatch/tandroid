@@ -1,15 +1,13 @@
 package c5;
 
-import android.webkit.WebView;
-import org.chromium.support_lib_boundary.StaticsBoundaryInterface;
-import org.chromium.support_lib_boundary.WebViewProviderBoundaryInterface;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public interface p {
-    String[] b();
+public final class p {
+    public final String a;
+    public final String b;
 
-    WebViewProviderBoundaryInterface createWebView(WebView webView);
-
-    StaticsBoundaryInterface getStatics();
+    public /* synthetic */ p(a aVar) {
+        this.a = aVar.b;
+        this.b = aVar.c;
+    }
 }

@@ -1,138 +1,52 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
+import j$.util.function.Predicate$-CC;
+import java.util.function.Predicate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class rr extends mm0 {
-    public final /* synthetic */ tr c;
+public final /* synthetic */ class rr implements Predicate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ TLObject b;
 
-    public rr(tr trVar) {
-        this.c = trVar;
+    public /* synthetic */ rr(int i10, TLObject tLObject) {
+        this.a = i10;
+        this.b = tLObject;
     }
 
-    @Override // org.telegram.ui.Components.mm0
-    public final boolean D(s4.e1 e1Var) {
-        return e1Var.f == 3;
+    public /* synthetic */ Predicate and(Predicate predicate) {
+        int i10 = this.a;
+        return Predicate$-CC.$default$and(this, predicate);
     }
 
-    @Override // s4.h0
-    public final int h() {
-        tr trVar = this.c;
-        return trVar.Z ? trVar.Y.size() + 3 : trVar.a0 ? 2 : 1;
-    }
-
-    @Override // s4.h0
-    public final int j(int i10) {
-        if (i10 == 0) {
-            return 0;
+    public /* synthetic */ Predicate negate() {
+        switch (this.a) {
         }
-        int i11 = 1;
-        if (i10 != 1) {
-            i11 = 2;
-            if (i10 != 2) {
-                return 3;
-            }
-        }
-        return i11;
+        return Predicate$-CC.$default$negate(this);
     }
 
-    @Override // s4.h0
-    public final void v(s4.e1 e1Var, int i10) {
-        int i11;
-        TLObject chat;
-        String str;
-        int i12;
-        int i13 = e1Var.f;
-        View view = e1Var.a;
-        if (i13 != 3) {
-            if (i13 != 2) {
-                if (i13 == 1) {
-                    ((org.telegram.ui.Cells.i9) view).setText(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.VoipChatStreamWithAnotherApp), org.telegram.ui.ActionBar.y6.L6, 0, new cp(this, 5)), true, AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f)));
-                    return;
+    public /* synthetic */ Predicate or(Predicate predicate) {
+        int i10 = this.a;
+        return Predicate$-CC.$default$or(this, predicate);
+    }
+
+    @Override // java.util.function.Predicate
+    public final boolean test(Object obj) {
+        switch (this.a) {
+            case 0:
+                TLRPC.InputPeer inputPeer = (TLRPC.InputPeer) this.b;
+                TLRPC.Peer peer = ((org.telegram.messenger.jj) obj).k.from_id;
+                if ((inputPeer != null || peer != null) && (inputPeer == null || peer == null || (!(inputPeer instanceof TLRPC.TL_inputPeerChat) || !(peer instanceof TLRPC.TL_peerChat) ? !(inputPeer instanceof TLRPC.TL_inputPeerChannel) || !(peer instanceof TLRPC.TL_peerChannel) ? !(inputPeer instanceof TLRPC.TL_inputPeerUser) || !(peer instanceof TLRPC.TL_peerUser) || inputPeer.user_id != peer.user_id : inputPeer.channel_id != peer.channel_id : inputPeer.chat_id != peer.chat_id))) {
                 }
-                return;
-            } else {
-                org.telegram.ui.Cells.q4 q4Var = (org.telegram.ui.Cells.q4) view;
-                q4Var.setTextSize(15.0f);
-                q4Var.setPadding(0, 0, 0, AndroidUtilities.dp(2.0f));
-                q4Var.setText(LocaleController.getString(R.string.VoipChatDisplayedAs).replace(":", ""));
-                return;
-            }
+            default:
+                org.telegram.messenger.jj jjVar = (org.telegram.messenger.jj) obj;
+                TLObject tLObject = this.b;
+                if (!(tLObject instanceof TLRPC.User) ? !(tLObject instanceof TLRPC.Chat) || jjVar.k.from_id.user_id != ((TLRPC.Chat) tLObject).id : jjVar.k.from_id.user_id != ((TLRPC.User) tLObject).id) {
+                }
+                break;
         }
-        tr trVar = this.c;
-        TLRPC.Peer peer = (TLRPC.Peer) trVar.Y.get(i10 - 3);
-        long peerId = MessageObject.getPeerId(peer);
-        if (peerId > 0) {
-            i12 = ((org.telegram.ui.ActionBar.k3) trVar).currentAccount;
-            chat = MessagesController.getInstance(i12).getUser(Long.valueOf(peerId));
-            str = LocaleController.getString(R.string.VoipGroupPersonalAccount);
-        } else {
-            i11 = ((org.telegram.ui.ActionBar.k3) trVar).currentAccount;
-            chat = MessagesController.getInstance(i11).getChat(Long.valueOf(-peerId));
-            str = null;
-        }
-        org.telegram.ui.Cells.k4 k4Var = (org.telegram.ui.Cells.k4) view;
-        k4Var.e(chat, null, str, i10 != h() - 1);
-        k4Var.c(peer == trVar.d0, false);
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r0v5, types: [android.view.ViewGroup, android.widget.LinearLayout] */
-    @Override // s4.h0
-    public final s4.e1 x(ViewGroup viewGroup, int i10) {
-        org.telegram.ui.ActionBar.u6 u6Var;
-        FrameLayout frameLayout;
-        Context context = viewGroup.getContext();
-        tr trVar = this.c;
-        if (i10 == 1) {
-            org.telegram.ui.Cells.i9 i9Var = new org.telegram.ui.Cells.i9(context);
-            int i11 = org.telegram.ui.ActionBar.y6.a7;
-            u6Var = ((org.telegram.ui.ActionBar.k3) trVar).resourcesProvider;
-            org.telegram.ui.ActionBar.f7.i(i11, i9Var, u6Var);
-            i9Var.setTopPadding(17);
-            i9Var.setBottomPadding(17);
-            frameLayout = i9Var;
-        } else if (i10 == 2) {
-            frameLayout = new org.telegram.ui.Cells.q4(context, 22);
-        } else if (i10 != 3) {
-            boolean z10 = trVar.b0;
-            ?? srVar = new sr(context);
-            srVar.setOrientation(1);
-            bk0 bk0Var = new bk0(context);
-            bk0Var.setAutoRepeat(true);
-            bk0Var.f(R.raw.utyan_schedule, 112, 112, null);
-            bk0Var.d();
-            srVar.addView(bk0Var, kb1.x(112, 112, 49, 0, 24, 0, 0));
-            TextView textView = new TextView(context);
-            textView.setTypeface(AndroidUtilities.bold());
-            textView.setText(z10 ? LocaleController.formatString(R.string.StartVoipChannelTitle, new Object[0]) : LocaleController.formatString(R.string.StartVoipChatTitle, new Object[0]));
-            textView.setTextSize(1, 20.0f);
-            org.telegram.ui.ActionBar.f7.V(textView, org.telegram.ui.ActionBar.y6.G6, null);
-            srVar.addView(textView, kb1.x(-2, -2, 1, 0, 14, 0, 7));
-            TextView textView2 = new TextView(context);
-            textView2.setTextSize(1, 14.0f);
-            textView2.setGravity(1);
-            org.telegram.ui.ActionBar.f7.V(textView2, org.telegram.ui.ActionBar.y6.j5, null);
-            textView2.setText(z10 ? LocaleController.formatString(R.string.VoipChannelStart2, new Object[0]) : LocaleController.formatString(R.string.VoipGroupStart2, new Object[0]));
-            textView2.setLineSpacing(textView2.getLineSpacingExtra(), textView2.getLineSpacingMultiplier() * 1.1f);
-            srVar.addView(textView2, kb1.x(-2, -2, 1, 28, 0, 28, 17));
-            frameLayout = srVar;
-        } else {
-            frameLayout = new org.telegram.ui.Cells.k4(context, 1, 0, false);
-        }
-        frameLayout.setLayoutParams(new s4.q0(-1, -2));
-        return new wl0(frameLayout);
+        return false;
     }
 }

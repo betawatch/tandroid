@@ -4,7 +4,7 @@ import java.util.AbstractList;
 import java.util.Arrays;
 import java.util.RandomAccess;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class m2 extends n0 implements RandomAccess {
     public static final m2 d;
@@ -24,7 +24,7 @@ public final class m2 extends n0 implements RandomAccess {
 
     @Override // com.google.android.gms.internal.vision.n0, java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
     public final boolean add(Object obj) {
-        h();
+        l();
         int i10 = this.c;
         Object[] objArr = this.b;
         if (i10 == objArr.length) {
@@ -62,7 +62,7 @@ public final class m2 extends n0 implements RandomAccess {
 
     @Override // com.google.android.gms.internal.vision.n0, java.util.AbstractList, java.util.List
     public final Object remove(int i10) {
-        h();
+        l();
         m(i10);
         Object[] objArr = this.b;
         Object obj = objArr[i10];
@@ -76,7 +76,7 @@ public final class m2 extends n0 implements RandomAccess {
 
     @Override // java.util.AbstractList, java.util.List
     public final Object set(int i10, Object obj) {
-        h();
+        l();
         m(i10);
         Object[] objArr = this.b;
         Object obj2 = objArr[i10];
@@ -101,7 +101,7 @@ public final class m2 extends n0 implements RandomAccess {
     @Override // java.util.AbstractList, java.util.List
     public final void add(int i10, Object obj) {
         int i11;
-        h();
+        l();
         if (i10 >= 0 && i10 <= (i11 = this.c)) {
             Object[] objArr = this.b;
             if (i11 < objArr.length) {

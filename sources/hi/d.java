@@ -1,56 +1,75 @@
 package hi;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.tl.TL_bots;
-import org.telegram.tgnet.tl.TL_payments;
+import android.graphics.Canvas;
+import java.util.Iterator;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class d implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ k b;
+public final class d implements a, tg.a {
+    public final a a;
+    public final a b;
+    public final je.b c = new je.b();
+    public float d;
 
-    public /* synthetic */ d(k kVar, int i10) {
-        this.a = i10;
-        this.b = kVar;
+    public d(a aVar, a aVar2) {
+        this.a = aVar;
+        this.b = aVar2;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                k kVar = this.b;
-                kVar.V.g(kVar.a0.end_date == 0 ? null : zg.l.f((r2 - kVar.getConnectionsManager().getCurrentTime()) * 1000), true);
-                if (kVar.a0.end_date != 0 && kVar.d0) {
-                    AndroidUtilities.runOnUIThread(kVar.X, 1000L);
-                    break;
-                }
-                break;
-            case 1:
-                TL_bots.updateStarRefProgram updatestarrefprogram = new TL_bots.updateStarRefProgram();
-                k kVar2 = this.b;
-                updatestarrefprogram.bot = kVar2.getMessagesController().getInputUser(kVar2.R);
-                TL_payments.starRefProgram starrefprogram = kVar2.a0;
-                updatestarrefprogram.commission_permille = starrefprogram.commission_permille;
-                int i10 = starrefprogram.duration_months;
-                updatestarrefprogram.duration_months = i10;
-                if (i10 > 0) {
-                    updatestarrefprogram.flags |= 1;
-                    starrefprogram.duration_months = i10 | 1;
-                } else {
-                    updatestarrefprogram.flags &= -2;
-                    starrefprogram.duration_months = i10 & (-2);
-                }
-                org.telegram.ui.ActionBar.e2 e2Var = new org.telegram.ui.ActionBar.e2(kVar2.getParentActivity(), 3, null);
-                e2Var.r(150L);
-                kVar2.getConnectionsManager().sendRequest(updatestarrefprogram, new b(kVar2, e2Var, 1));
-                break;
-            default:
-                k kVar3 = this.b;
-                qf.d.r(kVar3.getParentActivity(), LocaleController.getString((kVar3.Y || kVar3.a0.end_date != 0) ? R.string.AffiliateProgramUpdateInfoLink : R.string.AffiliateProgramStartInfoLink));
-                break;
+    @Override // tg.a
+    public final vg.f a() {
+        vg.f fVar = new vg.f(this);
+        this.c.add(fVar);
+        return fVar;
+    }
+
+    public final void b(float f7) {
+        if (this.d != f7) {
+            this.d = f7;
+            Iterator it = this.c.iterator();
+            while (it.hasNext()) {
+                vg.f fVar = (vg.f) it.next();
+                fVar.updateColors();
+                fVar.invalidateSelf();
+            }
+        }
+    }
+
+    @Override // hi.a
+    public final void e(Canvas canvas, float f7, float f10, float f11, float f12) {
+        Canvas canvas2;
+        float f13;
+        float f14;
+        float f15;
+        float f16;
+        if (this.d < 1.0f) {
+            canvas2 = canvas;
+            f13 = f7;
+            f14 = f10;
+            f15 = f11;
+            f16 = f12;
+            this.a.e(canvas2, f13, f14, f15, f16);
+        } else {
+            canvas2 = canvas;
+            f13 = f7;
+            f14 = f10;
+            f15 = f11;
+            f16 = f12;
+        }
+        float f17 = this.d;
+        if (f17 > 0.0f) {
+            if (f17 < 1.0f) {
+                canvas2.saveLayerAlpha(f13, f14, f15, f16, (int) (f17 * 255.0f));
+            }
+            float f18 = f16;
+            float f19 = f15;
+            float f20 = f14;
+            float f21 = f13;
+            Canvas canvas3 = canvas2;
+            this.b.e(canvas3, f21, f20, f19, f18);
+            if (this.d < 1.0f) {
+                canvas3.restore();
+            }
         }
     }
 }

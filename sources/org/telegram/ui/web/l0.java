@@ -1,38 +1,82 @@
 package org.telegram.ui.web;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class l0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ m0 b;
+import android.webkit.PermissionRequest;
 
-    public /* synthetic */ l0(m0 m0Var, int i10) {
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class l0 implements q0.a {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ s0 b;
+    public final /* synthetic */ PermissionRequest c;
+    public final /* synthetic */ String d;
+
+    public /* synthetic */ l0(s0 s0Var, PermissionRequest permissionRequest, String str, int i10) {
         this.a = i10;
-        this.b = m0Var;
+        this.b = s0Var;
+        this.c = permissionRequest;
+        this.d = str;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // q0.a
+    public final void accept(Object obj) {
+        Boolean bool = (Boolean) obj;
         switch (this.a) {
             case 0:
-                x0 x0Var = this.b.e;
-                a1 a1Var = x0Var.Q;
-                if (a1Var != null) {
-                    x0Var.h = false;
-                    a1Var.D(false, null);
-                    break;
+                s0 s0Var = this.b;
+                if (s0Var.a != null) {
+                    s0Var.a = null;
+                    boolean booleanValue = bool.booleanValue();
+                    PermissionRequest permissionRequest = this.c;
+                    if (!booleanValue) {
+                        permissionRequest.deny();
+                        break;
+                    } else {
+                        z0.a(s0Var.e.Q, new String[]{"android.permission.RECORD_AUDIO"}, new l0(s0Var, permissionRequest, this.d, 2));
+                        break;
+                    }
                 }
                 break;
             case 1:
-                a1 a1Var2 = this.b.e.Q;
-                if (a1Var2 != null) {
-                    a1Var2.I(!r0.canGoBack(), !r0.canGoForward());
-                    break;
+                s0 s0Var2 = this.b;
+                if (s0Var2.a != null) {
+                    s0Var2.a = null;
+                    boolean booleanValue2 = bool.booleanValue();
+                    PermissionRequest permissionRequest2 = this.c;
+                    if (!booleanValue2) {
+                        permissionRequest2.deny();
+                        break;
+                    } else {
+                        z0.a(s0Var2.e.Q, new String[]{"android.permission.CAMERA"}, new l0(s0Var2, permissionRequest2, this.d, 3));
+                        break;
+                    }
                 }
                 break;
+            case 2:
+                s0 s0Var3 = this.b;
+                s0Var3.getClass();
+                boolean booleanValue3 = bool.booleanValue();
+                PermissionRequest permissionRequest3 = this.c;
+                if (!booleanValue3) {
+                    permissionRequest3.deny();
+                    break;
+                } else {
+                    permissionRequest3.grant(new String[]{this.d});
+                    s0Var3.e.Q.T = true;
+                    break;
+                }
             default:
-                qf.d.r(this.b.e.getContext(), "https://play.google.com/store/apps/details?id=com.google.android.webview");
-                break;
+                s0 s0Var4 = this.b;
+                s0Var4.getClass();
+                boolean booleanValue4 = bool.booleanValue();
+                PermissionRequest permissionRequest4 = this.c;
+                if (!booleanValue4) {
+                    permissionRequest4.deny();
+                    break;
+                } else {
+                    permissionRequest4.grant(new String[]{this.d});
+                    s0Var4.e.Q.T = true;
+                    break;
+                }
         }
     }
 }

@@ -1,32 +1,26 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.Utilities;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ue implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesStorage b;
-    public final /* synthetic */ Utilities.Callback c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ long e;
+    public final /* synthetic */ String b;
+    public final /* synthetic */ float c;
 
-    public /* synthetic */ ue(MessagesStorage messagesStorage, Utilities.Callback callback, long j10, long j11, int i10) {
+    public /* synthetic */ ue(String str, int i10, float f7) {
         this.a = i10;
-        this.b = messagesStorage;
-        this.c = callback;
-        this.d = j10;
-        this.e = j11;
+        this.b = str;
+        this.c = f7;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$getEphemeralMessages$212(this.c, this.d, this.e);
+                w0.b.getSharedPreferences("media_saved_pos", 0).edit().putFloat(this.b, this.c).commit();
                 break;
             default:
-                this.b.lambda$getEphemeralMessages$211(this.c, this.d, this.e);
+                w0.b.getSharedPreferences("media_saved_pos", 0).edit().putFloat(this.b, this.c).commit();
                 break;
         }
     }

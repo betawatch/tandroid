@@ -1,62 +1,96 @@
 package nh;
 
 import android.content.Context;
+import android.graphics.Matrix;
+import android.os.SystemClock;
+import android.view.TextureView;
 import android.view.View;
-import bh.s0;
-import bh.x0;
-import java.util.List;
-import org.telegram.messenger.R;
-import org.telegram.messenger.voip.GroupCallMessage;
-import org.telegram.ui.ActionBar.k3;
-import org.telegram.ui.Components.gl0;
-import org.telegram.ui.u30;
-import org.telegram.ui.x50;
-import s4.e1;
-import s4.l;
+import li.w0;
+import org.telegram.ui.Components.d50;
+import org.telegram.ui.Components.gz;
+import org.telegram.ui.Components.oe0;
+import org.telegram.ui.Components.x9;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes4.dex */
-public final class f extends l {
-    public final /* synthetic */ h F;
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final class f extends TextureView {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public f(h hVar) {
-        this.F = hVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ f(Object obj, Context context, int i10) {
+        super(context);
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // s4.l
-    public final float A(View view) {
-        return 0.6f;
+    @Override // android.view.View
+    public void invalidate() {
+        w0 w0Var;
+        switch (this.a) {
+            case 1:
+                d50 d50Var = (d50) this.b;
+                if (!d50Var.H0 && (w0Var = d50Var.Q) != null && w0Var.a == 3) {
+                    d50Var.H0 = true;
+                    try {
+                        d50Var.F0 = SystemClock.elapsedRealtimeNanos();
+                        d50Var.D();
+                    } finally {
+                        d50Var.H0 = false;
+                    }
+                }
+                super.invalidate();
+                return;
+            default:
+                super.invalidate();
+                return;
+        }
     }
 
-    @Override // s4.g1
-    public final void w(e1 e1Var) {
-        x0 x0Var;
-        g gVar;
-        int i10;
-        h hVar = this.F;
-        e eVar = hVar.S0;
-        int b10 = e1Var.b();
-        List list = eVar.c;
-        GroupCallMessage groupCallMessage = null;
-        if (list != null && b10 >= 0 && b10 < list.size()) {
-            groupCallMessage = (GroupCallMessage) eVar.c.get(b10);
+    @Override // android.view.View
+    public void onMeasure(int i10, int i11) {
+        switch (this.a) {
+            case 0:
+                h hVar = (h) this.b;
+                setMeasuredDimension(hVar.g, hVar.h);
+                break;
+            case 1:
+            default:
+                super.onMeasure(i10, i11);
+                break;
+            case 2:
+                View.MeasureSpec.getSize(i10);
+                super.onMeasure(i10, i11);
+                break;
         }
-        if (groupCallMessage == null || (x0Var = groupCallMessage.visibleReaction) == null) {
-            return;
+    }
+
+    @Override // android.view.TextureView
+    public void setTransform(Matrix matrix) {
+        switch (this.a) {
+            case 2:
+                super.setTransform(matrix);
+                gz gzVar = ((oe0) this.b).l0;
+                if (gzVar != null) {
+                    int width = getWidth();
+                    int height = getHeight();
+                    x9 x9Var = gzVar.I;
+                    if (x9Var != null) {
+                        Matrix matrix2 = x9Var.v;
+                        matrix.invert(matrix2);
+                        float f7 = width;
+                        float f10 = height;
+                        matrix2.preScale(f7, f10);
+                        matrix2.postScale(1.0f / f7, 1.0f / f10);
+                        x9Var.c(matrix2);
+                        gzVar.c(false, false, false);
+                        break;
+                    }
+                }
+                break;
+            default:
+                super.setTransform(matrix);
+                break;
         }
-        View view = e1Var.a;
-        if (!(view instanceof c) || (gVar = hVar.X0) == null) {
-            return;
-        }
-        x50 x50Var = ((u30) gVar).a;
-        Context context = x50Var.getContext();
-        gl0 gl0Var = x50Var.K;
-        i10 = ((k3) x50Var).currentAccount;
-        s0 s0Var = new s0(context, null, gl0Var, (c) view, null, 0.0f, 0.0f, x0Var, i10, 1, false);
-        s0.B = s0Var;
-        s0Var.i.setTag(R.id.parent_tag, 1);
-        x50Var.container.addView(s0Var.i);
-        s0Var.s = true;
-        s0Var.y = System.currentTimeMillis();
     }
 }

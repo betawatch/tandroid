@@ -2,7 +2,7 @@ package com.google.android.gms.internal.play_billing;
 
 import java.io.IOException;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public abstract class e1 {
     protected int zza;
@@ -23,8 +23,8 @@ public abstract class e1 {
                 return bArr;
             }
             throw new IllegalStateException("Did not write as much data as expected.");
-        } catch (IOException e10) {
-            throw new RuntimeException(a1.g.p("Serializing ", getClass().getName(), " to a byte array threw an IOException (should never happen)."), e10);
+        } catch (IOException e7) {
+            throw new RuntimeException(a1.g.n("Serializing ", getClass().getName(), " to a byte array threw an IOException (should never happen)."), e7);
         }
     }
 

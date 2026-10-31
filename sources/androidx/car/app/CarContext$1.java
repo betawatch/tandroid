@@ -1,20 +1,21 @@
 package androidx.car.app;
 
 import androidx.car.app.IOnRequestPermissionsListener;
+import androidx.lifecycle.o;
 import androidx.lifecycle.v;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 class CarContext$1 extends IOnRequestPermissionsListener.Stub {
     final /* synthetic */ h this$0;
     final /* synthetic */ Executor val$executor;
-    final /* synthetic */ androidx.lifecycle.o val$lifecycle;
-    final /* synthetic */ l val$listener;
+    final /* synthetic */ o val$lifecycle;
+    final /* synthetic */ k val$listener;
 
-    public CarContext$1(h hVar, androidx.lifecycle.o oVar, Executor executor, l lVar) {
+    public CarContext$1(h hVar, o oVar, Executor executor, k kVar) {
         this.val$lifecycle = oVar;
         this.val$executor = executor;
     }
@@ -29,7 +30,7 @@ class CarContext$1 extends IOnRequestPermissionsListener.Stub {
                 public final void run() {
                     List list = asList;
                     List list2 = asList2;
-                    ((l) null).a();
+                    ((k) null).a();
                 }
             });
         }

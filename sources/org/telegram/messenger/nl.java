@@ -1,29 +1,38 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.LanguageDetector;
-import org.telegram.messenger.TranslateController;
-import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final /* synthetic */ class nl implements LanguageDetector.StringCallback, LanguageDetector.ExceptionCallback {
-    public final /* synthetic */ TranslateController a;
-    public final /* synthetic */ TL_stories.StoryItem b;
-    public final /* synthetic */ TranslateController.StoryKey c;
+public final /* synthetic */ class nl implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ vp b;
+    public final /* synthetic */ TLRPC.TL_error c;
+    public final /* synthetic */ long d;
 
-    public /* synthetic */ nl(TranslateController translateController, TL_stories.StoryItem storyItem, TranslateController.StoryKey storyKey) {
-        this.a = translateController;
-        this.b = storyItem;
-        this.c = storyKey;
+    public /* synthetic */ nl(vp vpVar, TLRPC.TL_error tL_error, long j10, int i10) {
+        this.a = i10;
+        this.b = vpVar;
+        this.c = tL_error;
+        this.d = j10;
     }
 
-    @Override // org.telegram.messenger.LanguageDetector.ExceptionCallback
-    public void run(Exception exc) {
-        this.a.lambda$detectStoryLanguage$34(this.b, this.c, exc);
-    }
-
-    @Override // org.telegram.messenger.LanguageDetector.StringCallback
-    public void run(String str) {
-        this.a.lambda$detectStoryLanguage$32(this.b, this.c, str);
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        long j10 = this.d;
+        TLRPC.TL_error tL_error = this.c;
+        vp vpVar = this.b;
+        switch (i10) {
+            case 0:
+                vpVar.F(j10, tL_error.text);
+                zs.f(vpVar.currentAccount).k(zs.E5, Long.valueOf(j10));
+                break;
+            default:
+                vpVar.getClass();
+                vpVar.F(j10, tL_error.text);
+                vpVar.s1.remove(Long.valueOf(j10));
+                break;
+        }
     }
 }

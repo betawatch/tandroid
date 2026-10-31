@@ -1,24 +1,22 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class q61 extends g.o {
-    public final /* synthetic */ s61 c;
-
-    public q61(s61 s61Var) {
-        this.c = s61Var;
-    }
-
-    @Override // g.o
-    public final int i(int i10) {
-        int i11;
-        s61 s61Var = this.c;
-        org.telegram.ui.Components.vz vzVar = s61Var.X;
-        org.telegram.ui.Components.k71 k71Var = s61Var.d0;
-        if (k71Var == null) {
-            return vzVar.J;
-        }
-        org.telegram.ui.Components.u61 G = k71Var.G(i10 - 1);
-        return (G == null || (i11 = G.u) == -1) ? vzVar.J : i11;
-    }
+public final class q61 {
+    public String a;
+    public String b;
+    public String c;
+    public boolean d;
+    public String e;
+    public String f;
+    public String g;
+    public boolean h;
+    public String i;
+    public String j;
+    public String k;
+    public boolean l;
+    public String m;
+    public String n;
+    public String o;
+    public boolean p;
 }

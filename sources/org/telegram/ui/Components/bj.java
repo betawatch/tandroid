@@ -1,35 +1,32 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import org.telegram.messenger.AndroidUtilities;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class bj extends s71 {
-    public final /* synthetic */ fj n3;
+public final /* synthetic */ class bj implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ dj b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public bj(fj fjVar, Context context, int i10, d dVar, xi xiVar, xi xiVar2, org.telegram.ui.ActionBar.u6 u6Var) {
-        super(context, i10, 0, false, dVar, xiVar, xiVar2, u6Var);
-        this.n3 = fjVar;
+    public /* synthetic */ bj(dj djVar, int i10) {
+        this.a = i10;
+        this.b = djVar;
     }
 
-    @Override // org.telegram.ui.Components.nm0
-    public final boolean E0(float f7) {
-        ti tiVar = this.n3.b;
-        return f7 >= ((float) ((AndroidUtilities.dp(30.0f) + tiVar.e2[0]) + (!tiVar.g0 ? AndroidUtilities.statusBarHeight : 0)));
-    }
-
-    @Override // org.telegram.ui.Components.s71
-    public final void I1() {
-        fj fjVar = this.n3;
-        fjVar.b.f2(fjVar, 0);
-    }
-
-    @Override // org.telegram.ui.Components.nm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        fj fjVar = this.n3;
-        fjVar.b.f2(fjVar, 0);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                dj djVar = this.b;
+                if (djVar.f != null) {
+                    djVar.w = org.telegram.messenger.m5.h(new StringBuilder("+"), djVar.f.phone, af.b.c());
+                    djVar.s = djVar.f;
+                    org.telegram.messenger.i0.g3(new bj(djVar, 1));
+                    break;
+                }
+                break;
+            default:
+                dj djVar2 = this.b;
+                djVar2.c.l(djVar2.w, false);
+                break;
+        }
     }
 }

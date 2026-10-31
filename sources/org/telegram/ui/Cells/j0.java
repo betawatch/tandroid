@@ -1,70 +1,41 @@
 package org.telegram.ui.Cells;
 
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.os.Bundle;
 import android.view.View;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.kb1;
+import org.telegram.ui.Components.dc;
+import org.telegram.ui.iy0;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public abstract class j0 extends FrameLayout {
-    public final int a;
-    public final ImageView b;
-    public final ImageView c;
-    public final i0 d;
+public final class j0 extends dc {
+    public final /* synthetic */ int k;
+    public final /* synthetic */ Object l;
 
-    public j0(Context context) {
-        super(context);
-        ImageView imageView = new ImageView(context);
-        this.b = imageView;
-        addView(imageView, kb1.h(24, 24.0f, 51, 17.0f, 12.0f, 0.0f, 0.0f));
-        i0 i0Var = new i0(0, context, null, true);
-        this.d = i0Var;
-        i0Var.setReportChanges(true);
-        i0Var.setDelegate(new jg.i(this));
-        i0Var.setImportantForAccessibility(2);
-        addView(i0Var, kb1.h(-1, 38.0f, 51, 54.0f, 5.0f, 54.0f, 0.0f));
-        ImageView imageView2 = new ImageView(context);
-        this.c = imageView2;
-        addView(imageView2, kb1.h(24, 24.0f, 53, 0.0f, 12.0f, 17.0f, 0.0f));
-        imageView.setImageResource(R.drawable.msg_brightness_low);
-        imageView2.setImageResource(R.drawable.msg_brightness_high);
-        this.a = 48;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ j0(q1 q1Var, q1 q1Var2, int i10) {
+        super(q1Var);
+        this.k = i10;
+        this.l = q1Var2;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        int i10 = org.telegram.ui.ActionBar.y6.m6;
-        PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
-        org.telegram.ui.ActionBar.f7.t(this.b, i10, null, mode);
-        org.telegram.ui.ActionBar.f7.t(this.c, i10, null, mode);
+    @Override // org.telegram.ui.Components.dc
+    public final void b() {
+        switch (this.k) {
+            case 0:
+                ((q1) this.l).n2();
+                break;
+            case 1:
+                ((q1) this.l).n2();
+                break;
+            default:
+                ((iy0) this.l).invalidateSelf();
+                break;
+        }
     }
 
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        this.d.getSeekBarAccessibilityDelegate().e(this, accessibilityNodeInfo);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.a), TLObject.FLAG_30));
-    }
-
-    @Override // android.view.View
-    public final boolean performAccessibilityAction(int i10, Bundle bundle) {
-        return super.performAccessibilityAction(i10, bundle) || this.d.getSeekBarAccessibilityDelegate().g(this, i10, bundle);
-    }
-
-    public void setProgress(float f7) {
-        this.d.setProgress(f7);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public j0(iy0 iy0Var) {
+        super((View) null);
+        this.k = 2;
+        this.l = iy0Var;
     }
 }

@@ -1,85 +1,15 @@
 package g9;
 
-import a8.mc;
-import a8.zb;
-import java.math.RoundingMode;
-import java.util.Arrays;
+import java.math.BigInteger;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class a {
-    public final String a;
-    public final char[] b;
-    public final int c;
-    public final int d;
-    public final int e;
-    public final int f;
-    public final byte[] g;
-    public final boolean h;
+public abstract class a {
+    public static final /* synthetic */ int a = 0;
 
-    public a(String str, char[] cArr, byte[] bArr, boolean z10) {
-        str.getClass();
-        this.a = str;
-        cArr.getClass();
-        this.b = cArr;
-        try {
-            int length = cArr.length;
-            RoundingMode roundingMode = RoundingMode.UNNECESSARY;
-            int c10 = mc.c(length);
-            this.d = c10;
-            int numberOfTrailingZeros = Integer.numberOfTrailingZeros(c10);
-            int i10 = 1 << (3 - numberOfTrailingZeros);
-            this.e = i10;
-            this.f = c10 >> numberOfTrailingZeros;
-            this.c = cArr.length - 1;
-            this.g = bArr;
-            boolean[] zArr = new boolean[i10];
-            for (int i11 = 0; i11 < this.f; i11++) {
-                int i12 = this.d;
-                RoundingMode roundingMode2 = RoundingMode.CEILING;
-                zArr[mc.b(i11 * 8, i12)] = true;
-            }
-            this.h = z10;
-        } catch (ArithmeticException e) {
-            throw new IllegalArgumentException("Illegal alphabet length " + cArr.length, e);
-        }
-    }
-
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof a)) {
-            return false;
-        }
-        a aVar = (a) obj;
-        return this.h == aVar.h && Arrays.equals(this.b, aVar.b);
-    }
-
-    public final int hashCode() {
-        return Arrays.hashCode(this.b) + (this.h ? 1231 : 1237);
-    }
-
-    public final String toString() {
-        return this.a;
-    }
-
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public a(String str, char[] cArr) {
-        this(str, cArr, r1, false);
-        byte[] bArr = new byte[128];
-        Arrays.fill(bArr, (byte) -1);
-        for (int i10 = 0; i10 < cArr.length; i10++) {
-            char c10 = cArr[i10];
-            if (c10 < 128) {
-                if (bArr[c10] == -1) {
-                    bArr[c10] = (byte) i10;
-                } else {
-                    throw new IllegalArgumentException(zb.a("Duplicate character: %s", Character.valueOf(c10)));
-                }
-            } else {
-                throw new IllegalArgumentException(zb.a("Non-ASCII character: %s", Character.valueOf(c10)));
-            }
-        }
+    static {
+        new BigInteger("16a09e667f3bcc908b2fb1366ea957d3e3adec17512775099da2f590b0667322a", 16);
+        Math.log(10.0d);
+        Math.log(2.0d);
     }
 }

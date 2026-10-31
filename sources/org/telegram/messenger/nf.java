@@ -1,44 +1,53 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class nf implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesStorage b;
-    public final /* synthetic */ long c;
+    public final /* synthetic */ ui b;
+    public final /* synthetic */ TLRPC.messages_Messages c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ long e;
+    public final /* synthetic */ ArrayList f;
+    public final /* synthetic */ int h;
+    public final /* synthetic */ int n;
+    public final /* synthetic */ boolean r;
+    public final /* synthetic */ int s;
+    public final /* synthetic */ int w;
 
-    public /* synthetic */ nf(MessagesStorage messagesStorage, long j10, int i10) {
-        this.a = i10;
-        this.b = messagesStorage;
-        this.c = j10;
+    public /* synthetic */ nf(ui uiVar, TLRPC.messages_Messages messages_messages, int i10, long j10, ArrayList arrayList, int i11, int i12, boolean z10, int i13, int i14, int i15) {
+        this.a = i15;
+        this.b = uiVar;
+        this.c = messages_messages;
+        this.d = i10;
+        this.e = j10;
+        this.f = arrayList;
+        this.h = i11;
+        this.n = i12;
+        this.r = z10;
+        this.s = i13;
+        this.w = i14;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$deleteStoryPushMessage$39(this.c);
-                break;
-            case 1:
-                this.b.lambda$clearUserPhotos$95(this.c);
-                break;
-            case 2:
-                this.b.lambda$removeAllTopics$59(this.c);
-                break;
-            case 3:
-                this.b.lambda$deleteWallpaper$82(this.c);
-                break;
-            case 4:
-                this.b.lambda$deleteSavedDialog$58(this.c);
-                break;
-            case 5:
-                this.b.lambda$onDeleteQueryComplete$94(this.c);
-                break;
-            case 6:
-                this.b.lambda$removePendingTask$11(this.c);
+                i0.g3(new nf(this.b, this.c, this.d, this.e, this.f, this.h, this.n, this.r, this.s, this.w, 1));
                 break;
             default:
-                this.b.lambda$loadChannelAdmins$127(this.c);
+                TLRPC.messages_Messages messages_messages = this.c;
+                int i10 = messages_messages.count;
+                ui uiVar = this.b;
+                vp messagesController = uiVar.getMessagesController();
+                ArrayList<TLRPC.User> arrayList = messages_messages.users;
+                int i11 = this.d;
+                messagesController.V3(arrayList, i11 != 0);
+                uiVar.getMessagesController().P3(messages_messages.chats, i11 != 0);
+                uiVar.getNotificationCenter().k(32, Long.valueOf(this.e), Integer.valueOf(i10), this.f, Integer.valueOf(this.h), Integer.valueOf(this.n), Boolean.valueOf(this.r), Boolean.valueOf(this.s != 0), Integer.valueOf(this.w));
                 break;
         }
     }

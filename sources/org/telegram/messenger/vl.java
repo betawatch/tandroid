@@ -1,36 +1,29 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.UnconfirmedAuthController;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import j$.util.function.Consumer$-CC;
+import java.util.ArrayList;
+import java.util.function.Consumer;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final /* synthetic */ class vl implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ UnconfirmedAuthController.UnconfirmedAuth b;
-    public final /* synthetic */ Utilities.Callback c;
+public final /* synthetic */ class vl implements Consumer {
+    public final /* synthetic */ vp a;
+    public final /* synthetic */ long b;
 
-    public /* synthetic */ vl(UnconfirmedAuthController.UnconfirmedAuth unconfirmedAuth, Utilities.Callback callback, int i10) {
-        this.a = i10;
-        this.b = unconfirmedAuth;
-        this.c = callback;
+    public /* synthetic */ vl(vp vpVar, long j10) {
+        this.a = vpVar;
+        this.b = j10;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                this.b.lambda$deny$4(this.c, tLObject, tL_error);
-                break;
-            case 1:
-                this.b.lambda$deny$6(this.c, tLObject, tL_error);
-                break;
-            default:
-                this.b.lambda$confirm$2(this.c, tLObject, tL_error);
-                break;
-        }
+    @Override // java.util.function.Consumer
+    /* renamed from: accept */
+    public final void x(Object obj) {
+        vp vpVar = this.a;
+        vpVar.getClass();
+        i0.g3(new ok(vpVar, (ArrayList) obj, this.b, 2));
+    }
+
+    public /* synthetic */ Consumer andThen(Consumer consumer) {
+        return Consumer$-CC.$default$andThen(this, consumer);
     }
 }

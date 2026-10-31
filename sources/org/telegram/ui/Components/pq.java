@@ -1,117 +1,73 @@
 package org.telegram.ui.Components;
 
-import android.R;
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
-import android.util.StateSet;
-import android.view.MotionEvent;
+import android.content.DialogInterface;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class pq extends s6 {
-    public final Rect s;
-    public Drawable v;
-    public boolean w;
+public final /* synthetic */ class pq implements DialogInterface.OnDismissListener {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ boolean[] b;
+    public final /* synthetic */ boolean[] c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object h;
 
-    public pq(Context context) {
-        super(context, false, false, false);
-        this.s = new Rect();
+    public /* synthetic */ pq(boolean[] zArr, ag.g3 g3Var, boolean[] zArr2, org.telegram.messenger.q20 q20Var, int[] iArr, int i10) {
+        this.b = zArr;
+        this.e = g3Var;
+        this.c = zArr2;
+        this.f = q20Var;
+        this.h = iArr;
+        this.d = i10;
     }
 
-    public Rect getClickBounds() {
-        return this.s;
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
+        switch (this.a) {
+            case 0:
+                ag.g3 g3Var = (ag.g3) this.e;
+                org.telegram.messenger.q20 q20Var = (org.telegram.messenger.q20) this.f;
+                int[] iArr = (int[]) this.h;
+                this.b[0] = true;
+                g3Var.run();
+                boolean[] zArr = this.c;
+                if (!zArr[0]) {
+                    zArr[0] = true;
+                    q20Var.a(null);
+                }
+                if (iArr[0] >= 0) {
+                    ConnectionsManager.getInstance(this.d).cancelRequest(iArr[0], true);
+                    iArr[0] = -1;
+                    break;
+                }
+                break;
+            default:
+                Context context = (Context) this.e;
+                TLRPC.User user = (TLRPC.User) this.f;
+                org.telegram.ui.web.o oVar = (org.telegram.ui.web.o) this.h;
+                if (!this.b[0]) {
+                    boolean[] zArr2 = this.c;
+                    if (!zArr2[0]) {
+                        zArr2[0] = true;
+                        xh.q3.e(context, this.d, user.id);
+                        oVar.a(Boolean.TRUE, "cancelled");
+                        break;
+                    }
+                }
+                break;
+        }
     }
 
-    @Override // org.telegram.ui.Components.s6, android.view.View
-    public final void onDraw(Canvas canvas) {
-        if (this.v != null) {
-            Rect bounds = getDrawable().getBounds();
-            Rect rect = this.s;
-            rect.set(bounds);
-            int ceil = (int) Math.ceil(getDrawable().c());
-            if (getDrawable().b == 3) {
-                rect.right = rect.left + ceil;
-            } else if (getDrawable().b == 5) {
-                rect.left = rect.right - ceil;
-            } else if (getDrawable().b == 17) {
-                int i10 = (rect.left + rect.right) / 2;
-                int i11 = ceil / 2;
-                rect.left = i10 - i11;
-                rect.right = i10 + i11;
-            }
-            rect.left -= getPaddingLeft();
-            rect.top -= getPaddingTop();
-            rect.right = getPaddingRight() + rect.right;
-            rect.bottom = getPaddingBottom() + rect.bottom;
-            this.v.setBounds(rect);
-            this.v.draw(canvas);
-        }
-        super.onDraw(canvas);
-    }
-
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        boolean contains = getClickBounds().contains((int) motionEvent.getX(), (int) motionEvent.getY());
-        if (motionEvent.getAction() == 0 && contains) {
-            this.w = true;
-            Drawable drawable = this.v;
-            if (drawable != null) {
-                drawable.setHotspot(motionEvent.getX(), motionEvent.getY());
-                this.v.setState(new int[]{R.attr.state_pressed, R.attr.state_enabled});
-            }
-            invalidate();
-            return contains;
-        }
-        if (motionEvent.getAction() == 1) {
-            if (this.w && contains) {
-                callOnClick();
-            }
-            this.w = false;
-            Drawable drawable2 = this.v;
-            if (drawable2 != null) {
-                drawable2.setState(StateSet.NOTHING);
-                return contains;
-            }
-        } else if (motionEvent.getAction() == 3) {
-            this.w = false;
-            Drawable drawable3 = this.v;
-            if (drawable3 != null) {
-                drawable3.setState(StateSet.NOTHING);
-            }
-        }
-        return contains;
-    }
-
-    @Override // android.view.View
-    public void setBackground(Drawable drawable) {
-        Drawable drawable2 = this.v;
-        if (drawable2 != null) {
-            drawable2.setCallback(null);
-        }
-        this.v = drawable;
-        if (drawable != null) {
-            drawable.setCallback(this);
-        }
-        invalidate();
-    }
-
-    @Override // android.view.View
-    public void setBackgroundDrawable(Drawable drawable) {
-        Drawable drawable2 = this.v;
-        if (drawable2 != null) {
-            drawable2.setCallback(null);
-        }
-        this.v = drawable;
-        if (drawable != null) {
-            drawable.setCallback(this);
-        }
-        invalidate();
-    }
-
-    @Override // android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return drawable == this.v || super.verifyDrawable(drawable);
+    public /* synthetic */ pq(boolean[] zArr, boolean[] zArr2, Context context, int i10, TLRPC.User user, org.telegram.ui.web.o oVar) {
+        this.b = zArr;
+        this.c = zArr2;
+        this.e = context;
+        this.d = i10;
+        this.f = user;
+        this.h = oVar;
     }
 }

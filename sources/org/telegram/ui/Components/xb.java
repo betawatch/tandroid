@@ -1,72 +1,24 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.MotionEvent;
-import android.view.View;
-import android.widget.TextView;
-import org.telegram.messenger.Emoji;
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class xb extends aa0 {
-    public final /* synthetic */ int L;
+public final /* synthetic */ class xb implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ eb b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ xb(Context context, int i10, org.telegram.ui.ActionBar.u6 u6Var) {
-        super(context, u6Var);
-        this.L = i10;
+    public /* synthetic */ xb(eb ebVar, int i10) {
+        this.a = i10;
+        this.b = ebVar;
     }
 
-    @Override // org.telegram.ui.Components.aa0
-    public int a() {
-        switch (this.L) {
-            case 4:
-                return 3;
-            default:
-                return super.a();
-        }
-    }
-
-    @Override // android.view.View
-    public boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        switch (this.L) {
-            case 3:
-                if (getAlpha() < 0.9f) {
-                    return false;
-                }
-                return super.dispatchTouchEvent(motionEvent);
-            default:
-                return super.dispatchTouchEvent(motionEvent);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.aa0, android.widget.TextView, android.view.View
-    public void onMeasure(int i10, int i11) {
-        switch (this.L) {
-            case 5:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
-                break;
-            default:
-                super.onMeasure(i10, i11);
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.aa0, android.widget.TextView
-    public void setText(CharSequence charSequence, TextView.BufferType bufferType) {
-        switch (this.L) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
             case 0:
-                super.setText(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), false), bufferType);
-                break;
-            case 1:
-                super.setText(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), false), bufferType);
-                break;
-            case 2:
-                super.setText(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), false), bufferType);
+                this.b.performHapticFeedback(3, 2);
                 break;
             default:
-                super.setText(charSequence, bufferType);
+                this.b.performHapticFeedback(3, 2);
                 break;
         }
     }

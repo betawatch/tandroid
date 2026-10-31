@@ -1,22 +1,22 @@
 package u2;
 
-import a8.ng;
-import a8.yb;
 import android.net.Uri;
 import android.os.Handler;
+import i2.v1;
 import j$.util.DesugarCollections;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
-import org.telegram.messenger.MediaDataController;
+import v7.t6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class w0 implements e0, c3.q, y2.g, y2.j, b1 {
     public static final Map i0;
     public static final b2.x j0;
+    public final q5.d D;
     public final e2.i E;
     public final p0 F;
     public final p0 G;
@@ -30,7 +30,7 @@ public final class w0 implements e0, c3.q, y2.g, y2.j, b1 {
     public boolean O;
     public boolean P;
     public boolean Q;
-    public com.google.firebase.messaging.q R;
+    public ji.f R;
     public c3.b0 S;
     public long T;
     public boolean U;
@@ -45,22 +45,21 @@ public final class w0 implements e0, c3.q, y2.g, y2.j, b1 {
     public boolean b0;
     public final n2.m c;
     public long c0;
-    public final u7.s d;
+    public final hb.a d;
     public long d0;
-    public final ng e;
+    public final a5.a e;
     public boolean e0;
     public final n2.j f;
     public int f0;
     public boolean g0;
     public final y0 h;
     public boolean h0;
-    public final a8.h0 n;
+    public final android.support.v4.media.session.a0 n;
     public final String r;
     public final long s;
-    public final b2.x v;
-    public final long w;
-    public final y2.l x;
-    public final s4.d y;
+    public final b2.x w;
+    public final long x;
+    public final y2.l y;
 
     static {
         HashMap hashMap = new HashMap();
@@ -68,29 +67,29 @@ public final class w0 implements e0, c3.q, y2.g, y2.j, b1 {
         i0 = DesugarCollections.unmodifiableMap(hashMap);
         b2.w wVar = new b2.w();
         wVar.a = "icy";
-        wVar.r = b2.w0.n("application/x-icy");
+        wVar.r = b2.v0.n("application/x-icy");
         j0 = new b2.x(wVar);
     }
 
-    public w0(Uri uri, g2.h hVar, s4.d dVar, n2.m mVar, n2.j jVar, u7.s sVar, ng ngVar, y0 y0Var, a8.h0 h0Var, String str, int i10, b2.x xVar, long j10, z2.a aVar) {
+    public w0(Uri uri, g2.h hVar, q5.d dVar, n2.m mVar, n2.j jVar, hb.a aVar, a5.a aVar2, y0 y0Var, android.support.v4.media.session.a0 a0Var, String str, int i10, b2.x xVar, long j10, z2.a aVar3) {
         this.a = uri;
         this.b = hVar;
         this.c = mVar;
         this.f = jVar;
-        this.d = sVar;
-        this.e = ngVar;
+        this.d = aVar;
+        this.e = aVar2;
         this.h = y0Var;
-        this.n = h0Var;
+        this.n = a0Var;
         this.r = str;
         this.s = i10;
-        this.v = xVar;
-        this.x = aVar != null ? new y2.l(aVar) : new y2.l("ProgressiveMediaPeriod");
-        this.y = dVar;
-        this.w = j10;
+        this.w = xVar;
+        this.y = aVar3 != null ? new y2.l(aVar3) : new y2.l("ProgressiveMediaPeriod");
+        this.D = dVar;
+        this.x = j10;
         this.E = new e2.i();
         this.F = new p0(this, 1);
         this.G = new p0(this, 2);
-        this.H = e2.n0.q(null);
+        this.H = e2.l0.q(null);
         this.M = new v0[0];
         this.L = new c1[0];
         this.K = new s0[0];
@@ -98,10 +97,23 @@ public final class w0 implements e0, c3.q, y2.g, y2.j, b1 {
         this.V = 1;
     }
 
-    public final void A() {
-        t0 t0Var = new t0(this, this.a, this.b, this.y, this, this.E);
+    public final void A(c3.b0 b0Var) {
+        this.S = this.J == null ? b0Var : new c3.t(-9223372036854775807L);
+        this.T = b0Var.h();
+        boolean z10 = !this.b0 && b0Var.h() == -9223372036854775807L;
+        this.U = z10;
+        this.V = z10 ? 7 : 1;
         if (this.O) {
-            yb.p(n());
+            this.h.v(this.T, b0Var, z10);
+        } else {
+            w();
+        }
+    }
+
+    public final void B() {
+        t0 t0Var = new t0(this, this.a, this.b, this.D, this, this.E);
+        if (this.O) {
+            t6.p(v());
             long j10 = this.W;
             if (j10 == Long.MIN_VALUE) {
                 j10 = this.T;
@@ -118,47 +130,48 @@ public final class w0 implements e0, c3.q, y2.g, y2.j, b1 {
             t0Var.f.a = j11;
             t0Var.r = j12;
             t0Var.n = true;
-            t0Var.w = false;
+            t0Var.x = false;
             for (c1 c1Var : this.L) {
                 c1Var.t = this.d0;
             }
             this.d0 = -9223372036854775807L;
         }
-        this.f0 = f();
-        this.x.f(t0Var, this, this.d.B0(this.V));
-    }
-
-    @Override // y2.g
-    public final void B(y2.i iVar, long j10, long j11) {
-        t0 t0Var = (t0) iVar;
-        if (this.T == -9223372036854775807L && this.S != null) {
-            long j12 = j(true);
-            long j13 = j12 == Long.MIN_VALUE ? 0L : j12 + 10000;
-            this.T = j13;
-            this.h.v(j13, this.S, this.U);
-        }
-        g2.b0 b0Var = t0Var.b;
-        u uVar = new u(t0Var.s, b0Var.c, b0Var.d, j10, j11, b0Var.b);
-        this.d.getClass();
-        this.e.q(uVar, 1, -1, null, 0, null, t0Var.r, this.T);
-        this.g0 = true;
-        d0 d0Var = this.I;
-        d0Var.getClass();
-        d0Var.u(this);
+        this.f0 = i();
+        this.y.f(t0Var, this, this.d.q0(this.V));
     }
 
     public final boolean C() {
-        return this.Y || n();
+        return this.Y || v();
     }
 
     @Override // c3.q
-    public final void D1(c3.b0 b0Var) {
-        this.H.post(new s9.g(14, this, b0Var));
+    public final void G1(c3.b0 b0Var) {
+        this.H.post(new th.o0(26, this, b0Var));
     }
 
     @Override // c3.q
-    public final c3.j0 F1(int i10, int i11) {
-        return x(new v0(i10, false));
+    public final c3.k0 I1(int i10, int i11) {
+        return z(new v0(i10, false));
+    }
+
+    @Override // y2.g
+    public final void M(y2.i iVar, long j10, long j11, boolean z10) {
+        t0 t0Var = (t0) iVar;
+        g2.c0 c0Var = t0Var.b;
+        u uVar = new u(t0Var.s, c0Var.c, c0Var.d, j10, j11, c0Var.b);
+        this.d.getClass();
+        this.e.p(uVar, 1, -1, null, 0, null, t0Var.r, this.T);
+        if (z10) {
+            return;
+        }
+        for (c1 c1Var : this.L) {
+            c1Var.G(false);
+        }
+        if (this.a0 > 0) {
+            d0 d0Var = this.I;
+            d0Var.getClass();
+            d0Var.r(this);
+        }
     }
 
     @Override // c3.q
@@ -167,8 +180,13 @@ public final class w0 implements e0, c3.q, y2.g, y2.j, b1 {
         this.H.post(this.F);
     }
 
-    @Override // y2.j
+    @Override // u2.b1
     public final void a() {
+        this.H.post(this.F);
+    }
+
+    @Override // y2.j
+    public final void b() {
         for (c1 c1Var : this.L) {
             c1Var.G(true);
             n2.g gVar = c1Var.h;
@@ -178,7 +196,7 @@ public final class w0 implements e0, c3.q, y2.g, y2.j, b1 {
                 c1Var.g = null;
             }
         }
-        s4.d dVar = this.y;
+        q5.d dVar = this.D;
         c3.o oVar = (c3.o) dVar.c;
         if (oVar != null) {
             oVar.release();
@@ -188,14 +206,14 @@ public final class w0 implements e0, c3.q, y2.g, y2.j, b1 {
     }
 
     @Override // u2.f1
-    public final long b() {
-        return q();
+    public final long c() {
+        return s();
     }
 
     @Override // u2.f1
-    public final boolean c() {
+    public final boolean d() {
         boolean z10;
-        if (this.g0 || !this.x.c()) {
+        if (this.g0 || !this.y.d()) {
             return false;
         }
         e2.i iVar = this.E;
@@ -205,45 +223,32 @@ public final class w0 implements e0, c3.q, y2.g, y2.j, b1 {
         return z10;
     }
 
-    @Override // u2.b1
-    public final void d() {
-        this.H.post(this.F);
-    }
-
     public final void e() {
-        yb.p(this.O);
+        t6.p(this.O);
         this.R.getClass();
         this.S.getClass();
     }
 
-    public final int f() {
-        int i10 = 0;
-        for (c1 c1Var : this.L) {
-            i10 += c1Var.q + c1Var.p;
-        }
-        return i10;
-    }
-
     @Override // u2.e0
-    public final void g() {
-        int B0 = this.d.B0(this.V);
-        y2.l lVar = this.x;
+    public final void f() {
+        int q02 = this.d.q0(this.V);
+        y2.l lVar = this.y;
         IOException iOException = lVar.c;
         if (iOException != null) {
             throw iOException;
         }
         y2.h hVar = lVar.b;
         if (hVar != null) {
-            if (B0 == Integer.MIN_VALUE) {
-                B0 = hVar.a;
+            if (q02 == Integer.MIN_VALUE) {
+                q02 = hVar.a;
             }
             IOException iOException2 = hVar.e;
-            if (iOException2 != null && hVar.f > B0) {
+            if (iOException2 != null && hVar.f > q02) {
                 throw iOException2;
             }
         }
         if (this.g0 && !this.O) {
-            throw b2.x0.a(null, "Loading finished before preparation is complete.");
+            throw b2.w0.a(null, "Loading finished before preparation is complete.");
         }
     }
 
@@ -255,9 +260,9 @@ public final class w0 implements e0, c3.q, y2.g, y2.j, b1 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final long h(long j10) {
+    public final long g(long j10) {
         e();
-        boolean[] zArr = (boolean[]) this.R.b;
+        boolean[] zArr = (boolean[]) this.R.c;
         if (!this.S.d()) {
             j10 = 0;
         }
@@ -265,13 +270,13 @@ public final class w0 implements e0, c3.q, y2.g, y2.j, b1 {
         boolean z10 = true;
         boolean z11 = this.c0 == j10;
         this.c0 = j10;
-        if (n()) {
+        if (v()) {
             this.d0 = j10;
             return j10;
         }
         int i10 = this.V;
-        y2.l lVar = this.x;
-        if (i10 != 7 && (this.g0 || lVar.c())) {
+        y2.l lVar = this.y;
+        if (i10 != 7 && (this.g0 || lVar.d())) {
             int length = this.L.length;
             for (int i11 = 0; i11 < length; i11++) {
                 c1 c1Var = this.L[i11];
@@ -287,11 +292,11 @@ public final class w0 implements e0, c3.q, y2.g, y2.j, b1 {
         this.d0 = j10;
         this.g0 = false;
         this.Z = false;
-        if (lVar.c()) {
+        if (lVar.d()) {
             for (c1 c1Var2 : this.L) {
                 c1Var2.l();
             }
-            lVar.a();
+            lVar.b();
             return j10;
         }
         lVar.c = null;
@@ -302,52 +307,46 @@ public final class w0 implements e0, c3.q, y2.g, y2.j, b1 {
     }
 
     @Override // u2.e0
-    public final void i(long j10) {
+    public final void h(long j10) {
         if (this.Q) {
             return;
         }
         e();
-        if (n()) {
+        if (v()) {
             return;
         }
-        boolean[] zArr = (boolean[]) this.R.c;
+        boolean[] zArr = (boolean[]) this.R.d;
         int length = this.L.length;
         for (int i10 = 0; i10 < length; i10++) {
             this.L[i10].k(j10, zArr[i10]);
         }
     }
 
-    public final long j(boolean z10) {
-        int i10;
-        long j10 = Long.MIN_VALUE;
-        while (i10 < this.L.length) {
-            if (!z10) {
-                com.google.firebase.messaging.q qVar = this.R;
-                qVar.getClass();
-                i10 = ((boolean[]) qVar.c)[i10] ? 0 : i10 + 1;
-            }
-            j10 = Math.max(j10, this.L[i10].s());
+    public final int i() {
+        int i10 = 0;
+        for (c1 c1Var : this.L) {
+            i10 += c1Var.q + c1Var.p;
         }
-        return j10;
+        return i10;
     }
 
     @Override // u2.e0
-    public final void k(d0 d0Var, long j10) {
+    public final void j(d0 d0Var, long j10) {
         this.I = d0Var;
-        b2.x xVar = this.v;
+        b2.x xVar = this.w;
         if (xVar == null) {
             this.E.e();
-            A();
+            B();
         } else {
-            F1(0, 3).b(xVar);
-            y(new c3.y(-9223372036854775807L, new long[]{0}, new long[]{0}));
+            I1(0, 3).b(xVar);
+            A(new c3.y(-9223372036854775807L, new long[]{0}, new long[]{0}));
             Q0();
             this.d0 = j10;
         }
     }
 
     @Override // u2.e0
-    public final long l() {
+    public final long k() {
         if (this.Z) {
             this.Z = false;
             return this.c0;
@@ -355,7 +354,7 @@ public final class w0 implements e0, c3.q, y2.g, y2.j, b1 {
         if (!this.Y) {
             return -9223372036854775807L;
         }
-        if (!this.g0 && f() <= this.f0) {
+        if (!this.g0 && i() <= this.f0) {
             return -9223372036854775807L;
         }
         this.Y = false;
@@ -363,23 +362,48 @@ public final class w0 implements e0, c3.q, y2.g, y2.j, b1 {
     }
 
     @Override // y2.g
-    public final void l0(y2.i iVar, long j10, long j11, boolean z10) {
+    public final k4.d l(y2.i iVar, long j10, long j11, IOException iOException, int i10) {
+        long min;
+        k4.d dVar;
+        c3.b0 b0Var;
         t0 t0Var = (t0) iVar;
-        g2.b0 b0Var = t0Var.b;
-        u uVar = new u(t0Var.s, b0Var.c, b0Var.d, j10, j11, b0Var.b);
+        g2.c0 c0Var = t0Var.b;
+        u uVar = new u(t0Var.s, c0Var.c, c0Var.d, j10, j11, c0Var.b);
+        String str = e2.l0.a;
         this.d.getClass();
-        this.e.p(uVar, 1, -1, null, 0, null, t0Var.r, this.T);
-        if (z10) {
-            return;
+        for (Throwable th2 = iOException; th2 != null; th2 = th2.getCause()) {
+            if ((th2 instanceof b2.w0) || (th2 instanceof FileNotFoundException) || (th2 instanceof g2.v) || (th2 instanceof y2.k) || ((th2 instanceof g2.k) && ((g2.k) th2).a == 2008)) {
+                min = -9223372036854775807L;
+                break;
+            }
         }
-        for (c1 c1Var : this.L) {
-            c1Var.G(false);
+        min = Math.min((i10 - 1) * 1000, 5000);
+        if (min == -9223372036854775807L) {
+            dVar = y2.l.f;
+        } else {
+            int i11 = i();
+            int i12 = i11 > this.f0 ? 1 : 0;
+            if (this.b0 || !((b0Var = this.S) == null || b0Var.h() == -9223372036854775807L)) {
+                this.f0 = i11;
+            } else if (!this.O || C()) {
+                this.Y = this.O;
+                this.c0 = 0L;
+                this.f0 = 0;
+                for (c1 c1Var : this.L) {
+                    c1Var.G(false);
+                }
+                t0Var.f.a = 0L;
+                t0Var.r = 0L;
+                t0Var.n = true;
+                t0Var.x = false;
+            } else {
+                this.e0 = true;
+                dVar = y2.l.e;
+            }
+            dVar = new k4.d(i12, min, false);
         }
-        if (this.a0 > 0) {
-            d0 d0Var = this.I;
-            d0Var.getClass();
-            d0Var.u(this);
-        }
+        this.e.r(uVar, 1, -1, null, 0, null, t0Var.r, this.T, iOException, !dVar.a());
+        return dVar;
     }
 
     @Override // u2.f1
@@ -387,39 +411,61 @@ public final class w0 implements e0, c3.q, y2.g, y2.j, b1 {
         if (this.g0) {
             return false;
         }
-        y2.l lVar = this.x;
-        if (lVar.b() || this.e0) {
+        y2.l lVar = this.y;
+        if (lVar.c() || this.e0) {
             return false;
         }
-        if ((this.O || this.v != null) && this.a0 == 0) {
+        if ((this.O || this.w != null) && this.a0 == 0) {
             return false;
         }
         boolean e = this.E.e();
-        if (lVar.c()) {
+        if (lVar.d()) {
             return e;
         }
-        A();
+        B();
         return true;
     }
 
-    public final boolean n() {
-        return this.d0 != -9223372036854775807L;
+    @Override // y2.g
+    public final void n(y2.i iVar, long j10, long j11, int i10) {
+        t0 t0Var = (t0) iVar;
+        g2.c0 c0Var = t0Var.b;
+        this.e.u(i10 == 0 ? new u(t0Var.s, j10) : new u(t0Var.s, c0Var.c, c0Var.d, j10, j11, c0Var.b), 1, -1, null, 0, null, t0Var.r, this.T, i10);
+    }
+
+    @Override // y2.g
+    public final void o(y2.i iVar, long j10, long j11) {
+        t0 t0Var = (t0) iVar;
+        if (this.T == -9223372036854775807L && this.S != null) {
+            long r10 = r(true);
+            long j12 = r10 == Long.MIN_VALUE ? 0L : r10 + 10000;
+            this.T = j12;
+            this.h.v(j12, this.S, this.U);
+        }
+        g2.c0 c0Var = t0Var.b;
+        u uVar = new u(t0Var.s, c0Var.c, c0Var.d, j10, j11, c0Var.b);
+        this.d.getClass();
+        this.e.q(uVar, 1, -1, null, 0, null, t0Var.r, this.T);
+        this.g0 = true;
+        d0 d0Var = this.I;
+        d0Var.getClass();
+        d0Var.r(this);
     }
 
     @Override // u2.e0
-    public final long o(x2.q[] qVarArr, boolean[] zArr, d1[] d1VarArr, boolean[] zArr2, long j10) {
+    public final long p(x2.q[] qVarArr, boolean[] zArr, d1[] d1VarArr, boolean[] zArr2, long j10) {
         x2.q qVar;
         e();
-        com.google.firebase.messaging.q qVar2 = this.R;
-        r1 r1Var = (r1) qVar2.a;
-        boolean[] zArr3 = (boolean[]) qVar2.c;
+        ji.f fVar = this.R;
+        r1 r1Var = (r1) fVar.b;
+        boolean[] zArr3 = (boolean[]) fVar.d;
         int i10 = this.a0;
         int i11 = 0;
         for (int i12 = 0; i12 < qVarArr.length; i12++) {
             d1 d1Var = d1VarArr[i12];
             if (d1Var != null && (qVarArr[i12] == null || !zArr[i12])) {
                 int i13 = ((u0) d1Var).a;
-                yb.p(zArr3[i13]);
+                t6.p(zArr3[i13]);
                 this.a0--;
                 zArr3[i13] = false;
                 d1VarArr[i12] = null;
@@ -428,10 +474,10 @@ public final class w0 implements e0, c3.q, y2.g, y2.j, b1 {
         boolean z10 = !this.X ? j10 == 0 || this.Q : i10 != 0;
         for (int i14 = 0; i14 < qVarArr.length; i14++) {
             if (d1VarArr[i14] == null && (qVar = qVarArr[i14]) != null) {
-                yb.p(qVar.length() == 1);
-                yb.p(qVar.h(0) == 0);
+                t6.p(qVar.length() == 1);
+                t6.p(qVar.h(0) == 0);
                 int b10 = r1Var.b(qVar.b());
-                yb.p(!zArr3[b10]);
+                t6.p(!zArr3[b10]);
                 this.a0++;
                 zArr3[b10] = true;
                 this.Z = qVar.m().y | this.Z;
@@ -447,15 +493,15 @@ public final class w0 implements e0, c3.q, y2.g, y2.j, b1 {
             this.e0 = false;
             this.Y = false;
             this.Z = false;
-            y2.l lVar = this.x;
-            if (lVar.c()) {
+            y2.l lVar = this.y;
+            if (lVar.d()) {
                 c1[] c1VarArr = this.L;
                 int length = c1VarArr.length;
                 while (i11 < length) {
                     c1VarArr[i11].l();
                     i11++;
                 }
-                lVar.a();
+                lVar.b();
             } else {
                 this.g0 = false;
                 for (c1 c1Var2 : this.L) {
@@ -463,7 +509,7 @@ public final class w0 implements e0, c3.q, y2.g, y2.j, b1 {
                 }
             }
         } else if (z10) {
-            j10 = h(j10);
+            j10 = g(j10);
             while (i11 < d1VarArr.length) {
                 if (d1VarArr[i11] != null) {
                     zArr2[i11] = true;
@@ -476,28 +522,42 @@ public final class w0 implements e0, c3.q, y2.g, y2.j, b1 {
     }
 
     @Override // u2.e0
-    public final r1 p() {
+    public final r1 q() {
         e();
-        return (r1) this.R.a;
+        return (r1) this.R.b;
+    }
+
+    public final long r(boolean z10) {
+        int i10;
+        long j10 = Long.MIN_VALUE;
+        while (i10 < this.L.length) {
+            if (!z10) {
+                ji.f fVar = this.R;
+                fVar.getClass();
+                i10 = ((boolean[]) fVar.d)[i10] ? 0 : i10 + 1;
+            }
+            j10 = Math.max(j10, this.L[i10].s());
+        }
+        return j10;
     }
 
     @Override // u2.f1
-    public final long q() {
+    public final long s() {
         long j10;
         boolean z10;
         e();
         if (this.g0 || this.a0 == 0) {
             return Long.MIN_VALUE;
         }
-        if (n()) {
+        if (v()) {
             return this.d0;
         }
         if (this.P) {
             int length = this.L.length;
             j10 = Long.MAX_VALUE;
             for (int i10 = 0; i10 < length; i10++) {
-                com.google.firebase.messaging.q qVar = this.R;
-                if (((boolean[]) qVar.b)[i10] && ((boolean[]) qVar.c)[i10]) {
+                ji.f fVar = this.R;
+                if (((boolean[]) fVar.c)[i10] && ((boolean[]) fVar.d)[i10]) {
                     c1 c1Var = this.L[i10];
                     synchronized (c1Var) {
                         z10 = c1Var.y;
@@ -511,24 +571,24 @@ public final class w0 implements e0, c3.q, y2.g, y2.j, b1 {
             j10 = Long.MAX_VALUE;
         }
         if (j10 == Long.MAX_VALUE) {
-            j10 = j(false);
+            j10 = r(false);
         }
         return j10 == Long.MIN_VALUE ? this.c0 : j10;
     }
 
     @Override // u2.e0
-    public final long r(long j10, i2.t1 t1Var) {
+    public final long t(long j10, v1 v1Var) {
         e();
         if (!this.S.d()) {
             return 0L;
         }
         c3.a0 f7 = this.S.f(j10);
-        return t1Var.a(j10, f7.a.a, f7.b.a);
+        return v1Var.a(j10, f7.a.a, f7.b.a);
     }
 
     @Override // u2.f1
-    public final void s(long j10) {
-        if (this.a0 <= 0 || n()) {
+    public final void u(long j10) {
+        if (this.a0 <= 0 || v()) {
             return;
         }
         int i10 = 0;
@@ -540,8 +600,8 @@ public final class w0 implements e0, c3.q, y2.g, y2.j, b1 {
                 if (i10 >= c1VarArr.length) {
                     break;
                 }
-                com.google.firebase.messaging.q qVar = this.R;
-                if (((boolean[]) qVar.c)[i10] && (((boolean[]) qVar.b)[i10] || !this.P)) {
+                ji.f fVar = this.R;
+                if (((boolean[]) fVar.d)[i10] && (((boolean[]) fVar.c)[i10] || !this.P)) {
                     i11 &= c1VarArr[i10].z() ? 1 : 0;
                 }
                 i10++;
@@ -553,9 +613,13 @@ public final class w0 implements e0, c3.q, y2.g, y2.j, b1 {
         }
     }
 
-    public final void t() {
+    public final boolean v() {
+        return this.d0 != -9223372036854775807L;
+    }
+
+    public final void w() {
         b2.u0 a2;
-        long j10 = this.w;
+        long j10 = this.x;
         if (this.h0 || this.O || !this.N || this.S == null) {
             return;
         }
@@ -580,7 +644,7 @@ public final class w0 implements e0, c3.q, y2.g, y2.j, b1 {
             }
             b2.x y3 = this.L[i11].y();
             y3.getClass();
-            int h = b2.w0.h(y3.s);
+            int h = b2.v0.h(y3.s);
             char c11 = h != 1 ? h != 2 ? h != 3 ? h != 4 ? (char) 0 : (char) 2 : (char) 1 : (char) 4 : (char) 3;
             if (i10 == 1) {
                 c10 = 3;
@@ -595,19 +659,19 @@ public final class w0 implements e0, c3.q, y2.g, y2.j, b1 {
             }
             i11++;
         }
-        b2.q1[] q1VarArr = new b2.q1[length];
+        b2.p1[] p1VarArr = new b2.p1[length];
         boolean[] zArr = new boolean[length];
         int i13 = 0;
         while (i13 < length) {
             b2.x y10 = this.L[i13].y();
             y10.getClass();
             String str = y10.s;
-            boolean i14 = b2.w0.i(str);
-            boolean z11 = (i14 || b2.w0.m(str)) ? true : z10;
+            boolean i14 = b2.v0.i(str);
+            boolean z11 = (i14 || b2.v0.m(str)) ? true : z10;
             zArr[i13] = z11;
             boolean z12 = z10;
             this.P |= z11;
-            this.Q = (j10 != -9223372036854775807L && length == 1 && b2.w0.k(str)) ? true : z12 ? 1 : 0;
+            this.Q = (j10 != -9223372036854775807L && length == 1 && b2.v0.k(str)) ? true : z12 ? 1 : 0;
             p3.b bVar = this.J;
             if (bVar != null) {
                 int i15 = bVar.a;
@@ -632,9 +696,9 @@ public final class w0 implements e0, c3.q, y2.g, y2.j, b1 {
                     y10 = new b2.x(a11);
                 }
             }
-            int w10 = this.c.w(y10);
+            int t02 = this.c.t0(y10);
             b2.w a12 = y10.a();
-            a12.S = w10;
+            a12.S = t02;
             b2.x xVar = new b2.x(a12);
             if (i13 != i12) {
                 b2.w a13 = xVar.a();
@@ -644,20 +708,13 @@ public final class w0 implements e0, c3.q, y2.g, y2.j, b1 {
             String num = Integer.toString(i13);
             b2.x[] xVarArr = new b2.x[1];
             xVarArr[z12 ? 1 : 0] = xVar;
-            q1VarArr[i13] = new b2.q1(num, xVarArr);
+            p1VarArr[i13] = new b2.p1(num, xVarArr);
             this.Z = xVar.y | this.Z;
             this.L[i13].K(this.W);
             i13++;
             z10 = z12 ? 1 : 0;
         }
-        r1 r1Var = new r1(q1VarArr);
-        com.google.firebase.messaging.q qVar = new com.google.firebase.messaging.q();
-        qVar.a = r1Var;
-        qVar.b = zArr;
-        int i16 = r1Var.a;
-        qVar.c = new boolean[i16];
-        qVar.d = new boolean[i16];
-        this.R = qVar;
+        this.R = new ji.f(new r1(p1VarArr), zArr);
         if (this.Q && this.T == -9223372036854775807L) {
             this.T = j10;
             this.S = new q0(this, this.S);
@@ -666,25 +723,25 @@ public final class w0 implements e0, c3.q, y2.g, y2.j, b1 {
         this.O = true;
         d0 d0Var = this.I;
         d0Var.getClass();
-        d0Var.n(this);
+        d0Var.e(this);
     }
 
-    public final void u(int i10) {
+    public final void x(int i10) {
         e();
-        com.google.firebase.messaging.q qVar = this.R;
-        boolean[] zArr = (boolean[]) qVar.d;
+        ji.f fVar = this.R;
+        boolean[] zArr = (boolean[]) fVar.e;
         if (zArr[i10]) {
             return;
         }
-        b2.x xVar = ((r1) qVar.a).a(i10).d[0];
-        this.e.l(b2.w0.h(xVar.s), xVar, 0, null, this.c0);
+        b2.x xVar = ((r1) fVar.b).a(i10).d[0];
+        this.e.l(b2.v0.h(xVar.s), xVar, 0, null, this.c0);
         zArr[i10] = true;
     }
 
-    public final void v(int i10) {
+    public final void y(int i10) {
         e();
         if (this.e0) {
-            if ((!this.P || ((boolean[]) this.R.b)[i10]) && !this.L[i10].A(false)) {
+            if ((!this.P || ((boolean[]) this.R.c)[i10]) && !this.L[i10].A(false)) {
                 this.d0 = 0L;
                 this.e0 = false;
                 this.Y = true;
@@ -695,57 +752,12 @@ public final class w0 implements e0, c3.q, y2.g, y2.j, b1 {
                 }
                 d0 d0Var = this.I;
                 d0Var.getClass();
-                d0Var.u(this);
+                d0Var.r(this);
             }
         }
     }
 
-    @Override // y2.g
-    public final k4.d w(y2.i iVar, long j10, long j11, IOException iOException, int i10) {
-        long min;
-        k4.d dVar;
-        c3.b0 b0Var;
-        t0 t0Var = (t0) iVar;
-        g2.b0 b0Var2 = t0Var.b;
-        u uVar = new u(t0Var.s, b0Var2.c, b0Var2.d, j10, j11, b0Var2.b);
-        String str = e2.n0.a;
-        this.d.getClass();
-        for (Throwable th2 = iOException; th2 != null; th2 = th2.getCause()) {
-            if ((th2 instanceof b2.x0) || (th2 instanceof FileNotFoundException) || (th2 instanceof g2.u) || (th2 instanceof y2.k) || ((th2 instanceof g2.j) && ((g2.j) th2).a == 2008)) {
-                min = -9223372036854775807L;
-                break;
-            }
-        }
-        min = Math.min((i10 - 1) * MediaDataController.MAX_STYLE_RUNS_COUNT, 5000);
-        if (min == -9223372036854775807L) {
-            dVar = y2.l.f;
-        } else {
-            int f7 = f();
-            int i11 = f7 > this.f0 ? 1 : 0;
-            if (this.b0 || !((b0Var = this.S) == null || b0Var.h() == -9223372036854775807L)) {
-                this.f0 = f7;
-            } else if (!this.O || C()) {
-                this.Y = this.O;
-                this.c0 = 0L;
-                this.f0 = 0;
-                for (c1 c1Var : this.L) {
-                    c1Var.G(false);
-                }
-                t0Var.f.a = 0L;
-                t0Var.r = 0L;
-                t0Var.n = true;
-                t0Var.w = false;
-            } else {
-                this.e0 = true;
-                dVar = y2.l.e;
-            }
-            dVar = new k4.d(i11, min, false);
-        }
-        this.e.r(uVar, 1, -1, null, 0, null, t0Var.r, this.T, iOException, !dVar.a());
-        return dVar;
-    }
-
-    public final c3.j0 x(v0 v0Var) {
+    public final c3.k0 z(v0 v0Var) {
         int length = this.L.length;
         for (int i10 = 0; i10 < length; i10++) {
             if (v0Var.equals(this.M[i10])) {
@@ -772,25 +784,5 @@ public final class w0 implements e0, c3.q, y2.g, y2.j, b1 {
         s0VarArr[length] = s0Var;
         this.K = s0VarArr;
         return s0Var;
-    }
-
-    public final void y(c3.b0 b0Var) {
-        this.S = this.J == null ? b0Var : new c3.t(-9223372036854775807L);
-        this.T = b0Var.h();
-        boolean z10 = !this.b0 && b0Var.h() == -9223372036854775807L;
-        this.U = z10;
-        this.V = z10 ? 7 : 1;
-        if (this.O) {
-            this.h.v(this.T, b0Var, z10);
-        } else {
-            t();
-        }
-    }
-
-    @Override // y2.g
-    public final void z(y2.i iVar, long j10, long j11, int i10) {
-        t0 t0Var = (t0) iVar;
-        g2.b0 b0Var = t0Var.b;
-        this.e.u(i10 == 0 ? new u(t0Var.s, j10) : new u(t0Var.s, b0Var.c, b0Var.d, j10, j11, b0Var.b), 1, -1, null, 0, null, t0Var.r, this.T, i10);
     }
 }

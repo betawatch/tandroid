@@ -4,9 +4,9 @@ import b2.r0;
 import j$.util.Objects;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class a extends i {
+public final class a extends j {
     public final String b;
     public final String c;
     public final int d;
@@ -20,7 +20,7 @@ public final class a extends i {
         this.e = bArr;
     }
 
-    @Override // q3.i, b2.t0
+    @Override // q3.j, b2.t0
     public final void b(r0 r0Var) {
         r0Var.a(this.d, this.e);
     }
@@ -46,7 +46,7 @@ public final class a extends i {
         return Arrays.hashCode(this.e) + ((hashCode + (str2 != null ? str2.hashCode() : 0)) * 31);
     }
 
-    @Override // q3.i
+    @Override // q3.j
     public final String toString() {
         return this.a + ": mimeType=" + this.b + ", description=" + this.c;
     }

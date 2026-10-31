@@ -1,19 +1,20 @@
 package com.android.billingclient.api;
 
+import a6.i;
 import android.app.PendingIntent;
 import android.content.IntentSender;
 import android.os.Bundle;
 import android.os.ResultReceiver;
-import androidx.activity.l;
+import androidx.activity.m;
 import androidx.activity.result.c;
 import androidx.activity.result.g;
-import androidx.fragment.app.d0;
-import b6.i;
+import androidx.fragment.app.e0;
 import com.google.android.gms.internal.play_billing.u;
+import k6.h;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public class ProxyBillingActivityV2 extends l {
+public class ProxyBillingActivityV2 extends m {
     public c J;
     public c K;
     public c L;
@@ -21,12 +22,12 @@ public class ProxyBillingActivityV2 extends l {
     public ResultReceiver N;
     public ResultReceiver O;
 
-    @Override // androidx.activity.l, e0.e, android.app.Activity
+    @Override // androidx.activity.m, e0.f, android.app.Activity
     public final void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        this.J = r(new rb.c(this, 15), new d0(3));
-        this.K = r(new za.c(this, 14), new d0(3));
-        this.L = r(new i(this, 14), new d0(3));
+        this.J = r(new h(this, 14), new e0(3));
+        this.K = r(new za.c(this, 12), new e0(3));
+        this.L = r(new i(this, 14), new e0(3));
         if (bundle != null) {
             if (bundle.containsKey("alternative_billing_only_dialog_result_receiver")) {
                 this.M = (ResultReceiver) bundle.getParcelable("alternative_billing_only_dialog_result_receiver");
@@ -72,7 +73,7 @@ public class ProxyBillingActivityV2 extends l {
         }
     }
 
-    @Override // androidx.activity.l, e0.e, android.app.Activity
+    @Override // androidx.activity.m, e0.f, android.app.Activity
     public final void onSaveInstanceState(Bundle bundle) {
         super.onSaveInstanceState(bundle);
         ResultReceiver resultReceiver = this.M;

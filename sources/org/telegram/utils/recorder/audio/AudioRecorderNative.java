@@ -4,7 +4,7 @@ import java.io.File;
 import java.nio.ByteBuffer;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes4.dex */
 final class AudioRecorderNative {
     public long a;
@@ -14,7 +14,7 @@ final class AudioRecorderNative {
         this.a = j10;
     }
 
-    public static AudioRecorderNative a(File file, long j10, long j11, File file2) {
+    public static AudioRecorderNative a(long j10, long j11, File file, File file2) {
         long nCreate = nCreate(file.getAbsolutePath(), 48000, file2 == null ? null : file2.getAbsolutePath(), j10, j11);
         if (nCreate == 0) {
             return null;

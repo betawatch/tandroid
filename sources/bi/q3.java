@@ -1,44 +1,96 @@
 package bi;
 
-import android.content.Context;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.o70;
+import java.util.ArrayList;
+import org.telegram.ui.Cells.k9;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class q3 implements Utilities.Callback {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.k3 c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ TLObject f;
-    public final /* synthetic */ TLObject g;
+public final class q3 extends k9 {
+    public final /* synthetic */ b4 F0;
+    public final /* synthetic */ d4 G0;
 
-    public /* synthetic */ q3(org.telegram.ui.ActionBar.k3 k3Var, Object obj, Object obj2, long j10, TLObject tLObject, TLObject tLObject2, int i10) {
-        this.a = i10;
-        this.c = k3Var;
-        this.d = obj;
-        this.e = obj2;
-        this.b = j10;
-        this.f = tLObject;
-        this.g = tLObject2;
+    public q3(d4 d4Var, b4 b4Var) {
+        this.G0 = d4Var;
+        this.F0 = b4Var;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        switch (this.a) {
-            case 0:
-                h7.Q0((h7) this.c, (qf.c) this.d, (vg.n1) this.e, this.b, (TL_stars.TL_starGiftUnique) this.f, (TL_wallet.nftItem) this.g, (TL_stars.starGiftDepositPayload) obj);
-                break;
-            default:
-                AndroidUtilities.runOnUIThread(new ag.m0((o70) this.c, (org.telegram.ui.ActionBar.e2) this.d, (Context) this.e, this.b, (TLRPC.TL_chatInviteExported) this.f, (TLRPC.TL_chatInviteImporter) this.g, (TLRPC.ChannelParticipant) obj));
-                break;
+    @Override // org.telegram.ui.Cells.w9
+    public final boolean C() {
+        d4 d4Var = this.G0;
+        CharSequence r10 = d4Var.u3.r();
+        if (r10 == null || r10.length() == 0) {
+            return true;
         }
+        d4Var.e5(r10);
+        return true;
+    }
+
+    @Override // org.telegram.ui.Cells.w9
+    public final void D() {
+        d4 d4Var = this.G0;
+        CharSequence r10 = d4Var.u3.r();
+        if (r10 != null && r10.length() > 0) {
+            d4Var.e5(r10);
+        }
+        d4Var.H2();
+    }
+
+    @Override // org.telegram.ui.Cells.k9, org.telegram.ui.Cells.w9
+    public final void F() {
+        super.F();
+        this.F0.r();
+    }
+
+    @Override // org.telegram.ui.Cells.w9
+    public final void H() {
+        this.G0.f4();
+    }
+
+    @Override // org.telegram.ui.Cells.w9
+    public final boolean J() {
+        if (a0()) {
+            return true;
+        }
+        return this.G0.V4();
+    }
+
+    @Override // org.telegram.ui.Cells.w9
+    public final void K(float f7, float f10) {
+        d4 d4Var = this.G0;
+        d4Var.z3 = true;
+        d4Var.A3 = f7;
+        d4Var.B3 = f10;
+    }
+
+    @Override // org.telegram.ui.Cells.w9
+    public final boolean j() {
+        boolean z10;
+        int size;
+        d4 d4Var = this.G0;
+        q3 q3Var = d4Var.u3;
+        ArrayList arrayList = d4Var.s3;
+        if (!arrayList.isEmpty() && q3Var.x() && q3Var.p0 == 0 && q3Var.q0 == 0 && q3Var.r0 <= 0 && q3Var.s0 == (size = arrayList.size() - 1)) {
+            a aVar = (a) arrayList.get(size);
+            String l4 = q6.p(aVar.b) ? s6.l(q6.k(aVar.b)) : "";
+            boolean z11 = !l4.isEmpty();
+            if (q3Var.t0 == z11) {
+                if (q3Var.u0 >= (z11 ? l4.length() : q6.z(aVar.b).length())) {
+                    z10 = true;
+                    return !z10;
+                }
+            }
+        }
+        z10 = false;
+        return !z10;
+    }
+
+    @Override // org.telegram.ui.Cells.w9
+    public final int o() {
+        return this.G0.getPaddingBottom();
+    }
+
+    @Override // org.telegram.ui.Cells.w9
+    public final int p() {
+        return this.G0.getPaddingTop();
     }
 }

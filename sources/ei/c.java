@@ -1,145 +1,105 @@
 package ei;
 
+import android.graphics.ColorFilter;
+import android.graphics.ColorMatrixColorFilter;
+import android.graphics.Rect;
 import android.graphics.RectF;
-import android.view.WindowManager;
-import di.s8;
-import fi.eb;
-import fi.p9;
-import fi.rb;
-import fi.sb;
-import fi.w7;
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
-import org.telegram.ui.Components.gh;
-import org.telegram.ui.Components.ri;
-import org.telegram.ui.Components.ti;
+import android.graphics.RenderEffect;
+import android.graphics.RenderNode;
+import android.graphics.Shader;
+import c3.i0;
+import e0.f0;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes4.dex */
-public final class c implements ri {
-    public final /* synthetic */ ti a;
-    public final /* synthetic */ String b;
-    public final /* synthetic */ v c;
+public final class c {
+    public final RenderNode e;
+    public final RenderNode f;
+    public final RenderNode g;
+    public final RenderNode h;
+    public final RenderNode i;
+    public ColorFilter j;
+    public int k;
+    public int l;
+    public int m;
+    public int n;
+    public int o;
+    public int p;
+    public float s;
+    public float t;
+    public int u;
+    public int v;
+    public int w;
+    public int x;
+    public final RectF a = new RectF();
+    public final Rect b = new Rect();
+    public final RectF c = new RectF();
+    public final RectF d = new RectF();
+    public int q = 1;
+    public final RectF r = new RectF();
 
-    public c(v vVar, ti tiVar, String str) {
-        this.c = vVar;
-        this.a = tiVar;
-        this.b = str;
+    public c(int i10) {
+        RenderNode renderNode = new RenderNode("cap-" + i10);
+        this.e = renderNode;
+        renderNode.setUseCompositingLayer(true, null);
+        RenderNode renderNode2 = new RenderNode("glass-" + i10);
+        this.f = renderNode2;
+        renderNode2.setRenderEffect(f0.d());
+        this.g = new RenderNode("glass-frosted-" + i10);
+        RenderNode renderNode3 = new RenderNode("filtered-" + i10);
+        this.h = renderNode3;
+        renderNode3.setRenderEffect(RenderEffect.createColorFilterEffect(e.v));
+        this.i = new RenderNode("frosted-filtered-" + i10);
     }
 
-    @Override // org.telegram.ui.Components.ri
-    public final void A(gh ghVar) {
-        ghVar.run();
-    }
-
-    @Override // org.telegram.ui.Components.ri
-    public final /* synthetic */ boolean E() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.ri
-    public final void p0(int i10, boolean z10, boolean z11, int i11, int i12, long j10, boolean z12, boolean z13, long j11) {
-        rb rbVar;
-        v vVar = this.c;
-        long j12 = vVar.d;
-        ti tiVar = this.a;
-        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = tiVar.j0;
-        if (chatAttachAlertPhotoLayout.getSelectedPhotos().isEmpty()) {
-            return;
+    public final RenderNode a(int i10) {
+        int c10 = m1.j.c(i10);
+        if (c10 == 0) {
+            return this.e;
         }
-        HashMap<Object, Object> selectedPhotos = chatAttachAlertPhotoLayout.getSelectedPhotos();
-        chatAttachAlertPhotoLayout.getSelectedPhotosOrder();
-        if (selectedPhotos.size() != 1) {
-            return;
+        if (c10 == 1) {
+            return this.f;
         }
-        Object next = selectedPhotos.values().iterator().next();
-        if (next instanceof MediaController.PhotoEntry) {
-            w7 l4 = w7.l((MediaController.PhotoEntry) next);
-            l4.J0 = j12;
-            String str = this.b;
-            l4.K0 = str;
-            l4.A();
-            sb D = sb.D(vVar.a.getParentActivity(), vVar.b);
-            RectF rectF = D.H;
-            WindowManager.LayoutParams layoutParams = D.h;
-            int i13 = D.c;
-            WindowManager windowManager = D.f;
-            if (!D.d) {
-                if (MessagesController.getInstance(i13).isFrozen()) {
-                    org.telegram.ui.b.b(i13);
-                } else {
-                    D.v0 = j12;
-                    D.w0 = str;
-                    D.u0 = false;
-                    D.e = false;
-                    D.B2 = false;
-                    if (windowManager != null && (rbVar = D.n) != null && rbVar.getParent() == null) {
-                        AndroidUtilities.setPreferredMaxRefreshRate(windowManager, D.n, layoutParams);
-                        windowManager.addView(D.n, layoutParams);
-                        D.f0();
-                    }
-                    D.K1 = l4;
-                    l4.J0 = j12;
-                    l4.K0 = str;
-                    D.O1 = l4.K ? 1 : 0;
-                    D.s0.g = false;
-                    D.J = 0;
-                    rectF.set(0.0f, AndroidUtilities.dp(100.0f), AndroidUtilities.displaySize.x, AndroidUtilities.dp(100.0f) + AndroidUtilities.displaySize.y);
-                    D.G = AndroidUtilities.dp(8.0f);
-                    D.r.c();
-                    eb ebVar = D.h0;
-                    int i14 = D.J;
-                    ebVar.setBackgroundColor((i14 == 1 || i14 == 0) ? 0 : -14737633);
-                    D.r.setTranslationX(0.0f);
-                    D.r.setTranslationY(0.0f);
-                    D.r.b(0.0f);
-                    D.r.setScaleX(1.0f);
-                    D.r.setScaleY(1.0f);
-                    D.K = 0.0f;
-                    AndroidUtilities.lockOrientation(D.b, 1);
-                    w7 w7Var = D.K1;
-                    if (w7Var != null) {
-                        D.c1.setText(w7Var.C0);
-                    }
-                    D.J(1, false);
-                    D.k0(-1, false, false);
-                    D.b1.b(false, false);
-                    D.b1.b(true, true);
-                    D.f(1.0f, true, new p9(D, 6));
-                    D.d();
-                }
+        if (c10 == 2) {
+            return this.g;
+        }
+        if (c10 == 3) {
+            return this.i;
+        }
+        throw new IllegalArgumentException("Unknown source index: ".concat(i0.F(i10)));
+    }
+
+    public final void b(int i10, int i11, int i12) {
+        if (this.o != i10) {
+            this.o = i10;
+            float N = org.telegram.messenger.i0.N(7.0f);
+            float max = N <= 0.0f ? 0.0f : Math.max(0.0f, ((((N * 0.57735f) + 0.5f) / i10) - 0.5f) / 0.57735f);
+            this.s = max;
+            this.e.setRenderEffect(RenderEffect.createBlurEffect(max, max, Shader.TileMode.CLAMP));
+        }
+        if (this.p != i11) {
+            this.p = i11;
+            float N2 = org.telegram.messenger.i0.N(36.0f);
+            float max2 = N2 > 0.0f ? Math.max(0.0f, ((((N2 * 0.57735f) + 0.5f) / i11) - 0.5f) / 0.57735f) : 0.0f;
+            this.t = max2;
+            RenderNode renderNode = this.g;
+            Shader.TileMode tileMode = Shader.TileMode.CLAMP;
+            renderNode.setRenderEffect(RenderEffect.createBlurEffect(max2, max2, tileMode));
+            RenderNode renderNode2 = this.i;
+            float f7 = this.t;
+            renderNode2.setRenderEffect(RenderEffect.createBlurEffect(f7, f7, tileMode));
+        }
+        this.q = i12;
+    }
+
+    public final void c(ColorMatrixColorFilter colorMatrixColorFilter) {
+        if (this.j != colorMatrixColorFilter) {
+            this.j = colorMatrixColorFilter;
+            RenderNode renderNode = this.h;
+            if (colorMatrixColorFilter == null) {
+                colorMatrixColorFilter = e.v;
             }
-            AndroidUtilities.runOnUIThread(new s8(tiVar, 7), 400L);
+            renderNode.setRenderEffect(RenderEffect.createColorFilterEffect(colorMatrixColorFilter));
         }
-    }
-
-    @Override // org.telegram.ui.Components.ri
-    public final boolean x0() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.ri
-    public final /* synthetic */ void T(Object obj) {
-    }
-
-    @Override // org.telegram.ui.Components.ri
-    public final /* synthetic */ void Y(TLRPC.User user) {
-    }
-
-    @Override // org.telegram.ui.Components.ri
-    public final /* synthetic */ void H() {
-    }
-
-    @Override // org.telegram.ui.Components.ri
-    public final /* synthetic */ void R() {
-    }
-
-    @Override // org.telegram.ui.Components.ri
-    public final /* synthetic */ void z0(ArrayList arrayList, CharSequence charSequence, boolean z10, int i10, int i11, long j10, boolean z11, long j11) {
     }
 }

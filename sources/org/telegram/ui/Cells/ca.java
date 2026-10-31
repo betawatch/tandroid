@@ -1,83 +1,167 @@
 package org.telegram.ui.Cells;
 
-import android.graphics.Canvas;
-import android.text.Layout;
-import org.telegram.messenger.FileLog;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.jj;
+import org.telegram.messenger.k20;
+import org.telegram.messenger.mc;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.CheckBoxBase;
+import org.telegram.ui.Components.bi0;
+import org.telegram.ui.Components.fp;
+import org.telegram.ui.Components.ik0;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.zh;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public class ca extends fa {
-    public final ba p0;
+public final /* synthetic */ class ca implements ik0, rf.l, mc, org.telegram.messenger.j9, fp, k20 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public ca(di.o8 o8Var, org.telegram.ui.ActionBar.u6 u6Var) {
-        this.p0 = o8Var;
-        this.g0 = u6Var;
+    public /* synthetic */ ca(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // org.telegram.ui.Cells.fa
-    public final /* bridge */ /* synthetic */ void L(aa aaVar, aa aaVar2) {
-    }
-
-    public final void W(Canvas canvas) {
-        Layout staticTextLayout = this.p0.getStaticTextLayout();
-        int w02 = org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.Md, this.g0);
-        this.o.setColor(w02);
-        this.p.setColor(w02);
-        h(canvas, staticTextLayout, this.u, this.v, true, true, 0.0f);
-    }
-
-    @Override // org.telegram.ui.Cells.fa
-    public final void i(int i10, v9 v9Var, boolean z10) {
-        v9Var.b = this.p0.getStaticTextLayout();
-        v9Var.c = 0.0f;
-        v9Var.d = 0.0f;
-        v9Var.a = 0;
-    }
-
-    @Override // org.telegram.ui.Cells.fa
-    public final int k(int i10, int i11, int i12, int i13, aa aaVar, boolean z10) {
-        ba baVar = (ba) aaVar;
-        if (i11 < 0) {
-            i11 = 1;
+    @Override // org.telegram.ui.Components.fp
+    public void a() {
+        switch (this.a) {
+            case 4:
+                q4 q4Var = (q4) this.b;
+                float progress = 1.0f - (q4Var.w.getProgress() * 0.143f);
+                org.telegram.ui.Components.g9 g9Var = q4Var.a;
+                g9Var.setScaleX(progress);
+                g9Var.setScaleY(progress);
+                q4Var.invalidate();
+                break;
+            default:
+                h7 h7Var = (h7) this.b;
+                float progress2 = 1.0f - (h7Var.d.getProgress() * 0.143f);
+                org.telegram.ui.Components.g9 g9Var2 = h7Var.a;
+                g9Var2.setScaleX(progress2);
+                g9Var2.setScaleY(progress2);
+                h7Var.invalidate();
+                break;
         }
-        Layout staticTextLayout = baVar.getStaticTextLayout();
-        if (i11 > staticTextLayout.getLineBottom(staticTextLayout.getLineCount() - 1) + 0.0f) {
-            i11 = (int) ((staticTextLayout.getLineBottom(staticTextLayout.getLineCount() - 1) + 0.0f) - 1.0f);
-        }
-        v9 v9Var = this.a0;
-        Layout layout = v9Var.b;
-        if (layout != null) {
-            int i14 = (int) (i10 - v9Var.d);
-            int i15 = 0;
-            while (true) {
-                if (i15 >= layout.getLineCount()) {
-                    i15 = -1;
-                    break;
-                }
-                if (i11 > layout.getLineTop(i15) + i13 && i11 < layout.getLineBottom(i15) + i13) {
-                    break;
-                }
-                i15++;
-            }
-            if (i15 >= 0) {
-                try {
-                    return v9Var.a + layout.getOffsetForHorizontal(i15, i14);
-                } catch (Exception e) {
-                    FileLog.e(e);
-                }
-            }
-        }
-        return -1;
     }
 
-    @Override // org.telegram.ui.Cells.fa
-    public final int m() {
-        Layout staticTextLayout = this.p0.getStaticTextLayout();
-        return staticTextLayout.getLineBottom(0) - staticTextLayout.getLineTop(0);
+    @Override // org.telegram.messenger.k20
+    public Object d(Number number, Object obj) {
+        return (CharSequence) ((zh) this.b).a((Integer) obj);
     }
 
-    @Override // org.telegram.ui.Cells.fa
-    public final CharSequence s(aa aaVar, boolean z10) {
-        return ((ba) aaVar).getText();
+    @Override // org.telegram.ui.Components.ik0
+    public boolean f(int i10, View view) {
+        ga gaVar = (ga) this.b;
+        gaVar.getClass();
+        gaVar.C1(((ThemesHorizontalListCell$InnerThemeView) view).b);
+        return true;
+    }
+
+    @Override // org.telegram.messenger.mc
+    public /* synthetic */ void j(ImageReceiver imageReceiver) {
+        int i10 = this.a;
+    }
+
+    @Override // rf.l
+    public void l(long j10) {
+        ((k) this.b).b(j10);
+    }
+
+    @Override // org.telegram.messenger.mc
+    public void o(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
+        bi0 B;
+        q0 q0Var;
+        int w9;
+        jj jjVar;
+        switch (this.a) {
+            case 2:
+                s0 s0Var = (s0) this.b;
+                if (z10 && (B = s0Var.I.B()) != null) {
+                    jj jjVar2 = s0Var.P0;
+                    if (jjVar2 != null && !jjVar2.m1) {
+                        jjVar2.m1 = true;
+                        B.N(0, false, false);
+                        org.telegram.messenger.i0.g3(new o0(B, 0));
+                        if (jjVar2.l1 || s0Var.L1) {
+                            jjVar2.l1 = false;
+                            s0Var.L1 = false;
+                            try {
+                                s0Var.performHapticFeedback(3, 2);
+                            } catch (Exception unused) {
+                            }
+                            if (s0Var.getContext() instanceof LaunchActivity) {
+                                ((LaunchActivity) s0Var.getContext()).x0.c(false);
+                            }
+                            TLRPC.VideoSize videoSize = s0Var.I1;
+                            if (videoSize != null && (q0Var = s0Var.f1) != null) {
+                                q0Var.t0(s0Var, s0Var.H1, videoSize);
+                                break;
+                            }
+                        }
+                    } else if (B.a0 < 1) {
+                        B.stop();
+                        B.N(B.e[0] - 1, false, false);
+                        break;
+                    }
+                }
+                break;
+            default:
+                s7 s7Var = (s7) this.b;
+                ImageReceiver imageReceiver2 = s7Var.d;
+                ImageReceiver imageReceiver3 = s7Var.c;
+                if (z10 && !z11 && (jjVar = s7Var.n) != null && jjVar.t2() && imageReceiver3.n() != null) {
+                    if (imageReceiver2.n() != null) {
+                        imageReceiver2.n().recycle();
+                    }
+                    imageReceiver2.v0(Utilities.D(imageReceiver3.n(), false));
+                }
+                if (z10 && !z11 && s7Var.w0 && imageReceiver3.n() != null) {
+                    int J0 = org.telegram.messenger.i0.J0(imageReceiver3.n());
+                    s7Var.a = J0;
+                    CheckBoxBase checkBoxBase = s7Var.P;
+                    if (checkBoxBase != null && checkBoxBase.x != (w9 = org.telegram.ui.ActionBar.t6.w(J0, org.telegram.ui.ActionBar.t6.r1(0.25f, -1)))) {
+                        checkBoxBase.x = w9;
+                        checkBoxBase.b();
+                        break;
+                    }
+                }
+                break;
+        }
+    }
+
+    @Override // org.telegram.messenger.mc
+    public /* synthetic */ void q(int i10, Drawable drawable) {
+        int i11 = this.a;
+    }
+
+    @Override // org.telegram.messenger.j9
+    public boolean run() {
+        TLRPC.Message message;
+        n4 n4Var;
+        q1 q1Var = (q1) this.b;
+        jj jjVar = q1Var.O5;
+        if (jjVar == null || (message = jjVar.k) == null) {
+            return false;
+        }
+        if (jjVar.D != 29 || ((n4Var = q1Var.V5) != null && n4Var.i)) {
+            return (message.noforwards && !jj.c3(message)) || q1Var.O5.S4() || q1Var.O5.y2();
+        }
+        return true;
+    }
+
+    private final /* synthetic */ void e(ImageReceiver imageReceiver) {
+    }
+
+    private final /* synthetic */ void g(ImageReceiver imageReceiver) {
+    }
+
+    private final /* synthetic */ void b(int i10, Drawable drawable) {
+    }
+
+    private final /* synthetic */ void c(int i10, Drawable drawable) {
     }
 }

@@ -2,7 +2,7 @@ package b2;
 
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class o {
     public static final o h = new o(1, 2, 3, null, -1, -1);
@@ -21,7 +21,7 @@ public final class o {
     public int g;
 
     static {
-        String str = e2.n0.a;
+        String str = e2.l0.a;
         i = Integer.toString(0, 36);
         j = Integer.toString(1, 36);
         k = Integer.toString(2, 36);
@@ -40,15 +40,15 @@ public final class o {
     }
 
     public static String a(int i10) {
-        return i10 != -1 ? i10 != 1 ? i10 != 2 ? ic.a.i(i10, "Undefined color range ") : "Limited range" : "Full range" : "Unset color range";
+        return i10 != -1 ? i10 != 1 ? i10 != 2 ? i0.a.i(i10, "Undefined color range ") : "Limited range" : "Full range" : "Unset color range";
     }
 
     public static String b(int i10) {
-        return i10 != -1 ? i10 != 6 ? i10 != 1 ? i10 != 2 ? ic.a.i(i10, "Undefined color space ") : "BT601" : "BT709" : "BT2020" : "Unset color space";
+        return i10 != -1 ? i10 != 6 ? i10 != 1 ? i10 != 2 ? i0.a.i(i10, "Undefined color space ") : "BT601" : "BT709" : "BT2020" : "Unset color space";
     }
 
     public static String c(int i10) {
-        return i10 != -1 ? i10 != 10 ? i10 != 1 ? i10 != 2 ? i10 != 3 ? i10 != 6 ? i10 != 7 ? ic.a.i(i10, "Undefined color transfer ") : "HLG" : "ST2084 PQ" : "SDR SMPTE 170M" : "sRGB" : "Linear" : "Gamma 2.2" : "Unset color transfer";
+        return i10 != -1 ? i10 != 10 ? i10 != 1 ? i10 != 2 ? i10 != 3 ? i10 != 6 ? i10 != 7 ? i0.a.i(i10, "Undefined color transfer ") : "HLG" : "ST2084 PQ" : "SDR SMPTE 170M" : "sRGB" : "Linear" : "Gamma 2.2" : "Unset color transfer";
     }
 
     public static boolean e(o oVar) {
@@ -139,9 +139,9 @@ public final class o {
         sb2.append(this.d != null);
         sb2.append(", ");
         int i10 = this.e;
-        sb2.append(i10 != -1 ? a1.g.m(i10, "bit Luma") : "NA");
+        sb2.append(i10 != -1 ? a1.g.k(i10, "bit Luma") : "NA");
         sb2.append(", ");
         int i11 = this.f;
-        return a1.g.s(sb2, i11 != -1 ? a1.g.m(i11, "bit Chroma") : "NA", ")");
+        return a1.g.r(sb2, i11 != -1 ? a1.g.k(i11, "bit Chroma") : "NA", ")");
     }
 }

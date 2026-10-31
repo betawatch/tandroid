@@ -1,128 +1,312 @@
 package org.telegram.ui.Components;
 
 import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Rect;
+import android.graphics.Paint;
+import android.graphics.Path;
 import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLRPC;
+import android.text.Layout;
+import android.view.View;
+import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class iy0 extends Drawable {
-    public final int a;
-    public final int b;
-    public final t5[] c;
-    public final boolean e;
-    public int d = 255;
-    public final RectF f = new RectF();
-    public boolean g = false;
+public final class iy0 {
+    public ky0 a;
+    public hy0 b;
+    public TL_iv.pageTableCell c;
+    public final int d;
+    public int e;
+    public int f;
+    public int g;
+    public int h;
+    public int i;
+    public int j;
+    public int k;
+    public int l;
+    public int m;
+    public int n;
+    public int o;
+    public int p;
+    public int q;
+    public int r = -1;
+    public final /* synthetic */ py0 s;
 
-    public iy0(int i10, ArrayList arrayList, boolean z10) {
-        this.e = z10;
-        int max = (int) Math.max(1.0d, Math.sqrt(arrayList.size()));
-        this.a = max;
-        int min = Math.min(max * max, arrayList.size());
-        this.b = min;
-        this.c = new t5[min];
-        if (!arrayList.isEmpty()) {
-            MessageObject.isAnimatedEmoji((TLRPC.Document) arrayList.get(0));
-        }
-        int i11 = max < 2 ? 1 : 0;
-        for (int i12 = 0; i12 < this.b; i12++) {
-            this.c[i12] = t5.m(i10, i11, (TLRPC.Document) arrayList.get(i12));
-        }
-    }
-
-    public final void a(org.telegram.ui.Cells.s1 s1Var) {
-        for (int i10 = 0; i10 < this.b; i10++) {
-            this.c[i10].o(s1Var);
-        }
-    }
-
-    public final boolean b() {
-        return this.g;
-    }
-
-    public final boolean c(ArrayList arrayList) {
-        t5[] t5VarArr = this.c;
-        if (t5VarArr.length == arrayList.size()) {
-            for (int i10 = 0; i10 < t5VarArr.length; i10++) {
-                TLRPC.Document document = t5VarArr[i10].e;
-                if ((document == null ? 0L : document.id) == ((TLRPC.Document) arrayList.get(i10)).id) {
-                }
-            }
-            return true;
-        }
-        return false;
-    }
-
-    public final void d() {
-        this.g = false;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        t5 t5Var;
-        if (this.d <= 0) {
-            return;
-        }
-        Rect bounds = getBounds();
-        RectF rectF = this.f;
-        rectF.set(bounds);
-        float centerX = rectF.centerX() - (AndroidUtilities.dp(48.0f) / 2.0f);
-        float centerY = rectF.centerY() - (AndroidUtilities.dp(48.0f) / 2.0f);
-        int dp = AndroidUtilities.dp(48.0f);
-        int i10 = this.a;
-        float f7 = dp / i10;
-        float dp2 = AndroidUtilities.dp(48.0f) / i10;
-        canvas.save();
-        canvas.clipRect(centerX, centerY, AndroidUtilities.dp(48.0f) + centerX, AndroidUtilities.dp(48.0f) + centerY);
-        for (int i11 = 0; i11 < i10; i11++) {
-            for (int i12 = 0; i12 < i10; i12++) {
-                int i13 = (i11 * i10) + i12;
-                if (i13 >= 0) {
-                    t5[] t5VarArr = this.c;
-                    if (i13 < t5VarArr.length && (t5Var = t5VarArr[i13]) != null) {
-                        t5Var.setBounds((int) ((i12 * f7) + centerX), (int) ((i11 * dp2) + centerY), (int) (((i12 + 1) * f7) + centerX), (int) (((i11 + 1) * dp2) + centerY));
-                        t5VarArr[i13].setAlpha(this.d);
-                        t5VarArr[i13].setColorFilter(this.e ? org.telegram.ui.ActionBar.y6.w3 : org.telegram.ui.ActionBar.y6.v3);
-                        t5VarArr[i13].draw(canvas);
-                    }
-                }
-            }
-        }
-        canvas.restore();
-    }
-
-    public final void e() {
-        this.g = true;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return AndroidUtilities.dp(48.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return AndroidUtilities.dp(48.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
+    public iy0(py0 py0Var, int i10) {
+        this.s = py0Var;
         this.d = i10;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    public final void a(Canvas canvas, View view, boolean z10) {
+        boolean z11;
+        boolean z12;
+        Paint paint;
+        Paint paint2;
+        RectF rectF;
+        int i10;
+        int i11;
+        int i12;
+        org.telegram.ui.Cells.k9 k9Var;
+        Canvas canvas2 = canvas;
+        if (this.c == null) {
+            return;
+        }
+        int i13 = this.p + this.k;
+        py0 py0Var = this.s;
+        int i14 = py0Var.D;
+        Path path = py0Var.L;
+        oy0 oy0Var = py0Var.O;
+        float[] fArr = py0Var.N;
+        RectF rectF2 = py0Var.M;
+        boolean z13 = i13 == i14;
+        boolean z14 = this.q + this.l == py0Var.E;
+        int L = org.telegram.messenger.i0.L(8.0f);
+        boolean z15 = this.c.header;
+        if (z15 || (py0Var.H && this.a.a.b.a % 2 == 0)) {
+            int i15 = this.p;
+            if (i15 == 0 && this.q == 0) {
+                float f7 = L;
+                fArr[1] = f7;
+                fArr[0] = f7;
+                z11 = true;
+            } else {
+                fArr[1] = 0.0f;
+                fArr[0] = 0.0f;
+                z11 = false;
+            }
+            if (z13 && this.q == 0) {
+                float f10 = L;
+                fArr[3] = f10;
+                fArr[2] = f10;
+                z11 = true;
+            } else {
+                fArr[3] = 0.0f;
+                fArr[2] = 0.0f;
+            }
+            if (z13 && z14) {
+                float f11 = L;
+                fArr[5] = f11;
+                fArr[4] = f11;
+                z11 = true;
+            } else {
+                fArr[5] = 0.0f;
+                fArr[4] = 0.0f;
+            }
+            if (i15 == 0 && z14) {
+                float f12 = L;
+                fArr[7] = f12;
+                fArr[6] = f12;
+                z12 = true;
+            } else {
+                fArr[7] = 0.0f;
+                fArr[6] = 0.0f;
+                z12 = z11;
+            }
+            if (z12) {
+                rectF2.set(i15, this.q, i15 + this.k, r6 + this.l);
+                path.reset();
+                path.addRoundRect(rectF2, fArr, Path.Direction.CW);
+                if (this.c.header) {
+                    canvas2.drawPath(path, oy0Var.getHeaderPaint());
+                } else {
+                    canvas2.drawPath(path, oy0Var.getStripPaint());
+                }
+            } else if (z15) {
+                canvas2.drawRect(i15, this.q, i15 + this.k, r4 + this.l, oy0Var.getHeaderPaint());
+                canvas2 = canvas;
+            } else {
+                canvas2 = canvas;
+                canvas2.drawRect(i15, this.q, this.k + i15, r1 + this.l, oy0Var.getStripPaint());
+            }
+        }
+        if (z10 && this.b != null) {
+            canvas2.save();
+            canvas2.translate(b(), c());
+            if (this.r >= 0 && (k9Var = py0Var.a) != null) {
+                k9Var.Z(canvas2, (org.telegram.ui.Cells.j9) py0Var.getParent().getParent(), this.r);
+            }
+            this.b.d(canvas2, view);
+            canvas2.restore();
+        }
+        if (py0Var.G) {
+            Paint linePaint = oy0Var.getLinePaint();
+            Paint linePaint2 = oy0Var.getLinePaint();
+            float strokeWidth = linePaint.getStrokeWidth() / 2.0f;
+            float strokeWidth2 = linePaint2.getStrokeWidth() / 2.0f;
+            int i16 = this.p;
+            if (i16 == 0) {
+                int i17 = this.q;
+                float f13 = i17;
+                float f14 = this.l + i17;
+                if (i17 == 0) {
+                    f13 += L;
+                }
+                float f15 = f13;
+                if (f14 == py0Var.E) {
+                    f14 -= L;
+                }
+                float f16 = i16 + strokeWidth;
+                canvas2.drawLine(f16, f15, f16, f14, linePaint);
+                paint = linePaint;
+                paint2 = linePaint2;
+            } else {
+                paint = linePaint;
+                float f17 = i16 - strokeWidth2;
+                paint2 = linePaint2;
+                canvas.drawLine(f17, this.q, f17, r1 + this.l, paint2);
+            }
+            int i18 = this.q;
+            if (i18 == 0) {
+                int i19 = this.p;
+                float f18 = i19;
+                float f19 = this.k + i19;
+                if (i19 == 0) {
+                    f18 += L;
+                }
+                float f20 = f18;
+                if (f19 == py0Var.D) {
+                    f19 -= L;
+                }
+                float f21 = i18 + strokeWidth;
+                canvas.drawLine(f20, f21, f19, f21, paint);
+            } else {
+                float f22 = i18 - strokeWidth2;
+                canvas.drawLine(this.p, f22, r2 + this.k, f22, paint2);
+            }
+            float f23 = (this.p + this.k) - strokeWidth;
+            Paint paint3 = paint;
+            canvas.drawLine(f23, (z13 && (i12 = this.q) == 0) ? i12 + L : this.q - strokeWidth, f23, (z13 && z14) ? (this.q + this.l) - L : (this.q + this.l) - strokeWidth, paint3);
+            int i20 = this.p;
+            float f24 = (this.q + this.l) - strokeWidth;
+            canvas.drawLine((i20 == 0 && z14) ? i20 + L : i20 - strokeWidth, f24, (z13 && z14) ? (i20 + this.k) - L : (i20 + this.k) - strokeWidth, f24, paint3);
+            int i21 = this.p;
+            if (i21 == 0 && (i11 = this.q) == 0) {
+                float f25 = i21 + strokeWidth;
+                float f26 = i11 + strokeWidth;
+                float f27 = L * 2;
+                rectF2.set(f25, f26, f25 + f27, f27 + f26);
+                rectF = rectF2;
+                canvas.drawArc(rectF, -180.0f, 90.0f, false, paint3);
+            } else {
+                rectF = rectF2;
+            }
+            if (z13 && (i10 = this.q) == 0) {
+                float f28 = (this.p + this.k) - strokeWidth;
+                float f29 = L * 2;
+                float f30 = i10 + strokeWidth;
+                rectF.set(f28 - f29, f30, f28, f29 + f30);
+                canvas.drawArc(rectF, 0.0f, -90.0f, false, paint3);
+            }
+            int i22 = this.p;
+            if (i22 == 0 && z14) {
+                float f31 = i22 + strokeWidth;
+                float f32 = (this.q + this.l) - strokeWidth;
+                float f33 = L * 2;
+                rectF.set(f31, f32 - f33, f33 + f31, f32);
+                canvas.drawArc(rectF, 180.0f, -90.0f, false, paint3);
+            }
+            if (z13 && z14) {
+                float f34 = (this.p + this.k) - strokeWidth;
+                float f35 = L * 2;
+                float f36 = (this.q + this.l) - strokeWidth;
+                rectF.set(f34 - f35, f36 - f35, f34, f36);
+                canvas.drawArc(rectF, 0.0f, 90.0f, false, paint3);
+            }
+        }
+    }
+
+    public final int b() {
+        return this.p + this.g;
+    }
+
+    public final int c() {
+        return this.q + this.h;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:18:0x002b, code lost:
+    
+        if (r3.align_right == false) goto L22;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void d(int i10, int i11, boolean z10) {
+        this.k = i10;
+        this.l = i11;
+        if (z10) {
+            this.m = i11;
+        }
+        if (this.c != null) {
+            hy0 hy0Var = this.b;
+            if (hy0Var != null) {
+                Layout a2 = hy0Var.a();
+                int lineCount = a2 != null ? a2.getLineCount() : 0;
+                if (!z10) {
+                    if (lineCount <= 1) {
+                        if (lineCount > 0) {
+                            TL_iv.pageTableCell pagetablecell = this.c;
+                            if (!pagetablecell.align_center) {
+                            }
+                        }
+                    }
+                    py0 py0Var = this.s;
+                    e(py0Var.O.c(this.c, this.k - (py0Var.w * 2)));
+                    this.m = this.f + py0Var.r + py0Var.s;
+                }
+                f();
+            }
+            g();
+        }
+    }
+
+    public final void e(hy0 hy0Var) {
+        this.b = hy0Var;
+        Layout a2 = hy0Var != null ? hy0Var.a() : null;
+        int i10 = 0;
+        if (a2 == null) {
+            this.i = 0;
+            this.e = 0;
+            this.f = 0;
+            return;
+        }
+        this.e = 0;
+        this.i = 0;
+        int lineCount = a2.getLineCount();
+        while (i10 < lineCount) {
+            float lineLeft = a2.getLineLeft(i10);
+            this.i = i10 == 0 ? (int) Math.ceil(lineLeft) : Math.min(this.i, (int) Math.ceil(lineLeft));
+            this.e = (int) Math.ceil(Math.max(a2.getLineWidth(i10), this.e));
+            i10++;
+        }
+        this.f = a2.getHeight();
+    }
+
+    public final void f() {
+        int i10 = -this.i;
+        this.g = i10;
+        TL_iv.pageTableCell pagetablecell = this.c;
+        boolean z10 = pagetablecell.align_right;
+        py0 py0Var = this.s;
+        if (z10) {
+            this.g = ((this.k - this.e) - py0Var.w) + i10;
+        } else if (pagetablecell.align_center) {
+            this.g = Math.round((this.k - this.e) / 2.0f) + i10;
+        } else {
+            this.g = i10 + py0Var.w;
+        }
+    }
+
+    public final void g() {
+        TL_iv.pageTableCell pagetablecell = this.c;
+        if (pagetablecell.valign_middle) {
+            this.h = (this.l - this.f) / 2;
+            return;
+        }
+        boolean z10 = pagetablecell.valign_bottom;
+        py0 py0Var = this.s;
+        if (z10) {
+            this.h = (this.l - this.f) - py0Var.s;
+        } else {
+            this.h = py0Var.r;
+        }
     }
 }

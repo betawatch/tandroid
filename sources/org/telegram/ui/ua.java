@@ -1,31 +1,36 @@
 package org.telegram.ui;
 
-import android.view.View;
-import java.util.ArrayList;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ua implements Runnable {
-    public final /* synthetic */ wb a;
-    public final /* synthetic */ ArrayList b;
-    public final /* synthetic */ ArrayList c;
-    public final /* synthetic */ ArrayList d;
-    public final /* synthetic */ View e;
-    public final /* synthetic */ float f;
-    public final /* synthetic */ float h;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ sb b;
 
-    public /* synthetic */ ua(wb wbVar, ArrayList arrayList, ArrayList arrayList2, ArrayList arrayList3, View view, float f7, float f10) {
-        this.a = wbVar;
-        this.b = arrayList;
-        this.c = arrayList2;
-        this.d = arrayList3;
-        this.e = view;
-        this.f = f7;
-        this.h = f10;
+    public /* synthetic */ ua(sb sbVar, int i10) {
+        this.a = i10;
+        this.b = sbVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        wb.W(this.a, this.b, this.c, this.d, this.e, this.f, this.h);
+        switch (this.a) {
+            case 0:
+                sb sbVar = this.b;
+                sbVar.G0 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                sbVar.H0 = -1;
+                sbVar.h1();
+                sbVar.I0 = null;
+                break;
+            case 1:
+                sb sbVar2 = this.b;
+                sbVar2.a1(false);
+                sbVar2.E.f();
+                break;
+            default:
+                this.b.Z0();
+                break;
+        }
     }
 }

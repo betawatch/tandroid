@@ -1,108 +1,161 @@
 package org.telegram.ui.Components;
 
-import android.text.SpannableStringBuilder;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.RequestDelegate;
+import java.util.ArrayList;
+import java.util.Arrays;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ur implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ zr b;
-    public final /* synthetic */ fi.d c;
+public final class ur {
+    public final int a;
+    public String b;
+    public final ArrayList c;
+    public final boolean[] d;
+    public boolean[] e;
+    public boolean f;
+    public final int g;
+    public int h;
+    public int i;
+    public final /* synthetic */ vr j;
 
-    public /* synthetic */ ur(zr zrVar, fi.d dVar, int i10) {
+    public ur(vr vrVar, int i10, ArrayList arrayList) {
+        this.j = vrVar;
         this.a = i10;
-        this.b = zrVar;
-        this.c = dVar;
+        int size = arrayList.size();
+        this.g = size;
+        this.i = 0;
+        if (size > 0) {
+            this.c = arrayList;
+            this.d = new boolean[size];
+            this.f = true;
+            i();
+        }
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(final TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                final int i10 = 0;
-                final zr zrVar = this.b;
-                final fi.d dVar = this.c;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.vr
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i10) {
-                            case 0:
-                                zr zrVar2 = zrVar;
-                                zrVar2.getClass();
-                                dVar.setLoading(false);
-                                TLObject tLObject2 = tLObject;
-                                if (tLObject2 != null && (tLObject2 instanceof TL_phone.groupCallStreamRtmpUrl)) {
-                                    TL_phone.groupCallStreamRtmpUrl groupcallstreamrtmpurl = (TL_phone.groupCallStreamRtmpUrl) tLObject2;
-                                    zrVar2.b0 = groupcallstreamrtmpurl.url;
-                                    zrVar2.c0 = groupcallstreamrtmpurl.key;
-                                    zrVar2.d0 = new SpannableStringBuilder(zrVar2.c0);
-                                    zrVar2.e0.O(true);
-                                    break;
-                                }
-                                break;
-                            default:
-                                zr zrVar3 = zrVar;
-                                zrVar3.getClass();
-                                dVar.setLoading(false);
-                                TLObject tLObject3 = tLObject;
-                                if (tLObject3 instanceof TL_phone.groupCallStreamRtmpUrl) {
-                                    TL_phone.groupCallStreamRtmpUrl groupcallstreamrtmpurl2 = (TL_phone.groupCallStreamRtmpUrl) tLObject3;
-                                    zrVar3.b0 = groupcallstreamrtmpurl2.url;
-                                    zrVar3.c0 = groupcallstreamrtmpurl2.key;
-                                    zrVar3.d0 = new SpannableStringBuilder(zrVar3.c0);
-                                    zrVar3.e0.O(true);
-                                    break;
-                                }
-                                break;
-                        }
-                    }
-                });
+    public final boolean a() {
+        boolean[] zArr;
+        for (int i10 = 0; i10 < this.g; i10++) {
+            if (!this.d[i10] || ((zArr = this.e) != null && !zArr[i10])) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public final void b(org.telegram.messenger.t20 t20Var) {
+        for (int i10 = 0; i10 < this.g; i10++) {
+            boolean[] zArr = this.e;
+            if (zArr == null || zArr[i10]) {
+                t20Var.a(i10, (TLObject) this.c.get(i10));
+            }
+        }
+    }
+
+    public final void c(org.telegram.messenger.t20 t20Var) {
+        boolean[] zArr;
+        for (int i10 = 0; i10 < this.g; i10++) {
+            if (this.d[i10] && ((zArr = this.e) == null || zArr[i10])) {
+                t20Var.a(i10, (TLObject) this.c.get(i10));
+            }
+        }
+    }
+
+    public final boolean d() {
+        return (this.e != null ? this.h : this.g) > 1;
+    }
+
+    public final boolean e() {
+        return (this.e != null ? this.h : this.g) > 0;
+    }
+
+    public final void f() {
+        boolean[] zArr;
+        boolean[] zArr2;
+        boolean z10 = false;
+        int i10 = 0;
+        while (true) {
+            int i11 = this.g;
+            zArr = this.d;
+            if (i10 >= i11) {
                 break;
-            default:
-                final int i11 = 1;
-                final zr zrVar2 = this.b;
-                final fi.d dVar2 = this.c;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.vr
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i11) {
-                            case 0:
-                                zr zrVar22 = zrVar2;
-                                zrVar22.getClass();
-                                dVar2.setLoading(false);
-                                TLObject tLObject2 = tLObject;
-                                if (tLObject2 != null && (tLObject2 instanceof TL_phone.groupCallStreamRtmpUrl)) {
-                                    TL_phone.groupCallStreamRtmpUrl groupcallstreamrtmpurl = (TL_phone.groupCallStreamRtmpUrl) tLObject2;
-                                    zrVar22.b0 = groupcallstreamrtmpurl.url;
-                                    zrVar22.c0 = groupcallstreamrtmpurl.key;
-                                    zrVar22.d0 = new SpannableStringBuilder(zrVar22.c0);
-                                    zrVar22.e0.O(true);
-                                    break;
-                                }
-                                break;
-                            default:
-                                zr zrVar3 = zrVar2;
-                                zrVar3.getClass();
-                                dVar2.setLoading(false);
-                                TLObject tLObject3 = tLObject;
-                                if (tLObject3 instanceof TL_phone.groupCallStreamRtmpUrl) {
-                                    TL_phone.groupCallStreamRtmpUrl groupcallstreamrtmpurl2 = (TL_phone.groupCallStreamRtmpUrl) tLObject3;
-                                    zrVar3.b0 = groupcallstreamrtmpurl2.url;
-                                    zrVar3.c0 = groupcallstreamrtmpurl2.key;
-                                    zrVar3.d0 = new SpannableStringBuilder(zrVar3.c0);
-                                    zrVar3.e0.O(true);
-                                    break;
-                                }
-                                break;
-                        }
-                    }
-                });
+            }
+            if (!zArr[i10] || ((zArr2 = this.e) != null && !zArr2[i10])) {
+                i10++;
+            }
+        }
+        z10 = true;
+        Arrays.fill(zArr, !z10);
+        h();
+        this.j.P1.O(true);
+    }
+
+    public final void g(int i10) {
+        boolean[] zArr = this.e;
+        if (zArr == null || zArr[i10]) {
+            boolean[] zArr2 = this.d;
+            boolean z10 = zArr2[i10];
+            zArr2[i10] = !z10;
+            if (z10) {
+                this.i--;
+            } else {
+                this.i++;
+            }
+            this.j.P1.O(true);
+        }
+    }
+
+    public final void h() {
+        this.i = 0;
+        this.h = 0;
+        for (int i10 = 0; i10 < this.g; i10++) {
+            boolean[] zArr = this.e;
+            boolean[] zArr2 = this.d;
+            if (zArr == null) {
+                if (zArr2[i10]) {
+                    this.i++;
+                }
+            } else if (zArr[i10]) {
+                this.h++;
+                if (zArr2[i10]) {
+                    this.i++;
+                }
+            }
+        }
+    }
+
+    public final void i() {
+        TLObject tLObject;
+        int i10 = this.g;
+        if (i10 == 0) {
+            return;
+        }
+        for (int i11 = 0; i11 < i10; i11++) {
+            boolean[] zArr = this.e;
+            if (zArr == null || zArr[i11]) {
+                tLObject = (TLObject) this.c.get(i11);
                 break;
+            }
+        }
+        tLObject = null;
+        String k10 = tLObject instanceof TLRPC.User ? org.telegram.messenger.h20.k((TLRPC.User) tLObject) : org.telegram.messenger.i5.o(tLObject);
+        int i12 = this.a;
+        if (i12 == 0) {
+            this.b = org.telegram.messenger.cd.L0(2131751503, null);
+            return;
+        }
+        if (i12 == 1) {
+            this.b = d() ? org.telegram.messenger.cd.L0(2131751583, null) : org.telegram.messenger.cd.a0(null, null, 2131751588, k10);
+            return;
+        }
+        if (i12 == 3) {
+            this.b = d() ? org.telegram.messenger.cd.L0(2131751578, null) : org.telegram.messenger.cd.a0(null, null, 2131751579, k10);
+        } else if (i12 == 2) {
+            if (this.j.Y1) {
+                this.b = d() ? org.telegram.messenger.cd.L0(2131751501, null) : org.telegram.messenger.cd.a0(null, null, 2131751502, k10);
+            } else {
+                this.b = d() ? org.telegram.messenger.cd.L0(2131751568, null) : org.telegram.messenger.cd.a0(null, null, 2131751569, k10);
+            }
         }
     }
 }

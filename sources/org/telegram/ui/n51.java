@@ -1,25 +1,29 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class n51 extends tg.c1 {
-    public final /* synthetic */ o51 M;
+public final /* synthetic */ class n51 implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ u61 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n51(o51 o51Var, Context context) {
-        super(context, 2, null);
-        this.M = o51Var;
+    public /* synthetic */ n51(u61 u61Var, int i10) {
+        this.a = i10;
+        this.b = u61Var;
     }
 
-    @Override // android.view.View
-    public final void invalidate() {
-        super.invalidate();
-        o51 o51Var = this.M;
-        if (o51Var.getParent() instanceof View) {
-            ((View) o51Var.getParent()).invalidate();
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                u61.Z(this.b, tLObject);
+                break;
+            default:
+                u61.Y(this.b, tLObject);
+                break;
         }
     }
 }

@@ -1,21 +1,75 @@
 package org.telegram.ui.Components;
 
-import android.view.MotionEvent;
+import android.content.Context;
 import android.view.View;
+import android.view.ViewGroup;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class ta extends View {
-    public int a;
+public abstract class ta extends bb {
+    private sa button;
+    private int childrenMeasuredWidth;
+    org.telegram.ui.ActionBar.p6 resourcesProvider;
+    public pb timerView;
+    private boolean wrapWidth;
 
-    @Override // android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        return false;
+    public ta(Context context, org.telegram.ui.ActionBar.p6 p6Var) {
+        super(context, p6Var);
+        this.resourcesProvider = p6Var;
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(this.a, TLObject.FLAG_30));
+    public sa getButton() {
+        return this.button;
+    }
+
+    @Override // android.view.ViewGroup
+    public void measureChildWithMargins(View view, int i10, int i11, int i12, int i13) {
+        sa saVar = this.button;
+        if (saVar != null && view != saVar) {
+            i11 = org.telegram.messenger.z20.D(12.0f, saVar.getMeasuredWidth(), i11);
+        }
+        super.measureChildWithMargins(view, i10, i11, i12, i13);
+        if (view != this.button) {
+            ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
+            this.childrenMeasuredWidth = Math.max(this.childrenMeasuredWidth, view.getMeasuredWidth() + marginLayoutParams.leftMargin + marginLayoutParams.rightMargin);
+        }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public void onMeasure(int i10, int i11) {
+        this.childrenMeasuredWidth = 0;
+        if (this.wrapWidth) {
+            i10 = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_31);
+        }
+        super.onMeasure(i10, i11);
+        if (this.button == null || View.MeasureSpec.getMode(i10) != Integer.MIN_VALUE) {
+            return;
+        }
+        setMeasuredDimension(this.button.getMeasuredWidth() + this.childrenMeasuredWidth, getMeasuredHeight());
+    }
+
+    public void setButton(sa saVar) {
+        sa saVar2 = this.button;
+        if (saVar2 != null) {
+            removeCallback(saVar2);
+            removeView(this.button);
+        }
+        this.button = saVar;
+        if (saVar != null) {
+            addCallback(saVar);
+            addView(saVar, 0, w7.b6.h(-2.0f, -2.0f, 8388629));
+        }
+    }
+
+    public void setTimer() {
+        pb pbVar = new pb(getContext(), this.resourcesProvider);
+        this.timerView = pbVar;
+        pbVar.b = 5000L;
+        addView(pbVar, w7.b6.i(20.0f, 20.0f, 8388627, 21.0f, 0.0f, 21.0f, 0.0f));
+    }
+
+    public void setWrapWidth() {
+        this.wrapWidth = true;
     }
 }

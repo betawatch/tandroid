@@ -1,53 +1,186 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+import java.nio.charset.Charset;
+import java.util.ArrayList;
+import java.util.List;
+
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class x1 extends c5 {
+public final class x1 extends d5 {
     private static final x1 zzb;
     private int zzd;
-    private int zze;
-    private int zzf;
+    private j2 zze;
+    private long zzf;
     private int zzg;
-    private int zzh;
+    private i5 zzh;
+    private i5 zzi;
+    private i5 zzj;
+    private i5 zzk;
 
     static {
         x1 x1Var = new x1();
         zzb = x1Var;
-        c5.e(x1.class, x1Var);
+        d5.e(x1.class, x1Var);
+    }
+
+    public x1() {
+        d6 d6Var = d6.d;
+        this.zzh = d6Var;
+        this.zzi = d6Var;
+        this.zzj = d6Var;
+        this.zzk = d6Var;
     }
 
     public static w1 l() {
         return (w1) zzb.j();
     }
 
-    public static /* synthetic */ void m(x1 x1Var, int i10) {
-        x1Var.zzd |= 2;
-        x1Var.zzf = i10;
-    }
-
-    public static /* synthetic */ void n(x1 x1Var, int i10) {
-        x1Var.zzd |= 4;
-        x1Var.zzg = i10;
-    }
-
-    public static /* synthetic */ void o(x1 x1Var, int i10) {
-        x1Var.zzd |= 8;
-        x1Var.zzh = i10;
-    }
-
-    public static /* synthetic */ void p(x1 x1Var, int i10) {
-        x1Var.zze = i10 - 1;
+    public static /* synthetic */ void m(x1 x1Var, j2 j2Var) {
+        x1Var.zze = j2Var;
         x1Var.zzd |= 1;
     }
 
-    @Override // com.google.android.gms.internal.cast.c5
-    public final Object h(int i10, c5 c5Var) {
+    public static /* synthetic */ void n(x1 x1Var, long j10) {
+        x1Var.zzd |= 2;
+        x1Var.zzf = j10;
+    }
+
+    public static void o(x1 x1Var, ArrayList arrayList) {
+        i5 i5Var = x1Var.zzh;
+        if (!((s4) i5Var).a) {
+            x1Var.zzh = d5.b(i5Var);
+        }
+        List list = x1Var.zzh;
+        Charset charset = j5.a;
+        if (list instanceof ArrayList) {
+            ((ArrayList) list).ensureCapacity(arrayList.size() + list.size());
+        }
+        int size = list.size();
+        int size2 = arrayList.size();
+        int i10 = 0;
+        while (i10 < size2) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            if (obj == null) {
+                String j10 = i0.a.j(list.size() - size, "Element at index ", " is null.");
+                int size3 = list.size();
+                while (true) {
+                    size3--;
+                    if (size3 < size) {
+                        throw new NullPointerException(j10);
+                    }
+                    list.remove(size3);
+                }
+            } else {
+                list.add(obj);
+            }
+        }
+    }
+
+    public static void p(x1 x1Var, ArrayList arrayList) {
+        i5 i5Var = x1Var.zzi;
+        if (!((s4) i5Var).a) {
+            x1Var.zzi = d5.b(i5Var);
+        }
+        List list = x1Var.zzi;
+        Charset charset = j5.a;
+        if (list instanceof ArrayList) {
+            ((ArrayList) list).ensureCapacity(arrayList.size() + list.size());
+        }
+        int size = list.size();
+        int size2 = arrayList.size();
+        int i10 = 0;
+        while (i10 < size2) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            if (obj == null) {
+                String j10 = i0.a.j(list.size() - size, "Element at index ", " is null.");
+                int size3 = list.size();
+                while (true) {
+                    size3--;
+                    if (size3 < size) {
+                        throw new NullPointerException(j10);
+                    }
+                    list.remove(size3);
+                }
+            } else {
+                list.add(obj);
+            }
+        }
+    }
+
+    public static void q(x1 x1Var, ArrayList arrayList) {
+        i5 i5Var = x1Var.zzj;
+        if (!((s4) i5Var).a) {
+            x1Var.zzj = d5.b(i5Var);
+        }
+        List list = x1Var.zzj;
+        Charset charset = j5.a;
+        if (list instanceof ArrayList) {
+            ((ArrayList) list).ensureCapacity(arrayList.size() + list.size());
+        }
+        int size = list.size();
+        int size2 = arrayList.size();
+        int i10 = 0;
+        while (i10 < size2) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            if (obj == null) {
+                String j10 = i0.a.j(list.size() - size, "Element at index ", " is null.");
+                int size3 = list.size();
+                while (true) {
+                    size3--;
+                    if (size3 < size) {
+                        throw new NullPointerException(j10);
+                    }
+                    list.remove(size3);
+                }
+            } else {
+                list.add(obj);
+            }
+        }
+    }
+
+    public static void r(x1 x1Var, ArrayList arrayList) {
+        i5 i5Var = x1Var.zzk;
+        if (!((s4) i5Var).a) {
+            x1Var.zzk = d5.b(i5Var);
+        }
+        List list = x1Var.zzk;
+        Charset charset = j5.a;
+        if (list instanceof ArrayList) {
+            ((ArrayList) list).ensureCapacity(arrayList.size() + list.size());
+        }
+        int size = list.size();
+        int size2 = arrayList.size();
+        int i10 = 0;
+        while (i10 < size2) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            if (obj == null) {
+                String j10 = i0.a.j(list.size() - size, "Element at index ", " is null.");
+                int size3 = list.size();
+                while (true) {
+                    size3--;
+                    if (size3 < size) {
+                        throw new NullPointerException(j10);
+                    }
+                    list.remove(size3);
+                }
+            } else {
+                list.add(obj);
+            }
+        }
+    }
+
+    @Override // com.google.android.gms.internal.cast.d5
+    public final Object h(int i10, d5 d5Var) {
         int i11 = i10 - 1;
         if (i11 == 0) {
             return (byte) 1;
         }
         if (i11 == 2) {
-            return new d6(zzb, "\u0001\u0004\u0000\u0001\u0001\u0004\u0004\u0000\u0000\u0000\u0001᠌\u0000\u0002င\u0001\u0003င\u0002\u0004င\u0003", new Object[]{"zzd", "zze", w0.t, "zzf", "zzg", "zzh"});
+            return new e6(zzb, "\u0001\u0007\u0000\u0001\u0001\u0007\u0007\u0000\u0004\u0000\u0001ဉ\u0000\u0002စ\u0001\u0003᠌\u0002\u0004\u001b\u0005\u001b\u0006\u001b\u0007\u001b", new Object[]{"zzd", "zze", "zzf", "zzg", y0.v, "zzh", v1.class, "zzi", t1.class, "zzj", b2.class, "zzk", z1.class});
         }
         if (i11 == 3) {
             return new x1();

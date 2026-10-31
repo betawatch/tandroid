@@ -1,112 +1,257 @@
 package bi;
 
-import android.app.Activity;
-import android.text.SpannableStringBuilder;
+import android.graphics.BitmapFactory;
+import android.text.TextUtils;
 import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.ds;
-import org.telegram.ui.ah;
-import org.telegram.ui.jj;
-import org.telegram.ui.wn;
+import org.telegram.messenger.b8;
+import org.telegram.messenger.us;
+import org.telegram.messenger.zs;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class l5 implements Utilities.Callback {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ Object d;
+public final class l5 implements us {
+    public int D;
+    public volatile String E;
+    public String F;
+    public TLRPC.InputFile G;
+    public boolean H;
+    public final int a;
+    public final String b;
+    public final boolean c;
+    public final boolean d;
+    public final boolean e;
+    public final int f;
+    public final int h;
+    public final int n;
+    public final TLRPC.Document r;
+    public final k5 s;
+    public boolean w;
+    public boolean x;
+    public boolean y;
 
-    public /* synthetic */ l5(Object obj, long j10, long j11, int i10) {
+    public l5(int i10, String str, boolean z10, int i11, int i12, int i13, p3 p3Var) {
         this.a = i10;
-        this.d = obj;
-        this.b = j10;
-        this.c = j11;
+        this.b = str;
+        this.c = z10;
+        this.d = false;
+        this.e = false;
+        this.f = i11;
+        this.h = i12;
+        this.n = i13;
+        this.r = null;
+        this.s = p3Var;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:38:0x0104 A[LOOP:1: B:36:0x0100->B:38:0x0104, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:42:0x0138  */
-    @Override // org.telegram.messenger.Utilities.Callback
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run(Object obj) {
-        SpannableStringBuilder spannableStringBuilder;
-        int size;
-        int i10;
-        org.telegram.ui.ActionBar.u6 u6Var;
-        int i11 = this.a;
-        Object obj2 = this.d;
-        switch (i11) {
-            case 0:
-                z5 z5Var = (z5) obj2;
-                ArrayList arrayList = (ArrayList) obj;
-                org.telegram.ui.Components.b6 b6Var = z5Var.E;
-                if (this.b == this.c) {
-                    z5Var.d0 = arrayList;
-                    b6Var.animate().alpha(z5Var.s ? 0.0f : z5Var.d0 != null ? 1.0f : 0.25f).setInterpolator(ds.h).setDuration(420L).start();
-                    ArrayList arrayList2 = new ArrayList();
-                    for (int i12 = 0; i12 < arrayList.size(); i12++) {
-                        if ((arrayList.get(i12) instanceof TL_stars.starGiftAttributeModel) && !(((TL_stars.StarGiftAttribute) arrayList.get(i12)).rarity instanceof TL_stars.TL_starGiftAttributeRarity)) {
-                            arrayList2.add((TL_stars.starGiftAttributeModel) arrayList.get(i12));
-                            if (arrayList2.size() >= 3) {
-                                spannableStringBuilder = new SpannableStringBuilder();
-                                size = arrayList2.size();
-                                i10 = 0;
-                                while (i10 < size) {
-                                    Object obj3 = arrayList2.get(i10);
-                                    i10++;
-                                    spannableStringBuilder.append((CharSequence) "x");
-                                    spannableStringBuilder.setSpan(new org.telegram.ui.Components.c6(((TL_stars.starGiftAttributeModel) obj3).document, b6Var.getPaint().getFontMetricsInt()), spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
-                                    spannableStringBuilder.append((CharSequence) " ");
-                                }
-                                if (spannableStringBuilder.length() > 0) {
-                                    spannableStringBuilder.append((CharSequence) " ");
-                                }
-                                spannableStringBuilder.append(AndroidUtilities.replaceArrows(LocaleController.getString(R.string.GiftCraftViewAllVariants), false, AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f)));
-                                b6Var.setText(spannableStringBuilder);
-                                break;
+    public final void a(String str) {
+        if (this.x || this.y) {
+            return;
+        }
+        this.E = str;
+        zs f7 = zs.f(this.a);
+        f7.b(this, zs.U1);
+        f7.b(this, zs.V1);
+        f7.b(this, zs.W1);
+        b8.G(this.a).i0(false, this.c ? 33554432 : this.d ? ConnectionsManager.FileTypeAudio : this.e ? 67108864 : 16777216, this.E, (this.c || this.d || this.e) ? false : true);
+    }
+
+    public final void b() {
+        if (this.y || this.x) {
+            return;
+        }
+        this.x = true;
+        try {
+            if (this.E != null) {
+                b8.G(this.a).b(this.E, false);
+            }
+        } catch (Throwable unused) {
+        }
+        if (this.D != 0) {
+            ConnectionsManager.getInstance(this.a).cancelRequest(this.D, true);
+            this.D = 0;
+        }
+        e();
+    }
+
+    public final void c(TLRPC.InputFile inputFile, TLRPC.InputFile inputFile2) {
+        String str;
+        TLRPC.TL_messages_uploadMedia tL_messages_uploadMedia = new TLRPC.TL_messages_uploadMedia();
+        tL_messages_uploadMedia.peer = new TLRPC.TL_inputPeerSelf();
+        if (this.c) {
+            TLRPC.TL_inputMediaUploadedDocument tL_inputMediaUploadedDocument = new TLRPC.TL_inputMediaUploadedDocument();
+            tL_inputMediaUploadedDocument.file = inputFile;
+            tL_inputMediaUploadedDocument.mime_type = "video/mp4";
+            TLRPC.TL_documentAttributeVideo tL_documentAttributeVideo = new TLRPC.TL_documentAttributeVideo();
+            tL_documentAttributeVideo.supports_streaming = true;
+            tL_documentAttributeVideo.duration = this.n;
+            tL_documentAttributeVideo.w = this.f;
+            tL_documentAttributeVideo.h = this.h;
+            tL_inputMediaUploadedDocument.attributes.add(tL_documentAttributeVideo);
+            tL_messages_uploadMedia.media = tL_inputMediaUploadedDocument;
+        } else {
+            boolean z10 = this.d;
+            boolean z11 = this.e;
+            if (z10 || z11) {
+                TLRPC.TL_inputMediaUploadedDocument tL_inputMediaUploadedDocument2 = new TLRPC.TL_inputMediaUploadedDocument();
+                tL_inputMediaUploadedDocument2.file = inputFile;
+                TLRPC.Document document = this.r;
+                if (z11) {
+                    str = "application/octet-stream";
+                } else if (document == null || (str = document.mime_type) == null) {
+                    str = "audio/mpeg";
+                }
+                tL_inputMediaUploadedDocument2.mime_type = str;
+                if (document != null) {
+                    if (z11) {
+                        ArrayList<TLRPC.DocumentAttribute> arrayList = document.attributes;
+                        int size = arrayList.size();
+                        int i10 = 0;
+                        while (i10 < size) {
+                            TLRPC.DocumentAttribute documentAttribute = arrayList.get(i10);
+                            i10++;
+                            TLRPC.DocumentAttribute documentAttribute2 = documentAttribute;
+                            if (documentAttribute2 instanceof TLRPC.TL_documentAttributeFilename) {
+                                tL_inputMediaUploadedDocument2.attributes.add(documentAttribute2);
                             }
                         }
+                    } else {
+                        tL_inputMediaUploadedDocument2.attributes.addAll(document.attributes);
                     }
-                    spannableStringBuilder = new SpannableStringBuilder();
-                    size = arrayList2.size();
-                    i10 = 0;
-                    while (i10 < size) {
-                    }
-                    if (spannableStringBuilder.length() > 0) {
-                    }
-                    spannableStringBuilder.append(AndroidUtilities.replaceArrows(LocaleController.getString(R.string.GiftCraftViewAllVariants), false, AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f)));
-                    b6Var.setText(spannableStringBuilder);
                 }
-                break;
-            case 1:
-                wn.m1((wn) obj2, this.b, this.c, (Long) obj);
-                break;
-            default:
-                jj jjVar = (jj) obj2;
-                Long l4 = (Long) obj;
-                wn wnVar = jjVar.b;
-                if (wnVar.getParentActivity() != null) {
-                    Activity parentActivity = wnVar.getParentActivity();
-                    String string = LocaleController.getString(R.string.RemoveMessageFeeTitle);
-                    int i13 = ChatObject.isMonoForum(wnVar.e) ? R.string.RemoveMessageFeeMessageChannel : R.string.RemoveMessageFeeMessage;
-                    long j10 = this.b;
-                    SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.formatString(i13, DialogObject.getShortName(j10)));
-                    String formatPluralStringComma = l4.longValue() > 0 ? LocaleController.formatPluralStringComma("RemoveMessageFeeRefund", (int) l4.longValue()) : null;
-                    String string2 = LocaleController.getString(R.string.Confirm);
-                    ah ahVar = new ah(jjVar, j10, this.c, l4, 1);
-                    u6Var = ((org.telegram.ui.ActionBar.r2) wnVar).resourceProvider;
-                    org.telegram.ui.Components.g5.h0(parentActivity, string, replaceTags, formatPluralStringComma, string2, ahVar, u6Var, true);
-                    break;
+                if (z11) {
+                    tL_inputMediaUploadedDocument2.force_file = true;
+                    if (inputFile2 != null) {
+                        tL_inputMediaUploadedDocument2.thumb = inputFile2;
+                        tL_inputMediaUploadedDocument2.flags |= 4;
+                    }
                 }
-                break;
+                tL_messages_uploadMedia.media = tL_inputMediaUploadedDocument2;
+            } else {
+                TLRPC.TL_inputMediaUploadedPhoto tL_inputMediaUploadedPhoto = new TLRPC.TL_inputMediaUploadedPhoto();
+                tL_inputMediaUploadedPhoto.file = inputFile;
+                tL_messages_uploadMedia.media = tL_inputMediaUploadedPhoto;
+            }
         }
+        this.D = ConnectionsManager.getInstance(this.a).sendRequest(tL_messages_uploadMedia, new ag.c(this, 7));
+    }
+
+    public final void d() {
+        int i10;
+        int i11;
+        if (this.w || this.x || this.y) {
+            return;
+        }
+        this.w = true;
+        if (this.c) {
+            k5 k5Var = this.s;
+            int i12 = this.f;
+            if (i12 > 0 && (i11 = this.h) > 0) {
+                k5Var.b(i12, i11);
+            }
+            a(this.b);
+            return;
+        }
+        if (this.e) {
+            Utilities.e.c(new j5(this, 0));
+            return;
+        }
+        if (this.d) {
+            a(this.b);
+            return;
+        }
+        try {
+            BitmapFactory.Options options = new BitmapFactory.Options();
+            options.inJustDecodeBounds = true;
+            BitmapFactory.decodeFile(this.b, options);
+            int i13 = options.outWidth;
+            if (i13 > 0 && (i10 = options.outHeight) > 0) {
+                this.s.b(i13, i10);
+            }
+        } catch (Exception unused) {
+        }
+        Utilities.e.c(new j5(this, 1));
+    }
+
+    @Override // org.telegram.messenger.us
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        TLRPC.InputFile inputFile;
+        if (i11 != this.a || this.x || this.y) {
+            return;
+        }
+        String str = (String) objArr[0];
+        if (this.E == null || !this.E.equals(str)) {
+            return;
+        }
+        if (i10 == zs.U1) {
+            TLRPC.InputFile inputFile2 = (TLRPC.InputFile) objArr[1];
+            if (this.e && !this.H && !TextUtils.isEmpty(this.F)) {
+                this.G = inputFile2;
+                this.H = true;
+                this.E = this.F;
+                b8.G(this.a).i0(false, 16777216, this.E, true);
+                return;
+            }
+            if (this.e && this.H) {
+                c(this.G, inputFile2);
+                return;
+            } else {
+                c(inputFile2, null);
+                return;
+            }
+        }
+        if (i10 == zs.V1) {
+            if (this.e && this.H && (inputFile = this.G) != null) {
+                c(inputFile, null);
+                return;
+            }
+            this.y = true;
+            e();
+            this.s.a();
+            return;
+        }
+        if (i10 == zs.W1) {
+            long longValue = ((Long) objArr[1]).longValue();
+            long longValue2 = ((Long) objArr[2]).longValue();
+            k5 k5Var = this.s;
+            if (this.H) {
+                return;
+            }
+            k5Var.g(longValue2 > 0 ? longValue / longValue2 : 0.0f);
+        }
+    }
+
+    public final void e() {
+        zs f7 = zs.f(this.a);
+        f7.n(this, zs.U1);
+        f7.n(this, zs.V1);
+        f7.n(this, zs.W1);
+    }
+
+    public l5(int i10, String str, TLRPC.Document document, o3 o3Var) {
+        this.a = i10;
+        this.b = str;
+        this.c = false;
+        this.d = true;
+        this.e = false;
+        this.f = 0;
+        this.h = 0;
+        this.n = 0;
+        this.r = document;
+        this.s = o3Var;
+    }
+
+    public l5(int i10, String str, TLRPC.Document document, n3 n3Var) {
+        this.a = i10;
+        this.b = str;
+        this.c = false;
+        this.d = false;
+        this.e = true;
+        this.f = 0;
+        this.h = 0;
+        this.n = 0;
+        this.r = document;
+        this.s = n3Var;
     }
 }

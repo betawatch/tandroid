@@ -1,16 +1,14 @@
 package o2;
 
 import android.text.TextUtils;
+import b2.v0;
 import b2.w;
 import b2.w0;
-import b2.x0;
-import c3.j0;
 import e2.k0;
-import e2.n0;
 import e2.x;
-import f9.g0;
-import f9.i0;
-import f9.s1;
+import e9.l0;
+import e9.n0;
+import e9.x1;
 import java.math.RoundingMode;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
@@ -18,7 +16,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class t implements c3.o {
     public static final Pattern i = Pattern.compile("LOCAL:([^,]+)");
@@ -42,14 +40,14 @@ public final class t implements c3.o {
     @Override // c3.o
     public final boolean a(c3.p pVar) {
         c3.l lVar = (c3.l) pVar;
-        lVar.h(this.g, 0, 6, false);
+        lVar.j(this.g, 0, 6, false);
         byte[] bArr = this.g;
         x xVar = this.c;
         xVar.L(6, bArr);
         if (i4.i.a(xVar)) {
             return true;
         }
-        lVar.h(this.g, 6, 3, false);
+        lVar.j(this.g, 6, 3, false);
         xVar.L(9, this.g);
         return i4.i.a(xVar);
     }
@@ -57,10 +55,10 @@ public final class t implements c3.o {
     @Override // c3.o
     public final void c(c3.q qVar) {
         if (this.e) {
-            qVar = new c2.b(qVar, this.d);
+            qVar = new ac.a(qVar, this.d);
         }
         this.f = qVar;
-        qVar.D1(new c3.t(-9223372036854775807L));
+        qVar.G1(new c3.t(-9223372036854775807L));
     }
 
     @Override // c3.o
@@ -70,8 +68,8 @@ public final class t implements c3.o {
 
     @Override // c3.o
     public final List e() {
-        g0 g0Var = i0.b;
-        return s1.e;
+        l0 l0Var = n0.b;
+        return x1.e;
     }
 
     @Override // c3.o
@@ -128,25 +126,25 @@ public final class t implements c3.o {
                 String group = matcher.group(1);
                 group.getClass();
                 long c10 = i4.i.c(group);
-                String str = n0.a;
-                long b10 = this.b.b(n0.a0((j10 + c10) - j11, 90000L, 1000000L, RoundingMode.DOWN) % 8589934592L);
-                j0 g7 = g(b10 - c10);
+                String str = e2.l0.a;
+                long b10 = this.b.b(e2.l0.a0((j10 + c10) - j11, 90000L, 1000000L, RoundingMode.DOWN) % 8589934592L);
+                c3.k0 g10 = g(b10 - c10);
                 byte[] bArr3 = this.g;
                 int i13 = this.h;
                 x xVar2 = this.c;
                 xVar2.L(i13, bArr3);
-                g7.d(this.h, xVar2);
-                g7.c(b10, 1, this.h, 0, null);
+                g10.d(this.h, xVar2);
+                g10.c(b10, 1, this.h, 0, null);
                 return -1;
             }
             if (n11.startsWith("X-TIMESTAMP-MAP")) {
                 Matcher matcher3 = i.matcher(n11);
                 if (!matcher3.find()) {
-                    throw x0.a(null, "X-TIMESTAMP-MAP doesn't contain local timestamp: ".concat(n11));
+                    throw w0.a(null, "X-TIMESTAMP-MAP doesn't contain local timestamp: ".concat(n11));
                 }
                 Matcher matcher4 = j.matcher(n11);
                 if (!matcher4.find()) {
-                    throw x0.a(null, "X-TIMESTAMP-MAP doesn't contain media timestamp: ".concat(n11));
+                    throw w0.a(null, "X-TIMESTAMP-MAP doesn't contain media timestamp: ".concat(n11));
                 }
                 String group2 = matcher3.group(1);
                 group2.getClass();
@@ -154,22 +152,22 @@ public final class t implements c3.o {
                 String group3 = matcher4.group(1);
                 group3.getClass();
                 long parseLong = Long.parseLong(group3);
-                String str2 = n0.a;
-                j10 = n0.a0(parseLong, 1000000L, 90000L, RoundingMode.DOWN);
+                String str2 = e2.l0.a;
+                j10 = e2.l0.a0(parseLong, 1000000L, 90000L, RoundingMode.DOWN);
             }
             n11 = xVar.n(StandardCharsets.UTF_8);
         }
     }
 
-    public final j0 g(long j10) {
-        j0 F1 = this.f.F1(0, 3);
+    public final c3.k0 g(long j10) {
+        c3.k0 I1 = this.f.I1(0, 3);
         w wVar = new w();
-        wVar.r = w0.n("text/vtt");
+        wVar.r = v0.n("text/vtt");
         wVar.d = this.a;
         wVar.w = j10;
-        ic.a.u(wVar, F1);
+        i0.a.r(wVar, I1);
         this.f.Q0();
-        return F1;
+        return I1;
     }
 
     @Override // c3.o

@@ -1,36 +1,31 @@
 package org.telegram.messenger.voip;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.x50;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final /* synthetic */ class k0 implements RequestDelegate {
+public final /* synthetic */ class k0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate d;
+    public final /* synthetic */ VoIPService b;
+    public final /* synthetic */ TLRPC.TL_error c;
 
-    public /* synthetic */ k0(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, int i10, boolean z10, int i11) {
-        this.a = i11;
-        this.d = notificationCenterDelegate;
-        this.b = i10;
-        this.c = z10;
+    public /* synthetic */ k0(VoIPService voIPService, TLRPC.TL_error tL_error, int i10) {
+        this.a = i10;
+        this.b = voIPService;
+        this.c = tL_error;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ((VoIPService) this.d).lambda$startGroupCall$29(this.b, this.c, tLObject, tL_error);
+                this.b.lambda$startGroupCall$28(this.c);
+                break;
+            case 1:
+                this.b.lambda$startGroupCall$22(this.c);
                 break;
             default:
-                x50 x50Var = (x50) this.d;
-                AndroidUtilities.runOnUIThread(new j0(this.b, 6, x50Var, tLObject, this.c));
+                this.b.lambda$startScreenCapture$59(this.c);
                 break;
         }
     }

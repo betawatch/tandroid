@@ -1,12 +1,94 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.LocaleController;
+import android.animation.TimeInterpolator;
+import android.os.SystemClock;
+import android.view.View;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class w4 extends nd0 {
-    @Override // org.telegram.ui.Components.nd0
-    public final CharSequence d(int i10) {
-        return LocaleController.formatPluralString("Minutes", i10, new Object[0]);
+public final class w4 {
+    public final View a;
+    public final Runnable b;
+    public int c;
+    public int d;
+    public boolean e;
+    public final long f;
+    public final TimeInterpolator g;
+    public boolean h;
+    public long i;
+    public int j;
+
+    public w4(View view) {
+        this.f = 200L;
+        this.g = gr.f;
+        this.a = view;
+        this.e = true;
+    }
+
+    public final int a(int i10, boolean z10) {
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        long j10 = this.f;
+        if (z10 || j10 <= 0 || this.e) {
+            this.d = i10;
+            this.c = i10;
+            this.h = false;
+            this.e = false;
+        } else if (this.d != i10) {
+            this.h = true;
+            this.d = i10;
+            this.j = this.c;
+            this.i = elapsedRealtime;
+        }
+        if (this.h) {
+            float a2 = w7.u.a((elapsedRealtime - this.i) / j10, 0.0f, 1.0f);
+            if (elapsedRealtime - this.i >= 0) {
+                TimeInterpolator timeInterpolator = this.g;
+                if (timeInterpolator == null) {
+                    this.c = i0.b.f(a2, this.j, this.d);
+                } else {
+                    this.c = i0.b.f(timeInterpolator.getInterpolation(a2), this.j, this.d);
+                }
+            }
+            if (a2 >= 1.0f) {
+                this.h = false;
+            } else {
+                View view = this.a;
+                if (view != null) {
+                    view.invalidate();
+                }
+                Runnable runnable = this.b;
+                if (runnable != null) {
+                    runnable.run();
+                }
+            }
+        }
+        return this.c;
+    }
+
+    public w4(View view, long j10, TimeInterpolator timeInterpolator) {
+        this.f = 200L;
+        gr grVar = gr.f;
+        this.a = view;
+        this.f = j10;
+        this.g = timeInterpolator;
+        this.e = true;
+    }
+
+    public w4(View view, long j10, TimeInterpolator timeInterpolator, int i10) {
+        this.f = 200L;
+        gr grVar = gr.f;
+        this.a = view;
+        this.f = j10;
+        this.g = timeInterpolator;
+        this.e = true;
+    }
+
+    public w4(Runnable runnable, long j10, TimeInterpolator timeInterpolator) {
+        this.f = 200L;
+        gr grVar = gr.f;
+        this.b = runnable;
+        this.f = j10;
+        this.g = timeInterpolator;
+        this.e = true;
     }
 }

@@ -1,7 +1,5 @@
 package com.google.android.gms.auth.api.signin;
 
-import a6.e;
-import a8.df;
 import android.net.Uri;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -11,16 +9,18 @@ import com.google.android.gms.common.internal.ReflectedParcelable;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
-import o6.l;
+import n6.l;
+import o6.a;
 import org.json.JSONArray;
 import org.json.JSONObject;
-import p6.a;
+import w7.h0;
+import z5.d;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 @Deprecated
 /* loaded from: classes.dex */
 public class GoogleSignInAccount extends a implements ReflectedParcelable {
-    public static final Parcelable.Creator<GoogleSignInAccount> CREATOR = new e(0);
+    public static final Parcelable.Creator<GoogleSignInAccount> CREATOR = new d(0);
     public final int a;
     public final String b;
     public final String c;
@@ -31,9 +31,9 @@ public class GoogleSignInAccount extends a implements ReflectedParcelable {
     public final long n;
     public final String r;
     public final List s;
-    public final String v;
     public final String w;
-    public final HashSet x = new HashSet();
+    public final String x;
+    public final HashSet y = new HashSet();
 
     public GoogleSignInAccount(int i10, String str, String str2, String str3, String str4, Uri uri, String str5, long j10, String str6, ArrayList arrayList, String str7, String str8) {
         this.a = i10;
@@ -46,8 +46,8 @@ public class GoogleSignInAccount extends a implements ReflectedParcelable {
         this.n = j10;
         this.r = str6;
         this.s = arrayList;
-        this.v = str7;
-        this.w = str8;
+        this.w = str7;
+        this.x = str8;
     }
 
     public static GoogleSignInAccount b(String str) {
@@ -71,7 +71,7 @@ public class GoogleSignInAccount extends a implements ReflectedParcelable {
         String optString6 = jSONObject.has("givenName") ? jSONObject.optString("givenName") : null;
         String optString7 = jSONObject.has("familyName") ? jSONObject.optString("familyName") : null;
         String string = jSONObject.getString("obfuscatedIdentifier");
-        l.f(string);
+        l.e(string);
         GoogleSignInAccount googleSignInAccount = new GoogleSignInAccount(3, optString2, optString3, optString4, optString5, parse, null, parseLong, string, new ArrayList(hashSet), optString6, optString7);
         googleSignInAccount.h = jSONObject.has("serverAuthCode") ? jSONObject.optString("serverAuthCode") : null;
         return googleSignInAccount;
@@ -92,36 +92,36 @@ public class GoogleSignInAccount extends a implements ReflectedParcelable {
             return false;
         }
         HashSet hashSet = new HashSet(googleSignInAccount.s);
-        hashSet.addAll(googleSignInAccount.x);
+        hashSet.addAll(googleSignInAccount.y);
         HashSet hashSet2 = new HashSet(this.s);
-        hashSet2.addAll(this.x);
+        hashSet2.addAll(this.y);
         return hashSet.equals(hashSet2);
     }
 
     public final int hashCode() {
         int hashCode = this.r.hashCode() + 527;
         HashSet hashSet = new HashSet(this.s);
-        hashSet.addAll(this.x);
+        hashSet.addAll(this.y);
         return (hashCode * 31) + hashSet.hashCode();
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q5 = df.q(parcel, 20293);
-        df.s(parcel, 1, 4);
+        int q6 = h0.q(parcel, 20293);
+        h0.s(parcel, 1, 4);
         parcel.writeInt(this.a);
-        df.l(parcel, 2, this.b);
-        df.l(parcel, 3, this.c);
-        df.l(parcel, 4, this.d);
-        df.l(parcel, 5, this.e);
-        df.k(parcel, 6, this.f, i10);
-        df.l(parcel, 7, this.h);
-        df.s(parcel, 8, 8);
+        h0.l(parcel, 2, this.b);
+        h0.l(parcel, 3, this.c);
+        h0.l(parcel, 4, this.d);
+        h0.l(parcel, 5, this.e);
+        h0.k(parcel, 6, this.f, i10);
+        h0.l(parcel, 7, this.h);
+        h0.s(parcel, 8, 8);
         parcel.writeLong(this.n);
-        df.l(parcel, 9, this.r);
-        df.p(parcel, 10, this.s);
-        df.l(parcel, 11, this.v);
-        df.l(parcel, 12, this.w);
-        df.r(parcel, q5);
+        h0.l(parcel, 9, this.r);
+        h0.p(parcel, 10, this.s);
+        h0.l(parcel, 11, this.w);
+        h0.l(parcel, 12, this.x);
+        h0.r(parcel, q6);
     }
 }

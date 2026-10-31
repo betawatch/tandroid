@@ -1,10 +1,11 @@
 package c3;
 
-import b2.x0;
+import b2.w0;
+import e9.n0;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class x {
     public final List a;
@@ -21,9 +22,9 @@ public final class x {
     public final float l;
     public final int m;
     public final String n;
-    public final com.google.firebase.messaging.q o;
+    public final xa.n o;
 
-    public x(List list, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17, int i18, int i19, float f7, int i20, String str, com.google.firebase.messaging.q qVar) {
+    public x(List list, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17, int i18, int i19, float f7, int i20, String str, xa.n nVar) {
         this.a = list;
         this.b = i10;
         this.c = i11;
@@ -38,12 +39,12 @@ public final class x {
         this.l = f7;
         this.m = i20;
         this.n = str;
-        this.o = qVar;
+        this.o = nVar;
     }
 
-    public static x a(e2.x xVar, boolean z10, com.google.firebase.messaging.q qVar) {
+    public static x a(e2.x xVar, boolean z10, xa.n nVar) {
         boolean z11;
-        ag.j j10;
+        ae.j j10;
         int i10;
         int i11 = 4;
         try {
@@ -74,7 +75,7 @@ public final class x {
             }
             xVar.N(i12);
             byte[] bArr = new byte[i15];
-            com.google.firebase.messaging.q qVar2 = qVar;
+            xa.n nVar2 = nVar;
             int i17 = -1;
             int i18 = -1;
             int i19 = -1;
@@ -93,7 +94,7 @@ public final class x {
                 int A3 = xVar.A() & 63;
                 int H3 = xVar.H();
                 int i29 = i13;
-                com.google.firebase.messaging.q qVar3 = qVar2;
+                xa.n nVar3 = nVar2;
                 while (i29 < H3) {
                     boolean z12 = z11;
                     int H4 = xVar.H();
@@ -102,10 +103,10 @@ public final class x {
                     int i31 = i28 + 4;
                     System.arraycopy(xVar.a, xVar.b, bArr, i31, H4);
                     if (A3 == 32 && i29 == 0) {
-                        qVar3 = f2.q.l(i31, i31 + H4, bArr);
+                        nVar3 = f2.q.l(i31, i31 + H4, bArr);
                     } else {
                         if (A3 == 33 && i29 == 0) {
-                            f2.m k10 = f2.q.k(bArr, i31, i31 + H4, qVar3);
+                            f2.m k10 = f2.q.k(bArr, i31, i31 + H4, nVar3);
                             i17 = k10.a + 1;
                             i18 = k10.g;
                             int i32 = k10.h;
@@ -129,9 +130,9 @@ public final class x {
                             i24 = i35;
                             i23 = i34;
                             i22 = i33;
-                        } else if (A3 == 39 && i29 == 0 && (j10 = f2.q.j(i31, i31 + H4, bArr)) != null && qVar3 != null) {
+                        } else if (A3 == 39 && i29 == 0 && (j10 = f2.q.j(i31, i31 + H4, bArr)) != null && nVar3 != null) {
                             i13 = 0;
-                            i25 = j10.a == ((f2.i) ((f9.i0) qVar3.a).get(0)).b ? 4 : 5;
+                            i25 = j10.a == ((f2.i) ((n0) nVar3.a).get(0)).b ? 4 : 5;
                         }
                         i13 = 0;
                     }
@@ -143,12 +144,12 @@ public final class x {
                     i11 = 4;
                 }
                 i27++;
-                qVar2 = qVar3;
+                nVar2 = nVar3;
                 i11 = 4;
             }
-            return new x(i15 == 0 ? Collections.EMPTY_LIST : Collections.singletonList(bArr), A + 1, i17, i18, i19, i20, i21, i22, i23, i24, i25, f7, i26, str, qVar2);
+            return new x(i15 == 0 ? Collections.EMPTY_LIST : Collections.singletonList(bArr), A + 1, i17, i18, i19, i20, i21, i22, i23, i24, i25, f7, i26, str, nVar2);
         } catch (ArrayIndexOutOfBoundsException e) {
-            throw x0.a(e, "Error parsing".concat(z10 ? "L-HEVC config" : "HEVC config"));
+            throw w0.a(e, "Error parsing".concat(z10 ? "L-HEVC config" : "HEVC config"));
         }
     }
 }

@@ -1,8 +1,9 @@
 package b2;
 
 import java.util.HashSet;
+import w7.g7;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class n0 {
     public int a;
@@ -20,23 +21,23 @@ public final class n0 {
         this.a = 0;
         this.b = 0;
         this.g = new HashSet();
-        hashSet.add(s9.s.a(cls));
+        hashSet.add(r9.r.a(cls));
         for (Class cls2 : clsArr) {
-            com.google.android.gms.internal.play_billing.s1.a(cls2, "Null interface");
-            ((HashSet) this.c).add(s9.s.a(cls2));
+            g7.a(cls2, "Null interface");
+            ((HashSet) this.c).add(r9.r.a(cls2));
         }
     }
 
-    public void a(s9.k kVar) {
-        if (((HashSet) this.c).contains(kVar.a)) {
+    public void a(r9.j jVar) {
+        if (((HashSet) this.c).contains(jVar.a)) {
             throw new IllegalArgumentException("Components are not allowed to depend on interfaces they themselves provide.");
         }
-        ((HashSet) this.e).add(kVar);
+        ((HashSet) this.e).add(jVar);
     }
 
-    public s9.a b() {
-        if (((s9.d) this.f) != null) {
-            return new s9.a((String) this.d, new HashSet((HashSet) this.c), new HashSet((HashSet) this.e), this.a, this.b, (s9.d) this.f, (HashSet) this.g);
+    public r9.a b() {
+        if (((r9.d) this.f) != null) {
+            return new r9.a((String) this.d, new HashSet((HashSet) this.c), new HashSet((HashSet) this.e), this.a, this.b, (r9.d) this.f, (HashSet) this.g);
         }
         throw new IllegalStateException("Missing required property: factory.");
     }

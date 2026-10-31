@@ -5,7 +5,6 @@ import android.graphics.Rect;
 import android.graphics.SurfaceTexture;
 import android.view.Surface;
 import android.view.SurfaceHolder;
-import c3.h0;
 import javax.microedition.khronos.egl.EGL10;
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.egl.EGLContext;
@@ -14,7 +13,7 @@ import javax.microedition.khronos.egl.EGLSurface;
 import org.webrtc.EglBase;
 import org.webrtc.EglBase10;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes4.dex */
 class EglBase10Impl implements EglBase10 {
     private static final int EGL_CONTEXT_CLIENT_VERSION = 12440;
@@ -26,7 +25,7 @@ class EglBase10Impl implements EglBase10 {
     private EGLDisplay eglDisplay;
     private EGLSurface eglSurface;
 
-    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+    /* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
     public static class Context implements EglBase10.Context {
         private final EGL10 egl;
         private final EGLContext eglContext;
@@ -76,7 +75,7 @@ class EglBase10Impl implements EglBase10 {
         }
     }
 
-    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+    /* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
     public class FakeSurfaceHolder implements SurfaceHolder {
         private final Surface surface;
 
@@ -110,6 +109,10 @@ class EglBase10Impl implements EglBase10 {
         }
 
         @Override // android.view.SurfaceHolder
+        public void setSizeFromLayout() {
+        }
+
+        @Override // android.view.SurfaceHolder
         public void addCallback(SurfaceHolder.Callback callback) {
         }
 
@@ -132,10 +135,6 @@ class EglBase10Impl implements EglBase10 {
 
         @Override // android.view.SurfaceHolder
         public void unlockCanvasAndPost(Canvas canvas) {
-        }
-
-        @Override // android.view.SurfaceHolder
-        public void setSizeFromLayout() {
         }
 
         @Override // android.view.SurfaceHolder
@@ -262,9 +261,9 @@ class EglBase10Impl implements EglBase10 {
         if (eglCreatePbufferSurface != eGLSurface2) {
             return;
         }
-        StringBuilder n10 = h0.n("Failed to create pixel buffer surface with size ", i10, "x", i11, ": 0x");
-        n10.append(Integer.toHexString(this.egl.eglGetError()));
-        throw new RuntimeException(n10.toString());
+        StringBuilder m10 = i0.a.m("Failed to create pixel buffer surface with size ", i10, "x", i11, ": 0x");
+        m10.append(Integer.toHexString(this.egl.eglGetError()));
+        throw new RuntimeException(m10.toString());
     }
 
     @Override // org.webrtc.EglBase

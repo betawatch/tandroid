@@ -2,9 +2,9 @@ package v3;
 
 import c3.a0;
 import c3.c0;
-import e2.n0;
+import e2.l0;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class i implements h {
     public final long[] a;
@@ -25,7 +25,7 @@ public final class i implements h {
 
     @Override // v3.h
     public final long a(long j10) {
-        return this.a[n0.f(this.b, j10, true)];
+        return this.a[l0.f(this.b, j10, true)];
     }
 
     @Override // v3.h
@@ -51,7 +51,7 @@ public final class i implements h {
     @Override // c3.b0
     public final a0 f(long j10) {
         long[] jArr = this.a;
-        int f7 = n0.f(jArr, j10, true);
+        int f7 = l0.f(jArr, j10, true);
         long j11 = jArr[f7];
         long[] jArr2 = this.b;
         c0 c0Var = new c0(j11, jArr2[f7]);

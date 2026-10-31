@@ -1,16 +1,16 @@
 package com.google.android.recaptcha.internal;
 
-import a8.jd;
-import ce.f0;
-import jd.f;
-import ld.c;
-import md.a;
-import nd.i;
-import ud.p;
+import ad.g;
+import cd.c;
+import dd.a;
+import ed.j;
+import l9.b;
+import ld.p;
+import td.e0;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-final class zzf extends i implements p {
+final class zzf extends j implements p {
     int zza;
     final /* synthetic */ long zzb;
     final /* synthetic */ zzg zzc;
@@ -25,16 +25,16 @@ final class zzf extends i implements p {
         this.zzd = str;
     }
 
-    @Override // nd.a
+    @Override // ed.a
     public final c create(Object obj, c cVar) {
         zzf zzfVar = new zzf(this.zzb, this.zzc, this.zzd, cVar);
         zzfVar.zze = obj;
         return zzfVar;
     }
 
-    @Override // ud.p
+    @Override // ld.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzf) create((zzgr) obj, (c) obj2)).invokeSuspend(jd.i.a);
+        return ((zzf) create((zzgr) obj, (c) obj2)).invokeSuspend(ad.j.a);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:14:0x0032, code lost:
@@ -45,7 +45,7 @@ final class zzf extends i implements p {
     
         return r1;
      */
-    @Override // nd.a
+    @Override // ed.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -54,22 +54,22 @@ final class zzf extends i implements p {
         int i10 = this.zza;
         try {
             if (i10 == 0) {
-                jd.b(obj);
+                b.b(obj);
                 zzgr zzgrVar = (zzgr) this.zze;
                 long j10 = this.zzb;
                 zze zzeVar = new zze(zzgrVar, this.zzc, this.zzd, null);
                 this.zza = 1;
-                obj = f0.x(j10, zzeVar, this);
+                obj = e0.x(j10, zzeVar, this);
             } else {
                 if (i10 != 1) {
                     zzcg zzcgVar = (zzcg) this.zze;
-                    jd.b(obj);
+                    b.b(obj);
                     throw zzcgVar;
                 }
-                jd.b(obj);
+                b.b(obj);
             }
-            Object obj2 = ((f) obj).a;
-            jd.b(obj2);
+            Object obj2 = ((g) obj).a;
+            b.b(obj2);
             return (zzxx) obj2;
         } catch (Exception e) {
             zzcg zza = zzh.zza(e, new zzcg(zzce.zzb, zzcd.zzaa, e.getMessage(), null, 8, null));

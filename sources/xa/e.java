@@ -1,0 +1,9 @@
+package xa;
+
+import java.util.concurrent.TimeUnit;
+
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes.dex */
+public abstract class e {
+    public static final long a = TimeUnit.MINUTES.toMillis(3);
+}

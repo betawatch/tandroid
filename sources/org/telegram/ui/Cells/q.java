@@ -5,9 +5,8 @@ import android.graphics.Canvas;
 import android.graphics.Path;
 import android.graphics.drawable.Drawable;
 import android.widget.ImageView;
-import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
 public class q extends ImageView {
     public Drawable a;
@@ -18,8 +17,8 @@ public class q extends ImageView {
     public q(Context context) {
         super(context);
         this.b = new Path();
-        this.c = AndroidUtilities.dp(5.0f);
-        this.d = AndroidUtilities.dp(42.0f);
+        this.c = org.telegram.messenger.i0.L(5.0f);
+        this.d = org.telegram.messenger.i0.L(42.0f);
     }
 
     @Override // android.view.View

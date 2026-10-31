@@ -1,38 +1,28 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.accessibility.AccessibilityNodeInfo;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.view.View;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class az0 extends yz0 {
-    public az0(Context context) {
-        super(context);
+public final /* synthetic */ class az0 implements org.telegram.ui.Components.ik0, org.telegram.ui.ActionBar.u1 {
+    public final /* synthetic */ ProxyListActivity a;
+
+    public /* synthetic */ az0(ProxyListActivity proxyListActivity) {
+        this.a = proxyListActivity;
     }
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        di.f3 f3Var;
-        super.dispatchDraw(canvas);
-        org.telegram.ui.Components.t5 t5Var = this.e;
-        if (t5Var == null || (f3Var = t5Var.k) == null) {
-            return;
+    @Override // org.telegram.ui.Components.ik0
+    public boolean f(int i10, View view) {
+        ProxyListActivity proxyListActivity = this.a;
+        if (i10 < proxyListActivity.n || i10 >= proxyListActivity.r) {
+            return false;
         }
-        f3Var.startAnimation();
+        proxyListActivity.a.M(i10);
+        return true;
     }
 
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        if (!getImageReceiver().hasNotThumb()) {
-            accessibilityNodeInfo.setVisibleToUser(false);
-            return;
-        }
-        accessibilityNodeInfo.setText(LocaleController.getString(R.string.AccDescrProfilePicture));
-        accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, LocaleController.getString(R.string.Open)));
-        accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(32, LocaleController.getString(R.string.AccDescrOpenInPhotoViewer)));
+    @Override // org.telegram.ui.ActionBar.u1
+    public void h(org.telegram.ui.ActionBar.x1 x1Var, int i10) {
+        ProxyListActivity.Z(this.a);
     }
 }

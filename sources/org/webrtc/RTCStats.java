@@ -2,7 +2,7 @@ package org.webrtc;
 
 import java.util.Map;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes4.dex */
 public class RTCStats {
     private final String id;
@@ -60,19 +60,19 @@ public class RTCStats {
     }
 
     public String toString() {
-        StringBuilder u10 = a1.g.u("{ timestampUs: ");
-        u10.append(this.timestampUs);
-        u10.append(", type: ");
-        u10.append(this.type);
-        u10.append(", id: ");
-        u10.append(this.id);
+        StringBuilder t10 = a1.g.t("{ timestampUs: ");
+        t10.append(this.timestampUs);
+        t10.append(", type: ");
+        t10.append(this.type);
+        t10.append(", id: ");
+        t10.append(this.id);
         for (Map.Entry<String, Object> entry : this.members.entrySet()) {
-            u10.append(", ");
-            u10.append(entry.getKey());
-            u10.append(": ");
-            appendValue(u10, entry.getValue());
+            t10.append(", ");
+            t10.append(entry.getKey());
+            t10.append(": ");
+            appendValue(t10, entry.getValue());
         }
-        u10.append(" }");
-        return u10.toString();
+        t10.append(" }");
+        return t10.toString();
     }
 }

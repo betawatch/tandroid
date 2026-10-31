@@ -1,44 +1,24 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
+import android.content.Context;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class p7 implements am0 {
-    public final /* synthetic */ int a;
+public final class p7 extends nn0 {
+    public final /* synthetic */ w7 m0;
 
-    public /* synthetic */ p7(int i10) {
-        this.a = i10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public p7(w7 w7Var, Context context, org.telegram.ui.ActionBar.p6 p6Var) {
+        super(context, p6Var, false);
+        this.m0 = w7Var;
     }
 
-    @Override // org.telegram.ui.Components.am0
-    public final void c(int i10, View view) {
-        switch (this.a) {
-            case 0:
-                if (view instanceof org.telegram.ui.Cells.w) {
-                    ((org.telegram.ui.Cells.w) view).a();
-                    break;
-                }
-                break;
-            case 1:
-                boolean z10 = ChatAttachAlertPhotoLayout.q1;
-                if (view instanceof org.telegram.ui.Cells.x5) {
-                    org.telegram.ui.Cells.x5 x5Var = (org.telegram.ui.Cells.x5) view;
-                    x5Var.w.b(x5Var);
-                    break;
-                }
-                break;
-            case 2:
-                break;
-            case 3:
-                int i11 = zh.c.a0;
-                break;
-            default:
-                int i12 = zh.m.A0;
-                break;
+    @Override // org.telegram.ui.Components.nn0
+    public final boolean d(MotionEvent motionEvent) {
+        if (this.m0.x2 != 0) {
+            return false;
         }
-    }
-
-    private final void a(int i10, View view) {
+        return super.d(motionEvent);
     }
 }

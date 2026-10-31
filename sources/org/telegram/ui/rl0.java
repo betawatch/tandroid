@@ -1,71 +1,51 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.tl.TL_account;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class rl0 extends org.telegram.ui.Components.t61 {
-    public static final /* synthetic */ int a = 0;
+public final /* synthetic */ class rl0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ sm0 b;
 
-    static {
-        org.telegram.ui.Components.t61.setup(new rl0());
+    public /* synthetic */ rl0(sm0 sm0Var, int i10) {
+        this.a = i10;
+        this.b = sm0Var;
     }
 
-    @Override // org.telegram.ui.Components.t61
-    public final void bindView(View view, org.telegram.ui.Components.u61 u61Var, boolean z10, org.telegram.ui.Components.k71 k71Var, org.telegram.ui.Components.s71 s71Var) {
-        sl0 sl0Var = (sl0) view;
-        TL_account.Passkey passkey = (TL_account.Passkey) u61Var.G;
-        View.OnClickListener onClickListener = u61Var.D;
-        TextView textView = sl0Var.n;
-        TextView textView2 = sl0Var.h;
-        org.telegram.ui.ActionBar.u6 u6Var = sl0Var.d;
-        FrameLayout frameLayout = sl0Var.e;
-        org.telegram.ui.Components.y9 y9Var = sl0Var.f;
-        sl0Var.v = passkey.id;
-        long j10 = passkey.software_emoji_id;
-        if (j10 != 0) {
-            y9Var.setAnimatedEmojiDrawable(org.telegram.ui.Components.t5.n(sl0Var.c, j10, null, 3));
-            frameLayout.setBackground(null);
-            y9Var.setColorFilter(null);
-            sl0Var.a = false;
-            y9Var.setScaleX(1.0f);
-            y9Var.setScaleY(1.0f);
-        } else {
-            int dp = AndroidUtilities.dp(4.0f);
-            int i10 = org.telegram.ui.ActionBar.y6.G6;
-            org.telegram.ui.ActionBar.f7.C(frameLayout, org.telegram.ui.ActionBar.y6.c0(dp, org.telegram.ui.ActionBar.y6.o1(0.04f, org.telegram.ui.ActionBar.y6.w0(i10, u6Var))), org.telegram.ui.ActionBar.f7.L(0.04f, i10), u6Var);
-            sl0Var.a();
-            y9Var.setImageResource(R.drawable.msg2_permissions);
-            y9Var.setScaleX(0.666f);
-            y9Var.setScaleY(0.666f);
-            y9Var.setAnimatedEmojiDrawable(null);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.y0();
+                break;
+            case 1:
+                sm0 sm0Var = this.b;
+                sm0Var.getMessagesController().m7 = null;
+                if (sm0Var.f1 == 3 && !sm0Var.isFinishing()) {
+                    sm0Var.f1 = 4;
+                    rm0 rm0Var = sm0Var.Z0;
+                    if (rm0Var != null) {
+                        rm0Var.e(4);
+                    }
+                    sm0Var.finishFragment();
+                    break;
+                } else if (sm0Var.f1 == 1 && !sm0Var.isFinishing()) {
+                    sm0Var.finishFragment();
+                    break;
+                }
+                break;
+            case 2:
+                sm0 sm0Var2 = this.b;
+                if (sm0Var2.d0 != null) {
+                    sm0Var2.B0();
+                    sm0Var2.d0 = null;
+                    break;
+                }
+                break;
+            default:
+                sm0 sm0Var3 = this.b;
+                sm0Var3.f[0].requestFocus();
+                org.telegram.messenger.i0.J3(sm0Var3.f[0]);
+                break;
         }
-        if (TextUtils.isEmpty(passkey.name)) {
-            textView2.setText(LocaleController.getString(R.string.PasskeyUnknown));
-        } else {
-            textView2.setText(passkey.name);
-        }
-        int i11 = passkey.last_usage_date;
-        if (i11 != 0) {
-            textView.setText(LocaleController.formatString(R.string.PasskeyLastUsedOn, LocaleController.formatDateTime(i11, false)));
-        } else {
-            textView.setText(LocaleController.formatString(R.string.PasskeyCreatedOn, LocaleController.formatDateTime(passkey.date, false)));
-        }
-        sl0Var.r.setOnClickListener(onClickListener);
-        sl0Var.s = z10;
-        sl0Var.setWillNotDraw(!z10);
-    }
-
-    @Override // org.telegram.ui.Components.t61
-    public final View createView(Context context, org.telegram.ui.Components.nm0 nm0Var, int i10, int i11, org.telegram.ui.ActionBar.u6 u6Var) {
-        return new sl0(context, i10, u6Var);
     }
 }

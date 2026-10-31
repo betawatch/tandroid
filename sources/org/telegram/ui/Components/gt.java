@@ -1,60 +1,27 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.text.Editable;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class gt extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ s4.e1 b;
-    public final /* synthetic */ org.telegram.ui.Cells.p2 c;
-    public final /* synthetic */ mt d;
+public final /* synthetic */ class gt implements org.telegram.messenger.q20 {
+    public final /* synthetic */ mt a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ gt(mt mtVar, s4.e1 e1Var, org.telegram.ui.Cells.p2 p2Var, int i10) {
-        this.a = i10;
-        this.d = mtVar;
-        this.b = e1Var;
-        this.c = p2Var;
+    public /* synthetic */ gt(mt mtVar, int i10, int i11) {
+        this.a = mtVar;
+        this.b = i10;
+        this.c = i11;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                animator.removeAllListeners();
-                org.telegram.ui.Cells.p2 p2Var = this.c;
-                p2Var.setClipProgress(0.0f);
-                p2Var.setElevation(0.0f);
-                mt mtVar = this.d;
-                s4.e1 e1Var = this.b;
-                mtVar.d(e1Var);
-                mtVar.x.remove(e1Var);
-                mtVar.A();
-                break;
-            default:
-                animator.removeAllListeners();
-                org.telegram.ui.Cells.p2 p2Var2 = this.c;
-                p2Var2.setClipProgress(0.0f);
-                p2Var2.setElevation(0.0f);
-                mt mtVar2 = this.d;
-                s4.e1 e1Var2 = this.b;
-                mtVar2.d(e1Var2);
-                mtVar2.x.remove(e1Var2);
-                mtVar2.A();
-                break;
-        }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationStart(Animator animator) {
-        switch (this.a) {
-            case 0:
-                this.d.y();
-                break;
-            default:
-                this.d.y();
-                break;
-        }
+    @Override // org.telegram.messenger.q20
+    public final void a(Object obj) {
+        CharSequence charSequence = (CharSequence) obj;
+        mt mtVar = this.a;
+        Editable text = mtVar.getText();
+        int i10 = this.b;
+        text.replace(i10, this.c, charSequence);
+        mtVar.setSelection(i10, charSequence.length() + i10);
     }
 }

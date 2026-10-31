@@ -1,74 +1,27 @@
 package org.telegram.ui.web;
 
-import android.text.TextUtils;
-import android.widget.EditText;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.wh;
-import org.telegram.ui.Components.m71;
+import android.util.Base64InputStream;
+import java.io.BufferedInputStream;
+import java.io.File;
+import java.io.FilterInputStream;
+import java.util.HashMap;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes4.dex */
-public final class e1 extends org.telegram.ui.ActionBar.s0 {
-    public final k2.c a = new k2.c(this, 29);
-    public final /* synthetic */ f1 b;
+public final class e1 {
+    public final HashMap a = new HashMap();
+    public File b;
+    public long c;
+    public long d;
 
-    public e1(f1 f1Var) {
-        this.b = f1Var;
-    }
-
-    public static boolean n(String str, String str2) {
-        if (str == null || str2 == null) {
-            return false;
+    public final FilterInputStream a() {
+        BufferedInputStream bufferedInputStream = new BufferedInputStream(new d1(this.c, this.d, this.b));
+        HashMap hashMap = this.a;
+        f1 f1Var = (f1) hashMap.get("content-transfer-encoding");
+        if ("base64".equals(f1Var == null ? null : f1Var.a)) {
+            return new Base64InputStream(bufferedInputStream, 0);
         }
-        String lowerCase = str.toLowerCase();
-        String lowerCase2 = str2.toLowerCase();
-        if (lowerCase.startsWith(lowerCase2) || wh.u(" ", lowerCase2, lowerCase) || wh.u(".", lowerCase2, lowerCase)) {
-            return true;
-        }
-        String translitSafe = AndroidUtilities.translitSafe(lowerCase);
-        String translitSafe2 = AndroidUtilities.translitSafe(lowerCase2);
-        return translitSafe.startsWith(translitSafe2) || wh.u(" ", translitSafe2, translitSafe) || wh.u(".", translitSafe2, translitSafe);
-    }
-
-    @Override // org.telegram.ui.ActionBar.s0
-    public final void h() {
-        f1 f1Var = this.b;
-        f1Var.r = null;
-        f1Var.n = false;
-        AndroidUtilities.cancelRunOnUIThread(this.a);
-        m71 m71Var = f1Var.a;
-        if (m71Var != null) {
-            m71Var.g3.O(true);
-            f1Var.a.f3.h1(0, 0);
-        }
-        f1Var.x.d.setText(LocaleController.getString(TextUtils.isEmpty(f1Var.r) ? R.string.WebNoHistory : R.string.WebNoSearchedHistory));
-    }
-
-    @Override // org.telegram.ui.ActionBar.s0
-    public final void l(EditText editText) {
-        f1 f1Var = this.b;
-        boolean z10 = !TextUtils.isEmpty(f1Var.r);
-        String obj = editText.getText().toString();
-        if (!TextUtils.equals(f1Var.r, obj)) {
-            f1Var.r = obj;
-            f1Var.n = true;
-            k2.c cVar = this.a;
-            AndroidUtilities.cancelRunOnUIThread(cVar);
-            AndroidUtilities.runOnUIThread(cVar, 500L);
-            f1Var.x.d.setText(LocaleController.getString(TextUtils.isEmpty(obj) ? R.string.WebNoHistory : R.string.WebNoSearchedHistory));
-        }
-        m71 m71Var = f1Var.a;
-        if (m71Var != null) {
-            m71Var.g3.O(true);
-            if (z10 != (!TextUtils.isEmpty(obj))) {
-                f1Var.a.f3.h1(0, 0);
-            }
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.s0
-    public final void i() {
+        f1 f1Var2 = (f1) hashMap.get("content-transfer-encoding");
+        return "quoted-printable".equalsIgnoreCase(f1Var2 != null ? f1Var2.a : null) ? new lc.z(bufferedInputStream, 1) : bufferedInputStream;
     }
 }

@@ -1,20 +1,20 @@
 package x2;
 
-import a8.ed;
-import a8.yb;
 import android.content.Context;
 import android.os.Build;
 import android.text.TextUtils;
 import android.util.Pair;
 import b2.b0;
+import b2.p1;
+import b2.q1;
 import b2.s1;
 import b2.u1;
 import b2.x;
-import c3.h0;
-import e2.n0;
-import f9.i0;
-import f9.q1;
-import f9.w;
+import e2.l0;
+import e9.n0;
+import e9.v1;
+import e9.x1;
+import e9.y;
 import i2.s0;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -23,29 +23,30 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.RandomAccess;
-import org.telegram.messenger.TranslateController;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.dv;
+import org.telegram.ui.ex0;
 import u2.r1;
+import v7.c8;
+import v7.t6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class o extends t {
-    public static final q1 l = new f9.t(new dv(22));
+    public static final v1 l = new y(new ex0(28));
     public final Object d;
     public final Context e;
-    public final qb.a f;
+    public final t7.u f;
     public j g;
     public Thread h;
     public z2.d i;
     public b2.f j;
     public Boolean k;
 
-    public o(Context context, qb.a aVar) {
+    public o(Context context, t7.u uVar) {
         j jVar = j.F0;
         this.d = new Object();
         this.e = context != null ? context.getApplicationContext() : null;
-        this.f = aVar;
+        this.f = uVar;
         if (jVar != null) {
             this.g = jVar;
         } else {
@@ -60,10 +61,10 @@ public final class o extends t {
         }
     }
 
-    public static int c(x xVar, i0 i0Var) {
-        for (int i10 = 0; i10 < i0Var.size(); i10++) {
+    public static int c(x xVar, n0 n0Var) {
+        for (int i10 = 0; i10 < n0Var.size(); i10++) {
             for (int i11 = 0; i11 < xVar.c.size(); i11++) {
-                if (((b0) xVar.c.get(i11)).b.equals(i0Var.get(i10))) {
+                if (((b0) xVar.c.get(i11)).b.equals(n0Var.get(i10))) {
                     return i10;
                 }
             }
@@ -104,23 +105,23 @@ public final class o extends t {
         }
         g(sVar.f, jVar, hashMap);
         for (int i12 = 0; i12 < i10; i12++) {
-            b2.r1 r1Var = (b2.r1) hashMap.get(Integer.valueOf(sVar.b[i12]));
-            if (r1Var != null) {
-                b2.q1 q1Var = r1Var.a;
-                i0 i0Var = r1Var.b;
-                pVarArr[i12] = (i0Var.isEmpty() || r1VarArr[i12].b(q1Var) == -1) ? null : new p(q1Var, ed.f(i0Var));
+            q1 q1Var = (q1) hashMap.get(Integer.valueOf(sVar.b[i12]));
+            if (q1Var != null) {
+                p1 p1Var = q1Var.a;
+                n0 n0Var = q1Var.b;
+                pVarArr[i12] = (n0Var.isEmpty() || r1VarArr[i12].b(p1Var) == -1) ? null : new p(p1Var, c8.f(n0Var));
             }
         }
     }
 
     public static void g(r1 r1Var, u1 u1Var, HashMap hashMap) {
         for (int i10 = 0; i10 < r1Var.a; i10++) {
-            b2.r1 r1Var2 = (b2.r1) u1Var.H.get(r1Var.a(i10));
-            if (r1Var2 != null) {
-                b2.q1 q1Var = r1Var2.a;
-                b2.r1 r1Var3 = (b2.r1) hashMap.get(Integer.valueOf(q1Var.c));
-                if (r1Var3 == null || (r1Var3.b.isEmpty() && !r1Var2.b.isEmpty())) {
-                    hashMap.put(Integer.valueOf(q1Var.c), r1Var2);
+            q1 q1Var = (q1) u1Var.H.get(r1Var.a(i10));
+            if (q1Var != null) {
+                p1 p1Var = q1Var.a;
+                q1 q1Var2 = (q1) hashMap.get(Integer.valueOf(p1Var.c));
+                if (q1Var2 == null || (q1Var2.b.isEmpty() && !q1Var.b.isEmpty())) {
+                    hashMap.put(Integer.valueOf(p1Var.c), q1Var);
                 }
             }
         }
@@ -148,12 +149,12 @@ public final class o extends t {
         if (l10.startsWith(l4) || l4.startsWith(l10)) {
             return 3;
         }
-        String str2 = n0.a;
+        String str2 = l0.a;
         return l10.split("-", 2)[0].equals(l4.split("-", 2)[0]) ? 2 : 0;
     }
 
     public static String l(String str) {
-        if (TextUtils.isEmpty(str) || TextUtils.equals(str, TranslateController.UNKNOWN_LANGUAGE)) {
+        if (TextUtils.isEmpty(str) || TextUtils.equals(str, "und")) {
             return null;
         }
         return str;
@@ -180,26 +181,26 @@ public final class o extends t {
     public static p o(r1 r1Var, int[][] iArr, j jVar) {
         if (jVar.w.a != 2) {
             int i10 = 0;
-            b2.q1 q1Var = null;
+            p1 p1Var = null;
             h hVar = null;
             for (int i11 = 0; i11 < r1Var.a; i11++) {
-                b2.q1 a2 = r1Var.a(i11);
+                p1 a2 = r1Var.a(i11);
                 int[] iArr2 = iArr[i11];
                 for (int i12 = 0; i12 < a2.a; i12++) {
-                    if (h0.e(iArr2[i12], jVar.B0)) {
+                    if (i0.a.b(iArr2[i12], jVar.B0)) {
                         h hVar2 = new h(a2.d[i12], iArr2[i12]);
                         if (hVar != null) {
-                            if (w.a.c(hVar2.b, hVar.b).c(hVar2.a, hVar.a).e() <= 0) {
+                            if (e9.b0.a.c(hVar2.b, hVar.b).c(hVar2.a, hVar.a).e() <= 0) {
                             }
                         }
-                        q1Var = a2;
+                        p1Var = a2;
                         i10 = i12;
                         hVar = hVar2;
                     }
                 }
             }
-            if (q1Var != null) {
-                return new p(q1Var, i10);
+            if (p1Var != null) {
+                return new p(p1Var, i10);
             }
         }
         return null;
@@ -216,25 +217,25 @@ public final class o extends t {
             if (i10 == sVar2.b[i13]) {
                 r1 r1Var = sVar2.c[i13];
                 for (int i14 = 0; i14 < r1Var.a; i14++) {
-                    b2.q1 a2 = r1Var.a(i14);
-                    f9.s1 a10 = lVar.a(i13, a2, iArr[i13][i14]);
+                    p1 a2 = r1Var.a(i14);
+                    x1 b10 = lVar.b(i13, a2, iArr[i13][i14]);
                     int i15 = a2.a;
                     boolean[] zArr = new boolean[i15];
                     int i16 = 0;
                     while (i16 < i15) {
-                        m mVar = (m) a10.get(i16);
-                        int a11 = mVar.a();
-                        if (zArr[i16] || a11 == 0) {
+                        m mVar = (m) b10.get(i16);
+                        int a10 = mVar.a();
+                        if (zArr[i16] || a10 == 0) {
                             i11 = i12;
                         } else {
-                            if (a11 == 1) {
-                                randomAccess = i0.y(mVar);
+                            if (a10 == 1) {
+                                randomAccess = n0.y(mVar);
                             } else {
                                 ArrayList arrayList2 = new ArrayList();
                                 arrayList2.add(mVar);
                                 int i17 = i16 + 1;
                                 while (i17 < i15) {
-                                    m mVar2 = (m) a10.get(i17);
+                                    m mVar2 = (m) b10.get(i17);
                                     int i18 = i12;
                                     if (mVar2.a() == 2 && mVar.b(mVar2)) {
                                         arrayList2.add(mVar2);
@@ -276,7 +277,7 @@ public final class o extends t {
             try {
                 Thread thread = this.h;
                 if (thread != null) {
-                    yb.o("DefaultTrackSelector is accessed on the wrong thread.", thread == Thread.currentThread());
+                    t6.o("DefaultTrackSelector is accessed on the wrong thread.", thread == Thread.currentThread());
                 }
             } catch (Throwable th2) {
                 throw th2;

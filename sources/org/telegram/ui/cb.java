@@ -1,48 +1,57 @@
 package org.telegram.ui;
 
-import j$.util.Objects;
-import j$.util.function.Predicate$-CC;
-import java.util.function.Predicate;
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.tl.TL_stars;
+import android.content.Context;
+import android.view.KeyEvent;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class cb implements Predicate {
-    public final /* synthetic */ int a;
+public final class cb extends org.telegram.ui.Components.ko {
+    public final /* synthetic */ int s;
+    public final /* synthetic */ org.telegram.ui.ActionBar.k2 w;
 
-    public /* synthetic */ cb(int i10) {
-        this.a = i10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public cb(int i10, Context context, org.telegram.ui.ActionBar.k2 k2Var) {
+        super(context);
+        this.s = i10;
+        this.w = k2Var;
+        setOrientation(1);
     }
 
-    public /* synthetic */ Predicate and(Predicate predicate) {
-        int i10 = this.a;
-        return Predicate$-CC.$default$and(this, predicate);
-    }
-
-    public /* synthetic */ Predicate negate() {
-        switch (this.a) {
-        }
-        return Predicate$-CC.$default$negate(this);
-    }
-
-    public /* synthetic */ Predicate or(Predicate predicate) {
-        int i10 = this.a;
-        return Predicate$-CC.$default$or(this, predicate);
-    }
-
-    @Override // java.util.function.Predicate
-    public final boolean test(Object obj) {
-        switch (this.a) {
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchKeyEvent(KeyEvent keyEvent) {
+        db dbVar;
+        switch (this.s) {
             case 0:
-                return ((String) obj) != null;
-            case 1:
-                return !((MessageObject) obj).isEphemeral();
-            case 2:
-                return Objects.nonNull((TLObject) obj);
+                if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (dbVar = ((sb) this.w).F0) != null) {
+                    dbVar.dismiss();
+                }
+                break;
             default:
-                return !((TL_stars.StarGift) obj).auction;
+                if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0) {
+                    ((un) this.w).I7(true);
+                }
+                break;
+        }
+        return super.dispatchKeyEvent(keyEvent);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        db dbVar;
+        switch (this.s) {
+            case 0:
+                boolean dispatchTouchEvent = super.dispatchTouchEvent(motionEvent);
+                if (motionEvent.getAction() == 0 && !dispatchTouchEvent && (dbVar = ((sb) this.w).F0) != null) {
+                    dbVar.dismiss();
+                }
+                return dispatchTouchEvent;
+            default:
+                boolean dispatchTouchEvent2 = super.dispatchTouchEvent(motionEvent);
+                if (motionEvent.getAction() == 0 && !dispatchTouchEvent2) {
+                    ((un) this.w).I7(true);
+                }
+                return dispatchTouchEvent2;
         }
     }
 }

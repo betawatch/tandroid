@@ -1,34 +1,39 @@
 package k6;
 
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.app.DialogFragment;
+import android.content.DialogInterface;
 import android.os.Bundle;
-import android.util.Log;
-import com.google.android.gms.tasks.Continuation;
-import com.google.android.gms.tasks.SuccessContinuation;
-import com.google.android.gms.tasks.Task;
-import com.google.android.gms.tasks.Tasks;
-import java.io.IOException;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final /* synthetic */ class b implements Continuation, SuccessContinuation {
-    public static final /* synthetic */ b a = new b();
-    public static final /* synthetic */ b b = new b();
+public class b extends DialogFragment {
+    public Dialog a;
+    public DialogInterface.OnCancelListener b;
+    public AlertDialog c;
 
-    @Override // com.google.android.gms.tasks.SuccessContinuation
-    public Task then(Object obj) {
-        Bundle bundle = (Bundle) obj;
-        int i10 = a.h;
-        return (bundle == null || !bundle.containsKey("google.messenger")) ? Tasks.forResult(bundle) : Tasks.forResult(null);
+    @Override // android.app.DialogFragment, android.content.DialogInterface.OnCancelListener
+    public final void onCancel(DialogInterface dialogInterface) {
+        DialogInterface.OnCancelListener onCancelListener = this.b;
+        if (onCancelListener != null) {
+            onCancelListener.onCancel(dialogInterface);
+        }
     }
 
-    @Override // com.google.android.gms.tasks.Continuation
-    public Object then(Task task) {
-        if (task.isSuccessful()) {
-            return (Bundle) task.getResult();
+    @Override // android.app.DialogFragment
+    public final Dialog onCreateDialog(Bundle bundle) {
+        Dialog dialog = this.a;
+        if (dialog != null) {
+            return dialog;
         }
-        if (Log.isLoggable("Rpc", 3)) {
-            Log.d("Rpc", "Error making request: ".concat(String.valueOf(task.getException())));
+        setShowsDialog(false);
+        if (this.c == null) {
+            Activity activity = getActivity();
+            n6.l.g(activity);
+            this.c = new AlertDialog.Builder(activity).create();
         }
-        throw new IOException("SERVICE_NOT_AVAILABLE", task.getException());
+        return this.c;
     }
 }

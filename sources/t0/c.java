@@ -5,8 +5,9 @@ import android.os.Bundle;
 import android.view.inputmethod.InputConnection;
 import android.view.inputmethod.InputConnectionWrapper;
 import android.view.inputmethod.InputContentInfo;
+import m2.t;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class c extends InputConnectionWrapper {
     public final /* synthetic */ e a;
@@ -19,11 +20,11 @@ public final class c extends InputConnectionWrapper {
 
     @Override // android.view.inputmethod.InputConnectionWrapper, android.view.inputmethod.InputConnection
     public final boolean commitContent(InputContentInfo inputContentInfo, int i10, Bundle bundle) {
-        i iVar = null;
+        t tVar = null;
         if (inputContentInfo != null && Build.VERSION.SDK_INT >= 25) {
-            iVar = new i(new g(inputContentInfo));
+            tVar = new t(new g(inputContentInfo), 27);
         }
-        if (this.a.d(iVar, i10, bundle)) {
+        if (this.a.p(tVar, i10, bundle)) {
             return true;
         }
         return super.commitContent(inputContentInfo, i10, bundle);

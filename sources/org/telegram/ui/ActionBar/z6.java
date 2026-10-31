@@ -1,62 +1,146 @@
 package org.telegram.ui.ActionBar;
 
-import android.graphics.PorterDuff;
-import java.lang.ref.WeakReference;
+import android.graphics.drawable.Drawable;
+import android.util.SparseArray;
+import android.view.View;
+import android.view.ViewGroup;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.IdentityHashMap;
+import org.telegram.messenger.f8;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class z6 {
-    public int a;
-    public int b = -1;
+public final class z6 implements q0.a {
+    public final IdentityHashMap a = new IdentityHashMap();
+    public boolean b;
     public int c;
-    public float d;
-    public WeakReference e;
-    public u6 f;
-    public int g;
-    public PorterDuff.Mode h;
-    public Object i;
-    public WeakReference j;
-    public boolean k;
-    public int l;
-    public boolean m;
-    public c7 n;
-    public d7 o;
+    public HashSet d;
+    public boolean e;
 
-    public final boolean a() {
-        WeakReference weakReference = this.e;
-        return weakReference != null && weakReference.get() == null;
+    public final void a() {
+        this.a.clear();
+        this.d = null;
+        this.e = false;
     }
 
-    public final int b() {
-        int i10 = this.a;
-        int i11 = this.b;
-        int i12 = this.c;
-        float f7 = this.d;
-        u6 u6Var = this.f;
-        if (u6Var == null) {
-            WeakReference weakReference = this.e;
-            u6Var = weakReference != null ? (u6) weakReference.get() : null;
-        }
-        return f7.Q(i10, i11, i12, f7, u6Var);
+    @Override // q0.a
+    public final void accept(Object obj) {
+        b((View) obj);
     }
 
-    public final void c(int i10, int i11, int i12, float f7, u6 u6Var) {
-        this.a = i10;
-        this.b = i11;
-        this.c = i12;
-        this.d = f7;
-        if (u6Var == null) {
-            this.e = null;
-            this.f = null;
+    /* JADX WARN: Multi-variable type inference failed */
+    public final void b(View view) {
+        s4.u0 recycledViewPool;
+        if (view == 0 || this.a.put(view, Boolean.TRUE) != null) {
             return;
         }
-        Class<?> cls = u6Var.getClass();
-        if (cls.isSynthetic() || cls.getName().contains("$$Lambda") || cls.getName().contains("$$ExternalSynthetic")) {
-            this.e = null;
-            this.f = u6Var;
+        int i10 = 0;
+        if (this.c == 0) {
+            if (view instanceof k6) {
+                try {
+                    ((k6) view).updateColors();
+                } catch (Exception e) {
+                    f8.g(e, true);
+                }
+            }
+            try {
+                a7.b0(view);
+            } catch (Exception e7) {
+                f8.g(e7, true);
+            }
+            Drawable background = view.getBackground();
+            if (background instanceof k6) {
+                try {
+                    ((k6) background).updateColors();
+                } catch (Exception e10) {
+                    f8.g(e10, true);
+                }
+                background.invalidateSelf();
+            }
+            Drawable foreground = view.getForeground();
+            if (foreground instanceof k6) {
+                try {
+                    ((k6) foreground).updateColors();
+                } catch (Exception e11) {
+                    f8.g(e11, true);
+                }
+                foreground.invalidateSelf();
+            }
+            view.invalidate();
         } else {
-            this.e = new WeakReference(u6Var);
-            this.f = null;
+            HashSet hashSet = this.d;
+            if (view instanceof k6) {
+                ((k6) view).addColorKeys(hashSet);
+            }
+            v6 p5 = a7.p(view, false);
+            if (p5 != null) {
+                for (int i11 = 0; i11 < 6; i11++) {
+                    u6 u6Var = p5.a[i11];
+                    if (u6Var != null) {
+                        a7.g(u6Var, hashSet);
+                    }
+                }
+                if (p5.b != null) {
+                    for (int i12 = 0; i12 < p5.b.size(); i12++) {
+                        a7.g((u6) p5.b.get(i12), hashSet);
+                    }
+                }
+                if (p5.c != null) {
+                    for (int i13 = 0; i13 < p5.c.size(); i13++) {
+                        a7.g((u6) p5.c.get(i13), hashSet);
+                    }
+                }
+                u6 u6Var2 = p5.e;
+                if (u6Var2 != null) {
+                    a7.g(u6Var2, hashSet);
+                }
+                u6 u6Var3 = p5.f;
+                if (u6Var3 != null) {
+                    a7.g(u6Var3, hashSet);
+                }
+            }
+        }
+        if (!(view instanceof RecyclerView)) {
+            if (view instanceof ViewGroup) {
+                ViewGroup viewGroup = (ViewGroup) view;
+                while (i10 < viewGroup.getChildCount()) {
+                    b(viewGroup.getChildAt(i10));
+                    i10++;
+                }
+                return;
+            }
+            return;
+        }
+        RecyclerView recyclerView = (RecyclerView) view;
+        boolean z10 = this.b;
+        for (int i14 = 0; i14 < recyclerView.getChildCount(); i14++) {
+            b(recyclerView.getChildAt(i14));
+        }
+        for (int i15 = 0; i15 < recyclerView.getHiddenChildCount(); i15++) {
+            b(recyclerView.V(i15));
+        }
+        for (int i16 = 0; i16 < recyclerView.getAttachedScrapChildCount(); i16++) {
+            b(recyclerView.O(i16));
+        }
+        for (int i17 = 0; i17 < recyclerView.getCachedChildCount(); i17++) {
+            b(recyclerView.P(i17));
+        }
+        if (!z10 || (recycledViewPool = recyclerView.getRecycledViewPool()) == null) {
+            return;
+        }
+        ArrayList arrayList = new ArrayList();
+        SparseArray sparseArray = recycledViewPool.a;
+        for (int i18 = 0; i18 < sparseArray.size(); i18++) {
+            ArrayList arrayList2 = ((s4.t0) sparseArray.valueAt(i18)).a;
+            for (int i19 = 0; i19 < arrayList2.size(); i19++) {
+                arrayList.add(((s4.c1) arrayList2.get(i19)).a);
+            }
+        }
+        while (i10 < arrayList.size()) {
+            b((View) arrayList.get(i10));
+            i10++;
         }
     }
 }

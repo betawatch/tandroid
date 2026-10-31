@@ -1,36 +1,30 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class k21 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ThemeEditorView b;
+public final class k21 {
+    public static final k21 a;
+    public static final k21 b;
+    public static final k21 c;
+    public static final /* synthetic */ k21[] d;
 
-    public /* synthetic */ k21(ThemeEditorView themeEditorView, int i10) {
-        this.a = i10;
-        this.b = themeEditorView;
+    static {
+        k21 k21Var = new k21("TOP", 0);
+        a = k21Var;
+        k21 k21Var2 = new k21("LEFT", 1);
+        b = k21Var2;
+        k21 k21Var3 = new k21("BOTTOM", 2);
+        c = k21Var3;
+        d = new k21[]{k21Var, k21Var2, k21Var3};
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                ThemeEditorView themeEditorView = this.b;
-                i21 i21Var = themeEditorView.c;
-                if (i21Var != null) {
-                    i21Var.setBackground(null);
-                    themeEditorView.j.removeView(themeEditorView.c);
-                    break;
-                }
-                break;
-            default:
-                ThemeEditorView themeEditorView2 = this.b;
-                org.telegram.ui.ActionBar.y6.u1(themeEditorView2.o, true, false, false);
-                themeEditorView2.b();
-                break;
-        }
+    public static k21 valueOf(String str) {
+        return (k21) Enum.valueOf(k21.class, str);
+    }
+
+    public static k21[] values() {
+        return (k21[]) d.clone();
     }
 }

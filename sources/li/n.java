@@ -1,57 +1,16 @@
 package li;
 
-import android.content.Intent;
-import java.util.ArrayList;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.ek;
-import org.telegram.ui.Components.ti;
+import android.media.MediaCodec;
+import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes4.dex */
-public final class n implements ek {
-    public final /* synthetic */ ti a;
-    public final /* synthetic */ q b;
+public final class n {
+    public final ByteBuffer a;
+    public final MediaCodec.BufferInfo b;
 
-    public n(q qVar, ti tiVar) {
-        this.b = qVar;
-        this.a = tiVar;
-    }
-
-    @Override // org.telegram.ui.Components.ek
-    public final void l(ArrayList arrayList, String str, ArrayList arrayList2, ArrayList arrayList3, boolean z10, int i10, long j10, boolean z11, long j11) {
-        v3 v3Var = this.b.r;
-        if (!arrayList.isEmpty()) {
-            v3Var.i2((String) arrayList.get(0));
-        } else if (!arrayList3.isEmpty()) {
-            MessageObject messageObject = (MessageObject) arrayList3.get(0);
-            v3Var.getClass();
-            if (messageObject != null && messageObject.getDocument() != null) {
-                TLRPC.Document document = messageObject.getDocument();
-                TLRPC.Message message = messageObject.messageOwner;
-                v3Var.j2(document, message != null ? message.attachPath : null);
-            }
-        }
-        this.a.dismiss(true);
-    }
-
-    @Override // org.telegram.ui.Components.ek
-    public final void x() {
-        try {
-            Intent intent = new Intent("android.intent.action.GET_CONTENT");
-            intent.setType("*/*");
-            this.b.b.f0.startActivityForResult(intent, 21);
-        } catch (Exception e) {
-            FileLog.e(e);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.ek
-    public final /* synthetic */ void P() {
-    }
-
-    @Override // org.telegram.ui.Components.ek
-    public final /* synthetic */ void m(long j10, ArrayList arrayList, boolean z10, int i10) {
+    public n(ByteBuffer byteBuffer, MediaCodec.BufferInfo bufferInfo) {
+        this.a = byteBuffer;
+        this.b = bufferInfo;
     }
 }

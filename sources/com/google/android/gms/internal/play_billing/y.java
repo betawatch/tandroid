@@ -2,7 +2,7 @@ package com.google.android.gms.internal.play_billing;
 
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class y extends t {
     public final transient a0 c;
@@ -18,14 +18,14 @@ public final class y extends t {
         return this.c.get(obj) != null;
     }
 
-    @Override // com.google.android.gms.internal.play_billing.o
-    public final int h(Object[] objArr) {
-        return this.d.h(objArr);
-    }
-
     @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
     public final /* synthetic */ Iterator iterator() {
         return this.d.listIterator(0);
+    }
+
+    @Override // com.google.android.gms.internal.play_billing.o
+    public final int l(Object[] objArr) {
+        return this.d.l(objArr);
     }
 
     @Override // com.google.android.gms.internal.play_billing.t, com.google.android.gms.internal.play_billing.o

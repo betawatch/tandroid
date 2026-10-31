@@ -1,31 +1,24 @@
 package i2;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class q1 {
-    public static final q1 c = new q1(0, false);
-    public final int a;
-    public final boolean b;
+public final class q1 extends u2.s {
+    public final b2.n1 f;
 
-    public q1(int i10, boolean z10) {
-        this.a = i10;
-        this.b = z10;
+    public q1(b2.o1 o1Var) {
+        super(o1Var);
+        this.f = new b2.n1();
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // u2.s, b2.o1
+    public final b2.l1 f(int i10, b2.l1 l1Var, boolean z10) {
+        b2.o1 o1Var = this.e;
+        b2.l1 f7 = o1Var.f(i10, l1Var, z10);
+        if (o1Var.m(f7.c, this.f, 0L).a()) {
+            f7.h(l1Var.a, l1Var.b, l1Var.c, l1Var.d, l1Var.e, b2.c.c, true);
+            return f7;
         }
-        if (obj != null && q1.class == obj.getClass()) {
-            q1 q1Var = (q1) obj;
-            if (this.a == q1Var.a && this.b == q1Var.b) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        return (this.a << 1) + (this.b ? 1 : 0);
+        f7.f = true;
+        return f7;
     }
 }

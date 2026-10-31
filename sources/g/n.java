@@ -1,6 +1,5 @@
 package g;
 
-import a8.h0;
 import android.content.Context;
 import android.content.IntentFilter;
 import android.location.Location;
@@ -10,18 +9,18 @@ import android.os.Process;
 import android.util.Log;
 import java.util.Calendar;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class n extends o {
-    public final /* synthetic */ int c = 1;
+    public final /* synthetic */ int c = 0;
     public final /* synthetic */ r d;
     public final Object e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n(r rVar, h0 h0Var) {
+    public n(r rVar, android.support.v4.media.session.a0 a0Var) {
         super(rVar);
         this.d = rVar;
-        this.e = h0Var;
+        this.e = a0Var;
     }
 
     @Override // g.o
@@ -50,13 +49,13 @@ public final class n extends o {
             case 0:
                 return ((PowerManager) this.e).isPowerSaveMode() ? 2 : 1;
             default:
-                h0 h0Var = (h0) this.e;
-                ch.a aVar = (ch.a) h0Var.d;
-                LocationManager locationManager = (LocationManager) h0Var.c;
-                if (aVar.b > System.currentTimeMillis()) {
-                    z10 = aVar.a;
+                android.support.v4.media.session.a0 a0Var = (android.support.v4.media.session.a0) this.e;
+                y yVar = (y) a0Var.d;
+                LocationManager locationManager = (LocationManager) a0Var.c;
+                if (yVar.a > System.currentTimeMillis()) {
+                    z10 = yVar.b;
                 } else {
-                    Context context = (Context) h0Var.b;
+                    Context context = (Context) a0Var.b;
                     Location location3 = null;
                     if (f0.c.a(context, "android.permission.ACCESS_COARSE_LOCATION", Process.myPid(), Process.myUid(), context.getPackageName()) == 0) {
                         try {
@@ -77,8 +76,8 @@ public final class n extends o {
                             if (locationManager.isProviderEnabled("gps")) {
                                 location3 = locationManager.getLastKnownLocation("gps");
                             }
-                        } catch (Exception e10) {
-                            Log.d("TwilightManager", "Failed to get last known location", e10);
+                        } catch (Exception e7) {
+                            Log.d("TwilightManager", "Failed to get last known location", e7);
                         }
                     }
                     if (location3 == null || location == null ? location3 != null : location3.getTime() > location.getTime()) {
@@ -107,8 +106,8 @@ public final class n extends o {
                             }
                             j10 = j11 + 60000;
                         }
-                        aVar.a = z10;
-                        aVar.b = j10;
+                        yVar.b = z10;
+                        yVar.a = j10;
                     } else {
                         Log.i("TwilightManager", "Could not get last known location. This is probably because the app does not have any location permissions. Falling back to hardcoded sunrise/sunset values.");
                         int i10 = Calendar.getInstance().get(11);

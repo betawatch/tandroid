@@ -1,87 +1,80 @@
 package s4;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.view.View;
 import android.view.ViewPropertyAnimator;
-import java.util.ArrayList;
-import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class g implements Runnable {
+public final class g extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ArrayList b;
-    public final /* synthetic */ l c;
+    public final /* synthetic */ h b;
+    public final /* synthetic */ ViewPropertyAnimator c;
+    public final /* synthetic */ View d;
+    public final /* synthetic */ j e;
 
-    public /* synthetic */ g(l lVar, ArrayList arrayList, int i10) {
+    public /* synthetic */ g(j jVar, h hVar, ViewPropertyAnimator viewPropertyAnimator, View view, int i10) {
         this.a = i10;
-        this.c = lVar;
-        this.b = arrayList;
+        this.e = jVar;
+        this.b = hVar;
+        this.c = viewPropertyAnimator;
+        this.d = view;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                ArrayList arrayList = this.b;
-                int size = arrayList.size();
-                int i10 = 0;
-                while (true) {
-                    l lVar = this.c;
-                    if (i10 >= size) {
-                        arrayList.clear();
-                        lVar.u.remove(arrayList);
-                        break;
-                    } else {
-                        Object obj = arrayList.get(i10);
-                        i10++;
-                        k kVar = (k) obj;
-                        lVar.C(kVar.a, kVar);
-                        lVar.w.add(kVar);
-                    }
+                this.c.setListener(null);
+                View view = this.d;
+                view.setAlpha(1.0f);
+                j jVar = this.e;
+                if (jVar.A(view) > 0.0f) {
+                    view.setScaleX(1.0f);
+                    view.setScaleY(1.0f);
                 }
-            case 1:
-                ArrayList arrayList2 = this.b;
-                int size2 = arrayList2.size();
-                int i11 = 0;
-                while (true) {
-                    l lVar2 = this.c;
-                    if (i11 >= size2) {
-                        arrayList2.clear();
-                        lVar2.v.remove(arrayList2);
-                        break;
-                    } else {
-                        Object obj2 = arrayList2.get(i11);
-                        i11++;
-                        j jVar = (j) obj2;
-                        lVar2.B(jVar);
-                        lVar2.x.add(jVar);
-                    }
-                }
+                view.setTranslationX(0.0f);
+                view.setTranslationY(0.0f);
+                h hVar = this.b;
+                c1 c1Var = hVar.a;
+                jVar.O();
+                jVar.d(hVar.a);
+                jVar.B.remove(hVar.a);
+                jVar.G();
+                break;
             default:
-                ArrayList arrayList3 = this.b;
-                int i12 = ConnectionsManager.DEFAULT_DATACENTER_ID;
-                for (int size3 = arrayList3.size() - 1; size3 >= 0; size3--) {
-                    i12 = Math.min(i12, ((e1) arrayList3.get(size3)).b());
+                this.c.setListener(null);
+                View view2 = this.d;
+                view2.setAlpha(1.0f);
+                j jVar2 = this.e;
+                if (jVar2.A(view2) > 0.0f) {
+                    view2.setScaleX(1.0f);
+                    view2.setScaleY(1.0f);
                 }
-                int size4 = arrayList3.size();
-                while (true) {
-                    size4--;
-                    l lVar3 = this.c;
-                    if (size4 < 0) {
-                        arrayList3.clear();
-                        lVar3.t.remove(arrayList3);
-                        break;
-                    } else {
-                        e1 e1Var = (e1) arrayList3.get(size4);
-                        long b10 = (e1Var.b() - i12) * lVar3.D;
-                        View view = e1Var.a;
-                        ViewPropertyAnimator animate = view.animate();
-                        lVar3.y.add(e1Var);
-                        animate.alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(lVar3.h()).setStartDelay(b10).setInterpolator(lVar3.h);
-                        animate.setUpdateListener(new e(lVar3, e1Var, 1));
-                        animate.setListener(new h(lVar3, e1Var, view, animate)).start();
-                    }
-                }
+                view2.setTranslationX(0.0f);
+                view2.setTranslationY(0.0f);
+                h hVar2 = this.b;
+                c1 c1Var2 = hVar2.b;
+                jVar2.O();
+                jVar2.d(hVar2.b);
+                jVar2.B.remove(hVar2.b);
+                jVar2.G();
+                break;
+        }
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationStart(Animator animator) {
+        switch (this.a) {
+            case 0:
+                c1 c1Var = this.b.a;
+                this.e.getClass();
+                break;
+            default:
+                c1 c1Var2 = this.b.b;
+                this.e.getClass();
+                break;
         }
     }
 }

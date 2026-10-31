@@ -1,28 +1,43 @@
 package g2;
 
-import java.io.IOException;
+import android.content.Context;
+import android.net.Uri;
+import b2.s0;
+import v7.v6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public class j extends IOException {
-    public final int a;
+public final class j implements e2.d {
+    public static final d9.t e = v6.a(new a3.s(2));
+    public final j9.z a;
+    public final hf.b b;
+    public final int c;
+    public final boolean d;
 
-    public j(int i10) {
-        this.a = i10;
+    public j(c5.e eVar) {
+        this.b = new hf.b((Context) eVar.c);
+        j9.z zVar = (j9.z) e.get();
+        zVar.getClass();
+        this.a = zVar;
+        this.c = eVar.a;
+        this.d = eVar.b;
     }
 
-    public j(Exception exc, int i10) {
-        super(exc);
-        this.a = i10;
+    @Override // e2.d
+    public final j9.y a(s0 s0Var) {
+        byte[] bArr = s0Var.k;
+        if (bArr != null) {
+            return w(bArr);
+        }
+        Uri uri = s0Var.n;
+        if (uri == null) {
+            return null;
+        }
+        return ((j9.a0) this.a).a(new i(1, this, uri));
     }
 
-    public j(String str, int i10) {
-        super(str);
-        this.a = i10;
-    }
-
-    public j(String str, Exception exc, int i10) {
-        super(str, exc);
-        this.a = i10;
+    @Override // e2.d
+    public final j9.y w(byte[] bArr) {
+        return ((j9.a0) this.a).a(new i(0, this, bArr));
     }
 }

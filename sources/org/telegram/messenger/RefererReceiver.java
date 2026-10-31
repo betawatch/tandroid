@@ -4,13 +4,19 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public class RefererReceiver extends BroadcastReceiver {
     @Override // android.content.BroadcastReceiver
-    public void onReceive(Context context, Intent intent) {
+    public final void onReceive(Context context, Intent intent) {
         try {
-            MessagesController.getInstance(UserConfig.selectedAccount).setReferer(intent.getExtras().getString("referrer"));
+            vp r12 = vp.r1(d20.s0);
+            String string = intent.getExtras().getString("referrer");
+            if (string == null) {
+                return;
+            }
+            r12.T3 = string;
+            r12.f7.edit().putString("installReferer", string).commit();
         } catch (Exception unused) {
         }
     }

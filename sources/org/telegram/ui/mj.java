@@ -1,18 +1,30 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes3.dex */
-public final class mj extends rh.i {
-    public final /* synthetic */ wn H;
+import org.telegram.tgnet.TLRPC;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public mj(wn wnVar, jf jfVar) {
-        super(jfVar);
-        this.H = wnVar;
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final class mj implements org.telegram.messenger.zr {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ nj b;
+
+    public mj(nj njVar, boolean z10) {
+        this.b = njVar;
+        this.a = z10;
     }
 
-    @Override // rh.i
-    public final r0.k1 b(r0.k1 k1Var) {
-        return this.H.F8(k1Var);
+    @Override // org.telegram.messenger.zr
+    public final void i(boolean z10) {
+        un unVar = this.b.b;
+        if (z10) {
+            TLRPC.User user = unVar.f;
+            boolean z11 = this.a;
+            if (user != null || z11) {
+                org.telegram.messenger.hs messagesStorage = unVar.getMessagesStorage();
+                messagesStorage.a.c(new org.telegram.messenger.lr(messagesStorage, unVar.j6, new lj(1, this, z11), 0));
+                return;
+            }
+        }
+        unVar.Ga(unVar.r4, z10);
     }
 }

@@ -1,27 +1,46 @@
 package n4;
 
-import android.media.session.MediaSessionManager;
-import android.text.TextUtils;
+import android.media.session.MediaSession;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public class o extends n {
-    @Override // n4.n
-    public final t c() {
-        MediaSessionManager.RemoteUserInfo currentControllerInfo = this.a.getCurrentControllerInfo();
-        t tVar = new t();
-        String packageName = currentControllerInfo.getPackageName();
-        if (packageName == null) {
-            throw new NullPointerException("package shouldn't be null");
+public final class o implements Parcelable {
+    public static final Parcelable.Creator<o> CREATOR = new m8.i(4);
+    public final h a;
+    public final long b;
+    public MediaSession.QueueItem c;
+
+    public o(h hVar, long j10) {
+        if (j10 == -1) {
+            throw new IllegalArgumentException("Id cannot be QueueItem.UNKNOWN_ID");
         }
-        if (TextUtils.isEmpty(packageName)) {
-            throw new IllegalArgumentException("packageName should be nonempty");
-        }
-        tVar.a = new u(currentControllerInfo.getPackageName(), currentControllerInfo.getPid(), currentControllerInfo.getUid());
-        return tVar;
+        this.a = hVar;
+        this.b = j10;
+        this.c = null;
     }
 
-    @Override // n4.n
-    public final void d(t tVar) {
+    @Override // android.os.Parcelable
+    public final int describeContents() {
+        return 0;
+    }
+
+    public final String toString() {
+        StringBuilder sb2 = new StringBuilder("MediaSession.QueueItem { Description=");
+        sb2.append(this.a);
+        sb2.append(", Id=");
+        return a1.g.q(sb2, this.b, " }");
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i10) {
+        this.a.writeToParcel(parcel, i10);
+        parcel.writeLong(this.b);
+    }
+
+    public o(Parcel parcel) {
+        this.a = h.CREATOR.createFromParcel(parcel);
+        this.b = parcel.readLong();
     }
 }

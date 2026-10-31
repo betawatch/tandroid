@@ -1,38 +1,34 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Paint;
+import android.text.TextPaint;
+import android.text.style.ClickableSpan;
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class r50 extends Paint {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class r50 extends ClickableSpan {
+    public final /* synthetic */ org.telegram.ui.ActionBar.z2[] a;
+    public final /* synthetic */ TLRPC.TL_chatInviteImporter b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ r50(Object obj, int i10) {
-        super(1);
-        this.a = i10;
-        this.b = obj;
+    public r50(org.telegram.ui.ActionBar.z2[] z2VarArr, TLRPC.TL_chatInviteImporter tL_chatInviteImporter) {
+        this.a = z2VarArr;
+        this.b = tL_chatInviteImporter;
     }
 
-    @Override // android.graphics.Paint
-    public final void setAlpha(int i10) {
-        switch (this.a) {
-            case 0:
-                super.setAlpha(i10);
-                ((p60) this.b).invalidate();
-                break;
-            case 1:
-                super.setAlpha(i10);
-                en0 en0Var = (en0) this.b;
-                en0Var.a.setAlpha(Math.round(i10 * 0.2f));
-                en0Var.invalidate();
-                break;
-            default:
-                super.setAlpha(i10);
-                ((ProfileActivity) this.b).fragmentView.invalidate();
-                break;
+    @Override // android.text.style.ClickableSpan
+    public final void onClick(View view) {
+        this.a[0].dismiss();
+        org.telegram.ui.ActionBar.k2 T = LaunchActivity.T();
+        if (T != null) {
+            T.presentFragment(ProfileActivity.z4(this.b.user_id));
         }
+    }
+
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        textPaint.setUnderlineText(false);
     }
 }

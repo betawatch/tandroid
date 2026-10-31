@@ -1,10 +1,10 @@
 package com.google.android.recaptcha.internal;
 
-import a8.id;
-import jd.c;
-import jd.g;
+import ad.c;
+import ad.h;
+import ib.a;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class zzgr {
     private final zzhk zza;
@@ -19,7 +19,7 @@ public final class zzgr {
         this.zzf = i10;
         this.zzb = num;
         int i11 = zzby.zza;
-        this.zze = id.a(zzgq.zza);
+        this.zze = a.a(zzgq.zza);
         zzd();
         this.zzc = zzvl.zzc(zzvl.zzb(System.currentTimeMillis()));
         zzd();
@@ -27,7 +27,7 @@ public final class zzgr {
     }
 
     private final zzdk zzd() {
-        return (zzdk) ((g) this.zze).a();
+        return (zzdk) ((h) this.zze).a();
     }
 
     private final zzwk zze(int i10) {

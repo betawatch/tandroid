@@ -1,23 +1,21 @@
 package bb;
 
-import a8.jd;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class b0 extends nd.i implements ud.p {
+public final class b0 extends ed.j implements ld.p {
     public final /* synthetic */ int a;
     public /* synthetic */ Object b;
     public final /* synthetic */ Object c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ b0(Object obj, ld.c cVar, int i10) {
+    public /* synthetic */ b0(Object obj, cd.c cVar, int i10) {
         super(2, cVar);
         this.a = i10;
         this.c = obj;
     }
 
-    @Override // nd.a
-    public final ld.c create(Object obj, ld.c cVar) {
+    @Override // ed.a
+    public final cd.c create(Object obj, cd.c cVar) {
         switch (this.a) {
             case 0:
                 b0 b0Var = new b0((String) this.c, cVar, 0);
@@ -30,36 +28,36 @@ public final class b0 extends nd.i implements ud.p {
         }
     }
 
-    @Override // ud.p
+    @Override // ld.p
     public final Object invoke(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                b0 b0Var = (b0) create((n1.b) obj, (ld.c) obj2);
-                jd.i iVar = jd.i.a;
-                b0Var.invokeSuspend(iVar);
-                return iVar;
+                b0 b0Var = (b0) create((n1.b) obj, (cd.c) obj2);
+                ad.j jVar = ad.j.a;
+                b0Var.invokeSuspend(jVar);
+                return jVar;
             default:
-                return ((b0) create((k1.a0) obj, (ld.c) obj2)).invokeSuspend(jd.i.a);
+                return ((b0) create((k1.a0) obj, (cd.c) obj2)).invokeSuspend(ad.j.a);
         }
     }
 
-    @Override // nd.a
+    @Override // ed.a
     public final Object invokeSuspend(Object obj) {
         int i10 = this.a;
         Object obj2 = this.c;
         switch (i10) {
             case 0:
-                md.a aVar = md.a.a;
-                jd.b(obj);
+                dd.a aVar = dd.a.a;
+                l9.b.b(obj);
                 n1.b bVar = (n1.b) this.b;
                 bVar.getClass();
                 n1.d key = x.a;
                 kotlin.jvm.internal.i.e(key, "key");
                 bVar.b(key, (String) obj2);
-                return jd.i.a;
+                return ad.j.a;
             default:
-                md.a aVar2 = md.a.a;
-                jd.b(obj);
+                dd.a aVar2 = dd.a.a;
+                l9.b.b(obj);
                 k1.a0 a0Var = (k1.a0) obj2;
                 return Boolean.valueOf(((a0Var instanceof k1.b) || (a0Var instanceof k1.g) || ((k1.a0) this.b) != a0Var) ? false : true);
         }

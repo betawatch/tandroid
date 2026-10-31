@@ -1,62 +1,41 @@
 package x7;
 
-import android.os.SystemClock;
-import java.io.Closeable;
-import java.util.HashMap;
-import java.util.Locale;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public class ia implements Closeable {
-    public static final HashMap f = new HashMap();
-    public int a;
-    public long b;
-    public long c;
-    public long d = 2147483647L;
-    public long e = -2147483648L;
+public abstract class ia {
+    public static t7.r a;
 
-    public ia(String str) {
+    public static synchronized ga a(ca caVar) {
+        ga gaVar;
+        synchronized (ia.class) {
+            try {
+                if (a == null) {
+                    a = new t7.r(3);
+                }
+                gaVar = (ga) a.R0(caVar);
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+        return gaVar;
     }
 
-    public void a() {
-        this.b = SystemClock.elapsedRealtimeNanos() / 1000;
-    }
-
-    public void b(long j10) {
-        long elapsedRealtimeNanos = SystemClock.elapsedRealtimeNanos() / 1000;
-        long j11 = this.c;
-        if (j11 != 0 && elapsedRealtimeNanos - j11 >= 1000000) {
-            this.a = 0;
-            this.b = 0L;
-            this.d = 2147483647L;
-            this.e = -2147483648L;
+    public static synchronized ga b() {
+        ga a2;
+        synchronized (ia.class) {
+            byte b10 = (byte) (((byte) 1) | 2);
+            if (b10 != 3) {
+                StringBuilder sb2 = new StringBuilder();
+                if ((b10 & 1) == 0) {
+                    sb2.append(" enableFirelog");
+                }
+                if ((b10 & 2) == 0) {
+                    sb2.append(" firelogEventType");
+                }
+                throw new IllegalStateException("Missing required properties:".concat(sb2.toString()));
+            }
+            a2 = a(new ca());
         }
-        this.c = elapsedRealtimeNanos;
-        this.a++;
-        this.d = Math.min(this.d, j10);
-        this.e = Math.max(this.e, j10);
-        if (this.a % 50 == 0) {
-            Locale locale = Locale.US;
-            qa.b();
-        }
-        if (this.a % 500 == 0) {
-            this.a = 0;
-            this.b = 0L;
-            this.d = 2147483647L;
-            this.e = -2147483648L;
-        }
-    }
-
-    public void c(long j10) {
-        b((SystemClock.elapsedRealtimeNanos() / 1000) - j10);
-    }
-
-    @Override // java.io.Closeable, java.lang.AutoCloseable
-    public void close() {
-        long j10 = this.b;
-        if (j10 == 0) {
-            throw new IllegalStateException("Did you forget to call start()?");
-        }
-        c(j10);
+        return a2;
     }
 }

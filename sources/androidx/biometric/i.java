@@ -1,14 +1,12 @@
 package androidx.biometric;
 
-import a8.c1;
-import a8.z0;
 import android.app.KeyguardManager;
 import android.content.Context;
 import android.os.Build;
 import android.os.Handler;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class i implements androidx.lifecycle.a0 {
     public final /* synthetic */ int a;
@@ -27,7 +25,7 @@ public final class i implements androidx.lifecycle.a0 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void Q(Object obj) {
+    public final void k0(Object obj) {
         boolean z10;
         int i10 = this.a;
         p pVar = this.b;
@@ -62,8 +60,8 @@ public final class i implements androidx.lifecycle.a0 {
                     int i12 = Build.VERSION.SDK_INT;
                     int i13 = 0;
                     if (i12 < 29 && ((i11 == 7 || i11 == 9) && n10 != null)) {
-                        KeyguardManager a2 = f0.a(n10);
-                        if ((a2 == null ? false : f0.b(a2)) && z0.a(pVar.l0.c())) {
+                        KeyguardManager a2 = g0.a(n10);
+                        if ((a2 == null ? false : g0.b(a2)) && v7.k.a(pVar.l0.c())) {
                             pVar.S();
                             pVar.l0.d(null);
                             break;
@@ -71,7 +69,7 @@ public final class i implements androidx.lifecycle.a0 {
                     }
                     if (pVar.R()) {
                         if (charSequence == null) {
-                            charSequence = c1.a(pVar.n(), i11);
+                            charSequence = v7.n.a(pVar.n(), i11);
                         }
                         if (i11 == 5) {
                             int i14 = pVar.l0.l;
@@ -118,11 +116,11 @@ public final class i implements androidx.lifecycle.a0 {
                 if (((Boolean) obj).booleanValue()) {
                     pVar.N(1);
                     pVar.O();
-                    x xVar = pVar.l0;
-                    if (xVar.x == null) {
-                        xVar.x = new androidx.lifecycle.z();
+                    y yVar = pVar.l0;
+                    if (yVar.x == null) {
+                        yVar.x = new androidx.lifecycle.z();
                     }
-                    x.h(xVar.x, Boolean.FALSE);
+                    y.h(yVar.x, Boolean.FALSE);
                     break;
                 }
                 break;

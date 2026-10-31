@@ -1,33 +1,42 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.view.MotionEvent;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.View;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class tw extends org.telegram.ui.Components.ka {
-    @Override // org.telegram.ui.Components.ka
-    public final int C1() {
-        return AndroidUtilities.dp(48.0f);
+public final /* synthetic */ class tw {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ uw b;
+    public final /* synthetic */ View c;
+
+    public /* synthetic */ tw(uw uwVar, View view, int i10) {
+        this.a = i10;
+        this.b = uwVar;
+        this.c = view;
     }
 
-    @Override // org.telegram.ui.Components.nm0, android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.nm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.nm0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.ka, org.telegram.ui.Components.nm0, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
+    public final void a(boolean z10) {
+        switch (this.a) {
+            case 0:
+                View view = this.c;
+                if (view instanceof th.l) {
+                    this.b.O0.E0.i((th.l) view, false);
+                    if (z10) {
+                        org.telegram.messenger.i0.h3(new org.telegram.ui.Components.voip.m0(2), 500L);
+                        break;
+                    }
+                }
+                break;
+            default:
+                View view2 = this.c;
+                if (view2 instanceof th.l) {
+                    this.b.O0.E0.i((th.l) view2, false);
+                    if (z10) {
+                        org.telegram.messenger.i0.h3(new org.telegram.ui.Components.voip.m0(2), 500L);
+                        break;
+                    }
+                }
+                break;
+        }
     }
 }

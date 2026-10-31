@@ -1,37 +1,39 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class j8 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ l8 b;
-    public final /* synthetic */ String c;
+public final class j8 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ float a;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ o8 d;
 
-    public /* synthetic */ j8(l8 l8Var, String str, int i10) {
-        this.a = i10;
-        this.b = l8Var;
-        this.c = str;
+    public j8(o8 o8Var, float f7, float f10, boolean z10) {
+        this.d = o8Var;
+        this.a = f7;
+        this.b = f10;
+        this.c = z10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                l8 l8Var = this.b;
-                String str = this.c;
-                l8Var.f = null;
-                AndroidUtilities.runOnUIThread(new j8(l8Var, str, 1));
-                break;
-            default:
-                l8 l8Var2 = this.b;
-                String str2 = this.c;
-                l8Var2.getClass();
-                Utilities.searchQueue.postRunnable(new k8(l8Var2, str2, new ArrayList(l8Var2.n.w0)));
-                break;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        org.telegram.ui.ActionBar.l lVar;
+        org.telegram.ui.ActionBar.l lVar2;
+        float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        o8 o8Var = this.d;
+        o8Var.N = floatValue;
+        float T1 = org.telegram.messenger.i0.T1(this.a, this.b, floatValue);
+        lVar = ((org.telegram.ui.ActionBar.k2) o8Var).actionBar;
+        lVar.getTitleTextView().setAlpha(o8Var.N);
+        if (o8Var.F && !this.c) {
+            o8Var.m0(false, 1.0f - o8Var.N);
         }
+        o8Var.r.setTranslationY(T1);
+        o8Var.y.setTranslationY(T1);
+        o8Var.fragmentView.invalidate();
+        lVar2 = ((org.telegram.ui.ActionBar.k2) o8Var).actionBar;
+        lVar2.invalidate();
     }
 }

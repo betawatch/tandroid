@@ -1,52 +1,64 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
+import android.content.Context;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class jn0 extends FrameLayout {
-    public TextView a;
-    public TextView b;
-    public ImageView c;
-    public boolean d;
+public final class jn0 extends i31 {
+    public final /* synthetic */ mn0 e2;
+    public final /* synthetic */ z21[] f2;
+    public final /* synthetic */ nn0 g2;
 
-    public final void a(String str, boolean z10) {
-        this.a.setText(str);
-        this.b.setText("");
-        this.d = z10;
-        setWillNotDraw(!z10);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public jn0(nn0 nn0Var, org.telegram.ui.ActionBar.k2 k2Var, Context context, Integer num, int i10, org.telegram.ui.ActionBar.p6 p6Var, int i11, int i12, mn0 mn0Var, z21[] z21VarArr) {
+        super(k2Var, context, true, num, i10, true, p6Var, i11, i12);
+        this.g2 = nn0Var;
+        this.e2 = mn0Var;
+        this.f2 = z21VarArr;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        if (this.d) {
-            canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.y6.k0);
+    @Override // org.telegram.ui.i31
+    public final float getScrimDrawableTranslationY() {
+        return 0.0f;
+    }
+
+    @Override // org.telegram.ui.i31
+    public final void p(View view, Long l4, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
+        nn0 nn0Var = this.g2;
+        if (tL_starGiftUnique != null) {
+            if (nn0Var.m0 == 0) {
+                TLRPC.PeerColor peerColor = tL_starGiftUnique.peer_color;
+                if (!(peerColor instanceof TLRPC.TL_peerColorCollectible)) {
+                    return;
+                }
+                nn0Var.s = (TLRPC.TL_peerColorCollectible) peerColor;
+                nn0Var.r = null;
+            } else {
+                nn0Var.s = null;
+                nn0Var.r = org.telegram.messenger.vp.q0(tL_starGiftUnique);
+            }
+            nn0Var.I = null;
+            nn0Var.h = -1;
+        } else {
+            nn0Var.n = l4 == null ? 0L : l4.longValue();
+            nn0Var.r = null;
+            nn0Var.s = null;
+            nn0Var.I = null;
         }
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(64.0f) + (this.d ? 1 : 0), TLObject.FLAG_30));
-    }
-
-    public void setChecked(boolean z10) {
-        this.c.setVisibility(z10 ? 0 : 4);
-    }
-
-    public void setNeedDivider(boolean z10) {
-        this.d = z10;
-        setWillNotDraw(!z10);
-        invalidate();
-    }
-
-    public void setValue(CharSequence charSequence) {
-        this.b.setText(charSequence);
+        mn0 mn0Var = this.e2;
+        if (mn0Var != null) {
+            mn0Var.b(true);
+        }
+        nn0Var.j(true);
+        nn0Var.i();
+        nn0Var.f(true);
+        z21 z21Var = this.f2[0];
+        if (z21Var != null) {
+            nn0Var.o0 = null;
+            z21Var.dismiss();
+        }
     }
 }

@@ -1,30 +1,68 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.text.TextUtils;
-import android.widget.TextView;
+import android.graphics.Canvas;
+import android.view.View;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class g30 extends org.telegram.ui.Components.g8 {
-    public final /* synthetic */ x50 E;
-    public final /* synthetic */ Activity y;
+public final class g30 extends org.telegram.ui.Components.wt {
+    public final /* synthetic */ b50 V;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g30(x50 x50Var, LaunchActivity launchActivity, Activity activity) {
-        super(launchActivity);
-        this.E = x50Var;
-        this.y = activity;
+    public g30(b50 b50Var, LaunchActivity launchActivity, g40 g40Var, org.telegram.ui.ActionBar.k2 k2Var, org.telegram.ui.ActionBar.p6 p6Var) {
+        super(launchActivity, g40Var, k2Var, 5, true, p6Var);
+        this.V = b50Var;
     }
 
-    @Override // org.telegram.ui.Components.g8
-    public final TextView a() {
-        TextView textView = new TextView(this.y);
-        org.telegram.messenger.t.r(textView, org.telegram.ui.ActionBar.y6.hg, null, 1, 20.0f);
-        textView.setGravity(51);
-        textView.setSingleLine(true);
-        textView.setEllipsize(TextUtils.TruncateAt.END);
-        textView.setOnClickListener(new org.telegram.ui.Components.l51(20, this, textView));
-        return textView;
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j10) {
+        if (view != getEditText()) {
+            return super.drawChild(canvas, view, j10);
+        }
+        canvas.save();
+        b50 b50Var = this.V;
+        b50Var.y1.getEditText().setTranslationY(view.getMeasuredHeight() - b50Var.s5.f);
+        boolean drawChild = super.drawChild(canvas, view, j10);
+        canvas.restore();
+        return drawChild;
+    }
+
+    @Override // org.telegram.ui.Components.wt
+    public final void f() {
+        super.f();
+        org.telegram.ui.Components.vy emojiView = getEmojiView();
+        if (emojiView != null) {
+            emojiView.w0 = false;
+            emojiView.x2 = false;
+            emojiView.setShouldDrawBackground(false);
+            emojiView.setBottomInset(this.V.b.getPaddingBottom());
+        }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
+        fe.f fVar = this.V.s5;
+        if (fVar.f == 0.0f) {
+            fVar.c(getMeasuredHeight());
+        } else {
+            fVar.a(getMeasuredHeight());
+        }
+    }
+
+    @Override // org.telegram.ui.Components.wt
+    public final void p() {
+        hh.i iVar = this.V.t3;
+        int max = this.e ? Math.max(0, getEmojiPadding()) : this.N ? Math.max(0, getKeyboardHeight()) : 0;
+        if (max > 0) {
+            iVar.g(max);
+        } else {
+            iVar.i(false);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.wt
+    public final void y() {
+        this.V.b.requestApplyInsets();
     }
 }

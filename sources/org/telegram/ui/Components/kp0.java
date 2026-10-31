@@ -1,81 +1,60 @@
 package org.telegram.ui.Components;
 
-import android.os.Bundle;
-import android.text.TextUtils;
-import android.view.View;
-import android.view.accessibility.AccessibilityNodeInfo;
-import java.util.HashMap;
-import java.util.WeakHashMap;
+import android.content.Context;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public abstract class kp0 extends View.AccessibilityDelegate {
-    public static final String c = "android.widget.SeekBar";
-    public final HashMap a = new HashMap(4);
-    public final bi.i6 b = new bi.i6(this, 11);
+public final class kp0 extends zf.u {
+    public final /* synthetic */ lp0 n;
 
-    public abstract boolean a();
-
-    public abstract boolean b();
-
-    public abstract void c(boolean z10);
-
-    public CharSequence d() {
-        return null;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public kp0(lp0 lp0Var, Context context, int i10, org.telegram.ui.ActionBar.p6 p6Var) {
+        super(i10, context, p6Var, true, true);
+        this.n = lp0Var;
     }
 
-    public void e(View view, AccessibilityNodeInfo accessibilityNodeInfo) {
-        accessibilityNodeInfo.setClassName(c);
-        CharSequence d = d();
-        if (!TextUtils.isEmpty(d)) {
-            accessibilityNodeInfo.setText(d);
+    @Override // zf.u, s4.g0
+    public final void t(s4.c1 c1Var, int i10) {
+        TLRPC.Chat chat;
+        org.telegram.ui.Cells.q4 q4Var = (org.telegram.ui.Cells.q4) c1Var.a;
+        op0 op0Var = this.n.K;
+        TLRPC.User user = null;
+        if (op0Var.Z1 || op0Var.a2) {
+            int i11 = org.telegram.ui.ActionBar.t6.bh;
+            int i12 = org.telegram.ui.ActionBar.t6.Tg;
+            org.telegram.ui.ActionBar.a7.V(q4Var.b, i11, null);
+            q4Var.H = i12;
+            q4Var.w.b(org.telegram.ui.ActionBar.t6.B5, i12, org.telegram.ui.ActionBar.t6.C5);
         }
-        if (a()) {
-            accessibilityNodeInfo.addAction(AccessibilityNodeInfo.AccessibilityAction.ACTION_SCROLL_BACKWARD);
-        }
-        if (b()) {
-            accessibilityNodeInfo.addAction(AccessibilityNodeInfo.AccessibilityAction.ACTION_SCROLL_FORWARD);
-        }
-    }
-
-    public final void f(AccessibilityNodeInfo accessibilityNodeInfo) {
-        e(null, accessibilityNodeInfo);
-    }
-
-    public boolean g(View view, int i10, Bundle bundle) {
-        if (i10 != 4096 && i10 != 8192) {
-            return false;
-        }
-        c(i10 == 8192);
-        if (view != null) {
-            WeakHashMap weakHashMap = r0.i0.a;
-            if (view.isAttachedToWindow()) {
-                HashMap hashMap = this.a;
-                Runnable runnable = (Runnable) hashMap.get(view);
-                if (runnable == null) {
-                    runnable = new u90(12, this, view);
-                    hashMap.put(view, runnable);
-                    view.addOnAttachStateChangeListener(this.b);
+        TLRPC.TL_topPeer tL_topPeer = (TLRPC.TL_topPeer) org.telegram.messenger.ui.b0(op0Var.a).i1.get(i10);
+        TLRPC.Peer peer = tL_topPeer.peer;
+        long j10 = peer.user_id;
+        if (j10 != 0) {
+            user = org.telegram.messenger.vp.r1(op0Var.a).Z1(Long.valueOf(tL_topPeer.peer.user_id));
+            chat = null;
+        } else {
+            long j11 = peer.channel_id;
+            if (j11 != 0) {
+                j10 = -j11;
+                chat = org.telegram.messenger.vp.r1(op0Var.a).L0(Long.valueOf(tL_topPeer.peer.channel_id));
+            } else {
+                long j12 = peer.chat_id;
+                if (j12 != 0) {
+                    j10 = -j12;
+                    chat = org.telegram.messenger.vp.r1(op0Var.a).L0(Long.valueOf(tL_topPeer.peer.chat_id));
                 } else {
-                    view.removeCallbacks(runnable);
+                    chat = null;
+                    j10 = 0;
                 }
-                view.postDelayed(runnable, 400L);
             }
         }
-        return true;
-    }
-
-    @Override // android.view.View.AccessibilityDelegate
-    public final void onInitializeAccessibilityNodeInfo(View view, AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(view, accessibilityNodeInfo);
-        e(view, accessibilityNodeInfo);
-    }
-
-    @Override // android.view.View.AccessibilityDelegate
-    public final boolean performAccessibilityAction(View view, int i10, Bundle bundle) {
-        if (super.performAccessibilityAction(view, i10, bundle)) {
-            return true;
+        boolean z10 = j10 == q4Var.getDialogId();
+        q4Var.setTag(Long.valueOf(j10));
+        q4Var.a(j10, true, user != null ? org.telegram.messenger.h20.j(user, true) : chat != null ? chat.title : "");
+        boolean z11 = op0Var.M1.h(j10) >= 0;
+        if (q4Var.x) {
+            q4Var.w.a(z11, z10);
         }
-        return g(view, i10, bundle);
     }
 }

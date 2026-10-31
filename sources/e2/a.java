@@ -9,10 +9,9 @@ import java.util.List;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import org.telegram.ui.Components.b10;
 import org.xmlpull.v1.XmlPullParser;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public abstract class a {
     public static ExecutorService a;
@@ -44,10 +43,10 @@ public abstract class a {
         if (TextUtils.isEmpty(replace)) {
             return str;
         }
-        StringBuilder l4 = b10.l(str, "\n  ");
-        l4.append(replace.replace("\n", "\n  "));
-        l4.append('\n');
-        return l4.toString();
+        StringBuilder i10 = sc.e.i(str, "\n  ");
+        i10.append(replace.replace("\n", "\n  "));
+        i10.append('\n');
+        return i10.toString();
     }
 
     public static void b(String str, String str2) {
@@ -73,7 +72,7 @@ public abstract class a {
         synchronized (a.class) {
             try {
                 if (a == null) {
-                    String str = n0.a;
+                    String str = l0.a;
                     a = Executors.newSingleThreadExecutor(new androidx.emoji2.text.a("ExoPlayer:BackgroundExecutor", 1));
                 }
                 executorService = a;
@@ -116,7 +115,7 @@ public abstract class a {
 
     public static void k(MediaFormat mediaFormat, List list) {
         for (int i10 = 0; i10 < list.size(); i10++) {
-            mediaFormat.setByteBuffer(ic.a.i(i10, "csd-"), ByteBuffer.wrap((byte[]) list.get(i10)));
+            mediaFormat.setByteBuffer(i0.a.i(i10, "csd-"), ByteBuffer.wrap((byte[]) list.get(i10)));
         }
     }
 

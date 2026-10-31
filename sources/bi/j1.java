@@ -1,36 +1,43 @@
 package bi;
 
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
+import android.view.ActionMode;
+import android.view.Menu;
+import android.view.MenuItem;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes4.dex */
-public final class j1 implements TextWatcher {
-    public final /* synthetic */ k1 a;
+public final class j1 implements ActionMode.Callback {
+    public final /* synthetic */ n1 a;
 
-    public j1(k1 k1Var) {
-        this.a = k1Var;
+    public j1(n1 n1Var) {
+        this.a = n1Var;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        String obj;
-        int indexOf;
-        boolean z10 = editable == null || editable.toString().isEmpty() || ".".equals(editable.toString());
-        if (!z10 && (indexOf = (obj = editable.toString()).indexOf(46)) >= 0 && (obj.length() - indexOf) - 1 > 2) {
-            editable.delete(indexOf + 3, obj.length());
+    @Override // android.view.ActionMode.Callback
+    public final boolean onActionItemClicked(ActionMode actionMode, MenuItem menuItem) {
+        return false;
+    }
+
+    @Override // android.view.ActionMode.Callback
+    public final boolean onCreateActionMode(ActionMode actionMode, Menu menu) {
+        return true;
+    }
+
+    @Override // android.view.ActionMode.Callback
+    public final boolean onPrepareActionMode(ActionMode actionMode, Menu menu) {
+        if (this.a.length() != 0) {
+            return false;
         }
-        k1 k1Var = this.a;
-        k1Var.n(!z10 ? bg.a.h(editable.toString(), k1Var.E.a) : bg.a.i(0L, k1Var.E.a), false, false, true);
-        k1Var.b.c(k1Var.c.isFocused(), true ^ TextUtils.isEmpty(k1Var.c.getText()));
+        for (int size = menu.size() - 1; size >= 0; size--) {
+            int itemId = menu.getItem(size).getItemId();
+            if (itemId != 16908322 && itemId != 16908337) {
+                menu.removeItem(itemId);
+            }
+        }
+        return true;
     }
 
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    @Override // android.view.ActionMode.Callback
+    public final void onDestroyActionMode(ActionMode actionMode) {
     }
 }

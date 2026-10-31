@@ -1,37 +1,59 @@
 package bi;
 
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.widget.FrameLayout;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.ui.Components.lw0;
-import org.telegram.ui.Components.nm0;
+import org.telegram.messenger.d20;
+import org.telegram.ui.kh0;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class f implements lw0 {
+public final /* synthetic */ class f implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ FrameLayout b;
+    public final /* synthetic */ t b;
 
-    public /* synthetic */ f(int i10, FrameLayout frameLayout) {
+    public /* synthetic */ f(t tVar, int i10) {
         this.a = i10;
-        this.b = frameLayout;
+        this.b = tVar;
     }
 
-    @Override // org.telegram.ui.Components.lw0
-    public final void a(Canvas canvas, RectF rectF, RecyclerView recyclerView) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                nm0 nm0Var = (nm0) recyclerView;
-                ih.d.a(nm0Var, canvas, rectF, nm0Var, this.b);
+                t tVar = this.b;
+                tVar.J(true, 2147483646, 0, 0L, false);
+                kh0 kh0Var = tVar.O;
+                if (kh0Var != null) {
+                    kh0Var.g(false);
+                    tVar.O = null;
+                    break;
+                }
                 break;
             case 1:
-                nm0 nm0Var2 = (nm0) recyclerView;
-                ih.d.a(nm0Var2, canvas, rectF, nm0Var2, this.b);
+                t tVar2 = this.b;
+                tVar2.J(false, 0, 0, 0L, false);
+                kh0 kh0Var2 = tVar2.O;
+                if (kh0Var2 != null) {
+                    kh0Var2.g(true);
+                    tVar2.O = null;
+                    break;
+                }
+                break;
+            case 2:
+                t tVar3 = this.b;
+                if (!d20.i(tVar3.n).q()) {
+                    new kg.i1(tVar3.b.W1, tVar3.getContext(), tVar3.n, 43, true).show();
+                    break;
+                }
+                break;
+            case 3:
+                t tVar4 = this.b;
+                i4 i4Var = tVar4.s;
+                if (i4Var != null) {
+                    i4Var.setSendEnabled(tVar4.r.P3());
+                    break;
+                }
                 break;
             default:
-                nm0 nm0Var3 = (nm0) recyclerView;
-                ih.d.a(nm0Var3, canvas, rectF, nm0Var3, this.b);
+                this.b.d0();
                 break;
         }
     }

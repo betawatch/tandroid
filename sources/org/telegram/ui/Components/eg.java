@@ -1,295 +1,55 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.VideoEditedInfo;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.PhotoViewer;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* JADX WARN: Enum visitor error
+jadx.core.utils.exceptions.JadxRuntimeException: Init of enum field 'd' uses external variables
+	at jadx.core.dex.visitors.EnumVisitor.createEnumFieldByConstructor(EnumVisitor.java:451)
+	at jadx.core.dex.visitors.EnumVisitor.processEnumFieldByRegister(EnumVisitor.java:395)
+	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromFilledArray(EnumVisitor.java:324)
+	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromInsn(EnumVisitor.java:262)
+	at jadx.core.dex.visitors.EnumVisitor.convertToEnum(EnumVisitor.java:151)
+	at jadx.core.dex.visitors.EnumVisitor.visit(EnumVisitor.java:100)
+ */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class eg implements org.telegram.ui.qu0 {
-    public boolean a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ MediaController.PhotoEntry d;
-    public final /* synthetic */ gg e;
+public final class eg {
+    public static final eg d;
+    public static final eg e;
+    public static final /* synthetic */ eg[] f;
+    public final dg a;
+    public final dg b;
+    public final int c;
 
-    public eg(gg ggVar, Object obj, Object obj2, MediaController.PhotoEntry photoEntry) {
-        this.e = ggVar;
-        this.b = obj;
-        this.c = obj2;
-        this.d = photoEntry;
+    static {
+        dg dgVar = dg.a;
+        dg dgVar2 = dg.b;
+        eg egVar = new eg("VOICE_TO_VIDEO", 0, dgVar, dgVar2, R.raw.voice_and_video);
+        d = egVar;
+        dg dgVar3 = dg.c;
+        dg dgVar4 = dg.d;
+        eg egVar2 = new eg("STICKER_TO_KEYBOARD", 1, dgVar3, dgVar4, R.raw.sticker_to_keyboard);
+        dg dgVar5 = dg.e;
+        eg egVar3 = new eg("SMILE_TO_KEYBOARD", 2, dgVar5, dgVar4, R.raw.smile_to_keyboard);
+        eg egVar4 = new eg("VIDEO_TO_VOICE", 3, dgVar2, dgVar, R.raw.voice_and_video);
+        e = egVar4;
+        eg egVar5 = new eg("KEYBOARD_TO_STICKER", 4, dgVar4, dgVar3, R.raw.keyboard_to_sticker);
+        dg dgVar6 = dg.f;
+        f = new eg[]{egVar, egVar2, egVar3, egVar4, egVar5, new eg("KEYBOARD_TO_GIF", 5, dgVar4, dgVar6, R.raw.keyboard_to_gif), new eg("KEYBOARD_TO_SMILE", 6, dgVar4, dgVar5, R.raw.keyboard_to_smile), new eg("GIF_TO_KEYBOARD", 7, dgVar6, dgVar4, R.raw.gif_to_keyboard), new eg("GIF_TO_SMILE", 8, dgVar6, dgVar5, R.raw.gif_to_smile), new eg("SMILE_TO_GIF", 9, dgVar5, dgVar6, R.raw.smile_to_gif), new eg("SMILE_TO_STICKER", 10, dgVar5, dgVar3, R.raw.smile_to_sticker), new eg("STICKER_TO_SMILE", 11, dgVar3, dgVar5, R.raw.sticker_to_smile)};
     }
 
-    @Override // org.telegram.ui.qu0
-    public final boolean A() {
-        return this.a;
+    public eg(String str, int i10, dg dgVar, dg dgVar2, int i11) {
+        this.a = dgVar;
+        this.b = dgVar2;
+        this.c = i11;
     }
 
-    @Override // org.telegram.ui.qu0
-    public final CharSequence C(int i10) {
-        return null;
+    public static eg valueOf(String str) {
+        return (eg) Enum.valueOf(eg.class, str);
     }
 
-    @Override // org.telegram.ui.qu0
-    public final org.telegram.ui.su0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
-        return null;
-    }
-
-    @Override // org.telegram.ui.qu0
-    public final void F(boolean z10) {
-        this.a = z10;
-    }
-
-    @Override // org.telegram.ui.qu0
-    public final int H() {
-        return 0;
-    }
-
-    @Override // org.telegram.ui.qu0
-    public final /* synthetic */ boolean I() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.qu0
-    public final boolean K() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.qu0
-    public final /* synthetic */ boolean L() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.qu0
-    public final /* synthetic */ boolean N() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.qu0
-    public final /* synthetic */ boolean O() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.qu0
-    public final boolean P() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.qu0
-    public final /* synthetic */ boolean Q() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.qu0
-    public final int R(Object obj) {
-        return 0;
-    }
-
-    @Override // org.telegram.ui.qu0
-    public final int S(int i10) {
-        return 0;
-    }
-
-    @Override // org.telegram.ui.qu0
-    public final boolean T() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.qu0
-    public final boolean U() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.qu0
-    public final MessageObject V() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.qu0
-    public final boolean Z() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.qu0
-    public final /* synthetic */ long a() {
-        return 0L;
-    }
-
-    @Override // org.telegram.ui.qu0
-    public final /* synthetic */ boolean b() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.qu0
-    public final String b0() {
-        return "";
-    }
-
-    @Override // org.telegram.ui.qu0
-    public final ArrayList c() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.qu0
-    public final CharSequence c0(int i10) {
-        return null;
-    }
-
-    @Override // org.telegram.ui.qu0
-    public final void d() {
-        fi.g gVar;
-        jd h12 = PhotoViewer.v1().h1();
-        if (h12 == null || (gVar = h12.f) == null) {
-            return;
-        }
-        mu muVar = gVar.a;
-        muVar.requestFocus();
-        AndroidUtilities.showKeyboard(muVar);
-    }
-
-    @Override // org.telegram.ui.qu0
-    public final boolean g() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.qu0
-    public final /* synthetic */ boolean h() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.qu0
-    public final ImageReceiver.BitmapHolder j(int i10) {
-        return null;
-    }
-
-    @Override // org.telegram.ui.qu0
-    public final int k(int i10, VideoEditedInfo videoEditedInfo) {
-        return 0;
-    }
-
-    @Override // org.telegram.ui.qu0
-    public final boolean l() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.qu0
-    public final void o(int i10, VideoEditedInfo videoEditedInfo, boolean z10, int i11, int i12, boolean z11) {
-        this.e.B(null, this.b, null, this.c, z10, i11, i12, this.d, this.a);
-    }
-
-    @Override // org.telegram.ui.qu0
-    public final boolean p() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.qu0
-    public final /* synthetic */ boolean q() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.qu0
-    public final boolean r() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.qu0
-    public final /* synthetic */ boolean t() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.qu0
-    public final boolean u() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.qu0
-    public final HashMap v() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.qu0
-    public final /* synthetic */ boolean w() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.qu0
-    public final boolean x(int i10) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.qu0
-    public final int y() {
-        return 0;
-    }
-
-    @Override // org.telegram.ui.qu0
-    public final boolean z() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.qu0
-    public final void D() {
-    }
-
-    @Override // org.telegram.ui.qu0
-    public final void G() {
-    }
-
-    @Override // org.telegram.ui.qu0
-    public final /* synthetic */ void J() {
-    }
-
-    @Override // org.telegram.ui.qu0
-    public final /* synthetic */ void W() {
-    }
-
-    @Override // org.telegram.ui.qu0
-    public final /* synthetic */ void i() {
-    }
-
-    @Override // org.telegram.ui.qu0
-    public final /* synthetic */ void m() {
-    }
-
-    @Override // org.telegram.ui.qu0
-    public final void n() {
-    }
-
-    @Override // org.telegram.ui.qu0
-    public final /* synthetic */ void s() {
-    }
-
-    @Override // org.telegram.ui.qu0
-    public final void B(int i10) {
-    }
-
-    @Override // org.telegram.ui.qu0
-    public final void M(VideoEditedInfo videoEditedInfo) {
-    }
-
-    @Override // org.telegram.ui.qu0
-    public final void X(int i10) {
-    }
-
-    @Override // org.telegram.ui.qu0
-    public final /* synthetic */ void Y(int i10) {
-    }
-
-    @Override // org.telegram.ui.qu0
-    public final void a0(int i10) {
-    }
-
-    @Override // org.telegram.ui.qu0
-    public final void e(CharSequence charSequence) {
-    }
-
-    @Override // org.telegram.ui.qu0
-    public final void f(String str, String str2, boolean z10) {
+    public static eg[] values() {
+        return (eg[]) f.clone();
     }
 }

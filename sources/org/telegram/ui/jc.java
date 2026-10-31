@@ -1,20 +1,61 @@
 package org.telegram.ui;
 
-import android.app.Activity;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class jc extends tg.j0 {
-    public final /* synthetic */ int X0;
+public final class jc implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public boolean b = false;
+    public final /* synthetic */ org.telegram.messenger.us c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public jc(bd bdVar, Activity activity, int i10, int i11, org.telegram.ui.ActionBar.u6 u6Var, int i12) {
-        super(i10, i11, activity, bdVar, u6Var);
-        this.X0 = i12;
+    public /* synthetic */ jc(org.telegram.messenger.us usVar, int i10) {
+        this.a = i10;
+        this.c = usVar;
     }
 
-    @Override // tg.j0
-    public final int s1() {
-        return this.X0;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                zc zcVar = (zc) this.c;
+                zcVar.n0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                zcVar.m0.invalidate();
+                if (!this.b && zcVar.n0 > 0.5f) {
+                    this.b = true;
+                    break;
+                }
+                break;
+            case 1:
+                tn0 tn0Var = (tn0) this.c;
+                tn0Var.Y = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                tn0Var.X.invalidate();
+                if (!this.b && tn0Var.Y > 0.5f) {
+                    this.b = true;
+                    break;
+                }
+                break;
+            case 2:
+                m91 m91Var = (m91) this.c;
+                m91Var.j2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                m91Var.i2.invalidate();
+                if (!this.b && m91Var.j2 > 0.5f) {
+                    this.b = true;
+                    break;
+                }
+                break;
+            default:
+                vh.o8 o8Var = (vh.o8) this.c;
+                o8Var.D2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                vh.y7 y7Var = o8Var.C2;
+                if (y7Var != null) {
+                    y7Var.invalidate();
+                }
+                if (!this.b && o8Var.D2 > 0.5f) {
+                    this.b = true;
+                    break;
+                }
+                break;
+        }
     }
 }

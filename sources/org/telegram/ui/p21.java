@@ -1,37 +1,39 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessageObject;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class p21 implements s21 {
-    public final /* synthetic */ wn a;
-    public final /* synthetic */ Activity b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.u6 c;
-    public final /* synthetic */ MessageObject d;
+public final /* synthetic */ class p21 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ s21 b;
 
-    public p21(wn wnVar, Activity activity, org.telegram.ui.ActionBar.u6 u6Var, MessageObject messageObject) {
-        this.a = wnVar;
-        this.b = activity;
-        this.c = u6Var;
-        this.d = messageObject;
+    public /* synthetic */ p21(s21 s21Var, int i10) {
+        this.a = i10;
+        this.b = s21Var;
     }
 
-    @Override // org.telegram.ui.s21
-    public final void a() {
-        AndroidUtilities.runOnUIThread(new j21(this.a, this.b, this.c, this.d, 2), 200L);
-    }
-
-    @Override // org.telegram.ui.s21
-    public final void b() {
-        AndroidUtilities.runOnUIThread(new te(this.a, this.d, 8), 200L);
-    }
-
-    @Override // org.telegram.ui.s21
-    public final void c() {
-        wn wnVar = this.a;
-        wnVar.showDialog(new tg.y0((org.telegram.ui.ActionBar.r2) wnVar, 3, true));
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                s21 s21Var = this.b;
+                s21Var.N = floatValue;
+                s21Var.V.h0.invalidate();
+                break;
+            case 1:
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                s21 s21Var2 = this.b;
+                s21Var2.N = floatValue2;
+                s21Var2.V.h0.invalidate();
+                break;
+            default:
+                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                s21 s21Var3 = this.b;
+                s21Var3.N = floatValue3;
+                s21Var3.V.h0.invalidate();
+                break;
+        }
     }
 }

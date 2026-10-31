@@ -1,53 +1,38 @@
 package org.telegram.ui;
 
-import j$.util.Objects;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class cc extends qg.a {
-    public final String c;
-    public final TL_stories.Boost d;
-    public TL_stories.PrepaidGiveaway e;
-    public boolean f;
-    public final int g;
+public final /* synthetic */ class cc implements org.telegram.messenger.q20 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ zc b;
 
-    public cc(int i10, String str) {
-        super(i10, false);
-        this.c = str;
+    public /* synthetic */ cc(zc zcVar, int i10) {
+        this.a = i10;
+        this.b = zcVar;
     }
 
-    public final boolean equals(Object obj) {
-        TL_stories.PrepaidGiveaway prepaidGiveaway;
-        boolean z10 = this.f;
-        if (this == obj) {
-            return true;
+    @Override // org.telegram.messenger.q20
+    public final void a(Object obj) {
+        switch (this.a) {
+            case 0:
+                TLRPC.WallPaper wallPaper = (TLRPC.WallPaper) obj;
+                zc zcVar = this.b;
+                zcVar.E = wallPaper;
+                zcVar.F = wallPaper;
+                zcVar.G = wallPaper;
+                zcVar.d1(false);
+                zcVar.g1(false);
+                org.telegram.messenger.i0.h3(new dc(zcVar, 1), 350L);
+                break;
+            case 1:
+                zc.Z(this.b, (org.telegram.messenger.h3) obj);
+                break;
+            default:
+                this.b.c1((TL_stories.TL_premium_boostsStatus) obj);
+                break;
         }
-        if (obj == null || cc.class != obj.getClass()) {
-            return false;
-        }
-        cc ccVar = (cc) obj;
-        TL_stories.Boost boost = ccVar.d;
-        boolean z11 = ccVar.f;
-        TL_stories.PrepaidGiveaway prepaidGiveaway2 = this.e;
-        if (prepaidGiveaway2 != null && (prepaidGiveaway = ccVar.e) != null) {
-            return prepaidGiveaway2.id == prepaidGiveaway.id && z10 == z11;
-        }
-        TL_stories.Boost boost2 = this.d;
-        if (boost2 == null || boost == null) {
-            return true;
-        }
-        return boost2.id.hashCode() == boost.id.hashCode() && z10 == z11 && this.g == ccVar.g;
-    }
-
-    public final int hashCode() {
-        return Objects.hash(this.c, this.d, this.e, Boolean.valueOf(this.f), Integer.valueOf(this.g));
-    }
-
-    public cc(TL_stories.Boost boost, boolean z10, int i10) {
-        super(5, true);
-        this.d = boost;
-        this.f = z10;
-        this.g = i10;
     }
 }

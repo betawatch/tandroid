@@ -3,9 +3,9 @@ package com.google.android.gms.tasks;
 import android.app.Activity;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.Executor;
-import o6.l;
+import n6.l;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 final class zzw<TResult> extends Task<TResult> {
     private final Object zza = new Object();
@@ -16,7 +16,7 @@ final class zzw<TResult> extends Task<TResult> {
     private Exception zzf;
 
     private final void zzf() {
-        l.j("Task is not yet complete", this.zzc);
+        l.i("Task is not yet complete", this.zzc);
     }
 
     private final void zzg() {
@@ -156,7 +156,7 @@ final class zzw<TResult> extends Task<TResult> {
     }
 
     public final void zza(Exception exc) {
-        l.i(exc, "Exception must not be null");
+        l.h(exc, "Exception must not be null");
         synchronized (this.zza) {
             zzh();
             this.zzc = true;
@@ -191,7 +191,7 @@ final class zzw<TResult> extends Task<TResult> {
     }
 
     public final boolean zzd(Exception exc) {
-        l.i(exc, "Exception must not be null");
+        l.h(exc, "Exception must not be null");
         synchronized (this.zza) {
             try {
                 if (this.zzc) {

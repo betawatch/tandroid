@@ -1,42 +1,15 @@
 package org.telegram.ui.Components;
 
-import j$.util.Objects;
-import org.telegram.messenger.ContactsController;
-import org.telegram.tgnet.TLRPC;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class nj {
-    public final int a;
-    public final long b;
+public interface nj {
+    void A();
 
-    public nj(int i10, long j10) {
-        this.a = i10;
-        this.b = j10;
-    }
+    void S();
 
-    public static nj a(Object obj) {
-        if (obj instanceof ContactsController.Contact) {
-            return new nj(2, ((ContactsController.Contact) obj).contact_id);
-        }
-        if (obj instanceof TLRPC.User) {
-            return new nj(1, ((TLRPC.User) obj).id);
-        }
-        return null;
-    }
+    void m(ArrayList arrayList, String str, ArrayList arrayList2, ArrayList arrayList3, boolean z10, int i10, long j10, boolean z11, long j11);
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || nj.class != obj.getClass()) {
-            return false;
-        }
-        nj njVar = (nj) obj;
-        return this.b == njVar.b && this.a == njVar.a;
-    }
-
-    public final int hashCode() {
-        return Objects.hash(m1.j.a(this.a), Long.valueOf(this.b));
-    }
+    void o(ArrayList arrayList, boolean z10, int i10, long j10);
 }

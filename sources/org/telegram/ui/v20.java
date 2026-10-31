@@ -1,31 +1,20 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class v20 extends g.o {
-    public final /* synthetic */ x50 c;
+public final class v20 extends s4.j {
+    public final /* synthetic */ b50 F;
 
-    public v20(x50 x50Var) {
-        this.c = x50Var;
+    public v20(b50 b50Var) {
+        this.F = b50Var;
     }
 
-    @Override // g.o
-    public final int i(int i10) {
-        r50 r50Var;
-        int i11;
-        int i12;
-        int i13 = x50.F3 ? 6 : 2;
-        if (x50.G3 || i10 < (i11 = (r50Var = this.c.P).G) || i10 >= (i12 = r50Var.H)) {
-            return i13;
-        }
-        int i14 = i12 - i11;
-        int i15 = (i10 != i12 - 1 || (!x50.F3 && i14 % 2 == 0)) ? 1 : 2;
-        if (!x50.F3) {
-            return i15;
-        }
-        if (i14 == 1) {
-            return 6;
-        }
-        return i14 == 2 ? 3 : 2;
+    @Override // s4.j
+    public final void P(s4.c1 c1Var) {
+        b50 b50Var = this.F;
+        b50Var.H1.invalidate();
+        b50Var.R3.invalidate();
+        b50Var.b.invalidate();
+        b50.P0(b50Var);
     }
 }

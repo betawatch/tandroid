@@ -1,12 +1,20 @@
 package ef;
 
-import a8.bc;
+import java.nio.charset.Charset;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class b extends a {
-    @Override // ef.p
-    public final void a(bc bcVar) {
-        bcVar.a(this);
+public enum b {
+    c(Charset.forName("ISO-8859-1"), 1),
+    d(Charset.forName("UTF-16"), 2),
+    e(Charset.forName("UTF-16BE"), 2),
+    f(Charset.forName("UTF-8"), 1);
+
+    public final Charset a;
+    public final int b;
+
+    b(Charset charset, int i10) {
+        this.a = charset;
+        this.b = i10;
     }
 }

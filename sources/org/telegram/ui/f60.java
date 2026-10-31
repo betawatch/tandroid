@@ -1,26 +1,17 @@
 package org.telegram.ui;
 
-import android.app.Activity;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class f60 extends tg.j0 {
-    public final /* synthetic */ g60 X0;
+public final class f60 {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ TLRPC.TL_messages_stickerSet b;
+    public final /* synthetic */ k60 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f60(g60 g60Var, g60 g60Var2, Activity activity, int i10, int i11, org.telegram.ui.ActionBar.u6 u6Var) {
-        super(i10, i11, activity, g60Var2, u6Var);
-        this.X0 = g60Var;
-    }
-
-    @Override // org.telegram.ui.ActionBar.k3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.n2
-    public final void dismiss() {
-        super.dismiss();
-        this.X0.B0 = false;
-    }
-
-    @Override // org.telegram.ui.ActionBar.k3
-    public final void onOpenAnimationEnd() {
-        this.X0.B0 = false;
+    public f60(k60 k60Var, boolean z10, TLRPC.TL_messages_stickerSet tL_messages_stickerSet) {
+        this.c = k60Var;
+        this.a = z10;
+        this.b = tL_messages_stickerSet;
     }
 }

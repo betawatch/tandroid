@@ -1,27 +1,20 @@
 package w7;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class c extends k9 {
-    public final transient Object[] c;
-    public final transient int d;
-    public final transient int e = 1;
+public final class c {
+    public static final c a;
+    public static final /* synthetic */ c[] b;
 
-    public c(int i10, Object[] objArr) {
-        this.c = objArr;
-        this.d = i10;
+    static {
+        c cVar = new c("DEFAULT", 0);
+        a = cVar;
+        b = new c[]{cVar, new c("SIGNED", 1), new c("FIXED", 2)};
     }
 
-    @Override // java.util.List
-    public final Object get(int i10) {
-        z.a(i10, this.e);
-        Object obj = this.c[i10 + i10 + this.d];
-        obj.getClass();
-        return obj;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.e;
+    public static c[] values() {
+        return (c[]) b.clone();
     }
 }

@@ -1,31 +1,30 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class x70 extends AnimatorListenerAdapter {
+public final /* synthetic */ class x70 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ y70 b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ boolean d;
 
-    public /* synthetic */ x70(y70 y70Var, int i10) {
+    public /* synthetic */ x70(y70 y70Var, boolean z10, boolean z11, int i10) {
         this.a = i10;
         this.b = y70Var;
+        this.c = z10;
+        this.d = z11;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                y70 y70Var = this.b;
-                y70Var.e.d0 = null;
-                y70Var.requestLayout();
+                org.telegram.messenger.i0.g3(new x70(this.b, this.c, this.d, 1));
                 break;
             default:
-                y70 y70Var2 = this.b;
-                y70Var2.e.d0 = null;
-                y70Var2.a = false;
+                y70 y70Var = this.b;
+                y70Var.setJoinRequest(this.c);
+                y70Var.setJoinToSend(this.d);
                 break;
         }
     }

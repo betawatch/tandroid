@@ -1,14 +1,11 @@
 package org.telegram.ui;
 
 import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class to implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -25,48 +22,48 @@ public final /* synthetic */ class to implements View.OnClickListener {
         cp cpVar = this.b;
         switch (i10) {
             case 0:
-                TLRPC.Chat currentChannel = ((org.telegram.ui.Cells.n) view.getParent()).getCurrentChannel();
+                TLRPC.Chat currentChannel = ((org.telegram.ui.Cells.m) view.getParent()).getCurrentChannel();
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(cpVar.getParentActivity());
-                String string = LocaleController.getString(R.string.AppName);
-                org.telegram.ui.ActionBar.e2 e2Var = alertDialog$Builder.a;
-                e2Var.R = string;
+                String L0 = org.telegram.messenger.cd.L0(R.string.AppName, null);
+                org.telegram.ui.ActionBar.x1 x1Var = alertDialog$Builder.a;
+                x1Var.R = L0;
                 if (cpVar.a0) {
-                    e2Var.T = AndroidUtilities.replaceTags(LocaleController.formatString("RevokeLinkAlertChannel", R.string.RevokeLinkAlertChannel, cpVar.getMessagesController().linkPrefix + "/" + ChatObject.getPublicUsername(currentChannel), currentChannel.title));
+                    x1Var.T = org.telegram.messenger.i0.W2(org.telegram.messenger.cd.a0("RevokeLinkAlertChannel", null, 2131746038, cpVar.getMessagesController().U2 + "/" + org.telegram.messenger.w3.K(currentChannel, false), currentChannel.title));
                 } else {
-                    e2Var.T = AndroidUtilities.replaceTags(LocaleController.formatString("RevokeLinkAlert", R.string.RevokeLinkAlert, cpVar.getMessagesController().linkPrefix + "/" + ChatObject.getPublicUsername(currentChannel), currentChannel.title));
+                    x1Var.T = org.telegram.messenger.i0.W2(org.telegram.messenger.cd.a0("RevokeLinkAlert", null, 2131746039, cpVar.getMessagesController().U2 + "/" + org.telegram.messenger.w3.K(currentChannel, false), currentChannel.title));
                 }
-                alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-                alertDialog$Builder.k(LocaleController.getString(R.string.RevokeButton), new m4.s0(23, cpVar, currentChannel));
-                cpVar.showDialog(e2Var);
+                alertDialog$Builder.h(org.telegram.messenger.cd.L0(2131752589, null), null);
+                alertDialog$Builder.k(org.telegram.messenger.cd.L0(2131746041, null), new ng.d(18, cpVar, currentChannel));
+                cpVar.showDialog(x1Var);
                 break;
             case 1:
                 if (!cpVar.V) {
                     cpVar.V = true;
-                    cpVar.d0();
+                    cpVar.g0();
                     break;
                 }
                 break;
             case 2:
                 if (cpVar.V) {
                     if (!cpVar.c0) {
-                        cpVar.b0();
+                        cpVar.e0();
                         break;
                     } else {
                         cpVar.V = false;
-                        cpVar.d0();
+                        cpVar.g0();
                         break;
                     }
                 }
                 break;
             case 3:
-                lh0 lh0Var = new lh0(cpVar.Z, 0L, 0);
-                lh0Var.i0(cpVar.Y, cpVar.l0);
-                cpVar.presentFragment(lh0Var);
+                kg0 kg0Var = new kg0(cpVar.Z, 0, 0L);
+                kg0Var.l0(cpVar.Y, cpVar.l0);
+                cpVar.presentFragment(kg0Var);
                 break;
             default:
                 boolean z10 = !cpVar.b0;
                 cpVar.b0 = z10;
-                ((org.telegram.ui.Cells.a9) view).setChecked(z10);
+                ((org.telegram.ui.Cells.t8) view).setChecked(z10);
                 break;
         }
     }

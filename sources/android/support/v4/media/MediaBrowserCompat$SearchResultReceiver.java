@@ -2,17 +2,17 @@ package android.support.v4.media;
 
 import android.os.Bundle;
 import android.os.Parcelable;
-import android.support.v4.media.session.b0;
+import android.support.v4.media.session.a0;
 import c.d;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 class MediaBrowserCompat$SearchResultReceiver extends d {
     @Override // c.d
     public final void a(int i10, Bundle bundle) {
         if (bundle != null) {
-            bundle = b0.j(bundle);
+            bundle = a0.H(bundle);
         }
         if (i10 != 0) {
             throw null;

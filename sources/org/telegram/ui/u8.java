@@ -1,53 +1,37 @@
 package org.telegram.ui;
 
 import android.view.View;
-import j$.util.function.Predicate$-CC;
-import java.util.Map;
-import java.util.function.Predicate;
-import org.telegram.tgnet.TLRPC;
+import java.io.Serializable;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class u8 implements Predicate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
+public final /* synthetic */ class u8 implements org.telegram.messenger.o20, org.telegram.messenger.p20, r0.m {
+    public final /* synthetic */ j9 a;
 
-    public /* synthetic */ u8(long j10, int i10) {
-        this.a = i10;
-        this.b = j10;
+    public /* synthetic */ u8(j9 j9Var) {
+        this.a = j9Var;
     }
 
-    public /* synthetic */ Predicate and(Predicate predicate) {
-        int i10 = this.a;
-        return Predicate$-CC.$default$and(this, predicate);
+    @Override // r0.m
+    public r0.j1 R0(View view, r0.j1 j1Var) {
+        return this.a.onInsetsInternal(view, j1Var);
     }
 
-    public /* synthetic */ Predicate negate() {
-        switch (this.a) {
+    @Override // org.telegram.messenger.p20
+    public Boolean a(org.telegram.ui.Components.a51 a51Var, View view, Integer num, Float f7, Float f10) {
+        boolean z10;
+        Object obj = a51Var.G;
+        if (obj instanceof g9) {
+            this.a.e0(((g9) obj).c, (f9) view);
+            z10 = true;
+        } else {
+            z10 = false;
         }
-        return Predicate$-CC.$default$negate(this);
+        return Boolean.valueOf(z10);
     }
 
-    public /* synthetic */ Predicate or(Predicate predicate) {
-        int i10 = this.a;
-        return Predicate$-CC.$default$or(this, predicate);
-    }
-
-    @Override // java.util.function.Predicate
-    public final boolean test(Object obj) {
-        switch (this.a) {
-            case 0:
-                return ((TLRPC.User) obj).id == this.b;
-            case 1:
-                return ((TLRPC.User) obj).id == this.b;
-            default:
-                Map.Entry entry = (Map.Entry) obj;
-                if (((View) entry.getKey()).isAttachedToWindow() && ((View) entry.getKey()).isShown() && ((View) entry.getKey()).getWindowVisibility() == 0) {
-                    if (this.b - ((Long) entry.getValue()).longValue() <= 300) {
-                        return false;
-                    }
-                }
-                return true;
-        }
+    @Override // org.telegram.messenger.o20
+    public void k(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
+        j9.Z(this.a, (org.telegram.ui.Components.a51) obj, (View) obj2);
     }
 }

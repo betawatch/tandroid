@@ -1,11 +1,11 @@
 package g;
 
-import a8.kc;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import androidx.appcompat.widget.ContentFrameLayout;
+import v7.r7;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class p extends ContentFrameLayout {
     public final /* synthetic */ r r;
@@ -24,9 +24,9 @@ public final class p extends ContentFrameLayout {
     @Override // android.view.ViewGroup
     public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
         if (motionEvent.getAction() == 0) {
-            int x9 = (int) motionEvent.getX();
+            int x10 = (int) motionEvent.getX();
             int y3 = (int) motionEvent.getY();
-            if (x9 < -5 || y3 < -5 || x9 > getWidth() + 5 || y3 > getHeight() + 5) {
+            if (x10 < -5 || y3 < -5 || x10 > getWidth() + 5 || y3 > getHeight() + 5) {
                 r rVar = this.r;
                 rVar.h(rVar.o(0), true);
                 return true;
@@ -37,6 +37,6 @@ public final class p extends ContentFrameLayout {
 
     @Override // android.view.View
     public final void setBackgroundResource(int i10) {
-        setBackgroundDrawable(kc.b(getContext(), i10));
+        setBackgroundDrawable(r7.b(getContext(), i10));
     }
 }

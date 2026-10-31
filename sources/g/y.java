@@ -1,53 +1,22 @@
 package g;
 
-import android.view.View;
-import androidx.appcompat.widget.ActionBarOverlayLayout;
-import java.util.WeakHashMap;
-import r0.i0;
-import r0.n0;
+import org.telegram.messenger.ui;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class y extends n0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ a0 b;
+public final class y {
+    public long a;
+    public boolean b;
 
-    public /* synthetic */ y(a0 a0Var, int i10) {
-        this.a = i10;
-        this.b = a0Var;
+    public void a(long j10) {
+        this.a = ui.p(this.a, j10);
     }
 
-    @Override // r0.m0
-    public final void c() {
-        View view;
-        int i10 = this.a;
-        a0 a0Var = this.b;
-        switch (i10) {
-            case 0:
-                if (a0Var.o && (view = a0Var.g) != null) {
-                    view.setTranslationY(0.0f);
-                    a0Var.d.setTranslationY(0.0f);
-                }
-                a0Var.d.setVisibility(8);
-                a0Var.d.setTransitioning(false);
-                a0Var.s = null;
-                n4.s sVar = a0Var.k;
-                if (sVar != null) {
-                    sVar.A(a0Var.j);
-                    a0Var.j = null;
-                    a0Var.k = null;
-                }
-                ActionBarOverlayLayout actionBarOverlayLayout = a0Var.c;
-                if (actionBarOverlayLayout != null) {
-                    WeakHashMap weakHashMap = i0.a;
-                    r0.y.c(actionBarOverlayLayout);
-                    break;
-                }
-                break;
-            default:
-                a0Var.s = null;
-                a0Var.d.requestLayout();
-                break;
-        }
+    public void b(boolean z10) {
+        a(z10 ? 1L : 0L);
+    }
+
+    public void c(float f7) {
+        a(Float.floatToIntBits(f7));
     }
 }

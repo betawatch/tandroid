@@ -1,32 +1,24 @@
 package w8;
 
-import a8.df;
 import android.os.Parcel;
 import android.os.Parcelable;
-import java.util.ArrayList;
+import v8.s;
+import w7.h0;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class c extends p6.a {
-    public static final Parcelable.Creator<c> CREATOR = new s(6);
-    public ArrayList a;
-    public boolean b;
-    public boolean c;
-    public int d;
+public final class c extends o6.a {
+    public static final Parcelable.Creator<c> CREATOR = new s(17);
+    public String a;
+    public d b;
+    public f c;
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q5 = df.q(parcel, 20293);
-        df.h(parcel, 1, this.a);
-        boolean z10 = this.b;
-        df.s(parcel, 2, 4);
-        parcel.writeInt(z10 ? 1 : 0);
-        boolean z11 = this.c;
-        df.s(parcel, 3, 4);
-        parcel.writeInt(z11 ? 1 : 0);
-        int i11 = this.d;
-        df.s(parcel, 4, 4);
-        parcel.writeInt(i11);
-        df.r(parcel, q5);
+        int q6 = h0.q(parcel, 20293);
+        h0.l(parcel, 2, this.a);
+        h0.k(parcel, 3, this.b, i10);
+        h0.k(parcel, 5, this.c, i10);
+        h0.r(parcel, q6);
     }
 }

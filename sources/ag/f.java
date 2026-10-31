@@ -1,38 +1,347 @@
 package ag;
 
-import android.graphics.Bitmap;
+import android.content.Context;
+import android.view.View;
+import android.widget.FrameLayout;
 import java.util.ArrayList;
-import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.cd;
+import org.telegram.messenger.us;
+import org.telegram.messenger.zs;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.ActionBar.l5;
+import org.telegram.ui.Components.a51;
+import org.telegram.ui.Components.p51;
+import org.telegram.ui.Components.tk0;
+import org.telegram.ui.Components.u51;
+import w7.b6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class f implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ArrayList b;
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final class f extends org.telegram.ui.ActionBar.k2 implements us {
+    public int D;
+    public int E;
+    public int F;
+    public l5 a;
+    public u51 b;
+    public x0 c;
+    public boolean d;
+    public boolean e;
+    public int f;
+    public TL_account.TL_businessAwayMessage h;
+    public int n;
+    public boolean r;
+    public boolean s;
+    public boolean w;
+    public int x;
+    public int y;
 
-    public /* synthetic */ f(ArrayList arrayList, int i10) {
-        this.a = i10;
-        this.b = arrayList;
+    public static void Y(f fVar, ArrayList arrayList, p51 p51Var) {
+        String L0 = cd.L0(2131752838, null);
+        String L02 = cd.L0(2131752835, null);
+        a51 a51Var = new a51(2);
+        a51Var.l = L0;
+        a51Var.o = L02;
+        a51Var.m = "RestrictedEmoji";
+        a51Var.n = "💤";
+        arrayList.add(a51Var);
+        a51 i10 = a51.i(1, cd.L0(2131752821, null));
+        i10.L(fVar.r);
+        arrayList.add(i10);
+        arrayList.add(a51.C(null));
+        if (fVar.r) {
+            h3 d = i3.f(fVar.currentAccount).d("away");
+            if (d != null) {
+                a51 a51Var2 = new a51(17);
+                a51Var2.G = d;
+                arrayList.add(a51Var2);
+            } else {
+                a51 c10 = a51.c(2, R.drawable.msg2_chats_add, cd.L0(2131752837, null));
+                c10.q = true;
+                arrayList.add(c10);
+            }
+            arrayList.add(a51.C(null));
+            arrayList.add(a51.u(cd.L0(2131752830, null)));
+            a51 x10 = a51.x(3, cd.L0(2131752829, null));
+            x10.L(fVar.x == 0);
+            arrayList.add(x10);
+            if (fVar.d) {
+                a51 x11 = a51.x(4, cd.L0(2131752822, null));
+                x11.L(fVar.x == 1);
+                arrayList.add(x11);
+            }
+            a51 x12 = a51.x(5, cd.L0(2131752828, null));
+            x12.L(fVar.x == 2);
+            arrayList.add(x12);
+            if (fVar.x == 2) {
+                arrayList.add(a51.C(null));
+                arrayList.add(a51.u(cd.L0(2131752830, null)));
+                arrayList.add(a51.f(cd.L0(2131752824, null), cd.Q(fVar.E), 8));
+                arrayList.add(a51.f(cd.L0(2131752827, null), cd.Q(fVar.F), 9));
+            }
+            arrayList.add(a51.C(null));
+            a51 i11 = a51.i(10, cd.L0(2131752832, null));
+            i11.L(fVar.w);
+            arrayList.add(i11);
+            arrayList.add(a51.C(cd.L0(2131752831, null)));
+            arrayList.add(a51.u(cd.L0(2131752688, null)));
+            a51 x13 = a51.x(6, cd.L0(2131752781, null));
+            x13.L(fVar.s);
+            arrayList.add(x13);
+            a51 x14 = a51.x(7, cd.L0(2131752776, null));
+            x14.L(!fVar.s);
+            arrayList.add(x14);
+            arrayList.add(a51.C(null));
+            fVar.c.a(arrayList, p51Var, true);
+            arrayList.add(a51.C(null));
+        }
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                ArrayList arrayList = this.b;
-                int size = arrayList.size();
-                int i10 = 0;
-                while (i10 < size) {
-                    Object obj = arrayList.get(i10);
-                    i10++;
-                    ((Bitmap) obj).recycle();
-                }
-                break;
-            default:
-                rg.j0.h = this.b;
-                rg.j0.i = false;
-                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.customTypefacesLoaded, new Object[0]);
-                break;
+    public final void Z(boolean z10) {
+        if (this.a == null) {
+            return;
         }
+        this.a.a(a0(), z10);
+    }
+
+    public final boolean a0() {
+        x0 x0Var;
+        if (this.e) {
+            boolean z10 = this.r;
+            TL_account.TL_businessAwayMessage tL_businessAwayMessage = this.h;
+            if (z10 == (tL_businessAwayMessage != null)) {
+                if (z10 && tL_businessAwayMessage != null) {
+                    if (tL_businessAwayMessage.recipients.exclude_selected == this.s && ((x0Var = this.c) == null || !x0Var.g())) {
+                        int i10 = this.n;
+                        int i11 = this.x;
+                        if (i10 == i11 && this.h.offline_only == this.w && (i11 != 2 || (this.y == this.E && this.D == this.F))) {
+                        }
+                    }
+                }
+            }
+            return true;
+        }
+        return false;
+    }
+
+    public final void b0() {
+        if (this.a.y.f) {
+            return;
+        }
+        if (!a0()) {
+            finishFragment();
+            return;
+        }
+        h3 d = i3.f(this.currentAccount).d("away");
+        boolean z10 = this.r;
+        if (z10 && d == null) {
+            org.telegram.messenger.t2.D.a();
+            View B1 = this.b.B1(2);
+            int i10 = -this.f;
+            this.f = i10;
+            org.telegram.messenger.i0.F3(i10, B1, null);
+            u51 u51Var = this.b;
+            u51Var.y0(u51Var.A1(2));
+            return;
+        }
+        if (!z10 || this.c.k(this.b)) {
+            this.a.b(true);
+            TLRPC.UserFull a2 = getMessagesController().a2(getUserConfig().e());
+            TL_account.updateBusinessAwayMessage updatebusinessawaymessage = new TL_account.updateBusinessAwayMessage();
+            if (this.r) {
+                TL_account.TL_inputBusinessAwayMessage tL_inputBusinessAwayMessage = new TL_account.TL_inputBusinessAwayMessage();
+                updatebusinessawaymessage.message = tL_inputBusinessAwayMessage;
+                tL_inputBusinessAwayMessage.offline_only = this.w;
+                tL_inputBusinessAwayMessage.shortcut_id = d.a;
+                tL_inputBusinessAwayMessage.recipients = this.c.e();
+                int i11 = this.x;
+                if (i11 == 0) {
+                    updatebusinessawaymessage.message.schedule = new TL_account.TL_businessAwayMessageScheduleAlways();
+                } else if (i11 == 1) {
+                    updatebusinessawaymessage.message.schedule = new TL_account.TL_businessAwayMessageScheduleOutsideWorkHours();
+                } else if (i11 == 2) {
+                    TL_account.TL_businessAwayMessageScheduleCustom tL_businessAwayMessageScheduleCustom = new TL_account.TL_businessAwayMessageScheduleCustom();
+                    tL_businessAwayMessageScheduleCustom.start_date = this.E;
+                    tL_businessAwayMessageScheduleCustom.end_date = this.F;
+                    updatebusinessawaymessage.message.schedule = tL_businessAwayMessageScheduleCustom;
+                }
+                updatebusinessawaymessage.flags |= 1;
+                if (a2 != null) {
+                    a2.flags2 |= 8;
+                    TL_account.TL_businessAwayMessage tL_businessAwayMessage = new TL_account.TL_businessAwayMessage();
+                    a2.business_away_message = tL_businessAwayMessage;
+                    tL_businessAwayMessage.offline_only = this.w;
+                    tL_businessAwayMessage.shortcut_id = d.a;
+                    tL_businessAwayMessage.recipients = this.c.f();
+                    a2.business_away_message.schedule = updatebusinessawaymessage.message.schedule;
+                }
+            } else if (a2 != null) {
+                a2.flags2 &= -9;
+                a2.business_away_message = null;
+            }
+            getConnectionsManager().sendRequest(updatebusinessawaymessage, new c(this, 0));
+            getMessagesStorage().j2(a2, false);
+        }
+    }
+
+    public final void c0() {
+        u51 u51Var;
+        p51 p51Var;
+        if (this.e) {
+            return;
+        }
+        TLRPC.UserFull a2 = getMessagesController().a2(getUserConfig().e());
+        if (a2 == null) {
+            getMessagesController().e3(getUserConfig().f(), true, getClassGuid());
+            return;
+        }
+        TL_account.TL_businessAwayMessage tL_businessAwayMessage = a2.business_away_message;
+        this.h = tL_businessAwayMessage;
+        this.d = a2.business_work_hours != null;
+        this.r = tL_businessAwayMessage != null;
+        this.s = tL_businessAwayMessage != null ? tL_businessAwayMessage.recipients.exclude_selected : true;
+        this.w = tL_businessAwayMessage != null ? tL_businessAwayMessage.offline_only : true;
+        x0 x0Var = this.c;
+        if (x0Var != null) {
+            x0Var.j(tL_businessAwayMessage == null ? null : tL_businessAwayMessage.recipients);
+        }
+        TL_account.TL_businessAwayMessage tL_businessAwayMessage2 = this.h;
+        if (tL_businessAwayMessage2 != null) {
+            TL_account.BusinessAwayMessageSchedule businessAwayMessageSchedule = tL_businessAwayMessage2.schedule;
+            if (businessAwayMessageSchedule instanceof TL_account.TL_businessAwayMessageScheduleCustom) {
+                this.n = 2;
+                this.x = 2;
+                TL_account.TL_businessAwayMessageScheduleCustom tL_businessAwayMessageScheduleCustom = (TL_account.TL_businessAwayMessageScheduleCustom) businessAwayMessageSchedule;
+                int i10 = tL_businessAwayMessageScheduleCustom.start_date;
+                this.y = i10;
+                this.E = i10;
+                int i11 = tL_businessAwayMessageScheduleCustom.end_date;
+                this.D = i11;
+                this.F = i11;
+                u51Var = this.b;
+                if (u51Var != null && (p51Var = u51Var.f3) != null) {
+                    p51Var.O(true);
+                }
+                Z(true);
+                this.e = true;
+            }
+        }
+        this.E = getConnectionsManager().getCurrentTime();
+        this.F = getConnectionsManager().getCurrentTime() + 86400;
+        TL_account.TL_businessAwayMessage tL_businessAwayMessage3 = this.h;
+        if (tL_businessAwayMessage3 != null && (tL_businessAwayMessage3.schedule instanceof TL_account.TL_businessAwayMessageScheduleAlways)) {
+            this.n = 0;
+            this.x = 0;
+        } else if (tL_businessAwayMessage3 == null || !(tL_businessAwayMessage3.schedule instanceof TL_account.TL_businessAwayMessageScheduleOutsideWorkHours)) {
+            this.n = 0;
+            this.x = 0;
+        } else {
+            this.n = 1;
+            this.x = 1;
+        }
+        u51Var = this.b;
+        if (u51Var != null) {
+            p51Var.O(true);
+        }
+        Z(true);
+        this.e = true;
+    }
+
+    @Override // org.telegram.ui.ActionBar.k2
+    public final View createView(Context context) {
+        setHasOwnBackground(true);
+        this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
+        this.simpleActionBar.setTitle(cd.L0(2131752838, null));
+        int i10 = 0;
+        this.simpleActionBar.setActionBarMenuOnItemClick(new e(this, i10));
+        this.a = this.simpleActionBar.n(cd.L0(2131745963, null));
+        Z(false);
+        FrameLayout frameLayout = new FrameLayout(context);
+        x0 x0Var = new x0(this, new a3.d(this, 3));
+        this.c = x0Var;
+        x0Var.h = this.s;
+        TL_account.TL_businessAwayMessage tL_businessAwayMessage = this.h;
+        x0Var.j(tL_businessAwayMessage == null ? null : tL_businessAwayMessage.recipients);
+        u51 u51Var = new u51(this, new a(this, i10), new b(this, i10), null);
+        this.b = u51Var;
+        u51Var.r1();
+        this.b.setSectionsDrawBackground(true);
+        u51 u51Var2 = this.b;
+        u51Var2.f3.r = false;
+        frameLayout.addView(u51Var2, b6.c(-1.0f, -1));
+        c0();
+        this.fragmentView = frameLayout;
+        return frameLayout;
+    }
+
+    @Override // org.telegram.messenger.us
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        p51 p51Var;
+        if (i10 != zs.F1) {
+            if (i10 == zs.E0) {
+                c0();
+            }
+        } else {
+            u51 u51Var = this.b;
+            if (u51Var != null && (p51Var = u51Var.f3) != null) {
+                p51Var.O(true);
+            }
+            Z(true);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.k2
+    public final tk0 getListViewForSimpleGlass() {
+        return this.b;
+    }
+
+    @Override // org.telegram.ui.ActionBar.k2
+    public final boolean isSupportEdgeToEdge() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.ActionBar.k2
+    public final boolean onBackPressed(boolean z10) {
+        if (!a0()) {
+            return super.onBackPressed(z10);
+        }
+        if (z10) {
+            if (!this.r) {
+                b0();
+                return false;
+            }
+            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getParentActivity());
+            String L0 = cd.L0(2131743860, null);
+            org.telegram.ui.ActionBar.x1 x1Var = alertDialog$Builder.a;
+            x1Var.R = L0;
+            x1Var.T = cd.L0(2131752820, null);
+            alertDialog$Builder.k(cd.L0(2131754216, null), new b(this, 1));
+            alertDialog$Builder.h(cd.L0(2131747596, null), new b(this, 2));
+            showDialog(x1Var);
+        }
+        return false;
+    }
+
+    @Override // org.telegram.ui.ActionBar.k2
+    public final boolean onFragmentCreate() {
+        getNotificationCenter().c(this, zs.F1);
+        getNotificationCenter().c(this, zs.E0);
+        i3.f(this.currentAccount).h();
+        c0();
+        return super.onFragmentCreate();
+    }
+
+    @Override // org.telegram.ui.ActionBar.k2
+    public final void onFragmentDestroy() {
+        getNotificationCenter().n(this, zs.F1);
+        getNotificationCenter().n(this, zs.E0);
+        super.onFragmentDestroy();
+    }
+
+    @Override // org.telegram.ui.ActionBar.k2
+    public final boolean useSimpleActionBar() {
+        return true;
     }
 }

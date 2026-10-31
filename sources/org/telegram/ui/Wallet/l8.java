@@ -1,92 +1,45 @@
 package org.telegram.ui.Wallet;
 
-import android.view.KeyEvent;
-import android.widget.EditText;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.cd;
+import org.telegram.messenger.q20;
+import org.telegram.ui.Components.cc;
+import org.telegram.ui.Components.wb;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class l8 implements TextView.OnEditorActionListener {
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class l8 implements q20 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ t8 b;
 
-    public /* synthetic */ l8(Object obj, int i10) {
+    public /* synthetic */ l8(t8 t8Var, int i10) {
         this.a = i10;
-        this.b = obj;
+        this.b = t8Var;
     }
 
-    @Override // android.widget.TextView.OnEditorActionListener
-    public final boolean onEditorAction(TextView textView, int i10, KeyEvent keyEvent) {
-        switch (this.a) {
+    @Override // org.telegram.messenger.q20
+    public final void a(Object obj) {
+        int i10 = this.a;
+        t8 t8Var = this.b;
+        switch (i10) {
             case 0:
-                n8 n8Var = (n8) this.b;
-                if (i10 != 3) {
-                    n8Var.getClass();
-                    return false;
-                }
-                AndroidUtilities.hideKeyboard(n8Var.b);
-                return true;
+                k0.x(t8Var.currentAccount).z(new ih.s(26, t8Var, (q20) obj), true, false);
+                break;
             case 1:
-                i9 i9Var = (i9) this.b;
-                if (i10 == 6) {
-                    fi.d dVar = i9Var.d0;
-                    if (dVar.c0) {
-                        dVar.performClick();
-                        return true;
-                    }
+                String str = (String) obj;
+                if (str == null) {
+                    wb I = cc.a0(t8Var).I(R.raw.contact_check, cd.L0(2131743214, null), cd.L0(2131743212, null));
+                    I.j = 5000;
+                    I.j();
+                    t8Var.a.f3.O(true);
+                    break;
                 } else {
-                    i9Var.getClass();
+                    cc.a0(t8Var).e0(str, false);
+                    break;
                 }
-                return false;
             default:
-                ha haVar = (ha) this.b;
-                EditText editText = haVar.a;
-                boolean z10 = keyEvent != null && (keyEvent.getKeyCode() == 66 || keyEvent.getKeyCode() == 160);
-                if (i10 != 5 && !z10) {
-                    return false;
-                }
-                if (keyEvent == null || (keyEvent.getAction() == 1 && !keyEvent.isCanceled())) {
-                    String lowerCase = editText.getText().toString().trim().toLowerCase();
-                    if (lowerCase.isEmpty() || !haVar.b()) {
-                        String str = null;
-                        if (!lowerCase.isEmpty()) {
-                            String[] mnemonicWordlist = WalletEngine2.getMnemonicWordlist();
-                            int length = mnemonicWordlist.length;
-                            int i11 = 0;
-                            while (true) {
-                                if (i11 < length) {
-                                    String str2 = mnemonicWordlist[i11];
-                                    if (str2.startsWith(lowerCase)) {
-                                        str = str2;
-                                    } else {
-                                        i11++;
-                                    }
-                                }
-                            }
-                        }
-                        if (str != null) {
-                            editText.setText(str);
-                            editText.setSelection(str.length());
-                            haVar.setError(false);
-                            haVar.a();
-                            Runnable runnable = haVar.r;
-                            if (runnable != null) {
-                                editText.post(runnable);
-                            }
-                        } else {
-                            haVar.setError(true);
-                        }
-                    } else {
-                        haVar.setError(false);
-                        haVar.a();
-                        Runnable runnable2 = haVar.r;
-                        if (runnable2 != null) {
-                            editText.post(runnable2);
-                        }
-                    }
-                }
-                return true;
+                t8.e0(t8Var, (Boolean) obj);
+                break;
         }
     }
 }

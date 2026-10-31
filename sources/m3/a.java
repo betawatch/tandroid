@@ -5,7 +5,7 @@ import b2.r0;
 import b2.t0;
 import b2.x;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class a implements t0 {
     public final int a;
@@ -30,7 +30,7 @@ public final class a implements t0 {
         StringBuilder sb2 = new StringBuilder("Ait(controlCode=");
         sb2.append(this.a);
         sb2.append(",url=");
-        return g.s(sb2, this.b, ")");
+        return g.r(sb2, this.b, ")");
     }
 
     @Override // b2.t0

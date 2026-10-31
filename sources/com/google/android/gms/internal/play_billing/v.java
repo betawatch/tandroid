@@ -1,9 +1,9 @@
 package com.google.android.gms.internal.play_billing;
 
-import a8.oa;
 import j$.util.Objects;
+import v7.w5;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class v extends r {
     public static final v e = new v(0, new Object[0]);
@@ -17,14 +17,14 @@ public final class v extends r {
 
     @Override // java.util.List
     public final Object get(int i10) {
-        oa.a(i10, this.d);
+        w5.a(i10, this.d);
         Object obj = this.c[i10];
         Objects.requireNonNull(obj);
         return obj;
     }
 
     @Override // com.google.android.gms.internal.play_billing.r, com.google.android.gms.internal.play_billing.o
-    public final int h(Object[] objArr) {
+    public final int l(Object[] objArr) {
         Object[] objArr2 = this.c;
         int i10 = this.d;
         System.arraycopy(objArr2, 0, objArr, 0, i10);

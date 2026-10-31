@@ -2,37 +2,37 @@ package org.telegram.ui;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c0 implements Runnable {
     public final /* synthetic */ int a = 0;
-    public final /* synthetic */ a3 b;
+    public final /* synthetic */ z2 b;
     public final /* synthetic */ View c;
 
-    public /* synthetic */ c0(View view, a3 a3Var) {
+    public /* synthetic */ c0(View view, z2 z2Var) {
         this.c = view;
-        this.b = a3Var;
+        this.b = z2Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                a3 a3Var = this.b;
+                z2 z2Var = this.b;
                 View view = this.c;
-                view.post(new c0(a3Var, view));
+                view.post(new c0(z2Var, view));
                 break;
             default:
-                a3 a3Var2 = this.b;
-                a3Var2.I.clear();
-                a3Var2.K.set(null);
+                z2 z2Var2 = this.b;
+                z2Var2.I.clear();
+                z2Var2.K.set(null);
                 this.c.invalidate();
                 break;
         }
     }
 
-    public /* synthetic */ c0(a3 a3Var, View view) {
-        this.b = a3Var;
+    public /* synthetic */ c0(z2 z2Var, View view) {
+        this.b = z2Var;
         this.c = view;
     }
 }

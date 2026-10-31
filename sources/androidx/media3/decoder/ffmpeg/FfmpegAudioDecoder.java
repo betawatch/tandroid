@@ -1,9 +1,8 @@
 package androidx.media3.decoder.ffmpeg;
 
-import a8.yb;
 import androidx.media3.decoder.SimpleDecoderOutputBuffer;
 import b2.x;
-import e2.n0;
+import e2.l0;
 import h2.f;
 import h2.h;
 import h2.j;
@@ -11,9 +10,10 @@ import h2.l;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.List;
-import org.telegram.messenger.MediaController;
+import org.telegram.messenger.zs;
+import v7.t6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class FfmpegAudioDecoder extends l {
     public static final byte[] w = {102, 76, 97, 67};
@@ -56,7 +56,7 @@ public final class FfmpegAudioDecoder extends l {
                 }
                 break;
             case -53558318:
-                if (str2.equals(MediaController.AUDIO_MIME_TYPE)) {
+                if (str2.equals("audio/mp4a-latm")) {
                     c10 = 1;
                     break;
                 }
@@ -87,12 +87,12 @@ public final class FfmpegAudioDecoder extends l {
                 byte[] bArr5 = (byte[]) list.get(1);
                 byte[] bArr6 = new byte[bArr4.length + bArr5.length + 6];
                 bArr6[0] = (byte) (bArr4.length >> 8);
-                bArr6[1] = (byte) (bArr4.length & 255);
+                bArr6[1] = (byte) (bArr4.length & zs.e4);
                 System.arraycopy(bArr4, 0, bArr6, 2, bArr4.length);
                 bArr6[bArr4.length + 2] = 0;
                 bArr6[bArr4.length + 3] = 0;
                 bArr6[bArr4.length + 4] = (byte) (bArr5.length >> 8);
-                bArr6[bArr4.length + 5] = (byte) (bArr5.length & 255);
+                bArr6[bArr4.length + 5] = (byte) (bArr5.length & zs.e4);
                 System.arraycopy(bArr5, 0, bArr6, bArr4.length + 6, bArr5.length);
                 bArr = bArr6;
                 break;
@@ -180,7 +180,7 @@ public final class FfmpegAudioDecoder extends l {
         this.r = i10;
         ByteBuffer byteBuffer = simpleDecoderOutputBuffer.b;
         byteBuffer.getClass();
-        yb.g(i10 >= byteBuffer.limit());
+        t6.f(i10 >= byteBuffer.limit());
         ByteBuffer order = ByteBuffer.allocateDirect(i10).order(ByteOrder.nativeOrder());
         int position = byteBuffer.position();
         byteBuffer.position(0);
@@ -222,7 +222,7 @@ public final class FfmpegAudioDecoder extends l {
             }
         }
         ByteBuffer byteBuffer = hVar.c;
-        String str = n0.a;
+        String str = l0.a;
         int limit = byteBuffer.limit();
         long j10 = hVar.e;
         int i10 = this.r;

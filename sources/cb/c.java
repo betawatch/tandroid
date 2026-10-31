@@ -1,16 +1,15 @@
 package cb;
 
-import a8.jd;
+import bd.t;
 import j$.util.DesugarCollections;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import kd.r;
 import kotlin.jvm.internal.i;
 import org.telegram.tgnet.TLObject;
-import y9.j;
+import x9.j;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class c {
     public static final c a = new c();
@@ -26,17 +25,17 @@ public final class c {
         throw new IllegalStateException("Cannot get dependency " + dVar + ". Dependencies should be added at class load time.");
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:14:0x00a7  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x00a6  */
     /* JADX WARN: Removed duplicated region for block: B:17:0x0066  */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x00cd A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x00af A[Catch: all -> 0x00c8, TRY_ENTER, TryCatch #0 {all -> 0x00c8, blocks: (B:12:0x0099, B:23:0x00af, B:24:0x00c7), top: B:11:0x0099 }] */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x00cc A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x00ae A[Catch: all -> 0x00c7, TRY_ENTER, TryCatch #0 {all -> 0x00c7, blocks: (B:12:0x0099, B:23:0x00ae, B:24:0x00c6), top: B:11:0x0099 }] */
     /* JADX WARN: Removed duplicated region for block: B:31:0x003f  */
     /* JADX WARN: Removed duplicated region for block: B:8:0x0021  */
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:21:0x0097 -> B:10:0x0098). Please report as a decompilation issue!!! */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object b(nd.c cVar) {
+    public final Object b(ed.c cVar) {
         b bVar;
         int i10;
         Map linkedHashMap;
@@ -47,13 +46,13 @@ public final class c {
             if ((i11 & TLObject.FLAG_31) != 0) {
                 bVar.r = i11 - TLObject.FLAG_31;
                 Object obj = bVar.h;
-                md.a aVar = md.a.a;
+                dd.a aVar = dd.a.a;
                 i10 = bVar.r;
                 if (i10 != 0) {
-                    jd.b(obj);
+                    l9.b.b(obj);
                     Map dependencies = b;
                     i.d(dependencies, "dependencies");
-                    linkedHashMap = new LinkedHashMap(r.a(dependencies.size()));
+                    linkedHashMap = new LinkedHashMap(t.a(dependencies.size()));
                     it = dependencies.entrySet().iterator();
                     if (it.hasNext()) {
                     }
@@ -63,11 +62,11 @@ public final class c {
                     }
                     Object key = bVar.f;
                     linkedHashMap = bVar.e;
-                    le.d dVar = bVar.d;
+                    ce.d dVar = bVar.d;
                     d subscriberName = bVar.c;
                     it = bVar.b;
                     Map map = bVar.a;
-                    jd.b(obj);
+                    l9.b.b(obj);
                     try {
                         i.e(subscriberName, "subscriberName");
                         j jVar = a(subscriberName).b;
@@ -109,7 +108,7 @@ public final class c {
         }
         bVar = new b(this, cVar);
         Object obj2 = bVar.h;
-        md.a aVar2 = md.a.a;
+        dd.a aVar2 = dd.a.a;
         i10 = bVar.r;
         if (i10 != 0) {
         }

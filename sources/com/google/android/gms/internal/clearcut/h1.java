@@ -1,47 +1,114 @@
 package com.google.android.gms.internal.clearcut;
 
-import java.lang.reflect.Field;
 import sun.misc.Unsafe;
 
 /* loaded from: classes.dex */
-public abstract class h1 {
-    public final Unsafe a;
+public final class h1 extends j1 {
+    public final /* synthetic */ int b;
 
-    public h1(Unsafe unsafe) {
-        this.a = unsafe;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ h1(Unsafe unsafe, int i10) {
+        super(unsafe);
+        this.b = i10;
     }
 
-    public final long a(Field field) {
-        return this.a.objectFieldOffset(field);
+    @Override // com.google.android.gms.internal.clearcut.j1
+    public final void c(Object obj, long j10, double d) {
+        switch (this.b) {
+            case 0:
+                e(obj, j10, Double.doubleToLongBits(d));
+                break;
+            default:
+                e(obj, j10, Double.doubleToLongBits(d));
+                break;
+        }
     }
 
-    public final void b(long j10, Object obj, int i10) {
-        this.a.putInt(obj, j10, i10);
+    @Override // com.google.android.gms.internal.clearcut.j1
+    public final void d(Object obj, long j10, float f7) {
+        switch (this.b) {
+            case 0:
+                b(j10, obj, Float.floatToIntBits(f7));
+                break;
+            default:
+                b(j10, obj, Float.floatToIntBits(f7));
+                break;
+        }
     }
 
-    public abstract void c(Object obj, long j10, double d);
-
-    public abstract void d(Object obj, long j10, float f7);
-
-    public final void e(Object obj, long j10, long j11) {
-        this.a.putLong(obj, j10, j11);
+    @Override // com.google.android.gms.internal.clearcut.j1
+    public final void f(Object obj, long j10, boolean z10) {
+        switch (this.b) {
+            case 0:
+                if (!k1.h) {
+                    k1.e(obj, j10, z10 ? (byte) 1 : (byte) 0);
+                    break;
+                } else {
+                    k1.c(obj, j10, z10 ? (byte) 1 : (byte) 0);
+                    break;
+                }
+            default:
+                if (!k1.h) {
+                    k1.e(obj, j10, z10 ? (byte) 1 : (byte) 0);
+                    break;
+                } else {
+                    k1.c(obj, j10, z10 ? (byte) 1 : (byte) 0);
+                    break;
+                }
+        }
     }
 
-    public abstract void f(Object obj, long j10, boolean z10);
-
-    public final int g(Object obj, long j10) {
-        return this.a.getInt(obj, j10);
+    @Override // com.google.android.gms.internal.clearcut.j1
+    public final boolean i(Object obj, long j10) {
+        switch (this.b) {
+            case 0:
+                if (k1.h) {
+                    if (k1.l(obj, j10) == 0) {
+                    }
+                } else if (k1.m(obj, j10) == 0) {
+                }
+                break;
+            default:
+                if (k1.h) {
+                    if (k1.l(obj, j10) == 0) {
+                    }
+                } else if (k1.m(obj, j10) == 0) {
+                }
+                break;
+        }
+        return false;
     }
 
-    public final long h(Object obj, long j10) {
-        return this.a.getLong(obj, j10);
+    @Override // com.google.android.gms.internal.clearcut.j1
+    public final float j(Object obj, long j10) {
+        switch (this.b) {
+        }
+        return Float.intBitsToFloat(g(obj, j10));
     }
 
-    public abstract boolean i(Object obj, long j10);
+    @Override // com.google.android.gms.internal.clearcut.j1
+    public final double k(Object obj, long j10) {
+        switch (this.b) {
+        }
+        return Double.longBitsToDouble(h(obj, j10));
+    }
 
-    public abstract float j(Object obj, long j10);
-
-    public abstract double k(Object obj, long j10);
-
-    public abstract byte l(Object obj, long j10);
+    @Override // com.google.android.gms.internal.clearcut.j1
+    public final byte l(Object obj, long j10) {
+        switch (this.b) {
+            case 0:
+                if (!k1.h) {
+                    break;
+                } else {
+                    break;
+                }
+            default:
+                if (!k1.h) {
+                    break;
+                } else {
+                    break;
+                }
+        }
+        return k1.m(obj, j10);
+    }
 }

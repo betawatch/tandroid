@@ -1,32 +1,44 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class ah0 implements Runnable {
-    public final /* synthetic */ lh0 a;
+public final class ah0 extends org.telegram.ui.Components.zf {
+    public final /* synthetic */ org.telegram.ui.Components.zf n0;
+    public final /* synthetic */ boolean o0;
+    public final /* synthetic */ kh0 p0;
 
-    public ah0(lh0 lh0Var) {
-        this.a = lh0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ah0(kh0 kh0Var, Context context, int i10, org.telegram.ui.ActionBar.p6 p6Var, org.telegram.ui.Components.zf zfVar, boolean z10) {
+        super(i10, context, p6Var, false);
+        this.p0 = kh0Var;
+        this.n0 = zfVar;
+        this.o0 = z10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        lh0 lh0Var = this.a;
-        if (lh0Var.b == null) {
-            return;
-        }
-        for (int i10 = 0; i10 < lh0Var.b.getChildCount(); i10++) {
-            View childAt = lh0Var.b.getChildAt(i10);
-            if (childAt instanceof ih0) {
-                ih0 ih0Var = (ih0) childAt;
-                if (ih0Var.I) {
-                    ih0Var.b(ih0Var.n, ih0Var.r);
-                }
-            }
-        }
-        AndroidUtilities.runOnUIThread(this, 500L);
+    @Override // org.telegram.ui.Components.zf
+    public final boolean d() {
+        return this.n0.d();
+    }
+
+    @Override // org.telegram.ui.Components.zf
+    public final boolean e() {
+        return this.n0.e();
+    }
+
+    @Override // org.telegram.ui.Components.zf
+    public final boolean f() {
+        return (this.o0 && this.p0.p0 && this.r <= 0) ? false : true;
+    }
+
+    @Override // org.telegram.ui.Components.zf
+    public final int getFillColor() {
+        return this.n0.getFillColor();
+    }
+
+    @Override // org.telegram.ui.Components.zf
+    public final boolean j() {
+        return this.n0.j();
     }
 }

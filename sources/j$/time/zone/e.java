@@ -9,7 +9,6 @@ import java.io.DataOutput;
 import java.io.InvalidObjectException;
 import java.io.ObjectInputStream;
 import java.io.Serializable;
-import org.telegram.messenger.RichMessageLayout;
 
 /* loaded from: classes2.dex */
 public final class e implements Serializable {
@@ -55,7 +54,7 @@ public final class e implements Serializable {
         } else {
             b10 = 31;
         }
-        int i10 = totalSeconds % RichMessageLayout.PART_MAX_HEIGHT_DP == 0 ? (totalSeconds / RichMessageLayout.PART_MAX_HEIGHT_DP) + 128 : 255;
+        int i10 = totalSeconds % 900 == 0 ? (totalSeconds / 900) + 128 : 255;
         int i11 = (totalSeconds2 == 0 || totalSeconds2 == 1800 || totalSeconds2 == 3600) ? totalSeconds2 / 1800 : 3;
         int i12 = (totalSeconds3 == 0 || totalSeconds3 == 1800 || totalSeconds3 == 3600) ? totalSeconds3 / 1800 : 3;
         DayOfWeek dayOfWeek = this.c;
@@ -102,7 +101,7 @@ public final class e implements Serializable {
             j$.time.temporal.a.HOUR_OF_DAY.w(i17);
             hVar = j$.time.h.h[i17];
         }
-        ZoneOffset O = ZoneOffset.O(i13 == 255 ? dataInput.readInt() : (i13 - 128) * RichMessageLayout.PART_MAX_HEIGHT_DP);
+        ZoneOffset O = ZoneOffset.O(i13 == 255 ? dataInput.readInt() : (i13 - 128) * 900);
         ZoneOffset O2 = ZoneOffset.O(i14 == 3 ? dataInput.readInt() : (i14 * 1800) + O.getTotalSeconds());
         ZoneOffset O3 = ZoneOffset.O(i15 == 3 ? dataInput.readInt() : (i15 * 1800) + O.getTotalSeconds());
         boolean z10 = i12 == 24;

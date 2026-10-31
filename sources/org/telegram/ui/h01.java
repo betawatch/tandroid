@@ -1,23 +1,39 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class h01 extends org.telegram.ui.Cells.n5 {
-    public final /* synthetic */ l01 v;
+public final /* synthetic */ class h01 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ k01 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h01(l01 l01Var, Context context, org.telegram.ui.ActionBar.u6 u6Var) {
-        super(18, 70, context, u6Var, false);
-        this.v = l01Var;
+    public /* synthetic */ h01(k01 k01Var, int i10) {
+        this.a = i10;
+        this.b = k01Var;
     }
 
-    @Override // org.telegram.ui.Cells.n5
-    public final int a(int i10) {
-        ProfileActivity profileActivity = this.v.e;
-        int i11 = ProfileActivity.R6;
-        profileActivity.getClass();
-        return i10;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                k01 k01Var = this.b;
+                k01Var.getClass();
+                k01Var.e = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                k01Var.g();
+                break;
+            case 1:
+                k01 k01Var2 = this.b;
+                k01Var2.getClass();
+                k01Var2.e = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                k01Var2.g();
+                break;
+            default:
+                k01 k01Var3 = this.b;
+                k01Var3.getClass();
+                k01Var3.e = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                k01Var3.g();
+                break;
+        }
     }
 }

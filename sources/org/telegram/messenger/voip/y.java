@@ -1,26 +1,30 @@
 package org.telegram.messenger.voip;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import java.util.HashSet;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final /* synthetic */ class y implements RequestDelegate {
+public final /* synthetic */ class y implements Runnable {
     public final /* synthetic */ int a;
+    public final /* synthetic */ VoIPService b;
+    public final /* synthetic */ HashSet c;
+    public final /* synthetic */ String d;
 
-    public /* synthetic */ y(int i10) {
+    public /* synthetic */ y(VoIPService voIPService, HashSet hashSet, String str, int i10) {
         this.a = i10;
+        this.b = voIPService;
+        this.c = hashSet;
+        this.d = str;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                VoIPService.lambda$callFailed$114(tLObject, tL_error);
+                this.b.lambda$startConferenceGroupCall$42(this.c, this.d);
                 break;
             default:
-                VoIPService.lambda$createGroupInstance$67(tLObject, tL_error);
+                this.b.lambda$startConferenceGroupCall$50(this.c, this.d);
                 break;
         }
     }

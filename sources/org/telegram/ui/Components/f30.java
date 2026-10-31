@@ -1,42 +1,41 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class f30 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ k30 b;
-
-    public /* synthetic */ f30(k30 k30Var, int i10) {
-        this.a = i10;
-        this.b = k30Var;
+public final class f30 implements ms0 {
+    @Override // org.telegram.ui.Components.ms0
+    public final boolean X() {
+        return false;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                k30 k30Var = this.b;
-                k30Var.r.x = (int) floatValue;
-                k30Var.h();
-                h30 h30Var = k30Var.a;
-                if (h30Var.getParent() != null) {
-                    k30Var.n.updateViewLayout(h30Var, k30Var.r);
-                    break;
-                }
-                break;
-            default:
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                k30 k30Var2 = this.b;
-                k30Var2.r.y = (int) floatValue2;
-                h30 h30Var2 = k30Var2.a;
-                if (h30Var2.getParent() != null) {
-                    k30Var2.n.updateViewLayout(h30Var2, k30Var2.r);
-                    break;
-                }
-                break;
-        }
+    @Override // org.telegram.ui.Components.ms0
+    public final tk0 f() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.Components.ms0
+    public final TLRPC.Chat g() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.Components.ms0
+    public final boolean h(TLRPC.ChatParticipant chatParticipant, boolean z10, boolean z11, View view) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.ms0
+    public final boolean s() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.ms0
+    public final void I() {
+    }
+
+    @Override // org.telegram.ui.Components.ms0
+    public final void V() {
     }
 }

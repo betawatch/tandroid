@@ -3,27 +3,26 @@ package bb;
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.os.Build;
-import li.h5;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class f0 {
     public static final f0 a = new f0();
-    public static final h5 b;
+    public static final a4.l b;
 
     static {
-        ma.d dVar = new ma.d();
-        dVar.d(e0.class, g.a);
-        dVar.d(n0.class, h.a);
-        dVar.d(j.class, e.a);
-        dVar.d(b.class, d.a);
-        dVar.d(a.class, c.a);
-        dVar.d(q.class, f.a);
+        la.d dVar = new la.d();
+        dVar.e(e0.class, g.a);
+        dVar.e(n0.class, h.a);
+        dVar.e(j.class, e.a);
+        dVar.e(b.class, d.a);
+        dVar.e(a.class, c.a);
+        dVar.e(q.class, f.a);
         dVar.d = true;
-        b = new h5(dVar);
+        b = new a4.l(dVar, 26);
     }
 
-    public static b a(m9.h hVar) {
+    public static b a(l9.h hVar) {
         hVar.a();
         Context context = hVar.a;
         kotlin.jvm.internal.i.d(context, "firebaseApp.applicationContext");

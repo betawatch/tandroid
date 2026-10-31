@@ -1,11 +1,13 @@
 package e0;
 
 import android.app.Notification;
+import android.app.PendingIntent;
+import android.graphics.drawable.Icon;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public abstract class b0 {
-    public static Notification.Action.Builder a(Notification.Action.Builder builder, boolean z10) {
-        return builder.setAllowGeneratedReplies(z10);
+    public static Notification.Action.Builder a(Icon icon, CharSequence charSequence, PendingIntent pendingIntent) {
+        return new Notification.Action.Builder(icon, charSequence, pendingIntent);
     }
 }

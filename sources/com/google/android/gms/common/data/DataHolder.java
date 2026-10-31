@@ -1,24 +1,21 @@
 package com.google.android.gms.common.data;
 
-import a8.df;
-import android.database.CursorIndexOutOfBoundsException;
 import android.database.CursorWindow;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Log;
-import h8.j;
+import g8.g;
 import java.io.Closeable;
 import java.util.ArrayList;
 import java.util.HashMap;
-import o6.l;
-import org.telegram.messenger.MediaDataController;
-import p6.a;
+import o6.a;
+import w7.h0;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class DataHolder extends a implements Closeable {
-    public static final Parcelable.Creator<DataHolder> CREATOR = new j(21);
+    public static final Parcelable.Creator<DataHolder> CREATOR = new g(19);
     public final int a;
     public final String[] b;
     public Bundle c;
@@ -40,42 +37,6 @@ public final class DataHolder extends a implements Closeable {
         this.d = cursorWindowArr;
         this.e = i11;
         this.f = bundle;
-    }
-
-    public final int b(int i10) {
-        int length;
-        int i11 = 0;
-        l.k(i10 >= 0 && i10 < this.n);
-        while (true) {
-            int[] iArr = this.h;
-            length = iArr.length;
-            if (i11 >= length) {
-                break;
-            }
-            if (i10 < iArr[i11]) {
-                i11--;
-                break;
-            }
-            i11++;
-        }
-        return i11 == length ? i11 - 1 : i11;
-    }
-
-    public final void c(int i10, String str) {
-        boolean z10;
-        Bundle bundle = this.c;
-        if (bundle == null || !bundle.containsKey(str)) {
-            throw new IllegalArgumentException("No such column: ".concat(str));
-        }
-        synchronized (this) {
-            z10 = this.r;
-        }
-        if (z10) {
-            throw new IllegalArgumentException("Buffer is closed.");
-        }
-        if (i10 < 0 || i10 >= this.n) {
-            throw new CursorIndexOutOfBoundsException(i10, this.n);
-        }
     }
 
     @Override // java.io.Closeable, java.lang.AutoCloseable
@@ -119,15 +80,15 @@ public final class DataHolder extends a implements Closeable {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q5 = df.q(parcel, 20293);
-        df.m(parcel, 1, this.b);
-        df.o(parcel, 2, this.d, i10);
-        df.s(parcel, 3, 4);
+        int q6 = h0.q(parcel, 20293);
+        h0.m(parcel, 1, this.b);
+        h0.o(parcel, 2, this.d, i10);
+        h0.s(parcel, 3, 4);
         parcel.writeInt(this.e);
-        df.b(parcel, 4, this.f);
-        df.s(parcel, MediaDataController.MAX_STYLE_RUNS_COUNT, 4);
+        h0.b(parcel, 4, this.f);
+        h0.s(parcel, 1000, 4);
         parcel.writeInt(this.a);
-        df.r(parcel, q5);
+        h0.r(parcel, q6);
         if ((i10 & 1) != 0) {
             close();
         }

@@ -1,26 +1,43 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
+import java.util.ArrayList;
+import java.util.HashSet;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class z4 extends FrameLayout {
-    public final /* synthetic */ org.telegram.ui.Cells.y1[] a;
+public final /* synthetic */ class z4 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ b5 b;
+    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ HashSet d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z4(Context context, org.telegram.ui.Cells.y1[] y1VarArr) {
-        super(context);
-        this.a = y1VarArr;
+    public /* synthetic */ z4(b5 b5Var, ArrayList arrayList, HashSet hashSet, int i10) {
+        this.a = i10;
+        this.b = b5Var;
+        this.c = arrayList;
+        this.d = hashSet;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        org.telegram.ui.Cells.y1[] y1VarArr = this.a;
-        if (y1VarArr[0] != null) {
-            setMeasuredDimension(getMeasuredWidth(), AndroidUtilities.dp(7.0f) + y1VarArr[0].getMeasuredHeight() + getMeasuredHeight());
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                org.telegram.messenger.i0.g3(new z4(this.b, this.c, this.d, 1));
+                break;
+            default:
+                b5 b5Var = this.b;
+                b5Var.d(this.c);
+                HashSet hashSet = this.d;
+                if (!hashSet.isEmpty()) {
+                    ArrayList<Long> arrayList = new ArrayList<>(hashSet);
+                    TLRPC.TL_messages_getCustomEmojiDocuments tL_messages_getCustomEmojiDocuments = new TLRPC.TL_messages_getCustomEmojiDocuments();
+                    tL_messages_getCustomEmojiDocuments.document_id = arrayList;
+                    ConnectionsManager.getInstance(b5Var.e).sendRequest(tL_messages_getCustomEmojiDocuments, new ag.k0(23, b5Var, arrayList));
+                    break;
+                }
+                break;
         }
     }
 }

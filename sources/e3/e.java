@@ -1,17 +1,17 @@
 package e3;
 
-import a8.yb;
 import c3.a0;
 import c3.c0;
-import c3.j0;
-import e2.n0;
+import c3.k0;
+import e2.l0;
 import java.math.RoundingMode;
+import v7.t6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class e {
     public final d a;
-    public final j0 b;
+    public final k0 b;
     public final int c;
     public final int d;
     public final long e;
@@ -25,7 +25,7 @@ public final class e {
     public long[] m;
     public int[] n;
 
-    public e(int i10, d dVar, j0 j0Var) {
+    public e(int i10, d dVar, k0 k0Var) {
         int i11 = dVar.d;
         this.a = dVar;
         int a2 = dVar.a();
@@ -33,14 +33,14 @@ public final class e {
         if (a2 != 1 && a2 != 2) {
             z10 = false;
         }
-        yb.g(z10);
+        t6.f(z10);
         int i12 = (((i10 % 10) + 48) << 8) | ((i10 / 10) + 48);
         this.c = (a2 == 2 ? 1667497984 : 1651965952) | i12;
         long j10 = dVar.b * 1000000;
         long j11 = dVar.c;
-        String str = n0.a;
-        this.e = n0.a0(i11, j10, j11, RoundingMode.DOWN);
-        this.b = j0Var;
+        String str = l0.a;
+        this.e = l0.a0(i11, j10, j11, RoundingMode.DOWN);
+        this.b = k0Var;
         this.d = a2 == 2 ? i12 | 1650720768 : -1;
         this.l = -1L;
         this.m = new long[512];
@@ -58,7 +58,7 @@ public final class e {
             return new a0(c0Var, c0Var);
         }
         int i10 = (int) (j10 / ((this.e * 1) / this.f));
-        int e = n0.e(this.n, i10, true, true);
+        int e = l0.e(this.n, i10, true, true);
         if (this.n[e] == i10) {
             c0 a2 = a(e);
             return new a0(a2, a2);

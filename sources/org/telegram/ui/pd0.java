@@ -1,30 +1,50 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
-import android.widget.ViewSwitcher;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class pd0 extends ViewSwitcher {
+public final /* synthetic */ class pd0 implements org.telegram.ui.ActionBar.u1 {
     public final /* synthetic */ int a;
+    public final /* synthetic */ wd0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ pd0(Context context, int i10) {
-        super(context);
+    public /* synthetic */ pd0(wd0 wd0Var, int i10) {
         this.a = i10;
+        this.b = wd0Var;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        switch (this.a) {
+    @Override // org.telegram.ui.ActionBar.u1
+    public final void h(org.telegram.ui.ActionBar.x1 x1Var, int i10) {
+        int i11 = this.a;
+        wd0 wd0Var = this.b;
+        switch (i11) {
             case 0:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLObject.FLAG_31));
+                wd0Var.c(true);
+                wd0Var.O.C1(0, true, null, true);
+                wd0Var.n();
+                break;
+            case 1:
+                wd0Var.O.q0.popup = false;
+                wd0Var.h(null);
+                break;
+            case 2:
+                hf0 hf0Var = wd0Var.O;
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(hf0Var.getParentActivity());
+                String L0 = org.telegram.messenger.cd.L0(2131744223, "TermsOfService");
+                org.telegram.ui.ActionBar.x1 x1Var2 = alertDialog$Builder.a;
+                x1Var2.R = L0;
+                x1Var2.T = org.telegram.messenger.cd.L0(2131744002, "TosDecline");
+                alertDialog$Builder.k(org.telegram.messenger.cd.L0(2131745338, "SignUp"), new pd0(wd0Var, 3));
+                alertDialog$Builder.h(org.telegram.messenger.cd.L0(2131751605, "Decline"), new pd0(wd0Var, 4));
+                hf0Var.showDialog(x1Var2);
+                break;
+            case 3:
+                wd0Var.O.q0.popup = false;
+                wd0Var.h(null);
                 break;
             default:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLObject.FLAG_31));
+                wd0Var.c(true);
+                wd0Var.O.C1(0, true, null, true);
                 break;
         }
     }

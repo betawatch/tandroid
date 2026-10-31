@@ -1,33 +1,32 @@
 package u2;
 
-import a8.ng;
-import a8.yb;
 import android.os.Looper;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
+import v7.t6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public abstract class a {
     public final ArrayList a = new ArrayList(1);
     public final HashSet b = new HashSet(1);
-    public final ng c = new ng(new CopyOnWriteArrayList(), 0, (g0) null);
+    public final a5.a c = new a5.a(new CopyOnWriteArrayList(), 0, (Object) null, 22);
     public final n2.j d = new n2.j(new CopyOnWriteArrayList(), 0, null);
     public Looper e;
-    public b2.p1 f;
-    public j2.j g;
+    public b2.o1 f;
+    public j2.l g;
 
     public boolean a(b2.p0 p0Var) {
         return false;
     }
 
-    public final ng b(g0 g0Var) {
-        return new ng((CopyOnWriteArrayList) this.c.d, 0, g0Var);
+    public final a5.a b(g0 g0Var) {
+        return new a5.a((CopyOnWriteArrayList) this.c.d, 0, g0Var, 22);
     }
 
-    public abstract e0 c(g0 g0Var, a8.h0 h0Var, long j10);
+    public abstract e0 c(g0 g0Var, android.support.v4.media.session.a0 a0Var, long j10);
 
     public final void d(h0 h0Var) {
         HashSet hashSet = this.b;
@@ -49,7 +48,7 @@ public abstract class a {
         }
     }
 
-    public b2.p1 h() {
+    public b2.o1 h() {
         return null;
     }
 
@@ -61,34 +60,34 @@ public abstract class a {
 
     public abstract void k();
 
-    public final void l(h0 h0Var, g2.c0 c0Var, j2.j jVar) {
+    public final void l(h0 h0Var, g2.d0 d0Var, j2.l lVar) {
         Looper myLooper = Looper.myLooper();
         Looper looper = this.e;
-        yb.g(looper == null || looper == myLooper);
-        this.g = jVar;
-        b2.p1 p1Var = this.f;
+        t6.f(looper == null || looper == myLooper);
+        this.g = lVar;
+        b2.o1 o1Var = this.f;
         this.a.add(h0Var);
         if (this.e == null) {
             this.e = myLooper;
             this.b.add(h0Var);
-            m(c0Var);
-        } else if (p1Var != null) {
+            m(d0Var);
+        } else if (o1Var != null) {
             f(h0Var);
-            h0Var.a(this, p1Var);
+            h0Var.a(this, o1Var);
         }
     }
 
-    public abstract void m(g2.c0 c0Var);
+    public abstract void m(g2.d0 d0Var);
 
-    public final void n(b2.p1 p1Var) {
-        this.f = p1Var;
+    public final void n(b2.o1 o1Var) {
+        this.f = o1Var;
         ArrayList arrayList = this.a;
         int size = arrayList.size();
         int i10 = 0;
         while (i10 < size) {
             Object obj = arrayList.get(i10);
             i10++;
-            ((h0) obj).a(this, p1Var);
+            ((h0) obj).a(this, o1Var);
         }
     }
 

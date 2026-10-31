@@ -1,22 +1,21 @@
 package x3;
 
-import b2.x0;
+import b2.w0;
 import c3.b0;
-import c3.j0;
+import c3.k0;
 import c3.o;
 import c3.p;
 import c3.q;
 import c3.s;
-import e2.n0;
+import e2.l0;
 import e2.x;
-import f9.g0;
-import f9.i0;
-import f9.s1;
+import e9.n0;
+import e9.x1;
 import java.util.Arrays;
 import java.util.List;
 import u2.z0;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class d implements o {
     public q a;
@@ -27,7 +26,7 @@ public final class d implements o {
     public final boolean a(p pVar) {
         try {
             return g(pVar);
-        } catch (x0 unused) {
+        } catch (w0 unused) {
             return false;
         }
     }
@@ -59,8 +58,8 @@ public final class d implements o {
                 long j12 = (iVar.i * j11) / 1000000;
                 iVar.e = j12;
                 g gVar = iVar.d;
-                String str = n0.a;
-                gVar.N0(j12);
+                String str = l0.a;
+                gVar.b0(j12);
                 iVar.h = 2;
             }
         }
@@ -68,8 +67,8 @@ public final class d implements o {
 
     @Override // c3.o
     public final List e() {
-        g0 g0Var = i0.b;
-        return s1.e;
+        e9.l0 l0Var = n0.b;
+        return x1.e;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:60:0x017a A[RETURN] */
@@ -84,29 +83,29 @@ public final class d implements o {
         this.a.getClass();
         if (this.b == null) {
             if (!g(pVar)) {
-                throw x0.a(null, "Failed to determine bitstream type");
+                throw w0.a(null, "Failed to determine bitstream type");
             }
-            pVar.p();
+            pVar.m();
         }
         if (!this.c) {
-            j0 F1 = this.a.F1(0, 1);
+            k0 I1 = this.a.I1(0, 1);
             this.a.Q0();
             i iVar = this.b;
             iVar.c = this.a;
-            iVar.b = F1;
+            iVar.b = I1;
             iVar.d(true);
             this.c = true;
         }
         i iVar2 = this.b;
         e eVar = iVar2.a;
         iVar2.b.getClass();
-        String str = n0.a;
+        String str = l0.a;
         int i11 = iVar2.h;
         int i12 = -1;
         int i13 = 3;
         if (i11 != 0) {
             if (i11 == 1) {
-                pVar.r((int) iVar2.f);
+                pVar.q((int) iVar2.f);
                 iVar2.h = 2;
                 return 0;
             }
@@ -116,19 +115,19 @@ public final class d implements o {
                 }
                 throw new IllegalStateException();
             }
-            long w10 = iVar2.d.w(pVar);
-            if (w10 >= 0) {
-                sVar.a = w10;
+            long w9 = iVar2.d.w(pVar);
+            if (w9 >= 0) {
+                sVar.a = w9;
                 return 1;
             }
-            if (w10 < -1) {
-                iVar2.a(-(w10 + 2));
+            if (w9 < -1) {
+                iVar2.a(-(w9 + 2));
             }
             if (!iVar2.l) {
-                b0 U = iVar2.d.U();
-                U.getClass();
-                iVar2.c.D1(U);
-                iVar2.b.e(U.h());
+                b0 E = iVar2.d.E();
+                E.getClass();
+                iVar2.c.G1(E);
+                iVar2.b.e(E.h());
                 iVar2.l = true;
             }
             if (iVar2.k <= 0 && !eVar.b(pVar)) {
@@ -186,7 +185,7 @@ public final class d implements o {
                         xVar2.L(xVar2.c, Arrays.copyOf(bArr, Math.max(65025, xVar2.c)));
                         return 0;
                     }
-                    iVar2.d = new sb.b(26);
+                    iVar2.d = new hb.a(26);
                 }
                 i10 = 2;
                 iVar2.h = i10;
@@ -212,7 +211,7 @@ public final class d implements o {
             xVar.N(0);
             try {
                 z10 = c3.b.w(1, xVar, true);
-            } catch (x0 unused) {
+            } catch (w0 unused) {
                 z10 = false;
             }
             if (z10) {

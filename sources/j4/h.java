@@ -1,12 +1,12 @@
 package j4;
 
-import a8.yb;
-import b2.w0;
-import c3.j0;
+import b2.v0;
+import c3.k0;
 import java.util.Collections;
 import java.util.List;
+import v7.t6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class h implements i {
     public final /* synthetic */ int a;
@@ -20,12 +20,12 @@ public final class h implements i {
     public h(List list) {
         this.a = 0;
         this.f = list;
-        this.g = new j0[list.size()];
+        this.g = new k0[list.size()];
         this.c = -9223372036854775807L;
     }
 
     @Override // j4.i
-    public final void a(e2.x xVar) {
+    public final void c(e2.x xVar) {
         boolean z10;
         boolean z11;
         switch (this.a) {
@@ -59,9 +59,9 @@ public final class h implements i {
                     }
                     int i10 = xVar.b;
                     int a2 = xVar.a();
-                    for (j0 j0Var : (j0[]) this.g) {
+                    for (k0 k0Var : (k0[]) this.g) {
                         xVar.N(i10);
-                        j0Var.d(a2, xVar);
+                        k0Var.d(a2, xVar);
                     }
                     this.e += a2;
                     break;
@@ -69,7 +69,7 @@ public final class h implements i {
                 break;
             default:
                 e2.x xVar2 = (e2.x) this.f;
-                ((j0) this.g).getClass();
+                ((k0) this.g).getClass();
                 if (this.b) {
                     int a10 = xVar.a();
                     int i11 = this.e;
@@ -89,7 +89,7 @@ public final class h implements i {
                         }
                     }
                     int min2 = Math.min(a10, this.d - this.e);
-                    ((j0) this.g).d(min2, xVar);
+                    ((k0) this.g).d(min2, xVar);
                     this.e += min2;
                     break;
                 }
@@ -98,7 +98,7 @@ public final class h implements i {
     }
 
     @Override // j4.i
-    public final void c() {
+    public final void e() {
         switch (this.a) {
             case 0:
                 this.b = false;
@@ -112,60 +112,60 @@ public final class h implements i {
     }
 
     @Override // j4.i
-    public final void d(c3.q qVar, f0 f0Var) {
+    public final void f(c3.q qVar, g0 g0Var) {
         switch (this.a) {
             case 0:
-                j0[] j0VarArr = (j0[]) this.g;
-                for (int i10 = 0; i10 < j0VarArr.length; i10++) {
-                    e0 e0Var = (e0) ((List) this.f).get(i10);
-                    f0Var.b();
-                    f0Var.c();
-                    j0 F1 = qVar.F1(f0Var.c, 3);
+                k0[] k0VarArr = (k0[]) this.g;
+                for (int i10 = 0; i10 < k0VarArr.length; i10++) {
+                    f0 f0Var = (f0) ((List) this.f).get(i10);
+                    g0Var.b();
+                    g0Var.c();
+                    k0 I1 = qVar.I1(g0Var.c, 3);
                     b2.w wVar = new b2.w();
-                    f0Var.c();
-                    wVar.a = (String) f0Var.e;
-                    wVar.q = w0.n("video/mp2t");
-                    wVar.r = w0.n("application/dvbsubs");
-                    wVar.u = Collections.singletonList(e0Var.b);
-                    wVar.d = e0Var.a;
-                    ic.a.u(wVar, F1);
-                    j0VarArr[i10] = F1;
+                    g0Var.c();
+                    wVar.a = (String) g0Var.e;
+                    wVar.q = v0.n("video/mp2t");
+                    wVar.r = v0.n("application/dvbsubs");
+                    wVar.u = Collections.singletonList(f0Var.b);
+                    wVar.d = f0Var.a;
+                    i0.a.r(wVar, I1);
+                    k0VarArr[i10] = I1;
                 }
                 break;
             default:
-                f0Var.b();
-                f0Var.c();
-                j0 F12 = qVar.F1(f0Var.c, 5);
-                this.g = F12;
+                g0Var.b();
+                g0Var.c();
+                k0 I12 = qVar.I1(g0Var.c, 5);
+                this.g = I12;
                 b2.w wVar2 = new b2.w();
-                f0Var.c();
-                wVar2.a = (String) f0Var.e;
-                wVar2.q = w0.n("video/mp2t");
-                wVar2.r = w0.n("application/id3");
-                ic.a.u(wVar2, F12);
+                g0Var.c();
+                wVar2.a = (String) g0Var.e;
+                wVar2.q = v0.n("video/mp2t");
+                wVar2.r = v0.n("application/id3");
+                i0.a.r(wVar2, I12);
                 break;
         }
     }
 
     @Override // j4.i
-    public final void e(boolean z10) {
+    public final void g(boolean z10) {
         int i10;
         switch (this.a) {
             case 0:
                 if (this.b) {
-                    yb.p(this.c != -9223372036854775807L);
-                    for (j0 j0Var : (j0[]) this.g) {
-                        j0Var.c(this.c, 1, this.e, 0, null);
+                    t6.p(this.c != -9223372036854775807L);
+                    for (k0 k0Var : (k0[]) this.g) {
+                        k0Var.c(this.c, 1, this.e, 0, null);
                     }
                     this.b = false;
                     break;
                 }
                 break;
             default:
-                ((j0) this.g).getClass();
+                ((k0) this.g).getClass();
                 if (this.b && (i10 = this.d) != 0 && this.e == i10) {
-                    yb.p(this.c != -9223372036854775807L);
-                    ((j0) this.g).c(this.c, 1, this.d, 0, null);
+                    t6.p(this.c != -9223372036854775807L);
+                    ((k0) this.g).c(this.c, 1, this.d, 0, null);
                     this.b = false;
                     break;
                 }
@@ -174,7 +174,7 @@ public final class h implements i {
     }
 
     @Override // j4.i
-    public final void f(int i10, long j10) {
+    public final void h(int i10, long j10) {
         switch (this.a) {
             case 0:
                 if ((i10 & 4) != 0) {

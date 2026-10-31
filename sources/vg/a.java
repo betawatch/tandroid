@@ -1,96 +1,73 @@
 package vg;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapShader;
 import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Matrix;
 import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
-import android.text.SpannableString;
-import android.text.TextPaint;
-import android.text.style.ReplacementSpan;
-import android.util.Pair;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
-import org.telegram.ui.Cells.s1;
-import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.r6;
+import android.graphics.Shader;
+import java.lang.ref.WeakReference;
+import org.telegram.ui.ActionBar.t6;
+import w7.k8;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes4.dex */
-public final class a extends ReplacementSpan {
-    public final Drawable a;
-    public final Drawable b;
-    public boolean c;
-    public boolean d;
-    public final r6 e;
-    public final TextPaint f;
-    public final int h;
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final class a extends k8 {
+    public final Paint a;
+    public final Paint b;
+    public final Matrix c;
+    public WeakReference d;
+    public BitmapShader e;
+    public final /* synthetic */ f f;
 
-    public a(s1 s1Var, TextPaint textPaint, int i10) {
-        this.f = textPaint;
-        r6 r6Var = new r6(false, false, true);
-        this.e = r6Var;
-        r6Var.n(0.3f, 250L, ds.h);
-        r6Var.setCallback(s1Var);
-        r6Var.w(AndroidUtilities.dp(11.5f));
-        r6Var.x(AndroidUtilities.bold());
-        r6Var.t("", true, true);
-        r6Var.b = 17;
-        Drawable mutate = s1Var.getContext().getDrawable(R.drawable.mini_boost_profile_badge).mutate();
-        this.a = mutate;
-        Drawable mutate2 = s1Var.getContext().getDrawable(R.drawable.mini_boost_profile_badge2).mutate();
-        this.b = mutate2;
-        mutate.setBounds(0, 0, mutate.getIntrinsicWidth(), mutate.getIntrinsicHeight());
-        mutate2.setBounds(0, 0, mutate2.getIntrinsicWidth(), mutate2.getIntrinsicHeight());
-        this.h = i10;
-        r6Var.t(i10 > 1 ? String.valueOf(i10) : "", false, true);
+    public a(f fVar) {
+        this.f = fVar;
+        Paint paint = new Paint(1);
+        this.a = paint;
+        this.b = new Paint(1);
+        this.c = new Matrix();
+        this.d = new WeakReference(null);
+        paint.setFilterBitmap(true);
     }
 
-    public static Pair a(s1 s1Var, TextPaint textPaint, int i10) {
-        SpannableString spannableString = new SpannableString("d");
-        a aVar = new a(s1Var, textPaint, i10);
-        spannableString.setSpan(aVar, 0, 1, 33);
-        return new Pair(spannableString, aVar);
-    }
-
-    public final int b() {
-        return (int) (this.e.e() + AndroidUtilities.dp((this.d ? 8 : 0) + 16));
-    }
-
-    @Override // android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
-        TextPaint textPaint = this.f;
-        int color = textPaint.getColor();
-        r6 r6Var = this.e;
-        int color2 = r6Var.a.getColor();
-        Drawable drawable = this.b;
-        Drawable drawable2 = this.a;
-        if (color != color2) {
-            r6Var.u(textPaint.getColor());
-            int color3 = r6Var.a.getColor();
-            PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
-            drawable2.setColorFilter(new PorterDuffColorFilter(color3, mode));
-            drawable.setColorFilter(new PorterDuffColorFilter(r6Var.a.getColor(), mode));
+    @Override // w7.k8
+    public final void b(Canvas canvas, hi.a aVar) {
+        hi.b bVar = (hi.b) f.u(aVar);
+        f fVar = this.f;
+        int i10 = fVar.c;
+        Bitmap bitmap = bVar.d;
+        Object obj = this.d.get();
+        Paint paint = this.a;
+        if (bitmap != obj) {
+            this.d = new WeakReference(bitmap);
+            if (bitmap == null || bitmap.isRecycled()) {
+                this.e = null;
+                paint.setShader(null);
+            } else {
+                Shader.TileMode tileMode = Shader.TileMode.CLAMP;
+                BitmapShader bitmapShader = new BitmapShader(bitmap, tileMode, tileMode);
+                this.e = bitmapShader;
+                paint.setShader(bitmapShader);
+            }
         }
-        canvas.save();
-        canvas.translate(f7 + ((!this.d || this.c) ? 0 : AndroidUtilities.dp(8.0f)), -AndroidUtilities.dp(0.2f));
-        if (this.h == 1) {
-            canvas.translate(AndroidUtilities.dp(1.5f), 0.0f);
-            drawable2.draw(canvas);
-        } else {
-            drawable.draw(canvas);
+        if (Color.alpha(fVar.r) > 0) {
+            fVar.Y.c(canvas, 0);
         }
-        canvas.translate(AndroidUtilities.dp(16.0f), 0.0f);
-        Rect rect = AndroidUtilities.rectTmp2;
-        rect.set(0, 0, (int) r6Var.c(), (int) r6Var.e);
-        r6Var.setBounds(rect);
-        r6Var.draw(canvas);
-        canvas.restore();
-    }
-
-    @Override // android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
-        return b();
+        if (this.e != null && bitmap != null && !bitmap.isRecycled() && i10 > 0) {
+            Matrix matrix = bVar.b;
+            Matrix matrix2 = this.c;
+            matrix2.set(matrix);
+            matrix2.postTranslate(-fVar.d, -fVar.e);
+            this.e.setLocalMatrix(matrix2);
+            paint.setAlpha(i10);
+            fVar.M.b(canvas, paint);
+        }
+        int r12 = t6.r1(i10 / 255.0f, fVar.s);
+        if (Color.alpha(r12) > 0) {
+            Paint paint2 = this.b;
+            paint2.setColor(r12);
+            fVar.M.b(canvas, paint2);
+        }
     }
 }

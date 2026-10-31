@@ -1,5 +1,6 @@
 package u4;
 
+import a0.g;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
@@ -20,7 +21,7 @@ import java.util.List;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlSerializer;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public abstract class d {
     public static volatile ArrayList a;
@@ -36,8 +37,8 @@ public abstract class d {
         return attributeValue == null ? xmlPullParser.getAttributeValue(null, str) : attributeValue;
     }
 
-    public static a0.f c(Context context, File file) {
-        g f7;
+    public static a0.f c(File file, Context context) {
+        f f7;
         a0.f fVar = new a0.f(0);
         try {
             FileInputStream fileInputStream = new FileInputStream(file);
@@ -141,7 +142,7 @@ public abstract class d {
         return arrayList;
     }
 
-    public static g f(XmlPullParser xmlPullParser, Context context) {
+    public static f f(XmlPullParser xmlPullParser, Context context) {
         Intent intent;
         if (!xmlPullParser.getName().equals("target")) {
             return null;
@@ -214,7 +215,7 @@ public abstract class d {
             cVar.c = (Intent[]) arrayList.toArray(new Intent[0]);
         }
         if (!hashSet.isEmpty()) {
-            a0.g gVar = new a0.g(0);
+            g gVar = new g(0);
             gVar.addAll(hashSet);
             cVar.j = gVar;
         }
@@ -225,7 +226,7 @@ public abstract class d {
         if (intentArr == null || intentArr.length == 0) {
             throw new IllegalArgumentException("Shortcut must have an intent");
         }
-        return new g(cVar, b15, b16);
+        return new f(cVar, b15, b16);
     }
 
     public static void g(XmlSerializer xmlSerializer, String str, String str2) {
@@ -235,11 +236,11 @@ public abstract class d {
         xmlSerializer.attribute(null, str, str2);
     }
 
-    public static void h(XmlSerializer xmlSerializer, g gVar) {
+    public static void h(XmlSerializer xmlSerializer, f fVar) {
         xmlSerializer.startTag(null, "target");
-        g0.c cVar = gVar.c;
-        String str = gVar.b;
-        String str2 = gVar.a;
+        g0.c cVar = fVar.c;
+        String str = fVar.b;
+        String str2 = fVar.a;
         g(xmlSerializer, "id", cVar.b);
         g(xmlSerializer, "short_label", cVar.e.toString());
         g(xmlSerializer, "rank", Integer.toString(cVar.m));

@@ -1,146 +1,157 @@
 package org.telegram.ui.Wallet;
 
-import a8.af;
+import android.text.TextUtils;
 import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.m71;
-import org.telegram.ui.Components.s71;
+import org.telegram.messenger.cd;
+import org.telegram.messenger.j20;
+import org.telegram.messenger.q20;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_wallet;
+import org.telegram.ui.Components.cc;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class m implements Runnable {
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class m implements q20 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ m(Object obj, int i10) {
+    public /* synthetic */ m(Object obj, Object obj2, Object obj3, int i10) {
         this.a = i10;
         this.b = obj;
+        this.c = obj2;
+        this.d = obj3;
     }
 
-    private final void a() {
-        b0 b0Var = (b0) this.b;
-        synchronized (b0Var) {
-            if (b0Var.a) {
-                return;
-            }
-            b0Var.a = true;
-            Runnable runnable = b0Var.b;
-            if (runnable != null) {
-                runnable.run();
-                b0Var.b = null;
-            }
-        }
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        View d;
-        switch (this.a) {
+    @Override // org.telegram.messenger.q20
+    public final void a(Object obj) {
+        int i10 = this.a;
+        char c10 = 1;
+        Object obj2 = this.d;
+        Object obj3 = this.c;
+        Object obj4 = this.b;
+        switch (i10) {
             case 0:
-                z zVar = (z) this.b;
-                synchronized (zVar) {
-                    if (zVar.a) {
-                        return;
-                    }
-                    zVar.a = true;
-                    Runnable runnable = zVar.b;
-                    if (runnable != null) {
-                        runnable.run();
-                        zVar.b = null;
-                    }
-                    return;
+                k0 k0Var = (k0) obj4;
+                j20 j20Var = (j20) obj3;
+                String str = (String) obj2;
+                byte[] bArr = (byte[]) obj;
+                k0Var.getClass();
+                if (bArr != null) {
+                    TL_wallet.walletUserAddress walletuseraddress = new TL_wallet.walletUserAddress();
+                    walletuseraddress.user_id = 0L;
+                    walletuseraddress.address = str;
+                    walletuseraddress.public_key = bArr;
+                    k0Var.M.put(str, walletuseraddress);
+                    j20Var.a(walletuseraddress, null);
+                    break;
+                } else {
+                    j20Var.a(null, null);
+                    break;
                 }
             case 1:
-                a();
-                return;
+                e2 e2Var = (e2) obj4;
+                a2 a2Var = (a2) obj3;
+                bi.d dVar = (bi.d) obj2;
+                String str2 = (String) obj;
+                e2Var.getClass();
+                a2Var.p = !a2Var.n && !e2Var.j(a2Var) && e2Var.A(a2Var) && str2 == null;
+                dVar.a(null, str2);
+                break;
             case 2:
-                ((i0) this.b).close();
-                return;
+                e2 e2Var2 = (e2) obj4;
+                a2 a2Var2 = (a2) obj3;
+                q20 q20Var = (q20) obj2;
+                String str3 = (String) obj;
+                e2Var2.getClass();
+                a2Var2.m = false;
+                if (a2Var2.r == null && e2Var2.g == a2Var2) {
+                    e2Var2.g = null;
+                }
+                q20Var.a(str3);
+                break;
             case 3:
-                ((boolean[]) this.b)[0] = true;
-                return;
+                e2 e2Var3 = (e2) obj4;
+                e2Var3.getClass();
+                org.telegram.messenger.i0.g3(new k7((Object) e2Var3, obj3, (String) obj, obj2, 6));
+                break;
             case 4:
-                v0 v0Var = (v0) this.b;
-                v0Var.c("AUTH_CANCELED");
-                v0Var.e();
-                if (af.b == v0Var) {
-                    af.b = null;
-                    return;
+                TL_wallet.walletTransaction wallettransaction = (TL_wallet.walletTransaction) obj4;
+                q4 q4Var = (q4) obj3;
+                TL_wallet.walletTransaction[] wallettransactionArr = (TL_wallet.walletTransaction[]) obj2;
+                TL_wallet.walletTransaction wallettransaction2 = (TL_wallet.walletTransaction) obj;
+                if (wallettransaction2 != null) {
+                    wallettransaction2.incoming = wallettransaction.incoming;
+                    wallettransaction2.peer = wallettransaction.peer;
+                    wallettransactionArr[0] = wallettransaction2;
+                    q4Var.a(wallettransaction2);
+                    break;
                 }
-                return;
+                break;
             case 5:
-                ((i2) this.b).dismiss();
-                return;
+                z2[] z2VarArr = (z2[]) obj3;
+                org.telegram.ui.ActionBar.p6 p6Var = (org.telegram.ui.ActionBar.p6) obj2;
+                String str4 = (String) obj;
+                ((vh.d) obj4).setLoading(false);
+                if (!TextUtils.isEmpty(str4)) {
+                    new cc(z2VarArr[0].E, p6Var).e0(str4, false);
+                    break;
+                } else {
+                    z2VarArr[0].dismiss();
+                    break;
+                }
             case 6:
-                ((org.telegram.ui.Cells.v0) this.b).invalidate();
-                return;
+                t8.c0((t8) obj4, (q20) obj3, (p0) obj2, (h0) obj);
+                break;
             case 7:
-                AndroidUtilities.removeFromParent((fi.v3) this.b);
-                return;
-            case 8:
-                i5 i5Var = (i5) this.b;
-                m71 m71Var = i5Var.c;
-                if (m71Var == null || m71Var.getScrollState() != 0) {
-                    return;
-                }
-                s71 u02 = i5Var.j.u0();
-                if ((u02 == null || u02.getScrollState() == 0) && (d = i5Var.d(i5Var.c.f3)) != null) {
-                    s4.c0 c0Var = i5Var.c.f3;
-                    c0Var.getClass();
-                    int i10 = new int[]{0, s4.p0.z(d) - c0Var.F()}[1];
-                    if (i10 != 0) {
-                        i5Var.c.w0(0, i10, null);
-                        return;
+                ba baVar = (ba) obj3;
+                k0 k0Var2 = (k0) obj4;
+                TLRPC.User user = (TLRPC.User) obj2;
+                String str5 = (String) obj;
+                if (!baVar.r) {
+                    if (!TextUtils.isEmpty(str5) && k0.b(baVar.f, k0Var2.t())) {
+                        a0 a0Var = new a0(k0Var2, str5, baVar.e, null, new q(baVar, k0Var2, user, str5));
+                        k0Var2.m0(a0Var);
+                        baVar.n = new l(a0Var, c10 == true ? 1 : 0);
+                        break;
+                    } else {
+                        baVar.h = false;
+                        baVar.Z.setLoading(false);
+                        cc.a0(baVar).e0(TextUtils.isEmpty(str5) ? cd.L0(2131743065, null) : "WALLET_CHANGED", false);
+                        break;
                     }
-                    return;
                 }
-                return;
-            case 9:
-                di.h3 h3Var = (di.h3) this.b;
-                ai.h hVar = (ai.h) h3Var.b;
-                ai.g gVar = (ai.g) h3Var.c;
-                if (gVar == null) {
-                    return;
-                }
-                hVar.a(gVar);
-                hVar.D = 0.0f;
-                h3Var.c = null;
-                h3Var.invalidate();
-                return;
-            case 10:
-                ((WalletEngine2) this.b).lambda$close$53();
-                return;
-            case 11:
-                i8 i8Var = (i8) this.b;
-                boolean z10 = i8Var.h != -1;
-                if (!z10 && !i8Var.s) {
-                    i8Var.c = i8Var.c();
-                    i8Var.d = 0.0f;
-                }
-                boolean z11 = z10 || i8Var.s || i8Var.e > 1.001f;
-                l3 l3Var = i8Var.b;
-                float f7 = i8Var.c;
-                float f10 = i8Var.d;
-                l3Var.r = f7;
-                l3Var.s = f10;
-                l3Var.v = z11;
-                l3Var.w = z11;
-                return;
-            case 12:
-                p8 p8Var = (p8) this.b;
-                p8Var.removeSelfFromStack();
-                Runnable runnable2 = p8Var.f;
-                if (runnable2 != null) {
-                    runnable2.run();
-                    return;
-                }
-                return;
-            case 13:
-                ((org.telegram.ui.Cells.y3) this.b).requestLayout();
-                return;
+                break;
+            case 8:
+                ((org.telegram.ui.Cells.k6) ((View) obj)).z((TLRPC.User) obj4, null, (CharSequence) obj3, (CharSequence) obj2, false, false);
+                break;
             default:
-                ((z9) this.b).V();
-                return;
+                z2 z2Var = (z2) obj3;
+                org.telegram.ui.ActionBar.p6 p6Var2 = (org.telegram.ui.ActionBar.p6) obj2;
+                String str6 = (String) obj;
+                ((vh.d) obj4).setLoading(false);
+                if (str6 != null) {
+                    cc.c0(str6, z2Var.E, p6Var2);
+                    break;
+                } else {
+                    z2Var.dismiss();
+                    break;
+                }
         }
+    }
+
+    public /* synthetic */ m(q20 q20Var, k0 k0Var, p0 p0Var, t8 t8Var) {
+        this.a = 6;
+        this.b = t8Var;
+        this.c = q20Var;
+        this.d = p0Var;
+    }
+
+    public /* synthetic */ m(ba baVar, k0 k0Var, TLRPC.User user) {
+        this.a = 7;
+        this.c = baVar;
+        this.b = k0Var;
+        this.d = user;
     }
 }

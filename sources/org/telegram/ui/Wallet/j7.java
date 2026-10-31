@@ -1,27 +1,36 @@
 package org.telegram.ui.Wallet;
 
-import android.view.animation.OvershootInterpolator;
+import org.telegram.messenger.q20;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes4.dex */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
 public final /* synthetic */ class j7 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ g7 b;
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ WalletEngine2 b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ q20 d;
 
-    public /* synthetic */ j7(g7 g7Var, int i10) {
-        this.a = i10;
-        this.b = g7Var;
+    public /* synthetic */ j7(WalletEngine2 walletEngine2, String str, q20 q20Var) {
+        this.b = walletEngine2;
+        this.c = str;
+        this.d = q20Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.animate().rotation(0.0f).setDuration(120L).start();
+                this.b.lambda$previewSignMessage$7(this.d, this.c);
                 break;
             default:
-                this.b.animate().scaleX(1.0f).scaleY(1.0f).setDuration(260L).setInterpolator(new OvershootInterpolator(2.0f)).start();
+                this.b.lambda$getTransactionByHash$39(this.c, this.d);
                 break;
         }
+    }
+
+    public /* synthetic */ j7(WalletEngine2 walletEngine2, q20 q20Var, String str) {
+        this.b = walletEngine2;
+        this.d = q20Var;
+        this.c = str;
     }
 }

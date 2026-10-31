@@ -1,75 +1,46 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Paint;
-import android.graphics.Path;
-import java.util.ArrayList;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.voip.VoIPService;
-import org.telegram.tgnet.TLRPC;
+import android.app.Activity;
+import android.content.Context;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class i20 {
-    public h20[] a;
-    public h20 b;
-    public h20 c;
-    public h20 d;
-    public float e;
-    public float f;
-    public float g;
-    public float h;
-    public float i;
-    public long j;
-    public float k;
-    public ArrayList l;
-    public Paint m;
-    public Path n;
+public final /* synthetic */ class i20 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Context b;
 
-    public final void a(float f7) {
-        this.g = f7;
-        float f10 = this.e;
-        this.h = (f7 - f10) / 250.0f;
-        this.i = (f7 - f10) / 120.0f;
+    public /* synthetic */ i20(Context context, int i10) {
+        this.a = i10;
+        this.b = context;
     }
 
-    public final void b(int i10, boolean z10) {
-        h20 h20Var = this.b;
-        if (h20Var == null || h20Var.i != i10) {
-            if (VoIPService.getSharedInstance() == null && this.b == null) {
-                this.b = this.d;
-                return;
-            }
-            h20 h20Var2 = z10 ? this.b : null;
-            this.c = h20Var2;
-            this.b = this.a[i10];
-            if (h20Var2 != null) {
-                this.k = 0.0f;
-            } else {
-                this.k = 1.0f;
-            }
-        }
-    }
-
-    public final void c(boolean z10) {
-        VoIPService sharedInstance = VoIPService.getSharedInstance();
-        if (sharedInstance != null) {
-            int callState = sharedInstance.getCallState();
-            if (!sharedInstance.isSwitchingStream() && (callState == 1 || callState == 2 || callState == 6 || callState == 5)) {
-                b(2, z10);
-                return;
-            }
-            ChatObject.Call call = sharedInstance.groupCall;
-            if (call == null) {
-                b(sharedInstance.isMicMute() ? 1 : 0, z10);
-                return;
-            }
-            TLRPC.GroupCallParticipant groupCallParticipant = (TLRPC.GroupCallParticipant) call.participants.f(sharedInstance.getSelfId());
-            if ((groupCallParticipant == null || groupCallParticipant.can_self_unmute || !groupCallParticipant.muted || ChatObject.canManageCalls(sharedInstance.getChat())) && !sharedInstance.groupCall.call.rtmp_stream) {
-                b(sharedInstance.isMicMute() ? 1 : 0, z10);
-            } else {
-                sharedInstance.setMicMute(true, false, false);
-                b(3, z10);
-            }
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        Context context = this.b;
+        switch (i10) {
+            case 0:
+                g20.j(context);
+                break;
+            case 1:
+                gf.f.r(context, org.telegram.messenger.cd.L0(2131744984, null));
+                break;
+            case 2:
+                Activity W = org.telegram.messenger.i0.W(context);
+                if (W instanceof LaunchActivity) {
+                    ((LaunchActivity) W).t0(new PremiumPreviewFragment(0, kg.q0.u1(10)));
+                    break;
+                }
+                break;
+            default:
+                Activity W2 = org.telegram.messenger.i0.W(context);
+                if (W2 instanceof LaunchActivity) {
+                    ((LaunchActivity) W2).t0(new PremiumPreviewFragment(0, kg.q0.u1(9)));
+                    break;
+                }
+                break;
         }
     }
 }

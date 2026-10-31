@@ -7,11 +7,12 @@ import android.graphics.Shader;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
-import rg.q1;
-import sg.a;
+import ig.q1;
+import jg.a;
+import org.telegram.messenger.i0;
+import org.telegram.messenger.zs;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
 public class ColorPicker extends FrameLayout {
     public static final int[] d = {-1431751, -2409774, -13610525, -11942419, -8337308, -205211, -223667, -16777216, -1};
@@ -55,7 +56,7 @@ public class ColorPicker extends FrameLayout {
         int green2 = Color.green(i13);
         int blue = Color.blue(i12);
         int blue2 = Color.blue(i13);
-        return Color.argb(255, Math.min(255, (int) (((red2 - red) * min) + red)), Math.min(255, (int) (((green2 - green) * min) + green)), Math.min(255, (int) (((blue2 - blue) * min) + blue)));
+        return Color.argb(zs.e4, Math.min(zs.e4, (int) (((red2 - red) * min) + red)), Math.min(zs.e4, (int) (((green2 - green) * min) + green)), Math.min(zs.e4, (int) (((blue2 - blue) * min) + blue)));
     }
 
     private void setDraggingFactor(float f7) {
@@ -77,13 +78,13 @@ public class ColorPicker extends FrameLayout {
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        canvas.drawRoundRect(null, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), null);
+        canvas.drawRoundRect(null, i0.L(6.0f), i0.L(6.0f), null);
         throw null;
     }
 
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        new LinearGradient(AndroidUtilities.dp(56.0f), 0.0f, (i12 - i10) - AndroidUtilities.dp(56.0f), 0.0f, d, e, Shader.TileMode.REPEAT);
+        new LinearGradient(i0.L(56.0f), 0.0f, (i12 - i10) - i0.L(56.0f), 0.0f, d, e, Shader.TileMode.REPEAT);
         throw null;
     }
 

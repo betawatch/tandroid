@@ -1,29 +1,45 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AccountInstance;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.tgnet.TLRPC;
+import android.widget.LinearLayout;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class p30 extends u4 {
-    public final /* synthetic */ x50 U;
+public final class p30 extends LinearLayout {
+    public boolean a;
+    public final /* synthetic */ org.telegram.ui.Components.ac0 b;
+    public final /* synthetic */ l30 c;
+    public final /* synthetic */ m30 d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public p30(x50 x50Var, LaunchActivity launchActivity) {
+    public p30(LaunchActivity launchActivity, org.telegram.ui.Components.ac0 ac0Var, l30 l30Var, m30 m30Var) {
         super(launchActivity);
-        this.U = x50Var;
+        this.b = ac0Var;
+        this.c = l30Var;
+        this.d = m30Var;
+        this.a = false;
     }
 
-    @Override // org.telegram.ui.u4, org.telegram.ui.Components.ji0
-    public final void c() {
-        x50 x50Var = this.U;
-        AccountInstance accountInstance = x50Var.d;
-        q30 q30Var = x50Var.b;
-        long dialogId = q30Var.getDialogId();
-        if (dialogId > 0) {
-            TLRPC.User user = accountInstance.getMessagesController().getUser(Long.valueOf(dialogId));
-            q30Var.H(null, ImageLocation.getForUserOrChat(accountInstance.getCurrentAccount(), user, 0), ImageLocation.getForUserOrChat(accountInstance.getCurrentAccount(), user, 1), false);
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        this.a = true;
+        org.telegram.ui.Components.ac0 ac0Var = this.b;
+        ac0Var.setItemCount(5);
+        l30 l30Var = this.c;
+        l30Var.setItemCount(5);
+        m30 m30Var = this.d;
+        m30Var.setItemCount(5);
+        ac0Var.getLayoutParams().height = org.telegram.messenger.i0.L(54.0f) * 5;
+        l30Var.getLayoutParams().height = org.telegram.messenger.i0.L(54.0f) * 5;
+        m30Var.getLayoutParams().height = org.telegram.messenger.i0.L(54.0f) * 5;
+        this.a = false;
+        super.onMeasure(i10, i11);
+    }
+
+    @Override // android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.a) {
+            return;
         }
+        super.requestLayout();
     }
 }

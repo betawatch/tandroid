@@ -2,112 +2,66 @@ package org.telegram.messenger;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import org.telegram.messenger.ImageLoader;
-import org.telegram.messenger.LocationController;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class y4 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
+    public final /* synthetic */ i5 b;
+    public final /* synthetic */ HashMap c;
+    public final /* synthetic */ ArrayList d;
+    public final /* synthetic */ HashMap e;
 
-    public /* synthetic */ y4(Object obj, int i10, Object obj2, int i11) {
-        this.a = i11;
-        this.c = obj;
-        this.b = i10;
-        this.d = obj2;
+    public /* synthetic */ y4(i5 i5Var, ArrayList arrayList, HashMap hashMap, HashMap hashMap2) {
+        this.a = 4;
+        this.b = i5Var;
+        this.d = arrayList;
+        this.c = hashMap;
+        this.e = hashMap2;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                ((ImageLoader) this.c).lambda$runHttpFileLoadTasks$14((ImageLoader.HttpFileTask) this.d, this.b);
+                HashMap hashMap = this.e;
+                i5 i5Var = this.b;
+                i5Var.E(this.c, this.d, hashMap, true);
+                i5Var.N();
+                i5Var.getNotificationCenter().k(25, new Object[0]);
+                i5Var.getNotificationCenter().k(26, new Object[0]);
                 break;
             case 1:
-                ((MediaDataController.1) this.c).lambda$run$0((Runnable) this.d, this.b);
+                HashMap hashMap2 = this.e;
+                i5 i5Var2 = this.b;
+                i5Var2.E(this.c, this.d, hashMap2, true);
+                i5Var2.N();
+                i5Var2.getNotificationCenter().k(25, new Object[0]);
+                i5Var2.getNotificationCenter().k(26, new Object[0]);
                 break;
             case 2:
-                ((DownloadController) this.c).lambda$onDownloadFail$8((MessageObject) this.d, this.b);
+                this.b.E(this.c, this.d, this.e, true);
                 break;
             case 3:
-                ((FileLoader) this.c).lambda$changePriority$11((String) this.d, this.b);
-                break;
-            case 4:
-                ((ImageLoader) this.c).lambda$changeFileLoadingPriorityForImageReceiver$3((ImageReceiver) this.d, this.b);
-                break;
-            case 5:
-                ((LocationController) this.c).lambda$saveSharingLocation$18(this.b, (LocationController.SharingLocationInfo) this.d);
-                break;
-            case 6:
-                ((MediaDataController) this.c).lambda$putPremiumPromoToCache$10((TLRPC.TL_help_premiumPromo) this.d, this.b);
-                break;
-            case 7:
-                ((MediaDataController) this.c).lambda$addRecentSticker$23(this.b, (TLRPC.Document) this.d);
-                break;
-            case 8:
-                ((MediaDataController) this.c).lambda$updateEmojiStatuses$235(this.b, (TL_account.TL_emojiStatuses) this.d);
-                break;
-            case 9:
-                ((MediaDataController) this.c).lambda$toggleStickerSetInternal$116((TLRPC.StickerSet) this.d, this.b);
-                break;
-            case 10:
-                ((MediaDataController) this.c).lambda$loadStickers$93(this.b, (Utilities.Callback) this.d);
-                break;
-            case 11:
-                ((MessagesController) this.c).lambda$checkCanOpenChat$460(this.b, (org.telegram.ui.ActionBar.r2) this.d);
-                break;
-            case 12:
-                ((MessagesController) this.c).lambda$migrateDialogs$213((TLRPC.messages_Dialogs) this.d, this.b);
-                break;
-            case 13:
-                ((MessagesController) this.c).lambda$toggleChatNoForwards$275((Utilities.Callback2) this.d, this.b);
-                break;
-            case 14:
-                ((MessagesController) this.c).lambda$loadGlobalNotificationsSettings$199((TLObject) this.d, this.b);
-                break;
-            case 15:
-                ((MessagesController.DialogPhotos) this.c).lambda$loadCache$4(this.b, (HashMap) this.d);
-                break;
-            case 16:
-                ((MessagesStorage) this.c).lambda$markMessageAsSendError$213(this.b, (TLRPC.Message) this.d);
-                break;
-            case 17:
-                ((MessagesStorage) this.c).lambda$broadcastScheduledMessagesChange$226((Long) this.d, this.b);
-                break;
-            case 18:
-                ((MessagesStorage) this.c).lambda$putDialogs$257((TLRPC.messages_Dialogs) this.d, this.b);
-                break;
-            case 19:
-                ((NotificationCenter) this.c).lambda$postNotificationNameOnUIThread$1(this.b, (Object[]) this.d);
-                break;
-            case 20:
-                ((NotificationsController) this.c).lambda$processNewMessages$26((ArrayList) this.d, this.b);
-                break;
-            case 21:
-                ((SecretChatHelper) this.c).lambda$performSendEncryptedRequest$4((TLRPC.Message) this.d, this.b);
-                break;
-            case 22:
-                ((TelegramMediaSession) this.c).lambda$loadChats$5((MessagesStorage) this.d, this.b);
+                HashMap hashMap3 = this.e;
+                i5 i5Var3 = this.b;
+                i5Var3.E(this.c, this.d, hashMap3, true);
+                i5Var3.getNotificationCenter().k(26, new Object[0]);
                 break;
             default:
-                ((UserNameResolver) this.c).lambda$resolve$2((String) this.d, this.b);
+                i5 i5Var4 = this.b;
+                i5Var4.c0 = this.d;
+                i5Var4.d0 = this.c;
+                i5Var4.b0 = this.e;
                 break;
         }
     }
 
-    public /* synthetic */ y4(Object obj, Object obj2, int i10, int i11) {
-        this.a = i11;
-        this.c = obj;
-        this.d = obj2;
-        this.b = i10;
+    public /* synthetic */ y4(i5 i5Var, HashMap hashMap, ArrayList arrayList, HashMap hashMap2, int i10) {
+        this.a = i10;
+        this.b = i5Var;
+        this.c = hashMap;
+        this.d = arrayList;
+        this.e = hashMap2;
     }
 }

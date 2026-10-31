@@ -1,63 +1,35 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.RectF;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class kh implements dh.a {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class kh implements vi {
+    public final /* synthetic */ bi a;
 
-    public /* synthetic */ kh(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public kh(bi biVar) {
+        this.a = biVar;
     }
 
-    /* JADX WARN: Failed to find 'out' block for switch in B:2:0x0002. Please report as an issue. */
-    @Override // dh.a
-    public final void b(ch.a aVar, RectF rectF) {
-        switch (this.a) {
+    @Override // org.telegram.ui.Components.vi
+    public final void a(TLRPC.User user, boolean z10, int i10, long j10) {
+        org.telegram.ui.un unVar = (org.telegram.ui.un) this.a.W1;
+        if (unVar.n7()) {
+            org.telegram.messenger.oz g10 = org.telegram.messenger.oz.g(user, unVar.j6, unVar.D5, unVar.l4, null, null, z10, i10, 0);
+            g10.K = unVar.P8();
+            g10.O = 0L;
+            g10.L = false;
+            g10.Q = j10;
+            g10.R = unVar.a9();
+            g10.T = unVar.w5;
+            unVar.getSendMessagesHelper().r0(g10);
+            unVar.F6();
         }
-        aVar.a = true;
     }
 
-    @Override // dh.a
-    public final void f(Canvas canvas, RectF rectF) {
-        Canvas canvas2;
-        RectF rectF2;
-        li liVar;
-        switch (this.a) {
-            case 0:
-                ti tiVar = (ti) this.b;
-                int i10 = 0;
-                while (i10 < 2) {
-                    li liVar2 = i10 == 0 ? tiVar.B0 : tiVar.C0;
-                    if (liVar2 == null || liVar2.c == null || liVar2.getVisibility() != 0) {
-                        canvas2 = canvas;
-                        rectF2 = rectF;
-                    } else {
-                        canvas2 = canvas;
-                        rectF2 = rectF;
-                        ih.d.b(liVar2.c, canvas2, rectF2, liVar2.d, tiVar.getContainerView(), (int) (((i10 == 0 && (liVar = tiVar.C0) != null && liVar.getVisibility() == 0) ? (1.0f - tiVar.C0.getAlpha()) * liVar2.getAlpha() : liVar2.getAlpha()) * 255.0f));
-                    }
-                    i10++;
-                    canvas = canvas2;
-                    rectF = rectF2;
-                }
-                break;
-            case 1:
-                sz szVar = (sz) this.b;
-                dy dyVar = szVar.P;
-                ih.d.a(dyVar, canvas, rectF, dyVar, szVar);
-                uw uwVar = szVar.h0;
-                ih.d.a(uwVar, canvas, rectF, uwVar, szVar);
-                zw zwVar = szVar.D0;
-                ih.d.a(zwVar, canvas, rectF, zwVar, szVar);
-                break;
-            default:
-                nr0.n((nr0) this.b, canvas, rectF);
-                break;
-        }
+    @Override // org.telegram.ui.Components.vi
+    public final void b(ArrayList arrayList, String str, boolean z10, int i10, long j10, boolean z11) {
+        ((org.telegram.ui.un) this.a.W1).vb(arrayList, str, z10, i10, j10, z11);
     }
 }

@@ -1,20 +1,20 @@
 package x1;
 
-import a8.gg;
 import android.util.Log;
+import c5.t;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.FutureTask;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class b extends FutureTask {
     public final /* synthetic */ a a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b(a aVar, gg ggVar) {
-        super(ggVar);
+    public b(a aVar, t tVar) {
+        super(tVar);
         this.a = aVar;
     }
 
@@ -35,8 +35,8 @@ public final class b extends FutureTask {
                 return;
             }
             aVar.b(null);
-        } catch (ExecutionException e10) {
-            throw new RuntimeException("An error occurred while executing doInBackground()", e10.getCause());
+        } catch (ExecutionException e7) {
+            throw new RuntimeException("An error occurred while executing doInBackground()", e7.getCause());
         } catch (Throwable th2) {
             throw new RuntimeException("An error occurred while executing doInBackground()", th2);
         }

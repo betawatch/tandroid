@@ -1,7 +1,5 @@
 package m;
 
-import a8.kc;
-import a8.nf;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.graphics.PorterDuff;
@@ -10,10 +8,12 @@ import android.text.InputFilter;
 import android.util.AttributeSet;
 import android.widget.CheckBox;
 import org.telegram.messenger.beta.R;
+import v7.r7;
+import w7.r6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class n extends CheckBox implements u0.k {
+public final class n extends CheckBox implements u0.l {
     public final p a;
     public final e2.c b;
     public final w0 c;
@@ -22,14 +22,14 @@ public final class n extends CheckBox implements u0.k {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public n(Context context, AttributeSet attributeSet) {
         super(context, attributeSet, R.attr.checkboxStyle);
-        c3.a(context);
-        b3.a(this, getContext());
+        b3.a(context);
+        a3.a(this, getContext());
         p pVar = new p(this);
         this.a = pVar;
         pVar.e(attributeSet, R.attr.checkboxStyle);
         e2.c cVar = new e2.c(this);
         this.b = cVar;
-        cVar.f(attributeSet, R.attr.checkboxStyle);
+        cVar.k(attributeSet, R.attr.checkboxStyle);
         w0 w0Var = new w0(this);
         this.c = w0Var;
         w0Var.f(attributeSet, R.attr.checkboxStyle);
@@ -69,7 +69,7 @@ public final class n extends CheckBox implements u0.k {
     public ColorStateList getSupportBackgroundTintList() {
         e2.c cVar = this.b;
         if (cVar != null) {
-            return cVar.d();
+            return cVar.i();
         }
         return null;
     }
@@ -77,7 +77,7 @@ public final class n extends CheckBox implements u0.k {
     public PorterDuff.Mode getSupportBackgroundTintMode() {
         e2.c cVar = this.b;
         if (cVar != null) {
-            return cVar.e();
+            return cVar.j();
         }
         return null;
     }
@@ -117,7 +117,7 @@ public final class n extends CheckBox implements u0.k {
         super.setBackgroundDrawable(drawable);
         e2.c cVar = this.b;
         if (cVar != null) {
-            cVar.g();
+            cVar.l();
         }
     }
 
@@ -126,7 +126,7 @@ public final class n extends CheckBox implements u0.k {
         super.setBackgroundResource(i10);
         e2.c cVar = this.b;
         if (cVar != null) {
-            cVar.h(i10);
+            cVar.m(i10);
         }
     }
 
@@ -168,20 +168,20 @@ public final class n extends CheckBox implements u0.k {
 
     @Override // android.widget.TextView
     public void setFilters(InputFilter[] inputFilterArr) {
-        super.setFilters(((nf) getEmojiTextViewHelper().b.b).a(inputFilterArr));
+        super.setFilters(((r6) getEmojiTextViewHelper().b.a).a(inputFilterArr));
     }
 
     public void setSupportBackgroundTintList(ColorStateList colorStateList) {
         e2.c cVar = this.b;
         if (cVar != null) {
-            cVar.l(colorStateList);
+            cVar.q(colorStateList);
         }
     }
 
     public void setSupportBackgroundTintMode(PorterDuff.Mode mode) {
         e2.c cVar = this.b;
         if (cVar != null) {
-            cVar.m(mode);
+            cVar.r(mode);
         }
     }
 
@@ -203,14 +203,14 @@ public final class n extends CheckBox implements u0.k {
         }
     }
 
-    @Override // u0.k
+    @Override // u0.l
     public void setSupportCompoundDrawablesTintList(ColorStateList colorStateList) {
         w0 w0Var = this.c;
         w0Var.l(colorStateList);
         w0Var.b();
     }
 
-    @Override // u0.k
+    @Override // u0.l
     public void setSupportCompoundDrawablesTintMode(PorterDuff.Mode mode) {
         w0 w0Var = this.c;
         w0Var.m(mode);
@@ -219,6 +219,6 @@ public final class n extends CheckBox implements u0.k {
 
     @Override // android.widget.CompoundButton
     public void setButtonDrawable(int i10) {
-        setButtonDrawable(kc.b(getContext(), i10));
+        setButtonDrawable(r7.b(getContext(), i10));
     }
 }

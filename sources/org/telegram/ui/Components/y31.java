@@ -1,33 +1,53 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
+import android.content.Context;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class y31 implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class y31 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ a41 b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.z2[] b;
+    public final /* synthetic */ Context c;
 
-    public /* synthetic */ y31(a41 a41Var, int i10) {
-        this.a = i10;
-        this.b = a41Var;
+    public /* synthetic */ y31(Context context, org.telegram.ui.ActionBar.z2[] z2VarArr) {
+        this.a = 3;
+        this.c = context;
+        this.b = z2VarArr;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        org.telegram.ui.ActionBar.z2 z2Var;
+        org.telegram.ui.ActionBar.k2 k2Var;
+        int i10 = this.a;
+        org.telegram.ui.ActionBar.z2[] z2VarArr = this.b;
+        Context context = this.c;
+        switch (i10) {
             case 0:
-                di.h3 h3Var = this.b.f;
-                h3Var.setScaleX(Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
-                h3Var.setScaleY(Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
-                h3Var.invalidate();
+                z2VarArr[0].dismiss();
+                gf.f.r(context, org.telegram.messenger.cd.L0(2131752035, null));
+                break;
+            case 1:
+                z2VarArr[0].dismiss();
+                gf.f.t(context, org.telegram.messenger.cd.L0(2131752030, null));
+                break;
+            case 2:
+                z2VarArr[0].dismiss();
+                gf.f.r(context, org.telegram.messenger.cd.L0(2131752027, null));
                 break;
             default:
-                a41 a41Var = this.b;
-                a41Var.getClass();
-                a41Var.F = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                a41Var.h();
+                jv0 jv0Var = new jv0(context);
+                if (!org.telegram.messenger.i0.Q1() && !org.telegram.messenger.i0.u1(z2VarArr[0].f1) && (z2Var = z2VarArr[0]) != null && (k2Var = z2Var.f1) != null) {
+                    jv0Var.a0(k2Var);
+                }
+                jv0Var.show();
                 break;
         }
+    }
+
+    public /* synthetic */ y31(org.telegram.ui.ActionBar.z2[] z2VarArr, Context context, int i10) {
+        this.a = i10;
+        this.b = z2VarArr;
+        this.c = context;
     }
 }

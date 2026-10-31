@@ -1,8 +1,5 @@
 package com.google.android.gms.auth.api.signin;
 
-import a6.d;
-import a6.e;
-import a8.df;
 import android.accounts.Account;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -15,19 +12,22 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
+import o6.a;
 import org.json.JSONArray;
 import org.json.JSONObject;
-import p6.a;
+import w7.h0;
+import z5.c;
+import z5.d;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 @Deprecated
 /* loaded from: classes.dex */
 public class GoogleSignInOptions extends a implements b, ReflectedParcelable {
     public static final Parcelable.Creator<GoogleSignInOptions> CREATOR;
+    public static final Scope D;
     public static final Scope E;
-    public static final d F;
-    public static final GoogleSignInOptions v;
-    public static final Scope w;
+    public static final c F;
+    public static final GoogleSignInOptions w;
     public static final Scope x;
     public static final Scope y;
     public final int a;
@@ -43,36 +43,36 @@ public class GoogleSignInOptions extends a implements b, ReflectedParcelable {
 
     static {
         Scope scope = new Scope(1, "profile");
-        w = new Scope(1, "email");
+        x = new Scope(1, "email");
         Scope scope2 = new Scope(1, "openid");
-        x = scope2;
+        y = scope2;
         Scope scope3 = new Scope(1, "https://www.googleapis.com/auth/games_lite");
-        y = scope3;
+        D = scope3;
         E = new Scope(1, "https://www.googleapis.com/auth/games");
         HashSet hashSet = new HashSet();
         HashMap hashMap = new HashMap();
         hashSet.add(scope2);
         hashSet.add(scope);
         if (hashSet.contains(E)) {
-            Scope scope4 = y;
+            Scope scope4 = D;
             if (hashSet.contains(scope4)) {
                 hashSet.remove(scope4);
             }
         }
-        v = new GoogleSignInOptions(3, new ArrayList(hashSet), null, false, false, false, null, null, hashMap, null);
+        w = new GoogleSignInOptions(3, new ArrayList(hashSet), null, false, false, false, null, null, hashMap, null);
         HashSet hashSet2 = new HashSet();
         HashMap hashMap2 = new HashMap();
         hashSet2.add(scope3);
         hashSet2.addAll(Arrays.asList(new Scope[0]));
         if (hashSet2.contains(E)) {
-            Scope scope5 = y;
+            Scope scope5 = D;
             if (hashSet2.contains(scope5)) {
                 hashSet2.remove(scope5);
             }
         }
         new GoogleSignInOptions(3, new ArrayList(hashSet2), null, false, false, false, null, null, hashMap2, null);
-        CREATOR = new e(1);
-        F = new d(1);
+        CREATOR = new d(1);
+        F = new c(1);
     }
 
     public GoogleSignInOptions(int i10, ArrayList arrayList, Account account, boolean z10, boolean z11, boolean z12, String str, String str2, HashMap hashMap, String str3) {
@@ -111,7 +111,7 @@ public class GoogleSignInOptions extends a implements b, ReflectedParcelable {
             while (i10 < size) {
                 Object obj = arrayList.get(i10);
                 i10++;
-                b6.a aVar = (b6.a) obj;
+                a6.a aVar = (a6.a) obj;
                 hashMap.put(Integer.valueOf(aVar.b), aVar);
             }
         }
@@ -175,21 +175,21 @@ public class GoogleSignInOptions extends a implements b, ReflectedParcelable {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q5 = df.q(parcel, 20293);
-        df.s(parcel, 1, 4);
+        int q6 = h0.q(parcel, 20293);
+        h0.s(parcel, 1, 4);
         parcel.writeInt(this.a);
-        df.p(parcel, 2, new ArrayList(this.b));
-        df.k(parcel, 3, this.c, i10);
-        df.s(parcel, 4, 4);
+        h0.p(parcel, 2, new ArrayList(this.b));
+        h0.k(parcel, 3, this.c, i10);
+        h0.s(parcel, 4, 4);
         parcel.writeInt(this.d ? 1 : 0);
-        df.s(parcel, 5, 4);
+        h0.s(parcel, 5, 4);
         parcel.writeInt(this.e ? 1 : 0);
-        df.s(parcel, 6, 4);
+        h0.s(parcel, 6, 4);
         parcel.writeInt(this.f ? 1 : 0);
-        df.l(parcel, 7, this.h);
-        df.l(parcel, 8, this.n);
-        df.p(parcel, 9, this.r);
-        df.l(parcel, 10, this.s);
-        df.r(parcel, q5);
+        h0.l(parcel, 7, this.h);
+        h0.l(parcel, 8, this.n);
+        h0.p(parcel, 9, this.r);
+        h0.l(parcel, 10, this.s);
+        h0.r(parcel, q6);
     }
 }

@@ -1,57 +1,54 @@
 package org.telegram.messenger.voip;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.concurrent.atomic.AtomicInteger;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
+import android.content.SharedPreferences;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class w implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ int f;
-    public final /* synthetic */ String g;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ w(MessagesController messagesController, HashMap hashMap, String str, a0.h hVar, long j10, int i10) {
-        this.a = 2;
-        this.b = messagesController;
-        this.d = hashMap;
-        this.g = str;
-        this.e = hVar;
-        this.c = j10;
-        this.f = i10;
+    public /* synthetic */ w(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
     @Override // org.telegram.tgnet.RequestDelegate
     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                ((VoIPService) this.b).lambda$startConferenceGroupCall$51(this.c, (HashSet) this.d, (AtomicInteger) this.e, this.f, this.g, tLObject, tL_error);
+                ((VoIPService) this.b).lambda$hangUp$4(tLObject, tL_error);
                 break;
             case 1:
-                ((VoIPService) this.b).lambda$startConferenceGroupCall$43(this.c, (HashSet) this.d, (AtomicInteger) this.e, this.f, this.g, tLObject, tL_error);
+                ((VoIPService) this.b).lambda$hangUp$5(tLObject, tL_error);
+                break;
+            case 2:
+                ((VoIPService) this.b).lambda$startOutgoingCall$7(tLObject, tL_error);
+                break;
+            case 3:
+                ((VoIPService) this.b).lambda$startGroupCheckShortpoll$62(tLObject, tL_error);
+                break;
+            case 4:
+                ((VoIPService) this.b).lambda$declineIncomingCall$105(tLObject, tL_error);
+                break;
+            case 5:
+                ((VoIPService) this.b).lambda$processAcceptedCall$20(tLObject, tL_error);
+                break;
+            case 6:
+                ((VoIPService) this.b).lambda$startGroupCall$23(tLObject, tL_error);
+                break;
+            case 7:
+                ((VoIPService) this.b).lambda$stopScreenCapture$15(tLObject, tL_error);
+                break;
+            case 8:
+                ((VoIPService) this.b).lambda$acceptIncomingCall$102(tLObject, tL_error);
                 break;
             default:
-                ((MessagesController) this.b).lambda$reloadWebPages$186((HashMap) this.d, this.g, (a0.h) this.e, this.c, this.f, tLObject, tL_error);
+                VoIPService.lambda$updateServerConfig$107((SharedPreferences) this.b, tLObject, tL_error);
                 break;
         }
-    }
-
-    public /* synthetic */ w(VoIPService voIPService, long j10, HashSet hashSet, AtomicInteger atomicInteger, int i10, String str, int i11) {
-        this.a = i11;
-        this.b = voIPService;
-        this.c = j10;
-        this.d = hashSet;
-        this.e = atomicInteger;
-        this.f = i10;
-        this.g = str;
     }
 }

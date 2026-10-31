@@ -1,51 +1,123 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import org.telegram.messenger.AndroidUtilities;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class w41 extends u51 {
-    public final /* synthetic */ f61 G;
+public final class w41 extends s4.s0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w41(f61 f61Var, Context context, boolean z10) {
-        super(f61Var, context, z10);
-        this.G = f61Var;
+    public /* synthetic */ w41(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        f61 f61Var = this.G;
-        r41 r41Var = f61Var.g0;
-        w41 w41Var = f61Var.f0;
-        f51 f51Var = f61Var.U;
-        if (f51Var != null) {
-            int measuredWidth = getMeasuredWidth();
-            int measuredHeight = getMeasuredHeight();
-            float x9 = r41Var.getX() + w41Var.getX();
-            float y3 = r41Var.getY() + w41Var.getY();
-            ai.f0 f0Var = (ai.f0) f51Var;
-            bh.i0 i0Var = (bh.i0) f0Var.b;
-            bh.h0 h0Var = i0Var.a;
-            org.telegram.ui.Components.gl0 gl0Var = (org.telegram.ui.Components.gl0) f0Var.c;
-            RectF rectF = AndroidUtilities.rectTmp;
-            float f7 = 0;
-            rectF.set(f7, f7, measuredWidth, measuredHeight);
-            gl0Var.getDelegate().l(canvas, rectF, 0.0f, h0Var.getX() + x9, (i0Var.y == 1 ? h0Var.getY() - AndroidUtilities.statusBarHeight : h0Var.getY() + i0Var.c.getY()) + y3, 255, true);
+    @Override // s4.s0
+    public void a(RecyclerView recyclerView, int i10) {
+        switch (this.a) {
+            case 0:
+                if (i10 == 0) {
+                    e51 e51Var = (e51) this.b;
+                    if (e51Var.E != null) {
+                        org.telegram.ui.ActionBar.p5 p5Var = e51Var.d;
+                        if (p5Var == null || !p5Var.w()) {
+                            float f7 = e51Var.X;
+                            if (f7 > 0.0f && f7 < 1.0f) {
+                                if (f7 < 0.5f) {
+                                    e51Var.c.w0(0, (int) Math.ceil(e51Var.Y - e51Var.a0), org.telegram.ui.Components.gr.h);
+                                    break;
+                                } else {
+                                    e51Var.c.w0(0, (int) (-(e51Var.Z - e51Var.Y)), org.telegram.ui.Components.gr.h);
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                }
+                break;
+            case 2:
+                if (i10 == 0) {
+                    ((m91) this.b).s0 = false;
+                    break;
+                }
+                break;
+            case 3:
+                if (i10 == 1) {
+                    org.telegram.messenger.i0.v1(((ea1) this.b).getParentActivity().getCurrentFocus());
+                    break;
+                }
+                break;
+            case 5:
+                if (i10 == 1) {
+                    org.telegram.messenger.i0.v1(((UsersSelectActivity) this.b).c);
+                    break;
+                }
+                break;
+            case 6:
+                WallpapersListActivity wallpapersListActivity = (WallpapersListActivity) this.b;
+                if (i10 == 1) {
+                    org.telegram.messenger.i0.v1(wallpapersListActivity.getParentActivity().getCurrentFocus());
+                }
+                wallpapersListActivity.f0 = i10 != 0;
+                break;
         }
-        super.dispatchDraw(canvas);
     }
 
-    @Override // android.view.View
-    public final void setTranslationY(float f7) {
-        if (f7 != getTranslationY()) {
-            super.setTranslationY(f7);
-            if (this.G.U != null) {
-                invalidate();
-            }
+    @Override // s4.s0
+    public void b(RecyclerView recyclerView, int i10, int i11) {
+        switch (this.a) {
+            case 0:
+                e51 e51Var = (e51) this.b;
+                e51Var.n0(false, true);
+                e51Var.o0();
+                if (e51Var.c.I1) {
+                    org.telegram.messenger.i0.v1(e51Var.fragmentView);
+                    break;
+                }
+                break;
+            case 1:
+                u61 u61Var = (u61) this.b;
+                if (u61Var.u0.size() != u61Var.v0.size() && !u61Var.z0 && u61Var.T.N0() > u61Var.W.c0 - 20) {
+                    u61Var.j0();
+                    break;
+                }
+                break;
+            case 2:
+                m91 m91Var = (m91) this.b;
+                m91Var.v0.g1();
+                m91Var.s0 = true;
+                break;
+            case 4:
+                lb1 lb1Var = (lb1) this.b;
+                if (lb1Var.o0 && lb1Var.a0.N0() + 5 >= lb1Var.m0) {
+                    lb1Var.L(lb1Var.d0);
+                }
+                pb1 pb1Var = lb1Var.v0;
+                if (pb1Var.s0) {
+                    if (i10 != 0 || i11 != 0) {
+                        org.telegram.messenger.i0.v1(pb1Var.p0.getSearchField());
+                        break;
+                    }
+                }
+                break;
+            case 6:
+                WallpapersListActivity wallpapersListActivity = (WallpapersListActivity) this.b;
+                if (wallpapersListActivity.F.getAdapter() == wallpapersListActivity.H) {
+                    int L0 = wallpapersListActivity.I.L0();
+                    int abs = L0 == -1 ? 0 : Math.abs(wallpapersListActivity.I.N0() - L0) + 1;
+                    if (abs > 0) {
+                        int B = wallpapersListActivity.I.B();
+                        if (abs != 0 && L0 + abs > B - 2) {
+                            pe1 pe1Var = wallpapersListActivity.H;
+                            if (!pe1Var.f && pe1Var.s == 0) {
+                                pe1Var.F(pe1Var.h, pe1Var.r, true);
+                                break;
+                            }
+                        }
+                    }
+                }
+                break;
         }
     }
 }

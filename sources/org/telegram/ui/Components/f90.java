@@ -1,29 +1,9 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class f90 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ h90 b;
-    public final /* synthetic */ boolean c;
-
-    public /* synthetic */ f90(h90 h90Var, boolean z10, int i10) {
-        this.a = i10;
-        this.b = h90Var;
-        this.c = z10;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                AndroidUtilities.runOnUIThread(new f90(this.b, this.c, 1));
-                break;
-            default:
-                this.b.setJoinRequest(this.c);
-                break;
-        }
-    }
+public final class f90 extends TL_iv.RichText {
+    public int a;
 }

@@ -1,22 +1,36 @@
 package sc;
 
-import java.util.logging.Logger;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public abstract class c {
-    public static c a(Class cls) {
-        if (System.getProperty("java.vm.name").equalsIgnoreCase("Dalvik")) {
-            String simpleName = cls.getSimpleName();
-            a aVar = new a(0);
-            aVar.b = simpleName;
-            return aVar;
+public final class c implements Iterable {
+    public final HashMap a = new HashMap();
+    public final ArrayList b = new ArrayList();
+
+    public c(HashMap hashMap) {
+        String str = (String) hashMap.get("cookie");
+        if (str != null) {
+            for (String str2 : str.split(";")) {
+                String[] split = str2.trim().split("=");
+                if (split.length == 2) {
+                    this.a.put(split[0], split[1]);
+                }
+            }
         }
-        String simpleName2 = cls.getSimpleName();
-        a aVar2 = new a(1);
-        aVar2.b = Logger.getLogger(simpleName2);
-        return aVar2;
     }
 
-    public abstract void b(String str);
+    @Override // java.lang.Iterable
+    public final Iterator iterator() {
+        return this.a.keySet().iterator();
+    }
+
+    public final void l() {
+        Iterator it = this.b.iterator();
+        if (it.hasNext()) {
+            throw a1.g.h(it);
+        }
+    }
 }

@@ -1,66 +1,137 @@
 package h1;
 
 import android.database.Cursor;
-import android.util.Log;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
 import android.widget.Filter;
-import androidx.appcompat.widget.SearchView;
-import m.a3;
+import android.widget.Filterable;
+import android.widget.ImageView;
+import m.y2;
+import m.z2;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class b extends Filter {
-    public a a;
+public abstract class b extends BaseAdapter implements Filterable {
+    public boolean a;
+    public boolean b;
+    public Cursor c;
+    public int d;
+    public com.google.android.gms.internal.clearcut.c e;
+    public a f;
+    public c h;
 
-    @Override // android.widget.Filter
-    public final CharSequence convertResultToString(Object obj) {
-        return ((a3) this.a).c((Cursor) obj);
-    }
+    public abstract void a(View view, Cursor cursor);
 
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0039  */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x0042  */
-    @Override // android.widget.Filter
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final Filter.FilterResults performFiltering(CharSequence charSequence) {
-        Cursor cursor;
-        a3 a3Var = (a3) this.a;
-        SearchView searchView = a3Var.v;
-        String charSequence2 = charSequence == null ? "" : charSequence.toString();
-        if (searchView.getVisibility() == 0 && searchView.getWindowVisibility() == 0) {
-            try {
-                cursor = a3Var.f(a3Var.w, charSequence2);
-            } catch (RuntimeException e) {
-                Log.w("SuggestionsAdapter", "Search suggestions query threw an exception.", e);
-            }
-            if (cursor != null) {
-                cursor.getCount();
-                Filter.FilterResults filterResults = new Filter.FilterResults();
-                if (cursor == null) {
-                    filterResults.count = cursor.getCount();
-                    filterResults.values = cursor;
-                } else {
-                    filterResults.count = 0;
-                    filterResults.values = null;
+    public void b(Cursor cursor) {
+        Cursor cursor2 = this.c;
+        if (cursor == cursor2) {
+            cursor2 = null;
+        } else {
+            if (cursor2 != null) {
+                com.google.android.gms.internal.clearcut.c cVar = this.e;
+                if (cVar != null) {
+                    cursor2.unregisterContentObserver(cVar);
                 }
-                return filterResults;
+                a aVar = this.f;
+                if (aVar != null) {
+                    cursor2.unregisterDataSetObserver(aVar);
+                }
+            }
+            this.c = cursor;
+            if (cursor != null) {
+                com.google.android.gms.internal.clearcut.c cVar2 = this.e;
+                if (cVar2 != null) {
+                    cursor.registerContentObserver(cVar2);
+                }
+                a aVar2 = this.f;
+                if (aVar2 != null) {
+                    cursor.registerDataSetObserver(aVar2);
+                }
+                this.d = cursor.getColumnIndexOrThrow("_id");
+                this.a = true;
+                notifyDataSetChanged();
+            } else {
+                this.d = -1;
+                this.a = false;
+                notifyDataSetInvalidated();
             }
         }
-        cursor = null;
-        Filter.FilterResults filterResults2 = new Filter.FilterResults();
-        if (cursor == null) {
+        if (cursor2 != null) {
+            cursor2.close();
         }
-        return filterResults2;
     }
 
-    @Override // android.widget.Filter
-    public final void publishResults(CharSequence charSequence, Filter.FilterResults filterResults) {
-        a aVar = this.a;
-        Cursor cursor = aVar.c;
-        Object obj = filterResults.values;
-        if (obj == null || obj == cursor) {
-            return;
+    public abstract String c(Cursor cursor);
+
+    @Override // android.widget.Adapter
+    public final int getCount() {
+        Cursor cursor;
+        if (!this.a || (cursor = this.c) == null) {
+            return 0;
         }
-        ((a3) aVar).b((Cursor) obj);
+        return cursor.getCount();
+    }
+
+    @Override // android.widget.BaseAdapter, android.widget.SpinnerAdapter
+    public View getDropDownView(int i10, View view, ViewGroup viewGroup) {
+        if (!this.a) {
+            return null;
+        }
+        this.c.moveToPosition(i10);
+        if (view == null) {
+            z2 z2Var = (z2) this;
+            view = z2Var.s.inflate(z2Var.r, viewGroup, false);
+        }
+        a(view, this.c);
+        return view;
+    }
+
+    @Override // android.widget.Filterable
+    public final Filter getFilter() {
+        if (this.h == null) {
+            c cVar = new c();
+            cVar.a = this;
+            this.h = cVar;
+        }
+        return this.h;
+    }
+
+    @Override // android.widget.Adapter
+    public final Object getItem(int i10) {
+        Cursor cursor;
+        if (!this.a || (cursor = this.c) == null) {
+            return null;
+        }
+        cursor.moveToPosition(i10);
+        return this.c;
+    }
+
+    @Override // android.widget.Adapter
+    public final long getItemId(int i10) {
+        Cursor cursor;
+        if (this.a && (cursor = this.c) != null && cursor.moveToPosition(i10)) {
+            return this.c.getLong(this.d);
+        }
+        return 0L;
+    }
+
+    @Override // android.widget.Adapter
+    public View getView(int i10, View view, ViewGroup viewGroup) {
+        if (!this.a) {
+            throw new IllegalStateException("this should only be called when the cursor is valid");
+        }
+        if (!this.c.moveToPosition(i10)) {
+            throw new IllegalStateException(i0.a.i(i10, "couldn't move cursor to position "));
+        }
+        if (view == null) {
+            z2 z2Var = (z2) this;
+            view = z2Var.s.inflate(z2Var.n, viewGroup, false);
+            view.setTag(new y2(view));
+            ((ImageView) view.findViewById(R.id.edit_query)).setImageResource(z2Var.E);
+        }
+        a(view, this.c);
+        return view;
     }
 }

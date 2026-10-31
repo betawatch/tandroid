@@ -1,121 +1,106 @@
 package org.telegram.messenger;
 
-import android.util.SparseArray;
-import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.atomic.AtomicInteger;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_update;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.CornerPathEffect;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final /* synthetic */ class k2 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
+public final class k2 extends Drawable {
+    public final long a;
+    public final Drawable b;
+    public final Paint c;
+    public final Path d;
+    public boolean e;
+    public final org.telegram.ui.Components.t5 f;
 
-    public /* synthetic */ k2(int i10, Object obj, Object obj2) {
-        this.a = i10;
-        this.b = obj;
-        this.c = obj2;
+    public k2(Context context) {
+        Paint paint = new Paint(1);
+        this.c = paint;
+        Path path = new Path();
+        this.d = path;
+        this.e = false;
+        this.f = new org.telegram.ui.Components.t5(new a(this, 3), 420L, org.telegram.ui.Components.gr.h, 0);
+        this.a = System.currentTimeMillis();
+        this.b = i0.a.f(context, R.drawable.ic_ab_other);
+        paint.setPathEffect(new CornerPathEffect(i0.L(1.0f)));
+        path.rewind();
+        path.moveTo(-i0.N(1.33f), i0.N(0.16f));
+        path.lineTo(-i0.N(1.33f), -i0.N(3.5f));
+        path.lineTo(i0.N(1.33f), -i0.N(3.5f));
+        path.lineTo(i0.N(1.33f), i0.N(0.16f));
+        path.lineTo(i0.N(3.5f), i0.N(0.16f));
+        path.lineTo(0.0f, i0.N(3.5f));
+        path.lineTo(-i0.N(3.5f), i0.N(0.16f));
+        path.close();
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                ((FactCheckController) this.b).lambda$applyFactCheck$14((TLRPC.Updates) this.c);
-                break;
-            case 1:
-                FactCheckController.lambda$saveToDatabase$6((MessagesStorage) this.b, (TLRPC.TL_factCheck) this.c);
-                break;
-            case 2:
-                ((FileLoadOperation) this.b).lambda$start$12((boolean[]) this.c);
-                break;
-            case 3:
-                ((FileLoadOperation) this.b).lambda$addPart$3((ArrayList) this.c);
-                break;
-            case 4:
-                ((FileLoader) this.b).lambda$uploadFile$21((NotificationCenter.NotificationCenterDelegate[]) this.c);
-                break;
-            case 5:
-                ((FileLoader) this.b).lambda$checkCurrentDownloadsFiles$19((ArrayList) this.c);
-                break;
-            case 6:
-                FileLog.lambda$e$3((String) this.b, (Throwable) this.c);
-                break;
-            case 7:
-                ((FilePathDatabase) this.b).lambda$removeFiles$6((List) this.c);
-                break;
-            case 8:
-                ((FileRefController) this.b).lambda$onRequestComplete$47((TLRPC.User) this.c);
-                break;
-            case 9:
-                ((FileRefController) this.b).lambda$onRequestComplete$50((TLRPC.TL_messages_stickerSet) this.c);
-                break;
-            case 10:
-                ((GiftAuctionController) this.b).lambda$sendBid$7((TLRPC.TL_payments_paymentResult) this.c);
-                break;
-            case 11:
-                ((ImageLoader) this.b).lambda$checkMediaPaths$1((Runnable) this.c);
-                break;
-            case 12:
-                ImageLoader.lambda$checkMediaPaths$0((SparseArray) this.b, (Runnable) this.c);
-                break;
-            case 13:
-                ((MediaController) this.b).lambda$playEmojiSound$17((File) this.c);
-                break;
-            case 14:
-                MediaController.lambda$playEmojiSound$18((AccountInstance) this.b, (TLRPC.TL_document) this.c);
-                break;
-            case 15:
-                ((MediaController) this.b).lambda$processMediaObserver$6((ArrayList) this.c);
-                break;
-            case 16:
-                ((MediaController) this.b).lambda$startAudioAgain$7((MessageObject) this.c);
-                break;
-            case 17:
-                MediaDataController.lambda$loadReplyMessagesForMessages$172((AtomicInteger) this.b, (Runnable) this.c);
-                break;
-            case 18:
-                MediaDataController.lambda$fillWithAnimatedEmoji$229((boolean[]) this.b, (d7) this.c);
-                break;
-            case 19:
-                ((MediaDataController) this.b).lambda$loadGroupStickerSet$44((TLRPC.StickerSet) this.c);
-                break;
-            case 20:
-                ((MediaDataController) this.b).lambda$loadHints$147((TLRPC.TL_contacts_topPeers) this.c);
-                break;
-            case 21:
-                ((MessageObject) this.b).lambda$loadAnimatedEmojiDocument$0((TLRPC.Document) this.c);
-                break;
-            case 22:
-                MessagesController.lambda$setCustomChatReactions$474((Utilities.Callback) this.b, (TLRPC.TL_error) this.c);
-                break;
-            case 23:
-                ((MessagesController) this.b).lambda$processUpdateArray$418((TL_update.TL_updateChannel) this.c);
-                break;
-            case 24:
-                ((MessagesController) this.b).lambda$createChat$256((TLRPC.TL_messages_invitedUsers) this.c);
-                break;
-            case 25:
-                ((MessagesController) this.b).lambda$requestContactToken$481((Utilities.Callback) this.c);
-                break;
-            case 26:
-                ((MessagesController) this.b).lambda$processMessageIDUpdate$378((TL_update.TL_updateMessageID) this.c);
-                break;
-            case 27:
-                ((MessagesController) this.b).lambda$createChat$259((TLRPC.Updates) this.c);
-                break;
-            case 28:
-                ((MessagesController) this.b).lambda$checkTosUpdate$161((TLRPC.TL_help_termsOfServiceUpdate) this.c);
-                break;
-            default:
-                ((MessagesController) this.b).lambda$processUpdateArray$397((TL_update.TL_updateServiceNotification) this.c);
-                break;
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        Rect bounds = getBounds();
+        Drawable drawable = this.b;
+        drawable.setBounds(bounds);
+        drawable.draw(canvas);
+        float d = this.f.d(this.e);
+        if (d > 0.0f) {
+            canvas.save();
+            canvas.translate(getBounds().centerX(), getBounds().centerY());
+            canvas.translate(-i0.N(8.166f), i0.N(5.0f));
+            float f7 = (d * 0.5f) + 0.5f;
+            canvas.scale(f7, f7);
+            int r12 = org.telegram.ui.ActionBar.t6.r1(0.4f, -1);
+            Paint paint = this.c;
+            paint.setColor(r12);
+            Path path = this.d;
+            canvas.drawPath(path, paint);
+            float currentTimeMillis = ((System.currentTimeMillis() - this.a) % 450) / 450.0f;
+            float f10 = 0.5f + currentTimeMillis;
+            canvas.save();
+            canvas.clipRect(-i0.L(5.0f), i0.T1(-i0.N(3.5f), i0.N(3.5f), currentTimeMillis), i0.L(5.0f), i0.T1(-i0.N(3.5f), i0.N(3.5f), f10));
+            paint.setColor(org.telegram.ui.ActionBar.t6.r1(1.0f, -1));
+            canvas.drawPath(path, paint);
+            canvas.restore();
+            if (f10 > 1.0f) {
+                canvas.save();
+                canvas.clipRect(-i0.L(5.0f), i0.T1(-i0.N(3.5f), i0.N(3.5f), 0.0f), i0.L(5.0f), i0.T1(-i0.N(3.5f), i0.N(3.5f), f10 - 1.0f));
+                paint.setColor(org.telegram.ui.ActionBar.t6.r1(1.0f, -1));
+                canvas.drawPath(path, paint);
+                canvas.restore();
+            }
+            canvas.restore();
+            invalidateSelf();
         }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return this.b.getIntrinsicHeight();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return this.b.getIntrinsicWidth();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        this.b.setAlpha(i10);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        this.c.setColorFilter(colorFilter);
+        this.b.setColorFilter(colorFilter);
     }
 }

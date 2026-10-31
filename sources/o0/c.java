@@ -15,17 +15,18 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
-import li.h5;
-import w7.b0;
+import k2.m0;
+import n2.u;
+import w7.m8;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public abstract class c {
     public static final a0.j a = new a0.j(2);
-    public static final a4.d b = new a4.d(28);
+    public static final a4.d b = new a4.d(12);
 
     public static j4.f a(Context context, List list) {
-        b0.a("FontProvider.getFontFamilyResult");
+        m8.a("FontProvider.getFontFamilyResult");
         try {
             ArrayList arrayList = new ArrayList();
             for (int i10 = 0; i10 < list.size(); i10++) {
@@ -45,7 +46,7 @@ public abstract class c {
     public static ProviderInfo b(PackageManager packageManager, d dVar, Resources resources) {
         a4.d dVar2 = b;
         a0.j jVar = a;
-        b0.a("FontProvider.getProvider");
+        m8.a("FontProvider.getProvider");
         try {
             List list = dVar.d;
             String str = dVar.a;
@@ -94,29 +95,28 @@ public abstract class c {
         }
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
     public static h[] c(Context context, d dVar, String str) {
-        jg.i iVar;
+        a aVar;
         ArrayList arrayList;
         Uri withAppendedId;
-        b0.a("FontProvider.query");
+        m8.a("FontProvider.query");
         try {
             ArrayList arrayList2 = new ArrayList();
             Uri build = new Uri.Builder().scheme("content").authority(str).build();
             Uri build2 = new Uri.Builder().scheme("content").authority(str).appendPath("file").build();
             if (Build.VERSION.SDK_INT < 24) {
-                h5 h5Var = new h5();
-                h5Var.a = context.getContentResolver().acquireUnstableContentProviderClient(build);
-                iVar = h5Var;
+                aVar = new u(context, build);
             } else {
-                iVar = new jg.i(context, build);
+                m0 m0Var = new m0();
+                m0Var.a = context.getContentResolver().acquireUnstableContentProviderClient(build);
+                aVar = m0Var;
             }
             Cursor cursor = null;
             try {
                 String[] strArr = {"_id", "file_id", "font_ttc_index", "font_variation_settings", "font_weight", "font_italic", "result_code"};
-                b0.a("ContentQueryWrapper.query");
+                m8.a("ContentQueryWrapper.query");
                 try {
-                    cursor = iVar.D(build, strArr, new String[]{dVar.c});
+                    cursor = aVar.I(build, strArr, new String[]{dVar.c});
                     Trace.endSection();
                     if (cursor != null && cursor.getCount() > 0) {
                         int columnIndex = cursor.getColumnIndex("result_code");
@@ -146,7 +146,7 @@ public abstract class c {
                     if (cursor != null) {
                         cursor.close();
                     }
-                    iVar.close();
+                    aVar.close();
                     return (h[]) arrayList2.toArray(new h[0]);
                 } finally {
                 }
@@ -154,7 +154,7 @@ public abstract class c {
                 if (cursor != null) {
                     cursor.close();
                 }
-                iVar.close();
+                aVar.close();
                 throw th2;
             }
         } finally {

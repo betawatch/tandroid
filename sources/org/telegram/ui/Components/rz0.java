@@ -1,74 +1,71 @@
 package org.telegram.ui.Components;
 
-import android.graphics.drawable.Drawable;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.UserConfig;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.text.style.ReplacementSpan;
+import android.view.View;
+import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class rz0 extends mm0 {
-    public final uz0 c;
-    public final /* synthetic */ uz0 d;
+public final class rz0 extends ReplacementSpan {
+    public static final /* synthetic */ int f = 0;
+    public ImageReceiver a;
+    public int b;
+    public int c;
+    public final boolean d;
+    public final int e;
 
-    public rz0(uz0 uz0Var, uz0 uz0Var2) {
-        this.d = uz0Var;
-        this.c = uz0Var2;
+    public rz0(View view, Bitmap bitmap, int i10, int i11, int i12, int i13) {
+        this.b = i10;
+        this.c = i11;
+        ImageReceiver imageReceiver = new ImageReceiver(view);
+        this.a = imageReceiver;
+        imageReceiver.J0 = true;
+        imageReceiver.v0(bitmap);
+        imageReceiver.o1 = new PorterDuffColorFilter(i12, PorterDuff.Mode.SRC_IN);
+        this.e = i13;
+        this.d = true;
     }
 
-    @Override // org.telegram.ui.Components.mm0
-    public final boolean D(s4.e1 e1Var) {
-        return true;
-    }
-
-    @Override // s4.h0
-    public final int h() {
-        ArrayList arrayList = this.c.w;
-        if (arrayList == null) {
-            return 0;
-        }
-        return arrayList.size();
-    }
-
-    @Override // s4.h0
-    public final long i(int i10) {
-        if (this.c.w == null) {
-            return 0L;
-        }
-        return ((MediaDataController.KeywordResult) r0.get(i10)).emoji.hashCode();
-    }
-
-    @Override // s4.h0
-    public final void v(s4.e1 e1Var, int i10) {
-        tz0 tz0Var = (tz0) e1Var.a;
-        uz0 uz0Var = this.c;
-        ArrayList arrayList = uz0Var.w;
-        String str = arrayList == null ? null : ((MediaDataController.KeywordResult) arrayList.get(i10)).emoji;
-        int direction = uz0Var.getDirection();
-        tz0Var.a = str;
-        if (str == null || !str.startsWith("animated_")) {
-            tz0Var.setImageDrawable(Emoji.getEmojiBigDrawable(str));
+    @Override // android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
+        int i15 = this.b;
+        int i16 = this.c;
+        ImageReceiver imageReceiver = this.a;
+        canvas.save();
+        if (this.d) {
+            imageReceiver.y0((int) f7, i13 - (i16 - this.e), i15, i16);
         } else {
-            try {
-                long parseLong = Long.parseLong(str.substring(9));
-                Drawable drawable = tz0Var.b;
-                if (!(drawable instanceof t5) || ((t5) drawable).i() != parseLong) {
-                    tz0Var.setImageDrawable(t5.n(UserConfig.selectedAccount, parseLong, null, tz0Var.f.d()));
-                }
-            } catch (Exception unused) {
-                tz0Var.setImageDrawable(null);
+            imageReceiver.y0((int) f7, i0.a.u(org.telegram.messenger.m5.z(4.0f, i14, i12), i16, 2, i12), i15, i16);
+        }
+        imageReceiver.h(canvas, null);
+        canvas.restore();
+    }
+
+    @Override // android.text.style.ReplacementSpan
+    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
+        int i12 = this.c;
+        if (fontMetricsInt != null) {
+            if (this.d) {
+                int i13 = this.e;
+                int i14 = -(i12 - i13);
+                fontMetricsInt.ascent = i14;
+                fontMetricsInt.top = i14;
+                fontMetricsInt.descent = i13;
+                fontMetricsInt.bottom = i13;
+            } else {
+                int L = ((-i12) / 2) - org.telegram.messenger.i0.L(4.0f);
+                fontMetricsInt.ascent = L;
+                fontMetricsInt.top = L;
+                int L2 = (i12 - (i12 / 2)) - org.telegram.messenger.i0.L(4.0f);
+                fontMetricsInt.descent = L2;
+                fontMetricsInt.bottom = L2;
             }
         }
-        if (tz0Var.d != direction) {
-            tz0Var.d = direction;
-            tz0Var.requestLayout();
-        }
-    }
-
-    @Override // s4.h0
-    public final s4.e1 x(ViewGroup viewGroup, int i10) {
-        return new wl0(new tz0(this.d, this.c.getContext()));
+        return this.b;
     }
 }

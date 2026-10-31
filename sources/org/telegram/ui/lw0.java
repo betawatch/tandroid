@@ -1,38 +1,66 @@
 package org.telegram.ui;
 
-import java.util.Comparator;
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.ConnectionsManager;
+import android.content.Context;
+import android.graphics.RectF;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class lw0 implements Comparator {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesController b;
+public final class lw0 extends org.telegram.ui.Components.v4 {
+    public final /* synthetic */ ProfileActivity U0;
 
-    public /* synthetic */ lw0(MessagesController messagesController, int i10) {
-        this.a = i10;
-        this.b = messagesController;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public lw0(ProfileActivity profileActivity, Context context) {
+        super(context);
+        this.U0 = profileActivity;
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        int i10;
-        int i11;
-        yw0 yw0Var = (yw0) obj;
-        yw0 yw0Var2 = (yw0) obj2;
-        switch (this.a) {
-            case 0:
-                MessagesController messagesController = this.b;
-                i10 = messagesController.businessFeaturesTypesToPosition.get(yw0Var.a, ConnectionsManager.DEFAULT_DATACENTER_ID);
-                i11 = messagesController.businessFeaturesTypesToPosition.get(yw0Var2.a, ConnectionsManager.DEFAULT_DATACENTER_ID);
-                break;
-            default:
-                MessagesController messagesController2 = this.b;
-                i10 = messagesController2.premiumFeaturesTypesToPosition.get(yw0Var.a, ConnectionsManager.DEFAULT_DATACENTER_ID);
-                i11 = messagesController2.premiumFeaturesTypesToPosition.get(yw0Var2.a, ConnectionsManager.DEFAULT_DATACENTER_ID);
-                break;
+    @Override // android.view.View
+    public final void setAlpha(float f7) {
+        super.setAlpha(f7);
+        RectF rectF = ProfileActivity.R6;
+        this.U0.P3();
+    }
+
+    @Override // org.telegram.ui.ActionBar.u5
+    public final void setTextColor(int i10) {
+        int r12;
+        ProfileActivity profileActivity = this.U0;
+        profileActivity.E5 = i10;
+        int f7 = i0.b.f(profileActivity.A5, i10, org.telegram.ui.ActionBar.t6.w0(org.telegram.ui.ActionBar.t6.y6, profileActivity.z0));
+        super.setTextColor(f7);
+        iy0 iy0Var = profileActivity.x6;
+        if (iy0Var == null || iy0Var.c == (r12 = org.telegram.ui.ActionBar.t6.r1(1.4f, org.telegram.ui.ActionBar.t6.b(-0.02f, 0.15f, f7)))) {
+            return;
         }
-        return i10 - i11;
+        iy0Var.c = r12;
+        iy0Var.invalidateSelf();
+    }
+
+    @Override // android.view.View
+    public final void setTranslationX(float f7) {
+        super.setTranslationX(f7);
+        RectF rectF = ProfileActivity.R6;
+        ProfileActivity profileActivity = this.U0;
+        profileActivity.o4();
+        profileActivity.getClass();
+        org.telegram.ui.Components.nv0 nv0Var = profileActivity.S;
+        if (nv0Var != null) {
+            nv0Var.setTranslationX(f7 - profileActivity.o4());
+        }
+    }
+
+    @Override // android.view.View
+    public final void setTranslationY(float f7) {
+        super.setTranslationY(f7);
+        RectF rectF = ProfileActivity.R6;
+        ProfileActivity profileActivity = this.U0;
+        if (profileActivity.S != null) {
+            org.telegram.messenger.i0.L(3.0f);
+            profileActivity.S.getVisibilityFactor();
+        }
+        org.telegram.ui.Components.nv0 nv0Var = profileActivity.S;
+        if (nv0Var != null) {
+            nv0Var.setTranslationY(f7 - org.telegram.messenger.i0.L(5.0f));
+        }
     }
 }

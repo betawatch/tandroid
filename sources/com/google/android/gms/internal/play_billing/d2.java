@@ -2,7 +2,7 @@ package com.google.android.gms.internal.play_billing;
 
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
 /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class d2 {
     public static final d2 a;
@@ -15,7 +15,7 @@ public final class d2 {
     public static final d2 n;
     public static final d2 r;
     public static final d2 s;
-    public static final /* synthetic */ d2[] v;
+    public static final /* synthetic */ d2[] w;
 
     static {
         d2 d2Var = new d2("VOID", 0);
@@ -39,10 +39,10 @@ public final class d2 {
         r = d2Var9;
         d2 d2Var10 = new d2("MESSAGE", 9);
         s = d2Var10;
-        v = new d2[]{d2Var, d2Var2, d2Var3, d2Var4, d2Var5, d2Var6, d2Var7, d2Var8, d2Var9, d2Var10};
+        w = new d2[]{d2Var, d2Var2, d2Var3, d2Var4, d2Var5, d2Var6, d2Var7, d2Var8, d2Var9, d2Var10};
     }
 
     public static d2[] values() {
-        return (d2[]) v.clone();
+        return (d2[]) w.clone();
     }
 }

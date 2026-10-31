@@ -3,6 +3,7 @@ package j$.util;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.function.Consumer;
+import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes2.dex */
 public class q1 implements Spliterator {
@@ -24,7 +25,7 @@ public class q1 implements Spliterator {
 
     public q1(java.util.Collection collection, int i10) {
         this.a = collection;
-        this.c = (i10 & 4096) == 0 ? i10 | 16448 : i10;
+        this.c = (i10 & TLObject.FLAG_12) == 0 ? i10 | 16448 : i10;
     }
 
     @Override // j$.util.Spliterator

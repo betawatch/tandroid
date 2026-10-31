@@ -1,78 +1,43 @@
 package d9;
 
-import android.content.ComponentName;
-import android.content.Intent;
-import android.content.ServiceConnection;
-import android.os.Bundle;
-import android.os.IBinder;
-import android.os.IInterface;
-import android.os.Parcel;
-import android.util.Log;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class b implements ServiceConnection {
-    public c9.c a;
-    public final /* synthetic */ c b;
+public final class b extends g {
+    public static final b c = new b("CharMatcher.any()", 0);
+    public static final b d = new b("CharMatcher.ascii()", 1);
+    public static final b e = new b("CharMatcher.javaIsoControl()", 2);
+    public static final b f = new b("CharMatcher.none()", 3);
+    public final /* synthetic */ int b;
 
-    public b(c cVar) {
-        this.b = cVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ b(String str, int i10) {
+        super(str);
+        this.b = i10;
     }
 
-    public static boolean a(b bVar) {
-        return bVar.a != null;
-    }
-
-    public final boolean b(Intent intent, Bundle bundle) {
-        c9.c cVar = this.a;
-        if (cVar != null) {
-            c9.a aVar = (c9.a) cVar;
-            Parcel obtain = Parcel.obtain();
-            obtain.writeInterfaceToken("com.google.android.search.verification.api.ISearchActionVerificationService");
-            int i10 = i5.a.a;
-            if (intent == null) {
-                obtain.writeInt(0);
-            } else {
-                obtain.writeInt(1);
-                intent.writeToParcel(obtain, 0);
-            }
-            obtain.writeInt(1);
-            bundle.writeToParcel(obtain, 0);
-            Parcel F0 = aVar.F0(obtain, 1);
-            boolean z10 = F0.readInt() != 0;
-            F0.recycle();
-            if (z10) {
+    @Override // d9.i
+    public final boolean c(char c10) {
+        switch (this.b) {
+            case 0:
                 return true;
-            }
+            case 1:
+                return c10 <= 127;
+            case 2:
+                return c10 <= 31 || (c10 >= 127 && c10 <= 159);
+            default:
+                return false;
         }
-        return false;
     }
 
-    @Override // android.content.ServiceConnection
-    public final void onServiceConnected(ComponentName componentName, IBinder iBinder) {
-        boolean z10;
-        c9.c aVar;
-        z10 = this.b.dbg;
-        if (z10) {
-            Log.d("SAVerificationClientS", "onServiceConnected");
-        }
-        int i10 = c9.b.a;
-        if (iBinder == null) {
-            aVar = null;
-        } else {
-            IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.search.verification.api.ISearchActionVerificationService");
-            aVar = queryLocalInterface instanceof c9.c ? (c9.c) queryLocalInterface : new c9.a(iBinder);
-        }
-        this.a = aVar;
-    }
-
-    @Override // android.content.ServiceConnection
-    public final void onServiceDisconnected(ComponentName componentName) {
-        boolean z10;
-        this.a = null;
-        z10 = this.b.dbg;
-        if (z10) {
-            Log.d("SAVerificationClientS", "onServiceDisconnected");
+    @Override // d9.d, d9.i
+    public i d() {
+        switch (this.b) {
+            case 0:
+                return f;
+            case 3:
+                return c;
+            default:
+                return super.d();
         }
     }
 }

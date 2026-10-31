@@ -1,34 +1,45 @@
 package le;
 
-import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
-import ud.l;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class b extends kotlin.jvm.internal.j implements l {
-    public final /* synthetic */ int b;
-    public final /* synthetic */ d c;
+public final class b {
+    public static final b e;
+    public boolean a;
+    public boolean b;
+    public boolean c;
+    public boolean d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ b(d dVar, c cVar, int i10) {
-        super(1);
-        this.b = i10;
-        this.c = dVar;
+    static {
+        b bVar = new b();
+        bVar.a = true;
+        bVar.b = true;
+        bVar.c = false;
+        bVar.d = false;
+        e = bVar;
+        bVar.a = true;
+        bVar.b = true;
+        bVar.c = false;
+        bVar.d = false;
     }
 
-    @Override // ud.l
-    public final Object invoke(Object obj) {
-        switch (this.b) {
-            case 0:
-                this.c.e(null);
-                break;
-            default:
-                AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = d.g;
-                d dVar = this.c;
-                atomicReferenceFieldUpdater.set(dVar, null);
-                dVar.e(null);
-                break;
+    public static String a(String str, Class cls, boolean z10) {
+        if (cls == null) {
+            return "ANONYMOUS";
         }
-        return jd.i.a;
+        if (cls.isArray()) {
+            Class<?> componentType = cls.getComponentType();
+            StringBuffer stringBuffer = new StringBuffer();
+            stringBuffer.append(a(componentType.getName(), componentType, z10));
+            stringBuffer.append("[]");
+            return stringBuffer.toString();
+        }
+        if (!z10) {
+            return str.replace('$', '.');
+        }
+        int lastIndexOf = str.lastIndexOf(46);
+        if (lastIndexOf != -1) {
+            str = str.substring(lastIndexOf + 1);
+        }
+        return str.replace('$', '.');
     }
 }

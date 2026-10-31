@@ -1,70 +1,40 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.Utilities;
+import android.text.Layout;
+import android.text.Spanned;
+import android.text.style.LeadingMarginSpan;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class ia implements Runnable {
-    public boolean a;
-    public int b;
-    public int c;
-    public final /* synthetic */ ja d;
+public final class ia implements LeadingMarginSpan {
+    public final int a;
+    public final int b;
 
-    public ia(ja jaVar) {
-        this.d = jaVar;
+    public ia(int i10, int i11) {
+        this.a = i10;
+        this.b = i11;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        Bitmap bitmap;
-        ja jaVar = this.d;
-        Paint paint = jaVar.w;
-        if (jaVar.f == null) {
-            jaVar.f = new Bitmap[2];
-            jaVar.i = new Canvas[2];
+    @Override // android.text.style.LeadingMarginSpan
+    public final void drawLeadingMargin(Canvas canvas, Paint paint, int i10, int i11, int i12, int i13, int i14, CharSequence charSequence, int i15, int i16, boolean z10, Layout layout) {
+        if (((Spanned) charSequence).getSpanStart(this) == i15) {
+            Paint.Style style = paint.getStyle();
+            int color = paint.getColor();
+            paint.setColor(-11491093);
+            paint.setStyle(Paint.Style.FILL);
+            if (layout != null) {
+                i14 -= layout.getLineForOffset(i15) != layout.getLineCount() + (-1) ? (int) layout.getSpacingAdd() : 0;
+            }
+            canvas.drawCircle((i11 * r7) + i10, (i12 + i14) / 2.0f, this.b, paint);
+            paint.setColor(color);
+            paint.setStyle(style);
         }
-        int i10 = (int) (this.b / 15.0f);
-        int i11 = 0;
-        while (i11 < 2) {
-            int i12 = (int) ((i11 == 0 ? jaVar.s : this.c) / 15.0f);
-            Bitmap bitmap2 = jaVar.f[i11];
-            if (bitmap2 != null && ((bitmap2.getHeight() != i12 || jaVar.f[i11].getWidth() != i10) && (bitmap = jaVar.f[i11]) != null)) {
-                bitmap.recycle();
-                jaVar.f[i11] = null;
-            }
-            System.currentTimeMillis();
-            Bitmap[] bitmapArr = jaVar.f;
-            if (bitmapArr[i11] == null) {
-                try {
-                    bitmapArr[i11] = Bitmap.createBitmap(i10, i12, Bitmap.Config.ARGB_8888);
-                    jaVar.i[i11] = new Canvas(jaVar.f[i11]);
-                    jaVar.i[i11].scale(i10 / jaVar.e[i11].getWidth(), i12 / jaVar.e[i11].getHeight());
-                } catch (Throwable th2) {
-                    FileLog.e(th2);
-                }
-            }
-            if (i11 == 1) {
-                jaVar.f[i11].eraseColor(org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.d6, jaVar.y));
-            } else {
-                jaVar.f[i11].eraseColor(0);
-            }
-            paint.setAlpha(255);
-            Utilities.stackBlurBitmap(jaVar.e[i11], 15);
-            Canvas canvas = jaVar.i[i11];
-            if (canvas != null) {
-                canvas.drawBitmap(jaVar.e[i11], 0.0f, 0.0f, paint);
-            }
-            if (this.a) {
-                return;
-            } else {
-                i11++;
-            }
-        }
-        AndroidUtilities.runOnUIThread(new pg(this, 13));
+    }
+
+    @Override // android.text.style.LeadingMarginSpan
+    public final int getLeadingMargin(boolean z10) {
+        return (this.b * 2) + this.a;
     }
 }

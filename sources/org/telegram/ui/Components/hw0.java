@@ -1,27 +1,34 @@
 package org.telegram.ui.Components;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+import android.animation.ValueAnimator;
+import android.view.View;
+import android.widget.FrameLayout;
+
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class hw0 {
-    public static final hw0 a;
-    public static final hw0 b;
-    public static final /* synthetic */ hw0[] c;
+public final class hw0 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ View b;
+    public final /* synthetic */ FrameLayout c;
 
-    static {
-        hw0 hw0Var = new hw0("DEFAULT", 0);
-        a = hw0Var;
-        hw0 hw0Var2 = new hw0("RECORDING", 1);
-        b = hw0Var2;
-        c = new hw0[]{hw0Var, hw0Var2};
+    public /* synthetic */ hw0(FrameLayout frameLayout, View view, int i10) {
+        this.a = i10;
+        this.c = frameLayout;
+        this.b = view;
     }
 
-    public static hw0 valueOf(String str) {
-        return (hw0) Enum.valueOf(hw0.class, str);
-    }
-
-    public static hw0[] values() {
-        return (hw0[]) c.clone();
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                jw0 jw0Var = (jw0) this.c;
+                jw0Var.b = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                jw0Var.invalidate();
+                ((ul0) this.b).invalidate();
+                break;
+            default:
+                ((w71) this.c).F(this.b, ((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
+        }
     }
 }

@@ -1,11 +1,54 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+import android.os.Bundle;
+import android.widget.LinearLayout;
+
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public interface zu0 {
-    org.telegram.ui.ActionBar.g1 Z(int i10, Runnable runnable, String str, boolean z10, boolean z11);
+public abstract class zu0 extends LinearLayout {
+    public boolean a() {
+        return this instanceof org.telegram.ui.wc0;
+    }
 
-    void v();
+    public boolean b() {
+        return this instanceof org.telegram.ui.wc0;
+    }
 
-    org.telegram.ui.ActionBar.g1 x(String str);
+    public boolean c(boolean z10) {
+        return true;
+    }
+
+    public String getHeaderName() {
+        return "";
+    }
+
+    public void h(String str) {
+    }
+
+    public void k(Bundle bundle) {
+    }
+
+    public void l(Bundle bundle) {
+    }
+
+    public void d() {
+    }
+
+    public void f() {
+    }
+
+    public void g() {
+    }
+
+    public void i() {
+    }
+
+    public void j() {
+    }
+
+    public void updateColors() {
+    }
+
+    public void m(Bundle bundle, boolean z10) {
+    }
 }

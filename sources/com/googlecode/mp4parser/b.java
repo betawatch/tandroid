@@ -4,9 +4,9 @@ import java.nio.ByteBuffer;
 import java.nio.channels.WritableByteChannel;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public abstract class b extends e implements g5.b {
+public abstract class b extends e implements f5.b {
     public e d;
     public final String e;
 
@@ -38,30 +38,30 @@ public abstract class b extends e implements g5.b {
         return wrap;
     }
 
-    @Override // g5.b
+    @Override // f5.b
     public void getBox(WritableByteChannel writableByteChannel) {
         writableByteChannel.write(d());
         c(writableByteChannel);
     }
 
-    @Override // g5.b
-    public final g5.f getParent() {
+    @Override // f5.b
+    public final f5.f getParent() {
         return this.d;
     }
 
-    @Override // g5.b
+    @Override // f5.b
     public long getSize() {
         long b10 = b();
         return b10 + (8 + b10 >= 4294967296L ? 16 : 8);
     }
 
-    @Override // g5.b
+    @Override // f5.b
     public final String getType() {
         return this.e;
     }
 
-    @Override // g5.b
-    public final void setParent(g5.f fVar) {
+    @Override // f5.b
+    public final void setParent(f5.f fVar) {
         this.d = (e) fVar;
     }
 }

@@ -1,9 +1,9 @@
 package u1;
 
 import android.view.animation.Interpolator;
-import c3.h0;
+import c3.i0;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public abstract class b implements Interpolator {
     public final float[] a;
@@ -25,8 +25,8 @@ public abstract class b implements Interpolator {
         float[] fArr = this.a;
         int min = Math.min((int) ((fArr.length - 1) * f7), fArr.length - 2);
         float f10 = this.b;
-        float f11 = h0.f(min, f10, f7, f10);
-        float f12 = fArr[min];
-        return h0.z(fArr[min + 1], f12, f11, f12);
+        float g10 = i0.g(min, f10, f7, f10);
+        float f11 = fArr[min];
+        return i0.z(fArr[min + 1], f11, g10, f11);
     }
 }

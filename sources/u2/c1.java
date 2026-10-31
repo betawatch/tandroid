@@ -1,17 +1,15 @@
 package u2;
 
-import a8.ng;
-import a8.yb;
 import android.util.SparseArray;
 import j$.util.Objects;
 import java.io.EOFException;
-import org.telegram.messenger.MediaDataController;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.pp0;
+import org.telegram.ui.Components.pn0;
+import v7.t6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public class c1 implements c3.j0 {
+public class c1 implements c3.k0 {
     public boolean B;
     public b2.x C;
     public b2.x D;
@@ -19,7 +17,7 @@ public class c1 implements c3.j0 {
     public boolean G;
     public long H;
     public boolean I;
-    public final pp0 a;
+    public final pn0 a;
     public final n2.m d;
     public final n2.j e;
     public Object f;
@@ -30,15 +28,15 @@ public class c1 implements c3.j0 {
     public int r;
     public int s;
     public boolean y;
-    public final k5.b b = new k5.b();
-    public int i = MediaDataController.MAX_STYLE_RUNS_COUNT;
-    public long[] j = new long[MediaDataController.MAX_STYLE_RUNS_COUNT];
-    public long[] k = new long[MediaDataController.MAX_STYLE_RUNS_COUNT];
-    public long[] n = new long[MediaDataController.MAX_STYLE_RUNS_COUNT];
-    public int[] m = new int[MediaDataController.MAX_STYLE_RUNS_COUNT];
-    public int[] l = new int[MediaDataController.MAX_STYLE_RUNS_COUNT];
-    public c3.i0[] o = new c3.i0[MediaDataController.MAX_STYLE_RUNS_COUNT];
-    public final ng c = new ng(new s0.b(19));
+    public final bi.d0 b = new bi.d0();
+    public int i = 1000;
+    public long[] j = new long[1000];
+    public long[] k = new long[1000];
+    public long[] n = new long[1000];
+    public int[] m = new int[1000];
+    public int[] l = new int[1000];
+    public c3.j0[] o = new c3.j0[1000];
+    public final a5.a c = new a5.a(new th.m1(3));
     public long t = Long.MIN_VALUE;
     public long v = Long.MIN_VALUE;
     public long w = Long.MIN_VALUE;
@@ -48,10 +46,10 @@ public class c1 implements c3.j0 {
     public long u = Long.MIN_VALUE;
     public int x = -1;
 
-    public c1(a8.h0 h0Var, n2.m mVar, n2.j jVar) {
+    public c1(android.support.v4.media.session.a0 a0Var, n2.m mVar, n2.j jVar) {
         this.d = mVar;
         this.e = jVar;
-        this.a = new pp0(h0Var);
+        this.a = new pn0(a0Var);
     }
 
     public final synchronized boolean A(boolean z10) {
@@ -87,12 +85,12 @@ public class c1 implements c3.j0 {
         if (gVar == null || gVar.e() != 1) {
             return;
         }
-        n2.f g7 = this.h.g();
-        g7.getClass();
-        throw g7;
+        n2.f g10 = this.h.g();
+        g10.getClass();
+        throw g10;
     }
 
-    public final void D(b2.x xVar, n4.s sVar) {
+    public final void D(b2.x xVar, hf.b bVar) {
         b2.x xVar2;
         b2.x xVar3 = this.g;
         boolean z10 = xVar3 == null;
@@ -101,24 +99,24 @@ public class c1 implements c3.j0 {
         b2.t tVar2 = xVar.w;
         n2.m mVar = this.d;
         if (mVar != null) {
-            int w10 = mVar.w(xVar);
+            int t02 = mVar.t0(xVar);
             b2.w a2 = xVar.a();
-            a2.S = w10;
+            a2.S = t02;
             xVar2 = new b2.x(a2);
         } else {
             xVar2 = xVar;
         }
-        sVar.c = xVar2;
-        sVar.b = this.h;
+        bVar.c = xVar2;
+        bVar.b = this.h;
         if (mVar == null) {
             return;
         }
         if (z10 || !Objects.equals(tVar, tVar2)) {
             n2.g gVar = this.h;
             n2.j jVar = this.e;
-            n2.g z11 = mVar.z(jVar, xVar);
-            this.h = z11;
-            sVar.b = z11;
+            n2.g B0 = mVar.B0(jVar, xVar);
+            this.h = B0;
+            bVar.b = B0;
             if (gVar != null) {
                 gVar.a(jVar);
             }
@@ -164,10 +162,10 @@ public class c1 implements c3.j0 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final int F(n4.s sVar, h2.h hVar, int i10, boolean z10) {
+    public final int F(hf.b bVar, h2.h hVar, int i10, boolean z10) {
         int i11;
         boolean z11 = (i10 & 2) != 0;
-        k5.b bVar = this.b;
+        bi.d0 d0Var = this.b;
         synchronized (this) {
             hVar.d = false;
             int v = v();
@@ -177,23 +175,23 @@ public class c1 implements c3.j0 {
             if ((this.s != this.p) && !z12) {
                 b2.x xVar = ((a1) this.c.n(v)).a;
                 if (!z11 && xVar == this.g) {
-                    int w10 = w(this.s);
-                    if (B(w10)) {
-                        hVar.setFlags(this.m[w10]);
+                    int w9 = w(this.s);
+                    if (B(w9)) {
+                        hVar.setFlags(this.m[w9]);
                         if (this.s == this.p - 1 && (z10 || this.y)) {
                             hVar.addFlag(TLObject.FLAG_29);
                         }
-                        hVar.e = this.n[w10];
-                        bVar.b = this.l[w10];
-                        bVar.a = this.k[w10];
-                        bVar.c = this.o[w10];
+                        hVar.e = this.n[w9];
+                        d0Var.a = this.l[w9];
+                        d0Var.b = this.k[w9];
+                        d0Var.c = this.o[w9];
                         i11 = -4;
                     } else {
                         hVar.d = true;
                         i11 = -3;
                     }
                 }
-                D(xVar, sVar);
+                D(xVar, bVar);
             }
             hVar.setFlags(4);
             hVar.e = Long.MIN_VALUE;
@@ -203,11 +201,11 @@ public class c1 implements c3.j0 {
             boolean z13 = (i10 & 1) != 0;
             if ((i10 & 4) == 0) {
                 if (z13) {
-                    pp0 pp0Var = this.a;
-                    pp0.f((z0) pp0Var.f, hVar, this.b, (e2.x) pp0Var.d);
+                    pn0 pn0Var = this.a;
+                    pn0.f((z0) pn0Var.f, hVar, this.b, (e2.x) pn0Var.d);
                 } else {
-                    pp0 pp0Var2 = this.a;
-                    pp0Var2.f = pp0.f((z0) pp0Var2.f, hVar, this.b, (e2.x) pp0Var2.d);
+                    pn0 pn0Var2 = this.a;
+                    pn0Var2.f = pn0.f((z0) pn0Var2.f, hVar, this.b, (e2.x) pn0Var2.d);
                 }
             }
             if (!z13) {
@@ -218,17 +216,17 @@ public class c1 implements c3.j0 {
     }
 
     public final void G(boolean z10) {
-        pp0 pp0Var = this.a;
-        z0 z0Var = (z0) pp0Var.e;
+        pn0 pn0Var = this.a;
+        z0 z0Var = (z0) pn0Var.e;
         if (((y2.a) z0Var.c) != null) {
-            a8.h0 h0Var = (a8.h0) pp0Var.c;
-            synchronized (h0Var) {
-                ((i2.i) h0Var.d).c.b(z0Var);
+            android.support.v4.media.session.a0 a0Var = (android.support.v4.media.session.a0) pn0Var.c;
+            synchronized (a0Var) {
+                ((i2.h) a0Var.d).c.b(z0Var);
                 z0 z0Var2 = z0Var;
                 while (z0Var2 != null) {
                     y2.a aVar = (y2.a) z0Var2.c;
                     aVar.getClass();
-                    h0Var.t(aVar);
+                    a0Var.v(aVar);
                     z0Var2 = (z0) z0Var2.d;
                     if (z0Var2 == null || ((y2.a) z0Var2.c) == null) {
                         z0Var2 = null;
@@ -238,16 +236,16 @@ public class c1 implements c3.j0 {
             z0Var.c = null;
             z0Var.d = null;
         }
-        z0 z0Var3 = (z0) pp0Var.e;
-        int i10 = pp0Var.a;
-        yb.p(((y2.a) z0Var3.c) == null);
+        z0 z0Var3 = (z0) pn0Var.e;
+        int i10 = pn0Var.a;
+        t6.p(((y2.a) z0Var3.c) == null);
         z0Var3.a = 0L;
         z0Var3.b = i10;
-        z0 z0Var4 = (z0) pp0Var.e;
-        pp0Var.f = z0Var4;
-        pp0Var.g = z0Var4;
-        pp0Var.b = 0L;
-        ((a8.h0) pp0Var.c).u();
+        z0 z0Var4 = (z0) pn0Var.e;
+        pn0Var.f = z0Var4;
+        pn0Var.g = z0Var4;
+        pn0Var.b = 0L;
+        ((android.support.v4.media.session.a0) pn0Var.c).G();
         this.p = 0;
         this.q = 0;
         this.r = 0;
@@ -258,12 +256,12 @@ public class c1 implements c3.j0 {
         this.v = Long.MIN_VALUE;
         this.w = Long.MIN_VALUE;
         this.y = false;
-        ng ngVar = this.c;
-        SparseArray sparseArray = (SparseArray) ngVar.c;
+        a5.a aVar2 = this.c;
+        SparseArray sparseArray = (SparseArray) aVar2.c;
         for (int i11 = 0; i11 < sparseArray.size(); i11++) {
-            ((s0.b) ngVar.d).accept(sparseArray.valueAt(i11));
+            ((th.m1) aVar2.d).accept(sparseArray.valueAt(i11));
         }
-        ngVar.b = -1;
+        aVar2.b = -1;
         sparseArray.clear();
         if (z10) {
             this.C = null;
@@ -275,8 +273,8 @@ public class c1 implements c3.j0 {
 
     public final synchronized void H() {
         this.s = 0;
-        pp0 pp0Var = this.a;
-        pp0Var.f = (z0) pp0Var.e;
+        pn0 pn0Var = this.a;
+        pn0Var.f = (z0) pn0Var.e;
     }
 
     public final synchronized boolean I(int i10) {
@@ -299,11 +297,11 @@ public class c1 implements c3.j0 {
         long min;
         c1 c1Var;
         long j11;
-        int q5;
+        int q6;
         try {
             try {
                 H();
-                int w10 = w(this.s);
+                int w9 = w(this.s);
                 long j12 = this.u;
                 if (j12 != Long.MIN_VALUE) {
                     try {
@@ -317,24 +315,24 @@ public class c1 implements c3.j0 {
                 }
                 int i10 = this.s;
                 int i11 = this.p;
-                if (!(i10 != i11) || j10 < this.n[w10] || (j10 > min && !z10)) {
+                if (!(i10 != i11) || j10 < this.n[w9] || (j10 > min && !z10)) {
                     return false;
                 }
                 if (this.F) {
-                    q5 = p(j10, w10, i11 - i10, z10);
+                    q6 = p(w9, i11 - i10, j10, z10);
                     c1Var = this;
                     j11 = j10;
                 } else {
                     int i12 = i11 - i10;
                     c1Var = this;
                     j11 = j10;
-                    q5 = c1Var.q(j11, w10, i12, true);
+                    q6 = c1Var.q(w9, i12, j11, true);
                 }
-                if (q5 == -1) {
+                if (q6 == -1) {
                     return false;
                 }
                 c1Var.t = j11;
-                c1Var.s += q5;
+                c1Var.s += q6;
                 return true;
             } catch (Throwable th4) {
                 th = th4;
@@ -371,7 +369,7 @@ public class c1 implements c3.j0 {
                 if (j10 <= this.w) {
                     c1Var = this;
                     j11 = j10;
-                    i10 = c1Var.p(j11, this.r, this.p, false);
+                    i10 = c1Var.p(this.r, this.p, j11, false);
                 } else {
                     c1Var = this;
                     j11 = j10;
@@ -400,7 +398,7 @@ public class c1 implements c3.j0 {
             try {
                 if (this.s + i10 <= this.p) {
                     z10 = true;
-                    yb.g(z10);
+                    t6.f(z10);
                     this.s += i10;
                 }
             } catch (Throwable th2) {
@@ -408,44 +406,44 @@ public class c1 implements c3.j0 {
             }
         }
         z10 = false;
-        yb.g(z10);
+        t6.f(z10);
         this.s += i10;
     }
 
-    @Override // c3.j0
+    @Override // c3.k0
     public final int a(b2.p pVar, int i10, boolean z10) {
         return f(pVar, i10, z10);
     }
 
     /* JADX WARN: Type inference failed for: r6v26, types: [java.lang.Object, u2.b1] */
-    @Override // c3.j0
+    @Override // c3.k0
     public final void b(b2.x xVar) {
-        b2.x r6 = r(xVar);
+        b2.x r10 = r(xVar);
         boolean z10 = false;
         this.B = false;
         this.C = xVar;
         synchronized (this) {
             try {
                 this.A = false;
-                if (!Objects.equals(r6, this.D)) {
+                if (!Objects.equals(r10, this.D)) {
                     if (!(((SparseArray) this.c.c).size() == 0)) {
                         SparseArray sparseArray = (SparseArray) this.c.c;
-                        if (((a1) sparseArray.valueAt(sparseArray.size() - 1)).a.equals(r6)) {
+                        if (((a1) sparseArray.valueAt(sparseArray.size() - 1)).a.equals(r10)) {
                             SparseArray sparseArray2 = (SparseArray) this.c.c;
                             this.D = ((a1) sparseArray2.valueAt(sparseArray2.size() - 1)).a;
                             boolean z11 = this.F;
                             b2.x xVar2 = this.D;
                             String str = xVar2.s;
-                            this.F = z11 & (b2.w0.h(str) != 1 && b2.w0.a(str, xVar2.k));
+                            this.F = z11 & (b2.v0.h(str) != 1 && b2.v0.a(str, xVar2.k));
                             this.G = false;
                             z10 = true;
                         }
                     }
-                    this.D = r6;
+                    this.D = r10;
                     boolean z112 = this.F;
                     b2.x xVar22 = this.D;
                     String str2 = xVar22.s;
-                    this.F = z112 & (b2.w0.h(str2) != 1 && b2.w0.a(str2, xVar22.k));
+                    this.F = z112 & (b2.v0.h(str2) != 1 && b2.v0.a(str2, xVar22.k));
                     this.G = false;
                     z10 = true;
                 }
@@ -457,15 +455,15 @@ public class c1 implements c3.j0 {
         if (r62 == 0 || !z10) {
             return;
         }
-        r62.d();
+        r62.a();
     }
 
     /* JADX WARN: Removed duplicated region for block: B:24:0x0052  */
-    @Override // c3.j0
+    @Override // c3.k0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public void c(long j10, int i10, int i11, int i12, c3.i0 i0Var) {
+    public void c(long j10, int i10, int i11, int i12, c3.j0 j0Var) {
         int i13;
         if (this.B) {
             b2.x xVar = this.C;
@@ -511,60 +509,60 @@ public class c1 implements c3.j0 {
                         this.I = false;
                     }
                 }
-                h(j11, i13, (this.a.b - i11) - i12, i11, i0Var);
+                h(j11, i13, (this.a.b - i11) - i12, i11, j0Var);
             }
         }
         i13 = i10;
         if (this.I) {
         }
-        h(j11, i13, (this.a.b - i11) - i12, i11, i0Var);
+        h(j11, i13, (this.a.b - i11) - i12, i11, j0Var);
     }
 
-    @Override // c3.j0
+    @Override // c3.k0
     public final /* synthetic */ void d(int i10, e2.x xVar) {
-        c3.h0.a(this, xVar, i10);
+        c3.i0.a(this, xVar, i10);
     }
 
-    @Override // c3.j0
+    @Override // c3.k0
     public final int f(b2.p pVar, int i10, boolean z10) {
-        pp0 pp0Var = this.a;
-        int c10 = pp0Var.c(i10);
-        z0 z0Var = (z0) pp0Var.g;
+        pn0 pn0Var = this.a;
+        int c10 = pn0Var.c(i10);
+        z0 z0Var = (z0) pn0Var.g;
         y2.a aVar = (y2.a) z0Var.c;
-        int read = pVar.read(aVar.a, ((int) (pp0Var.b - z0Var.a)) + aVar.b, c10);
+        int read = pVar.read(aVar.a, ((int) (pn0Var.b - z0Var.a)) + aVar.b, c10);
         if (read == -1) {
             if (z10) {
                 return -1;
             }
             throw new EOFException();
         }
-        long j10 = pp0Var.b + read;
-        pp0Var.b = j10;
-        z0 z0Var2 = (z0) pp0Var.g;
+        long j10 = pn0Var.b + read;
+        pn0Var.b = j10;
+        z0 z0Var2 = (z0) pn0Var.g;
         if (j10 == z0Var2.b) {
-            pp0Var.g = (z0) z0Var2.d;
+            pn0Var.g = (z0) z0Var2.d;
         }
         return read;
     }
 
-    @Override // c3.j0
+    @Override // c3.k0
     public final void g(e2.x xVar, int i10, int i11) {
         while (true) {
-            pp0 pp0Var = this.a;
+            pn0 pn0Var = this.a;
             if (i10 <= 0) {
-                pp0Var.getClass();
+                pn0Var.getClass();
                 return;
             }
-            int c10 = pp0Var.c(i10);
-            z0 z0Var = (z0) pp0Var.g;
+            int c10 = pn0Var.c(i10);
+            z0 z0Var = (z0) pn0Var.g;
             y2.a aVar = (y2.a) z0Var.c;
-            xVar.k(((int) (pp0Var.b - z0Var.a)) + aVar.b, c10, aVar.a);
+            xVar.k(((int) (pn0Var.b - z0Var.a)) + aVar.b, c10, aVar.a);
             i10 -= c10;
-            long j10 = pp0Var.b + c10;
-            pp0Var.b = j10;
-            z0 z0Var2 = (z0) pp0Var.g;
+            long j10 = pn0Var.b + c10;
+            pn0Var.b = j10;
+            z0 z0Var2 = (z0) pn0Var.g;
             if (j10 == z0Var2.b) {
-                pp0Var.g = (z0) z0Var2.d;
+                pn0Var.g = (z0) z0Var2.d;
             }
         }
     }
@@ -576,12 +574,12 @@ public class c1 implements c3.j0 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final synchronized void h(long j10, int i10, long j11, int i11, c3.i0 i0Var) {
+    public final synchronized void h(long j10, int i10, long j11, int i11, c3.j0 j0Var) {
         try {
             int i12 = this.p;
             if (i12 > 0) {
-                int w10 = w(i12 - 1);
-                yb.g(this.k[w10] + ((long) this.l[w10]) <= j11);
+                int w9 = w(i12 - 1);
+                t6.f(this.k[w9] + ((long) this.l[w9]) <= j11);
             }
             this.y = (536870912 & i10) != 0;
             this.w = Math.max(this.w, j10);
@@ -589,33 +587,33 @@ public class c1 implements c3.j0 {
             if (j12 != Long.MIN_VALUE && this.x == -1 && j10 >= j12) {
                 this.x = this.q + this.p;
             }
-            int w11 = w(this.p);
-            this.n[w11] = j10;
-            this.k[w11] = j11;
-            this.l[w11] = i11;
-            this.m[w11] = i10;
-            this.o[w11] = i0Var;
-            this.j[w11] = this.E;
+            int w10 = w(this.p);
+            this.n[w10] = j10;
+            this.k[w10] = j11;
+            this.l[w10] = i11;
+            this.m[w10] = i10;
+            this.o[w10] = j0Var;
+            this.j[w10] = this.E;
             if (!(((SparseArray) this.c.c).size() == 0)) {
                 SparseArray sparseArray = (SparseArray) this.c.c;
             }
             b2.x xVar = this.D;
             xVar.getClass();
             n2.m mVar = this.d;
-            n2.l g7 = mVar != null ? mVar.g(this.e, xVar) : n2.l.u;
-            ng ngVar = this.c;
+            n2.l p5 = mVar != null ? mVar.p(this.e, xVar) : n2.l.l;
+            a5.a aVar = this.c;
             int i13 = this.q + this.p;
-            a1 a1Var = new a1(xVar, g7);
-            SparseArray sparseArray2 = (SparseArray) ngVar.c;
-            if (ngVar.b == -1) {
-                yb.p(sparseArray2.size() == 0);
-                ngVar.b = 0;
+            a1 a1Var = new a1(xVar, p5);
+            SparseArray sparseArray2 = (SparseArray) aVar.c;
+            if (aVar.b == -1) {
+                t6.p(sparseArray2.size() == 0);
+                aVar.b = 0;
             }
             if (sparseArray2.size() > 0) {
                 int keyAt = sparseArray2.keyAt(sparseArray2.size() - 1);
-                yb.g(i13 >= keyAt);
+                t6.f(i13 >= keyAt);
                 if (keyAt == i13) {
-                    ((s0.b) ngVar.d).accept(sparseArray2.valueAt(sparseArray2.size() - 1));
+                    ((th.m1) aVar.d).accept(sparseArray2.valueAt(sparseArray2.size() - 1));
                 }
             }
             sparseArray2.append(i13, a1Var);
@@ -623,33 +621,33 @@ public class c1 implements c3.j0 {
             this.p = i14;
             int i15 = this.i;
             if (i14 == i15) {
-                int i16 = i15 + MediaDataController.MAX_STYLE_RUNS_COUNT;
+                int i16 = i15 + 1000;
                 long[] jArr = new long[i16];
                 long[] jArr2 = new long[i16];
                 long[] jArr3 = new long[i16];
                 int[] iArr = new int[i16];
                 int[] iArr2 = new int[i16];
-                c3.i0[] i0VarArr = new c3.i0[i16];
+                c3.j0[] j0VarArr = new c3.j0[i16];
                 int i17 = this.r;
                 int i18 = i15 - i17;
                 System.arraycopy(this.k, i17, jArr2, 0, i18);
                 System.arraycopy(this.n, this.r, jArr3, 0, i18);
                 System.arraycopy(this.m, this.r, iArr, 0, i18);
                 System.arraycopy(this.l, this.r, iArr2, 0, i18);
-                System.arraycopy(this.o, this.r, i0VarArr, 0, i18);
+                System.arraycopy(this.o, this.r, j0VarArr, 0, i18);
                 System.arraycopy(this.j, this.r, jArr, 0, i18);
                 int i19 = this.r;
                 System.arraycopy(this.k, 0, jArr2, i18, i19);
                 System.arraycopy(this.n, 0, jArr3, i18, i19);
                 System.arraycopy(this.m, 0, iArr, i18, i19);
                 System.arraycopy(this.l, 0, iArr2, i18, i19);
-                System.arraycopy(this.o, 0, i0VarArr, i18, i19);
+                System.arraycopy(this.o, 0, j0VarArr, i18, i19);
                 System.arraycopy(this.j, 0, jArr, i18, i19);
                 this.k = jArr2;
                 this.n = jArr3;
                 this.m = iArr;
                 this.l = iArr2;
-                this.o = i0VarArr;
+                this.o = j0VarArr;
                 this.j = jArr;
                 this.r = 0;
                 this.i = i16;
@@ -661,12 +659,12 @@ public class c1 implements c3.j0 {
 
     public final int i(long j10) {
         int i10 = this.p;
-        int w10 = w(i10 - 1);
-        while (i10 > this.s && this.n[w10] >= j10) {
+        int w9 = w(i10 - 1);
+        while (i10 > this.s && this.n[w9] >= j10) {
             i10--;
-            w10--;
-            if (w10 == -1) {
-                w10 = this.i - 1;
+            w9--;
+            if (w9 == -1) {
+                w9 = this.i - 1;
             }
         }
         return i10;
@@ -689,18 +687,18 @@ public class c1 implements c3.j0 {
         if (i14 < 0) {
             this.s = 0;
         }
-        ng ngVar = this.c;
-        SparseArray sparseArray = (SparseArray) ngVar.c;
+        a5.a aVar = this.c;
+        SparseArray sparseArray = (SparseArray) aVar.c;
         while (i15 < sparseArray.size() - 1) {
             int i16 = i15 + 1;
             if (i11 < sparseArray.keyAt(i16)) {
                 break;
             }
-            ((s0.b) ngVar.d).accept(sparseArray.valueAt(i15));
+            ((th.m1) aVar.d).accept(sparseArray.valueAt(i15));
             sparseArray.removeAt(i15);
-            int i17 = ngVar.b;
+            int i17 = aVar.b;
             if (i17 > 0) {
-                ngVar.b = i17 - 1;
+                aVar.b = i17 - 1;
             }
             i15 = i16;
         }
@@ -716,7 +714,7 @@ public class c1 implements c3.j0 {
 
     public final void k(long j10, boolean z10) {
         Throwable th2;
-        pp0 pp0Var = this.a;
+        pn0 pn0Var = this.a;
         synchronized (this) {
             try {
                 try {
@@ -737,14 +735,14 @@ public class c1 implements c3.j0 {
                                     throw th2;
                                 }
                             }
-                            int q5 = q(j10, i11, i10, false);
-                            if (q5 != -1) {
-                                j11 = j(q5);
+                            int q6 = q(i11, i10, j10, false);
+                            if (q6 != -1) {
+                                j11 = j(q6);
                             }
-                            pp0Var.b(j11);
+                            pn0Var.b(j11);
                         }
                     }
-                    pp0Var.b(j11);
+                    pn0Var.b(j11);
                 } catch (Throwable th4) {
                     th = th4;
                     th2 = th;
@@ -760,19 +758,19 @@ public class c1 implements c3.j0 {
 
     public final void l() {
         long j10;
-        pp0 pp0Var = this.a;
+        pn0 pn0Var = this.a;
         synchronized (this) {
             int i10 = this.p;
             j10 = i10 == 0 ? -1L : j(i10);
         }
-        pp0Var.b(j10);
+        pn0Var.b(j10);
     }
 
     public final void m(long j10) {
         if (this.p == 0) {
             return;
         }
-        yb.g(j10 > t());
+        t6.f(j10 > t());
         o(this.q + i(j10));
     }
 
@@ -781,7 +779,7 @@ public class c1 implements c3.j0 {
         int i12 = this.p;
         int i13 = (i11 + i12) - i10;
         boolean z10 = false;
-        yb.g(i13 >= 0 && i13 <= i12 - this.s);
+        t6.f(i13 >= 0 && i13 <= i12 - this.s);
         int i14 = this.p - i13;
         this.p = i14;
         this.w = Math.max(this.v, u(i14));
@@ -793,13 +791,13 @@ public class c1 implements c3.j0 {
         if (i15 != -1 && i10 < i15) {
             this.x = -1;
         }
-        ng ngVar = this.c;
-        SparseArray sparseArray = (SparseArray) ngVar.c;
+        a5.a aVar = this.c;
+        SparseArray sparseArray = (SparseArray) aVar.c;
         for (int size = sparseArray.size() - 1; size >= 0 && i10 < sparseArray.keyAt(size); size--) {
-            ((s0.b) ngVar.d).accept(sparseArray.valueAt(size));
+            ((th.m1) aVar.d).accept(sparseArray.valueAt(size));
             sparseArray.removeAt(size);
         }
-        ngVar.b = sparseArray.size() > 0 ? Math.min(ngVar.b, sparseArray.size() - 1) : -1;
+        aVar.b = sparseArray.size() > 0 ? Math.min(aVar.b, sparseArray.size() - 1) : -1;
         int i16 = this.p;
         if (i16 == 0) {
             return 0L;
@@ -808,28 +806,28 @@ public class c1 implements c3.j0 {
     }
 
     public final void o(int i10) {
-        pp0 pp0Var = this.a;
+        pn0 pn0Var = this.a;
         long n10 = n(i10);
-        int i11 = pp0Var.a;
-        yb.g(n10 <= pp0Var.b);
-        pp0Var.b = n10;
+        int i11 = pn0Var.a;
+        t6.f(n10 <= pn0Var.b);
+        pn0Var.b = n10;
         if (n10 != 0) {
-            z0 z0Var = (z0) pp0Var.e;
+            z0 z0Var = (z0) pn0Var.e;
             if (n10 != z0Var.a) {
-                while (pp0Var.b > z0Var.b) {
+                while (pn0Var.b > z0Var.b) {
                     z0Var = (z0) z0Var.d;
                 }
                 z0 z0Var2 = (z0) z0Var.d;
                 z0Var2.getClass();
                 if (((y2.a) z0Var2.c) != null) {
-                    a8.h0 h0Var = (a8.h0) pp0Var.c;
-                    synchronized (h0Var) {
-                        ((i2.i) h0Var.d).c.b(z0Var2);
+                    android.support.v4.media.session.a0 a0Var = (android.support.v4.media.session.a0) pn0Var.c;
+                    synchronized (a0Var) {
+                        ((i2.h) a0Var.d).c.b(z0Var2);
                         z0 z0Var3 = z0Var2;
                         while (z0Var3 != null) {
                             y2.a aVar = (y2.a) z0Var3.c;
                             aVar.getClass();
-                            h0Var.t(aVar);
+                            a0Var.v(aVar);
                             z0Var3 = (z0) z0Var3.d;
                             if (z0Var3 == null || ((y2.a) z0Var3.c) == null) {
                                 z0Var3 = null;
@@ -841,25 +839,25 @@ public class c1 implements c3.j0 {
                 }
                 z0 z0Var4 = new z0(z0Var.b, i11);
                 z0Var.d = z0Var4;
-                if (pp0Var.b == z0Var.b) {
+                if (pn0Var.b == z0Var.b) {
                     z0Var = z0Var4;
                 }
-                pp0Var.g = z0Var;
-                if (((z0) pp0Var.f) == z0Var2) {
-                    pp0Var.f = z0Var4;
+                pn0Var.g = z0Var;
+                if (((z0) pn0Var.f) == z0Var2) {
+                    pn0Var.f = z0Var4;
                     return;
                 }
                 return;
             }
         }
-        pp0Var.a((z0) pp0Var.e);
-        z0 z0Var5 = new z0(pp0Var.b, i11);
-        pp0Var.e = z0Var5;
-        pp0Var.f = z0Var5;
-        pp0Var.g = z0Var5;
+        pn0Var.a((z0) pn0Var.e);
+        z0 z0Var5 = new z0(pn0Var.b, i11);
+        pn0Var.e = z0Var5;
+        pn0Var.f = z0Var5;
+        pn0Var.g = z0Var5;
     }
 
-    public final int p(long j10, int i10, int i11, boolean z10) {
+    public final int p(int i10, int i11, long j10, boolean z10) {
         for (int i12 = 0; i12 < i11; i12++) {
             if (this.n[i10] >= j10) {
                 return i12;
@@ -875,7 +873,7 @@ public class c1 implements c3.j0 {
         return -1;
     }
 
-    public final int q(long j10, int i10, int i11, boolean z10) {
+    public final int q(int i10, int i11, long j10, boolean z10) {
         int i12 = -1;
         for (int i13 = 0; i13 < i11; i13++) {
             long j11 = this.n[i10];
@@ -918,15 +916,15 @@ public class c1 implements c3.j0 {
         if (i10 == 0) {
             return Long.MIN_VALUE;
         }
-        int w10 = w(i10 - 1);
+        int w9 = w(i10 - 1);
         for (int i11 = 0; i11 < i10; i11++) {
-            j10 = Math.max(j10, this.n[w10]);
-            if ((this.m[w10] & 1) != 0) {
+            j10 = Math.max(j10, this.n[w9]);
+            if ((this.m[w9] & 1) != 0) {
                 return j10;
             }
-            w10--;
-            if (w10 == -1) {
-                w10 = this.i - 1;
+            w9--;
+            if (w9 == -1) {
+                w9 = this.i - 1;
             }
         }
         return j10;
@@ -945,20 +943,20 @@ public class c1 implements c3.j0 {
     public final synchronized int x(long j10, boolean z10) {
         try {
             try {
-                int w10 = w(this.s);
+                int w9 = w(this.s);
                 int i10 = this.s;
                 int i11 = this.p;
-                if (!(i10 != i11) || j10 < this.n[w10]) {
+                if (!(i10 != i11) || j10 < this.n[w9]) {
                     return 0;
                 }
                 if (j10 > this.w && z10) {
                     return i11 - i10;
                 }
-                int q5 = q(j10, w10, i11 - i10, true);
-                if (q5 == -1) {
+                int q6 = q(w9, i11 - i10, j10, true);
+                if (q6 == -1) {
                     return 0;
                 }
-                return q5;
+                return q6;
             } catch (Throwable th2) {
                 th = th2;
                 throw th;
@@ -977,7 +975,7 @@ public class c1 implements c3.j0 {
         return this.x != -1;
     }
 
-    @Override // c3.j0
+    @Override // c3.k0
     public final /* synthetic */ void e(long j10) {
     }
 }

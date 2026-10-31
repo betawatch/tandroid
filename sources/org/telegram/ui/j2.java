@@ -1,56 +1,44 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.graphics.drawable.ColorDrawable;
-import android.view.View;
-import java.util.HashSet;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.R;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class j2 extends View implements org.telegram.ui.ActionBar.p6 {
-    public final j70 a;
-    public final org.telegram.ui.Components.ar b;
+public final class j2 extends z4.g {
+    public final /* synthetic */ o2 w0;
 
-    public j2(Context context, j70 j70Var) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public j2(o2 o2Var, Context context) {
         super(context);
-        this.a = j70Var;
-        org.telegram.ui.Components.ar arVar = new org.telegram.ui.Components.ar(new ColorDrawable(org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.Qk, false)), org.telegram.ui.ActionBar.y6.W0(context, R.drawable.greydivider_bottom, -16777216));
-        this.b = arVar;
-        arVar.w = true;
-        setBackgroundDrawable(arVar);
-        setImportantForAccessibility(2);
+        this.w0 = o2Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.p6
-    public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.y6.Qk));
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        setMeasuredDimension(View.MeasureSpec.getSize(i10), AndroidUtilities.dp(12.0f));
-        int i12 = org.telegram.ui.ActionBar.y6.Qk;
-        ((j4) this.a).getClass();
-        org.telegram.ui.ActionBar.y6.y1(this.b, org.telegram.ui.ActionBar.y6.x0(null, i12, false), false);
-    }
-
-    @Override // org.telegram.ui.ActionBar.p6
-    public final void updateColors() {
-        j70 j70Var;
-        try {
-            org.telegram.ui.Components.ar arVar = this.b;
-            if (arVar == null || (j70Var = this.a) == null) {
-                return;
-            }
-            int i10 = org.telegram.ui.ActionBar.y6.Qk;
-            ((j4) j70Var).getClass();
-            org.telegram.ui.ActionBar.y6.y1(arVar, org.telegram.ui.ActionBar.y6.x0(null, i10, false), false);
-            invalidate();
-        } catch (Exception e) {
-            FileLog.e(e);
+    @Override // z4.g, android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        int actionMasked = motionEvent.getActionMasked();
+        o2 o2Var = this.w0;
+        if (actionMasked == 0) {
+            o2Var.D.f0.requestDisallowInterceptTouchEvent(true);
+        } else if (motionEvent.getActionMasked() == 1 || motionEvent.getActionMasked() == 3) {
+            o2Var.D.f0.requestDisallowInterceptTouchEvent(false);
         }
+        o2Var.D.i();
+        return super.onInterceptTouchEvent(motionEvent);
+    }
+
+    @Override // z4.g, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        int actionMasked = motionEvent.getActionMasked();
+        o2 o2Var = this.w0;
+        if (actionMasked == 0) {
+            o2Var.D.f0.requestDisallowInterceptTouchEvent(true);
+        }
+        boolean onTouchEvent = super.onTouchEvent(motionEvent);
+        if (motionEvent.getActionMasked() != 1 && motionEvent.getActionMasked() != 3) {
+            return onTouchEvent;
+        }
+        o2Var.D.f0.requestDisallowInterceptTouchEvent(false);
+        return onTouchEvent;
     }
 }

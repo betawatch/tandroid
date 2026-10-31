@@ -2,39 +2,32 @@ package org.telegram.ui.Components;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i51 implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ s51 b;
+    public final /* synthetic */ UndoView b;
 
-    public /* synthetic */ i51(s51 s51Var, int i10) {
+    public /* synthetic */ i51(UndoView undoView, int i10) {
         this.a = i10;
-        this.b = s51Var;
+        this.b = undoView;
     }
 
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
-        switch (this.a) {
+        int i10 = this.a;
+        UndoView undoView = this.b;
+        switch (i10) {
             case 0:
-                this.b.dismiss();
-                break;
-            case 1:
-                this.b.dismiss();
-                break;
-            case 2:
-                this.b.dismiss();
-                break;
-            case 3:
-                s51 s51Var = this.b;
-                CharSequence charSequence = s51Var.c0;
-                if (charSequence != null) {
-                    s51Var.d0.run(charSequence);
+                int i11 = UndoView.i0;
+                if (undoView.a()) {
+                    undoView.d(1, false);
+                    break;
                 }
-                s51Var.dismiss();
                 break;
             default:
-                s51.P(this.b, view);
+                int i12 = UndoView.i0;
+                undoView.d(1, false);
                 break;
         }
     }

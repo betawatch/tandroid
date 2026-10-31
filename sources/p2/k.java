@@ -1,6 +1,6 @@
 package p2;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public abstract class k implements Comparable {
     public final String a;
@@ -13,7 +13,7 @@ public abstract class k implements Comparable {
     public final String n;
     public final long r;
     public final long s;
-    public final boolean v;
+    public final boolean w;
 
     public k(String str, j jVar, long j10, int i10, long j11, b2.t tVar, String str2, String str3, long j12, long j13, boolean z10) {
         this.a = str;
@@ -26,7 +26,7 @@ public abstract class k implements Comparable {
         this.n = str3;
         this.r = j12;
         this.s = j13;
-        this.v = z10;
+        this.w = z10;
     }
 
     @Override // java.lang.Comparable

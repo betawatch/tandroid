@@ -1,19 +1,18 @@
 package org.telegram.ui;
 
 import android.webkit.JavascriptInterface;
-import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
 class ArticleViewer$BlockEmbedCell$TelegramWebviewProxy {
-    public final /* synthetic */ s1 a;
+    public final /* synthetic */ r1 a;
 
-    public ArticleViewer$BlockEmbedCell$TelegramWebviewProxy(s1 s1Var) {
-        this.a = s1Var;
+    public ArticleViewer$BlockEmbedCell$TelegramWebviewProxy(r1 r1Var) {
+        this.a = r1Var;
     }
 
     @JavascriptInterface
     public void postEvent(String str, String str2) {
-        AndroidUtilities.runOnUIThread(new q1(this, str, str2, 0));
+        org.telegram.messenger.i0.g3(new p1(this, str, str2, 0));
     }
 }

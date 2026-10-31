@@ -1,14 +1,15 @@
 package com.google.android.recaptcha.internal;
 
-import a8.jd;
-import ld.c;
-import md.a;
-import nd.i;
-import ud.p;
+import cd.c;
+import dd.a;
+import ed.j;
+import kotlin.jvm.internal.i;
+import l9.b;
+import ld.p;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-final class zzfu extends i implements p {
+final class zzfu extends j implements p {
     int zza;
     final /* synthetic */ zzgb zzb;
     final /* synthetic */ long zzc;
@@ -21,16 +22,16 @@ final class zzfu extends i implements p {
         this.zzc = j10;
     }
 
-    @Override // nd.a
+    @Override // ed.a
     public final c create(Object obj, c cVar) {
         zzfu zzfuVar = new zzfu(this.zzb, this.zzc, cVar);
         zzfuVar.zzd = obj;
         return zzfuVar;
     }
 
-    @Override // ud.p
+    @Override // ld.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzfu) create((zzhk) obj, (c) obj2)).invokeSuspend(jd.i.a);
+        return ((zzfu) create((zzhk) obj, (c) obj2)).invokeSuspend(ad.j.a);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:23:0x0040, code lost:
@@ -43,7 +44,7 @@ final class zzfu extends i implements p {
      */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0064  */
     /* JADX WARN: Removed duplicated region for block: B:13:0x006a A[Catch: Exception -> 0x0011, TRY_ENTER, TryCatch #0 {Exception -> 0x0011, blocks: (B:6:0x000d, B:7:0x0055, B:13:0x006a, B:14:0x0078, B:17:0x0042), top: B:2:0x0007 }] */
-    @Override // nd.a
+    @Override // ed.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -57,7 +58,7 @@ final class zzfu extends i implements p {
         int i10 = this.zza;
         try {
             if (i10 == 0) {
-                jd.b(obj);
+                b.b(obj);
                 zzhkVar = (zzhk) this.zzd;
                 zzgb zzgbVar = this.zzb;
                 long j10 = this.zzc;
@@ -66,17 +67,17 @@ final class zzfu extends i implements p {
                 obj = zzgbVar.zzq(j10, this);
             } else if (i10 == 1) {
                 zzhkVar = (zzhk) this.zzd;
-                jd.b(obj);
+                b.b(obj);
             } else {
                 if (i10 != 2) {
-                    jd.b(obj);
+                    b.b(obj);
                     longValue = this.zzc - ((Number) obj).longValue();
                     if (longValue < 500) {
                         return new Long(longValue);
                     }
                     throw new zzcg(zzce.zzc, zzcd.zzas, null, null, 12, null);
                 }
-                jd.b(obj);
+                b.b(obj);
                 zzgb zzgbVar2 = this.zzb;
                 zzft zzftVar = new zzft(this.zzc, zzgbVar2, null);
                 this.zza = 3;
@@ -98,10 +99,10 @@ final class zzfu extends i implements p {
             zzgb zzgbVar3 = this.zzb;
             zzdv zze = zzgbVar3.zze();
             zzdrVar = zzdv.zzd;
-            if (!kotlin.jvm.internal.i.a(zze, zzdrVar)) {
+            if (!i.a(zze, zzdrVar)) {
                 zzdv zze2 = zzgbVar3.zze();
                 zzdtVar = zzdv.zzc;
-                if (!kotlin.jvm.internal.i.a(zze2, zzdtVar)) {
+                if (!i.a(zze2, zzdtVar)) {
                     throw zzcgVar2;
                 }
             }

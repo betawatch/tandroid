@@ -1,8 +1,8 @@
 package l2;
 
-import f9.i0;
+import e9.n0;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class a {
     public final int[] a;
@@ -12,9 +12,9 @@ public final class a {
     public final int e;
     public final int f;
     public final int g;
-    public final i0 h;
+    public final n0 h;
 
-    public a(int i10, int i11, int[] iArr, int i12, int i13, int i14, int i15, i0 i0Var) {
+    public a(int i10, int i11, int[] iArr, int i12, int i13, int i14, int i15, n0 n0Var) {
         this.b = i10;
         this.a = iArr;
         this.c = i11;
@@ -22,6 +22,6 @@ public final class a {
         this.f = i13;
         this.g = i14;
         this.d = i15;
-        this.h = i0Var;
+        this.h = n0Var;
     }
 }

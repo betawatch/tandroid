@@ -1,17 +1,16 @@
 package a1;
 
 import androidx.credentials.playservices.CredentialProviderPlayServicesImpl;
-import v0.i;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ i b;
+    public final /* synthetic */ v0.h b;
 
-    public /* synthetic */ e(i iVar, int i10) {
+    public /* synthetic */ e(v0.h hVar, int i10) {
         this.a = i10;
-        this.b = iVar;
+        this.b = hVar;
     }
 
     @Override // java.lang.Runnable
@@ -39,16 +38,16 @@ public final /* synthetic */ class e implements Runnable {
                 this.b.onResult(null);
                 break;
             case 7:
-                this.b.onError(new w0.h("No provider data returned.", 2));
+                this.b.g(new w0.h(2, "No provider data returned."));
                 break;
             case 8:
-                this.b.onError(new w0.c((CharSequence) null, 2));
+                this.b.g(new w0.c(2, (CharSequence) null));
                 break;
             case 9:
-                this.b.onError(new w0.c((CharSequence) null, 2));
+                this.b.g(new w0.c(2, (CharSequence) null));
                 break;
             default:
-                this.b.onError(new w0.h("Failed to launch the selector UI. Hint: ensure the `context` parameter is an Activity-based context.", 2));
+                this.b.g(new w0.h(2, "Failed to launch the selector UI. Hint: ensure the `context` parameter is an Activity-based context."));
                 break;
         }
     }

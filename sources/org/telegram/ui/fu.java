@@ -1,69 +1,54 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.StatsController;
+import android.text.TextUtils;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class fu implements org.telegram.ui.Components.xl0, org.telegram.ui.ActionBar.b2 {
-    public final /* synthetic */ ju a;
+public final class fu extends hg.b {
+    public final int c;
+    public final int d;
+    public final int e;
+    public final CharSequence f;
+    public final CharSequence g;
+    public final int h;
 
-    public /* synthetic */ fu(ju juVar) {
-        this.a = juVar;
+    public fu(int i10, String str) {
+        super(i10, false);
+        this.f = str;
     }
 
-    @Override // org.telegram.ui.ActionBar.b2
-    public void h(org.telegram.ui.ActionBar.e2 e2Var, int i10) {
-        int i11;
-        int i12;
-        int i13;
-        ju juVar = this.a;
-        nu nuVar = juVar.w3;
-        ArrayList arrayList = juVar.n3;
-        arrayList.clear();
-        int i14 = 0;
-        while (true) {
-            iu[] iuVarArr = juVar.o3;
-            if (i14 >= iuVarArr.length) {
-                i11 = ((org.telegram.ui.ActionBar.r2) nuVar).currentAccount;
-                StatsController.getInstance(i11).resetStats(0);
-                i12 = ((org.telegram.ui.ActionBar.r2) nuVar).currentAccount;
-                StatsController.getInstance(i12).resetStats(1);
-                i13 = ((org.telegram.ui.ActionBar.r2) nuVar).currentAccount;
-                StatsController.getInstance(i13).resetStats(2);
-                juVar.f3 = true;
-                juVar.F1();
-                juVar.G1(true);
-                return;
-            }
-            iu iuVar = iuVarArr[i14];
-            if (iuVar.c > 0) {
-                arrayList.add(Integer.valueOf(iuVar.d));
-            }
-            i14++;
-        }
+    public static fu b(CharSequence charSequence, String str) {
+        return new fu(-1, 0, 0, 0, charSequence, str);
     }
 
-    @Override // org.telegram.ui.Components.xl0
-    public int run() {
-        ju juVar = this.a;
-        ArrayList arrayList = juVar.k3;
-        int i10 = 0;
-        while (true) {
-            if (i10 >= arrayList.size()) {
-                i10 = -1;
-                break;
-            }
-            if (((eu) arrayList.get(i10)).a == 5) {
-                break;
-            }
-            i10++;
+    public final boolean equals(Object obj) {
+        if (!(obj instanceof fu)) {
+            return false;
         }
-        if (i10 < 0) {
-            return -1;
+        fu fuVar = (fu) obj;
+        CharSequence charSequence = fuVar.f;
+        int i10 = fuVar.a;
+        int i11 = this.a;
+        if (i10 != i11) {
+            return false;
         }
-        juVar.h3.h1(i10, AndroidUtilities.dp(60.0f));
-        return i10;
+        CharSequence charSequence2 = this.f;
+        if (i11 == 1 || i11 == 4 || i11 == 3 || i11 == 5) {
+            return TextUtils.equals(charSequence2, charSequence);
+        }
+        if (i11 == 2) {
+            return fuVar.h == this.h && TextUtils.equals(charSequence2, charSequence) && fuVar.d == this.d && fuVar.e == this.e && fuVar.c == this.c;
+        }
+        return true;
+    }
+
+    public fu(int i10, int i11, int i12, int i13, CharSequence charSequence, CharSequence charSequence2) {
+        super(2, false);
+        this.h = i10;
+        this.c = i11;
+        this.d = i12;
+        this.e = i13;
+        this.f = charSequence;
+        this.g = charSequence2;
     }
 }

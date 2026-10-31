@@ -1,43 +1,37 @@
 package org.telegram.ui.ActionBar;
 
+import android.content.Context;
+import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class k4 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ m4 b;
+public final class k4 extends ArrayAdapter {
+    public final /* synthetic */ q4 a;
 
-    public /* synthetic */ k4(m4 m4Var, int i10) {
-        this.a = i10;
-        this.b = m4Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public k4(q4 q4Var, Context context) {
+        super(context, 0);
+        this.a = q4Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                m4 m4Var = this.b;
-                View view = m4Var.m;
-                if (view.getWindowVisibility() == 0 && view.isShown()) {
-                    l4 l4Var = m4Var.s;
-                    l4Var.getClass();
-                    System.currentTimeMillis();
-                    l4Var.c = false;
-                    m4Var.s.a();
-                    break;
-                }
-                break;
-            default:
-                m4 m4Var2 = this.b;
-                View view2 = m4Var2.m;
-                if (view2.getWindowVisibility() == 0 && view2.isShown()) {
-                    l4 l4Var2 = m4Var2.s;
-                    l4Var2.b = false;
-                    l4Var2.a();
-                    break;
-                }
-                break;
+    @Override // android.widget.ArrayAdapter, android.widget.Adapter
+    public final View getView(int i10, View view, ViewGroup viewGroup) {
+        q4 q4Var = this.a;
+        p4 p4Var = q4Var.q;
+        MenuItem menuItem = (MenuItem) getItem(i10);
+        int width = q4Var.I.getWidth();
+        if (view != null) {
+            int i11 = p4Var.a;
+            s4.e(view, menuItem, ((q4) p4Var.e).Q.j != null);
+        } else {
+            view = s4.b(((q4) p4Var.e).Q, (Context) p4Var.d, menuItem, true, false, false);
+            int i12 = p4Var.b;
+            view.setPadding(i12, 0, i12, 0);
         }
+        view.setMinimumWidth(width);
+        return view;
     }
 }

@@ -1,17 +1,34 @@
 package org.telegram.ui.Wallet;
 
-import android.view.View;
-import org.telegram.ui.Components.s71;
+import android.content.Context;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.cd;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes4.dex */
-public final class g4 extends s71 {
-    @Override // org.telegram.ui.Components.nm0
-    public final boolean x1(View view) {
-        if (!(view instanceof f3)) {
-            return true;
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class g4 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Context b;
+
+    public /* synthetic */ g4(Context context, int i10) {
+        this.a = i10;
+        this.b = context;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        Context context = this.b;
+        switch (i10) {
+            case 0:
+                gf.f.t(context, cd.L0(2131744221, null));
+                break;
+            case 1:
+                gf.f.t(context, cd.L0(2131744221, null));
+                break;
+            default:
+                new c6(context.getApplicationContext(), R.drawable.wallet_card_qr, 46, new org.telegram.ui.Components.voip.m0(21));
+                break;
         }
-        f3 f3Var = (f3) view;
-        return f3Var.F <= 0.0f && !f3Var.I.d();
     }
 }

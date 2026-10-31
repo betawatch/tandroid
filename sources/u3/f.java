@@ -1,16 +1,15 @@
 package u3;
 
-import a8.yb;
 import android.util.Pair;
 import android.util.SparseArray;
 import b2.n;
 import b2.t;
 import b2.t0;
 import b2.u0;
+import b2.v0;
 import b2.w;
 import b2.w0;
-import b2.x0;
-import c3.h0;
+import c3.i0;
 import c3.j0;
 import c3.k0;
 import c3.l;
@@ -18,12 +17,10 @@ import c3.o;
 import c3.p;
 import c3.q;
 import c3.s;
-import d5.z;
-import e2.n0;
+import e2.l0;
 import e2.x;
-import f9.g0;
-import f9.i0;
-import f9.s1;
+import e9.n0;
+import e9.x1;
 import j$.util.DesugarCollections;
 import java.math.RoundingMode;
 import java.nio.ByteBuffer;
@@ -38,14 +35,12 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.UUID;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesStorage;
+import org.telegram.messenger.zs;
 import org.telegram.tgnet.TLObject;
+import v7.t6;
 import z3.k;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class f implements o {
     public static final byte[] k0 = {49, 10, 48, 48, 58, 48, 48, 58, 48, 48, 44, 48, 48, 48, 32, 45, 45, 62, 32, 48, 48, 58, 48, 48, 58, 48, 48, 44, 48, 48, 48, 10};
@@ -118,14 +113,14 @@ public final class f implements o {
     public boolean z;
 
     static {
-        String str = n0.a;
+        String str = l0.a;
         l0 = "Format: Start, End, ReadOrder, Layer, Style, Name, MarginL, MarginR, MarginV, Effect, Text".getBytes(StandardCharsets.UTF_8);
         m0 = new byte[]{68, 105, 97, 108, 111, 103, 117, 101, 58, 32, 48, 58, 48, 48, 58, 48, 48, 58, 48, 48, 44, 48, 58, 48, 48, 58, 48, 48, 58, 48, 48, 44};
         n0 = new byte[]{87, 69, 66, 86, 84, 84, 10, 10, 48, 48, 58, 48, 48, 58, 48, 48, 46, 48, 48, 48, 32, 45, 45, 62, 32, 48, 48, 58, 48, 48, 58, 48, 48, 46, 48, 48, 48, 10};
         o0 = new UUID(72057594037932032L, -9223371306706625679L);
         HashMap hashMap = new HashMap();
-        h0.o(0, hashMap, "htc_video_rotA-000", 90, "htc_video_rotA-090");
-        h0.o(180, hashMap, "htc_video_rotA-180", 270, "htc_video_rotA-270");
+        i0.o(0, hashMap, "htc_video_rotA-000", 90, "htc_video_rotA-090");
+        i0.o(zs.K2, hashMap, "htc_video_rotA-180", zs.t4, "htc_video_rotA-270");
         p0 = DesugarCollections.unmodifiableMap(hashMap);
     }
 
@@ -144,7 +139,7 @@ public final class f implements o {
         this.L = -1L;
         this.M = -9223372036854775807L;
         this.a = bVar;
-        bVar.d = new t6.f(this);
+        bVar.d = new s9.g(this);
         this.f = kVar;
         this.C = new SparseArray();
         this.d = (i10 & 1) == 0;
@@ -165,22 +160,22 @@ public final class f implements o {
         this.x = true;
     }
 
-    public static byte[] j(long j10, long j11, String str) {
-        yb.g(j10 != -9223372036854775807L);
+    public static byte[] j(long j10, String str, long j11) {
+        t6.f(j10 != -9223372036854775807L);
         int i10 = (int) (j10 / 3600000000L);
         long j12 = j10 - (i10 * 3600000000L);
         int i11 = (int) (j12 / 60000000);
         long j13 = j12 - (i11 * 60000000);
         int i12 = (int) (j13 / 1000000);
         String format = String.format(Locale.US, str, Integer.valueOf(i10), Integer.valueOf(i11), Integer.valueOf(i12), Integer.valueOf((int) ((j13 - (i12 * 1000000)) / j11)));
-        String str2 = n0.a;
+        String str2 = l0.a;
         return format.getBytes(StandardCharsets.UTF_8);
     }
 
     @Override // c3.o
     public final boolean a(p pVar) {
-        z zVar = new z(11, (short) 0);
-        x xVar = (x) zVar.c;
+        c5.x xVar = new c5.x(18, (short) 0);
+        x xVar2 = (x) xVar.c;
         l lVar = (l) pVar;
         long j10 = lVar.c;
         long j11 = 1024;
@@ -188,35 +183,35 @@ public final class f implements o {
             j11 = j10;
         }
         int i10 = (int) j11;
-        lVar.h(xVar.a, 0, 4, false);
-        long C = xVar.C();
-        zVar.b = 4;
+        lVar.j(xVar2.a, 0, 4, false);
+        long C = xVar2.C();
+        xVar.b = 4;
         while (true) {
             if (C != 440786851) {
-                int i11 = zVar.b + 1;
-                zVar.b = i11;
+                int i11 = xVar.b + 1;
+                xVar.b = i11;
                 if (i11 == i10) {
                     break;
                 }
-                lVar.h(xVar.a, 0, 1, false);
-                C = ((C << 8) & (-256)) | (xVar.a[0] & 255);
+                lVar.j(xVar2.a, 0, 1, false);
+                C = ((C << 8) & (-256)) | (xVar2.a[0] & 255);
             } else {
-                long q5 = zVar.q(lVar);
-                long j12 = zVar.b;
-                if (q5 != Long.MIN_VALUE && (j10 == -1 || j12 + q5 < j10)) {
+                long q6 = xVar.q(lVar);
+                long j12 = xVar.b;
+                if (q6 != Long.MIN_VALUE && (j10 == -1 || j12 + q6 < j10)) {
                     while (true) {
-                        long j13 = zVar.b;
-                        long j14 = j12 + q5;
+                        long j13 = xVar.b;
+                        long j14 = j12 + q6;
                         if (j13 < j14) {
-                            if (zVar.q(lVar) != Long.MIN_VALUE) {
-                                long q9 = zVar.q(lVar);
-                                if (q9 < 0 || q9 > 2147483647L) {
+                            if (xVar.q(lVar) != Long.MIN_VALUE) {
+                                long q10 = xVar.q(lVar);
+                                if (q10 < 0 || q10 > 2147483647L) {
                                     break;
                                 }
-                                if (q9 != 0) {
-                                    int i12 = (int) q9;
-                                    lVar.u(i12, false);
-                                    zVar.b += i12;
+                                if (q10 != 0) {
+                                    int i12 = (int) q10;
+                                    lVar.r(i12, false);
+                                    xVar.b += i12;
                                 }
                             } else {
                                 break;
@@ -234,7 +229,7 @@ public final class f implements o {
     @Override // c3.o
     public final void c(q qVar) {
         if (this.e) {
-            qVar = new c2.b(qVar, this.f);
+            qVar = new ac.a(qVar, this.f);
         }
         this.j0 = qVar;
     }
@@ -267,10 +262,10 @@ public final class f implements o {
             if (i10 >= sparseArray.size()) {
                 return;
             }
-            k0 k0Var = ((e) sparseArray.valueAt(i10)).V;
-            if (k0Var != null) {
-                k0Var.b = false;
-                k0Var.c = 0;
+            c3.l0 l0Var = ((e) sparseArray.valueAt(i10)).V;
+            if (l0Var != null) {
+                l0Var.b = false;
+                l0Var.c = 0;
             }
             i10++;
         }
@@ -278,112 +273,112 @@ public final class f implements o {
 
     @Override // c3.o
     public final List e() {
-        g0 g0Var = i0.b;
-        return s1.e;
+        e9.l0 l0Var = n0.b;
+        return x1.e;
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Code restructure failed: missing block: B:100:0x0f80, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:100:0x0f71, code lost:
     
         if (r0.z == false) goto L927;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:101:0x0f82, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:101:0x0f73, code lost:
     
         r6 = r0.L;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:102:0x0f86, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:102:0x0f77, code lost:
     
         if (r6 == (-1)) goto L928;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:104:0x0f88, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:104:0x0f79, code lost:
     
         r45.a = r6;
         r0.L = -1;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:105:0x0f8e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:105:0x0f7f, code lost:
     
         return 1;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:108:0x0f95, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:108:0x0f86, code lost:
     
         r4 = r35;
         r3 = false;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:109:0x0f95, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:109:0x0f86, code lost:
     
         continue;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:111:0x0f6d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:111:0x0f5e, code lost:
     
         r0.L = r2;
         r45.a = r0.K;
         r0.J = r4;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:112:0x0f79, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:112:0x0f6a, code lost:
     
         return 1;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:113:0x0f8f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:113:0x0f80, code lost:
     
         r35 = true;
         r0 = r43;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:499:0x0a1a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:499:0x0a0d, code lost:
     
         if (r0.u() == r4.getLeastSignificantBits()) goto L608;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:95:0x0d3a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:95:0x0d2a, code lost:
     
         r5 = true;
         r1 = r1;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:96:0x0f61, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:96:0x0f52, code lost:
     
         if (r5 == false) goto L879;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:97:0x0f63, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:97:0x0f54, code lost:
     
         r2 = r1.getPosition();
         r0 = r43;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:98:0x0f6b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:98:0x0f5c, code lost:
     
         if (r0.J == false) goto L873;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:99:0x0f7a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:99:0x0f6b, code lost:
     
         r35 = true;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:233:0x0a62  */
-    /* JADX WARN: Removed duplicated region for block: B:238:0x0a7a  */
-    /* JADX WARN: Removed duplicated region for block: B:241:0x0a90  */
-    /* JADX WARN: Removed duplicated region for block: B:244:0x0c5b  */
-    /* JADX WARN: Removed duplicated region for block: B:249:0x0c6f  */
-    /* JADX WARN: Removed duplicated region for block: B:251:0x0c72  */
-    /* JADX WARN: Removed duplicated region for block: B:252:0x0a9c  */
-    /* JADX WARN: Removed duplicated region for block: B:338:0x0a7d  */
-    /* JADX WARN: Removed duplicated region for block: B:65:0x019e  */
-    /* JADX WARN: Removed duplicated region for block: B:90:0x0192  */
+    /* JADX WARN: Removed duplicated region for block: B:233:0x0a54  */
+    /* JADX WARN: Removed duplicated region for block: B:238:0x0a6b  */
+    /* JADX WARN: Removed duplicated region for block: B:241:0x0a81  */
+    /* JADX WARN: Removed duplicated region for block: B:244:0x0c4c  */
+    /* JADX WARN: Removed duplicated region for block: B:249:0x0c60  */
+    /* JADX WARN: Removed duplicated region for block: B:251:0x0c63  */
+    /* JADX WARN: Removed duplicated region for block: B:252:0x0a8d  */
+    /* JADX WARN: Removed duplicated region for block: B:338:0x0a6e  */
+    /* JADX WARN: Removed duplicated region for block: B:65:0x019d  */
+    /* JADX WARN: Removed duplicated region for block: B:90:0x0191  */
     /* JADX WARN: Type inference failed for: r15v2 */
     /* JADX WARN: Type inference failed for: r15v3, types: [int] */
     /* JADX WARN: Type inference failed for: r15v4 */
-    /* JADX WARN: Type inference failed for: r2v47 */
-    /* JADX WARN: Type inference failed for: r2v48, types: [java.lang.RuntimeException] */
-    /* JADX WARN: Type inference failed for: r2v49 */
-    /* JADX WARN: Type inference failed for: r4v111 */
-    /* JADX WARN: Type inference failed for: r4v22 */
+    /* JADX WARN: Type inference failed for: r2v46 */
+    /* JADX WARN: Type inference failed for: r2v47, types: [java.lang.RuntimeException] */
+    /* JADX WARN: Type inference failed for: r2v48 */
+    /* JADX WARN: Type inference failed for: r4v112 */
+    /* JADX WARN: Type inference failed for: r4v23 */
     /* JADX WARN: Type inference failed for: r4v3, types: [boolean] */
     /* JADX WARN: Type inference failed for: r4v4, types: [boolean] */
-    /* JADX WARN: Type inference failed for: r6v100, types: [int] */
-    /* JADX WARN: Type inference failed for: r6v102 */
-    /* JADX WARN: Type inference failed for: r6v103, types: [int] */
-    /* JADX WARN: Type inference failed for: r6v116 */
-    /* JADX WARN: Type inference failed for: r6v117, types: [int] */
-    /* JADX WARN: Type inference failed for: r6v122 */
+    /* JADX WARN: Type inference failed for: r6v100 */
+    /* JADX WARN: Type inference failed for: r6v101, types: [int] */
+    /* JADX WARN: Type inference failed for: r6v103 */
+    /* JADX WARN: Type inference failed for: r6v104, types: [int] */
+    /* JADX WARN: Type inference failed for: r6v117 */
+    /* JADX WARN: Type inference failed for: r6v118, types: [int] */
     /* JADX WARN: Type inference failed for: r6v123 */
     /* JADX WARN: Type inference failed for: r6v124 */
-    /* JADX WARN: Type inference failed for: r6v99 */
+    /* JADX WARN: Type inference failed for: r6v125 */
     /* JADX WARN: Type inference failed for: r8v0, types: [u3.g] */
     /* JADX WARN: Type inference failed for: r8v5, types: [android.util.SparseArray] */
     /* JADX WARN: Type inference failed for: r9v2, types: [android.util.SparseArray] */
@@ -452,7 +447,7 @@ public final class f implements o {
                         long b10 = r82.b(pVar3, true, r43, 4);
                         if (b10 == -2) {
                             byte[] bArr2 = bVar.a;
-                            pVar3.p();
+                            pVar3.m();
                             int i20 = r43;
                             while (true) {
                                 pVar3.b(i20, i19, bArr2);
@@ -473,11 +468,11 @@ public final class f implements o {
                                     if (a2 == 357149030 || a2 == 524531317 || a2 == 475249515 || a2 == 374648427) {
                                     }
                                 }
-                                pVar3.r(1);
+                                pVar3.q(1);
                                 i19 = 4;
                                 i20 = 0;
                             }
-                            pVar3.r(i11);
+                            pVar3.q(i11);
                             b10 = a2;
                         }
                         z10 = true;
@@ -496,24 +491,24 @@ public final class f implements o {
                         bVar.g = r82.b(pVar3, false, z10, 8);
                         bVar.e = 2;
                     }
-                    t6.f fVar2 = bVar.d;
+                    s9.g gVar = bVar.d;
                     int i22 = bVar.f;
-                    Object obj2 = fVar2.a;
+                    Object obj2 = gVar.a;
                     switch (i22) {
-                        case 131:
-                        case 136:
-                        case 155:
-                        case 159:
-                        case 176:
-                        case 179:
-                        case 186:
-                        case 215:
-                        case 231:
-                        case 238:
-                        case 240:
-                        case 241:
-                        case 247:
-                        case 251:
+                        case zs.P1 /* 131 */:
+                        case zs.S1 /* 136 */:
+                        case zs.l2 /* 155 */:
+                        case zs.p2 /* 159 */:
+                        case zs.G2 /* 176 */:
+                        case zs.J2 /* 179 */:
+                        case zs.Q2 /* 186 */:
+                        case zs.s3 /* 215 */:
+                        case zs.H3 /* 231 */:
+                        case zs.N3 /* 238 */:
+                        case zs.P3 /* 240 */:
+                        case zs.Q3 /* 241 */:
+                        case zs.W3 /* 247 */:
+                        case zs.a4 /* 251 */:
                         case 16871:
                         case 16980:
                         case 17029:
@@ -550,13 +545,13 @@ public final class f implements o {
                         case 2274716:
                             i10 = 3;
                             break;
-                        case 160:
-                        case 166:
-                        case 174:
-                        case 183:
-                        case 187:
-                        case 224:
-                        case 225:
+                        case zs.q2 /* 160 */:
+                        case zs.w2 /* 166 */:
+                        case zs.E2 /* 174 */:
+                        case zs.N2 /* 183 */:
+                        case zs.R2 /* 187 */:
+                        case zs.B3 /* 224 */:
+                        case zs.C3 /* 225 */:
                         case 16868:
                         case 18407:
                         case 19899:
@@ -577,9 +572,9 @@ public final class f implements o {
                         case 524531317:
                             i10 = 1;
                             break;
-                        case 161:
-                        case 163:
-                        case 165:
+                        case zs.r2 /* 161 */:
+                        case zs.t2 /* 163 */:
+                        case zs.v2 /* 165 */:
                         case 16877:
                         case 16981:
                         case 18402:
@@ -588,7 +583,7 @@ public final class f implements o {
                         case 30322:
                             i10 = 4;
                             break;
-                        case MessagesStorage.LAST_DB_VERSION /* 181 */:
+                        case zs.L2 /* 181 */:
                         case 17545:
                         case 21969:
                         case 21970:
@@ -610,30 +605,30 @@ public final class f implements o {
                             break;
                     }
                     if (i10 == 0) {
-                        pVar3.r((int) bVar.g);
+                        pVar3.q((int) bVar.g);
                         bVar.e = 0;
                         z12 = false;
                         r42 = 1;
                     } else if (i10 == 1) {
                         long position = pVar3.getPosition();
                         arrayDeque.push(new a(bVar.f, bVar.g + position));
-                        bVar.d.d(bVar.f, position, bVar.g);
+                        bVar.d.p(position, bVar.f, bVar.g);
                         z11 = false;
                         bVar.e = 0;
                         pVar2 = pVar3;
                     } else if (i10 == 2) {
                         long j13 = bVar.g;
                         if (j13 > 8) {
-                            throw x0.a(null, "Invalid integer size: " + bVar.g);
+                            throw w0.a(null, "Invalid integer size: " + bVar.g);
                         }
-                        fVar2.c(i22, bVar.a(pVar3, (int) j13));
+                        gVar.k(i22, bVar.a(pVar3, (int) j13));
                         z11 = false;
                         bVar.e = 0;
                         pVar2 = pVar3;
                     } else if (i10 == 3) {
                         long j14 = bVar.g;
                         if (j14 > 2147483647L) {
-                            throw x0.a(null, "String element size: " + bVar.g);
+                            throw w0.a(null, "String element size: " + bVar.g);
                         }
                         int i23 = (int) j14;
                         if (i23 == 0) {
@@ -648,108 +643,108 @@ public final class f implements o {
                             r15 = 0;
                             str = new String(bArr3, 0, i23);
                         }
-                        fVar2.e(i22, str);
+                        gVar.y(i22, str);
                         bVar.e = r15;
                         z11 = r15;
                         pVar2 = pVar3;
                     } else if (i10 == 4) {
-                        fVar2.a(i22, (int) bVar.g, pVar3);
+                        gVar.c(i22, (int) bVar.g, pVar3);
                         z11 = false;
                         bVar.e = 0;
                         pVar2 = pVar3;
                     } else {
                         if (i10 != 5) {
-                            throw x0.a(null, "Invalid element type " + i10);
+                            throw w0.a(null, "Invalid element type " + i10);
                         }
                         long j15 = bVar.g;
                         if (j15 != 4 && j15 != 8) {
-                            throw x0.a(null, "Invalid float size: " + bVar.g);
+                            throw w0.a(null, "Invalid float size: " + bVar.g);
                         }
                         int i24 = (int) j15;
                         double intBitsToFloat = i24 == 4 ? Float.intBitsToFloat((int) r4) : Double.longBitsToDouble(bVar.a(pVar3, i24));
-                        f fVar3 = (f) fVar2.a;
+                        f fVar2 = (f) gVar.a;
                         if (i22 == 181) {
-                            fVar3.h(i22);
-                            fVar3.y.S = (int) intBitsToFloat;
+                            fVar2.h(i22);
+                            fVar2.y.S = (int) intBitsToFloat;
                         } else if (i22 != 17545) {
                             switch (i22) {
                                 case 21969:
-                                    fVar3.h(i22);
-                                    fVar3.y.F = (float) intBitsToFloat;
+                                    fVar2.h(i22);
+                                    fVar2.y.F = (float) intBitsToFloat;
                                     break;
                                 case 21970:
-                                    fVar3.h(i22);
-                                    fVar3.y.G = (float) intBitsToFloat;
+                                    fVar2.h(i22);
+                                    fVar2.y.G = (float) intBitsToFloat;
                                     break;
                                 case 21971:
-                                    fVar3.h(i22);
-                                    fVar3.y.H = (float) intBitsToFloat;
+                                    fVar2.h(i22);
+                                    fVar2.y.H = (float) intBitsToFloat;
                                     break;
                                 case 21972:
-                                    fVar3.h(i22);
-                                    fVar3.y.I = (float) intBitsToFloat;
+                                    fVar2.h(i22);
+                                    fVar2.y.I = (float) intBitsToFloat;
                                     break;
                                 case 21973:
-                                    fVar3.h(i22);
-                                    fVar3.y.J = (float) intBitsToFloat;
+                                    fVar2.h(i22);
+                                    fVar2.y.J = (float) intBitsToFloat;
                                     break;
                                 case 21974:
-                                    fVar3.h(i22);
-                                    fVar3.y.K = (float) intBitsToFloat;
+                                    fVar2.h(i22);
+                                    fVar2.y.K = (float) intBitsToFloat;
                                     break;
                                 case 21975:
-                                    fVar3.h(i22);
-                                    fVar3.y.L = (float) intBitsToFloat;
+                                    fVar2.h(i22);
+                                    fVar2.y.L = (float) intBitsToFloat;
                                     break;
                                 case 21976:
-                                    fVar3.h(i22);
-                                    fVar3.y.M = (float) intBitsToFloat;
+                                    fVar2.h(i22);
+                                    fVar2.y.M = (float) intBitsToFloat;
                                     break;
                                 case 21977:
-                                    fVar3.h(i22);
-                                    fVar3.y.N = (float) intBitsToFloat;
+                                    fVar2.h(i22);
+                                    fVar2.y.N = (float) intBitsToFloat;
                                     break;
                                 case 21978:
-                                    fVar3.h(i22);
-                                    fVar3.y.O = (float) intBitsToFloat;
+                                    fVar2.h(i22);
+                                    fVar2.y.O = (float) intBitsToFloat;
                                     break;
                                 default:
                                     switch (i22) {
                                         case 30323:
-                                            fVar3.h(i22);
-                                            fVar3.y.u = (float) intBitsToFloat;
+                                            fVar2.h(i22);
+                                            fVar2.y.u = (float) intBitsToFloat;
                                             break;
                                         case 30324:
-                                            fVar3.h(i22);
-                                            fVar3.y.v = (float) intBitsToFloat;
+                                            fVar2.h(i22);
+                                            fVar2.y.v = (float) intBitsToFloat;
                                             break;
                                         case 30325:
-                                            fVar3.h(i22);
-                                            fVar3.y.w = (float) intBitsToFloat;
+                                            fVar2.h(i22);
+                                            fVar2.y.w = (float) intBitsToFloat;
                                             break;
                                     }
                             }
                         } else {
-                            fVar3.u = (long) intBitsToFloat;
+                            fVar2.u = (long) intBitsToFloat;
                         }
                         z11 = false;
                         bVar.e = 0;
                         pVar2 = pVar3;
                     }
                 } else {
-                    t6.f fVar4 = bVar.d;
+                    s9.g gVar2 = bVar.d;
                     int i25 = ((a) arrayDeque.pop()).a;
-                    f fVar5 = (f) fVar4.a;
-                    ?? r83 = fVar5.C;
-                    ?? r92 = fVar5.c;
-                    fVar5.j0.getClass();
+                    f fVar3 = (f) gVar2.a;
+                    ?? r83 = fVar3.C;
+                    ?? r92 = fVar3.c;
+                    fVar3.j0.getClass();
                     if (i25 != 160) {
                         if (i25 == 174) {
-                            e eVar = fVar5.y;
+                            e eVar = fVar3.y;
                             eVar.getClass();
                             String str5 = eVar.c;
                             if (str5 == null) {
-                                throw x0.a(null, "CodecId is missing in TrackEntry element");
+                                throw w0.a(null, "CodecId is missing in TrackEntry element");
                             }
                             switch (str5) {
                                 case "V_MPEG4/ISO/AP":
@@ -1050,13 +1045,13 @@ public final class f implements o {
                                             }
                                             int i27 = (eVar.Y ? 1 : 0) | (!eVar.X ? 2 : 0);
                                             wVar = new w();
-                                            i13 = w0.i(str6);
+                                            i13 = v0.i(str6);
                                             Map map = p0;
                                             if (!i13) {
                                                 wVar.J = eVar.Q;
                                                 wVar.K = eVar.S;
                                                 wVar.L = D;
-                                            } else if (w0.m(str6)) {
+                                            } else if (v0.m(str6)) {
                                                 if (eVar.s == 0) {
                                                     int i28 = eVar.q;
                                                     i14 = -1;
@@ -1110,9 +1105,9 @@ public final class f implements o {
                                                     } else if (Float.compare(eVar.w, 90.0f) == 0) {
                                                         intValue = 90;
                                                     } else if (Float.compare(eVar.w, -180.0f) == 0 || Float.compare(eVar.w, 180.0f) == 0) {
-                                                        intValue = 180;
+                                                        intValue = zs.K2;
                                                     } else if (Float.compare(eVar.w, -90.0f) == 0) {
-                                                        intValue = 270;
+                                                        intValue = zs.t4;
                                                     }
                                                 }
                                                 wVar.y = eVar.n;
@@ -1123,15 +1118,15 @@ public final class f implements o {
                                                 wVar.G = eVar.y;
                                                 wVar.H = oVar;
                                             } else if (!"application/x-subrip".equals(str6) && !"text/x-ssa".equals(str6) && !"text/vtt".equals(str6) && !"application/vobsub".equals(str6) && !"application/pgs".equals(str6) && !"application/dvbsubs".equals(str6)) {
-                                                throw x0.a(null, "Unexpected MIME type.");
+                                                throw w0.a(null, "Unexpected MIME type.");
                                             }
                                             str4 = eVar.b;
                                             if (str4 != null && !map.containsKey(str4)) {
                                                 wVar.b = eVar.b;
                                             }
                                             wVar.a = Integer.toString(i26);
-                                            wVar.q = w0.n(!eVar.a ? "video/webm" : "video/x-matroska");
-                                            wVar.r = w0.n(str6);
+                                            wVar.q = v0.n(!eVar.a ? "video/webm" : "video/x-matroska");
+                                            wVar.r = v0.n(str6);
                                             wVar.s = i12;
                                             wVar.d = eVar.Z;
                                             wVar.e = i27;
@@ -1139,7 +1134,7 @@ public final class f implements o {
                                             wVar.j = str2;
                                             wVar.v = eVar.m;
                                             eVar.b0 = wVar.a();
-                                            eVar.a0 = fVar5.j0.F1(eVar.d, eVar.e);
+                                            eVar.a0 = fVar3.j0.I1(eVar.d, eVar.e);
                                             r92.put(eVar.d, eVar);
                                             break;
                                         case 2:
@@ -1168,7 +1163,7 @@ public final class f implements o {
                                                     }
                                                     int i272 = (eVar.Y ? 1 : 0) | (!eVar.X ? 2 : 0);
                                                     wVar = new w();
-                                                    i13 = w0.i(str6);
+                                                    i13 = v0.i(str6);
                                                     Map map2 = p0;
                                                     if (!i13) {
                                                     }
@@ -1178,8 +1173,8 @@ public final class f implements o {
                                                         break;
                                                     }
                                                     wVar.a = Integer.toString(i26);
-                                                    wVar.q = w0.n(!eVar.a ? "video/webm" : "video/x-matroska");
-                                                    wVar.r = w0.n(str6);
+                                                    wVar.q = v0.n(!eVar.a ? "video/webm" : "video/x-matroska");
+                                                    wVar.r = v0.n(str6);
                                                     wVar.s = i12;
                                                     wVar.d = eVar.Z;
                                                     wVar.e = i272;
@@ -1187,12 +1182,12 @@ public final class f implements o {
                                                     wVar.j = str2;
                                                     wVar.v = eVar.m;
                                                     eVar.b0 = wVar.a();
-                                                    eVar.a0 = fVar5.j0.F1(eVar.d, eVar.e);
+                                                    eVar.a0 = fVar3.j0.I1(eVar.d, eVar.e);
                                                     r92.put(eVar.d, eVar);
                                                 }
                                                 int i34 = eVar.R;
-                                                String str8 = n0.a;
-                                                D = n0.D(i34, ByteOrder.LITTLE_ENDIAN);
+                                                String str8 = l0.a;
+                                                D = l0.D(i34, ByteOrder.LITTLE_ENDIAN);
                                                 if (D == 0) {
                                                     e2.a.l("MatroskaExtractor", "Unsupported PCM bit depth: " + eVar.R + ". Setting mimeType to audio/x-unknown");
                                                     str6 = "audio/x-unknown";
@@ -1204,7 +1199,7 @@ public final class f implements o {
                                                     }
                                                     int i2722 = (eVar.Y ? 1 : 0) | (!eVar.X ? 2 : 0);
                                                     wVar = new w();
-                                                    i13 = w0.i(str6);
+                                                    i13 = v0.i(str6);
                                                     Map map22 = p0;
                                                     if (!i13) {
                                                     }
@@ -1212,8 +1207,8 @@ public final class f implements o {
                                                     if (str4 != null) {
                                                     }
                                                     wVar.a = Integer.toString(i26);
-                                                    wVar.q = w0.n(!eVar.a ? "video/webm" : "video/x-matroska");
-                                                    wVar.r = w0.n(str6);
+                                                    wVar.q = v0.n(!eVar.a ? "video/webm" : "video/x-matroska");
+                                                    wVar.r = v0.n(str6);
                                                     wVar.s = i12;
                                                     wVar.d = eVar.Z;
                                                     wVar.e = i2722;
@@ -1221,7 +1216,7 @@ public final class f implements o {
                                                     wVar.j = str2;
                                                     wVar.v = eVar.m;
                                                     eVar.b0 = wVar.a();
-                                                    eVar.a0 = fVar5.j0.F1(eVar.d, eVar.e);
+                                                    eVar.a0 = fVar3.j0.I1(eVar.d, eVar.e);
                                                     r92.put(eVar.d, eVar);
                                                 }
                                                 str6 = "audio/raw";
@@ -1232,7 +1227,7 @@ public final class f implements o {
                                                 }
                                                 int i27222 = (eVar.Y ? 1 : 0) | (!eVar.X ? 2 : 0);
                                                 wVar = new w();
-                                                i13 = w0.i(str6);
+                                                i13 = v0.i(str6);
                                                 Map map222 = p0;
                                                 if (!i13) {
                                                 }
@@ -1240,8 +1235,8 @@ public final class f implements o {
                                                 if (str4 != null) {
                                                 }
                                                 wVar.a = Integer.toString(i26);
-                                                wVar.q = w0.n(!eVar.a ? "video/webm" : "video/x-matroska");
-                                                wVar.r = w0.n(str6);
+                                                wVar.q = v0.n(!eVar.a ? "video/webm" : "video/x-matroska");
+                                                wVar.r = v0.n(str6);
                                                 wVar.s = i12;
                                                 wVar.d = eVar.Z;
                                                 wVar.e = i27222;
@@ -1249,14 +1244,14 @@ public final class f implements o {
                                                 wVar.j = str2;
                                                 wVar.v = eVar.m;
                                                 eVar.b0 = wVar.a();
-                                                eVar.a0 = fVar5.j0.F1(eVar.d, eVar.e);
+                                                eVar.a0 = fVar3.j0.I1(eVar.d, eVar.e);
                                                 r92.put(eVar.d, eVar);
                                             } catch (ArrayIndexOutOfBoundsException unused) {
-                                                throw x0.a(null, "Error parsing MS/ACM codec private");
+                                                throw w0.a(null, "Error parsing MS/ACM codec private");
                                             }
                                             break;
                                         case 3:
-                                            eVar.V = new k0();
+                                            eVar.V = new c3.l0();
                                             str6 = "audio/true-hd";
                                             D = -1;
                                             i12 = -1;
@@ -1266,7 +1261,7 @@ public final class f implements o {
                                             }
                                             int i272222 = (eVar.Y ? 1 : 0) | (!eVar.X ? 2 : 0);
                                             wVar = new w();
-                                            i13 = w0.i(str6);
+                                            i13 = v0.i(str6);
                                             Map map2222 = p0;
                                             if (!i13) {
                                             }
@@ -1274,8 +1269,8 @@ public final class f implements o {
                                             if (str4 != null) {
                                             }
                                             wVar.a = Integer.toString(i26);
-                                            wVar.q = w0.n(!eVar.a ? "video/webm" : "video/x-matroska");
-                                            wVar.r = w0.n(str6);
+                                            wVar.q = v0.n(!eVar.a ? "video/webm" : "video/x-matroska");
+                                            wVar.r = v0.n(str6);
                                             wVar.s = i12;
                                             wVar.d = eVar.Z;
                                             wVar.e = i272222;
@@ -1283,7 +1278,7 @@ public final class f implements o {
                                             wVar.j = str2;
                                             wVar.v = eVar.m;
                                             eVar.b0 = wVar.a();
-                                            eVar.a0 = fVar5.j0.F1(eVar.d, eVar.e);
+                                            eVar.a0 = fVar3.j0.I1(eVar.d, eVar.e);
                                             r92.put(eVar.d, eVar);
                                             break;
                                         case 4:
@@ -1292,39 +1287,39 @@ public final class f implements o {
                                                 r22 = a12[0];
                                                 try {
                                                     if (r22 != 2) {
-                                                        throw x0.a(null, "Error parsing vorbis codec private");
+                                                        throw w0.a(null, "Error parsing vorbis codec private");
                                                     }
                                                     int i35 = 0;
                                                     int i36 = 1;
                                                     while (true) {
-                                                        int i37 = a12[i36] & 255;
+                                                        int i37 = a12[i36] & zs.e4;
                                                         if (i37 == 255) {
-                                                            i35 += 255;
+                                                            i35 += zs.e4;
                                                             i36++;
                                                         } else {
                                                             int i38 = i36 + 1;
                                                             int i39 = i35 + i37;
                                                             int i40 = 0;
                                                             while (true) {
-                                                                int i41 = a12[i38] & 255;
+                                                                int i41 = a12[i38] & zs.e4;
                                                                 if (i41 == 255) {
-                                                                    i40 += 255;
+                                                                    i40 += zs.e4;
                                                                     i38++;
                                                                 } else {
                                                                     int i42 = i38 + 1;
                                                                     int i43 = i40 + i41;
                                                                     if (a12[i42] != 1) {
-                                                                        throw x0.a(null, "Error parsing vorbis codec private");
+                                                                        throw w0.a(null, "Error parsing vorbis codec private");
                                                                     }
                                                                     byte[] bArr6 = new byte[i39];
                                                                     System.arraycopy(a12, i42, bArr6, 0, i39);
                                                                     int i44 = i42 + i39;
                                                                     if (a12[i44] != 3) {
-                                                                        throw x0.a(null, "Error parsing vorbis codec private");
+                                                                        throw w0.a(null, "Error parsing vorbis codec private");
                                                                     }
                                                                     int i45 = i44 + i43;
                                                                     if (a12[i45] != 5) {
-                                                                        throw x0.a(null, "Error parsing vorbis codec private");
+                                                                        throw w0.a(null, "Error parsing vorbis codec private");
                                                                     }
                                                                     byte[] bArr7 = new byte[a12.length - i45];
                                                                     System.arraycopy(a12, i45, bArr7, 0, a12.length - i45);
@@ -1332,7 +1327,7 @@ public final class f implements o {
                                                                     arrayList2.add(bArr6);
                                                                     arrayList2.add(bArr7);
                                                                     str6 = "audio/vorbis";
-                                                                    i12 = 8192;
+                                                                    i12 = TLObject.FLAG_13;
                                                                     arrayList = arrayList2;
                                                                     D = -1;
                                                                     list4 = arrayList;
@@ -1342,7 +1337,7 @@ public final class f implements o {
                                                                     }
                                                                     int i2722222 = (eVar.Y ? 1 : 0) | (!eVar.X ? 2 : 0);
                                                                     wVar = new w();
-                                                                    i13 = w0.i(str6);
+                                                                    i13 = v0.i(str6);
                                                                     Map map22222 = p0;
                                                                     if (!i13) {
                                                                     }
@@ -1350,8 +1345,8 @@ public final class f implements o {
                                                                     if (str4 != null) {
                                                                     }
                                                                     wVar.a = Integer.toString(i26);
-                                                                    wVar.q = w0.n(!eVar.a ? "video/webm" : "video/x-matroska");
-                                                                    wVar.r = w0.n(str6);
+                                                                    wVar.q = v0.n(!eVar.a ? "video/webm" : "video/x-matroska");
+                                                                    wVar.r = v0.n(str6);
                                                                     wVar.s = i12;
                                                                     wVar.d = eVar.Z;
                                                                     wVar.e = i2722222;
@@ -1359,14 +1354,14 @@ public final class f implements o {
                                                                     wVar.j = str2;
                                                                     wVar.v = eVar.m;
                                                                     eVar.b0 = wVar.a();
-                                                                    eVar.a0 = fVar5.j0.F1(eVar.d, eVar.e);
+                                                                    eVar.a0 = fVar3.j0.I1(eVar.d, eVar.e);
                                                                     r92.put(eVar.d, eVar);
                                                                 }
                                                             }
                                                         }
                                                     }
                                                 } catch (ArrayIndexOutOfBoundsException unused2) {
-                                                    throw x0.a(r22, "Error parsing vorbis codec private");
+                                                    throw w0.a(r22, "Error parsing vorbis codec private");
                                                 }
                                             } catch (ArrayIndexOutOfBoundsException unused3) {
                                                 r22 = 0;
@@ -1375,14 +1370,14 @@ public final class f implements o {
                                         case 5:
                                             str6 = "audio/mpeg-L2";
                                             D = -1;
-                                            i12 = 4096;
+                                            i12 = TLObject.FLAG_12;
                                             str2 = null;
                                             list3 = null;
                                             if (eVar.P != null) {
                                             }
                                             int i27222222 = (eVar.Y ? 1 : 0) | (!eVar.X ? 2 : 0);
                                             wVar = new w();
-                                            i13 = w0.i(str6);
+                                            i13 = v0.i(str6);
                                             Map map222222 = p0;
                                             if (!i13) {
                                             }
@@ -1390,8 +1385,8 @@ public final class f implements o {
                                             if (str4 != null) {
                                             }
                                             wVar.a = Integer.toString(i26);
-                                            wVar.q = w0.n(!eVar.a ? "video/webm" : "video/x-matroska");
-                                            wVar.r = w0.n(str6);
+                                            wVar.q = v0.n(!eVar.a ? "video/webm" : "video/x-matroska");
+                                            wVar.r = v0.n(str6);
                                             wVar.s = i12;
                                             wVar.d = eVar.Z;
                                             wVar.e = i27222222;
@@ -1399,20 +1394,20 @@ public final class f implements o {
                                             wVar.j = str2;
                                             wVar.v = eVar.m;
                                             eVar.b0 = wVar.a();
-                                            eVar.a0 = fVar5.j0.F1(eVar.d, eVar.e);
+                                            eVar.a0 = fVar3.j0.I1(eVar.d, eVar.e);
                                             r92.put(eVar.d, eVar);
                                             break;
                                         case 6:
                                             str6 = "audio/mpeg";
                                             D = -1;
-                                            i12 = 4096;
+                                            i12 = TLObject.FLAG_12;
                                             str2 = null;
                                             list3 = null;
                                             if (eVar.P != null) {
                                             }
                                             int i272222222 = (eVar.Y ? 1 : 0) | (!eVar.X ? 2 : 0);
                                             wVar = new w();
-                                            i13 = w0.i(str6);
+                                            i13 = v0.i(str6);
                                             Map map2222222 = p0;
                                             if (!i13) {
                                             }
@@ -1420,8 +1415,8 @@ public final class f implements o {
                                             if (str4 != null) {
                                             }
                                             wVar.a = Integer.toString(i26);
-                                            wVar.q = w0.n(!eVar.a ? "video/webm" : "video/x-matroska");
-                                            wVar.r = w0.n(str6);
+                                            wVar.q = v0.n(!eVar.a ? "video/webm" : "video/x-matroska");
+                                            wVar.r = v0.n(str6);
                                             wVar.s = i12;
                                             wVar.d = eVar.Z;
                                             wVar.e = i272222222;
@@ -1429,27 +1424,27 @@ public final class f implements o {
                                             wVar.j = str2;
                                             wVar.v = eVar.m;
                                             eVar.b0 = wVar.a();
-                                            eVar.a0 = fVar5.j0.F1(eVar.d, eVar.e);
+                                            eVar.a0 = fVar3.j0.I1(eVar.d, eVar.e);
                                             r92.put(eVar.d, eVar);
                                             break;
                                         case 7:
                                             x xVar2 = new x(eVar.a(eVar.c));
                                             try {
                                                 xVar2.O(16);
-                                                long r6 = xVar2.r();
-                                                if (r6 == 1482049860) {
+                                                long r10 = xVar2.r();
+                                                if (r10 == 1482049860) {
                                                     runtimeException = null;
                                                     try {
                                                         pair = new Pair("video/divx", null);
                                                         str2 = null;
                                                     } catch (ArrayIndexOutOfBoundsException unused4) {
-                                                        throw x0.a(runtimeException, "Error parsing FourCC private data");
+                                                        throw w0.a(runtimeException, "Error parsing FourCC private data");
                                                     }
                                                 } else {
-                                                    if (r6 == 859189832) {
+                                                    if (r10 == 859189832) {
                                                         pair = new Pair("video/3gpp", null);
                                                     } else {
-                                                        if (r6 == 826496599) {
+                                                        if (r10 == 826496599) {
                                                             byte[] bArr8 = xVar2.a;
                                                             for (int i46 = xVar2.b + 20; i46 < bArr8.length - 4; i46++) {
                                                                 if (bArr8[i46] == 0 && bArr8[i46 + 1] == 0 && bArr8[i46 + 2] == 1) {
@@ -1459,7 +1454,7 @@ public final class f implements o {
                                                                 }
                                                             }
                                                             runtimeException = null;
-                                                            throw x0.a(null, "Failed to find FourCC VC1 initialization data");
+                                                            throw w0.a(null, "Failed to find FourCC VC1 initialization data");
                                                         }
                                                         e2.a.l("MatroskaExtractor", "Unknown FourCC. Setting mimeType to video/x-unknown");
                                                         str2 = null;
@@ -1476,7 +1471,7 @@ public final class f implements o {
                                                 }
                                                 int i2722222222 = (eVar.Y ? 1 : 0) | (!eVar.X ? 2 : 0);
                                                 wVar = new w();
-                                                i13 = w0.i(str6);
+                                                i13 = v0.i(str6);
                                                 Map map22222222 = p0;
                                                 if (!i13) {
                                                 }
@@ -1484,8 +1479,8 @@ public final class f implements o {
                                                 if (str4 != null) {
                                                 }
                                                 wVar.a = Integer.toString(i26);
-                                                wVar.q = w0.n(!eVar.a ? "video/webm" : "video/x-matroska");
-                                                wVar.r = w0.n(str6);
+                                                wVar.q = v0.n(!eVar.a ? "video/webm" : "video/x-matroska");
+                                                wVar.r = v0.n(str6);
                                                 wVar.s = i12;
                                                 wVar.d = eVar.Z;
                                                 wVar.e = i2722222222;
@@ -1493,7 +1488,7 @@ public final class f implements o {
                                                 wVar.j = str2;
                                                 wVar.v = eVar.m;
                                                 eVar.b0 = wVar.a();
-                                                eVar.a0 = fVar5.j0.F1(eVar.d, eVar.e);
+                                                eVar.a0 = fVar3.j0.I1(eVar.d, eVar.e);
                                                 r92.put(eVar.d, eVar);
                                             } catch (ArrayIndexOutOfBoundsException unused5) {
                                                 runtimeException = null;
@@ -1502,7 +1497,7 @@ public final class f implements o {
                                         case '\b':
                                             byte[] bArr9 = new byte[4];
                                             System.arraycopy(eVar.a(str5), 0, bArr9, 0, 4);
-                                            y3 = i0.y(bArr9);
+                                            y3 = n0.y(bArr9);
                                             str6 = "application/dvbsubs";
                                             D = -1;
                                             i12 = -1;
@@ -1513,7 +1508,7 @@ public final class f implements o {
                                             }
                                             int i27222222222 = (eVar.Y ? 1 : 0) | (!eVar.X ? 2 : 0);
                                             wVar = new w();
-                                            i13 = w0.i(str6);
+                                            i13 = v0.i(str6);
                                             Map map222222222 = p0;
                                             if (!i13) {
                                             }
@@ -1521,8 +1516,8 @@ public final class f implements o {
                                             if (str4 != null) {
                                             }
                                             wVar.a = Integer.toString(i26);
-                                            wVar.q = w0.n(!eVar.a ? "video/webm" : "video/x-matroska");
-                                            wVar.r = w0.n(str6);
+                                            wVar.q = v0.n(!eVar.a ? "video/webm" : "video/x-matroska");
+                                            wVar.r = v0.n(str6);
                                             wVar.s = i12;
                                             wVar.d = eVar.Z;
                                             wVar.e = i27222222222;
@@ -1530,7 +1525,7 @@ public final class f implements o {
                                             wVar.j = str2;
                                             wVar.v = eVar.m;
                                             eVar.b0 = wVar.a();
-                                            eVar.a0 = fVar5.j0.F1(eVar.d, eVar.e);
+                                            eVar.a0 = fVar3.j0.I1(eVar.d, eVar.e);
                                             r92.put(eVar.d, eVar);
                                             break;
                                         case '\n':
@@ -1538,7 +1533,7 @@ public final class f implements o {
                                             ArrayList arrayList3 = a13.a;
                                             eVar.c0 = a13.b;
                                             str3 = a13.l;
-                                            str6 = MediaController.VIDEO_MIME_TYPE;
+                                            str6 = "video/avc";
                                             list2 = arrayList3;
                                             str2 = str3;
                                             list = list2;
@@ -1549,7 +1544,7 @@ public final class f implements o {
                                             }
                                             int i272222222222 = (eVar.Y ? 1 : 0) | (!eVar.X ? 2 : 0);
                                             wVar = new w();
-                                            i13 = w0.i(str6);
+                                            i13 = v0.i(str6);
                                             Map map2222222222 = p0;
                                             if (!i13) {
                                             }
@@ -1557,8 +1552,8 @@ public final class f implements o {
                                             if (str4 != null) {
                                             }
                                             wVar.a = Integer.toString(i26);
-                                            wVar.q = w0.n(!eVar.a ? "video/webm" : "video/x-matroska");
-                                            wVar.r = w0.n(str6);
+                                            wVar.q = v0.n(!eVar.a ? "video/webm" : "video/x-matroska");
+                                            wVar.r = v0.n(str6);
                                             wVar.s = i12;
                                             wVar.d = eVar.Z;
                                             wVar.e = i272222222222;
@@ -1566,11 +1561,11 @@ public final class f implements o {
                                             wVar.j = str2;
                                             wVar.v = eVar.m;
                                             eVar.b0 = wVar.a();
-                                            eVar.a0 = fVar5.j0.F1(eVar.d, eVar.e);
+                                            eVar.a0 = fVar3.j0.I1(eVar.d, eVar.e);
                                             r92.put(eVar.d, eVar);
                                             break;
                                         case 11:
-                                            y3 = i0.y(eVar.a(str5));
+                                            y3 = n0.y(eVar.a(str5));
                                             str6 = "application/vobsub";
                                             D = -1;
                                             i12 = -1;
@@ -1581,7 +1576,7 @@ public final class f implements o {
                                             }
                                             int i2722222222222 = (eVar.Y ? 1 : 0) | (!eVar.X ? 2 : 0);
                                             wVar = new w();
-                                            i13 = w0.i(str6);
+                                            i13 = v0.i(str6);
                                             Map map22222222222 = p0;
                                             if (!i13) {
                                             }
@@ -1589,8 +1584,8 @@ public final class f implements o {
                                             if (str4 != null) {
                                             }
                                             wVar.a = Integer.toString(i26);
-                                            wVar.q = w0.n(!eVar.a ? "video/webm" : "video/x-matroska");
-                                            wVar.r = w0.n(str6);
+                                            wVar.q = v0.n(!eVar.a ? "video/webm" : "video/x-matroska");
+                                            wVar.r = v0.n(str6);
                                             wVar.s = i12;
                                             wVar.d = eVar.Z;
                                             wVar.e = i2722222222222;
@@ -1598,7 +1593,7 @@ public final class f implements o {
                                             wVar.j = str2;
                                             wVar.v = eVar.m;
                                             eVar.b0 = wVar.a();
-                                            eVar.a0 = fVar5.j0.F1(eVar.d, eVar.e);
+                                            eVar.a0 = fVar3.j0.I1(eVar.d, eVar.e);
                                             r92.put(eVar.d, eVar);
                                             break;
                                         case '\f':
@@ -1611,7 +1606,7 @@ public final class f implements o {
                                             }
                                             int i27222222222222 = (eVar.Y ? 1 : 0) | (!eVar.X ? 2 : 0);
                                             wVar = new w();
-                                            i13 = w0.i(str6);
+                                            i13 = v0.i(str6);
                                             Map map222222222222 = p0;
                                             if (!i13) {
                                             }
@@ -1619,8 +1614,8 @@ public final class f implements o {
                                             if (str4 != null) {
                                             }
                                             wVar.a = Integer.toString(i26);
-                                            wVar.q = w0.n(!eVar.a ? "video/webm" : "video/x-matroska");
-                                            wVar.r = w0.n(str6);
+                                            wVar.q = v0.n(!eVar.a ? "video/webm" : "video/x-matroska");
+                                            wVar.r = v0.n(str6);
                                             wVar.s = i12;
                                             wVar.d = eVar.Z;
                                             wVar.e = i27222222222222;
@@ -1628,7 +1623,7 @@ public final class f implements o {
                                             wVar.j = str2;
                                             wVar.v = eVar.m;
                                             eVar.b0 = wVar.a();
-                                            eVar.a0 = fVar5.j0.F1(eVar.d, eVar.e);
+                                            eVar.a0 = fVar3.j0.I1(eVar.d, eVar.e);
                                             r92.put(eVar.d, eVar);
                                             break;
                                         case '\r':
@@ -1637,10 +1632,9 @@ public final class f implements o {
                                             c3.a n10 = c3.b.n(new a4.g(bArr10, bArr10.length), false);
                                             eVar.S = n10.b;
                                             eVar.Q = n10.c;
-                                            String str9 = n10.a;
-                                            str6 = MediaController.AUDIO_MIME_TYPE;
+                                            str6 = "audio/mp4a-latm";
                                             list = singletonList2;
-                                            str2 = str9;
+                                            str2 = n10.a;
                                             D = -1;
                                             i12 = -1;
                                             list3 = list;
@@ -1648,7 +1642,7 @@ public final class f implements o {
                                             }
                                             int i272222222222222 = (eVar.Y ? 1 : 0) | (!eVar.X ? 2 : 0);
                                             wVar = new w();
-                                            i13 = w0.i(str6);
+                                            i13 = v0.i(str6);
                                             Map map2222222222222 = p0;
                                             if (!i13) {
                                             }
@@ -1656,8 +1650,8 @@ public final class f implements o {
                                             if (str4 != null) {
                                             }
                                             wVar.a = Integer.toString(i26);
-                                            wVar.q = w0.n(!eVar.a ? "video/webm" : "video/x-matroska");
-                                            wVar.r = w0.n(str6);
+                                            wVar.q = v0.n(!eVar.a ? "video/webm" : "video/x-matroska");
+                                            wVar.r = v0.n(str6);
                                             wVar.s = i12;
                                             wVar.d = eVar.Z;
                                             wVar.e = i272222222222222;
@@ -1665,7 +1659,7 @@ public final class f implements o {
                                             wVar.j = str2;
                                             wVar.v = eVar.m;
                                             eVar.b0 = wVar.a();
-                                            eVar.a0 = fVar5.j0.F1(eVar.d, eVar.e);
+                                            eVar.a0 = fVar3.j0.I1(eVar.d, eVar.e);
                                             r92.put(eVar.d, eVar);
                                             break;
                                         case 14:
@@ -1678,7 +1672,7 @@ public final class f implements o {
                                             }
                                             int i2722222222222222 = (eVar.Y ? 1 : 0) | (!eVar.X ? 2 : 0);
                                             wVar = new w();
-                                            i13 = w0.i(str6);
+                                            i13 = v0.i(str6);
                                             Map map22222222222222 = p0;
                                             if (!i13) {
                                             }
@@ -1686,8 +1680,8 @@ public final class f implements o {
                                             if (str4 != null) {
                                             }
                                             wVar.a = Integer.toString(i26);
-                                            wVar.q = w0.n(!eVar.a ? "video/webm" : "video/x-matroska");
-                                            wVar.r = w0.n(str6);
+                                            wVar.q = v0.n(!eVar.a ? "video/webm" : "video/x-matroska");
+                                            wVar.r = v0.n(str6);
                                             wVar.s = i12;
                                             wVar.d = eVar.Z;
                                             wVar.e = i2722222222222222;
@@ -1695,7 +1689,7 @@ public final class f implements o {
                                             wVar.j = str2;
                                             wVar.v = eVar.m;
                                             eVar.b0 = wVar.a();
-                                            eVar.a0 = fVar5.j0.F1(eVar.d, eVar.e);
+                                            eVar.a0 = fVar3.j0.I1(eVar.d, eVar.e);
                                             r92.put(eVar.d, eVar);
                                             break;
                                         case 15:
@@ -1710,7 +1704,7 @@ public final class f implements o {
                                             }
                                             int i27222222222222222 = (eVar.Y ? 1 : 0) | (!eVar.X ? 2 : 0);
                                             wVar = new w();
-                                            i13 = w0.i(str6);
+                                            i13 = v0.i(str6);
                                             Map map222222222222222 = p0;
                                             if (!i13) {
                                             }
@@ -1718,8 +1712,8 @@ public final class f implements o {
                                             if (str4 != null) {
                                             }
                                             wVar.a = Integer.toString(i26);
-                                            wVar.q = w0.n(!eVar.a ? "video/webm" : "video/x-matroska");
-                                            wVar.r = w0.n(str6);
+                                            wVar.q = v0.n(!eVar.a ? "video/webm" : "video/x-matroska");
+                                            wVar.r = v0.n(str6);
                                             wVar.s = i12;
                                             wVar.d = eVar.Z;
                                             wVar.e = i27222222222222222;
@@ -1727,12 +1721,12 @@ public final class f implements o {
                                             wVar.j = str2;
                                             wVar.v = eVar.m;
                                             eVar.b0 = wVar.a();
-                                            eVar.a0 = fVar5.j0.F1(eVar.d, eVar.e);
+                                            eVar.a0 = fVar3.j0.I1(eVar.d, eVar.e);
                                             r92.put(eVar.d, eVar);
                                             break;
                                         case 16:
                                             byte[] bArr11 = eVar.l;
-                                            singletonList = bArr11 == null ? null : i0.y(bArr11);
+                                            singletonList = bArr11 == null ? null : n0.y(bArr11);
                                             str6 = "video/av01";
                                             y3 = singletonList;
                                             D = -1;
@@ -1744,7 +1738,7 @@ public final class f implements o {
                                             }
                                             int i272222222222222222 = (eVar.Y ? 1 : 0) | (!eVar.X ? 2 : 0);
                                             wVar = new w();
-                                            i13 = w0.i(str6);
+                                            i13 = v0.i(str6);
                                             Map map2222222222222222 = p0;
                                             if (!i13) {
                                             }
@@ -1752,8 +1746,8 @@ public final class f implements o {
                                             if (str4 != null) {
                                             }
                                             wVar.a = Integer.toString(i26);
-                                            wVar.q = w0.n(!eVar.a ? "video/webm" : "video/x-matroska");
-                                            wVar.r = w0.n(str6);
+                                            wVar.q = v0.n(!eVar.a ? "video/webm" : "video/x-matroska");
+                                            wVar.r = v0.n(str6);
                                             wVar.s = i12;
                                             wVar.d = eVar.Z;
                                             wVar.e = i272222222222222222;
@@ -1761,7 +1755,7 @@ public final class f implements o {
                                             wVar.j = str2;
                                             wVar.v = eVar.m;
                                             eVar.b0 = wVar.a();
-                                            eVar.a0 = fVar5.j0.F1(eVar.d, eVar.e);
+                                            eVar.a0 = fVar3.j0.I1(eVar.d, eVar.e);
                                             r92.put(eVar.d, eVar);
                                             break;
                                         case 17:
@@ -1774,7 +1768,7 @@ public final class f implements o {
                                             }
                                             int i2722222222222222222 = (eVar.Y ? 1 : 0) | (!eVar.X ? 2 : 0);
                                             wVar = new w();
-                                            i13 = w0.i(str6);
+                                            i13 = v0.i(str6);
                                             Map map22222222222222222 = p0;
                                             if (!i13) {
                                             }
@@ -1782,8 +1776,8 @@ public final class f implements o {
                                             if (str4 != null) {
                                             }
                                             wVar.a = Integer.toString(i26);
-                                            wVar.q = w0.n(!eVar.a ? "video/webm" : "video/x-matroska");
-                                            wVar.r = w0.n(str6);
+                                            wVar.q = v0.n(!eVar.a ? "video/webm" : "video/x-matroska");
+                                            wVar.r = v0.n(str6);
                                             wVar.s = i12;
                                             wVar.d = eVar.Z;
                                             wVar.e = i2722222222222222222;
@@ -1791,12 +1785,12 @@ public final class f implements o {
                                             wVar.j = str2;
                                             wVar.v = eVar.m;
                                             eVar.b0 = wVar.a();
-                                            eVar.a0 = fVar5.j0.F1(eVar.d, eVar.e);
+                                            eVar.a0 = fVar3.j0.I1(eVar.d, eVar.e);
                                             r92.put(eVar.d, eVar);
                                             break;
                                         case 18:
                                             byte[] bArr12 = eVar.l;
-                                            singletonList = bArr12 == null ? null : i0.y(bArr12);
+                                            singletonList = bArr12 == null ? null : n0.y(bArr12);
                                             str6 = "video/x-vnd.on2.vp9";
                                             y3 = singletonList;
                                             D = -1;
@@ -1808,7 +1802,7 @@ public final class f implements o {
                                             }
                                             int i27222222222222222222 = (eVar.Y ? 1 : 0) | (!eVar.X ? 2 : 0);
                                             wVar = new w();
-                                            i13 = w0.i(str6);
+                                            i13 = v0.i(str6);
                                             Map map222222222222222222 = p0;
                                             if (!i13) {
                                             }
@@ -1816,8 +1810,8 @@ public final class f implements o {
                                             if (str4 != null) {
                                             }
                                             wVar.a = Integer.toString(i26);
-                                            wVar.q = w0.n(!eVar.a ? "video/webm" : "video/x-matroska");
-                                            wVar.r = w0.n(str6);
+                                            wVar.q = v0.n(!eVar.a ? "video/webm" : "video/x-matroska");
+                                            wVar.r = v0.n(str6);
                                             wVar.s = i12;
                                             wVar.d = eVar.Z;
                                             wVar.e = i27222222222222222222;
@@ -1825,7 +1819,7 @@ public final class f implements o {
                                             wVar.j = str2;
                                             wVar.v = eVar.m;
                                             eVar.b0 = wVar.a();
-                                            eVar.a0 = fVar5.j0.F1(eVar.d, eVar.e);
+                                            eVar.a0 = fVar3.j0.I1(eVar.d, eVar.e);
                                             r92.put(eVar.d, eVar);
                                             break;
                                         case 19:
@@ -1838,7 +1832,7 @@ public final class f implements o {
                                             }
                                             int i272222222222222222222 = (eVar.Y ? 1 : 0) | (!eVar.X ? 2 : 0);
                                             wVar = new w();
-                                            i13 = w0.i(str6);
+                                            i13 = v0.i(str6);
                                             Map map2222222222222222222 = p0;
                                             if (!i13) {
                                             }
@@ -1846,8 +1840,8 @@ public final class f implements o {
                                             if (str4 != null) {
                                             }
                                             wVar.a = Integer.toString(i26);
-                                            wVar.q = w0.n(!eVar.a ? "video/webm" : "video/x-matroska");
-                                            wVar.r = w0.n(str6);
+                                            wVar.q = v0.n(!eVar.a ? "video/webm" : "video/x-matroska");
+                                            wVar.r = v0.n(str6);
                                             wVar.s = i12;
                                             wVar.d = eVar.Z;
                                             wVar.e = i272222222222222222222;
@@ -1855,7 +1849,7 @@ public final class f implements o {
                                             wVar.j = str2;
                                             wVar.v = eVar.m;
                                             eVar.b0 = wVar.a();
-                                            eVar.a0 = fVar5.j0.F1(eVar.d, eVar.e);
+                                            eVar.a0 = fVar3.j0.I1(eVar.d, eVar.e);
                                             r92.put(eVar.d, eVar);
                                             break;
                                         case 20:
@@ -1867,7 +1861,7 @@ public final class f implements o {
                                             }
                                             int i2722222222222222222222 = (eVar.Y ? 1 : 0) | (!eVar.X ? 2 : 0);
                                             wVar = new w();
-                                            i13 = w0.i(str6);
+                                            i13 = v0.i(str6);
                                             Map map22222222222222222222 = p0;
                                             if (!i13) {
                                             }
@@ -1875,8 +1869,8 @@ public final class f implements o {
                                             if (str4 != null) {
                                             }
                                             wVar.a = Integer.toString(i26);
-                                            wVar.q = w0.n(!eVar.a ? "video/webm" : "video/x-matroska");
-                                            wVar.r = w0.n(str6);
+                                            wVar.q = v0.n(!eVar.a ? "video/webm" : "video/x-matroska");
+                                            wVar.r = v0.n(str6);
                                             wVar.s = i12;
                                             wVar.d = eVar.Z;
                                             wVar.e = i2722222222222222222222;
@@ -1884,7 +1878,7 @@ public final class f implements o {
                                             wVar.j = str2;
                                             wVar.v = eVar.m;
                                             eVar.b0 = wVar.a();
-                                            eVar.a0 = fVar5.j0.F1(eVar.d, eVar.e);
+                                            eVar.a0 = fVar3.j0.I1(eVar.d, eVar.e);
                                             r92.put(eVar.d, eVar);
                                             break;
                                         case 22:
@@ -1898,7 +1892,7 @@ public final class f implements o {
                                                 }
                                                 int i27222222222222222222222 = (eVar.Y ? 1 : 0) | (!eVar.X ? 2 : 0);
                                                 wVar = new w();
-                                                i13 = w0.i(str6);
+                                                i13 = v0.i(str6);
                                                 Map map222222222222222222222 = p0;
                                                 if (!i13) {
                                                 }
@@ -1906,8 +1900,8 @@ public final class f implements o {
                                                 if (str4 != null) {
                                                 }
                                                 wVar.a = Integer.toString(i26);
-                                                wVar.q = w0.n(!eVar.a ? "video/webm" : "video/x-matroska");
-                                                wVar.r = w0.n(str6);
+                                                wVar.q = v0.n(!eVar.a ? "video/webm" : "video/x-matroska");
+                                                wVar.r = v0.n(str6);
                                                 wVar.s = i12;
                                                 wVar.d = eVar.Z;
                                                 wVar.e = i27222222222222222222222;
@@ -1915,7 +1909,7 @@ public final class f implements o {
                                                 wVar.j = str2;
                                                 wVar.v = eVar.m;
                                                 eVar.b0 = wVar.a();
-                                                eVar.a0 = fVar5.j0.F1(eVar.d, eVar.e);
+                                                eVar.a0 = fVar3.j0.I1(eVar.d, eVar.e);
                                                 r92.put(eVar.d, eVar);
                                             } else {
                                                 e2.a.l("MatroskaExtractor", "Unsupported floating point PCM bit depth: " + eVar.R + ". Setting mimeType to audio/x-unknown");
@@ -1928,7 +1922,7 @@ public final class f implements o {
                                                 }
                                                 int i272222222222222222222222 = (eVar.Y ? 1 : 0) | (!eVar.X ? 2 : 0);
                                                 wVar = new w();
-                                                i13 = w0.i(str6);
+                                                i13 = v0.i(str6);
                                                 Map map2222222222222222222222 = p0;
                                                 if (!i13) {
                                                 }
@@ -1936,8 +1930,8 @@ public final class f implements o {
                                                 if (str4 != null) {
                                                 }
                                                 wVar.a = Integer.toString(i26);
-                                                wVar.q = w0.n(!eVar.a ? "video/webm" : "video/x-matroska");
-                                                wVar.r = w0.n(str6);
+                                                wVar.q = v0.n(!eVar.a ? "video/webm" : "video/x-matroska");
+                                                wVar.r = v0.n(str6);
                                                 wVar.s = i12;
                                                 wVar.d = eVar.Z;
                                                 wVar.e = i272222222222222222222222;
@@ -1945,7 +1939,7 @@ public final class f implements o {
                                                 wVar.j = str2;
                                                 wVar.v = eVar.m;
                                                 eVar.b0 = wVar.a();
-                                                eVar.a0 = fVar5.j0.F1(eVar.d, eVar.e);
+                                                eVar.a0 = fVar3.j0.I1(eVar.d, eVar.e);
                                                 r92.put(eVar.d, eVar);
                                             }
                                             break;
@@ -1961,7 +1955,7 @@ public final class f implements o {
                                                 }
                                                 int i2722222222222222222222222 = (eVar.Y ? 1 : 0) | (!eVar.X ? 2 : 0);
                                                 wVar = new w();
-                                                i13 = w0.i(str6);
+                                                i13 = v0.i(str6);
                                                 Map map22222222222222222222222 = p0;
                                                 if (!i13) {
                                                 }
@@ -1969,8 +1963,8 @@ public final class f implements o {
                                                 if (str4 != null) {
                                                 }
                                                 wVar.a = Integer.toString(i26);
-                                                wVar.q = w0.n(!eVar.a ? "video/webm" : "video/x-matroska");
-                                                wVar.r = w0.n(str6);
+                                                wVar.q = v0.n(!eVar.a ? "video/webm" : "video/x-matroska");
+                                                wVar.r = v0.n(str6);
                                                 wVar.s = i12;
                                                 wVar.d = eVar.Z;
                                                 wVar.e = i2722222222222222222222222;
@@ -1978,7 +1972,7 @@ public final class f implements o {
                                                 wVar.j = str2;
                                                 wVar.v = eVar.m;
                                                 eVar.b0 = wVar.a();
-                                                eVar.a0 = fVar5.j0.F1(eVar.d, eVar.e);
+                                                eVar.a0 = fVar3.j0.I1(eVar.d, eVar.e);
                                                 r92.put(eVar.d, eVar);
                                             } else {
                                                 if (i47 == 16) {
@@ -1998,7 +1992,7 @@ public final class f implements o {
                                                     }
                                                     int i27222222222222222222222222 = (eVar.Y ? 1 : 0) | (!eVar.X ? 2 : 0);
                                                     wVar = new w();
-                                                    i13 = w0.i(str6);
+                                                    i13 = v0.i(str6);
                                                     Map map222222222222222222222222 = p0;
                                                     if (!i13) {
                                                     }
@@ -2006,8 +2000,8 @@ public final class f implements o {
                                                     if (str4 != null) {
                                                     }
                                                     wVar.a = Integer.toString(i26);
-                                                    wVar.q = w0.n(!eVar.a ? "video/webm" : "video/x-matroska");
-                                                    wVar.r = w0.n(str6);
+                                                    wVar.q = v0.n(!eVar.a ? "video/webm" : "video/x-matroska");
+                                                    wVar.r = v0.n(str6);
                                                     wVar.s = i12;
                                                     wVar.d = eVar.Z;
                                                     wVar.e = i27222222222222222222222222;
@@ -2015,7 +2009,7 @@ public final class f implements o {
                                                     wVar.j = str2;
                                                     wVar.v = eVar.m;
                                                     eVar.b0 = wVar.a();
-                                                    eVar.a0 = fVar5.j0.F1(eVar.d, eVar.e);
+                                                    eVar.a0 = fVar3.j0.I1(eVar.d, eVar.e);
                                                     r92.put(eVar.d, eVar);
                                                 }
                                                 str6 = "audio/raw";
@@ -2026,7 +2020,7 @@ public final class f implements o {
                                                 }
                                                 int i272222222222222222222222222 = (eVar.Y ? 1 : 0) | (!eVar.X ? 2 : 0);
                                                 wVar = new w();
-                                                i13 = w0.i(str6);
+                                                i13 = v0.i(str6);
                                                 Map map2222222222222222222222222 = p0;
                                                 if (!i13) {
                                                 }
@@ -2034,8 +2028,8 @@ public final class f implements o {
                                                 if (str4 != null) {
                                                 }
                                                 wVar.a = Integer.toString(i26);
-                                                wVar.q = w0.n(!eVar.a ? "video/webm" : "video/x-matroska");
-                                                wVar.r = w0.n(str6);
+                                                wVar.q = v0.n(!eVar.a ? "video/webm" : "video/x-matroska");
+                                                wVar.r = v0.n(str6);
                                                 wVar.s = i12;
                                                 wVar.d = eVar.Z;
                                                 wVar.e = i272222222222222222222222222;
@@ -2043,14 +2037,14 @@ public final class f implements o {
                                                 wVar.j = str2;
                                                 wVar.v = eVar.m;
                                                 eVar.b0 = wVar.a();
-                                                eVar.a0 = fVar5.j0.F1(eVar.d, eVar.e);
+                                                eVar.a0 = fVar3.j0.I1(eVar.d, eVar.e);
                                                 r92.put(eVar.d, eVar);
                                             }
                                             break;
                                         case 24:
                                             int i48 = eVar.R;
-                                            String str10 = n0.a;
-                                            D = n0.D(i48, ByteOrder.LITTLE_ENDIAN);
+                                            String str9 = l0.a;
+                                            D = l0.D(i48, ByteOrder.LITTLE_ENDIAN);
                                             if (D == 0) {
                                                 e2.a.l("MatroskaExtractor", "Unsupported little endian PCM bit depth: " + eVar.R + ". Setting mimeType to audio/x-unknown");
                                                 str6 = "audio/x-unknown";
@@ -2062,7 +2056,7 @@ public final class f implements o {
                                                 }
                                                 int i2722222222222222222222222222 = (eVar.Y ? 1 : 0) | (!eVar.X ? 2 : 0);
                                                 wVar = new w();
-                                                i13 = w0.i(str6);
+                                                i13 = v0.i(str6);
                                                 Map map22222222222222222222222222 = p0;
                                                 if (!i13) {
                                                 }
@@ -2070,8 +2064,8 @@ public final class f implements o {
                                                 if (str4 != null) {
                                                 }
                                                 wVar.a = Integer.toString(i26);
-                                                wVar.q = w0.n(!eVar.a ? "video/webm" : "video/x-matroska");
-                                                wVar.r = w0.n(str6);
+                                                wVar.q = v0.n(!eVar.a ? "video/webm" : "video/x-matroska");
+                                                wVar.r = v0.n(str6);
                                                 wVar.s = i12;
                                                 wVar.d = eVar.Z;
                                                 wVar.e = i2722222222222222222222222222;
@@ -2079,7 +2073,7 @@ public final class f implements o {
                                                 wVar.j = str2;
                                                 wVar.v = eVar.m;
                                                 eVar.b0 = wVar.a();
-                                                eVar.a0 = fVar5.j0.F1(eVar.d, eVar.e);
+                                                eVar.a0 = fVar3.j0.I1(eVar.d, eVar.e);
                                                 r92.put(eVar.d, eVar);
                                             }
                                             str6 = "audio/raw";
@@ -2090,7 +2084,7 @@ public final class f implements o {
                                             }
                                             int i27222222222222222222222222222 = (eVar.Y ? 1 : 0) | (!eVar.X ? 2 : 0);
                                             wVar = new w();
-                                            i13 = w0.i(str6);
+                                            i13 = v0.i(str6);
                                             Map map222222222222222222222222222 = p0;
                                             if (!i13) {
                                             }
@@ -2098,8 +2092,8 @@ public final class f implements o {
                                             if (str4 != null) {
                                             }
                                             wVar.a = Integer.toString(i26);
-                                            wVar.q = w0.n(!eVar.a ? "video/webm" : "video/x-matroska");
-                                            wVar.r = w0.n(str6);
+                                            wVar.q = v0.n(!eVar.a ? "video/webm" : "video/x-matroska");
+                                            wVar.r = v0.n(str6);
                                             wVar.s = i12;
                                             wVar.d = eVar.Z;
                                             wVar.e = i27222222222222222222222222222;
@@ -2107,12 +2101,12 @@ public final class f implements o {
                                             wVar.j = str2;
                                             wVar.v = eVar.m;
                                             eVar.b0 = wVar.a();
-                                            eVar.a0 = fVar5.j0.F1(eVar.d, eVar.e);
+                                            eVar.a0 = fVar3.j0.I1(eVar.d, eVar.e);
                                             r92.put(eVar.d, eVar);
                                             break;
                                         case 25:
                                         case 26:
-                                            y3 = i0.z(l0, eVar.a(str5));
+                                            y3 = n0.z(l0, eVar.a(str5));
                                             str6 = "text/x-ssa";
                                             D = -1;
                                             i12 = -1;
@@ -2123,7 +2117,7 @@ public final class f implements o {
                                             }
                                             int i272222222222222222222222222222 = (eVar.Y ? 1 : 0) | (!eVar.X ? 2 : 0);
                                             wVar = new w();
-                                            i13 = w0.i(str6);
+                                            i13 = v0.i(str6);
                                             Map map2222222222222222222222222222 = p0;
                                             if (!i13) {
                                             }
@@ -2131,8 +2125,8 @@ public final class f implements o {
                                             if (str4 != null) {
                                             }
                                             wVar.a = Integer.toString(i26);
-                                            wVar.q = w0.n(!eVar.a ? "video/webm" : "video/x-matroska");
-                                            wVar.r = w0.n(str6);
+                                            wVar.q = v0.n(!eVar.a ? "video/webm" : "video/x-matroska");
+                                            wVar.r = v0.n(str6);
                                             wVar.s = i12;
                                             wVar.d = eVar.Z;
                                             wVar.e = i272222222222222222222222222222;
@@ -2140,7 +2134,7 @@ public final class f implements o {
                                             wVar.j = str2;
                                             wVar.v = eVar.m;
                                             eVar.b0 = wVar.a();
-                                            eVar.a0 = fVar5.j0.F1(eVar.d, eVar.e);
+                                            eVar.a0 = fVar3.j0.I1(eVar.d, eVar.e);
                                             r92.put(eVar.d, eVar);
                                             break;
                                         case 27:
@@ -2159,7 +2153,7 @@ public final class f implements o {
                                             }
                                             int i2722222222222222222222222222222 = (eVar.Y ? 1 : 0) | (!eVar.X ? 2 : 0);
                                             wVar = new w();
-                                            i13 = w0.i(str6);
+                                            i13 = v0.i(str6);
                                             Map map22222222222222222222222222222 = p0;
                                             if (!i13) {
                                             }
@@ -2167,8 +2161,8 @@ public final class f implements o {
                                             if (str4 != null) {
                                             }
                                             wVar.a = Integer.toString(i26);
-                                            wVar.q = w0.n(!eVar.a ? "video/webm" : "video/x-matroska");
-                                            wVar.r = w0.n(str6);
+                                            wVar.q = v0.n(!eVar.a ? "video/webm" : "video/x-matroska");
+                                            wVar.r = v0.n(str6);
                                             wVar.s = i12;
                                             wVar.d = eVar.Z;
                                             wVar.e = i2722222222222222222222222222222;
@@ -2176,7 +2170,7 @@ public final class f implements o {
                                             wVar.j = str2;
                                             wVar.v = eVar.m;
                                             eVar.b0 = wVar.a();
-                                            eVar.a0 = fVar5.j0.F1(eVar.d, eVar.e);
+                                            eVar.a0 = fVar3.j0.I1(eVar.d, eVar.e);
                                             r92.put(eVar.d, eVar);
                                             break;
                                         case 28:
@@ -2189,7 +2183,7 @@ public final class f implements o {
                                             }
                                             int i27222222222222222222222222222222 = (eVar.Y ? 1 : 0) | (!eVar.X ? 2 : 0);
                                             wVar = new w();
-                                            i13 = w0.i(str6);
+                                            i13 = v0.i(str6);
                                             Map map222222222222222222222222222222 = p0;
                                             if (!i13) {
                                             }
@@ -2197,8 +2191,8 @@ public final class f implements o {
                                             if (str4 != null) {
                                             }
                                             wVar.a = Integer.toString(i26);
-                                            wVar.q = w0.n(!eVar.a ? "video/webm" : "video/x-matroska");
-                                            wVar.r = w0.n(str6);
+                                            wVar.q = v0.n(!eVar.a ? "video/webm" : "video/x-matroska");
+                                            wVar.r = v0.n(str6);
                                             wVar.s = i12;
                                             wVar.d = eVar.Z;
                                             wVar.e = i27222222222222222222222222222222;
@@ -2206,7 +2200,7 @@ public final class f implements o {
                                             wVar.j = str2;
                                             wVar.v = eVar.m;
                                             eVar.b0 = wVar.a();
-                                            eVar.a0 = fVar5.j0.F1(eVar.d, eVar.e);
+                                            eVar.a0 = fVar3.j0.I1(eVar.d, eVar.e);
                                             r92.put(eVar.d, eVar);
                                             break;
                                         case 29:
@@ -2219,7 +2213,7 @@ public final class f implements o {
                                             }
                                             int i272222222222222222222222222222222 = (eVar.Y ? 1 : 0) | (!eVar.X ? 2 : 0);
                                             wVar = new w();
-                                            i13 = w0.i(str6);
+                                            i13 = v0.i(str6);
                                             Map map2222222222222222222222222222222 = p0;
                                             if (!i13) {
                                             }
@@ -2227,8 +2221,8 @@ public final class f implements o {
                                             if (str4 != null) {
                                             }
                                             wVar.a = Integer.toString(i26);
-                                            wVar.q = w0.n(!eVar.a ? "video/webm" : "video/x-matroska");
-                                            wVar.r = w0.n(str6);
+                                            wVar.q = v0.n(!eVar.a ? "video/webm" : "video/x-matroska");
+                                            wVar.r = v0.n(str6);
                                             wVar.s = i12;
                                             wVar.d = eVar.Z;
                                             wVar.e = i272222222222222222222222222222222;
@@ -2236,10 +2230,10 @@ public final class f implements o {
                                             wVar.j = str2;
                                             wVar.v = eVar.m;
                                             eVar.b0 = wVar.a();
-                                            eVar.a0 = fVar5.j0.F1(eVar.d, eVar.e);
+                                            eVar.a0 = fVar3.j0.I1(eVar.d, eVar.e);
                                             r92.put(eVar.d, eVar);
                                             break;
-                                        case MessageObject.TYPE_GIFT_STARS /* 30 */:
+                                        case zs.T /* 30 */:
                                             str6 = "video/mpeg2";
                                             D = -1;
                                             i12 = -1;
@@ -2249,7 +2243,7 @@ public final class f implements o {
                                             }
                                             int i2722222222222222222222222222222222 = (eVar.Y ? 1 : 0) | (!eVar.X ? 2 : 0);
                                             wVar = new w();
-                                            i13 = w0.i(str6);
+                                            i13 = v0.i(str6);
                                             Map map22222222222222222222222222222222 = p0;
                                             if (!i13) {
                                             }
@@ -2257,8 +2251,8 @@ public final class f implements o {
                                             if (str4 != null) {
                                             }
                                             wVar.a = Integer.toString(i26);
-                                            wVar.q = w0.n(!eVar.a ? "video/webm" : "video/x-matroska");
-                                            wVar.r = w0.n(str6);
+                                            wVar.q = v0.n(!eVar.a ? "video/webm" : "video/x-matroska");
+                                            wVar.r = v0.n(str6);
                                             wVar.s = i12;
                                             wVar.d = eVar.Z;
                                             wVar.e = i2722222222222222222222222222222222;
@@ -2266,10 +2260,10 @@ public final class f implements o {
                                             wVar.j = str2;
                                             wVar.v = eVar.m;
                                             eVar.b0 = wVar.a();
-                                            eVar.a0 = fVar5.j0.F1(eVar.d, eVar.e);
+                                            eVar.a0 = fVar3.j0.I1(eVar.d, eVar.e);
                                             r92.put(eVar.d, eVar);
                                             break;
-                                        case MessageObject.TYPE_GIFT_THEME_UPDATE /* 31 */:
+                                        case zs.U /* 31 */:
                                             str6 = "audio/eac3";
                                             D = -1;
                                             i12 = -1;
@@ -2279,7 +2273,7 @@ public final class f implements o {
                                             }
                                             int i27222222222222222222222222222222222 = (eVar.Y ? 1 : 0) | (!eVar.X ? 2 : 0);
                                             wVar = new w();
-                                            i13 = w0.i(str6);
+                                            i13 = v0.i(str6);
                                             Map map222222222222222222222222222222222 = p0;
                                             if (!i13) {
                                             }
@@ -2287,8 +2281,8 @@ public final class f implements o {
                                             if (str4 != null) {
                                             }
                                             wVar.a = Integer.toString(i26);
-                                            wVar.q = w0.n(!eVar.a ? "video/webm" : "video/x-matroska");
-                                            wVar.r = w0.n(str6);
+                                            wVar.q = v0.n(!eVar.a ? "video/webm" : "video/x-matroska");
+                                            wVar.r = v0.n(str6);
                                             wVar.s = i12;
                                             wVar.d = eVar.Z;
                                             wVar.e = i27222222222222222222222222222222222;
@@ -2296,7 +2290,7 @@ public final class f implements o {
                                             wVar.j = str2;
                                             wVar.v = eVar.m;
                                             eVar.b0 = wVar.a();
-                                            eVar.a0 = fVar5.j0.F1(eVar.d, eVar.e);
+                                            eVar.a0 = fVar3.j0.I1(eVar.d, eVar.e);
                                             r92.put(eVar.d, eVar);
                                             break;
                                         case ' ':
@@ -2312,7 +2306,7 @@ public final class f implements o {
                                             }
                                             int i272222222222222222222222222222222222 = (eVar.Y ? 1 : 0) | (!eVar.X ? 2 : 0);
                                             wVar = new w();
-                                            i13 = w0.i(str6);
+                                            i13 = v0.i(str6);
                                             Map map2222222222222222222222222222222222 = p0;
                                             if (!i13) {
                                             }
@@ -2320,8 +2314,8 @@ public final class f implements o {
                                             if (str4 != null) {
                                             }
                                             wVar.a = Integer.toString(i26);
-                                            wVar.q = w0.n(!eVar.a ? "video/webm" : "video/x-matroska");
-                                            wVar.r = w0.n(str6);
+                                            wVar.q = v0.n(!eVar.a ? "video/webm" : "video/x-matroska");
+                                            wVar.r = v0.n(str6);
                                             wVar.s = i12;
                                             wVar.d = eVar.Z;
                                             wVar.e = i272222222222222222222222222222222222;
@@ -2329,7 +2323,7 @@ public final class f implements o {
                                             wVar.j = str2;
                                             wVar.v = eVar.m;
                                             eVar.b0 = wVar.a();
-                                            eVar.a0 = fVar5.j0.F1(eVar.d, eVar.e);
+                                            eVar.a0 = fVar3.j0.I1(eVar.d, eVar.e);
                                             r92.put(eVar.d, eVar);
                                             break;
                                         case '!':
@@ -2350,7 +2344,7 @@ public final class f implements o {
                                             }
                                             int i2722222222222222222222222222222222222 = (eVar.Y ? 1 : 0) | (!eVar.X ? 2 : 0);
                                             wVar = new w();
-                                            i13 = w0.i(str6);
+                                            i13 = v0.i(str6);
                                             Map map22222222222222222222222222222222222 = p0;
                                             if (!i13) {
                                             }
@@ -2358,8 +2352,8 @@ public final class f implements o {
                                             if (str4 != null) {
                                             }
                                             wVar.a = Integer.toString(i26);
-                                            wVar.q = w0.n(!eVar.a ? "video/webm" : "video/x-matroska");
-                                            wVar.r = w0.n(str6);
+                                            wVar.q = v0.n(!eVar.a ? "video/webm" : "video/x-matroska");
+                                            wVar.r = v0.n(str6);
                                             wVar.s = i12;
                                             wVar.d = eVar.Z;
                                             wVar.e = i2722222222222222222222222222222222222;
@@ -2367,59 +2361,59 @@ public final class f implements o {
                                             wVar.j = str2;
                                             wVar.v = eVar.m;
                                             eVar.b0 = wVar.a();
-                                            eVar.a0 = fVar5.j0.F1(eVar.d, eVar.e);
+                                            eVar.a0 = fVar3.j0.I1(eVar.d, eVar.e);
                                             r92.put(eVar.d, eVar);
                                             break;
                                         default:
-                                            throw x0.a(null, "Unrecognized codec identifier.");
+                                            throw w0.a(null, "Unrecognized codec identifier.");
                                     }
                                 default:
-                                    fVar5.y = null;
+                                    fVar3.y = null;
                                     break;
                             }
                         } else if (i25 != 183) {
                             if (i25 == 19899) {
-                                int i49 = fVar5.A;
+                                int i49 = fVar3.A;
                                 if (i49 != -1) {
-                                    long j16 = fVar5.B;
+                                    long j16 = fVar3.B;
                                     if (j16 != -1) {
                                         if (i49 == 475249515) {
-                                            fVar5.K = j16;
+                                            fVar3.K = j16;
                                         }
                                     }
                                 }
-                                throw x0.a(null, "Mandatory element SeekID or SeekPosition not found");
+                                throw w0.a(null, "Mandatory element SeekID or SeekPosition not found");
                             }
                             if (i25 == 25152) {
-                                fVar5.h(i25);
-                                e eVar2 = fVar5.y;
+                                fVar3.h(i25);
+                                e eVar2 = fVar3.y;
                                 if (eVar2.i) {
-                                    c3.i0 i0Var = eVar2.k;
-                                    if (i0Var == null) {
-                                        throw x0.a(null, "Encrypted Track found but ContentEncKeyID was not found");
+                                    j0 j0Var = eVar2.k;
+                                    if (j0Var == null) {
+                                        throw w0.a(null, "Encrypted Track found but ContentEncKeyID was not found");
                                     }
-                                    eVar2.m = new t(null, true, new b2.s(n.b, null, "video/webm", i0Var.b));
+                                    eVar2.m = new t(null, true, new b2.s(n.b, null, "video/webm", j0Var.b));
                                 }
                             } else if (i25 == 28032) {
-                                fVar5.h(i25);
-                                e eVar3 = fVar5.y;
+                                fVar3.h(i25);
+                                e eVar3 = fVar3.y;
                                 if (eVar3.i && eVar3.j != null) {
-                                    throw x0.a(null, "Combining encryption and compression is not supported");
+                                    throw w0.a(null, "Combining encryption and compression is not supported");
                                 }
                             } else if (i25 == 357149030) {
-                                if (fVar5.t == -9223372036854775807L) {
-                                    fVar5.t = 1000000L;
+                                if (fVar3.t == -9223372036854775807L) {
+                                    fVar3.t = 1000000L;
                                 }
-                                long j17 = fVar5.u;
+                                long j17 = fVar3.u;
                                 if (j17 != -9223372036854775807L) {
-                                    fVar5.v = fVar5.n(j17);
+                                    fVar3.v = fVar3.n(j17);
                                 }
                             } else if (i25 == 374648427) {
                                 boolean z15 = z12;
                                 if (r92.size() == 0) {
-                                    throw x0.a(null, "No valid tracks were found");
+                                    throw w0.a(null, "No valid tracks were found");
                                 }
-                                boolean z16 = (!fVar5.d || fVar5.K == -1) ? true : z15 ? 1 : 0;
+                                boolean z16 = (!fVar3.d || fVar3.K == -1) ? true : z15 ? 1 : 0;
                                 int i50 = -1;
                                 int i51 = -1;
                                 int i52 = -1;
@@ -2445,50 +2439,50 @@ public final class f implements o {
                                     if (z16) {
                                         eVar4.a0.getClass();
                                         if (!eVar4.W) {
-                                            j0 j0Var = eVar4.a0;
+                                            k0 k0Var = eVar4.a0;
                                             b2.x xVar3 = eVar4.b0;
                                             xVar3.getClass();
-                                            j0Var.b(xVar3);
+                                            k0Var.b(xVar3);
                                         }
                                     }
                                 }
                                 if (i50 != -1) {
-                                    fVar5.I = i50;
+                                    fVar3.I = i50;
                                 } else if (i51 != -1) {
-                                    fVar5.I = i51;
+                                    fVar3.I = i51;
                                 } else if (i52 != -1) {
-                                    fVar5.I = i52;
+                                    fVar3.I = i52;
                                 } else if (i53 != -1) {
-                                    fVar5.I = i53;
+                                    fVar3.I = i53;
                                 } else {
-                                    fVar5.I = r92.size() > 0 ? ((e) r92.valueAt(z15 ? 1 : 0)).d : -1;
+                                    fVar3.I = r92.size() > 0 ? ((e) r92.valueAt(z15 ? 1 : 0)).d : -1;
                                 }
                                 if (z16) {
-                                    fVar5.k();
+                                    fVar3.k();
                                 }
-                            } else if (i25 == 475249515 && !fVar5.z) {
+                            } else if (i25 == 475249515 && !fVar3.z) {
                                 ?? r62 = z12;
                                 while (true) {
                                     if (r62 < r83.size()) {
                                         if (((List) r83.valueAt(r62)).isEmpty()) {
                                             r62++;
-                                        } else if (fVar5.v != -9223372036854775807L) {
+                                        } else if (fVar3.v != -9223372036854775807L) {
                                             for (?? r63 = z12; r63 < r83.size(); r63++) {
                                                 Collections.sort((List) r83.valueAt(r63));
                                             }
-                                            fVar5.j0.D1(new d(r83, fVar5.v, fVar5.I, fVar5.s, fVar5.r));
+                                            fVar3.j0.G1(new d(r83, fVar3.v, fVar3.I, fVar3.s, fVar3.r));
                                         }
                                     }
                                 }
-                                fVar5.j0.D1(new c3.t(fVar5.v));
-                                fVar5.z = r42;
-                                fVar5.D = z12;
+                                fVar3.j0.G1(new c3.t(fVar3.v));
+                                fVar3.z = r42;
+                                fVar3.D = z12;
                                 int i56 = r42;
                                 for (?? r64 = z12; r64 < r92.size(); r64 = i17 + 1) {
                                     e eVar5 = (e) r92.valueAt(r64);
-                                    long j18 = fVar5.v;
-                                    long j19 = fVar5.s;
-                                    long j20 = fVar5.r;
+                                    long j18 = fVar3.v;
+                                    long j19 = fVar3.s;
+                                    long j20 = fVar3.r;
                                     boolean z17 = z12;
                                     int i57 = i56;
                                     if (eVar5.e != 2 || (list5 = (List) r83.get(eVar5.d)) == null || list5.isEmpty()) {
@@ -2559,60 +2553,60 @@ public final class f implements o {
                                     }
                                     if (!eVar5.W) {
                                         eVar5.a0.getClass();
-                                        j0 j0Var2 = eVar5.a0;
+                                        k0 k0Var2 = eVar5.a0;
                                         b2.x xVar5 = eVar5.b0;
                                         xVar5.getClass();
-                                        j0Var2.b(xVar5);
+                                        k0Var2.b(xVar5);
                                     }
                                     z12 = z17 ? 1 : 0;
                                     i56 = 1;
                                 }
-                                fVar5.k();
+                                fVar3.k();
                                 z11 = z12;
                                 pVar2 = pVar;
                             }
-                        } else if (!fVar5.z) {
-                            fVar5.g(i25);
-                            if (fVar5.E != -9223372036854775807L && (i16 = fVar5.F) != -1 && fVar5.G != -1) {
+                        } else if (!fVar3.z) {
+                            fVar3.g(i25);
+                            if (fVar3.E != -9223372036854775807L && (i16 = fVar3.F) != -1 && fVar3.G != -1) {
                                 List list7 = (List) r83.get(i16);
                                 if (list7 == null) {
                                     list7 = new ArrayList();
-                                    r83.put(fVar5.F, list7);
+                                    r83.put(fVar3.F, list7);
                                 }
-                                list7.add(new c(fVar5.E, fVar5.s + fVar5.G, fVar5.H));
+                                list7.add(new c(fVar3.E, fVar3.s + fVar3.G, fVar3.H));
                             }
                         }
                         z11 = false;
                         pVar2 = pVar;
                     } else {
-                        if (fVar5.O == 2) {
-                            e eVar6 = (e) r92.get(fVar5.U);
+                        if (fVar3.O == 2) {
+                            e eVar6 = (e) r92.get(fVar3.U);
                             eVar6.a0.getClass();
-                            if (fVar5.Z > 0 && "A_OPUS".equals(eVar6.c)) {
-                                x xVar6 = fVar5.p;
-                                byte[] array = ByteBuffer.allocate(8).order(ByteOrder.LITTLE_ENDIAN).putLong(fVar5.Z).array();
+                            if (fVar3.Z > 0 && "A_OPUS".equals(eVar6.c)) {
+                                x xVar6 = fVar3.p;
+                                byte[] array = ByteBuffer.allocate(8).order(ByteOrder.LITTLE_ENDIAN).putLong(fVar3.Z).array();
                                 xVar6.getClass();
                                 xVar6.L(array.length, array);
                             }
                             int i60 = 0;
-                            for (int i61 = 0; i61 < fVar5.S; i61++) {
-                                i60 += fVar5.T[i61];
+                            for (int i61 = 0; i61 < fVar3.S; i61++) {
+                                i60 += fVar3.T[i61];
                             }
                             int i62 = 0;
-                            while (i62 < fVar5.S) {
-                                long j25 = fVar5.P + ((eVar6.f * i62) / MediaDataController.MAX_STYLE_RUNS_COUNT);
-                                int i63 = fVar5.W;
-                                if (i62 == 0 && !fVar5.Y) {
+                            while (i62 < fVar3.S) {
+                                long j25 = fVar3.P + ((eVar6.f * i62) / 1000);
+                                int i63 = fVar3.W;
+                                if (i62 == 0 && !fVar3.Y) {
                                     i63 |= 1;
                                 }
-                                int i64 = fVar5.T[i62];
+                                int i64 = fVar3.T[i62];
                                 int i65 = i60 - i64;
-                                fVar5.i(eVar6, j25, i63, i64, i65);
+                                fVar3.i(eVar6, j25, i63, i64, i65);
                                 i62++;
                                 i60 = i65;
                             }
                             z11 = false;
-                            fVar5.O = 0;
+                            fVar3.O = 0;
                             pVar2 = pVar;
                         }
                         z11 = false;
@@ -2632,9 +2626,9 @@ public final class f implements o {
             }
             e eVar7 = (e) sparseArray.valueAt(i66);
             eVar7.a0.getClass();
-            k0 k0Var = eVar7.V;
-            if (k0Var != null) {
-                k0Var.a(eVar7.a0, eVar7.k);
+            c3.l0 l0Var = eVar7.V;
+            if (l0Var != null) {
+                l0Var.a(eVar7.a0, eVar7.k);
             }
             i66++;
         }
@@ -2644,14 +2638,14 @@ public final class f implements o {
         if (this.D) {
             return;
         }
-        throw x0.a(null, "Element " + i10 + " must be in a Cues");
+        throw w0.a(null, "Element " + i10 + " must be in a Cues");
     }
 
     public final void h(int i10) {
         if (this.y != null) {
             return;
         }
-        throw x0.a(null, "Element " + i10 + " must be in a TrackEntry");
+        throw w0.a(null, "Element " + i10 + " must be in a TrackEntry");
     }
 
     /* JADX WARN: Removed duplicated region for block: B:18:0x00ea  */
@@ -2662,9 +2656,9 @@ public final class f implements o {
         byte[] j11;
         int i13;
         int i14;
-        k0 k0Var = eVar.V;
-        if (k0Var != null) {
-            k0Var.b(eVar.a0, j10, i10, i11, i12, eVar.k);
+        c3.l0 l0Var = eVar.V;
+        if (l0Var != null) {
+            l0Var.b(eVar.a0, j10, i10, i11, i12, eVar.k);
         } else {
             if ("S_TEXT/UTF8".equals(eVar.c) || "S_TEXT/ASS".equals(eVar.c) || "S_TEXT/SSA".equals(eVar.c) || "S_TEXT/WEBVTT".equals(eVar.c)) {
                 if (this.S > 1) {
@@ -2681,15 +2675,15 @@ public final class f implements o {
                         switch (str) {
                             case "S_TEXT/ASS":
                             case "S_TEXT/SSA":
-                                j11 = j(j12, 10000L, "%01d:%02d:%02d:%02d");
+                                j11 = j(j12, "%01d:%02d:%02d:%02d", 10000L);
                                 i13 = 21;
                                 break;
                             case "S_TEXT/WEBVTT":
-                                j11 = j(j12, 1000L, "%02d:%02d:%02d.%03d");
+                                j11 = j(j12, "%02d:%02d:%02d.%03d", 1000L);
                                 i13 = 25;
                                 break;
                             case "S_TEXT/UTF8":
-                                j11 = j(j12, 1000L, "%02d:%02d:%02d,%03d");
+                                j11 = j(j12, "%02d:%02d:%02d,%03d", 1000L);
                                 i13 = 19;
                                 break;
                             default:
@@ -2784,10 +2778,10 @@ public final class f implements o {
     public final long n(long j10) {
         long j11 = this.t;
         if (j11 == -9223372036854775807L) {
-            throw x0.a(null, "Can't scale timecode prior to timecodeScale being set.");
+            throw w0.a(null, "Can't scale timecode prior to timecodeScale being set.");
         }
-        String str = n0.a;
-        return n0.a0(j10, j11, 1000L, RoundingMode.DOWN);
+        String str = l0.a;
+        return l0.a0(j10, j11, 1000L, RoundingMode.DOWN);
     }
 
     public final int o(p pVar, e eVar, int i10, boolean z10) {
@@ -2815,18 +2809,18 @@ public final class f implements o {
         if (eVar.W) {
             eVar.b0.getClass();
             x xVar = new x(i10);
-            if (pVar.h(xVar.a, 0, i10, true)) {
-                pVar.p();
+            if (pVar.j(xVar.a, 0, i10, true)) {
+                pVar.m();
                 if (c3.b.i(xVar.i()) == 1 && xVar.a() >= 10) {
                     byte[] bArr = new byte[10];
                     xVar.k(0, 10, bArr);
                     xVar.N(0);
-                    int g7 = c3.b.g(bArr);
-                    if (g7 > 0 && xVar.a() >= g7 + 4) {
-                        xVar.O(g7);
+                    int g10 = c3.b.g(bArr);
+                    if (g10 > 0 && xVar.a() >= g10 + 4) {
+                        xVar.O(g10);
                         if (c3.b.i(xVar.m()) == 2) {
                             w a11 = eVar.b0.a();
-                            a11.r = w0.n("audio/vnd.dts.hd");
+                            a11.r = v0.n("audio/vnd.dts.hd");
                             eVar.b0 = new b2.x(a11);
                         }
                     }
@@ -2836,7 +2830,7 @@ public final class f implements o {
             eVar.W = false;
             k();
         }
-        j0 j0Var = eVar.a0;
+        k0 k0Var = eVar.a0;
         boolean z11 = this.d0;
         x xVar2 = this.l;
         if (!z11) {
@@ -2849,7 +2843,7 @@ public final class f implements o {
                     this.a0++;
                     byte b10 = xVar3.a[0];
                     if ((b10 & 128) == 128) {
-                        throw x0.a(null, "Extension bit is set in signal byte");
+                        throw w0.a(null, "Extension bit is set in signal byte");
                     }
                     this.h0 = b10;
                     this.e0 = true;
@@ -2865,10 +2859,10 @@ public final class f implements o {
                         this.i0 = true;
                         xVar3.a[0] = (byte) ((z13 ? 128 : 0) | 8);
                         xVar3.N(0);
-                        j0Var.g(xVar3, 1, 1);
+                        k0Var.g(xVar3, 1, 1);
                         this.b0++;
                         xVar4.N(0);
-                        j0Var.g(xVar4, 8, 1);
+                        k0Var.g(xVar4, 8, 1);
                         this.b0 += 8;
                     }
                     if (z13) {
@@ -2917,7 +2911,7 @@ public final class f implements o {
                         byte[] array = this.q.array();
                         x xVar5 = this.o;
                         xVar5.L(i16, array);
-                        j0Var.g(xVar5, i16, 1);
+                        k0Var.g(xVar5, i16, 1);
                         this.b0 += i16;
                     }
                 }
@@ -2933,11 +2927,11 @@ public final class f implements o {
                 int i20 = (xVar2.c + i10) - this.a0;
                 xVar3.K(4);
                 byte[] bArr3 = xVar3.a;
-                bArr3[0] = (byte) ((i20 >> 24) & 255);
-                bArr3[1] = (byte) ((i20 >> 16) & 255);
-                bArr3[2] = (byte) ((i20 >> 8) & 255);
-                bArr3[3] = (byte) (i20 & 255);
-                j0Var.g(xVar3, 4, 2);
+                bArr3[0] = (byte) ((i20 >> 24) & zs.e4);
+                bArr3[1] = (byte) ((i20 >> 16) & zs.e4);
+                bArr3[2] = (byte) ((i20 >> 8) & zs.e4);
+                bArr3[3] = (byte) (i20 & zs.e4);
+                k0Var.g(xVar3, 4, 2);
                 this.b0 += 4;
             }
             this.d0 = true;
@@ -2945,7 +2939,7 @@ public final class f implements o {
         int i21 = i10 + xVar2.c;
         if (!"V_MPEG4/ISO/AVC".equals(eVar.c) && !"V_MPEGH/ISO/HEVC".equals(eVar.c)) {
             if (eVar.V != null) {
-                yb.p(xVar2.c == 0);
+                t6.p(xVar2.c == 0);
                 eVar.V.c(pVar);
             }
             while (true) {
@@ -2957,9 +2951,9 @@ public final class f implements o {
                 int a12 = xVar2.a();
                 if (a12 > 0) {
                     a10 = Math.min(i23, a12);
-                    j0Var.d(a10, xVar2);
+                    k0Var.d(a10, xVar2);
                 } else {
-                    a10 = j0Var.a(pVar, i23, false);
+                    a10 = k0Var.a(pVar, i23, false);
                 }
                 this.a0 += a10;
                 this.b0 += a10;
@@ -2985,15 +2979,15 @@ public final class f implements o {
                     this.c0 = xVar6.E();
                     x xVar7 = this.g;
                     xVar7.N(0);
-                    j0Var.d(4, xVar7);
+                    k0Var.d(4, xVar7);
                     this.b0 += 4;
                 } else {
                     int a13 = xVar2.a();
                     if (a13 > 0) {
                         a2 = Math.min(i26, a13);
-                        j0Var.d(a2, xVar2);
+                        k0Var.d(a2, xVar2);
                     } else {
-                        a2 = j0Var.a(pVar, i26, false);
+                        a2 = k0Var.a(pVar, i26, false);
                     }
                     this.a0 += a2;
                     this.b0 += a2;
@@ -3004,7 +2998,7 @@ public final class f implements o {
         if ("A_VORBIS".equals(eVar.c)) {
             x xVar8 = this.j;
             xVar8.N(0);
-            j0Var.d(4, xVar8);
+            k0Var.d(4, xVar8);
             this.b0 += 4;
         }
         int i27 = this.b0;

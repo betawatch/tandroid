@@ -1,64 +1,89 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.TranslateController;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
+import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ml implements RequestDelegate {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ Runnable d;
-    public final /* synthetic */ BaseController e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object g;
-    public final /* synthetic */ Object h;
+public final /* synthetic */ class ml implements j20 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ vp b;
+    public final /* synthetic */ j20 c;
 
-    public /* synthetic */ ml(MessagesController messagesController, long j10, String str, Runnable runnable, org.telegram.ui.ActionBar.r2 r2Var, TLRPC.TL_channels_updateUsername tL_channels_updateUsername, Runnable runnable2) {
-        this.e = messagesController;
-        this.b = j10;
-        this.c = str;
-        this.d = runnable;
-        this.f = r2Var;
-        this.g = tL_channels_updateUsername;
-        this.h = runnable2;
+    public /* synthetic */ ml(vp vpVar, j20 j20Var, int i10) {
+        this.a = i10;
+        this.b = vpVar;
+        this.c = j20Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // org.telegram.messenger.j20
+    public final void a(Object obj, Object obj2) {
+        int i10;
         switch (this.a) {
             case 0:
-                ((TranslateController) this.e).lambda$translatePhoto$46((MessageObject) this.f, this.c, (TranslateController.MessageKey) this.g, this.d, this.b, (TLRPC.TL_textWithEntities) this.h, tLObject, tL_error);
-                break;
-            case 1:
-                ((MessagesController) this.e).lambda$updateChannelUserName$291(this.b, this.c, this.d, (org.telegram.ui.ActionBar.r2) this.f, (TLRPC.TL_channels_updateUsername) this.g, (Runnable) this.h, tLObject, tL_error);
+                TLRPC.messages_Chats messages_chats = (TLRPC.messages_Chats) obj;
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
+                vp vpVar = this.b;
+                vpVar.getClass();
+                j20 j20Var = this.c;
+                if (messages_chats == null) {
+                    j20Var.a(null, tL_error);
+                    break;
+                } else {
+                    ArrayList arrayList = new ArrayList(messages_chats.chats.size());
+                    vpVar.P3(messages_chats.chats, true);
+                    ArrayList<TLRPC.Chat> arrayList2 = messages_chats.chats;
+                    int size = arrayList2.size();
+                    int i11 = 0;
+                    while (i11 < size) {
+                        TLRPC.Chat chat = arrayList2.get(i11);
+                        i11++;
+                        TLRPC.Chat chat2 = chat;
+                        if (chat2.creator && !w3.p0(chat2) && !w3.Y(chat2)) {
+                            arrayList.add(chat2);
+                        }
+                    }
+                    j20Var.a(arrayList, null);
+                    break;
+                }
                 break;
             default:
-                ((MessagesController) this.e).lambda$changeChatAvatar$320((TLRPC.TL_inputChatPhoto) this.f, (TLRPC.FileLocation) this.g, (TLRPC.FileLocation) this.h, this.c, this.b, this.d, tLObject, tL_error);
+                TLRPC.Updates updates = (TLRPC.Updates) obj;
+                TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
+                j20 j20Var2 = this.c;
+                if (updates == null) {
+                    if (j20Var2 != null) {
+                        i0.g3(new oi(21, j20Var2, tL_error2));
+                        break;
+                    }
+                } else {
+                    ArrayList<TLRPC.Update> arrayList3 = updates.updates;
+                    int size2 = arrayList3.size();
+                    int i12 = 0;
+                    while (true) {
+                        if (i12 < size2) {
+                            TLRPC.Update update = arrayList3.get(i12);
+                            i12++;
+                            TLRPC.Update update2 = update;
+                            if (update2 instanceof TL_update.TL_updateNewMessage) {
+                                TLRPC.MessageAction messageAction = ((TL_update.TL_updateNewMessage) update2).message.action;
+                                if (messageAction instanceof TLRPC.TL_messageActionNoForwardsRequest) {
+                                    i10 = 2;
+                                } else if (messageAction instanceof TLRPC.TL_messageActionNoForwardsToggle) {
+                                    i10 = 1;
+                                }
+                            }
+                        } else {
+                            i10 = 0;
+                        }
+                    }
+                    vp vpVar2 = this.b;
+                    vpVar2.L3(updates, false);
+                    i0.g3(new o7(vpVar2, j20Var2, i10, 13));
+                    break;
+                }
                 break;
         }
-    }
-
-    public /* synthetic */ ml(MessagesController messagesController, TLRPC.TL_inputChatPhoto tL_inputChatPhoto, TLRPC.FileLocation fileLocation, TLRPC.FileLocation fileLocation2, String str, long j10, Runnable runnable) {
-        this.e = messagesController;
-        this.f = tL_inputChatPhoto;
-        this.g = fileLocation;
-        this.h = fileLocation2;
-        this.c = str;
-        this.b = j10;
-        this.d = runnable;
-    }
-
-    public /* synthetic */ ml(TranslateController translateController, MessageObject messageObject, String str, TranslateController.MessageKey messageKey, Runnable runnable, long j10, TLRPC.TL_textWithEntities tL_textWithEntities) {
-        this.e = translateController;
-        this.f = messageObject;
-        this.c = str;
-        this.g = messageKey;
-        this.d = runnable;
-        this.b = j10;
-        this.h = tL_textWithEntities;
     }
 }

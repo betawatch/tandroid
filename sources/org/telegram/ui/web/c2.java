@@ -1,78 +1,111 @@
 package org.telegram.ui.web;
 
-import android.webkit.WebResourceResponse;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.Build;
+import android.text.TextUtils;
 import java.io.ByteArrayInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.R;
+import java.io.ByteArrayOutputStream;
+import org.telegram.messenger.f8;
+import org.telegram.tgnet.InputSerializedData;
+import org.telegram.tgnet.OutputSerializedData;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes4.dex */
-public final class c2 extends WebViewClient {
-    public boolean a = true;
-    public boolean b;
-    public final /* synthetic */ InputStream c;
-    public final /* synthetic */ h2 d;
+public final class c2 extends TLObject {
+    public long a = System.currentTimeMillis();
+    public String b;
+    public String c;
+    public String d;
+    public int e;
+    public int f;
+    public Bitmap i;
+    public byte[] j;
 
-    public c2(h2 h2Var, InputStream inputStream) {
-        this.d = h2Var;
-        this.c = inputStream;
+    public static c2 a(v0 v0Var) {
+        c2 c2Var = new c2();
+        String K0 = org.telegram.messenger.i0.K0(v0Var.getUrl(), true);
+        c2Var.b = K0;
+        if (TextUtils.isEmpty(K0)) {
+            return null;
+        }
+        if (v0Var.J) {
+            c2Var.c = v0Var.K;
+        }
+        c2Var.d = v0Var.r;
+        if (v0Var.s) {
+            c2Var.e = v0Var.x;
+        }
+        if (v0Var.w) {
+            c2Var.f = v0Var.y;
+        }
+        if (v0Var.M) {
+            c2Var.i = v0Var.O;
+        }
+        return c2Var;
     }
 
-    @Override // android.webkit.WebViewClient
-    public final WebResourceResponse shouldInterceptRequest(WebView webView, String str) {
-        InputStream a2;
-        String str2;
-        if (this.a) {
-            this.a = false;
-            return new WebResourceResponse("text/html", "UTF-8", new ByteArrayInputStream(a1.g.p("<script>\n", AndroidUtilities.readRes(R.raw.instant).replace("$DEBUG$", "" + BuildVars.DEBUG_VERSION), "\n</script>").getBytes(StandardCharsets.UTF_8)));
-        }
-        h2 h2Var = this.d;
-        if (str == null || !str.endsWith("/index.html")) {
-            com.google.firebase.messaging.q qVar = h2Var.b;
-            k1 k1Var = qVar != null ? (k1) ((HashMap) qVar.c).get(str) : null;
-            if (k1Var == null) {
-                return new WebResourceResponse("text/plain", "utf-8", 404, "Not Found", null, null);
-            }
-            l1 l1Var = (l1) k1Var.a.get("content-type");
-            String str3 = l1Var == null ? null : l1Var.a;
-            if (!"text/html".equalsIgnoreCase(str3) && !"text/css".equalsIgnoreCase(str3)) {
-                return new WebResourceResponse("text/plain", "utf-8", 404, "Not Found", null, null);
-            }
-            try {
-                a2 = k1Var.a();
-                str2 = str3;
-            } catch (IOException e) {
-                FileLog.e(e);
-                return new WebResourceResponse("text/plain", "utf-8", 503, "Server error", null, null);
-            }
+    @Override // org.telegram.tgnet.TLObject
+    public final void readParams(InputSerializedData inputSerializedData, boolean z10) {
+        this.a = inputSerializedData.readInt64(z10);
+        this.b = inputSerializedData.readString(z10);
+        this.c = inputSerializedData.readString(z10);
+        this.d = inputSerializedData.readString(z10);
+        this.e = inputSerializedData.readInt32(z10);
+        this.f = inputSerializedData.readInt32(z10);
+        if (inputSerializedData.readInt32(z10) == 1450380236) {
+            this.i = null;
         } else {
-            str2 = "application/octet-stream";
-            if (this.b) {
-                com.google.firebase.messaging.q qVar2 = h2Var.b;
-                k1 k1Var2 = qVar2 != null ? (k1) ((ArrayList) qVar2.b).get(0) : null;
-                if (k1Var2 == null) {
-                    return new WebResourceResponse("text/plain", "utf-8", 404, "Not Found", null, null);
-                }
-                try {
-                    a2 = k1Var2.a();
-                } catch (IOException e10) {
-                    FileLog.e(e10);
-                    return new WebResourceResponse("text/plain", "utf-8", 503, "Server error", null, null);
-                }
-            } else {
-                this.b = true;
-                a2 = this.c;
-            }
+            this.j = inputSerializedData.readByteArray(z10);
+            this.i = BitmapFactory.decodeStream(new ByteArrayInputStream(this.j));
         }
-        return new WebResourceResponse(str2, null, a2);
+    }
+
+    @Override // org.telegram.tgnet.TLObject
+    public final void serializeToStream(OutputSerializedData outputSerializedData) {
+        Bitmap.CompressFormat compressFormat;
+        outputSerializedData.writeInt64(this.a);
+        String str = this.b;
+        if (str == null) {
+            str = "";
+        }
+        outputSerializedData.writeString(str);
+        String str2 = this.c;
+        if (str2 == null) {
+            str2 = "";
+        }
+        outputSerializedData.writeString(str2);
+        String str3 = this.d;
+        outputSerializedData.writeString(str3 != null ? str3 : "");
+        outputSerializedData.writeInt32(this.e);
+        outputSerializedData.writeInt32(this.f);
+        if (this.i == null) {
+            outputSerializedData.writeInt32(TLRPC.TL_null.constructor);
+            return;
+        }
+        outputSerializedData.writeInt32(953850003);
+        byte[] bArr = this.j;
+        if (bArr != null) {
+            outputSerializedData.writeByteArray(bArr);
+            return;
+        }
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        if (Build.VERSION.SDK_INT >= 30) {
+            Bitmap bitmap = this.i;
+            compressFormat = Bitmap.CompressFormat.WEBP_LOSSY;
+            bitmap.compress(compressFormat, 80, byteArrayOutputStream);
+        } else {
+            this.i.compress(Bitmap.CompressFormat.WEBP, 80, byteArrayOutputStream);
+        }
+        byte[] byteArray = byteArrayOutputStream.toByteArray();
+        this.j = byteArray;
+        outputSerializedData.writeByteArray(byteArray);
+        try {
+            byteArrayOutputStream.close();
+        } catch (Exception e) {
+            f8.g(e, true);
+        }
     }
 }

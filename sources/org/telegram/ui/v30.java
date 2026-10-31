@@ -1,45 +1,36 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
-import org.telegram.messenger.voip.GroupCallMessage;
+import android.view.ViewTreeObserver;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class v30 implements nh.a {
-    public final /* synthetic */ x50 a;
+public final class v30 implements ViewTreeObserver.OnPreDrawListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ b50 b;
 
-    public v30(x50 x50Var) {
-        this.a = x50Var;
+    public /* synthetic */ v30(b50 b50Var, int i10) {
+        this.a = i10;
+        this.b = b50Var;
     }
 
-    public final void a(GroupCallMessage groupCallMessage) {
-        org.telegram.ui.ActionBar.r2 R = LaunchActivity.R();
-        if (R == null) {
-            return;
+    @Override // android.view.ViewTreeObserver.OnPreDrawListener
+    public final boolean onPreDraw() {
+        switch (this.a) {
+            case 0:
+                b50 b50Var = this.b;
+                b50Var.H1.getViewTreeObserver().removeOnPreDrawListener(this);
+                b50Var.R3.j(null);
+                org.telegram.messenger.i0.a4(b50Var.d4);
+                b50Var.b.requestLayout();
+                break;
+            default:
+                b50 b50Var2 = this.b;
+                b50Var2.H1.getViewTreeObserver().removeOnPreDrawListener(this);
+                b50Var2.R3.j(null);
+                org.telegram.messenger.i0.a4(b50Var2.d4);
+                b50Var2.b.requestLayout();
+                break;
         }
-        boolean z10 = R instanceof ProfileActivity;
-        x50 x50Var = this.a;
-        if (z10 && ((ProfileActivity) R).a() == groupCallMessage.fromId) {
-            x50Var.dismiss();
-            return;
-        }
-        int P0 = x50Var.P0();
-        Bundle bundle = new Bundle();
-        long j10 = groupCallMessage.fromId;
-        if (j10 > 0) {
-            bundle.putLong("user_id", j10);
-        } else {
-            bundle.putLong("chat_id", -j10);
-        }
-        boolean z11 = true;
-        if (groupCallMessage.fromId == x50Var.d.getUserConfig().getClientUserId()) {
-            bundle.putBoolean("my_profile", true);
-        }
-        ProfileActivity profileActivity = new ProfileActivity(bundle, null);
-        if (P0 > 0 && P0 != Integer.MAX_VALUE) {
-            z11 = false;
-        }
-        R.presentFragment(profileActivity, false, z11);
-        x50Var.dismiss();
+        return false;
     }
 }

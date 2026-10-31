@@ -1,48 +1,174 @@
 package k8;
 
 import android.os.Parcel;
-import android.os.RemoteException;
-import androidx.car.app.j;
-import o6.l;
+import android.os.Parcelable;
+import android.util.Base64;
+import c3.i0;
+import g8.g;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import w7.h0;
+import w7.i;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
 /* loaded from: classes.dex */
-public final class a {
-    public final t7.h a;
+public final class a extends o6.a {
+    public static final Parcelable.Creator<a> CREATOR = new g(18);
+    public final String a;
+    public final byte[] b;
+    public final byte[][] c;
+    public final byte[][] d;
+    public final byte[][] e;
+    public final byte[][] f;
+    public final int[] h;
+    public final byte[][] n;
 
-    public a(t7.h hVar) {
-        l.h(hVar);
-        this.a = hVar;
+    public a(String str, byte[] bArr, byte[][] bArr2, byte[][] bArr3, byte[][] bArr4, byte[][] bArr5, int[] iArr, byte[][] bArr6) {
+        this.a = str;
+        this.b = bArr;
+        this.c = bArr2;
+        this.d = bArr3;
+        this.e = bArr4;
+        this.f = bArr5;
+        this.h = iArr;
+        this.n = bArr6;
+    }
+
+    public static List b(int[] iArr) {
+        if (iArr == null) {
+            return Collections.EMPTY_LIST;
+        }
+        ArrayList arrayList = new ArrayList(iArr.length);
+        int length = iArr.length;
+        int i10 = 0;
+        while (i10 < length) {
+            i10 = i0.j(iArr[i10], i10, 1, arrayList);
+        }
+        Collections.sort(arrayList);
+        return arrayList;
+    }
+
+    public static List c(byte[][] bArr) {
+        if (bArr == null) {
+            return Collections.EMPTY_LIST;
+        }
+        ArrayList arrayList = new ArrayList(bArr.length);
+        for (byte[] bArr2 : bArr) {
+            arrayList.add(Base64.encodeToString(bArr2, 3));
+        }
+        Collections.sort(arrayList);
+        return arrayList;
+    }
+
+    public static void d(StringBuilder sb2, String str, byte[][] bArr) {
+        String str2;
+        sb2.append(str);
+        sb2.append("=");
+        if (bArr == null) {
+            str2 = "null";
+        } else {
+            sb2.append("(");
+            int length = bArr.length;
+            boolean z10 = true;
+            int i10 = 0;
+            while (i10 < length) {
+                byte[] bArr2 = bArr[i10];
+                if (!z10) {
+                    sb2.append(", ");
+                }
+                sb2.append("'");
+                sb2.append(Base64.encodeToString(bArr2, 3));
+                sb2.append("'");
+                i10++;
+                z10 = false;
+            }
+            str2 = ")";
+        }
+        sb2.append(str2);
     }
 
     public final boolean equals(Object obj) {
-        if (!(obj instanceof a)) {
-            return false;
+        if (obj instanceof a) {
+            a aVar = (a) obj;
+            if (i.a(this.a, aVar.a) && Arrays.equals(this.b, aVar.b) && i.a(c(this.c), c(aVar.c)) && i.a(c(this.d), c(aVar.d)) && i.a(c(this.e), c(aVar.e)) && i.a(c(this.f), c(aVar.f)) && i.a(b(this.h), b(aVar.h)) && i.a(c(this.n), c(aVar.n))) {
+                return true;
+            }
         }
-        try {
-            t7.h hVar = this.a;
-            t7.h hVar2 = ((a) obj).a;
-            t7.f fVar = (t7.f) hVar;
-            Parcel N0 = fVar.N0();
-            t7.b.c(N0, hVar2);
-            Parcel M0 = fVar.M0(N0, 17);
-            boolean z10 = M0.readInt() != 0;
-            M0.recycle();
-            return z10;
-        } catch (RemoteException e) {
-            throw new j(e);
-        }
+        return false;
     }
 
-    public final int hashCode() {
-        try {
-            t7.f fVar = (t7.f) this.a;
-            Parcel M0 = fVar.M0(fVar.N0(), 18);
-            int readInt = M0.readInt();
-            M0.recycle();
-            return readInt;
-        } catch (RemoteException e) {
-            throw new j(e);
+    public final String toString() {
+        String sb2;
+        StringBuilder sb3 = new StringBuilder("ExperimentTokens");
+        sb3.append("(");
+        String str = this.a;
+        if (str == null) {
+            sb2 = "null";
+        } else {
+            StringBuilder sb4 = new StringBuilder(String.valueOf(str).length() + 2);
+            sb4.append("'");
+            sb4.append(str);
+            sb4.append("'");
+            sb2 = sb4.toString();
         }
+        sb3.append(sb2);
+        sb3.append(", direct=");
+        byte[] bArr = this.b;
+        if (bArr == null) {
+            sb3.append("null");
+        } else {
+            sb3.append("'");
+            sb3.append(Base64.encodeToString(bArr, 3));
+            sb3.append("'");
+        }
+        sb3.append(", ");
+        d(sb3, "GAIA", this.c);
+        sb3.append(", ");
+        d(sb3, "PSEUDO", this.d);
+        sb3.append(", ");
+        d(sb3, "ALWAYS", this.e);
+        sb3.append(", ");
+        d(sb3, "OTHER", this.f);
+        sb3.append(", ");
+        sb3.append("weak");
+        sb3.append("=");
+        int[] iArr = this.h;
+        if (iArr == null) {
+            sb3.append("null");
+        } else {
+            sb3.append("(");
+            int length = iArr.length;
+            boolean z10 = true;
+            int i10 = 0;
+            while (i10 < length) {
+                int i11 = iArr[i10];
+                if (!z10) {
+                    sb3.append(", ");
+                }
+                sb3.append(i11);
+                i10++;
+                z10 = false;
+            }
+            sb3.append(")");
+        }
+        sb3.append(", ");
+        d(sb3, "directs", this.n);
+        sb3.append(")");
+        return sb3.toString();
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i10) {
+        int q6 = h0.q(parcel, 20293);
+        h0.l(parcel, 2, this.a);
+        h0.c(parcel, 3, this.b);
+        h0.d(parcel, 4, this.c);
+        h0.d(parcel, 5, this.d);
+        h0.d(parcel, 6, this.e);
+        h0.d(parcel, 7, this.f);
+        h0.g(parcel, 8, this.h);
+        h0.d(parcel, 9, this.n);
+        h0.r(parcel, q6);
     }
 }

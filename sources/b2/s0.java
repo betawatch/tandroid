@@ -1,6 +1,5 @@
 package b2;
 
-import a8.yb;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -9,10 +8,10 @@ import android.text.TextUtils;
 import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.Arrays;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.zs;
+import v7.t6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class s0 {
     public static final s0 L = new s0(new r0());
@@ -61,7 +60,7 @@ public final class s0 {
     public final CharSequence H;
     public final Integer I;
     public final Bundle J;
-    public final f9.i0 K;
+    public final e9.n0 K;
     public final CharSequence a;
     public final CharSequence b;
     public final CharSequence c;
@@ -70,8 +69,8 @@ public final class s0 {
     public final CharSequence f;
     public final CharSequence g;
     public final Long h;
-    public final h1 i;
-    public final h1 j;
+    public final g1 i;
+    public final g1 j;
     public final byte[] k;
     public m l;
     public final Integer m;
@@ -90,7 +89,7 @@ public final class s0 {
     public final Integer z;
 
     static {
-        String str = e2.n0.a;
+        String str = e2.l0.a;
         M = Integer.toString(0, 36);
         N = Integer.toString(1, 36);
         O = Integer.toString(2, 36);
@@ -125,7 +124,7 @@ public final class s0 {
         r0 = Integer.toString(32, 36);
         s0 = Integer.toString(33, 36);
         t0 = Integer.toString(34, 36);
-        u0 = Integer.toString(MediaDataController.MAX_STYLE_RUNS_COUNT, 36);
+        u0 = Integer.toString(1000, 36);
     }
 
     public s0(r0 r0Var) {
@@ -159,7 +158,7 @@ public final class s0 {
                         case 17:
                         case 18:
                         case 19:
-                        case MessageObject.TYPE_GIFT_THEME_UPDATE /* 31 */:
+                        case zs.U /* 31 */:
                         case 32:
                         case 33:
                         case 34:
@@ -170,7 +169,7 @@ public final class s0 {
                         case 27:
                         case 28:
                         case 29:
-                        case MessageObject.TYPE_GIFT_STARS /* 30 */:
+                        case zs.T /* 30 */:
                         default:
                             i10 = 0;
                             break;
@@ -281,7 +280,7 @@ public final class s0 {
         r0Var.E = bundle.getCharSequence(m0);
         r0Var.F = bundle.getCharSequence(n0);
         r0Var.G = bundle.getCharSequence(p0);
-        r0Var.I = e2.n0.o(bundle.getBundle(u0));
+        r0Var.I = e2.l0.o(bundle.getBundle(u0));
         String str = V;
         if (bundle.containsKey(str)) {
             String str2 = o0;
@@ -306,17 +305,17 @@ public final class s0 {
         }
         String str3 = T;
         if (bundle.containsKey(str3) && (bundle3 = bundle.getBundle(str3)) != null) {
-            r0Var.i = h1.a(bundle3);
+            r0Var.i = g1.a(bundle3);
         }
         String str4 = U;
         if (bundle.containsKey(str4) && (bundle2 = bundle.getBundle(str4)) != null) {
-            r0Var.j = h1.a(bundle2);
+            r0Var.j = g1.a(bundle2);
         }
         String str5 = s0;
         if (bundle.containsKey(str5)) {
             long j10 = bundle.getLong(str5);
             Long valueOf2 = Long.valueOf(j10);
-            yb.g(j10 >= 0);
+            t6.f(j10 >= 0);
             r0Var.h = valueOf2;
         }
         String str6 = X;
@@ -377,7 +376,7 @@ public final class s0 {
         }
         ArrayList<String> stringArrayList = bundle.getStringArrayList(t0);
         if (stringArrayList != null) {
-            r0Var.J = f9.i0.u(stringArrayList);
+            r0Var.J = e9.n0.u(stringArrayList);
         }
         return new s0(r0Var);
     }
@@ -518,13 +517,13 @@ public final class s0 {
         if (charSequence13 != null) {
             bundle.putCharSequence(p0, charSequence13);
         }
-        h1 h1Var = this.i;
-        if (h1Var != null) {
-            bundle.putBundle(T, h1Var.c());
+        g1 g1Var = this.i;
+        if (g1Var != null) {
+            bundle.putBundle(T, g1Var.c());
         }
-        h1 h1Var2 = this.j;
-        if (h1Var2 != null) {
-            bundle.putBundle(U, h1Var2.c());
+        g1 g1Var2 = this.j;
+        if (g1Var2 != null) {
+            bundle.putBundle(U, g1Var2.c());
         }
         Integer num = this.o;
         if (num != null) {
@@ -586,9 +585,9 @@ public final class s0 {
         if (num13 != null) {
             bundle.putInt(q0, num13.intValue());
         }
-        f9.i0 i0Var = this.K;
-        if (!i0Var.isEmpty()) {
-            bundle.putStringArrayList(t0, new ArrayList<>(i0Var));
+        e9.n0 n0Var = this.K;
+        if (!n0Var.isEmpty()) {
+            bundle.putStringArrayList(t0, new ArrayList<>(n0Var));
         }
         Bundle bundle3 = this.J;
         if (bundle3 != null) {

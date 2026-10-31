@@ -1,201 +1,175 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.text.TextPaint;
-import android.view.View;
-import android.widget.HorizontalScrollView;
-import android.widget.LinearLayout;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesStorage;
+import android.media.AudioTimestamp;
+import android.os.SystemClock;
+import j$.util.Collection;
+import java.nio.ByteBuffer;
+import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class w40 extends HorizontalScrollView {
-    public static final RectF v = new RectF();
-    public final org.telegram.ui.ActionBar.u6 a;
-    public final h6 b;
-    public final h6 c;
-    public final LinearLayout d;
-    public final Paint e;
-    public final TextPaint f;
-    public boolean h;
-    public int n;
-    public final Path r;
-    public final Path s;
+public final class w40 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public w40(Context context, org.telegram.ui.ActionBar.u6 u6Var) {
-        super(context);
-        this.e = new Paint(1);
-        TextPaint textPaint = new TextPaint(1);
-        this.f = textPaint;
-        this.r = new Path();
-        this.s = new Path();
-        this.a = u6Var;
-        LinearLayout linearLayout = new LinearLayout(context);
-        this.d = linearLayout;
-        linearLayout.setLayerType(0, null);
-        linearLayout.setOrientation(0);
-        addView(linearLayout, kb1.B(-1, -1, 8388611));
-        textPaint.setTextSize(AndroidUtilities.dp(13.0f));
-        textPaint.setTypeface(AndroidUtilities.bold());
-        final int i10 = 0;
-        h6 h6Var = new h6(new Runnable(this) { // from class: org.telegram.ui.Components.v40
-            public final /* synthetic */ w40 b;
+    public /* synthetic */ w40(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
+    }
 
-            {
-                this.b = this;
-            }
-
-            @Override // java.lang.Runnable
-            public final void run() {
-                switch (i10) {
-                    case 0:
-                        w40 w40Var = this.b;
-                        w40Var.invalidate();
-                        LinearLayout linearLayout2 = w40Var.d;
-                        linearLayout2.invalidate();
-                        for (int i11 = 0; i11 < linearLayout2.getChildCount(); i11++) {
-                            linearLayout2.getChildAt(i11).invalidate();
+    /* JADX WARN: Code restructure failed: missing block: B:87:0x006b, code lost:
+    
+        if (((org.telegram.ui.Components.x40) r22.b).X == 0) goto L87;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x013f  */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x0141 A[SYNTHETIC] */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        o40 o40Var;
+        long j10;
+        long j11;
+        switch (this.a) {
+            case 0:
+                AudioTimestamp audioTimestamp = new AudioTimestamp();
+                long j12 = -1;
+                long j13 = -1;
+                boolean z10 = false;
+                boolean z11 = true;
+                while (!z10) {
+                    if ((!((x40) this.b).W || ((x40) this.b).D0) && ((x40) this.b).y0.getRecordingState() != 1) {
+                        try {
+                            ((x40) this.b).y0.stop();
+                        } catch (Exception unused) {
+                            z10 = true;
                         }
                         break;
-                    default:
-                        w40 w40Var2 = this.b;
-                        w40Var2.invalidate();
-                        LinearLayout linearLayout3 = w40Var2.d;
-                        linearLayout3.invalidate();
-                        for (int i12 = 0; i12 < linearLayout3.getChildCount(); i12++) {
-                            linearLayout3.getChildAt(i12).invalidate();
+                    }
+                    boolean z12 = z10;
+                    if (((x40) this.b).z0.isEmpty()) {
+                        try {
+                            o40Var = new o40();
+                        } catch (OutOfMemoryError unused2) {
+                            System.gc();
+                            o40Var = new o40();
                         }
-                        break;
+                    } else {
+                        o40Var = (o40) ((x40) this.b).z0.poll();
+                    }
+                    o40 o40Var2 = o40Var;
+                    o40Var2.e = 0;
+                    int i10 = 10;
+                    o40Var2.d = 10;
+                    int i11 = 0;
+                    while (true) {
+                        if (i11 < i10) {
+                            long j14 = 1000;
+                            if (j13 == j12 && !z11) {
+                                j13 = System.nanoTime() / 1000;
+                            }
+                            ByteBuffer byteBuffer = o40Var2.a[i11];
+                            byteBuffer.rewind();
+                            int read = ((x40) this.b).y0.read(byteBuffer, 2048);
+                            if (read <= 0 || i11 % 2 != 0) {
+                                j10 = 1000;
+                            } else {
+                                byteBuffer.limit(read);
+                                double d = 0.0d;
+                                int i12 = 0;
+                                while (true) {
+                                    j10 = j14;
+                                    if (i12 < read / 2) {
+                                        short s10 = byteBuffer.getShort();
+                                        d += s10 * s10;
+                                        i12++;
+                                        j14 = j10;
+                                    } else {
+                                        org.telegram.messenger.i0.g3(new org.telegram.messenger.se(this, Math.sqrt((d / read) / 2.0d), 1));
+                                        byteBuffer.position(0);
+                                    }
+                                }
+                            }
+                            if (read <= 0) {
+                                o40Var2.d = i11;
+                                if (!((x40) this.b).W) {
+                                    o40Var2.f = true;
+                                }
+                            } else {
+                                if (z11) {
+                                    try {
+                                        ((x40) this.b).y0.getTimestamp(audioTimestamp, 0);
+                                        j11 = j13;
+                                        j13 = audioTimestamp.nanoTime / j10;
+                                    } catch (Exception e) {
+                                        org.telegram.messenger.f8.g(e, true);
+                                        j13 = System.nanoTime() / j10;
+                                        z11 = false;
+                                    }
+                                    o40Var2.b[i11] = j13;
+                                    o40Var2.c[i11] = read;
+                                    int i13 = ((read * 1000000) / 48000) / 2;
+                                    if (z11) {
+                                        j11 += i13;
+                                    }
+                                    j13 = j11;
+                                    i11++;
+                                    j12 = -1;
+                                    i10 = 10;
+                                }
+                                j11 = j13;
+                                o40Var2.b[i11] = j13;
+                                o40Var2.c[i11] = read;
+                                int i132 = ((read * 1000000) / 48000) / 2;
+                                if (z11) {
+                                }
+                                j13 = j11;
+                                i11++;
+                                j12 = -1;
+                                i10 = 10;
+                            }
+                        }
+                    }
+                    if (o40Var2.d >= 0 || o40Var2.f) {
+                        if (!((x40) this.b).W && o40Var2.d < 10) {
+                            z12 = true;
+                        }
+                        ((x40) this.b).T.sendMessage(((x40) this.b).T.obtainMessage(3, o40Var2));
+                    } else if (((x40) this.b).W) {
+                        try {
+                            ((x40) this.b).z0.put(o40Var2);
+                        } catch (Exception unused3) {
+                        }
+                    } else {
+                        z10 = true;
+                        j12 = -1;
+                    }
+                    z10 = z12;
+                    j12 = -1;
                 }
-            }
-        });
-        this.b = h6Var;
-        h6Var.g = 180L;
-        final int i11 = 1;
-        h6 h6Var2 = new h6(new Runnable(this) { // from class: org.telegram.ui.Components.v40
-            public final /* synthetic */ w40 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // java.lang.Runnable
-            public final void run() {
-                switch (i11) {
-                    case 0:
-                        w40 w40Var = this.b;
-                        w40Var.invalidate();
-                        LinearLayout linearLayout2 = w40Var.d;
-                        linearLayout2.invalidate();
-                        for (int i112 = 0; i112 < linearLayout2.getChildCount(); i112++) {
-                            linearLayout2.getChildAt(i112).invalidate();
-                        }
-                        break;
-                    default:
-                        w40 w40Var2 = this.b;
-                        w40Var2.invalidate();
-                        LinearLayout linearLayout3 = w40Var2.d;
-                        linearLayout3.invalidate();
-                        for (int i12 = 0; i12 < linearLayout3.getChildCount(); i12++) {
-                            linearLayout3.getChildAt(i12).invalidate();
-                        }
-                        break;
+                try {
+                    ((x40) this.b).y0.release();
+                } catch (Exception e7) {
+                    org.telegram.messenger.f8.g(e7, true);
                 }
-            }
-        });
-        this.c = h6Var2;
-        h6Var2.g = 180L;
-        setVerticalScrollBarEnabled(false);
-        setHorizontalScrollBarEnabled(false);
-    }
-
-    public final void a(int i10, boolean z10) {
-        this.n = i10;
-        LinearLayout linearLayout = this.d;
-        boolean z11 = !z10;
-        this.b.d(linearLayout.getChildAt(i10).getLeft(), z11);
-        this.c.d(linearLayout.getChildAt(i10).getRight(), z11);
-    }
-
-    public final void b(ArrayList arrayList, MessagesStorage.IntCallback intCallback) {
-        LinearLayout linearLayout = this.d;
-        linearLayout.removeAllViews();
-        for (int i10 = 0; i10 < arrayList.size(); i10++) {
-            CharSequence charSequence = (CharSequence) arrayList.get(i10);
-            bi.cc ccVar = new bi.cc(getContext());
-            ccVar.setDrawingCacheEnabled(false);
-            ccVar.setOnClickListener(new bi.pa(this, i10, intCallback, 10));
-            ccVar.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(5.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(5.0f));
-            LinearLayout.LayoutParams r6 = kb1.r(-2, -2);
-            if (i10 < arrayList.size() - 1) {
-                r6.rightMargin = AndroidUtilities.dp(4.0f);
-            }
-            ccVar.b = new r11(charSequence, this.f);
-            linearLayout.addView(ccVar, r6);
+                if (!((x40) this.b).D0) {
+                    ((x40) this.b).T.sendMessage(((x40) this.b).T.obtainMessage(1, ((x40) this.b).X, 0, ((x40) this.b).Y));
+                    break;
+                }
+                break;
+            default:
+                long uptimeMillis = SystemClock.uptimeMillis();
+                org.telegram.ui.Wallet.m6 m6Var = (org.telegram.ui.Wallet.m6) this.b;
+                WeakHashMap weakHashMap = m6Var.e;
+                Collection.-EL.removeIf(weakHashMap.entrySet(), new org.telegram.ui.o8(uptimeMillis, 3));
+                if (!weakHashMap.isEmpty()) {
+                    m6Var.d.postDelayed(this, 250L);
+                    break;
+                } else {
+                    m6Var.a();
+                    break;
+                }
         }
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        float c10 = this.b.c();
-        float c11 = this.c.c();
-        float measuredHeight = getMeasuredHeight();
-        RectF rectF = v;
-        rectF.set(c10, 0.0f, c11, measuredHeight);
-        Path path = this.r;
-        path.rewind();
-        float dp = AndroidUtilities.dp(13.0f);
-        float dp2 = AndroidUtilities.dp(13.0f);
-        Path.Direction direction = Path.Direction.CW;
-        path.addRoundRect(rectF, dp, dp2, direction);
-        path.close();
-        Path path2 = this.s;
-        path2.rewind();
-        LinearLayout linearLayout = this.d;
-        path2.addRect(0.0f, 0.0f, linearLayout.getMeasuredWidth(), getMeasuredHeight(), direction);
-        path2.addRoundRect(rectF, AndroidUtilities.dp(13.0f), AndroidUtilities.dp(13.0f), Path.Direction.CCW);
-        path2.close();
-        boolean z10 = this.h;
-        org.telegram.ui.ActionBar.u6 u6Var = this.a;
-        int o12 = z10 ? org.telegram.ui.ActionBar.y6.o1(0.1f, org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.Oh, u6Var)) : org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.y6, u6Var) & 520093695;
-        Paint paint = this.e;
-        paint.setColor(o12);
-        canvas.drawPath(path, paint);
-        int w02 = org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.y6, u6Var);
-        TextPaint textPaint = this.f;
-        textPaint.setColor(w02);
-        canvas.save();
-        canvas.clipPath(path2);
-        super.dispatchDraw(canvas);
-        canvas.restore();
-        textPaint.setColor(this.h ? org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.Oh, u6Var) : org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.Y8, u6Var));
-        canvas.save();
-        canvas.clipPath(path);
-        for (int i10 = 0; i10 < linearLayout.getChildCount(); i10++) {
-            View childAt = linearLayout.getChildAt(i10);
-            if (rectF.right >= childAt.getLeft() && rectF.left <= childAt.getRight()) {
-                canvas.save();
-                canvas.translate(childAt.getLeft(), childAt.getTop());
-                childAt.draw(canvas);
-                canvas.restore();
-            }
-        }
-        canvas.restore();
-    }
-
-    @Override // android.widget.HorizontalScrollView, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        a(this.n, false);
-    }
-
-    public void setAccent(boolean z10) {
-        this.h = z10;
     }
 }

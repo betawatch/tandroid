@@ -5,7 +5,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewConfiguration;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public abstract class u1 implements View.OnTouchListener, View.OnAttachStateChangeListener {
     public final float a;
@@ -40,12 +40,12 @@ public abstract class u1 implements View.OnTouchListener, View.OnAttachStateChan
         }
     }
 
-    public abstract l.b0 b();
+    public abstract l.c0 b();
 
     public abstract boolean c();
 
     public boolean d() {
-        l.b0 b10 = b();
+        l.c0 b10 = b();
         if (b10 == null || !b10.a()) {
             return true;
         }
@@ -72,7 +72,7 @@ public abstract class u1 implements View.OnTouchListener, View.OnAttachStateChan
         boolean z11 = this.h;
         View view2 = this.d;
         if (z11) {
-            l.b0 b10 = b();
+            l.c0 b10 = b();
             if (b10 != null && b10.a() && (f7 = b10.f()) != null && f7.isShown()) {
                 MotionEvent obtainNoHistory = MotionEvent.obtainNoHistory(motionEvent);
                 int[] iArr = this.r;
@@ -99,11 +99,11 @@ public abstract class u1 implements View.OnTouchListener, View.OnAttachStateChan
                         if (actionMasked2 == 2) {
                             int findPointerIndex = motionEvent.findPointerIndex(this.n);
                             if (findPointerIndex >= 0) {
-                                float x9 = motionEvent.getX(findPointerIndex);
+                                float x10 = motionEvent.getX(findPointerIndex);
                                 float y3 = motionEvent.getY(findPointerIndex);
                                 float f10 = this.a;
                                 float f11 = -f10;
-                                if (x9 < f11 || y3 < f11 || x9 >= (view2.getRight() - view2.getLeft()) + f10 || y3 >= (view2.getBottom() - view2.getTop()) + f10) {
+                                if (x10 < f11 || y3 < f11 || x10 >= (view2.getRight() - view2.getLeft()) + f10 || y3 >= (view2.getBottom() - view2.getTop()) + f10) {
                                     a();
                                     view2.getParent().requestDisallowInterceptTouchEvent(true);
                                     if (c()) {

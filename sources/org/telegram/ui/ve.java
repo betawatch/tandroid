@@ -1,53 +1,52 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
+import org.telegram.messenger.beta.R;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ve implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ wn b;
-    public final /* synthetic */ org.telegram.ui.Components.in0 c;
-    public final /* synthetic */ String d;
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ un b;
+    public final /* synthetic */ org.telegram.messenger.vp c;
+    public final /* synthetic */ CharSequence d;
+    public final /* synthetic */ boolean e;
 
-    public /* synthetic */ ve(wn wnVar, org.telegram.ui.Components.in0 in0Var, String str, int i10) {
-        this.a = i10;
-        this.b = wnVar;
-        this.c = in0Var;
-        this.d = str;
+    public /* synthetic */ ve(un unVar, CharSequence charSequence, org.telegram.messenger.vp vpVar, boolean z10) {
+        this.b = unVar;
+        this.d = charSequence;
+        this.c = vpVar;
+        this.e = z10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        org.telegram.ui.Components.wc b02;
-        int i10;
         switch (this.a) {
             case 0:
-                this.c.dismiss();
-                AndroidUtilities.addToClipboard(this.d);
-                b02 = org.telegram.ui.Components.wc.b0(this.b);
-                i10 = R.string.RelativeDateCopied;
-                break;
-            case 1:
-                this.c.dismiss();
-                AndroidUtilities.addToClipboard(this.d);
-                b02 = org.telegram.ui.Components.wc.b0(this.b);
-                i10 = R.string.WalletAddressCopiedBulletin;
-                break;
-            case 2:
-                this.c.dismiss();
-                AndroidUtilities.addToClipboard(this.d);
-                b02 = org.telegram.ui.Components.wc.b0(this.b);
-                i10 = R.string.CardNumberCopied;
+                un.F1(this.b, this.d, this.c, this.e);
                 break;
             default:
-                this.c.dismiss();
-                AndroidUtilities.addToClipboard("@" + this.d);
-                b02 = org.telegram.ui.Components.wc.b0(this.b);
-                i10 = R.string.UsernameCopied;
+                un unVar = this.b;
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, unVar.getParentActivity(), unVar.xa);
+                String L0 = org.telegram.messenger.cd.L0(R.string.AppName, null);
+                org.telegram.ui.ActionBar.x1 x1Var = alertDialog$Builder.a;
+                x1Var.R = L0;
+                String L02 = org.telegram.messenger.cd.L0(2131747847, null);
+                org.telegram.messenger.vp vpVar = this.c;
+                alertDialog$Builder.k(L02, new bi.o4(unVar, vpVar, this.d, this.e, 2));
+                alertDialog$Builder.h(org.telegram.messenger.cd.L0(2131752589, null), null);
+                x1Var.T = org.telegram.messenger.cd.L0(2131745702, null);
+                unVar.showDialog(x1Var);
+                vpVar.G2 = 0;
+                org.telegram.messenger.vp.d1().edit().putInt("secretWebpage2", vpVar.G2).commit();
                 break;
         }
-        org.telegram.messenger.wh.m(i10, b02);
+    }
+
+    public /* synthetic */ ve(un unVar, org.telegram.messenger.vp vpVar, CharSequence charSequence, boolean z10) {
+        this.b = unVar;
+        this.c = vpVar;
+        this.d = charSequence;
+        this.e = z10;
     }
 }

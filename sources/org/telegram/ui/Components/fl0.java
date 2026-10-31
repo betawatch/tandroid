@@ -1,21 +1,8 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.view.View;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public interface fl0 {
-    boolean f();
-
-    boolean i();
-
-    void l(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10);
-
-    void m();
-
-    boolean o();
-
-    void p(View view, bh.x0 x0Var, boolean z10, boolean z11);
+public abstract class fl0 extends org.telegram.ui.ActionBar.z2 {
+    public el0 i1;
+    public EditTextBoldCursor j1;
 }

@@ -1,21 +1,45 @@
 package ig;
 
-import org.telegram.messenger.SendMessagesHelper;
+import android.os.Looper;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class z0 extends SendMessagesHelper.LocationProvider {
-    public final /* synthetic */ j1 a;
+public final /* synthetic */ class z0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ a1 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z0(j1 j1Var, y0 y0Var) {
-        super(y0Var);
-        this.a = j1Var;
+    public /* synthetic */ z0(a1 a1Var, int i10) {
+        this.a = i10;
+        this.b = a1Var;
     }
 
-    @Override // org.telegram.messenger.SendMessagesHelper.LocationProvider
-    public final void stop() {
-        super.stop();
-        this.a.z0 = null;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                a1 a1Var = this.b;
+                androidx.activity.i iVar = a1Var.x;
+                z0 z0Var = a1Var.s;
+                if (z0Var != null) {
+                    a1Var.cancelRunnable(z0Var);
+                    a1Var.s = null;
+                }
+                a1Var.cancelRunnable(iVar);
+                a1Var.postRunnable(iVar);
+                break;
+            case 1:
+                a1 a1Var2 = this.b;
+                a1Var2.s = null;
+                a1Var2.x.run();
+                break;
+            default:
+                this.b.finish();
+                Looper myLooper = Looper.myLooper();
+                if (myLooper != null) {
+                    myLooper.quit();
+                    break;
+                }
+                break;
+        }
     }
 }

@@ -1,25 +1,34 @@
 package org.telegram.messenger;
 
-import java.util.function.IntFunction;
+import android.net.Uri;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ge implements IntFunction {
+public final /* synthetic */ class ge implements Runnable {
     public final /* synthetic */ int a;
+    public final /* synthetic */ q20 b;
+    public final /* synthetic */ Uri c;
 
-    public /* synthetic */ ge(int i10) {
+    public /* synthetic */ ge(q20 q20Var, Uri uri, int i10) {
         this.a = i10;
+        this.b = q20Var;
+        this.c = uri;
     }
 
-    @Override // java.util.function.IntFunction
-    public final Object apply(int i10) {
-        int[][] lambda$new$16;
-        switch (this.a) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        Uri uri = this.c;
+        q20 q20Var = this.b;
+        switch (i10) {
             case 0:
-                return String.valueOf(i10);
+                String[] strArr = MediaController.U1;
+                q20Var.a(uri);
+                break;
             default:
-                lambda$new$16 = MessagesController.lambda$new$16(i10);
-                return lambda$new$16;
+                String[] strArr2 = MediaController.U1;
+                q20Var.a(uri);
+                break;
         }
     }
 }

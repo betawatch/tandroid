@@ -1,58 +1,30 @@
 package li;
 
-import android.content.Context;
-import android.text.SpannableStringBuilder;
-import android.view.View;
-import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.Components.k71;
-import org.telegram.ui.Components.nm0;
-import org.telegram.ui.Components.s71;
-import org.telegram.ui.Components.t61;
-import org.telegram.ui.Components.u61;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes4.dex */
-public final class r0 extends t61 {
-    public static final /* synthetic */ int a = 0;
+public final class r0 {
+    public static final r0 a;
+    public static final r0 b;
+    public static final r0 c;
+    public static final /* synthetic */ r0[] d;
 
     static {
-        t61.setup(new r0());
+        r0 r0Var = new r0("HIGH", 0);
+        a = r0Var;
+        r0 r0Var2 = new r0("MEDIUM", 1);
+        b = r0Var2;
+        r0 r0Var3 = new r0("LOW", 2);
+        c = r0Var3;
+        d = new r0[]{r0Var, r0Var2, r0Var3};
     }
 
-    @Override // org.telegram.ui.Components.t61
-    public final void bindView(View view, u61 u61Var, boolean z10, k71 k71Var, s71 s71Var) {
-        s0 s0Var = (s0) view;
-        a aVar = (a) u61Var.G;
-        c3 c3Var = (c3) u61Var.H;
-        g1 g1Var = s0Var.d;
-        boolean z11 = s0Var.f != aVar;
-        s0Var.f = aVar;
-        s0Var.h = c3Var;
-        TL_iv.PageBlock pageBlock = aVar.b;
-        if (pageBlock instanceof TL_iv.pageBlockDetails) {
-            TL_iv.pageBlockDetails pageblockdetails = (TL_iv.pageBlockDetails) pageBlock;
-            s0Var.c.a(pageblockdetails.open ? 0.0f : 1.0f);
-            SpannableStringBuilder r6 = f6.r(pageblockdetails.title, null, true);
-            if (!aVar.s) {
-                aVar.s = true;
-                aVar.r = r6.length() == 0 || (f6.q(0, r6.length(), r6) & 1) != 0;
-            }
-            g1Var.setAutoBold(aVar.r);
-            if (z11 || !String.valueOf(g1Var.getText()).equals(f6.l(pageblockdetails.title))) {
-                g1Var.setTextSilently(r6);
-                g1Var.invalidateEffects();
-            }
-        }
+    public static r0 valueOf(String str) {
+        return (r0) Enum.valueOf(r0.class, str);
     }
 
-    @Override // org.telegram.ui.Components.t61
-    public final View createView(Context context, nm0 nm0Var, int i10, int i11, u6 u6Var) {
-        return new s0(context, u6Var);
-    }
-
-    @Override // org.telegram.ui.Components.t61
-    public final boolean isClickable() {
-        return false;
+    public static r0[] values() {
+        return (r0[]) d.clone();
     }
 }

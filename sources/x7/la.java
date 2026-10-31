@@ -1,29 +1,28 @@
 package x7;
 
-import android.content.Context;
-import java.util.ArrayList;
+import android.os.IBinder;
+import android.os.IInterface;
+import android.os.Parcel;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class la implements ka {
-    public final ArrayList a;
-
-    public la(Context context, ja jaVar) {
-        ArrayList arrayList = new ArrayList();
-        this.a = arrayList;
-        jaVar.getClass();
-        arrayList.add(new na(context, jaVar));
-    }
-
-    @Override // x7.ka
-    public final void a(m4.c cVar) {
-        ArrayList arrayList = this.a;
-        int size = arrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
-            ((ka) obj).a(cVar);
+public final class la extends a9.a implements na {
+    public final ka X0(x6.b bVar, pa paVar) {
+        ka kaVar;
+        Parcel P0 = P0();
+        int i10 = y.a;
+        P0.writeStrongBinder(bVar);
+        P0.writeInt(1);
+        paVar.writeToParcel(P0, 0);
+        Parcel R0 = R0(P0, 1);
+        IBinder readStrongBinder = R0.readStrongBinder();
+        if (readStrongBinder == null) {
+            kaVar = null;
+        } else {
+            IInterface queryLocalInterface = readStrongBinder.queryLocalInterface("com.google.mlkit.vision.label.aidls.IImageLabeler");
+            kaVar = queryLocalInterface instanceof ka ? (ka) queryLocalInterface : new ka(readStrongBinder, "com.google.mlkit.vision.label.aidls.IImageLabeler", 10);
         }
+        R0.recycle();
+        return kaVar;
     }
 }

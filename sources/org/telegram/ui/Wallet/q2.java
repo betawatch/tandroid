@@ -1,22 +1,23 @@
 package org.telegram.ui.Wallet;
 
-import org.telegram.ui.TwoStepVerificationActivity;
+import android.content.Context;
+import android.view.View;
+import android.widget.ScrollView;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes4.dex */
-public final class q2 extends TwoStepVerificationActivity {
-    public final /* synthetic */ ag.b1 d0;
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final class q2 extends ScrollView {
+    public final /* synthetic */ int a;
 
-    public q2(ag.b1 b1Var) {
-        this.d0 = b1Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public q2(Context context, int i10) {
+        super(context);
+        this.a = i10;
     }
 
-    @Override // org.telegram.ui.TwoStepVerificationActivity, org.telegram.ui.ActionBar.r2
-    public final void onFragmentDestroy() {
-        ag.b1 b1Var = this.d0;
-        if (((Runnable) b1Var.d) != null && !b1Var.c) {
-            b1Var.b();
-        }
-        super.onFragmentDestroy();
+    @Override // android.widget.ScrollView, android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i11), org.telegram.messenger.i0.L(this.a)), TLObject.FLAG_31));
     }
 }

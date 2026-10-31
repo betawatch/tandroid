@@ -1,26 +1,31 @@
 package org.telegram.ui;
 
-import android.content.Context;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class x81 extends org.telegram.ui.Components.nm0 {
-    public int f3;
-    public final /* synthetic */ y91 g3;
+public final class x81 implements e91 {
+    public boolean a;
+    public final /* synthetic */ un b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x81(y91 y91Var, Context context) {
-        super(context, null);
-        this.g3 = y91Var;
+    public x81(un unVar, boolean z10) {
+        this.b = unVar;
+        this.a = z10;
     }
 
-    @Override // org.telegram.ui.Components.nm0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        d91 d91Var;
-        super.onMeasure(i10, i11);
-        if (this.f3 != getMeasuredHeight() && (d91Var = this.g3.W) != null) {
-            d91Var.l();
-        }
-        this.f3 = getMeasuredHeight();
+    @Override // org.telegram.ui.e91
+    public final void M1(boolean z10) {
+        boolean z11 = !this.a;
+        this.a = z11;
+        sn snVar = this.b.xa;
+        snVar.r(snVar.f, snVar.g, z10, Boolean.valueOf(z11), false);
+    }
+
+    @Override // org.telegram.ui.e91
+    public final boolean a() {
+        return this.a;
+    }
+
+    @Override // org.telegram.ui.e91
+    public final boolean b1() {
+        return true;
     }
 }

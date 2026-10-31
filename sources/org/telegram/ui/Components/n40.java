@@ -1,58 +1,36 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.HashtagSearchController;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class n40 implements Utilities.Callback5, Utilities.Callback5Return {
-    public final /* synthetic */ o40 a;
+public final class n40 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ boolean[] a;
+    public final /* synthetic */ j40 b;
+    public final /* synthetic */ e50 c;
 
-    public /* synthetic */ n40(o40 o40Var) {
-        this.a = o40Var;
+    public n40(e50 e50Var, boolean[] zArr, j40 j40Var) {
+        this.c = e50Var;
+        this.a = zArr;
+        this.b = j40Var;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback5
-    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        ((Integer) obj3).getClass();
-        ((Float) obj4).getClass();
-        ((Float) obj5).getClass();
-        int i10 = ((u61) obj).d;
-        o40 o40Var = this.a;
-        if (i10 == 0) {
-            HashtagSearchController.getInstance(o40Var.a).clearHistory();
-            o40Var.f.O(true);
-        } else {
-            Utilities.Callback callback = o40Var.h;
-            if (callback != null) {
-                callback.run((String) o40Var.c.get(i10 - 1));
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        if (floatValue > 0.5f) {
+            boolean[] zArr = this.a;
+            if (!zArr[0]) {
+                zArr[0] = true;
+                this.b.run();
             }
         }
-    }
-
-    @Override // org.telegram.messenger.Utilities.Callback5Return
-    public Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        ((Integer) obj3).getClass();
-        ((Float) obj4).getClass();
-        ((Float) obj5).getClass();
-        int i10 = ((u61) obj).d;
-        boolean z10 = false;
-        if (i10 != 0) {
-            o40 o40Var = this.a;
-            String str = (String) o40Var.c.get(i10 - 1);
-            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(o40Var.getContext(), 0, o40Var.b);
-            String string = LocaleController.getString(R.string.ClearSearchSingleAlertTitle);
-            org.telegram.ui.ActionBar.e2 e2Var = alertDialog$Builder.a;
-            e2Var.R = string;
-            e2Var.T = LocaleController.formatString(R.string.ClearSearchSingleHashtagAlertText, str);
-            alertDialog$Builder.k(LocaleController.getString(R.string.ClearSearchRemove), new p1(22, o40Var, str));
-            alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-            e2Var.show();
-            z10 = true;
+        if (floatValue >= 0.5f) {
+            floatValue -= 1.0f;
         }
-        return Boolean.valueOf(z10);
+        float f7 = floatValue * 180.0f;
+        e50 e50Var = this.c;
+        e50Var.f.setRotationY(f7);
+        e50Var.q0.setRotationY(f7);
     }
 }

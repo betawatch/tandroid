@@ -1,133 +1,125 @@
 package ki;
 
-import ai.k;
-import android.content.Context;
-import android.view.View;
-import android.widget.FrameLayout;
-import bi.u7;
-import bi.w0;
-import fi.d;
-import hi.e2;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserObject;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Cells.m6;
-import org.telegram.ui.Cells.n6;
-import org.telegram.ui.Components.bb;
-import org.telegram.ui.Components.g5;
-import org.telegram.ui.Components.k71;
-import org.telegram.ui.Components.kb1;
-import org.telegram.ui.Components.mm0;
-import org.telegram.ui.Components.nm0;
-import s4.q0;
+import android.media.AudioRecord;
+import android.os.Handler;
+import android.os.SystemClock;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.me;
+import org.telegram.messenger.zs;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes4.dex */
-public final class a extends bb {
-    public k71 X;
-    public boolean Y;
-    public final FrameLayout Z;
-    public final boolean a0;
-    public final boolean b0;
-    public int c0;
+public final /* synthetic */ class a implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.utils.recorder.audio.d b;
 
-    public a(Context context, TLRPC.Chat chat, long j10, Utilities.Callback callback) {
-        super(context, (u6) null, false);
-        int i10;
-        TLRPC.User user = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(j10));
-        TLRPC.Chat chat2 = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-j10));
-        this.b0 = UserObject.isBot(user);
-        this.a0 = ChatObject.isChannelAndNotMegaGroup(chat2);
-        this.L = false;
-        this.K = AndroidUtilities.dp(12.0f);
-        this.e.setTitle(y());
-        setBackgroundColorKey(y6.a7);
-        FrameLayout frameLayout = new FrameLayout(context);
-        this.Z = frameLayout;
-        frameLayout.setPadding(0, AndroidUtilities.dp(3.0f), 0, AndroidUtilities.dp(3.0f));
-        frameLayout.setLayoutParams(new q0(-1, -2));
-        m6 m6Var = new m6(context, null);
-        if (chat2 != null) {
-            i10 = -1;
-            m6Var.s(chat2, null, chat2.title, LocaleController.formatPluralStringSpaced("Members", chat2.participants_count), false, false);
-        } else {
-            i10 = -1;
-            if (user != null) {
-                m6Var.s(user, null, DialogObject.getName(user), LocaleController.getString(R.string.Bot), false, false);
-            }
-        }
-        frameLayout.addView(m6Var, kb1.g(-2.0f, i10));
-        nm0 nm0Var = this.d;
-        int i11 = this.backgroundPaddingLeft;
-        nm0Var.setPadding(i11, 0, i11, AndroidUtilities.dp(64.0f) + AndroidUtilities.navigationBarHeight);
-        this.d.u1();
-        this.d.setClipToPadding(false);
-        this.d.setOnItemClickListener(new k(this, 17));
-        d dVar = new d(context, this.resourcesProvider, true);
-        if (chat != null) {
-            dVar.setText(LocaleController.getString(ChatObject.canAddChatToCommunity(chat) ? R.string.CommunityAddToCommunityButton : R.string.CommunityAddToCommunityRequestButton));
-        } else {
-            dVar.setText(LocaleController.getString(R.string.CommunityCreateCommunity));
-        }
-        dVar.f();
-        dVar.setOnClickListener(new w0(this, callback, chat, 12));
-        this.containerView.addView(dVar, kb1.j(48.0f, 80, AndroidUtilities.dp(12.0f) + this.backgroundPaddingLeft, 0, AndroidUtilities.dp(12.0f) + this.backgroundPaddingLeft, AndroidUtilities.dp(12.0f) + AndroidUtilities.navigationBarHeight));
-        this.X.O(false);
+    public /* synthetic */ a(org.telegram.utils.recorder.audio.d dVar, int i10) {
+        this.a = i10;
+        this.b = dVar;
     }
 
-    public final void P(Utilities.Callback callback, boolean z10, boolean z11) {
-        if (z11 && !z10 && !this.b0) {
-            g5.O(getContext(), this.resourcesProvider, LocaleController.getString(R.string.CommunityAddToCommunityTitle), LocaleController.getString(this.a0 ? R.string.CommunityAddToCommunityChannelMessage : R.string.CommunityAddToCommunityGroupMessage), LocaleController.getString(R.string.Add), new u7(this, callback, z10, 6)).show();
-        } else {
-            callback.run(Boolean.valueOf(z10));
-            dismiss();
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                org.telegram.utils.recorder.audio.d dVar = this.b;
+                try {
+                    if (dVar.n) {
+                        dVar.e(null);
+                        return;
+                    }
+                    int minBufferSize = AudioRecord.getMinBufferSize(48000, 16, 2);
+                    if (minBufferSize <= 0) {
+                        minBufferSize = 7680;
+                    }
+                    int max = Math.max(minBufferSize * 2, 7680);
+                    AudioRecord audioRecord = new AudioRecord(0, 48000, 16, 2, max);
+                    dVar.p = audioRecord;
+                    if (audioRecord.getState() != 1) {
+                        throw new IllegalStateException("Unable to initialize AudioRecord");
+                    }
+                    dVar.p.startRecording();
+                    if (dVar.p.getRecordingState() != 3) {
+                        throw new IllegalStateException("Unable to start AudioRecord");
+                    }
+                    dVar.f.b("AudioRecord started: minBufferBytes=" + minBufferSize + ", bufferBytes=" + max + ", sessionId=" + dVar.p.getAudioSessionId());
+                    dVar.r = SystemClock.elapsedRealtime();
+                    g gVar = dVar.g;
+                    ((k) gVar.c).i.post(new bi.e(gVar, gVar.a, 3));
+                    dVar.i.post(new a(dVar, 2));
+                    return;
+                } catch (Throwable th2) {
+                    dVar.e(org.telegram.utils.recorder.audio.d.a(th2));
+                    return;
+                }
+            case 1:
+                this.b.e(null);
+                return;
+            default:
+                org.telegram.utils.recorder.audio.d dVar2 = this.b;
+                if (dVar2.o) {
+                    return;
+                }
+                if (dVar2.n) {
+                    dVar2.e(null);
+                    return;
+                }
+                ByteBuffer byteBuffer = (ByteBuffer) dVar2.l.poll();
+                if (byteBuffer == null) {
+                    byteBuffer = ByteBuffer.allocateDirect(1920).order(ByteOrder.nativeOrder());
+                }
+                byteBuffer.clear();
+                try {
+                    int read = dVar2.p.read(byteBuffer, byteBuffer.capacity());
+                    if (read <= 0) {
+                        throw new IllegalStateException("AudioRecord read failed: " + read);
+                    }
+                    byteBuffer.limit(read);
+                    int i10 = read / 2;
+                    long j10 = 0;
+                    for (int i11 = 0; i11 + 1 < read; i11 += 2) {
+                        long j11 = byteBuffer.getShort(i11);
+                        j10 += j11 * j11;
+                    }
+                    dVar2.q += i10;
+                    dVar2.m.incrementAndGet();
+                    dVar2.k.post(new org.telegram.utils.recorder.audio.c(0, dVar2, byteBuffer));
+                    long elapsedRealtime = SystemClock.elapsedRealtime();
+                    if (elapsedRealtime - dVar2.r >= 32) {
+                        final double sqrt = i10 == 0 ? 0.0d : Math.sqrt(j10 / i10);
+                        final g gVar2 = dVar2.g;
+                        final long j12 = dVar2.q;
+                        Handler handler = ((k) gVar2.c).i;
+                        final long j13 = gVar2.a;
+                        handler.post(new Runnable() { // from class: ki.f
+                            @Override // java.lang.Runnable
+                            public final void run() {
+                                k kVar = (k) g.this.c;
+                                if (j13 == kVar.o && kVar.G == 3) {
+                                    kVar.q = j12;
+                                    long j14 = kVar.j();
+                                    double d = sqrt;
+                                    if (d >= 0.0d) {
+                                        MediaController mediaController = ((me) kVar.f.b).a;
+                                        mediaController.j1 = j14;
+                                        zs.f(mediaController.g1).k(zs.k2, Integer.valueOf(mediaController.f1), Double.valueOf(d / 2.0d));
+                                    }
+                                }
+                            }
+                        });
+                        dVar2.r = elapsedRealtime;
+                    }
+                    dVar2.i.post(new a(dVar2, 2));
+                    return;
+                } catch (Throwable th3) {
+                    if (0 == 0) {
+                        dVar2.c(byteBuffer);
+                    }
+                    dVar2.e(dVar2.n ? null : org.telegram.utils.recorder.audio.d.a(th3));
+                    return;
+                }
         }
-    }
-
-    public final void Q(boolean z10) {
-        boolean z11;
-        if (this.Y == z10) {
-            return;
-        }
-        this.Y = z10;
-        int i10 = this.c0 + 1;
-        nm0 nm0Var = this.d;
-        View U0 = nm0Var.U0(i10);
-        if (U0 instanceof n6) {
-            ((n6) U0).a(!z10);
-            z11 = false;
-        } else {
-            z11 = true;
-        }
-        View U02 = nm0Var.U0(this.c0 + 2);
-        if (U02 instanceof n6) {
-            ((n6) U02).a(z10);
-        } else {
-            z11 = true;
-        }
-        if (z11) {
-            this.X.O(true);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.bb
-    public final mm0 v(nm0 nm0Var) {
-        k71 k71Var = new k71(this.d, getContext(), this.currentAccount, 0, false, new e2(this, 14), this.resourcesProvider);
-        this.X = k71Var;
-        k71Var.r = false;
-        return k71Var;
-    }
-
-    @Override // org.telegram.ui.Components.bb
-    public final CharSequence y() {
-        return LocaleController.getString(this.b0 ? R.string.CommunityAddBotTitle : R.string.CommunityAddChatTitle);
     }
 }

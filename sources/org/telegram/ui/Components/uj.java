@@ -1,34 +1,36 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.AndroidUtilities;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.View;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class uj implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ wj b;
+public final class uj extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ org.telegram.ui.uq b;
 
-    public /* synthetic */ uj(wj wjVar, int i10) {
-        this.a = i10;
-        this.b = wjVar;
+    public uj(org.telegram.ui.uq uqVar) {
+        this.b = uqVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                wj wjVar = this.b;
-                if (wjVar.f != null) {
-                    wjVar.v = org.telegram.messenger.wh.g(new StringBuilder("+"), wjVar.f.phone, kf.b.c());
-                    wjVar.s = wjVar.f;
-                    AndroidUtilities.runOnUIThread(new uj(wjVar, 1));
-                    break;
-                }
+                ((wj) this.b.d).U.e();
                 break;
             default:
-                wj wjVar2 = this.b;
-                wjVar2.c.l(wjVar2.v, false);
+                org.telegram.ui.uq uqVar = this.b;
+                View view = uqVar.b;
+                view.setAlpha(1.0f);
+                s4.n0.x0(view);
+                ((wj) uqVar.d).X.r.removeView(view);
                 break;
         }
+    }
+
+    public uj(org.telegram.ui.uq uqVar, s4.n0 n0Var) {
+        this.b = uqVar;
     }
 }

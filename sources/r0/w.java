@@ -1,61 +1,37 @@
 package r0;
 
-import android.text.TextUtils;
+import android.os.Build;
 import android.view.View;
+import android.view.ViewTreeObserver;
+import java.util.Map;
+import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class w extends p1.c {
-    public final /* synthetic */ int e;
+public final class w implements ViewTreeObserver.OnGlobalLayoutListener, View.OnAttachStateChangeListener {
+    public final WeakHashMap a = new WeakHashMap();
 
-    public w(int i10, Class cls, int i11, int i12, int i13) {
-        this.e = i13;
-        this.a = i10;
-        this.d = cls;
-        this.c = i11;
-        this.b = i12;
-    }
-
-    @Override // p1.c
-    public final Object b(View view) {
-        switch (this.e) {
-            case 0:
-                return Boolean.valueOf(d0.c(view));
-            case 1:
-                return d0.a(view);
-            default:
-                return Boolean.valueOf(d0.b(view));
+    @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
+    public final void onGlobalLayout() {
+        if (Build.VERSION.SDK_INT < 28) {
+            for (Map.Entry entry : this.a.entrySet()) {
+                View view = (View) entry.getKey();
+                boolean booleanValue = ((Boolean) entry.getValue()).booleanValue();
+                boolean z10 = view.isShown() && view.getWindowVisibility() == 0;
+                if (booleanValue != z10) {
+                    h0.f(z10 ? 16 : 32, view);
+                    entry.setValue(Boolean.valueOf(z10));
+                }
+            }
         }
     }
 
-    @Override // p1.c
-    public final void c(View view, Object obj) {
-        switch (this.e) {
-            case 0:
-                d0.f(view, ((Boolean) obj).booleanValue());
-                break;
-            case 1:
-                d0.e(view, (CharSequence) obj);
-                break;
-            default:
-                d0.d(view, ((Boolean) obj).booleanValue());
-                break;
-        }
+    @Override // android.view.View.OnAttachStateChangeListener
+    public final void onViewAttachedToWindow(View view) {
+        view.getViewTreeObserver().addOnGlobalLayoutListener(this);
     }
 
-    @Override // p1.c
-    public final boolean e(Object obj, Object obj2) {
-        switch (this.e) {
-            case 0:
-                Boolean bool = (Boolean) obj;
-                Boolean bool2 = (Boolean) obj2;
-                return !((bool != null && bool.booleanValue()) == (bool2 != null && bool2.booleanValue()));
-            case 1:
-                return !TextUtils.equals((CharSequence) obj, (CharSequence) obj2);
-            default:
-                Boolean bool3 = (Boolean) obj;
-                Boolean bool4 = (Boolean) obj2;
-                return !((bool3 != null && bool3.booleanValue()) == (bool4 != null && bool4.booleanValue()));
-        }
+    @Override // android.view.View.OnAttachStateChangeListener
+    public final void onViewDetachedFromWindow(View view) {
     }
 }

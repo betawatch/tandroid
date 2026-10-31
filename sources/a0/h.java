@@ -2,7 +2,7 @@ package a0;
 
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class h implements Cloneable {
     public /* synthetic */ boolean a;
@@ -34,7 +34,7 @@ public final class h implements Cloneable {
         this.c = new Object[i14];
     }
 
-    public final void a(Long l4, long j10) {
+    public final void a(long j10, Long l4) {
         int i10 = this.d;
         if (i10 != 0 && j10 <= this.b[i10 - 1]) {
             k(l4, j10);
@@ -170,7 +170,7 @@ public final class h implements Cloneable {
     public final long j(int i10) {
         int i11;
         if (i10 < 0 || i10 >= (i11 = this.d)) {
-            throw new IllegalArgumentException(ic.a.i(i10, "Expected index to be within 0..size()-1, but was ").toString());
+            throw new IllegalArgumentException(i0.a.i(i10, "Expected index to be within 0..size()-1, but was ").toString());
         }
         if (this.a) {
             long[] jArr = this.b;
@@ -261,7 +261,7 @@ public final class h implements Cloneable {
             kotlin.jvm.internal.i.e(jArr2, "<this>");
             System.arraycopy(jArr2, i10, jArr2, i20, i19);
             Object[] objArr3 = this.c;
-            kd.f.c(i20, i10, this.d, objArr3, objArr3);
+            bd.h.c(i20, i10, this.d, objArr3, objArr3);
         }
         this.b[i10] = j10;
         this.c[i10] = obj;
@@ -307,7 +307,7 @@ public final class h implements Cloneable {
     public final Object n(int i10) {
         int i11;
         if (i10 < 0 || i10 >= (i11 = this.d)) {
-            throw new IllegalArgumentException(ic.a.i(i10, "Expected index to be within 0..size()-1, but was ").toString());
+            throw new IllegalArgumentException(i0.a.i(i10, "Expected index to be within 0..size()-1, but was ").toString());
         }
         if (this.a) {
             long[] jArr = this.b;

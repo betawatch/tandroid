@@ -9,7 +9,6 @@ import java.io.InvalidObjectException;
 import java.io.ObjectInputStream;
 import java.io.Serializable;
 import java.util.Locale;
-import org.telegram.messenger.MediaDataController;
 
 /* loaded from: classes2.dex */
 public final class r implements Temporal, j$.time.temporal.m, Comparable, Serializable {
@@ -164,7 +163,7 @@ public final class r implements Temporal, j$.time.temporal.m, Comparable, Serial
             return I(j$.com.android.tools.r8.a.S(j10, 100));
         }
         if (i10 == 4) {
-            return I(j$.com.android.tools.r8.a.S(j10, MediaDataController.MAX_STYLE_RUNS_COUNT));
+            return I(j$.com.android.tools.r8.a.S(j10, 1000));
         }
         if (i10 == 5) {
             j$.time.temporal.a aVar = j$.time.temporal.a.ERA;

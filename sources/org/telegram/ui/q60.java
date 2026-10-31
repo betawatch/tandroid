@@ -1,154 +1,106 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.ContactsController;
-import org.telegram.messenger.DispatchQueue2;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.UserObject;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.SurfaceTexture;
+import android.view.TextureView;
+import org.telegram.messenger.Intro;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class q60 implements Runnable {
+public final class q60 implements TextureView.SurfaceTextureListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ r60 b;
-    public final /* synthetic */ String c;
+    public final /* synthetic */ org.telegram.messenger.us b;
 
-    public /* synthetic */ q60(r60 r60Var, String str, int i10) {
+    public /* synthetic */ q60(org.telegram.messenger.us usVar, int i10) {
         this.a = i10;
-        this.b = r60Var;
-        this.c = str;
+        this.b = usVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        String str;
-        String publicUsername;
-        ArrayList arrayList;
-        boolean z10;
-        int i10;
-        Object obj;
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i10, int i11) {
         switch (this.a) {
             case 0:
-                r60 r60Var = this.b;
-                String str2 = this.c;
-                r60Var.getClass();
-                AndroidUtilities.runOnUIThread(new q60(r60Var, str2, 1));
-                break;
-            case 1:
-                r60 r60Var2 = this.b;
-                String str3 = this.c;
-                ig.a2 a2Var = r60Var2.f;
-                t60 t60Var = r60Var2.I;
-                a2Var.g(str3, true, t60Var.O || t60Var.P, true, false, 0L, false, 0, 0);
-                DispatchQueue2 dispatchQueue2 = Utilities.searchQueue;
-                q60 q60Var = new q60(r60Var2, str3, 2);
-                r60Var2.h = q60Var;
-                dispatchQueue2.postRunnable(q60Var);
-                break;
-            default:
-                r60 r60Var3 = this.b;
-                String str4 = this.c;
-                ArrayList arrayList2 = r60Var3.r;
-                String lowerCase = str4.trim().toLowerCase();
-                if (!lowerCase.isEmpty()) {
-                    String translitString = LocaleController.getInstance().getTranslitString(lowerCase);
-                    if (lowerCase.equals(translitString) || translitString.isEmpty()) {
-                        translitString = null;
-                    }
-                    int i11 = 0;
-                    boolean z11 = true;
-                    int i12 = (translitString != null ? 1 : 0) + 1;
-                    String[] strArr = new String[i12];
-                    strArr[0] = lowerCase;
-                    if (translitString != null) {
-                        strArr[1] = translitString;
-                    }
-                    ArrayList arrayList3 = new ArrayList();
-                    ArrayList arrayList4 = new ArrayList();
-                    int i13 = 0;
-                    while (i13 < arrayList2.size()) {
-                        TLObject tLObject = (TLObject) arrayList2.get(i13);
-                        boolean z12 = tLObject instanceof TLRPC.User;
-                        if (z12) {
-                            TLRPC.User user = (TLRPC.User) tLObject;
-                            str = ContactsController.formatName(user.first_name, user.last_name).toLowerCase();
-                            publicUsername = UserObject.getPublicUsername(user);
-                        } else {
-                            if (tLObject instanceof TLRPC.Chat) {
-                                TLRPC.Chat chat = (TLRPC.Chat) tLObject;
-                                str = chat.title;
-                                publicUsername = ChatObject.getPublicUsername(chat);
-                            }
-                            arrayList = arrayList2;
-                            z10 = z11;
-                            i13++;
-                            z11 = z10;
-                            arrayList2 = arrayList;
-                            i11 = 0;
-                        }
-                        String translitString2 = LocaleController.getInstance().getTranslitString(str);
-                        if (str.equals(translitString2)) {
-                            translitString2 = null;
-                        }
-                        int i14 = i11;
-                        while (i11 < i12) {
-                            String str5 = strArr[i11];
-                            if (str.startsWith(str5) || org.telegram.messenger.wh.u(" ", str5, str) || (translitString2 != null && (translitString2.startsWith(str5) || org.telegram.messenger.wh.u(" ", str5, translitString2)))) {
-                                i10 = 1;
-                            } else {
-                                if (publicUsername != null && publicUsername.startsWith(str5)) {
-                                    i14 = 2;
-                                }
-                                i10 = i14;
-                            }
-                            if (i10 != 0) {
-                                arrayList = arrayList2;
-                                z10 = true;
-                                if (i10 == 1) {
-                                    if (z12) {
-                                        TLRPC.User user2 = (TLRPC.User) tLObject;
-                                        arrayList4.add(AndroidUtilities.generateSearchName(user2.first_name, user2.last_name, str5));
-                                    } else if (tLObject instanceof TLRPC.Chat) {
-                                        obj = null;
-                                        arrayList4.add(AndroidUtilities.generateSearchName(((TLRPC.Chat) tLObject).title, null, str5));
-                                    }
-                                    obj = null;
-                                } else {
-                                    obj = null;
-                                    arrayList4.add(AndroidUtilities.generateSearchName(org.telegram.ui.Components.b10.j("@", publicUsername), null, "@" + str5));
-                                }
-                                arrayList3.add(tLObject);
-                                i13++;
-                                z11 = z10;
-                                arrayList2 = arrayList;
-                                i11 = 0;
-                            } else {
-                                i11++;
-                                int i15 = i10;
-                                z11 = true;
-                                arrayList2 = arrayList2;
-                                i14 = i15;
-                            }
-                        }
-                        arrayList = arrayList2;
-                        z10 = z11;
-                        i13++;
-                        z11 = z10;
-                        arrayList2 = arrayList;
-                        i11 = 0;
-                    }
-                    AndroidUtilities.runOnUIThread(new pq(r60Var3, arrayList3, arrayList4, 10));
-                    break;
-                } else {
-                    AndroidUtilities.runOnUIThread(new pq(r60Var3, new ArrayList(), new ArrayList(), 10));
+                s60 s60Var = (s60) this.b;
+                if (s60Var.I == null && surfaceTexture != null) {
+                    s60Var.I = new r60(s60Var, surfaceTexture);
+                    Intro.onSurfaceChanged(i10, i11, Math.min(i10 / 150.0f, i11 / 150.0f), 0);
+                    s60Var.I.postRunnable(new zy(this, 12));
+                    r60 r60Var = s60Var.I;
+                    r60Var.postRunnable(r60Var.x);
                     break;
                 }
                 break;
         }
+    }
+
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final boolean onSurfaceTextureDestroyed(SurfaceTexture surfaceTexture) {
+        switch (this.a) {
+            case 0:
+                s60 s60Var = (s60) this.b;
+                r60 r60Var = s60Var.I;
+                if (r60Var == null) {
+                    return true;
+                }
+                r60Var.postRunnable(new zy(r60Var, 14));
+                s60Var.I = null;
+                return true;
+            default:
+                PhotoViewer photoViewer = (PhotoViewer) this.b;
+                if (photoViewer.B2 != null) {
+                    org.telegram.ui.Components.jf0 jf0Var = org.telegram.ui.Components.jf0.p0;
+                    if (jf0Var.P && org.telegram.ui.Components.jf0.k() != null && org.telegram.ui.Components.jf0.k().b.a != 0) {
+                        (jf0Var != null ? jf0Var.l0 : null).setSurfaceTexture(surfaceTexture);
+                        (jf0Var != null ? jf0Var.l0 : null).setVisibility(0);
+                        return false;
+                    }
+                    if (photoViewer.F3) {
+                        if (photoViewer.L3) {
+                            photoViewer.G3 = 2;
+                        }
+                        photoViewer.B2.setSurfaceTexture(surfaceTexture);
+                        photoViewer.B2.setVisibility(0);
+                        photoViewer.F3 = false;
+                        photoViewer.e0.invalidate();
+                        return false;
+                    }
+                }
+                return true;
+        }
+    }
+
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureSizeChanged(SurfaceTexture surfaceTexture, int i10, int i11) {
+        switch (this.a) {
+            case 0:
+                if (((s60) this.b).I != null) {
+                    Intro.onSurfaceChanged(i10, i11, Math.min(i10 / 150.0f, i11 / 150.0f), 0);
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
+        switch (this.a) {
+            case 0:
+                break;
+            default:
+                PhotoViewer photoViewer = (PhotoViewer) this.b;
+                if (photoViewer.G3 == 1) {
+                    photoViewer.y0(true);
+                    break;
+                }
+                break;
+        }
+    }
+
+    private final void c(SurfaceTexture surfaceTexture) {
+    }
+
+    private final void a(SurfaceTexture surfaceTexture, int i10, int i11) {
+    }
+
+    private final void b(SurfaceTexture surfaceTexture, int i10, int i11) {
     }
 }

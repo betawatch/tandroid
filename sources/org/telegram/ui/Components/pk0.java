@@ -1,9 +1,9 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public interface pk0 {
-    void f(long j10, TLRPC.MessagePeerReaction messagePeerReaction);
+public final class pk0 {
+    public float a;
+    public float b;
+    public float c;
 }

@@ -1,44 +1,27 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class ya extends s4.j0 {
-    public final /* synthetic */ s4.j0 a;
-    public final /* synthetic */ za b;
+public final /* synthetic */ class ya implements o1.g {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ bb b;
+    public final /* synthetic */ q0.a c;
 
-    public ya(za zaVar, s4.j0 j0Var) {
-        this.b = zaVar;
-        this.a = j0Var;
+    public /* synthetic */ ya(q0.a aVar, bb bbVar, int i10) {
+        this.a = i10;
+        this.c = aVar;
+        this.b = bbVar;
     }
 
-    @Override // s4.j0
-    public final void a() {
-        this.a.a();
-    }
-
-    @Override // s4.j0
-    public final void b(int i10, int i11) {
-        this.a.b(i10 + (!((bb) this.b.f).P ? 1 : 0), i11);
-    }
-
-    @Override // s4.j0
-    public final void c(int i10, int i11, Object obj) {
-        this.a.c(i10 + (!((bb) this.b.f).P ? 1 : 0), i11, obj);
-    }
-
-    @Override // s4.j0
-    public final void d(int i10, int i11) {
-        this.a.d(i10 + (!((bb) this.b.f).P ? 1 : 0), i11);
-    }
-
-    @Override // s4.j0
-    public final void e(int i10, int i11) {
-        int i12 = !((bb) this.b.f).P ? 1 : 0;
-        this.a.e(i10 + i12, i11 + i12);
-    }
-
-    @Override // s4.j0
-    public final void f(int i10, int i11) {
-        this.a.f(i10 + (!((bb) this.b.f).P ? 1 : 0), i11);
+    @Override // o1.g
+    public final void a(o1.j jVar, float f7, float f10) {
+        switch (this.a) {
+            case 0:
+                ((ma) this.c).accept(Float.valueOf(this.b.getTranslationY()));
+                break;
+            default:
+                ((gl) this.c).accept(Float.valueOf(this.b.getTranslationY()));
+                break;
+        }
     }
 }

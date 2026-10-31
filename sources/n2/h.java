@@ -1,6 +1,6 @@
 package n2;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class h implements Runnable {
     public final /* synthetic */ int a;
@@ -20,11 +20,11 @@ public final /* synthetic */ class h implements Runnable {
         switch (this.a) {
             case 0:
                 j jVar = this.b;
-                this.c.g(jVar.a, jVar.b);
+                this.c.E(jVar.a, jVar.b);
                 break;
             default:
                 j jVar2 = this.b;
-                this.c.i(jVar2.a, jVar2.b);
+                this.c.J(jVar2.a, jVar2.b);
                 break;
         }
     }

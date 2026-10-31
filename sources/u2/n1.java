@@ -1,43 +1,44 @@
 package u2;
 
-import a8.yb;
 import android.net.Uri;
+import e9.x1;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import v7.t6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class n1 extends a {
-    public final g2.m h;
+    public final g2.n h;
     public final g2.g i;
     public final b2.x j;
-    public final u7.s l;
+    public final hb.a l;
     public final j1 n;
     public final b2.p0 o;
-    public g2.c0 p;
+    public g2.d0 p;
     public final long k = -9223372036854775807L;
     public final boolean m = true;
 
-    public n1(b2.o0 o0Var, rf.b bVar, u7.s sVar) {
+    public n1(b2.o0 o0Var, hf.b bVar, hb.a aVar) {
         b2.k0 k0Var;
         this.i = bVar;
-        this.l = sVar;
+        this.l = aVar;
         boolean z10 = true;
         b2.d0 d0Var = new b2.d0();
         b2.g0 g0Var = new b2.g0();
         List list = Collections.EMPTY_LIST;
-        f9.s1 s1Var = f9.s1.e;
+        x1 x1Var = x1.e;
         b2.i0 i0Var = new b2.i0();
         b2.l0 l0Var = b2.l0.d;
         Uri uri = Uri.EMPTY;
         String uri2 = o0Var.a.toString();
         uri2.getClass();
-        f9.i0 u10 = f9.i0.u(f9.i0.y(o0Var));
+        e9.n0 u10 = e9.n0.u(e9.n0.y(o0Var));
         if (g0Var.b != null && g0Var.a == null) {
             z10 = false;
         }
-        yb.p(z10);
+        t6.p(z10);
         if (uri != null) {
             k0Var = new b2.k0(uri, null, g0Var.a != null ? new b2.h0(g0Var) : null, null, list, null, u10, -9223372036854775807L);
         } else {
@@ -47,7 +48,7 @@ public final class n1 extends a {
         this.o = p0Var;
         b2.w wVar = new b2.w();
         String str = o0Var.b;
-        wVar.r = b2.w0.n(str == null ? "text/x-unknown" : str);
+        wVar.r = b2.v0.n(str == null ? "text/x-unknown" : str);
         wVar.d = o0Var.c;
         wVar.e = o0Var.d;
         wVar.f = o0Var.e;
@@ -57,13 +58,13 @@ public final class n1 extends a {
         this.j = new b2.x(wVar);
         Map map = Collections.EMPTY_MAP;
         Uri uri3 = o0Var.a;
-        yb.l(uri3, "The uri must be set.");
-        this.h = new g2.m(uri3, 1, null, map, 0L, -1L, null, 1);
+        t6.l(uri3, "The uri must be set.");
+        this.h = new g2.n(uri3, 1, null, map, 0L, -1L, null, 1);
         this.n = new j1(-9223372036854775807L, -9223372036854775807L, -9223372036854775807L, -9223372036854775807L, 0L, 0L, true, false, false, null, p0Var, null);
     }
 
     @Override // u2.a
-    public final e0 c(g0 g0Var, a8.h0 h0Var, long j10) {
+    public final e0 c(g0 g0Var, android.support.v4.media.session.a0 a0Var, long j10) {
         return new m1(this.h, this.i, this.p, this.j, this.k, this.l, b(g0Var), this.m, null);
     }
 
@@ -73,8 +74,8 @@ public final class n1 extends a {
     }
 
     @Override // u2.a
-    public final void m(g2.c0 c0Var) {
-        this.p = c0Var;
+    public final void m(g2.d0 d0Var) {
+        this.p = d0Var;
         n(this.n);
     }
 

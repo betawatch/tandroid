@@ -1,23 +1,23 @@
 package com.google.android.recaptcha.internal;
 
-import a8.id;
+import ad.c;
+import ad.h;
+import ib.a;
 import java.util.Iterator;
 import java.util.List;
-import jd.c;
-import jd.g;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class zzq {
     private final c zza;
 
     public zzq() {
         int i10 = zzby.zza;
-        this.zza = id.a(zzp.zza);
+        this.zza = a.a(zzp.zza);
     }
 
     private final zzi zzf() {
-        return (zzi) ((g) this.zza).a();
+        return (zzi) ((h) this.zza).a();
     }
 
     public final zzzd zza() {
@@ -28,11 +28,11 @@ public final class zzq {
         return (zzzd) zzf.zzk();
     }
 
-    public final Object zzb(String str, long j10, ld.c cVar) {
+    public final Object zzb(String str, long j10, cd.c cVar) {
         return new zzhf(31, new zzl(this, str, j10, null), null);
     }
 
-    public final Object zzc(long j10, zzxn zzxnVar, ld.c cVar) {
+    public final Object zzc(long j10, zzxn zzxnVar, cd.c cVar) {
         return new zzhf(30, new zzo(this, j10, zzxnVar, null), null);
     }
 

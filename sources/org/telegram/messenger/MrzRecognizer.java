@@ -13,41 +13,10 @@ import android.util.SparseArray;
 import java.util.Calendar;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public class MrzRecognizer {
-
-    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-    public static class Result {
-        public static final int GENDER_FEMALE = 2;
-        public static final int GENDER_MALE = 1;
-        public static final int GENDER_UNKNOWN = 0;
-        public static final int TYPE_DRIVER_LICENSE = 4;
-        public static final int TYPE_ID = 2;
-        public static final int TYPE_INTERNAL_PASSPORT = 3;
-        public static final int TYPE_PASSPORT = 1;
-        public int birthDay;
-        public int birthMonth;
-        public int birthYear;
-        public boolean doesNotExpire;
-        public int expiryDay;
-        public int expiryMonth;
-        public int expiryYear;
-        public String firstName;
-        public int gender;
-        public String issuingCountry;
-        public String lastName;
-        public boolean mainCheckDigitIsValid;
-        public String middleName;
-        public String nationality;
-        public String number;
-        public String rawMRZ;
-        public int type;
-    }
-
-    private static native Rect[][] binarizeAndFindCharacters(Bitmap bitmap, Bitmap bitmap2);
-
-    private static String capitalize(String str) {
+    public static String a(String str) {
         if (str == null) {
             return null;
         }
@@ -63,7 +32,7 @@ public class MrzRecognizer {
         return new String(charArray);
     }
 
-    private static int checksum(String str) {
+    public static int b(String str) {
         char[] charArray = str.toCharArray();
         int[] iArr = {7, 3, 1};
         int i10 = 0;
@@ -74,7 +43,9 @@ public class MrzRecognizer {
         return i10 % 10;
     }
 
-    private static String cyrillicToLatin(String str) {
+    private static native Rect[][] binarizeAndFindCharacters(Bitmap bitmap, Bitmap bitmap2);
+
+    public static String c(String str) {
         String[] strArr = {"A", "B", "V", "G", "D", "E", "E", "ZH", "Z", "I", "I", "K", "L", "M", "N", "O", "P", "R", "S", "T", "U", "F", "KH", "TS", "CH", "SH", "SHCH", "IE", "Y", "", "E", "IU", "IA"};
         int i10 = 0;
         String str2 = str;
@@ -86,10 +57,8 @@ public class MrzRecognizer {
         return str2;
     }
 
-    private static native int[] findCornerPoints(Bitmap bitmap);
-
-    private static HashMap<String, String> getCountriesMap() {
-        HashMap<String, String> hashMap = new HashMap<>();
+    public static HashMap d() {
+        HashMap hashMap = new HashMap();
         hashMap.put("AFG", "AF");
         hashMap.put("ALA", "AX");
         hashMap.put("ALB", "AL");
@@ -342,7 +311,7 @@ public class MrzRecognizer {
         return hashMap;
     }
 
-    private static int getNumber(char c10) {
+    public static int e(char c10) {
         if (c10 == 'O') {
             return 0;
         }
@@ -355,144 +324,126 @@ public class MrzRecognizer {
         return c10 - '0';
     }
 
-    private static void parseBirthDate(String str, Result result) {
+    public static void f(String str, is isVar) {
         try {
             int parseInt = Integer.parseInt(str.substring(0, 2));
-            result.birthYear = parseInt;
-            result.birthYear = parseInt < (Calendar.getInstance().get(1) % 100) + (-5) ? result.birthYear + 2000 : result.birthYear + 1900;
-            result.birthMonth = Integer.parseInt(str.substring(2, 4));
-            result.birthDay = Integer.parseInt(str.substring(4));
+            isVar.i = parseInt;
+            isVar.i = parseInt < (Calendar.getInstance().get(1) % 100) + (-5) ? isVar.i + 2000 : isVar.i + 1900;
+            isVar.j = Integer.parseInt(str.substring(2, 4));
+            isVar.k = Integer.parseInt(str.substring(4));
         } catch (NumberFormatException unused) {
         }
     }
 
-    private static void parseExpiryDate(String str, Result result) {
+    private static native int[] findCornerPoints(Bitmap bitmap);
+
+    public static void g(String str, is isVar) {
         try {
             if ("<<<<<<".equals(str)) {
-                result.doesNotExpire = true;
+                isVar.o = true;
                 return;
             }
-            result.expiryYear = Integer.parseInt(str.substring(0, 2)) + 2000;
-            result.expiryMonth = Integer.parseInt(str.substring(2, 4));
-            result.expiryDay = Integer.parseInt(str.substring(4));
+            isVar.f = Integer.parseInt(str.substring(0, 2)) + 2000;
+            isVar.g = Integer.parseInt(str.substring(2, 4));
+            isVar.h = Integer.parseInt(str.substring(4));
         } catch (NumberFormatException unused) {
         }
     }
 
-    private static int parseGender(char c10) {
+    public static int h(char c10) {
         if (c10 != 'F') {
             return c10 != 'M' ? 0 : 1;
         }
         return 2;
     }
 
-    private static native String performRecognition(Bitmap bitmap, int i10, int i11, AssetManager assetManager);
-
-    public static Result recognize(Bitmap bitmap, boolean z10) {
-        Result recognizeBarcode;
-        Result recognizeBarcode2;
-        if (z10 && (recognizeBarcode2 = recognizeBarcode(bitmap)) != null) {
-            return recognizeBarcode2;
-        }
-        try {
-            Result recognizeMRZ = recognizeMRZ(bitmap);
-            if (recognizeMRZ != null) {
-                return recognizeMRZ;
-            }
-        } catch (Exception unused) {
-        }
-        if (z10 || (recognizeBarcode = recognizeBarcode(bitmap)) == null) {
-            return null;
-        }
-        return recognizeBarcode;
-    }
-
-    private static Result recognizeBarcode(Bitmap bitmap) {
-        s8.n nVar = new s8.n(new com.google.android.gms.internal.vision.t2(ApplicationLoader.applicationContext, new com.google.android.gms.internal.vision.x1()));
+    public static is i(Bitmap bitmap) {
+        r8.e eVar;
+        r8.n nVar = new r8.n(new com.google.android.gms.internal.vision.t2(w0.b, new com.google.android.gms.internal.vision.x1()));
         if (bitmap.getWidth() > 1500 || bitmap.getHeight() > 1500) {
             float max = 1500.0f / Math.max(bitmap.getWidth(), bitmap.getHeight());
             bitmap = Bitmap.createScaledBitmap(bitmap, Math.round(bitmap.getWidth() * max), Math.round(bitmap.getHeight() * max), true);
         }
-        k6.c cVar = new k6.c(28);
+        q5.d dVar = new q5.d(1);
         int width = bitmap.getWidth();
         int height = bitmap.getHeight();
-        cVar.d = bitmap;
-        a3.l lVar = (a3.l) cVar.b;
+        dVar.d = bitmap;
+        a3.l lVar = (a3.l) dVar.b;
         lVar.a = width;
         lVar.b = height;
-        SparseArray e12 = nVar.e1(cVar);
+        SparseArray e12 = nVar.e1(dVar);
         int i10 = 0;
         for (int i11 = 0; i11 < e12.size(); i11++) {
-            s8.m mVar = (s8.m) e12.valueAt(i11);
+            r8.m mVar = (r8.m) e12.valueAt(i11);
             int i12 = mVar.d;
             int i13 = 6;
             int i14 = 4;
-            if (i12 == 12 && mVar.y != null) {
-                Result result = new Result();
-                result.type = "ID".equals(mVar.y.a) ? 2 : 4;
-                String str = mVar.y.y;
+            if (i12 == 12 && (eVar = mVar.D) != null) {
+                is isVar = new is();
+                isVar.a = "ID".equals(eVar.a) ? 2 : 4;
+                String str = mVar.D.D;
                 str.getClass();
                 if (str.equals("CAN")) {
-                    result.issuingCountry = "CA";
-                    result.nationality = "CA";
+                    isVar.l = "CA";
+                    isVar.m = "CA";
                 } else if (str.equals("USA")) {
-                    result.issuingCountry = "US";
-                    result.nationality = "US";
+                    isVar.l = "US";
+                    isVar.m = "US";
                 }
-                result.firstName = capitalize(mVar.y.b);
-                result.lastName = capitalize(mVar.y.d);
-                result.middleName = capitalize(mVar.y.c);
-                s8.e eVar = mVar.y;
-                result.number = eVar.s;
-                String str2 = eVar.e;
+                isVar.b = a(mVar.D.b);
+                isVar.c = a(mVar.D.d);
+                isVar.d = a(mVar.D.c);
+                r8.e eVar2 = mVar.D;
+                isVar.e = eVar2.s;
+                String str2 = eVar2.e;
                 if (str2 != null) {
                     if (str2.equals("1")) {
-                        result.gender = 1;
+                        isVar.n = 1;
                     } else if (str2.equals("2")) {
-                        result.gender = 2;
+                        isVar.n = 2;
                     }
                 }
-                if ("USA".equals(result.issuingCountry)) {
+                if ("USA".equals(isVar.l)) {
                     i14 = 0;
                     i10 = 4;
                     i13 = 2;
                 }
                 try {
-                    String str3 = mVar.y.x;
+                    String str3 = mVar.D.y;
                     if (str3 != null && str3.length() == 8) {
-                        result.birthYear = Integer.parseInt(mVar.y.x.substring(i10, i10 + 4));
-                        result.birthMonth = Integer.parseInt(mVar.y.x.substring(i14, i14 + 2));
-                        result.birthDay = Integer.parseInt(mVar.y.x.substring(i13, i13 + 2));
+                        isVar.i = Integer.parseInt(mVar.D.y.substring(i10, i10 + 4));
+                        isVar.j = Integer.parseInt(mVar.D.y.substring(i14, i14 + 2));
+                        isVar.k = Integer.parseInt(mVar.D.y.substring(i13, i13 + 2));
                     }
-                    String str4 = mVar.y.w;
+                    String str4 = mVar.D.x;
                     if (str4 != null && str4.length() == 8) {
-                        result.expiryYear = Integer.parseInt(mVar.y.w.substring(i10, i10 + 4));
-                        result.expiryMonth = Integer.parseInt(mVar.y.w.substring(i14, i14 + 2));
-                        result.expiryDay = Integer.parseInt(mVar.y.w.substring(i13, i13 + 2));
+                        isVar.f = Integer.parseInt(mVar.D.x.substring(i10, i10 + 4));
+                        isVar.g = Integer.parseInt(mVar.D.x.substring(i14, i14 + 2));
+                        isVar.h = Integer.parseInt(mVar.D.x.substring(i13, i13 + 2));
                     }
                 } catch (NumberFormatException unused) {
                 }
-                return result;
+                return isVar;
             }
             if (i12 == 7 && mVar.a == 2048 && mVar.b.matches("^[A-Za-z0-9=]+$")) {
                 try {
                     String[] split = new String(Base64.decode(mVar.b, 0), "windows-1251").split("\\|");
                     if (split.length >= 10) {
-                        Result result2 = new Result();
-                        result2.type = 4;
-                        result2.issuingCountry = "RU";
-                        result2.nationality = "RU";
-                        result2.number = split[0];
-                        result2.expiryYear = Integer.parseInt(split[2].substring(0, 4));
-                        result2.expiryMonth = Integer.parseInt(split[2].substring(4, 6));
-                        result2.expiryDay = Integer.parseInt(split[2].substring(6));
-                        result2.lastName = capitalize(cyrillicToLatin(split[3]));
-                        result2.firstName = capitalize(cyrillicToLatin(split[4]));
-                        result2.middleName = capitalize(cyrillicToLatin(split[5]));
-                        result2.birthYear = Integer.parseInt(split[6].substring(0, 4));
-                        result2.birthMonth = Integer.parseInt(split[6].substring(4, 6));
-                        result2.birthDay = Integer.parseInt(split[6].substring(6));
-                        return result2;
+                        is isVar2 = new is();
+                        isVar2.a = 4;
+                        isVar2.l = "RU";
+                        isVar2.m = "RU";
+                        isVar2.e = split[0];
+                        isVar2.f = Integer.parseInt(split[2].substring(0, 4));
+                        isVar2.g = Integer.parseInt(split[2].substring(4, 6));
+                        isVar2.h = Integer.parseInt(split[2].substring(6));
+                        isVar2.c = a(c(split[3]));
+                        isVar2.b = a(c(split[4]));
+                        isVar2.d = a(c(split[5]));
+                        isVar2.i = Integer.parseInt(split[6].substring(0, 4));
+                        isVar2.j = Integer.parseInt(split[6].substring(4, 6));
+                        isVar2.k = Integer.parseInt(split[6].substring(6));
+                        return isVar2;
                     }
                     continue;
                 } catch (Exception unused2) {
@@ -503,12 +454,15 @@ public class MrzRecognizer {
         return null;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:189:0x027d A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x01f6  */
+    /* JADX WARN: Removed duplicated region for block: B:177:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:185:0x0281 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x01f5  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x02ae  */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x02fe  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    private static Result recognizeMRZ(Bitmap bitmap) {
+    public static is j(Bitmap bitmap) {
         float max;
         Bitmap createScaledBitmap;
         int i10;
@@ -521,7 +475,9 @@ public class MrzRecognizer {
         Bitmap createScaledBitmap2;
         int i17;
         int i18;
+        Rect[][] rectArr;
         int i19;
+        String performRecognition;
         int i20;
         char c10;
         Matrix matrix;
@@ -563,9 +519,8 @@ public class MrzRecognizer {
             if (d >= 1.35d && d <= 1.75d && d11 >= 1.35d && d11 <= 1.75d && d10 >= 1.35d && d10 <= 1.75d && d12 >= 1.35d && d12 <= 1.75d) {
                 Bitmap createBitmap = Bitmap.createBitmap(1024, (int) Math.round(1024.0d / ((((d + d10) + d11) + d12) / 4.0d)), Bitmap.Config.ARGB_8888);
                 Canvas canvas = new Canvas(createBitmap);
-                float[] fArr = {point2.x * f7, point2.y * f7, point.x * f7, point.y * f7, point3.x * f7, point3.y * f7, point4.x * f7, point4.y * f7};
                 Matrix matrix2 = new Matrix();
-                matrix2.setPolyToPoly(fArr, 0, new float[]{0.0f, 0.0f, createBitmap.getWidth(), 0.0f, createBitmap.getWidth(), createBitmap.getHeight(), 0.0f, createBitmap.getHeight()}, 0, 4);
+                matrix2.setPolyToPoly(new float[]{point2.x * f7, point2.y * f7, point.x * f7, point.y * f7, point3.x * f7, point3.y * f7, point4.x * f7, point4.y * f7}, 0, new float[]{0.0f, 0.0f, createBitmap.getWidth(), 0.0f, createBitmap.getWidth(), createBitmap.getHeight(), 0.0f, createBitmap.getHeight()}, 0, 4);
                 canvas.drawBitmap(bitmap2, matrix2, new Paint(2));
                 bitmap2 = createBitmap;
             }
@@ -580,37 +535,35 @@ public class MrzRecognizer {
                 float max2 = 1500.0f / Math.max(bitmap2.getWidth(), bitmap2.getHeight());
                 i16 = 1;
                 createScaledBitmap2 = Bitmap.createScaledBitmap(bitmap2, Math.round(bitmap2.getWidth() * max2), Math.round(bitmap2.getHeight() * max2), true);
-                Result result = null;
-                Bitmap bitmap3 = null;
-                Rect[][] rectArr = null;
                 i17 = i14;
                 i18 = i17;
                 int i21 = i18;
+                Bitmap bitmap3 = null;
+                rectArr = null;
                 while (true) {
                     if (i17 < i12) {
                         i19 = 2;
                         break;
                     }
-                    if (i17 != i16) {
-                        if (i17 != 2) {
-                            matrix = null;
-                        } else {
-                            Matrix matrix3 = new Matrix();
-                            matrix3.setRotate(-1.0f, createScaledBitmap2.getWidth() / 2, createScaledBitmap2.getHeight() / 2);
-                            matrix = matrix3;
-                        }
+                    if (i17 == i16) {
+                        Matrix matrix3 = new Matrix();
                         c10 = 0;
+                        matrix3.setRotate(1.0f, createScaledBitmap2.getWidth() / 2, createScaledBitmap2.getHeight() / 2);
+                        matrix = matrix3;
+                    } else if (i17 != 2) {
+                        c10 = 0;
+                        matrix = null;
                     } else {
                         Matrix matrix4 = new Matrix();
-                        c10 = 0;
-                        matrix4.setRotate(1.0f, createScaledBitmap2.getWidth() / 2, createScaledBitmap2.getHeight() / 2);
+                        matrix4.setRotate(-1.0f, createScaledBitmap2.getWidth() / 2, createScaledBitmap2.getHeight() / 2);
                         matrix = matrix4;
+                        c10 = 0;
                     }
                     Bitmap createBitmap2 = matrix != null ? Bitmap.createBitmap(createScaledBitmap2, 0, 0, createScaledBitmap2.getWidth(), createScaledBitmap2.getHeight(), matrix, true) : createScaledBitmap2;
                     bitmap3 = Bitmap.createBitmap(createBitmap2.getWidth(), createBitmap2.getHeight(), Bitmap.Config.ALPHA_8);
                     rectArr = binarizeAndFindCharacters(createBitmap2, bitmap3);
                     if (rectArr == null) {
-                        return null;
+                        break;
                     }
                     int length = rectArr.length;
                     for (int i22 = i14; i22 < length; i22++) {
@@ -628,185 +581,177 @@ public class MrzRecognizer {
                     i16 = 1;
                     i12 = 3;
                 }
-                if (i18 >= 30 || i21 < i19) {
-                    return null;
-                }
-                Bitmap createBitmap3 = Bitmap.createBitmap(rectArr[i14].length * 10, rectArr.length * 15, Bitmap.Config.ALPHA_8);
-                Canvas canvas2 = new Canvas(createBitmap3);
-                Paint paint = new Paint(2);
-                int i23 = i14;
-                Rect rect = new Rect(i23, i23, 10, 15);
-                int length2 = rectArr.length;
-                int i24 = 0;
-                int i25 = 0;
-                while (i24 < length2) {
-                    Rect[] rectArr3 = rectArr[i24];
-                    Result result2 = result;
-                    int i26 = 0;
-                    int i27 = 0;
-                    for (int length3 = rectArr3.length; i26 < length3; length3 = length3) {
-                        Rect rect2 = rectArr3[i26];
-                        int i28 = i27 * 10;
-                        int i29 = i25 * 15;
-                        rect.set(i28, i29, i28 + 10, i29 + 15);
-                        canvas2.drawBitmap(bitmap3, rect2, rect, paint);
-                        i27++;
-                        i26++;
+                if (i18 >= 30 && i21 >= i19) {
+                    Bitmap createBitmap3 = Bitmap.createBitmap(rectArr[i14].length * 10, rectArr.length * 15, Bitmap.Config.ALPHA_8);
+                    Canvas canvas2 = new Canvas(createBitmap3);
+                    Paint paint = new Paint(2);
+                    int i23 = i14;
+                    Rect rect = new Rect(i23, i23, 10, 15);
+                    int i24 = 0;
+                    for (Rect[] rectArr3 : rectArr) {
+                        int i25 = 0;
+                        int i26 = 0;
+                        for (int length2 = rectArr3.length; i25 < length2; length2 = length2) {
+                            Rect rect2 = rectArr3[i25];
+                            int i27 = i26 * 10;
+                            int i28 = i24 * 15;
+                            rect.set(i27, i28, i27 + 10, i28 + 15);
+                            canvas2.drawBitmap(bitmap3, rect2, rect, paint);
+                            i26++;
+                            i25++;
+                        }
+                        i24++;
                     }
-                    i25++;
-                    i24++;
-                    result = result2;
-                }
-                Result result3 = result;
-                String performRecognition = performRecognition(createBitmap3, rectArr.length, rectArr[0].length, ApplicationLoader.applicationContext.getAssets());
-                if (performRecognition == null) {
-                    return result3;
-                }
-                String[] split = TextUtils.split(performRecognition, "\n");
-                Result result4 = new Result();
-                if (split.length < 2 || split[0].length() < 30 || split[1].length() != split[0].length()) {
-                    return result3;
-                }
-                result4.rawMRZ = TextUtils.join("\n", split);
-                HashMap<String, String> countriesMap = getCountriesMap();
-                char charAt = split[0].charAt(0);
-                if (charAt == 'P') {
-                    result4.type = 1;
-                    if (split[0].length() == 44) {
-                        int i30 = i13;
-                        result4.issuingCountry = split[0].substring(2, i30);
-                        int indexOf = split[0].indexOf("<<", i11);
-                        if (indexOf != -1) {
-                            result4.lastName = split[0].substring(i30, indexOf).replace('<', ' ').replace('0', 'O').trim();
-                            String trim = split[0].substring(indexOf + 2).replace('<', ' ').replace('0', 'O').trim();
-                            result4.firstName = trim;
-                            if (trim.contains("   ")) {
-                                String str = result4.firstName;
-                                i20 = 0;
-                                result4.firstName = str.substring(0, str.indexOf("   "));
+                    performRecognition = performRecognition(createBitmap3, rectArr.length, rectArr[0].length, w0.b.getAssets());
+                    if (performRecognition != null) {
+                        return null;
+                    }
+                    String[] split = TextUtils.split(performRecognition, "\n");
+                    is isVar = new is();
+                    if (split.length < 2 || split[0].length() < 30 || split[1].length() != split[0].length()) {
+                        return null;
+                    }
+                    isVar.p = TextUtils.join("\n", split);
+                    HashMap d13 = d();
+                    char charAt = split[0].charAt(0);
+                    if (charAt == 'P') {
+                        isVar.a = 1;
+                        if (split[0].length() == 44) {
+                            int i29 = i13;
+                            isVar.l = split[0].substring(2, i29);
+                            int indexOf = split[0].indexOf("<<", i11);
+                            if (indexOf != -1) {
+                                isVar.c = split[0].substring(i29, indexOf).replace('<', ' ').replace('0', 'O').trim();
+                                String trim = split[0].substring(indexOf + 2).replace('<', ' ').replace('0', 'O').trim();
+                                isVar.b = trim;
+                                if (trim.contains("   ")) {
+                                    String str = isVar.b;
+                                    i20 = 0;
+                                    isVar.b = str.substring(0, str.indexOf("   "));
+                                } else {
+                                    i20 = 0;
+                                }
                             } else {
                                 i20 = 0;
                             }
-                        } else {
-                            i20 = 0;
-                        }
-                        String trim2 = split[1].substring(i20, 9).replace('<', ' ').replace('O', '0').trim();
-                        if (checksum(trim2) == getNumber(split[1].charAt(9))) {
-                            result4.number = trim2;
-                        }
-                        result4.nationality = split[1].substring(10, 13);
-                        String replace = split[1].substring(13, 19).replace('O', '0').replace('I', '1');
-                        if (checksum(replace) == getNumber(split[1].charAt(19))) {
-                            parseBirthDate(replace, result4);
-                        }
-                        result4.gender = parseGender(split[1].charAt(20));
-                        String replace2 = split[1].substring(21, 27).replace('O', '0').replace('I', '1');
-                        if (checksum(replace2) == getNumber(split[1].charAt(27)) || split[1].charAt(27) == '<') {
-                            parseExpiryDate(replace2, result4);
-                        }
-                        if ("RUS".equals(result4.issuingCountry) && split[0].charAt(1) == 'N') {
-                            result4.type = 3;
-                            String[] split2 = result4.firstName.split(" ");
-                            result4.firstName = cyrillicToLatin(russianPassportTranslit(split2[0]));
-                            if (split2.length > 1) {
-                                result4.middleName = cyrillicToLatin(russianPassportTranslit(split2[1]));
+                            String trim2 = split[1].substring(i20, 9).replace('<', ' ').replace('O', '0').trim();
+                            if (b(trim2) == e(split[1].charAt(9))) {
+                                isVar.e = trim2;
                             }
-                            result4.lastName = cyrillicToLatin(russianPassportTranslit(result4.lastName));
-                            if (result4.number != null) {
-                                result4.number = result4.number.substring(0, 3) + split[1].charAt(28) + result4.number.substring(3);
+                            isVar.m = split[1].substring(10, 13);
+                            String replace = split[1].substring(13, 19).replace('O', '0').replace('I', '1');
+                            if (b(replace) == e(split[1].charAt(19))) {
+                                f(replace, isVar);
                             }
-                        } else {
-                            result4.firstName = result4.firstName.replace('8', 'B');
-                            result4.lastName = result4.lastName.replace('8', 'B');
+                            isVar.n = h(split[1].charAt(20));
+                            String replace2 = split[1].substring(21, 27).replace('O', '0').replace('I', '1');
+                            if (b(replace2) == e(split[1].charAt(27)) || split[1].charAt(27) == '<') {
+                                g(replace2, isVar);
+                            }
+                            if ("RUS".equals(isVar.l) && split[0].charAt(1) == 'N') {
+                                isVar.a = 3;
+                                String[] split2 = isVar.b.split(" ");
+                                isVar.b = c(k(split2[0]));
+                                if (split2.length > 1) {
+                                    isVar.d = c(k(split2[1]));
+                                }
+                                isVar.c = c(k(isVar.c));
+                                if (isVar.e != null) {
+                                    isVar.e = isVar.e.substring(0, 3) + split[1].charAt(28) + isVar.e.substring(3);
+                                }
+                            } else {
+                                isVar.b = isVar.b.replace('8', 'B');
+                                isVar.c = isVar.c.replace('8', 'B');
+                            }
+                            isVar.c = a(isVar.c);
+                            isVar.b = a(isVar.b);
+                            isVar.d = a(isVar.d);
                         }
-                        result4.lastName = capitalize(result4.lastName);
-                        result4.firstName = capitalize(result4.firstName);
-                        result4.middleName = capitalize(result4.middleName);
+                    } else {
+                        if (charAt != 'I' && charAt != 'A' && charAt != 'C') {
+                            return null;
+                        }
+                        isVar.a = 2;
+                        if (split.length == 3 && split[0].length() == 30 && split[2].length() == 30) {
+                            isVar.l = split[0].substring(2, 5);
+                            String trim3 = split[0].substring(5, 14).replace('<', ' ').replace('O', '0').trim();
+                            if (b(trim3) == split[0].charAt(14) - '0') {
+                                isVar.e = trim3;
+                            }
+                            String replace3 = split[1].substring(0, 6).replace('O', '0').replace('I', '1');
+                            if (b(replace3) == e(split[1].charAt(6))) {
+                                f(replace3, isVar);
+                            }
+                            isVar.n = h(split[1].charAt(i15));
+                            String replace4 = split[1].substring(8, 14).replace('O', '0').replace('I', '1');
+                            if (b(replace4) == e(split[1].charAt(14)) || split[1].charAt(14) == '<') {
+                                g(replace4, isVar);
+                            }
+                            isVar.m = split[1].substring(15, 18);
+                            int indexOf2 = split[2].indexOf("<<");
+                            if (indexOf2 != -1) {
+                                isVar.c = split[2].substring(0, indexOf2).replace('<', ' ').trim();
+                                isVar.b = split[2].substring(indexOf2 + 2).replace('<', ' ').trim();
+                            }
+                        } else if (split.length == 2 && split[0].length() == 36) {
+                            String substring = split[0].substring(2, 5);
+                            isVar.l = substring;
+                            if ("FRA".equals(substring) && charAt == 'I' && split[0].charAt(1) == 'D') {
+                                isVar.m = "FRA";
+                                isVar.c = split[0].substring(5, 30).replace('<', ' ').trim();
+                                isVar.b = split[1].substring(13, 27).replace("<<", ", ").replace('<', ' ').trim();
+                                String replace5 = split[1].substring(0, 12).replace('O', '0');
+                                if (b(replace5) == e(split[1].charAt(12))) {
+                                    isVar.e = replace5;
+                                }
+                                String replace6 = split[1].substring(27, 33).replace('O', '0').replace('I', '1');
+                                if (b(replace6) == e(split[1].charAt(33))) {
+                                    f(replace6, isVar);
+                                }
+                                isVar.n = h(split[1].charAt(34));
+                                isVar.o = true;
+                            } else {
+                                int indexOf3 = split[0].indexOf("<<");
+                                if (indexOf3 != -1) {
+                                    isVar.c = split[0].substring(5, indexOf3).replace('<', ' ').trim();
+                                    isVar.b = split[0].substring(indexOf3 + 2).replace('<', ' ').trim();
+                                }
+                                String trim4 = split[1].substring(0, 9).replace('<', ' ').replace('O', '0').trim();
+                                if (b(trim4) == e(split[1].charAt(9))) {
+                                    isVar.e = trim4;
+                                }
+                                isVar.m = split[1].substring(10, 13);
+                                String replace7 = split[1].substring(13, 19).replace('O', '0').replace('I', '1');
+                                if (b(replace7) == e(split[1].charAt(19))) {
+                                    f(replace7, isVar);
+                                }
+                                isVar.n = h(split[1].charAt(20));
+                                String replace8 = split[1].substring(21, 27).replace('O', '0').replace('I', '1');
+                                if (b(replace8) == e(split[1].charAt(27)) || split[1].charAt(27) == '<') {
+                                    g(replace8, isVar);
+                                }
+                            }
+                        }
+                        isVar.b = a(isVar.b.replace('0', 'O').replace('8', 'B'));
+                        isVar.c = a(isVar.c.replace('0', 'O').replace('8', 'B'));
                     }
-                } else {
-                    if (charAt != 'I' && charAt != 'A' && charAt != 'C') {
-                        return result3;
+                    if (TextUtils.isEmpty(isVar.b) && TextUtils.isEmpty(isVar.c)) {
+                        return null;
                     }
-                    result4.type = 2;
-                    if (split.length == 3 && split[0].length() == 30 && split[2].length() == 30) {
-                        result4.issuingCountry = split[0].substring(2, 5);
-                        String trim3 = split[0].substring(5, 14).replace('<', ' ').replace('O', '0').trim();
-                        if (checksum(trim3) == split[0].charAt(14) - '0') {
-                            result4.number = trim3;
-                        }
-                        String replace3 = split[1].substring(0, 6).replace('O', '0').replace('I', '1');
-                        if (checksum(replace3) == getNumber(split[1].charAt(6))) {
-                            parseBirthDate(replace3, result4);
-                        }
-                        result4.gender = parseGender(split[1].charAt(i15));
-                        String replace4 = split[1].substring(8, 14).replace('O', '0').replace('I', '1');
-                        if (checksum(replace4) == getNumber(split[1].charAt(14)) || split[1].charAt(14) == '<') {
-                            parseExpiryDate(replace4, result4);
-                        }
-                        result4.nationality = split[1].substring(15, 18);
-                        int indexOf2 = split[2].indexOf("<<");
-                        if (indexOf2 != -1) {
-                            result4.lastName = split[2].substring(0, indexOf2).replace('<', ' ').trim();
-                            result4.firstName = split[2].substring(indexOf2 + 2).replace('<', ' ').trim();
-                        }
-                    } else if (split.length == 2 && split[0].length() == 36) {
-                        String substring = split[0].substring(2, 5);
-                        result4.issuingCountry = substring;
-                        if ("FRA".equals(substring) && charAt == 'I' && split[0].charAt(1) == 'D') {
-                            result4.nationality = "FRA";
-                            result4.lastName = split[0].substring(5, 30).replace('<', ' ').trim();
-                            result4.firstName = split[1].substring(13, 27).replace("<<", ", ").replace('<', ' ').trim();
-                            String replace5 = split[1].substring(0, 12).replace('O', '0');
-                            if (checksum(replace5) == getNumber(split[1].charAt(12))) {
-                                result4.number = replace5;
-                            }
-                            String replace6 = split[1].substring(27, 33).replace('O', '0').replace('I', '1');
-                            if (checksum(replace6) == getNumber(split[1].charAt(33))) {
-                                parseBirthDate(replace6, result4);
-                            }
-                            result4.gender = parseGender(split[1].charAt(34));
-                            result4.doesNotExpire = true;
-                        } else {
-                            int indexOf3 = split[0].indexOf("<<");
-                            if (indexOf3 != -1) {
-                                result4.lastName = split[0].substring(5, indexOf3).replace('<', ' ').trim();
-                                result4.firstName = split[0].substring(indexOf3 + 2).replace('<', ' ').trim();
-                            }
-                            String trim4 = split[1].substring(0, 9).replace('<', ' ').replace('O', '0').trim();
-                            if (checksum(trim4) == getNumber(split[1].charAt(9))) {
-                                result4.number = trim4;
-                            }
-                            result4.nationality = split[1].substring(10, 13);
-                            String replace7 = split[1].substring(13, 19).replace('O', '0').replace('I', '1');
-                            if (checksum(replace7) == getNumber(split[1].charAt(19))) {
-                                parseBirthDate(replace7, result4);
-                            }
-                            result4.gender = parseGender(split[1].charAt(20));
-                            String replace8 = split[1].substring(21, 27).replace('O', '0').replace('I', '1');
-                            if (checksum(replace8) == getNumber(split[1].charAt(27)) || split[1].charAt(27) == '<') {
-                                parseExpiryDate(replace8, result4);
-                            }
-                        }
-                    }
-                    result4.firstName = capitalize(result4.firstName.replace('0', 'O').replace('8', 'B'));
-                    result4.lastName = capitalize(result4.lastName.replace('0', 'O').replace('8', 'B'));
+                    isVar.l = (String) d13.get(isVar.l);
+                    isVar.m = (String) d13.get(isVar.m);
+                    return isVar;
                 }
-                if (TextUtils.isEmpty(result4.firstName) && TextUtils.isEmpty(result4.lastName)) {
-                    return result3;
-                }
-                result4.issuingCountry = countriesMap.get(result4.issuingCountry);
-                result4.nationality = countriesMap.get(result4.nationality);
-                return result4;
+                return null;
             }
         }
         createScaledBitmap2 = bitmap2;
         i16 = i10;
-        Result result5 = null;
-        Bitmap bitmap32 = null;
-        Rect[][] rectArr4 = null;
         i17 = i14;
         i18 = i17;
         int i212 = i18;
+        Bitmap bitmap32 = null;
+        rectArr = null;
         while (true) {
             if (i17 < i12) {
             }
@@ -815,11 +760,22 @@ public class MrzRecognizer {
             i12 = 3;
         }
         if (i18 >= 30) {
+            Bitmap createBitmap32 = Bitmap.createBitmap(rectArr[i14].length * 10, rectArr.length * 15, Bitmap.Config.ALPHA_8);
+            Canvas canvas22 = new Canvas(createBitmap32);
+            Paint paint2 = new Paint(2);
+            int i232 = i14;
+            Rect rect3 = new Rect(i232, i232, 10, 15);
+            int i242 = 0;
+            while (r13 < r12) {
+            }
+            performRecognition = performRecognition(createBitmap32, rectArr.length, rectArr[0].length, w0.b.getAssets());
+            if (performRecognition != null) {
+            }
         }
         return null;
     }
 
-    private static String russianPassportTranslit(String str) {
+    public static String k(String str) {
         char[] charArray = str.toCharArray();
         for (int i10 = 0; i10 < charArray.length; i10++) {
             int indexOf = "ABVGDE2JZIQKLMNOPRSTUFHC34WXY9678".indexOf(charArray[i10]);
@@ -830,16 +786,7 @@ public class MrzRecognizer {
         return new String(charArray);
     }
 
-    private static native void setYuvBitmapPixels(Bitmap bitmap, byte[] bArr);
+    private static native String performRecognition(Bitmap bitmap, int i10, int i11, AssetManager assetManager);
 
-    public static Result recognize(byte[] bArr, int i10, int i11, int i12) {
-        Bitmap createBitmap = Bitmap.createBitmap(i10, i11, Bitmap.Config.ARGB_8888);
-        setYuvBitmapPixels(createBitmap, bArr);
-        Matrix matrix = new Matrix();
-        matrix.setRotate(i12);
-        int min = Math.min(i10, i11);
-        int round = Math.round(min * 0.704f);
-        boolean z10 = i12 == 90 || i12 == 270;
-        return recognize(Bitmap.createBitmap(createBitmap, z10 ? (i10 / 2) - (round / 2) : 0, z10 ? 0 : (i11 / 2) - (round / 2), z10 ? round : min, z10 ? min : round, matrix, false), false);
-    }
+    private static native void setYuvBitmapPixels(Bitmap bitmap, byte[] bArr);
 }

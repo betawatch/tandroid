@@ -2,7 +2,7 @@ package u2;
 
 import java.io.IOException;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class u0 implements d1 {
     public final int a;
@@ -14,23 +14,23 @@ public final class u0 implements d1 {
     }
 
     @Override // u2.d1
-    public final void d() {
+    public final void a() {
         int i10 = this.a;
         w0 w0Var = this.b;
         w0Var.L[i10].C();
-        y2.l lVar = w0Var.x;
-        int B0 = w0Var.d.B0(w0Var.V);
+        y2.l lVar = w0Var.y;
+        int q02 = w0Var.d.q0(w0Var.V);
         IOException iOException = lVar.c;
         if (iOException != null) {
             throw iOException;
         }
         y2.h hVar = lVar.b;
         if (hVar != null) {
-            if (B0 == Integer.MIN_VALUE) {
-                B0 = hVar.a;
+            if (q02 == Integer.MIN_VALUE) {
+                q02 = hVar.a;
             }
             IOException iOException2 = hVar.e;
-            if (iOException2 != null && hVar.f > B0) {
+            if (iOException2 != null && hVar.f > q02) {
                 throw iOException2;
             }
         }
@@ -43,34 +43,34 @@ public final class u0 implements d1 {
     }
 
     @Override // u2.d1
-    public final int f(n4.s sVar, h2.h hVar, int i10) {
-        w0 w0Var = this.b;
-        if (w0Var.C()) {
-            return -3;
-        }
-        int i11 = this.a;
-        w0Var.u(i11);
-        int F = w0Var.L[i11].F(sVar, hVar, i10, w0Var.g0);
-        if (F == -3) {
-            w0Var.v(i11);
-        }
-        return F;
-    }
-
-    @Override // u2.d1
-    public final int j(long j10) {
+    public final int i(long j10) {
         w0 w0Var = this.b;
         if (w0Var.C()) {
             return 0;
         }
         int i10 = this.a;
-        w0Var.u(i10);
+        w0Var.x(i10);
         c1 c1Var = w0Var.L[i10];
-        int x9 = c1Var.x(j10, w0Var.g0);
-        c1Var.L(x9);
-        if (x9 == 0) {
-            w0Var.v(i10);
+        int x10 = c1Var.x(j10, w0Var.g0);
+        c1Var.L(x10);
+        if (x10 == 0) {
+            w0Var.y(i10);
         }
-        return x9;
+        return x10;
+    }
+
+    @Override // u2.d1
+    public final int r(hf.b bVar, h2.h hVar, int i10) {
+        w0 w0Var = this.b;
+        if (w0Var.C()) {
+            return -3;
+        }
+        int i11 = this.a;
+        w0Var.x(i11);
+        int F = w0Var.L[i11].F(bVar, hVar, i10, w0Var.g0);
+        if (F == -3) {
+            w0Var.y(i11);
+        }
+        return F;
     }
 }

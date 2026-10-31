@@ -1,96 +1,30 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.R;
+import android.content.Context;
+import android.view.View;
+import android.widget.LinearLayout;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class wn0 implements Runnable {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ do0 b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ ArrayList d;
-    public final /* synthetic */ ArrayList e;
+public final class wn0 extends LinearLayout {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
 
-    public /* synthetic */ wn0(do0 do0Var, String str, ArrayList arrayList, ArrayList arrayList2) {
-        this.b = do0Var;
-        this.c = str;
-        this.d = arrayList;
-        this.e = arrayList2;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public wn0(Context context, int i10, int i11) {
+        super(context);
+        this.a = i10;
+        this.b = i11;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                do0 do0Var = this.b;
-                int i10 = do0Var.d;
-                ArrayList arrayList = new ArrayList();
-                ArrayList arrayList2 = new ArrayList();
-                int i11 = 0;
-                while (true) {
-                    ArrayList arrayList3 = this.d;
-                    int size = arrayList3.size();
-                    String str = this.c;
-                    if (i11 >= size) {
-                        int i12 = 0;
-                        while (true) {
-                            ArrayList arrayList4 = this.e;
-                            if (i12 >= arrayList4.size()) {
-                                AndroidUtilities.runOnUIThread(new wn0(do0Var, str, arrayList, arrayList2));
-                                break;
-                            } else {
-                                String documentFileName = FileLoader.getDocumentFileName(((MessageObject) arrayList4.get(i12)).getDocument());
-                                if (documentFileName != null && documentFileName.toLowerCase().contains(str)) {
-                                    MessageObject messageObject = new MessageObject(i10, ((MessageObject) arrayList4.get(i12)).messageOwner, false, false);
-                                    messageObject.mediaExists = ((MessageObject) arrayList4.get(i12)).mediaExists;
-                                    messageObject.setQuery(do0Var.K);
-                                    arrayList2.add(messageObject);
-                                }
-                                i12++;
-                            }
-                        }
-                    } else {
-                        String documentFileName2 = FileLoader.getDocumentFileName(((MessageObject) arrayList3.get(i11)).getDocument());
-                        if (documentFileName2 != null && documentFileName2.toLowerCase().contains(str)) {
-                            MessageObject messageObject2 = new MessageObject(i10, ((MessageObject) arrayList3.get(i11)).messageOwner, false, false);
-                            messageObject2.mediaExists = ((MessageObject) arrayList3.get(i11)).mediaExists;
-                            messageObject2.setQuery(do0Var.K);
-                            arrayList.add(messageObject2);
-                        }
-                        i11++;
-                    }
-                }
-                break;
-            default:
-                do0 do0Var2 = this.b;
-                fy0 fy0Var = do0Var2.a;
-                if (this.c.equals(do0Var2.L)) {
-                    if (do0Var2.r == 0) {
-                        do0Var2.N.b(0);
-                    }
-                    do0Var2.e(this.d, this.e, true);
-                    if (do0Var2.r == 0) {
-                        fy0Var.e(false, true);
-                        aa0 aa0Var = fy0Var.e;
-                        fy0Var.d.setText(LocaleController.getString(R.string.SearchEmptyViewTitle2));
-                        aa0Var.setVisibility(0);
-                        aa0Var.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
-                        break;
-                    }
-                }
-                break;
-        }
+    @Override // android.view.View
+    public final int getSuggestedMinimumWidth() {
+        return org.telegram.messenger.i0.L(260.0f);
     }
 
-    public /* synthetic */ wn0(do0 do0Var, ArrayList arrayList, String str, ArrayList arrayList2) {
-        this.b = do0Var;
-        this.d = arrayList;
-        this.c = str;
-        this.e = arrayList2;
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i10), this.a), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i11), this.b), View.MeasureSpec.getMode(i11)));
     }
 }

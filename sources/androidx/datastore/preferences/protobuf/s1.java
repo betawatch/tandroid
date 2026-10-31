@@ -1,6 +1,8 @@
 package androidx.datastore.preferences.protobuf;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+import org.telegram.messenger.zs;
+
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class s1 extends r0 {
     public final /* synthetic */ int c;
@@ -219,7 +221,7 @@ public final class s1 extends r0 {
                                 char charAt4 = str.charAt(i19);
                                 if (Character.isSurrogatePair(charAt3, charAt4)) {
                                     int codePoint = Character.toCodePoint(charAt3, charAt4);
-                                    bArr[i17] = (byte) ((codePoint >>> 18) | 240);
+                                    bArr[i17] = (byte) ((codePoint >>> 18) | zs.P3);
                                     bArr[i17 + 1] = (byte) (((codePoint >>> 12) & 63) | 128);
                                     int i20 = i17 + 3;
                                     bArr[i17 + 2] = (byte) (((codePoint >>> 6) & 63) | 128);
@@ -280,7 +282,7 @@ public final class s1 extends r0 {
                                     char charAt6 = str.charAt(i23);
                                     if (Character.isSurrogatePair(charAt5, charAt6)) {
                                         int codePoint2 = Character.toCodePoint(charAt5, charAt6);
-                                        r1.j(bArr, j13, (byte) ((codePoint2 >>> 18) | 240));
+                                        r1.j(bArr, j13, (byte) ((codePoint2 >>> 18) | zs.P3));
                                         r1.j(bArr, j13 + j11, (byte) (((codePoint2 >>> 12) & 63) | 128));
                                         long j15 = j13 + 3;
                                         r1.j(bArr, j13 + 2, (byte) (((codePoint2 >>> 6) & 63) | 128));

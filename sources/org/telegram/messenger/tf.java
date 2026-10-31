@@ -1,205 +1,117 @@
 package org.telegram.messenger;
 
-import android.text.TextUtils;
 import java.util.ArrayList;
-import org.telegram.SQLite.SQLiteCursor;
+import org.telegram.SQLite.SQLiteDatabase;
+import org.telegram.SQLite.SQLitePreparedStatement;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class tf implements Runnable {
     public final /* synthetic */ int a = 0;
     public final /* synthetic */ int b;
-    public final /* synthetic */ MessagesStorage c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ long e;
-    public final /* synthetic */ int f;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ f1 f;
     public final /* synthetic */ Object h;
 
-    public /* synthetic */ tf(int i10, int i11, long j10, long j11, MessagesStorage messagesStorage, TLRPC.InputChannel inputChannel) {
-        this.c = messagesStorage;
-        this.d = j10;
+    public /* synthetic */ tf(ui uiVar, boolean z10, int i10, ArrayList arrayList, boolean z11, int i11) {
+        this.f = uiVar;
+        this.c = z10;
         this.b = i10;
-        this.h = inputChannel;
-        this.f = i11;
-        this.e = j11;
+        this.h = arrayList;
+        this.d = z11;
+        this.e = i11;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:38:0x00e3  */
-    /* JADX WARN: Removed duplicated region for block: B:42:0x00f7  */
     @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public final void run() {
-        SQLiteCursor sQLiteCursor;
         int i10;
-        boolean z10;
-        SQLiteCursor queryFinalized;
-        long j10;
-        boolean z11;
         int i11 = this.a;
+        int i12 = 3;
+        int i13 = this.e;
+        boolean z10 = this.d;
+        boolean z11 = this.c;
         Object obj = this.h;
+        int i14 = this.b;
+        f1 f1Var = this.f;
         switch (i11) {
             case 0:
-                this.c.lambda$loadPendingTasks$22(this.d, this.b, (TLRPC.InputChannel) obj, this.f, this.e);
-                return;
-            default:
-                final org.telegram.ui.Cells.k6 k6Var = (org.telegram.ui.Cells.k6) obj;
-                long j11 = this.e;
-                final ArrayList arrayList = new ArrayList();
-                ArrayList<TLRPC.User> arrayList2 = new ArrayList<>();
-                ArrayList<TLRPC.Chat> arrayList3 = new ArrayList<>();
-                boolean z12 = true;
-                int i12 = this.b;
-                final MessagesStorage messagesStorage = this.c;
-                final long j12 = this.d;
-                if (i12 <= 0) {
-                    try {
-                        try {
-                            i10 = i12;
-                            z10 = false;
-                        } catch (Exception e) {
-                            e = e;
-                            i10 = i12;
-                        }
-                        try {
-                            queryFinalized = messagesStorage.getDatabase().queryFinalized("SELECT data, mid FROM messages_v2 WHERE uid = ? ORDER BY mid DESC LIMIT 10", Long.valueOf(-j12));
-                        } catch (Exception e10) {
-                            e = e10;
-                            sQLiteCursor = null;
-                            try {
-                                FileLog.e(e);
-                                if (sQLiteCursor != null) {
-                                    sQLiteCursor.dispose();
-                                }
-                                final int i13 = this.f;
-                                final int i14 = i10;
-                                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Cells.j6
-                                    @Override // java.lang.Runnable
-                                    public final void run() {
-                                        k6.b(k6.this, i13, arrayList, j12, i14, messagesStorage);
-                                    }
-                                });
-                                return;
-                            } catch (Throwable th2) {
-                                th = th2;
-                                if (sQLiteCursor != null) {
-                                    sQLiteCursor.dispose();
-                                }
-                                throw th;
-                            }
-                        }
-                    } catch (Throwable th3) {
-                        th = th3;
-                        sQLiteCursor = null;
-                        if (sQLiteCursor != null) {
-                        }
-                        throw th;
-                    }
-                } else {
-                    i10 = i12;
-                    z10 = false;
-                    try {
-                        queryFinalized = messagesStorage.getDatabase().queryFinalized("SELECT data, mid FROM messages_v2 WHERE uid = ? AND mid <= ? ORDER BY mid DESC LIMIT 10", Long.valueOf(-j12), Integer.valueOf(i10));
-                    } catch (Exception e11) {
-                        e = e11;
-                        sQLiteCursor = null;
-                        FileLog.e(e);
-                        if (sQLiteCursor != null) {
-                        }
-                        final int i132 = this.f;
-                        final int i142 = i10;
-                        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Cells.j6
-                            @Override // java.lang.Runnable
-                            public final void run() {
-                                k6.b(k6.this, i132, arrayList, j12, i142, messagesStorage);
-                            }
-                        });
-                        return;
-                    } catch (Throwable th4) {
-                        th = th4;
-                        sQLiteCursor = null;
-                        if (sQLiteCursor != null) {
-                        }
-                        throw th;
-                    }
-                }
+                ui uiVar = (ui) f1Var;
+                ArrayList arrayList = (ArrayList) obj;
                 try {
-                    ArrayList<Long> arrayList4 = new ArrayList<>();
-                    ArrayList arrayList5 = new ArrayList();
-                    while (queryFinalized.next()) {
-                        boolean z13 = z10;
-                        NativeByteBuffer byteBufferValue = queryFinalized.byteBufferValue(z13 ? 1 : 0);
-                        if (byteBufferValue != null) {
-                            TLRPC.Message TLdeserialize = TLRPC.Message.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(z13), z13);
-                            TLdeserialize.readAttachPath(byteBufferValue, j11);
-                            byteBufferValue.reuse();
-                            z11 = true;
-                            TLdeserialize.id = queryFinalized.intValue(1);
-                            j10 = j11;
-                            TLdeserialize.dialog_id = -j12;
-                            MessagesStorage.addUsersAndChatsFromMessage(TLdeserialize, arrayList4, arrayList5, null);
-                            arrayList.add(TLdeserialize);
-                        } else {
-                            j10 = j11;
-                            z11 = z12;
+                    SQLiteDatabase sQLiteDatabase = uiVar.getMessagesStorage().b;
+                    if (z11) {
+                        i10 = uiVar.getMessagesController().f3;
+                    } else {
+                        if (i14 != 3 && i14 != 7) {
+                            i10 = i14 == 2 ? uiVar.getMessagesController().e3 : uiVar.getMessagesController().d3;
                         }
-                        z12 = z11;
-                        j11 = j10;
-                        z10 = false;
+                        i10 = zs.e3;
                     }
-                    queryFinalized.dispose();
-                    if (!arrayList.isEmpty()) {
-                        if (!arrayList4.isEmpty()) {
-                            messagesStorage.getUsersInternal(arrayList4, arrayList2);
-                        }
-                        if (!arrayList5.isEmpty()) {
-                            messagesStorage.getChatsInternal(TextUtils.join(",", arrayList5), arrayList3);
-                        }
+                    sQLiteDatabase.beginTransaction();
+                    SQLitePreparedStatement executeFast = sQLiteDatabase.executeFast("REPLACE INTO web_recent_v3 VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+                    int size = arrayList.size();
+                    int i15 = z11 ? 2 : i14 == 0 ? 3 : i14 == 1 ? 4 : i14 == 3 ? 6 : i14 == 5 ? 7 : i14 == 7 ? 8 : 5;
+                    if (z10) {
+                        sQLiteDatabase.executeFast("DELETE FROM web_recent_v3 WHERE type = " + i15).stepThis().dispose();
                     }
-                    queryFinalized.dispose();
-                } catch (Exception e12) {
-                    e = e12;
-                    sQLiteCursor = queryFinalized;
-                    FileLog.e(e);
-                    if (sQLiteCursor != null) {
+                    int i16 = 0;
+                    while (i16 < size && i16 != i10) {
+                        TLRPC.Document document = (TLRPC.Document) arrayList.get(i16);
+                        executeFast.requery();
+                        StringBuilder sb2 = new StringBuilder();
+                        sb2.append("");
+                        int i17 = i13;
+                        sb2.append(document.id);
+                        executeFast.bindString(1, sb2.toString());
+                        executeFast.bindInteger(2, i15);
+                        executeFast.bindString(i12, "");
+                        executeFast.bindString(4, "");
+                        executeFast.bindString(5, "");
+                        executeFast.bindInteger(6, 0);
+                        executeFast.bindInteger(7, 0);
+                        executeFast.bindInteger(8, 0);
+                        executeFast.bindInteger(9, i17 != 0 ? i17 : size - i16);
+                        NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(document.getObjectSize());
+                        document.serializeToStream(nativeByteBuffer);
+                        executeFast.bindByteBuffer(10, nativeByteBuffer);
+                        executeFast.step();
+                        nativeByteBuffer.reuse();
+                        i16++;
+                        i13 = i17;
+                        i12 = 3;
                     }
-                    final int i1322 = this.f;
-                    final int i1422 = i10;
-                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Cells.j6
-                        @Override // java.lang.Runnable
-                        public final void run() {
-                            k6.b(k6.this, i1322, arrayList, j12, i1422, messagesStorage);
+                    executeFast.dispose();
+                    sQLiteDatabase.commitTransaction();
+                    if (!z10 && arrayList.size() >= i10) {
+                        sQLiteDatabase.beginTransaction();
+                        while (i10 < arrayList.size()) {
+                            sQLiteDatabase.executeFast("DELETE FROM web_recent_v3 WHERE id = '" + ((TLRPC.Document) arrayList.get(i10)).id + "' AND type = " + i15).stepThis().dispose();
+                            i10++;
                         }
-                    });
+                        sQLiteDatabase.commitTransaction();
+                        break;
+                    }
+                } catch (Exception e) {
+                    f8.g(e, true);
                     return;
-                } catch (Throwable th5) {
-                    th = th5;
-                    sQLiteCursor = queryFinalized;
-                    if (sQLiteCursor != null) {
-                    }
-                    throw th;
                 }
-                final int i13222 = this.f;
-                final int i14222 = i10;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Cells.j6
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        k6.b(k6.this, i13222, arrayList, j12, i14222, messagesStorage);
-                    }
-                });
-                return;
+                break;
+            default:
+                ((vp) f1Var).getNotificationCenter().k(18, Integer.valueOf(i14), Integer.valueOf(((TLRPC.messages_Messages) obj).messages.size()), Boolean.valueOf(z11), Boolean.valueOf(z10), Integer.valueOf(i13));
+                break;
         }
     }
 
-    public /* synthetic */ tf(org.telegram.ui.Cells.k6 k6Var, int i10, MessagesStorage messagesStorage, long j10, long j11, int i11) {
-        this.h = k6Var;
+    public /* synthetic */ tf(vp vpVar, int i10, TLRPC.messages_Messages messages_messages, boolean z10, boolean z11, int i11) {
+        this.f = vpVar;
         this.b = i10;
-        this.c = messagesStorage;
-        this.d = j10;
-        this.e = j11;
-        this.f = i11;
+        this.h = messages_messages;
+        this.c = z10;
+        this.d = z11;
+        this.e = i11;
     }
 }

@@ -1,33 +1,49 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class zg0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ lh0 b;
-    public final /* synthetic */ TLRPC.TL_error c;
-    public final /* synthetic */ TLObject d;
+public final class zg0 extends ly {
+    public final int[] N;
+    public final /* synthetic */ kh0 O;
 
-    public /* synthetic */ zg0(lh0 lh0Var, TLRPC.TL_error tL_error, TLObject tLObject, int i10) {
-        this.a = i10;
-        this.b = lh0Var;
-        this.c = tL_error;
-        this.d = tLObject;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public zg0(kh0 kh0Var, yg0 yg0Var, int i10) {
+        super(i10, yg0Var);
+        this.O = kh0Var;
+        this.N = new int[2];
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                lh0 lh0Var = this.b;
-                lh0Var.getNotificationCenter().doOnIdle(new zg0(lh0Var, this.c, this.d, 1));
-                break;
-            default:
-                lh0.W(this.b, this.c, this.d);
-                break;
+    @Override // org.telegram.ui.ly
+    public final void g(ky kyVar) {
+        kh0 kh0Var = this.O;
+        gh0 gh0Var = kh0Var.J;
+        if (kyVar == null) {
+            return;
         }
+        if (kh0Var.k0 != null) {
+            kyVar.c = true;
+            float f7 = (ly.f() * org.telegram.messenger.i0.p) / 1.3f;
+            float f10 = f7 / 3.0f;
+            kyVar.d = f10;
+            kyVar.e = f10;
+            kyVar.a = Utilities.i(kh0Var.k0.right - (0.75f * f7), org.telegram.messenger.i0.q.x - f7, 0.0f);
+            kyVar.b = kh0Var.k0.bottom - (f7 / 2.0f);
+            return;
+        }
+        org.telegram.ui.Cells.q1 q1Var = kh0Var.P;
+        if (q1Var == null || !q1Var.isAttachedToWindow() || kh0Var.P.getMessageObject() == null || kh0Var.P.getMessageObject().f1() != kh0Var.Q) {
+            return;
+        }
+        kh0Var.P.getLocationOnScreen(this.N);
+        kyVar.c = true;
+        float f11 = (ly.f() * org.telegram.messenger.i0.p) / 1.3f;
+        float f12 = f11 / 3.0f;
+        kyVar.d = f12;
+        kyVar.e = f12;
+        float f13 = f11 / 2.0f;
+        kyVar.a = Utilities.i(((gh0Var.getScaleX() * kh0Var.P.getTimeX()) + r8[0]) - f13, org.telegram.messenger.i0.q.x - f11, 0.0f);
+        kyVar.b = ((gh0Var.getScaleY() * kh0Var.P.getTimeY()) + r8[1]) - f13;
     }
 }

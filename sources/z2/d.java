@@ -9,16 +9,16 @@ import android.os.Handler;
 import android.os.Looper;
 import b2.f;
 import b2.x;
-import c2.j;
-import e2.n0;
-import f9.g0;
-import f9.i0;
-import f9.s1;
-import i2.h0;
+import c2.h;
+import e2.l0;
+import e9.n0;
+import e9.x1;
+import i2.g0;
 import j$.util.Objects;
 import java.util.List;
+import org.telegram.messenger.zs;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class d {
     public final Spatializer a;
@@ -27,7 +27,7 @@ public final class d {
     public final c d;
 
     public d(Context context, Runnable runnable, Boolean bool) {
-        AudioManager e = context == null ? null : j.e(context);
+        AudioManager e = context == null ? null : h.e(context);
         if (e == null || (bool != null && bool.booleanValue())) {
             this.a = null;
             this.b = false;
@@ -44,7 +44,7 @@ public final class d {
         this.c = handler;
         c cVar = new c(runnable);
         this.d = cVar;
-        spatializer.addOnSpatializerStateChangedListener(new h0(handler, 1), cVar);
+        spatializer.addOnSpatializerStateChangedListener(new g0(handler, 1), cVar);
     }
 
     public final boolean a(f fVar, x xVar) {
@@ -64,7 +64,7 @@ public final class d {
         } else if (Objects.equals(str, "audio/ac4") && (i10 == 18 || i10 == 21)) {
             i10 = 24;
         }
-        int t10 = n0.t(i10);
+        int t10 = l0.t(i10);
         if (t10 == 0) {
             return false;
         }
@@ -80,11 +80,11 @@ public final class d {
 
     public final List b() {
         if (this.a == null || !this.b || !c() || !d()) {
-            g0 g0Var = i0.b;
-            return s1.e;
+            e9.l0 l0Var = n0.b;
+            return x1.e;
         }
         if (Build.VERSION.SDK_INT < 36) {
-            return i0.y(252);
+            return n0.y(Integer.valueOf(zs.b4));
         }
         Spatializer spatializer = this.a;
         spatializer.getClass();

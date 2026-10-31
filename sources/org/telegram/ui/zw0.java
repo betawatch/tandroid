@@ -1,129 +1,42 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import java.util.Locale;
-import org.telegram.messenger.BillingController;
-import org.telegram.messenger.BuildVars;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.ColorFilter;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class zw0 {
-    public final TLRPC.TL_premiumSubscriptionOption a;
-    public int b;
-    public long c;
-    public long d;
-    public long e;
-    public d5.o f;
-    public d5.n g;
-    public int h;
+public final class zw0 extends org.telegram.ui.Components.eq {
+    public final /* synthetic */ int D;
 
-    public zw0(TLRPC.TL_premiumSubscriptionOption tL_premiumSubscriptionOption) {
-        this.a = tL_premiumSubscriptionOption;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ zw0(Drawable drawable, Drawable drawable2, int i10) {
+        super(drawable, drawable2);
+        this.D = i10;
     }
 
-    public final void a() {
-        d5.o oVar = this.f;
-        if (oVar != null && this.g == null) {
-            ArrayList arrayList = oVar.h;
-            int size = arrayList.size();
-            int i10 = 0;
-            while (i10 < size) {
-                Object obj = arrayList.get(i10);
-                i10++;
-                d5.n nVar = (d5.n) obj;
-                String str = ((d5.m) ((ArrayList) nVar.b.b).get(0)).d;
-                int i11 = this.a.months;
-                if (i11 != 12) {
-                    Locale locale = Locale.ROOT;
-                    if (str.equals("P" + i11 + "M")) {
-                        this.g = nVar;
-                        return;
-                    }
-                } else if (str.equals("P1Y")) {
-                    this.g = nVar;
-                    return;
-                }
-            }
-        }
+    @Override // org.telegram.ui.Components.eq, android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        int i10 = this.D;
     }
 
-    public final String b() {
-        boolean useInvoiceBilling = BuildVars.useInvoiceBilling();
-        TLRPC.TL_premiumSubscriptionOption tL_premiumSubscriptionOption = this.a;
-        if (useInvoiceBilling || tL_premiumSubscriptionOption.store_product == null) {
-            return tL_premiumSubscriptionOption.currency;
-        }
-        if (this.f == null) {
-            return "";
-        }
-        a();
-        d5.n nVar = this.g;
-        return nVar == null ? "" : ((d5.m) ((ArrayList) nVar.b.b).get(0)).c;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ zw0(Drawable drawable, Drawable drawable2, int i10, int i11) {
+        super(drawable, drawable2, i10, i11);
+        this.D = 0;
     }
 
-    public final int c() {
-        if (this.b == 0) {
-            if (h() == 0) {
-                return 0;
-            }
-            if (this.e != 0) {
-                int i10 = (int) ((1.0d - (i() / this.e)) * 100.0d);
-                this.b = i10;
-                if (i10 == 0) {
-                    this.b = -1;
-                }
-            }
-        }
-        return this.b;
+    private final void a(ColorFilter colorFilter) {
     }
 
-    public final String d() {
-        return (BuildVars.useInvoiceBilling() || this.a.store_product == null) ? BillingController.getInstance().formatCurrency(g(), b()) : this.f == null ? "" : BillingController.getInstance().formatCurrency(g(), b(), 6);
+    private final void b(ColorFilter colorFilter) {
     }
 
-    public final String e() {
-        return (BuildVars.useInvoiceBilling() || this.a.store_product == null) ? BillingController.getInstance().formatCurrency(h(), b()) : this.f == null ? "" : BillingController.getInstance().formatCurrency(h(), b(), 6);
+    private final void c(ColorFilter colorFilter) {
     }
 
-    public final String f() {
-        return (BuildVars.useInvoiceBilling() || this.a.store_product == null) ? BillingController.getInstance().formatCurrency(i(), b()) : this.f == null ? "" : BillingController.getInstance().formatCurrency(i(), b(), 6);
+    private final void d(ColorFilter colorFilter) {
     }
 
-    public final long g() {
-        boolean useInvoiceBilling = BuildVars.useInvoiceBilling();
-        TLRPC.TL_premiumSubscriptionOption tL_premiumSubscriptionOption = this.a;
-        if (useInvoiceBilling || tL_premiumSubscriptionOption.store_product == null) {
-            return tL_premiumSubscriptionOption.amount;
-        }
-        if (this.f == null) {
-            return 0L;
-        }
-        a();
-        d5.n nVar = this.g;
-        if (nVar == null) {
-            return 0L;
-        }
-        return ((d5.m) ((ArrayList) nVar.b.b).get(0)).b;
-    }
-
-    public final long h() {
-        if (this.c == 0) {
-            long g7 = g();
-            if (g7 != 0) {
-                this.c = g7 / this.a.months;
-            }
-        }
-        return this.c;
-    }
-
-    public final long i() {
-        if (this.d == 0) {
-            long g7 = g();
-            if (g7 != 0) {
-                this.d = (long) ((g7 / this.a.months) * 12.0d);
-            }
-        }
-        return this.d;
+    private final void e(ColorFilter colorFilter) {
     }
 }

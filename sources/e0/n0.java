@@ -5,9 +5,8 @@ import android.os.Build;
 import android.os.Bundle;
 import java.util.HashSet;
 import java.util.Iterator;
-import org.telegram.messenger.NotificationsController;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class n0 {
     public final CharSequence a;
@@ -28,11 +27,11 @@ public final class n0 {
         for (int i10 = 0; i10 < n0VarArr.length; i10++) {
             n0 n0Var = n0VarArr[i10];
             n0Var.getClass();
-            RemoteInput.Builder addExtras = new RemoteInput.Builder(NotificationsController.EXTRA_VOICE_REPLY).setLabel(n0Var.a).setChoices(null).setAllowFreeFormInput(true).addExtras(n0Var.b);
+            RemoteInput.Builder addExtras = new RemoteInput.Builder("extra_voice_reply").setLabel(n0Var.a).setChoices(null).setAllowFreeFormInput(true).addExtras(n0Var.b);
             if (Build.VERSION.SDK_INT >= 26) {
                 Iterator it = n0Var.c.iterator();
                 while (it.hasNext()) {
-                    x6.a.c(addExtras, (String) it.next());
+                    w6.a.c(addExtras, (String) it.next());
                 }
             }
             if (Build.VERSION.SDK_INT >= 29) {

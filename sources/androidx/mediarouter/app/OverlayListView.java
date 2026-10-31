@@ -10,7 +10,7 @@ import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class OverlayListView extends ListView {
     public final ArrayList a;
@@ -46,7 +46,7 @@ public final class OverlayListView extends ListView {
                     Rect rect2 = p0Var.f;
                     rect.top = rect2.top + i10;
                     rect.bottom = rect2.bottom + i10;
-                    float z11 = c3.h0.z(p0Var.h, 1.0f, interpolation, 1.0f);
+                    float z11 = c3.i0.z(p0Var.h, 1.0f, interpolation, 1.0f);
                     p0Var.b = z11;
                     if (bitmapDrawable2 != null) {
                         bitmapDrawable2.setAlpha((int) (z11 * 255.0f));
@@ -54,11 +54,11 @@ public final class OverlayListView extends ListView {
                     }
                     if (p0Var.j && max >= 1.0f) {
                         p0Var.k = true;
-                        rf.b bVar = p0Var.l;
-                        if (bVar != null) {
-                            u uVar = (u) bVar.c;
-                            uVar.Z.remove((p4.v) bVar.b);
-                            uVar.V.notifyDataSetChanged();
+                        n4.q qVar = p0Var.l;
+                        if (qVar != null) {
+                            t tVar = (t) qVar.b;
+                            tVar.Z.remove((p4.w) qVar.a);
+                            tVar.V.notifyDataSetChanged();
                         }
                     }
                     z10 = !p0Var.k;

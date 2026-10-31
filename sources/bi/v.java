@@ -1,28 +1,63 @@
 package bi;
 
-import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.text.style.ReplacementSpan;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes4.dex */
-public final class v extends fi.d {
-    public final /* synthetic */ int k0;
+public final class v extends ReplacementSpan {
+    public static final /* synthetic */ int h = 0;
+    public final String a;
+    public final Bitmap b;
+    public final int c;
+    public final int d;
+    public final int e;
+    public final Paint f;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ v(int i10, Context context, org.telegram.ui.ActionBar.u6 u6Var, boolean z10) {
-        super(context, u6Var, z10);
-        this.k0 = i10;
+    public v(String str, Bitmap bitmap, int i10, int i11, int i12, int i13) {
+        Paint paint = new Paint(3);
+        this.f = paint;
+        this.a = str;
+        this.b = bitmap;
+        this.c = i10;
+        this.d = i11;
+        this.e = i13;
+        paint.setColor(i12);
     }
 
-    @Override // fi.d
-    public boolean j() {
-        switch (this.k0) {
-            case 0:
-                return false;
-            case 1:
-            default:
-                return super.j();
-            case 2:
-                return false;
+    public static v a(String str, int i10, float f7) {
+        u a2;
+        if (str == null || str.isEmpty() || (a2 = u.a(str, f7, true)) == null) {
+            return null;
         }
+        return new v(str, a2.a, a2.b, a2.c, i10, a2.d);
+    }
+
+    @Override // android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
+        Bitmap bitmap = this.b;
+        if (bitmap == null) {
+            return;
+        }
+        int color = paint.getColor();
+        Paint paint2 = this.f;
+        paint2.setColor(color);
+        canvas.drawBitmap(bitmap, f7, i13 - (this.d - this.e), paint2);
+    }
+
+    @Override // android.text.style.ReplacementSpan
+    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
+        if (fontMetricsInt != null) {
+            int i12 = this.d;
+            int i13 = this.e;
+            int i14 = -(i12 - i13);
+            fontMetricsInt.ascent = i14;
+            fontMetricsInt.top = i14;
+            fontMetricsInt.descent = i13;
+            fontMetricsInt.bottom = i13;
+        }
+        return this.c;
     }
 }

@@ -1,6 +1,5 @@
 package com.google.android.gms.internal.play_billing;
 
-import a8.sa;
 import j$.util.Objects;
 import java.util.Locale;
 import java.util.concurrent.CancellationException;
@@ -11,9 +10,9 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.concurrent.locks.LockSupport;
 import java.util.logging.Level;
-import org.telegram.messenger.BuildConfig;
+import v7.b6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class w0 extends l0 implements g0 {
     public t0 n;
@@ -89,13 +88,13 @@ public final class w0 extends l0 implements g0 {
                     }
                     throw th3;
                 }
-            } catch (Error | Exception e10) {
-                e = e10;
+            } catch (Error | Exception e7) {
+                e = e7;
                 return new e0(e);
-            } catch (CancellationException e11) {
-                return !isCancelled ? new e0(new IllegalArgumentException("get() threw CancellationException, despite reporting isCancelled() == false: ".concat(String.valueOf(t0Var)), e11)) : new b0(e11, false);
-            } catch (ExecutionException e12) {
-                return isCancelled ? new b0(new IllegalArgumentException("get() did not throw CancellationException, despite reporting isCancelled() == true: ".concat(String.valueOf(t0Var)), e12), false) : new e0(e12.getCause());
+            } catch (CancellationException e10) {
+                return !isCancelled ? new e0(new IllegalArgumentException("get() threw CancellationException, despite reporting isCancelled() == false: ".concat(String.valueOf(t0Var)), e10)) : new b0(e10, false);
+            } catch (ExecutionException e11) {
+                return isCancelled ? new b0(new IllegalArgumentException("get() did not throw CancellationException, despite reporting isCancelled() == true: ".concat(String.valueOf(t0Var)), e11), false) : new e0(e11.getCause());
             }
         }
         if (z11) {
@@ -166,7 +165,7 @@ public final class w0 extends l0 implements g0 {
         try {
             executor.execute(runnable);
         } catch (Exception e) {
-            l0.e.c().logp(Level.SEVERE, "com.google.common.util.concurrent.AbstractFuture", "executeListener", c3.h0.m("RuntimeException while executing runnable ", String.valueOf(runnable), " with executor ", String.valueOf(executor)), (Throwable) e);
+            l0.e.c().logp(Level.SEVERE, "com.google.common.util.concurrent.AbstractFuture", "executeListener", c3.i0.n("RuntimeException while executing runnable ", String.valueOf(runnable), " with executor ", String.valueOf(executor)), (Throwable) e);
         }
     }
 
@@ -257,15 +256,15 @@ public final class w0 extends l0 implements g0 {
         if (t0Var == null) {
             return null;
         }
-        String p10 = a1.g.p("inputFuture=[", t0Var.toString(), "]");
+        String n10 = a1.g.n("inputFuture=[", t0Var.toString(), "]");
         if (scheduledFuture == null) {
-            return p10;
+            return n10;
         }
         long delay = scheduledFuture.getDelay(TimeUnit.MILLISECONDS);
         if (delay <= 0) {
-            return p10;
+            return n10;
         }
-        return p10 + ", remaining delay=[" + delay + " ms]";
+        return n10 + ", remaining delay=[" + delay + " ms]";
     }
 
     @Override // java.util.concurrent.Future
@@ -283,9 +282,9 @@ public final class w0 extends l0 implements g0 {
         if (k0Var2 != k0Var) {
             k0 k0Var3 = new k0();
             do {
-                sa saVar = l0.h;
-                saVar.c(k0Var3, k0Var2);
-                if (saVar.g(this, k0Var2, k0Var3)) {
+                b6 b6Var = l0.h;
+                b6Var.c(k0Var3, k0Var2);
+                if (b6Var.g(this, k0Var2, k0Var3)) {
                     do {
                         LockSupport.park(this);
                         if (Thread.interrupted()) {
@@ -328,9 +327,9 @@ public final class w0 extends l0 implements g0 {
                 sb2.append(e.getCause());
                 sb2.append("]");
                 return;
-            } catch (Exception e10) {
+            } catch (Exception e7) {
                 sb2.append("UNKNOWN, cause=[");
-                sb2.append(e10.getClass());
+                sb2.append(e7.getClass());
                 sb2.append(" thrown from get()]");
                 return;
             }
@@ -340,7 +339,7 @@ public final class w0 extends l0 implements g0 {
         }
         sb2.append("SUCCESS, result=[");
         if (obj == null) {
-            sb2.append(BuildConfig.BETA_URL);
+            sb2.append("null");
         } else if (obj == this) {
             sb2.append("this future");
         } else {
@@ -362,7 +361,7 @@ public final class w0 extends l0 implements g0 {
         return (obj != null) & g(obj);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:39:0x00a9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:39:0x00a8, code lost:
     
         if (r3.isEmpty() != false) goto L34;
      */
@@ -456,9 +455,9 @@ public final class w0 extends l0 implements g0 {
                 if (k0Var2 != k0Var) {
                     k0 k0Var3 = new k0();
                     while (true) {
-                        sa saVar = l0.h;
-                        saVar.c(k0Var3, k0Var2);
-                        if (saVar.g(this, k0Var2, k0Var3)) {
+                        b6 b6Var = l0.h;
+                        b6Var.c(k0Var3, k0Var2);
+                        if (b6Var.g(this, k0Var2, k0Var3)) {
                             j11 = j12;
                             while (true) {
                                 LockSupport.parkNanos(this, Math.min(nanos, 2147483647999999999L));
@@ -528,7 +527,7 @@ public final class w0 extends l0 implements g0 {
                         if (isDone()) {
                             throw new TimeoutException(str.concat(" but future completed as timeout expired"));
                         }
-                        throw new TimeoutException(a1.g.D(str, " for ", w0Var));
+                        throw new TimeoutException(a1.g.C(str, " for ", w0Var));
                     }
                 }
                 Object obj5 = this.a;

@@ -1,90 +1,102 @@
 package tg;
 
-import android.content.Context;
-import android.graphics.Bitmap;
 import android.graphics.Canvas;
-import android.graphics.LinearGradient;
-import android.graphics.Paint;
-import android.graphics.Shader;
-import android.util.SparseIntArray;
-import bi.h5;
-import bi.p5;
-import java.util.ArrayList;
-import java.util.Collections;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.ActionBar.y6;
+import android.graphics.PointF;
+import android.graphics.RectF;
+import android.os.SystemClock;
+import android.view.View;
+import android.view.ViewGroup;
+import g.y;
+import org.telegram.ui.Components.tk0;
+import org.telegram.ui.ProfileActivity;
+import org.telegram.ui.m50;
+import org.telegram.ui.nb1;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes4.dex */
-public final class j extends b {
-    public final ArrayList d;
-    public final Bitmap e;
-    public final int f;
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final class j implements ug.a {
+    public final ViewGroup c;
+    public final m50 d;
+    public final ViewGroup e;
+    public boolean h;
+    public final RectF a = new RectF();
+    public final PointF b = new PointF();
+    public final RectF f = new RectF();
 
-    /* JADX WARN: Removed duplicated region for block: B:6:0x01ad  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public j(Context context, int i10, u6 u6Var) {
-        super(context, u6Var);
-        SparseIntArray sparseIntArray;
-        ArrayList arrayList = new ArrayList();
-        this.d = arrayList;
-        this.f = i10;
-        ArrayList arrayList2 = new ArrayList();
-        MessagesController messagesController = MessagesController.getInstance(UserConfig.selectedAccount);
-        if (i10 == 0) {
-            arrayList2.add(new h(R.drawable.msg_stories_order, 20, LocaleController.getString(R.string.PremiumStoriesPriority), LocaleController.getString(R.string.PremiumStoriesPriorityDescription)));
-            arrayList2.add(new h(R.drawable.msg_stories_stealth, 15, LocaleController.getString(R.string.PremiumStoriesStealth), LocaleController.getString(R.string.PremiumStoriesStealthDescription)));
-            arrayList2.add(new h(R.drawable.menu_quality_hd, 25, LocaleController.getString(R.string.PremiumStoriesQuality), LocaleController.getString(R.string.PremiumStoriesQualityDescription)));
-            arrayList2.add(new h(R.drawable.msg_stories_views, 16, LocaleController.getString(R.string.PremiumStoriesViews), LocaleController.getString(R.string.PremiumStoriesViewsDescription)));
-            arrayList2.add(new h(R.drawable.msg_stories_timer, 17, LocaleController.getString(R.string.PremiumStoriesExpiration), LocaleController.getString(R.string.PremiumStoriesExpirationDescription)));
-            arrayList2.add(new h(R.drawable.msg_stories_save, 18, LocaleController.getString(R.string.PremiumStoriesSaveToGallery), LocaleController.getString(R.string.PremiumStoriesSaveToGalleryDescription)));
-            arrayList2.add(new h(R.drawable.msg_stories_caption, 21, LocaleController.getString(R.string.PremiumStoriesCaption), LocaleController.getString(R.string.PremiumStoriesCaptionDescription)));
-            arrayList2.add(new h(R.drawable.msg_stories_link, 19, LocaleController.getString(R.string.PremiumStoriesFormatting), LocaleController.getString(R.string.PremiumStoriesFormattingDescription)));
-        } else if (i10 == 1) {
-            sparseIntArray = messagesController.businessFeaturesTypesToPosition;
-            arrayList2.add(new h(R.drawable.menu_premium_location, 29, LocaleController.getString(R.string.PremiumBusinessLocation), LocaleController.getString(R.string.PremiumBusinessLocationDescription)));
-            arrayList2.add(new h(R.drawable.menu_premium_clock, 30, LocaleController.getString(R.string.PremiumBusinessOpeningHours), LocaleController.getString(R.string.PremiumBusinessOpeningHoursDescription)));
-            arrayList2.add(new h(R.drawable.menu_quickreply, 31, LocaleController.getString(R.string.PremiumBusinessQuickReplies), LocaleController.getString(R.string.PremiumBusinessQuickRepliesDescription)));
-            arrayList2.add(new h(R.drawable.menu_feature_status, 32, LocaleController.getString(R.string.PremiumBusinessGreetingMessages), LocaleController.getString(R.string.PremiumBusinessGreetingMessagesDescription)));
-            arrayList2.add(new h(R.drawable.menu_premium_away, 33, LocaleController.getString(R.string.PremiumBusinessAwayMessages), LocaleController.getString(R.string.PremiumBusinessAwayMessagesDescription)));
-            arrayList2.add(new h(R.drawable.menu_premium_chatbot, 34, LocaleController.getString(R.string.PremiumBusinessChatbots2), LocaleController.getString(R.string.PremiumBusinessChatbotsDescription)));
-            arrayList2.add(new h(R.drawable.menu_feature_intro, 36, LocaleController.getString(R.string.PremiumBusinessIntro), LocaleController.getString(R.string.PremiumBusinessIntroDescription)));
-            arrayList2.add(new h(R.drawable.menu_premium_chatlink, 37, LocaleController.getString(R.string.PremiumBusinessChatLinks), LocaleController.getString(R.string.PremiumBusinessChatLinksDescription)));
-            if (sparseIntArray != null) {
-                Collections.sort(arrayList2, new p5(sparseIntArray, 5));
-            }
-            arrayList.add(new h(0));
-            arrayList.addAll(arrayList2);
-            arrayList.add(new h(2));
-            Bitmap createBitmap = Bitmap.createBitmap(arrayList.size(), 1, Bitmap.Config.ARGB_8888);
-            this.e = createBitmap;
-            Canvas canvas = new Canvas(createBitmap);
-            Paint paint = new Paint();
-            paint.setShader(new LinearGradient(0.0f, 0.0f, createBitmap.getWidth(), 0.0f, new int[]{y6.x0(null, y6.Lj, false), y6.x0(null, y6.Mj, false), y6.x0(null, y6.Nj, false), y6.x0(null, y6.Oj, false)}, (float[]) null, Shader.TileMode.CLAMP));
-            canvas.drawRect(0.0f, 0.0f, createBitmap.getWidth(), createBitmap.getHeight(), paint);
-        }
-        sparseIntArray = null;
-        if (sparseIntArray != null) {
-        }
-        arrayList.add(new h(0));
-        arrayList.addAll(arrayList2);
-        arrayList.add(new h(2));
-        Bitmap createBitmap2 = Bitmap.createBitmap(arrayList.size(), 1, Bitmap.Config.ARGB_8888);
-        this.e = createBitmap2;
-        Canvas canvas2 = new Canvas(createBitmap2);
-        Paint paint2 = new Paint();
-        paint2.setShader(new LinearGradient(0.0f, 0.0f, createBitmap2.getWidth(), 0.0f, new int[]{y6.x0(null, y6.Lj, false), y6.x0(null, y6.Mj, false), y6.x0(null, y6.Nj, false), y6.x0(null, y6.Oj, false)}, (float[]) null, Shader.TileMode.CLAMP));
-        canvas2.drawRect(0.0f, 0.0f, createBitmap2.getWidth(), createBitmap2.getHeight(), paint2);
+    public j(ViewGroup viewGroup, ViewGroup viewGroup2, m50 m50Var) {
+        this.c = viewGroup;
+        this.d = m50Var;
+        this.e = viewGroup2;
     }
 
-    @Override // tg.b
-    public final s4.h0 a() {
-        return new h5(this, 6);
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // ug.a
+    public final void d(Canvas canvas, RectF rectF) {
+        long uptimeMillis = SystemClock.uptimeMillis();
+        ViewGroup viewGroup = this.c;
+        ViewGroup viewGroup2 = this.e;
+        PointF pointF = this.b;
+        if (zg.h.b(viewGroup, viewGroup2, pointF)) {
+            canvas.save();
+            canvas.clipRect(rectF);
+            canvas.translate(pointF.x, pointF.y);
+            if (!(viewGroup instanceof ug.a) || this.h) {
+                for (int i10 = 0; i10 < viewGroup.getChildCount(); i10++) {
+                    View childAt = viewGroup.getChildAt(i10);
+                    RectF rectF2 = this.a;
+                    if (zg.h.c(childAt, viewGroup2, rectF2) && rectF2.intersect(rectF)) {
+                        m50 m50Var = this.d;
+                        int i11 = m50Var.a;
+                        Object obj = m50Var.b;
+                        switch (i11) {
+                            case 0:
+                                ((tk0) obj).drawChild(canvas, childAt, uptimeMillis);
+                                break;
+                            case 1:
+                                ProfileActivity profileActivity = (ProfileActivity) obj;
+                                if (childAt == profileActivity.N) {
+                                    break;
+                                } else {
+                                    profileActivity.a.drawChild(canvas, childAt, uptimeMillis);
+                                    break;
+                                }
+                            default:
+                                ((nb1) obj).drawChild(canvas, childAt, uptimeMillis);
+                                break;
+                        }
+                    }
+                }
+            } else {
+                RectF rectF3 = this.f;
+                rectF3.set(rectF);
+                rectF.offset(-pointF.x, -pointF.y);
+                ((ug.a) viewGroup).d(canvas, rectF);
+                rectF.set(rectF3);
+            }
+            canvas.restore();
+        }
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // ug.a
+    public final void g(y yVar, RectF rectF) {
+        ViewGroup viewGroup = this.c;
+        ViewGroup viewGroup2 = this.e;
+        PointF pointF = this.b;
+        if (!zg.h.b(viewGroup, viewGroup2, pointF)) {
+            yVar.b = true;
+            return;
+        }
+        if (!(viewGroup instanceof ug.a) || this.h) {
+            yVar.b = true;
+            return;
+        }
+        yVar.c(pointF.x);
+        yVar.c(pointF.y);
+        RectF rectF2 = this.f;
+        rectF2.set(rectF);
+        rectF.offset(-pointF.x, -pointF.y);
+        ((ug.a) viewGroup).g(yVar, rectF);
+        rectF.set(rectF2);
     }
 }

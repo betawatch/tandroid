@@ -1,6 +1,5 @@
 package r1;
 
-import a8.sf;
 import android.content.res.AssetManager;
 import android.media.MediaMetadataRetriever;
 import android.os.Build;
@@ -27,8 +26,10 @@ import java.util.Map;
 import java.util.regex.Pattern;
 import java.util.zip.CRC32;
 import org.chromium.support_lib_boundary.WebViewProviderFactoryBoundaryInterface;
+import org.telegram.messenger.zs;
+import w7.y6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class g {
     public static final String[] E;
@@ -84,14 +85,14 @@ public final class g {
         E = new String[]{"", "BYTE", "STRING", "USHORT", "ULONG", "URATIONAL", "SBYTE", "UNDEFINED", "SSHORT", "SLONG", "SRATIONAL", "SINGLE", "DOUBLE", "IFD"};
         F = new int[]{0, 1, 1, 2, 4, 8, 1, 1, 2, 4, 8, 4, 8, 1};
         G = new byte[]{65, 83, 67, 73, 73, 0, 0, 0};
-        d[] dVarArr = {new d("NewSubfileType", 254, 4), new d("SubfileType", 255, 4), new d(256, 3, "ImageWidth", 4), new d(257, 3, "ImageLength", 4), new d("BitsPerSample", 258, 3), new d("Compression", 259, 3), new d("PhotometricInterpretation", 262, 3), new d("ImageDescription", 270, 2), new d("Make", 271, 2), new d("Model", 272, 2), new d(273, 3, "StripOffsets", 4), new d("Orientation", 274, 3), new d("SamplesPerPixel", 277, 3), new d(278, 3, "RowsPerStrip", 4), new d(279, 3, "StripByteCounts", 4), new d("XResolution", 282, 5), new d("YResolution", 283, 5), new d("PlanarConfiguration", 284, 3), new d("ResolutionUnit", 296, 3), new d("TransferFunction", 301, 3), new d("Software", 305, 2), new d("DateTime", 306, 2), new d("Artist", 315, 2), new d("WhitePoint", 318, 5), new d("PrimaryChromaticities", 319, 5), new d("SubIFDPointer", 330, 4), new d("JPEGInterchangeFormat", 513, 4), new d("JPEGInterchangeFormatLength", 514, 4), new d("YCbCrCoefficients", 529, 5), new d("YCbCrSubSampling", 530, 3), new d("YCbCrPositioning", 531, 3), new d("ReferenceBlackWhite", 532, 5), new d("Copyright", 33432, 2), new d("ExifIFDPointer", 34665, 4), new d("GPSInfoIFDPointer", 34853, 4), new d("SensorTopBorder", 4, 4), new d("SensorLeftBorder", 5, 4), new d("SensorBottomBorder", 6, 4), new d("SensorRightBorder", 7, 4), new d("ISO", 23, 3), new d("JpgFromRaw", 46, 7), new d("Xmp", 700, 1)};
+        d[] dVarArr = {new d("NewSubfileType", zs.d4, 4), new d("SubfileType", zs.e4, 4), new d(256, 3, "ImageWidth", 4), new d(zs.g4, 3, "ImageLength", 4), new d("BitsPerSample", zs.h4, 3), new d("Compression", zs.i4, 3), new d("PhotometricInterpretation", zs.l4, 3), new d("ImageDescription", zs.t4, 2), new d("Make", zs.u4, 2), new d("Model", zs.v4, 2), new d(zs.w4, 3, "StripOffsets", 4), new d("Orientation", zs.x4, 3), new d("SamplesPerPixel", zs.A4, 3), new d(zs.B4, 3, "RowsPerStrip", 4), new d(zs.C4, 3, "StripByteCounts", 4), new d("XResolution", zs.F4, 5), new d("YResolution", zs.G4, 5), new d("PlanarConfiguration", zs.H4, 3), new d("ResolutionUnit", zs.T4, 3), new d("TransferFunction", zs.Y4, 3), new d("Software", zs.c5, 2), new d("DateTime", zs.d5, 2), new d("Artist", zs.m5, 2), new d("WhitePoint", zs.p5, 5), new d("PrimaryChromaticities", zs.q5, 5), new d("SubIFDPointer", zs.B5, 4), new d("JPEGInterchangeFormat", 513, 4), new d("JPEGInterchangeFormatLength", 514, 4), new d("YCbCrCoefficients", 529, 5), new d("YCbCrSubSampling", 530, 3), new d("YCbCrPositioning", 531, 3), new d("ReferenceBlackWhite", 532, 5), new d("Copyright", 33432, 2), new d("ExifIFDPointer", 34665, 4), new d("GPSInfoIFDPointer", 34853, 4), new d("SensorTopBorder", 4, 4), new d("SensorLeftBorder", 5, 4), new d("SensorBottomBorder", 6, 4), new d("SensorRightBorder", 7, 4), new d("ISO", 23, 3), new d("JpgFromRaw", 46, 7), new d("Xmp", 700, 1)};
         d[] dVarArr2 = {new d("ExposureTime", 33434, 5), new d("FNumber", 33437, 5), new d("ExposureProgram", 34850, 3), new d("SpectralSensitivity", 34852, 2), new d("PhotographicSensitivity", 34855, 3), new d("OECF", 34856, 7), new d("SensitivityType", 34864, 3), new d("StandardOutputSensitivity", 34865, 4), new d("RecommendedExposureIndex", 34866, 4), new d("ISOSpeed", 34867, 4), new d("ISOSpeedLatitudeyyy", 34868, 4), new d("ISOSpeedLatitudezzz", 34869, 4), new d("ExifVersion", 36864, 2), new d("DateTimeOriginal", 36867, 2), new d("DateTimeDigitized", 36868, 2), new d("OffsetTime", 36880, 2), new d("OffsetTimeOriginal", 36881, 2), new d("OffsetTimeDigitized", 36882, 2), new d("ComponentsConfiguration", 37121, 7), new d("CompressedBitsPerPixel", 37122, 5), new d("ShutterSpeedValue", 37377, 10), new d("ApertureValue", 37378, 5), new d("BrightnessValue", 37379, 10), new d("ExposureBiasValue", 37380, 10), new d("MaxApertureValue", 37381, 5), new d("SubjectDistance", 37382, 5), new d("MeteringMode", 37383, 3), new d("LightSource", 37384, 3), new d("Flash", 37385, 3), new d("FocalLength", 37386, 5), new d("SubjectArea", 37396, 3), new d("MakerNote", 37500, 7), new d("UserComment", 37510, 7), new d("SubSecTime", 37520, 2), new d("SubSecTimeOriginal", 37521, 2), new d("SubSecTimeDigitized", 37522, 2), new d("FlashpixVersion", 40960, 7), new d("ColorSpace", 40961, 3), new d(40962, 3, "PixelXDimension", 4), new d(40963, 3, "PixelYDimension", 4), new d("RelatedSoundFile", 40964, 2), new d("InteroperabilityIFDPointer", 40965, 4), new d("FlashEnergy", 41483, 5), new d("SpatialFrequencyResponse", 41484, 7), new d("FocalPlaneXResolution", 41486, 5), new d("FocalPlaneYResolution", 41487, 5), new d("FocalPlaneResolutionUnit", 41488, 3), new d("SubjectLocation", 41492, 3), new d("ExposureIndex", 41493, 5), new d("SensingMethod", 41495, 3), new d("FileSource", 41728, 7), new d("SceneType", 41729, 7), new d("CFAPattern", 41730, 7), new d("CustomRendered", 41985, 3), new d("ExposureMode", 41986, 3), new d("WhiteBalance", 41987, 3), new d("DigitalZoomRatio", 41988, 5), new d("FocalLengthIn35mmFilm", 41989, 3), new d("SceneCaptureType", 41990, 3), new d("GainControl", 41991, 3), new d("Contrast", 41992, 3), new d("Saturation", 41993, 3), new d("Sharpness", 41994, 3), new d("DeviceSettingDescription", 41995, 7), new d("SubjectDistanceRange", 41996, 3), new d("ImageUniqueID", 42016, 2), new d("CameraOwnerName", 42032, 2), new d("BodySerialNumber", 42033, 2), new d("LensSpecification", 42034, 5), new d("LensMake", 42035, 2), new d("LensModel", 42036, 2), new d("Gamma", 42240, 5), new d("DNGVersion", 50706, 1), new d(50720, 3, "DefaultCropSize", 4)};
         d[] dVarArr3 = {new d("GPSVersionID", 0, 1), new d("GPSLatitudeRef", 1, 2), new d(2, 5, "GPSLatitude", 10), new d("GPSLongitudeRef", 3, 2), new d(4, 5, "GPSLongitude", 10), new d("GPSAltitudeRef", 5, 1), new d("GPSAltitude", 6, 5), new d("GPSTimeStamp", 7, 5), new d("GPSSatellites", 8, 2), new d("GPSStatus", 9, 2), new d("GPSMeasureMode", 10, 2), new d("GPSDOP", 11, 5), new d("GPSSpeedRef", 12, 2), new d("GPSSpeed", 13, 5), new d("GPSTrackRef", 14, 2), new d("GPSTrack", 15, 5), new d("GPSImgDirectionRef", 16, 2), new d("GPSImgDirection", 17, 5), new d("GPSMapDatum", 18, 2), new d("GPSDestLatitudeRef", 19, 2), new d("GPSDestLatitude", 20, 5), new d("GPSDestLongitudeRef", 21, 2), new d("GPSDestLongitude", 22, 5), new d("GPSDestBearingRef", 23, 2), new d("GPSDestBearing", 24, 5), new d("GPSDestDistanceRef", 25, 2), new d("GPSDestDistance", 26, 5), new d("GPSProcessingMethod", 27, 7), new d("GPSAreaInformation", 28, 7), new d("GPSDateStamp", 29, 2), new d("GPSDifferential", 30, 3), new d("GPSHPositioningError", 31, 5)};
         d[] dVarArr4 = {new d("InteroperabilityIndex", 1, 2)};
-        d[] dVarArr5 = {new d("NewSubfileType", 254, 4), new d("SubfileType", 255, 4), new d(256, 3, "ThumbnailImageWidth", 4), new d(257, 3, "ThumbnailImageLength", 4), new d("BitsPerSample", 258, 3), new d("Compression", 259, 3), new d("PhotometricInterpretation", 262, 3), new d("ImageDescription", 270, 2), new d("Make", 271, 2), new d("Model", 272, 2), new d(273, 3, "StripOffsets", 4), new d("ThumbnailOrientation", 274, 3), new d("SamplesPerPixel", 277, 3), new d(278, 3, "RowsPerStrip", 4), new d(279, 3, "StripByteCounts", 4), new d("XResolution", 282, 5), new d("YResolution", 283, 5), new d("PlanarConfiguration", 284, 3), new d("ResolutionUnit", 296, 3), new d("TransferFunction", 301, 3), new d("Software", 305, 2), new d("DateTime", 306, 2), new d("Artist", 315, 2), new d("WhitePoint", 318, 5), new d("PrimaryChromaticities", 319, 5), new d("SubIFDPointer", 330, 4), new d("JPEGInterchangeFormat", 513, 4), new d("JPEGInterchangeFormatLength", 514, 4), new d("YCbCrCoefficients", 529, 5), new d("YCbCrSubSampling", 530, 3), new d("YCbCrPositioning", 531, 3), new d("ReferenceBlackWhite", 532, 5), new d("Copyright", 33432, 2), new d("ExifIFDPointer", 34665, 4), new d("GPSInfoIFDPointer", 34853, 4), new d("DNGVersion", 50706, 1), new d(50720, 3, "DefaultCropSize", 4)};
-        H = new d("StripOffsets", 273, 3);
-        I = new d[][]{dVarArr, dVarArr2, dVarArr3, dVarArr4, dVarArr5, dVarArr, new d[]{new d("ThumbnailImage", 256, 7), new d("CameraSettingsIFDPointer", 8224, 4), new d("ImageProcessingIFDPointer", 8256, 4)}, new d[]{new d("PreviewImageStart", 257, 4), new d("PreviewImageLength", 258, 4)}, new d[]{new d("AspectFrame", 4371, 3)}, new d[]{new d("ColorSpace", 55, 3)}};
-        J = new d[]{new d("SubIFDPointer", 330, 4), new d("ExifIFDPointer", 34665, 4), new d("GPSInfoIFDPointer", 34853, 4), new d("InteroperabilityIFDPointer", 40965, 4), new d("CameraSettingsIFDPointer", 8224, 1), new d("ImageProcessingIFDPointer", 8256, 1)};
+        d[] dVarArr5 = {new d("NewSubfileType", zs.d4, 4), new d("SubfileType", zs.e4, 4), new d(256, 3, "ThumbnailImageWidth", 4), new d(zs.g4, 3, "ThumbnailImageLength", 4), new d("BitsPerSample", zs.h4, 3), new d("Compression", zs.i4, 3), new d("PhotometricInterpretation", zs.l4, 3), new d("ImageDescription", zs.t4, 2), new d("Make", zs.u4, 2), new d("Model", zs.v4, 2), new d(zs.w4, 3, "StripOffsets", 4), new d("ThumbnailOrientation", zs.x4, 3), new d("SamplesPerPixel", zs.A4, 3), new d(zs.B4, 3, "RowsPerStrip", 4), new d(zs.C4, 3, "StripByteCounts", 4), new d("XResolution", zs.F4, 5), new d("YResolution", zs.G4, 5), new d("PlanarConfiguration", zs.H4, 3), new d("ResolutionUnit", zs.T4, 3), new d("TransferFunction", zs.Y4, 3), new d("Software", zs.c5, 2), new d("DateTime", zs.d5, 2), new d("Artist", zs.m5, 2), new d("WhitePoint", zs.p5, 5), new d("PrimaryChromaticities", zs.q5, 5), new d("SubIFDPointer", zs.B5, 4), new d("JPEGInterchangeFormat", 513, 4), new d("JPEGInterchangeFormatLength", 514, 4), new d("YCbCrCoefficients", 529, 5), new d("YCbCrSubSampling", 530, 3), new d("YCbCrPositioning", 531, 3), new d("ReferenceBlackWhite", 532, 5), new d("Copyright", 33432, 2), new d("ExifIFDPointer", 34665, 4), new d("GPSInfoIFDPointer", 34853, 4), new d("DNGVersion", 50706, 1), new d(50720, 3, "DefaultCropSize", 4)};
+        H = new d("StripOffsets", zs.w4, 3);
+        I = new d[][]{dVarArr, dVarArr2, dVarArr3, dVarArr4, dVarArr5, dVarArr, new d[]{new d("ThumbnailImage", 256, 7), new d("CameraSettingsIFDPointer", 8224, 4), new d("ImageProcessingIFDPointer", 8256, 4)}, new d[]{new d("PreviewImageStart", zs.g4, 4), new d("PreviewImageLength", zs.h4, 4)}, new d[]{new d("AspectFrame", 4371, 3)}, new d[]{new d("ColorSpace", 55, 3)}};
+        J = new d[]{new d("SubIFDPointer", zs.B5, 4), new d("ExifIFDPointer", 34665, 4), new d("GPSInfoIFDPointer", 34853, 4), new d("InteroperabilityIFDPointer", 40965, 4), new d("CameraSettingsIFDPointer", 8224, 1), new d("ImageProcessingIFDPointer", 8256, 1)};
         K = new HashMap[10];
         L = new HashMap[10];
         M = new HashSet(Arrays.asList("FNumber", "DigitalZoomRatio", "ExposureTime", "SubjectDistance", "GPSTimeStamp"));
@@ -591,8 +592,8 @@ public final class g {
                                 }
                                 throw th;
                             }
-                        } catch (Exception e10) {
-                            e = e10;
+                        } catch (Exception e7) {
+                            e = e7;
                             i10 = 0;
                             bVar2 = null;
                         } catch (Throwable th3) {
@@ -630,8 +631,8 @@ public final class g {
                                             }
                                         }
                                     }
-                                } catch (Exception e11) {
-                                    e = e11;
+                                } catch (Exception e10) {
+                                    e = e10;
                                     if (m) {
                                         Log.d("ExifInterface", "Exception parsing HEIF file type box.", e);
                                     }
@@ -825,7 +826,7 @@ public final class g {
                 if (Arrays.equals(bArr2, y)) {
                     byte[] bArr3 = new byte[readInt];
                     if (bVar.read(bArr3) != readInt) {
-                        throw new IOException("Failed to read given length for given PNG chunk type: " + sf.a(bArr2));
+                        throw new IOException("Failed to read given length for given PNG chunk type: " + y6.a(bArr2));
                     }
                     int readInt2 = bVar.readInt();
                     CRC32 crc32 = new CRC32();
@@ -962,7 +963,7 @@ public final class g {
                         x(new b(bArr3));
                         return;
                     } else {
-                        throw new IOException("Failed to read given length for given PNG chunk type: " + sf.a(bArr2));
+                        throw new IOException("Failed to read given length for given PNG chunk type: " + y6.a(bArr2));
                     }
                 }
                 if (readInt2 % 2 == 1) {
@@ -989,16 +990,16 @@ public final class g {
             return;
         }
         int e = cVar.e(this.g);
-        int e10 = cVar2.e(this.g);
+        int e7 = cVar2.e(this.g);
         if (this.d == 7) {
             e += this.j;
         }
-        if (e > 0 && e10 > 0 && this.a == null && this.c == null && this.b == null) {
+        if (e > 0 && e7 > 0 && this.a == null && this.c == null && this.b == null) {
             bVar.skip(e);
-            bVar.read(new byte[e10]);
+            bVar.read(new byte[e7]);
         }
         if (m) {
-            Log.d("ExifInterface", "Setting thumbnail attributes with offset: " + e + ", length: " + e10);
+            Log.d("ExifInterface", "Setting thumbnail attributes with offset: " + e + ", length: " + e7);
         }
     }
 
@@ -1044,8 +1045,8 @@ public final class g {
             if (fileInputStream2 != null) {
                 try {
                     fileInputStream2.close();
-                } catch (RuntimeException e10) {
-                    throw e10;
+                } catch (RuntimeException e7) {
+                    throw e7;
                 } catch (Exception unused3) {
                 }
             }
@@ -1097,8 +1098,8 @@ public final class g {
                 }
                 s();
                 return;
-            } catch (UnsupportedOperationException e10) {
-                e = e10;
+            } catch (UnsupportedOperationException e7) {
+                e = e7;
                 if (z10) {
                 }
                 a();
@@ -1107,9 +1108,9 @@ public final class g {
             }
         }
         BufferedInputStream bufferedInputStream = new BufferedInputStream(inputStream, 5000);
-        int g7 = g(bufferedInputStream);
-        this.d = g7;
-        if (g7 != 4 && g7 != 9 && g7 != 13 && g7 != 14) {
+        int g10 = g(bufferedInputStream);
+        this.d = g10;
+        if (g10 != 4 && g10 != 9 && g10 != 13 && g10 != 14) {
             f fVar = new f(bufferedInputStream);
             int i11 = this.d;
             if (i11 == 12) {
@@ -1157,7 +1158,7 @@ public final class g {
         }
         int readInt = fVar.readInt();
         if (readInt < 8) {
-            throw new IOException(ic.a.i(readInt, "Invalid first Ifd offset: "));
+            throw new IOException(i0.a.i(readInt, "Invalid first Ifd offset: "));
         }
         int i11 = readInt - 8;
         if (i11 > 0) {
@@ -1172,9 +1173,9 @@ public final class g {
             if (i10 >= hashMapArr.length) {
                 return;
             }
-            StringBuilder k10 = ic.a.k(i10, "The size of tag group[", "]: ");
-            k10.append(hashMapArr[i10].size());
-            Log.d("ExifInterface", k10.toString());
+            StringBuilder l4 = i0.a.l(i10, "The size of tag group[", "]: ");
+            l4.append(hashMapArr[i10].size());
+            Log.d("ExifInterface", l4.toString());
             for (Map.Entry entry : hashMapArr[i10].entrySet()) {
                 c cVar = (c) entry.getValue();
                 Log.d("ExifInterface", "tagName: " + ((String) entry.getKey()) + ", tagType: " + cVar.toString() + ", tagValue: '" + cVar.f(this.g) + "'");
@@ -1189,11 +1190,11 @@ public final class g {
         v(fVar, i10);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:21:0x0172  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x0179  */
-    /* JADX WARN: Removed duplicated region for block: B:56:0x0262  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x027d  */
-    /* JADX WARN: Removed duplicated region for block: B:67:0x02b6  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0171  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0178  */
+    /* JADX WARN: Removed duplicated region for block: B:56:0x0260  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x027b  */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x02b4  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1460,12 +1461,12 @@ public final class g {
             n(bVar, hashMap);
             return;
         }
-        int e10 = cVar2.e(this.g);
-        if (e10 != 1) {
-            if (e10 == 6) {
+        int e7 = cVar2.e(this.g);
+        if (e7 != 1) {
+            if (e7 == 6) {
                 n(bVar, hashMap);
                 return;
-            } else if (e10 != 7) {
+            } else if (e7 != 7) {
                 return;
             }
         }
@@ -1479,8 +1480,8 @@ public final class g {
                 if (cVar4 == null || cVar5 == null) {
                     return;
                 }
-                long[] b10 = sf.b(cVar4.g(this.g));
-                long[] b11 = sf.b(cVar5.g(this.g));
+                long[] b10 = y6.b(cVar4.g(this.g));
+                long[] b11 = y6.b(cVar5.g(this.g));
                 if (b10 == null || b10.length == 0) {
                     Log.w("ExifInterface", "stripOffsets should not be null or have zero length.");
                     return;
@@ -1569,10 +1570,10 @@ public final class g {
             return;
         }
         int e = cVar.e(this.g);
-        int e10 = cVar2.e(this.g);
-        int e11 = cVar3.e(this.g);
-        int e12 = cVar4.e(this.g);
-        if (e >= e11 || e10 >= e12) {
+        int e7 = cVar2.e(this.g);
+        int e10 = cVar3.e(this.g);
+        int e11 = cVar4.e(this.g);
+        if (e >= e10 || e7 >= e11) {
             return;
         }
         HashMap hashMap = hashMapArr[i10];
@@ -1613,14 +1614,14 @@ public final class g {
         }
         if (cVar2 != null && cVar3 != null && cVar4 != null && cVar5 != null) {
             int e = cVar2.e(this.g);
-            int e10 = cVar4.e(this.g);
-            int e11 = cVar5.e(this.g);
-            int e12 = cVar3.e(this.g);
-            if (e10 <= e || e11 <= e12) {
+            int e7 = cVar4.e(this.g);
+            int e10 = cVar5.e(this.g);
+            int e11 = cVar3.e(this.g);
+            if (e7 <= e || e10 <= e11) {
                 return;
             }
-            c c12 = c.c(e10 - e, this.g);
-            c c13 = c.c(e11 - e12, this.g);
+            c c12 = c.c(e7 - e, this.g);
+            c c13 = c.c(e10 - e11, this.g);
             hashMapArr[i10].put("ImageLength", c12);
             hashMapArr[i10].put("ImageWidth", c13);
             return;
@@ -1633,12 +1634,12 @@ public final class g {
             if (cVar8 == null || cVar9 == null) {
                 return;
             }
+            int e12 = cVar8.e(this.g);
             int e13 = cVar8.e(this.g);
-            int e14 = cVar8.e(this.g);
-            fVar.b(e13);
-            byte[] bArr = new byte[e14];
+            fVar.b(e12);
+            byte[] bArr = new byte[e13];
             fVar.read(bArr);
-            f(new b(bArr), e13, i10);
+            f(new b(bArr), e12, i10);
         }
     }
 

@@ -2,70 +2,62 @@ package jg;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.Drawable;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.j5;
-import org.telegram.ui.Components.r6;
+import android.text.TextUtils;
+import android.widget.TextView;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.cd;
+import org.telegram.messenger.z20;
+import org.telegram.ui.ActionBar.j6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class s1 extends EditTextBoldCursor {
-    public final j5 b;
-    public int c;
-    public final r6 d;
-    public final /* synthetic */ u6 e;
+public final class s1 extends TextView {
+    public boolean a;
+    public Drawable b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public s1(Context context, u6 u6Var) {
+    public s1(Context context) {
         super(context);
-        this.e = u6Var;
-        this.b = new j5(this);
-        r6 r6Var = new r6(false, true, true);
-        this.d = r6Var;
-        r6Var.n(0.2f, 160L, ds.h);
-        r6Var.w(AndroidUtilities.dp(15.33f));
-        r6Var.setCallback(this);
-        r6Var.b = 5;
-    }
-
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        int a2 = this.b.a(y6.w0(this.c < 0 ? y6.p7 : y6.P5, this.e), false);
-        r6 r6Var = this.d;
-        r6Var.u(a2);
-        r6Var.setBounds(getScrollX(), 0, getWidth() + getScrollX(), getHeight());
-        r6Var.draw(canvas);
-    }
-
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(36.0f), TLObject.FLAG_30));
-    }
-
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.lu, android.widget.TextView
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        super.onTextChanged(charSequence, i10, i11, i12);
-        r6 r6Var = this.d;
-        if (r6Var != null) {
-            this.c = 32 - charSequence.length();
-            r6Var.a();
-            String str = "";
-            if (this.c <= 4) {
-                str = "" + this.c;
-            }
-            r6Var.t(str, true, true);
-        }
+        setTextColor(-1);
+        setTextSize(1, 14.0f);
+        setCurrent(false);
+        setEllipsize(TextUtils.TruncateAt.END);
+        setSingleLine();
     }
 
     @Override // android.widget.TextView, android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return drawable == this.d || super.verifyDrawable(drawable);
+    public final void onDraw(Canvas canvas) {
+        canvas.save();
+        canvas.translate(0.0f, org.telegram.messenger.i0.L(-1.0f));
+        super.onDraw(canvas);
+        canvas.restore();
+        if (this.a) {
+            int y3 = z20.y(16.0f, getHeight(), 2);
+            if (cd.X) {
+                this.b.setBounds(org.telegram.messenger.i0.L(7.0f), y3, org.telegram.messenger.i0.L(23.0f), org.telegram.messenger.i0.L(16.0f) + y3);
+            } else {
+                this.b.setBounds(getWidth() - org.telegram.messenger.i0.L(23.0f), y3, getWidth() - org.telegram.messenger.i0.L(7.0f), org.telegram.messenger.i0.L(16.0f) + y3);
+            }
+            this.b.draw(canvas);
+        }
+    }
+
+    public void setCurrent(boolean z10) {
+        this.a = z10;
+        if (z10) {
+            setPadding(org.telegram.messenger.i0.L(cd.X ? 27.0f : 12.0f), org.telegram.messenger.i0.L(6.0f), org.telegram.messenger.i0.L(cd.X ? 12.0f : 27.0f), org.telegram.messenger.i0.L(6.0f));
+            setBackground(j6.d(0, j6.b(1090519039), org.telegram.messenger.i0.L(32.0f)));
+        } else {
+            setPadding(org.telegram.messenger.i0.L(24.0f), org.telegram.messenger.i0.L(14.0f), org.telegram.messenger.i0.L(24.0f), org.telegram.messenger.i0.L(14.0f));
+            setBackground(j6.d(0, j6.b(-14145495), 0.0f));
+        }
+        if (this.a && this.b == null) {
+            Drawable drawable = getContext().getDrawable(R.drawable.photo_expand);
+            this.b = drawable;
+            drawable.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
+        }
+        invalidate();
     }
 }

@@ -1,30 +1,68 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaDataController;
+import android.graphics.Rect;
+import android.view.MotionEvent;
+import android.view.View;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class ne extends ah {
-    public final /* synthetic */ ChatActivityEnterView x;
+public final class ne implements View.OnTouchListener {
+    public final /* synthetic */ int a = 0;
+    public final Rect b = new Rect();
+    public final /* synthetic */ org.telegram.messenger.us c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ne(ChatActivityEnterView chatActivityEnterView, Activity activity) {
-        super(activity);
-        this.x = chatActivityEnterView;
+    public ne(org.telegram.ui.yn0 yn0Var) {
+        this.c = yn0Var;
     }
 
-    @Override // android.widget.ImageView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        ChatActivityEnterView chatActivityEnterView = this.x;
-        Paint paint = chatActivityEnterView.Q1;
-        super.onDraw(canvas);
-        if (getTag() == null || chatActivityEnterView.p1 == null || chatActivityEnterView.W0 || MediaDataController.getInstance(chatActivityEnterView.Q).getUnreadStickerSets().isEmpty() || paint == null) {
-            return;
+    @Override // android.view.View.OnTouchListener
+    public final boolean onTouch(View view, MotionEvent motionEvent) {
+        oe oeVar;
+        org.telegram.ui.ActionBar.k1 k1Var;
+        org.telegram.ui.ActionBar.k1 k1Var2;
+        switch (this.a) {
+            case 0:
+                ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.c;
+                if (motionEvent.getActionMasked() == 0 && (oeVar = chatActivityEnterView.N0) != null && oeVar.isShowing()) {
+                    Rect rect = this.b;
+                    view.getHitRect(rect);
+                    if (!rect.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
+                        chatActivityEnterView.N0.dismiss();
+                        break;
+                    }
+                }
+                break;
+            case 1:
+                org.telegram.ui.yn0 yn0Var = (org.telegram.ui.yn0) this.c;
+                if (motionEvent.getActionMasked() == 0 && (k1Var = yn0Var.I) != null && k1Var.isShowing()) {
+                    Rect rect2 = this.b;
+                    view.getHitRect(rect2);
+                    if (!rect2.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
+                        yn0Var.I.d(true);
+                        break;
+                    }
+                }
+                break;
+            default:
+                org.telegram.ui.lo0 lo0Var = (org.telegram.ui.lo0) this.c;
+                if (motionEvent.getActionMasked() == 0 && (k1Var2 = lo0Var.m0) != null && k1Var2.isShowing()) {
+                    Rect rect3 = this.b;
+                    view.getHitRect(rect3);
+                    if (!rect3.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
+                        lo0Var.m0.d(true);
+                        break;
+                    }
+                }
+                break;
         }
-        canvas.drawCircle(AndroidUtilities.dp(9.0f) + (getWidth() / 2), (getHeight() / 2) - AndroidUtilities.dp(8.0f), AndroidUtilities.dp(5.0f), paint);
+        return false;
+    }
+
+    public ne(org.telegram.ui.lo0 lo0Var) {
+        this.c = lo0Var;
+    }
+
+    public ne(ChatActivityEnterView chatActivityEnterView) {
+        this.c = chatActivityEnterView;
     }
 }

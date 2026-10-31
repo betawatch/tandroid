@@ -1,107 +1,43 @@
 package c2;
 
 import java.nio.ByteBuffer;
-import java.nio.ByteOrder;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public abstract class p implements o {
-    public l b;
-    public l c;
-    public l d;
-    public l e;
-    public ByteBuffer f;
-    public ByteBuffer g;
-    public boolean h;
+public interface p {
+    void a(int i10, ByteBuffer byteBuffer);
 
-    public p() {
-        ByteBuffer byteBuffer = o.a;
-        this.f = byteBuffer;
-        this.g = byteBuffer;
-        l lVar = l.e;
-        this.d = lVar;
-        this.e = lVar;
-        this.b = lVar;
-        this.c = lVar;
-    }
+    void b(int i10, ByteBuffer byteBuffer);
 
-    @Override // c2.o
-    public ByteBuffer a() {
-        ByteBuffer byteBuffer = this.g;
-        this.g = o.a;
-        return byteBuffer;
-    }
+    void c(int i10, int i11);
 
-    @Override // c2.o
-    public boolean c() {
-        return this.h && this.g == o.a;
-    }
+    void d(int i10, int i11);
 
-    @Override // c2.o
-    public final void d(m mVar) {
-        this.g = o.a;
-        this.h = false;
-        this.b = this.d;
-        this.c = this.e;
-        i();
-    }
+    int e(int i10, int i11, int i12);
 
-    @Override // c2.o
-    public final l e(l lVar) {
-        this.d = lVar;
-        this.e = h(lVar);
-        return isActive() ? this.e : l.e;
-    }
+    void f();
 
-    @Override // c2.o
-    public final void f() {
-        this.h = true;
-        j();
-    }
+    void flush();
 
-    public abstract l h(l lVar);
+    Object g();
 
-    @Override // c2.o
-    public boolean isActive() {
-        return this.e != l.e;
-    }
+    Object h();
 
-    public final ByteBuffer l(int i10) {
-        if (this.f.capacity() < i10) {
-            this.f = ByteBuffer.allocateDirect(i10).order(ByteOrder.nativeOrder());
-        } else {
-            this.f.clear();
-        }
-        ByteBuffer byteBuffer = this.f;
-        this.g = byteBuffer;
-        return byteBuffer;
-    }
+    void i(int i10);
 
-    @Override // c2.o
-    public final void reset() {
-        ByteBuffer byteBuffer = o.a;
-        this.g = byteBuffer;
-        this.h = false;
-        this.f = byteBuffer;
-        l lVar = l.e;
-        this.d = lVar;
-        this.e = lVar;
-        this.b = lVar;
-        this.c = lVar;
-        k();
-    }
+    boolean j();
 
-    public void i() {
-    }
+    void k(long j10, int i10, long j11);
 
-    public void j() {
-    }
+    Object l();
 
-    public void k() {
-    }
+    void m(int i10, int i11, int i12, int i13, int i14);
 
-    @Override // c2.o
-    public long g(long j10) {
-        return j10;
-    }
+    void n(int i10);
+
+    int o();
+
+    void p(int i10);
+
+    int q(int i10, int i11);
 }

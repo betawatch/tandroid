@@ -1,23 +1,54 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class p4 extends nd0 {
-    public final /* synthetic */ int[] y0;
+public final class p4 {
+    public final int a;
+    public final int b;
+    public final int c;
+    public final int d;
+    public final int e;
+    public final int f;
+    public final int g;
+    public final int h;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public p4(Context context, org.telegram.ui.ActionBar.u6 u6Var, int[] iArr) {
-        super(context, u6Var);
-        this.y0 = iArr;
+    /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public p4(org.telegram.ui.ActionBar.p6 p6Var) {
+        this(r4, r5, r6, r7, r8, r9, r10, p6Var != null ? p6Var.f(r2) : org.telegram.ui.ActionBar.t6.x0(null, r2, false), p6Var != null ? p6Var.f(org.telegram.ui.ActionBar.t6.Ei) : org.telegram.ui.ActionBar.t6.x0(null, org.telegram.ui.ActionBar.t6.Ei, false));
+        int i10 = org.telegram.ui.ActionBar.t6.j5;
+        int f7 = p6Var != null ? p6Var.f(i10) : org.telegram.ui.ActionBar.t6.x0(null, i10, false);
+        int i11 = org.telegram.ui.ActionBar.t6.h5;
+        int f10 = p6Var != null ? p6Var.f(i11) : org.telegram.ui.ActionBar.t6.x0(null, i11, false);
+        int i12 = org.telegram.ui.ActionBar.t6.xj;
+        if (p6Var != null) {
+            p6Var.f(i12);
+        } else {
+            org.telegram.ui.ActionBar.t6.x0(null, i12, false);
+        }
+        int i13 = org.telegram.ui.ActionBar.t6.Bj;
+        int f11 = p6Var != null ? p6Var.f(i13) : org.telegram.ui.ActionBar.t6.x0(null, i13, false);
+        int i14 = org.telegram.ui.ActionBar.t6.E8;
+        int f12 = p6Var != null ? p6Var.f(i14) : org.telegram.ui.ActionBar.t6.x0(null, i14, false);
+        int i15 = org.telegram.ui.ActionBar.t6.G8;
+        int f13 = p6Var != null ? p6Var.f(i15) : org.telegram.ui.ActionBar.t6.x0(null, i15, false);
+        int i16 = org.telegram.ui.ActionBar.t6.i6;
+        int f14 = p6Var != null ? p6Var.f(i16) : org.telegram.ui.ActionBar.t6.x0(null, i16, false);
+        int i17 = org.telegram.ui.ActionBar.t6.Gi;
+        int f15 = p6Var != null ? p6Var.f(i17) : org.telegram.ui.ActionBar.t6.x0(null, i17, false);
+        int i18 = org.telegram.ui.ActionBar.t6.Ci;
     }
 
-    @Override // org.telegram.ui.Components.nd0
-    public final CharSequence d(int i10) {
-        int i11 = this.y0[i10];
-        return i11 == 0 ? LocaleController.getString(R.string.MuteNever) : i11 < 60 ? LocaleController.formatPluralString("Minutes", i11, new Object[0]) : i11 < 1440 ? LocaleController.formatPluralString("Hours", i11 / 60, new Object[0]) : i11 < 10080 ? LocaleController.formatPluralString("Days", i11 / 1440, new Object[0]) : i11 < 44640 ? LocaleController.formatPluralString("Weeks", i11 / 10080, new Object[0]) : i11 < 525600 ? LocaleController.formatPluralString("Months", i11 / 44640, new Object[0]) : LocaleController.formatPluralString("Years", i11 / 525600, new Object[0]);
+    public p4(int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17, int i18) {
+        this.a = i10;
+        this.b = i11;
+        this.c = i12;
+        this.d = i13;
+        this.e = i14;
+        this.f = i15;
+        this.g = i16;
+        this.h = i17;
     }
 }

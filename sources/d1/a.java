@@ -1,17 +1,18 @@
 package d1;
 
-import v0.i;
+import kotlin.jvm.internal.i;
+import v0.h;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ e b;
+    public final /* synthetic */ f b;
     public final /* synthetic */ w0.d c;
 
-    public /* synthetic */ a(e eVar, w0.d dVar, int i10) {
+    public /* synthetic */ a(f fVar, w0.d dVar, int i10) {
         this.a = i10;
-        this.b = eVar;
+        this.b = fVar;
         this.c = dVar;
     }
 
@@ -19,30 +20,30 @@ public final /* synthetic */ class a implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                i iVar = this.b.f;
-                if (iVar != null) {
-                    iVar.onError(this.c);
+                h hVar = this.b.f;
+                if (hVar != null) {
+                    hVar.g(this.c);
                     return;
                 } else {
-                    kotlin.jvm.internal.i.h("callback");
+                    i.h("callback");
                     throw null;
                 }
             case 1:
-                i iVar2 = this.b.f;
-                if (iVar2 != null) {
-                    iVar2.onError(this.c);
+                h hVar2 = this.b.f;
+                if (hVar2 != null) {
+                    hVar2.g(this.c);
                     return;
                 } else {
-                    kotlin.jvm.internal.i.h("callback");
+                    i.h("callback");
                     throw null;
                 }
             default:
-                i iVar3 = this.b.f;
-                if (iVar3 != null) {
-                    iVar3.onError(this.c);
+                h hVar3 = this.b.f;
+                if (hVar3 != null) {
+                    hVar3.g(this.c);
                     return;
                 } else {
-                    kotlin.jvm.internal.i.h("callback");
+                    i.h("callback");
                     throw null;
                 }
         }

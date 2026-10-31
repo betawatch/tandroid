@@ -1,63 +1,45 @@
 package ig;
 
-import java.io.File;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.r6;
-import org.telegram.ui.ActionBar.y6;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class u0 implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object h;
+public final class u0 {
+    public final double a;
+    public final double b;
+    public final double c;
+    public boolean d;
 
-    public /* synthetic */ u0(j1 j1Var, CharSequence charSequence, int i10, ArrayList arrayList, boolean z10, boolean z11) {
-        this.e = j1Var;
-        this.f = charSequence;
-        this.c = i10;
-        this.h = arrayList;
-        this.b = z10;
-        this.d = z11;
+    public u0(double d, double d10, double d11) {
+        this.a = d;
+        this.b = d10;
+        this.c = d11;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                ((j1) this.e).U((CharSequence) this.f, this.c, (ArrayList) this.h, this.b, this.d);
-                break;
-            case 1:
-                ((MediaDataController) this.e).lambda$processLoadedDiceStickers$89(this.b, (TLRPC.TL_messages_stickerSet) this.f, this.c, (String) this.h, this.d);
-                break;
-            default:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.q(y6.n1((r6) this.e, (File) this.f, this.c, this.b, (TLRPC.Document) this.h, this.d), 16));
-                break;
+    public final float a(u0 u0Var) {
+        return (float) Math.sqrt(Math.pow(this.c - u0Var.c, 2.0d) + Math.pow(this.b - u0Var.b, 2.0d) + Math.pow(this.a - u0Var.a, 2.0d));
+    }
+
+    public final u0 b(u0 u0Var) {
+        return new u0((this.a + u0Var.a) * 0.5d, (this.b + u0Var.b) * 0.5d, (this.c + u0Var.c) * 0.5d);
+    }
+
+    public final boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
         }
+        if (obj == this) {
+            return true;
+        }
+        if (!(obj instanceof u0)) {
+            return false;
+        }
+        u0 u0Var = (u0) obj;
+        return this.a == u0Var.a && this.b == u0Var.b && this.c == u0Var.c;
     }
 
-    public /* synthetic */ u0(MediaDataController mediaDataController, boolean z10, TLRPC.TL_messages_stickerSet tL_messages_stickerSet, int i10, String str, boolean z11) {
-        this.e = mediaDataController;
-        this.b = z10;
-        this.f = tL_messages_stickerSet;
-        this.c = i10;
-        this.h = str;
-        this.d = z11;
-    }
-
-    public /* synthetic */ u0(r6 r6Var, File file, int i10, boolean z10, TLRPC.Document document, boolean z11) {
-        this.e = r6Var;
-        this.f = file;
-        this.c = i10;
-        this.b = z10;
-        this.h = document;
-        this.d = z11;
+    public u0(double d, double d10, double d11, int i10) {
+        this.a = d;
+        this.b = d10;
+        this.c = d11;
+        this.d = true;
     }
 }

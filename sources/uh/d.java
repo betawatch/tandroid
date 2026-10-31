@@ -1,94 +1,72 @@
 package uh;
 
-import ag.v;
-import android.graphics.Canvas;
 import android.graphics.Rect;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Cells.s1;
-import org.telegram.ui.Components.ck0;
-import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.r6;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.ui.Cells.s7;
+import s4.m0;
+import s4.z0;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes4.dex */
-public final class d extends c {
-    public final r6 d;
-    public final ck0 e;
-    public final oe.b f;
-    public float h;
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final class d extends m0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ i b;
 
-    public d(s1 s1Var, u6 u6Var) {
-        super(u6Var);
-        ck0 ck0Var = new ck0(s1Var);
-        this.e = ck0Var;
-        ck0Var.d(null, true, false);
-        ck0Var.v = 650.0f;
-        ck0Var.e(0.69f, false);
-        ck0Var.p.setStrokeWidth(AndroidUtilities.dp(1.5f));
-        this.f = new oe.b(s1Var, ds.h, 260L);
-        r6 r6Var = new r6(true, false, false);
-        this.d = r6Var;
-        r6Var.x(AndroidUtilities.bold());
-        r6Var.w(AndroidUtilities.dp(13.0f));
-        r6Var.b = 17;
-        int w02 = y6.w0(y6.i6, u6Var);
-        if (this.b != w02) {
-            y6.E1(this.a, w02, false);
-            this.b = w02;
+    public /* synthetic */ d(i iVar, int i10) {
+        this.a = i10;
+        this.b = iVar;
+    }
+
+    @Override // s4.m0
+    public final void c(Rect rect, View view, RecyclerView recyclerView, z0 z0Var) {
+        switch (this.a) {
+            case 0:
+                if (!(view instanceof s7)) {
+                    rect.left = 0;
+                    rect.top = 0;
+                    rect.bottom = 0;
+                    rect.right = 0;
+                    break;
+                } else {
+                    s7 s7Var = (s7) view;
+                    i iVar = this.b;
+                    iVar.f.getClass();
+                    int R = RecyclerView.R(s7Var);
+                    int i10 = iVar.h.J;
+                    s7Var.a0 = R < i10;
+                    int i11 = R % i10;
+                    s7Var.V = i11 == 0;
+                    s7Var.W = i11 == i10 - 1;
+                    rect.left = 0;
+                    rect.top = 0;
+                    rect.bottom = 0;
+                    rect.right = 0;
+                    break;
+                }
+            default:
+                if (!(view instanceof s7)) {
+                    rect.left = 0;
+                    rect.top = 0;
+                    rect.bottom = 0;
+                    rect.right = 0;
+                    break;
+                } else {
+                    s7 s7Var2 = (s7) view;
+                    i iVar2 = this.b;
+                    iVar2.r.getClass();
+                    int R2 = RecyclerView.R(s7Var2);
+                    int i12 = iVar2.s.J;
+                    s7Var2.a0 = R2 < i12;
+                    int i13 = R2 % i12;
+                    s7Var2.V = i13 == 0;
+                    s7Var2.W = i13 == i12 - 1;
+                    rect.left = 0;
+                    rect.top = 0;
+                    rect.bottom = 0;
+                    rect.right = 0;
+                    break;
+                }
         }
-    }
-
-    @Override // uh.c
-    public final void a(int i10) {
-        this.a.setAlpha(i10);
-        this.d.B = i10;
-    }
-
-    public final float b() {
-        return this.f.e;
-    }
-
-    public final void c(int i10) {
-        this.d.u(i10);
-        this.e.o = i10;
-    }
-
-    public final void d(float f7) {
-        if (this.h != f7) {
-            this.h = f7;
-            Rect bounds = getBounds();
-            int i10 = (int) this.h;
-            this.d.setBounds(bounds.left, bounds.top + i10, bounds.right, bounds.bottom + i10);
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        float f7 = this.f.e;
-        if (f7 < 1.0f) {
-            v.b(canvas, this.d, 1.0f - f7);
-        }
-        if (f7 > 0.0f) {
-            float exactCenterX = getBounds().exactCenterX();
-            float exactCenterY = getBounds().exactCenterY();
-            canvas.save();
-            canvas.scale(f7, f7, exactCenterX, exactCenterY);
-            this.e.a(canvas);
-            canvas.restore();
-        }
-    }
-
-    @Override // uh.c, android.graphics.drawable.Drawable
-    public final void onBoundsChange(Rect rect) {
-        super.onBoundsChange(rect);
-        Rect bounds = getBounds();
-        int i10 = (int) this.h;
-        this.d.setBounds(bounds.left, bounds.top + i10, bounds.right, bounds.bottom + i10);
-        int dp = AndroidUtilities.dp(11.0f);
-        int centerX = rect.centerX();
-        int centerY = rect.centerY();
-        this.e.f(centerX - dp, centerY - dp, centerX + dp, centerY + dp);
     }
 }

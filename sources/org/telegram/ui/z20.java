@@ -1,24 +1,27 @@
 package org.telegram.ui;
 
-import android.view.ViewGroup;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class z20 extends s4.l {
-    public final /* synthetic */ x50 F;
+public final class z20 extends q4 {
+    public final /* synthetic */ b50 U;
 
-    public z20(x50 x50Var) {
-        this.F = x50Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public z20(b50 b50Var, LaunchActivity launchActivity) {
+        super(launchActivity);
+        this.U = b50Var;
     }
 
-    @Override // s4.l
-    public final void P(s4.e1 e1Var) {
-        ViewGroup viewGroup;
-        x50 x50Var = this.F;
-        x50Var.Q.invalidate();
-        x50Var.a2.invalidate();
-        viewGroup = ((org.telegram.ui.ActionBar.k3) x50Var).containerView;
-        viewGroup.invalidate();
-        x50.J0(x50Var);
+    @Override // org.telegram.ui.q4, org.telegram.ui.Components.qg0
+    public final void c() {
+        b50 b50Var = this.U;
+        org.telegram.messenger.c cVar = b50Var.k1;
+        a30 a30Var = b50Var.i1;
+        long dialogId = a30Var.getDialogId();
+        if (dialogId > 0) {
+            TLRPC.User Z1 = org.telegram.messenger.vp.r1(cVar.a).Z1(Long.valueOf(dialogId));
+            a30Var.H(null, org.telegram.messenger.ic.m(cVar.a, 0, Z1), org.telegram.messenger.ic.m(cVar.a, 1, Z1), false);
+        }
     }
 }

@@ -1,244 +1,76 @@
 package org.telegram.ui.Components;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.content.ComponentName;
-import android.content.Intent;
-import android.net.Uri;
-import android.net.http.SslError;
-import android.text.TextUtils;
-import android.view.View;
-import android.webkit.RenderProcessGoneDetail;
-import android.webkit.SslErrorHandler;
-import android.webkit.WebResourceError;
-import android.webkit.WebResourceRequest;
-import android.webkit.WebResourceResponse;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
-import java.io.ByteArrayInputStream;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.pi1;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RadialGradient;
+import android.graphics.Shader;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class jg0 extends WebViewClient {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class jg0 implements hi.a, tg.a {
+    public final hi.a a;
+    public final Paint b = new Paint(1);
+    public RadialGradient c;
+    public int d;
+    public float e;
+    public final /* synthetic */ kg0 f;
 
-    public /* synthetic */ jg0(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public jg0(kg0 kg0Var, hi.a aVar) {
+        this.f = kg0Var;
+        this.a = aVar;
     }
 
-    public boolean a(String str) {
-        if (TextUtils.isEmpty(str)) {
-            return false;
-        }
-        Uri parse = Uri.parse(str);
-        if (!"tg".equals(parse.getScheme())) {
-            return false;
-        }
-        ((pi1) this.b).getClass();
-        ((pi1) this.b).finishFragment(false);
-        try {
-            Intent intent = new Intent("android.intent.action.VIEW", parse);
-            intent.setComponent(new ComponentName(ApplicationLoader.applicationContext.getPackageName(), LaunchActivity.class.getName()));
-            intent.putExtra("com.android.browser.application_id", ApplicationLoader.applicationContext.getPackageName());
-            ApplicationLoader.applicationContext.startActivity(intent);
-            return true;
-        } catch (Exception e) {
-            FileLog.e(e);
-            return true;
-        }
+    @Override // tg.a
+    public final vg.f a() {
+        return new vg.f(this);
     }
 
-    @Override // android.webkit.WebViewClient
-    public void onLoadResource(WebView webView, String str) {
-        switch (this.a) {
-            case 1:
-                if (!a(str)) {
-                    super.onLoadResource(webView, str);
-                    break;
-                }
-                break;
-            default:
-                super.onLoadResource(webView, str);
-                break;
-        }
-    }
-
-    @Override // android.webkit.WebViewClient
-    public void onPageFinished(WebView webView, String str) {
-        int i10 = this.a;
-        Object obj = this.b;
-        switch (i10) {
-            case 0:
-                super.onPageFinished(webView, str);
-                org.telegram.ui.xt0 xt0Var = (org.telegram.ui.xt0) obj;
-                View view = xt0Var.r;
-                if (!xt0Var.x) {
-                    xt0Var.n.setVisibility(4);
-                    xt0Var.h.setVisibility(4);
-                    view.setEnabled(true);
-                    view.setAlpha(1.0f);
-                    break;
-                }
-                break;
-            case 1:
-                super.onPageFinished(webView, str);
-                pi1 pi1Var = (pi1) obj;
-                er erVar = pi1Var.c;
-                if (erVar != null && erVar.getVisibility() == 0) {
-                    AnimatorSet animatorSet = new AnimatorSet();
-                    pi1Var.b.getContentView().setVisibility(0);
-                    pi1Var.b.setEnabled(true);
-                    animatorSet.playTogether(ObjectAnimator.ofFloat(pi1Var.c, "scaleX", 1.0f, 0.1f), ObjectAnimator.ofFloat(pi1Var.c, "scaleY", 1.0f, 0.1f), ObjectAnimator.ofFloat(pi1Var.c, "alpha", 1.0f, 0.0f), ObjectAnimator.ofFloat(pi1Var.b.getContentView(), "scaleX", 0.0f, 1.0f), ObjectAnimator.ofFloat(pi1Var.b.getContentView(), "scaleY", 0.0f, 1.0f), ObjectAnimator.ofFloat(pi1Var.b.getContentView(), "alpha", 0.0f, 1.0f));
-                    animatorSet.addListener(new org.telegram.ui.hc1(this, 13));
-                    animatorSet.setDuration(150L);
-                    animatorSet.start();
-                    break;
-                }
-                break;
-            default:
-                super.onPageFinished(webView, str);
-                break;
-        }
-    }
-
-    @Override // android.webkit.WebViewClient
-    public void onReceivedError(WebView webView, WebResourceRequest webResourceRequest, WebResourceError webResourceError) {
-        switch (this.a) {
-            case 2:
-                if (webResourceRequest.isForMainFrame()) {
-                    ti.j jVar = (ti.j) this.b;
-                    if (webView == jVar.o) {
-                        jVar.f();
-                        break;
+    @Override // hi.a
+    public final void e(Canvas canvas, float f7, float f10, float f11, float f12) {
+        hi.a aVar = this.a;
+        kg0 kg0Var = this.f;
+        float f13 = aVar != null ? kg0Var.l : 0.0f;
+        if (f13 < 1.0f) {
+            boolean z10 = kg0Var.b != null && canvas.isHardwareAccelerated();
+            if (z10) {
+                kg0Var.b.e(canvas, f7, f10, f11, f12);
+            }
+            float f14 = z10 ? 1.0f - kg0Var.k : 1.0f;
+            if (f14 > 0.0f) {
+                boolean z11 = kg0Var.j;
+                Paint paint = this.b;
+                if (z11) {
+                    float f15 = f11 - f7;
+                    float max = Math.max(1.0f, 0.65f * f15);
+                    if (this.c == null || this.d != kg0Var.i || this.e != max) {
+                        this.d = kg0Var.i;
+                        this.e = max;
+                        this.c = new RadialGradient(0.0f, 0.0f, max, org.telegram.ui.ActionBar.t6.r1(0.8f, kg0Var.i), kg0Var.i, Shader.TileMode.CLAMP);
                     }
-                }
-                break;
-            default:
-                super.onReceivedError(webView, webResourceRequest, webResourceError);
-                break;
-        }
-    }
-
-    @Override // android.webkit.WebViewClient
-    public void onReceivedHttpError(WebView webView, WebResourceRequest webResourceRequest, WebResourceResponse webResourceResponse) {
-        switch (this.a) {
-            case 2:
-                if (webResourceRequest.isForMainFrame()) {
-                    ti.j jVar = (ti.j) this.b;
-                    if (webView == jVar.o) {
-                        jVar.f();
-                        break;
-                    }
-                }
-                break;
-            default:
-                super.onReceivedHttpError(webView, webResourceRequest, webResourceResponse);
-                break;
-        }
-    }
-
-    @Override // android.webkit.WebViewClient
-    public void onReceivedSslError(WebView webView, SslErrorHandler sslErrorHandler, SslError sslError) {
-        switch (this.a) {
-            case 2:
-                sslErrorHandler.cancel();
-                ti.j jVar = (ti.j) this.b;
-                if (webView == jVar.o) {
-                    jVar.f();
-                    break;
-                }
-                break;
-            default:
-                super.onReceivedSslError(webView, sslErrorHandler, sslError);
-                break;
-        }
-    }
-
-    @Override // android.webkit.WebViewClient
-    public boolean onRenderProcessGone(WebView webView, RenderProcessGoneDetail renderProcessGoneDetail) {
-        switch (this.a) {
-            case 2:
-                ti.j jVar = (ti.j) this.b;
-                if (webView != jVar.o) {
-                    return true;
-                }
-                jVar.f();
-                return true;
-            default:
-                return super.onRenderProcessGone(webView, renderProcessGoneDetail);
-        }
-    }
-
-    @Override // android.webkit.WebViewClient
-    public WebResourceResponse shouldInterceptRequest(WebView webView, WebResourceRequest webResourceRequest) {
-        switch (this.a) {
-            case 0:
-                String uri = webResourceRequest.getUrl().toString();
-                if (!((org.telegram.ui.xt0) this.b).x || !uri.startsWith("https://www.youtube.com/youtubei/v1/player?key=")) {
-                    return null;
-                }
-                Utilities.externalNetworkQueue.postRunnable(new kg(this, uri, webResourceRequest, 17));
-                return null;
-            case 1:
-            default:
-                return super.shouldInterceptRequest(webView, webResourceRequest);
-            case 2:
-                Uri url = webResourceRequest.getUrl();
-                if ("http".equalsIgnoreCase(url.getScheme()) || "https".equalsIgnoreCase(url.getScheme())) {
-                    ti.j jVar = (ti.j) this.b;
-                    jVar.getClass();
-                    String path = url.getPath();
-                    if (!"https".equalsIgnoreCase(url.getScheme()) || !jVar.c.equalsIgnoreCase(url.getHost()) || url.getUserInfo() != null || ((url.getPort() != -1 && url.getPort() != 443) || path == null || !path.startsWith(jVar.d))) {
-                        return new WebResourceResponse("text/plain", "UTF-8", new ByteArrayInputStream(new byte[0]));
-                    }
-                }
-                return null;
-        }
-    }
-
-    @Override // android.webkit.WebViewClient
-    public boolean shouldOverrideUrlLoading(WebView webView, String str) {
-        switch (this.a) {
-            case 0:
-                if (!((org.telegram.ui.xt0) this.b).x) {
-                    break;
+                    canvas.save();
+                    float f16 = (f7 + f11) / 2.0f;
+                    float f17 = (f10 + f12) / 2.0f;
+                    canvas.translate(f16, f17);
+                    paint.setShader(this.c);
+                    paint.setColor(-16777216);
+                    paint.setAlpha((int) (f14 * 255.0f));
+                    canvas.drawRect(f7 - f16, f10 - f17, f15 / 2.0f, (f12 - f10) / 2.0f, paint);
+                    canvas.restore();
                 } else {
-                    qf.d.r(webView.getContext(), str);
-                    break;
+                    paint.setShader(null);
+                    paint.setColor(org.telegram.ui.ActionBar.t6.r1(f14, kg0Var.i));
+                    canvas.drawRect(f7, f10, f11, f12, paint);
                 }
-            case 1:
-                if (a(str) || super.shouldOverrideUrlLoading(webView, str)) {
-                }
-                break;
+            }
         }
-        return super.shouldOverrideUrlLoading(webView, str);
-    }
-
-    @Override // android.webkit.WebViewClient
-    public boolean shouldOverrideUrlLoading(WebView webView, WebResourceRequest webResourceRequest) {
-        switch (this.a) {
-            case 2:
-                if (webResourceRequest.isForMainFrame()) {
-                    ti.j jVar = (ti.j) this.b;
-                    Uri url = webResourceRequest.getUrl();
-                    if (url != null) {
-                        if (jVar.g.equals(url.toString())) {
-                            return false;
-                        }
-                    } else {
-                        jVar.getClass();
-                    }
-                }
-                return true;
-            default:
-                return super.shouldOverrideUrlLoading(webView, webResourceRequest);
+        if (f13 > 0.0f) {
+            if (f13 < 1.0f) {
+                canvas.saveLayerAlpha(f7, f10, f11, f12, (int) (f13 * 255.0f));
+            }
+            this.a.e(canvas, f7, f10, f11, f12);
+            if (f13 < 1.0f) {
+                canvas.restore();
+            }
         }
     }
 }

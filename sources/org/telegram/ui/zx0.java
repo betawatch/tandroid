@@ -1,39 +1,40 @@
 package org.telegram.ui;
 
-import java.util.List;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.ActionBarLayout;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class zx0 implements MessagesStorage.BooleanCallback, ks {
-    public final /* synthetic */ ProfileActivity a;
-    public final /* synthetic */ TLRPC.User b;
+public final class zx0 implements z4.e {
+    public int a;
+    public final /* synthetic */ ay0 b;
 
-    public /* synthetic */ zx0(ProfileActivity profileActivity, TLRPC.User user) {
-        this.a = profileActivity;
-        this.b = user;
+    public zx0(ay0 ay0Var) {
+        this.b = ay0Var;
     }
 
-    @Override // org.telegram.ui.ks
-    public void a() {
-        ProfileActivity.c0(this.a, this.b);
-    }
-
-    @Override // org.telegram.messenger.MessagesStorage.BooleanCallback
-    public void run(boolean z10) {
-        int i10 = ProfileActivity.R6;
-        ProfileActivity profileActivity = this.a;
-        if (profileActivity.getParentLayout() != null) {
-            List fragmentStack = profileActivity.getParentLayout().getFragmentStack();
-            if (((fragmentStack == null || fragmentStack.size() < 2) ? null : (org.telegram.ui.ActionBar.r2) org.telegram.ui.Components.b10.h(2, fragmentStack)) instanceof wn) {
-                ((ActionBarLayout) profileActivity.getParentLayout()).a0(fragmentStack.size() - 2);
-            }
+    @Override // z4.e
+    public final void a(int i10) {
+        ay0 ay0Var = this.b;
+        ProfileActivity profileActivity = ay0Var.n;
+        int k10 = profileActivity.n0.D0.k(i10);
+        ay0Var.a(this.a != k10);
+        this.a = k10;
+        if (profileActivity.q0 == null) {
+            return;
         }
-        profileActivity.N1 = true;
-        profileActivity.finishFragment();
-        profileActivity.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needDeleteDialog, Long.valueOf(profileActivity.i1), this.b, profileActivity.E2, Boolean.valueOf(z10));
+        if (profileActivity.S0.x()) {
+            org.telegram.messenger.i0.h3(new wv0(ay0Var, 6), 500L);
+        } else {
+            ay0Var.c();
+        }
+    }
+
+    @Override // z4.e
+    public final void b(float f7, int i10, int i11) {
+        ei.r rVar;
+        rVar = ((org.telegram.ui.ActionBar.k2) this.b.n).glassEngine;
+        rVar.g();
+    }
+
+    @Override // z4.e
+    public final void c(int i10) {
     }
 }

@@ -1,14 +1,14 @@
 package i2;
 
 import android.os.Bundle;
-import org.telegram.messenger.GenericProvider;
-import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.wc;
-import org.telegram.ui.rg0;
+import org.telegram.messenger.l9;
+import org.telegram.ui.Components.cc;
+import org.telegram.ui.Components.wb;
+import org.telegram.ui.pf0;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final /* synthetic */ class y implements e2.o, e2.j, p.a, GenericProvider {
+public final /* synthetic */ class y implements e2.o, e2.j, p.a, l9 {
     public final /* synthetic */ int a;
     public final /* synthetic */ boolean b;
 
@@ -21,10 +21,10 @@ public final /* synthetic */ class y implements e2.o, e2.j, p.a, GenericProvider
     public void accept(Object obj) {
         switch (this.a) {
             case 2:
-                ((m4.n1) obj).X(this.b);
+                ((m4.n1) obj).W(this.b);
                 break;
             case 3:
-                ((m4.n1) obj).q0(this.b);
+                ((m4.n1) obj).p0(this.b);
                 break;
             default:
                 ((m4.n1) obj).w(this.b);
@@ -33,27 +33,27 @@ public final /* synthetic */ class y implements e2.o, e2.j, p.a, GenericProvider
     }
 
     @Override // p.a
-    public qc c(wc wcVar) {
-        return wcVar.k(this.b);
+    public wb c(cc ccVar) {
+        return ccVar.k(this.b);
     }
 
     @Override // e2.o
     public void invoke(Object obj) {
         switch (this.a) {
             case 0:
-                ((b2.e1) obj).onShuffleModeEnabledChanged(this.b);
+                ((b2.d1) obj).x(this.b);
                 break;
             default:
-                ((b2.e1) obj).onSkipSilenceEnabledChanged(this.b);
+                ((b2.d1) obj).e(this.b);
                 break;
         }
     }
 
-    @Override // org.telegram.messenger.GenericProvider
-    public Object provide(Object obj) {
-        Bundle i10 = a1.g.i("afterSignup", this.b);
-        rg0 rg0Var = new rg0();
-        rg0Var.i0(i10);
-        return rg0Var;
+    @Override // org.telegram.messenger.l9
+    public Object l(Object obj) {
+        Bundle g10 = a1.g.g("afterSignup", this.b);
+        pf0 pf0Var = new pf0();
+        pf0Var.q0(g10);
+        return pf0Var;
     }
 }

@@ -1,12 +1,13 @@
 package org.telegram.utils.recorder.audio;
 
+import a3.l0;
 import android.os.SystemClock;
 import java.nio.ByteBuffer;
-import org.telegram.ui.Components.oy0;
-import ui.i;
-import ui.o;
+import ki.g;
+import ki.j;
+import ki.k;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c implements Runnable {
     public final /* synthetic */ int a;
@@ -48,8 +49,8 @@ public final /* synthetic */ class c implements Runnable {
                             long d = dVar.t.d();
                             dVar.x = elapsedRealtime;
                             if (d >= 0) {
-                                dc.e eVar = dVar.g;
-                                ((o) eVar.c).a((i) eVar.b, d);
+                                g gVar = dVar.g;
+                                ((k) gVar.c).a((j) gVar.b, d);
                             }
                         }
                     }
@@ -66,15 +67,15 @@ public final /* synthetic */ class c implements Runnable {
                 }
                 return;
             default:
-                o oVar = (o) this.b;
-                i iVar = (i) this.c;
+                k kVar = (k) this.b;
+                j jVar = (j) this.c;
                 try {
-                    bArr = AudioRecorderNative.e(iVar.b.getAbsolutePath());
+                    bArr = AudioRecorderNative.e(jVar.b.getAbsolutePath());
                 } catch (Throwable th3) {
-                    oVar.h.a("waveform extraction failed", th3);
+                    kVar.h.a("waveform extraction failed", th3);
                     bArr = null;
                 }
-                oVar.i.post(new oy0(oVar, iVar, bArr, 16));
+                kVar.i.post(new l0(kVar, jVar, bArr, 28));
                 return;
         }
     }

@@ -1,8 +1,8 @@
 package u2;
 
-import a8.yb;
+import v7.t6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class z0 implements x3.g {
     public long a;
@@ -11,21 +11,21 @@ public final class z0 implements x3.g {
     public Object d;
 
     public z0(long j10, int i10) {
-        yb.p(((y2.a) this.c) == null);
+        t6.p(((y2.a) this.c) == null);
         this.a = j10;
         this.b = j10 + i10;
     }
 
     @Override // x3.g
-    public void N0(long j10) {
-        long[] jArr = (long[]) ((rf.b) this.d).b;
-        this.b = jArr[e2.n0.f(jArr, j10, true)];
+    public c3.b0 E() {
+        t6.p(this.a != -1);
+        return new c3.t((c3.u) this.c, this.a, 0);
     }
 
     @Override // x3.g
-    public c3.b0 U() {
-        yb.p(this.a != -1);
-        return new c3.t((c3.u) this.c, this.a, 0);
+    public void b0(long j10) {
+        long[] jArr = (long[]) ((hf.b) this.d).b;
+        this.b = jArr[e2.l0.f(jArr, j10, true)];
     }
 
     @Override // x3.g

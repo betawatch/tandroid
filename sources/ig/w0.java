@@ -1,56 +1,38 @@
 package ig;
 
-import java.io.Serializable;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class w0 implements RequestDelegate {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate c;
-    public final /* synthetic */ Serializable d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Serializable f;
-    public final /* synthetic */ Object g;
-    public final /* synthetic */ Object h;
+public final /* synthetic */ class w0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ c1 b;
 
-    public /* synthetic */ w0(j1 j1Var, String str, boolean z10, TLRPC.User user, String str2, MessagesStorage messagesStorage, String str3) {
-        this.c = j1Var;
-        this.d = str;
-        this.b = z10;
-        this.g = user;
-        this.e = str2;
-        this.h = messagesStorage;
-        this.f = str3;
+    public /* synthetic */ w0(c1 c1Var, int i10) {
+        this.a = i10;
+        this.b = c1Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                AndroidUtilities.runOnUIThread(new x0((j1) this.c, (String) this.d, this.b, tLObject, (TLRPC.User) this.g, (String) this.e, (MessagesStorage) this.h, (String) this.f));
+                b1 b1Var = this.b.a;
+                if (b1Var != null) {
+                    b1Var.g();
+                    break;
+                }
+                break;
+            case 1:
+                c1 c1Var = this.b;
+                c1Var.c.a(c1Var.r);
+                a1 a1Var = c1Var.d;
+                a1Var.getClass();
+                a1Var.postRunnable(new z0(a1Var, 2));
+                c1Var.d = null;
                 break;
             default:
-                ((SendMessagesHelper) this.c).lambda$performSendMessageRequestMulti$77((ArrayList) this.d, (TLObject) this.e, (ArrayList) this.f, (ArrayList) this.g, (SendMessagesHelper.DelayedMessage) this.h, this.b, tLObject, tL_error);
+                c1 c1Var2 = this.b;
+                c1Var2.c.q(c1Var2.y);
                 break;
         }
-    }
-
-    public /* synthetic */ w0(ArrayList arrayList, ArrayList arrayList2, ArrayList arrayList3, SendMessagesHelper.DelayedMessage delayedMessage, SendMessagesHelper sendMessagesHelper, TLObject tLObject, boolean z10) {
-        this.c = sendMessagesHelper;
-        this.d = arrayList;
-        this.e = tLObject;
-        this.f = arrayList2;
-        this.g = arrayList3;
-        this.h = delayedMessage;
-        this.b = z10;
     }
 }

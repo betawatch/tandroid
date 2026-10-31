@@ -1,13 +1,13 @@
 package b2;
 
-import a8.ed;
 import android.os.Bundle;
 import android.os.Parcelable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import v7.c8;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public class u1 {
     public static final u1 J = new u1(new t1());
@@ -56,8 +56,8 @@ public class u1 {
     public final boolean E;
     public final boolean F;
     public final boolean G;
-    public final f9.l0 H;
-    public final f9.t0 I;
+    public final e9.q0 H;
+    public final e9.y0 I;
     public final int a;
     public final int b;
     public final int c;
@@ -70,23 +70,23 @@ public class u1 {
     public final int j;
     public final boolean k;
     public final boolean l;
-    public final f9.i0 m;
-    public final f9.i0 n;
-    public final f9.i0 o;
+    public final e9.n0 m;
+    public final e9.n0 n;
+    public final e9.n0 o;
     public final int p;
-    public final f9.i0 q;
-    public final f9.i0 r;
+    public final e9.n0 q;
+    public final e9.n0 r;
     public final int s;
     public final int t;
     public final int u;
-    public final f9.i0 v;
+    public final e9.n0 v;
     public final s1 w;
     public final boolean x;
-    public final f9.i0 y;
-    public final f9.i0 z;
+    public final e9.n0 y;
+    public final e9.n0 z;
 
     static {
-        String str = e2.n0.a;
+        String str = e2.l0.a;
         K = Integer.toString(1, 36);
         L = Integer.toString(2, 36);
         M = Integer.toString(3, 36);
@@ -161,8 +161,8 @@ public class u1 {
         this.E = t1Var.E;
         this.F = t1Var.F;
         this.G = t1Var.G;
-        this.H = f9.l0.a(t1Var.H);
-        this.I = f9.t0.u(t1Var.I);
+        this.H = e9.q0.a(t1Var.H);
+        this.I = e9.y0.u(t1Var.I);
     }
 
     public static u1 b(Bundle bundle) {
@@ -187,19 +187,19 @@ public class u1 {
         if (stringArray == null) {
             stringArray = strArr;
         }
-        t1Var.m = f9.i0.v(stringArray);
+        t1Var.m = e9.n0.v(stringArray);
         String[] stringArray2 = bundle.getStringArray(t0);
         String[] strArr2 = new String[0];
         if (stringArray2 == null) {
             stringArray2 = strArr2;
         }
-        t1Var.n = f9.i0.v(stringArray2);
+        t1Var.n = e9.n0.v(stringArray2);
         String[] stringArray3 = bundle.getStringArray(p0);
         String[] strArr3 = new String[0];
         if (stringArray3 == null) {
             stringArray3 = strArr3;
         }
-        t1Var.o = f9.i0.v(stringArray3);
+        t1Var.o = e9.n0.v(stringArray3);
         t1Var.p = bundle.getInt(i0, u1Var.p);
         String[] stringArray4 = bundle.getStringArray(K);
         String[] strArr4 = new String[0];
@@ -212,7 +212,7 @@ public class u1 {
         if (stringArray5 == null) {
             stringArray5 = strArr5;
         }
-        t1Var.r = f9.i0.v(stringArray5);
+        t1Var.r = e9.n0.v(stringArray5);
         t1Var.s = bundle.getInt(L, u1Var.s);
         t1Var.t = bundle.getInt(b0, u1Var.t);
         t1Var.u = bundle.getInt(c0, u1Var.u);
@@ -221,23 +221,23 @@ public class u1 {
         if (stringArray6 == null) {
             stringArray6 = strArr6;
         }
-        t1Var.v = f9.i0.v(stringArray6);
+        t1Var.v = e9.n0.v(stringArray6);
         Bundle bundle2 = bundle.getBundle(n0);
         if (bundle2 != null) {
-            ag.g gVar = new ag.g(1);
+            r1 r1Var = new r1(0);
             String str = s1.e;
             s1 s1Var2 = s1.d;
-            gVar.a = bundle2.getInt(str, s1Var2.a);
-            gVar.b = bundle2.getBoolean(s1.f, s1Var2.b);
-            gVar.c = bundle2.getBoolean(s1.g, s1Var2.c);
-            s1Var = new s1(gVar);
+            r1Var.a = bundle2.getInt(str, s1Var2.a);
+            r1Var.b = bundle2.getBoolean(s1.f, s1Var2.b);
+            r1Var.c = bundle2.getBoolean(s1.g, s1Var2.c);
+            s1Var = new s1(r1Var);
         } else {
-            ag.g gVar2 = new ag.g(1);
+            r1 r1Var2 = new r1(0);
             s1 s1Var3 = s1.d;
-            gVar2.a = bundle.getInt(k0, s1Var3.a);
-            gVar2.b = bundle.getBoolean(l0, s1Var3.b);
-            gVar2.c = bundle.getBoolean(m0, s1Var3.c);
-            s1Var = new s1(gVar2);
+            r1Var2.a = bundle.getInt(k0, s1Var3.a);
+            r1Var2.b = bundle.getBoolean(l0, s1Var3.b);
+            r1Var2.c = bundle.getBoolean(m0, s1Var3.c);
+            s1Var = new s1(r1Var2);
         }
         t1Var.w = s1Var;
         t1Var.x = bundle.getBoolean(s0, u1Var.x);
@@ -255,17 +255,17 @@ public class u1 {
         if (stringArray8 == null) {
             stringArray8 = strArr8;
         }
-        t1Var.B = f9.i0.v(stringArray8);
+        t1Var.B = e9.n0.v(stringArray8);
         t1Var.D = bundle.getBoolean(O, u1Var.D);
         t1Var.E = bundle.getBoolean(o0, u1Var.E);
         t1Var.F = bundle.getBoolean(e0, u1Var.F);
         t1Var.G = bundle.getBoolean(f0, u1Var.G);
         ArrayList parcelableArrayList = bundle.getParcelableArrayList(g0);
-        f9.s1 b10 = parcelableArrayList == null ? f9.s1.e : e2.e.b(new ag.w(10), parcelableArrayList);
+        e9.x1 b10 = parcelableArrayList == null ? e9.x1.e : e2.e.b(new aa.a(18), parcelableArrayList);
         t1Var.H = new HashMap();
         for (int i11 = 0; i11 < b10.d; i11++) {
-            r1 r1Var = (r1) b10.get(i11);
-            t1Var.H.put(r1Var.a, r1Var);
+            q1 q1Var = (q1) b10.get(i11);
+            t1Var.H.put(q1Var.a, q1Var);
         }
         int[] intArray = bundle.getIntArray(h0);
         int[] iArr = new int[0];
@@ -330,17 +330,17 @@ public class u1 {
         bundle.putBoolean(o0, this.E);
         bundle.putBoolean(e0, this.F);
         bundle.putBoolean(f0, this.G);
-        f9.d0<r1> values = this.H.values();
+        e9.i0<q1> values = this.H.values();
         ArrayList<? extends Parcelable> arrayList = new ArrayList<>(values.size());
-        for (r1 r1Var : values) {
-            r1Var.getClass();
+        for (q1 q1Var : values) {
+            q1Var.getClass();
             Bundle bundle3 = new Bundle();
-            bundle3.putBundle(r1.c, r1Var.a.c());
-            bundle3.putIntArray(r1.d, ed.f(r1Var.b));
+            bundle3.putBundle(q1.c, q1Var.a.c());
+            bundle3.putIntArray(q1.d, c8.f(q1Var.b));
             arrayList.add(bundle3);
         }
         bundle.putParcelableArrayList(g0, arrayList);
-        bundle.putIntArray(h0, ed.f(this.I));
+        bundle.putIntArray(h0, c8.f(this.I));
         return bundle;
     }
 
@@ -351,10 +351,10 @@ public class u1 {
         if (obj != null && getClass() == obj.getClass()) {
             u1 u1Var = (u1) obj;
             if (this.a == u1Var.a && this.b == u1Var.b && this.c == u1Var.c && this.d == u1Var.d && this.e == u1Var.e && this.f == u1Var.f && this.g == u1Var.g && this.h == u1Var.h && this.l == u1Var.l && this.i == u1Var.i && this.j == u1Var.j && this.k == u1Var.k && this.m.equals(u1Var.m) && this.n.equals(u1Var.n) && this.o.equals(u1Var.o) && this.p == u1Var.p && this.q.equals(u1Var.q) && this.s == u1Var.s && this.t == u1Var.t && this.r.equals(u1Var.r) && this.u == u1Var.u && this.v.equals(u1Var.v) && this.w.equals(u1Var.w) && this.x == u1Var.x && this.z.equals(u1Var.z) && this.y.equals(u1Var.y) && this.A == u1Var.A && this.B == u1Var.B && this.C == u1Var.C && this.D == u1Var.D && this.E == u1Var.E && this.F == u1Var.F && this.G == u1Var.G) {
-                f9.l0 l0Var = u1Var.H;
-                f9.l0 l0Var2 = this.H;
-                l0Var2.getClass();
-                if (f9.o.i(l0Var2, l0Var) && this.I.equals(u1Var.I)) {
+                e9.q0 q0Var = u1Var.H;
+                e9.q0 q0Var2 = this.H;
+                q0Var2.getClass();
+                if (e9.s.i(q0Var2, q0Var) && this.I.equals(u1Var.I)) {
                     return true;
                 }
             }

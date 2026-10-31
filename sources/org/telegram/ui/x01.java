@@ -1,98 +1,56 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.AndroidUtilities;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class x01 extends Drawable implements org.telegram.ui.ActionBar.a6 {
-    public final org.telegram.ui.Components.r6 a;
-    public final Paint b;
-    public int c;
-    public float d;
-    public float e;
-    public final org.telegram.ui.Cells.k0 f;
-    public org.telegram.ui.Cells.v0 h;
+public final class x01 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ SecretMediaViewer b;
 
-    public x01(String str) {
-        Paint paint = new Paint(1);
-        this.b = paint;
-        this.d = 1.0f;
-        this.e = 1.0f;
-        this.f = new org.telegram.ui.Cells.k0(this);
-        org.telegram.ui.Components.r6 r6Var = new org.telegram.ui.Components.r6(false, false, false);
-        this.a = r6Var;
-        r6Var.setCallback(new rr(1, this));
-        r6Var.t(str, true, true);
-        r6Var.w(AndroidUtilities.dp(11.0f));
-        r6Var.b = 17;
-        paint.setColor(520093696);
+    public /* synthetic */ x01(SecretMediaViewer secretMediaViewer, int i10) {
+        this.a = i10;
+        this.b = secretMediaViewer;
     }
 
-    public final void a(int i10) {
-        Paint paint = this.b;
-        if (paint.getColor() != i10) {
-            paint.setColor(i10);
-            invalidateSelf();
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                SecretMediaViewer secretMediaViewer = this.b;
+                Runnable runnable = secretMediaViewer.m0;
+                if (runnable != null) {
+                    runnable.run();
+                    secretMediaViewer.m0 = null;
+                    break;
+                }
+                break;
+            case 1:
+                SecretMediaViewer secretMediaViewer2 = this.b;
+                AnimatorSet animatorSet = secretMediaViewer2.G;
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    secretMediaViewer2.F.setVisibility(8);
+                    secretMediaViewer2.G = null;
+                    secretMediaViewer2.Y.scrollTo(0, 0);
+                    break;
+                }
+                break;
+            case 2:
+                SecretMediaViewer secretMediaViewer3 = this.b;
+                Runnable runnable2 = secretMediaViewer3.m0;
+                if (runnable2 != null) {
+                    runnable2.run();
+                    secretMediaViewer3.m0 = null;
+                    break;
+                }
+                break;
+            default:
+                SecretMediaViewer secretMediaViewer4 = this.b;
+                secretMediaViewer4.I0 = null;
+                secretMediaViewer4.e.invalidate();
+                break;
         }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        float f7 = this.d * this.e;
-        if (f7 <= 0.0f) {
-            return;
-        }
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(getBounds());
-        canvas.save();
-        float a2 = this.f.a(0.1f);
-        canvas.scale(a2, a2, rectF.centerX(), rectF.centerY());
-        Paint paint = this.b;
-        int alpha = paint.getAlpha();
-        paint.setAlpha((int) (alpha * f7));
-        canvas.drawRoundRect(rectF, AndroidUtilities.dp(20.0f), AndroidUtilities.dp(20.0f), paint);
-        paint.setAlpha(alpha);
-        int i10 = this.c;
-        org.telegram.ui.Components.r6 r6Var = this.a;
-        r6Var.u(i10);
-        r6Var.B = (int) (f7 * 255.0f);
-        r6Var.setBounds((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
-        r6Var.draw(canvas);
-        canvas.restore();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getAlpha() {
-        return (int) (this.d * 255.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return AndroidUtilities.dp(17.33f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return (int) (this.a.d + AndroidUtilities.dp(11.0f));
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        this.d = i10 / 255.0f;
-        invalidateSelf();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

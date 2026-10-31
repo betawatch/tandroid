@@ -1,87 +1,57 @@
 package org.telegram.ui.ActionBar;
 
 import android.animation.ValueAnimator;
-import org.telegram.ui.Components.o60;
-import org.telegram.ui.Components.rl0;
-import org.telegram.ui.Components.ru;
-import org.telegram.ui.Components.sz;
-import org.telegram.ui.tq;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u2 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
+    public final /* synthetic */ w2 b;
 
-    public /* synthetic */ u2(Object obj, int i10, int i11) {
-        this.a = i11;
-        this.c = obj;
-        this.b = i10;
+    public /* synthetic */ u2(w2 w2Var, int i10) {
+        this.a = i10;
+        this.b = w2Var;
     }
 
     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        int i10;
         switch (this.a) {
             case 0:
-                k3 k3Var = (k3) this.c;
-                k3Var.getClass();
-                int intValue = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                k3Var.setItemColor(this.b, intValue, intValue);
+                w2 w2Var = this.b;
+                z2 z2Var = w2Var.G;
+                z2Var.b.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                z2Var.h0();
+                z2Var.q0(z2Var.b.getTranslationY());
+                w2Var.invalidate();
                 break;
             case 1:
-                org.telegram.ui.Cells.s1 s1Var = (org.telegram.ui.Cells.s1) this.c;
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                if (s1Var.getMessageObject() != null && s1Var.getMessageObject().getId() == this.b) {
-                    s1Var.setSelectedBackgroundProgress(floatValue);
-                    break;
+                z2 z2Var2 = this.b.G;
+                p2 p2Var = z2Var2.c;
+                if (p2Var != null) {
+                    p2Var.invalidate();
                 }
+                z2Var2.h0();
                 break;
             case 2:
-                ru ruVar = (ru) this.c;
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                ruVar.d.setTranslationY(floatValue2);
-                int i11 = this.b;
-                float f7 = i11;
-                float f10 = 1.0f - (floatValue2 / f7);
-                ruVar.R = f10;
-                if (i11 > 0 && ((i10 = ruVar.L) == 2 || i10 == 3)) {
-                    ruVar.d.setAlpha(f10);
-                }
-                ruVar.c(floatValue2 - f7);
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                w2 w2Var2 = this.b;
+                w2Var2.D = floatValue;
+                z2 z2Var3 = w2Var2.G;
+                z2Var3.b.setTranslationX(floatValue);
+                z2Var3.c.invalidate();
                 break;
             case 3:
-                ((sz) this.c).Q0[this.b] = (int) ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                break;
-            case 4:
-                o60 o60Var = (o60) this.c;
-                if (this.b == o60Var.s0) {
-                    float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                    if (floatValue3 >= 0.5f) {
-                        floatValue3 -= 1.0f;
-                    }
-                    o60Var.w.setRotationY(floatValue3 * 180.0f);
-                    break;
-                }
-                break;
-            case 5:
-                tq tqVar = (tq) this.c;
-                tqVar.getClass();
-                Float f11 = (Float) valueAnimator.getAnimatedValue();
-                rl0 rl0Var = (rl0) tqVar.d;
-                rl0Var.b.put(this.b, f11);
-                rl0Var.d = true;
-                rl0Var.a.invalidate();
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                w2 w2Var3 = this.b;
+                w2Var3.D = floatValue2;
+                z2 z2Var4 = w2Var3.G;
+                z2Var4.b.setTranslationX(floatValue2);
+                z2Var4.c.invalidate();
                 break;
             default:
-                xh.g gVar = (xh.g) this.c;
-                gVar.getClass();
-                float floatValue4 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                gVar.n = floatValue4;
-                gVar.setAlpha((int) ((1.0f - floatValue4) * this.b));
-                gVar.p = true;
-                gVar.invalidateSelf();
+                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                z2 z2Var5 = this.b.G;
+                z2Var5.Y.setAlpha(z2Var5.o0 ? (int) (z2Var5.p0 * floatValue3) : 0);
                 break;
         }
     }

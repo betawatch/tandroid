@@ -1,86 +1,176 @@
 package j4;
 
 import e2.k0;
-import e2.n0;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class x {
-    public final /* synthetic */ int a;
-    public final k0 b;
-    public final e2.x c;
-    public boolean d;
-    public boolean e;
+public final class x implements h0 {
+    public final i a;
+    public final a4.g b = new a4.g(new byte[10], 10);
+    public int c = 0;
+    public int d;
+    public k0 e;
     public boolean f;
-    public long g;
-    public long h;
-    public long i;
+    public boolean g;
+    public boolean h;
+    public int i;
+    public int j;
+    public boolean k;
+    public long l;
 
-    public x(int i10) {
-        this.a = i10;
-        switch (i10) {
-            case 1:
-                this.b = new k0(0L);
-                this.g = -9223372036854775807L;
-                this.h = -9223372036854775807L;
-                this.i = -9223372036854775807L;
-                this.c = new e2.x();
-                break;
-            default:
-                this.b = new k0(0L);
-                this.g = -9223372036854775807L;
-                this.h = -9223372036854775807L;
-                this.i = -9223372036854775807L;
-                this.c = new e2.x();
-                break;
-        }
+    public x(i iVar) {
+        this.a = iVar;
     }
 
-    public static int b(int i10, byte[] bArr) {
-        return (bArr[i10 + 3] & 255) | ((bArr[i10] & 255) << 24) | ((bArr[i10 + 1] & 255) << 16) | ((bArr[i10 + 2] & 255) << 8);
-    }
-
-    public static long c(e2.x xVar) {
-        int i10 = xVar.b;
-        if (xVar.a() < 9) {
-            return -9223372036854775807L;
-        }
-        byte[] bArr = new byte[9];
-        xVar.k(0, 9, bArr);
-        xVar.N(i10);
-        byte b10 = bArr[0];
-        if ((b10 & 196) == 68) {
-            byte b11 = bArr[2];
-            if ((b11 & 4) == 4) {
-                byte b12 = bArr[4];
-                if ((b12 & 4) == 4 && (bArr[5] & 1) == 1 && (bArr[8] & 3) == 3) {
-                    long j10 = b10;
-                    long j11 = b11;
-                    return ((j11 & 3) << 13) | ((j10 & 3) << 28) | (((56 & j10) >> 3) << 30) | ((bArr[1] & 255) << 20) | (((j11 & 248) >> 3) << 15) | ((bArr[3] & 255) << 5) | ((b12 & 248) >> 3);
+    @Override // j4.h0
+    public final void a(int i10, e2.x xVar) {
+        this.e.getClass();
+        int i11 = i10 & 1;
+        int i12 = -1;
+        int i13 = 2;
+        i iVar = this.a;
+        if (i11 != 0) {
+            int i14 = this.c;
+            if (i14 != 0 && i14 != 1) {
+                if (i14 == 2) {
+                    e2.a.l("PesReader", "Unexpected start indicator reading extended header");
+                } else {
+                    if (i14 != 3) {
+                        throw new IllegalStateException();
+                    }
+                    if (this.j != -1) {
+                        e2.a.l("PesReader", "Unexpected start indicator: expected " + this.j + " more bytes");
+                    }
+                    iVar.g(xVar.c == 0);
                 }
             }
+            this.c = 1;
+            this.d = 0;
         }
-        return -9223372036854775807L;
+        int i15 = i10;
+        while (xVar.a() > 0) {
+            int i16 = this.c;
+            if (i16 != 0) {
+                a4.g gVar = this.b;
+                if (i16 != 1) {
+                    if (i16 == i13) {
+                        if (b(xVar, (byte[]) gVar.b, Math.min(10, this.i)) && b(xVar, null, this.i)) {
+                            gVar.d0(0);
+                            this.l = -9223372036854775807L;
+                            if (this.f) {
+                                gVar.f0(4);
+                                gVar.f0(1);
+                                gVar.f0(1);
+                                long i17 = (gVar.i(15) << 15) | (gVar.i(3) << 30) | gVar.i(15);
+                                gVar.f0(1);
+                                if (!this.h && this.g) {
+                                    gVar.f0(4);
+                                    gVar.f0(1);
+                                    gVar.f0(1);
+                                    gVar.f0(1);
+                                    this.e.b((gVar.i(3) << 30) | (gVar.i(15) << 15) | gVar.i(15));
+                                    this.h = true;
+                                }
+                                this.l = this.e.b(i17);
+                            }
+                            i15 |= this.k ? 4 : 0;
+                            iVar.h(i15, this.l);
+                            this.c = 3;
+                            this.d = 0;
+                        }
+                    } else {
+                        if (i16 != 3) {
+                            throw new IllegalStateException();
+                        }
+                        int a2 = xVar.a();
+                        int i18 = this.j;
+                        int i19 = i18 == i12 ? 0 : a2 - i18;
+                        if (i19 > 0) {
+                            a2 -= i19;
+                            xVar.M(xVar.b + a2);
+                        }
+                        iVar.c(xVar);
+                        int i20 = this.j;
+                        if (i20 != i12) {
+                            int i21 = i20 - a2;
+                            this.j = i21;
+                            if (i21 == 0) {
+                                iVar.g(false);
+                                this.c = 1;
+                                this.d = 0;
+                            }
+                        }
+                    }
+                } else if (b(xVar, (byte[]) gVar.b, 9)) {
+                    this.c = c() ? 2 : 0;
+                    this.d = 0;
+                }
+            } else {
+                xVar.O(xVar.a());
+            }
+            i12 = -1;
+            i13 = 2;
+        }
     }
 
-    public final void a(c3.p pVar) {
-        switch (this.a) {
-            case 0:
-                byte[] bArr = n0.b;
-                e2.x xVar = this.c;
-                xVar.getClass();
-                xVar.L(bArr.length, bArr);
-                this.d = true;
-                pVar.p();
-                break;
-            default:
-                byte[] bArr2 = n0.b;
-                e2.x xVar2 = this.c;
-                xVar2.getClass();
-                xVar2.L(bArr2.length, bArr2);
-                this.d = true;
-                pVar.p();
-                break;
+    public final boolean b(e2.x xVar, byte[] bArr, int i10) {
+        int min = Math.min(xVar.a(), i10 - this.d);
+        if (min <= 0) {
+            return true;
         }
+        if (bArr == null) {
+            xVar.O(min);
+        } else {
+            xVar.k(this.d, min, bArr);
+        }
+        int i11 = this.d + min;
+        this.d = i11;
+        return i11 == i10;
+    }
+
+    public final boolean c() {
+        a4.g gVar = this.b;
+        gVar.d0(0);
+        int i10 = gVar.i(24);
+        if (i10 != 1) {
+            a1.g.w(i10, "Unexpected start code prefix: ", "PesReader");
+            this.j = -1;
+            return false;
+        }
+        gVar.f0(8);
+        int i11 = gVar.i(16);
+        gVar.f0(5);
+        this.k = gVar.h();
+        gVar.f0(2);
+        this.f = gVar.h();
+        this.g = gVar.h();
+        gVar.f0(6);
+        int i12 = gVar.i(8);
+        this.i = i12;
+        if (i11 == 0) {
+            this.j = -1;
+        } else {
+            int i13 = (i11 - 3) - i12;
+            this.j = i13;
+            if (i13 < 0) {
+                e2.a.l("PesReader", "Found negative packet payload size: " + this.j);
+                this.j = -1;
+            }
+        }
+        return true;
+    }
+
+    @Override // j4.h0
+    public final void d(k0 k0Var, c3.q qVar, g0 g0Var) {
+        this.e = k0Var;
+        this.a.f(qVar, g0Var);
+    }
+
+    @Override // j4.h0
+    public final void e() {
+        this.c = 0;
+        this.d = 0;
+        this.h = false;
+        this.a.e();
     }
 }

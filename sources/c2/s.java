@@ -1,223 +1,201 @@
 package c2;
 
-import java.io.Serializable;
+import e2.l0;
+import java.math.RoundingMode;
 import java.nio.ByteBuffer;
-import java.nio.ShortBuffer;
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.nio.ByteOrder;
+import v7.t6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class s implements r {
-    public int a;
+public final class s implements m {
     public int b;
-    public int c;
-    public final Serializable d;
-    public Object e;
-    public Serializable f;
-    public Serializable g;
-    public Object h;
+    public float c;
+    public float d;
+    public j e;
+    public j f;
+    public j g;
+    public j h;
+    public boolean i;
+    public r j;
+    public ByteBuffer k;
+    public ByteBuffer l;
+    public long m;
+    public long n;
+    public boolean o;
 
-    public s(byte[] bArr, String str, ArrayList arrayList, String str2, int i10, int i11, int i12) {
-        this.d = str;
-        this.e = arrayList;
-        this.f = str2;
-        this.a = i11;
-        this.b = i10;
-        this.c = i12;
-    }
-
-    @Override // c2.r
-    public void a(int i10, ByteBuffer byteBuffer) {
-        ShortBuffer asShortBuffer = byteBuffer.asShortBuffer();
-        short[] sArr = (short[]) this.e;
-        t tVar = (t) this.h;
-        asShortBuffer.get(sArr, tVar.j * tVar.b, i10 / 2);
-        byteBuffer.position(byteBuffer.position() + i10);
-    }
-
-    @Override // c2.r
-    public void b(int i10, ByteBuffer byteBuffer) {
-        ShortBuffer asShortBuffer = byteBuffer.asShortBuffer();
-        short[] sArr = (short[]) this.f;
-        t tVar = (t) this.h;
-        asShortBuffer.put(sArr, 0, tVar.b * i10);
-        byteBuffer.position((i10 * 2 * tVar.b) + byteBuffer.position());
-    }
-
-    @Override // c2.r
-    public void c(int i10, long j10, long j11) {
-        int i11 = 0;
-        while (true) {
-            t tVar = (t) this.h;
-            int i12 = tVar.b;
-            if (i11 >= i12) {
-                return;
+    @Override // c2.m
+    public final ByteBuffer a() {
+        r rVar = this.j;
+        if (rVar != null) {
+            p pVar = rVar.i;
+            int i10 = rVar.b;
+            t6.p(rVar.k >= 0);
+            int o10 = pVar.o() * rVar.k * i10;
+            if (o10 > 0) {
+                if (this.k.capacity() < o10) {
+                    this.k = ByteBuffer.allocateDirect(o10).order(ByteOrder.nativeOrder());
+                } else {
+                    this.k.clear();
+                }
+                ByteBuffer byteBuffer = this.k;
+                t6.p(rVar.k >= 0);
+                int min = Math.min(byteBuffer.remaining() / (pVar.o() * i10), rVar.k);
+                pVar.b(min, byteBuffer);
+                rVar.k -= min;
+                System.arraycopy(pVar.h(), min * i10, pVar.h(), 0, rVar.k * i10);
+                this.k.flip();
+                this.n += o10;
+                this.l = this.k;
             }
-            short[] sArr = (short[]) this.f;
-            int i13 = (tVar.k * i12) + i11;
-            short[] sArr2 = (short[]) this.g;
-            int i14 = (i10 * i12) + i11;
-            short s10 = sArr2[i14];
-            short s11 = sArr2[i14 + i12];
-            long j12 = tVar.n * j10;
-            long j13 = (r1 + 1) * j11;
-            long j14 = j13 - j12;
-            long j15 = j13 - (tVar.m * j11);
-            sArr[i13] = (short) ((((j15 - j14) * s11) + (s10 * j14)) / j15);
-            i11++;
+        }
+        ByteBuffer byteBuffer2 = this.l;
+        this.l = m.a;
+        return byteBuffer2;
+    }
+
+    @Override // c2.m
+    public final void b(ByteBuffer byteBuffer) {
+        if (byteBuffer.hasRemaining()) {
+            r rVar = this.j;
+            rVar.getClass();
+            this.m += byteBuffer.remaining();
+            int remaining = byteBuffer.remaining();
+            int i10 = rVar.b;
+            p pVar = rVar.i;
+            int o10 = remaining / (pVar.o() * i10);
+            pVar.p(o10);
+            pVar.a(remaining, byteBuffer);
+            rVar.j += o10;
+            rVar.b();
         }
     }
 
-    @Override // c2.r
-    public void d(int i10, int i11) {
-        for (int i12 = 0; i12 < ((t) this.h).b * i11; i12++) {
-            ((short[]) this.e)[i10 + i12] = 0;
-        }
-    }
-
-    @Override // c2.r
-    public void e(int i10, int i11) {
-        short[] sArr = (short[]) this.e;
-        t tVar = (t) this.h;
-        int i12 = tVar.h / i11;
-        int i13 = tVar.b;
-        int i14 = i11 * i13;
-        int i15 = i10 * i13;
-        for (int i16 = 0; i16 < i12; i16++) {
-            int i17 = 0;
-            for (int i18 = 0; i18 < i14; i18++) {
-                i17 += sArr[(i16 * i14) + i15 + i18];
+    @Override // c2.m
+    public final boolean c() {
+        if (this.o) {
+            r rVar = this.j;
+            if (rVar != null) {
+                t6.p(rVar.k >= 0);
+                if (rVar.i.o() * rVar.k * rVar.b == 0) {
+                }
             }
-            ((short[]) this.d)[i16] = (short) (i17 / i14);
+            return true;
         }
+        return false;
     }
 
-    @Override // c2.r
-    public int f(int i10, int i11, int i12) {
-        return s((short[]) this.e, i10, i11, i12);
-    }
-
-    @Override // c2.r
-    public void flush() {
-        this.c = 0;
-        this.a = 0;
-        this.b = 0;
-    }
-
-    @Override // c2.r
-    public void g() {
-        this.c = this.a;
-    }
-
-    @Override // c2.r
-    public Object h() {
-        return (short[]) this.e;
-    }
-
-    @Override // c2.r
-    public Object i() {
-        return (short[]) this.f;
-    }
-
-    /* JADX WARN: Type inference failed for: r3v1, types: [java.io.Serializable, short[]] */
-    @Override // c2.r
-    public void j(int i10) {
-        this.f = r((short[]) this.f, ((t) this.h).k, i10);
-    }
-
-    @Override // c2.r
-    public boolean k() {
-        int i10 = this.a;
-        return i10 != 0 && ((t) this.h).p != 0 && this.b <= i10 * 3 && i10 * 2 > this.c * 3;
-    }
-
-    @Override // c2.r
-    public Object l() {
-        return (short[]) this.g;
-    }
-
-    @Override // c2.r
-    public void m(int i10, int i11, int i12, int i13, int i14) {
-        short[] sArr = (short[]) this.f;
-        short[] sArr2 = (short[]) this.e;
-        for (int i15 = 0; i15 < i11; i15++) {
-            int i16 = (i12 * i11) + i15;
-            int i17 = (i14 * i11) + i15;
-            int i18 = (i13 * i11) + i15;
-            for (int i19 = 0; i19 < i10; i19++) {
-                sArr[i16] = (short) (((sArr2[i17] * i19) + ((i10 - i19) * sArr2[i18])) / i10);
-                i16 += i11;
-                i18 += i11;
-                i17 += i11;
+    @Override // c2.m
+    public final void d(k kVar) {
+        if (isActive()) {
+            j jVar = this.e;
+            this.g = jVar;
+            j jVar2 = this.f;
+            this.h = jVar2;
+            if (this.i) {
+                this.j = new r(jVar.a, jVar.b, this.c, this.d, jVar2.a, jVar.c == 4);
+            } else {
+                r rVar = this.j;
+                if (rVar != null) {
+                    rVar.j = 0;
+                    rVar.k = 0;
+                    rVar.l = 0;
+                    rVar.m = 0;
+                    rVar.n = 0;
+                    rVar.o = 0;
+                    rVar.p = 0;
+                    rVar.q = 0.0d;
+                    rVar.i.flush();
+                }
             }
         }
+        this.l = m.a;
+        this.m = 0L;
+        this.n = 0L;
+        this.o = false;
     }
 
-    /* JADX WARN: Type inference failed for: r3v1, types: [java.io.Serializable, short[]] */
-    @Override // c2.r
-    public void n(int i10) {
-        this.g = r((short[]) this.g, ((t) this.h).l, i10);
-    }
-
-    @Override // c2.r
-    public int o() {
-        return 2;
-    }
-
-    @Override // c2.r
-    public void p(int i10) {
-        this.e = r((short[]) this.e, ((t) this.h).j, i10);
-    }
-
-    @Override // c2.r
-    public int q(int i10, int i11) {
-        return s((short[]) this.d, 0, i10, i11);
-    }
-
-    public short[] r(short[] sArr, int i10, int i11) {
-        int length = sArr.length;
-        int i12 = ((t) this.h).b;
-        int i13 = length / i12;
-        return i10 + i11 <= i13 ? sArr : Arrays.copyOf(sArr, (((i13 * 3) / 2) + i11) * i12);
-    }
-
-    public int s(short[] sArr, int i10, int i11, int i12) {
-        int i13 = i10 * ((t) this.h).b;
-        int i14 = 255;
-        int i15 = 1;
-        int i16 = 0;
-        int i17 = 0;
-        while (i11 <= i12) {
-            int i18 = 0;
-            for (int i19 = 0; i19 < i11; i19++) {
-                i18 += Math.abs(sArr[i13 + i19] - sArr[(i13 + i11) + i19]);
-            }
-            if (i18 * i16 < i15 * i11) {
-                i16 = i11;
-                i15 = i18;
-            }
-            if (i18 * i14 > i17 * i11) {
-                i14 = i11;
-                i17 = i18;
-            }
-            i11++;
+    @Override // c2.m
+    public final j e(j jVar) {
+        int i10 = jVar.c;
+        if (i10 != 2 && i10 != 4) {
+            throw new l(jVar);
         }
-        this.a = i15 / i16;
-        this.b = i17 / i14;
-        return i16;
+        int i11 = this.b;
+        if (i11 == -1) {
+            i11 = jVar.a;
+        }
+        this.e = jVar;
+        j jVar2 = new j(i11, jVar.b, i10);
+        this.f = jVar2;
+        this.i = true;
+        return jVar2;
     }
 
-    /* JADX WARN: Type inference failed for: r1v0, types: [java.io.Serializable, short[]] */
-    /* JADX WARN: Type inference failed for: r3v3, types: [java.io.Serializable, short[]] */
-    /* JADX WARN: Type inference failed for: r3v4, types: [java.io.Serializable, short[]] */
-    public s(t tVar) {
-        this.h = tVar;
-        int i10 = tVar.h;
-        this.d = new short[i10];
-        int i11 = i10 * tVar.b;
-        this.e = new short[i11];
-        this.f = new short[i11];
-        this.g = new short[i11];
+    @Override // c2.m
+    public final void f() {
+        r rVar = this.j;
+        if (rVar != null) {
+            int i10 = rVar.j;
+            float f7 = rVar.c;
+            float f10 = rVar.d;
+            double d = f7 / f10;
+            int i11 = rVar.k + ((int) (((((((i10 - r6) / d) + rVar.o) + rVar.q) + rVar.l) / (rVar.e * f10)) + 0.5d));
+            rVar.q = 0.0d;
+            p pVar = rVar.i;
+            int i12 = rVar.h * 2;
+            pVar.p(i12 + i10);
+            pVar.c(i10 * rVar.b, i12);
+            rVar.j = i12 + rVar.j;
+            rVar.b();
+            if (rVar.k > i11) {
+                rVar.k = Math.max(i11, 0);
+            }
+            rVar.j = 0;
+            rVar.o = 0;
+            rVar.l = 0;
+        }
+        this.o = true;
+    }
+
+    @Override // c2.m
+    public final long g(long j10) {
+        if (this.n < 1024) {
+            return (long) (j10 / this.c);
+        }
+        long j11 = this.m;
+        this.j.getClass();
+        long o10 = j11 - (r2.i.o() * (r2.j * r2.b));
+        int i10 = this.h.a;
+        int i11 = this.g.a;
+        return i10 == i11 ? l0.a0(j10, this.n, o10, RoundingMode.DOWN) : l0.a0(j10, this.n * i11, o10 * i10, RoundingMode.DOWN);
+    }
+
+    @Override // c2.m
+    public final boolean isActive() {
+        if (this.f.a != -1) {
+            return Math.abs(this.c - 1.0f) >= 1.0E-4f || Math.abs(this.d - 1.0f) >= 1.0E-4f || this.f.a != this.e.a;
+        }
+        return false;
+    }
+
+    @Override // c2.m
+    public final void reset() {
+        this.c = 1.0f;
+        this.d = 1.0f;
+        j jVar = j.e;
+        this.e = jVar;
+        this.f = jVar;
+        this.g = jVar;
+        this.h = jVar;
+        ByteBuffer byteBuffer = m.a;
+        this.k = byteBuffer;
+        this.l = byteBuffer;
+        this.b = -1;
+        this.i = false;
+        this.j = null;
+        this.m = 0L;
+        this.n = 0L;
+        this.o = false;
     }
 }

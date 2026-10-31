@@ -1,47 +1,35 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+import java.util.Arrays;
+import java.util.Comparator;
+
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class mf0 extends u6 {
-    public final /* synthetic */ int b;
-    public final /* synthetic */ pf0 c;
+public final class mf0 implements Comparator {
+    public final /* synthetic */ tf0 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public mf0(pf0 pf0Var, int i10) {
-        super("thumbAnimationProgress", 0);
-        this.b = i10;
-        switch (i10) {
-            case 1:
-                this.c = pf0Var;
-                super("thumbImageVisibleProgress", 0);
-                break;
-            default:
-                this.c = pf0Var;
-                break;
-        }
+    public mf0(tf0 tf0Var) {
+        this.a = tf0Var;
     }
 
-    @Override // org.telegram.ui.Components.u6
-    public final void c(Object obj, float f7) {
-        switch (this.b) {
-            case 0:
-                this.c.r = f7;
-                ((pf0) obj).invalidate();
-                break;
-            default:
-                this.c.n = f7;
-                ((pf0) obj).invalidate();
-                break;
+    public final int a(sf0 sf0Var) {
+        tf0 tf0Var = this.a;
+        int size = tf0Var.p1.answers.size();
+        for (int i10 = 0; i10 < size; i10++) {
+            if (Arrays.equals(tf0Var.p1.answers.get(i10).option, sf0Var.d)) {
+                return i10;
+            }
         }
+        return 0;
     }
 
-    @Override // android.util.Property
-    public final Object get(Object obj) {
-        switch (this.b) {
-            case 0:
-                return Float.valueOf(this.c.r);
-            default:
-                return Float.valueOf(this.c.n);
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        int a2 = a((sf0) obj);
+        int a10 = a((sf0) obj2);
+        if (a2 > a10) {
+            return 1;
         }
+        return a2 < a10 ? -1 : 0;
     }
 }

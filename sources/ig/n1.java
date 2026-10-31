@@ -1,195 +1,62 @@
 package ig;
 
-import android.content.Context;
-import android.view.View;
-import android.view.ViewGroup;
-import di.t6;
-import fi.ua;
-import java.util.ArrayList;
-import java.util.HashSet;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.HashtagSearchController;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.Cells.p2;
-import org.telegram.ui.Components.c10;
-import org.telegram.ui.Components.mm0;
-import org.telegram.ui.wn;
+import w7.z8;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class n1 extends mm0 implements NotificationCenter.NotificationCenterDelegate {
-    public final Context c;
-    public final wn f;
-    public int h;
-    public int n;
-    public final u6 s;
-    public final int v;
-    public final boolean w;
-    public String x;
-    public t6 y;
-    public final HashSet d = new HashSet();
-    public final ArrayList e = new ArrayList();
-    public final int r = UserConfig.selectedAccount;
-    public final ua E = new ua(this, 20);
+public final class n1 extends o1 {
+    public final f1 f;
+    public final float g;
+    public final float h;
+    public final /* synthetic */ p1 i;
 
-    public n1(Context context, wn wnVar, u6 u6Var, int i10, boolean z10) {
-        this.s = u6Var;
-        this.c = context;
-        this.f = wnVar;
-        this.v = i10;
-        this.w = z10;
+    public n1(p1 p1Var, f1 f1Var, boolean z10, boolean z11) {
+        this.i = p1Var;
+        this.b = false;
+        this.f = f1Var;
+        this.g = z10 ? -1.0f : 1.0f;
+        this.h = z11 ? -1.0f : 1.0f;
+        a();
     }
 
-    @Override // org.telegram.ui.Components.mm0
-    public final boolean D(s4.e1 e1Var) {
-        int i10 = e1Var.f;
-        return i10 == 0 || i10 == 2;
-    }
-
-    public final Object E(int i10) {
-        if (i10 < 0) {
-            return null;
-        }
-        ArrayList arrayList = this.e;
-        if (i10 >= arrayList.size()) {
-            return null;
-        }
-        return arrayList.get(i10);
-    }
-
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if (i10 == NotificationCenter.storiesListUpdated && objArr[0] == this.y) {
-            l();
+    @Override // ig.o1
+    public final void a() {
+        f1 f1Var = this.f;
+        if (f1Var != null) {
+            float f7 = (this.g * f1Var.d) + f1Var.b;
+            float f10 = (this.h * f1Var.e) + f1Var.c;
+            p1 p1Var = this.i;
+            p1Var.c(f7, f10, true);
+            float[] fArr = p1Var.p;
+            float f11 = fArr[0];
+            float f12 = fArr[1];
+            this.d = f11;
+            this.e = f12;
         }
     }
 
-    @Override // s4.h0
-    public final int h() {
-        return this.e.size() + this.n;
-    }
-
-    @Override // s4.h0
-    public final int j(int i10) {
-        return i10 < this.e.size() ? 0 : 1;
-    }
-
-    @Override // s4.h0
-    public final void l() {
-        int h = h();
-        ArrayList arrayList = this.e;
-        arrayList.clear();
-        HashSet hashSet = this.d;
-        hashSet.clear();
-        int i10 = this.r;
-        int i11 = this.v;
-        ArrayList<MessageObject> foundMessageObjects = i11 == 0 ? MediaDataController.getInstance(i10).getFoundMessageObjects() : HashtagSearchController.getInstance(i10).getMessages(i11);
-        int i12 = 0;
-        for (int i13 = 0; i13 < foundMessageObjects.size(); i13++) {
-            MessageObject messageObject = foundMessageObjects.get(i13);
-            if ((!messageObject.hasValidGroupId() || messageObject.isPrimaryGroupMessage) && !hashSet.contains(Integer.valueOf(messageObject.getId()))) {
-                arrayList.add(messageObject);
-                hashSet.add(Integer.valueOf(messageObject.getId()));
-            }
+    @Override // ig.o1
+    public final void b(float f7, float f10) {
+        this.d = f7;
+        this.e = f10;
+        f1 f1Var = this.f;
+        float f11 = ((-this.g) * f1Var.d) + f1Var.b;
+        float f12 = ((-this.h) * f1Var.e) + f1Var.c;
+        p1 p1Var = this.i;
+        p1Var.c(f7, f10, false);
+        p1Var.c(f11, f12, true);
+        float[] fArr = p1Var.p;
+        float f13 = fArr[0];
+        float f14 = fArr[1];
+        double atan2 = (3.141592653589793d - Math.atan2(f10 - f14, f7 - f13)) - f1Var.h;
+        double cos = Math.cos(atan2) * z8.a(f7, f10, f13, f14);
+        double sin = Math.sin(atan2) * z8.a(f7, f10, f13, f14);
+        f1Var.d = ((float) Math.abs(cos)) / 2.0f;
+        f1Var.e = ((float) Math.abs(sin)) / 2.0f;
+        f1Var.b = (f7 + f13) / 2.0f;
+        f1Var.c = (f10 + f14) / 2.0f;
+        for (int i10 = 0; i10 < p1Var.m.size(); i10++) {
+            ((o1) p1Var.m.get(i10)).a();
         }
-        int i14 = this.n;
-        this.h = arrayList.size();
-        if (i11 != 0) {
-            if (!HashtagSearchController.getInstance(i10).isEndReached(i11) && this.h != 0) {
-                i12 = Utilities.clamp(HashtagSearchController.getInstance(i10).getCount(i11) - this.h, 3, 0);
-            }
-            this.n = i12;
-        } else {
-            if (!MediaDataController.getInstance(i10).searchEndReached() && this.h != 0) {
-                i12 = Utilities.clamp(MediaDataController.getInstance(i10).getSearchCount() - this.h, 3, 0);
-            }
-            this.n = i12;
-        }
-        int h10 = h();
-        if (h >= h10) {
-            super.l();
-            return;
-        }
-        if (i14 > 0) {
-            q(h - i14, i14);
-        }
-        s(h, h10 - h);
-    }
-
-    @Override // s4.h0
-    public final void v(s4.e1 e1Var, int i10) {
-        boolean z10;
-        int i11;
-        int i12;
-        int i13 = e1Var.f;
-        View view = e1Var.a;
-        if (i13 != 0) {
-            if (i13 == 2) {
-                ((m1) view).a(this.y);
-                return;
-            }
-            return;
-        }
-        p2 p2Var = (p2) view;
-        p2Var.s2 = true;
-        MessageObject messageObject = (MessageObject) E(i10);
-        long dialogId = messageObject.getDialogId();
-        int i14 = messageObject.messageOwner.date;
-        if (this.w) {
-            p2Var.r0 = true;
-            long savedDialogId = messageObject.getSavedDialogId();
-            TLRPC.Message message = messageObject.messageOwner;
-            TLRPC.MessageFwdHeader messageFwdHeader = message.fwd_from;
-            if (messageFwdHeader == null || ((i11 = messageFwdHeader.date) == 0 && messageFwdHeader.saved_date == 0)) {
-                i12 = message.date;
-            } else {
-                if (i11 == 0) {
-                    i12 = messageFwdHeader.saved_date;
-                }
-                z10 = false;
-                dialogId = savedDialogId;
-            }
-            i11 = i12;
-            z10 = false;
-            dialogId = savedDialogId;
-        } else {
-            if (messageObject.isOutOwner() || ChatObject.isMonoForum(this.r, dialogId)) {
-                dialogId = messageObject.getFromChatId();
-            }
-            z10 = true;
-            i11 = i14;
-        }
-        p2Var.V(dialogId, messageObject, i11, z10, false);
-        p2Var.setDialogCellDelegate(new k1(this));
-    }
-
-    @Override // s4.h0
-    public final s4.e1 x(ViewGroup viewGroup, int i10) {
-        View p2Var;
-        View view;
-        if (i10 != 0) {
-            u6 u6Var = this.s;
-            Context context = this.c;
-            if (i10 == 1) {
-                c10 c10Var = new c10(context, u6Var);
-                c10Var.setIsSingleCell(true);
-                c10Var.setViewType(7);
-                view = c10Var;
-            } else if (i10 != 2) {
-                p2Var = null;
-            } else {
-                view = new m1(context, u6Var);
-            }
-            p2Var = view;
-        } else {
-            p2Var = new p2(null, this.c, true, this.r, this.s);
-        }
-        return ic.a.n(p2Var, p2Var, -1, -2);
     }
 }

@@ -1,22 +1,49 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class zl extends org.telegram.ui.Cells.g0 {
-    public final /* synthetic */ hm L;
+public final class zl extends yr0 {
+    public final /* synthetic */ org.telegram.messenger.jj a;
+    public final /* synthetic */ org.telegram.messenger.ef b;
+    public final /* synthetic */ am c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zl(hm hmVar, Context context, int i10, org.telegram.ui.ActionBar.u6 u6Var) {
-        super(context, i10, u6Var);
-        this.L = hmVar;
+    public zl(am amVar, org.telegram.messenger.jj jjVar, org.telegram.messenger.ef efVar) {
+        this.c = amVar;
+        this.a = jjVar;
+        this.b = efVar;
     }
 
-    @Override // org.telegram.ui.Cells.g0
-    public final int getSideMenuWidth() {
-        wn wnVar = this.L.Q;
-        int i10 = wn.fd;
-        return wnVar.e9();
+    @Override // org.telegram.ui.yr0, org.telegram.ui.es0
+    public final gs0 E(org.telegram.messenger.jj jjVar, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
+        return this.c.a.Q.Za.E(this.a, fileLocation, i10, z10, false);
+    }
+
+    @Override // org.telegram.ui.yr0, org.telegram.ui.es0
+    public final void o(int i10, org.telegram.messenger.x20 x20Var, boolean z10, int i11, int i12, boolean z11) {
+        fm fmVar = this.c.a;
+        org.telegram.messenger.jj jjVar = this.a;
+        jjVar.q = true;
+        org.telegram.messenger.ef efVar = this.b;
+        if (efVar.h != null || efVar.b) {
+            un unVar = fmVar.Q;
+            rh rhVar = new rh(jjVar, 6);
+            org.telegram.ui.ActionBar.z4 parentLayout = unVar.getParentLayout();
+            int currentAccount = unVar.getCurrentAccount();
+            org.telegram.ui.Components.b40 b40Var = new org.telegram.ui.Components.b40(0, true, true);
+            b40Var.a = unVar;
+            b40Var.s(efVar);
+            b40Var.b = new mg.i0(currentAccount, rhVar, parentLayout, b40Var);
+            return;
+        }
+        TLRPC.TL_photos_updateProfilePhoto tL_photos_updateProfilePhoto = new TLRPC.TL_photos_updateProfilePhoto();
+        TLRPC.TL_inputPhoto tL_inputPhoto = new TLRPC.TL_inputPhoto();
+        tL_photos_updateProfilePhoto.id = tL_inputPhoto;
+        TLRPC.Photo photo = jjVar.k.action.photo;
+        tL_inputPhoto.id = photo.id;
+        tL_inputPhoto.access_hash = photo.access_hash;
+        tL_inputPhoto.file_reference = photo.file_reference;
+        fmVar.Q.getConnectionsManager().sendRequest(tL_photos_updateProfilePhoto, new ag.k0(19, this, jjVar));
     }
 }

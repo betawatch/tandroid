@@ -7,7 +7,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.RandomAccess;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class d0 extends b implements e0, RandomAccess {
     public final ArrayList b;
@@ -22,7 +22,7 @@ public final class d0 extends b implements e0, RandomAccess {
 
     @Override // java.util.AbstractList, java.util.List
     public final void add(int i10, Object obj) {
-        h();
+        l();
         this.b.add(i10, (String) obj);
         ((AbstractList) this).modCount++;
     }
@@ -45,20 +45,20 @@ public final class d0 extends b implements e0, RandomAccess {
 
     @Override // androidx.datastore.preferences.protobuf.b, java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
     public final void clear() {
-        h();
+        l();
         this.b.clear();
         ((AbstractList) this).modCount++;
     }
 
     @Override // androidx.datastore.preferences.protobuf.e0
     public final void e(g gVar) {
-        h();
+        l();
         this.b.add(gVar);
         ((AbstractList) this).modCount++;
     }
 
     @Override // androidx.datastore.preferences.protobuf.e0
-    public final List g() {
+    public final List f() {
         return DesugarCollections.unmodifiableList(this.b);
     }
 
@@ -87,18 +87,18 @@ public final class d0 extends b implements e0, RandomAccess {
     }
 
     @Override // androidx.datastore.preferences.protobuf.e0
-    public final e0 i() {
+    public final e0 h() {
         return this.a ? new m1(this) : this;
     }
 
     @Override // androidx.datastore.preferences.protobuf.e0
-    public final Object k(int i10) {
+    public final Object j(int i10) {
         return this.b.get(i10);
     }
 
     @Override // java.util.AbstractList, java.util.List
     public final Object remove(int i10) {
-        h();
+        l();
         Object remove = this.b.remove(i10);
         ((AbstractList) this).modCount++;
         if (remove instanceof String) {
@@ -113,7 +113,7 @@ public final class d0 extends b implements e0, RandomAccess {
 
     @Override // java.util.AbstractList, java.util.List
     public final Object set(int i10, Object obj) {
-        h();
+        l();
         Object obj2 = this.b.set(i10, (String) obj);
         if (obj2 instanceof String) {
             return (String) obj2;
@@ -136,9 +136,9 @@ public final class d0 extends b implements e0, RandomAccess {
 
     @Override // androidx.datastore.preferences.protobuf.b, java.util.AbstractList, java.util.List
     public final boolean addAll(int i10, Collection collection) {
-        h();
+        l();
         if (collection instanceof e0) {
-            collection = ((e0) collection).g();
+            collection = ((e0) collection).f();
         }
         boolean addAll = this.b.addAll(i10, collection);
         ((AbstractList) this).modCount++;

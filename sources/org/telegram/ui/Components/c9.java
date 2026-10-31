@@ -1,39 +1,20 @@
 package org.telegram.ui.Components;
 
-import j$.util.Objects;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class c9 {
-    public int a;
-    public boolean b;
-    public int c;
-    public int d;
-    public int e;
-    public int f;
+public final class c9 extends w7.y5 {
+    public final /* synthetic */ ViewGroup a;
+    public final /* synthetic */ f9 b;
 
-    public final c9 a() {
-        c9 c9Var = new c9();
-        c9Var.c = this.c;
-        c9Var.d = this.d;
-        c9Var.e = this.e;
-        c9Var.f = this.f;
-        c9Var.b = this.b;
-        return c9Var;
+    public c9(f9 f9Var, ViewGroup viewGroup) {
+        this.b = f9Var;
+        this.a = viewGroup;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof c9)) {
-            return false;
-        }
-        c9 c9Var = (c9) obj;
-        return this.c == c9Var.c && this.d == c9Var.d && this.e == c9Var.e && this.f == c9Var.f;
-    }
-
-    public final int hashCode() {
-        return Objects.hash(Integer.valueOf(this.a), Integer.valueOf(this.c), Integer.valueOf(this.d), Integer.valueOf(this.e), Integer.valueOf(this.f));
+    @Override // w7.y5
+    public final void a() {
+        this.a.invalidate();
     }
 }

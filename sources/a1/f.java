@@ -1,67 +1,67 @@
 package a1;
 
 import a3.m0;
-import ai.k0;
-import ai.o0;
-import ai.t1;
-import ai.y;
-import ai.z;
-import ai.z0;
-import android.animation.AnimatorSet;
-import android.app.Activity;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.PointF;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.os.Build;
-import android.text.SpannableStringBuilder;
+import ag.h2;
+import ag.h3;
+import ag.i3;
+import ag.j0;
+import ag.j1;
+import ag.k;
+import ag.t1;
+import android.content.Context;
+import android.database.Cursor;
+import android.media.AudioManager;
+import android.net.Uri;
+import android.text.TextUtils;
+import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.AnimationUtils;
 import androidx.credentials.playservices.CredentialProviderPlayServicesImpl;
 import b2.b2;
-import bh.a1;
-import bh.i0;
-import bh.l0;
-import bh.q;
-import bh.u;
-import bh.v0;
-import bh.y0;
-import bi.h7;
-import c3.h0;
-import e2.n0;
+import bi.c6;
+import bi.d4;
+import bi.k5;
+import bi.l2;
+import bi.l5;
+import bi.n1;
+import bi.o0;
+import bi.q6;
+import bi.u;
+import bi.u3;
+import bi.z;
+import bi.z5;
+import e2.l0;
+import i2.b0;
 import i2.c0;
-import i2.d0;
-import i2.j0;
+import i2.i0;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.Arrays;
+import kotlin.jvm.internal.i;
 import kotlin.jvm.internal.p;
-import n4.s;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
+import n4.q;
+import org.telegram.SQLite.SQLiteDatabase;
+import org.telegram.SQLite.SQLitePreparedStatement;
+import org.telegram.messenger.b8;
+import org.telegram.messenger.cd;
+import org.telegram.messenger.f8;
+import org.telegram.messenger.hs;
+import org.telegram.messenger.j20;
+import org.telegram.messenger.jj;
+import org.telegram.messenger.tz;
+import org.telegram.messenger.vp;
+import org.telegram.messenger.zs;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_payments;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Cells.s4;
-import org.telegram.ui.Components.RLottieNative;
-import org.telegram.ui.Components.c6;
-import org.telegram.ui.Components.gl0;
-import org.telegram.ui.Components.wc;
-import org.telegram.ui.cq0;
-import v0.i;
-import v0.o;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.tgnet.tl.TL_iv;
+import org.telegram.ui.Components.a51;
+import org.telegram.ui.Components.p51;
+import org.telegram.ui.Components.qq;
+import org.webrtc.MediaStreamTrack;
+import v0.n;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f implements Runnable {
     public final /* synthetic */ int a;
@@ -74,439 +74,510 @@ public final /* synthetic */ class f implements Runnable {
         this.c = obj2;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:204:0x0451, code lost:
+    /* JADX WARN: Can't wrap try/catch for region: R(12:120|(2:121|122)|(3:169|170|(10:172|173|(2:164|165)|126|(1:128)|129|130|131|(1:(1:134))(7:136|137|138|139|140|141|142)|135))|124|(0)|126|(0)|129|130|131|(0)(0)|135) */
+    /* JADX WARN: Code restructure failed: missing block: B:162:0x028e, code lost:
     
-        if (r4 == null) goto L189;
+        r0 = move-exception;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:163:0x02e0, code lost:
+    
+        org.telegram.messenger.f8.g(r0, true);
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:114:0x02bf  */
+    /* JADX WARN: Removed duplicated region for block: B:114:0x02ea  */
+    /* JADX WARN: Removed duplicated region for block: B:119:? A[ADDED_TO_REGION, RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:128:0x025a  */
+    /* JADX WARN: Removed duplicated region for block: B:133:0x0288  */
+    /* JADX WARN: Removed duplicated region for block: B:136:0x0290 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:164:0x024c A[EXC_TOP_SPLITTER, SYNTHETIC] */
     @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void run() {
-        RLottieNative rLottieNative;
-        FileOutputStream fileOutputStream;
-        ai.g gVar;
-        int i10 = 10;
-        Bitmap bitmap = null;
-        r8 = false;
-        r8 = false;
-        r8 = false;
+        TLRPC.Message message;
+        String str;
+        String str2;
+        InputStream openInputStream;
+        Cursor query;
+        TLRPC.Document document;
+        TLRPC.PhotoSize w9;
+        TLRPC.Photo photo;
+        int i10 = this.a;
+        int i11 = 2;
         boolean z10 = false;
-        final int i11 = 1;
-        switch (this.a) {
+        View C1 = null;
+        r6 = null;
+        r6 = null;
+        String str3 = null;
+        r6 = null;
+        SQLitePreparedStatement sQLitePreparedStatement = null;
+        ArrayList arrayList = null;
+        r6 = null;
+        SQLitePreparedStatement sQLitePreparedStatement2 = null;
+        Object obj = this.c;
+        Object obj2 = this.b;
+        switch (i10) {
             case 0:
-                CredentialProviderPlayServicesImpl.runFallbackClearCredFlow$lambda$27$lambda$26$lambda$25$lambda$24((i) this.b, (Exception) this.c);
+                CredentialProviderPlayServicesImpl.runFallbackClearCredFlow$lambda$27$lambda$26$lambda$25$lambda$24((v0.h) obj2, (Exception) obj);
                 return;
             case 1:
-                CredentialProviderPlayServicesImpl.onClearCredential$lambda$14$lambda$13$lambda$12((i) this.b, (p) this.c);
+                CredentialProviderPlayServicesImpl.onClearCredential$lambda$14$lambda$13$lambda$12((v0.h) obj2, (p) obj);
                 return;
             case 2:
-                ((a3.f) ((rf.b) this.b).c).h.onVideoSizeChanged((b2) this.c);
+                ((a3.f) ((q) obj2).b).h.d((b2) obj);
                 return;
             case 3:
-                s sVar = (s) this.b;
-                i2.d dVar = (i2.d) this.c;
-                m0 m0Var = (m0) sVar.c;
-                String str = n0.a;
-                rf.b.D(((d0) m0Var).a.G, dVar);
+                m0 m0Var = (m0) ((hf.b) obj2).c;
+                String str4 = l0.a;
+                q.f(((c0) m0Var).a.G, (i2.c) obj);
                 return;
             case 4:
-                s sVar2 = (s) this.b;
-                b2 b2Var = (b2) this.c;
-                m0 m0Var2 = (m0) sVar2.c;
-                String str2 = n0.a;
-                j0 j0Var = ((d0) m0Var2).a;
-                j0Var.k0 = b2Var;
-                j0Var.m.e(25, new c0(b2Var));
+                b2 b2Var = (b2) obj;
+                m0 m0Var2 = (m0) ((hf.b) obj2).c;
+                String str5 = l0.a;
+                i0 i0Var = ((c0) m0Var2).a;
+                i0Var.k0 = b2Var;
+                i0Var.m.e(25, new b0(b2Var));
                 return;
             case 5:
-                s sVar3 = (s) this.b;
-                Exception exc = (Exception) this.c;
-                m0 m0Var3 = (m0) sVar3.c;
-                String str3 = n0.a;
-                j2.e eVar = ((d0) m0Var3).a.s;
-                j2.a p10 = eVar.p();
-                eVar.q(p10, 1030, new ig.g(p10, exc, 3));
+                m0 m0Var3 = (m0) ((hf.b) obj2).c;
+                String str6 = l0.a;
+                j2.g gVar = ((c0) m0Var3).a.s;
+                j2.a U = gVar.U();
+                gVar.V(U, 1030, new d2.c(U, (Exception) obj, 29));
                 return;
             case 6:
-                s sVar4 = (s) this.b;
-                String str4 = (String) this.c;
-                m0 m0Var4 = (m0) sVar4.c;
-                String str5 = n0.a;
-                j2.e eVar2 = ((d0) m0Var4).a.s;
-                j2.a p11 = eVar2.p();
-                eVar2.q(p11, 1019, new ig.g(p11, str4, 10));
+                m0 m0Var4 = (m0) ((hf.b) obj2).c;
+                String str7 = l0.a;
+                j2.g gVar2 = ((c0) m0Var4).a.s;
+                j2.a U2 = gVar2.U();
+                gVar2.V(U2, 1019, new j2.c(U2, (String) obj, 6));
                 return;
             case 7:
-                y yVar = (y) this.b;
-                if (((TLRPC.Document) this.c) != null) {
-                    yVar.e();
-                    return;
-                } else {
-                    yVar.getClass();
-                    return;
+                k kVar = (k) obj2;
+                TLObject tLObject = (TLObject) obj;
+                kVar.e = false;
+                TL_account.connectedBots connectedbots = tLObject instanceof TL_account.connectedBots ? (TL_account.connectedBots) tLObject : null;
+                kVar.c = connectedbots;
+                if (connectedbots != null) {
+                    vp.r1(kVar.a).V3(kVar.c.users, false);
                 }
+                kVar.b = System.currentTimeMillis();
+                kVar.f = true;
+                kVar.d();
+                return;
             case 8:
-                z zVar = (z) this.b;
-                File file = (File) this.c;
-                int i12 = zVar.c;
-                try {
-                    rLottieNative = RLottieNative.a(file.getAbsolutePath(), null, null, null, 0, null);
-                    if (rLottieNative != null) {
-                        try {
-                            Bitmap.Config config = Bitmap.Config.ARGB_8888;
-                            Bitmap createBitmap = Bitmap.createBitmap(i12, i12, config);
-                            rLottieNative.c(0, createBitmap, true);
-                            Bitmap createBitmap2 = Bitmap.createBitmap(i12, i12, config);
-                            Paint paint = new Paint(2);
-                            paint.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
-                            new Canvas(createBitmap2).drawBitmap(createBitmap, 0.0f, 0.0f, paint);
-                            createBitmap.recycle();
-                            createBitmap2.setHasMipMap(true);
-                            rLottieNative.d();
-                            bitmap = createBitmap2;
-                        } catch (Throwable th2) {
-                            th = th2;
-                            try {
-                                FileLog.e(th);
-                                break;
-                            } finally {
-                                if (rLottieNative != null) {
-                                    rLottieNative.d();
-                                }
-                            }
-                        }
-                    }
-                } catch (Throwable th3) {
-                    th = th3;
-                    rLottieNative = null;
-                }
-                AndroidUtilities.runOnUIThread(new f(9, zVar, bitmap));
+                j1 j1Var = (j1) obj2;
+                k.a(j1Var.a).b();
+                ((qq) obj).run();
+                j1Var.dismiss();
                 return;
             case 9:
-                z zVar2 = (z) this.b;
-                Bitmap bitmap2 = (Bitmap) this.c;
-                zVar2.h = true;
-                if (zVar2.e) {
-                    if (bitmap2 != null) {
-                        bitmap2.recycle();
-                        return;
-                    }
-                    return;
-                } else {
-                    if (bitmap2 != null) {
-                        zVar2.d.run(bitmap2);
-                        return;
-                    }
-                    return;
-                }
+                vp.r1(((t1) obj2).currentAccount).L3((TLRPC.Updates) ((TLObject) obj), false);
+                return;
             case 10:
-                o0 o0Var = (o0) this.b;
-                rf.b bVar = (rf.b) this.c;
-                if (o0Var.V) {
-                    return;
-                }
-                o0Var.e();
-                o0Var.a.f((String) bVar.b);
+                h2 h2Var = (h2) obj2;
+                h2Var.getClass();
+                h2Var.b0(((a51) obj).d);
                 return;
             case 11:
-                ai.m0 m0Var5 = (ai.m0) this.b;
-                rf.b bVar2 = (rf.b) this.c;
-                o0 o0Var2 = m0Var5.a;
-                if (o0Var2.l0 || o0Var2.V || o0Var2.U) {
-                    return;
-                }
-                o0Var2.l0 = true;
-                o0Var2.h0 = false;
-                o0Var2.performHapticFeedback(3, 2);
-                PointF[] pointFArr = (PointF[]) bVar2.c;
-                r8 = pointFArr.length >= 3 ? 1 : 0;
-                if (r8 != 0) {
-                    o0Var2.m0 = pointFArr;
-                    o0Var2.invalidate();
-                }
-                AndroidUtilities.runOnUIThread(new f(i10, o0Var2, bVar2), r8 != 0 ? 450L : 0L);
-                return;
-            case 12:
-                z0.V((z0) this.b, (AnimatorSet) this.c);
-                return;
-            case 13:
-                z0 z0Var = (z0) this.b;
-                Bitmap bitmap3 = (Bitmap) this.c;
-                File file2 = new File(AndroidUtilities.getCacheDir(), "qr_code_" + System.currentTimeMillis() + ".png");
+                h3 h3Var = (h3) obj;
                 try {
-                    fileOutputStream = new FileOutputStream(file2);
-                } catch (Exception e) {
-                    FileLog.e(e);
-                }
-                try {
-                    z10 = bitmap3.compress(Bitmap.CompressFormat.PNG, 100, fileOutputStream);
-                    fileOutputStream.close();
-                    bitmap3.recycle();
-                    if (z10) {
-                        AndroidUtilities.runOnUIThread(new f(15, z0Var, file2));
-                        return;
+                    try {
+                        sQLitePreparedStatement2 = ((hs) obj2).b.executeFast("REPLACE INTO business_replies VALUES(?, ?, ?, ?);");
+                        sQLitePreparedStatement2.requery();
+                        sQLitePreparedStatement2.bindInteger(1, h3Var.a);
+                        sQLitePreparedStatement2.bindString(2, h3Var.b);
+                        sQLitePreparedStatement2.bindInteger(3, h3Var.c);
+                        sQLitePreparedStatement2.bindInteger(4, h3Var.f);
+                        sQLitePreparedStatement2.step();
+                    } catch (Exception e) {
+                        f8.g(e, true);
+                        if (sQLitePreparedStatement2 == null) {
+                            return;
+                        }
                     }
+                    sQLitePreparedStatement2.dispose();
                     return;
-                } finally {
+                } catch (Throwable th2) {
+                    if (sQLitePreparedStatement2 != null) {
+                        sQLitePreparedStatement2.dispose();
+                    }
+                    throw th2;
                 }
-            case 14:
-                final z0 z0Var2 = (z0) this.b;
-                o0 o0Var3 = (o0) this.c;
-                if (o0.d(z0Var2.getParentActivity())) {
-                    o0Var3.e();
-                    ai.d0 d0Var = new ai.d0(i11);
-                    Utilities.Callback callback = new Utilities.Callback() { // from class: ai.s0
-                        @Override // org.telegram.messenger.Utilities.Callback
-                        public final void run(Object obj) {
-                            switch (r2) {
-                                case 0:
-                                    String str6 = (String) obj;
-                                    z0 z0Var3 = z0Var2;
-                                    if (z0Var3.getParentActivity() != null) {
-                                        qf.d.r(z0Var3.getParentActivity(), str6);
-                                        break;
-                                    }
-                                    break;
-                                default:
-                                    z0 z0Var4 = z0Var2;
-                                    t1 t1Var = z0Var4.d;
-                                    if (t1Var != null && !z0Var4.isFinished) {
-                                        t1Var.d1(R.drawable.msg_download, LocaleController.getString(R.string.QrSavedToGallery), null);
-                                        break;
-                                    }
-                                    break;
+            case 12:
+                i3 i3Var = (i3) obj2;
+                TLObject tLObject2 = (TLObject) obj;
+                ArrayList arrayList2 = i3Var.b;
+                int i12 = i3Var.a;
+                if (tLObject2 instanceof TLRPC.TL_messages_quickReplies) {
+                    TLRPC.TL_messages_quickReplies tL_messages_quickReplies = (TLRPC.TL_messages_quickReplies) tLObject2;
+                    vp.r1(i12).V3(tL_messages_quickReplies.users, false);
+                    vp.r1(i12).P3(tL_messages_quickReplies.chats, false);
+                    hs.a0(i12).m1(tL_messages_quickReplies.users, tL_messages_quickReplies.chats, true, true);
+                    ArrayList arrayList3 = new ArrayList();
+                    for (int i13 = 0; i13 < tL_messages_quickReplies.quick_replies.size(); i13++) {
+                        TLRPC.TL_quickReply tL_quickReply = tL_messages_quickReplies.quick_replies.get(i13);
+                        h3 h3Var2 = new h3();
+                        h3Var2.a = tL_quickReply.shortcut_id;
+                        h3Var2.b = tL_quickReply.shortcut;
+                        h3Var2.f = tL_quickReply.count;
+                        h3Var2.d = tL_quickReply.top_message;
+                        h3Var2.c = i13;
+                        int i14 = 0;
+                        while (true) {
+                            if (i14 < tL_messages_quickReplies.messages.size()) {
+                                message = tL_messages_quickReplies.messages.get(i14);
+                                if (message.id != tL_quickReply.top_message) {
+                                    i14++;
+                                }
+                            } else {
+                                message = null;
                             }
                         }
-                    };
-                    cq0 cq0Var = new cq0(10, false, false, null);
-                    cq0Var.G = 1;
-                    cq0Var.H = false;
-                    cq0Var.x = false;
-                    cq0Var.V = new k0(d0Var, z0Var2, callback);
-                    z0Var2.presentFragment(cq0Var);
-                    return;
-                }
-                return;
-            case 15:
-                final z0 z0Var3 = (z0) this.b;
-                File file3 = (File) this.c;
-                Activity parentActivity = z0Var3.getParentActivity();
-                if (parentActivity == null) {
-                    return;
-                }
-                MediaController.saveFile(file3.getAbsolutePath(), parentActivity, 0, file3.getName(), "image/png", new Utilities.Callback() { // from class: ai.s0
-                    @Override // org.telegram.messenger.Utilities.Callback
-                    public final void run(Object obj) {
-                        switch (i11) {
-                            case 0:
-                                String str6 = (String) obj;
-                                z0 z0Var32 = z0Var3;
-                                if (z0Var32.getParentActivity() != null) {
-                                    qf.d.r(z0Var32.getParentActivity(), str6);
-                                    break;
-                                }
-                                break;
-                            default:
-                                z0 z0Var4 = z0Var3;
-                                t1 t1Var = z0Var4.d;
-                                if (t1Var != null && !z0Var4.isFinished) {
-                                    t1Var.d1(R.drawable.msg_download, LocaleController.getString(R.string.QrSavedToGallery), null);
-                                    break;
-                                }
-                                break;
+                        if (message != null) {
+                            jj jjVar = new jj(i12, message, false, true);
+                            h3Var2.e = jjVar;
+                            jjVar.r0(false);
+                            h3Var2.e.l(tL_quickReply.shortcut_id, tL_quickReply.shortcut);
                         }
+                        arrayList3.add(h3Var2);
                     }
-                }, false);
+                    arrayList = arrayList3;
+                }
+                i3Var.e = false;
+                if (arrayList != null) {
+                    arrayList2.clear();
+                    arrayList2.addAll(arrayList);
+                }
+                i3Var.f = true;
+                i3Var.l();
+                zs.f(i12).k(zs.F1, new Object[0]);
                 return;
-            case 16:
-                t1 t1Var = (t1) this.b;
-                ai.g gVar2 = (ai.g) this.c;
-                ai.h hVar = t1Var.s0;
-                if (hVar.q == 2 && hVar.o < 1.0f) {
-                    hVar.m = gVar2;
-                    t1Var.invalidate();
-                    return;
-                }
-                long currentAnimationTimeMillis = AnimationUtils.currentAnimationTimeMillis();
-                t1Var.p2 = t1.j(t1Var.n2, 0.03f, 0.005f);
-                t1Var.n2 = currentAnimationTimeMillis;
-                ai.g gVar3 = hVar.m;
-                if (gVar3 == null) {
-                    hVar.m = gVar2;
-                    hVar.n = null;
-                    hVar.o = 1.0f;
-                    return;
-                }
-                int i13 = (Build.VERSION.SDK_INT >= 29 ? 1 : 0) ^ 1;
-                if (hVar.o < 1.0f && (gVar = hVar.n) != null) {
-                    gVar3 = gVar;
-                }
-                hVar.n = gVar3;
-                hVar.m = gVar2;
-                hVar.o = 0.0f;
-                hVar.q = i13;
-                hVar.p = System.currentTimeMillis();
-                boolean[] zArr = hVar.s;
-                if (zArr != null) {
-                    int length = zArr.length;
-                    int i14 = hVar.n.e;
-                    if (length >= i14 * i14) {
-                        Arrays.fill(zArr, false);
-                        hVar.G = i13 == 1;
+            case 13:
+                hs hsVar = (hs) obj;
+                ArrayList arrayList4 = ((i3) obj2).b;
+                try {
+                    try {
+                        SQLiteDatabase sQLiteDatabase = hsVar.b;
+                        sQLiteDatabase.executeFast("DELETE FROM business_replies").stepThis().dispose();
+                        sQLitePreparedStatement = sQLiteDatabase.executeFast("REPLACE INTO business_replies VALUES(?, ?, ?, ?)");
+                        for (int i15 = 0; i15 < arrayList4.size(); i15++) {
+                            h3 h3Var3 = (h3) arrayList4.get(i15);
+                            sQLitePreparedStatement.requery();
+                            sQLitePreparedStatement.bindInteger(1, h3Var3.a);
+                            sQLitePreparedStatement.bindString(2, h3Var3.b);
+                            sQLitePreparedStatement.bindInteger(3, h3Var3.c);
+                            sQLitePreparedStatement.bindInteger(4, h3Var3.f);
+                            sQLitePreparedStatement.step();
+                        }
+                        if (sQLitePreparedStatement == null) {
+                            return;
+                        }
+                    } catch (Throwable th3) {
+                        if (sQLitePreparedStatement != null) {
+                            sQLitePreparedStatement.dispose();
+                        }
+                        throw th3;
+                    }
+                } catch (Exception e7) {
+                    f8.g(e7, true);
+                    if (sQLitePreparedStatement == null) {
                         return;
                     }
                 }
-                int i15 = hVar.n.e;
-                hVar.s = new boolean[i15 * i15];
-                hVar.G = i13 == 1;
+                sQLitePreparedStatement.dispose();
                 return;
-            case 17:
-                ((Utilities.Callback) this.b).run((ai.g) this.c);
-                return;
-            case 18:
-                ViewGroup container = (ViewGroup) this.b;
-                kotlin.jvm.internal.i.e(container, "$container");
+            case 14:
+                ViewGroup container = (ViewGroup) obj2;
+                i.e(container, "$container");
                 container.endViewTransition(null);
                 throw null;
-            case 19:
-                ((i) this.b).onError(this.c);
+            case 15:
+                ((v0.h) obj2).g(obj);
                 return;
-            case 20:
-                ((i) this.b).onResult((o) this.c);
+            case 16:
+                ((v0.h) obj2).onResult((n) obj);
                 return;
-            case 21:
-                u uVar = (u) this.b;
-                c6 c6Var = (c6) this.c;
-                SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(uVar.h.getText());
-                for (c6 c6Var2 : (c6[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), c6.class)) {
-                    if (c6Var2 == c6Var) {
-                        int editTextSelectionEnd = uVar.h.getEditTextSelectionEnd();
-                        int spanEnd = spannableStringBuilder.getSpanEnd(c6Var2);
-                        int spanStart = spannableStringBuilder.getSpanStart(c6Var2);
-                        uVar.h.getText().delete(spanStart, spanEnd);
-                        int i16 = spanEnd - spanStart;
-                        q qVar = uVar.h;
-                        if (spanEnd <= editTextSelectionEnd) {
-                            editTextSelectionEnd -= i16;
-                        }
-                        qVar.setSelection(editTextSelectionEnd);
-                        return;
-                    }
+            case 17:
+                j20 j20Var = (j20) obj;
+                u a2 = u.a(((String[]) obj2)[0], org.telegram.messenger.i0.L(26.0f), false);
+                if (a2 == null) {
+                    a2 = u.a(cd.L0(2131754007, null), org.telegram.messenger.i0.L(26.0f), false);
+                    z10 = true;
                 }
+                org.telegram.messenger.i0.g3(new j0(j20Var, a2 != null ? a2.a : null, z10, i11));
                 return;
-            case 22:
-                u uVar2 = (u) this.b;
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) this.c;
-                if (uVar2.V != null && tL_error.text.equals("BOOSTS_REQUIRED")) {
-                    a1.f(-uVar2.R, uVar2.W, uVar2.V);
+            case 18:
+                z zVar = (z) obj2;
+                TLObject tLObject3 = (TLObject) obj;
+                zVar.Y1 = false;
+                zVar.Z1 = 0;
+                vh.d dVar = zVar.X1;
+                dVar.setLoading(false);
+                if (!(tLObject3 instanceof TLRPC.TL_composedRichMessageWithAI)) {
+                    org.telegram.messenger.i0.F3(4.0f, dVar, null);
                     return;
                 }
-                String str6 = tL_error.text;
-                if (str6.equals("REACTIONS_TOO_MANY")) {
-                    str6 = LocaleController.formatPluralString("ReactionMaxCountError", uVar2.M, new Object[0]);
+                TL_iv.RichMessage richMessage = ((TLRPC.TL_composedRichMessageWithAI) tLObject3).result;
+                if (richMessage == null) {
+                    org.telegram.messenger.i0.F3(4.0f, dVar, null);
+                    return;
                 }
-                wc.b0(uVar2).t(str6, null).j();
+                zVar.a2 = richMessage;
+                zVar.U1.set(richMessage);
+                dVar.i(cd.L0(2131754061, null), true, true);
+                zVar.d1();
+                p51 p51Var = zVar.R1;
+                if (p51Var != null) {
+                    p51Var.O(true);
+                    return;
+                }
                 return;
-            case 23:
-                bh.s sVar5 = (bh.s) this.b;
-                c6 c6Var3 = (c6) this.c;
-                u uVar3 = sVar5.f2;
-                SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(uVar3.h.getText());
-                for (c6 c6Var4 : (c6[]) spannableStringBuilder2.getSpans(0, spannableStringBuilder2.length(), c6.class)) {
-                    if (c6Var4 == c6Var3) {
-                        int editTextSelectionEnd2 = uVar3.h.getEditTextSelectionEnd();
-                        int spanEnd2 = spannableStringBuilder2.getSpanEnd(c6Var4);
-                        int spanStart2 = spannableStringBuilder2.getSpanStart(c6Var4);
-                        uVar3.h.getText().delete(spanStart2, spanEnd2);
-                        int i17 = spanEnd2 - spanStart2;
-                        q qVar2 = uVar3.h;
-                        if (spanEnd2 <= editTextSelectionEnd2) {
-                            editTextSelectionEnd2 -= i17;
+            case 19:
+                d4 d4Var = (d4) obj2;
+                Uri uri = (Uri) obj;
+                try {
+                    str = org.telegram.messenger.i0.T0(uri);
+                } catch (Exception e10) {
+                    f8.g(e10, true);
+                    str = null;
+                }
+                if (TextUtils.isEmpty(str) || !sc.e.x(str)) {
+                    try {
+                        query = d4Var.getContext().getContentResolver().query(uri, new String[]{"_display_name"}, null, null, null);
+                    } catch (Exception e11) {
+                        e = e11;
+                        str2 = null;
+                        f8.g(e, true);
+                        if (TextUtils.isEmpty(str2)) {
                         }
-                        qVar2.setSelection(editTextSelectionEnd2);
+                        String replace = str2.replace('/', '_').replace('\\', '_');
+                        openInputStream = d4Var.getContext().getContentResolver().openInputStream(uri);
+                        if (openInputStream == null) {
+                        }
+                        str = str3;
+                        if (TextUtils.isEmpty(str)) {
+                        }
+                    }
+                    if (query != null) {
+                        try {
+                            if (query.moveToFirst()) {
+                                str2 = query.getString(0);
+                                if (query != null) {
+                                    try {
+                                        query.close();
+                                    } catch (Exception e12) {
+                                        e = e12;
+                                        f8.g(e, true);
+                                        if (TextUtils.isEmpty(str2)) {
+                                        }
+                                        String replace2 = str2.replace('/', '_').replace('\\', '_');
+                                        openInputStream = d4Var.getContext().getContentResolver().openInputStream(uri);
+                                        if (openInputStream == null) {
+                                        }
+                                        str = str3;
+                                        if (TextUtils.isEmpty(str)) {
+                                            return;
+                                        } else {
+                                            return;
+                                        }
+                                    }
+                                }
+                                if (TextUtils.isEmpty(str2)) {
+                                    str2 = "document_" + tz.p();
+                                }
+                                String replace22 = str2.replace('/', '_').replace('\\', '_');
+                                openInputStream = d4Var.getContext().getContentResolver().openInputStream(uri);
+                                if (openInputStream == null) {
+                                    try {
+                                        File file = new File(b8.z(4), "rich_document_" + Math.abs(uri.hashCode()) + "_" + replace22);
+                                        FileOutputStream fileOutputStream = new FileOutputStream(file);
+                                        try {
+                                            org.telegram.messenger.i0.D(openInputStream, fileOutputStream);
+                                            fileOutputStream.close();
+                                            String absolutePath = file.getAbsolutePath();
+                                            openInputStream.close();
+                                            str3 = absolutePath;
+                                        } finally {
+                                        }
+                                    } finally {
+                                    }
+                                } else if (openInputStream != null) {
+                                    openInputStream.close();
+                                }
+                                str = str3;
+                            }
+                        } finally {
+                        }
+                    }
+                    str2 = null;
+                    if (query != null) {
+                    }
+                    if (TextUtils.isEmpty(str2)) {
+                    }
+                    String replace222 = str2.replace('/', '_').replace('\\', '_');
+                    openInputStream = d4Var.getContext().getContentResolver().openInputStream(uri);
+                    if (openInputStream == null) {
+                    }
+                    str = str3;
+                }
+                if (TextUtils.isEmpty(str) || !sc.e.x(str)) {
+                    return;
+                }
+                org.telegram.messenger.i0.g3(new f(20, d4Var, str));
+                return;
+            case 20:
+                ((d4) obj2).f2((String) obj);
+                return;
+            case 21:
+                d4 d4Var2 = (d4) obj2;
+                l2 l2Var = (l2) obj;
+                d4Var2.getClass();
+                long j10 = l2Var.a;
+                int i16 = l2Var.d;
+                int i17 = l2Var.c;
+                ArrayList arrayList5 = d4Var2.s3;
+                int i18 = 0;
+                while (true) {
+                    if (i18 >= arrayList5.size()) {
+                        i18 = -1;
+                    } else if (((bi.a) arrayList5.get(i18)).a != j10) {
+                        i18++;
+                    }
+                }
+                if (i18 < 0) {
+                    return;
+                }
+                View m10 = d4Var2.e3.m(i18);
+                if (m10 instanceof q6) {
+                    q6 q6Var = (q6) m10;
+                    q6Var.B();
+                    n1 editText = q6Var.getEditText();
+                    int length = editText.length();
+                    editText.setSelection(Math.max(0, Math.min(i17, length)), Math.max(0, Math.min(i16, length)));
+                    return;
+                }
+                if (!(m10 instanceof z5)) {
+                    if (m10 instanceof o0) {
+                        n1 captionEditText = ((o0) m10).getCaptionEditText();
+                        captionEditText.N();
+                        int length2 = captionEditText.length();
+                        captionEditText.setSelection(Math.max(0, Math.min(i17, length2)), Math.max(0, Math.min(i16, length2)));
                         return;
                     }
+                    return;
                 }
+                z5 z5Var = (z5) m10;
+                n1 m11 = z5Var.m(l2Var.b);
+                if (m11 == null) {
+                    m11 = z5Var.m(0);
+                }
+                if (m11 == null) {
+                    return;
+                }
+                m11.N();
+                int length3 = m11.length();
+                m11.setSelection(Math.max(0, Math.min(i17, length3)), Math.max(0, Math.min(i16, length3)));
+                return;
+            case 22:
+                u3 u3Var = (u3) obj2;
+                bi.a aVar = (bi.a) obj;
+                if (aVar == null) {
+                    u3Var.getClass();
+                } else {
+                    C1 = u3Var.e.C1(aVar);
+                }
+                if (C1 instanceof q6) {
+                    q6 q6Var2 = (q6) C1;
+                    q6Var2.B();
+                    q6Var2.getEditText().setSelection(q6Var2.getEditText().length());
+                    return;
+                }
+                return;
+            case 23:
+                l5 l5Var = (l5) obj2;
+                TLObject tLObject4 = (TLObject) obj;
+                boolean z11 = l5Var.e;
+                boolean z12 = l5Var.d;
+                k5 k5Var = l5Var.s;
+                if (l5Var.x) {
+                    return;
+                }
+                l5Var.D = 0;
+                if (l5Var.c || z12 || z11) {
+                    if ((tLObject4 instanceof TLRPC.TL_messageMediaDocument) && (document = ((TLRPC.TL_messageMediaDocument) tLObject4).document) != null) {
+                        if (!z11) {
+                            if (z12) {
+                                l5Var.y = true;
+                                l5Var.e();
+                                k5Var.f(document);
+                                return;
+                            } else {
+                                l5Var.y = true;
+                                l5Var.e();
+                                k5Var.d(document);
+                                return;
+                            }
+                        }
+                        int i19 = l5Var.a;
+                        if (document.id == 0 || document.access_hash == 0) {
+                            l5Var.y = true;
+                            l5Var.e();
+                            k5Var.a();
+                            return;
+                        }
+                        l5Var.y = true;
+                        l5Var.e();
+                        if (!TextUtils.isEmpty(l5Var.F) && jj.W2(document) && (w9 = b8.w(document.thumbs, zs.r5, false, null, false)) != null) {
+                            b8.G(i19).f0(l5Var.F, w9);
+                            File file2 = new File(l5Var.F);
+                            b8.G(i19);
+                            org.telegram.messenger.i0.F(file2, b8.K(w9, null, true, true));
+                        }
+                        k5Var.e(document);
+                        return;
+                    }
+                } else if ((tLObject4 instanceof TLRPC.TL_messageMediaPhoto) && (photo = ((TLRPC.TL_messageMediaPhoto) tLObject4).photo) != null) {
+                    l5Var.y = true;
+                    l5Var.e();
+                    k5Var.c(photo);
+                    return;
+                }
+                l5Var.y = true;
+                l5Var.e();
+                k5Var.a();
                 return;
             case 24:
-                i0 i0Var = (i0) this.b;
-                gl0 gl0Var = (gl0) this.c;
-                i0Var.l = true;
-                i0Var.a.invalidate();
-                gl0Var.c1 = false;
-                gl0Var.invalidate();
-                i0Var.c(true);
+                l5 l5Var2 = (l5) obj2;
+                String str8 = (String) obj;
+                if (l5Var2.x || l5Var2.y) {
+                    return;
+                }
+                l5Var2.a(str8);
                 return;
             case 25:
-                l0 l0Var = (l0) this.b;
-                bh.c cVar = (bh.c) this.c;
-                l0Var.getText().delete(l0Var.getText().getSpanStart(cVar), l0Var.getText().getSpanEnd(cVar));
-                l0Var.setCursorVisible(true);
-                l0Var.setLongClickable(true);
+                c6 m12 = ((z5) obj2).w.m((TL_iv.pageTableCell) obj);
+                if (m12 == null) {
+                    return;
+                }
+                n1 n1Var = m12.a;
+                n1Var.N();
+                n1Var.setSelection(n1Var.length());
                 return;
             case 26:
-                y0 y0Var = (y0) this.b;
-                v0 v0Var = (v0) this.c;
-                y0Var.getClass();
-                TLRPC.ReactionCount reactionCount = v0Var.a;
-                org.telegram.ui.Cells.z zVar3 = y0Var.z;
-                if (h0.t(zVar3)) {
-                    ((s4) zVar3).d(reactionCount, true, 0.0f, 0.0f);
-                }
-                v0Var.Y.c(false);
-                y0Var.S = null;
-                y0Var.T = false;
-                y0Var.U = null;
+                ((c1.d) obj2).e().g(((p) obj).a);
                 return;
             case 27:
-                bi.j0 j0Var2 = (bi.j0) this.b;
-                TLObject tLObject = (TLObject) this.c;
-                int i18 = j0Var2.a;
-                ArrayList arrayList = j0Var2.e;
-                j0Var2.i = 0;
-                if (tLObject instanceof TL_payments.connectedStarRefBots) {
-                    TL_payments.connectedStarRefBots connectedstarrefbots = (TL_payments.connectedStarRefBots) tLObject;
-                    MessagesController.getInstance(i18).putUsers(connectedstarrefbots.users, false);
-                    if (j0Var2.c <= 0) {
-                        arrayList.clear();
-                    }
-                    j0Var2.c = connectedstarrefbots.count;
-                    arrayList.addAll(connectedstarrefbots.connected_bots);
-                    j0Var2.d = connectedstarrefbots.connected_bots.isEmpty() || arrayList.size() >= j0Var2.c;
-                } else {
-                    j0Var2.h = true;
-                    j0Var2.d = true;
-                }
-                j0Var2.g = false;
-                NotificationCenter.getInstance(i18).lambda$postNotificationNameOnUIThread$1(NotificationCenter.channelConnectedBotsUpdate, Long.valueOf(j0Var2.b));
+                ((c1.d) obj2).e().g((w0.h) obj);
                 return;
             case 28:
-                bi.k0 k0Var = (bi.k0) this.b;
-                TLObject tLObject2 = (TLObject) this.c;
-                int i19 = k0Var.a;
-                ArrayList arrayList2 = k0Var.e;
-                if (tLObject2 instanceof TL_payments.suggestedStarRefBots) {
-                    TL_payments.suggestedStarRefBots suggestedstarrefbots = (TL_payments.suggestedStarRefBots) tLObject2;
-                    MessagesController.getInstance(i19).putUsers(suggestedstarrefbots.users, false);
-                    if (k0Var.c <= 0) {
-                        arrayList2.clear();
-                    }
-                    k0Var.c = suggestedstarrefbots.count;
-                    arrayList2.addAll(suggestedstarrefbots.suggested_bots);
-                    k0Var.j = suggestedstarrefbots.next_offset;
-                    k0Var.d = suggestedstarrefbots.suggested_bots.isEmpty() || arrayList2.size() >= k0Var.c;
-                } else {
-                    k0Var.i = true;
-                    k0Var.d = true;
-                }
-                k0Var.h = false;
-                NotificationCenter.getInstance(i19).lambda$postNotificationNameOnUIThread$1(NotificationCenter.channelSuggestedBotsUpdate, Long.valueOf(k0Var.b));
+                ((c1.d) obj2).e().onResult((n) obj);
                 return;
             default:
-                h7.e1((h7) this.b, (TL_stars.TL_payments_uniqueStarGift) this.c);
+                c2.h.a = (AudioManager) ((Context) obj2).getSystemService(MediaStreamTrack.AUDIO_TRACK_KIND);
+                ((e2.i) obj).e();
                 return;
         }
     }

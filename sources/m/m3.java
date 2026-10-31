@@ -1,39 +1,11 @@
 package m;
 
-import android.content.Context;
 import android.view.View;
-import android.view.Window;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class m3 implements View.OnClickListener {
-    public final l.a a;
-    public final /* synthetic */ n3 b;
-
-    public m3(n3 n3Var) {
-        this.b = n3Var;
-        Context context = n3Var.a.getContext();
-        CharSequence charSequence = n3Var.h;
-        l.a aVar = new l.a();
-        aVar.e = 4096;
-        aVar.g = 4096;
-        aVar.l = null;
-        aVar.m = null;
-        aVar.n = false;
-        aVar.o = false;
-        aVar.p = 16;
-        aVar.i = context;
-        aVar.a = charSequence;
-        this.a = aVar;
-    }
-
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        n3 n3Var = this.b;
-        Window.Callback callback = n3Var.k;
-        if (callback == null || !n3Var.l) {
-            return;
-        }
-        callback.onMenuItemSelected(0, this.a);
+public abstract class m3 {
+    public static void a(View view, CharSequence charSequence) {
+        view.setTooltipText(charSequence);
     }
 }

@@ -1,908 +1,1165 @@
 package org.telegram.ui.web;
 
-import android.app.Activity;
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.ShapeDrawable;
-import android.view.View;
-import android.view.ViewGroup;
-import android.webkit.CookieManager;
-import android.webkit.WebStorage;
-import android.webkit.WebView;
-import android.widget.LinearLayout;
-import bi.pa;
-import bi.t8;
-import di.o2;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.text.TextUtils;
+import android.util.Pair;
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicReference;
-import java.util.regex.Pattern;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.b7;
-import org.telegram.ui.ActionBar.f7;
-import org.telegram.ui.ActionBar.r2;
-import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Cells.a9;
-import org.telegram.ui.Cells.p6;
-import org.telegram.ui.Components.f5;
-import org.telegram.ui.Components.g5;
-import org.telegram.ui.Components.k71;
-import org.telegram.ui.Components.kb1;
-import org.telegram.ui.Components.l80;
-import org.telegram.ui.Components.m71;
-import org.telegram.ui.Components.n71;
-import org.telegram.ui.Components.nm0;
-import org.telegram.ui.Components.u61;
-import org.telegram.ui.Wallet.a6;
-import org.telegram.ui.cg;
+import java.util.Map;
+import org.json.JSONArray;
+import org.json.JSONObject;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.d00;
+import org.telegram.messenger.f8;
+import org.telegram.messenger.l00;
+import org.telegram.messenger.q20;
+import org.telegram.messenger.v2;
+import org.telegram.messenger.zs;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_iv;
+import org.telegram.ui.ActionBar.w5;
+import org.telegram.ui.f11;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes4.dex */
-public final class y1 extends n71 implements NotificationCenter.NotificationCenterDelegate {
-    public o2 e;
-    public final Utilities.Callback f;
-    public long h;
-    public long n;
-    public long r;
-    public int s;
-    public int v;
+public final class y1 {
+    public static final HashMap e = new HashMap();
+    public static HashMap f;
+    public String a;
+    public xa.n b;
+    public TLRPC.TL_webPage c;
+    public final HashMap d = new HashMap();
 
-    public y1(org.telegram.ui.q qVar) {
-        this.f = qVar;
+    public static void a(TL_iv.RichText richText) {
+        TL_iv.textPlain textplain;
+        String str;
+        if (richText == null) {
+            return;
+        }
+        TL_iv.RichText richText2 = richText.text;
+        if (richText2 != null) {
+            a(richText2);
+            return;
+        }
+        if (!richText.texts.isEmpty()) {
+            a((TL_iv.RichText) i0.a.g(1, richText.texts));
+            return;
+        }
+        if (!(richText instanceof TL_iv.textPlain) || (str = (textplain = (TL_iv.textPlain) richText).text) == null || str.endsWith(" ")) {
+            return;
+        }
+        textplain.text += ' ';
     }
 
-    public static boolean Z(File file, Boolean bool) {
-        boolean z10;
-        if (file == null || !file.exists()) {
-            return false;
+    public static void b(TL_iv.RichText richText) {
+        if (richText == null) {
+            return;
         }
-        if (file.isDirectory()) {
-            File[] listFiles = file.listFiles();
-            if (listFiles != null) {
-                z10 = true;
-                for (File file2 : listFiles) {
-                    if ((bool == null || bool.booleanValue() == file2.getName().startsWith("Cookies")) && !Z(file2, bool)) {
-                        z10 = false;
+        TL_iv.RichText richText2 = richText.text;
+        if (richText2 != null) {
+            b(richText2);
+            return;
+        }
+        if (!richText.texts.isEmpty()) {
+            b((TL_iv.RichText) i0.a.g(1, richText.texts));
+            return;
+        }
+        if (richText instanceof TL_iv.textPlain) {
+            StringBuilder sb2 = new StringBuilder();
+            TL_iv.textPlain textplain = (TL_iv.textPlain) richText;
+            sb2.append(textplain.text);
+            sb2.append('\n');
+            textplain.text = sb2.toString();
+        }
+    }
+
+    public static TL_iv.RichText c(TL_iv.RichText richText, JSONObject jSONObject) {
+        String optString = jSONObject.optString("id");
+        if (TextUtils.isEmpty(optString)) {
+            return richText;
+        }
+        TL_iv.textAnchor textanchor = new TL_iv.textAnchor();
+        textanchor.text = richText;
+        textanchor.name = optString;
+        return textanchor;
+    }
+
+    public static TL_iv.RichText d(TL_iv.RichText richText, String str, String str2) {
+        TL_iv.textUrl texturl;
+        String str3;
+        if (richText == null) {
+            return richText;
+        }
+        if (richText instanceof TL_iv.textConcat) {
+            TL_iv.textConcat textconcat = (TL_iv.textConcat) richText;
+            TL_iv.textConcat textconcat2 = new TL_iv.textConcat();
+            for (int i10 = 0; i10 < textconcat.texts.size(); i10++) {
+                TL_iv.RichText d = d(textconcat.texts.get(i10), str, str2);
+                if (d != null) {
+                    textconcat2.texts.add(d);
+                }
+            }
+            return textconcat2;
+        }
+        if (!(richText instanceof TL_iv.textUrl) || (str3 = (texturl = (TL_iv.textUrl) richText).url) == null) {
+            return richText;
+        }
+        if (!str3.toLowerCase().equals("#" + str2)) {
+            if (!TextUtils.equals(texturl.url.toLowerCase(), str + "#" + str2)) {
+                return richText;
+            }
+        }
+        return null;
+    }
+
+    public static w5 e(v0 v0Var, q20 q20Var) {
+        if (v0Var == null) {
+            q20Var.a(null);
+            return null;
+        }
+        boolean[] zArr = {false};
+        y1 y1Var = new y1();
+        y1Var.a = v0Var.getUrl();
+        l00 l00Var = !v2.a ? null : new l00("WebInstantView");
+        q1 q1Var = new q1(l00.d(l00Var, "getHTML"), zArr, l00Var, y1Var, q20Var, 0);
+        System.currentTimeMillis();
+        v0Var.evaluateJavascript(org.telegram.messenger.i0.y2(null, R.raw.open_collapsed).replace("$OPEN$", "true"), new r1(y1Var, v0Var, new File(org.telegram.messenger.i0.E0(), "archive.mht"), q1Var, 0));
+        return new w5(zArr, 20);
+    }
+
+    public static boolean f(JSONArray jSONArray) {
+        List asList = Arrays.asList("b", "strong", "span", "img", "i", "s", "a", "code", "mark", "sub", "sup");
+        for (int i10 = 0; i10 < jSONArray.length(); i10++) {
+            Object obj = jSONArray.get(i10);
+            if (!(obj instanceof String)) {
+                if (obj instanceof JSONObject) {
+                    JSONObject jSONObject = (JSONObject) obj;
+                    String optString = jSONObject.optString("tag");
+                    if (!asList.contains(optString)) {
+                        if ("div".equalsIgnoreCase(optString) || "span".equalsIgnoreCase(optString)) {
+                            f(jSONObject.optJSONArray("content"));
+                        }
+                    }
+                }
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static void g(x1 x1Var, ImageReceiver imageReceiver, Runnable runnable) {
+        y1 y1Var;
+        e1 e1Var;
+        Bitmap decodeStream;
+        if (x1Var == null || (y1Var = x1Var.a) == null) {
+            return;
+        }
+        HashMap hashMap = y1Var.d;
+        try {
+            if (y1Var.b != null) {
+                Iterator it = x1Var.c.iterator();
+                e1Var = null;
+                while (it.hasNext()) {
+                    e1Var = (e1) ((HashMap) y1Var.b.c).get((String) it.next());
+                    if (e1Var != null) {
+                        break;
                     }
                 }
             } else {
-                z10 = true;
+                e1Var = null;
             }
-            if (z10) {
-                file.delete();
-            }
-        } else {
-            if (bool != null && bool.booleanValue() != file.getName().startsWith("Cookies")) {
-                return false;
-            }
-            file.delete();
-        }
-        return true;
-    }
-
-    public static long a0(File file, Boolean bool) {
-        long j10 = 0;
-        if (file == null || !file.exists()) {
-            return 0L;
-        }
-        if (file.isDirectory()) {
-            File[] listFiles = file.listFiles();
-            if (listFiles != null) {
-                for (File file2 : listFiles) {
-                    j10 += a0(file2, bool);
-                }
-                return j10;
-            }
-        } else if (bool == null || bool.booleanValue() == file.getName().startsWith("Cookies")) {
-            return file.length();
-        }
-        return 0L;
-    }
-
-    @Override // org.telegram.ui.Components.n71
-    public final void V(ArrayList arrayList, k71 k71Var) {
-        boolean isWebBrowserInAppEnabled = getMessagesController().isWebBrowserInAppEnabled();
-        arrayList.size();
-        String string = LocaleController.getString(R.string.BrowserSettingsEnable);
-        u61 u61Var = new u61(9);
-        u61Var.d = 1;
-        u61Var.l = string;
-        u61Var.L(isWebBrowserInAppEnabled);
-        arrayList.add(u61Var);
-        ic.a.z(R.string.BrowserSettingsEnableInfo, arrayList);
-        if (!isWebBrowserInAppEnabled) {
-            getMessagesController().isWebBrowserUseCustomTabs();
-            u61 i10 = u61.i(17, LocaleController.getString(R.string.WebBrowserShowCloseButton));
-            i10.L(getMessagesController().isWebBrowserUseCustomTabs());
-            arrayList.add(i10);
-            ic.a.z(R.string.WebBrowserShowCloseButtonInfo, arrayList);
-            arrayList.add(u61.u(LocaleController.getString(R.string.BrowserSettingsAlwaysOpenInTitle2)));
-            arrayList.size();
-            o2 o2Var = this.e;
-            String string2 = LocaleController.getString(R.string.BrowserSettingsNeverOpenInAdd);
-            u61 u61Var2 = new u61(3);
-            u61Var2.d = 16;
-            u61Var2.G = o2Var;
-            u61Var2.l = string2;
-            u61Var2.q = true;
-            arrayList.add(u61Var2);
-            List<TL_account.WebDomainException> webBrowserExceptionsList = getMessagesController().getWebBrowserExceptionsList(false);
-            for (TL_account.WebDomainException webDomainException : webBrowserExceptionsList) {
-                String str = webDomainException.domain;
-                String str2 = webDomainException.title;
-                long j10 = webDomainException.favicon;
-                int i11 = w1.a;
-                u61 K = u61.K(w1.class);
-                K.l = str;
-                K.n = str2;
-                K.B = j10;
-                arrayList.add(K);
-            }
-            arrayList.add(u61.C(LocaleController.getString(R.string.BrowserSettingsAlwaysOpenInInfo2)));
-            if (webBrowserExceptionsList.isEmpty()) {
-                return;
-            }
-            arrayList.size();
-            u61 e = u61.e(5, LocaleController.getString(R.string.BrowserSettingsNeverOpenInClearList2));
-            e.r = true;
-            arrayList.add(e);
-            arrayList.add(u61.C(null));
-            return;
-        }
-        arrayList.size();
-        int i12 = R.drawable.menu_clear_cookies;
-        String string3 = LocaleController.getString(R.string.BrowserSettingsCookiesClear);
-        long j11 = this.n;
-        arrayList.add(u61.d(3, i12, string3, j11 > 0 ? AndroidUtilities.formatFileSize(j11) : ""));
-        arrayList.size();
-        int i13 = R.drawable.menu_clear_cache;
-        String string4 = LocaleController.getString(R.string.BrowserSettingsCacheClear);
-        long j12 = this.h;
-        arrayList.add(u61.d(2, i13, string4, j12 > 0 ? AndroidUtilities.formatFileSize(j12) : ""));
-        ic.a.z(R.string.BrowserSettingsCookiesInfo, arrayList);
-        if (this.r > 0) {
-            arrayList.size();
-            arrayList.add(u61.c(9, R.drawable.menu_clear_recent, LocaleController.getString(R.string.BrowserSettingsHistoryShow)));
-            arrayList.size();
-            arrayList.add(u61.d(7, R.drawable.menu_clear_cache, LocaleController.getString(R.string.BrowserSettingsHistoryClear), LocaleController.formatPluralStringComma("BrowserSettingsHistoryPages", (int) this.r, ',')));
-            arrayList.add(u61.C(null));
-        }
-        arrayList.add(u61.u(LocaleController.getString(R.string.BrowserSettingsNeverOpenInTitle2)));
-        arrayList.size();
-        o2 o2Var2 = this.e;
-        String string5 = LocaleController.getString(R.string.BrowserSettingsNeverOpenInAdd);
-        u61 u61Var3 = new u61(3);
-        u61Var3.d = 15;
-        u61Var3.G = o2Var2;
-        u61Var3.l = string5;
-        u61Var3.q = true;
-        arrayList.add(u61Var3);
-        List<TL_account.WebDomainException> webBrowserExceptionsList2 = getMessagesController().getWebBrowserExceptionsList(true);
-        for (TL_account.WebDomainException webDomainException2 : webBrowserExceptionsList2) {
-            String str3 = webDomainException2.domain;
-            String str4 = webDomainException2.title;
-            long j13 = webDomainException2.favicon;
-            int i14 = w1.a;
-            u61 K2 = u61.K(w1.class);
-            K2.l = str3;
-            K2.n = str4;
-            K2.B = j13;
-            arrayList.add(K2);
-        }
-        arrayList.add(u61.C(LocaleController.getString(R.string.BrowserSettingsNeverOpenInInfo2)));
-        if (!webBrowserExceptionsList2.isEmpty()) {
-            arrayList.size();
-            u61 e10 = u61.e(5, LocaleController.getString(R.string.BrowserSettingsNeverOpenInClearList2));
-            e10.r = true;
-            arrayList.add(e10);
-            arrayList.add(u61.C(null));
-        }
-        arrayList.size();
-        arrayList.add(u61.d(6, R.drawable.msg_search, LocaleController.getString(R.string.SearchEngine), n1.a().a));
-        ic.a.z(R.string.BrowserSettingsSearchEngineInfo, arrayList);
-        if (BuildVars.DEBUG_PRIVATE_VERSION) {
-            u61 i15 = u61.i(12, "adaptable colors");
-            i15.L(SharedConfig.adaptableColorInBrowser);
-            arrayList.add(i15);
-            u61 i16 = u61.i(13, "only local IV");
-            i16.L(SharedConfig.onlyLocalInstantView);
-            arrayList.add(i16);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.n71
-    public final CharSequence W() {
-        return LocaleController.getString(R.string.BrowserSettingsTitle);
-    }
-
-    @Override // org.telegram.ui.Components.n71
-    public final void X(u61 u61Var, View view) {
-        int i10 = u61Var.d;
-        if (i10 == 12) {
-            SharedConfig.toggleBrowserAdaptableColors();
-            ((a9) view).setChecked(SharedConfig.adaptableColorInBrowser);
-            return;
-        }
-        if (i10 == 13) {
-            SharedConfig.toggleLocalInstantView();
-            ((a9) view).setChecked(SharedConfig.onlyLocalInstantView);
-            return;
-        }
-        final int i11 = 1;
-        if (i10 == 17) {
-            boolean z10 = !getMessagesController().isWebBrowserUseCustomTabs();
-            getMessagesController().toggleWebBrowserUseCustomTabs(z10);
-            ((a9) view).setChecked(z10);
-            this.a.g3.O(true);
-            return;
-        }
-        final int i12 = 0;
-        if (i10 == 1) {
-            getMessagesController().toggleWebBrowserInAppEnabled();
-            boolean isWebBrowserInAppEnabled = getMessagesController().isWebBrowserInAppEnabled();
-            a9 a9Var = (a9) view;
-            a9Var.setChecked(isWebBrowserInAppEnabled);
-            a9Var.b(y6.x0(null, isWebBrowserInAppEnabled ? y6.f6 : y6.e6, false), isWebBrowserInAppEnabled);
-            this.a.g3.O(true);
-            return;
-        }
-        int i13 = 10;
-        if (i10 == 10) {
-            getMessagesController().toggleWebBrowserUseCustomTabs(true);
-            this.a.g3.O(true);
-            return;
-        }
-        if (i10 == 11) {
-            getMessagesController().toggleWebBrowserUseCustomTabs(false);
-            this.a.g3.O(true);
-            return;
-        }
-        String str = "";
-        final int i14 = 2;
-        if (i10 == 2) {
-            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getParentActivity(), 0, getResourceProvider());
-            String string = LocaleController.getString(R.string.BrowserSettingsCacheClear);
-            org.telegram.ui.ActionBar.e2 e2Var = alertDialog$Builder.a;
-            e2Var.R = string;
-            int i15 = R.string.BrowserSettingsCacheClearText;
-            if (this.h != 0) {
-                str = " (" + AndroidUtilities.formatFileSize(this.h) + ")";
-            }
-            e2Var.T = LocaleController.formatString(i15, str);
-            alertDialog$Builder.k(LocaleController.getString(R.string.Clear), new org.telegram.ui.ActionBar.b2(this) { // from class: org.telegram.ui.web.v1
-                public final /* synthetic */ y1 b;
-
-                {
-                    this.b = this;
-                }
-
-                @Override // org.telegram.ui.ActionBar.b2
-                public final void h(org.telegram.ui.ActionBar.e2 e2Var2, int i16) {
-                    switch (i12) {
-                        case 0:
-                            y1 y1Var = this.b;
-                            y1Var.getClass();
-                            ApplicationLoader.applicationContext.deleteDatabase("webview.db");
-                            ApplicationLoader.applicationContext.deleteDatabase("webviewCache.db");
-                            WebStorage.getInstance().deleteAllData();
-                            try {
-                                WebView webView = new WebView(y1Var.getParentActivity());
-                                webView.clearCache(true);
-                                webView.clearHistory();
-                                webView.destroy();
-                            } catch (Exception unused) {
-                            }
-                            try {
-                                File file = new File(ApplicationLoader.applicationContext.getApplicationInfo().dataDir, "app_webview");
-                                if (file.exists()) {
-                                    y1.Z(file, Boolean.FALSE);
-                                }
-                            } catch (Exception e) {
-                                FileLog.e(e);
-                            }
-                            try {
-                                File file2 = new File(ApplicationLoader.applicationContext.getApplicationInfo().dataDir, "cache/WebView");
-                                if (file2.exists()) {
-                                    y1.Z(file2, null);
-                                }
-                            } catch (Exception e10) {
-                                FileLog.e(e10);
-                            }
-                            m2 b10 = m2.b();
-                            HashMap hashMap = b10.a;
-                            if (hashMap == null) {
-                                b10.c = false;
-                                b10.b = true;
-                                b10.a = new HashMap();
-                            } else {
-                                hashMap.clear();
-                            }
-                            b10.d();
-                            y1Var.b0();
-                            break;
-                        case 1:
-                            y1 y1Var2 = this.b;
-                            y1Var2.getClass();
-                            CookieManager cookieManager = CookieManager.getInstance();
-                            cookieManager.removeAllCookies(null);
-                            cookieManager.flush();
-                            try {
-                                File file3 = new File(ApplicationLoader.applicationContext.getApplicationInfo().dataDir, "app_webview");
-                                if (file3.exists()) {
-                                    y1.Z(file3, Boolean.TRUE);
-                                }
-                            } catch (Exception e11) {
-                                FileLog.e(e11);
-                            }
-                            y1Var2.b0();
-                            break;
-                        case 2:
-                            y1 y1Var3 = this.b;
-                            try {
-                                c1.c.clear();
-                                c1.d.clear();
-                                File file4 = new File(FileLoader.getDirectory(4), "webhistory.dat");
-                                if (file4.exists()) {
-                                    file4.delete();
-                                }
-                            } catch (Exception e12) {
-                                FileLog.e(e12);
-                            }
-                            y1Var3.r = 0L;
-                            y1Var3.a.g3.O(true);
-                            break;
-                        default:
-                            y1 y1Var4 = this.b;
-                            y1Var4.getMessagesController().clearAllWebBrowserExceptions();
-                            y1Var4.a.g3.O(true);
-                            break;
-                    }
-                }
-            });
-            alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-            alertDialog$Builder.d(-1);
-            alertDialog$Builder.p();
-            return;
-        }
-        final int i16 = 3;
-        if (i10 == 3) {
-            AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(getParentActivity(), 0, getResourceProvider());
-            String string2 = LocaleController.getString(R.string.BrowserSettingsCookiesClear);
-            org.telegram.ui.ActionBar.e2 e2Var2 = alertDialog$Builder2.a;
-            e2Var2.R = string2;
-            int i17 = R.string.BrowserSettingsCookiesClearText;
-            if (this.n != 0) {
-                str = " (" + AndroidUtilities.formatFileSize(this.n) + ")";
-            }
-            e2Var2.T = LocaleController.formatString(i17, str);
-            alertDialog$Builder2.k(LocaleController.getString(R.string.Clear), new org.telegram.ui.ActionBar.b2(this) { // from class: org.telegram.ui.web.v1
-                public final /* synthetic */ y1 b;
-
-                {
-                    this.b = this;
-                }
-
-                @Override // org.telegram.ui.ActionBar.b2
-                public final void h(org.telegram.ui.ActionBar.e2 e2Var22, int i162) {
-                    switch (i11) {
-                        case 0:
-                            y1 y1Var = this.b;
-                            y1Var.getClass();
-                            ApplicationLoader.applicationContext.deleteDatabase("webview.db");
-                            ApplicationLoader.applicationContext.deleteDatabase("webviewCache.db");
-                            WebStorage.getInstance().deleteAllData();
-                            try {
-                                WebView webView = new WebView(y1Var.getParentActivity());
-                                webView.clearCache(true);
-                                webView.clearHistory();
-                                webView.destroy();
-                            } catch (Exception unused) {
-                            }
-                            try {
-                                File file = new File(ApplicationLoader.applicationContext.getApplicationInfo().dataDir, "app_webview");
-                                if (file.exists()) {
-                                    y1.Z(file, Boolean.FALSE);
-                                }
-                            } catch (Exception e) {
-                                FileLog.e(e);
-                            }
-                            try {
-                                File file2 = new File(ApplicationLoader.applicationContext.getApplicationInfo().dataDir, "cache/WebView");
-                                if (file2.exists()) {
-                                    y1.Z(file2, null);
-                                }
-                            } catch (Exception e10) {
-                                FileLog.e(e10);
-                            }
-                            m2 b10 = m2.b();
-                            HashMap hashMap = b10.a;
-                            if (hashMap == null) {
-                                b10.c = false;
-                                b10.b = true;
-                                b10.a = new HashMap();
-                            } else {
-                                hashMap.clear();
-                            }
-                            b10.d();
-                            y1Var.b0();
-                            break;
-                        case 1:
-                            y1 y1Var2 = this.b;
-                            y1Var2.getClass();
-                            CookieManager cookieManager = CookieManager.getInstance();
-                            cookieManager.removeAllCookies(null);
-                            cookieManager.flush();
-                            try {
-                                File file3 = new File(ApplicationLoader.applicationContext.getApplicationInfo().dataDir, "app_webview");
-                                if (file3.exists()) {
-                                    y1.Z(file3, Boolean.TRUE);
-                                }
-                            } catch (Exception e11) {
-                                FileLog.e(e11);
-                            }
-                            y1Var2.b0();
-                            break;
-                        case 2:
-                            y1 y1Var3 = this.b;
-                            try {
-                                c1.c.clear();
-                                c1.d.clear();
-                                File file4 = new File(FileLoader.getDirectory(4), "webhistory.dat");
-                                if (file4.exists()) {
-                                    file4.delete();
-                                }
-                            } catch (Exception e12) {
-                                FileLog.e(e12);
-                            }
-                            y1Var3.r = 0L;
-                            y1Var3.a.g3.O(true);
-                            break;
-                        default:
-                            y1 y1Var4 = this.b;
-                            y1Var4.getMessagesController().clearAllWebBrowserExceptions();
-                            y1Var4.a.g3.O(true);
-                            break;
-                    }
-                }
-            });
-            alertDialog$Builder2.h(LocaleController.getString(R.string.Cancel), null);
-            alertDialog$Builder2.d(-1);
-            alertDialog$Builder2.p();
-            return;
-        }
-        if (i10 == 7) {
-            ArrayList a2 = c1.a(null);
-            int size = a2.size();
-            long j10 = Long.MAX_VALUE;
-            int i18 = 0;
-            while (i18 < size) {
-                Object obj = a2.get(i18);
-                i18++;
-                j10 = Math.min(j10, ((b1) obj).b);
-            }
-            AlertDialog$Builder alertDialog$Builder3 = new AlertDialog$Builder(getParentActivity(), 0, getResourceProvider());
-            String string3 = LocaleController.getString(R.string.BrowserSettingsHistoryClear);
-            org.telegram.ui.ActionBar.e2 e2Var3 = alertDialog$Builder3.a;
-            e2Var3.R = string3;
-            e2Var3.T = LocaleController.formatString(R.string.BrowserSettingsHistoryClearText, LocaleController.formatDateChat(j10 / 1000));
-            alertDialog$Builder3.k(LocaleController.getString(R.string.Clear), new org.telegram.ui.ActionBar.b2(this) { // from class: org.telegram.ui.web.v1
-                public final /* synthetic */ y1 b;
-
-                {
-                    this.b = this;
-                }
-
-                @Override // org.telegram.ui.ActionBar.b2
-                public final void h(org.telegram.ui.ActionBar.e2 e2Var22, int i162) {
-                    switch (i14) {
-                        case 0:
-                            y1 y1Var = this.b;
-                            y1Var.getClass();
-                            ApplicationLoader.applicationContext.deleteDatabase("webview.db");
-                            ApplicationLoader.applicationContext.deleteDatabase("webviewCache.db");
-                            WebStorage.getInstance().deleteAllData();
-                            try {
-                                WebView webView = new WebView(y1Var.getParentActivity());
-                                webView.clearCache(true);
-                                webView.clearHistory();
-                                webView.destroy();
-                            } catch (Exception unused) {
-                            }
-                            try {
-                                File file = new File(ApplicationLoader.applicationContext.getApplicationInfo().dataDir, "app_webview");
-                                if (file.exists()) {
-                                    y1.Z(file, Boolean.FALSE);
-                                }
-                            } catch (Exception e) {
-                                FileLog.e(e);
-                            }
-                            try {
-                                File file2 = new File(ApplicationLoader.applicationContext.getApplicationInfo().dataDir, "cache/WebView");
-                                if (file2.exists()) {
-                                    y1.Z(file2, null);
-                                }
-                            } catch (Exception e10) {
-                                FileLog.e(e10);
-                            }
-                            m2 b10 = m2.b();
-                            HashMap hashMap = b10.a;
-                            if (hashMap == null) {
-                                b10.c = false;
-                                b10.b = true;
-                                b10.a = new HashMap();
-                            } else {
-                                hashMap.clear();
-                            }
-                            b10.d();
-                            y1Var.b0();
-                            break;
-                        case 1:
-                            y1 y1Var2 = this.b;
-                            y1Var2.getClass();
-                            CookieManager cookieManager = CookieManager.getInstance();
-                            cookieManager.removeAllCookies(null);
-                            cookieManager.flush();
-                            try {
-                                File file3 = new File(ApplicationLoader.applicationContext.getApplicationInfo().dataDir, "app_webview");
-                                if (file3.exists()) {
-                                    y1.Z(file3, Boolean.TRUE);
-                                }
-                            } catch (Exception e11) {
-                                FileLog.e(e11);
-                            }
-                            y1Var2.b0();
-                            break;
-                        case 2:
-                            y1 y1Var3 = this.b;
-                            try {
-                                c1.c.clear();
-                                c1.d.clear();
-                                File file4 = new File(FileLoader.getDirectory(4), "webhistory.dat");
-                                if (file4.exists()) {
-                                    file4.delete();
-                                }
-                            } catch (Exception e12) {
-                                FileLog.e(e12);
-                            }
-                            y1Var3.r = 0L;
-                            y1Var3.a.g3.O(true);
-                            break;
-                        default:
-                            y1 y1Var4 = this.b;
-                            y1Var4.getMessagesController().clearAllWebBrowserExceptions();
-                            y1Var4.a.g3.O(true);
-                            break;
-                    }
-                }
-            });
-            alertDialog$Builder3.h(LocaleController.getString(R.string.Cancel), null);
-            alertDialog$Builder3.d(-1);
-            alertDialog$Builder3.p();
-            return;
-        }
-        if (i10 == 9) {
-            f1[] f1VarArr = {null};
-            r2 f1Var = new f1(null, new org.telegram.ui.Wallet.s(15, this, f1VarArr));
-            f1VarArr[0] = f1Var;
-            presentFragment(f1Var);
-            return;
-        }
-        if (i10 == 5) {
-            AlertDialog$Builder alertDialog$Builder4 = new AlertDialog$Builder(getParentActivity(), 0, getResourceProvider());
-            String string4 = LocaleController.getString(R.string.WebBrowserDeleteAllExceptionsTitle);
-            org.telegram.ui.ActionBar.e2 e2Var4 = alertDialog$Builder4.a;
-            e2Var4.R = string4;
-            e2Var4.T = LocaleController.getString(R.string.WebBrowserDeleteAllExceptionsMessage);
-            alertDialog$Builder4.k(LocaleController.getString(R.string.Delete), new org.telegram.ui.ActionBar.b2(this) { // from class: org.telegram.ui.web.v1
-                public final /* synthetic */ y1 b;
-
-                {
-                    this.b = this;
-                }
-
-                @Override // org.telegram.ui.ActionBar.b2
-                public final void h(org.telegram.ui.ActionBar.e2 e2Var22, int i162) {
-                    switch (i16) {
-                        case 0:
-                            y1 y1Var = this.b;
-                            y1Var.getClass();
-                            ApplicationLoader.applicationContext.deleteDatabase("webview.db");
-                            ApplicationLoader.applicationContext.deleteDatabase("webviewCache.db");
-                            WebStorage.getInstance().deleteAllData();
-                            try {
-                                WebView webView = new WebView(y1Var.getParentActivity());
-                                webView.clearCache(true);
-                                webView.clearHistory();
-                                webView.destroy();
-                            } catch (Exception unused) {
-                            }
-                            try {
-                                File file = new File(ApplicationLoader.applicationContext.getApplicationInfo().dataDir, "app_webview");
-                                if (file.exists()) {
-                                    y1.Z(file, Boolean.FALSE);
-                                }
-                            } catch (Exception e) {
-                                FileLog.e(e);
-                            }
-                            try {
-                                File file2 = new File(ApplicationLoader.applicationContext.getApplicationInfo().dataDir, "cache/WebView");
-                                if (file2.exists()) {
-                                    y1.Z(file2, null);
-                                }
-                            } catch (Exception e10) {
-                                FileLog.e(e10);
-                            }
-                            m2 b10 = m2.b();
-                            HashMap hashMap = b10.a;
-                            if (hashMap == null) {
-                                b10.c = false;
-                                b10.b = true;
-                                b10.a = new HashMap();
-                            } else {
-                                hashMap.clear();
-                            }
-                            b10.d();
-                            y1Var.b0();
-                            break;
-                        case 1:
-                            y1 y1Var2 = this.b;
-                            y1Var2.getClass();
-                            CookieManager cookieManager = CookieManager.getInstance();
-                            cookieManager.removeAllCookies(null);
-                            cookieManager.flush();
-                            try {
-                                File file3 = new File(ApplicationLoader.applicationContext.getApplicationInfo().dataDir, "app_webview");
-                                if (file3.exists()) {
-                                    y1.Z(file3, Boolean.TRUE);
-                                }
-                            } catch (Exception e11) {
-                                FileLog.e(e11);
-                            }
-                            y1Var2.b0();
-                            break;
-                        case 2:
-                            y1 y1Var3 = this.b;
-                            try {
-                                c1.c.clear();
-                                c1.d.clear();
-                                File file4 = new File(FileLoader.getDirectory(4), "webhistory.dat");
-                                if (file4.exists()) {
-                                    file4.delete();
-                                }
-                            } catch (Exception e12) {
-                                FileLog.e(e12);
-                            }
-                            y1Var3.r = 0L;
-                            y1Var3.a.g3.O(true);
-                            break;
-                        default:
-                            y1 y1Var4 = this.b;
-                            y1Var4.getMessagesController().clearAllWebBrowserExceptions();
-                            y1Var4.a.g3.O(true);
-                            break;
-                    }
-                }
-            });
-            alertDialog$Builder4.h(LocaleController.getString(R.string.Cancel), null);
-            alertDialog$Builder4.d(-1);
-            alertDialog$Builder4.p();
-            return;
-        }
-        if (u61Var.H(w1.class)) {
-            x1 x1Var = (x1) view;
-            String str2 = x1Var.e;
-            l80 F = l80.F((ViewGroup) this.fragmentView, null, x1Var);
-            F.s = 40;
-            F.c(R.drawable.menu_delete_old, LocaleController.getString(R.string.Remove), new a6(18, this, str2), false);
-            F.Z();
-            return;
-        }
-        int i19 = u61Var.d;
-        if (i19 == 6) {
-            if (getParentActivity() == null) {
-                return;
-            }
-            AtomicReference atomicReference = new AtomicReference();
-            LinearLayout linearLayout = new LinearLayout(getParentActivity());
-            linearLayout.setOrientation(1);
-            ArrayList b10 = n1.b();
-            int size2 = b10.size();
-            CharSequence[] charSequenceArr = new CharSequence[size2];
-            int i20 = 0;
-            while (i20 < size2) {
-                charSequenceArr[i20] = ((n1) b10.get(i20)).a;
-                p6 p6Var = new p6(getParentActivity(), null);
-                p6Var.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
-                p6Var.a(y6.x0(null, y6.g7, false), y6.x0(null, y6.E5, false));
-                p6Var.b(charSequenceArr[i20], i20 == SharedConfig.searchEngineType);
-                int i21 = y6.i6;
-                org.telegram.ui.Cells.y g02 = y6.g0(y6.x0(null, i21, false), 2, -1);
-                b7 N = f7.N(i21);
-                p6Var.setBackground(g02);
-                f7.k(p6Var, g02, null, N, null);
-                linearLayout.addView(p6Var);
-                p6Var.setOnClickListener(new pa(i20, view, atomicReference));
-                i20++;
-            }
-            AlertDialog$Builder alertDialog$Builder5 = new AlertDialog$Builder(getParentActivity());
-            String string5 = LocaleController.getString(R.string.SearchEngine);
-            org.telegram.ui.ActionBar.e2 e2Var5 = alertDialog$Builder5.a;
-            e2Var5.R = string5;
-            alertDialog$Builder5.o(linearLayout);
-            alertDialog$Builder5.h(LocaleController.getString(R.string.Cancel), null);
-            atomicReference.set(e2Var5);
-            showDialog(e2Var5);
-            return;
-        }
-        if (i19 == 15 || i19 == 16) {
-            boolean isWebBrowserInAppEnabled2 = getMessagesController().isWebBrowserInAppEnabled();
-            if (getMessagesController().isWebBrowserExceptionsLimitReached(isWebBrowserInAppEnabled2)) {
-                g5.t0(this, LocaleController.getString(R.string.WebBrowserExceptionsLimitTitle), LocaleController.getString(R.string.WebBrowserExceptionsLimitMessage), null);
-                return;
-            }
-            Activity parentActivity = getParentActivity();
-            u6 resourceProvider = getResourceProvider();
-            t8 t8Var = new t8(i13, this, isWebBrowserInAppEnabled2);
-            Pattern pattern = g5.a;
-            Activity findActivity = AndroidUtilities.findActivity(parentActivity);
-            View currentFocus = findActivity != null ? findActivity.getCurrentFocus() : null;
-            org.telegram.ui.ActionBar.e2[] e2VarArr = new org.telegram.ui.ActionBar.e2[1];
-            AlertDialog$Builder alertDialog$Builder6 = new AlertDialog$Builder(parentActivity, 0, resourceProvider);
-            String string6 = LocaleController.getString(isWebBrowserInAppEnabled2 ? R.string.BrowserSettingsAddTitle : R.string.BrowserSettingsAddTitleExternal);
-            org.telegram.ui.ActionBar.e2 e2Var6 = alertDialog$Builder6.a;
-            e2Var6.R = string6;
-            e2Var6.T = LocaleController.getString(isWebBrowserInAppEnabled2 ? R.string.BrowserSettingsAddText : R.string.BrowserSettingsAddTextExternal);
-            f5 f5Var = new f5(parentActivity);
-            f5Var.setTextSize(1, 16.0f);
-            int i22 = y6.j5;
-            f7.V(f5Var, i22, resourceProvider);
-            f7.E(f5Var, y6.Xh, resourceProvider);
-            f5Var.setHint(LocaleController.getString(R.string.BrowserSettingsAddHint));
-            f5Var.setInputType(17);
-            f5Var.setImeOptions(6);
-            f5Var.setSingleLine(true);
-            f5Var.setFocusable(true);
-            f5Var.setPadding(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(13.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(13.0f));
-            f5Var.setCursorWidth(1.5f);
-            f5Var.i(y6.q6, resourceProvider);
-            ShapeDrawable c02 = y6.c0(AndroidUtilities.dp(22.0f), y6.o1(0.06f, y6.w0(i22, resourceProvider)));
-            b7 L = f7.L(0.06f, i22);
-            f5Var.setBackground(c02);
-            f7.k(f5Var, c02, L, null, resourceProvider);
-            m4.v0 v0Var = new m4.v0(f5Var, t8Var, e2VarArr, currentFocus, 23);
-            f5Var.setOnEditorActionListener(new org.telegram.ui.Components.d1(v0Var, i12));
-            LinearLayout linearLayout2 = new LinearLayout(parentActivity);
-            linearLayout2.setOrientation(1);
-            linearLayout2.addView(f5Var, kb1.o(24.0f, 4.0f, 24.0f, 9.0f, -1, -2));
-            alertDialog$Builder6.c();
-            alertDialog$Builder6.o(linearLayout2);
-            e2Var6.a = Math.min(AndroidUtilities.dp(320.0f), (AndroidUtilities.displaySize.x * 85) / 100);
-            alertDialog$Builder6.k(LocaleController.getString(R.string.Done), new org.telegram.ui.Components.s(v0Var, 2));
-            alertDialog$Builder6.h(LocaleController.getString(R.string.Cancel), new cg(17));
-            e2VarArr[0] = e2Var6;
-            e2Var6.j0 = false;
-            e2Var6.setOnDismissListener(new org.telegram.ui.Components.z0(f5Var, i11));
-            e2VarArr[0].setOnShowListener(new org.telegram.ui.Components.e1(i12, f5Var));
-            e2VarArr[0].show();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.n71
-    public final boolean Y(u61 u61Var, View view) {
-        return false;
-    }
-
-    public final void b0() {
-        k71 k71Var;
-        if (c1.a(new ig.o(this, 15)) != null) {
-            this.r = r0.size();
-            m71 m71Var = this.a;
-            if (m71Var != null && (k71Var = m71Var.g3) != null && m71Var.G) {
-                k71Var.O(true);
-            }
-        }
-        Utilities.globalQueue.postRunnable(new h1(this, 2));
-    }
-
-    @Override // org.telegram.ui.Components.n71, org.telegram.ui.ActionBar.r2
-    public final View createView(Context context) {
-        setHasOwnBackground(true);
-        Drawable mutate = context.getResources().getDrawable(R.drawable.poll_add_circle).mutate();
-        Drawable mutate2 = context.getResources().getDrawable(R.drawable.poll_add_plus).mutate();
-        int themedColor = getThemedColor(y6.N6);
-        PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
-        mutate.setColorFilter(new PorterDuffColorFilter(themedColor, mode));
-        mutate2.setColorFilter(new PorterDuffColorFilter(getThemedColor(y6.k7), mode));
-        o2 o2Var = new o2(mutate, mutate2, 4);
-        o2Var.x = AndroidUtilities.dp(2.0f);
-        this.e = o2Var;
-        this.fragmentView = super.createView(context);
-        this.a.u1();
-        this.a.setSectionsDrawBackground(true);
-        return this.fragmentView;
-    }
-
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        m71 m71Var;
-        if (i10 != NotificationCenter.webBrowserSettingsUpdate || (m71Var = this.a) == null) {
-            return;
-        }
-        m71Var.g3.O(true);
-    }
-
-    @Override // org.telegram.ui.ActionBar.r2
-    public final nm0 getListViewForSimpleGlass() {
-        return this.a;
-    }
-
-    @Override // org.telegram.ui.ActionBar.r2
-    public final boolean isSupportEdgeToEdge() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.ActionBar.r2
-    public final boolean onFragmentCreate() {
-        b0();
-        getNotificationCenter().addWeakObserver(this, NotificationCenter.webBrowserSettingsUpdate);
-        return super.onFragmentCreate();
-    }
-
-    @Override // org.telegram.ui.ActionBar.r2
-    public final void onFragmentDestroy() {
-        super.onFragmentDestroy();
-        getNotificationCenter().removeObserver(this, NotificationCenter.webBrowserSettingsUpdate);
-    }
-
-    @Override // org.telegram.ui.ActionBar.r2
-    public final void onThemeColorsChanged() {
-        super.onThemeColorsChanged();
-        try {
-            o2 o2Var = this.e;
-            if (o2Var != null) {
-                int themedColor = getThemedColor(y6.N6);
-                int themedColor2 = getThemedColor(y6.k7);
-                if (themedColor == this.s && themedColor2 == this.v) {
+            if (e1Var == null) {
+                if (hashMap.containsKey(x1Var.b)) {
+                    imageReceiver.v0((Bitmap) hashMap.get(x1Var.b));
                     return;
                 }
-                this.s = themedColor;
-                this.v = themedColor2;
-                Drawable drawable = o2Var.a;
-                if (drawable != null) {
-                    drawable.setColorFilter(new PorterDuffColorFilter(themedColor, PorterDuff.Mode.MULTIPLY));
+                if (f == null) {
+                    f = new HashMap();
                 }
-                Drawable drawable2 = o2Var.b;
-                if (drawable2 != null) {
-                    drawable2.setColorFilter(new PorterDuffColorFilter(themedColor2, PorterDuff.Mode.MULTIPLY));
+                ArrayList arrayList = (ArrayList) f.get(x1Var.b);
+                if (arrayList == null) {
+                    f.put(x1Var.b, new ArrayList());
+                    new c1(new f11(20, y1Var, x1Var)).execute(x1Var.b);
+                    return;
                 }
-                m71 m71Var = this.a;
-                if (m71Var != null) {
-                    m71Var.g1();
+                for (int i10 = 0; i10 < arrayList.size(); i10++) {
+                    if (((Pair) arrayList.get(i10)).first == imageReceiver) {
+                        return;
+                    }
                 }
+                arrayList.add(new Pair(imageReceiver, runnable));
+                return;
             }
-        } catch (Exception e) {
-            FileLog.e(e);
+            f1 f1Var = (f1) e1Var.a.get("content-type");
+            if ((f1Var == null ? null : f1Var.a).contains("svg")) {
+                if (x1Var.d > 0 && x1Var.e > 0) {
+                    decodeStream = d00.g(e1Var.a(), org.telegram.messenger.i0.L(x1Var.d), org.telegram.messenger.i0.L(x1Var.e));
+                }
+                return;
+            }
+            if (x1Var.d <= 0 || x1Var.e <= 0) {
+                BitmapFactory.Options options = new BitmapFactory.Options();
+                options.inJustDecodeBounds = true;
+                BitmapFactory.decodeStream(e1Var.a(), null, options);
+                int i11 = x1Var.d;
+                if (i11 == 0 && x1Var.e == 0) {
+                    x1Var.d = options.outWidth;
+                    x1Var.e = options.outHeight;
+                } else if (i11 == 0) {
+                    x1Var.d = (int) ((options.outWidth / options.outHeight) * x1Var.e);
+                } else if (x1Var.e == 0) {
+                    x1Var.e = (int) ((options.outHeight / options.outWidth) * i11);
+                }
+                runnable.run();
+            }
+            decodeStream = BitmapFactory.decodeStream(e1Var.a());
+            imageReceiver.v0(decodeStream);
+        } catch (Exception e7) {
+            f8.g(e7, true);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.r2
-    public final boolean useSimpleActionBar() {
-        return true;
+    public static TL_iv.textPlain m(String str) {
+        TL_iv.textPlain textplain = new TL_iv.textPlain();
+        textplain.text = str;
+        return textplain;
+    }
+
+    public static void o(TLRPC.WebPage webPage) {
+        TL_iv.Page page;
+        ArrayList<TLRPC.Photo> arrayList;
+        HashMap hashMap = e;
+        y1 y1Var = (y1) hashMap.remove(webPage);
+        if (y1Var != null) {
+            hashMap.remove(y1Var.c);
+            HashMap hashMap2 = y1Var.d;
+            Iterator it = hashMap2.entrySet().iterator();
+            while (it.hasNext()) {
+                org.telegram.messenger.i0.z2((Bitmap) ((Map.Entry) it.next()).getValue());
+            }
+            hashMap2.clear();
+            TLRPC.TL_webPage tL_webPage = y1Var.c;
+            if (tL_webPage == null || (page = tL_webPage.cached_page) == null || (arrayList = page.photos) == null) {
+                return;
+            }
+            int size = arrayList.size();
+            int i10 = 0;
+            while (i10 < size) {
+                TLRPC.Photo photo = arrayList.get(i10);
+                i10++;
+                TLRPC.Photo photo2 = photo;
+                if (photo2 instanceof x1) {
+                    x1 x1Var = (x1) photo2;
+                    HashMap hashMap3 = f;
+                    if (hashMap3 != null) {
+                        hashMap3.remove(x1Var.b);
+                    }
+                }
+            }
+        }
+    }
+
+    public static TL_iv.RichText p(TL_iv.RichText richText) {
+        TL_iv.textPlain textplain;
+        String str;
+        if (richText == null) {
+            return richText;
+        }
+        TL_iv.RichText richText2 = richText.text;
+        if (richText2 != null) {
+            p(richText2);
+            return richText;
+        }
+        if (richText.texts.size() == 1) {
+            p(richText.texts.get(0));
+            return richText;
+        }
+        if (!richText.texts.isEmpty()) {
+            r(richText.texts.get(0));
+            q((TL_iv.RichText) i0.a.g(1, richText.texts));
+            return richText;
+        }
+        if ((richText instanceof TL_iv.textPlain) && (str = (textplain = (TL_iv.textPlain) richText).text) != null) {
+            textplain.text = str.trim();
+        }
+        return richText;
+    }
+
+    public static void q(TL_iv.RichText richText) {
+        TL_iv.textPlain textplain;
+        String str;
+        if (richText == null) {
+            return;
+        }
+        TL_iv.RichText richText2 = richText.text;
+        if (richText2 != null) {
+            q(richText2);
+            return;
+        }
+        if (!richText.texts.isEmpty()) {
+            q((TL_iv.RichText) i0.a.g(1, richText.texts));
+        } else {
+            if (!(richText instanceof TL_iv.textPlain) || (str = (textplain = (TL_iv.textPlain) richText).text) == null) {
+                return;
+            }
+            textplain.text = str.replaceAll("\\s+$", "");
+        }
+    }
+
+    public static void r(TL_iv.RichText richText) {
+        TL_iv.textPlain textplain;
+        String str;
+        if (richText == null) {
+            return;
+        }
+        TL_iv.RichText richText2 = richText.text;
+        if (richText2 != null) {
+            r(richText2);
+            return;
+        }
+        if (!richText.texts.isEmpty()) {
+            r(richText.texts.get(0));
+        } else {
+            if (!(richText instanceof TL_iv.textPlain) || (str = (textplain = (TL_iv.textPlain) richText).text) == null) {
+                return;
+            }
+            textplain.text = str.replaceAll("^\\s+", "");
+        }
+    }
+
+    public final TL_iv.pageBlockPhoto h(JSONObject jSONObject, TL_iv.TL_page tL_page) {
+        TL_iv.pageBlockPhoto pageblockphoto = new TL_iv.pageBlockPhoto();
+        pageblockphoto.caption = new TL_iv.PageCaption();
+        String optString = jSONObject.optString("alt");
+        if (optString != null) {
+            pageblockphoto.caption.text = p(m(optString));
+            pageblockphoto.caption.credit = p(m(""));
+        }
+        String optString2 = jSONObject.optString("src");
+        if (optString2 == null) {
+            return null;
+        }
+        x1 x1Var = new x1();
+        x1Var.a = this;
+        x1Var.id = (-1) - tL_page.photos.size();
+        x1Var.b = optString2;
+        x1Var.c.add(optString2);
+        try {
+            x1Var.d = Integer.parseInt(jSONObject.optString("width"));
+        } catch (Exception unused) {
+        }
+        try {
+            x1Var.e = Integer.parseInt(jSONObject.optString("height"));
+        } catch (Exception unused2) {
+        }
+        if (x1Var.d == 0) {
+            x1Var.d = x1Var.e;
+        }
+        if (x1Var.e == 0) {
+            x1Var.e = x1Var.d;
+        }
+        pageblockphoto.photo_id = x1Var.id;
+        pageblockphoto.url = optString2;
+        tL_page.photos.add(x1Var);
+        return pageblockphoto;
+    }
+
+    public final TLRPC.TL_webPage i(String str, JSONObject jSONObject) {
+        TLRPC.TL_webPage tL_webPage = new TLRPC.TL_webPage();
+        tL_webPage.id = 0L;
+        tL_webPage.url = str;
+        tL_webPage.display_url = str;
+        String string = jSONObject.getString("siteName");
+        if (string != null && !"null".equals(string)) {
+            tL_webPage.flags |= 2;
+            tL_webPage.site_name = string;
+        }
+        String optString = jSONObject.optString("title");
+        if (optString != null && !"null".equals(optString)) {
+            tL_webPage.flags |= 4;
+            tL_webPage.title = optString;
+        }
+        String optString2 = jSONObject.optString("byline");
+        if (optString2 != null && !"null".equals(optString2) && !"by".equalsIgnoreCase(optString2)) {
+            tL_webPage.flags |= 256;
+            tL_webPage.author = optString2;
+        }
+        String optString3 = jSONObject.optString("excerpt");
+        if (optString3 != null && !"null".equals(optString3)) {
+            tL_webPage.flags |= 8;
+            tL_webPage.description = optString3;
+        }
+        JSONArray optJSONArray = jSONObject.optJSONArray("content");
+        if (optJSONArray != null && !"null".equals(optJSONArray)) {
+            tL_webPage.flags |= 1024;
+            String optString4 = jSONObject.optString("title");
+            if ("null".equals(optString4)) {
+                optString4 = null;
+            }
+            "null".equals(jSONObject.optString("publishedTime"));
+            JSONArray optJSONArray2 = jSONObject.optJSONArray("content");
+            TL_iv.TL_page tL_page = new TL_iv.TL_page();
+            tL_page.web = true;
+            tL_page.url = str;
+            tL_page.blocks.addAll(j(optJSONArray2, tL_page));
+            if (tL_page.blocks.isEmpty() || !(tL_page.blocks.get(0) instanceof TL_iv.pageBlockHeader)) {
+                TL_iv.pageBlockTitle pageblocktitle = new TL_iv.pageBlockTitle();
+                pageblocktitle.text = p(m(optString4));
+                tL_page.blocks.add(0, pageblocktitle);
+            }
+            tL_webPage.cached_page = tL_page;
+        }
+        return tL_webPage;
+    }
+
+    /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r17v0, types: [org.telegram.ui.web.y1] */
+    /* JADX WARN: Type inference failed for: r8v5, types: [org.telegram.tgnet.tl.TL_iv$pageBlockList] */
+    /* JADX WARN: Type inference failed for: r8v6, types: [java.lang.Object] */
+    /* JADX WARN: Type inference failed for: r8v7, types: [org.telegram.tgnet.tl.TL_iv$pageBlockOrderedList] */
+    public final ArrayList j(JSONArray jSONArray, TL_iv.TL_page tL_page) {
+        x1 x1Var;
+        TL_iv.pageBlockPhoto pageblockphoto;
+        ?? pageblocklist;
+        TL_iv.pageBlockDetails pageblockdetails;
+        ArrayList arrayList = new ArrayList();
+        for (int i10 = 0; i10 < jSONArray.length(); i10++) {
+            Object obj = jSONArray.get(i10);
+            if (obj instanceof String) {
+                TL_iv.pageBlockParagraph pageblockparagraph = new TL_iv.pageBlockParagraph();
+                pageblockparagraph.text = m((String) obj);
+                arrayList.add(pageblockparagraph);
+            } else if (obj instanceof JSONObject) {
+                JSONObject jSONObject = (JSONObject) obj;
+                String optString = jSONObject.optString("tag");
+                JSONArray optJSONArray = jSONObject.optJSONArray("content");
+                optString.getClass();
+                char c10 = 65535;
+                switch (optString.hashCode()) {
+                    case -1274639644:
+                        if (optString.equals("figure")) {
+                            c10 = 0;
+                            break;
+                        }
+                        break;
+                    case -891980137:
+                        if (optString.equals("strong")) {
+                            c10 = 1;
+                            break;
+                        }
+                        break;
+                    case -577741570:
+                        if (optString.equals("picture")) {
+                            c10 = 2;
+                            break;
+                        }
+                        break;
+                    case zs.i1 /* 97 */:
+                        if (optString.equals("a")) {
+                            c10 = 3;
+                            break;
+                        }
+                        break;
+                    case zs.j1 /* 98 */:
+                        if (optString.equals("b")) {
+                            c10 = 4;
+                            break;
+                        }
+                        break;
+                    case zs.q1 /* 105 */:
+                        if (optString.equals("i")) {
+                            c10 = 5;
+                            break;
+                        }
+                        break;
+                    case zs.x1 /* 112 */:
+                        if (optString.equals("p")) {
+                            c10 = 6;
+                            break;
+                        }
+                        break;
+                    case zs.A1 /* 115 */:
+                        if (optString.equals("s")) {
+                            c10 = 7;
+                            break;
+                        }
+                        break;
+                    case 3273:
+                        if (optString.equals("h1")) {
+                            c10 = '\b';
+                            break;
+                        }
+                        break;
+                    case 3274:
+                        if (optString.equals("h2")) {
+                            c10 = '\t';
+                            break;
+                        }
+                        break;
+                    case 3275:
+                        if (optString.equals("h3")) {
+                            c10 = '\n';
+                            break;
+                        }
+                        break;
+                    case 3276:
+                        if (optString.equals("h4")) {
+                            c10 = 11;
+                            break;
+                        }
+                        break;
+                    case 3277:
+                        if (optString.equals("h5")) {
+                            c10 = '\f';
+                            break;
+                        }
+                        break;
+                    case 3278:
+                        if (optString.equals("h6")) {
+                            c10 = '\r';
+                            break;
+                        }
+                        break;
+                    case 3338:
+                        if (optString.equals("hr")) {
+                            c10 = 14;
+                            break;
+                        }
+                        break;
+                    case 3549:
+                        if (optString.equals("ol")) {
+                            c10 = 15;
+                            break;
+                        }
+                        break;
+                    case 3735:
+                        if (optString.equals("ul")) {
+                            c10 = 16;
+                            break;
+                        }
+                        break;
+                    case 104387:
+                        if (optString.equals("img")) {
+                            c10 = 17;
+                            break;
+                        }
+                        break;
+                    case 111267:
+                        if (optString.equals("pre")) {
+                            c10 = 18;
+                            break;
+                        }
+                        break;
+                    case 114240:
+                        if (optString.equals("sub")) {
+                            c10 = 19;
+                            break;
+                        }
+                        break;
+                    case 114254:
+                        if (optString.equals("sup")) {
+                            c10 = 20;
+                            break;
+                        }
+                        break;
+                    case 3059181:
+                        if (optString.equals("code")) {
+                            c10 = 21;
+                            break;
+                        }
+                        break;
+                    case 3344077:
+                        if (optString.equals("mark")) {
+                            c10 = 22;
+                            break;
+                        }
+                        break;
+                    case 3536714:
+                        if (optString.equals("span")) {
+                            c10 = 23;
+                            break;
+                        }
+                        break;
+                    case 110115790:
+                        if (optString.equals("table")) {
+                            c10 = 24;
+                            break;
+                        }
+                        break;
+                    case 1303202319:
+                        if (optString.equals("blockquote")) {
+                            c10 = 25;
+                            break;
+                        }
+                        break;
+                    case 1557721666:
+                        if (optString.equals("details")) {
+                            c10 = 26;
+                            break;
+                        }
+                        break;
+                }
+                switch (c10) {
+                    case 0:
+                    case 2:
+                        JSONArray optJSONArray2 = jSONObject.optJSONArray("content");
+                        ArrayList arrayList2 = new ArrayList();
+                        TL_iv.pageBlockPhoto pageblockphoto2 = null;
+                        TL_iv.RichText richText = null;
+                        for (int i11 = 0; i11 < optJSONArray2.length(); i11++) {
+                            Object obj2 = optJSONArray2.get(i11);
+                            if (obj2 instanceof JSONObject) {
+                                JSONObject jSONObject2 = (JSONObject) obj2;
+                                String optString2 = jSONObject2.optString("tag");
+                                if ("figurecaption".equalsIgnoreCase(optString2) || "caption".equalsIgnoreCase(optString2)) {
+                                    richText = p(l(jSONObject2, tL_page));
+                                } else if ("img".equalsIgnoreCase(optString2)) {
+                                    pageblockphoto2 = h(jSONObject2, tL_page);
+                                } else if ("source".equalsIgnoreCase(optString2)) {
+                                    String optString3 = jSONObject2.optString("src");
+                                    if (TextUtils.isEmpty(optString3)) {
+                                        String optString4 = jSONObject2.optString("srcset");
+                                        if (!TextUtils.isEmpty(optString4)) {
+                                            for (String str : optString4.split(",")) {
+                                                arrayList2.add(str.trim().split(" ")[0].trim());
+                                            }
+                                        }
+                                    } else {
+                                        arrayList2.add(optString3);
+                                    }
+                                }
+                            }
+                        }
+                        if (pageblockphoto2 == null) {
+                            pageblockphoto = null;
+                        } else {
+                            if (richText != null) {
+                                TL_iv.PageCaption pageCaption = new TL_iv.PageCaption();
+                                pageblockphoto2.caption = pageCaption;
+                                pageCaption.text = richText;
+                                pageCaption.credit = new TL_iv.textEmpty();
+                            }
+                            int i12 = 0;
+                            while (true) {
+                                if (i12 >= tL_page.photos.size()) {
+                                    x1Var = null;
+                                } else if ((tL_page.photos.get(i12) instanceof x1) && tL_page.photos.get(i12).id == pageblockphoto2.photo_id) {
+                                    x1Var = (x1) tL_page.photos.get(i12);
+                                } else {
+                                    i12++;
+                                }
+                            }
+                            if (x1Var != null) {
+                                x1Var.c.addAll(arrayList2);
+                            }
+                            pageblockphoto = pageblockphoto2;
+                        }
+                        if (pageblockphoto == null) {
+                            break;
+                        } else {
+                            arrayList.add(pageblockphoto);
+                            continue;
+                        }
+                        break;
+                    case 1:
+                    case 3:
+                    case 4:
+                    case 5:
+                    case 7:
+                    case 19:
+                    case 20:
+                    case 21:
+                    case 22:
+                    case 23:
+                        JSONArray jSONArray2 = new JSONArray();
+                        jSONArray2.put(jSONObject);
+                        TL_iv.pageBlockParagraph pageblockparagraph2 = new TL_iv.pageBlockParagraph();
+                        pageblockparagraph2.text = k(jSONArray2, tL_page);
+                        arrayList.add(pageblockparagraph2);
+                        break;
+                    case 6:
+                        TL_iv.pageBlockParagraph pageblockparagraph3 = new TL_iv.pageBlockParagraph();
+                        pageblockparagraph3.text = p(l(jSONObject, tL_page));
+                        arrayList.add(pageblockparagraph3);
+                        break;
+                    case '\b':
+                        TL_iv.pageBlockHeading1 pageblockheading1 = new TL_iv.pageBlockHeading1();
+                        pageblockheading1.text = p(l(jSONObject, tL_page));
+                        arrayList.add(pageblockheading1);
+                        break;
+                    case '\t':
+                        TL_iv.pageBlockHeading2 pageblockheading2 = new TL_iv.pageBlockHeading2();
+                        pageblockheading2.text = p(l(jSONObject, tL_page));
+                        arrayList.add(pageblockheading2);
+                        break;
+                    case '\n':
+                        TL_iv.pageBlockHeading3 pageblockheading3 = new TL_iv.pageBlockHeading3();
+                        pageblockheading3.text = p(l(jSONObject, tL_page));
+                        arrayList.add(pageblockheading3);
+                        break;
+                    case 11:
+                        TL_iv.pageBlockHeading4 pageblockheading4 = new TL_iv.pageBlockHeading4();
+                        pageblockheading4.text = p(l(jSONObject, tL_page));
+                        arrayList.add(pageblockheading4);
+                        break;
+                    case '\f':
+                        TL_iv.pageBlockHeading5 pageblockheading5 = new TL_iv.pageBlockHeading5();
+                        pageblockheading5.text = p(l(jSONObject, tL_page));
+                        arrayList.add(pageblockheading5);
+                        break;
+                    case '\r':
+                        TL_iv.pageBlockHeading6 pageblockheading6 = new TL_iv.pageBlockHeading6();
+                        pageblockheading6.text = p(l(jSONObject, tL_page));
+                        arrayList.add(pageblockheading6);
+                        break;
+                    case 14:
+                        arrayList.add(new TL_iv.pageBlockDivider());
+                        break;
+                    case 15:
+                    case 16:
+                        if ("ol".equals(jSONObject.optString("tag"))) {
+                            pageblocklist = new TL_iv.pageBlockOrderedList();
+                            JSONArray jSONArray3 = jSONObject.getJSONArray("content");
+                            for (int i13 = 0; i13 < jSONArray3.length(); i13++) {
+                                Object obj3 = jSONArray3.get(i13);
+                                if (obj3 instanceof JSONObject) {
+                                    JSONObject jSONObject3 = (JSONObject) obj3;
+                                    if ("li".equals(jSONObject3.optString("tag"))) {
+                                        JSONArray optJSONArray3 = jSONObject3.optJSONArray("content");
+                                        if (f(optJSONArray3)) {
+                                            TL_iv.TL_pageListOrderedItemText tL_pageListOrderedItemText = new TL_iv.TL_pageListOrderedItemText();
+                                            tL_pageListOrderedItemText.text = k(optJSONArray3, tL_page);
+                                            pageblocklist.items.add(tL_pageListOrderedItemText);
+                                        } else {
+                                            TL_iv.TL_pageListOrderedItemBlocks tL_pageListOrderedItemBlocks = new TL_iv.TL_pageListOrderedItemBlocks();
+                                            tL_pageListOrderedItemBlocks.blocks.addAll(j(optJSONArray3, tL_page));
+                                            pageblocklist.items.add(tL_pageListOrderedItemBlocks);
+                                        }
+                                    }
+                                }
+                            }
+                        } else {
+                            pageblocklist = new TL_iv.pageBlockList();
+                            JSONArray jSONArray4 = jSONObject.getJSONArray("content");
+                            for (int i14 = 0; i14 < jSONArray4.length(); i14++) {
+                                Object obj4 = jSONArray4.get(i14);
+                                if (obj4 instanceof JSONObject) {
+                                    JSONObject jSONObject4 = (JSONObject) obj4;
+                                    if ("li".equals(jSONObject4.optString("tag"))) {
+                                        JSONArray optJSONArray4 = jSONObject4.optJSONArray("content");
+                                        if (f(optJSONArray4)) {
+                                            TL_iv.TL_pageListItemText tL_pageListItemText = new TL_iv.TL_pageListItemText();
+                                            tL_pageListItemText.text = k(optJSONArray4, tL_page);
+                                            pageblocklist.items.add(tL_pageListItemText);
+                                        } else {
+                                            TL_iv.TL_pageListItemBlocks tL_pageListItemBlocks = new TL_iv.TL_pageListItemBlocks();
+                                            tL_pageListItemBlocks.blocks.addAll(j(optJSONArray4, tL_page));
+                                            pageblocklist.items.add(tL_pageListItemBlocks);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        arrayList.add(pageblocklist);
+                        break;
+                    case 17:
+                        TL_iv.pageBlockPhoto h = h(jSONObject, tL_page);
+                        if (h != null) {
+                            arrayList.add(h);
+                            break;
+                        }
+                        break;
+                    case 18:
+                        TL_iv.pageBlockPreformatted pageblockpreformatted = new TL_iv.pageBlockPreformatted();
+                        TL_iv.textFixed textfixed = new TL_iv.textFixed();
+                        textfixed.text = p(l(jSONObject, tL_page));
+                        pageblockpreformatted.text = textfixed;
+                        pageblockpreformatted.language = "";
+                        arrayList.add(pageblockpreformatted);
+                        break;
+                    case 24:
+                        TL_iv.pageBlockTable pageblocktable = new TL_iv.pageBlockTable();
+                        pageblocktable.bordered = true;
+                        pageblocktable.striped = true;
+                        String optString5 = jSONObject.optString("title");
+                        pageblocktable.title = p(c(m(optString5 != null ? optString5 : ""), jSONObject));
+                        pageblocktable.rows.addAll(n(jSONObject.getJSONArray("content"), tL_page));
+                        arrayList.add(pageblocktable);
+                        break;
+                    case 25:
+                        TL_iv.pageBlockBlockquote pageblockblockquote = new TL_iv.pageBlockBlockquote();
+                        pageblockblockquote.text = p(l(jSONObject, tL_page));
+                        TL_iv.textItalic textitalic = new TL_iv.textItalic();
+                        textitalic.text = pageblockblockquote.text;
+                        pageblockblockquote.text = textitalic;
+                        arrayList.add(pageblockblockquote);
+                        break;
+                    case 26:
+                        TL_iv.pageBlockDetails pageblockdetails2 = new TL_iv.pageBlockDetails();
+                        JSONArray optJSONArray5 = jSONObject.optJSONArray("content");
+                        if (optJSONArray5 == null) {
+                            pageblockdetails = null;
+                        } else {
+                            int i15 = 0;
+                            while (true) {
+                                if (i15 < optJSONArray5.length()) {
+                                    Object obj5 = optJSONArray5.get(i15);
+                                    if (obj5 instanceof JSONObject) {
+                                        JSONObject jSONObject5 = (JSONObject) obj5;
+                                        if ("summary".equals(jSONObject5.optString("tag"))) {
+                                            pageblockdetails2.title = p(l(jSONObject5, tL_page));
+                                            optJSONArray5.remove(i15);
+                                        }
+                                    }
+                                    i15++;
+                                }
+                            }
+                            pageblockdetails2.blocks.addAll(j(optJSONArray5, tL_page));
+                            pageblockdetails2.open = jSONObject.has("open");
+                            pageblockdetails = pageblockdetails2;
+                        }
+                        if (pageblockdetails != null) {
+                            arrayList.add(pageblockdetails);
+                            break;
+                        }
+                        break;
+                    default:
+                        if (optJSONArray != null) {
+                            arrayList.addAll(j(optJSONArray, tL_page));
+                            break;
+                        }
+                        break;
+                }
+            }
+        }
+        return arrayList;
+    }
+
+    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
+    public final TL_iv.RichText k(JSONArray jSONArray, TL_iv.TL_page tL_page) {
+        char c10;
+        ArrayList<TL_iv.RichText> arrayList = new ArrayList<>();
+        for (int i10 = 0; i10 < jSONArray.length(); i10++) {
+            Object obj = jSONArray.get(i10);
+            if (obj instanceof String) {
+                arrayList.add(m((String) obj));
+            } else {
+                JSONObject jSONObject = (JSONObject) obj;
+                String optString = jSONObject.optString("tag");
+                optString.getClass();
+                switch (optString.hashCode()) {
+                    case -891980137:
+                        if (optString.equals("strong")) {
+                            c10 = 0;
+                            break;
+                        }
+                        c10 = 65535;
+                        break;
+                    case zs.i1 /* 97 */:
+                        if (optString.equals("a")) {
+                            c10 = 1;
+                            break;
+                        }
+                        c10 = 65535;
+                        break;
+                    case zs.j1 /* 98 */:
+                        if (optString.equals("b")) {
+                            c10 = 2;
+                            break;
+                        }
+                        c10 = 65535;
+                        break;
+                    case zs.q1 /* 105 */:
+                        if (optString.equals("i")) {
+                            c10 = 3;
+                            break;
+                        }
+                        c10 = 65535;
+                        break;
+                    case zs.x1 /* 112 */:
+                        if (optString.equals("p")) {
+                            c10 = 4;
+                            break;
+                        }
+                        c10 = 65535;
+                        break;
+                    case zs.A1 /* 115 */:
+                        if (optString.equals("s")) {
+                            c10 = 5;
+                            break;
+                        }
+                        c10 = 65535;
+                        break;
+                    case 3152:
+                        if (optString.equals("br")) {
+                            c10 = 6;
+                            break;
+                        }
+                        c10 = 65535;
+                        break;
+                    case 104387:
+                        if (optString.equals("img")) {
+                            c10 = 7;
+                            break;
+                        }
+                        c10 = 65535;
+                        break;
+                    case 111267:
+                        if (optString.equals("pre")) {
+                            c10 = '\b';
+                            break;
+                        }
+                        c10 = 65535;
+                        break;
+                    case 114240:
+                        if (optString.equals("sub")) {
+                            c10 = '\t';
+                            break;
+                        }
+                        c10 = 65535;
+                        break;
+                    case 114254:
+                        if (optString.equals("sup")) {
+                            c10 = '\n';
+                            break;
+                        }
+                        c10 = 65535;
+                        break;
+                    case 3059181:
+                        if (optString.equals("code")) {
+                            c10 = 11;
+                            break;
+                        }
+                        c10 = 65535;
+                        break;
+                    case 3344077:
+                        if (optString.equals("mark")) {
+                            c10 = '\f';
+                            break;
+                        }
+                        c10 = 65535;
+                        break;
+                    default:
+                        c10 = 65535;
+                        break;
+                }
+                TL_iv.RichText richText = null;
+                richText = null;
+                richText = null;
+                switch (c10) {
+                    case 0:
+                    case 2:
+                        TL_iv.textBold textbold = new TL_iv.textBold();
+                        textbold.text = l(jSONObject, tL_page);
+                        richText = textbold;
+                        break;
+                    case 1:
+                        String optString2 = jSONObject.optString("href");
+                        if (optString2 == null) {
+                            richText = l(jSONObject, tL_page);
+                            break;
+                        } else if (optString2.startsWith("tel:")) {
+                            TL_iv.textPhone textphone = new TL_iv.textPhone();
+                            textphone.phone = optString2.substring(4);
+                            textphone.text = l(jSONObject, tL_page);
+                            richText = textphone;
+                            break;
+                        } else if (optString2.startsWith("mailto:")) {
+                            TL_iv.textEmail textemail = new TL_iv.textEmail();
+                            textemail.email = optString2.substring(7);
+                            textemail.text = l(jSONObject, tL_page);
+                            richText = textemail;
+                            break;
+                        } else {
+                            TL_iv.textUrl texturl = new TL_iv.textUrl();
+                            texturl.url = optString2;
+                            texturl.text = l(jSONObject, tL_page);
+                            richText = texturl;
+                            break;
+                        }
+                    case 3:
+                        TL_iv.textItalic textitalic = new TL_iv.textItalic();
+                        textitalic.text = l(jSONObject, tL_page);
+                        richText = textitalic;
+                        break;
+                    case 4:
+                        if (!arrayList.isEmpty()) {
+                            b((TL_iv.RichText) i0.a.g(1, arrayList));
+                        }
+                        richText = l(jSONObject, tL_page);
+                        break;
+                    case 5:
+                        TL_iv.textStrike textstrike = new TL_iv.textStrike();
+                        textstrike.text = l(jSONObject, tL_page);
+                        richText = textstrike;
+                        break;
+                    case 6:
+                        if (!arrayList.isEmpty()) {
+                            b((TL_iv.RichText) i0.a.g(1, arrayList));
+                            break;
+                        }
+                        break;
+                    case 7:
+                        if (!arrayList.isEmpty()) {
+                            a((TL_iv.RichText) i0.a.g(1, arrayList));
+                        }
+                        TL_iv.textImage textimage = new TL_iv.textImage();
+                        String optString3 = jSONObject.optString("src");
+                        if (optString3 != null) {
+                            x1 x1Var = new x1();
+                            x1Var.a = this;
+                            x1Var.id = (-1) - tL_page.photos.size();
+                            x1Var.b = optString3;
+                            x1Var.c.add(optString3);
+                            try {
+                                x1Var.d = Integer.parseInt(jSONObject.optString("width"));
+                            } catch (Exception unused) {
+                            }
+                            try {
+                                x1Var.e = Integer.parseInt(jSONObject.optString("height"));
+                            } catch (Exception unused2) {
+                            }
+                            textimage.url = optString3;
+                            tL_page.photos.add(x1Var);
+                            if (x1Var.d == 0) {
+                                x1Var.d = x1Var.e;
+                            }
+                            if (x1Var.e == 0) {
+                                x1Var.e = x1Var.d;
+                            }
+                            try {
+                                textimage.w = Integer.parseInt(jSONObject.optString("width"));
+                            } catch (Exception unused3) {
+                            }
+                            try {
+                                textimage.h = Integer.parseInt(jSONObject.optString("height"));
+                            } catch (Exception unused4) {
+                            }
+                            if (textimage.w == 0) {
+                                textimage.w = textimage.h;
+                            }
+                            if (textimage.h == 0) {
+                                textimage.h = textimage.w;
+                            }
+                            textimage.photo_id = x1Var.id;
+                            richText = textimage;
+                            break;
+                        }
+                        break;
+                    case '\b':
+                    case 11:
+                        TL_iv.textFixed textfixed = new TL_iv.textFixed();
+                        textfixed.text = l(jSONObject, tL_page);
+                        richText = textfixed;
+                        break;
+                    case '\t':
+                        TL_iv.textSubscript textsubscript = new TL_iv.textSubscript();
+                        textsubscript.text = l(jSONObject, tL_page);
+                        richText = textsubscript;
+                        break;
+                    case '\n':
+                        TL_iv.textSuperscript textsuperscript = new TL_iv.textSuperscript();
+                        textsuperscript.text = l(jSONObject, tL_page);
+                        richText = textsuperscript;
+                        break;
+                    case '\f':
+                        TL_iv.textMarked textmarked = new TL_iv.textMarked();
+                        textmarked.text = l(jSONObject, tL_page);
+                        richText = textmarked;
+                        break;
+                    default:
+                        richText = l(jSONObject, tL_page);
+                        break;
+                }
+                if (richText != null) {
+                    arrayList.add(c(richText, jSONObject));
+                }
+            }
+        }
+        if (arrayList.isEmpty()) {
+            return new TL_iv.textEmpty();
+        }
+        if (arrayList.size() == 1) {
+            return arrayList.get(0);
+        }
+        TL_iv.textConcat textconcat = new TL_iv.textConcat();
+        textconcat.texts = arrayList;
+        return textconcat;
+    }
+
+    public final TL_iv.RichText l(JSONObject jSONObject, TL_iv.TL_page tL_page) {
+        TL_iv.RichText c10 = c(k(jSONObject.getJSONArray("content"), tL_page), jSONObject);
+        if (jSONObject.has("bold")) {
+            TL_iv.textBold textbold = new TL_iv.textBold();
+            textbold.text = c10;
+            c10 = textbold;
+        }
+        if (!jSONObject.has("italic")) {
+            return c10;
+        }
+        TL_iv.textItalic textitalic = new TL_iv.textItalic();
+        textitalic.text = c10;
+        return textitalic;
+    }
+
+    public final ArrayList n(JSONArray jSONArray, TL_iv.TL_page tL_page) {
+        JSONObject jSONObject;
+        String optString;
+        ArrayList arrayList = new ArrayList();
+        new ArrayList();
+        for (int i10 = 0; i10 < jSONArray.length(); i10++) {
+            Object obj = jSONArray.get(i10);
+            if (obj instanceof JSONObject) {
+                JSONObject jSONObject2 = (JSONObject) obj;
+                if ("tr".equals(jSONObject2.optString("tag"))) {
+                    TL_iv.pageTableRow pagetablerow = new TL_iv.pageTableRow();
+                    JSONArray jSONArray2 = jSONObject2.getJSONArray("content");
+                    for (int i11 = 0; i11 < jSONArray2.length(); i11++) {
+                        Object obj2 = jSONArray2.get(i11);
+                        if ((obj2 instanceof JSONObject) && (optString = (jSONObject = (JSONObject) obj2).optString("tag")) != null && ("td".equals(optString) || "th".equals(optString))) {
+                            TL_iv.pageTableCell pagetablecell = new TL_iv.pageTableCell();
+                            pagetablecell.header = "th".equals(optString);
+                            try {
+                                pagetablecell.colspan = Integer.parseInt(jSONObject.optString("colspan"));
+                                pagetablecell.flags |= 2;
+                            } catch (Exception unused) {
+                            }
+                            try {
+                                pagetablecell.rowspan = Integer.parseInt(jSONObject.optString("rowspan"));
+                                pagetablecell.flags |= 4;
+                            } catch (Exception unused2) {
+                            }
+                            pagetablecell.text = p(k(jSONObject.getJSONArray("content"), tL_page));
+                            if (jSONObject.has("bold") || pagetablecell.header) {
+                                TL_iv.textBold textbold = new TL_iv.textBold();
+                                textbold.text = pagetablecell.text;
+                                pagetablecell.text = textbold;
+                            }
+                            if (jSONObject.has("italic")) {
+                                TL_iv.textItalic textitalic = new TL_iv.textItalic();
+                                textitalic.text = pagetablecell.text;
+                                pagetablecell.text = textitalic;
+                            }
+                            pagetablecell.align_center = jSONObject.has("xcenter");
+                            pagetablerow.cells.add(pagetablecell);
+                        }
+                    }
+                    arrayList.add(pagetablerow);
+                } else {
+                    JSONArray optJSONArray = jSONObject2.optJSONArray("content");
+                    if (optJSONArray != null) {
+                        arrayList.addAll(n(optJSONArray, tL_page));
+                    }
+                }
+            }
+        }
+        return arrayList;
     }
 }

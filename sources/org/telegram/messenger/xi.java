@@ -1,29 +1,57 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.tl.TL_update;
+import org.telegram.tgnet.NativeByteBuffer;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final /* synthetic */ class xi implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ SendMessagesHelper b;
-    public final /* synthetic */ TL_update.TL_updateNewChannelMessage c;
-
-    public /* synthetic */ xi(SendMessagesHelper sendMessagesHelper, TL_update.TL_updateNewChannelMessage tL_updateNewChannelMessage, int i10) {
-        this.a = i10;
-        this.b = sendMessagesHelper;
-        this.c = tL_updateNewChannelMessage;
+public abstract class xi {
+    public static void a(TLRPC.Message message, TLRPC.TL_message tL_message) {
+        tL_message.voiceTranscription = message.voiceTranscription;
+        tL_message.voiceTranscriptionOpen = message.voiceTranscriptionOpen;
+        tL_message.voiceTranscriptionFinal = message.voiceTranscriptionFinal;
+        tL_message.voiceTranscriptionForce = message.voiceTranscriptionForce;
+        tL_message.voiceTranscriptionRated = message.voiceTranscriptionRated;
+        tL_message.voiceTranscriptionId = message.voiceTranscriptionId;
+        tL_message.premiumEffectWasPlayed = message.premiumEffectWasPlayed;
+        tL_message.originalLanguage = message.originalLanguage;
+        tL_message.translatedToLanguage = message.translatedToLanguage;
+        tL_message.translatedPoll = message.translatedPoll;
+        tL_message.translatedText = message.translatedText;
+        tL_message.translatedRichMessage = message.translatedRichMessage;
+        tL_message.errorAllowedPriceStars = message.errorAllowedPriceStars;
+        tL_message.errorNewPriceStars = message.errorNewPriceStars;
+        tL_message.translatedVoiceTranscription = message.translatedVoiceTranscription;
+        tL_message.summarizedOpen = message.summarizedOpen;
+        tL_message.summaryText = message.summaryText;
+        tL_message.translatedSummaryText = message.translatedSummaryText;
+        tL_message.translatedSummaryLanguage = message.translatedSummaryLanguage;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.lambda$performSendMessageRequest$95(this.c);
-                break;
-            default:
-                this.b.lambda$performSendMessageRequestMulti$70(this.c);
-                break;
+    public static void b(TLRPC.Message message, NativeByteBuffer nativeByteBuffer) {
+        if (nativeByteBuffer == null) {
+            return;
+        }
+        int readInt32 = nativeByteBuffer.readInt32(true);
+        if (readInt32 != 1) {
+            throw new RuntimeException(i0.a.i(readInt32, "can't read params version = "));
+        }
+        new wi(message).readParams(nativeByteBuffer, true);
+    }
+
+    public static NativeByteBuffer c(TLRPC.Message message) {
+        TLRPC.MessageAction messageAction = message.action;
+        if (!((messageAction instanceof TLRPC.TL_messageActionGramTransfer) && ((TLRPC.TL_messageActionGramTransfer) messageAction).comment_encrypted_preparing) && message.voiceTranscription == null && message.translatedVoiceTranscription == null && !message.voiceTranscriptionOpen && !message.summarizedOpen && message.summaryText == null && message.translatedSummaryLanguage == null && message.translatedSummaryText == null && !message.voiceTranscriptionFinal && !message.voiceTranscriptionRated && !message.voiceTranscriptionForce && message.voiceTranscriptionId == 0 && !message.premiumEffectWasPlayed && message.originalLanguage == null && message.translatedToLanguage == null && message.translatedPoll == null && message.translatedText == null && message.translatedRichMessage == null && message.errorAllowedPriceStars == 0 && message.errorNewPriceStars == 0) {
+            return null;
+        }
+        wi wiVar = new wi(message);
+        try {
+            NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(wiVar.getObjectSize());
+            wiVar.serializeToStream(nativeByteBuffer);
+            return nativeByteBuffer;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
         }
     }
 }

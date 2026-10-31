@@ -5,7 +5,7 @@ import java.util.AbstractList;
 import java.util.Arrays;
 import java.util.RandomAccess;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 final class zzud extends zzpz implements RandomAccess {
     private static final Object[] zza;
@@ -32,7 +32,7 @@ final class zzud extends zzpz implements RandomAccess {
     }
 
     private final String zzh(int i10) {
-        return g.l(i10, this.zzd, "Index:", ", Size:");
+        return g.j(i10, this.zzd, "Index:", ", Size:");
     }
 
     private final void zzi(int i10) {

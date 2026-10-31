@@ -1,10 +1,14 @@
 package org.telegram.ui.Components;
 
-import android.animation.AnimatorSet;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class ie0 {
-    public AnimatorSet a;
-    public float b;
+public final /* synthetic */ class ie0 implements j61, ee0, ge0 {
+    public final /* synthetic */ oe0 a;
+
+    @Override // org.telegram.ui.Components.j61
+    public void b(gz gzVar) {
+        oe0 oe0Var = this.a;
+        oe0Var.l0 = gzVar;
+        gzVar.d(oe0Var);
+    }
 }

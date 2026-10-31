@@ -1,29 +1,22 @@
 package k2;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public interface y {
-    void D(v0 v0Var);
+public final class y extends Exception {
+    public final boolean a;
+    public final b2.x b;
 
-    void J(v0 v0Var);
-
-    void N();
-
-    void a(long j10);
-
-    void i();
-
-    void j();
-
-    void m(int i10, long j10, long j11);
-
-    void n();
-
-    void onAudioSessionIdChanged(int i10);
-
-    void onSkipSilenceEnabledChanged(boolean z10);
-
-    void r(Exception exc);
-
-    void v();
+    /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public y(int i10, int i11, int i12, int i13, b2.x xVar, boolean z10, m mVar) {
+        super(r3.toString(), mVar);
+        StringBuilder m10 = i0.a.m("AudioTrack init failed 0 Config(", i10, ", ", i11, ", ");
+        i0.a.t(m10, i12, ", ", i13, ") ");
+        m10.append(xVar);
+        m10.append(z10 ? " (recoverable)" : "");
+        this.a = z10;
+        this.b = xVar;
+    }
 }

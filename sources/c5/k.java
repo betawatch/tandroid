@@ -1,48 +1,34 @@
 package c5;
 
-import android.content.pm.PackageInfo;
-import android.os.Build;
-import java.lang.reflect.InvocationTargetException;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.util.ArrayList;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class k extends c {
-    public final Pattern d;
+public final class k {
+    public final ArrayList a;
 
     public k() {
-        super("ALGORITHMIC_DARKENING", "ALGORITHMIC_DARKENING");
-        this.d = Pattern.compile("\\A\\d+");
+        this.a = new ArrayList();
+        new ArrayList();
+        new ArrayList();
     }
 
-    @Override // c5.c
-    public final boolean a() {
-        return Build.VERSION.SDK_INT >= 33;
-    }
-
-    @Override // c5.c
-    public final boolean b() {
-        int i10;
-        PackageInfo packageInfo;
-        boolean b10 = super.b();
-        if (!b10 || (i10 = Build.VERSION.SDK_INT) >= 29) {
-            return b10;
-        }
-        boolean z10 = b5.a.a;
-        if (i10 >= 26) {
-            packageInfo = x6.a.a();
-        } else {
-            try {
-                packageInfo = b5.a.b();
-            } catch (ClassNotFoundException | IllegalAccessException | NoSuchMethodException | InvocationTargetException unused) {
-                packageInfo = null;
+    public k(JSONArray jSONArray) {
+        ArrayList arrayList = new ArrayList();
+        if (jSONArray != null) {
+            for (int i10 = 0; i10 < jSONArray.length(); i10++) {
+                JSONObject optJSONObject = jSONArray.optJSONObject(i10);
+                if (optJSONObject != null) {
+                    arrayList.add(new j(optJSONObject));
+                }
             }
         }
-        if (packageInfo == null) {
-            return false;
-        }
-        Matcher matcher = this.d.matcher(packageInfo.versionName);
-        return matcher.find() && Integer.parseInt(packageInfo.versionName.substring(matcher.start(), matcher.end())) >= 105;
+        this.a = arrayList;
+    }
+
+    public k(ArrayList arrayList) {
+        this.a = arrayList;
     }
 }

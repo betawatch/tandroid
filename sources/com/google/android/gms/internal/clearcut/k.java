@@ -11,19 +11,19 @@ public abstract class k extends AbstractList implements c0 {
 
     @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
     public final boolean add(Object obj) {
-        h();
+        l();
         return super.add(obj);
     }
 
     @Override // java.util.AbstractList, java.util.List
     public boolean addAll(int i10, Collection collection) {
-        h();
+        l();
         return super.addAll(i10, collection);
     }
 
     @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
     public void clear() {
-        h();
+        l();
         super.clear();
     }
 
@@ -51,12 +51,6 @@ public abstract class k extends AbstractList implements c0 {
         return true;
     }
 
-    public final void h() {
-        if (!this.a) {
-            throw new UnsupportedOperationException();
-        }
-    }
-
     @Override // java.util.AbstractList, java.util.Collection, java.util.List
     public final int hashCode() {
         int size = size();
@@ -67,27 +61,33 @@ public abstract class k extends AbstractList implements c0 {
         return i10;
     }
 
+    public final void l() {
+        if (!this.a) {
+            throw new UnsupportedOperationException();
+        }
+    }
+
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public final boolean remove(Object obj) {
-        h();
+        l();
         return super.remove(obj);
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public final boolean removeAll(Collection collection) {
-        h();
+        l();
         return super.removeAll(collection);
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public final boolean retainAll(Collection collection) {
-        h();
+        l();
         return super.retainAll(collection);
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public boolean addAll(Collection collection) {
-        h();
+        l();
         return super.addAll(collection);
     }
 }

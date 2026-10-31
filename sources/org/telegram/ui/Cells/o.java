@@ -1,166 +1,182 @@
 package org.telegram.ui.Cells;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
+import android.text.TextUtils;
 import android.view.View;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.TLObject;
+import android.view.ViewGroup;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.cd;
+import org.telegram.messenger.d20;
+import org.telegram.messenger.jj;
+import org.telegram.messenger.q20;
+import org.telegram.messenger.zs;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.a51;
+import org.telegram.ui.Components.gk0;
+import org.telegram.ui.Components.z60;
+import org.telegram.ui.Components.za0;
+import org.telegram.ui.ba0;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class o extends View {
-    public final int a;
-    public final int b;
-    public final int c;
-    public int d;
-    public final ArrayList e;
-    public float f;
-    public float h;
-    public Integer n;
+public final /* synthetic */ class o implements gk0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    public o(Context context) {
-        super(context);
-        this.e = new ArrayList();
-        this.a = 20;
-        this.b = 60;
-        this.c = 60;
+    public /* synthetic */ o(Object obj, Object obj2, Object obj3, int i10) {
+        this.a = i10;
+        this.b = obj;
+        this.c = obj2;
+        this.d = obj3;
     }
 
-    public final void a(bh.x0 x0Var) {
-        TLRPC.TL_availableReaction tL_availableReaction;
-        TLRPC.Document document;
-        String findAnimatedEmojiEmoticon;
-        TLRPC.TL_availableReaction tL_availableReaction2 = x0Var.f != null ? MediaDataController.getInstance(UserConfig.selectedAccount).getReactionsMap().get(x0Var.f) : null;
-        if (tL_availableReaction2 == null) {
-            document = org.telegram.ui.Components.t5.f(UserConfig.selectedAccount, x0Var.g);
-            if (document != null && (findAnimatedEmojiEmoticon = MessageObject.findAnimatedEmojiEmoticon(document, null)) != null) {
-                tL_availableReaction2 = MediaDataController.getInstance(UserConfig.selectedAccount).getReactionsMap().get(findAnimatedEmojiEmoticon);
-            }
-            tL_availableReaction = tL_availableReaction2;
-        } else {
-            tL_availableReaction = tL_availableReaction2;
-            document = null;
-        }
-        ArrayList arrayList = this.e;
-        if (document != null || tL_availableReaction == null) {
-            org.telegram.ui.Components.t5 n10 = document == null ? org.telegram.ui.Components.t5.n(2, x0Var.g, null, UserConfig.selectedAccount) : org.telegram.ui.Components.t5.m(2, UserConfig.selectedAccount, document);
-            if (this.n != null) {
-                n10.setColorFilter(new PorterDuffColorFilter(this.n.intValue(), PorterDuff.Mode.MULTIPLY));
-            }
-            bh.e a2 = bh.e.a(n10, false, !n10.c());
-            a2.f(this);
-            arrayList.add(a2);
-            invalidate();
-            return;
-        }
-        ImageReceiver imageReceiver = new ImageReceiver();
-        imageReceiver.setParentView(this);
-        int i10 = this.d;
-        this.d = i10 + 1;
-        imageReceiver.setUniqKeyPrefix(Integer.toString(i10));
-        ImageLocation forDocument = ImageLocation.getForDocument(tL_availableReaction.around_animation);
-        StringBuilder sb2 = new StringBuilder();
-        int i11 = this.b;
-        sb2.append(i11);
-        sb2.append("_");
-        sb2.append(i11);
-        sb2.append("_nolimit");
-        imageReceiver.setImage(forDocument, sb2.toString(), null, "tgs", tL_availableReaction, 1);
-        imageReceiver.setAutoRepeat(0);
-        imageReceiver.onAttachedToWindow();
-        arrayList.add(imageReceiver);
-        invalidate();
-    }
-
-    public final void b(float f7, float f10) {
-        setTranslationX(f7 - (getMeasuredWidth() / 2.0f));
-        float measuredHeight = f10 - (getMeasuredHeight() / 2.0f);
-        this.f = measuredHeight;
-        setTranslationY(measuredHeight + this.h);
-    }
-
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        int dp = AndroidUtilities.dp(this.c);
-        int dp2 = AndroidUtilities.dp(this.b);
-        int i10 = 0;
-        while (true) {
-            ArrayList arrayList = this.e;
-            if (i10 >= arrayList.size()) {
-                return;
-            }
-            Object obj = arrayList.get(i10);
-            if (obj instanceof ImageReceiver) {
-                ImageReceiver imageReceiver = (ImageReceiver) obj;
-                float f7 = dp2;
-                imageReceiver.setImageCoords((getMeasuredWidth() - dp2) / 2.0f, (getMeasuredHeight() - dp2) / 2.0f, f7, f7);
-                imageReceiver.draw(canvas);
-            } else if (obj instanceof bh.e) {
-                bh.e eVar = (bh.e) obj;
-                eVar.e((int) ((getMeasuredWidth() - dp) / 2.0f), (int) ((getMeasuredHeight() - dp) / 2.0f), (int) ((getMeasuredWidth() + dp) / 2.0f), (int) ((getMeasuredHeight() + dp) / 2.0f));
-                eVar.b(canvas);
-                if (eVar.c()) {
-                    eVar.d(this);
-                    arrayList.remove(eVar);
+    @Override // org.telegram.ui.Components.gk0
+    public final void f(int i10, View view) {
+        TLRPC.WebPage webPage;
+        int i11 = this.a;
+        Object obj = this.c;
+        Object obj2 = this.d;
+        Object obj3 = this.b;
+        int i12 = 1;
+        switch (i11) {
+            case 0:
+                t tVar = (t) obj3;
+                org.telegram.ui.ActionBar.k2 k2Var = (org.telegram.ui.ActionBar.k2) obj;
+                Context context = (Context) obj2;
+                s sVar = (s) view;
+                ba0 ba0Var = (ba0) tVar.e3.get(i10);
+                if (ba0Var.e && !d20.o()) {
+                    k2Var.showDialog(new kg.i1(k2Var, 10, true));
+                    break;
+                } else if (!w7.j6.a(ba0Var)) {
+                    p pVar = new p(context);
+                    pVar.a = i10;
+                    tVar.f3.w0(pVar);
+                    w7.j6.b(ba0Var);
+                    int i13 = s.h;
+                    sVar.b(true, true);
+                    for (int i14 = 0; i14 < tVar.getChildCount(); i14++) {
+                        s sVar2 = (s) tVar.getChildAt(i14);
+                        if (sVar2 != sVar) {
+                            sVar2.b(false, true);
+                        }
+                    }
+                    zs.e().k(zs.P4, 5, ba0Var);
+                    break;
                 }
-            }
-            i10++;
-        }
-    }
-
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        ArrayList arrayList = this.e;
-        if (!arrayList.isEmpty()) {
-            int size = arrayList.size();
-            int i10 = 0;
-            while (i10 < size) {
-                Object obj = arrayList.get(i10);
-                i10++;
-                if (obj instanceof ImageReceiver) {
-                    ((ImageReceiver) obj).onDetachedFromWindow();
-                } else if (obj instanceof bh.e) {
-                    ((bh.e) obj).d(this);
+                break;
+            case 1:
+                th.p1 p1Var = (th.p1) obj3;
+                th.c0 c0Var = (th.c0) view;
+                th.h0 h0Var = c0Var.K;
+                z60 F = z60.F((ViewGroup) obj, new th.b(), view);
+                F.p(15, -1, cd.a0(null, null, 2131748818, cd.x(h0Var.d, true)));
+                F.k();
+                F.c(R.drawable.msg_openprofile, cd.L0(2131747802, null), new rh.o(26, (th.o7) obj2, h0Var), false);
+                F.l(R.drawable.msg_copy, cd.L0(2131751767, null), new rh.o(27, p1Var, c0Var), !h0Var.e);
+                F.l(R.drawable.msg_delete, cd.L0(2131751599, null), new rh.o(28, p1Var, h0Var), p1Var.M == d20.i(p1Var.N).e() || p1Var.f());
+                F.Z();
+                break;
+            case 2:
+                vh.f5 f5Var = (vh.f5) obj3;
+                q20 q20Var = (q20) obj;
+                org.telegram.ui.ActionBar.p6 p6Var = (org.telegram.ui.ActionBar.p6) obj2;
+                if (!(view instanceof k7)) {
+                    a51 G = f5Var.h2.G(i10 - 1);
+                    if (G != null && G.d == 1) {
+                        new vh.f5(f5Var.getContext(), true, f5Var, q20Var, p6Var).show();
+                        break;
+                    } else if (G != null && G.d == 2) {
+                        f5Var.W1.b();
+                        break;
+                    } else if (G != null && G.d == 3) {
+                        f5Var.h1();
+                        break;
+                    } else if (G != null && G.d == 4) {
+                        f5Var.g1();
+                        break;
+                    }
+                } else {
+                    jj message = ((k7) view).getMessage();
+                    if (message != null) {
+                        org.telegram.messenger.b6.q(f5Var.a).v(f5Var);
+                        if (f5Var.Y1 != null) {
+                            org.telegram.messenger.b8.G(f5Var.a).f(f5Var.Y1.F0());
+                            f5Var.Y1 = null;
+                        }
+                        if (message.w0 || message.x0) {
+                            f5Var.X1.a(message);
+                            vh.f5 f5Var2 = f5Var.S1;
+                            if (f5Var2 != null) {
+                                f5Var2.dismiss();
+                            }
+                            f5Var.dismiss();
+                            break;
+                        } else {
+                            String S0 = message.S0();
+                            if (!TextUtils.isEmpty(S0)) {
+                                f5Var.Y1 = message;
+                                org.telegram.messenger.b6.q(f5Var.a).a(S0, message, f5Var);
+                                org.telegram.messenger.b8.G(f5Var.a).X(message.F0(), message, 1, 0);
+                                break;
+                            }
+                        }
+                    }
                 }
-            }
+                break;
+            default:
+                vh.t5 t5Var = (vh.t5) obj3;
+                Context context2 = (Context) obj2;
+                vh.k4 k4Var = (vh.k4) obj;
+                m3 m3Var = t5Var.R1;
+                m3 m3Var2 = t5Var.Q1;
+                a51 G2 = t5Var.P1.G(i10 - 1);
+                if (G2 != null) {
+                    if (G2.H(vh.r5.class) && (webPage = t5Var.Y1) != null && !vh.t5.g1(webPage)) {
+                        jg.d3 d3Var = new jg.d3(context2, t5Var.a);
+                        jg.s0 s0Var = new jg.s0();
+                        s0Var.c = m3Var2.d.getText().toString();
+                        s0Var.b = t5Var.e2 ? m3Var.d.getText().toString() : null;
+                        TLRPC.WebPage webPage2 = t5Var.Y1;
+                        s0Var.d = webPage2;
+                        s0Var.e = t5Var.g2;
+                        s0Var.f = t5Var.f2;
+                        ph.h1 h1Var = new ph.h1(t5Var, 29);
+                        d3Var.G = s0Var;
+                        int i15 = (webPage2 == null || (webPage2.photo == null && !jj.K4(webPage2.document))) ? 8 : 0;
+                        za0 za0Var = d3Var.y;
+                        za0Var.setVisibility(i15);
+                        d3Var.f.b(d3Var.a, s0Var, false);
+                        d3Var.x.a(!s0Var.f, false);
+                        za0Var.a(!s0Var.e, false);
+                        d3Var.H = h1Var;
+                        d3Var.e.setImageDrawable(new jg.x0(k4Var, i12));
+                        d3Var.show();
+                        break;
+                    } else if (G2.d == 2 && (view instanceof t8)) {
+                        boolean z10 = !t5Var.e2;
+                        t5Var.e2 = z10;
+                        ((t8) view).setChecked(z10);
+                        t5Var.P1.O(true);
+                        if (t5Var.e2) {
+                            m3Var.requestFocus();
+                            break;
+                        } else {
+                            m3Var2.requestFocus();
+                            break;
+                        }
+                    }
+                }
+                break;
         }
-        arrayList.clear();
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int max = Math.max(this.a, this.b);
-        int i12 = this.c;
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(Math.max(i12, max)), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(Math.max(i12, Math.max(r4, r5))), TLObject.FLAG_30));
-    }
-
-    public void setColor(int i10) {
-        this.n = Integer.valueOf(i10);
-        PorterDuffColorFilter porterDuffColorFilter = new PorterDuffColorFilter(i10, PorterDuff.Mode.MULTIPLY);
-        PorterDuffColorFilter porterDuffColorFilter2 = new PorterDuffColorFilter(i10, PorterDuff.Mode.SRC_IN);
-        int i11 = 0;
-        while (true) {
-            ArrayList arrayList = this.e;
-            if (i11 >= arrayList.size()) {
-                return;
-            }
-            Object obj = arrayList.get(i11);
-            if (obj instanceof ImageReceiver) {
-                ((ImageReceiver) obj).setColorFilter(porterDuffColorFilter);
-            } else if (obj instanceof bh.e) {
-                ((bh.e) obj).a.setColorFilter(porterDuffColorFilter2);
-            }
-            i11++;
-        }
+    public /* synthetic */ o(vh.t5 t5Var, Context context, vh.k4 k4Var) {
+        this.a = 3;
+        this.b = t5Var;
+        this.d = context;
+        this.c = k4Var;
     }
 }

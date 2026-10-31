@@ -1,110 +1,82 @@
 package fc;
 
-import java.nio.charset.Charset;
-import java.nio.charset.CharsetEncoder;
-import java.nio.charset.StandardCharsets;
-import java.nio.charset.UnsupportedCharsetException;
+import java.nio.ByteBuffer;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class d {
-    public static final ArrayList c = new ArrayList();
-    public final CharsetEncoder[] a;
-    public final int b;
+public final class d extends b {
+    public static final Logger m = Logger.getLogger(d.class.getName());
+    public int d;
+    public int e;
+    public int f;
+    public int g;
+    public long h;
+    public long i;
+    public a j;
+    public ArrayList k;
+    public byte[] l;
 
-    static {
-        String[] strArr = {"IBM437", "ISO-8859-2", "ISO-8859-3", "ISO-8859-4", "ISO-8859-5", "ISO-8859-6", "ISO-8859-7", "ISO-8859-8", "ISO-8859-9", "ISO-8859-10", "ISO-8859-11", "ISO-8859-13", "ISO-8859-14", "ISO-8859-15", "ISO-8859-16", "windows-1250", "windows-1251", "windows-1252", "windows-1256", "Shift_JIS"};
-        for (int i10 = 0; i10 < 20; i10++) {
-            String str = strArr[i10];
-            if (((c) c.d.get(str)) != null) {
-                try {
-                    c.add(Charset.forName(str).newEncoder());
-                } catch (UnsupportedCharsetException unused) {
-                }
+    @Override // fc.b
+    public final void b(ByteBuffer byteBuffer) {
+        this.d = e5.b.a(byteBuffer.get());
+        int a2 = e5.b.a(byteBuffer.get());
+        this.e = a2 >>> 2;
+        this.f = (a2 >> 1) & 1;
+        this.g = e5.b.a(byteBuffer.get()) + (e5.b.h(byteBuffer) << 8);
+        this.h = e5.b.i(byteBuffer);
+        this.i = e5.b.i(byteBuffer);
+        int remaining = byteBuffer.remaining();
+        Logger logger = m;
+        if (remaining > 2) {
+            int position = byteBuffer.position();
+            b a10 = k.a(this.d, byteBuffer);
+            int position2 = byteBuffer.position() - position;
+            logger.finer(a10 + " - DecoderConfigDescr1 read: " + position2 + ", size: " + Integer.valueOf(a10.a()));
+            int a11 = a10.a();
+            if (position2 < a11) {
+                byte[] bArr = new byte[a11 - position2];
+                this.l = bArr;
+                byteBuffer.get(bArr);
             }
+            if (a10 instanceof a) {
+                this.j = (a) a10;
+            }
+        }
+        while (byteBuffer.remaining() > 2) {
+            long position3 = byteBuffer.position();
+            b a12 = k.a(this.d, byteBuffer);
+            logger.finer(a12 + " - DecoderConfigDescr2 read: " + (byteBuffer.position() - position3) + ", size: " + Integer.valueOf(a12.a()));
         }
     }
 
-    public d(String str, Charset charset) {
-        int i10;
-        boolean z10;
-        ArrayList arrayList = new ArrayList();
-        arrayList.add(StandardCharsets.ISO_8859_1.newEncoder());
-        int i11 = 0;
-        boolean z11 = charset != null && charset.name().startsWith("UTF");
-        int i12 = 0;
-        while (true) {
-            i10 = -1;
-            if (i12 >= str.length()) {
-                break;
-            }
-            int size = arrayList.size();
-            int i13 = 0;
-            while (i13 < size) {
-                Object obj = arrayList.get(i13);
-                i13++;
-                CharsetEncoder charsetEncoder = (CharsetEncoder) obj;
-                char charAt = str.charAt(i12);
-                if (charAt == 65535 || charsetEncoder.canEncode(charAt)) {
-                    z10 = true;
-                    break;
-                }
-            }
-            z10 = false;
-            if (!z10) {
-                ArrayList arrayList2 = c;
-                int size2 = arrayList2.size();
-                int i14 = 0;
-                while (true) {
-                    if (i14 >= size2) {
-                        break;
-                    }
-                    Object obj2 = arrayList2.get(i14);
-                    i14++;
-                    CharsetEncoder charsetEncoder2 = (CharsetEncoder) obj2;
-                    if (charsetEncoder2.canEncode(str.charAt(i12))) {
-                        arrayList.add(charsetEncoder2);
-                        z10 = true;
-                        break;
-                    }
-                }
-            }
-            if (!z10) {
-                z11 = true;
-            }
-            i12++;
+    public final String toString() {
+        StringBuilder sb2 = new StringBuilder("DecoderConfigDescriptor{objectTypeIndication=");
+        sb2.append(this.d);
+        sb2.append(", streamType=");
+        sb2.append(this.e);
+        sb2.append(", upStream=");
+        sb2.append(this.f);
+        sb2.append(", bufferSizeDB=");
+        sb2.append(this.g);
+        sb2.append(", maxBitRate=");
+        sb2.append(this.h);
+        sb2.append(", avgBitRate=");
+        sb2.append(this.i);
+        sb2.append(", decoderSpecificInfo=null, audioSpecificInfo=");
+        sb2.append(this.j);
+        sb2.append(", configDescriptorDeadBytes=");
+        byte[] bArr = this.l;
+        if (bArr == null) {
+            bArr = new byte[0];
         }
-        if (arrayList.size() != 1 || z11) {
-            this.a = new CharsetEncoder[arrayList.size() + 2];
-            int size3 = arrayList.size();
-            int i15 = 0;
-            int i16 = 0;
-            while (i16 < size3) {
-                Object obj3 = arrayList.get(i16);
-                i16++;
-                this.a[i15] = (CharsetEncoder) obj3;
-                i15++;
-            }
-            this.a[i15] = StandardCharsets.UTF_8.newEncoder();
-            this.a[i15 + 1] = StandardCharsets.UTF_16BE.newEncoder();
-        } else {
-            this.a = new CharsetEncoder[]{(CharsetEncoder) arrayList.get(0)};
-        }
-        if (charset != null) {
-            while (true) {
-                CharsetEncoder[] charsetEncoderArr = this.a;
-                if (i11 < charsetEncoderArr.length) {
-                    if (charsetEncoderArr[i11] != null && charset.name().equals(this.a[i11].charset().name())) {
-                        i10 = i11;
-                        break;
-                    }
-                    i11++;
-                } else {
-                    break;
-                }
-            }
-        }
-        this.b = i10;
+        sb2.append(e5.b.c(0, bArr));
+        sb2.append(", profileLevelIndicationDescriptors=");
+        ArrayList arrayList = this.k;
+        sb2.append(arrayList == null ? "null" : Arrays.asList(arrayList).toString());
+        sb2.append('}');
+        return sb2.toString();
     }
 }

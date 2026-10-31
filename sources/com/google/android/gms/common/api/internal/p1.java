@@ -1,108 +1,42 @@
 package com.google.android.gms.common.api.internal;
 
-import a8.ng;
-import android.app.Activity;
-import android.app.Fragment;
-import android.content.Intent;
 import android.os.Bundle;
-import java.io.FileDescriptor;
-import java.io.PrintWriter;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class p1 extends Fragment implements m {
-    public static final WeakHashMap b = new WeakHashMap();
-    public final ng a = new ng(3, (byte) 0);
+public final class p1 implements com.google.android.gms.common.api.k, com.google.android.gms.common.api.l {
+    public final com.google.android.gms.common.api.e a;
+    public final boolean b;
+    public n0 c;
 
-    @Override // com.google.android.gms.common.api.internal.m
-    public final void a(String str, l lVar) {
-        this.a.E(str, lVar);
+    public p1(com.google.android.gms.common.api.e eVar, boolean z10) {
+        this.a = eVar;
+        this.b = z10;
     }
 
-    @Override // com.google.android.gms.common.api.internal.m
-    public final l b(Class cls, String str) {
-        return (l) cls.cast(((Map) this.a.c).get(str));
+    @Override // com.google.android.gms.common.api.k
+    public final void onConnected(Bundle bundle) {
+        n6.l.h(this.c, "Callbacks must be attached to a ClientConnectionHelper instance before connecting the client.");
+        this.c.onConnected(bundle);
     }
 
-    @Override // android.app.Fragment
-    public final void dump(String str, FileDescriptor fileDescriptor, PrintWriter printWriter, String[] strArr) {
-        super.dump(str, fileDescriptor, printWriter, strArr);
-        Iterator it = ((Map) this.a.c).values().iterator();
-        while (it.hasNext()) {
-            ((l) it.next()).dump(str, fileDescriptor, printWriter, strArr);
+    @Override // com.google.android.gms.common.api.l
+    public final void onConnectionFailed(k6.a aVar) {
+        com.google.android.gms.common.api.e eVar = this.a;
+        boolean z10 = this.b;
+        n6.l.h(this.c, "Callbacks must be attached to a ClientConnectionHelper instance before connecting the client.");
+        n0 n0Var = this.c;
+        n0Var.a.lock();
+        try {
+            n0Var.m.I(aVar, eVar, z10);
+        } finally {
+            n0Var.a.unlock();
         }
     }
 
-    @Override // com.google.android.gms.common.api.internal.m
-    public final Activity e() {
-        return getActivity();
-    }
-
-    @Override // android.app.Fragment
-    public final void onActivityResult(int i10, int i11, Intent intent) {
-        super.onActivityResult(i10, i11, intent);
-        Iterator it = ((Map) this.a.c).values().iterator();
-        while (it.hasNext()) {
-            ((l) it.next()).onActivityResult(i10, i11, intent);
-        }
-    }
-
-    @Override // android.app.Fragment
-    public final void onCreate(Bundle bundle) {
-        super.onCreate(bundle);
-        this.a.G(bundle);
-    }
-
-    @Override // android.app.Fragment
-    public final void onDestroy() {
-        super.onDestroy();
-        ng ngVar = this.a;
-        ngVar.b = 5;
-        Iterator it = ((Map) ngVar.c).values().iterator();
-        while (it.hasNext()) {
-            ((l) it.next()).onDestroy();
-        }
-    }
-
-    @Override // android.app.Fragment
-    public final void onResume() {
-        super.onResume();
-        ng ngVar = this.a;
-        ngVar.b = 3;
-        Iterator it = ((Map) ngVar.c).values().iterator();
-        while (it.hasNext()) {
-            ((l) it.next()).onResume();
-        }
-    }
-
-    @Override // android.app.Fragment
-    public final void onSaveInstanceState(Bundle bundle) {
-        super.onSaveInstanceState(bundle);
-        this.a.H(bundle);
-    }
-
-    @Override // android.app.Fragment
-    public final void onStart() {
-        super.onStart();
-        ng ngVar = this.a;
-        ngVar.b = 2;
-        Iterator it = ((Map) ngVar.c).values().iterator();
-        while (it.hasNext()) {
-            ((l) it.next()).onStart();
-        }
-    }
-
-    @Override // android.app.Fragment
-    public final void onStop() {
-        super.onStop();
-        ng ngVar = this.a;
-        ngVar.b = 4;
-        Iterator it = ((Map) ngVar.c).values().iterator();
-        while (it.hasNext()) {
-            ((l) it.next()).onStop();
-        }
+    @Override // com.google.android.gms.common.api.k
+    public final void onConnectionSuspended(int i10) {
+        n6.l.h(this.c, "Callbacks must be attached to a ClientConnectionHelper instance before connecting the client.");
+        this.c.onConnectionSuspended(i10);
     }
 }

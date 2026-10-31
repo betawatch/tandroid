@@ -1,34 +1,52 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.voip.VoIPService;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.util.SparseArray;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class g30 implements Runnable {
-    public final /* synthetic */ h30 a;
+public final class g30 extends zt0 {
+    public final /* synthetic */ j30 w2;
 
-    public g30(h30 h30Var) {
-        this.a = h30Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public g30(j30 j30Var, Context context, rt0 rt0Var, j30 j30Var2, f30 f30Var, org.telegram.ui.ActionBar.p6 p6Var) {
+        super(context, 0L, rt0Var, 0, null, null, null, 8, 0, j30Var2, f30Var, 0, p6Var, null);
+        this.w2 = j30Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        VoIPService sharedInstance = VoIPService.getSharedInstance();
-        if (sharedInstance == null || !sharedInstance.isMicMute()) {
-            return;
-        }
-        TLRPC.GroupCallParticipant groupCallParticipant = (TLRPC.GroupCallParticipant) sharedInstance.groupCall.participants.f(sharedInstance.getSelfId());
-        if (groupCallParticipant == null || groupCallParticipant.can_self_unmute || !groupCallParticipant.muted || ChatObject.canManageCalls(sharedInstance.getChat())) {
-            h30 h30Var = this.a;
-            AndroidUtilities.runOnUIThread(h30Var.f, 90L);
-            try {
-                h30Var.performHapticFeedback(3, 2);
-            } catch (Exception unused) {
-            }
-            h30Var.c = true;
-        }
+    @Override // org.telegram.ui.Components.zt0
+    public final boolean C0() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.zt0
+    public final int getInitialTab() {
+        return 8;
+    }
+
+    @Override // org.telegram.ui.Components.zt0
+    public final String getStoriesHashtag() {
+        return this.w2.b;
+    }
+
+    @Override // org.telegram.ui.Components.zt0
+    public final String getStoriesHashtagUsername() {
+        return this.w2.c;
+    }
+
+    @Override // org.telegram.ui.Components.zt0
+    public final void L0(SparseArray sparseArray) {
+    }
+
+    @Override // org.telegram.ui.Components.zt0
+    public final void S0(boolean z10) {
+    }
+
+    @Override // org.telegram.ui.Components.zt0
+    public final void U0(float f7) {
+    }
+
+    @Override // org.telegram.ui.Components.zt0
+    public final void l1(boolean z10) {
     }
 }

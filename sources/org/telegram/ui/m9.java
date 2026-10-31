@@ -1,35 +1,38 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class m9 extends org.telegram.ui.Components.t61 {
-    public static final /* synthetic */ int a = 0;
+public final /* synthetic */ class m9 implements o1.f {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    static {
-        org.telegram.ui.Components.t61.setup(new m9());
+    public /* synthetic */ m9(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // org.telegram.ui.Components.t61
-    public final void bindView(View view, org.telegram.ui.Components.u61 u61Var, boolean z10, org.telegram.ui.Components.k71 k71Var, org.telegram.ui.Components.s71 s71Var) {
-        n9 n9Var = (n9) view;
-        TLRPC.Chat chat = (TLRPC.Chat) u61Var.G;
-        View.OnClickListener onClickListener = u61Var.D;
-        n9Var.c = chat;
-        org.telegram.ui.Components.xi0 xi0Var = n9Var.b;
-        xi0Var.setTag(Long.valueOf(chat.id));
-        n9Var.a.s(chat, null, null, (!ChatObject.isChannel(chat) || chat.megagroup) ? chat.has_geo ? LocaleController.getString(R.string.MegaLocation) : !ChatObject.isPublic(chat) ? LocaleController.getString(R.string.MegaPrivate).toLowerCase() : LocaleController.getString(R.string.MegaPublic).toLowerCase() : !ChatObject.isPublic(chat) ? LocaleController.getString(R.string.ChannelPrivate).toLowerCase() : LocaleController.getString(R.string.ChannelPublic).toLowerCase(), false, false);
-        xi0Var.setOnClickListener(onClickListener);
-    }
-
-    @Override // org.telegram.ui.Components.t61
-    public final View createView(Context context, org.telegram.ui.Components.nm0 nm0Var, int i10, int i11, org.telegram.ui.ActionBar.u6 u6Var) {
-        return new n9(context);
+    @Override // o1.f
+    public final void a(o1.j jVar, boolean z10, float f7, float f10) {
+        switch (this.a) {
+            case 0:
+                u9 u9Var = (u9) this.b;
+                o1.j jVar2 = u9Var.D;
+                if (jVar2 != null) {
+                    jVar2.d();
+                    u9Var.D = null;
+                    break;
+                }
+                break;
+            case 1:
+                om0 om0Var = (om0) this.b;
+                if (jVar == om0Var.c) {
+                    om0Var.c = null;
+                    break;
+                }
+                break;
+            default:
+                ((tr0) this.b).E();
+                break;
+        }
     }
 }

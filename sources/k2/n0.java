@@ -1,101 +1,356 @@
 package k2;
 
-import a8.yb;
-import java.nio.ByteBuffer;
-import java.nio.ByteOrder;
-import java.util.Arrays;
+import android.content.Context;
+import android.content.IntentFilter;
+import android.media.AudioAttributes;
+import android.media.AudioDeviceInfo;
+import android.media.AudioFormat;
+import android.media.AudioManager;
+import android.media.AudioTrack;
+import android.os.Build;
+import android.os.Handler;
+import android.os.Looper;
+import android.util.Pair;
+import e9.x1;
+import j$.util.Objects;
+import java.math.RoundingMode;
+import java.util.List;
+import v7.c8;
+import v7.n7;
+import v7.t6;
+import v7.u6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class n0 extends c2.p {
-    public int[] i;
-    public int[] j;
+public final class n0 implements p {
+    public final Context a;
+    public final x0 b;
+    public final q0 c;
+    public final m0 d;
+    public final float e;
+    public e2.r f;
+    public e2.g0 g;
+    public b h;
+    public e i;
+    public Looper j;
+    public Context k;
 
-    @Override // c2.o
-    public final void b(ByteBuffer byteBuffer) {
-        int[] iArr = this.j;
-        iArr.getClass();
-        int position = byteBuffer.position();
-        int limit = byteBuffer.limit();
-        ByteBuffer l4 = l(((limit - position) / this.b.d) * this.c.d);
-        while (position < limit) {
-            for (int i10 : iArr) {
-                int u10 = (e2.n0.u(this.b.c) * i10) + position;
-                int i11 = this.b.c;
-                if (i11 != 2) {
-                    if (i11 == 3) {
-                        l4.put(byteBuffer.get(u10));
-                    } else if (i11 != 4) {
-                        if (i11 != 21) {
-                            if (i11 != 22) {
-                                if (i11 != 268435456) {
-                                    if (i11 != 1342177280) {
-                                        if (i11 != 1610612736) {
-                                            if (i11 != 1879048192) {
-                                                throw new IllegalStateException("Unexpected encoding: " + this.b.c);
-                                            }
-                                            l4.putDouble(byteBuffer.getDouble(u10));
-                                        }
-                                    }
-                                }
-                            }
-                            l4.putInt(byteBuffer.getInt(u10));
-                        }
-                        ByteOrder order = byteBuffer.order();
-                        ByteOrder byteOrder = ByteOrder.BIG_ENDIAN;
-                        byte b10 = byteBuffer.get(order == byteOrder ? u10 : u10 + 2);
-                        byte b11 = byteBuffer.get(u10 + 1);
-                        if (byteBuffer.order() == byteOrder) {
-                            u10 += 2;
-                        }
-                        int i12 = ((((b10 << 24) & (-16777216)) | ((b11 << 16) & 16711680)) | ((byteBuffer.get(u10) << 8) & 65280)) >> 8;
-                        yb.h((i12 & (-16777216)) == 0 || (i12 & (-8388608)) == -8388608, "Value out of range of 24-bit integer: %s", Integer.toHexString(i12));
-                        yb.g(l4.remaining() >= 3);
-                        l4.put((byte) (l4.order() == byteOrder ? (i12 & 16711680) >> 16 : i12 & 255)).put((byte) ((i12 & 65280) >> 8)).put((byte) (l4.order() == byteOrder ? i12 & 255 : (i12 & 16711680) >> 16));
-                    } else {
-                        l4.putFloat(byteBuffer.getFloat(u10));
-                    }
+    public n0(l0 l0Var) {
+        Context context = l0Var.a;
+        this.a = context;
+        q0 q0Var = l0Var.b;
+        q0Var.getClass();
+        this.c = q0Var;
+        this.b = l0Var.c;
+        this.h = l0Var.d;
+        this.d = context == null ? null : new m0(this);
+        this.e = l0Var.e;
+        this.g = e2.g0.a;
+    }
+
+    public final j0 a(o oVar) {
+        Context context;
+        Context context2;
+        try {
+            int i10 = oVar.h;
+            int i11 = oVar.i;
+            if (i11 == -1 || (context2 = this.a) == null || Build.VERSION.SDK_INT < 34) {
+                context = null;
+            } else {
+                Context context3 = this.k;
+                if (context3 == null || context3.getDeviceId() != i11) {
+                    this.k = context2.createDeviceContext(i11);
                 }
-                l4.putShort(byteBuffer.getShort(u10));
+                context = this.k;
+                i10 = 0;
             }
-            position += this.b.d;
-        }
-        byteBuffer.position(limit);
-        l4.flip();
-    }
-
-    @Override // c2.p
-    public final c2.l h(c2.l lVar) {
-        int i10 = lVar.c;
-        int[] iArr = this.i;
-        if (iArr == null) {
-            return c2.l.e;
-        }
-        int i11 = lVar.b;
-        if (!e2.n0.M(i10)) {
-            throw new c2.n(lVar);
-        }
-        boolean z10 = i11 != iArr.length;
-        int i12 = 0;
-        while (i12 < iArr.length) {
-            int i13 = iArr[i12];
-            if (i13 >= i11) {
-                throw new c2.n("Channel map (" + Arrays.toString(iArr) + ") trying to access non-existent input channel.", lVar);
+            AudioTrack.Builder sessionId = new AudioTrack.Builder().setAudioAttributes(oVar.d ? new AudioAttributes.Builder().setContentType(3).setFlags(16).setUsage(1).build() : oVar.g.b()).setAudioFormat(new AudioFormat.Builder().setSampleRate(oVar.b).setChannelMask(oVar.c).setEncoding(oVar.a).build()).setTransferMode(1).setBufferSizeInBytes(oVar.f).setSessionId(i10);
+            int i12 = Build.VERSION.SDK_INT;
+            if (i12 >= 29) {
+                sessionId.setOffloadedPlayback(oVar.e);
             }
-            z10 |= i13 != i12;
-            i12++;
+            if (i12 >= 34 && context != null) {
+                sessionId.setContext(context);
+            }
+            AudioTrack build = sessionId.build();
+            if (build.getState() == 1) {
+                return new j0(build, oVar, this.d, this.e, this.g);
+            }
+            try {
+                build.release();
+            } catch (Exception unused) {
+            }
+            throw new m();
+        } catch (IllegalArgumentException e) {
+            e = e;
+            throw new m(e);
+        } catch (UnsupportedOperationException e7) {
+            e = e7;
+            throw new m(e);
         }
-        return z10 ? new c2.l(lVar.a, iArr.length, i10) : c2.l.e;
     }
 
-    @Override // c2.p
-    public final void i() {
-        this.j = this.i;
+    public final l b(j jVar) {
+        e(jVar);
+        b2.x xVar = jVar.a;
+        b2.f fVar = jVar.b;
+        g b10 = this.c.b(fVar, xVar);
+        k kVar = new k();
+        String str = xVar.s;
+        int i10 = xVar.M;
+        int i11 = 0;
+        if (!Objects.equals(str, "audio/raw") ? this.h.c(fVar, xVar) != null : i10 == 2) {
+            i11 = 2;
+        }
+        kVar.a = i11;
+        kVar.b = b10.a;
+        kVar.c = b10.b;
+        kVar.d = b10.c;
+        return kVar.a();
     }
 
-    @Override // c2.p
-    public final void k() {
-        this.j = null;
-        this.i = null;
+    /* JADX WARN: Removed duplicated region for block: B:11:0x008a  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0174  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x0176  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x008e  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final o c(j jVar) {
+        int intValue;
+        int i10;
+        boolean z10;
+        char c10;
+        boolean z11;
+        int i11;
+        int i12;
+        double d;
+        boolean z12;
+        int i13;
+        int i14;
+        int j10;
+        b2.x xVar = jVar.a;
+        boolean z13 = jVar.d;
+        b2.f fVar = jVar.b;
+        e(jVar);
+        String str = xVar.s;
+        int i15 = xVar.L;
+        int i16 = xVar.M;
+        int i17 = xVar.K;
+        if (Objects.equals(str, "audio/raw")) {
+            t6.f(e2.l0.M(i16));
+            intValue = e2.l0.t(i17);
+            i10 = e2.l0.u(i16) * i17;
+            z10 = false;
+            c10 = 0;
+        } else {
+            g b10 = z13 ? this.c.b(fVar, xVar) : g.d;
+            if (z13 && b10.a) {
+                str.getClass();
+                int c11 = b2.v0.c(str, xVar.k);
+                int t10 = e2.l0.t(i17);
+                boolean z14 = b10.b;
+                i16 = c11;
+                intValue = t10;
+                z10 = z14;
+                i10 = -1;
+                c10 = 1;
+                z11 = true;
+                i11 = xVar.j;
+                if (Objects.equals(str, "audio/vnd.dts.hd;profile=lbr") && i11 == -1) {
+                    i11 = 768000;
+                }
+                i12 = jVar.h;
+                if (i12 == -1) {
+                    z12 = true;
+                } else {
+                    int minBufferSize = AudioTrack.getMinBufferSize(i15, intValue, i16);
+                    t6.p(minBufferSize != -2);
+                    if (i10 == -1) {
+                        i10 = 1;
+                    }
+                    double d10 = z11 ? this.e : 1.0d;
+                    this.b.getClass();
+                    if (c10 != 0) {
+                        if (c10 != 1) {
+                            z12 = true;
+                            if (c10 != 2) {
+                                throw new IllegalArgumentException();
+                            }
+                            int i18 = i16 == 5 ? 500000 : i16 == 8 ? 1000000 : 250000;
+                            if (i11 != -1) {
+                                RoundingMode roundingMode = RoundingMode.CEILING;
+                                j10 = n7.b(i11, 8);
+                            } else {
+                                j10 = c3.b.j(i16);
+                                t6.p(j10 != -2147483647);
+                            }
+                            d = d10;
+                            i14 = c8.b((i18 * j10) / 1000000);
+                        } else {
+                            d = d10;
+                            z12 = true;
+                            int j11 = c3.b.j(i16);
+                            t6.p(j11 != -2147483647);
+                            i14 = c8.b((50000000 * j11) / 1000000);
+                        }
+                        i13 = i10;
+                    } else {
+                        d = d10;
+                        z12 = true;
+                        long j12 = i15;
+                        long j13 = i10;
+                        i13 = i10;
+                        i14 = e2.l0.i(minBufferSize * 4, c8.b(((250000 * j12) * j13) / 1000000), c8.b(((750000 * j12) * j13) / 1000000));
+                    }
+                    i12 = (((Math.max(minBufferSize, (int) (i14 * d)) + i13) - 1) / i13) * i13;
+                }
+                n nVar = new n();
+                b2.f fVar2 = b2.f.i;
+                nVar.i = -1;
+                nVar.b = i15;
+                nVar.c = intValue;
+                nVar.a = i16;
+                nVar.f = i12;
+                nVar.h = jVar.e;
+                nVar.g = fVar;
+                boolean z15 = z12;
+                nVar.e = c10 != z15 ? z15 : false;
+                nVar.d = jVar.g;
+                nVar.j = z11;
+                nVar.k = z10;
+                nVar.i = jVar.f;
+                return new o(nVar);
+            }
+            Pair c12 = this.h.c(fVar, xVar);
+            if (c12 == null) {
+                String str2 = "Unable to configure passthrough for: " + xVar;
+                str2.getClass();
+                throw new i(str2);
+            }
+            i16 = ((Integer) c12.first).intValue();
+            intValue = ((Integer) c12.second).intValue();
+            i10 = -1;
+            z10 = false;
+            c10 = 2;
+        }
+        z11 = false;
+        i11 = xVar.j;
+        if (Objects.equals(str, "audio/vnd.dts.hd;profile=lbr")) {
+            i11 = 768000;
+        }
+        i12 = jVar.h;
+        if (i12 == -1) {
+        }
+        n nVar2 = new n();
+        b2.f fVar22 = b2.f.i;
+        nVar2.i = -1;
+        nVar2.b = i15;
+        nVar2.c = intValue;
+        nVar2.a = i16;
+        nVar2.f = i12;
+        nVar2.h = jVar.e;
+        nVar2.g = fVar;
+        boolean z152 = z12;
+        nVar2.e = c10 != z152 ? z152 : false;
+        nVar2.d = jVar.g;
+        nVar2.j = z11;
+        nVar2.k = z10;
+        nVar2.i = jVar.f;
+        return new o(nVar2);
+    }
+
+    public final void d() {
+        z2.d dVar;
+        e2.r rVar = this.f;
+        if (rVar != null) {
+            rVar.d();
+        }
+        e eVar = this.i;
+        if (eVar != null) {
+            Context context = eVar.a;
+            if (eVar.k) {
+                eVar.h = null;
+                c2.h.e(context).unregisterAudioDeviceCallback(eVar.d);
+                if (Build.VERSION.SDK_INT >= 32 && (dVar = eVar.g) != null) {
+                    dVar.e();
+                    eVar.g = null;
+                }
+                context.unregisterReceiver(eVar.e);
+                d dVar2 = eVar.f;
+                if (dVar2 != null) {
+                    dVar2.a.unregisterContentObserver(dVar2);
+                }
+                eVar.k = false;
+            }
+        }
+    }
+
+    public final void e(j jVar) {
+        Context context;
+        b b10;
+        AudioDeviceInfo audioDeviceInfo = jVar.c;
+        b2.f fVar = jVar.b;
+        f();
+        e eVar = this.i;
+        if (eVar == null && (context = this.a) != null) {
+            e eVar2 = new e(context, new ig.c0(this, 18), fVar, audioDeviceInfo);
+            this.i = eVar2;
+            if (eVar2.k) {
+                b10 = eVar2.h;
+                b10.getClass();
+            } else {
+                eVar2.k = true;
+                d dVar = eVar2.f;
+                if (dVar != null) {
+                    dVar.a.registerContentObserver(dVar.b, false, dVar);
+                }
+                Context context2 = eVar2.a;
+                AudioManager e = c2.h.e(context2);
+                c cVar = eVar2.d;
+                Handler handler = eVar2.c;
+                e.registerAudioDeviceCallback(cVar, handler);
+                if (Build.VERSION.SDK_INT >= 32 && eVar2.g == null) {
+                    eVar2.g = new z2.d(context2, new gg.c(eVar2, 19), Boolean.valueOf(e2.l0.P(context2)));
+                }
+                b10 = b.b(context2, context2.registerReceiver(eVar2.e, new IntentFilter("android.media.action.HDMI_AUDIO_PLUG"), null, handler), eVar2.j, eVar2.i, eVar2.a());
+                eVar2.h = b10;
+            }
+            this.h = b10;
+        } else if (eVar != null) {
+            if (audioDeviceInfo != null && !audioDeviceInfo.equals(eVar.i)) {
+                eVar.i = audioDeviceInfo;
+                Context context3 = eVar.a;
+                b2.f fVar2 = eVar.j;
+                List a2 = eVar.a();
+                x1 x1Var = b.e;
+                eVar.b(b.b(context3, context3.registerReceiver(null, new IntentFilter("android.media.action.HDMI_AUDIO_PLUG")), fVar2, audioDeviceInfo, a2));
+            }
+            e eVar3 = this.i;
+            if (!Objects.equals(fVar, eVar3.j)) {
+                eVar3.j = fVar;
+                Context context4 = eVar3.a;
+                AudioDeviceInfo audioDeviceInfo2 = eVar3.i;
+                List a10 = eVar3.a();
+                x1 x1Var2 = b.e;
+                eVar3.b(b.b(context4, context4.registerReceiver(null, new IntentFilter("android.media.action.HDMI_AUDIO_PLUG")), fVar, audioDeviceInfo2, a10));
+            }
+        }
+        this.h.getClass();
+    }
+
+    public final void f() {
+        if (this.a == null) {
+            return;
+        }
+        Looper myLooper = Looper.myLooper();
+        Looper looper = this.j;
+        boolean z10 = looper == null || looper == myLooper;
+        String name = looper == null ? "null" : looper.getThread().getName();
+        String name2 = myLooper != null ? myLooper.getThread().getName() : "null";
+        if (!z10) {
+            throw new IllegalStateException(u6.a("AudioTrackAudioOutputProvider accessed on multiple threads: %s and %s", name, name2));
+        }
+        this.j = myLooper;
     }
 }

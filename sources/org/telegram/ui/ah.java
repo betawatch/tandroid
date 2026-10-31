@@ -1,41 +1,69 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ah implements Utilities.Callback {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ Long d;
-    public final /* synthetic */ Object e;
+public final /* synthetic */ class ah implements Runnable {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ un b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ long d;
 
-    public /* synthetic */ ah(Object obj, long j10, long j11, Long l4, int i10) {
-        this.a = i10;
-        this.e = obj;
-        this.b = j10;
-        this.c = j11;
-        this.d = l4;
+    public /* synthetic */ ah(un unVar, long j10, boolean z10) {
+        this.b = unVar;
+        this.d = j10;
+        this.c = z10;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        int i10;
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                wn.u1((wn) this.e, this.b, this.c, this.d, (Boolean) obj);
+                un.k1(this.b, this.d, this.c);
                 break;
             default:
-                Boolean bool = (Boolean) obj;
-                i10 = ((org.telegram.ui.ActionBar.r2) ((jj) this.e).b).currentAccount;
-                boolean z10 = false;
-                bi.ca y3 = bi.ca.y(i10, false);
-                if (this.d.longValue() > 0 && bool.booleanValue()) {
-                    z10 = true;
+                mk mkVar = this.b.Z;
+                if (mkVar != null) {
+                    MediaController B = MediaController.B();
+                    if (!mkVar.Y1 && !mkVar.F2 && B.J() && !B.K() && B.f1 == mkVar.G2) {
+                        mkVar.c1 = false;
+                        org.telegram.ui.Components.zd zdVar = mkVar.b1;
+                        if (zdVar != null) {
+                            zdVar.j(org.telegram.ui.Components.dg.a, false);
+                        }
+                        mkVar.F2 = true;
+                        mkVar.K1(0, true);
+                        if (this.c) {
+                            mkVar.O = true;
+                            org.telegram.ui.Components.wf wfVar = mkVar.O1;
+                            if (wfVar != null) {
+                                wfVar.D.d(1, true, false);
+                            }
+                            org.telegram.messenger.ui b02 = org.telegram.messenger.ui.b0(mkVar.Q);
+                            long j10 = mkVar.Q2;
+                            un unVar = mkVar.P2;
+                            b02.e2(j10, (unVar == null || !unVar.v4) ? 0L : unVar.b(), true);
+                        }
+                        long j11 = this.d;
+                        long currentTimeMillis = j11 > 0 ? System.currentTimeMillis() - j11 : B.j1;
+                        mkVar.i1 = currentTimeMillis;
+                        org.telegram.ui.Components.bg bgVar = mkVar.Y0;
+                        if (bgVar != null) {
+                            bgVar.a(currentTimeMillis);
+                        }
+                        mkVar.s4 = true;
+                        mkVar.w1();
+                        break;
+                    }
                 }
-                y3.i0(this.b, this.c, z10, true);
                 break;
         }
+    }
+
+    public /* synthetic */ ah(un unVar, boolean z10, long j10) {
+        this.b = unVar;
+        this.c = z10;
+        this.d = j10;
     }
 }

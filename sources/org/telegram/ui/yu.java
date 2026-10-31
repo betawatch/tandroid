@@ -1,45 +1,56 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.graphics.RectF;
+import android.os.Bundle;
+import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class yu implements xx, ts {
-    public final /* synthetic */ bv a;
+public final class yu extends org.telegram.ui.Components.jx0 {
+    public final /* synthetic */ m4.c I;
 
-    public /* synthetic */ yu(bv bvVar) {
-        this.a = bvVar;
-    }
-
-    @Override // org.telegram.ui.xx
-    public /* synthetic */ boolean C() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.xx
-    public /* synthetic */ boolean K(ey eyVar) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.ts
-    public void b(TLRPC.User user) {
-        this.a.m0(user);
-    }
-
-    @Override // org.telegram.ui.xx
-    public boolean v(ey eyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, cf1 cf1Var) {
-        if (arrayList.isEmpty()) {
-            return true;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public yu(Context context, long j10, m4.c cVar) {
+        super(context);
+        this.I = cVar;
+        this.a = new RectF();
+        this.f = 0.0f;
+        org.telegram.ui.Components.e6 e6Var = new org.telegram.ui.Components.e6(false, true, true);
+        this.r = e6Var;
+        org.telegram.ui.Components.e6 e6Var2 = new org.telegram.ui.Components.e6(false, true, false);
+        this.s = e6Var2;
+        e6Var.setCallback(this);
+        e6Var2.setCallback(this);
+        this.n = Long.valueOf(j10);
+        org.telegram.ui.Components.r8 r8Var = new org.telegram.ui.Components.r8((org.telegram.ui.ActionBar.p6) null);
+        r8Var.p = 1.5f;
+        ImageReceiver imageReceiver = new ImageReceiver(null);
+        this.h = imageReceiver;
+        imageReceiver.H0(this);
+        if (j10 == Long.MAX_VALUE) {
+            this.w = org.telegram.messenger.cd.L0(2131752647, null);
+            r8Var.g(14);
+            imageReceiver.i0(null, r8Var, null);
+        } else {
+            String H = org.telegram.messenger.o5.H(imageReceiver, r8Var, org.telegram.messenger.vp.r1(org.telegram.messenger.d20.s0).d2(j10));
+            this.w = H;
+            this.w = org.telegram.messenger.k6.m(H, null, false, null, 0);
         }
-        long j10 = ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId;
-        if (!DialogObject.isUserDialog(j10)) {
-            return true;
+    }
+
+    @Override // org.telegram.ui.Components.jx0
+    public final void b() {
+        m4.c cVar = this.I;
+        y6 y6Var = (y6) cVar.c;
+        y6Var.Z.dismiss();
+        Bundle bundle = new Bundle();
+        long j10 = ((s6) cVar.b).a;
+        if (j10 > 0) {
+            bundle.putLong("user_id", j10);
+        } else {
+            bundle.putLong("chat_id", -j10);
         }
-        bv bvVar = this.a;
-        bvVar.m0(bvVar.getMessagesController().getUser(Long.valueOf(j10)));
-        return true;
+        y6Var.presentFragment(new ProfileActivity(bundle, null));
     }
 }

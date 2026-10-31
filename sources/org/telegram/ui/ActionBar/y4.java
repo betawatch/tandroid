@@ -1,14 +1,30 @@
 package org.telegram.ui.ActionBar;
 
-import android.view.animation.Interpolator;
+import org.telegram.ui.nn;
+import org.telegram.ui.pn;
+import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class y4 implements Interpolator {
-    public final float a = 1.0f / ((float) (1.0d - Math.pow(100, -1.0f)));
+public final class y4 {
+    public final s6 a;
+    public final int b;
+    public final boolean c;
+    public final boolean d;
+    public boolean e;
+    public bi.n4 h;
+    public nn i;
+    public nn j;
+    public pn k;
+    public sn m;
+    public boolean f = true;
+    public boolean g = true;
+    public long l = 200;
 
-    @Override // android.animation.TimeInterpolator
-    public final float getInterpolation(float f7) {
-        return 1.0f - (((float) (1.0d - Math.pow(100, -(1.0f - f7)))) * this.a);
+    public y4(s6 s6Var, int i10, boolean z10, boolean z11) {
+        this.a = s6Var;
+        this.b = i10;
+        this.c = z10;
+        this.d = z11;
     }
 }

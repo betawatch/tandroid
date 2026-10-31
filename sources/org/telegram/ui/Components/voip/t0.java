@@ -1,15 +1,29 @@
 package org.telegram.ui.Components.voip;
 
-import org.webrtc.RendererCommon;
+import org.telegram.ui.Components.ei0;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes4.dex */
-public final class t0 implements RendererCommon.RendererEvents {
-    @Override // org.webrtc.RendererCommon.RendererEvents
-    public final void onFirstFrameRendered() {
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class t0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ jg.b1 b;
+    public final /* synthetic */ ei0 c;
+
+    public /* synthetic */ t0(jg.b1 b1Var, ei0 ei0Var, int i10) {
+        this.a = i10;
+        this.b = b1Var;
+        this.c = ei0Var;
     }
 
-    @Override // org.webrtc.RendererCommon.RendererEvents
-    public final void onFrameResolutionChanged(int i10, int i11, int i12) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                org.telegram.messenger.i0.g3(new t0(this.b, this.c, 1));
+                break;
+            default:
+                this.b.removeView(this.c);
+                break;
+        }
     }
 }

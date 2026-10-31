@@ -1,53 +1,28 @@
 package org.telegram.ui.Components;
 
-import android.text.TextUtils;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_wallet;
+import android.content.Context;
+import android.view.View;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class tk implements Utilities.Callback2 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ al b;
+public final class tk extends s4.b0 {
+    public final /* synthetic */ ag.d1 r;
 
-    public /* synthetic */ tk(al alVar, int i10) {
-        this.a = i10;
-        this.b = alVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public tk(ag.d1 d1Var, Context context) {
+        super(context);
+        this.r = d1Var;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback2
-    public final void run(Object obj, Object obj2) {
-        switch (this.a) {
-            case 0:
-                TL_wallet.walletUserAddress walletuseraddress = (TL_wallet.walletUserAddress) obj;
-                String str = (String) obj2;
-                al alVar = this.b;
-                TLRPC.User user = alVar.r;
-                if (!alVar.K) {
-                    alVar.I = false;
-                    if (TextUtils.equals(str, "WALLET_USER_UNAVAILABLE")) {
-                        alVar.J = true;
-                    }
-                    if (walletuseraddress != null && walletuseraddress.user_id == user.id) {
-                        alVar.G = walletuseraddress.address;
-                        alVar.H = walletuseraddress.public_key;
-                    }
-                    alVar.v.a(alVar.G, user);
-                    alVar.g0();
-                    alVar.Y();
-                    break;
-                }
-                break;
-            default:
-                TL_wallet.walletTransaction wallettransaction = (TL_wallet.walletTransaction) obj;
-                al alVar2 = this.b;
-                if (!alVar2.K && wallettransaction != null) {
-                    alVar2.g0 = wallettransaction.fee;
-                    alVar2.h0();
-                    break;
-                }
-                break;
-        }
+    @Override // s4.b0
+    public final int k(int i10, View view) {
+        int k10 = super.k(i10, view);
+        bl blVar = (bl) this.r.V;
+        return k10 - (blVar.N.getPaddingTop() - (blVar.x0 - blVar.w0));
+    }
+
+    @Override // s4.b0
+    public final int m(int i10) {
+        return super.m(i10) * 4;
     }
 }

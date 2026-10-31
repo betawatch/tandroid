@@ -2,7 +2,6 @@ package org.telegram.ui.Components;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
-import android.app.Activity;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.RectF;
@@ -12,43 +11,38 @@ import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.ImageView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.Bitmaps;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.UserConfig;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public class PipRoundVideoView implements NotificationCenter.NotificationCenterDelegate {
+public class PipRoundVideoView implements org.telegram.messenger.us {
     public static PipRoundVideoView F;
+    public DecelerateInterpolator D;
     public final RectF E = new RectF();
-    public vg0 a;
+    public ze0 a;
     public int b;
     public TextureView c;
     public ImageView d;
-    public wg0 e;
+    public af0 e;
     public Bitmap f;
     public int h;
     public int n;
     public AnimatorSet r;
     public Runnable s;
-    public WindowManager.LayoutParams v;
-    public WindowManager w;
-    public SharedPreferences x;
-    public DecelerateInterpolator y;
+    public WindowManager.LayoutParams w;
+    public WindowManager x;
+    public SharedPreferences y;
 
     public static int b(float f7, int i10, int i11, boolean z10) {
         int i12;
         if (z10) {
-            i12 = AndroidUtilities.displaySize.x;
+            i12 = org.telegram.messenger.i0.q.x;
         } else {
-            i12 = AndroidUtilities.displaySize.y - i11;
-            i11 = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
+            i12 = org.telegram.messenger.i0.q.y - i11;
+            i11 = org.telegram.ui.ActionBar.l.getCurrentActionBarHeight();
         }
-        int dp = i10 == 0 ? AndroidUtilities.dp(10.0f) : i10 == 1 ? (i12 - i11) - AndroidUtilities.dp(10.0f) : Math.round((r0 - AndroidUtilities.dp(20.0f)) * f7) + AndroidUtilities.dp(10.0f);
-        return !z10 ? org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + dp : dp;
+        int L = i10 == 0 ? org.telegram.messenger.i0.L(10.0f) : i10 == 1 ? (i12 - i11) - org.telegram.messenger.i0.L(10.0f) : Math.round((r0 - org.telegram.messenger.i0.L(20.0f)) * f7) + org.telegram.messenger.i0.L(10.0f);
+        return !z10 ? org.telegram.ui.ActionBar.l.getCurrentActionBarHeight() + L : L;
     }
 
     public final void a(boolean z10) {
@@ -59,13 +53,13 @@ public class PipRoundVideoView implements NotificationCenter.NotificationCenterD
                 this.f = null;
             }
             try {
-                this.w.removeView(this.a);
+                this.x.removeView(this.a);
             } catch (Exception unused) {
             }
             if (F == this) {
                 F = null;
             }
-            NotificationCenter.getInstance(this.b).removeObserver(this, NotificationCenter.messagePlayingProgressDidChanged);
+            org.telegram.messenger.zs.f(this.b).n(this, org.telegram.messenger.zs.e2);
             return;
         }
         TextureView textureView = this.c;
@@ -73,7 +67,10 @@ public class PipRoundVideoView implements NotificationCenter.NotificationCenterD
             return;
         }
         if (this.c.getWidth() > 0 && this.c.getHeight() > 0) {
-            this.f = Bitmaps.createBitmap(this.c.getWidth(), this.c.getHeight(), Bitmap.Config.ARGB_8888);
+            int width = this.c.getWidth();
+            int height = this.c.getHeight();
+            Bitmap.Config config = Bitmap.Config.ARGB_8888;
+            this.f = org.telegram.messenger.js.b(width, height);
         }
         try {
             this.c.getBitmap(this.f);
@@ -96,83 +93,86 @@ public class PipRoundVideoView implements NotificationCenter.NotificationCenterD
         }
         AnimatorSet animatorSet2 = new AnimatorSet();
         this.r = animatorSet2;
-        animatorSet2.playTogether(ObjectAnimator.ofFloat(this.a, (Property<vg0, Float>) View.ALPHA, z10 ? 1.0f : 0.0f), ObjectAnimator.ofFloat(this.a, (Property<vg0, Float>) View.SCALE_X, z10 ? 1.0f : 0.8f), ObjectAnimator.ofFloat(this.a, (Property<vg0, Float>) View.SCALE_Y, z10 ? 1.0f : 0.8f));
+        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this.a, (Property<ze0, Float>) View.ALPHA, z10 ? 1.0f : 0.0f);
+        ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(this.a, (Property<ze0, Float>) View.SCALE_X, z10 ? 1.0f : 0.8f);
+        int i10 = 3;
+        animatorSet2.playTogether(ofFloat, ofFloat2, ObjectAnimator.ofFloat(this.a, (Property<ze0, Float>) View.SCALE_Y, z10 ? 1.0f : 0.8f));
         this.r.setDuration(150L);
-        if (this.y == null) {
-            this.y = new DecelerateInterpolator();
+        if (this.D == null) {
+            this.D = new DecelerateInterpolator();
         }
-        this.r.addListener(new org.telegram.ui.lo(18, this, z10));
-        this.r.setInterpolator(this.y);
+        this.r.addListener(new ha0(i10, this, z10));
+        this.r.setInterpolator(this.D);
         this.r.start();
     }
 
-    public final void d(Activity activity, Runnable runnable) {
-        if (activity == null) {
+    public final void d(LaunchActivity launchActivity, Runnable runnable) {
+        if (launchActivity == null) {
             return;
         }
         F = this;
         this.s = runnable;
-        vg0 vg0Var = new vg0(this, activity);
-        this.a = vg0Var;
-        vg0Var.setWillNotDraw(false);
-        this.h = AndroidUtilities.dp(126.0f);
-        this.n = AndroidUtilities.dp(126.0f);
-        wg0 wg0Var = new wg0(this, activity, 0);
-        this.e = wg0Var;
-        wg0Var.setOutlineProvider(new ag.v0(16));
+        ze0 ze0Var = new ze0(this, launchActivity);
+        this.a = ze0Var;
+        ze0Var.setWillNotDraw(false);
+        this.h = org.telegram.messenger.i0.L(126.0f);
+        this.n = org.telegram.messenger.i0.L(126.0f);
+        af0 af0Var = new af0(this, launchActivity, 0);
+        this.e = af0Var;
+        af0Var.setOutlineProvider(new bi.d2(13));
         this.e.setClipToOutline(true);
         this.e.a(1.0f, 0);
-        this.a.addView(this.e, kb1.h(120, 120.0f, 51, 3.0f, 3.0f, 0.0f, 0.0f));
+        this.a.addView(this.e, w7.b6.d(120, 120.0f, 51, 3.0f, 3.0f, 0.0f, 0.0f));
         this.a.setAlpha(1.0f);
         this.a.setScaleX(0.8f);
         this.a.setScaleY(0.8f);
-        this.c = new TextureView(activity);
-        float dpf2 = (AndroidUtilities.dpf2(2.0f) + AndroidUtilities.dpf2(120.0f)) / AndroidUtilities.dpf2(120.0f);
-        this.c.setScaleX(dpf2);
-        this.c.setScaleY(dpf2);
-        this.e.addView(this.c, kb1.g(-1.0f, -1));
-        ImageView imageView = new ImageView(activity);
+        this.c = new TextureView(launchActivity);
+        float N = (org.telegram.messenger.i0.N(2.0f) + org.telegram.messenger.i0.N(120.0f)) / org.telegram.messenger.i0.N(120.0f);
+        this.c.setScaleX(N);
+        this.c.setScaleY(N);
+        this.e.addView(this.c, w7.b6.c(-1.0f, -1));
+        ImageView imageView = new ImageView(launchActivity);
         this.d = imageView;
-        this.e.addView(imageView, kb1.g(-1.0f, -1));
+        this.e.addView(imageView, w7.b6.c(-1.0f, -1));
         this.d.setVisibility(4);
-        this.w = (WindowManager) activity.getSystemService("window");
-        SharedPreferences sharedPreferences = ApplicationLoader.applicationContext.getSharedPreferences("pipconfig", 0);
-        this.x = sharedPreferences;
+        this.x = (WindowManager) launchActivity.getSystemService("window");
+        SharedPreferences sharedPreferences = org.telegram.messenger.w0.b.getSharedPreferences("pipconfig", 0);
+        this.y = sharedPreferences;
         int i10 = sharedPreferences.getInt("sidex", 1);
-        int i11 = this.x.getInt("sidey", 0);
-        float f7 = this.x.getFloat("px", 0.0f);
-        float f10 = this.x.getFloat("py", 0.0f);
+        int i11 = this.y.getInt("sidey", 0);
+        float f7 = this.y.getFloat("px", 0.0f);
+        float f10 = this.y.getFloat("py", 0.0f);
         try {
             WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams();
-            this.v = layoutParams;
+            this.w = layoutParams;
             int i12 = this.h;
             layoutParams.width = i12;
             layoutParams.height = this.n;
             layoutParams.x = b(f7, i10, i12, true);
-            this.v.y = b(f10, i11, this.n, false);
-            WindowManager.LayoutParams layoutParams2 = this.v;
+            this.w.y = b(f10, i11, this.n, false);
+            WindowManager.LayoutParams layoutParams2 = this.w;
             layoutParams2.format = -3;
             layoutParams2.gravity = 51;
             layoutParams2.type = 99;
             layoutParams2.flags = 16777736;
-            AndroidUtilities.setPreferredMaxRefreshRate(this.w, this.a, layoutParams2);
-            this.w.addView(this.a, this.v);
-            int i13 = UserConfig.selectedAccount;
+            org.telegram.messenger.i0.x3(this.x, this.a, layoutParams2);
+            this.x.addView(this.a, this.w);
+            int i13 = org.telegram.messenger.d20.s0;
             this.b = i13;
-            NotificationCenter.getInstance(i13).addWeakObserver(this, NotificationCenter.messagePlayingProgressDidChanged);
+            org.telegram.messenger.zs.f(i13).c(this, org.telegram.messenger.zs.e2);
             c(true);
         } catch (Exception e) {
-            FileLog.e(e);
+            org.telegram.messenger.f8.g(e, true);
         }
     }
 
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    @Override // org.telegram.messenger.us
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        wg0 wg0Var;
-        if (i10 != NotificationCenter.messagePlayingProgressDidChanged || (wg0Var = this.e) == null) {
+        af0 af0Var;
+        if (i10 != org.telegram.messenger.zs.e2 || (af0Var = this.e) == null) {
             return;
         }
-        wg0Var.invalidate();
+        af0Var.invalidate();
     }
 
     public final void e(boolean z10) {
@@ -182,38 +182,38 @@ public class PipRoundVideoView implements NotificationCenter.NotificationCenterD
         }
         AnimatorSet animatorSet2 = new AnimatorSet();
         this.r = animatorSet2;
-        animatorSet2.playTogether(ObjectAnimator.ofFloat(this.a, (Property<vg0, Float>) View.ALPHA, z10 ? 1.0f : 0.0f), ObjectAnimator.ofFloat(this.a, (Property<vg0, Float>) View.SCALE_X, z10 ? 1.0f : 0.8f), ObjectAnimator.ofFloat(this.a, (Property<vg0, Float>) View.SCALE_Y, z10 ? 1.0f : 0.8f));
+        animatorSet2.playTogether(ObjectAnimator.ofFloat(this.a, (Property<ze0, Float>) View.ALPHA, z10 ? 1.0f : 0.0f), ObjectAnimator.ofFloat(this.a, (Property<ze0, Float>) View.SCALE_X, z10 ? 1.0f : 0.8f), ObjectAnimator.ofFloat(this.a, (Property<ze0, Float>) View.SCALE_Y, z10 ? 1.0f : 0.8f));
         this.r.setDuration(150L);
-        if (this.y == null) {
-            this.y = new DecelerateInterpolator();
+        if (this.D == null) {
+            this.D = new DecelerateInterpolator();
         }
-        this.r.addListener(new xg0(this, 0));
-        this.r.setInterpolator(this.y);
+        this.r.addListener(new bf0(this, 0));
+        this.r.setInterpolator(this.D);
         this.r.start();
     }
 
     public int getX() {
-        return this.v.x;
+        return this.w.x;
     }
 
     public int getY() {
-        return this.v.y;
+        return this.w.y;
     }
 
     public void setX(int i10) {
-        WindowManager.LayoutParams layoutParams = this.v;
+        WindowManager.LayoutParams layoutParams = this.w;
         layoutParams.x = i10;
         try {
-            this.w.updateViewLayout(this.a, layoutParams);
+            this.x.updateViewLayout(this.a, layoutParams);
         } catch (Exception unused) {
         }
     }
 
     public void setY(int i10) {
-        WindowManager.LayoutParams layoutParams = this.v;
+        WindowManager.LayoutParams layoutParams = this.w;
         layoutParams.y = i10;
         try {
-            this.w.updateViewLayout(this.a, layoutParams);
+            this.x.updateViewLayout(this.a, layoutParams);
         } catch (Exception unused) {
         }
     }

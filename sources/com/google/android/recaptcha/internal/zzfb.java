@@ -1,22 +1,21 @@
 package com.google.android.recaptcha.internal;
 
-import a8.jd;
-import ce.b0;
-import ce.f0;
-import ce.g1;
+import cd.c;
+import cd.h;
+import dd.a;
+import ed.j;
 import java.util.Iterator;
 import java.util.List;
-import ld.c;
-import ld.h;
-import md.a;
-import nd.i;
-import ud.p;
-import zd.b;
-import zd.d;
+import ld.p;
+import qd.b;
+import qd.d;
+import td.b0;
+import td.e0;
+import td.f1;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-final class zzfb extends i implements p {
+final class zzfb extends j implements p {
     int zza;
     final /* synthetic */ zzfp zzb;
     final /* synthetic */ zzxn zzc;
@@ -31,16 +30,16 @@ final class zzfb extends i implements p {
         this.zzd = j10;
     }
 
-    @Override // nd.a
+    @Override // ed.a
     public final c create(Object obj, c cVar) {
         zzfb zzfbVar = new zzfb(this.zzb, this.zzc, this.zzd, cVar);
         zzfbVar.zze = obj;
         return zzfbVar;
     }
 
-    @Override // ud.p
+    @Override // ld.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzfb) create((zzhk) obj, (c) obj2)).invokeSuspend(jd.i.a);
+        return ((zzfb) create((zzhk) obj, (c) obj2)).invokeSuspend(ad.j.a);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:15:0x0053, code lost:
@@ -55,7 +54,7 @@ final class zzfb extends i implements p {
     
         if (r10 != r1) goto L17;
      */
-    @Override // nd.a
+    @Override // ed.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -67,7 +66,7 @@ final class zzfb extends i implements p {
         int i10 = this.zza;
         try {
             if (i10 == 0) {
-                jd.b(obj);
+                l9.b.b(obj);
                 zzhkVar = (zzhk) this.zze;
                 zzfp zzfpVar = this.zzb;
                 zzxn zzxnVar = this.zzc;
@@ -80,36 +79,36 @@ final class zzfb extends i implements p {
             } else {
                 if (i10 != 1) {
                     if (i10 == 2) {
-                        jd.b(obj);
-                        return jd.i.a;
+                        l9.b.b(obj);
+                        return ad.j.a;
                     }
                     zzcg zzcgVar = (zzcg) this.zze;
-                    jd.b(obj);
+                    l9.b.b(obj);
                     throw zzcgVar;
                 }
                 zzhkVar = (zzhk) this.zze;
-                jd.b(obj);
+                l9.b.b(obj);
             }
             this.zze = null;
             this.zza = 2;
         } catch (zzcg e) {
             zzfp zzfpVar2 = this.zzb;
-            g1 g1Var = (g1) zzfp.zzf(zzfpVar2).zzd().c().get(b0Var);
-            if (g1Var != null && (children = g1Var.getChildren()) != null) {
+            f1 f1Var = (f1) zzfp.zzf(zzfpVar2).zzd().c().get(b0Var);
+            if (f1Var != null && (children = f1Var.getChildren()) != null) {
                 Iterator it = children.iterator();
                 while (it.hasNext()) {
-                    ((g1) it.next()).cancel(null);
+                    ((f1) it.next()).cancel(null);
                 }
             }
             h c10 = zzfp.zzf(zzfpVar2).zzd().c();
-            g1 g1Var2 = (g1) c10.get(b0Var);
-            if (g1Var2 == null) {
+            f1 f1Var2 = (f1) c10.get(b0Var);
+            if (f1Var2 == null) {
                 throw new IllegalStateException(("Current context doesn't contain Job in it: " + c10).toString());
             }
-            List a2 = d.a(g1Var2.getChildren());
+            List a2 = d.a(f1Var2.getChildren());
             this.zze = e;
             this.zza = 3;
-            if (f0.o(a2, this) != aVar) {
+            if (e0.o(a2, this) != aVar) {
                 throw e;
             }
         }

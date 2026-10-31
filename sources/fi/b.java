@@ -1,51 +1,63 @@
 package fi;
 
-import android.animation.ValueAnimator;
+import android.graphics.Canvas;
+import android.graphics.LinearGradient;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.RenderNode;
+import android.support.v4.media.session.w;
+import v7.i7;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class b implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ d b;
+public final class b extends i7 {
+    public final RenderNode a = w.k();
+    public final Paint b = new Paint(1);
+    public final /* synthetic */ f c;
 
-    public /* synthetic */ b(d dVar, int i10) {
-        this.a = i10;
-        this.b = dVar;
+    public b(f fVar) {
+        this.c = fVar;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                d dVar = this.b;
-                dVar.getClass();
-                dVar.S = Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue());
-                dVar.invalidate();
-                break;
-            case 1:
-                d dVar2 = this.b;
-                dVar2.getClass();
-                dVar2.b0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                dVar2.invalidate();
-                break;
-            case 2:
-                d dVar3 = this.b;
-                dVar3.getClass();
-                dVar3.P = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                dVar3.invalidate();
-                break;
-            case 3:
-                d dVar4 = this.b;
-                dVar4.getClass();
-                dVar4.K = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                dVar4.invalidate();
-                break;
-            default:
-                d dVar5 = this.b;
-                dVar5.getClass();
-                dVar5.K = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                dVar5.invalidate();
-                break;
+    @Override // v7.i7
+    public final void a(Rect rect, RectF rectF) {
+        f fVar = this.c;
+        if (fVar.x || !this.a.hasDisplayList()) {
+            int width = rect.width();
+            int height = rect.height();
+            int i10 = fVar.y;
+            float f7 = (i10 == 1 || i10 == 4) ? height : width;
+            g gVar = fVar.F;
+            gVar.getClass();
+            LinearGradient l4 = f.l(fVar, gVar, f7, 0, fVar.J, 1);
+            Paint paint = this.b;
+            paint.setShader(l4);
+            this.a.setPosition(0, 0, width, height);
+            this.a.beginRecording().drawRect(0.0f, 0.0f, width, height, paint);
+            this.a.endRecording();
+            paint.setShader(null);
+            fVar.x = false;
         }
+    }
+
+    @Override // v7.i7
+    public final void b() {
+        this.a.discardDisplayList();
+    }
+
+    @Override // v7.i7
+    public final void c(Canvas canvas) {
+        canvas.drawRenderNode(this.a);
+    }
+
+    @Override // v7.i7
+    public final boolean d() {
+        return this.a.hasDisplayList();
+    }
+
+    @Override // v7.i7
+    public final void e(float f7) {
+        this.a.setAlpha(f7);
     }
 }

@@ -1,27 +1,48 @@
 package com.google.android.gms.internal.cast;
 
-import sun.misc.Unsafe;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public abstract class o6 {
-    public final Unsafe a;
-
-    public o6(Unsafe unsafe) {
-        this.a = unsafe;
+public final class o6 extends p6 {
+    @Override // com.google.android.gms.internal.cast.p6
+    public final double a(Object obj, long j10) {
+        return Double.longBitsToDouble(this.a.getLong(obj, j10));
     }
 
-    public abstract double a(Object obj, long j10);
+    @Override // com.google.android.gms.internal.cast.p6
+    public final float b(Object obj, long j10) {
+        return Float.intBitsToFloat(this.a.getInt(obj, j10));
+    }
 
-    public abstract float b(Object obj, long j10);
+    @Override // com.google.android.gms.internal.cast.p6
+    public final void c(Object obj, long j10, boolean z10) {
+        if (q6.g) {
+            q6.c(obj, j10, z10 ? (byte) 1 : (byte) 0);
+        } else {
+            q6.d(obj, j10, z10 ? (byte) 1 : (byte) 0);
+        }
+    }
 
-    public abstract void c(Object obj, long j10, boolean z10);
+    @Override // com.google.android.gms.internal.cast.p6
+    public final void d(Object obj, long j10, byte b10) {
+        if (q6.g) {
+            q6.c(obj, j10, b10);
+        } else {
+            q6.d(obj, j10, b10);
+        }
+    }
 
-    public abstract void d(Object obj, long j10, byte b10);
+    @Override // com.google.android.gms.internal.cast.p6
+    public final void e(Object obj, long j10, double d) {
+        this.a.putLong(obj, j10, Double.doubleToLongBits(d));
+    }
 
-    public abstract void e(Object obj, long j10, double d);
+    @Override // com.google.android.gms.internal.cast.p6
+    public final void f(Object obj, long j10, float f7) {
+        this.a.putInt(obj, j10, Float.floatToIntBits(f7));
+    }
 
-    public abstract void f(Object obj, long j10, float f7);
-
-    public abstract boolean g(Object obj, long j10);
+    @Override // com.google.android.gms.internal.cast.p6
+    public final boolean g(Object obj, long j10) {
+        return q6.g ? q6.m(obj, j10) : q6.n(obj, j10);
+    }
 }

@@ -1,9 +1,9 @@
 package com.google.android.recaptcha.internal;
 
+import bd.h;
 import java.util.Arrays;
-import kd.f;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class zzjw implements zzjt {
     public static final zzjw zza = new zzjw();
@@ -25,7 +25,7 @@ public final class zzjw implements zzjt {
         if (cls == null) {
             throw new zzdm(4, 5, null);
         }
-        Class[] zzf = zzizVar.zzc().zzf(f.h(zzztVarArr).subList(1, length));
+        Class[] zzf = zzizVar.zzc().zzf(h.h(zzztVarArr).subList(1, length));
         try {
             zzizVar.zzc().zze(i10, cls.getConstructor((Class[]) Arrays.copyOf(zzf, zzf.length)));
         } catch (Exception e) {

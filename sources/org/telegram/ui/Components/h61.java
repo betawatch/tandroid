@@ -1,69 +1,44 @@
 package org.telegram.ui.Components;
 
+import android.graphics.Point;
 import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class h61 extends xz {
-    public final /* synthetic */ q61 Y;
+public final class h61 implements View.OnLayoutChangeListener {
+    public Boolean a;
+    public boolean b;
+    public final /* synthetic */ li.k c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h61(q61 q61Var, int i10, g61 g61Var) {
-        super(5, i10, g61Var);
-        this.Y = q61Var;
+    public h61(li.k kVar, View view) {
+        this.c = kVar;
+        o1.j jVar = new o1.j((Object) view, (o1.h) o1.j.p, 0.0f);
+        kVar.c = jVar;
+        jVar.m.a(1.0f);
+        ((o1.j) kVar.c).m.b(350.0f);
     }
 
-    @Override // org.telegram.ui.Components.xz
-    public final boolean E1() {
-        q61 q61Var = this.Y;
-        return q61Var.n.getAdapter() == q61Var.v;
-    }
-
-    @Override // s4.c0
-    public final boolean Y0() {
-        return LocaleController.isRTL;
-    }
-
-    @Override // s4.t, s4.c0, s4.p0
-    public final int o0(int i10, rf.e eVar, s4.b1 b1Var) {
-        int i11;
-        View m10;
-        q61 q61Var = this.Y;
-        if (q61Var.N) {
-            return super.o0(i10, eVar, b1Var);
+    @Override // android.view.View.OnLayoutChangeListener
+    public final void onLayoutChange(View view, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17) {
+        Point point = org.telegram.messenger.i0.q;
+        boolean z10 = point.x > point.y;
+        Boolean bool = this.a;
+        if (bool == null || bool.booleanValue() != z10) {
+            this.a = Boolean.valueOf(z10);
+            this.b = true;
         }
-        int i12 = 0;
-        if (q61Var.L != null) {
-            return 0;
+        if (i15 == 0 || i15 == i11 || this.b) {
+            this.b = false;
+            return;
         }
-        if (q61Var.M) {
-            while (true) {
-                i11 = 1;
-                if (i12 >= r()) {
-                    break;
-                }
-                g61 g61Var = q61Var.n;
-                View q5 = q(i12);
-                g61Var.getClass();
-                int R = RecyclerView.R(q5);
-                if (R < 1) {
-                    i11 = R;
-                    break;
-                }
-                i12++;
-            }
-            if (i11 == 0 && (m10 = q61Var.r.m(i11)) != null && m10.getTop() - i10 > AndroidUtilities.dp(58.0f)) {
-                i10 = m10.getTop() - AndroidUtilities.dp(58.0f);
-            }
+        li.k kVar = this.c;
+        ((o1.j) kVar.c).d();
+        if (view.getVisibility() != 0) {
+            view.setTranslationY(0.0f);
+            return;
         }
-        return super.o0(i10, eVar, b1Var);
-    }
-
-    @Override // s4.t, s4.c0, s4.p0
-    public final boolean y0() {
-        return false;
+        ((o1.j) kVar.c).m.i = 0.0f;
+        view.setTranslationY((i15 - i11) + 0.0f);
+        ((o1.j) kVar.c).h();
     }
 }

@@ -1,24 +1,25 @@
 package w7;
 
-import a8.qg;
+import android.net.Uri;
+import java.util.Iterator;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public abstract class f9 {
-    public static qg a;
-
-    public static synchronized d9 a(a9 a9Var) {
-        d9 d9Var;
-        synchronized (f9.class) {
-            try {
-                if (a == null) {
-                    a = new qg(2);
+    public static Uri a(Uri uri) {
+        if (!uri.isHierarchical() || uri.getQueryParameter("CMCD") == null) {
+            return uri;
+        }
+        Uri.Builder buildUpon = uri.buildUpon();
+        buildUpon.clearQuery();
+        for (String str : uri.getQueryParameterNames()) {
+            if (!str.equals("CMCD")) {
+                Iterator<String> it = uri.getQueryParameters(str).iterator();
+                while (it.hasNext()) {
+                    buildUpon.appendQueryParameter(str, it.next());
                 }
-                d9Var = (d9) a.R0(a9Var);
-            } catch (Throwable th2) {
-                throw th2;
             }
         }
-        return d9Var;
+        return buildUpon.build();
     }
 }

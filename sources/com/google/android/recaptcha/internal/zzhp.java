@@ -1,24 +1,25 @@
 package com.google.android.recaptcha.internal;
 
-import a8.id;
+import ad.c;
+import ad.h;
+import ib.a;
 import java.io.InputStreamReader;
 import java.io.StringWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.zip.GZIPInputStream;
-import jd.c;
-import jd.g;
 import kotlin.jvm.internal.i;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class zzhp implements zzhn {
     private final c zza;
 
     public zzhp() {
         int i10 = zzby.zza;
-        this.zza = id.a(zzho.zza);
+        this.zza = a.a(zzho.zza);
     }
 
     @Override // com.google.android.recaptcha.internal.zzhn
@@ -26,7 +27,7 @@ public final class zzhp implements zzhn {
         zzhl zzhlVar = null;
         try {
             try {
-                zzhlVar = ((zzhm) ((g) this.zza).a()).zza(str);
+                zzhlVar = ((zzhm) ((h) this.zza).a()).zza(str);
                 zzhlVar.zzc();
                 zzhlVar.zze(zzzdVar.zzd());
                 zzts zza = zzhlVar.zza(zzxn.zzj());
@@ -43,11 +44,11 @@ public final class zzhp implements zzhn {
                 }
                 try {
                     throw zzcf.zza(zzzj.zzg(zzhlVar.zzb().getErrorStream()).zzi());
-                } catch (Exception e10) {
-                    throw new zzcg(zzce.zzc, zzcd.zzG, e10.getMessage(), null, 8, null);
+                } catch (Exception e7) {
+                    throw new zzcg(zzce.zzc, zzcd.zzG, e7.getMessage(), null, 8, null);
                 }
-            } catch (Exception e11) {
-                throw new zzcg(zzce.zzc, zzcd.zzF, e11.getMessage(), null, 8, null);
+            } catch (Exception e10) {
+                throw new zzcg(zzce.zzc, zzcd.zzF, e10.getMessage(), null, 8, null);
             }
         } finally {
         }
@@ -71,7 +72,7 @@ public final class zzhp implements zzhn {
                 try {
                     InputStreamReader inputStreamReader = "gzip".equals(httpURLConnection.getContentEncoding()) ? new InputStreamReader(new GZIPInputStream(httpURLConnection.getInputStream())) : new InputStreamReader(httpURLConnection.getInputStream());
                     StringWriter stringWriter = new StringWriter();
-                    char[] cArr = new char[8192];
+                    char[] cArr = new char[TLObject.FLAG_13];
                     for (int read = inputStreamReader.read(cArr); read >= 0; read = inputStreamReader.read(cArr)) {
                         stringWriter.write(cArr, 0, read);
                     }

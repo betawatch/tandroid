@@ -1,11 +1,10 @@
 package p4;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+import android.content.BroadcastReceiver;
+
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class f0 extends j0 {
-    @Override // p4.j0
-    public void u(h0 h0Var, l lVar) {
-        super.u(h0Var, lVar);
-        lVar.a.putInt("deviceType", h0Var.a.getDeviceType());
-    }
+public abstract class f0 extends BroadcastReceiver {
+    public static final /* synthetic */ int a = 0;
+    public static final /* synthetic */ int b = 0;
 }

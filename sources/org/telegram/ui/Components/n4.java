@@ -1,12 +1,25 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.LocaleController;
+import android.content.Context;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class n4 extends nd0 {
-    @Override // org.telegram.ui.Components.nd0
-    public final CharSequence d(int i10) {
-        return LocaleController.formatPluralString("Times", i10 + 1, new Object[0]);
+public final class n4 extends FrameLayout {
+    public final /* synthetic */ org.telegram.ui.Cells.c2[] a;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public n4(Context context, org.telegram.ui.Cells.c2[] c2VarArr) {
+        super(context);
+        this.a = c2VarArr;
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
+        org.telegram.ui.Cells.c2[] c2VarArr = this.a;
+        if (c2VarArr[0] != null) {
+            setMeasuredDimension(getMeasuredWidth(), org.telegram.messenger.i0.L(7.0f) + c2VarArr[0].getMeasuredHeight() + getMeasuredHeight());
+        }
     }
 }

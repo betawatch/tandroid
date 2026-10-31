@@ -8,8 +8,9 @@ import java.io.EOFException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.ByteOrder;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public class b extends InputStream implements DataInput {
     public static final ByteOrder e = ByteOrder.LITTLE_ENDIAN;
@@ -37,11 +38,11 @@ public class b extends InputStream implements DataInput {
             int skip = (int) dataInputStream.skip(i12);
             if (skip <= 0) {
                 if (this.d == null) {
-                    this.d = new byte[8192];
+                    this.d = new byte[TLObject.FLAG_13];
                 }
-                skip = dataInputStream.read(this.d, 0, Math.min(8192, i12));
+                skip = dataInputStream.read(this.d, 0, Math.min(TLObject.FLAG_13, i12));
                 if (skip == -1) {
-                    throw new EOFException(ic.a.j(i10, "Reached EOF while skipping ", " bytes."));
+                    throw new EOFException(i0.a.j(i10, "Reached EOF while skipping ", " bytes."));
                 }
             }
             i11 += skip;

@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class i implements Parcelable {
     public static final Parcelable.Creator<i> CREATOR;
@@ -49,13 +49,13 @@ public final class i implements Parcelable {
         fVar.put("android.media.metadata.ADVERTISEMENT", 0);
         fVar.put("android.media.metadata.DOWNLOAD_STATUS", 0);
         d = new String[]{"android.media.metadata.TITLE", "android.media.metadata.ARTIST", "android.media.metadata.ALBUM", "android.media.metadata.ALBUM_ARTIST", "android.media.metadata.WRITER", "android.media.metadata.AUTHOR", "android.media.metadata.COMPOSER", "android.media.metadata.DISPLAY_SUBTITLE", "android.media.metadata.DISPLAY_DESCRIPTION"};
-        CREATOR = new h8.j(27);
+        CREATOR = new m8.i(3);
     }
 
     public i(Bundle bundle) {
         Bundle bundle2 = new Bundle(bundle);
         this.a = bundle2;
-        ClassLoader classLoader = s.class.getClassLoader();
+        ClassLoader classLoader = q.class.getClassLoader();
         classLoader.getClass();
         bundle2.setClassLoader(classLoader);
     }
@@ -71,7 +71,7 @@ public final class i implements Parcelable {
     }
 
     public i(Parcel parcel) {
-        Bundle readBundle = parcel.readBundle(s.class.getClassLoader());
+        Bundle readBundle = parcel.readBundle(q.class.getClassLoader());
         readBundle.getClass();
         this.a = readBundle;
     }

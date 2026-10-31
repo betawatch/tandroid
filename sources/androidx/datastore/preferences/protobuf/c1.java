@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public abstract class c1 {
     public static final Class a;
@@ -357,11 +357,11 @@ public abstract class c1 {
         }
         e0 e0Var = (e0) list;
         while (i11 < list.size()) {
-            Object k10 = e0Var.k(i11);
-            if (k10 instanceof String) {
-                jVar.P(i10, (String) k10);
+            Object j10 = e0Var.j(i11);
+            if (j10 instanceof String) {
+                jVar.P(i10, (String) j10);
             } else {
-                jVar.G(i10, (g) k10);
+                jVar.G(i10, (g) j10);
             }
             i11++;
         }
@@ -617,12 +617,12 @@ public abstract class c1 {
         }
         e0 e0Var = (e0) list;
         while (i11 < size) {
-            Object k10 = e0Var.k(i11);
-            if (k10 instanceof g) {
-                int size3 = ((g) k10).size();
+            Object j10 = e0Var.j(i11);
+            if (j10 instanceof g) {
+                int size3 = ((g) j10).size();
                 y3 = j.z(size3) + size3 + y3;
             } else {
-                y3 = j.x((String) k10) + y3;
+                y3 = j.x((String) j10) + y3;
             }
             i11++;
         }

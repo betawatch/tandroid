@@ -1,46 +1,28 @@
 package sb;
 
-import android.os.HandlerThread;
-import android.os.Looper;
-import com.google.android.gms.internal.cast.y;
-import com.google.android.gms.tasks.Task;
-import com.google.android.gms.tasks.TaskCompletionSource;
-import java.util.concurrent.Callable;
-import k9.u;
+import jb.g;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class f {
-    public static final Object b = new Object();
-    public static f c;
-    public final y a;
+public final /* synthetic */ class f implements r9.d {
+    public static final /* synthetic */ f b = new f(0);
+    public static final /* synthetic */ f c = new f(1);
+    public static final /* synthetic */ f d = new f(2);
+    public final /* synthetic */ int a;
 
-    public f(Looper looper) {
-        y yVar = new y(looper);
-        Looper.getMainLooper();
-        this.a = yVar;
+    public /* synthetic */ f(int i10) {
+        this.a = i10;
     }
 
-    public static f a() {
-        f fVar;
-        synchronized (b) {
-            try {
-                if (c == null) {
-                    HandlerThread handlerThread = new HandlerThread("MLHandler", 9);
-                    handlerThread.start();
-                    c = new f(handlerThread.getLooper());
-                }
-                fVar = c;
-            } catch (Throwable th2) {
-                throw th2;
-            }
+    @Override // r9.d
+    public final Object K(bh.d dVar) {
+        switch (this.a) {
+            case 0:
+                return new d((g) dVar.b(g.class));
+            case 1:
+                return new c((d) dVar.b(d.class), (jb.d) dVar.b(jb.d.class));
+            default:
+                return new pb.b(dVar.c(c.class));
         }
-        return fVar;
-    }
-
-    public static Task b(Callable callable) {
-        TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
-        m.a.execute(new u(27, callable, taskCompletionSource));
-        return taskCompletionSource.getTask();
     }
 }

@@ -1,17 +1,16 @@
 package com.google.android.recaptcha.internal;
 
-import a8.id;
-import a8.jd;
+import ad.c;
+import ad.h;
 import android.app.Application;
-import jd.c;
-import jd.g;
+import ce.a;
+import ce.d;
+import ce.e;
 import kotlin.jvm.internal.i;
-import le.a;
-import le.d;
-import le.e;
+import l9.b;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class zzeh {
     private final Application zza;
@@ -22,11 +21,11 @@ public final class zzeh {
     public zzeh(Application application) {
         this.zza = application;
         int i10 = zzby.zza;
-        this.zzd = id.a(zzef.zza);
+        this.zzd = ib.a.a(zzef.zza);
         zzdp.zza(application);
     }
 
-    public static /* synthetic */ Object zzd(zzeh zzehVar, String str, long j10, zzdw zzdwVar, zzdq zzdqVar, ld.c cVar, int i10, Object obj) {
+    public static /* synthetic */ Object zzd(zzeh zzehVar, String str, long j10, zzdw zzdwVar, zzdq zzdqVar, cd.c cVar, int i10, Object obj) {
         if ((i10 & 8) != 0) {
             zzdqVar = zzdq.zza;
         }
@@ -47,7 +46,7 @@ public final class zzeh {
     }
 
     public final zzcr zza() {
-        return (zzcr) ((g) this.zzd).a();
+        return (zzcr) ((h) this.zzd).a();
     }
 
     /* JADX WARN: Removed duplicated region for block: B:28:0x007e  */
@@ -58,10 +57,10 @@ public final class zzeh {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object zzc(String str, long j10, zzdw zzdwVar, zzdq zzdqVar, ld.c cVar) {
+    public final Object zzc(String str, long j10, zzdw zzdwVar, zzdq zzdqVar, cd.c cVar) {
         zzea zzeaVar;
         Object obj;
-        md.a aVar;
+        dd.a aVar;
         int i10;
         String str2;
         zzdq zzdqVar2;
@@ -78,10 +77,10 @@ public final class zzeh {
                     zzeaVar.zzg = i13 - TLObject.FLAG_31;
                     zzea zzeaVar2 = zzeaVar;
                     obj = zzeaVar2.zze;
-                    aVar = md.a.a;
+                    aVar = dd.a.a;
                     i10 = zzeaVar2.zzg;
                     if (i10 != 0) {
-                        jd.b(obj);
+                        b.b(obj);
                         a aVar2 = this.zzb;
                         str2 = str;
                         zzeaVar2.zza = str2;
@@ -104,7 +103,7 @@ public final class zzeh {
                         }
                         obj3 = (a) zzeaVar2.zza;
                         try {
-                            jd.b(obj);
+                            b.b(obj);
                             zzeq zzeqVar = (zzeq) obj;
                             ((d) obj3).e(null);
                             return zzeqVar;
@@ -118,7 +117,7 @@ public final class zzeh {
                     Object obj4 = (a) zzeaVar2.zzc;
                     zzdq zzdqVar3 = zzeaVar2.zzh;
                     String str3 = (String) zzeaVar2.zza;
-                    jd.b(obj);
+                    b.b(obj);
                     obj2 = obj4;
                     zzdqVar2 = zzdqVar3;
                     str2 = str3;
@@ -180,7 +179,7 @@ public final class zzeh {
         zzeaVar = new zzea(this, cVar);
         zzea zzeaVar22 = zzeaVar;
         obj = zzeaVar22.zze;
-        aVar = md.a.a;
+        aVar = dd.a.a;
         i10 = zzeaVar22.zzg;
         if (i10 != 0) {
         }

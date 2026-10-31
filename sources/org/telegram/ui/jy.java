@@ -1,44 +1,43 @@
 package org.telegram.ui;
 
-import android.graphics.Rect;
-import android.view.View;
-import android.widget.ImageView;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class jy implements org.telegram.ui.Components.dm0 {
-    public final Rect a = new Rect();
-    public final /* synthetic */ ny b;
+public final class jy implements org.telegram.messenger.mc {
+    public final /* synthetic */ ky a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ org.telegram.messenger.jj c;
+    public final /* synthetic */ ly d;
 
-    public jy(ny nyVar) {
-        this.b = nyVar;
+    public jy(ly lyVar, ky kyVar, boolean z10, org.telegram.messenger.jj jjVar) {
+        this.d = lyVar;
+        this.a = kyVar;
+        this.b = z10;
+        this.c = jjVar;
     }
 
-    @Override // org.telegram.ui.Components.dm0
-    public final boolean e(float f7, float f10, int i10, View view) {
-        ny nyVar = this.b;
-        if (nyVar.getParentActivity() != null && (view instanceof org.telegram.ui.Cells.k4)) {
-            ImageView imageView = (ImageView) view.getTag(R.id.object_tag);
-            Rect rect = this.a;
-            imageView.getHitRect(rect);
-            if (!rect.contains((int) f7, (int) f10)) {
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(nyVar.getParentActivity());
-                alertDialog$Builder.f(new CharSequence[]{LocaleController.getString(R.string.Delete)}, new iy(this, i10, 0));
-                nyVar.showDialog(alertDialog$Builder.a);
-                return true;
+    @Override // org.telegram.messenger.mc
+    public final void j(ImageReceiver imageReceiver) {
+        org.telegram.messenger.jj jjVar;
+        if (this.b && (jjVar = this.c) != null && jjVar.F2() && imageReceiver.B() != null && imageReceiver.B().y == null) {
+            try {
+                this.d.G.performHapticFeedback(3, 1);
+            } catch (Exception unused) {
             }
         }
-        return false;
     }
 
-    @Override // org.telegram.ui.Components.dm0
-    public final void g() {
+    @Override // org.telegram.messenger.mc
+    public final void o(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
+        ImageReceiver imageReceiver2 = this.a.r;
+        if (imageReceiver2.B() != null) {
+            imageReceiver2.B().N(0, false, true);
+        }
     }
 
-    @Override // org.telegram.ui.Components.dm0
-    public final void o(float f7) {
+    @Override // org.telegram.messenger.mc
+    public final /* synthetic */ void q(int i10, Drawable drawable) {
     }
 }

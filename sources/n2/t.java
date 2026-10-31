@@ -1,13 +1,12 @@
 package n2;
 
-import a8.yb;
-import ag.t0;
 import android.media.MediaCrypto;
 import android.media.MediaCryptoException;
 import android.media.MediaDrm;
 import android.os.Build;
 import android.text.TextUtils;
-import e2.n0;
+import e0.f0;
+import e2.l0;
 import j$.util.Objects;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
@@ -17,16 +16,16 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
-import li.e3;
-import m4.x0;
+import m4.v0;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import v7.t6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class t implements q {
-    public static final x0 d = new x0(18);
+    public static final v0 d = new v0(20);
     public final UUID a;
     public final MediaDrm b;
     public int c;
@@ -34,7 +33,7 @@ public final class t implements q {
     public t(UUID uuid) {
         uuid.getClass();
         UUID uuid2 = b2.n.c;
-        yb.f("Use C.CLEARKEY_UUID instead", !uuid2.equals(uuid));
+        t6.e("Use C.CLEARKEY_UUID instead", !uuid2.equals(uuid));
         this.a = uuid;
         MediaDrm mediaDrm = new MediaDrm((Build.VERSION.SDK_INT >= 27 || !uuid.equals(b2.n.d)) ? uuid : uuid2);
         this.b = mediaDrm;
@@ -45,20 +44,15 @@ public final class t implements q {
     }
 
     @Override // n2.q
-    public final void E(byte[] bArr, byte[] bArr2) {
-        this.b.restoreKeys(bArr, bArr2);
-    }
-
-    @Override // n2.q
-    public final void H(byte[] bArr) {
+    public final void B0(byte[] bArr) {
         this.b.closeSession(bArr);
     }
 
     @Override // n2.q
-    public final byte[] R(byte[] bArr, byte[] bArr2) {
+    public final byte[] P0(byte[] bArr, byte[] bArr2) {
         if (b2.n.d.equals(this.a) && Build.VERSION.SDK_INT < 27) {
             try {
-                JSONObject jSONObject = new JSONObject(n0.r(bArr2));
+                JSONObject jSONObject = new JSONObject(l0.r(bArr2));
                 StringBuilder sb2 = new StringBuilder("{\"keys\":[");
                 JSONArray jSONArray = jSONObject.getJSONArray("keys");
                 for (int i10 = 0; i10 < jSONArray.length(); i10++) {
@@ -77,29 +71,24 @@ public final class t implements q {
                 sb2.append("]}");
                 bArr2 = sb2.toString().getBytes(StandardCharsets.UTF_8);
             } catch (JSONException e) {
-                e2.a.d("ClearKeyUtil", "Failed to adjust response data: ".concat(n0.r(bArr2)), e);
+                e2.a.d("ClearKeyUtil", "Failed to adjust response data: ".concat(l0.r(bArr2)), e);
             }
         }
         return this.b.provideKeyResponse(bArr, bArr2);
     }
 
     @Override // n2.q
-    public final void T(final e3 e3Var) {
-        this.b.setOnEventListener(new MediaDrm.OnEventListener() { // from class: n2.s
-            @Override // android.media.MediaDrm.OnEventListener
-            public final void onEvent(MediaDrm mediaDrm, byte[] bArr, int i10, int i11, byte[] bArr2) {
-                t tVar = t.this;
-                e3 e3Var2 = e3Var;
-                tVar.getClass();
-                androidx.mediarouter.app.c cVar = ((e) e3Var2.b).M;
-                cVar.getClass();
-                cVar.obtainMessage(i10, bArr).sendToTarget();
-            }
-        });
+    public final h2.b X(byte[] bArr) {
+        int i10 = Build.VERSION.SDK_INT;
+        UUID uuid = this.a;
+        if (i10 < 27 && Objects.equals(uuid, b2.n.d)) {
+            uuid = b2.n.c;
+        }
+        return new r(uuid, bArr);
     }
 
     @Override // n2.q
-    public final void U(byte[] bArr) {
+    public final void X0(byte[] bArr) {
         this.b.provideProvisionResponse(bArr);
     }
 
@@ -111,22 +100,22 @@ public final class t implements q {
     
         if (r5 == null) goto L80;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:79:0x0244, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:79:0x0242, code lost:
     
         if (j$.util.Objects.equals(r3, "aidl-1") == false) goto L111;
      */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x0257  */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x0255  */
     @Override // n2.q
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final o Y(byte[] bArr, List list, int i10, HashMap hashMap) {
+    public final o Y0(byte[] bArr, List list, int i10, HashMap hashMap) {
         byte[] bArr2;
         String str;
         String str2;
         b2.s sVar;
         byte[] bArr3;
-        k6.m i11;
+        j6.m i11;
         UUID uuid = this.a;
         b2.s sVar2 = null;
         if (list != null) {
@@ -163,7 +152,7 @@ public final class t implements q {
                     b2.s sVar5 = (b2.s) list.get(i16);
                     byte[] bArr7 = sVar5.e;
                     bArr7.getClass();
-                    k6.m i17 = w3.p.i(bArr7);
+                    j6.m i17 = w3.p.i(bArr7);
                     if ((i17 == null ? -1 : i17.a) == 1) {
                         sVar = sVar5;
                         break;
@@ -183,12 +172,12 @@ public final class t implements q {
                 }
                 e2.x xVar = new e2.x(bArr8);
                 int o10 = xVar.o();
-                short q5 = xVar.q();
-                short q9 = xVar.q();
-                if (q5 == 1 && q9 == 1) {
-                    short q10 = xVar.q();
+                short q6 = xVar.q();
+                short q10 = xVar.q();
+                if (q6 == 1 && q10 == 1) {
+                    short q11 = xVar.q();
                     Charset charset = StandardCharsets.UTF_16LE;
-                    String y3 = xVar.y(q10, charset);
+                    String y3 = xVar.y(q11, charset);
                     if (!y3.contains("<LA_URL>")) {
                         int indexOf = y3.indexOf("</DATA>");
                         if (indexOf == -1) {
@@ -199,8 +188,8 @@ public final class t implements q {
                         ByteBuffer allocate = ByteBuffer.allocate(i18);
                         allocate.order(ByteOrder.LITTLE_ENDIAN);
                         allocate.putInt(i18);
-                        allocate.putShort(q5);
-                        allocate.putShort(q9);
+                        allocate.putShort(q6);
+                        allocate.putShort(q10);
                         allocate.putShort((short) (str3.length() * 2));
                         allocate.put(str3.getBytes(charset));
                         bArr8 = allocate.array();
@@ -239,7 +228,7 @@ public final class t implements q {
         MediaDrm.KeyRequest keyRequest = this.b.getKeyRequest(bArr, bArr2, str, i10, hashMap);
         byte[] data = keyRequest.getData();
         if (b2.n.d.equals(uuid) && Build.VERSION.SDK_INT < 27) {
-            data = n0.r(data).replace('+', '-').replace('/', '_').getBytes(StandardCharsets.UTF_8);
+            data = l0.r(data).replace('+', '-').replace('/', '_').getBytes(StandardCharsets.UTF_8);
         }
         String defaultUrl = keyRequest.getDefaultUrl();
         if (!"<LA_URL>https://x</LA_URL>".equals(defaultUrl)) {
@@ -268,15 +257,25 @@ public final class t implements q {
     }
 
     @Override // n2.q
-    public final Map b(byte[] bArr) {
+    public final byte[] b0() {
+        return this.b.openSession();
+    }
+
+    @Override // n2.q
+    public final int d1() {
+        return 2;
+    }
+
+    @Override // n2.q
+    public final Map k(byte[] bArr) {
         return this.b.queryKeyStatus(bArr);
     }
 
     @Override // n2.q
-    public final void e(byte[] bArr, j2.j jVar) {
+    public final void p(byte[] bArr, j2.l lVar) {
         if (Build.VERSION.SDK_INT >= 31) {
             try {
-                t0.h(this.b, bArr, jVar);
+                f0.h(this.b, bArr, lVar);
             } catch (UnsupportedOperationException unused) {
                 e2.a.l("FrameworkMediaDrm", "setLogSessionId failed.");
             }
@@ -284,18 +283,27 @@ public final class t implements q {
     }
 
     @Override // n2.q
-    public final int i0() {
-        return 2;
+    public final void q0(byte[] bArr, byte[] bArr2) {
+        this.b.restoreKeys(bArr, bArr2);
     }
 
     @Override // n2.q
-    public final p k() {
+    public final synchronized void release() {
+        int i10 = this.c - 1;
+        this.c = i10;
+        if (i10 == 0) {
+            this.b.release();
+        }
+    }
+
+    @Override // n2.q
+    public final p u() {
         MediaDrm.ProvisionRequest provisionRequest = this.b.getProvisionRequest();
         return new p(provisionRequest.getDefaultUrl(), provisionRequest.getData());
     }
 
     @Override // n2.q
-    public final boolean p0(String str, byte[] bArr) {
+    public final boolean x1(String str, byte[] bArr) {
         MediaCrypto mediaCrypto;
         boolean equals;
         int i10 = Build.VERSION.SDK_INT;
@@ -310,7 +318,7 @@ public final class t implements q {
                 equals = uuid.equals(b2.n.d);
             }
             if (equals) {
-                return t0.f(mediaDrm, str, mediaDrm.getSecurityLevel(bArr));
+                return f0.f(mediaDrm, str, mediaDrm.getSecurityLevel(bArr));
             }
         }
         MediaCrypto mediaCrypto2 = null;
@@ -344,26 +352,17 @@ public final class t implements q {
     }
 
     @Override // n2.q
-    public final synchronized void release() {
-        int i10 = this.c - 1;
-        this.c = i10;
-        if (i10 == 0) {
-            this.b.release();
-        }
-    }
-
-    @Override // n2.q
-    public final h2.b y(byte[] bArr) {
-        int i10 = Build.VERSION.SDK_INT;
-        UUID uuid = this.a;
-        if (i10 < 27 && Objects.equals(uuid, b2.n.d)) {
-            uuid = b2.n.c;
-        }
-        return new r(uuid, bArr);
-    }
-
-    @Override // n2.q
-    public final byte[] z() {
-        return this.b.openSession();
+    public final void y(final m2.t tVar) {
+        this.b.setOnEventListener(new MediaDrm.OnEventListener() { // from class: n2.s
+            @Override // android.media.MediaDrm.OnEventListener
+            public final void onEvent(MediaDrm mediaDrm, byte[] bArr, int i10, int i11, byte[] bArr2) {
+                t tVar2 = t.this;
+                m2.t tVar3 = tVar;
+                tVar2.getClass();
+                android.support.v4.media.session.q qVar = ((e) tVar3.b).M;
+                qVar.getClass();
+                qVar.obtainMessage(i10, bArr).sendToTarget();
+            }
+        });
     }
 }

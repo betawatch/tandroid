@@ -1,62 +1,33 @@
 package org.telegram.ui;
 
-import android.graphics.Bitmap;
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.AndroidUtilities;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class kr0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ PhotoViewer b;
-    public final /* synthetic */ Bitmap c;
+public final class kr0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ lr0 a;
 
-    public /* synthetic */ kr0(PhotoViewer photoViewer, Bitmap bitmap, int i10) {
-        this.a = i10;
-        this.b = photoViewer;
-        this.c = bitmap;
+    public kr0(lr0 lr0Var) {
+        this.a = lr0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        Bitmap bitmap = this.c;
-        PhotoViewer photoViewer = this.b;
-        switch (i10) {
-            case 0:
-                Drawable[] drawableArr = PhotoViewer.U8;
-                photoViewer.o0(bitmap);
-                AndroidUtilities.runOnUIThread(new kr0(photoViewer, bitmap, 6));
-                break;
-            case 1:
-                Drawable[] drawableArr2 = PhotoViewer.U8;
-                photoViewer.o0(bitmap);
-                AndroidUtilities.runOnUIThread(new kr0(photoViewer, bitmap, 5));
-                break;
-            case 2:
-                Drawable[] drawableArr3 = PhotoViewer.U8;
-                photoViewer.o0(bitmap);
-                AndroidUtilities.runOnUIThread(new kr0(photoViewer, bitmap, 4));
-                break;
-            case 3:
-                Drawable[] drawableArr4 = PhotoViewer.U8;
-                photoViewer.o0(bitmap);
-                break;
-            case 4:
-                photoViewer.C4.setImageBitmap(bitmap);
-                photoViewer.t5.setUndoCutState(true);
-                photoViewer.d3(true, true);
-                break;
-            case 5:
-                photoViewer.C4.setImageBitmap(bitmap);
-                photoViewer.t5.setUndoCutState(true);
-                photoViewer.d3(true, true);
-                break;
-            default:
-                photoViewer.C4.setImageBitmap(bitmap);
-                photoViewer.t5.setUndoCutState(true);
-                photoViewer.d3(true, true);
-                break;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        super.onAnimationEnd(animator);
+        lr0 lr0Var = this.a;
+        PhotoViewer photoViewer = lr0Var.c;
+        photoViewer.n4 = 0;
+        photoViewer.I1();
+        photoViewer.L0.setAlpha(org.telegram.messenger.zs.e4);
+        photoViewer.e0.invalidate();
+        photoViewer.P0.setTranslationY(0.0f);
+        if (photoViewer.t4) {
+            PhotoViewer.b0(photoViewer, lr0Var.b.intValue());
+        }
+        es0 es0Var = lr0Var.a;
+        if (es0Var != null) {
+            es0Var.d();
         }
     }
 }

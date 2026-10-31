@@ -1,6 +1,6 @@
 package m4;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class j0 implements Runnable {
     public final /* synthetic */ int a;
@@ -18,14 +18,14 @@ public final /* synthetic */ class j0 implements Runnable {
         switch (this.a) {
             case 0:
                 p0 p0Var = this.b;
-                n4.s sVar = p0Var.m;
+                n4.q qVar = p0Var.n;
                 n1 n1Var = this.c;
-                sVar.G(p0Var.G(n1Var));
-                p0Var.i.s(n1Var.s().a(17) ? n1Var.y0() : b2.p1.a);
+                qVar.H(p0Var.h0(n1Var));
+                p0Var.j.v(n1Var.s().a(17) ? n1Var.y0() : b2.o1.a);
                 break;
             default:
                 p0 p0Var2 = this.b;
-                p0Var2.m.G(p0Var2.G(this.c));
+                p0Var2.n.H(p0Var2.h0(this.c));
                 break;
         }
     }

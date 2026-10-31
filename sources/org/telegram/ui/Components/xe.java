@@ -1,73 +1,48 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class xe extends vg {
-    public final /* synthetic */ int n0;
-    public final /* synthetic */ ChatActivityEnterView o0;
+public final class xe extends AnimatorListenerAdapter {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ ChatActivityEnterView b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ xe(ChatActivityEnterView chatActivityEnterView, Context context, int i10, org.telegram.ui.ActionBar.u6 u6Var, int i11) {
-        super(i10, context, u6Var, true);
-        this.n0 = i11;
-        this.o0 = chatActivityEnterView;
+    public xe(ChatActivityEnterView chatActivityEnterView, boolean z10) {
+        this.b = chatActivityEnterView;
+        this.a = z10;
     }
 
-    @Override // org.telegram.ui.Components.vg
-    public boolean d() {
-        switch (this.n0) {
-            case 0:
-                return this.o0.c();
-            default:
-                return super.d();
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        ChatActivityEnterView chatActivityEnterView = this.b;
+        if (animator.equals(chatActivityEnterView.t2)) {
+            chatActivityEnterView.t2 = null;
         }
-    }
-
-    @Override // org.telegram.ui.Components.vg
-    public final boolean e() {
-        switch (this.n0) {
-            case 0:
-                ChatActivityEnterView chatActivityEnterView = this.o0;
-                return !chatActivityEnterView.c() && chatActivityEnterView.G0 == Integer.MAX_VALUE;
-            default:
-                return !this.o0.q3;
+        chatActivityEnterView.u0();
+        chatActivityEnterView.k1.setAlpha(1.0f);
+        chatActivityEnterView.k1.setTranslationX(0.0f);
+        wf wfVar = chatActivityEnterView.O1;
+        if (wfVar != null && org.telegram.messenger.tz.O < 3) {
+            ChatActivityEnterView chatActivityEnterView2 = wfVar.b0;
+            chatActivityEnterView2.e4 = true;
+            chatActivityEnterView2.f4 = System.currentTimeMillis();
         }
-    }
-
-    @Override // org.telegram.ui.Components.vg
-    public final boolean f() {
-        switch (this.n0) {
-            case 0:
-                mf mfVar = this.o0.L0;
-                return !(mfVar == null || mfVar.p0) || this.r > 0;
-            default:
-                return true;
+        se seVar = chatActivityEnterView.E0;
+        if (seVar != null) {
+            seVar.setAlpha(0.0f);
         }
-    }
-
-    @Override // org.telegram.ui.Components.vg
-    public boolean j() {
-        switch (this.n0) {
-            case 0:
-                return this.o0.y4;
-            default:
-                return super.j();
-        }
-    }
-
-    @Override // android.view.View
-    public void setAlpha(float f7) {
-        switch (this.n0) {
-            case 0:
-                super.setAlpha(f7);
-                int i10 = ChatActivityEnterView.r5;
-                this.o0.w1();
-                break;
-            default:
-                super.setAlpha(f7);
-                break;
+        if (this.a) {
+            nj0 nj0Var = chatActivityEnterView.h1;
+            if (nj0Var != null) {
+                nj0Var.setVisibility(8);
+            }
+            pd pdVar = chatActivityEnterView.e1;
+            if (pdVar != null) {
+                pdVar.setVisibility(8);
+            }
+            chatActivityEnterView.u0();
         }
     }
 }

@@ -1,72 +1,33 @@
 package ei;
 
-import android.graphics.Rect;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.ui.Cells.w7;
-import s4.b1;
-import s4.n0;
+import org.telegram.ui.Components.iw;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes4.dex */
-public final class j extends n0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ r b;
+public final class j implements z4.e {
+    public int a;
+    public final /* synthetic */ iw b;
+    public final /* synthetic */ r c;
 
-    public /* synthetic */ j(r rVar, int i10) {
-        this.a = i10;
-        this.b = rVar;
+    public j(r rVar, iw iwVar) {
+        this.c = rVar;
+        this.b = iwVar;
+        this.a = iwVar.getScrollX();
     }
 
-    @Override // s4.n0
-    public final void d(Rect rect, View view, RecyclerView recyclerView, b1 b1Var) {
-        switch (this.a) {
-            case 0:
-                if (!(view instanceof w7)) {
-                    rect.left = 0;
-                    rect.top = 0;
-                    rect.bottom = 0;
-                    rect.right = 0;
-                    break;
-                } else {
-                    w7 w7Var = (w7) view;
-                    r rVar = this.b;
-                    rVar.f.getClass();
-                    int R = RecyclerView.R(w7Var);
-                    int i10 = rVar.h.J;
-                    w7Var.a0 = R < i10;
-                    int i11 = R % i10;
-                    w7Var.V = i11 == 0;
-                    w7Var.W = i11 == i10 - 1;
-                    rect.left = 0;
-                    rect.top = 0;
-                    rect.bottom = 0;
-                    rect.right = 0;
-                    break;
-                }
-            default:
-                if (!(view instanceof w7)) {
-                    rect.left = 0;
-                    rect.top = 0;
-                    rect.bottom = 0;
-                    rect.right = 0;
-                    break;
-                } else {
-                    w7 w7Var2 = (w7) view;
-                    r rVar2 = this.b;
-                    rVar2.r.getClass();
-                    int R2 = RecyclerView.R(w7Var2);
-                    int i12 = rVar2.s.J;
-                    w7Var2.a0 = R2 < i12;
-                    int i13 = R2 % i12;
-                    w7Var2.V = i13 == 0;
-                    w7Var2.W = i13 == i12 - 1;
-                    rect.left = 0;
-                    rect.top = 0;
-                    rect.bottom = 0;
-                    rect.right = 0;
-                    break;
-                }
-        }
+    @Override // z4.e
+    public final void b(float f7, int i10, int i11) {
+        int scrollX = this.b.getScrollX();
+        this.c.h(scrollX - this.a, 0);
+        this.a = scrollX;
+    }
+
+    @Override // z4.e
+    public final void c(int i10) {
+        this.c.g++;
+    }
+
+    @Override // z4.e
+    public final void a(int i10) {
     }
 }

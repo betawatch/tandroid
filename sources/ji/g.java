@@ -1,93 +1,99 @@
 package ji;
 
-import android.content.Context;
-import android.text.SpannableStringBuilder;
-import android.view.View;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Components.j9;
-import org.telegram.ui.Components.k71;
-import org.telegram.ui.Components.nm0;
-import org.telegram.ui.Components.s71;
-import org.telegram.ui.Components.t61;
-import org.telegram.ui.Components.u61;
-import org.telegram.ui.Components.y9;
-import s4.q0;
+import android.util.Base64;
+import b5.m;
+import org.telegram.messenger.f8;
+import org.telegram.messenger.i0;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes4.dex */
-public final class g extends t61 {
-    public static final /* synthetic */ int a = 0;
+public final /* synthetic */ class g implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ k b;
 
-    static {
-        t61.setup(new g());
+    public /* synthetic */ g(k kVar, int i10) {
+        this.a = i10;
+        this.b = kVar;
     }
 
-    @Override // org.telegram.ui.Components.t61
-    public final void bindView(View view, u61 u61Var, boolean z10, k71 k71Var, s71 s71Var) {
-        h hVar = (h) view;
-        f fVar = (f) u61Var.G;
-        TLRPC.User user = fVar.b;
-        long j10 = fVar.a;
-        e eVar = (e) u61Var.H;
-        boolean z11 = fVar.c;
-        boolean z12 = !u61Var.j;
-        y9 y9Var = hVar.c;
-        TextView textView = hVar.n;
-        TextView textView2 = hVar.d;
-        hVar.E = eVar;
-        hVar.F = j10;
-        hVar.G = user.id;
-        int i10 = hVar.b;
-        TLRPC.Chat chat = MessagesController.getInstance(i10).getChat(Long.valueOf(-j10));
-        TLRPC.User user2 = MessagesController.getInstance(i10).getUser(Long.valueOf(j10));
-        hVar.f.setText(DialogObject.getName(j10));
-        hVar.h.setText(AndroidUtilities.replaceSingleLinkKey(LocaleController.formatString(user2 != null ? R.string.CommunityPendingRequestSuggestedBot : ChatObject.isChannelAndNotMegaGroup(chat) ? R.string.CommunityPendingRequestSuggestedChannel : R.string.CommunityPendingRequestSuggestedGroup, DialogObject.getShortName(user)), y6.il, null, new ag.c(20)));
-        if (user2 != null) {
-            textView2.setVisibility(8);
-        } else if (chat == null || chat.participants_count <= 0) {
-            textView2.setVisibility(8);
-        } else {
-            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("* ");
-            spannableStringBuilder.setSpan(hVar.s, 0, 1, 33);
-            spannableStringBuilder.append((CharSequence) LocaleController.formatNumberWithMillion(chat.participants_count, ','));
-            textView2.setText(spannableStringBuilder);
-            textView2.setVisibility(0);
+    private final void a() {
+        k kVar = this.b;
+        kVar.g();
+        synchronized (kVar.a) {
+            try {
+                if (kVar.u) {
+                    return;
+                }
+                i0.h3(new g(kVar, 2), 1000L);
+            } catch (Throwable th2) {
+                throw th2;
+            }
         }
-        if (z11) {
-            textView.setVisibility(0);
-        } else {
-            textView.setVisibility(8);
-        }
-        hVar.x = z12;
-        if (user2 != null) {
-            y9Var.f(user2, new j9(0, user2));
-        } else {
-            y9Var.f(chat, new j9(chat));
-        }
-        hVar.e.f(user, new j9(0, user));
     }
 
-    @Override // org.telegram.ui.Components.t61
-    public final View createView(Context context, nm0 nm0Var, int i10, int i11, u6 u6Var) {
-        h hVar = new h(context, i10, u6Var);
-        hVar.setLayoutParams(new q0(-1, -2));
-        hVar.setClickable(false);
-        return hVar;
-    }
-
-    @Override // org.telegram.ui.Components.t61
-    public final boolean equals(u61 u61Var, u61 u61Var2) {
-        f fVar = (f) u61Var.G;
-        f fVar2 = (f) u61Var2.G;
-        return fVar.a == fVar2.a && DialogObject.getDialogId(fVar.b) == DialogObject.getDialogId(fVar2.b);
+    /* JADX WARN: Code restructure failed: missing block: B:43:0x008a, code lost:
+    
+        return;
+     */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                k kVar = this.b;
+                b5.h hVar = kVar.p;
+                if (hVar != null) {
+                    try {
+                        if (!m.c.b()) {
+                            throw new UnsupportedOperationException("This method is not supported by the current version of the framework and the current WebView APK");
+                        }
+                        hVar.a.postMessage("{\"t\":\"close\"}");
+                    } catch (Exception unused) {
+                    }
+                }
+                kVar.g();
+                return;
+            case 1:
+                k.d(this.b);
+                return;
+            case 2:
+                k.c(this.b);
+                return;
+            case 3:
+                a();
+                return;
+            default:
+                k kVar2 = this.b;
+                while (true) {
+                    synchronized (kVar2.a) {
+                        b5.h hVar2 = kVar2.p;
+                        if (!kVar2.u && hVar2 != null && kVar2.r && !kVar2.n.isEmpty()) {
+                            byte[] bArr = (byte[]) kVar2.n.removeFirst();
+                            kVar2.w -= bArr.length;
+                            try {
+                                if (!kVar2.q) {
+                                    String str = "tproxy-base64:" + Base64.encodeToString(bArr, 2);
+                                    if (!m.c.b()) {
+                                        throw new UnsupportedOperationException("This method is not supported by the current version of the framework and the current WebView APK");
+                                    }
+                                    hVar2.a.postMessage(str);
+                                } else {
+                                    if (!m.a.b()) {
+                                        throw new UnsupportedOperationException("This method is not supported by the current version of the framework and the current WebView APK");
+                                    }
+                                    hVar2.a.postMessageWithPayload(new me.a(new b5.j(bArr)));
+                                }
+                            } catch (Exception e) {
+                                f8.g(e, true);
+                                kVar2.h();
+                                return;
+                            }
+                        }
+                    }
+                }
+                break;
+        }
     }
 }

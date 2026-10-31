@@ -1,67 +1,112 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Typeface;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import org.telegram.messenger.AndroidUtilities;
+import android.graphics.Paint;
+import java.util.Random;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class kc extends nb {
-    public final bk0 a;
-    public final s6 b;
-    public final s6 c;
-    public final int d;
+public final class kc {
+    public float a;
+    public float b;
+    public float c;
+    public float d;
+    public float e;
+    public float f;
+    public int g;
+    public float[] k;
+    public float[] l;
+    public float[] m;
+    public float[] n;
+    public float[] o;
+    public float[] p;
+    public float[] q;
+    public float[] r;
+    public float[] s;
+    public float[] t;
+    public float[] u;
+    public float[] v;
+    public float[] w;
+    public int x;
+    public int h = -11318601;
+    public final Paint i = new Paint(1);
+    public final Random j = new Random();
+    public int y = org.telegram.messenger.zs.e4;
 
-    public kc(Context context, org.telegram.ui.ActionBar.u6 u6Var) {
-        super(context, u6Var);
-        int i10 = org.telegram.ui.ActionBar.y6.Hi;
-        this.d = getThemedColor(i10);
-        setBackground(getThemedColor(org.telegram.ui.ActionBar.y6.Fi));
-        bk0 bk0Var = new bk0(context);
-        this.a = bk0Var;
-        bk0Var.setScaleType(ImageView.ScaleType.CENTER);
-        addView(bk0Var, kb1.l(56.0f, 48.0f, 8388627));
-        getThemedColor(i10);
-        getThemedColor(org.telegram.ui.ActionBar.y6.Gi);
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(1);
-        addView(linearLayout, kb1.m(-1.0f, -2.0f, 8388627, 52.0f, 8.0f, 8.0f, 8.0f));
-        s6 s6Var = new s6(context, true, true, true);
-        this.b = s6Var;
-        s6Var.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
-        org.telegram.ui.ActionBar.f7.Z(s6Var, i10, u6Var);
-        s6Var.setTextSize(AndroidUtilities.dp(14.0f));
-        s6Var.setTypeface(AndroidUtilities.bold());
-        s6Var.setEllipsizeByGradient(true);
-        linearLayout.addView(s6Var, kb1.r(-1, 20));
-        s6 s6Var2 = new s6(context, true, true, true);
-        this.c = s6Var2;
-        s6Var2.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
-        org.telegram.ui.ActionBar.f7.Z(s6Var2, i10, u6Var);
-        s6Var2.setTypeface(Typeface.SANS_SERIF);
-        s6Var2.setTextSize(AndroidUtilities.dp(13.0f));
-        s6Var2.setEllipsizeByGradient(true);
-        linearLayout.addView(s6Var2, kb1.r(-1, 18));
+    public final void a() {
+        int i10 = this.h;
+        Paint paint = this.i;
+        paint.setColor(i10);
+        paint.setAlpha((this.g * this.y) / org.telegram.messenger.zs.e4);
     }
 
-    public final void c(int i10, String... strArr) {
-        bk0 bk0Var = this.a;
-        bk0Var.f(i10, 32, 32, null);
-        for (String str : strArr) {
-            bk0Var.h(this.d, str);
+    /* JADX WARN: Code restructure failed: missing block: B:14:0x0029, code lost:
+    
+        if (r3 > 1.0f) goto L4;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void b(int i10) {
+        float f7 = 0.18f / this.x;
+        float f10 = this.k[i10];
+        Random random = this.j;
+        float nextFloat = ((random.nextFloat() - 0.5f) * 2.0f * 0.35f) + f10;
+        float[] fArr = this.l;
+        float f11 = nextFloat >= 0.0f ? 1.0f : 0.0f;
+        nextFloat = f11;
+        fArr[i10] = nextFloat;
+        float nextFloat2 = ((random.nextFloat() - 0.5f) * 2.0f * f7 * 0.35f) + this.m[i10];
+        float[] fArr2 = this.n;
+        float f12 = -f7;
+        if (nextFloat2 < f12) {
+            f7 = f12;
+        } else if (nextFloat2 <= f7) {
+            f7 = nextFloat2;
         }
+        fArr2[i10] = f7;
+        this.p[i10] = ((random.nextFloat() * 0.003f) + 0.017f) * this.a;
     }
 
-    @Override // org.telegram.ui.Components.ub
-    public CharSequence getAccessibilityText() {
-        return ((Object) this.b.getText()) + ".\n" + ((Object) this.c.getText());
+    public final void c(int i10) {
+        this.x = i10;
+        this.k = new float[i10];
+        this.l = new float[i10];
+        this.m = new float[i10];
+        this.n = new float[i10];
+        this.o = new float[i10];
+        this.p = new float[i10];
+        this.q = new float[i10];
+        this.r = new float[i10];
+        this.s = new float[i10];
+        this.t = new float[i10];
+        this.u = new float[i10];
+        this.v = new float[i10];
+        this.w = new float[i10];
+        for (int i11 = 0; i11 < this.x; i11++) {
+            float[] fArr = this.k;
+            Random random = this.j;
+            fArr[i11] = random.nextFloat();
+            this.m[i11] = (((random.nextFloat() - 0.5f) * 2.0f) * 0.18f) / this.x;
+            b(i11);
+            this.o[i11] = random.nextFloat();
+        }
+        a();
     }
 
-    @Override // org.telegram.ui.Components.ub
-    public final void onShow() {
-        super.onShow();
-        this.a.d();
+    public final void d(float f7) {
+        for (int i10 = 0; i10 < this.x; i10++) {
+            float[] fArr = this.o;
+            float f10 = fArr[i10];
+            float f11 = this.p[i10];
+            nh.a aVar = lc.H;
+            float f12 = (f11 * f7 * 8.2f) + (0.8f * f11) + f10;
+            fArr[i10] = f12;
+            if (f12 >= 1.0f) {
+                fArr[i10] = 0.0f;
+                this.k[i10] = this.l[i10];
+                this.m[i10] = this.n[i10];
+                b(i10);
+            }
+        }
     }
 }

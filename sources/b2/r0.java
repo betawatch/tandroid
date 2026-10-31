@@ -4,7 +4,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class r0 {
     public CharSequence A;
@@ -16,7 +16,7 @@ public final class r0 {
     public CharSequence G;
     public Integer H;
     public Bundle I;
-    public f9.i0 J;
+    public e9.n0 J;
     public CharSequence a;
     public CharSequence b;
     public CharSequence c;
@@ -25,8 +25,8 @@ public final class r0 {
     public CharSequence f;
     public CharSequence g;
     public Long h;
-    public h1 i;
-    public h1 j;
+    public g1 i;
+    public g1 j;
     public byte[] k;
     public m l;
     public Integer m;
@@ -45,8 +45,8 @@ public final class r0 {
     public CharSequence z;
 
     public r0() {
-        f9.g0 g0Var = f9.i0.b;
-        this.J = f9.s1.e;
+        e9.l0 l0Var = e9.n0.b;
+        this.J = e9.x1.e;
     }
 
     public final void a(int i10, byte[] bArr) {

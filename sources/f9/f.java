@@ -1,108 +1,60 @@
 package f9;
 
-import a8.ta;
-import java.util.Iterator;
-import java.util.NavigableMap;
-import java.util.NavigableSet;
-import java.util.SortedMap;
-import java.util.SortedSet;
+import java.io.InputStream;
+import java.util.ArrayDeque;
+import java.util.Arrays;
+import org.telegram.tgnet.TLObject;
+import v7.c8;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class f extends i implements NavigableSet {
-    public final /* synthetic */ k1 e;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f(k1 k1Var, NavigableMap navigableMap) {
-        super(k1Var, navigableMap);
-        this.e = k1Var;
+public abstract class f {
+    static {
+        new e();
     }
 
-    @Override // java.util.NavigableSet
-    public final Object ceiling(Object obj) {
-        return h().ceilingKey(obj);
-    }
-
-    @Override // java.util.NavigableSet
-    public final Iterator descendingIterator() {
-        return ((d) descendingSet()).iterator();
-    }
-
-    @Override // java.util.NavigableSet
-    public final NavigableSet descendingSet() {
-        return new f(this.e, h().descendingMap());
-    }
-
-    @Override // java.util.NavigableSet
-    public final Object floor(Object obj) {
-        return h().floorKey(obj);
-    }
-
-    @Override // f9.i, java.util.SortedSet, java.util.NavigableSet
-    public final SortedSet headSet(Object obj) {
-        return headSet(obj, false);
-    }
-
-    @Override // java.util.NavigableSet
-    public final Object higher(Object obj) {
-        return h().higherKey(obj);
-    }
-
-    @Override // java.util.NavigableSet
-    public final Object lower(Object obj) {
-        return h().lowerKey(obj);
-    }
-
-    @Override // f9.i
-    /* renamed from: m, reason: merged with bridge method [inline-methods] */
-    public final NavigableMap h() {
-        return (NavigableMap) ((SortedMap) this.b);
-    }
-
-    @Override // java.util.NavigableSet
-    public final Object pollFirst() {
-        ta taVar = (ta) iterator();
-        if (!taVar.hasNext()) {
-            return null;
+    public static byte[] a(ArrayDeque arrayDeque, int i10) {
+        if (arrayDeque.isEmpty()) {
+            return new byte[0];
         }
-        Object next = taVar.next();
-        taVar.remove();
-        return next;
-    }
-
-    @Override // java.util.NavigableSet
-    public final Object pollLast() {
-        Iterator descendingIterator = descendingIterator();
-        if (!descendingIterator.hasNext()) {
-            return null;
+        byte[] bArr = (byte[]) arrayDeque.remove();
+        if (bArr.length == i10) {
+            return bArr;
         }
-        Object next = descendingIterator.next();
-        descendingIterator.remove();
-        return next;
+        int length = i10 - bArr.length;
+        byte[] copyOf = Arrays.copyOf(bArr, i10);
+        while (length > 0) {
+            byte[] bArr2 = (byte[]) arrayDeque.remove();
+            int min = Math.min(length, bArr2.length);
+            System.arraycopy(bArr2, 0, copyOf, i10 - length, min);
+            length -= min;
+        }
+        return copyOf;
     }
 
-    @Override // f9.i, java.util.SortedSet, java.util.NavigableSet
-    public final SortedSet subSet(Object obj, Object obj2) {
-        return subSet(obj, true, obj2, false);
-    }
-
-    @Override // f9.i, java.util.SortedSet, java.util.NavigableSet
-    public final SortedSet tailSet(Object obj) {
-        return tailSet(obj, true);
-    }
-
-    @Override // java.util.NavigableSet
-    public final NavigableSet headSet(Object obj, boolean z10) {
-        return new f(this.e, h().headMap(obj, z10));
-    }
-
-    @Override // java.util.NavigableSet
-    public final NavigableSet subSet(Object obj, boolean z10, Object obj2, boolean z11) {
-        return new f(this.e, h().subMap(obj, z10, obj2, z11));
-    }
-
-    @Override // java.util.NavigableSet
-    public final NavigableSet tailSet(Object obj, boolean z10) {
-        return new f(this.e, h().tailMap(obj, z10));
+    public static byte[] b(InputStream inputStream) {
+        inputStream.getClass();
+        ArrayDeque arrayDeque = new ArrayDeque(20);
+        int min = Math.min(TLObject.FLAG_13, Math.max(128, Integer.highestOneBit(0) * 2));
+        int i10 = 0;
+        while (i10 < 2147483639) {
+            int min2 = Math.min(min, 2147483639 - i10);
+            byte[] bArr = new byte[min2];
+            arrayDeque.add(bArr);
+            int i11 = 0;
+            while (i11 < min2) {
+                int read = inputStream.read(bArr, i11, min2 - i11);
+                if (read == -1) {
+                    return a(arrayDeque, i10);
+                }
+                i11 += read;
+                i10 += read;
+            }
+            min = c8.e(min * (min < 4096 ? 4 : 2));
+        }
+        if (inputStream.read() == -1) {
+            return a(arrayDeque, 2147483639);
+        }
+        throw new OutOfMemoryError("input is too large to fit in a byte array");
     }
 }

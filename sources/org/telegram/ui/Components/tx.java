@@ -1,42 +1,37 @@
 package org.telegram.ui.Components;
 
-import androidx.recyclerview.widget.RecyclerView;
-import j$.util.Objects;
-import org.telegram.messenger.AndroidUtilities;
+import java.util.ArrayList;
+import java.util.LinkedHashSet;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class tx extends rz {
-    public final /* synthetic */ sz d;
+public final class tx implements jy {
+    public final /* synthetic */ ux a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public tx(sz szVar) {
-        super(szVar, 1);
-        this.d = szVar;
+    public tx(ux uxVar) {
+        this.a = uxVar;
     }
 
-    @Override // org.telegram.ui.Components.rz, s4.u0
-    public final void a(RecyclerView recyclerView, int i10) {
-        if (i10 == 0) {
-            this.d.f0 = false;
-        }
-        super.a(recyclerView, i10);
-    }
-
-    @Override // org.telegram.ui.Components.rz, s4.u0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        sz szVar = this.d;
-        qx qxVar = szVar.Q;
-        szVar.V(qxVar.I0());
-        super.b(recyclerView, i10, i11);
-        sy syVar = szVar.S;
-        if (syVar == null || szVar.P.getAdapter() != syVar || syVar.x.a() || syVar.x.a.E) {
+    @Override // org.telegram.ui.Components.jy
+    public final void e() {
+        ux uxVar = this.a;
+        if (uxVar.F.V.F) {
             return;
         }
-        if (qxVar.N0() + 20 > syVar.h()) {
-            ry ryVar = syVar.x;
-            Objects.requireNonNull(ryVar);
-            AndroidUtilities.runOnUIThread(new yw(ryVar, 1));
+        ArrayList arrayList = new ArrayList();
+        uxVar.F.V.e(true);
+        ux.E(uxVar, new at(7, this, arrayList), arrayList, true);
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        LinkedHashSet linkedHashSet = new LinkedHashSet();
+        String str = this.a.w;
+        at atVar = new at(6, this, str);
+        if (org.telegram.messenger.k6.d(str)) {
+            bw0.F3.c(org.telegram.messenger.d20.s0, str, new vg(6, linkedHashSet, atVar));
+        } else {
+            atVar.run();
         }
     }
 }

@@ -1,45 +1,55 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
+import android.view.KeyEvent;
 import android.view.View;
+import android.widget.EditText;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class hr extends View {
-    public final gr a;
+public final /* synthetic */ class hr implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ lr b;
 
-    public hr(Context context, org.telegram.ui.ActionBar.u6 u6Var) {
-        super(context);
-        setVisibility(8);
-        gr grVar = new gr(this, true, u6Var);
-        this.a = grVar;
-        grVar.G = true;
+    public /* synthetic */ hr(lr lrVar, int i10) {
+        this.a = i10;
+        this.b = lrVar;
     }
 
-    public float getEnterProgress() {
-        int i10;
-        gr grVar = this.a;
-        float f7 = grVar.l;
-        return (f7 == 1.0f || !((i10 = grVar.c) == 0 || i10 == 1)) ? grVar.h == 0 ? 0.0f : 1.0f : i10 == 0 ? f7 : 1.0f - f7;
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        this.a.a(canvas);
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        this.a.d(getMeasuredHeight(), getMeasuredWidth());
-    }
-
-    public void setGravity(int i10) {
-        this.a.z = i10;
-    }
-
-    public void setReverse(boolean z10) {
-        this.a.D = z10;
+    @Override // java.lang.Runnable
+    public final void run() {
+        View view;
+        switch (this.a) {
+            case 0:
+                lr lrVar = this.b;
+                if (lrVar.b == null && (view = lrVar.d) != null) {
+                    View findFocus = view.findFocus();
+                    if (findFocus instanceof EditText) {
+                        lrVar.b = (EditText) findFocus;
+                    }
+                }
+                EditText editText = lrVar.b;
+                if (editText != null) {
+                    if (editText.length() != 0 || lrVar.e) {
+                        try {
+                            lrVar.performHapticFeedback(3, 2);
+                            lrVar.playSoundEffect(0);
+                        } catch (Exception unused) {
+                        }
+                        lrVar.b.dispatchKeyEvent(new KeyEvent(0, 67));
+                        lrVar.b.dispatchKeyEvent(new KeyEvent(1, 67));
+                        if (lrVar.f) {
+                            lrVar.postDelayed(lrVar.h, 50L);
+                            break;
+                        }
+                    }
+                }
+                break;
+            default:
+                lr lrVar2 = this.b;
+                lrVar2.n = false;
+                lrVar2.f = true;
+                lrVar2.h.run();
+                break;
+        }
     }
 }

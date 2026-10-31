@@ -1,20 +1,33 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.AndroidUtilities;
+import android.view.View;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class o71 extends s4.c0 {
-    public final /* synthetic */ s71 I;
+public abstract class o71 {
+    public abstract void b(View view, int i10, int i11);
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public o71(s71 s71Var, int i10) {
-        super(i10, false);
-        this.I = s71Var;
+    public boolean c(int i10) {
+        return false;
     }
 
-    @Override // s4.c0
-    public final int W0(s4.b1 b1Var) {
-        return this.I.i3 ? AndroidUtilities.displaySize.y : super.W0(b1Var);
+    public abstract View d(int i10);
+
+    public abstract int e();
+
+    public CharSequence g(int i10) {
+        return "";
+    }
+
+    public int h(int i10) {
+        return 0;
+    }
+
+    public void a(ArrayList arrayList) {
+    }
+
+    public int f(int i10) {
+        return i10;
     }
 }

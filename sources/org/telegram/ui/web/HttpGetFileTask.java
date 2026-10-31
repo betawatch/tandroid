@@ -3,7 +3,6 @@ package org.telegram.ui.web;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.webkit.MimeTypeMap;
-import fi.w7;
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -13,34 +12,37 @@ import java.net.ProtocolException;
 import java.net.URL;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.d20;
+import org.telegram.messenger.f8;
+import org.telegram.messenger.q20;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.w5;
+import vh.n5;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes4.dex */
 public class HttpGetFileTask extends AsyncTask<String, Void, File> {
-    private Utilities.Callback<File> doneCallback;
+    private q20 doneCallback;
     private Exception exception;
     private File file;
     private long max_size = -1;
     private String overrideExt;
-    private Utilities.Callback<Float> progressCallback;
+    private q20 progressCallback;
 
-    public HttpGetFileTask(Utilities.Callback<File> callback, Utilities.Callback<Float> callback2) {
-        this.doneCallback = callback;
-        this.progressCallback = callback2;
+    public HttpGetFileTask(q20 q20Var, q20 q20Var2) {
+        this.doneCallback = q20Var;
+        this.progressCallback = q20Var2;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$doInBackground$0(float f7) {
-        this.progressCallback.run(Float.valueOf(f7));
+        this.progressCallback.a(Float.valueOf(f7));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$doInBackground$1() {
-        this.progressCallback.run(Float.valueOf(1.0f));
+        this.progressCallback.a(Float.valueOf(1.0f));
     }
 
     public HttpGetFileTask setDestFile(File file) {
@@ -58,224 +60,268 @@ public class HttpGetFileTask extends AsyncTask<String, Void, File> {
         return this;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:86:0x00ec, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:92:0x0100, code lost:
     
         r18.file.delete();
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x0176 A[LOOP:0: B:2:0x0009->B:35:0x0176, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x0181 A[SYNTHETIC] */
-    /* JADX WARN: Type inference failed for: r16v0 */
-    /* JADX WARN: Type inference failed for: r16v1 */
-    /* JADX WARN: Type inference failed for: r16v10 */
-    /* JADX WARN: Type inference failed for: r16v11, types: [long] */
-    /* JADX WARN: Type inference failed for: r16v12 */
-    /* JADX WARN: Type inference failed for: r16v2, types: [int] */
-    /* JADX WARN: Type inference failed for: r16v3 */
-    /* JADX WARN: Type inference failed for: r16v4 */
-    /* JADX WARN: Type inference failed for: r16v5 */
-    /* JADX WARN: Type inference failed for: r16v6 */
-    /* JADX WARN: Type inference failed for: r16v7 */
-    /* JADX WARN: Type inference failed for: r16v8 */
-    /* JADX WARN: Type inference failed for: r16v9 */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x019e A[LOOP:0: B:2:0x0008->B:36:0x019e, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x01aa A[SYNTHETIC] */
+    /* JADX WARN: Type inference failed for: r0v34 */
+    /* JADX WARN: Type inference failed for: r0v36 */
+    /* JADX WARN: Type inference failed for: r0v37 */
+    /* JADX WARN: Type inference failed for: r0v8, types: [boolean] */
+    /* JADX WARN: Type inference failed for: r17v0 */
+    /* JADX WARN: Type inference failed for: r17v1 */
+    /* JADX WARN: Type inference failed for: r17v10 */
+    /* JADX WARN: Type inference failed for: r17v11 */
+    /* JADX WARN: Type inference failed for: r17v13 */
+    /* JADX WARN: Type inference failed for: r17v14 */
+    /* JADX WARN: Type inference failed for: r17v15 */
+    /* JADX WARN: Type inference failed for: r17v2 */
+    /* JADX WARN: Type inference failed for: r17v3 */
+    /* JADX WARN: Type inference failed for: r17v4, types: [int] */
+    /* JADX WARN: Type inference failed for: r17v5 */
+    /* JADX WARN: Type inference failed for: r17v6 */
+    /* JADX WARN: Type inference failed for: r17v7 */
+    /* JADX WARN: Type inference failed for: r17v8 */
+    /* JADX WARN: Type inference failed for: r17v9 */
+    /* JADX WARN: Type inference failed for: r19v1 */
+    /* JADX WARN: Type inference failed for: r19v10 */
+    /* JADX WARN: Type inference failed for: r19v11 */
+    /* JADX WARN: Type inference failed for: r19v12 */
+    /* JADX WARN: Type inference failed for: r19v13 */
+    /* JADX WARN: Type inference failed for: r19v14, types: [java.io.File] */
+    /* JADX WARN: Type inference failed for: r19v16 */
+    /* JADX WARN: Type inference failed for: r19v17 */
+    /* JADX WARN: Type inference failed for: r19v18 */
+    /* JADX WARN: Type inference failed for: r19v3 */
+    /* JADX WARN: Type inference failed for: r19v4, types: [java.io.File] */
+    /* JADX WARN: Type inference failed for: r19v5 */
+    /* JADX WARN: Type inference failed for: r19v6 */
+    /* JADX WARN: Type inference failed for: r19v7 */
+    /* JADX WARN: Type inference failed for: r19v8 */
+    /* JADX WARN: Type inference failed for: r19v9 */
     @Override // android.os.AsyncTask
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public File doInBackground(String... strArr) {
-        ?? r16;
+        ?? r17;
         BufferedInputStream bufferedInputStream;
-        Throwable th2;
         FileOutputStream fileOutputStream;
-        Throwable th3;
         FileChannel channel;
-        String str = strArr[0];
-        long j10 = 0;
         int i10 = 0;
-        long j11 = 0;
-        while (i10 < 5) {
-            boolean z10 = i10 > 0;
+        String str = strArr[0];
+        int i11 = 0;
+        long j10 = 0;
+        ?? r19 = strArr;
+        while (true) {
+            Object obj = null;
+            if (i11 >= 5) {
+                this.exception = new RuntimeException("too many retries");
+                return null;
+            }
+            int i12 = i11 > 0 ? 1 : i10;
             try {
                 HttpURLConnection httpURLConnection = (HttpURLConnection) new URL(str).openConnection();
                 httpURLConnection.setRequestMethod("GET");
-                if (z10) {
-                    httpURLConnection.setRequestProperty("Range", "bytes=" + j11 + "-");
+                if (i12 != 0) {
+                    httpURLConnection.setRequestProperty("Range", "bytes=" + j10 + "-");
                 }
                 httpURLConnection.setDoInput(true);
                 int responseCode = httpURLConnection.getResponseCode();
                 InputStream errorStream = (responseCode < 200 || responseCode >= 300) ? httpURLConnection.getErrorStream() : httpURLConnection.getInputStream();
                 int responseCode2 = httpURLConnection.getResponseCode();
-                if (z10 && responseCode2 != 206) {
-                    FileLog.d("failed to resume, server doesn't support partial content. downloading from the beginning");
-                    try {
-                        File file = this.file;
-                        if (file != null) {
-                            try {
-                                file.delete();
-                            } catch (Exception unused) {
+                ?? r02 = i12;
+                if (i12 != 0) {
+                    r02 = i12;
+                    if (responseCode2 != 206) {
+                        f8.b("failed to resume, server doesn't support partial content. downloading from the beginning");
+                        try {
+                            File file = this.file;
+                            if (file != null) {
+                                try {
+                                    file.delete();
+                                } catch (Exception unused) {
+                                }
+                                this.file = null;
                             }
-                            this.file = null;
+                            r02 = i10;
+                            j10 = 0;
+                        } catch (Exception e) {
+                            e = e;
+                            r17 = str;
+                            r19 = 0;
+                            j10 = 0;
+                            if (e instanceof ProtocolException) {
+                            }
                         }
-                        z10 = false;
-                        j11 = j10;
-                    } catch (Exception e) {
-                        e = e;
-                        j11 = j10;
-                        r16 = j11;
-                        if (e instanceof ProtocolException) {
-                            this.exception = e;
-                            FileLog.e(e);
-                            return null;
-                        }
-                        FileLog.d("got unexpected end of stream, lets try to resume");
-                        i10++;
-                        j10 = r16;
                     }
                 }
                 long contentLengthLong = Build.VERSION.SDK_INT >= 24 ? httpURLConnection.getContentLengthLong() : httpURLConnection.getContentLength();
-                long j12 = this.max_size;
-                r16 = (j12 > j10 ? 1 : (j12 == j10 ? 0 : -1));
-                if (r16 <= 0 || contentLengthLong <= j12) {
+                try {
+                    long j11 = this.max_size;
+                    r17 = (j11 > 0L ? 1 : (j11 == 0L ? 0 : -1));
+                    if (r17 > 0 && contentLengthLong > j11) {
+                        errorStream.close();
+                        if (this.file != null) {
+                            this.file = null;
+                        }
+                        return null;
+                    }
                     if (this.file == null) {
                         String str2 = this.overrideExt;
                         if (str2 == null) {
                             str2 = MimeTypeMap.getSingleton().getExtensionFromMimeType(httpURLConnection.getContentType());
                         }
-                        this.file = w7.w(UserConfig.selectedAccount, str2);
+                        this.file = n5.w(d20.s0, str2);
                     }
-                    bufferedInputStream = new BufferedInputStream(errorStream, 16384);
                     try {
+                        bufferedInputStream = new BufferedInputStream(errorStream, TLObject.FLAG_14);
                         try {
-                            fileOutputStream = new FileOutputStream(this.file, z10);
+                            fileOutputStream = new FileOutputStream(this.file, (boolean) r02);
                             try {
+                                channel = fileOutputStream.getChannel();
                                 try {
-                                    channel = fileOutputStream.getChannel();
-                                    try {
-                                        byte[] bArr = new byte[16384];
-                                        while (true) {
-                                            int read = bufferedInputStream.read(bArr);
-                                            r16 = j10;
-                                            if (read == -1) {
-                                                if (this.progressCallback != null) {
-                                                    AndroidUtilities.runOnUIThread(new h1(this, 0));
+                                    byte[] bArr = new byte[TLObject.FLAG_14];
+                                    while (true) {
+                                        int read = bufferedInputStream.read(bArr);
+                                        r19 = obj;
+                                        if (read == -1) {
+                                            if (this.progressCallback != null) {
+                                                org.telegram.messenger.i0.g3(new w5(this, 17));
+                                            }
+                                            if (channel != null) {
+                                                channel.close();
+                                            }
+                                            fileOutputStream.close();
+                                            bufferedInputStream.close();
+                                            return isCancelled() ? r19 : this.file;
+                                        }
+                                        try {
+                                            channel.write(ByteBuffer.wrap(bArr, i10, read));
+                                            r17 = str;
+                                            j10 += read;
+                                        } catch (Throwable th2) {
+                                            th = th2;
+                                            r17 = str;
+                                        }
+                                        try {
+                                            if (isCancelled()) {
+                                                try {
+                                                    break;
+                                                } catch (Exception e7) {
+                                                    f8.g(e7, true);
                                                 }
-                                                if (channel != null) {
-                                                    channel.close();
+                                            } else {
+                                                if (contentLengthLong > 0) {
+                                                    float l4 = Utilities.l(j10 / contentLengthLong);
+                                                    if (this.progressCallback != null) {
+                                                        org.telegram.messenger.i0.g3(new org.telegram.ui.a0(this, l4, 3));
+                                                    }
                                                 }
-                                                fileOutputStream.close();
-                                                bufferedInputStream.close();
-                                                if (isCancelled()) {
-                                                    return null;
-                                                }
-                                                return this.file;
+                                                obj = r19;
+                                                str = r17;
+                                                i10 = 0;
+                                            }
+                                        } catch (Throwable th3) {
+                                            th = th3;
+                                            Throwable th4 = th;
+                                            if (channel == null) {
+                                                throw th4;
                                             }
                                             try {
-                                                channel.write(ByteBuffer.wrap(bArr, 0, read));
-                                                j11 += read;
-                                                if (isCancelled()) {
-                                                    try {
-                                                        break;
-                                                    } catch (Exception e10) {
-                                                        FileLog.e(e10);
-                                                    }
-                                                } else {
-                                                    if (contentLengthLong > r16) {
-                                                        float clamp01 = Utilities.clamp01(j11 / contentLengthLong);
-                                                        if (this.progressCallback != null) {
-                                                            AndroidUtilities.runOnUIThread(new org.telegram.ui.b0(this, clamp01, 5));
-                                                        }
-                                                    }
-                                                    j10 = r16;
-                                                }
-                                            } catch (Throwable th4) {
-                                                th = th4;
-                                                Throwable th5 = th;
-                                                if (channel == null) {
-                                                    throw th5;
-                                                }
                                                 try {
                                                     channel.close();
-                                                    throw th5;
-                                                } catch (Throwable th6) {
-                                                    th5.addSuppressed(th6);
-                                                    throw th5;
+                                                    throw th4;
+                                                } catch (Throwable th5) {
+                                                    th4.addSuppressed(th5);
+                                                    throw th4;
+                                                }
+                                            } catch (Throwable th6) {
+                                                th = th6;
+                                                Throwable th7 = th;
+                                                try {
+                                                    try {
+                                                        fileOutputStream.close();
+                                                        throw th7;
+                                                    } catch (Throwable th8) {
+                                                        th7.addSuppressed(th8);
+                                                        throw th7;
+                                                    }
+                                                } catch (Throwable th9) {
+                                                    th = th9;
+                                                    Throwable th10 = th;
+                                                    try {
+                                                        bufferedInputStream.close();
+                                                        throw th10;
+                                                    } catch (Throwable th11) {
+                                                        th10.addSuppressed(th11);
+                                                        throw th10;
+                                                    }
                                                 }
                                             }
                                         }
-                                    } catch (Throwable th7) {
-                                        th = th7;
-                                        r16 = j10;
                                     }
-                                } catch (Throwable th8) {
-                                    th = th8;
-                                    th3 = th;
-                                    try {
-                                        fileOutputStream.close();
-                                        throw th3;
-                                    } catch (Throwable th9) {
-                                        th3.addSuppressed(th9);
-                                        throw th3;
-                                    }
-                                }
-                            } catch (Throwable th10) {
-                                th = th10;
-                                r16 = j10;
-                                th3 = th;
-                                fileOutputStream.close();
-                                throw th3;
-                            }
-                        } catch (Throwable th11) {
-                            th = th11;
-                            r16 = j10;
-                            th2 = th;
-                            try {
-                                try {
-                                    bufferedInputStream.close();
-                                    throw th2;
                                 } catch (Throwable th12) {
-                                    th2.addSuppressed(th12);
-                                    throw th2;
+                                    th = th12;
+                                    r17 = str;
+                                    r19 = obj;
                                 }
-                            } catch (Exception e11) {
-                                e = e11;
-                                if (e instanceof ProtocolException) {
-                                }
+                            } catch (Throwable th13) {
+                                th = th13;
+                                r17 = str;
+                                r19 = 0;
                             }
+                        } catch (Throwable th14) {
+                            th = th14;
+                            r17 = str;
+                            r19 = 0;
                         }
-                    } catch (Throwable th13) {
-                        th = th13;
-                        th2 = th;
-                        bufferedInputStream.close();
-                        throw th2;
+                    } catch (Exception e10) {
+                        e = e10;
+                        if (e instanceof ProtocolException) {
+                            this.exception = e;
+                            f8.g(e, true);
+                            return r19;
+                        }
+                        f8.b("got unexpected end of stream, lets try to resume");
+                        i11++;
+                        str = r17;
+                        i10 = 0;
+                        r19 = r19;
                     }
-                } else {
-                    errorStream.close();
-                    if (this.file != null) {
-                        this.file = null;
-                    }
+                } catch (Exception e11) {
+                    e = e11;
+                    r17 = str;
+                    r19 = 0;
                 }
-                return null;
             } catch (Exception e12) {
                 e = e12;
-                r16 = j10;
+                r17 = str;
+                r19 = 0;
             }
+            f8.b("got unexpected end of stream, lets try to resume");
+            i11++;
+            str = r17;
+            i10 = 0;
+            r19 = r19;
         }
-        this.exception = new RuntimeException("too many retries");
-        return null;
         channel.close();
         fileOutputStream.close();
         bufferedInputStream.close();
-        return null;
+        return r19;
     }
 
     @Override // android.os.AsyncTask
     public void onPostExecute(File file) {
-        Utilities.Callback<File> callback = this.doneCallback;
-        if (callback != null) {
+        q20 q20Var = this.doneCallback;
+        if (q20Var != null) {
             if (this.exception == null) {
-                callback.run(file);
+                q20Var.a(file);
             } else {
-                callback.run(null);
+                q20Var.a(null);
             }
         }
     }

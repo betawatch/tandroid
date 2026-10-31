@@ -1,59 +1,39 @@
 package y8;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes.dex */
-public abstract class j {
-    public static final com.google.android.gms.common.api.e a = new com.google.android.gms.common.api.e("Wearable.API", new b8.d(18), new com.google.android.gms.common.api.d());
-    public static final l6.c[] b = {new l6.c("app_client", 4), new l6.c("carrier_auth", 1), new l6.c("wear3_oem_companion", 1), new l6.c("wear_consent", 2), new l6.c("wear_consent_recordoptin", 1), new l6.c("wear_consent_supervised", 1), new l6.c("wear_fast_pair_account_key_sync", 1), new l6.c("wear_get_related_configs", 1), new l6.c("wear_get_node_id", 1), new l6.c("wear_retry_connection", 1), new l6.c("wear_set_cloud_sync_setting_by_node", 1), new l6.c("wear_update_config", 1), new l6.c("wear_update_connection_retry_strategy", 1), new l6.c("wearable_services", 1)};
+import android.os.Parcel;
+import android.os.Parcelable;
 
-    public static String a(int i10) {
-        switch (i10) {
-            case -1:
-                return "SUCCESS_CACHE";
-            case 0:
-                return "SUCCESS";
-            case 1:
-            case 9:
-            case 11:
-            case 12:
-            default:
-                return ic.a.i(i10, "unknown status code: ");
-            case 2:
-                return "SERVICE_VERSION_UPDATE_REQUIRED";
-            case 3:
-                return "SERVICE_DISABLED";
-            case 4:
-                return "SIGN_IN_REQUIRED";
-            case 5:
-                return "INVALID_ACCOUNT";
-            case 6:
-                return "RESOLUTION_REQUIRED";
-            case 7:
-                return "NETWORK_ERROR";
-            case 8:
-                return "INTERNAL_ERROR";
-            case 10:
-                return "DEVELOPER_ERROR";
-            case 13:
-                return "ERROR";
-            case 14:
-                return "INTERRUPTED";
-            case 15:
-                return "TIMEOUT";
-            case 16:
-                return "CANCELED";
-            case 17:
-                return "API_NOT_CONNECTED";
-            case 18:
-                return "DEAD_CLIENT";
-            case 19:
-                return "REMOTE_EXCEPTION";
-            case 20:
-                return "CONNECTION_SUSPENDED_DURING_CALL";
-            case 21:
-                return "RECONNECTION_TIMED_OUT_DURING_UPDATE";
-            case 22:
-                return "RECONNECTION_TIMED_OUT";
-        }
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes.dex */
+public final class j extends o6.a {
+    public static final Parcelable.Creator<j> CREATOR = new c(6);
+    public final int a;
+    public final boolean b;
+    public final boolean c;
+    public final boolean d;
+    public final boolean e;
+
+    public j(int i10, boolean z10, boolean z11, boolean z12, boolean z13) {
+        this.a = i10;
+        this.b = z10;
+        this.c = z11;
+        this.d = z12;
+        this.e = z13;
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i10) {
+        int q6 = w7.h0.q(parcel, 20293);
+        w7.h0.s(parcel, 1, 4);
+        parcel.writeInt(this.a);
+        w7.h0.s(parcel, 2, 4);
+        parcel.writeInt(this.b ? 1 : 0);
+        w7.h0.s(parcel, 3, 4);
+        parcel.writeInt(this.c ? 1 : 0);
+        w7.h0.s(parcel, 4, 4);
+        parcel.writeInt(this.d ? 1 : 0);
+        w7.h0.s(parcel, 5, 4);
+        parcel.writeInt(this.e ? 1 : 0);
+        w7.h0.r(parcel, q6);
     }
 }

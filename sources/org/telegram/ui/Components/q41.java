@@ -1,40 +1,46 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Rect;
-import android.view.MotionEvent;
-import android.view.View;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class q41 extends nm0 {
-    public final /* synthetic */ g51 f3;
+public final class q41 implements ax0 {
+    public final /* synthetic */ TLRPC.InputStickerSet a;
+    public final /* synthetic */ w41 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public q41(g51 g51Var, Context context) {
-        super(context, null);
-        this.f3 = g51Var;
+    public q41(w41 w41Var, TLRPC.InputStickerSet inputStickerSet) {
+        this.b = w41Var;
+        this.a = inputStickerSet;
     }
 
-    @Override // org.telegram.ui.Components.nm0, android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        if (motionEvent.getAction() == 0) {
-            float y3 = motionEvent.getY();
-            g51 g51Var = this.f3;
-            if (y3 < g51Var.K(true) - getTop()) {
-                g51Var.dismiss();
-                return true;
+    @Override // org.telegram.ui.Components.ax0
+    public final void a() {
+        w41 w41Var = this.b;
+        s4.g0 adapter = w41Var.n.getAdapter();
+        v41 v41Var = w41Var.s;
+        TLRPC.InputStickerSet inputStickerSet = this.a;
+        int i10 = 0;
+        if (adapter == v41Var) {
+            while (i10 < v41Var.e.size()) {
+                TLRPC.StickerSetCovered stickerSetCovered = (TLRPC.StickerSetCovered) v41Var.e.get(i10);
+                if (stickerSetCovered.set.id == inputStickerSet.id) {
+                    v41Var.F(stickerSetCovered, null);
+                    return;
+                }
+                i10++;
             }
+            return;
         }
-        return super.dispatchTouchEvent(motionEvent);
-    }
-
-    @Override // androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
-    public final boolean onRequestFocusInDescendants(int i10, Rect rect) {
-        return true;
-    }
-
-    @Override // androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.ViewParent
-    public final void requestChildFocus(View view, View view2) {
+        zf.o1 o1Var = w41Var.w;
+        ArrayList arrayList = o1Var.E;
+        while (i10 < arrayList.size()) {
+            TLRPC.StickerSetCovered stickerSetCovered2 = (TLRPC.StickerSetCovered) arrayList.get(i10);
+            if (stickerSetCovered2.set.id == inputStickerSet.id) {
+                o1Var.F(stickerSetCovered2, null);
+                return;
+            }
+            i10++;
+        }
     }
 }

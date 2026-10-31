@@ -1,417 +1,449 @@
 package org.telegram.ui.Components;
 
-import android.content.ContentValues;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import android.graphics.Bitmap;
-import android.graphics.drawable.Drawable;
-import android.util.Base64;
-import android.util.Log;
-import android.webkit.JsPromptResult;
-import j$.util.DesugarCollections;
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.text.TextUtils;
+import android.util.LongSparseArray;
+import android.util.SparseArray;
+import android.util.SparseIntArray;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import org.telegram.messenger.AccountInstance;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.R;
-import org.telegram.messenger.VideoEditedInfo;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qy implements MediaDataController.KeywordResultCallback, e5, org.telegram.ui.ActionBar.b2, ImageReceiver.ImageReceiverDelegate, MessagesStorage.BooleanCallback, u5.b, t5.e, e2.j, x2.l {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
+public final class qy extends sk0 {
+    public boolean D;
+    public int L;
+    public int M;
+    public String N;
+    public final /* synthetic */ vy Q;
+    public final qx c;
+    public long d;
+    public TLRPC.StickerSet e;
+    public ArrayList f;
+    public final Context h;
+    public int y;
+    public final SparseArray n = new SparseArray();
+    public final SparseArray r = new SparseArray();
+    public final SparseArray s = new SparseArray();
+    public final SparseIntArray w = new SparseIntArray();
+    public final SparseArray x = new SparseArray();
+    public ArrayList E = new ArrayList();
+    public HashMap F = new HashMap();
+    public HashMap G = new HashMap();
+    public HashMap H = new HashMap();
+    public ArrayList I = new ArrayList();
+    public ArrayList J = new ArrayList();
+    public ArrayList K = new ArrayList();
+    public final py O = new py(this);
+    public int P = -1;
 
-    public /* synthetic */ qy(Object obj, Object obj2, Object obj3, int i10) {
-        this.a = i10;
-        this.c = obj;
-        this.d = obj2;
-        this.b = obj3;
+    public qy(vy vyVar, Context context) {
+        this.Q = vyVar;
+        this.h = context;
+        qx qxVar = new qx(context, vyVar.c1, new d(this, 12), new px(this, 2), vyVar.Z1);
+        this.c = qxVar;
+        qxVar.setPadding(org.telegram.messenger.i0.L(10.0f), 0, org.telegram.messenger.i0.L(10.0f), org.telegram.messenger.i0.L(5.0f));
+        qxVar.setClipToPadding(false);
+        qxVar.f3.r = false;
+        qxVar.setNestedScrollingEnabled(false);
+        qxVar.setDrawSelection(false);
+        qxVar.setOnTouchListener(new m.c2(this, 3));
     }
 
-    @Override // org.telegram.ui.Components.e5
-    public void G(int i10, int i11, boolean z10) {
-        h60 h60Var = (h60) this.c;
-        c60 c60Var = (c60) this.d;
-        VideoEditedInfo videoEditedInfo = (VideoEditedInfo) this.b;
-        p60 p60Var = h60Var.H0;
-        MediaController.PhotoEntry photoEntry = new MediaController.PhotoEntry(0, 0, 0L, h60Var.a.getAbsolutePath(), 0, true, 0, 0, 0L);
-        if (c60Var != null) {
-            photoEntry.ttl = c60Var.c;
-            photoEntry.effectId = c60Var.d;
+    @Override // org.telegram.ui.Components.sk0
+    public final boolean D(s4.c1 c1Var) {
+        return c1Var.f == 7;
+    }
+
+    @Override // s4.g0
+    public final int b() {
+        int i10 = this.y;
+        if (i10 != 1) {
+            return i10 + 1;
         }
-        p60Var.h.r(photoEntry, videoEditedInfo, z10 || c60Var == null || c60Var.a, i10 != 0 ? i10 : c60Var != null ? c60Var.b : 0, i11 != 0 ? i11 : 0, false, c60Var != null ? c60Var.e : 0L);
-        p60Var.s(false, false);
+        return 2;
     }
 
-    @Override // x2.l
-    public f9.s1 a(int i10, b2.q1 q1Var, int[] iArr) {
-        x2.j jVar = (x2.j) this.c;
-        String str = (String) this.d;
-        String str2 = (String) this.b;
-        f9.f0 t10 = f9.i0.t();
-        for (int i11 = 0; i11 < q1Var.a; i11++) {
-            t10.c(new x2.k(i10, q1Var, i11, jVar, iArr[i11], str, str2));
+    @Override // s4.g0
+    public final int d(int i10) {
+        if (this.d != 0 && i10 == b() - 1) {
+            return 8;
         }
-        return t10.f();
+        if (i10 == this.P) {
+            return 7;
+        }
+        if (i10 == 0) {
+            return 4;
+        }
+        if (i10 == 1 && this.y == 1) {
+            return 5;
+        }
+        Object obj = this.r.get(i10);
+        if (obj == null) {
+            return 1;
+        }
+        if (obj instanceof TLRPC.Document) {
+            return 0;
+        }
+        return obj instanceof TLRPC.StickerSetCovered ? 3 : 2;
     }
 
-    @Override // e2.j
-    public void accept(Object obj) {
-        a8.ng ngVar = (a8.ng) this.c;
-        ((u2.k0) obj).c(ngVar.b, (u2.g0) this.d, (u2.c0) this.b);
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:11:0x0077  */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x007f A[SYNTHETIC] */
-    @Override // t5.e
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public Object apply(Object obj) {
-        long insert;
-        Cursor cursor;
-        p5.c cVar;
-        int i10 = this.a;
-        int i11 = 5;
-        int i12 = 4;
-        int i13 = 3;
-        p5.c cVar2 = p5.c.d;
-        int i14 = 2;
-        int i15 = 1;
-        Object obj2 = this.b;
-        Object obj3 = this.d;
-        int i16 = 0;
-        t5.g gVar = (t5.g) this.c;
-        switch (i10) {
-            case 8:
-                m5.h hVar = (m5.h) obj3;
-                m5.m mVar = hVar.c;
-                String str = hVar.a;
-                m5.i iVar = (m5.i) obj2;
-                SQLiteDatabase sQLiteDatabase = (SQLiteDatabase) obj;
-                long simpleQueryForLong = gVar.a().compileStatement("PRAGMA page_size").simpleQueryForLong() * gVar.a().compileStatement("PRAGMA page_count").simpleQueryForLong();
-                t5.a aVar = gVar.d;
-                if (simpleQueryForLong >= aVar.a) {
-                    gVar.e(1L, cVar2, str);
-                    return -1L;
+    @Override // s4.g0
+    public final void f() {
+        int i10;
+        int i11;
+        boolean z10;
+        boolean z11;
+        int i12;
+        int i13;
+        vy vyVar = this.Q;
+        int i14 = vyVar.c1;
+        ny nyVar = vyVar.y0;
+        this.P = -1;
+        SparseArray sparseArray = this.n;
+        sparseArray.clear();
+        SparseIntArray sparseIntArray = this.w;
+        sparseIntArray.clear();
+        SparseArray sparseArray2 = this.r;
+        sparseArray2.clear();
+        SparseArray sparseArray3 = this.x;
+        sparseArray3.clear();
+        this.y = 0;
+        int size = this.G.size() + this.E.size();
+        this.c.f3.O(false);
+        long j10 = this.d;
+        String str = "";
+        SparseArray sparseArray4 = this.s;
+        if (j10 != 0) {
+            ArrayList arrayList = this.f;
+            int i15 = this.y;
+            this.y = i15 + 1;
+            sparseArray2.put(i15, "search");
+            if (size > 0) {
+                int i16 = this.y;
+                this.y = i16 + 1;
+                this.P = i16;
+                sparseArray2.put(i16, "packs");
+                int i17 = this.y;
+                this.y = i17 + 1;
+                sparseArray2.put(i17, org.telegram.messenger.cd.G(this.e.count, "Stickers", new Object[0]));
+                i13 = 3;
+            } else {
+                i13 = 1;
+            }
+            String str2 = (String) this.H.get(arrayList);
+            if (str2 != null && !"".equals(str2)) {
+                sparseArray3.put(this.y, str2);
+            }
+            int size2 = arrayList.size();
+            int i18 = 0;
+            int i19 = 0;
+            while (i18 < size2) {
+                int i20 = this.y + i19;
+                int i21 = (i19 / nyVar.d) + i13;
+                TLRPC.Document document = (TLRPC.Document) arrayList.get(i18);
+                sparseArray2.put(i20, document);
+                ArrayList arrayList2 = arrayList;
+                int i22 = i18;
+                TLRPC.TL_messages_stickerSet o02 = org.telegram.messenger.ui.b0(i14).o0(org.telegram.messenger.ui.q0(document));
+                if (o02 != null) {
+                    sparseArray4.put(i20, o02);
                 }
-                Long b10 = t5.g.b(sQLiteDatabase, iVar);
-                if (b10 != null) {
-                    insert = b10.longValue();
-                } else {
-                    ContentValues contentValues = new ContentValues();
-                    contentValues.put("backend_name", iVar.a);
-                    contentValues.put("priority", Integer.valueOf(w5.a.a(iVar.c)));
-                    contentValues.put("next_request_ms", (Integer) 0);
-                    byte[] bArr = iVar.b;
-                    if (bArr != null) {
-                        contentValues.put("extras", Base64.encodeToString(bArr, 0));
+                sparseIntArray.put(i20, i21);
+                i19++;
+                i18 = i22 + 1;
+                arrayList = arrayList2;
+            }
+            int ceil = (int) Math.ceil(i19 / nyVar.d);
+            for (int i23 = 0; i23 < ceil; i23++) {
+                sparseArray.put(i13 + i23, Integer.valueOf(i19));
+            }
+            this.y = (ceil * nyVar.d) + this.y;
+        } else {
+            boolean isEmpty = this.I.isEmpty();
+            ArrayList arrayList3 = this.K;
+            boolean z12 = (arrayList3 == null || arrayList3.isEmpty()) ? false : true;
+            int i24 = this.y;
+            this.y = i24 + 1;
+            sparseArray2.put(i24, "search");
+            if (size > 0) {
+                int i25 = this.y;
+                this.y = i25 + 1;
+                this.P = i25;
+                sparseArray2.put(i25, "packs");
+                i10 = 2;
+            } else {
+                i10 = 1;
+            }
+            if (isEmpty) {
+                i11 = i14;
+                z10 = isEmpty;
+                z11 = z12;
+                i12 = size;
+            } else {
+                int i26 = this.y;
+                this.y = i26 + 1;
+                sparseArray2.put(i26, org.telegram.messenger.cd.L0(2131744892, null));
+                int i27 = i10 + 1;
+                int size3 = this.I.size();
+                int i28 = 0;
+                int i29 = 0;
+                while (i29 < size3) {
+                    int i30 = i14;
+                    ArrayList arrayList4 = (ArrayList) this.I.get(i29);
+                    boolean z13 = isEmpty;
+                    String str3 = (String) this.H.get(arrayList4);
+                    if (str3 != null && !str.equals(str3)) {
+                        sparseArray3.put(this.y + i28, str3);
+                        str = str3;
                     }
-                    insert = sQLiteDatabase.insert("transport_contexts", null, contentValues);
-                }
-                int i17 = aVar.e;
-                byte[] bArr2 = mVar.b;
-                boolean z10 = bArr2.length <= i17;
-                ContentValues contentValues2 = new ContentValues();
-                contentValues2.put("context_id", Long.valueOf(insert));
-                contentValues2.put("transport_name", str);
-                contentValues2.put("timestamp_ms", Long.valueOf(hVar.d));
-                contentValues2.put("uptime_ms", Long.valueOf(hVar.e));
-                contentValues2.put("payload_encoding", mVar.a.a);
-                contentValues2.put("code", hVar.b);
-                contentValues2.put("num_attempts", (Integer) 0);
-                contentValues2.put("inline", Boolean.valueOf(z10));
-                contentValues2.put("payload", z10 ? bArr2 : new byte[0]);
-                long insert2 = sQLiteDatabase.insert("events", null, contentValues2);
-                if (!z10) {
-                    int ceil = (int) Math.ceil(bArr2.length / i17);
-                    for (int i18 = 1; i18 <= ceil; i18++) {
-                        byte[] copyOfRange = Arrays.copyOfRange(bArr2, (i18 - 1) * i17, Math.min(i18 * i17, bArr2.length));
-                        ContentValues contentValues3 = new ContentValues();
-                        contentValues3.put("event_id", Long.valueOf(insert2));
-                        contentValues3.put("sequence_num", Integer.valueOf(i18));
-                        contentValues3.put("bytes", copyOfRange);
-                        sQLiteDatabase.insert("event_payloads", null, contentValues3);
-                    }
-                }
-                for (Map.Entry entry : DesugarCollections.unmodifiableMap(hVar.f).entrySet()) {
-                    ContentValues contentValues4 = new ContentValues();
-                    contentValues4.put("event_id", Long.valueOf(insert2));
-                    contentValues4.put("name", (String) entry.getKey());
-                    contentValues4.put("value", (String) entry.getValue());
-                    sQLiteDatabase.insert("event_metadata", null, contentValues4);
-                }
-                return Long.valueOf(insert2);
-            case 9:
-                ArrayList arrayList = (ArrayList) obj3;
-                m5.i iVar2 = (m5.i) obj2;
-                Cursor cursor2 = (Cursor) obj;
-                while (cursor2.moveToNext()) {
-                    long j10 = cursor2.getLong(0);
-                    int i19 = cursor2.getInt(7) != 0 ? i15 : 0;
-                    aa.m0 m0Var = new aa.m0();
-                    m0Var.f = new HashMap();
-                    String string = cursor2.getString(i15);
-                    if (string == null) {
-                        throw new NullPointerException("Null transportName");
-                    }
-                    m0Var.b = string;
-                    m0Var.a = Long.valueOf(cursor2.getLong(i14));
-                    m0Var.e = Long.valueOf(cursor2.getLong(3));
-                    if (i19 != 0) {
-                        String string2 = cursor2.getString(4);
-                        m0Var.d = new m5.m(string2 == null ? t5.g.f : new j5.c(string2), cursor2.getBlob(5));
-                    } else {
-                        String string3 = cursor2.getString(4);
-                        j5.c cVar3 = string3 == null ? t5.g.f : new j5.c(string3);
-                        Cursor query = gVar.a().query("event_payloads", new String[]{"bytes"}, "event_id = ?", new String[]{String.valueOf(j10)}, null, null, "sequence_num");
-                        try {
-                            ArrayList arrayList2 = new ArrayList();
-                            int i20 = 0;
-                            while (query.moveToNext()) {
-                                byte[] blob = query.getBlob(0);
-                                arrayList2.add(blob);
-                                i20 += blob.length;
-                            }
-                            byte[] bArr3 = new byte[i20];
-                            int i21 = 0;
-                            int i22 = 0;
-                            while (i21 < arrayList2.size()) {
-                                byte[] bArr4 = (byte[]) arrayList2.get(i21);
-                                cursor = query;
-                                try {
-                                    ArrayList arrayList3 = arrayList2;
-                                    System.arraycopy(bArr4, 0, bArr3, i22, bArr4.length);
-                                    i22 += bArr4.length;
-                                    i21++;
-                                    query = cursor;
-                                    arrayList2 = arrayList3;
-                                } catch (Throwable th2) {
-                                    th = th2;
-                                    cursor.close();
-                                    throw th;
-                                }
-                            }
-                            query.close();
-                            m0Var.d = new m5.m(cVar3, bArr3);
-                        } catch (Throwable th3) {
-                            th = th3;
-                            cursor = query;
+                    int size4 = arrayList4.size();
+                    boolean z14 = z12;
+                    int i31 = 0;
+                    while (i31 < size4) {
+                        int i32 = size4;
+                        int i33 = this.y + i28;
+                        int i34 = size;
+                        int i35 = (i28 / nyVar.d) + i27;
+                        ArrayList arrayList5 = arrayList4;
+                        TLRPC.Document document2 = (TLRPC.Document) arrayList4.get(i31);
+                        sparseArray2.put(i33, document2);
+                        String str4 = str;
+                        int i36 = i27;
+                        TLRPC.TL_messages_stickerSet o03 = org.telegram.messenger.ui.b0(i30).o0(org.telegram.messenger.ui.q0(document2));
+                        if (o03 != null) {
+                            sparseArray4.put(i33, o03);
                         }
+                        sparseIntArray.put(i33, i35);
+                        i28++;
+                        i31++;
+                        size4 = i32;
+                        size = i34;
+                        arrayList4 = arrayList5;
+                        i27 = i36;
+                        str = str4;
                     }
-                    if (!cursor2.isNull(6)) {
-                        m0Var.c = Integer.valueOf(cursor2.getInt(6));
-                    }
-                    arrayList.add(new t5.b(j10, iVar2, m0Var.h()));
-                    i14 = 2;
-                    i15 = 1;
+                    i29++;
+                    i14 = i30;
+                    isEmpty = z13;
+                    z12 = z14;
                 }
-                return null;
-            default:
-                HashMap hashMap = (HashMap) obj3;
-                ti.e eVar = (ti.e) obj2;
-                ArrayList arrayList4 = (ArrayList) eVar.c;
-                Cursor cursor3 = (Cursor) obj;
-                gVar.getClass();
-                while (cursor3.moveToNext()) {
-                    String string4 = cursor3.getString(i16);
-                    int i23 = cursor3.getInt(1);
-                    p5.c cVar4 = p5.c.b;
-                    if (i23 != 0) {
-                        if (i23 == 1) {
-                            cVar4 = p5.c.c;
-                        } else if (i23 == 2) {
-                            cVar = cVar2;
-                            long j11 = cursor3.getLong(2);
-                            if (hashMap.containsKey(string4)) {
-                                hashMap.put(string4, new ArrayList());
-                            }
-                            ((List) hashMap.get(string4)).add(new p5.d(j11, cVar));
-                            i16 = 0;
-                            i11 = 5;
-                            i12 = 4;
-                            i13 = 3;
-                        } else if (i23 == i13) {
-                            cVar4 = p5.c.e;
-                        } else if (i23 == i12) {
-                            cVar4 = p5.c.f;
-                        } else if (i23 == i11) {
-                            cVar4 = p5.c.h;
-                        } else if (i23 == 6) {
-                            cVar4 = p5.c.n;
-                        } else {
-                            a8.of.a(Integer.valueOf(i23), "SQLiteEventStore", "%n is not valid. No matched LogEventDropped-Reason found. Treated it as REASON_UNKNOWN");
-                        }
-                    }
-                    cVar = cVar4;
-                    long j112 = cursor3.getLong(2);
-                    if (hashMap.containsKey(string4)) {
-                    }
-                    ((List) hashMap.get(string4)).add(new p5.d(j112, cVar));
-                    i16 = 0;
-                    i11 = 5;
-                    i12 = 4;
-                    i13 = 3;
+                i11 = i14;
+                z10 = isEmpty;
+                z11 = z12;
+                i12 = size;
+                int i37 = i27;
+                int ceil2 = (int) Math.ceil(i28 / nyVar.d);
+                for (int i38 = 0; i38 < ceil2; i38++) {
+                    sparseArray.put(i37 + i38, Integer.valueOf(i28));
                 }
-                for (Map.Entry entry2 : hashMap.entrySet()) {
-                    int i24 = p5.e.c;
-                    new ArrayList();
-                    arrayList4.add(new p5.e((String) entry2.getKey(), DesugarCollections.unmodifiableList((List) entry2.getValue())));
+                this.y = (nyVar.d * ceil2) + this.y;
+                i10 = i37 + ceil2;
+            }
+            if (z11) {
+                int i39 = this.y;
+                this.y = i39 + 1;
+                sparseArray2.put(i39, org.telegram.messenger.cd.L0(2131744893, null));
+                int i40 = i10 + 1;
+                String str5 = (String) this.H.get(this.K);
+                if (str5 != null) {
+                    sparseArray3.put(this.y, str5);
                 }
-                long o10 = gVar.b.o();
-                SQLiteDatabase a2 = gVar.a();
-                a2.beginTransaction();
-                try {
-                    Cursor rawQuery = a2.rawQuery("SELECT last_metrics_upload_ms FROM global_log_event_state LIMIT 1", new String[0]);
-                    try {
-                        rawQuery.moveToNext();
-                        p5.g gVar2 = new p5.g(rawQuery.getLong(0), o10);
-                        rawQuery.close();
-                        a2.setTransactionSuccessful();
-                        a2.endTransaction();
-                        eVar.b = gVar2;
-                        eVar.d = new p5.b(new p5.f(gVar.a().compileStatement("PRAGMA page_size").simpleQueryForLong() * gVar.a().compileStatement("PRAGMA page_count").simpleQueryForLong(), t5.a.f.a));
-                        eVar.e = (String) gVar.e.get();
-                        return new p5.a((p5.g) eVar.b, DesugarCollections.unmodifiableList(arrayList4), (p5.b) eVar.d, (String) eVar.e);
-                    } catch (Throwable th4) {
-                        rawQuery.close();
-                        throw th4;
+                int size5 = this.K.size();
+                int i41 = 0;
+                for (int i42 = 0; i42 < size5; i42++) {
+                    int i43 = this.y + i41;
+                    int i44 = (i41 / nyVar.d) + i40;
+                    TLRPC.Document document3 = (TLRPC.Document) this.K.get(i42);
+                    sparseArray2.put(i43, document3);
+                    TLRPC.TL_messages_stickerSet o04 = org.telegram.messenger.ui.b0(i11).o0(org.telegram.messenger.ui.q0(document3));
+                    if (o04 != null) {
+                        sparseArray4.put(i43, o04);
                     }
-                } catch (Throwable th5) {
-                    a2.endTransaction();
-                    throw th5;
+                    sparseIntArray.put(i43, i44);
+                    i41++;
                 }
+                int ceil3 = (int) Math.ceil(i41 / nyVar.d);
+                for (int i45 = 0; i45 < ceil3; i45++) {
+                    sparseArray.put(i40 + i45, Integer.valueOf(i41));
+                }
+                this.y = (ceil3 * nyVar.d) + this.y;
+            }
+            if (z10 && !z11 && i12 == 0) {
+                this.y = 1;
+            }
         }
+        super.f();
     }
 
-    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
-    public void didSetImage(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
-        Bitmap bitmap;
-        e31 e31Var = (e31) this.c;
-        yp ypVar = (yp) this.d;
-        TLRPC.WallPaper wallPaper = (TLRPC.WallPaper) this.b;
-        ImageReceiver.BitmapHolder bitmapSafe = imageReceiver.getBitmapSafe();
-        if (!z10 || bitmapSafe == null || (bitmap = bitmapSafe.bitmap) == null) {
+    @Override // s4.g0
+    public final void t(s4.c1 c1Var, int i10) {
+        vy vyVar = this.Q;
+        LongSparseArray longSparseArray = vyVar.z1;
+        LongSparseArray longSparseArray2 = vyVar.y1;
+        int i11 = c1Var.f;
+        View view = c1Var.a;
+        SparseArray sparseArray = this.r;
+        boolean z10 = true;
+        z10 = true;
+        if (i11 == 0) {
+            TLRPC.Document document = (TLRPC.Document) sparseArray.get(i10);
+            org.telegram.ui.Cells.d8 d8Var = (org.telegram.ui.Cells.d8) view;
+            d8Var.d(document, null, this.s.get(i10), (String) this.x.get(i10), false, false);
+            if (!vyVar.j1.contains(document) && !vyVar.k1.contains(document)) {
+                z10 = false;
+            }
+            d8Var.setRecent(z10);
             return;
         }
-        Drawable drawable = ypVar.b;
-        if (drawable instanceof vc0) {
-            vc0 vc0Var = (vc0) drawable;
-            TLRPC.WallPaperSettings wallPaperSettings = wallPaper.settings;
-            vc0Var.s(e31.e(bitmap), (wallPaperSettings == null || wallPaperSettings.intensity >= 0) ? 100 : -100);
-            vc0Var.t(e31Var.L);
-            e31Var.invalidate();
+        Integer num = null;
+        if (i11 == 1) {
+            org.telegram.ui.Cells.o3 o3Var = (org.telegram.ui.Cells.o3) view;
+            if (i10 != this.y) {
+                o3Var.setHeight(org.telegram.messenger.i0.L(82.0f));
+                return;
+            }
+            int i12 = this.w.get(i10 - 1, TLObject.FLAG_31);
+            if (i12 == Integer.MIN_VALUE) {
+                o3Var.setHeight(1);
+                return;
+            }
+            Object obj = this.n.get(i12);
+            if (obj instanceof TLRPC.TL_messages_stickerSet) {
+                num = Integer.valueOf(((TLRPC.TL_messages_stickerSet) obj).documents.size());
+            } else if (obj instanceof Integer) {
+                num = (Integer) obj;
+            }
+            if (num == null) {
+                o3Var.setHeight(1);
+                return;
+            } else if (num.intValue() == 0) {
+                o3Var.setHeight(org.telegram.messenger.i0.L(8.0f));
+                return;
+            } else {
+                int A = org.telegram.messenger.z20.A(82.0f, (int) Math.ceil(num.intValue() / vyVar.y0.d), vyVar.h.getHeight());
+                o3Var.setHeight(A > 0 ? A : 1);
+                return;
+            }
         }
-    }
-
-    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
-    public /* synthetic */ void didSetImageBitmap(int i10, String str, Drawable drawable) {
-        org.telegram.messenger.p5.a(this, i10, str, drawable);
-    }
-
-    @Override // u5.b
-    public Object f() {
-        r5.a aVar = (r5.a) this.c;
-        m5.i iVar = (m5.i) this.d;
-        m5.h hVar = (m5.h) this.b;
-        t5.g gVar = (t5.g) aVar.d;
-        gVar.getClass();
-        j5.d dVar = iVar.c;
-        String str = hVar.a;
-        String str2 = iVar.a;
-        String c10 = a8.of.c("SQLiteEventStore");
-        if (Log.isLoggable(c10, 3)) {
-            Log.d(c10, "Storing event with priority=" + dVar + ", name=" + str + " for destination " + str2);
-        }
-        ((Long) gVar.c(new qy(gVar, hVar, iVar, 8))).getClass();
-        aVar.a.t(iVar, 1, false);
-        return null;
-    }
-
-    @Override // org.telegram.ui.ActionBar.b2
-    public void h(org.telegram.ui.ActionBar.e2 e2Var, int i10) {
-        switch (this.a) {
-            case 3:
-                bw0 bw0Var = (bw0) this.c;
-                di.s6 s6Var = (di.s6) this.d;
-                ArrayList arrayList = (ArrayList) this.b;
-                s6Var.F(arrayList);
-                wc.b0(bw0Var.x1).R(R.raw.ic_delete, 36, LocaleController.formatPluralString("BotPreviewsDeleted", arrayList.size(), new Object[0])).j();
-                bw0Var.S(false);
-                break;
-            case 6:
-                boolean[] zArr = (boolean[]) this.c;
-                JsPromptResult jsPromptResult = (JsPromptResult) this.d;
-                ju juVar = (ju) this.b;
-                if (!zArr[0]) {
-                    zArr[0] = true;
-                    jsPromptResult.confirm(juVar.getText().toString());
-                    break;
+        if (i11 == 2) {
+            org.telegram.ui.Cells.n8 n8Var = (org.telegram.ui.Cells.n8) view;
+            Object obj2 = sparseArray.get(i10);
+            if (!(obj2 instanceof TLRPC.TL_messages_stickerSet)) {
+                if (obj2 instanceof String) {
+                    n8Var.a(0, (String) obj2);
+                    n8Var.c(0, null);
+                    return;
                 }
-                break;
-            default:
-                tg.j0.P((tg.j0) this.c, (ArrayList) this.d, (TLRPC.User) this.b);
-                break;
+                return;
+            }
+            TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) obj2;
+            if (!TextUtils.isEmpty(this.N) && this.F.containsKey(tL_messages_stickerSet)) {
+                TLRPC.StickerSet stickerSet = tL_messages_stickerSet.set;
+                if (stickerSet != null) {
+                    n8Var.a(0, stickerSet.title);
+                }
+                n8Var.c(this.N.length(), tL_messages_stickerSet.set.short_name);
+                return;
+            }
+            Integer num2 = (Integer) this.G.get(tL_messages_stickerSet);
+            TLRPC.StickerSet stickerSet2 = tL_messages_stickerSet.set;
+            if (stickerSet2 != null && num2 != null) {
+                n8Var.b(stickerSet2.title, 0, null, num2.intValue(), !TextUtils.isEmpty(this.N) ? this.N.length() : 0);
+            }
+            n8Var.c(0, null);
+            return;
         }
+        if (i11 != 3) {
+            return;
+        }
+        TLRPC.StickerSetCovered stickerSetCovered = (TLRPC.StickerSetCovered) sparseArray.get(i10);
+        org.telegram.ui.Cells.w3 w3Var = (org.telegram.ui.Cells.w3) view;
+        boolean z11 = longSparseArray2.indexOfKey(stickerSetCovered.set.id) >= 0;
+        char c10 = longSparseArray.indexOfKey(stickerSetCovered.set.id) < 0 ? (char) 0 : (char) 1;
+        if (z11 || c10 != 0) {
+            if (z11 && w3Var.r) {
+                longSparseArray2.remove(stickerSetCovered.set.id);
+                z11 = false;
+            } else if (c10 != 0 && !w3Var.r) {
+                longSparseArray.remove(stickerSetCovered.set.id);
+            }
+        }
+        w3Var.b(z11, false);
+        int A1 = TextUtils.isEmpty(this.N) ? -1 : org.telegram.messenger.i0.A1(stickerSetCovered.set.title, this.N);
+        if (A1 >= 0) {
+            w3Var.c(stickerSetCovered, false, false, A1, this.N.length(), false);
+            return;
+        }
+        w3Var.c(stickerSetCovered, false, false, 0, 0, false);
+        if (TextUtils.isEmpty(this.N) || org.telegram.messenger.i0.A1(stickerSetCovered.set.short_name, this.N) != 0) {
+            return;
+        }
+        w3Var.d(this.N.length(), stickerSetCovered.set.short_name);
     }
 
-    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
-    public /* synthetic */ void onAnimationReady(ImageReceiver imageReceiver) {
-        org.telegram.messenger.p5.b(this, imageReceiver);
-    }
-
-    @Override // org.telegram.messenger.MessagesStorage.BooleanCallback
-    public void run(boolean z10) {
-        TLRPC.Chat chat = (TLRPC.Chat) this.c;
-        org.telegram.ui.ActionBar.r2 r2Var = (org.telegram.ui.ActionBar.r2) this.d;
-        org.telegram.ui.Components.voip.g2.l(chat, null, true, null, r2Var.getParentActivity(), r2Var, (AccountInstance) this.b);
-    }
-
-    @Override // org.telegram.messenger.MediaDataController.KeywordResultCallback
-    public void run(ArrayList arrayList, String str) {
-        switch (this.a) {
+    @Override // s4.g0
+    public final s4.c1 w(ViewGroup viewGroup, int i10) {
+        vy vyVar = this.Q;
+        org.telegram.ui.ActionBar.p6 p6Var = vyVar.Z1;
+        int i11 = 1;
+        char c10 = 1;
+        Context context = this.h;
+        View view = null;
+        switch (i10) {
             case 0:
-                ry ryVar = (ry) this.c;
-                String str2 = (String) this.d;
-                Runnable runnable = (Runnable) this.b;
-                sy syVar = ryVar.a;
-                if (str2.equals(syVar.v)) {
-                    syVar.w = str;
-                    syVar.n.addAll(arrayList);
-                    runnable.run();
-                    break;
-                }
+                view = new my(i11, context, p6Var, c10 == true ? 1 : 0);
                 break;
-            default:
-                lz lzVar = (lz) this.c;
-                HashMap hashMap = (HashMap) this.d;
-                Runnable runnable2 = (Runnable) this.b;
-                HashMap hashMap2 = lzVar.f;
-                if (lzVar.w.M == lzVar.b) {
-                    int size = arrayList.size();
-                    for (int i10 = 0; i10 < size; i10++) {
-                        String str3 = ((MediaDataController.KeywordResult) arrayList.get(i10)).emoji;
-                        ArrayList arrayList2 = (ArrayList) hashMap.get(str3);
-                        if (arrayList2 != null && !arrayList2.isEmpty() && !hashMap2.containsKey(arrayList2)) {
-                            hashMap2.put(arrayList2, str3);
-                            lzVar.h.add(arrayList2);
-                        }
-                    }
-                    runnable2.run();
-                    break;
-                }
+            case 1:
+                view = new org.telegram.ui.Cells.o3(context);
+                break;
+            case 2:
+                view = new org.telegram.ui.Cells.n8(this.h, false, false, vyVar.Z1, vyVar.i2);
+                break;
+            case 3:
+                org.telegram.ui.Cells.w3 w3Var = new org.telegram.ui.Cells.w3(17, this.h, vyVar.Z1, false, true);
+                w3Var.setAddOnClickListener(new h0(this, 13));
+                view = w3Var;
+                break;
+            case 4:
+                view = new View(context);
+                view.setLayoutParams(new s4.o0(-1, vyVar.b1));
+                break;
+            case 5:
+                jg.l0 l0Var = new jg.l0(this, context, 18);
+                ImageView imageView = new ImageView(context);
+                imageView.setScaleType(ImageView.ScaleType.CENTER);
+                imageView.setImageResource(R.drawable.stickers_empty);
+                int i12 = org.telegram.ui.ActionBar.t6.Af;
+                org.telegram.ui.ActionBar.a7.t(imageView, i12, p6Var, PorterDuff.Mode.MULTIPLY);
+                imageView.setTranslationY(-org.telegram.messenger.i0.L(24.0f));
+                l0Var.addView(imageView, w7.b6.d(-2, -2.0f, 17, 0.0f, 42.0f, 0.0f, 28.0f));
+                TextView textView = new TextView(context);
+                textView.setText(org.telegram.messenger.cd.L0(2131748165, null));
+                textView.setTextSize(1, 16.0f);
+                org.telegram.ui.ActionBar.a7.V(textView, i12, p6Var);
+                l0Var.addView(textView, w7.b6.d(-2, -2.0f, 17, 0.0f, 42.0f, 0.0f, 9.0f));
+                l0Var.setLayoutParams(new s4.o0(-1, -2));
+                view = l0Var;
+                break;
+            case 7:
+                s4.o0 o0Var = new s4.o0(-1, org.telegram.messenger.i0.L(79.0f));
+                view = this.c;
+                view.setLayoutParams(o0Var);
+                break;
+            case 8:
+                view = new View(vyVar.getContext());
+                view.setLayoutParams(new s4.o0(-1, org.telegram.messenger.i0.L(68.0f)));
                 break;
         }
+        return new ck0(view);
     }
 }

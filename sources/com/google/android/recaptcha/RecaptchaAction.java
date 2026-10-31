@@ -4,7 +4,7 @@ import a1.g;
 import kotlin.jvm.internal.e;
 import kotlin.jvm.internal.i;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class RecaptchaAction {
     public static final Companion Companion = new Companion(null);
@@ -12,7 +12,7 @@ public final class RecaptchaAction {
     public static final RecaptchaAction SIGNUP = new RecaptchaAction("signup");
     private final String action;
 
-    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+    /* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
     public static final class Companion {
         private Companion() {
         }
@@ -65,7 +65,7 @@ public final class RecaptchaAction {
     }
 
     public String toString() {
-        return g.s(new StringBuilder("RecaptchaAction(action="), this.action, ")");
+        return g.r(new StringBuilder("RecaptchaAction(action="), this.action, ")");
     }
 
     public /* synthetic */ RecaptchaAction(String str, e eVar) {

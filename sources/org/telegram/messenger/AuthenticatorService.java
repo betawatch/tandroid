@@ -1,78 +1,22 @@
 package org.telegram.messenger;
 
-import android.accounts.AbstractAccountAuthenticator;
-import android.accounts.Account;
-import android.accounts.AccountAuthenticatorResponse;
 import android.app.Service;
-import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
 import android.os.IBinder;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public class AuthenticatorService extends Service {
-    private static Authenticator authenticator;
-
-    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-    public static class Authenticator extends AbstractAccountAuthenticator {
-        public Authenticator(Context context) {
-            super(context);
-        }
-
-        @Override // android.accounts.AbstractAccountAuthenticator
-        public Bundle addAccount(AccountAuthenticatorResponse accountAuthenticatorResponse, String str, String str2, String[] strArr, Bundle bundle) {
-            return null;
-        }
-
-        @Override // android.accounts.AbstractAccountAuthenticator
-        public Bundle confirmCredentials(AccountAuthenticatorResponse accountAuthenticatorResponse, Account account, Bundle bundle) {
-            return null;
-        }
-
-        @Override // android.accounts.AbstractAccountAuthenticator
-        public Bundle editProperties(AccountAuthenticatorResponse accountAuthenticatorResponse, String str) {
-            return null;
-        }
-
-        @Override // android.accounts.AbstractAccountAuthenticator
-        public Bundle getAccountRemovalAllowed(AccountAuthenticatorResponse accountAuthenticatorResponse, Account account) {
-            return super.getAccountRemovalAllowed(accountAuthenticatorResponse, account);
-        }
-
-        @Override // android.accounts.AbstractAccountAuthenticator
-        public Bundle getAuthToken(AccountAuthenticatorResponse accountAuthenticatorResponse, Account account, String str, Bundle bundle) {
-            return null;
-        }
-
-        @Override // android.accounts.AbstractAccountAuthenticator
-        public String getAuthTokenLabel(String str) {
-            return null;
-        }
-
-        @Override // android.accounts.AbstractAccountAuthenticator
-        public Bundle hasFeatures(AccountAuthenticatorResponse accountAuthenticatorResponse, Account account, String[] strArr) {
-            return null;
-        }
-
-        @Override // android.accounts.AbstractAccountAuthenticator
-        public Bundle updateCredentials(AccountAuthenticatorResponse accountAuthenticatorResponse, Account account, String str, Bundle bundle) {
-            return null;
-        }
-    }
-
-    public Authenticator getAuthenticator() {
-        if (authenticator == null) {
-            authenticator = new Authenticator(this);
-        }
-        return authenticator;
-    }
+    public static z0 a;
 
     @Override // android.app.Service
-    public IBinder onBind(Intent intent) {
-        if (intent.getAction().equals("android.accounts.AccountAuthenticator")) {
-            return getAuthenticator().getIBinder();
+    public final IBinder onBind(Intent intent) {
+        if (!intent.getAction().equals("android.accounts.AccountAuthenticator")) {
+            return null;
         }
-        return null;
+        if (a == null) {
+            a = new z0(this);
+        }
+        return a.getIBinder();
     }
 }

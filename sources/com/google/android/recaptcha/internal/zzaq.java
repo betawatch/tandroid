@@ -1,32 +1,32 @@
 package com.google.android.recaptcha.internal;
 
-import a8.jd;
-import ld.c;
-import md.a;
-import nd.i;
-import ud.p;
+import cd.c;
+import dd.a;
+import ed.j;
+import l9.b;
+import ld.p;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-final class zzaq extends i implements p {
+final class zzaq extends j implements p {
     public zzaq(c cVar) {
         super(2, cVar);
     }
 
-    @Override // nd.a
+    @Override // ed.a
     public final c create(Object obj, c cVar) {
         return new zzaq(cVar);
     }
 
-    @Override // ud.p
+    @Override // ld.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzaq) create((zzhk) obj, (c) obj2)).invokeSuspend(jd.i.a);
+        return ((zzaq) create((zzhk) obj, (c) obj2)).invokeSuspend(ad.j.a);
     }
 
-    @Override // nd.a
+    @Override // ed.a
     public final Object invokeSuspend(Object obj) {
         a aVar = a.a;
-        jd.b(obj);
-        return jd.i.a;
+        b.b(obj);
+        return ad.j.a;
     }
 }

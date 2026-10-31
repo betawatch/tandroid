@@ -1,27 +1,53 @@
 package org.telegram.ui.ActionBar;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Path;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public enum q6 {
-    h(y6.Af, y6.Bf, y6.Cf, y6.Pf, y6.Qf, y6.Rf),
-    n(y6.Df, y6.Ef, y6.Ff, y6.Sf, y6.Tf, y6.Uf),
-    r(y6.Gf, y6.Hf, y6.If, y6.Vf, y6.Wf, y6.Xf),
-    s(y6.Jf, y6.Kf, y6.Lf, y6.Yf, y6.Zf, y6.ag),
-    v(y6.Mf, y6.Nf, y6.Of, y6.bg, y6.cg, y6.dg);
+public final class q6 extends Drawable {
+    public float[] b;
+    public Path a = new Path();
+    public boolean c = true;
 
-    public final int a;
-    public final int b;
-    public final int c;
-    public final int d;
-    public final int e;
-    public final int f;
+    public q6(float f7, float f10) {
+        this.b = new float[]{r4, r4, r4, r4, r4, r4, r4, r4};
+        float L = org.telegram.messenger.i0.L(f7);
+        float L2 = org.telegram.messenger.i0.L(f10);
+    }
 
-    q6(int i10, int i11, int i12, int i13, int i14, int i15) {
-        this.a = i10;
-        this.b = i11;
-        this.c = i12;
-        this.d = i13;
-        this.e = i14;
-        this.f = i15;
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        Path path = this.a;
+        if (this.c) {
+            this.c = false;
+            path.reset();
+            RectF rectF = org.telegram.messenger.i0.P;
+            rectF.set(getBounds());
+            path.addRoundRect(rectF, this.b, Path.Direction.CW);
+        }
+        canvas.drawPath(path, t6.z);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return 0;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void onBoundsChange(Rect rect) {
+        this.c = true;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

@@ -3,11 +3,11 @@ package m;
 import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.View;
-import org.telegram.ui.Components.fz;
-import org.telegram.ui.Components.nz;
-import org.telegram.ui.Components.sy;
+import org.telegram.ui.Components.iy;
+import org.telegram.ui.Components.qy;
+import org.telegram.ui.Components.ux;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class c2 implements View.OnTouchListener {
     public final /* synthetic */ int a;
@@ -27,9 +27,9 @@ public final class c2 implements View.OnTouchListener {
                 Handler handler = d2Var.K;
                 x xVar = d2Var.O;
                 int action = motionEvent.getAction();
-                int x9 = (int) motionEvent.getX();
+                int x10 = (int) motionEvent.getX();
                 int y3 = (int) motionEvent.getY();
-                if (action == 0 && xVar != null && xVar.isShowing() && x9 >= 0 && x9 < xVar.getWidth() && y3 >= 0 && y3 < xVar.getHeight()) {
+                if (action == 0 && xVar != null && xVar.isShowing() && x10 >= 0 && x10 < xVar.getWidth() && y3 >= 0 && y3 < xVar.getHeight()) {
                     handler.postDelayed(a2Var, 250L);
                     break;
                 } else if (action == 1) {
@@ -38,38 +38,38 @@ public final class c2 implements View.OnTouchListener {
                 }
                 break;
             case 1:
-                sy syVar = (sy) this.b;
+                ux uxVar = (ux) this.b;
                 if (motionEvent.getAction() != 0) {
                     if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-                        syVar.F.f = false;
+                        uxVar.F.f = false;
                         break;
                     }
                 } else {
-                    syVar.F.f = true;
+                    uxVar.F.f = true;
                     break;
                 }
                 break;
             case 2:
-                fz fzVar = (fz) this.b;
+                iy iyVar = (iy) this.b;
                 if (motionEvent.getAction() != 0) {
                     if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-                        fzVar.G.f = false;
+                        iyVar.G.f = false;
                         break;
                     }
                 } else {
-                    fzVar.G.f = true;
+                    iyVar.G.f = true;
                     break;
                 }
                 break;
             default:
-                nz nzVar = (nz) this.b;
+                qy qyVar = (qy) this.b;
                 if (motionEvent.getAction() != 0) {
                     if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-                        nzVar.Q.f = false;
+                        qyVar.Q.f = false;
                         break;
                     }
                 } else {
-                    nzVar.Q.f = true;
+                    qyVar.Q.f = true;
                     break;
                 }
                 break;

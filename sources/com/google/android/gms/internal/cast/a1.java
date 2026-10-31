@@ -1,73 +1,22 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public enum a1 {
-    b(0),
-    c(1),
-    d(2),
-    e(3),
-    f(4),
-    h(5),
-    n(6),
-    r(7),
-    s(8),
-    v(9),
-    w(10),
-    x(11),
-    y(12),
-    E(13),
-    F(14),
-    G(15),
-    H(16),
-    I(17),
-    J(18),
-    K(19),
-    L(20),
-    M(21),
-    N(22),
-    O(23),
-    P(24),
-    Q(25),
-    R(26),
-    S(27),
-    T(28),
-    U(29),
-    V(30),
-    W(31),
-    X(32),
-    Y(33),
-    Z(34),
-    a0(35),
-    b0(36),
-    c0(37),
-    d0(38),
-    e0(39),
-    f0(40),
-    g0(41),
-    h0(42),
-    i0(43),
-    j0(44),
-    k0(45),
-    l0(46),
-    m0(47),
-    n0(48),
-    o0(49),
-    p0(50),
-    q0(51),
-    r0(52),
-    s0(53),
-    t0(54),
-    u0(55);
+public final class a1 {
+    public static final g6.b k = new g6.b("ApplicationAnalyticsSession", null);
+    public static long l = System.currentTimeMillis();
+    public final c a;
+    public String b;
+    public String c;
+    public long d = l;
+    public int e = 1;
+    public String f;
+    public int g;
+    public String h;
+    public boolean i;
+    public int j;
 
-    public final int a;
-
-    a1(int i10) {
-        this.a = i10;
-    }
-
-    @Override // java.lang.Enum
-    public final String toString() {
-        return Integer.toString(this.a);
+    public a1(c cVar) {
+        this.a = cVar;
     }
 }

@@ -1,69 +1,57 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.widget.FrameLayout;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class sb1 extends FrameLayout {
-    public final /* synthetic */ int a;
-    public final RectF b;
-    public final /* synthetic */ vc1 c;
+public final class sb1 implements org.telegram.ui.Components.gk0 {
+    public final /* synthetic */ vb1 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public sb1(vc1 vc1Var, Context context, int i10) {
-        super(context);
-        this.a = i10;
-        switch (i10) {
-            case 1:
-                this.c = vc1Var;
-                super(context);
-                this.b = new RectF();
-                break;
-            default:
-                this.c = vc1Var;
-                this.b = new RectF();
-                break;
-        }
+    public sb1(vb1 vb1Var) {
+        this.a = vb1Var;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        switch (this.a) {
-            case 0:
-                float measuredWidth = getMeasuredWidth();
-                float measuredHeight = getMeasuredHeight();
-                RectF rectF = this.b;
-                rectF.set(0.0f, 0.0f, measuredWidth, measuredHeight);
-                vc1 vc1Var = this.c;
-                sb1 sb1Var = vc1Var.E0;
-                kc1 kc1Var = vc1Var.y0;
-                ub1 ub1Var = vc1Var.a;
-                org.telegram.ui.ActionBar.y6.s(sb1Var, kc1Var, ub1Var);
-                canvas.drawRoundRect(rectF, getMeasuredHeight() / 2, getMeasuredHeight() / 2, ub1Var.d("paintChatActionBackground"));
-                if (org.telegram.ui.ActionBar.y6.c1()) {
-                    canvas.drawRoundRect(rectF, getMeasuredHeight() / 2, getMeasuredHeight() / 2, ub1Var.d("paintChatActionBackgroundDarken"));
-                    break;
-                }
-                break;
-            default:
-                float measuredWidth2 = getMeasuredWidth();
-                float measuredHeight2 = getMeasuredHeight();
-                RectF rectF2 = this.b;
-                rectF2.set(0.0f, 0.0f, measuredWidth2, measuredHeight2);
-                vc1 vc1Var2 = this.c;
-                sb1 sb1Var2 = vc1Var2.F0;
-                kc1 kc1Var2 = vc1Var2.y0;
-                ub1 ub1Var2 = vc1Var2.a;
-                org.telegram.ui.ActionBar.y6.s(sb1Var2, kc1Var2, ub1Var2);
-                canvas.drawRoundRect(rectF2, getMeasuredHeight() / 2, getMeasuredHeight() / 2, ub1Var2.d("paintChatActionBackground"));
-                if (org.telegram.ui.ActionBar.y6.c1()) {
-                    canvas.drawRoundRect(rectF2, getMeasuredHeight() / 2, getMeasuredHeight() / 2, ub1Var2.d("paintChatActionBackgroundDarken"));
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.Components.gk0
+    public final void f(int i10, View view) {
+        vb1 vb1Var = this.a;
+        ArrayList arrayList = vb1Var.d;
+        if (((ub1) arrayList.get(i10)).a == 1) {
+            Bundle bundle = new Bundle();
+            bundle.putLong("chat_id", -vb1Var.c);
+            bundle.putBoolean("for_select", true);
+            pb1 pb1Var = new pb1(bundle);
+            pb1Var.A0 = vb1Var.e;
+            pb1Var.w = new qb1(this);
+            vb1Var.presentFragment(pb1Var);
+        }
+        if (((ub1) arrayList.get(i10)).a == 2) {
+            TLRPC.TL_forumTopic tL_forumTopic = ((ub1) arrayList.get(i10)).c;
+            Bundle bundle2 = new Bundle();
+            bundle2.putLong("dialog_id", vb1Var.c);
+            bundle2.putLong("topic_id", tL_forumTopic.id);
+            bundle2.putBoolean("exception", false);
+            uy0 uy0Var = new uy0(bundle2, null);
+            uy0Var.s = new rb1(this, tL_forumTopic);
+            vb1Var.presentFragment(uy0Var);
+        }
+        if (((ub1) arrayList.get(i10)).a == 4) {
+            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(vb1Var.getParentActivity());
+            String L0 = org.telegram.messenger.cd.L0(2131747929, null);
+            org.telegram.ui.ActionBar.x1 x1Var = alertDialog$Builder.a;
+            x1Var.R = L0;
+            x1Var.T = org.telegram.messenger.cd.L0(2131747930, null);
+            alertDialog$Builder.k(org.telegram.messenger.cd.L0(2131751599, null), new qb1(this));
+            alertDialog$Builder.h(org.telegram.messenger.cd.L0(2131752589, null), null);
+            vb1Var.showDialog(x1Var);
+            TextView textView = (TextView) x1Var.d(-1);
+            if (textView != null) {
+                org.telegram.ui.ActionBar.a7.V(textView, org.telegram.ui.ActionBar.t6.q7, null);
+            }
         }
     }
 }

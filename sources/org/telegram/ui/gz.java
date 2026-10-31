@@ -1,61 +1,127 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.view.View;
-import android.view.ViewGroup;
+import android.app.Activity;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
+import android.text.SpannableString;
+import android.text.SpannableStringBuilder;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.ScrollView;
 import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public abstract class gz extends FrameLayout {
-    public FrameLayout a;
-    public org.telegram.ui.ActionBar.b6 b;
-    public org.telegram.ui.ActionBar.b6 c;
-    public ImageView d;
-    public fz e;
-    public bi.md f;
-    public bi.md h;
-    public TextView n;
-    public org.telegram.ui.ActionBar.r2 r;
-    public String s;
-    public float v;
-    public ValueAnimator w;
-    public org.telegram.ui.ActionBar.o1 x;
-    public float[] y;
+public final class gz extends bz {
+    public final /* synthetic */ hz E;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r3v0, types: [android.widget.FrameLayout] */
-    /* JADX WARN: Type inference failed for: r3v1, types: [android.view.View] */
-    /* JADX WARN: Type inference failed for: r3v9, types: [android.view.View] */
-    public static void a(FrameLayout frameLayout, FrameLayout frameLayout2, float[] fArr) {
-        float f7 = 0.0f;
-        float f10 = 0.0f;
-        while (frameLayout != frameLayout2) {
-            float y3 = frameLayout.getY() + f7;
-            f10 += frameLayout.getX();
-            if (frameLayout instanceof ScrollView) {
-                y3 -= frameLayout.getScrollY();
-            }
-            f7 = y3;
-            if (!(frameLayout.getParent() instanceof View)) {
-                break;
-            }
-            frameLayout = (View) frameLayout.getParent();
-            if (!(frameLayout instanceof ViewGroup)) {
-                return;
-            }
-        }
-        fArr[0] = f10 - frameLayout2.getPaddingLeft();
-        fArr[1] = f7 - frameLayout2.getPaddingTop();
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(127.0f), TLObject.FLAG_30));
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public gz(hz hzVar, Activity activity, org.telegram.ui.ActionBar.k2 k2Var) {
+        super(activity);
+        this.E = hzVar;
+        this.D = new float[2];
+        this.r = k2Var;
+        FrameLayout frameLayout = new FrameLayout(activity);
+        this.a = frameLayout;
+        int L = org.telegram.messenger.i0.L(8.0f);
+        int i10 = org.telegram.ui.ActionBar.t6.e7;
+        int x02 = org.telegram.ui.ActionBar.t6.x0(null, i10, false);
+        int x03 = org.telegram.ui.ActionBar.t6.x0(null, i10, false);
+        int i11 = org.telegram.ui.ActionBar.t6.i6;
+        int w9 = org.telegram.ui.ActionBar.t6.w(x03, org.telegram.ui.ActionBar.t6.x0(null, i11, false));
+        Drawable k02 = org.telegram.ui.ActionBar.t6.k0(L, L, L, L, x02, w9, w9);
+        org.telegram.ui.ActionBar.w6 N = org.telegram.ui.ActionBar.a7.N(i10);
+        org.telegram.ui.ActionBar.w6 q6 = org.telegram.ui.ActionBar.a7.q(i10, i11);
+        frameLayout.setBackground(k02);
+        org.telegram.ui.ActionBar.a7.k(frameLayout, k02, N, q6, null);
+        frameLayout.setOnClickListener(new yy(this, 0));
+        addView(frameLayout, w7.b6.d(-1, 48.0f, 55, 22.0f, 9.0f, 22.0f, 0.0f));
+        org.telegram.ui.ActionBar.u5 u5Var = new org.telegram.ui.ActionBar.u5(activity);
+        this.b = u5Var;
+        u5Var.setTextSize(16);
+        int i12 = org.telegram.ui.ActionBar.t6.G6;
+        org.telegram.ui.ActionBar.a7.Y(u5Var, i12, null);
+        SpannableString spannableString = new SpannableString("t.me/folder/N3k/dImA/bIo");
+        org.telegram.ui.Components.yz0 yz0Var = new org.telegram.ui.Components.yz0();
+        yz0Var.a |= 256;
+        spannableString.setSpan(new org.telegram.ui.Components.zz0(yz0Var, 0), 0, spannableString.length(), 33);
+        u5Var.l(spannableString, false);
+        u5Var.setAlpha(1.0f);
+        frameLayout.addView(u5Var, w7.b6.d(-1, -2.0f, 23, 20.0f, 0.0f, 40.0f, 0.0f));
+        org.telegram.ui.ActionBar.u5 u5Var2 = new org.telegram.ui.ActionBar.u5(activity);
+        this.c = u5Var2;
+        u5Var2.setTextSize(16);
+        org.telegram.ui.ActionBar.a7.Y(u5Var2, i12, null);
+        u5Var2.l(spannableString, false);
+        u5Var2.setAlpha(0.0f);
+        frameLayout.addView(u5Var2, w7.b6.d(-1, -2.0f, 23, 20.0f, 0.0f, 40.0f, 0.0f));
+        ImageView imageView = new ImageView(activity);
+        this.d = imageView;
+        imageView.setImageDrawable(getContext().getResources().getDrawable(R.drawable.ic_ab_other));
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        org.telegram.ui.ActionBar.a7.t(imageView, org.telegram.ui.ActionBar.t6.r5, null, PorterDuff.Mode.SRC_IN);
+        imageView.setAlpha(0.0f);
+        imageView.setVisibility(8);
+        imageView.setContentDescription(org.telegram.messenger.cd.L0(2131754839, null));
+        imageView.setOnClickListener(new yy(this, 1));
+        frameLayout.addView(imageView, w7.b6.d(40, 40.0f, 21, 4.0f, 4.0f, 4.0f, 4.0f));
+        az azVar = new az(activity);
+        Paint paint = new Paint();
+        azVar.a = paint;
+        azVar.b = new float[8];
+        azVar.c = new Path();
+        azVar.setWillNotDraw(false);
+        paint.setColor(org.telegram.ui.ActionBar.t6.x0(null, org.telegram.ui.ActionBar.t6.Ci, false));
+        this.e = azVar;
+        addView(azVar, w7.b6.d(-1, 42.0f, 55, 22.0f, 69.0f, 22.0f, 0.0f));
+        ag.j3 j3Var = new ag.j3(activity, 24);
+        this.f = j3Var;
+        j3Var.setGravity(17);
+        int i13 = org.telegram.ui.ActionBar.t6.Gi;
+        org.telegram.ui.ActionBar.a7.V(j3Var, i13, null);
+        j3Var.setBackground(org.telegram.ui.ActionBar.t6.a0(822083583, 8, 8));
+        j3Var.setTypeface(org.telegram.messenger.i0.o());
+        j3Var.setTextSize(14.0f);
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
+        spannableStringBuilder.append((CharSequence) "..").setSpan(new org.telegram.ui.Components.dq(0, activity.getDrawable(R.drawable.msg_copy_filled)), 0, 1, 0);
+        spannableStringBuilder.setSpan(new org.telegram.ui.Cells.t2(org.telegram.messenger.i0.L(8.0f)), 1, 2, 0);
+        spannableStringBuilder.append((CharSequence) org.telegram.messenger.cd.L0(2131748936, null));
+        spannableStringBuilder.append((CharSequence) ".").setSpan(new org.telegram.ui.Cells.t2(org.telegram.messenger.i0.L(5.0f)), spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 0);
+        j3Var.setText(spannableStringBuilder);
+        j3Var.setOnClickListener(new yy(this, 2));
+        j3Var.setAlpha(0.0f);
+        j3Var.setVisibility(8);
+        azVar.addView(j3Var, w7.b6.e(-1, -1, 3));
+        ag.j3 j3Var2 = new ag.j3(activity, 25);
+        this.h = j3Var2;
+        j3Var2.setGravity(17);
+        org.telegram.ui.ActionBar.a7.V(j3Var2, i13, null);
+        j3Var2.setBackground(org.telegram.ui.ActionBar.t6.a0(822083583, 8, 8));
+        j3Var2.setTypeface(org.telegram.messenger.i0.o());
+        j3Var2.setTextSize(14.0f);
+        SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder();
+        spannableStringBuilder2.append((CharSequence) "..").setSpan(new org.telegram.ui.Components.dq(0, activity.getDrawable(R.drawable.msg_share_filled)), 0, 1, 0);
+        spannableStringBuilder2.setSpan(new org.telegram.ui.Cells.t2(org.telegram.messenger.i0.L(8.0f)), 1, 2, 0);
+        spannableStringBuilder2.append((CharSequence) org.telegram.messenger.cd.L0(2131748935, null));
+        spannableStringBuilder2.append((CharSequence) ".").setSpan(new org.telegram.ui.Cells.t2(org.telegram.messenger.i0.L(5.0f)), spannableStringBuilder2.length() - 1, spannableStringBuilder2.length(), 0);
+        j3Var2.setText(spannableStringBuilder2);
+        j3Var2.setOnClickListener(new yy(this, 3));
+        j3Var2.setAlpha(0.0f);
+        j3Var2.setVisibility(8);
+        azVar.addView(j3Var2, w7.b6.e(-1, -1, 5));
+        TextView textView = new TextView(activity);
+        this.n = textView;
+        textView.setGravity(17);
+        org.telegram.ui.ActionBar.a7.V(textView, i13, null);
+        textView.setBackground(org.telegram.ui.ActionBar.t6.a0(822083583, 8, 8));
+        textView.setTypeface(org.telegram.messenger.i0.o());
+        textView.setTextSize(14.0f);
+        textView.setText("Generate Invite Link");
+        textView.setOnClickListener(new bh.c(this, 15));
+        textView.setAlpha(1.0f);
+        textView.setVisibility(0);
+        azVar.addView(textView, w7.b6.c(-1.0f, -1));
     }
 }

@@ -9,9 +9,9 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
-import t8.a;
+import s8.a;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public class DynamiteClearcutLogger {
     private static final ExecutorService zza;
@@ -43,6 +43,6 @@ public class DynamiteClearcutLogger {
                 aVar.c = currentTimeMillis;
             }
         }
-        zza.execute(new g(this, i10, f0Var, 6));
+        zza.execute(new g(this, i10, f0Var, 7));
     }
 }

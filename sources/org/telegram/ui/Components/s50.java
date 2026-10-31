@@ -1,27 +1,40 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class s50 extends b60 {
-    public final /* synthetic */ p60 d;
+public final /* synthetic */ class s50 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ TLRPC.User b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ boolean e;
+    public final /* synthetic */ boolean f;
+    public final /* synthetic */ sk0 h;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public s50(p60 p60Var, Context context) {
-        super(p60Var, context);
-        this.d = p60Var;
+    public /* synthetic */ s50(sk0 sk0Var, TLRPC.User user, String str, boolean z10, boolean z11, boolean z12, int i10) {
+        this.a = i10;
+        this.h = sk0Var;
+        this.b = user;
+        this.c = str;
+        this.d = z10;
+        this.e = z11;
+        this.f = z12;
     }
 
-    @Override // android.view.View
-    public final void setAlpha(float f7) {
-        super.setAlpha(f7);
-        this.d.invalidate();
-    }
-
-    @Override // android.view.View
-    public final void setRotationY(float f7) {
-        super.setRotationY(f7);
-        this.d.invalidate();
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                c60 c60Var = ((x50) this.h).c;
+                iz0.b(c60Var.getContext(), c60Var.a, -c60Var.X1, this.b, this.c, this.d, this.e, this.f, c60Var.I0);
+                break;
+            default:
+                zt0 zt0Var = ((ks0) this.h).f;
+                iz0.b(zt0Var.getContext(), zt0Var.x1.getCurrentAccount(), zt0Var.l1, this.b, this.c, this.d, this.e, this.f, zt0Var.H1);
+                break;
+        }
     }
 }

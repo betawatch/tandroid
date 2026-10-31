@@ -1,69 +1,100 @@
 package li;
 
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.view.View;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.Space;
-import android.widget.TextView;
-import java.util.HashSet;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.p6;
-import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Components.kb1;
+import android.os.SystemClock;
+import bi.n4;
+import java.io.File;
+import java.io.IOException;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes4.dex */
-public final class l0 extends LinearLayout implements p6 {
-    public final u6 a;
-    public final ImageView b;
-    public final TextView c;
-    public final TextView d;
+public final /* synthetic */ class l0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ x0 b;
 
-    public l0(Context context, m0 m0Var, u6 u6Var) {
-        super(context);
-        this.a = u6Var;
-        setOrientation(0);
-        ImageView imageView = new ImageView(context);
-        this.b = imageView;
-        imageView.setScaleType(ImageView.ScaleType.CENTER);
-        addView(imageView, kb1.x(42, 42, 19, 0, 0, 0, 0));
-        TextView textView = new TextView(context);
-        this.c = textView;
-        textView.setTextSize(1, 16.0f);
-        TextView textView2 = new TextView(context);
-        this.d = textView2;
-        textView2.setTextSize(1, 16.0f);
-        textView2.setGravity(5);
-        addView(textView, kb1.x(-2, -2, 19, 8, 0, 0, 0));
-        addView(new Space(context), kb1.s(0, -2, 1.0f, 119));
-        addView(textView2, kb1.x(-2, -2, 21, 8, 0, 0, 0));
-        imageView.setImageResource(m0Var.a);
-        textView.setText(m0Var.b);
-        textView2.setText((CharSequence) m0Var.c.get(0));
-        updateColors();
+    public /* synthetic */ l0(x0 x0Var, int i10) {
+        this.a = i10;
+        this.b = x0Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.p6
-    public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(y6.G6));
-    }
-
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30));
-    }
-
-    @Override // org.telegram.ui.ActionBar.p6
-    public final void updateColors() {
-        int i10 = y6.G6;
-        u6 u6Var = this.a;
-        this.b.setColorFilter(new PorterDuffColorFilter(y6.w0(i10, u6Var), PorterDuff.Mode.SRC_IN));
-        this.c.setTextColor(y6.w0(i10, u6Var));
-        this.d.setTextColor(y6.o1(0.75f, y6.w0(i10, u6Var)));
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                x0 x0Var = this.b;
+                if (x0Var.Z == 3) {
+                    x0Var.q();
+                    return;
+                }
+                return;
+            case 1:
+                x0 x0Var2 = this.b;
+                z zVar = x0Var2.T;
+                File file = x0Var2.U;
+                if (zVar != null) {
+                    try {
+                        synchronized (zVar) {
+                            zVar.w = true;
+                            try {
+                                zVar.g();
+                            } finally {
+                                zVar.w = false;
+                            }
+                        }
+                    } catch (IOException unused) {
+                    }
+                    w7.q.c(zVar.a);
+                }
+                if (file != null) {
+                    w7.q.c(file);
+                    return;
+                }
+                return;
+            case 2:
+                x0 x0Var3 = this.b;
+                int i10 = x0Var3.Z;
+                if (i10 == 2 || i10 == 6) {
+                    x0Var3.I = SystemClock.elapsedRealtime();
+                    x0Var3.m.b("recording started: retainedDurationMs=" + x0Var3.H);
+                    x0Var3.w(3);
+                    long j10 = x0Var3.q - x0Var3.H;
+                    if (j10 > 0 && !x0Var3.D) {
+                        x0Var3.i.postDelayed(x0Var3.W, j10);
+                        return;
+                    } else {
+                        x0Var3.D = false;
+                        x0Var3.q();
+                        return;
+                    }
+                }
+                return;
+            default:
+                x0 x0Var4 = this.b;
+                x0Var4.E = false;
+                x0Var4.m.b("recording segment stopped: state=" + i0.a.A(x0Var4.Z) + ", retainedDurationMs=" + x0Var4.H);
+                if (x0Var4.C) {
+                    x0Var4.C = false;
+                    x0Var4.i();
+                    return;
+                }
+                if (x0Var4.A) {
+                    x0Var4.A = false;
+                    x0Var4.j.execute(new n4(x0Var4, x0Var4.T, x0Var4.B, x0Var4.S, 3));
+                    return;
+                }
+                if (x0Var4.Z != 4) {
+                    return;
+                }
+                try {
+                    File d = x0Var4.d("round_video_preview_");
+                    x0Var4.U = d;
+                    x0Var4.M = System.nanoTime();
+                    x0Var4.m.b("preview snapshot started: file=" + d.getName());
+                    x0Var4.j.execute(new s(x0Var4, x0Var4.T, d, 1));
+                    return;
+                } catch (IOException e) {
+                    x0Var4.h(e);
+                    return;
+                }
+        }
     }
 }

@@ -1,20 +1,17 @@
 package com.google.android.gms.internal.play_billing;
 
-import androidx.car.app.navigation.model.Maneuver;
-import com.google.android.gms.internal.cast.w4;
+import com.google.android.gms.internal.cast.x4;
 import java.lang.reflect.Field;
 import java.nio.charset.Charset;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import org.telegram.messenger.CharacterCompat;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.voip.VoIPService;
+import org.telegram.messenger.zs;
 import org.telegram.tgnet.TLObject;
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class n2 implements t2 {
     public static final int[] j = new int[0];
@@ -53,9 +50,9 @@ public final class n2 implements t2 {
             }
             String name = cls.getName();
             String arrays = Arrays.toString(declaredFields);
-            StringBuilder w10 = a1.g.w("Field ", str, " for ", name, " not found. Known fields are ");
-            w10.append(arrays);
-            throw new RuntimeException(w10.toString(), e);
+            StringBuilder v = a1.g.v("Field ", str, " for ", name, " not found. Known fields are ");
+            v.append(arrays);
+            throw new RuntimeException(v.toString(), e);
         }
     }
 
@@ -375,7 +372,7 @@ public final class n2 implements t2 {
             int i83 = i26 + 1;
             int charAt24 = str.charAt(i26);
             Object[] objArr4 = objArr2;
-            char c10 = CharacterCompat.MIN_HIGH_SURROGATE;
+            char c10 = 55296;
             if (charAt24 >= 55296) {
                 int i84 = charAt24 & 8191;
                 int i85 = 13;
@@ -388,7 +385,7 @@ public final class n2 implements t2 {
                     i84 |= (charAt12 & 8191) << i85;
                     i85 += 13;
                     i83 = i39;
-                    c10 = CharacterCompat.MIN_HIGH_SURROGATE;
+                    c10 = 55296;
                 }
                 charAt24 = i84 | (charAt12 << i85);
                 i83 = i39;
@@ -397,13 +394,13 @@ public final class n2 implements t2 {
                 iArr[i77] = i78;
                 i77++;
             }
-            int i86 = charAt24 & 255;
+            int i86 = charAt24 & zs.e4;
             int i87 = charAt23;
             int i88 = charAt24 & 2048;
             if (i86 >= 51) {
                 int i89 = i83 + 1;
                 int charAt25 = str.charAt(i83);
-                char c11 = CharacterCompat.MIN_HIGH_SURROGATE;
+                char c11 = 55296;
                 if (charAt25 >= 55296) {
                     int i90 = charAt25 & 8191;
                     int i91 = i89;
@@ -417,7 +414,7 @@ public final class n2 implements t2 {
                         i90 |= (charAt11 & 8191) << i92;
                         i92 += 13;
                         i91 = i38;
-                        c11 = CharacterCompat.MIN_HIGH_SURROGATE;
+                        c11 = 55296;
                     }
                     charAt25 = i90 | (charAt11 << i92);
                     i35 = i38;
@@ -561,7 +558,7 @@ public final class n2 implements t2 {
                         }
                         objectFieldOffset = (int) unsafe.objectFieldOffset(B4);
                         i28 = 1048575;
-                        if ((charAt24 & 4096) != 0 || i86 > 17) {
+                        if ((charAt24 & TLObject.FLAG_12) != 0 || i86 > 17) {
                             i29 = 55296;
                             i30 = i83;
                             i31 = 0;
@@ -609,7 +606,7 @@ public final class n2 implements t2 {
                     cls = cls2;
                     objectFieldOffset = (int) unsafe.objectFieldOffset(B4);
                     i28 = 1048575;
-                    if ((charAt24 & 4096) != 0) {
+                    if ((charAt24 & TLObject.FLAG_12) != 0) {
                     }
                     i29 = 55296;
                     i30 = i83;
@@ -625,7 +622,7 @@ public final class n2 implements t2 {
                 i15 = i100;
                 objectFieldOffset = (int) unsafe.objectFieldOffset(B4);
                 i28 = 1048575;
-                if ((charAt24 & 4096) != 0) {
+                if ((charAt24 & TLObject.FLAG_12) != 0) {
                 }
                 i29 = 55296;
                 i30 = i83;
@@ -660,7 +657,7 @@ public final class n2 implements t2 {
     }
 
     public static int u(int i10) {
-        return (i10 >>> 20) & 255;
+        return (i10 >>> 20) & zs.e4;
     }
 
     public static long w(Object obj, long j10) {
@@ -766,7 +763,7 @@ public final class n2 implements t2 {
                     break;
                 case 7:
                     i10 = i12 * 53;
-                    boolean g7 = c3.c.g(v1Var, j10);
+                    boolean g10 = c3.c.g(v1Var, j10);
                     Charset charset5 = a2.a;
                     break;
                 case 8:
@@ -845,8 +842,8 @@ public final class n2 implements t2 {
                 case 27:
                 case 28:
                 case 29:
-                case MessageObject.TYPE_GIFT_STARS /* 30 */:
-                case MessageObject.TYPE_GIFT_THEME_UPDATE /* 31 */:
+                case zs.T /* 30 */:
+                case zs.U /* 31 */:
                 case 32:
                 case 33:
                 case 34:
@@ -854,27 +851,27 @@ public final class n2 implements t2 {
                 case 36:
                 case 37:
                 case 38:
-                case Maneuver.TYPE_DESTINATION /* 39 */:
-                case Maneuver.TYPE_DESTINATION_STRAIGHT /* 40 */:
-                case Maneuver.TYPE_DESTINATION_LEFT /* 41 */:
-                case Maneuver.TYPE_DESTINATION_RIGHT /* 42 */:
-                case Maneuver.TYPE_ROUNDABOUT_ENTER_CW /* 43 */:
-                case Maneuver.TYPE_ROUNDABOUT_EXIT_CW /* 44 */:
-                case Maneuver.TYPE_ROUNDABOUT_ENTER_CCW /* 45 */:
-                case Maneuver.TYPE_ROUNDABOUT_EXIT_CCW /* 46 */:
-                case Maneuver.TYPE_FERRY_BOAT_LEFT /* 47 */:
+                case 39:
+                case 40:
+                case 41:
+                case 42:
+                case 43:
+                case 44:
+                case 45:
+                case 46:
+                case 47:
                 case 48:
-                case Maneuver.TYPE_FERRY_TRAIN_LEFT /* 49 */:
+                case 49:
                     i10 = i12 * 53;
                     floatToIntBits = c3.h(v1Var, j10).hashCode();
                     i12 = i10 + floatToIntBits;
                     break;
-                case Maneuver.TYPE_FERRY_TRAIN_RIGHT /* 50 */:
+                case 50:
                     i10 = i12 * 53;
                     floatToIntBits = c3.h(v1Var, j10).hashCode();
                     i12 = i10 + floatToIntBits;
                     break;
-                case 51:
+                case zs.o0 /* 51 */:
                     if (!p(i14, i11, v1Var)) {
                         break;
                     } else {
@@ -885,7 +882,7 @@ public final class n2 implements t2 {
                         i12 = i10 + floatToIntBits;
                         break;
                     }
-                case 52:
+                case zs.p0 /* 52 */:
                     if (!p(i14, i11, v1Var)) {
                         break;
                     } else {
@@ -894,7 +891,7 @@ public final class n2 implements t2 {
                         i12 = i10 + floatToIntBits;
                         break;
                     }
-                case 53:
+                case zs.q0 /* 53 */:
                     if (!p(i14, i11, v1Var)) {
                         break;
                     } else {
@@ -905,7 +902,7 @@ public final class n2 implements t2 {
                         i12 = i10 + floatToIntBits;
                         break;
                     }
-                case 54:
+                case zs.r0 /* 54 */:
                     if (!p(i14, i11, v1Var)) {
                         break;
                     } else {
@@ -916,7 +913,7 @@ public final class n2 implements t2 {
                         i12 = i10 + floatToIntBits;
                         break;
                     }
-                case 55:
+                case zs.s0 /* 55 */:
                     if (!p(i14, i11, v1Var)) {
                         break;
                     } else {
@@ -925,7 +922,7 @@ public final class n2 implements t2 {
                         i12 = i10 + floatToIntBits;
                         break;
                     }
-                case 56:
+                case zs.t0 /* 56 */:
                     if (!p(i14, i11, v1Var)) {
                         break;
                     } else {
@@ -936,7 +933,7 @@ public final class n2 implements t2 {
                         i12 = i10 + floatToIntBits;
                         break;
                     }
-                case 57:
+                case zs.u0 /* 57 */:
                     if (!p(i14, i11, v1Var)) {
                         break;
                     } else {
@@ -945,7 +942,7 @@ public final class n2 implements t2 {
                         i12 = i10 + floatToIntBits;
                         break;
                     }
-                case 58:
+                case zs.v0 /* 58 */:
                     if (!p(i14, i11, v1Var)) {
                         break;
                     } else {
@@ -954,7 +951,7 @@ public final class n2 implements t2 {
                         Charset charset12 = a2.a;
                         break;
                     }
-                case 59:
+                case zs.w0 /* 59 */:
                     if (!p(i14, i11, v1Var)) {
                         break;
                     } else {
@@ -963,7 +960,7 @@ public final class n2 implements t2 {
                         i12 = i10 + floatToIntBits;
                         break;
                     }
-                case 60:
+                case zs.x0 /* 60 */:
                     if (!p(i14, i11, v1Var)) {
                         break;
                     } else {
@@ -972,7 +969,7 @@ public final class n2 implements t2 {
                         i12 = i10 + floatToIntBits;
                         break;
                     }
-                case 61:
+                case zs.y0 /* 61 */:
                     if (!p(i14, i11, v1Var)) {
                         break;
                     } else {
@@ -981,7 +978,7 @@ public final class n2 implements t2 {
                         i12 = i10 + floatToIntBits;
                         break;
                     }
-                case 62:
+                case zs.z0 /* 62 */:
                     if (!p(i14, i11, v1Var)) {
                         break;
                     } else {
@@ -990,7 +987,7 @@ public final class n2 implements t2 {
                         i12 = i10 + floatToIntBits;
                         break;
                     }
-                case 63:
+                case zs.A0 /* 63 */:
                     if (!p(i14, i11, v1Var)) {
                         break;
                     } else {
@@ -1008,7 +1005,7 @@ public final class n2 implements t2 {
                         i12 = i10 + floatToIntBits;
                         break;
                     }
-                case VoIPService.CALL_MIN_LAYER /* 65 */:
+                case 65:
                     if (!p(i14, i11, v1Var)) {
                         break;
                     } else {
@@ -1019,7 +1016,7 @@ public final class n2 implements t2 {
                         i12 = i10 + floatToIntBits;
                         break;
                     }
-                case 66:
+                case zs.D0 /* 66 */:
                     if (!p(i14, i11, v1Var)) {
                         break;
                     } else {
@@ -1028,7 +1025,7 @@ public final class n2 implements t2 {
                         i12 = i10 + floatToIntBits;
                         break;
                     }
-                case 67:
+                case zs.E0 /* 67 */:
                     if (!p(i14, i11, v1Var)) {
                         break;
                     } else {
@@ -1039,7 +1036,7 @@ public final class n2 implements t2 {
                         i12 = i10 + floatToIntBits;
                         break;
                     }
-                case 68:
+                case zs.F0 /* 68 */:
                     if (!p(i14, i11, v1Var)) {
                         break;
                     } else {
@@ -1098,7 +1095,7 @@ public final class n2 implements t2 {
                         } else if (u10 != 49) {
                             if (u10 == 50 && !((j2) c3.h(obj, v & 1048575)).isEmpty()) {
                                 int i22 = i11 / 3;
-                                throw c3.h0.k(this.b[i22 + i22]);
+                                throw c3.i0.l(this.b[i22 + i22]);
                             }
                         }
                         i14++;
@@ -1208,23 +1205,23 @@ public final class n2 implements t2 {
                     }
                 case 7:
                     if (n2Var.n(obj, i13, i15, i14, i10)) {
-                        byte g7 = c3.c.g(obj, j10);
+                        byte g10 = c3.c.g(obj, j10);
                         m1 m1Var = (m1) i2Var.a;
                         m1Var.o(i16 << 3);
                         int i19 = m1Var.d;
                         try {
                             int i20 = i19 + 1;
                             try {
-                                m1Var.b[i19] = g7;
+                                m1Var.b[i19] = g10;
                                 m1Var.d = i20;
                                 break;
                             } catch (IndexOutOfBoundsException e) {
                                 e = e;
                                 i19 = i20;
-                                throw new w4(i19, m1Var.c, 1, e);
+                                throw new x4(i19, m1Var.c, 1, e);
                             }
-                        } catch (IndexOutOfBoundsException e10) {
-                            e = e10;
+                        } catch (IndexOutOfBoundsException e7) {
+                            e = e7;
                         }
                     } else {
                         continue;
@@ -1383,10 +1380,10 @@ public final class n2 implements t2 {
                 case 29:
                     u2.c(iArr[i13], (List) unsafe.getObject(obj, j10), i2Var, false);
                     break;
-                case MessageObject.TYPE_GIFT_STARS /* 30 */:
+                case zs.T /* 30 */:
                     u2.s(iArr[i13], (List) unsafe.getObject(obj, j10), i2Var, false);
                     break;
-                case MessageObject.TYPE_GIFT_THEME_UPDATE /* 31 */:
+                case zs.U /* 31 */:
                     u2.y(iArr[i13], (List) unsafe.getObject(obj, j10), i2Var, false);
                     break;
                 case 32:
@@ -1410,37 +1407,37 @@ public final class n2 implements t2 {
                 case 38:
                     u2.d(iArr[i13], (List) unsafe.getObject(obj, j10), i2Var, true);
                     break;
-                case Maneuver.TYPE_DESTINATION /* 39 */:
+                case 39:
                     u2.w(iArr[i13], (List) unsafe.getObject(obj, j10), i2Var, true);
                     break;
-                case Maneuver.TYPE_DESTINATION_STRAIGHT /* 40 */:
+                case 40:
                     u2.u(iArr[i13], (List) unsafe.getObject(obj, j10), i2Var, true);
                     break;
-                case Maneuver.TYPE_DESTINATION_LEFT /* 41 */:
+                case 41:
                     u2.t(iArr[i13], (List) unsafe.getObject(obj, j10), i2Var, true);
                     break;
-                case Maneuver.TYPE_DESTINATION_RIGHT /* 42 */:
+                case 42:
                     u2.q(iArr[i13], (List) unsafe.getObject(obj, j10), i2Var, true);
                     break;
-                case Maneuver.TYPE_ROUNDABOUT_ENTER_CW /* 43 */:
+                case 43:
                     u2.c(iArr[i13], (List) unsafe.getObject(obj, j10), i2Var, true);
                     break;
-                case Maneuver.TYPE_ROUNDABOUT_EXIT_CW /* 44 */:
+                case 44:
                     u2.s(iArr[i13], (List) unsafe.getObject(obj, j10), i2Var, true);
                     break;
-                case Maneuver.TYPE_ROUNDABOUT_ENTER_CCW /* 45 */:
+                case 45:
                     u2.y(iArr[i13], (List) unsafe.getObject(obj, j10), i2Var, true);
                     break;
-                case Maneuver.TYPE_ROUNDABOUT_EXIT_CCW /* 46 */:
+                case 46:
                     u2.z(iArr[i13], (List) unsafe.getObject(obj, j10), i2Var, true);
                     break;
-                case Maneuver.TYPE_FERRY_BOAT_LEFT /* 47 */:
+                case 47:
                     u2.a(iArr[i13], (List) unsafe.getObject(obj, j10), i2Var, true);
                     break;
                 case 48:
                     u2.b(iArr[i13], (List) unsafe.getObject(obj, j10), i2Var, true);
                     break;
-                case Maneuver.TYPE_FERRY_TRAIN_LEFT /* 49 */:
+                case 49:
                     int i29 = iArr[i13];
                     List list4 = (List) unsafe.getObject(obj, j10);
                     t2 y10 = n2Var.y(i13);
@@ -1452,62 +1449,62 @@ public final class n2 implements t2 {
                         break;
                     }
                     break;
-                case Maneuver.TYPE_FERRY_TRAIN_RIGHT /* 50 */:
+                case 50:
                     if (unsafe.getObject(obj, j10) != null) {
                         int i31 = i13 / 3;
-                        throw c3.h0.k(n2Var.b[i31 + i31]);
+                        throw c3.i0.l(n2Var.b[i31 + i31]);
                     }
                     break;
-                case 51:
+                case zs.o0 /* 51 */:
                     if (n2Var.p(i16, i13, obj)) {
                         ((m1) i2Var.a).h(i16, Double.doubleToRawLongBits(((Double) c3.h(obj, j10)).doubleValue()));
                         break;
                     } else {
                         break;
                     }
-                case 52:
+                case zs.p0 /* 52 */:
                     if (n2Var.p(i16, i13, obj)) {
                         ((m1) i2Var.a).f(i16, Float.floatToRawIntBits(((Float) c3.h(obj, j10)).floatValue()));
                         break;
                     } else {
                         break;
                     }
-                case 53:
+                case zs.q0 /* 53 */:
                     if (n2Var.p(i16, i13, obj)) {
                         ((m1) i2Var.a).p(i16, w(obj, j10));
                         break;
                     } else {
                         break;
                     }
-                case 54:
+                case zs.r0 /* 54 */:
                     if (n2Var.p(i16, i13, obj)) {
                         ((m1) i2Var.a).p(i16, w(obj, j10));
                         break;
                     } else {
                         break;
                     }
-                case 55:
+                case zs.s0 /* 55 */:
                     if (n2Var.p(i16, i13, obj)) {
                         ((m1) i2Var.a).j(i16, s(obj, j10));
                         break;
                     } else {
                         break;
                     }
-                case 56:
+                case zs.t0 /* 56 */:
                     if (n2Var.p(i16, i13, obj)) {
                         ((m1) i2Var.a).h(i16, w(obj, j10));
                         break;
                     } else {
                         break;
                     }
-                case 57:
+                case zs.u0 /* 57 */:
                     if (n2Var.p(i16, i13, obj)) {
                         ((m1) i2Var.a).f(i16, s(obj, j10));
                         break;
                     } else {
                         break;
                     }
-                case 58:
+                case zs.v0 /* 58 */:
                     if (n2Var.p(i16, i13, obj)) {
                         byte booleanValue = ((Boolean) c3.h(obj, j10)).booleanValue();
                         m1 m1Var3 = (m1) i2Var.a;
@@ -1515,22 +1512,22 @@ public final class n2 implements t2 {
                         int i32 = m1Var3.d;
                         try {
                             i11 = i32 + 1;
-                        } catch (IndexOutOfBoundsException e11) {
-                            e = e11;
+                        } catch (IndexOutOfBoundsException e10) {
+                            e = e10;
                         }
                         try {
                             m1Var3.b[i32] = booleanValue;
                             m1Var3.d = i11;
                             break;
-                        } catch (IndexOutOfBoundsException e12) {
-                            e = e12;
+                        } catch (IndexOutOfBoundsException e11) {
+                            e = e11;
                             i32 = i11;
-                            throw new w4(i32, m1Var3.c, 1, e);
+                            throw new x4(i32, m1Var3.c, 1, e);
                         }
                     } else {
                         continue;
                     }
-                case 59:
+                case zs.w0 /* 59 */:
                     if (n2Var.p(i16, i13, obj)) {
                         Object object2 = unsafe.getObject(obj, j10);
                         if (object2 instanceof String) {
@@ -1543,28 +1540,28 @@ public final class n2 implements t2 {
                     } else {
                         break;
                     }
-                case 60:
+                case zs.x0 /* 60 */:
                     if (n2Var.p(i16, i13, obj)) {
                         i2Var.b(i16, unsafe.getObject(obj, j10), n2Var.y(i13));
                         break;
                     } else {
                         break;
                     }
-                case 61:
+                case zs.y0 /* 61 */:
                     if (n2Var.p(i16, i13, obj)) {
                         ((m1) i2Var.a).e(i16, (l1) unsafe.getObject(obj, j10));
                         break;
                     } else {
                         break;
                     }
-                case 62:
+                case zs.z0 /* 62 */:
                     if (n2Var.p(i16, i13, obj)) {
                         ((m1) i2Var.a).n(i16, s(obj, j10));
                         break;
                     } else {
                         break;
                     }
-                case 63:
+                case zs.A0 /* 63 */:
                     if (n2Var.p(i16, i13, obj)) {
                         ((m1) i2Var.a).j(i16, s(obj, j10));
                         break;
@@ -1578,14 +1575,14 @@ public final class n2 implements t2 {
                     } else {
                         break;
                     }
-                case VoIPService.CALL_MIN_LAYER /* 65 */:
+                case 65:
                     if (n2Var.p(i16, i13, obj)) {
                         ((m1) i2Var.a).h(i16, w(obj, j10));
                         break;
                     } else {
                         break;
                     }
-                case 66:
+                case zs.D0 /* 66 */:
                     if (n2Var.p(i16, i13, obj)) {
                         int s10 = s(obj, j10);
                         ((m1) i2Var.a).n(i16, (s10 >> 31) ^ (s10 + s10));
@@ -1593,15 +1590,15 @@ public final class n2 implements t2 {
                     } else {
                         break;
                     }
-                case 67:
+                case zs.E0 /* 67 */:
                     if (n2Var.p(i16, i13, obj)) {
-                        long w10 = w(obj, j10);
-                        ((m1) i2Var.a).p(i16, (w10 >> 63) ^ (w10 + w10));
+                        long w9 = w(obj, j10);
+                        ((m1) i2Var.a).p(i16, (w9 >> 63) ^ (w9 + w9));
                         break;
                     } else {
                         break;
                     }
-                case 68:
+                case zs.F0 /* 68 */:
                     if (n2Var.p(i16, i13, obj)) {
                         i2Var.a(i16, unsafe.getObject(obj, j10), n2Var.y(i13));
                         break;
@@ -2173,7 +2170,7 @@ public final class n2 implements t2 {
                     i12 += 3;
                     n2Var = this;
                     e1Var2 = e1Var;
-                case MessageObject.TYPE_GIFT_STARS /* 30 */:
+                case zs.T /* 30 */:
                     List list9 = (List) unsafe.getObject(e1Var2, j10);
                     t1 t1Var10 = u2.a;
                     size = list9.size();
@@ -2191,7 +2188,7 @@ public final class n2 implements t2 {
                     i12 += 3;
                     n2Var = this;
                     e1Var2 = e1Var;
-                case MessageObject.TYPE_GIFT_THEME_UPDATE /* 31 */:
+                case zs.U /* 31 */:
                     h = u2.g(i16, (List) unsafe.getObject(e1Var2, j10));
                     b18 = h;
                     i14 += b18;
@@ -2317,7 +2314,7 @@ public final class n2 implements t2 {
                         n2Var = this;
                         e1Var2 = e1Var;
                     }
-                case Maneuver.TYPE_DESTINATION /* 39 */:
+                case 39:
                     size2 = u2.i((List) unsafe.getObject(e1Var2, j10));
                     if (size2 > 0) {
                         b20 = m1.b(i16 << 3);
@@ -2335,7 +2332,7 @@ public final class n2 implements t2 {
                         n2Var = this;
                         e1Var2 = e1Var;
                     }
-                case Maneuver.TYPE_DESTINATION_STRAIGHT /* 40 */:
+                case 40:
                     List list14 = (List) unsafe.getObject(e1Var2, j10);
                     t1 t1Var15 = u2.a;
                     size2 = list14.size() * 8;
@@ -2355,7 +2352,7 @@ public final class n2 implements t2 {
                         n2Var = this;
                         e1Var2 = e1Var;
                     }
-                case Maneuver.TYPE_DESTINATION_LEFT /* 41 */:
+                case 41:
                     List list15 = (List) unsafe.getObject(e1Var2, j10);
                     t1 t1Var16 = u2.a;
                     size2 = list15.size() * 4;
@@ -2375,7 +2372,7 @@ public final class n2 implements t2 {
                         n2Var = this;
                         e1Var2 = e1Var;
                     }
-                case Maneuver.TYPE_DESTINATION_RIGHT /* 42 */:
+                case 42:
                     List list16 = (List) unsafe.getObject(e1Var2, j10);
                     t1 t1Var17 = u2.a;
                     size2 = list16.size();
@@ -2395,7 +2392,7 @@ public final class n2 implements t2 {
                         n2Var = this;
                         e1Var2 = e1Var;
                     }
-                case Maneuver.TYPE_ROUNDABOUT_ENTER_CW /* 43 */:
+                case 43:
                     size2 = u2.m((List) unsafe.getObject(e1Var2, j10));
                     if (size2 > 0) {
                         b20 = m1.b(i16 << 3);
@@ -2413,7 +2410,7 @@ public final class n2 implements t2 {
                         n2Var = this;
                         e1Var2 = e1Var;
                     }
-                case Maneuver.TYPE_ROUNDABOUT_EXIT_CW /* 44 */:
+                case 44:
                     size2 = u2.f((List) unsafe.getObject(e1Var2, j10));
                     if (size2 > 0) {
                         b20 = m1.b(i16 << 3);
@@ -2431,7 +2428,7 @@ public final class n2 implements t2 {
                         n2Var = this;
                         e1Var2 = e1Var;
                     }
-                case Maneuver.TYPE_ROUNDABOUT_ENTER_CCW /* 45 */:
+                case 45:
                     List list17 = (List) unsafe.getObject(e1Var2, j10);
                     t1 t1Var18 = u2.a;
                     size2 = list17.size() * 4;
@@ -2451,7 +2448,7 @@ public final class n2 implements t2 {
                         n2Var = this;
                         e1Var2 = e1Var;
                     }
-                case Maneuver.TYPE_ROUNDABOUT_EXIT_CCW /* 46 */:
+                case 46:
                     List list18 = (List) unsafe.getObject(e1Var2, j10);
                     t1 t1Var19 = u2.a;
                     size2 = list18.size() * 8;
@@ -2471,7 +2468,7 @@ public final class n2 implements t2 {
                         n2Var = this;
                         e1Var2 = e1Var;
                     }
-                case Maneuver.TYPE_FERRY_BOAT_LEFT /* 47 */:
+                case 47:
                     size2 = u2.k((List) unsafe.getObject(e1Var2, j10));
                     if (size2 > 0) {
                         b20 = m1.b(i16 << 3);
@@ -2507,7 +2504,7 @@ public final class n2 implements t2 {
                         n2Var = this;
                         e1Var2 = e1Var;
                     }
-                case Maneuver.TYPE_FERRY_TRAIN_LEFT /* 49 */:
+                case 49:
                     List list19 = (List) unsafe.getObject(e1Var2, j10);
                     t2 y12 = n2Var.y(i12);
                     t1 t1Var20 = u2.a;
@@ -2529,7 +2526,7 @@ public final class n2 implements t2 {
                     i12 += 3;
                     n2Var = this;
                     e1Var2 = e1Var;
-                case Maneuver.TYPE_FERRY_TRAIN_RIGHT /* 50 */:
+                case 50:
                     int i29 = i12 / 3;
                     j2 j2Var = (j2) unsafe.getObject(e1Var2, j10);
                     if (n2Var.b[i29 + i29] != null) {
@@ -2549,7 +2546,7 @@ public final class n2 implements t2 {
                     i12 += 3;
                     n2Var = this;
                     e1Var2 = e1Var;
-                case 51:
+                case zs.o0 /* 51 */:
                     if (n2Var.p(i16, i12, e1Var2)) {
                         b10 = m1.b(i16 << 3);
                         i19 = 8;
@@ -2564,7 +2561,7 @@ public final class n2 implements t2 {
                         n2Var = this;
                         e1Var2 = e1Var;
                     }
-                case 52:
+                case zs.p0 /* 52 */:
                     if (n2Var.p(i16, i12, e1Var2)) {
                         b10 = m1.b(i16 << 3);
                         i19 = 4;
@@ -2579,7 +2576,23 @@ public final class n2 implements t2 {
                         n2Var = this;
                         e1Var2 = e1Var;
                     }
-                case 53:
+                case zs.q0 /* 53 */:
+                    if (n2Var.p(i16, i12, e1Var2)) {
+                        long w9 = w(e1Var2, j10);
+                        b11 = m1.b(i16 << 3);
+                        c10 = m1.c(w9);
+                        h = b11 + c10;
+                        b18 = h;
+                        i14 += b18;
+                        i12 += 3;
+                        n2Var = this;
+                        e1Var2 = e1Var;
+                    } else {
+                        i12 += 3;
+                        n2Var = this;
+                        e1Var2 = e1Var;
+                    }
+                case zs.r0 /* 54 */:
                     if (n2Var.p(i16, i12, e1Var2)) {
                         long w10 = w(e1Var2, j10);
                         b11 = m1.b(i16 << 3);
@@ -2595,23 +2608,7 @@ public final class n2 implements t2 {
                         n2Var = this;
                         e1Var2 = e1Var;
                     }
-                case 54:
-                    if (n2Var.p(i16, i12, e1Var2)) {
-                        long w11 = w(e1Var2, j10);
-                        b11 = m1.b(i16 << 3);
-                        c10 = m1.c(w11);
-                        h = b11 + c10;
-                        b18 = h;
-                        i14 += b18;
-                        i12 += 3;
-                        n2Var = this;
-                        e1Var2 = e1Var;
-                    } else {
-                        i12 += 3;
-                        n2Var = this;
-                        e1Var2 = e1Var;
-                    }
-                case 55:
+                case zs.s0 /* 55 */:
                     if (n2Var.p(i16, i12, e1Var2)) {
                         long s10 = s(e1Var2, j10);
                         b11 = m1.b(i16 << 3);
@@ -2627,7 +2624,7 @@ public final class n2 implements t2 {
                         n2Var = this;
                         e1Var2 = e1Var;
                     }
-                case 56:
+                case zs.t0 /* 56 */:
                     if (n2Var.p(i16, i12, e1Var2)) {
                         b10 = m1.b(i16 << 3);
                         i19 = 8;
@@ -2642,7 +2639,7 @@ public final class n2 implements t2 {
                         n2Var = this;
                         e1Var2 = e1Var;
                     }
-                case 57:
+                case zs.u0 /* 57 */:
                     if (n2Var.p(i16, i12, e1Var2)) {
                         b10 = m1.b(i16 << 3);
                         i19 = 4;
@@ -2657,7 +2654,7 @@ public final class n2 implements t2 {
                         n2Var = this;
                         e1Var2 = e1Var;
                     }
-                case 58:
+                case zs.v0 /* 58 */:
                     if (n2Var.p(i16, i12, e1Var2)) {
                         b10 = m1.b(i16 << 3);
                         h = b10 + i19;
@@ -2671,7 +2668,7 @@ public final class n2 implements t2 {
                         n2Var = this;
                         e1Var2 = e1Var;
                     }
-                case 59:
+                case zs.w0 /* 59 */:
                     if (n2Var.p(i16, i12, e1Var2)) {
                         int i30 = i16 << 3;
                         Object object3 = unsafe.getObject(e1Var2, j10);
@@ -2701,7 +2698,7 @@ public final class n2 implements t2 {
                         n2Var = this;
                         e1Var2 = e1Var;
                     }
-                case 60:
+                case zs.x0 /* 60 */:
                     if (n2Var.p(i16, i12, e1Var2)) {
                         Object object4 = unsafe.getObject(e1Var2, j10);
                         t2 y13 = n2Var.y(i12);
@@ -2720,7 +2717,7 @@ public final class n2 implements t2 {
                         n2Var = this;
                         e1Var2 = e1Var;
                     }
-                case 61:
+                case zs.y0 /* 61 */:
                     if (n2Var.p(i16, i12, e1Var2)) {
                         l1 l1Var2 = (l1) unsafe.getObject(e1Var2, j10);
                         b11 = m1.b(i16 << 3);
@@ -2738,7 +2735,7 @@ public final class n2 implements t2 {
                         n2Var = this;
                         e1Var2 = e1Var;
                     }
-                case 62:
+                case zs.z0 /* 62 */:
                     if (n2Var.p(i16, i12, e1Var2)) {
                         int s11 = s(e1Var2, j10);
                         b11 = m1.b(i16 << 3);
@@ -2754,7 +2751,7 @@ public final class n2 implements t2 {
                         n2Var = this;
                         e1Var2 = e1Var;
                     }
-                case 63:
+                case zs.A0 /* 63 */:
                     if (n2Var.p(i16, i12, e1Var2)) {
                         long s12 = s(e1Var2, j10);
                         b11 = m1.b(i16 << 3);
@@ -2785,7 +2782,7 @@ public final class n2 implements t2 {
                         n2Var = this;
                         e1Var2 = e1Var;
                     }
-                case VoIPService.CALL_MIN_LAYER /* 65 */:
+                case 65:
                     if (n2Var.p(i16, i12, e1Var2)) {
                         b10 = m1.b(i16 << 3);
                         i19 = 8;
@@ -2800,7 +2797,7 @@ public final class n2 implements t2 {
                         n2Var = this;
                         e1Var2 = e1Var;
                     }
-                case 66:
+                case zs.D0 /* 66 */:
                     if (n2Var.p(i16, i12, e1Var2)) {
                         int s13 = s(e1Var2, j10);
                         b11 = m1.b(i16 << 3);
@@ -2816,11 +2813,11 @@ public final class n2 implements t2 {
                         n2Var = this;
                         e1Var2 = e1Var;
                     }
-                case 67:
+                case zs.E0 /* 67 */:
                     if (n2Var.p(i16, i12, e1Var2)) {
-                        long w12 = w(e1Var2, j10);
+                        long w11 = w(e1Var2, j10);
                         b11 = m1.b(i16 << 3);
-                        c10 = m1.c((w12 >> 63) ^ (w12 + w12));
+                        c10 = m1.c((w11 >> 63) ^ (w11 + w11));
                         h = b11 + c10;
                         b18 = h;
                         i14 += b18;
@@ -2832,7 +2829,7 @@ public final class n2 implements t2 {
                         n2Var = this;
                         e1Var2 = e1Var;
                     }
-                case 68:
+                case zs.F0 /* 68 */:
                     if (n2Var.p(i16, i12, e1Var2)) {
                         e1 e1Var5 = (e1) unsafe.getObject(e1Var2, j10);
                         t2 y14 = n2Var.y(i12);
@@ -3011,8 +3008,8 @@ public final class n2 implements t2 {
                     case 27:
                     case 28:
                     case 29:
-                    case MessageObject.TYPE_GIFT_STARS /* 30 */:
-                    case MessageObject.TYPE_GIFT_THEME_UPDATE /* 31 */:
+                    case zs.T /* 30 */:
+                    case zs.U /* 31 */:
                     case 32:
                     case 33:
                     case 34:
@@ -3020,40 +3017,40 @@ public final class n2 implements t2 {
                     case 36:
                     case 37:
                     case 38:
-                    case Maneuver.TYPE_DESTINATION /* 39 */:
-                    case Maneuver.TYPE_DESTINATION_STRAIGHT /* 40 */:
-                    case Maneuver.TYPE_DESTINATION_LEFT /* 41 */:
-                    case Maneuver.TYPE_DESTINATION_RIGHT /* 42 */:
-                    case Maneuver.TYPE_ROUNDABOUT_ENTER_CW /* 43 */:
-                    case Maneuver.TYPE_ROUNDABOUT_EXIT_CW /* 44 */:
-                    case Maneuver.TYPE_ROUNDABOUT_ENTER_CCW /* 45 */:
-                    case Maneuver.TYPE_ROUNDABOUT_EXIT_CCW /* 46 */:
-                    case Maneuver.TYPE_FERRY_BOAT_LEFT /* 47 */:
+                    case 39:
+                    case 40:
+                    case 41:
+                    case 42:
+                    case 43:
+                    case 44:
+                    case 45:
+                    case 46:
+                    case 47:
                     case 48:
-                    case Maneuver.TYPE_FERRY_TRAIN_LEFT /* 49 */:
+                    case 49:
                         e = u2.e(c3.h(v1Var, j10), c3.h(v1Var2, j10));
                         break;
-                    case Maneuver.TYPE_FERRY_TRAIN_RIGHT /* 50 */:
+                    case 50:
                         e = u2.e(c3.h(v1Var, j10), c3.h(v1Var2, j10));
                         break;
-                    case 51:
-                    case 52:
-                    case 53:
-                    case 54:
-                    case 55:
-                    case 56:
-                    case 57:
-                    case 58:
-                    case 59:
-                    case 60:
-                    case 61:
-                    case 62:
-                    case 63:
+                    case zs.o0 /* 51 */:
+                    case zs.p0 /* 52 */:
+                    case zs.q0 /* 53 */:
+                    case zs.r0 /* 54 */:
+                    case zs.s0 /* 55 */:
+                    case zs.t0 /* 56 */:
+                    case zs.u0 /* 57 */:
+                    case zs.v0 /* 58 */:
+                    case zs.w0 /* 59 */:
+                    case zs.x0 /* 60 */:
+                    case zs.y0 /* 61 */:
+                    case zs.z0 /* 62 */:
+                    case zs.A0 /* 63 */:
                     case 64:
-                    case VoIPService.CALL_MIN_LAYER /* 65 */:
-                    case 66:
-                    case 67:
-                    case 68:
+                    case 65:
+                    case zs.D0 /* 66 */:
+                    case zs.E0 /* 67 */:
+                    case zs.F0 /* 68 */:
                         long j11 = iArr[i10 + 2] & 1048575;
                         if (c3.e(v1Var, j11) == c3.e(v1Var2, j11) && u2.e(c3.h(v1Var, j10), c3.h(v1Var2, j10))) {
                             continue;
@@ -3403,8 +3400,8 @@ public final class n2 implements t2 {
                         case 27:
                         case 28:
                         case 29:
-                        case MessageObject.TYPE_GIFT_STARS /* 30 */:
-                        case MessageObject.TYPE_GIFT_THEME_UPDATE /* 31 */:
+                        case zs.T /* 30 */:
+                        case zs.U /* 31 */:
                         case 32:
                         case 33:
                         case 34:
@@ -3412,17 +3409,17 @@ public final class n2 implements t2 {
                         case 36:
                         case 37:
                         case 38:
-                        case Maneuver.TYPE_DESTINATION /* 39 */:
-                        case Maneuver.TYPE_DESTINATION_STRAIGHT /* 40 */:
-                        case Maneuver.TYPE_DESTINATION_LEFT /* 41 */:
-                        case Maneuver.TYPE_DESTINATION_RIGHT /* 42 */:
-                        case Maneuver.TYPE_ROUNDABOUT_ENTER_CW /* 43 */:
-                        case Maneuver.TYPE_ROUNDABOUT_EXIT_CW /* 44 */:
-                        case Maneuver.TYPE_ROUNDABOUT_ENTER_CCW /* 45 */:
-                        case Maneuver.TYPE_ROUNDABOUT_EXIT_CCW /* 46 */:
-                        case Maneuver.TYPE_FERRY_BOAT_LEFT /* 47 */:
+                        case 39:
+                        case 40:
+                        case 41:
+                        case 42:
+                        case 43:
+                        case 44:
+                        case 45:
+                        case 46:
+                        case 47:
                         case 48:
-                        case Maneuver.TYPE_FERRY_TRAIN_LEFT /* 49 */:
+                        case 49:
                             f1 f1Var = (f1) ((z1) c3.h(obj, j10));
                             if (!f1Var.a) {
                                 break;
@@ -3430,7 +3427,7 @@ public final class n2 implements t2 {
                                 f1Var.a = false;
                                 break;
                             }
-                        case Maneuver.TYPE_FERRY_TRAIN_RIGHT /* 50 */:
+                        case 50:
                             Unsafe unsafe = k;
                             Object object = unsafe.getObject(obj, j10);
                             if (object == null) {
@@ -3611,8 +3608,8 @@ public final class n2 implements t2 {
                 case 27:
                 case 28:
                 case 29:
-                case MessageObject.TYPE_GIFT_STARS /* 30 */:
-                case MessageObject.TYPE_GIFT_THEME_UPDATE /* 31 */:
+                case zs.T /* 30 */:
+                case zs.U /* 31 */:
                 case 32:
                 case 33:
                 case 34:
@@ -3620,17 +3617,17 @@ public final class n2 implements t2 {
                 case 36:
                 case 37:
                 case 38:
-                case Maneuver.TYPE_DESTINATION /* 39 */:
-                case Maneuver.TYPE_DESTINATION_STRAIGHT /* 40 */:
-                case Maneuver.TYPE_DESTINATION_LEFT /* 41 */:
-                case Maneuver.TYPE_DESTINATION_RIGHT /* 42 */:
-                case Maneuver.TYPE_ROUNDABOUT_ENTER_CW /* 43 */:
-                case Maneuver.TYPE_ROUNDABOUT_EXIT_CW /* 44 */:
-                case Maneuver.TYPE_ROUNDABOUT_ENTER_CCW /* 45 */:
-                case Maneuver.TYPE_ROUNDABOUT_EXIT_CCW /* 46 */:
-                case Maneuver.TYPE_FERRY_BOAT_LEFT /* 47 */:
+                case 39:
+                case 40:
+                case 41:
+                case 42:
+                case 43:
+                case 44:
+                case 45:
+                case 46:
+                case 47:
                 case 48:
-                case Maneuver.TYPE_FERRY_TRAIN_LEFT /* 49 */:
+                case 49:
                     z1 z1Var = (z1) c3.h(obj, j10);
                     z1 z1Var2 = (z1) c3.h(obj2, j10);
                     int size = z1Var.size();
@@ -3647,44 +3644,44 @@ public final class n2 implements t2 {
                     c3.l(obj, j10, z1Var2);
                     obj3 = obj;
                     break;
-                case Maneuver.TYPE_FERRY_TRAIN_RIGHT /* 50 */:
+                case 50:
                     t1 t1Var = u2.a;
                     c3.l(obj, j10, t1.a(c3.h(obj, j10), c3.h(obj2, j10)));
                     obj3 = obj;
                     break;
-                case 51:
-                case 52:
-                case 53:
-                case 54:
-                case 55:
-                case 56:
-                case 57:
-                case 58:
-                case 59:
+                case zs.o0 /* 51 */:
+                case zs.p0 /* 52 */:
+                case zs.q0 /* 53 */:
+                case zs.r0 /* 54 */:
+                case zs.s0 /* 55 */:
+                case zs.t0 /* 56 */:
+                case zs.u0 /* 57 */:
+                case zs.v0 /* 58 */:
+                case zs.w0 /* 59 */:
                     if (p(i12, i10, obj2)) {
                         c3.l(obj, j10, c3.h(obj2, j10));
                         c3.j(obj, iArr[i10 + 2] & 1048575, i12);
                     }
                     obj3 = obj;
                     break;
-                case 60:
+                case zs.x0 /* 60 */:
                     h(i10, obj, obj2);
                     obj3 = obj;
                     break;
-                case 61:
-                case 62:
-                case 63:
+                case zs.y0 /* 61 */:
+                case zs.z0 /* 62 */:
+                case zs.A0 /* 63 */:
                 case 64:
-                case VoIPService.CALL_MIN_LAYER /* 65 */:
-                case 66:
-                case 67:
+                case 65:
+                case zs.D0 /* 66 */:
+                case zs.E0 /* 67 */:
                     if (p(i12, i10, obj2)) {
                         c3.l(obj, j10, c3.h(obj2, j10));
                         c3.j(obj, iArr[i10 + 2] & 1048575, i12);
                     }
                     obj3 = obj;
                     break;
-                case 68:
+                case zs.F0 /* 68 */:
                     h(i10, obj, obj2);
                     obj3 = obj;
                     break;

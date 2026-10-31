@@ -3,7 +3,7 @@ package androidx.lifecycle;
 import android.os.Looper;
 import java.util.Map;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public class z {
     public static final Object k = new Object();
@@ -16,12 +16,12 @@ public class z {
     public int g;
     public boolean h;
     public boolean i;
-    public final a5.d j;
+    public final androidx.activity.i j;
 
     public z() {
         Object obj = k;
         this.f = obj;
-        this.j = new a5.d(this, 9);
+        this.j = new androidx.activity.i(this, 5);
         this.e = obj;
         this.g = -1;
     }
@@ -29,7 +29,7 @@ public class z {
     public static void a(String str) {
         n.a.a().a.getClass();
         if (Looper.getMainLooper().getThread() != Thread.currentThread()) {
-            throw new IllegalStateException(a1.g.p("Cannot invoke ", str, " on a background thread"));
+            throw new IllegalStateException(a1.g.n("Cannot invoke ", str, " on a background thread"));
         }
     }
 
@@ -45,7 +45,7 @@ public class z {
                 return;
             }
             yVar.c = i11;
-            yVar.a.Q(this.e);
+            yVar.a.k0(this.e);
         }
     }
 
@@ -84,9 +84,9 @@ public class z {
         }
         LiveData$LifecycleBoundObserver liveData$LifecycleBoundObserver = new LiveData$LifecycleBoundObserver(this, tVar, a0Var);
         o.f fVar = this.b;
-        o.c h = fVar.h(a0Var);
-        if (h != null) {
-            obj = h.b;
+        o.c l4 = fVar.l(a0Var);
+        if (l4 != null) {
+            obj = l4.b;
         } else {
             o.c cVar = new o.c(a0Var, liveData$LifecycleBoundObserver);
             fVar.d++;
@@ -111,25 +111,25 @@ public class z {
         tVar.m().a(liveData$LifecycleBoundObserver);
     }
 
-    public final void e(rb.c cVar) {
+    public final void e(k6.h hVar) {
         Object obj;
         a("observeForever");
-        x xVar = new x(this, cVar);
+        x xVar = new x(this, hVar);
         o.f fVar = this.b;
-        o.c h = fVar.h(cVar);
-        if (h != null) {
-            obj = h.b;
+        o.c l4 = fVar.l(hVar);
+        if (l4 != null) {
+            obj = l4.b;
         } else {
-            o.c cVar2 = new o.c(cVar, xVar);
+            o.c cVar = new o.c(hVar, xVar);
             fVar.d++;
-            o.c cVar3 = fVar.b;
-            if (cVar3 == null) {
-                fVar.a = cVar2;
-                fVar.b = cVar2;
+            o.c cVar2 = fVar.b;
+            if (cVar2 == null) {
+                fVar.a = cVar;
+                fVar.b = cVar;
             } else {
-                cVar3.c = cVar2;
-                cVar2.d = cVar3;
-                fVar.b = cVar2;
+                cVar2.c = cVar;
+                cVar.d = cVar2;
+                fVar.b = cVar;
             }
             obj = null;
         }

@@ -1,56 +1,22 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class w31 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ SecretMediaViewer b;
+public final class w31 implements View.OnLongClickListener {
+    public final /* synthetic */ TLRPC.TL_authorization a;
+    public final /* synthetic */ c41 b;
 
-    public /* synthetic */ w31(SecretMediaViewer secretMediaViewer, int i10) {
-        this.a = i10;
-        this.b = secretMediaViewer;
+    public w31(c41 c41Var, TLRPC.TL_authorization tL_authorization) {
+        this.b = c41Var;
+        this.a = tL_authorization;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                SecretMediaViewer secretMediaViewer = this.b;
-                Runnable runnable = secretMediaViewer.o0;
-                if (runnable != null) {
-                    runnable.run();
-                    secretMediaViewer.o0 = null;
-                    break;
-                }
-                break;
-            case 1:
-                SecretMediaViewer secretMediaViewer2 = this.b;
-                AnimatorSet animatorSet = secretMediaViewer2.G;
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    secretMediaViewer2.F.setVisibility(8);
-                    secretMediaViewer2.G = null;
-                    secretMediaViewer2.a0.scrollTo(0, 0);
-                    break;
-                }
-                break;
-            case 2:
-                SecretMediaViewer secretMediaViewer3 = this.b;
-                Runnable runnable2 = secretMediaViewer3.o0;
-                if (runnable2 != null) {
-                    runnable2.run();
-                    secretMediaViewer3.o0 = null;
-                    break;
-                }
-                break;
-            default:
-                SecretMediaViewer secretMediaViewer4 = this.b;
-                secretMediaViewer4.K0 = null;
-                secretMediaViewer4.e.invalidate();
-                break;
-        }
+    @Override // android.view.View.OnLongClickListener
+    public final boolean onLongClick(View view) {
+        c41.I0(this.b, this.a.country);
+        return true;
     }
 }

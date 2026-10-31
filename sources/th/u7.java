@@ -1,0 +1,111 @@
+package th;
+
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.text.SpannableStringBuilder;
+import android.text.TextPaint;
+import android.text.style.ReplacementSpan;
+import android.view.View;
+import android.widget.TextView;
+import org.telegram.ui.Components.gr;
+
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final class u7 extends ReplacementSpan {
+    public View a;
+    public float d;
+    public boolean e;
+    public long f;
+    public boolean n;
+    public boolean r;
+    public int b = 1;
+    public int c = 2;
+    public final gr h = new gr(0.0f, 0.5f, 0.5f, 1.0f);
+
+    public static CharSequence a(TextView textView, String str) {
+        int i10;
+        int i11;
+        SpannableStringBuilder spannableStringBuilder = null;
+        if (str == null) {
+            return null;
+        }
+        int i12 = 0;
+        while (i12 < str.length()) {
+            if (str.charAt(i12) == 8230) {
+                i11 = 1;
+            } else {
+                if (str.charAt(i12) == '.' && (i10 = i12 + 2) < str.length() && str.charAt(i12 + 1) == '.' && str.charAt(i10) == '.') {
+                    i11 = 3;
+                }
+                i12++;
+            }
+            if (spannableStringBuilder == null) {
+                spannableStringBuilder = new SpannableStringBuilder(str);
+            }
+            u7 u7Var = new u7();
+            u7Var.a = textView;
+            u7Var.n = false;
+            spannableStringBuilder.setSpan(u7Var, i12, i12 + i11, 33);
+            i12 += i11 - 1;
+            i12++;
+        }
+        return spannableStringBuilder == null ? str : spannableStringBuilder;
+    }
+
+    public final void b(org.telegram.ui.Cells.s0 s0Var) {
+        this.a = s0Var;
+        this.n = false;
+    }
+
+    @Override // android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
+        float f10;
+        TextPaint textPaint = (TextPaint) paint;
+        float measureText = paint.measureText("…") / 3.0f;
+        float f11 = -(this.r ? textPaint.getFontMetrics().ascent : textPaint.getFontMetrics().top);
+        float f12 = (textPaint.getFontMetrics().bottom - textPaint.getFontMetrics().top) * (this.n ? 0.05f : 0.0365f);
+        float f13 = f11 - f12;
+        if (!this.e) {
+            float f14 = this.d + 0.053333335f;
+            this.d = f14;
+            if (f14 > 1.0f) {
+                this.d = 0.0f;
+                int i15 = this.b - 1;
+                this.b = i15;
+                this.c--;
+                if (i15 < 0) {
+                    this.b = 1;
+                    this.c = 2;
+                    this.e = true;
+                    this.f = System.currentTimeMillis();
+                }
+            }
+        } else if (System.currentTimeMillis() - this.f > 1000) {
+            this.e = false;
+        }
+        for (int i16 = 0; i16 < 3; i16++) {
+            float f15 = measureText / 2.0f;
+            float f16 = (i16 * measureText) + f7 + f15;
+            if (i16 == this.b) {
+                f16 = org.telegram.messenger.i0.T1(f16, sc.e.d(measureText, i16 + 1, f7, f15), this.d);
+                float f17 = this.d;
+                f10 = org.telegram.messenger.i0.T1(f13, f13 - f15, this.h.getInterpolation(f17 < 0.5f ? f17 / 0.5f : org.telegram.messenger.m5.y(f17, 0.5f, 0.5f, 1.0f)));
+            } else {
+                if (i16 == this.c) {
+                    f16 = org.telegram.messenger.i0.T1(f16, sc.e.d(measureText, i16 - 1, f7, f15), this.d);
+                }
+                f10 = f13;
+            }
+            canvas.drawCircle(f16, f10, f12, paint);
+        }
+        View view = this.a;
+        if (view != null) {
+            view.invalidate();
+        }
+    }
+
+    @Override // android.text.style.ReplacementSpan
+    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
+        return (int) paint.measureText("…");
+    }
+}

@@ -1,51 +1,47 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessageObject;
+import java.util.concurrent.CountDownLatch;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class vb extends org.telegram.ui.Components.kb1 {
-    public MessageObject c;
-    public int d = 0;
-    public boolean e = true;
-    public int f = 0;
-    public int g;
-    public final /* synthetic */ wb h;
+public final /* synthetic */ class vb implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ zb b;
 
-    public vb(wb wbVar) {
-        this.h = wbVar;
+    public /* synthetic */ vb(zb zbVar, int i10) {
+        this.a = i10;
+        this.b = zbVar;
     }
 
-    @Override // org.telegram.ui.Components.kb1
-    public final void N() {
-        MessageObject messageObject = this.c;
-        wb wbVar = this.h;
-        if (messageObject != null) {
-            int indexOf = wbVar.o0.indexOf(messageObject) + wbVar.E.f;
-            if (indexOf >= 0) {
-                wbVar.x.i1(indexOf, this.g, false);
-            }
-        } else {
-            wbVar.x.i1(this.d, this.f, this.e);
-        }
-        this.c = null;
-        wbVar.V = true;
-        wbVar.e1();
-        AndroidUtilities.runOnUIThread(new bu0(this, 21));
-    }
-
-    @Override // org.telegram.ui.Components.kb1
-    public final void Q() {
-        wb wbVar = this.h;
-        wbVar.K0 = wbVar.getNotificationCenter().setAnimationInProgress(wbVar.K0, wb.R0);
-    }
-
-    @Override // org.telegram.ui.Components.kb1
-    public final void S(View view) {
-        if (view instanceof org.telegram.ui.Cells.s1) {
-            this.h.h.add((org.telegram.ui.Cells.s1) view);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                CountDownLatch countDownLatch = new CountDownLatch(2);
+                zb zbVar = this.b;
+                zbVar.a(countDownLatch, null);
+                zbVar.b(countDownLatch, null);
+                try {
+                    countDownLatch.await();
+                } catch (InterruptedException unused) {
+                }
+                org.telegram.messenger.i0.g3(new vb(zbVar, 3));
+                break;
+            case 1:
+                zb zbVar2 = this.b;
+                zbVar2.G = false;
+                zbVar2.d(true);
+                break;
+            case 2:
+                zb zbVar3 = this.b;
+                zbVar3.G = false;
+                zbVar3.d(true);
+                break;
+            default:
+                zb zbVar4 = this.b;
+                zbVar4.G = false;
+                zbVar4.d(true);
+                break;
         }
     }
 }

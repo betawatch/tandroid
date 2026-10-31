@@ -1,31 +1,47 @@
 package h7;
 
-import a8.df;
-import android.app.PendingIntent;
-import android.os.Parcel;
-import android.os.Parcelable;
+import android.os.IBinder;
+import android.os.IInterface;
+import kotlin.jvm.internal.i;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class e extends p6.a {
-    public static final Parcelable.Creator<e> CREATOR = new f6.i(16);
-    public final PendingIntent a;
-    public final g b;
-
-    public e(PendingIntent pendingIntent, g gVar) {
-        this.a = pendingIntent;
-        this.b = gVar;
-        if (pendingIntent == null && gVar == null) {
-            throw new IllegalArgumentException("pendingIntent or createCredentialResponse must be specified.");
-        }
+public final class e extends n6.g {
+    @Override // n6.g
+    public final boolean D() {
+        return true;
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel dest, int i10) {
-        kotlin.jvm.internal.i.e(dest, "dest");
-        int q5 = df.q(dest, 20293);
-        df.k(dest, 1, this.a, i10);
-        df.k(dest, 2, this.b, i10);
-        df.r(dest, q5);
+    @Override // n6.g, com.google.android.gms.common.api.c
+    public final int m() {
+        return 17895000;
+    }
+
+    @Override // n6.g
+    public final IInterface r(IBinder iBinder) {
+        i.e(iBinder, "iBinder");
+        int i10 = c.b;
+        IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.identitycredentials.internal.IIdentityCredentialService");
+        return queryLocalInterface instanceof d ? (d) queryLocalInterface : new b(iBinder);
+    }
+
+    @Override // n6.g
+    public final k6.c[] s() {
+        return q7.b.c;
+    }
+
+    @Override // n6.g
+    public final String w() {
+        return "com.google.android.gms.identitycredentials.internal.IIdentityCredentialService";
+    }
+
+    @Override // n6.g
+    public final String x() {
+        return "com.google.android.gms.identitycredentials.service.START";
+    }
+
+    @Override // n6.g
+    public final boolean z() {
+        return true;
     }
 }

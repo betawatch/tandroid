@@ -1,44 +1,36 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.view.View;
+import java.util.HashSet;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class il0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ PasscodeActivity b;
-    public final /* synthetic */ boolean c;
+public final class il0 extends View implements org.telegram.ui.ActionBar.k6 {
+    public Paint a;
+    public Paint b;
+    public float c;
 
-    public /* synthetic */ il0(PasscodeActivity passcodeActivity, boolean z10, int i10) {
-        this.a = i10;
-        this.b = passcodeActivity;
-        this.c = z10;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        float measuredWidth = (int) (getMeasuredWidth() * this.c);
+        canvas.drawRect(0.0f, 0.0f, measuredWidth, getMeasuredHeight(), this.b);
+        canvas.drawRect(measuredWidth, 0.0f, getMeasuredWidth(), getMeasuredHeight(), this.a);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                PasscodeActivity passcodeActivity = this.b;
-                passcodeActivity.getMediaDataController().buildShortcuts();
-                if (this.c) {
-                    passcodeActivity.presentFragment(new PasscodeActivity(0), true);
-                    jb0 jb0Var = passcodeActivity.U;
-                    if (jb0Var != null) {
-                        AndroidUtilities.runOnUIThread(jb0Var);
-                        passcodeActivity.U = null;
-                    }
-                } else {
-                    passcodeActivity.finishFragment();
-                }
-                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didSetPasscode, new Object[0]);
-                break;
-            default:
-                PasscodeActivity passcodeActivity2 = this.b;
-                passcodeActivity2.w.e(true, this.c);
-                AndroidUtilities.cancelRunOnUIThread(passcodeActivity2.T);
-                break;
+    @Override // org.telegram.ui.ActionBar.k6
+    public final void updateColors() {
+        try {
+            this.a.setColor(org.telegram.ui.ActionBar.t6.x0(null, org.telegram.ui.ActionBar.t6.Ui, false));
+            this.b.setColor(org.telegram.ui.ActionBar.t6.x0(null, org.telegram.ui.ActionBar.t6.Vi, false));
+            invalidate();
+        } catch (Exception e) {
+            org.telegram.messenger.f8.g(e, true);
         }
+    }
+
+    @Override // org.telegram.ui.ActionBar.k6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

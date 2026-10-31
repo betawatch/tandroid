@@ -1,48 +1,38 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+import android.content.SharedPreferences;
+import android.text.TextUtils;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final /* synthetic */ class q0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ Object e;
+public final class q0 implements m0 {
+    public final String a;
+    public final String b;
+    public String c;
 
-    public /* synthetic */ q0(long j10, long j11, long j12, org.telegram.ui.e5 e5Var) {
-        this.a = 2;
-        this.b = j10;
-        this.c = j11;
-        this.d = j12;
-        this.e = e5Var;
+    public q0(String str, String str2) {
+        this.a = str;
+        this.b = str2;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                ((BotGuardHelper) this.e).lambda$openGuardBotWebApp$0(this.b, this.c, this.d);
-                break;
-            case 1:
-                ((MediaDataController) this.e).lambda$loadMusic$142(this.b, this.c, this.d);
-                break;
-            default:
-                org.telegram.ui.e5 e5Var = (org.telegram.ui.e5) this.e;
-                long j10 = this.b;
-                long j11 = this.c;
-                org.telegram.ui.c7.l0 = Long.valueOf(j10 * j11);
-                Long valueOf = Long.valueOf(this.d * j11);
-                org.telegram.ui.c7.m0 = valueOf;
-                e5Var.run(org.telegram.ui.c7.l0, valueOf);
-                break;
+    @Override // org.telegram.messenger.m0
+    public final boolean a(SharedPreferences.Editor editor, TLRPC.JSONValue jSONValue) {
+        if (!(jSONValue instanceof TLRPC.TL_jsonString)) {
+            return false;
         }
+        TLRPC.TL_jsonString tL_jsonString = (TLRPC.TL_jsonString) jSONValue;
+        if (TextUtils.equals(tL_jsonString.value, this.c)) {
+            return false;
+        }
+        String str = tL_jsonString.value;
+        this.c = str;
+        editor.putString(this.a, str);
+        return true;
     }
 
-    public /* synthetic */ q0(BaseController baseController, long j10, long j11, long j12, int i10) {
-        this.a = i10;
-        this.e = baseController;
-        this.b = j10;
-        this.c = j11;
-        this.d = j12;
+    @Override // org.telegram.messenger.m0
+    public final void b(SharedPreferences sharedPreferences) {
+        this.c = sharedPreferences.getString(this.a, this.b);
     }
 }

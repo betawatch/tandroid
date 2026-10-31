@@ -1,35 +1,46 @@
 package org.telegram.ui.Components;
 
-import android.os.Bundle;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserObject;
-import org.telegram.tgnet.TLRPC;
+import java.util.HashMap;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class cg extends org.telegram.ui.wn {
-    public boolean od;
-    public final /* synthetic */ TLRPC.User pd;
-    public final /* synthetic */ TLRPC.User qd;
-    public final /* synthetic */ long rd;
+public final class cg extends HashMap {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public cg(Bundle bundle, TLRPC.User user, TLRPC.User user2, long j10) {
-        super(bundle);
-        this.pd = user;
-        this.qd = user2;
-        this.rd = j10;
+    public /* synthetic */ cg(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // org.telegram.ui.wn, org.telegram.ui.ActionBar.r2
-    public final void onBecomeFullyVisible() {
-        super.onBecomeFullyVisible();
-        if (this.od) {
-            return;
+    @Override // java.util.HashMap, java.util.AbstractMap, java.util.Map
+    public Object get(Object obj) {
+        switch (this.a) {
+            case 0:
+                int i10 = ((fg) this.b).w;
+                bi0 bi0Var = (bi0) super.get(obj);
+                if (bi0Var != null) {
+                    return bi0Var;
+                }
+                eg egVar = (eg) obj;
+                bi0 bi0Var2 = new bi0(egVar.c, org.telegram.messenger.i0.L(i10), org.telegram.messenger.i0.L(i10));
+                put(egVar, bi0Var2);
+                return bi0Var2;
+            default:
+                return super.get(obj);
         }
-        this.od = true;
-        wc.b0(this).M(LocaleController.formatString(R.string.CreateManagedBotCreatedTitle, UserObject.getUserName(this.pd)), AndroidUtilities.replaceSingleTag(LocaleController.formatString(R.string.CreateManagedBotCreatedText, UserObject.getUserName(this.qd)), new bi.r3(this, this.rd, 23)), R.raw.contact_check).j();
+    }
+
+    @Override // java.util.HashMap, java.util.AbstractMap, java.util.Map
+    public Object put(Object obj, Object obj2) {
+        switch (this.a) {
+            case 1:
+                String str = (String) obj;
+                String str2 = (String) obj2;
+                ((sc.h) this.b).f.put(str == null ? str : str.toLowerCase(), str2);
+                return (String) super.put(str, str2);
+            default:
+                return super.put(obj, obj2);
+        }
     }
 }

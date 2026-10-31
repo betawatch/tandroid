@@ -1,32 +1,94 @@
 package mg;
 
+import android.graphics.Canvas;
 import android.graphics.Paint;
-import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.ActionBar.y6;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
+import android.text.SpannableString;
+import android.text.TextPaint;
+import android.text.style.ReplacementSpan;
+import android.util.Pair;
+import org.telegram.messenger.beta.R;
+import org.telegram.ui.Components.e6;
+import org.telegram.ui.Components.gr;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class a extends f {
-    public final u6 q;
-    public final Paint r;
-    public int s;
+public final class a extends ReplacementSpan {
+    public final Drawable a;
+    public final Drawable b;
+    public boolean c;
+    public boolean d;
+    public final e6 e;
+    public final TextPaint f;
+    public final int h;
 
-    public a(lg.a aVar, u6 u6Var) {
-        super(aVar, false, null);
-        Paint paint = new Paint();
-        this.r = paint;
-        this.s = 0;
-        this.q = u6Var;
-        Paint paint2 = this.c;
-        Paint.Style style = Paint.Style.STROKE;
-        paint2.setStyle(style);
-        paint.setStyle(style);
-        this.c.setAntiAlias(false);
+    public a(org.telegram.ui.Cells.q1 q1Var, TextPaint textPaint, int i10) {
+        this.f = textPaint;
+        e6 e6Var = new e6(false, false, true);
+        this.e = e6Var;
+        e6Var.n(0.3f, 250L, gr.h);
+        e6Var.setCallback(q1Var);
+        e6Var.w(org.telegram.messenger.i0.L(11.5f));
+        e6Var.x(org.telegram.messenger.i0.o());
+        e6Var.t("", true, true);
+        e6Var.b = 17;
+        Drawable mutate = q1Var.getContext().getDrawable(R.drawable.mini_boost_profile_badge).mutate();
+        this.a = mutate;
+        Drawable mutate2 = q1Var.getContext().getDrawable(R.drawable.mini_boost_profile_badge2).mutate();
+        this.b = mutate2;
+        mutate.setBounds(0, 0, mutate.getIntrinsicWidth(), mutate.getIntrinsicHeight());
+        mutate2.setBounds(0, 0, mutate2.getIntrinsicWidth(), mutate2.getIntrinsicHeight());
+        this.h = i10;
+        e6Var.t(i10 > 1 ? String.valueOf(i10) : "", false, true);
     }
 
-    @Override // mg.f
-    public final void a() {
-        super.a();
-        this.s = i0.a.f(0.3f, y6.w0(y6.d6, this.q), this.m);
+    public static Pair a(org.telegram.ui.Cells.q1 q1Var, TextPaint textPaint, int i10) {
+        SpannableString spannableString = new SpannableString("d");
+        a aVar = new a(q1Var, textPaint, i10);
+        spannableString.setSpan(aVar, 0, 1, 33);
+        return new Pair(spannableString, aVar);
+    }
+
+    public final int b() {
+        return (int) (this.e.e() + org.telegram.messenger.i0.L((this.d ? 8 : 0) + 16));
+    }
+
+    @Override // android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
+        TextPaint textPaint = this.f;
+        int color = textPaint.getColor();
+        e6 e6Var = this.e;
+        int color2 = e6Var.a.getColor();
+        Drawable drawable = this.b;
+        Drawable drawable2 = this.a;
+        if (color != color2) {
+            e6Var.u(textPaint.getColor());
+            int color3 = e6Var.a.getColor();
+            PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
+            drawable2.setColorFilter(new PorterDuffColorFilter(color3, mode));
+            drawable.setColorFilter(new PorterDuffColorFilter(e6Var.a.getColor(), mode));
+        }
+        canvas.save();
+        canvas.translate(f7 + ((!this.d || this.c) ? 0 : org.telegram.messenger.i0.L(8.0f)), -org.telegram.messenger.i0.L(0.2f));
+        if (this.h == 1) {
+            canvas.translate(org.telegram.messenger.i0.L(1.5f), 0.0f);
+            drawable2.draw(canvas);
+        } else {
+            drawable.draw(canvas);
+        }
+        canvas.translate(org.telegram.messenger.i0.L(16.0f), 0.0f);
+        Rect rect = org.telegram.messenger.i0.Q;
+        rect.set(0, 0, (int) e6Var.c(), (int) e6Var.e);
+        e6Var.setBounds(rect);
+        e6Var.draw(canvas);
+        canvas.restore();
+    }
+
+    @Override // android.text.style.ReplacementSpan
+    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
+        return b();
     }
 }

@@ -1,40 +1,29 @@
 package org.telegram.ui;
 
-import android.view.View;
-import android.widget.TextView;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class a71 implements View.OnClickListener {
-    public final /* synthetic */ l71 a;
-    public final /* synthetic */ TLRPC.TL_authorization b;
-    public final /* synthetic */ SessionsActivity c;
-    public final /* synthetic */ c71 d;
+public final class a71 extends org.telegram.ui.Components.s41 {
+    public final /* synthetic */ StickersActivity b;
 
-    public a71(c71 c71Var, l71 l71Var, TLRPC.TL_authorization tL_authorization, SessionsActivity sessionsActivity) {
-        this.d = c71Var;
-        this.a = l71Var;
-        this.b = tL_authorization;
-        this.c = sessionsActivity;
+    public a71(StickersActivity stickersActivity) {
+        this.b = stickersActivity;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(this.d.c.getParentActivity());
-        alertDialog$Builder.a.T = LocaleController.getString(R.string.TerminateSessionText);
-        alertDialog$Builder.a.R = LocaleController.getString(R.string.AreYouSureSessionTitle);
-        alertDialog$Builder.k(LocaleController.getString(R.string.Terminate), new e7(this, this.a, this.b, 21));
-        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-        SessionsActivity sessionsActivity = this.c;
-        org.telegram.ui.ActionBar.e2 e2Var = alertDialog$Builder.a;
-        sessionsActivity.showDialog(e2Var);
-        TextView textView = (TextView) e2Var.d(-1);
-        if (textView != null) {
-            org.telegram.ui.ActionBar.f7.V(textView, org.telegram.ui.ActionBar.y6.q7, null);
-        }
+    @Override // org.telegram.ui.Components.s41
+    public final void g(TLRPC.StickerSetCovered stickerSetCovered, boolean z10) {
+        int i10;
+        StickersActivity stickersActivity = this.b;
+        i10 = ((org.telegram.ui.ActionBar.k2) stickersActivity).currentAccount;
+        org.telegram.messenger.ui.b0(i10).f2(stickersActivity.getParentActivity(), stickerSetCovered, 2, stickersActivity, false, false);
+    }
+
+    @Override // org.telegram.ui.Components.s41
+    public final void h(TLRPC.StickerSetCovered stickerSetCovered) {
+        int i10;
+        StickersActivity stickersActivity = this.b;
+        i10 = ((org.telegram.ui.ActionBar.k2) stickersActivity).currentAccount;
+        org.telegram.messenger.ui.b0(i10).f2(stickersActivity.getParentActivity(), stickerSetCovered, 0, stickersActivity, false, false);
     }
 }

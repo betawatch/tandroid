@@ -1,180 +1,203 @@
 package org.telegram.ui;
 
-import android.os.AsyncTask;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.util.Locale;
-import java.util.Scanner;
-import org.json.JSONObject;
-import org.scilab.forge.jlatexmath.TeXSymbolParser;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.content.Context;
+import android.graphics.Point;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class ho0 extends AsyncTask {
-    public final /* synthetic */ xc.a a;
-    public final /* synthetic */ ro0 b;
+public final class ho0 extends org.telegram.ui.Components.uu0 {
+    public int f0;
+    public boolean g0;
+    public int h0;
+    public final /* synthetic */ lo0 i0;
 
-    public ho0(ro0 ro0Var, xc.a aVar) {
-        this.b = ro0Var;
-        this.a = aVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ho0(lo0 lo0Var, Context context) {
+        super(context, null);
+        this.i0 = lo0Var;
     }
 
-    /* JADX WARN: Can't wrap try/catch for region: R(20:0|1|(2:2|3)|(13:48|49|(3:51|52|(1:54))|(1:7)(2:44|(1:46)(1:47))|8|9|10|11|12|13|14|15|(4:23|(1:25)|26|27)(3:19|20|21))|5|(0)(0)|8|9|10|11|12|13|14|15|(1:17)|23|(0)|26|27|(2:(0)|(0))) */
-    /* JADX WARN: Code restructure failed: missing block: B:40:0x0134, code lost:
-    
-        r0 = e;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:41:0x016e, code lost:
-    
-        org.telegram.messenger.FileLog.e(r0);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:42:0x0171, code lost:
-    
-        if (r5 == null) goto L53;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:55:0x0084, code lost:
-    
-        if (r5.endsWith(".smart-glocal.com/cds/v1/tokenize/card") == false) goto L14;
-     */
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x013a A[Catch: all -> 0x0131, Exception -> 0x0134, TRY_LEAVE, TryCatch #1 {all -> 0x0131, blocks: (B:11:0x00b7, B:14:0x00e8, B:19:0x00f9, B:23:0x0136, B:25:0x013a, B:38:0x016d, B:37:0x016a, B:41:0x016e), top: B:2:0x000e }] */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x0098 A[Catch: all -> 0x0087, Exception -> 0x0094, TryCatch #4 {all -> 0x0087, blocks: (B:3:0x000e, B:49:0x0063, B:52:0x0076, B:54:0x007e, B:7:0x008e, B:8:0x00af, B:44:0x0098, B:46:0x00a0, B:47:0x00a8), top: B:2:0x000e }] */
-    /* JADX WARN: Removed duplicated region for block: B:63:0x0178  */
-    /* JADX WARN: Removed duplicated region for block: B:7:0x008e A[Catch: all -> 0x0087, Exception -> 0x0094, TRY_ENTER, TryCatch #4 {all -> 0x0087, blocks: (B:3:0x000e, B:49:0x0063, B:52:0x0076, B:54:0x007e, B:7:0x008e, B:8:0x00af, B:44:0x0098, B:46:0x00a0, B:47:0x00a8), top: B:2:0x000e }] */
-    /* JADX WARN: Type inference failed for: r7v0 */
-    /* JADX WARN: Type inference failed for: r7v1, types: [java.net.HttpURLConnection] */
-    /* JADX WARN: Type inference failed for: r7v2 */
-    @Override // android.os.AsyncTask
+    /* JADX WARN: Removed duplicated region for block: B:36:0x009e  */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x00ca  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x00d6  */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x00e0  */
+    /* JADX WARN: Removed duplicated region for block: B:56:0x00ba  */
+    @Override // org.telegram.ui.Components.uu0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object doInBackground(Object[] objArr) {
-        HttpURLConnection httpURLConnection;
-        ?? r72;
-        JSONObject jSONObject;
-        String string;
-        int responseCode;
-        ro0 ro0Var = this.b;
-        xc.a aVar = this.a;
-        try {
-            try {
-                try {
-                    jSONObject = new JSONObject();
-                    JSONObject jSONObject2 = new JSONObject();
-                    jSONObject2.put("number", aVar.a);
-                    jSONObject2.put("expiration_month", String.format(Locale.US, "%02d", aVar.c));
-                    jSONObject2.put("expiration_year", "" + aVar.d);
-                    jSONObject2.put("security_code", "" + aVar.b);
-                    jSONObject.put("card", jSONObject2);
-                } catch (Throwable th2) {
-                    th = th2;
-                    r72 = aVar;
-                    if (r72 != 0) {
-                        r72.disconnect();
-                    }
-                    throw th;
-                }
-            } catch (Throwable th3) {
-                th = th3;
-                r72 = 0;
-                if (r72 != 0) {
-                }
-                throw th;
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        int i14;
+        int i15;
+        int i16;
+        int i17;
+        int i18;
+        int i19;
+        org.telegram.ui.Components.wt wtVar;
+        int measuredHeight;
+        int measuredHeight2;
+        int i20 = this.f0;
+        int i21 = i12 - i10;
+        lo0 lo0Var = this.i0;
+        if (i20 != i21) {
+            this.f0 = i21;
+            fg.j jVar = lo0Var.L;
+            if (jVar != null) {
+                jVar.f();
             }
-        } catch (Exception e) {
-            e = e;
-            httpURLConnection = null;
+            org.telegram.ui.ActionBar.k1 k1Var = lo0Var.m0;
+            if (k1Var != null && k1Var.isShowing()) {
+                lo0Var.m0.d(true);
+            }
         }
-        try {
-            if (ro0Var.C0.native_params != null) {
-                try {
-                    string = new JSONObject(ro0Var.C0.native_params.data).getString("tokenize_url");
-                    if (string != null) {
-                        try {
-                            if (string.startsWith("https://")) {
-                            }
-                        } catch (Exception unused) {
+        int childCount = getChildCount();
+        int emojiPadding = (lo0Var.d0 == null || lo0Var.Z.getParent() != this || org.telegram.messenger.i0.L(20.0f) < 0 || org.telegram.messenger.i0.E || org.telegram.messenger.i0.Q1()) ? 0 : lo0Var.d0.getEmojiPadding();
+        setBottomClip(emojiPadding);
+        for (int i22 = 0; i22 < childCount; i22++) {
+            View childAt = getChildAt(i22);
+            if (childAt.getVisibility() != 8) {
+                FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) childAt.getLayoutParams();
+                int measuredWidth = childAt.getMeasuredWidth();
+                int measuredHeight3 = childAt.getMeasuredHeight();
+                int i23 = layoutParams.gravity;
+                if (i23 == -1) {
+                    i23 = 51;
+                }
+                int i24 = i23 & org.telegram.messenger.zs.x1;
+                int i25 = i23 & 7;
+                if (i25 == 1) {
+                    i14 = ((i21 - measuredWidth) / 2) + layoutParams.leftMargin;
+                    i15 = layoutParams.rightMargin;
+                } else if (i25 != 5) {
+                    i16 = getPaddingLeft() + layoutParams.leftMargin;
+                    if (i24 == 16) {
+                        if (i24 == 48) {
+                            i19 = layoutParams.topMargin + getPaddingTop();
+                        } else if (i24 != 80) {
+                            i19 = layoutParams.topMargin;
+                        } else {
+                            i17 = ((i13 - emojiPadding) - i11) - measuredHeight3;
+                            i18 = layoutParams.bottomMargin;
                         }
+                        wtVar = lo0Var.d0;
+                        if (wtVar != null && wtVar.l(childAt)) {
+                            if (org.telegram.messenger.i0.Q1()) {
+                                measuredHeight = getMeasuredHeight();
+                                measuredHeight2 = childAt.getMeasuredHeight();
+                            } else {
+                                measuredHeight = getMeasuredHeight();
+                                measuredHeight2 = childAt.getMeasuredHeight();
+                            }
+                            i19 = measuredHeight - measuredHeight2;
+                        }
+                        childAt.layout(i16, i19, measuredWidth + i16, measuredHeight3 + i19);
+                    } else {
+                        i17 = ((((i13 - emojiPadding) - i11) - measuredHeight3) / 2) + layoutParams.topMargin;
+                        i18 = layoutParams.bottomMargin;
                     }
-                } catch (Exception unused2) {
-                }
-                httpURLConnection = (HttpURLConnection) (string == null ? new URL(string) : ro0Var.C0.invoice.test ? new URL("https://tgb-playground.smart-glocal.com/cds/v1/tokenize/card") : new URL("https://tgb.smart-glocal.com/cds/v1/tokenize/card")).openConnection();
-                httpURLConnection.setConnectTimeout(30000);
-                httpURLConnection.setReadTimeout(80000);
-                httpURLConnection.setUseCaches(false);
-                httpURLConnection.setDoOutput(true);
-                httpURLConnection.setRequestMethod("POST");
-                httpURLConnection.setRequestProperty("Content-Type", "application/json");
-                httpURLConnection.setRequestProperty("X-PUBLIC-TOKEN", ro0Var.j0);
-                OutputStream outputStream = httpURLConnection.getOutputStream();
-                outputStream.write(jSONObject.toString().getBytes("UTF-8"));
-                outputStream.close();
-                responseCode = httpURLConnection.getResponseCode();
-                if (responseCode >= 200 || responseCode >= 300) {
-                    if (BuildVars.DEBUG_VERSION) {
-                        StringBuilder sb2 = new StringBuilder("");
-                        InputStream errorStream = httpURLConnection.getErrorStream();
-                        String next = new Scanner(errorStream, "UTF-8").useDelimiter("\\A").next();
-                        errorStream.close();
-                        sb2.append(next);
-                        FileLog.e(sb2.toString());
+                    i19 = i17 - i18;
+                    wtVar = lo0Var.d0;
+                    if (wtVar != null) {
+                        if (org.telegram.messenger.i0.Q1()) {
+                        }
+                        i19 = measuredHeight - measuredHeight2;
                     }
-                    httpURLConnection.disconnect();
-                    return null;
+                    childAt.layout(i16, i19, measuredWidth + i16, measuredHeight3 + i19);
+                } else {
+                    i14 = (i21 - measuredWidth) - layoutParams.rightMargin;
+                    i15 = getPaddingRight();
                 }
-                JSONObject jSONObject3 = new JSONObject();
-                InputStream inputStream = httpURLConnection.getInputStream();
-                String next2 = new Scanner(inputStream, "UTF-8").useDelimiter("\\A").next();
-                inputStream.close();
-                jSONObject3.put("token", new JSONObject(next2).getJSONObject("data").getString("token"));
-                jSONObject3.put(TeXSymbolParser.TYPE_ATTR, "card");
-                String jSONObject4 = jSONObject3.toString();
-                httpURLConnection.disconnect();
-                return jSONObject4;
+                i16 = i14 - i15;
+                if (i24 == 16) {
+                }
+                i19 = i17 - i18;
+                wtVar = lo0Var.d0;
+                if (wtVar != null) {
+                }
+                childAt.layout(i16, i19, measuredWidth + i16, measuredHeight3 + i19);
             }
-            outputStream.write(jSONObject.toString().getBytes("UTF-8"));
-            outputStream.close();
-            responseCode = httpURLConnection.getResponseCode();
-            if (responseCode >= 200) {
-            }
-            if (BuildVars.DEBUG_VERSION) {
-            }
-            httpURLConnection.disconnect();
-            return null;
-        } finally {
         }
-        string = null;
-        httpURLConnection = (HttpURLConnection) (string == null ? new URL(string) : ro0Var.C0.invoice.test ? new URL("https://tgb-playground.smart-glocal.com/cds/v1/tokenize/card") : new URL("https://tgb.smart-glocal.com/cds/v1/tokenize/card")).openConnection();
-        httpURLConnection.setConnectTimeout(30000);
-        httpURLConnection.setReadTimeout(80000);
-        httpURLConnection.setUseCaches(false);
-        httpURLConnection.setDoOutput(true);
-        httpURLConnection.setRequestMethod("POST");
-        httpURLConnection.setRequestProperty("Content-Type", "application/json");
-        httpURLConnection.setRequestProperty("X-PUBLIC-TOKEN", ro0Var.j0);
-        OutputStream outputStream2 = httpURLConnection.getOutputStream();
+        R();
     }
 
-    @Override // android.os.AsyncTask
-    public final void onPostExecute(Object obj) {
-        String str = (String) obj;
-        ro0 ro0Var = this.b;
-        if (ro0Var.Q0) {
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        org.telegram.ui.Components.wt wtVar;
+        int size = View.MeasureSpec.getSize(i11);
+        int size2 = View.MeasureSpec.getSize(i10);
+        boolean Q1 = org.telegram.messenger.i0.Q1();
+        lo0 lo0Var = this.i0;
+        if (Q1) {
+            lo0Var.g0 = 4;
+        } else {
+            Point point = org.telegram.messenger.i0.q;
+            if (point.x > point.y) {
+                lo0Var.g0 = 4;
+            } else {
+                lo0Var.g0 = 3;
+            }
+        }
+        this.g0 = true;
+        int L = ((size2 - org.telegram.messenger.i0.L(4.0f)) - org.telegram.messenger.i0.L(4.0f)) / lo0Var.g0;
+        lo0Var.R = L;
+        if (this.h0 != L) {
+            this.h0 = L;
+            org.telegram.messenger.i0.g3(new mg0(this, 16));
+        }
+        if (lo0Var.Y) {
+            lo0Var.M.y1(1);
+        } else {
+            lo0Var.M.y1(Math.max(1, ((lo0Var.g0 - 1) * org.telegram.messenger.i0.L(2.0f)) + (lo0Var.R * lo0Var.g0)));
+        }
+        this.g0 = false;
+        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30);
+        int size3 = View.MeasureSpec.getSize(i10);
+        int size4 = View.MeasureSpec.getSize(makeMeasureSpec);
+        setMeasuredDimension(size3, size4);
+        int Q = Q();
+        if (org.telegram.messenger.i0.L(20.0f) >= 0 && !org.telegram.messenger.i0.E && lo0Var.d0 != null && lo0Var.Z.getParent() == this) {
+            size4 -= lo0Var.d0.getEmojiPadding();
+            makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size4, TLObject.FLAG_30);
+        }
+        int i12 = size4;
+        int i13 = makeMeasureSpec;
+        if (Q > org.telegram.messenger.i0.L(20.0f) && (wtVar = lo0Var.d0) != null) {
+            this.g0 = true;
+            wtVar.j();
+            this.g0 = false;
+        }
+        org.telegram.ui.Components.wt wtVar2 = lo0Var.d0;
+        if (wtVar2 != null && wtVar2.e) {
+            lo0Var.fragmentView.setTranslationY(0.0f);
+            lo0Var.K.setTranslationY(0.0f);
+            lo0Var.N.setTranslationY(0.0f);
+        }
+        int childCount = getChildCount();
+        for (int i14 = 0; i14 < childCount; i14++) {
+            View childAt = getChildAt(i14);
+            if (childAt != null && childAt.getVisibility() != 8) {
+                org.telegram.ui.Components.wt wtVar3 = lo0Var.d0;
+                if (wtVar3 == null || !wtVar3.l(childAt)) {
+                    measureChildWithMargins(childAt, i10, 0, i13, 0);
+                } else if (!org.telegram.messenger.i0.E && !org.telegram.messenger.i0.Q1()) {
+                    childAt.measure(View.MeasureSpec.makeMeasureSpec(size3, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(childAt.getLayoutParams().height, TLObject.FLAG_30));
+                } else if (org.telegram.messenger.i0.Q1()) {
+                    childAt.measure(View.MeasureSpec.makeMeasureSpec(size3, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(Math.min(org.telegram.messenger.i0.L(org.telegram.messenger.i0.Q1() ? 200.0f : 320.0f), getPaddingTop() + (i12 - org.telegram.messenger.i0.m)), TLObject.FLAG_30));
+                } else {
+                    childAt.measure(View.MeasureSpec.makeMeasureSpec(size3, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(getPaddingTop() + (i12 - org.telegram.messenger.i0.m), TLObject.FLAG_30));
+                }
+            }
+        }
+    }
+
+    @Override // android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.g0) {
             return;
         }
-        if (str == null) {
-            org.telegram.ui.Components.g5.v0(ro0Var, LocaleController.getString(R.string.PaymentConnectionFailed));
-        } else {
-            ro0Var.w0 = str;
-            ro0Var.u0();
-        }
-        ro0Var.I0(true, false);
-        ro0Var.E0(false);
+        super.requestLayout();
     }
 }

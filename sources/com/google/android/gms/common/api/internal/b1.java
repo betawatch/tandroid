@@ -1,11 +1,15 @@
 package com.google.android.gms.common.api.internal;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final /* synthetic */ class b1 implements Runnable {
-    public static final /* synthetic */ b1 a = new b1();
+public final class b1 {
+    public final l1 a;
+    public final int b;
+    public final com.google.android.gms.common.api.j c;
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    public b1(l1 l1Var, int i10, com.google.android.gms.common.api.j jVar) {
+        this.a = l1Var;
+        this.b = i10;
+        this.c = jVar;
     }
 }

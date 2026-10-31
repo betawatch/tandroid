@@ -3,7 +3,7 @@ package a3;
 import android.view.Surface;
 import java.util.List;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public interface p0 {
     void b(float f7);
@@ -18,17 +18,17 @@ public interface p0 {
 
     void g();
 
-    void h(long j10);
+    void h(a6.i iVar);
 
-    void i();
+    void i(long j10);
 
-    void j(int i10);
+    void j();
 
-    void k();
+    void k(int i10);
 
-    void l(b2.x xVar, long j10, int i10, List list);
+    void l();
 
-    void m(b6.i iVar);
+    void m(b2.x xVar, long j10, int i10, List list);
 
     void n(boolean z10);
 

@@ -1,9 +1,10 @@
 package c3;
 
-import a8.yb;
 import java.nio.ByteBuffer;
+import org.telegram.messenger.zs;
+import v7.t6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class m0 {
     public boolean a;
@@ -11,7 +12,7 @@ public final class m0 {
     public m0(f2.t tVar, f2.s sVar) {
         int i10 = sVar.a;
         ByteBuffer byteBuffer = sVar.b;
-        yb.g(i10 == 6 || i10 == 3);
+        t6.f(i10 == 6 || i10 == 3);
         int min = Math.min(4, byteBuffer.remaining());
         byte[] bArr = new byte[min];
         byteBuffer.asReadOnlyBuffer().get(bArr);
@@ -19,41 +20,41 @@ public final class m0 {
         if (tVar.a) {
             throw new f2.r();
         }
-        if (gVar.f()) {
+        if (gVar.h()) {
             this.a = false;
             return;
         }
-        int g7 = gVar.g(2);
-        boolean f7 = gVar.f();
+        int i11 = gVar.i(2);
+        boolean h = gVar.h();
         if (tVar.b) {
             throw new f2.r();
         }
-        if (!f7) {
+        if (!h) {
             this.a = true;
             return;
         }
-        boolean f10 = (g7 == 3 || g7 == 0) ? true : gVar.f();
-        gVar.n();
+        boolean h10 = (i11 == 3 || i11 == 0) ? true : gVar.h();
+        gVar.e0();
         if (!tVar.d) {
             throw new f2.r();
         }
-        if (gVar.f()) {
+        if (gVar.h()) {
             if (!tVar.e) {
                 throw new f2.r();
             }
-            gVar.n();
+            gVar.e0();
         }
         if (tVar.c) {
             throw new f2.r();
         }
-        if (g7 != 3) {
-            gVar.n();
+        if (i11 != 3) {
+            gVar.e0();
         }
-        gVar.o(tVar.f);
-        if (g7 != 2 && g7 != 0 && !f10) {
-            gVar.o(3);
+        gVar.f0(tVar.f);
+        if (i11 != 2 && i11 != 0 && !h10) {
+            gVar.f0(3);
         }
-        this.a = ((g7 == 3 || g7 == 0) ? 255 : gVar.g(8)) != 0;
+        this.a = ((i11 == 3 || i11 == 0) ? zs.e4 : gVar.i(8)) != 0;
     }
 
     public void a(boolean z10) {

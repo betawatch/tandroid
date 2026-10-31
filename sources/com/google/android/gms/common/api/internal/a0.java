@@ -1,42 +1,79 @@
 package com.google.android.gms.common.api.internal;
 
-import android.os.Looper;
-import java.lang.ref.WeakReference;
-import java.util.concurrent.locks.Lock;
+import android.os.Bundle;
+import android.os.DeadObjectException;
+import android.os.RemoteException;
+import com.google.android.gms.common.api.Status;
+import java.util.Set;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class a0 implements o6.b {
-    public final WeakReference a;
-    public final com.google.android.gms.common.api.e b;
-    public final boolean c;
+public final class a0 implements l0 {
+    public final n0 a;
 
-    public a0(f0 f0Var, com.google.android.gms.common.api.e eVar, boolean z10) {
-        this.a = new WeakReference(f0Var);
-        this.b = eVar;
-        this.c = z10;
+    public a0(n0 n0Var) {
+        this.a = n0Var;
     }
 
-    @Override // o6.b
-    public final void a(l6.a aVar) {
-        f0 f0Var = (f0) this.a.get();
-        if (f0Var == null) {
-            return;
-        }
-        Lock lock = f0Var.b;
-        o6.l.j("onReportServiceBinding must be called on the GoogleApiClient handler thread", Looper.myLooper() == f0Var.a.o.h);
-        lock.lock();
+    @Override // com.google.android.gms.common.api.internal.l0
+    public final void K(int i10) {
+        n0 n0Var = this.a;
+        n0Var.h();
+        n0Var.p.w(i10);
+    }
+
+    @Override // com.google.android.gms.common.api.internal.l0
+    public final boolean b0() {
+        n0 n0Var = this.a;
+        n0Var.o.getClass();
+        n0Var.h();
+        return true;
+    }
+
+    @Override // com.google.android.gms.common.api.internal.l0
+    public final e j0(e eVar) {
+        n0 n0Var = this.a;
         try {
-            if (f0Var.i(0)) {
-                if (!aVar.c()) {
-                    f0Var.g(aVar, this.b, this.c);
-                }
-                if (f0Var.j()) {
-                    f0Var.h();
-                }
+            h1 h1Var = n0Var.o.M;
+            ((Set) h1Var.a).add(eVar);
+            eVar.g.set((g1) h1Var.b);
+            com.google.android.gms.common.api.d dVar = eVar.o;
+            com.google.android.gms.common.api.c cVar = (com.google.android.gms.common.api.c) n0Var.o.E.get(dVar);
+            n6.l.h(cVar, "Appropriate Api was not requested.");
+            if (!cVar.k() && n0Var.i.containsKey(dVar)) {
+                eVar.o(new Status(17, null, null, null));
+                return eVar;
             }
-        } finally {
-            lock.unlock();
+            try {
+                eVar.n(cVar);
+            } catch (DeadObjectException e) {
+                eVar.o(new Status(8, e.getLocalizedMessage(), null, null));
+                throw e;
+            } catch (RemoteException e7) {
+                eVar.o(new Status(8, e7.getLocalizedMessage(), null, null));
+            }
+            return eVar;
+        } catch (DeadObjectException unused) {
+            z zVar = new z(this, this);
+            i0 i0Var = n0Var.e;
+            i0Var.sendMessage(i0Var.obtainMessage(1, zVar));
+            return eVar;
         }
+    }
+
+    @Override // com.google.android.gms.common.api.internal.l0
+    public final void Q() {
+    }
+
+    @Override // com.google.android.gms.common.api.internal.l0
+    public final void q() {
+    }
+
+    @Override // com.google.android.gms.common.api.internal.l0
+    public final void l(Bundle bundle) {
+    }
+
+    @Override // com.google.android.gms.common.api.internal.l0
+    public final void I(k6.a aVar, com.google.android.gms.common.api.e eVar, boolean z10) {
     }
 }

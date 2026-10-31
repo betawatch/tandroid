@@ -8,12 +8,13 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 import java.util.PriorityQueue;
+import lc.s;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class b {
-    public static final a5.b f = new a5.b(5);
+    public static final s f = new s(2);
     public static final c g = new c();
     public final Object a;
     public final Object b;
@@ -39,8 +40,8 @@ public final class b {
             if (iArr2[i14] > 0) {
                 int rgb = Color.rgb(b((i14 >> 10) & 31, 5, 8), b((i14 >> 5) & 31, 5, 8), b(i14 & 31, 5, 8));
                 float[] fArr = (float[]) this.e;
-                ThreadLocal threadLocal = i0.a.a;
-                i0.a.c(fArr, Color.red(rgb), Color.green(rgb), Color.blue(rgb));
+                ThreadLocal threadLocal = i0.b.a;
+                i0.b.c(Color.red(rgb), Color.green(rgb), Color.blue(rgb), fArr);
                 if (c(fArr)) {
                     iArr2[i14] = 0;
                 }

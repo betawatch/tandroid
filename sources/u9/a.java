@@ -1,32 +1,44 @@
 package u9;
 
-import android.os.Bundle;
 import android.util.Log;
-import androidx.emoji2.text.f;
-import java.util.ArrayList;
+import java.util.concurrent.atomic.AtomicReference;
+import r9.p;
+import rh.d0;
+import sc.e;
+import z9.b1;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final /* synthetic */ class a implements w9.a {
-    public final /* synthetic */ f a;
+public final class a {
+    public static final c c = new c();
+    public final p a;
+    public final AtomicReference b = new AtomicReference(null);
 
-    public /* synthetic */ a(f fVar) {
-        this.a = fVar;
+    public a(p pVar) {
+        this.a = pVar;
+        pVar.a(new d0(this, 20));
     }
 
-    public void a(vg.d dVar) {
-        f fVar = this.a;
-        synchronized (fVar) {
-            ((ArrayList) fVar.b).add(dVar);
-            ((tb.a) fVar.c).getClass();
-            if (Log.isLoggable("FirebaseCrashlytics", 3)) {
-                Log.d("FirebaseCrashlytics", "Could not register handler for breadcrumbs events.", null);
-            }
+    public final c a(String str) {
+        a aVar = (a) this.b.get();
+        return aVar == null ? c : aVar.a(str);
+    }
+
+    public final boolean b() {
+        a aVar = (a) this.b.get();
+        return aVar != null && aVar.b();
+    }
+
+    public final boolean c(String str) {
+        a aVar = (a) this.b.get();
+        return aVar != null && aVar.c(str);
+    }
+
+    public final void d(String str, long j10, b1 b1Var) {
+        String h = e.h("Deferring native open session: ", str);
+        if (Log.isLoggable("FirebaseCrashlytics", 2)) {
+            Log.v("FirebaseCrashlytics", h, null);
         }
-    }
-
-    @Override // w9.a
-    public void b(Bundle bundle) {
-        ((pa.d) this.a.a).b(bundle);
+        this.a.a(new org.telegram.messenger.voip.d0(str, j10, b1Var, 10));
     }
 }

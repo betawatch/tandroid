@@ -1,39 +1,19 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import java.util.HashMap;
+import android.graphics.Paint;
+import android.view.View;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class y5 {
-    public ArrayList a;
-    public HashMap b;
-    public ArrayList c;
+public final class y5 extends Paint {
+    public final org.telegram.ui.ActionBar.p6 a;
+    public final w4 b;
 
-    public final void a() {
-        ArrayList arrayList = this.a;
-        for (int i10 = 0; i10 < arrayList.size(); i10++) {
-            ((x5) arrayList.get(i10)).d.spanDrawn = false;
-        }
-    }
-
-    public final void b(int i10) {
-        x5 x5Var = (x5) this.a.remove(i10);
-        HashMap hashMap = this.b;
-        a6 a6Var = (a6) hashMap.get(x5Var.c);
-        if (a6Var == null) {
-            throw new RuntimeException("!!!");
-        }
-        ArrayList arrayList = a6Var.b;
-        arrayList.remove(x5Var);
-        a6Var.a();
-        if (arrayList.isEmpty()) {
-            hashMap.remove(x5Var.c);
-            this.c.remove(a6Var);
-        }
-        t5 t5Var = x5Var.f;
-        if (t5Var != null) {
-            t5Var.p(x5Var);
-        }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public y5(View view, org.telegram.ui.ActionBar.p6 p6Var) {
+        super(3);
+        gr grVar = gr.h;
+        this.a = p6Var;
+        this.b = new w4(view, 320L, grVar);
     }
 }

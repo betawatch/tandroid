@@ -1,35 +1,21 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public abstract class ua extends bb {
-    public final LinearLayout X;
-    public FrameLayout Y;
-    public fi.d Z;
+public interface ua {
+    boolean a();
 
-    public ua(Context context, org.telegram.ui.ActionBar.u6 u6Var) {
-        super(context, null, false, false, u6Var);
-        LinearLayout linearLayout = new LinearLayout(context);
-        this.X = linearLayout;
-        linearLayout.setOrientation(1);
-    }
+    void b(wb wbVar);
 
-    @Override // org.telegram.ui.ActionBar.k3, android.app.Dialog
-    public final void setTitle(CharSequence charSequence) {
-        this.e.setTitle(charSequence);
-    }
+    void c(float f7);
 
-    @Override // org.telegram.ui.Components.bb
-    public final mm0 v(nm0 nm0Var) {
-        return new bi.h5(this, 2);
-    }
+    void d(wb wbVar);
 
-    @Override // org.telegram.ui.Components.bb
-    public final CharSequence y() {
-        return null;
-    }
+    boolean e();
+
+    int f(int i10);
+
+    boolean g(int i10);
+
+    int h(int i10);
 }

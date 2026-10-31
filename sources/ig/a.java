@@ -1,37 +1,27 @@
 package ig;
 
-import android.location.Location;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class a implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ c b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ Location d;
-
-    public /* synthetic */ a(c cVar, String str, Location location, int i10) {
-        this.a = i10;
-        this.b = cVar;
-        this.c = str;
-        this.d = location;
+public final class a extends h {
+    @Override // ig.h
+    public final int c() {
+        return -30208;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                c cVar = this.b;
-                cVar.getClass();
-                AndroidUtilities.runOnUIThread(new a(cVar, this.c, this.d, 1));
-                break;
-            default:
-                c cVar2 = this.b;
-                cVar2.E = null;
-                cVar2.v = null;
-                cVar2.H(this.c, this.d, true);
-                break;
-        }
+    @Override // ig.h
+    public final float d() {
+        return 0.25f;
+    }
+
+    @Override // ig.h
+    public final int e() {
+        return R.raw.photo_arrow;
+    }
+
+    @Override // ig.h
+    public final float j() {
+        return 0.25f;
     }
 }

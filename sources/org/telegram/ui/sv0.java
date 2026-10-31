@@ -1,19 +1,35 @@
 package org.telegram.ui;
 
+import android.graphics.RectF;
 import android.view.View;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class sv0 implements View.OnClickListener {
-    public final /* synthetic */ org.telegram.ui.Components.l80 a;
+public final /* synthetic */ class sv0 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ProfileActivity b;
+    public final /* synthetic */ String c;
 
-    public sv0(org.telegram.ui.Components.l80 l80Var) {
-        this.a = l80Var;
+    public /* synthetic */ sv0(ProfileActivity profileActivity, String str, int i10) {
+        this.a = i10;
+        this.b = profileActivity;
+        this.c = str;
     }
 
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
-        org.telegram.ui.Components.qc.e();
-        this.a.s();
+        int i10 = this.a;
+        String str = this.c;
+        ProfileActivity profileActivity = this.b;
+        switch (i10) {
+            case 0:
+                RectF rectF = ProfileActivity.R6;
+                gf.f.r(profileActivity.getParentActivity(), "https://" + profileActivity.getMessagesController().U2 + "/nft/" + str);
+                break;
+            default:
+                RectF rectF2 = ProfileActivity.R6;
+                gf.f.r(profileActivity.getParentActivity(), "https://" + profileActivity.getMessagesController().U2 + "/nft/" + str);
+                break;
+        }
     }
 }

@@ -1,21 +1,16 @@
 package com.google.android.gms.internal.cast;
 
-import java.util.concurrent.locks.AbstractOwnableSynchronizer;
+import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class g4 extends AbstractOwnableSynchronizer implements Runnable {
-    public final o4 a;
-
-    public /* synthetic */ g4(o4 o4Var) {
-        this.a = o4Var;
-    }
-
-    public final String toString() {
-        return this.a.toString();
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
+public abstract /* synthetic */ class g4 {
+    public static /* synthetic */ boolean a(Unsafe unsafe, e4 e4Var, long j10, Object obj, Object obj2) {
+        while (!f4.a(unsafe, e4Var, j10, obj, obj2)) {
+            if (unsafe.getObject(e4Var, j10) != obj) {
+                return false;
+            }
+        }
+        return true;
     }
 }

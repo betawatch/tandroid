@@ -1,175 +1,67 @@
 package fd;
 
-import com.google.android.gms.common.data.DataHolder;
-import java.util.Iterator;
-import java.util.NoSuchElementException;
+import a1.g;
+import bd.e;
+import java.io.Serializable;
 import kotlin.jvm.internal.i;
-import o6.l;
-import y8.e;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public class b implements Iterator {
-    public final /* synthetic */ int a;
-    public int b;
-    public final Object c;
+public final class b extends e implements a, Serializable {
+    public final Enum[] a;
 
-    public b(e eVar) {
-        this.a = 3;
-        this.c = eVar;
-        this.b = -1;
+    public b(Enum[] entries) {
+        i.e(entries, "entries");
+        this.a = entries;
     }
 
-    @Override // java.util.Iterator
-    public final boolean hasNext() {
-        switch (this.a) {
-            case 0:
-                if (this.b < ((c) this.c).a) {
-                }
-                break;
-            case 1:
-                if (this.b < ((kd.c) this.c).h()) {
-                }
-                break;
-            case 2:
-                if (this.b < ((Object[]) this.c).length) {
-                }
-                break;
-            default:
-                e eVar = (e) this.c;
-                int i10 = this.b;
-                eVar.n();
-                if (i10 < eVar.c.size() - 1) {
-                }
-                break;
+    @Override // bd.e, java.util.List, java.util.Collection
+    public final boolean contains(Object obj) {
+        if (!(obj instanceof Enum)) {
+            return false;
         }
-        return false;
+        Enum r42 = (Enum) obj;
+        int ordinal = r42.ordinal();
+        Enum[] enumArr = this.a;
+        i.e(enumArr, "<this>");
+        return ((ordinal < 0 || ordinal >= enumArr.length) ? null : enumArr[ordinal]) == r42;
     }
 
-    @Override // java.util.Iterator
-    public final Object next() {
-        int intValue;
-        int intValue2;
-        switch (this.a) {
-            case 0:
-                c cVar = (c) this.c;
-                String[] strArr = cVar.c;
-                int i10 = this.b;
-                String str = strArr[i10];
-                String str2 = cVar.b[i10];
-                if (str == null) {
-                    str = "";
-                }
-                a aVar = new a();
-                if (str2 == null) {
-                    throw new IllegalArgumentException("Object must not be null");
-                }
-                aVar.a = str2.trim();
-                if (str2.length() == 0) {
-                    throw new IllegalArgumentException("String must not be empty");
-                }
-                aVar.b = str;
-                aVar.c = cVar;
-                this.b++;
-                return aVar;
-            case 1:
-                if (!hasNext()) {
-                    throw new NoSuchElementException();
-                }
-                kd.c cVar2 = (kd.c) this.c;
-                int i11 = this.b;
-                this.b = i11 + 1;
-                return cVar2.get(i11);
-            case 2:
-                try {
-                    Object[] objArr = (Object[]) this.c;
-                    int i12 = this.b;
-                    this.b = i12 + 1;
-                    return objArr[i12];
-                } catch (ArrayIndexOutOfBoundsException e) {
-                    this.b--;
-                    throw new NoSuchElementException(e.getMessage());
-                }
-            default:
-                if (!hasNext()) {
-                    throw new NoSuchElementException(ic.a.i(this.b, "Cannot advance the iterator beyond "));
-                }
-                e eVar = (e) this.c;
-                int i13 = this.b;
-                int i14 = i13 + 1;
-                this.b = i14;
-                DataHolder dataHolder = eVar.a;
-                eVar.n();
-                int m10 = eVar.m(i14);
-                int i15 = 0;
-                if (i14 >= 0 && i14 != eVar.c.size()) {
-                    if (i14 == eVar.c.size() - 1) {
-                        l.h(dataHolder);
-                        intValue = dataHolder.n;
-                        intValue2 = ((Integer) eVar.c.get(i14)).intValue();
-                    } else {
-                        intValue = ((Integer) eVar.c.get(i13 + 2)).intValue();
-                        intValue2 = ((Integer) eVar.c.get(i14)).intValue();
-                    }
-                    i15 = intValue - intValue2;
-                    if (i15 == 1) {
-                        int m11 = eVar.m(i14);
-                        l.h(dataHolder);
-                        dataHolder.b(m11);
-                        i15 = 1;
-                    }
-                }
-                return new z8.l(dataHolder, m10, i15, 0);
+    @Override // java.util.List
+    public final Object get(int i10) {
+        Enum[] enumArr = this.a;
+        int length = enumArr.length;
+        if (i10 < 0 || i10 >= length) {
+            throw new IndexOutOfBoundsException(g.j(i10, length, "index: ", ", size: "));
         }
+        return enumArr[i10];
     }
 
-    @Override // java.util.Iterator
-    public final void remove() {
-        switch (this.a) {
-            case 0:
-                c cVar = (c) this.c;
-                int i10 = this.b;
-                int i11 = i10 - 1;
-                this.b = i11;
-                int i12 = cVar.a;
-                if (i11 >= i12) {
-                    throw new IllegalArgumentException("Must be false");
-                }
-                int i13 = (i12 - i11) - 1;
-                if (i13 > 0) {
-                    String[] strArr = cVar.b;
-                    System.arraycopy(strArr, i10, strArr, i11, i13);
-                    String[] strArr2 = cVar.c;
-                    System.arraycopy(strArr2, i10, strArr2, i11, i13);
-                }
-                int i14 = cVar.a - 1;
-                cVar.a = i14;
-                cVar.b[i14] = null;
-                cVar.c[i14] = null;
-                return;
-            case 1:
-                throw new UnsupportedOperationException("Operation is not supported for read-only collection");
-            case 2:
-                throw new UnsupportedOperationException("Operation is not supported for read-only collection");
-            default:
-                throw new UnsupportedOperationException("Cannot remove elements from a DataBufferIterator");
+    @Override // bd.e, java.util.List
+    public final int indexOf(Object obj) {
+        if (!(obj instanceof Enum)) {
+            return -1;
         }
+        Enum r42 = (Enum) obj;
+        int ordinal = r42.ordinal();
+        Enum[] enumArr = this.a;
+        i.e(enumArr, "<this>");
+        if (((ordinal < 0 || ordinal >= enumArr.length) ? null : enumArr[ordinal]) == r42) {
+            return ordinal;
+        }
+        return -1;
     }
 
-    public b(Object[] array) {
-        this.a = 2;
-        i.e(array, "array");
-        this.c = array;
+    @Override // bd.e
+    public final int l() {
+        return this.a.length;
     }
 
-    public b(kd.c cVar) {
-        this.a = 1;
-        this.c = cVar;
-    }
-
-    public b(c cVar) {
-        this.a = 0;
-        this.c = cVar;
-        this.b = 0;
+    @Override // bd.e, java.util.List
+    public final int lastIndexOf(Object obj) {
+        if (obj instanceof Enum) {
+            return indexOf((Enum) obj);
+        }
+        return -1;
     }
 }

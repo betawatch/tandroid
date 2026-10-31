@@ -1,15 +1,15 @@
 package com.google.android.recaptcha.internal;
 
-import a8.jd;
-import jd.f;
-import ld.c;
-import md.a;
-import nd.i;
-import ud.p;
+import ad.g;
+import cd.c;
+import dd.a;
+import ed.j;
+import l9.b;
+import ld.p;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-final class zzll extends i implements p {
+final class zzll extends j implements p {
     int zza;
     final /* synthetic */ zzxn zzb;
     final /* synthetic */ zzly zzc;
@@ -22,20 +22,20 @@ final class zzll extends i implements p {
         this.zzc = zzlyVar;
     }
 
-    @Override // nd.a
+    @Override // ed.a
     public final c create(Object obj, c cVar) {
         zzll zzllVar = new zzll(this.zzb, this.zzc, cVar);
         zzllVar.zzd = obj;
         return zzllVar;
     }
 
-    @Override // ud.p
+    @Override // ld.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzll) create((zzhk) obj, (c) obj2)).invokeSuspend(jd.i.a);
+        return ((zzll) create((zzhk) obj, (c) obj2)).invokeSuspend(ad.j.a);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:13:? A[RETURN, SYNTHETIC] */
-    @Override // nd.a
+    @Override // ed.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -46,26 +46,26 @@ final class zzll extends i implements p {
         int i10 = this.zza;
         if (i10 != 0) {
             if (i10 == 1) {
-                jd.b(obj);
-                a2 = jd.a(new zzcg(zzce.zzb, zzcd.zzay, null, null, 12, null));
-                return new f(a2);
+                b.b(obj);
+                a2 = b.a(new zzcg(zzce.zzb, zzcd.zzay, null, null, 12, null));
+                return new g(a2);
             }
             if (i10 != 2) {
-                jd.b(obj);
-                a2 = jd.i.a;
-                return new f(a2);
+                b.b(obj);
+                a2 = ad.j.a;
+                return new g(a2);
             }
             zzhkVar = (zzhk) this.zzd;
-            jd.b(obj);
+            b.b(obj);
             this.zzd = null;
             this.zza = 3;
             if (((zzhg) obj).zza(zzhkVar, this) == aVar) {
                 return aVar;
             }
-            a2 = jd.i.a;
-            return new f(a2);
+            a2 = ad.j.a;
+            return new g(a2);
         }
-        jd.b(obj);
+        b.b(obj);
         zzhkVar = (zzhk) this.zzd;
         zzxn zzxnVar = this.zzb;
         if (!zzxnVar.zzV() || !zzxnVar.zzT() || !zzxnVar.zzS()) {
@@ -75,8 +75,8 @@ final class zzll extends i implements p {
             if (zzn.zzc(zzmcVar, this) == aVar) {
                 return aVar;
             }
-            a2 = jd.a(new zzcg(zzce.zzb, zzcd.zzay, null, null, 12, null));
-            return new f(a2);
+            a2 = b.a(new zzcg(zzce.zzb, zzcd.zzay, null, null, 12, null));
+            return new g(a2);
         }
         zzly zzlyVar = this.zzc;
         zzlyVar.zze = zzxnVar;
@@ -90,7 +90,7 @@ final class zzll extends i implements p {
         this.zza = 3;
         if (((zzhg) obj).zza(zzhkVar, this) == aVar) {
         }
-        a2 = jd.i.a;
-        return new f(a2);
+        a2 = ad.j.a;
+        return new g(a2);
     }
 }

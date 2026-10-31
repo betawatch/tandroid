@@ -1,49 +1,71 @@
 package org.telegram.ui.ActionBar;
 
 import android.view.View;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class n5 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ r5 b;
+public final class n5 implements fe.i, ie.a {
+    public final View a;
+    public boolean b;
+    public float c = 1.0f;
+    public float d = 1.0f;
+    public float e = 1.0f;
 
-    public /* synthetic */ n5(r5 r5Var, int i10) {
-        this.a = i10;
-        this.b = r5Var;
+    public n5(View view) {
+        this.a = view;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                r5 r5Var = this.b;
-                if (!r5Var.G && r5Var.F) {
-                    r5Var.f(true);
-                    break;
-                } else {
-                    j jVar = r5Var.T;
-                    if (jVar != null) {
-                        jVar.b(-1);
-                        break;
-                    }
-                }
-                break;
-            default:
-                r5 r5Var2 = this.b;
-                if (r5Var2.s.length() != 0) {
-                    r5Var2.s.setText("");
-                } else {
-                    TextView textView = r5Var2.w;
-                    if (textView != null && textView.getVisibility() == 0) {
-                        r5Var2.e();
-                    }
-                }
-                r5Var2.s.requestFocus();
-                AndroidUtilities.showKeyboard(r5Var2.s);
-                break;
+    @Override // ie.a
+    public final void a() {
+        View view = this.a;
+        if (o5.h(view)) {
+            return;
         }
+        if (view instanceof p5) {
+            ((p5) view).X();
+        } else {
+            view.setVisibility(8);
+        }
+        c(1.0f, 1.0f);
+    }
+
+    @Override // fe.i
+    public final /* synthetic */ int b(boolean z10) {
+        return 0;
+    }
+
+    public final void c(float f7, float f10) {
+        float f11 = this.c;
+        if (f11 == f7 && this.d == f10) {
+            return;
+        }
+        View view = this.a;
+        if (f11 == 1.0f) {
+            this.e = view.getAlpha();
+        }
+        this.c = f7;
+        this.d = f10;
+        view.setAlpha(this.e * f7);
+        float min = Math.min(org.telegram.messenger.i0.T1(0.6f, 1.0f, f7), f10);
+        view.setScaleX(min);
+        view.setScaleY(min);
+    }
+
+    public final boolean equals(Object obj) {
+        return (obj instanceof n5) && ((n5) obj).a == this.a;
+    }
+
+    @Override // fe.i
+    public final int getHeight() {
+        return this.a.getMeasuredHeight();
+    }
+
+    @Override // fe.i
+    public final int getWidth() {
+        return o5.f(this.a);
+    }
+
+    public final int hashCode() {
+        return this.a.hashCode();
     }
 }

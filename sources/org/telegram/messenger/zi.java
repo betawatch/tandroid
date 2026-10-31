@@ -1,29 +1,35 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.TLRPC;
+import android.text.TextPaint;
+import android.text.style.CharacterStyle;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final /* synthetic */ class zi implements Runnable {
+public final class zi extends CharacterStyle {
     public final /* synthetic */ int a;
-    public final /* synthetic */ SendMessagesHelper b;
-    public final /* synthetic */ TLRPC.Updates c;
 
-    public /* synthetic */ zi(SendMessagesHelper sendMessagesHelper, TLRPC.Updates updates, int i10) {
+    public /* synthetic */ zi(int i10) {
         this.a = i10;
-        this.b = sendMessagesHelper;
-        this.c = updates;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
         switch (this.a) {
             case 0:
-                this.b.lambda$performSendMessageRequest$97(this.c);
+                textPaint.setTextSize(textPaint.getTextSize() * 0.8f);
+                textPaint.setColor(org.telegram.ui.ActionBar.t6.T2.getColor());
+                break;
+            case 1:
+                textPaint.setColor(org.telegram.ui.ActionBar.t6.o2.linkColor);
+                break;
+            case 2:
                 break;
             default:
-                this.b.lambda$performSendMessageRequestMulti$75(this.c);
+                textPaint.setAlpha(128);
                 break;
         }
+    }
+
+    private final void a(TextPaint textPaint) {
     }
 }

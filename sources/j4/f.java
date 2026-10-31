@@ -1,13 +1,14 @@
 package j4;
 
-import a8.h0;
-import b2.w0;
+import b2.v0;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import org.telegram.messenger.zs;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class f {
     public final int a;
@@ -19,64 +20,64 @@ public final class f {
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x0062  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x0061  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public g0 a(int i10, k6.m mVar) {
+    public h0 a(int i10, j6.m mVar) {
         String str = (String) mVar.b;
         if (i10 != 2) {
             if (i10 == 3 || i10 == 4) {
-                return new w(new u(str, mVar.d(), "video/mp2t"));
+                return new x(new u(str, mVar.d(), "video/mp2t"));
             }
             if (i10 == 21) {
-                return new w(new h());
+                return new x(new h());
             }
             if (i10 == 27) {
                 if (c(4)) {
                     return null;
                 }
-                return new w(new q(new c0(0, b(mVar)), c(1), c(8)));
+                return new x(new q(new d0(0, b(mVar)), c(1), c(8)));
             }
             if (i10 == 36) {
-                return new w(new s(new c0(0, b(mVar))));
+                return new x(new s(new d0(0, b(mVar))));
             }
             if (i10 == 45) {
-                return new w(new v());
+                return new x(new v());
             }
             if (i10 == 89) {
-                return new w(new h((List) mVar.c));
+                return new x(new h((List) mVar.c));
             }
             if (i10 == 172) {
-                return new w(new b(mVar.d(), 1, str, "video/mp2t"));
+                return new x(new b(mVar.d(), 1, str, "video/mp2t"));
             }
             if (i10 == 257) {
-                return new b0(new h0("application/vnd.dvb.ait", 25));
+                return new c0(new android.support.v4.media.session.a0("application/vnd.dvb.ait", 22));
             }
             if (i10 != 138) {
                 if (i10 == 139) {
-                    return new w(new g(str, mVar.d(), 5408));
+                    return new x(new g(str, mVar.d(), 5408));
                 }
                 switch (i10) {
                     case 15:
                         if (c(2)) {
                             return null;
                         }
-                        return new w(new e(mVar.d(), str, "video/mp2t", false));
+                        return new x(new e(mVar.d(), str, "video/mp2t", false));
                     case 16:
-                        return new w(new n(new c0(1, b(mVar))));
+                        return new x(new n(new d0(1, b(mVar))));
                     case 17:
                         if (c(2)) {
                             return null;
                         }
-                        return new w(new t(str, mVar.d()));
+                        return new x(new t(str, mVar.d()));
                     default:
                         switch (i10) {
                             case 128:
                                 break;
-                            case 129:
-                                return new w(new b(mVar.d(), 0, str, "video/mp2t"));
-                            case 130:
+                            case zs.N1 /* 129 */:
+                                return new x(new b(mVar.d(), 0, str, "video/mp2t"));
+                            case zs.O1 /* 130 */:
                                 if (!c(64)) {
                                     return null;
                                 }
@@ -87,10 +88,10 @@ public final class f {
                                         if (c(16)) {
                                             return null;
                                         }
-                                        return new b0(new h0("application/x-scte35", 25));
-                                    case 135:
+                                        return new c0(new android.support.v4.media.session.a0("application/x-scte35", 22));
+                                    case zs.R1 /* 135 */:
                                         break;
-                                    case 136:
+                                    case zs.S1 /* 136 */:
                                         break;
                                     default:
                                         return null;
@@ -98,12 +99,12 @@ public final class f {
                         }
                 }
             }
-            return new w(new g(str, mVar.d(), 4096));
+            return new x(new g(str, mVar.d(), TLObject.FLAG_12));
         }
-        return new w(new k(new c0(1, b(mVar)), "video/mp2t"));
+        return new x(new k(new d0(1, b(mVar)), "video/mp2t"));
     }
 
-    public List b(k6.m mVar) {
+    public List b(j6.m mVar) {
         String str;
         int i10;
         List list;
@@ -140,7 +141,7 @@ public final class f {
                         list = null;
                     }
                     b2.w wVar = new b2.w();
-                    wVar.r = w0.n(str);
+                    wVar.r = v0.n(str);
                     wVar.d = y3;
                     wVar.O = i10;
                     wVar.u = list;

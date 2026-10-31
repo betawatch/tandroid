@@ -1,19 +1,37 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes3.dex */
-public final class n60 {
-    public final boolean a;
-    public final int b;
-    public final int c;
-    public final long d;
-    public final long e;
+import android.view.KeyEvent;
 
-    public n60(long j10, int i10, int i11, boolean z10, long j11) {
-        this.a = z10;
-        this.b = i10;
-        this.c = i11;
-        this.d = j10;
-        this.e = j11;
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class n60 implements org.telegram.ui.ActionBar.i1 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ z60 b;
+
+    public /* synthetic */ n60(z60 z60Var, int i10) {
+        this.a = i10;
+        this.b = z60Var;
+    }
+
+    @Override // org.telegram.ui.ActionBar.i1
+    public final void r(KeyEvent keyEvent) {
+        z60 z60Var;
+        u60 u60Var;
+        z60 z60Var2;
+        u60 u60Var2;
+        switch (this.a) {
+            case 0:
+                if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (u60Var = (z60Var = this.b).m) != null && u60Var.isShowing()) {
+                    z60Var.u();
+                    break;
+                }
+                break;
+            default:
+                if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (u60Var2 = (z60Var2 = this.b).m) != null && u60Var2.isShowing()) {
+                    z60Var2.u();
+                    break;
+                }
+                break;
+        }
     }
 }

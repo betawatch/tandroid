@@ -1,14 +1,14 @@
 package org.telegram.utils.code.highlight;
 
 import com.google.android.gms.internal.play_billing.s0;
-import ni.r;
+import di.t;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes4.dex */
 public final class PrismaHighlighter implements AutoCloseable {
     public long a;
     public final String[] b;
-    public final r c;
+    public final t c;
 
     public PrismaHighlighter(byte[] bArr) {
         if (bArr == null) {
@@ -25,13 +25,13 @@ public final class PrismaHighlighter implements AutoCloseable {
             if (nativeGetTokenNames == null || nativeGetTokenNames.length == 0 || !"".equals(nativeGetTokenNames[0])) {
                 throw new IllegalStateException("Invalid native token name table");
             }
-            this.c = new r(nativeGetTokenNames);
+            this.c = new t(nativeGetTokenNames);
         } catch (Error e) {
             e = e;
             close();
             throw e;
-        } catch (RuntimeException e10) {
-            e = e10;
+        } catch (RuntimeException e7) {
+            e = e7;
             close();
             throw e;
         }

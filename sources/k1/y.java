@@ -4,9 +4,9 @@ import java.io.File;
 import java.io.FileOutputStream;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class y extends nd.c {
+public final class y extends ed.c {
     public z a;
     public File b;
     public FileOutputStream c;
@@ -16,15 +16,15 @@ public final class y extends nd.c {
     public int h;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public y(z zVar, nd.c cVar) {
+    public y(z zVar, ed.c cVar) {
         super(cVar);
         this.f = zVar;
     }
 
-    @Override // nd.a
+    @Override // ed.a
     public final Object invokeSuspend(Object obj) {
         this.e = obj;
         this.h |= TLObject.FLAG_31;
-        return this.f.i(null, this);
+        return this.f.j(this, null);
     }
 }

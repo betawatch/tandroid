@@ -1,67 +1,85 @@
 package od;
 
-import a1.g;
-import java.io.Serializable;
-import kd.c;
-import kotlin.jvm.internal.i;
+import java.util.Iterator;
+import java.util.NoSuchElementException;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class b extends c implements a, Serializable {
-    public final Enum[] a;
+public final class b implements Iterator {
+    public final /* synthetic */ int a = 0;
+    public final int b;
+    public final int c;
+    public boolean d;
+    public int e;
 
-    public b(Enum[] entries) {
-        i.e(entries, "entries");
-        this.a = entries;
+    public b(char c10, char c11, int i10) {
+        boolean z10 = false;
+        this.b = i10;
+        this.c = c11;
+        if (i10 <= 0 ? c10 >= c11 : c10 < c11 || c10 == c11) {
+            z10 = true;
+        }
+        this.d = z10;
+        this.e = z10 ? c10 : c11;
     }
 
-    @Override // kd.c, java.util.List, java.util.Collection
-    public final boolean contains(Object obj) {
-        if (!(obj instanceof Enum)) {
-            return false;
+    @Override // java.util.Iterator
+    public final boolean hasNext() {
+        switch (this.a) {
         }
-        Enum r42 = (Enum) obj;
-        int ordinal = r42.ordinal();
-        Enum[] enumArr = this.a;
-        i.e(enumArr, "<this>");
-        return ((ordinal < 0 || ordinal >= enumArr.length) ? null : enumArr[ordinal]) == r42;
+        return this.d;
     }
 
-    @Override // java.util.List
-    public final Object get(int i10) {
-        Enum[] enumArr = this.a;
-        int length = enumArr.length;
-        if (i10 < 0 || i10 >= length) {
-            throw new IndexOutOfBoundsException(g.l(i10, length, "index: ", ", size: "));
+    @Override // java.util.Iterator
+    public final Object next() {
+        switch (this.a) {
+            case 0:
+                int i10 = this.e;
+                if (i10 != this.c) {
+                    this.e = this.b + i10;
+                } else {
+                    if (!this.d) {
+                        throw new NoSuchElementException();
+                    }
+                    this.d = false;
+                }
+                return Character.valueOf((char) i10);
+            default:
+                return Integer.valueOf(nextInt());
         }
-        return enumArr[i10];
     }
 
-    @Override // kd.c
-    public final int h() {
-        return this.a.length;
+    public int nextInt() {
+        int i10 = this.e;
+        if (i10 != this.c) {
+            this.e = this.b + i10;
+            return i10;
+        }
+        if (!this.d) {
+            throw new NoSuchElementException();
+        }
+        this.d = false;
+        return i10;
     }
 
-    @Override // kd.c, java.util.List
-    public final int indexOf(Object obj) {
-        if (!(obj instanceof Enum)) {
-            return -1;
+    @Override // java.util.Iterator
+    public final void remove() {
+        switch (this.a) {
+            case 0:
+                throw new UnsupportedOperationException("Operation is not supported for read-only collection");
+            default:
+                throw new UnsupportedOperationException("Operation is not supported for read-only collection");
         }
-        Enum r42 = (Enum) obj;
-        int ordinal = r42.ordinal();
-        Enum[] enumArr = this.a;
-        i.e(enumArr, "<this>");
-        if (((ordinal < 0 || ordinal >= enumArr.length) ? null : enumArr[ordinal]) == r42) {
-            return ordinal;
-        }
-        return -1;
     }
 
-    @Override // kd.c, java.util.List
-    public final int lastIndexOf(Object obj) {
-        if (obj instanceof Enum) {
-            return indexOf((Enum) obj);
+    public b(int i10, int i11, int i12) {
+        this.b = i12;
+        this.c = i11;
+        boolean z10 = false;
+        if (i12 <= 0 ? i10 >= i11 : i10 <= i11) {
+            z10 = true;
         }
-        return -1;
+        this.d = z10;
+        this.e = z10 ? i10 : i11;
     }
 }

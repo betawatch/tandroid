@@ -1,34 +1,46 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.Utilities;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class xe0 implements NotificationCenter.NotificationCenterDelegate {
+public final class xe0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Utilities.Callback b;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate[] c;
+    public final /* synthetic */ ye0 b;
 
-    public xe0(int i10, Utilities.Callback callback, NotificationCenter.NotificationCenterDelegate[] notificationCenterDelegateArr) {
+    public /* synthetic */ xe0(ye0 ye0Var, int i10) {
         this.a = i10;
-        this.b = callback;
-        this.c = notificationCenterDelegateArr;
+        this.b = ye0Var;
     }
 
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        int i12 = NotificationCenter.activityPermissionsGranted;
-        if (i10 == i12) {
-            int intValue = ((Integer) objArr[0]).intValue();
-            int[] iArr = (int[]) objArr[2];
-            if (intValue == this.a) {
-                Utilities.Callback callback = this.b;
-                if (callback != null) {
-                    callback.run(iArr);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                ye0 ye0Var = this.b;
+                ye0Var.h = false;
+                ye0Var.a = ye0Var.c;
+                ye0Var.invalidate();
+                int i10 = ye0Var.J;
+                if (i10 >= 0) {
+                    ye0Var.b(i10);
+                    ye0Var.J = -1;
+                    break;
                 }
-                NotificationCenter.getGlobalInstance().removeObserver(this.c[0], i12);
-            }
+                break;
+            default:
+                ye0 ye0Var2 = this.b;
+                ye0Var2.n = false;
+                ye0Var2.h = false;
+                ye0Var2.invalidate();
+                int i11 = ye0Var2.J;
+                if (i11 >= 0) {
+                    ye0Var2.b(i11);
+                    ye0Var2.J = -1;
+                }
+                ye0Var2.a();
+                break;
         }
     }
 }

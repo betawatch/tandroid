@@ -1,30 +1,33 @@
 package org.telegram.messenger.voip;
 
-import org.telegram.tgnet.TLRPC;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class t implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ VoIPService b;
-    public final /* synthetic */ TLRPC.Updates c;
-    public final /* synthetic */ long d;
+    public final /* synthetic */ TLObject b;
+    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ ArrayList d;
+    public final /* synthetic */ Runnable e;
 
-    public /* synthetic */ t(VoIPService voIPService, TLRPC.Updates updates, long j10, int i10) {
+    public /* synthetic */ t(TLObject tLObject, ArrayList arrayList, ArrayList arrayList2, Runnable runnable, int i10) {
         this.a = i10;
-        this.b = voIPService;
-        this.c = updates;
-        this.d = j10;
+        this.b = tLObject;
+        this.c = arrayList;
+        this.d = arrayList2;
+        this.e = runnable;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$startConferenceGroupCall$38(this.c, this.d);
+                VoIPService.lambda$startConferenceGroupCall$48(this.b, this.c, this.d, this.e);
                 break;
             default:
-                this.b.lambda$startConferenceGroupCall$46(this.c, this.d);
+                VoIPService.lambda$startConferenceGroupCall$40(this.b, this.c, this.d, this.e);
                 break;
         }
     }

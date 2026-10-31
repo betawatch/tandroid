@@ -1,7 +1,5 @@
 package androidx.mediarouter.app;
 
-import a8.kc;
-import a8.p1;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
@@ -15,10 +13,11 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import org.telegram.messenger.beta.R;
+import v7.r7;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class l0 extends g0 {
+public final class l0 extends f0 {
     public final ImageView A;
     public final ProgressBar B;
     public final TextView C;
@@ -26,7 +25,7 @@ public final class l0 extends g0 {
     public final CheckBox E;
     public final float F;
     public final int G;
-    public final x H;
+    public final w H;
     public final /* synthetic */ m0 I;
     public final View z;
 
@@ -37,8 +36,8 @@ public final class l0 extends g0 {
     public l0(m0 m0Var, View view) {
         super(r4, view, (ImageButton) view.findViewById(R.id.mr_cast_mute_button), (MediaRouteVolumeSlider) view.findViewById(R.id.mr_cast_volume_slider));
         this.I = m0Var;
-        o0 o0Var = m0Var.w;
-        this.H = new x(this, 3);
+        o0 o0Var = m0Var.x;
+        this.H = new w(this, 3);
         this.z = view;
         this.A = (ImageView) view.findViewById(R.id.mr_cast_route_icon);
         ProgressBar progressBar = (ProgressBar) view.findViewById(R.id.mr_cast_route_progress_bar);
@@ -47,14 +46,14 @@ public final class l0 extends g0 {
         this.D = (RelativeLayout) view.findViewById(R.id.mr_cast_volume_layout);
         CheckBox checkBox = (CheckBox) view.findViewById(R.id.mr_cast_checkbox);
         this.E = checkBox;
-        Context context = o0Var.y;
-        Drawable b10 = kc.b(context, R.drawable.mr_cast_checkbox);
-        if (p1.h(context)) {
+        Context context = o0Var.D;
+        Drawable b10 = r7.b(context, R.drawable.mr_cast_checkbox);
+        if (v7.a0.h(context)) {
             b10.setTint(context.getColor(R.color.mr_dynamic_dialog_icon_light));
         }
         checkBox.setButtonDrawable(b10);
-        p1.i(context, progressBar);
-        this.F = p1.c(context);
+        v7.a0.i(context, progressBar);
+        this.F = v7.a0.c(context);
         Resources resources = context.getResources();
         DisplayMetrics displayMetrics = resources.getDisplayMetrics();
         TypedValue typedValue = new TypedValue();
@@ -62,11 +61,11 @@ public final class l0 extends g0 {
         this.G = (int) typedValue.getDimension(displayMetrics);
     }
 
-    public final boolean v(p4.v vVar) {
-        if (vVar.g()) {
+    public final boolean v(p4.w wVar) {
+        if (wVar.g()) {
             return true;
         }
-        jg.i b10 = this.I.w.r.b(vVar);
+        k2.m0 b10 = this.I.x.r.b(wVar);
         if (b10 == null) {
             return false;
         }

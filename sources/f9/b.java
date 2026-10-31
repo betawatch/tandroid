@@ -1,59 +1,32 @@
 package f9;
 
-import j$.util.Objects;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.Map;
+import v7.t6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class b implements Iterator {
-    public final Iterator a;
-    public Object b = null;
-    public Collection c = null;
-    public Iterator d = y0.a;
-    public final /* synthetic */ k1 e;
-    public final /* synthetic */ int f;
+public final class b extends d {
+    public final char[] e;
 
-    public b(k1 k1Var, int i10) {
-        this.f = i10;
-        this.e = k1Var;
-        this.a = k1Var.e.entrySet().iterator();
-    }
-
-    @Override // java.util.Iterator
-    public final boolean hasNext() {
-        return this.a.hasNext() || this.d.hasNext();
-    }
-
-    @Override // java.util.Iterator
-    public final Object next() {
-        if (!this.d.hasNext()) {
-            Map.Entry entry = (Map.Entry) this.a.next();
-            this.b = entry.getKey();
-            Collection collection = (Collection) entry.getValue();
-            this.c = collection;
-            this.d = collection.iterator();
-        }
-        Object obj = this.b;
-        Object next = this.d.next();
-        switch (this.f) {
-            case 0:
-                return next;
-            default:
-                return new e0(obj, next);
+    public b(a aVar) {
+        super(aVar, (Character) null);
+        this.e = new char[512];
+        char[] cArr = aVar.b;
+        t6.f(cArr.length == 16);
+        for (int i10 = 0; i10 < 256; i10++) {
+            char[] cArr2 = this.e;
+            cArr2[i10] = cArr[i10 >>> 4];
+            cArr2[i10 | 256] = cArr[i10 & 15];
         }
     }
 
-    @Override // java.util.Iterator
-    public final void remove() {
-        this.d.remove();
-        Collection collection = this.c;
-        Objects.requireNonNull(collection);
-        if (collection.isEmpty()) {
-            this.a.remove();
+    @Override // f9.d
+    public final void b(StringBuilder sb2, byte[] bArr, int i10) {
+        t6.n(0, i10, bArr.length);
+        for (int i11 = 0; i11 < i10; i11++) {
+            int i12 = bArr[i11] & 255;
+            char[] cArr = this.e;
+            sb2.append(cArr[i12]);
+            sb2.append(cArr[i12 | 256]);
         }
-        k1 k1Var = this.e;
-        k1Var.f--;
     }
 }

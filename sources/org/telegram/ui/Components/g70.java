@@ -1,30 +1,23 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class g70 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ i70 b;
+public final class g70 extends tk0 {
+    public final /* synthetic */ k70 e3;
 
-    public /* synthetic */ g70(i70 i70Var, int i10) {
-        this.a = i10;
-        this.b = i70Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public g70(k70 k70Var, Context context) {
+        super(context, null);
+        this.e3 = k70Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                AndroidUtilities.runOnUIThread(new kg(this.b, tL_error, tLObject, 11));
-                break;
-            default:
-                AndroidUtilities.runOnUIThread(new so(27, this.b, tL_error));
-                break;
+    @Override // org.telegram.ui.Components.tk0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.e3.q1) {
+            return;
         }
+        super.requestLayout();
     }
 }

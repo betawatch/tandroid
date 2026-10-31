@@ -1,71 +1,35 @@
 package ii;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.y6;
+import android.util.SparseArray;
+import bi.t6;
+import j$.util.Comparator$-CC;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes4.dex */
-public final class a extends Drawable {
-    public int b;
-    public int c = 255;
-    public final Drawable a = ApplicationLoader.applicationContext.getResources().getDrawable(R.drawable.settings_arrow).mutate();
+public final class a {
+    public SparseArray a;
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        float exactCenterX = getBounds().exactCenterX();
-        float exactCenterY = getBounds().exactCenterY();
-        int x02 = y6.x0(null, y6.G6, false);
-        int x03 = y6.x0(null, y6.d6, false);
-        int i10 = this.b;
-        Drawable drawable = this.a;
-        if (i10 != x03) {
-            this.b = x03;
-            drawable.setColorFilter(new PorterDuffColorFilter(x03, PorterDuff.Mode.SRC_IN));
+    public final void a(HashMap hashMap) {
+        if (this.a != null) {
+            for (Map.Entry entry : hashMap.entrySet()) {
+                this.a.put(((String) entry.getKey()).hashCode(), (String) entry.getValue());
+            }
+            return;
         }
-        canvas.drawCircle(exactCenterX, exactCenterY, AndroidUtilities.dp(7.6666665f), y6.m0(i0.a.o(x03, this.c)));
-        canvas.drawCircle(exactCenterX, exactCenterY, AndroidUtilities.dp(6.6666665f), y6.m0(i0.a.o(x02, this.c)));
-        ag.v.d(drawable, exactCenterX, exactCenterY, 17);
-        canvas.translate(0.0f, AndroidUtilities.dp(0.66f));
-        canvas.save();
-        canvas.rotate(90.0f, exactCenterX, exactCenterY);
-        ag.v.b(canvas, drawable, 0.8f);
-        canvas.restore();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getAlpha() {
-        return this.c;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return AndroidUtilities.dp(13.333333f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return AndroidUtilities.dp(13.333333f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -3;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        this.c = i10;
-        this.a.setAlpha(i10);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+        this.a = new SparseArray(hashMap.size());
+        ArrayList arrayList = new ArrayList(hashMap.entrySet());
+        Collections.sort(arrayList, Comparator$-CC.comparingInt(new t6(1)));
+        int size = arrayList.size();
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            Map.Entry entry2 = (Map.Entry) obj;
+            this.a.append(((String) entry2.getKey()).hashCode(), (String) entry2.getValue());
+        }
     }
 }

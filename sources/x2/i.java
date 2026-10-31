@@ -2,13 +2,13 @@ package x2;
 
 import android.util.SparseArray;
 import android.util.SparseBooleanArray;
-import b2.r1;
+import b2.q1;
 import b2.t1;
 import b2.u1;
 import java.util.HashMap;
 import java.util.Map;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class i extends t1 {
     public final boolean J;
@@ -40,8 +40,8 @@ public final class i extends t1 {
     }
 
     @Override // b2.t1
-    public final void a(r1 r1Var) {
-        this.H.put(r1Var.a, r1Var);
+    public final void a(q1 q1Var) {
+        this.H.put(q1Var.a, q1Var);
     }
 
     @Override // b2.t1

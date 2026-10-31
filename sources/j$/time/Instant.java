@@ -7,8 +7,6 @@ import j$.util.Objects;
 import java.io.InvalidObjectException;
 import java.io.ObjectInputStream;
 import java.io.Serializable;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MediaDataController;
 
 /* loaded from: classes2.dex */
 public final class Instant implements Temporal, j$.time.temporal.m, Comparable<Instant>, Serializable {
@@ -39,8 +37,8 @@ public final class Instant implements Temporal, j$.time.temporal.m, Comparable<I
     }
 
     public static Instant ofEpochMilli(long j10) {
-        long j11 = MediaDataController.MAX_STYLE_RUNS_COUNT;
-        return G(j$.com.android.tools.r8.a.R(j10, j11), ((int) j$.com.android.tools.r8.a.Q(j10, j11)) * MediaController.VIDEO_BITRATE_480);
+        long j11 = 1000;
+        return G(j$.com.android.tools.r8.a.R(j10, j11), ((int) j$.com.android.tools.r8.a.Q(j10, j11)) * 1000000);
     }
 
     public static Instant H(j$.time.temporal.l lVar) {
@@ -96,10 +94,10 @@ public final class Instant implements Temporal, j$.time.temporal.m, Comparable<I
             return this.b;
         }
         if (i10 == 2) {
-            return this.b / MediaDataController.MAX_STYLE_RUNS_COUNT;
+            return this.b / 1000;
         }
         if (i10 == 3) {
-            return this.b / MediaController.VIDEO_BITRATE_480;
+            return this.b / 1000000;
         }
         if (i10 == 4) {
             j$.time.temporal.a aVar = j$.time.temporal.a.INSTANT_SECONDS;
@@ -118,7 +116,7 @@ public final class Instant implements Temporal, j$.time.temporal.m, Comparable<I
         if (i11 == 1) {
             i10 = this.b;
         } else if (i11 == 2) {
-            i10 = this.b / MediaDataController.MAX_STYLE_RUNS_COUNT;
+            i10 = this.b / 1000;
         } else {
             if (i11 != 3) {
                 if (i11 == 4) {
@@ -126,7 +124,7 @@ public final class Instant implements Temporal, j$.time.temporal.m, Comparable<I
                 }
                 throw new j$.time.temporal.r(c.a("Unsupported field: ", oVar));
             }
-            i10 = this.b / MediaController.VIDEO_BITRATE_480;
+            i10 = this.b / 1000000;
         }
         return i10;
     }
@@ -147,12 +145,12 @@ public final class Instant implements Temporal, j$.time.temporal.m, Comparable<I
         int i10 = d.a[aVar.ordinal()];
         if (i10 != 1) {
             if (i10 == 2) {
-                int i11 = ((int) j10) * MediaDataController.MAX_STYLE_RUNS_COUNT;
+                int i11 = ((int) j10) * 1000;
                 if (i11 != this.b) {
                     return G(this.a, i11);
                 }
             } else if (i10 == 3) {
-                int i12 = ((int) j10) * MediaController.VIDEO_BITRATE_480;
+                int i12 = ((int) j10) * 1000000;
                 if (i12 != this.b) {
                     return G(this.a, i12);
                 }
@@ -266,7 +264,7 @@ public final class Instant implements Temporal, j$.time.temporal.m, Comparable<I
 
     public long toEpochMilli() {
         long j10 = this.a;
-        return (j10 >= 0 || this.b <= 0) ? j$.com.android.tools.r8.a.N(j$.com.android.tools.r8.a.S(j10, MediaDataController.MAX_STYLE_RUNS_COUNT), this.b / MediaController.VIDEO_BITRATE_480) : j$.com.android.tools.r8.a.N(j$.com.android.tools.r8.a.S(j10 + 1, MediaDataController.MAX_STYLE_RUNS_COUNT), (this.b / MediaController.VIDEO_BITRATE_480) - MediaDataController.MAX_STYLE_RUNS_COUNT);
+        return (j10 >= 0 || this.b <= 0) ? j$.com.android.tools.r8.a.N(j$.com.android.tools.r8.a.S(j10, 1000), this.b / 1000000) : j$.com.android.tools.r8.a.N(j$.com.android.tools.r8.a.S(j10 + 1, 1000), (this.b / 1000000) - 1000);
     }
 
     public final boolean equals(Object obj) {

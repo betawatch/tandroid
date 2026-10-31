@@ -1,23 +1,8 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.view.View;
+import android.widget.LinearLayout;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class ud0 {
-    public Paint a;
-    public Paint b;
-    public View c;
-    public i2.b0 d;
-    public long e;
-    public RectF f;
-    public float g;
-    public float h;
-    public float i;
-    public Path j;
-    public boolean k;
-    public boolean l;
+public final class ud0 extends LinearLayout {
 }

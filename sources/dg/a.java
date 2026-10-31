@@ -1,25 +1,32 @@
 package dg;
 
-import java.nio.ShortBuffer;
-import pa.d;
-import sb.b;
+import android.graphics.Paint;
+import org.telegram.ui.ActionBar.p6;
+import org.telegram.ui.ActionBar.t6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes.dex */
-public interface a {
-    public static final d l = new d();
-    public static final tb.a m;
-    public static final qb.a o;
-    public static final b p;
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final class a extends g {
+    public final p6 q;
+    public final Paint r;
+    public int s;
 
-    static {
-        int i10 = 6;
-        m = new tb.a(i10);
-        o = new qb.a(i10);
-        p = new b(i10);
+    public a(cg.a aVar, p6 p6Var) {
+        super(aVar, false, null);
+        Paint paint = new Paint();
+        this.r = paint;
+        this.s = 0;
+        this.q = p6Var;
+        Paint paint2 = this.c;
+        Paint.Style style = Paint.Style.STROKE;
+        paint2.setStyle(style);
+        paint.setStyle(style);
+        this.c.setAntiAlias(false);
     }
 
-    void G0(ShortBuffer shortBuffer, int i10, ShortBuffer shortBuffer2, int i11);
-
-    int t1(int i10, int i11, int i12);
+    @Override // dg.g
+    public final void a() {
+        super.a();
+        this.s = i0.b.f(0.3f, t6.w0(t6.d6, this.q), this.m);
+    }
 }

@@ -2,7 +2,7 @@ package u3;
 
 import c3.p;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class g {
     public static final long[] d = {128, 64, 32, 16, 8, 4, 2, 1};
@@ -26,7 +26,7 @@ public final class g {
         int i12 = this.b;
         byte[] bArr = this.a;
         if (i12 == 0) {
-            if (!pVar.c(bArr, 0, 1, z10)) {
+            if (!pVar.d(bArr, 0, 1, z10)) {
                 return -1L;
             }
             int i13 = bArr[0] & 255;

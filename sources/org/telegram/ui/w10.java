@@ -1,78 +1,37 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes3.dex */
-public final class w10 implements org.telegram.ui.Components.lp0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ug.g b;
+import android.content.DialogInterface;
 
-    public /* synthetic */ w10(ug.g gVar, int i10) {
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class w10 implements DialogInterface.OnDismissListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ b50 b;
+
+    public /* synthetic */ w10(b50 b50Var, int i10) {
         this.a = i10;
-        this.b = gVar;
+        this.b = b50Var;
     }
 
-    @Override // org.telegram.ui.Components.lp0
-    public final void U(float f7, boolean z10) {
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                ug.o oVar = this.b.c;
-                if (oVar != null) {
-                    oVar.B = f7 * 2.0f;
+                org.telegram.ui.ActionBar.k2 T = LaunchActivity.T();
+                if (this.b.o2 && (T instanceof un)) {
+                    ((un) T).ja(true, true);
                     break;
                 }
                 break;
             case 1:
-                ug.o oVar2 = this.b.c;
-                if (oVar2 != null) {
-                    oVar2.C = f7 * 2.0f;
-                    break;
-                }
+                this.b.dismiss();
                 break;
             case 2:
-                ug.o oVar3 = this.b.c;
-                if (oVar3 != null) {
-                    oVar3.D = f7;
-                    break;
-                }
+                this.b.v3 = null;
                 break;
             default:
-                ug.o oVar4 = this.b.c;
-                if (oVar4 != null) {
-                    oVar4.G = f7 * 2.0f;
-                    break;
-                }
+                this.b.i2 = null;
                 break;
         }
-    }
-
-    @Override // org.telegram.ui.Components.lp0
-    public final /* synthetic */ CharSequence getContentDescription() {
-        switch (this.a) {
-        }
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.lp0
-    public final /* synthetic */ int k0() {
-        switch (this.a) {
-        }
-        return 0;
-    }
-
-    @Override // org.telegram.ui.Components.lp0
-    public final void y() {
-        int i10 = this.a;
-    }
-
-    private final void a() {
-    }
-
-    private final void b() {
-    }
-
-    private final void c() {
-    }
-
-    private final void d() {
     }
 }

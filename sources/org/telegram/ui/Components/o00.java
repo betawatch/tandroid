@@ -1,70 +1,78 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.ViewGroup;
+import java.util.Iterator;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class o00 extends mm0 {
-    public final Context c;
-    public final /* synthetic */ s00 d;
+public final /* synthetic */ class o00 implements org.telegram.ui.ActionBar.o0, fe.l, org.telegram.ui.ActionBar.u1, cu0 {
+    public final /* synthetic */ FragmentContextView a;
 
-    public o00(s00 s00Var, Context context) {
-        this.d = s00Var;
-        this.c = context;
+    public /* synthetic */ o00(FragmentContextView fragmentContextView) {
+        this.a = fragmentContextView;
     }
 
-    @Override // org.telegram.ui.Components.mm0
-    public final boolean D(s4.e1 e1Var) {
-        return true;
+    @Override // fe.l
+    public void b(fe.m mVar) {
+        FragmentContextView fragmentContextView = this.a;
+        fe.m mVar2 = fragmentContextView.U0;
+        float f7 = 1.0f - mVar2.a.d.c.a;
+        fragmentContextView.d.setAlpha(f7);
+        fragmentContextView.d.setScaleX(org.telegram.messenger.i0.T1(0.7f, 1.0f, f7));
+        fragmentContextView.d.setScaleY(org.telegram.messenger.i0.T1(0.7f, 1.0f, f7));
+        Iterator it = mVar2.iterator();
+        while (it.hasNext()) {
+            fe.h hVar = (fe.h) it.next();
+            float c10 = hVar.c();
+            Object obj = hVar.a;
+            float T1 = org.telegram.messenger.i0.T1(0.7f, 1.0f, c10);
+            dh.d dVar = ((a10) obj).b;
+            dVar.setAlpha(hVar.c());
+            dVar.setScaleX(T1);
+            dVar.setScaleY(T1);
+        }
     }
 
-    @Override // s4.h0
-    public final int h() {
-        return this.d.h.size();
+    @Override // org.telegram.ui.Components.cu0
+    public void d(org.telegram.messenger.md mdVar) {
+        float[] fArr = FragmentContextView.W0;
+        this.a.k(mdVar);
     }
 
-    @Override // s4.h0
-    public final long i(int i10) {
-        return this.d.k0.get(i10);
+    @Override // org.telegram.ui.ActionBar.u1
+    public void h(org.telegram.ui.ActionBar.x1 x1Var, int i10) {
+        FragmentContextView fragmentContextView = this.a;
+        org.telegram.ui.ActionBar.k2 k2Var = fragmentContextView.h;
+        if (!(k2Var instanceof org.telegram.ui.ay)) {
+            org.telegram.messenger.nd.f(k2Var.getCurrentAccount()).k(fragmentContextView.n.a());
+            return;
+        }
+        for (int i11 = 0; i11 < 4; i11++) {
+            Utilities.d.c(new org.telegram.messenger.ed(org.telegram.messenger.nd.f(i11), 6));
+        }
     }
 
-    @Override // s4.h0
-    public final int j(int i10) {
-        return 0;
-    }
-
-    @Override // s4.h0
-    public final void v(s4.e1 e1Var, int i10) {
-        q00 q00Var = (q00) e1Var.a;
-        int id2 = q00Var.b != null ? q00Var.getId() : -1;
-        p00 p00Var = (p00) this.d.h.get(i10);
-        q00Var.b = p00Var;
-        q00Var.e = i10;
-        q00Var.setContentDescription(p00Var.b);
-        q00Var.requestLayout();
-        boolean z10 = q00Var.n;
-        p00 p00Var2 = q00Var.b;
-        if (z10 != (p00Var2 != null && p00Var2.g)) {
-            c6.release(q00Var, q00Var.r);
-            c6.release(q00Var, q00Var.O);
-            c6.release(q00Var, q00Var.Q);
-            c6.release(q00Var, q00Var.S);
-            if (q00Var.l0) {
-                q00Var.r = c6.update(q00Var.b.g ? 26 : 0, q00Var, q00Var.r, q00Var.s);
-                q00Var.O = c6.update(q00Var.b.g ? 26 : 0, q00Var, q00Var.O, q00Var.P);
-                q00Var.Q = c6.update(q00Var.b.g ? 26 : 0, q00Var, q00Var.Q, q00Var.R);
-                q00Var.S = c6.update(q00Var.b.g ? 26 : 0, q00Var, q00Var.S, q00Var.T);
+    @Override // org.telegram.ui.ActionBar.o0
+    public void k(int i10) {
+        float[] fArr = FragmentContextView.W0;
+        if (i10 >= 0) {
+            float[] fArr2 = FragmentContextView.W0;
+            if (i10 >= 6) {
+                return;
             }
-            q00Var.n = q00Var.b.g;
-        }
-        if (id2 != q00Var.getId()) {
-            q00Var.k0 = q00Var.b.f ? 1.0f : 0.0f;
+            MediaController B = MediaController.B();
+            FragmentContextView fragmentContextView = this.a;
+            float C = B.C(fragmentContextView.W);
+            float f7 = fArr2[i10];
+            MediaController.B().m0(fragmentContextView.W, f7);
+            if (C != f7) {
+                fragmentContextView.l(C, f7, false);
+            }
         }
     }
 
-    @Override // s4.h0
-    public final s4.e1 x(ViewGroup viewGroup, int i10) {
-        return new wl0(new q00(this.d, this.c));
+    @Override // fe.l
+    public /* synthetic */ void a() {
     }
 }

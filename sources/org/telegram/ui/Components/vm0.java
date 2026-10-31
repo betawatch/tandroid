@@ -1,200 +1,97 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.ValueAnimator;
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import java.util.ArrayList;
+import android.text.TextUtils;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class vm0 extends Drawable implements Animator.AnimatorListener {
-    public final Context a;
-    public ColorFilter b;
-    public Drawable d;
-    public Drawable e;
-    public ValueAnimator f;
-    public boolean r;
-    public int c = 0;
-    public float h = 1.0f;
-    public final ArrayList n = new ArrayList();
+public final class vm0 extends s4.s0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.ui.ay b;
+    public final /* synthetic */ org.telegram.ui.kx c;
 
-    public vm0(Context context) {
-        this.a = context;
+    public /* synthetic */ vm0(org.telegram.ui.kx kxVar, org.telegram.ui.ay ayVar, int i10) {
+        this.a = i10;
+        this.c = kxVar;
+        this.b = ayVar;
     }
 
-    public final void a(int i10, boolean z10) {
-        if (this.c == i10) {
-            return;
-        }
-        b(this.a.getDrawable(i10).mutate(), z10);
-        this.c = i10;
-    }
-
-    public final void b(Drawable drawable, boolean z10) {
-        if (drawable == null) {
-            this.d = null;
-            this.e = null;
-            invalidateSelf();
-            return;
-        }
-        if (getBounds() == null || getBounds().isEmpty()) {
-            z10 = false;
-        }
-        Drawable drawable2 = this.d;
-        if (drawable == drawable2) {
-            drawable2.setColorFilter(this.b);
-            return;
-        }
-        this.c = 0;
-        this.e = drawable2;
-        this.d = drawable;
-        drawable.setColorFilter(this.b);
-        c(this.d, getBounds());
-        c(this.e, getBounds());
-        ValueAnimator valueAnimator = this.f;
-        if (valueAnimator != null) {
-            valueAnimator.removeAllListeners();
-            this.f.cancel();
-        }
-        if (!z10) {
-            this.h = 1.0f;
-            this.e = null;
-            return;
-        }
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-        this.f = ofFloat;
-        ofFloat.addUpdateListener(new f80(this, 11));
-        this.f.addListener(this);
-        this.f.setDuration(150L);
-        this.f.start();
-    }
-
-    public final void c(Drawable drawable, Rect rect) {
-        int height;
-        int intrinsicHeight;
-        int width;
-        int intrinsicWidth;
-        if (drawable == null) {
-            return;
-        }
-        if (this.r) {
-            drawable.setBounds(rect);
-            return;
-        }
-        if (drawable.getIntrinsicHeight() < 0) {
-            height = rect.top;
-            intrinsicHeight = rect.bottom;
-        } else {
-            height = ((rect.height() - drawable.getIntrinsicHeight()) / 2) + rect.top;
-            intrinsicHeight = drawable.getIntrinsicHeight() + height;
-        }
-        if (drawable.getIntrinsicWidth() < 0) {
-            width = rect.left;
-            intrinsicWidth = rect.right;
-        } else {
-            width = ((rect.width() - drawable.getIntrinsicWidth()) / 2) + rect.left;
-            intrinsicWidth = drawable.getIntrinsicWidth() + width;
-        }
-        drawable.setBounds(width, height, intrinsicWidth, intrinsicHeight);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        int centerX = getBounds().centerX();
-        int centerY = getBounds().centerY();
-        if (this.h == 1.0f || this.d == null) {
-            Drawable drawable = this.d;
-            if (drawable != null) {
-                drawable.setAlpha(255);
-                this.d.draw(canvas);
-            }
-        } else {
-            canvas.save();
-            float f7 = this.h;
-            canvas.scale(f7, f7, centerX, centerY);
-            this.d.setAlpha((int) (this.h * 255.0f));
-            this.d.draw(canvas);
-            canvas.restore();
-        }
-        float f10 = this.h;
-        if (f10 == 1.0f || this.e == null) {
-            Drawable drawable2 = this.e;
-            if (drawable2 != null) {
-                drawable2.setAlpha(255);
-                this.e.draw(canvas);
-                return;
-            }
-            return;
-        }
-        float f11 = 1.0f - f10;
-        canvas.save();
-        canvas.scale(f11, f11, centerX, centerY);
-        this.e.setAlpha((int) (f11 * 255.0f));
-        this.e.draw(canvas);
-        canvas.restore();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void invalidateSelf() {
-        super.invalidateSelf();
-        ArrayList arrayList = this.n;
-        if (arrayList != null) {
-            for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                ((View) arrayList.get(i10)).invalidate();
-            }
+    @Override // s4.s0
+    public final void a(RecyclerView recyclerView, int i10) {
+        switch (this.a) {
+            case 0:
+                if (i10 == 1) {
+                    org.telegram.messenger.i0.v1(this.b.getParentActivity().getCurrentFocus());
+                    break;
+                }
+                break;
+            case 1:
+                if (i10 == 1) {
+                    org.telegram.messenger.i0.v1(this.b.getParentActivity().getCurrentFocus());
+                    break;
+                }
+                break;
+            case 2:
+                if (i10 == 1) {
+                    org.telegram.messenger.i0.v1(this.b.getParentActivity().getCurrentFocus());
+                    break;
+                }
+                break;
+            default:
+                if (i10 == 1) {
+                    org.telegram.messenger.i0.v1(this.b.getParentActivity().getCurrentFocus());
+                    break;
+                }
+                break;
         }
     }
 
-    @Override // android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        this.e = null;
-        invalidateSelf();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void onBoundsChange(Rect rect) {
-        super.onBoundsChange(rect);
-        c(this.d, rect);
-        c(this.e, rect);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        this.b = colorFilter;
-        Drawable drawable = this.d;
-        if (drawable != null) {
-            drawable.setColorFilter(colorFilter);
+    @Override // s4.s0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        org.telegram.ui.mx mxVar;
+        int i12;
+        tk0 tk0Var;
+        switch (this.a) {
+            case 0:
+                org.telegram.ui.kx kxVar = this.c;
+                kxVar.q0.W();
+                kxVar.T();
+                break;
+            case 1:
+                org.telegram.ui.kx kxVar2 = this.c;
+                kxVar2.x0.X();
+                kxVar2.T();
+                break;
+            case 2:
+                org.telegram.ui.kx kxVar3 = this.c;
+                zm0 zm0Var = kxVar3.d0;
+                s4.a0 a0Var = kxVar3.e0;
+                int L0 = a0Var.L0();
+                int N0 = a0Var.N0();
+                int abs = Math.abs(a0Var.N0() - L0) + 1;
+                int b10 = recyclerView.getAdapter().b();
+                if (abs > 0 && (((zm0Var.U.a() != 0 && !zm0Var.X) || !zm0Var.W) && (N0 == b10 - 1 || ((mxVar = zm0Var.U) != null && mxVar.a() != 0 && (i12 = zm0Var.Y) >= 0 && L0 <= i12 && N0 >= i12)))) {
+                    zm0Var.P();
+                }
+                kxVar3.T();
+                break;
+            default:
+                org.telegram.ui.kx kxVar4 = this.c;
+                bn0 bn0Var = kxVar4.l0;
+                if (bn0Var.a0 && !bn0Var.Y && !TextUtils.isEmpty(bn0Var.d0) && (tk0Var = bn0Var.d) != null) {
+                    int i13 = 0;
+                    while (true) {
+                        if (i13 < tk0Var.getChildCount()) {
+                            if (!(tk0Var.getChildAt(i13) instanceof zz)) {
+                                i13++;
+                            } else if (bn0Var.a0 && !bn0Var.Y && !TextUtils.isEmpty(bn0Var.d0)) {
+                                bn0Var.W(true);
+                            }
+                        }
+                    }
+                }
+                kxVar4.T();
+                break;
         }
-        Drawable drawable2 = this.e;
-        if (drawable2 != null) {
-            drawable2.setColorFilter(colorFilter);
-        }
-        invalidateSelf();
-    }
-
-    @Override // android.animation.Animator.AnimatorListener
-    public final void onAnimationCancel(Animator animator) {
-    }
-
-    @Override // android.animation.Animator.AnimatorListener
-    public final void onAnimationRepeat(Animator animator) {
-    }
-
-    @Override // android.animation.Animator.AnimatorListener
-    public final void onAnimationStart(Animator animator) {
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
     }
 }

@@ -1,8 +1,8 @@
 package com.google.android.gms.tasks;
 
-import o6.l;
+import n6.l;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 final class zzk implements Runnable {
     final /* synthetic */ Task zza;
@@ -26,7 +26,7 @@ final class zzk implements Runnable {
                 if (onFailureListener != null) {
                     onFailureListener2 = zzlVar.zzc;
                     Exception exception = this.zza.getException();
-                    l.h(exception);
+                    l.g(exception);
                     onFailureListener2.onFailure(exception);
                 }
             } catch (Throwable th2) {

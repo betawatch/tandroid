@@ -1,26 +1,65 @@
 package dc;
 
-import a8.me;
-import sb.g;
+import java.io.FilterInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final /* synthetic */ class a implements s9.d {
-    public static final /* synthetic */ a b = new a(0);
-    public static final /* synthetic */ a c = new a(1);
-    public final /* synthetic */ int a;
+public final class a extends FilterInputStream {
+    public int a;
+    public int b;
 
-    public /* synthetic */ a(int i10) {
-        this.a = i10;
+    public a(InputStream inputStream) {
+        super(inputStream);
+        this.a = -1;
+        this.b = -1;
     }
 
-    @Override // s9.d
-    public final Object d1(me meVar) {
-        switch (this.a) {
-            case 0:
-                return new c((g) meVar.a(g.class));
-            default:
-                return new b((c) meVar.a(c.class), (sb.d) meVar.a(sb.d.class));
+    @Override // java.io.FilterInputStream, java.io.InputStream
+    public final boolean markSupported() {
+        return false;
+    }
+
+    @Override // java.io.FilterInputStream, java.io.InputStream
+    public final int read() {
+        int read = super.read();
+        if (read == 3 && this.a == 0 && this.b == 0) {
+            this.a = -1;
+            this.b = -1;
+            read = super.read();
         }
+        this.a = this.b;
+        this.b = read;
+        return read;
+    }
+
+    @Override // java.io.FilterInputStream, java.io.InputStream
+    public final int read(byte[] bArr, int i10, int i11) {
+        bArr.getClass();
+        if (i10 < 0 || i11 < 0 || i11 > bArr.length - i10) {
+            throw new IndexOutOfBoundsException();
+        }
+        if (i11 == 0) {
+            return 0;
+        }
+        int read = read();
+        if (read == -1) {
+            return -1;
+        }
+        bArr[i10] = (byte) read;
+        int i12 = 1;
+        while (i12 < i11) {
+            try {
+                int read2 = read();
+                if (read2 == -1) {
+                    break;
+                }
+                bArr[i10 + i12] = (byte) read2;
+                i12++;
+            } catch (IOException unused) {
+            }
+        }
+        return i12;
     }
 }

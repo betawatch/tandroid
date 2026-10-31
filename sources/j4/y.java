@@ -1,20 +1,86 @@
 package j4;
 
 import e2.k0;
+import e2.l0;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class y {
-    public final i a;
+    public final /* synthetic */ int a;
     public final k0 b;
-    public final a4.g c = new a4.g(new byte[64], 64);
+    public final e2.x c;
     public boolean d;
     public boolean e;
     public boolean f;
     public long g;
+    public long h;
+    public long i;
 
-    public y(i iVar, k0 k0Var) {
-        this.a = iVar;
-        this.b = k0Var;
+    public y(int i10) {
+        this.a = i10;
+        switch (i10) {
+            case 1:
+                this.b = new k0(0L);
+                this.g = -9223372036854775807L;
+                this.h = -9223372036854775807L;
+                this.i = -9223372036854775807L;
+                this.c = new e2.x();
+                break;
+            default:
+                this.b = new k0(0L);
+                this.g = -9223372036854775807L;
+                this.h = -9223372036854775807L;
+                this.i = -9223372036854775807L;
+                this.c = new e2.x();
+                break;
+        }
+    }
+
+    public static int b(int i10, byte[] bArr) {
+        return (bArr[i10 + 3] & 255) | ((bArr[i10] & 255) << 24) | ((bArr[i10 + 1] & 255) << 16) | ((bArr[i10 + 2] & 255) << 8);
+    }
+
+    public static long c(e2.x xVar) {
+        int i10 = xVar.b;
+        if (xVar.a() < 9) {
+            return -9223372036854775807L;
+        }
+        byte[] bArr = new byte[9];
+        xVar.k(0, 9, bArr);
+        xVar.N(i10);
+        byte b10 = bArr[0];
+        if ((b10 & 196) == 68) {
+            byte b11 = bArr[2];
+            if ((b11 & 4) == 4) {
+                byte b12 = bArr[4];
+                if ((b12 & 4) == 4 && (bArr[5] & 1) == 1 && (bArr[8] & 3) == 3) {
+                    long j10 = b10;
+                    long j11 = b11;
+                    return ((j11 & 3) << 13) | ((j10 & 3) << 28) | (((56 & j10) >> 3) << 30) | ((bArr[1] & 255) << 20) | (((j11 & 248) >> 3) << 15) | ((bArr[3] & 255) << 5) | ((b12 & 248) >> 3);
+                }
+            }
+        }
+        return -9223372036854775807L;
+    }
+
+    public final void a(c3.p pVar) {
+        switch (this.a) {
+            case 0:
+                byte[] bArr = l0.b;
+                e2.x xVar = this.c;
+                xVar.getClass();
+                xVar.L(bArr.length, bArr);
+                this.d = true;
+                pVar.m();
+                break;
+            default:
+                byte[] bArr2 = l0.b;
+                e2.x xVar2 = this.c;
+                xVar2.getClass();
+                xVar2.L(bArr2.length, bArr2);
+                this.d = true;
+                pVar.m();
+                break;
+        }
     }
 }

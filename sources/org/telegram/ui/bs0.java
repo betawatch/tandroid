@@ -1,29 +1,35 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.Utilities;
+import java.io.File;
+import java.util.List;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class bs0 implements Utilities.Callback {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ hs0 b;
-    public final /* synthetic */ boolean c;
+public interface bs0 {
+    boolean a(int i10);
 
-    public /* synthetic */ bs0(hs0 hs0Var, boolean z10, int i10) {
-        this.a = i10;
-        this.b = hs0Var;
-        this.c = z10;
-    }
+    File b(int i10);
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        switch (this.a) {
-            case 0:
-                org.telegram.ui.Components.wc.F(this.b.b.e0, this.c).j();
-                break;
-            default:
-                org.telegram.ui.Components.wc.F(this.b.b.e0, this.c).j();
-                break;
-        }
-    }
+    String c(int i10);
+
+    TLObject d(int i10);
+
+    boolean e(int i10);
+
+    TLRPC.PhotoSize f(TLObject tLObject, int[] iArr);
+
+    Object g();
+
+    TL_iv.PageBlock get(int i10);
+
+    List getAll();
+
+    void h(TL_iv.PageBlock pageBlock);
+
+    CharSequence i(int i10);
+
+    int j();
 }

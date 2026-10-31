@@ -1,36 +1,24 @@
 package c9;
 
-import android.os.IBinder;
-import android.os.IInterface;
-import android.os.Parcel;
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Build;
+import android.os.Bundle;
+import org.telegram.messenger.GoogleVoiceClientService;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class a implements c, IInterface {
-    public final IBinder a;
-
-    public a(IBinder iBinder) {
-        this.a = iBinder;
-    }
-
-    public final Parcel F0(Parcel parcel, int i10) {
-        Parcel obtain = Parcel.obtain();
-        try {
-            try {
-                this.a.transact(i10, parcel, obtain, 0);
-                obtain.readException();
-                return obtain;
-            } catch (RuntimeException e) {
-                obtain.recycle();
-                throw e;
-            }
-        } finally {
-            parcel.recycle();
+public abstract class a extends Activity {
+    @Override // android.app.Activity
+    public final void onCreate(Bundle bundle) {
+        super.onCreate(bundle);
+        Intent intent = new Intent(this, (Class<?>) GoogleVoiceClientService.class);
+        intent.putExtra("SearchActionVerificationClientExtraIntent", getIntent());
+        if (Build.VERSION.SDK_INT >= 26) {
+            startForegroundService(intent);
+        } else {
+            startService(intent);
         }
-    }
-
-    @Override // android.os.IInterface
-    public final IBinder asBinder() {
-        return this.a;
+        finish();
     }
 }

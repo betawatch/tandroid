@@ -1,47 +1,37 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import j$.util.concurrent.ConcurrentHashMap;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final /* synthetic */ class bc implements RequestDelegate {
+public final /* synthetic */ class bc implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesController b;
+    public final /* synthetic */ cc b;
     public final /* synthetic */ long c;
     public final /* synthetic */ long d;
-    public final /* synthetic */ ArrayList e;
 
-    public /* synthetic */ bc(int i10, long j10, long j11, ArrayList arrayList, MessagesController messagesController) {
+    public /* synthetic */ bc(cc ccVar, long j10, long j11, int i10) {
         this.a = i10;
-        this.b = messagesController;
+        this.b = ccVar;
         this.c = j10;
         this.d = j11;
-        this.e = arrayList;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$checkUnreadPollVotesInternal2$436(this.c, this.d, this.e, tLObject, tL_error);
-                break;
-            case 1:
-                this.b.lambda$checkUnreadPollVotesInternal2$438(this.c, this.d, this.e, tLObject, tL_error);
-                break;
-            case 2:
-                this.b.lambda$checkUnreadPollVotesInternal2$440(this.c, this.d, this.e, tLObject, tL_error);
-                break;
-            case 3:
-                this.b.lambda$checkUnreadReactionsInternal2$429(this.c, this.d, this.e, tLObject, tL_error);
-                break;
-            case 4:
-                this.b.lambda$checkUnreadReactionsInternal2$431(this.c, this.d, this.e, tLObject, tL_error);
+                cc ccVar = this.b;
+                ConcurrentHashMap concurrentHashMap = ccVar.h.u;
+                String str = ccVar.a.e;
+                long j10 = this.c;
+                long j11 = this.d;
+                concurrentHashMap.put(str, new long[]{j10, j11});
+                i0.g3(new bc(ccVar, j10, j11, 1));
                 break;
             default:
-                this.b.lambda$checkUnreadReactionsInternal2$433(this.c, this.d, this.e, tLObject, tL_error);
+                vb vbVar = this.b.a;
+                zs.f(vbVar.o).k(zs.X1, vbVar.e, Long.valueOf(this.c), Long.valueOf(this.d));
                 break;
         }
     }

@@ -1,13 +1,36 @@
 package yc;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes.dex */
-public final class a {
-    public final String a;
-    public final String b;
+import c3.i0;
+import java.util.regex.Pattern;
+import ve.r;
 
-    public a(String str, String str2) {
-        this.a = str;
-        this.b = str2;
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes.dex */
+public final class a extends h {
+    public static final Pattern e = Pattern.compile("^<([a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*)>");
+    public static final Pattern f = Pattern.compile("^<[a-zA-Z][a-zA-Z0-9.+-]{1,31}:[^<>\u0000- ]*>");
+
+    @Override // yc.h
+    public final df.c b() {
+        String a2 = a(e);
+        if (a2 != null) {
+            String m10 = i0.m(1, 1, a2);
+            ve.k kVar = new ve.k(1, sc.e.h("mailto:", m10), null);
+            kVar.b(new r(m10));
+            return kVar;
+        }
+        String a10 = a(f);
+        if (a10 == null) {
+            return null;
+        }
+        String m11 = i0.m(1, 1, a10);
+        ve.k kVar2 = new ve.k(1, m11, null);
+        kVar2.b(new r(m11));
+        return kVar2;
+    }
+
+    @Override // yc.h
+    public final char d() {
+        return '<';
     }
 }

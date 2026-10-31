@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class f0 extends h0 {
     public static final Class c = DesugarCollections.unmodifiableList(Collections.EMPTY_LIST).getClass();
@@ -45,7 +45,7 @@ public final class f0 extends h0 {
         Object unmodifiableList;
         List list = (List) r1.d.i(obj, j10);
         if (list instanceof e0) {
-            unmodifiableList = ((e0) list).i();
+            unmodifiableList = ((e0) list).h();
         } else {
             if (c.isAssignableFrom(list.getClass())) {
                 return;

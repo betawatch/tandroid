@@ -1,260 +1,113 @@
 package bh;
 
-import android.graphics.Canvas;
-import android.graphics.Rect;
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.view.View;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.LiteMode;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.t5;
-import org.telegram.ui.Components.yj0;
-import org.telegram.ui.qy;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.cd;
+import org.telegram.messenger.i0;
+import org.telegram.ui.ActionBar.a7;
+import org.telegram.ui.ActionBar.p6;
+import org.telegram.ui.ActionBar.t6;
+import org.telegram.ui.jj;
+import w7.b6;
+import w7.e6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes4.dex */
-public final class e {
-    public static int m;
-    public t5 a;
-    public Rect b;
-    public ArrayList c;
-    public View d;
-    public long e;
-    public boolean f;
-    public boolean g;
-    public int h;
-    public boolean i;
-    public ImageReceiver j;
-    public int k;
-    public long l;
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final class e extends LinearLayout {
+    public static final /* synthetic */ int e = 0;
+    public final p6 a;
+    public final d b;
+    public final d c;
+    public float d;
 
-    public static e a(t5 t5Var, boolean z10, boolean z11) {
-        int i10 = UserConfig.selectedAccount;
-        e eVar = new e();
-        eVar.b = new Rect();
-        eVar.c = new ArrayList();
-        eVar.g = true;
-        eVar.k = -1;
-        eVar.a = t5Var;
-        eVar.f = z10;
-        eVar.h = i10;
-        eVar.i = z11;
-        eVar.e = System.currentTimeMillis();
-        if (z11 && LiteMode.isEnabled(LiteMode.FLAG_ANIMATED_EMOJI_CHAT)) {
-            ImageReceiver imageReceiver = new ImageReceiver();
-            eVar.j = imageReceiver;
-            if (z10) {
-                imageReceiver.setAllowDrawWhileCacheGenerating(true);
-            }
-        }
-        return eVar;
+    public e(Context context, p6 p6Var, jj jjVar, tg.b bVar) {
+        super(context);
+        d dVar = new d(this);
+        this.b = dVar;
+        d dVar2 = new d(this);
+        this.c = dVar2;
+        this.a = p6Var;
+        ah.a c10 = ah.a.c(context, p6Var, bVar, jjVar);
+        dVar.a = c10;
+        int i10 = 0;
+        c10.setOnClickListener(new c(i10));
+        e6.b((ah.a) dVar.a, 0.065f, 2.0f);
+        ah.a c11 = ah.a.c(context, p6Var, bVar, jjVar);
+        dVar2.a = c11;
+        c11.setOnClickListener(new c(i10));
+        e6.b((ah.a) dVar2.a, 0.065f, 2.0f);
+        a(dVar, cd.L0(2131746278, null), R.drawable.input_reply, false);
+        a(dVar2, cd.L0(2131750588, null), R.drawable.input_forward, true);
+        setOrientation(0);
+        setClipChildren(false);
+        addView((ah.a) dVar.a, b6.m(1.0f, 0, 56, 1, -1, 0));
+        addView((ah.a) dVar2.a, b6.m(1.0f, 0, 56, -1, 1, 0));
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:34:0x0144  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x0184  */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x0189 A[SYNTHETIC] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void b(Canvas canvas) {
-        float f7;
-        Rect rect = this.b;
-        ImageReceiver imageReceiver = this.j;
-        ArrayList arrayList = this.c;
-        boolean z10 = this.f;
+    public final void a(d dVar, String str, int i10, boolean z10) {
+        TextView textView = new TextView(getContext());
+        textView.setText(str);
+        textView.setGravity(16);
+        textView.setTextSize(1, 15.0f);
+        textView.setPadding(i0.L(21.0f), 0, i0.L(21.0f), 0);
+        textView.setCompoundDrawablePadding(i0.L(6.0f));
+        int i11 = t6.Ll;
+        p6 p6Var = this.a;
+        a7.V(textView, i11, p6Var);
+        textView.setTypeface(i0.o());
+        Drawable mutate = getContext().getResources().getDrawable(i10).mutate();
+        a7.y(this, mutate, t6.Kl, p6Var, PorterDuff.Mode.MULTIPLY);
+        Drawable drawable = z10 ? mutate : null;
         if (z10) {
-            long currentTimeMillis = System.currentTimeMillis();
-            if (arrayList.size() < 12) {
-                long j10 = currentTimeMillis - this.e;
-                if (j10 < 1500 && j10 > 200 && currentTimeMillis - this.l > 50 && Utilities.fastRandom.nextInt() % 6 == 0) {
-                    d dVar = new d(this);
-                    dVar.a();
-                    arrayList.add(dVar);
-                    this.l = currentTimeMillis;
-                }
-            }
-        } else if (this.g) {
-            for (int i10 = 0; i10 < 7; i10++) {
-                d dVar2 = new d(this);
-                dVar2.a();
-                arrayList.add(dVar2);
-            }
+            mutate = null;
         }
-        if (imageReceiver != null && this.i && (imageReceiver.getLottieAnimation() == null || !imageReceiver.getLottieAnimation().A())) {
-            if (z10) {
-                canvas.save();
-                canvas.translate(rect.width() / 3.0f, 0.0f);
-                imageReceiver.draw(canvas);
-                canvas.restore();
-            } else {
-                imageReceiver.draw(canvas);
-            }
-        }
-        canvas.save();
-        canvas.translate(rect.left, rect.top);
-        int i11 = 0;
-        while (i11 < arrayList.size()) {
-            d dVar3 = (d) arrayList.get(i11);
-            float min = (Math.min(40.0f, 1000.0f / AndroidUtilities.screenRefreshRate) / dVar3.i) + dVar3.h;
-            dVar3.h = min;
-            float clamp = Utilities.clamp(min, 1.0f, 0.0f);
-            dVar3.h = clamp;
-            ds dsVar = ds.g;
-            float interpolation = dsVar.getInterpolation(clamp);
-            float lerp = AndroidUtilities.lerp(dVar3.a, dVar3.c, interpolation);
-            e eVar = dVar3.l;
-            t5 t5Var = eVar.a;
-            float f10 = dVar3.h;
-            float lerp2 = f10 < 0.3f ? AndroidUtilities.lerp(dVar3.b, dVar3.d, dsVar.getInterpolation(f10 / 0.3f)) : AndroidUtilities.lerp(dVar3.d, dVar3.e, ds.i.getInterpolation((f10 - 0.3f) / 0.7f));
-            float lerp3 = AndroidUtilities.lerp(dVar3.f, dVar3.g, interpolation);
-            if (!eVar.f) {
-                float height = eVar.b.height() * 0.8f;
-                if (lerp2 > height) {
-                    f7 = 1.0f - Utilities.clamp((lerp2 - height) / AndroidUtilities.dp(16.0f), 1.0f, 0.0f);
-                    float f11 = (lerp3 / 2.0f) * f7;
-                    canvas.save();
-                    if (dVar3.j) {
-                        canvas.scale(-1.0f, 1.0f, lerp, lerp2);
-                    }
-                    canvas.rotate(dVar3.k, lerp, lerp2);
-                    t5Var.setAlpha((int) (Utilities.clamp(dVar3.h / 0.2f, 1.0f, 0.0f) * f7 * 255.0f));
-                    t5Var.setBounds((int) (lerp - f11), (int) (lerp2 - f11), (int) (lerp + f11), (int) (lerp2 + f11));
-                    t5Var.draw(canvas);
-                    t5Var.setAlpha(255);
-                    canvas.restore();
-                    if (((d) arrayList.get(i11)).h < 1.0f) {
-                        arrayList.remove(i11);
-                        i11--;
-                    }
-                    i11++;
-                }
-            }
-            f7 = 1.0f;
-            float f112 = (lerp3 / 2.0f) * f7;
-            canvas.save();
-            if (dVar3.j) {
-            }
-            canvas.rotate(dVar3.k, lerp, lerp2);
-            t5Var.setAlpha((int) (Utilities.clamp(dVar3.h / 0.2f, 1.0f, 0.0f) * f7 * 255.0f));
-            t5Var.setBounds((int) (lerp - f112), (int) (lerp2 - f112), (int) (lerp + f112), (int) (lerp2 + f112));
-            t5Var.draw(canvas);
-            t5Var.setAlpha(255);
-            canvas.restore();
-            if (((d) arrayList.get(i11)).h < 1.0f) {
-            }
-            i11++;
-        }
-        canvas.restore();
-        View view = this.d;
-        if (view != null) {
-            view.invalidate();
-        }
-        this.g = false;
+        textView.setCompoundDrawablesWithIntrinsicBounds(drawable, (Drawable) null, mutate, (Drawable) null);
+        dVar.b = textView;
+        ((ah.a) dVar.a).addView(textView, b6.e(-2, -2, 17));
     }
 
-    public final boolean c() {
-        return System.currentTimeMillis() - this.e > 2500;
+    public final void b(d dVar) {
+        float f7 = this.d * ((fe.b) dVar.c).e;
+        float f10 = (1.0f - f7) * (-i0.L(54.0f));
+        float interpolation = (1.0f - ee.a.a.getInterpolation(f7)) * (getMeasuredWidth() / 2.0f);
+        if (dVar == this.b) {
+            interpolation *= -1.0f;
+        }
+        ((ah.a) dVar.a).setTranslationX(interpolation);
+        ((ah.a) dVar.a).setTranslationY(f10);
+        ((ah.a) dVar.a).setAlpha(f7);
+        ((ah.a) dVar.a).setVisibility(f7 > 0.0f ? 0 : 4);
     }
 
-    public final void d(View view) {
-        this.a.o(view);
-        ImageReceiver imageReceiver = this.j;
-        if (imageReceiver != null) {
-            imageReceiver.onDetachedFromWindow();
-            imageReceiver.clearImage();
-        }
+    public View getForwardButton() {
+        return (ah.a) this.c.a;
     }
 
-    public final void e(int i10, int i11, int i12, int i13) {
-        Rect rect = this.b;
-        rect.set(i10, i11, i12, i13);
-        ImageReceiver imageReceiver = this.j;
-        if (imageReceiver != null) {
-            imageReceiver.setImageCoords(rect);
-        }
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
+        b(this.c);
+        b(this.b);
     }
 
-    public final void f(View view) {
-        boolean z10;
-        boolean z11;
-        TLRPC.TL_availableReaction tL_availableReaction;
-        TLRPC.Document document;
-        boolean z12 = this.f;
-        int i10 = this.h;
-        t5 t5Var = this.a;
-        t5Var.a(view);
-        this.d = view;
-        ImageReceiver imageReceiver = this.j;
-        if (imageReceiver == null || !this.i) {
-            return;
+    public void setForwardButtonOnClickListener(View.OnClickListener onClickListener) {
+        ((ah.a) this.c.a).setOnClickListener(onClickListener);
+    }
+
+    public void setReplyButtonOnClickListener(View.OnClickListener onClickListener) {
+        ((ah.a) this.b.a).setOnClickListener(onClickListener);
+    }
+
+    public void setTotalVisibilityFactor(float f7) {
+        if (this.d != f7) {
+            this.d = f7;
+            b(this.c);
+            b(this.b);
         }
-        imageReceiver.onAttachedToWindow();
-        TLRPC.Document document2 = t5Var.e;
-        TLRPC.TL_messages_stickerSet tL_messages_stickerSet = null;
-        String findAnimatedEmojiEmoticon = MessageObject.findAnimatedEmojiEmoticon(document2, null);
-        if (findAnimatedEmojiEmoticon == null || (tL_availableReaction = MediaDataController.getInstance(i10).getReactionsMap().get(findAnimatedEmojiEmoticon)) == null || (document = tL_availableReaction.around_animation) == null) {
-            z10 = true;
-            z11 = false;
-        } else {
-            if (z12) {
-                StringBuilder sb2 = new StringBuilder();
-                int i11 = m;
-                m = i11 + 1;
-                sb2.append(i11);
-                sb2.append(" ");
-                imageReceiver.setUniqKeyPrefix(sb2.toString());
-                int f7 = qy.f();
-                TLRPC.Document document3 = tL_availableReaction.around_animation;
-                z10 = true;
-                imageReceiver.setImage(ImageLocation.getForDocument(tL_availableReaction.around_animation), f7 + "_" + f7 + "_pcache_compress", null, null, document3, 0);
-            } else {
-                ImageLocation forDocument = ImageLocation.getForDocument(document);
-                String a2 = s0.a();
-                TLRPC.Document document4 = tL_availableReaction.around_animation;
-                z10 = true;
-                imageReceiver.setImage(forDocument, a2, null, null, document4, 0);
-            }
-            z11 = z10;
-        }
-        if (!z11) {
-            String str = UserConfig.getInstance(i10).genericAnimationsStickerPack;
-            if (str != null && (tL_messages_stickerSet = MediaDataController.getInstance(i10).getStickerSetByName(str)) == null) {
-                tL_messages_stickerSet = MediaDataController.getInstance(i10).getStickerSetByEmojiOrName(str);
-            }
-            if (tL_messages_stickerSet != null) {
-                if (this.k < 0) {
-                    this.k = Math.abs(Utilities.fastRandom.nextInt() % tL_messages_stickerSet.documents.size());
-                }
-                if (z12) {
-                    StringBuilder sb3 = new StringBuilder();
-                    int i12 = m;
-                    m = i12 + 1;
-                    sb3.append(i12);
-                    sb3.append(" ");
-                    imageReceiver.setUniqKeyPrefix(sb3.toString());
-                    int f10 = qy.f();
-                    imageReceiver.setImage(ImageLocation.getForDocument(tL_messages_stickerSet.documents.get(this.k)), f10 + "_" + f10 + "_pcache_compress", null, null, tL_messages_stickerSet.documents.get(this.k), 0);
-                } else {
-                    imageReceiver.setImage(ImageLocation.getForDocument(tL_messages_stickerSet.documents.get(this.k)), "60_60", null, null, tL_messages_stickerSet.documents.get(this.k), 0);
-                }
-                z11 = z10;
-            }
-        }
-        if (!z11) {
-            imageReceiver.setImageBitmap(new yj0(R.raw.custom_emoji_reaction, AndroidUtilities.dp(60.0f), AndroidUtilities.dp(60.0f), false, null));
-            return;
-        }
-        if (imageReceiver.getLottieAnimation() != null) {
-            imageReceiver.getLottieAnimation().N(0, false, z10);
-        }
-        imageReceiver.setAutoRepeat(0);
     }
 }

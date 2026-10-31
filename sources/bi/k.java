@@ -1,48 +1,65 @@
 package bi;
 
-import android.app.Activity;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.TwoStepVerificationActivity;
+import android.graphics.drawable.Drawable;
+import org.telegram.ui.Components.z60;
+import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class k implements RequestDelegate {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
+public final /* synthetic */ class k implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ z60 b;
+    public final /* synthetic */ z60 c;
 
-    public /* synthetic */ k(y yVar, TwoStepVerificationActivity twoStepVerificationActivity, Activity activity, boolean z10, long j10) {
-        this.d = yVar;
-        this.e = twoStepVerificationActivity;
-        this.f = activity;
-        this.b = z10;
-        this.c = j10;
+    public /* synthetic */ k(z60 z60Var, z60 z60Var2, int i10) {
+        this.a = i10;
+        this.b = z60Var;
+        this.c = z60Var2;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        z60 z60Var = this.c;
+        z60 z60Var2 = this.b;
+        switch (i10) {
             case 0:
-                AndroidUtilities.runOnUIThread(new l((y) this.d, tL_error, (TwoStepVerificationActivity) this.e, (Activity) this.f, this.b, this.c, tLObject));
+                z60Var2.K(z60Var);
+                break;
+            case 1:
+                z60Var2.K(z60Var);
+                break;
+            case 2:
+                z60Var2.K(z60Var);
+                break;
+            case 3:
+                z60Var2.K(z60Var);
+                break;
+            case 4:
+                z60Var2.K(z60Var);
+                break;
+            case 5:
+                z60Var2.K(z60Var);
+                break;
+            case 6:
+                z60Var2.K(z60Var);
+                break;
+            case 7:
+                z60Var2.K(z60Var);
+                break;
+            case 8:
+                z60Var2.K(z60Var);
+                break;
+            case 9:
+                Drawable[] drawableArr = PhotoViewer.U8;
+                z60Var2.K(z60Var);
+                break;
+            case 10:
+                z60Var2.K(z60Var);
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new n((di.h7) this.d, tL_error, this.b, this.c, (Utilities.Callback) this.e, (org.telegram.ui.ActionBar.u6) this.f));
+                z60Var2.K(z60Var);
                 break;
         }
-    }
-
-    public /* synthetic */ k(di.h7 h7Var, boolean z10, long j10, Utilities.Callback callback, org.telegram.ui.ActionBar.u6 u6Var) {
-        this.d = h7Var;
-        this.b = z10;
-        this.c = j10;
-        this.e = callback;
-        this.f = u6Var;
     }
 }

@@ -1,173 +1,144 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.Color;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.ScrollView;
-import android.widget.TextView;
-import java.util.HashMap;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.TelegramQRCodeWriter;
+import android.graphics.Canvas;
+import android.graphics.Rect;
+import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public class jj0 extends org.telegram.ui.ActionBar.k3 {
-    public final Bitmap b;
-    public final TextView c;
-    public final TextView d;
-    public final TextView e;
-    public final int f;
-    public final bk0 h;
-    public boolean n;
-    public int r;
+public final class jj0 extends g9 {
+    public final /* synthetic */ int G;
+    public final /* synthetic */ kj0 H;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public jj0(Context context, String str, String str2, String str3, boolean z10) {
-        super(1, context, (org.telegram.ui.ActionBar.u6) null, false);
-        Bitmap bitmap = null;
-        fixNavigationBar();
-        setTitle(str, true);
-        jg.l lVar = new jg.l(context, 3);
-        lVar.setScaleType(ImageView.ScaleType.FIT_XY);
-        lVar.setOutlineProvider(new ag.v0(17));
-        lVar.setClipToOutline(true);
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(1);
-        linearLayout.setPadding(0, AndroidUtilities.dp(16.0f), 0, 0);
-        Bitmap bitmap2 = this.b;
-        try {
-            HashMap hashMap = new HashMap();
-            hashMap.put(ec.b.a, jc.c.c);
-            hashMap.put(ec.b.c, 0);
-            TelegramQRCodeWriter telegramQRCodeWriter = new TelegramQRCodeWriter();
-            Bitmap encode = telegramQRCodeWriter.encode(str2, 768, 768, hashMap, bitmap2);
-            this.f = telegramQRCodeWriter.getImageSize();
-            bitmap = encode;
-        } catch (Exception e) {
-            FileLog.e(e);
-        }
-        this.b = bitmap;
-        lVar.setImageBitmap(bitmap);
-        bk0 bk0Var = new bk0(context);
-        this.h = bk0Var;
-        bk0Var.setScaleType(ImageView.ScaleType.FIT_CENTER);
-        bk0Var.setBackgroundColor(-1);
-        org.telegram.ui.em0 em0Var = new org.telegram.ui.em0(this, context, lVar);
-        em0Var.addView(lVar, kb1.g(-1.0f, -1));
-        em0Var.addView(bk0Var, kb1.i(60, 60, 17));
-        linearLayout.addView(em0Var, kb1.x(220, 220, 1, 30, 0, 30, 0));
-        TextView textView = new TextView(context);
-        this.c = textView;
-        textView.setTextSize(1, 14.0f);
-        textView.setText(str3);
-        textView.setGravity(1);
-        linearLayout.addView(textView, kb1.h(-1, -2.0f, 0, 40.0f, 8.0f, 40.0f, 8.0f));
-        TextView textView2 = new TextView(context);
-        this.d = textView2;
-        textView2.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
-        textView2.setGravity(17);
-        textView2.setTextSize(1, 14.0f);
-        textView2.setTypeface(AndroidUtilities.bold());
-        textView2.setText(LocaleController.getString(R.string.ShareQrCode));
-        textView2.setOnClickListener(new ga(24, this, context));
-        linearLayout.addView(textView2, kb1.x(-1, 48, 80, 16, 15, 16, 3));
-        if (z10) {
-            TextView textView3 = new TextView(context);
-            this.e = textView3;
-            textView3.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
-            textView3.setGravity(17);
-            textView3.setTextSize(1, 14.0f);
-            textView3.setText(LocaleController.getString(R.string.ShareLink));
-            textView3.setOnClickListener(new ga(25, str2, context));
-            linearLayout.addView(textView3, kb1.x(-1, 48, 80, 16, 3, 16, 16));
-        }
-        updateColors();
-        ScrollView scrollView = new ScrollView(context);
-        scrollView.addView(linearLayout);
-        setCustomView(scrollView);
+    public /* synthetic */ jj0(kj0 kj0Var, Context context, int i10) {
+        super(context);
+        this.G = i10;
+        this.H = kj0Var;
     }
 
-    public final void m(int i10) {
-        bk0 bk0Var = this.h;
-        bk0Var.setAutoRepeat(true);
-        bk0Var.f(i10, 60, 60, null);
-        bk0Var.d();
-    }
-
-    @Override // org.telegram.ui.ActionBar.k3
-    public final void onThemeColorsChanged() {
-        super.onThemeColorsChanged();
-        try {
-            int i10 = org.telegram.ui.ActionBar.y6.Sh;
-            int themedColor = getThemedColor(i10) * 31;
-            int i11 = org.telegram.ui.ActionBar.y6.Oh;
-            int themedColor2 = (getThemedColor(i11) * 17) + themedColor;
-            int i12 = org.telegram.ui.ActionBar.y6.Qh;
-            int themedColor3 = (getThemedColor(i12) * 13) + themedColor2;
-            int i13 = org.telegram.ui.ActionBar.y6.i6;
-            int themedColor4 = (getThemedColor(i13) * 7) + themedColor3;
-            int i14 = org.telegram.ui.ActionBar.y6.y6;
-            int themedColor5 = (getThemedColor(i14) * 5) + themedColor4;
-            int i15 = org.telegram.ui.ActionBar.y6.G6;
-            int themedColor6 = (getThemedColor(i15) * 3) + themedColor5;
-            int i16 = org.telegram.ui.ActionBar.y6.h5;
-            int themedColor7 = themedColor6 + getThemedColor(i16);
-            if (this.n && themedColor7 == this.r) {
-                return;
-            }
-            this.n = true;
-            this.r = themedColor7;
-            TextView textView = this.d;
-            if (textView != null) {
-                textView.setTextColor(getThemedColor(i10));
-                org.telegram.ui.ActionBar.y6.E1(textView.getBackground(), getThemedColor(i11), false);
-                org.telegram.ui.ActionBar.y6.E1(textView.getBackground(), getThemedColor(i12), true);
-            }
-            TextView textView2 = this.e;
-            if (textView2 != null) {
-                textView2.setTextColor(getThemedColor(i11));
-                org.telegram.ui.ActionBar.y6.E1(textView2.getBackground(), i0.a.o(getThemedColor(i11), Math.min(255, Color.alpha(getThemedColor(i13)) * 2)), true);
-            }
-            TextView textView3 = this.c;
-            if (textView3 != null) {
-                textView3.setTextColor(getThemedColor(i14));
-            }
-            if (getTitleView() != null) {
-                getTitleView().setTextColor(getThemedColor(i15));
-            }
-            setBackgroundColor(getThemedColor(i16));
-        } catch (Exception e) {
-            FileLog.e(e);
+    @Override // org.telegram.ui.Components.g9
+    public ImageReceiver c() {
+        switch (this.G) {
+            case 0:
+                return new ij0(0, this);
+            case 1:
+                return new ij0(1, this);
+            default:
+                return super.c();
         }
     }
 
-    public final void updateColors() {
-        int themedColor = getThemedColor(org.telegram.ui.ActionBar.y6.Sh);
-        TextView textView = this.d;
-        textView.setTextColor(themedColor);
-        int dp = AndroidUtilities.dp(24.0f);
-        int i10 = org.telegram.ui.ActionBar.y6.Oh;
-        int themedColor2 = getThemedColor(i10);
-        int themedColor3 = getThemedColor(org.telegram.ui.ActionBar.y6.Qh);
-        textView.setBackground(org.telegram.ui.ActionBar.y6.j0(dp, dp, dp, dp, themedColor2, themedColor3, themedColor3));
-        TextView textView2 = this.e;
-        if (textView2 != null) {
-            textView2.setTextColor(getThemedColor(i10));
-            textView2.setBackground(org.telegram.ui.ActionBar.y6.g0(i0.a.o(getThemedColor(i10), Math.min(255, Color.alpha(getThemedColor(org.telegram.ui.ActionBar.y6.i6)) * 2)), 7, -1));
+    @Override // android.view.View
+    public void dispatchDraw(Canvas canvas) {
+        switch (this.G) {
+            case 0:
+                kj0 kj0Var = this.H;
+                jj0 jj0Var = kj0Var.b;
+                super.dispatchDraw(canvas);
+                if (this.a.B() != null && !kj0Var.E) {
+                    this.a.B().start();
+                }
+                if (kj0Var.s && !kj0Var.w && this.a.B() != null && this.a.B().A() && jj0Var.a.B() != null && jj0Var.a.B().u()) {
+                    kj0Var.w = true;
+                    jj0Var.a.B().N(0, false, true);
+                    jj0Var.setVisibility(0);
+                    Runnable runnable = kj0Var.P.P0;
+                    if (runnable != null) {
+                        runnable.run();
+                    }
+                    org.telegram.messenger.i0.g3(new eb0(this, 17));
+                }
+                invalidate();
+                break;
+            default:
+                super.dispatchDraw(canvas);
+                break;
         }
-        int i11 = org.telegram.ui.ActionBar.y6.y6;
-        int themedColor4 = getThemedColor(i11);
-        TextView textView3 = this.c;
-        textView3.setTextColor(themedColor4);
-        textView3.setTextColor(getThemedColor(i11));
-        if (getTitleView() != null) {
-            getTitleView().setTextColor(getThemedColor(org.telegram.ui.ActionBar.y6.G6));
+    }
+
+    @Override // android.view.View
+    public void invalidate(Rect rect) {
+        switch (this.G) {
+            case 0:
+                kj0 kj0Var = this.H;
+                if (!sg.e0.c(this, kj0Var.P)) {
+                    super.invalidate(rect);
+                    kj0Var.P.invalidate();
+                    break;
+                }
+                break;
+            default:
+                super.invalidate(rect);
+                break;
         }
-        setBackgroundColor(getThemedColor(org.telegram.ui.ActionBar.y6.h5));
+    }
+
+    @Override // org.telegram.ui.Components.g9, android.view.View
+    public void onDraw(Canvas canvas) {
+        switch (this.G) {
+            case 1:
+                this.H.b();
+                super.onDraw(canvas);
+                break;
+            case 2:
+                f5 f5Var = this.e;
+                ImageReceiver imageReceiver = f5Var != null ? f5Var.k : this.a;
+                if (imageReceiver != null && imageReceiver.B() != null) {
+                    imageReceiver.B().start();
+                }
+                super.onDraw(canvas);
+                break;
+            default:
+                super.onDraw(canvas);
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public void invalidate(int i10, int i11, int i12, int i13) {
+        switch (this.G) {
+            case 0:
+                if (!sg.e0.c(this)) {
+                    super.invalidate(i10, i11, i12, i13);
+                    break;
+                }
+                break;
+            case 1:
+                if (!sg.e0.c(this)) {
+                    super.invalidate(i10, i11, i12, i13);
+                    break;
+                }
+                break;
+            default:
+                super.invalidate(i10, i11, i12, i13);
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public final void invalidate() {
+        int i10 = this.G;
+        kj0 kj0Var = this.H;
+        switch (i10) {
+            case 0:
+                if (!sg.e0.c(this, kj0Var.P)) {
+                    super.invalidate();
+                    kj0Var.P.invalidate();
+                    break;
+                }
+                break;
+            case 1:
+                if (!sg.e0.c(this)) {
+                    super.invalidate();
+                    break;
+                }
+                break;
+            default:
+                super.invalidate();
+                kj0Var.P.invalidate();
+                break;
+        }
     }
 }

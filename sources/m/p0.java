@@ -1,6 +1,5 @@
 package m;
 
-import a8.kc;
 import android.R;
 import android.content.Context;
 import android.content.res.ColorStateList;
@@ -21,8 +20,9 @@ import android.widget.ListAdapter;
 import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
 import android.widget.ThemedSpinnerAdapter;
+import v7.r7;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class p0 extends Spinner {
     public static final int[] r = {R.attr.spinnerMode};
@@ -47,10 +47,10 @@ public final class p0 extends Spinner {
         super(context, attributeSet, org.telegram.messenger.beta.R.attr.spinnerStyle);
         TypedArray typedArray;
         this.n = new Rect();
-        b3.a(this, getContext());
+        a3.a(this, getContext());
         int[] iArr = f.a.v;
-        k6.c D = k6.c.D(context, attributeSet, iArr, org.telegram.messenger.beta.R.attr.spinnerStyle);
-        TypedArray typedArray2 = (TypedArray) D.c;
+        li.k G = li.k.G(context, attributeSet, iArr, org.telegram.messenger.beta.R.attr.spinnerStyle);
+        TypedArray typedArray2 = (TypedArray) G.c;
         this.a = new e2.c(this);
         int resourceId = typedArray2.getResourceId(4, 0);
         if (resourceId != 0) {
@@ -79,8 +79,8 @@ public final class p0 extends Spinner {
                 }
                 throw th;
             }
-        } catch (Exception e10) {
-            e = e10;
+        } catch (Exception e7) {
+            e = e7;
             typedArray = null;
         } catch (Throwable th3) {
             th = th3;
@@ -95,11 +95,11 @@ public final class p0 extends Spinner {
             i0Var.c = typedArray2.getString(2);
         } else if (i10 == 1) {
             m0 m0Var = new m0(this, this.b, attributeSet);
-            k6.c D2 = k6.c.D(this.b, attributeSet, iArr, org.telegram.messenger.beta.R.attr.spinnerStyle);
-            this.h = ((TypedArray) D2.c).getLayoutDimension(3, -2);
-            m0Var.i(D2.w(1));
+            li.k G2 = li.k.G(this.b, attributeSet, iArr, org.telegram.messenger.beta.R.attr.spinnerStyle);
+            this.h = ((TypedArray) G2.c).getLayoutDimension(3, -2);
+            m0Var.j(G2.w(1));
             m0Var.S = typedArray2.getString(2);
-            D2.E();
+            G2.I();
             this.f = m0Var;
             this.c = new e0(this, this, m0Var);
         }
@@ -109,14 +109,14 @@ public final class p0 extends Spinner {
             arrayAdapter.setDropDownViewResource(org.telegram.messenger.beta.R.layout.support_simple_spinner_dropdown_item);
             setAdapter((SpinnerAdapter) arrayAdapter);
         }
-        D.E();
+        G.I();
         this.e = true;
         SpinnerAdapter spinnerAdapter = this.d;
         if (spinnerAdapter != null) {
             setAdapter(spinnerAdapter);
             this.d = null;
         }
-        this.a.f(attributeSet, org.telegram.messenger.beta.R.attr.spinnerStyle);
+        this.a.k(attributeSet, org.telegram.messenger.beta.R.attr.spinnerStyle);
     }
 
     public final int a(SpinnerAdapter spinnerAdapter, Drawable drawable) {
@@ -169,7 +169,7 @@ public final class p0 extends Spinner {
     @Override // android.widget.Spinner
     public int getDropDownVerticalOffset() {
         o0 o0Var = this.f;
-        return o0Var != null ? o0Var.m() : super.getDropDownVerticalOffset();
+        return o0Var != null ? o0Var.n() : super.getDropDownVerticalOffset();
     }
 
     @Override // android.widget.Spinner
@@ -184,7 +184,7 @@ public final class p0 extends Spinner {
     @Override // android.widget.Spinner
     public Drawable getPopupBackground() {
         o0 o0Var = this.f;
-        return o0Var != null ? o0Var.e() : super.getPopupBackground();
+        return o0Var != null ? o0Var.g() : super.getPopupBackground();
     }
 
     @Override // android.widget.Spinner
@@ -195,13 +195,13 @@ public final class p0 extends Spinner {
     @Override // android.widget.Spinner
     public CharSequence getPrompt() {
         o0 o0Var = this.f;
-        return o0Var != null ? o0Var.d() : super.getPrompt();
+        return o0Var != null ? o0Var.e() : super.getPrompt();
     }
 
     public ColorStateList getSupportBackgroundTintList() {
         e2.c cVar = this.a;
         if (cVar != null) {
-            return cVar.d();
+            return cVar.i();
         }
         return null;
     }
@@ -209,7 +209,7 @@ public final class p0 extends Spinner {
     public PorterDuff.Mode getSupportBackgroundTintMode() {
         e2.c cVar = this.a;
         if (cVar != null) {
-            return cVar.e();
+            return cVar.j();
         }
         return null;
     }
@@ -241,7 +241,7 @@ public final class p0 extends Spinner {
         if (!n0Var.a || (viewTreeObserver = getViewTreeObserver()) == null) {
             return;
         }
-        viewTreeObserver.addOnGlobalLayoutListener(new androidx.mediarouter.app.j(this, 3));
+        viewTreeObserver.addOnGlobalLayoutListener(new androidx.mediarouter.app.i(this, 3));
     }
 
     @Override // android.widget.Spinner, android.widget.AbsSpinner, android.view.View
@@ -270,7 +270,7 @@ public final class p0 extends Spinner {
         if (o0Var.a()) {
             return true;
         }
-        o0Var.l(g0.b(this), g0.a(this));
+        o0Var.m(g0.b(this), g0.a(this));
         return true;
     }
 
@@ -279,7 +279,7 @@ public final class p0 extends Spinner {
         super.setBackgroundDrawable(drawable);
         e2.c cVar = this.a;
         if (cVar != null) {
-            cVar.g();
+            cVar.l();
         }
     }
 
@@ -288,7 +288,7 @@ public final class p0 extends Spinner {
         super.setBackgroundResource(i10);
         e2.c cVar = this.a;
         if (cVar != null) {
-            cVar.h(i10);
+            cVar.m(i10);
         }
     }
 
@@ -298,7 +298,7 @@ public final class p0 extends Spinner {
         if (o0Var == null) {
             super.setDropDownHorizontalOffset(i10);
         } else {
-            o0Var.k(i10);
+            o0Var.l(i10);
             o0Var.c(i10);
         }
     }
@@ -307,7 +307,7 @@ public final class p0 extends Spinner {
     public void setDropDownVerticalOffset(int i10) {
         o0 o0Var = this.f;
         if (o0Var != null) {
-            o0Var.j(i10);
+            o0Var.k(i10);
         } else {
             super.setDropDownVerticalOffset(i10);
         }
@@ -326,7 +326,7 @@ public final class p0 extends Spinner {
     public void setPopupBackgroundDrawable(Drawable drawable) {
         o0 o0Var = this.f;
         if (o0Var != null) {
-            o0Var.i(drawable);
+            o0Var.j(drawable);
         } else {
             super.setPopupBackgroundDrawable(drawable);
         }
@@ -334,14 +334,14 @@ public final class p0 extends Spinner {
 
     @Override // android.widget.Spinner
     public void setPopupBackgroundResource(int i10) {
-        setPopupBackgroundDrawable(kc.b(getPopupContext(), i10));
+        setPopupBackgroundDrawable(r7.b(getPopupContext(), i10));
     }
 
     @Override // android.widget.Spinner
     public void setPrompt(CharSequence charSequence) {
         o0 o0Var = this.f;
         if (o0Var != null) {
-            o0Var.g(charSequence);
+            o0Var.i(charSequence);
         } else {
             super.setPrompt(charSequence);
         }
@@ -350,14 +350,14 @@ public final class p0 extends Spinner {
     public void setSupportBackgroundTintList(ColorStateList colorStateList) {
         e2.c cVar = this.a;
         if (cVar != null) {
-            cVar.l(colorStateList);
+            cVar.q(colorStateList);
         }
     }
 
     public void setSupportBackgroundTintMode(PorterDuff.Mode mode) {
         e2.c cVar = this.a;
         if (cVar != null) {
-            cVar.m(mode);
+            cVar.r(mode);
         }
     }
 
@@ -383,7 +383,7 @@ public final class p0 extends Spinner {
             if (theme != null && (spinnerAdapter instanceof ThemedSpinnerAdapter)) {
                 h0.a((ThemedSpinnerAdapter) spinnerAdapter, theme);
             }
-            o0Var.n(j0Var);
+            o0Var.o(j0Var);
         }
     }
 }

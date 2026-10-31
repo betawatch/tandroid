@@ -1,12 +1,10 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.LocaleController;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class x3 extends nd0 {
-    @Override // org.telegram.ui.Components.nd0
+public final class x3 extends ac0 {
+    @Override // org.telegram.ui.Components.ac0
     public final CharSequence d(int i10) {
-        return LocaleController.formatPluralString("Minutes", i10, new Object[0]);
+        return org.telegram.messenger.cd.G(i10, "Minutes", new Object[0]);
     }
 }

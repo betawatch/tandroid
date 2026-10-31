@@ -1,26 +1,83 @@
 package org.telegram.ui.Cells;
 
-import org.telegram.messenger.BotInlineKeyboard;
+import android.animation.ValueAnimator;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.z20;
+import org.telegram.tgnet.tl.TL_keyboard;
+import org.telegram.ui.Components.qz0;
+import org.telegram.ui.Components.t80;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public abstract /* synthetic */ class c0 {
-    public static final /* synthetic */ int[] a;
+public final class c0 {
+    public final Runnable a;
+    public boolean b;
+    public float c;
+    public int d;
+    public float e;
+    public int f;
+    public int g;
+    public qz0 h;
+    public TL_keyboard.KeyboardInlineButton i;
+    public org.telegram.messenger.s2 j;
+    public org.telegram.messenger.q2 k;
+    public boolean l;
+    public boolean m;
+    public final Path n = new Path();
+    public final Paint o = new Paint(1);
+    public final RectF p = new RectF();
+    public final float[] q = new float[8];
+    public t80 r;
+    public y s;
+    public Drawable t;
+    public org.telegram.ui.Components.f5 u;
+    public boolean v;
+    public float w;
+    public ValueAnimator x;
 
-    static {
-        int[] iArr = new int[BotInlineKeyboard.BackgroundColor.values().length];
-        a = iArr;
-        try {
-            iArr[BotInlineKeyboard.BackgroundColor.DANGER.ordinal()] = 1;
-        } catch (NoSuchFieldError unused) {
+    public c0(Runnable runnable) {
+        this.a = runnable;
+    }
+
+    public final float a() {
+        if (this.v) {
+            float f7 = this.w;
+            if (f7 != 1.0f) {
+                float min = (Math.min(40.0f, 1000.0f / org.telegram.messenger.i0.r) / 100.0f) + f7;
+                this.w = min;
+                this.w = Utilities.i(min, 1.0f, 0.0f);
+                this.a.run();
+            }
         }
-        try {
-            a[BotInlineKeyboard.BackgroundColor.SUCCESS.ordinal()] = 2;
-        } catch (NoSuchFieldError unused2) {
-        }
-        try {
-            a[BotInlineKeyboard.BackgroundColor.PRIMARY.ordinal()] = 3;
-        } catch (NoSuchFieldError unused3) {
+        return c3.i0.z(1.0f, this.w, 0.04f, 0.96f);
+    }
+
+    public final void b(boolean z10) {
+        ValueAnimator valueAnimator;
+        if (this.v != z10) {
+            this.v = z10;
+            this.a.run();
+            if (z10 && (valueAnimator = this.x) != null) {
+                valueAnimator.removeAllListeners();
+                this.x.cancel();
+            }
+            if (z10) {
+                return;
+            }
+            float f7 = this.w;
+            if (f7 != 0.0f) {
+                ValueAnimator ofFloat = ValueAnimator.ofFloat(f7, 0.0f);
+                this.x = ofFloat;
+                ofFloat.addUpdateListener(new r(this, 1));
+                this.x.addListener(new org.telegram.ui.s9(this, 3));
+                z20.j(2.0f, this.x);
+                this.x.setDuration(350L);
+                this.x.start();
+            }
         }
     }
 }

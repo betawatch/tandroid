@@ -1,113 +1,59 @@
 package w7;
 
-import org.telegram.messenger.voip.VoIPService;
+import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public enum l6 implements f {
-    b(0),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(1),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF3(2),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF5(3),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF7(4),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF9(6),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF11(7),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF14(8),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF2(9),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF6(5),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF4(100),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF8(101),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF10(102),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF12(103),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF13(104),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(105),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(106),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF2(107),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(108),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(109),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF2(110),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(111),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(112),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(113),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(114),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(115),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(116),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(201),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(202),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(VoIPService.ID_INCOMING_CALL_PRENOTIFICATION),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(204),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(205),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(206),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(207),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(301),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(302),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(303),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(304),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(305),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(400),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(401),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(402),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(403),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(404),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(405),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(406),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(407),
-    c(9999);
-
-    public final int a;
-
-    l6(int i10) {
-        this.a = i10;
+public abstract class l6 {
+    public static boolean a(int i10, byte[] bArr) {
+        return ((bArr[i10 / 8] >> (7 - (i10 % 8))) & 1) != 0;
     }
 
-    @Override // w7.f
-    public final int zza() {
-        return this.a;
+    public static int b(byte[] bArr, int[] iArr) {
+        int i10 = 0;
+        if (a(0, bArr) && !a(1, bArr) && !a(2, bArr) && !a(3, bArr) && a(4, bArr) && !a(5, bArr) && !a(6, bArr)) {
+            int i11 = 271;
+            int i12 = 0;
+            while (i10 < 4) {
+                i12 = (i12 << 1) | (a(i11, bArr) ? 1 : 0);
+                i10++;
+                i11++;
+            }
+            int i13 = (i12 * 8) + i11;
+            int i14 = i13 + 1;
+            if (a(i13, bArr)) {
+                int i15 = i13 + 2;
+                if (a(i14, bArr)) {
+                    i14 = i15;
+                } else {
+                    int i16 = i13 + 3;
+                    if (a(i15, bArr)) {
+                        i16 = i13 + 8;
+                    }
+                    int i17 = i16 + 1;
+                    if (a(i16, bArr)) {
+                        i17 = i16 + 3;
+                    }
+                    i14 = i17 + 3;
+                }
+            }
+            if (a(i14, bArr) && iArr.length > 0) {
+                return iArr[iArr.length - 1];
+            }
+        }
+        return -1;
+    }
+
+    public static void c(int i10, byte[] bArr) {
+        int i11 = i10 / 8;
+        bArr[i11] = (byte) (((byte) (1 << (7 - (i10 % 8)))) | bArr[i11]);
+    }
+
+    public static long d(int i10, ByteBuffer byteBuffer) {
+        long j10 = 0;
+        for (int i11 = 0; i11 < i10; i11++) {
+            j10 = (j10 << 8) | (byteBuffer.get() & 255);
+        }
+        return j10;
     }
 }

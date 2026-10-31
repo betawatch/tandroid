@@ -1,34 +1,39 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.app.Activity;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.DialogInterface;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class qu implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ float a;
+public final /* synthetic */ class qu implements DialogInterface.OnClickListener {
+    public final /* synthetic */ int a;
     public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ Activity d;
-    public final /* synthetic */ ru e;
 
-    public qu(ru ruVar, float f7, int i10, int i11, Activity activity) {
-        this.e = ruVar;
-        this.a = f7;
+    public /* synthetic */ qu(int i10, int i11) {
+        this.a = i11;
         this.b = i10;
-        this.c = i11;
-        this.d = activity;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        float max = Math.max(0.0f, Math.min(1.0f, ((((Float) valueAnimator.getAnimatedValue()).floatValue() * 350.0f) - this.a) / 150.0f));
-        tu tuVar = this.e.c;
-        tuVar.n = i0.a.f(max, this.b, this.c);
-        int i10 = tuVar.n;
-        Activity activity = this.d;
-        AndroidUtilities.setNavigationBarColor(activity, i10, false);
-        AndroidUtilities.setLightNavigationBar(activity, AndroidUtilities.computePerceivedBrightness(tuVar.n) >= 0.721f);
+    @Override // android.content.DialogInterface.OnClickListener
+    public final void onClick(DialogInterface dialogInterface, int i10) {
+        switch (this.a) {
+            case 0:
+                int i11 = 2 - i10;
+                if (i11 != this.b) {
+                    org.telegram.messenger.tz.w(i11);
+                    break;
+                } else {
+                    org.telegram.messenger.tz.w(-1);
+                    break;
+                }
+            default:
+                int i12 = 2 - i10;
+                if (i12 != this.b) {
+                    org.telegram.messenger.tz.w(i12);
+                    break;
+                } else {
+                    org.telegram.messenger.tz.w(-1);
+                    break;
+                }
+        }
     }
 }

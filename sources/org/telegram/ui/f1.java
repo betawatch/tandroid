@@ -1,8 +1,6 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.MessageObject;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
 public final class f1 extends g.o {
     public final /* synthetic */ j1 c;
@@ -14,6 +12,6 @@ public final class f1 extends g.o {
     @Override // g.o
     public final int i(int i10) {
         j1 j1Var = this.c;
-        return ((MessageObject.GroupedMessagePosition) j1Var.v.b.get(j1Var.s.items.get((r1.size() - i10) - 1))).spanSize;
+        return ((org.telegram.messenger.bj) j1Var.w.b.get(j1Var.s.items.get((r1.size() - i10) - 1))).i;
     }
 }

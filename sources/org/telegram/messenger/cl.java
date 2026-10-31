@@ -1,37 +1,19 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+import java.util.function.IntFunction;
+
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final /* synthetic */ class cl implements Runnable {
+public final /* synthetic */ class cl implements IntFunction {
     public final /* synthetic */ int a;
-    public final /* synthetic */ TranslateController b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ MessageObject d;
-    public final /* synthetic */ long e;
-    public final /* synthetic */ int f;
 
-    public /* synthetic */ cl(TranslateController translateController, String str, MessageObject messageObject, long j10, int i10, int i11) {
-        this.a = i11;
-        this.b = translateController;
-        this.c = str;
-        this.d = messageObject;
-        this.e = j10;
-        this.f = i10;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // java.util.function.IntFunction
+    public final Object apply(int i10) {
         switch (this.a) {
             case 0:
-                long j10 = this.e;
-                int i10 = this.f;
-                this.b.lambda$checkLanguage$16(this.c, this.d, j10, i10);
-                break;
+                return new int[i10][];
             default:
-                long j11 = this.e;
-                int i11 = this.f;
-                this.b.lambda$checkLanguage$12(this.c, this.d, j11, i11);
-                break;
+                return String.valueOf(i10);
         }
     }
 }

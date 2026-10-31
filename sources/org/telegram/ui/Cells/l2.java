@@ -1,17 +1,28 @@
 package org.telegram.ui.Cells;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+import android.view.ViewGroup;
+import org.telegram.messenger.q20;
+
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public interface l2 {
-    void a(p2 p2Var);
+public final /* synthetic */ class l2 implements q20 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ViewGroup b;
 
-    boolean b();
+    public /* synthetic */ l2(ViewGroup viewGroup, int i10) {
+        this.a = i10;
+        this.b = viewGroup;
+    }
 
-    void c();
-
-    void d(p2 p2Var);
-
-    void e(p2 p2Var);
-
-    void f(p2 p2Var);
+    @Override // org.telegram.messenger.q20
+    public final void a(Object obj) {
+        switch (this.a) {
+            case 0:
+                ((v2) this.b).k0(true);
+                break;
+            default:
+                ((q4) this.b).c(true);
+                break;
+        }
+    }
 }

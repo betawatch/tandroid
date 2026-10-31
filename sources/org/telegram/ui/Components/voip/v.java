@@ -1,40 +1,50 @@
 package org.telegram.ui.Components.voip;
 
-import android.animation.ValueAnimator;
-import org.telegram.ui.t40;
-import org.telegram.ui.x50;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class v implements ValueAnimator.AnimatorUpdateListener {
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final class v extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ l0 b;
+    public final /* synthetic */ w b;
 
-    public /* synthetic */ v(l0 l0Var, int i10) {
+    public /* synthetic */ v(w wVar, int i10) {
         this.a = i10;
-        this.b = l0Var;
+        this.b = wVar;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                l0 l0Var = this.b;
-                l0Var.getClass();
-                l0Var.I0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                l0Var.invalidate();
+                w wVar = this.b;
+                wVar.N0 = null;
+                wVar.D.E = false;
+                r rVar = wVar.E;
+                if (rVar != null) {
+                    if (rVar.getParent() != null) {
+                        wVar.removeView(wVar.E);
+                        wVar.E.e();
+                    }
+                    wVar.E = null;
+                    break;
+                }
+                break;
+            case 1:
+                super.onAnimationEnd(animator);
+                w wVar2 = this.b;
+                wVar2.J0 = null;
+                wVar2.I0 = 0.0f;
+                wVar2.invalidate();
                 break;
             default:
-                l0 l0Var2 = this.b;
-                l0Var2.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                l0Var2.c = floatValue;
-                x50 x50Var = l0Var2.j0;
-                x50Var.z1.setAlpha(1.0f - floatValue);
-                t40 t40Var = x50Var.O;
-                t40Var.setAlpha((1.0f - x50Var.a2.c) * (t40Var.getTag() != null ? 1.0f : 0.0f));
-                x50Var.E1(x50Var.y0);
-                l0Var2.l();
+                w wVar3 = this.b;
+                wVar3.B0 = null;
+                wVar3.y0 = 1.0f;
+                wVar3.r0 = 0.0f;
+                wVar3.s0 = 0.0f;
+                wVar3.invalidate();
                 break;
         }
     }

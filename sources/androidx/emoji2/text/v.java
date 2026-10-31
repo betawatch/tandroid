@@ -1,13 +1,13 @@
 package androidx.emoji2.text;
 
-import a8.mf;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.text.style.ReplacementSpan;
 import java.nio.ByteBuffer;
+import w7.q6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class v extends ReplacementSpan {
     public final o b;
@@ -15,7 +15,7 @@ public final class v extends ReplacementSpan {
     public float c = 1.0f;
 
     public v(o oVar) {
-        mf.a(oVar, "metadata cannot be null");
+        q6.a(oVar, "metadata cannot be null");
         this.b = oVar;
     }
 
@@ -23,11 +23,11 @@ public final class v extends ReplacementSpan {
     public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
         l.a().getClass();
         o oVar = this.b;
-        com.google.firebase.messaging.q qVar = oVar.b;
-        Typeface typeface = (Typeface) qVar.d;
+        ji.f fVar = oVar.b;
+        Typeface typeface = (Typeface) fVar.e;
         Typeface typeface2 = paint.getTypeface();
         paint.setTypeface(typeface);
-        canvas.drawText((char[]) qVar.b, oVar.a * 2, 2, f7, i13, paint);
+        canvas.drawText((char[]) fVar.c, oVar.a * 2, 2, f7, i13, paint);
         paint.setTypeface(typeface2);
     }
 

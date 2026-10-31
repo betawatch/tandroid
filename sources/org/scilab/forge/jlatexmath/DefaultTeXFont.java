@@ -8,11 +8,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.telegram.ui.Components.b10;
+import org.telegram.ui.Cells.f1;
 import ru.noties.jlatexmath.JLatexMathAndroid;
 import ru.noties.jlatexmath.awt.Font;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public class DefaultTeXFont implements TeXFont {
     protected static final int BOT = 3;
@@ -78,11 +78,11 @@ public class DefaultTeXFont implements TeXFont {
     }
 
     public static void addAlphabet(Character.UnicodeBlock unicodeBlock, String str) {
-        String k10 = b10.k("fonts/", str, "/language_", str, ".xml");
-        String k11 = b10.k("fonts/", str, "/symbols_", str, ".xml");
-        String k12 = b10.k("fonts/", str, "/mappings_", str, ".xml");
+        String o10 = f1.o("fonts/", str, "/language_", str, ".xml");
+        String o11 = f1.o("fonts/", str, "/symbols_", str, ".xml");
+        String o12 = f1.o("fonts/", str, "/mappings_", str, ".xml");
         try {
-            addAlphabet(unicodeBlock, JLatexMathAndroid.getResourceAsStream(k10), k10, JLatexMathAndroid.getResourceAsStream(k11), k11, JLatexMathAndroid.getResourceAsStream(k12), k12);
+            addAlphabet(unicodeBlock, JLatexMathAndroid.getResourceAsStream(o10), o10, JLatexMathAndroid.getResourceAsStream(o11), o11, JLatexMathAndroid.getResourceAsStream(o12), o12);
         } catch (FontAlreadyLoadedException unused) {
         }
     }

@@ -1,14 +1,20 @@
 package org.telegram.ui;
 
-import android.content.ClipboardManager;
+import android.content.Context;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class v11 implements ClipboardManager.OnPrimaryClipChangedListener {
-    public final /* synthetic */ d21 a;
+public final class v11 extends l21 {
+    public final /* synthetic */ i31 m3;
 
-    @Override // android.content.ClipboardManager.OnPrimaryClipChangedListener
-    public final void onPrimaryClipChanged() {
-        this.a.X();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public v11(i31 i31Var, Context context) {
+        super(i31Var, context);
+        this.m3 = i31Var;
+    }
+
+    @Override // androidx.recyclerview.widget.RecyclerView
+    public final void l0(int i10) {
+        this.m3.h();
     }
 }

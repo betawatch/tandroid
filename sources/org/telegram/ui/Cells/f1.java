@@ -1,97 +1,169 @@
 package org.telegram.ui.Cells;
 
-import android.view.MotionEvent;
-import org.telegram.messenger.video.OldVideoPlayerRewinder;
-import org.telegram.ui.Components.ch0;
-import org.telegram.ui.Components.dh0;
-import org.telegram.ui.Components.k81;
-import org.telegram.ui.PhotoViewer;
+import android.content.Context;
+import android.graphics.drawable.Drawable;
+import android.os.Bundle;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
+import org.telegram.messenger.cd;
+import org.telegram.messenger.jj;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.cc;
+import org.telegram.ui.Components.ku0;
+import org.telegram.ui.Components.zz;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class f1 extends OldVideoPlayerRewinder {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-
-    public /* synthetic */ f1(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+public abstract /* synthetic */ class f1 {
+    public static /* synthetic */ String A(int i10) {
+        if (i10 == 1) {
+            return "PAID";
+        }
+        if (i10 == 2) {
+            return "CANCELLED";
+        }
+        if (i10 == 3) {
+            return "PENDING";
+        }
+        if (i10 == 4) {
+            return "FAILED";
+        }
+        throw null;
     }
 
-    @Override // org.telegram.messenger.video.OldVideoPlayerRewinder
-    public final void onRewindCanceled() {
-        switch (this.a) {
-            case 0:
-                s1 s1Var = (s1) this.b;
-                s1Var.onTouchEvent(MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0));
-                s1Var.Gd.f(false);
-                break;
-            default:
-                PhotoViewer photoViewer = (PhotoViewer) this.b;
-                PhotoViewer.k(photoViewer, MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0));
-                photoViewer.z1.f(false);
-                dh0.p0.Q.f(false);
-                break;
+    public static boolean a(jj jjVar) {
+        return jjVar != null && jj.B0(jjVar.k) == 1271266957;
+    }
+
+    public static void b(RecyclerView recyclerView) {
+        recyclerView.C0();
+        s4.n0 layoutManager = recyclerView.getLayoutManager();
+        if (layoutManager instanceof s4.a0) {
+            ((s4.a0) layoutManager).h1(0, 0);
+        } else {
+            recyclerView.v0(0);
         }
     }
 
-    @Override // org.telegram.messenger.video.OldVideoPlayerRewinder
-    public final void onRewindStart(boolean z10) {
-        switch (this.a) {
-            case 0:
-                s1 s1Var = (s1) this.b;
-                k81 k81Var = s1Var.Gd;
-                k81Var.n = new jg.s0(this, 15);
-                k81Var.e(false);
-                s1Var.Gd.d(!z10);
-                s1Var.Gd.f(true);
-                s1Var.invalidate();
-                break;
-            default:
-                PhotoViewer photoViewer = (PhotoViewer) this.b;
-                photoViewer.z1.e(false);
-                photoViewer.z1.d(!z10);
-                photoViewer.z1.f(true);
-                photoViewer.e0.invalidate();
-                dh0.v(z10);
-                break;
+    public static float c(RecyclerView recyclerView) {
+        int i10 = ku0.l0;
+        s4.n0 layoutManager = recyclerView.getLayoutManager();
+        if (layoutManager == null || !recyclerView.canScrollVertically(-1)) {
+            return 0.0f;
         }
+        if (layoutManager.m(0) == null) {
+            return Float.POSITIVE_INFINITY;
+        }
+        return Math.max(0.0f, (recyclerView.getPaddingTop() - s4.n0.z(r0)) + ((ViewGroup.MarginLayoutParams) ((s4.o0) r0.getLayoutParams())).topMargin);
     }
 
-    @Override // org.telegram.messenger.video.OldVideoPlayerRewinder
-    public final void updateRewindProgressUi(long j10, float f7, boolean z10) {
-        switch (this.a) {
-            case 0:
-                s1 s1Var = (s1) this.b;
-                s1Var.Gd.g(Math.abs(j10));
-                if (z10) {
-                    s1Var.y7.audioProgress = f7;
-                    s1Var.s4();
-                    break;
-                }
-                break;
-            default:
-                PhotoViewer photoViewer = (PhotoViewer) this.b;
-                photoViewer.z1.g(Math.abs(j10));
-                if (z10) {
-                    photoViewer.q3.h(f7, false);
-                    photoViewer.r3.invalidate();
-                }
-                dh0 dh0Var = dh0.p0;
-                dh0Var.Q.g(0L);
-                if (z10) {
-                    dh0Var.Z = f7;
-                    di.h3 h3Var = dh0Var.b0;
-                    if (h3Var != null) {
-                        h3Var.invalidate();
-                    }
-                    ch0 ch0Var = dh0Var.h;
-                    if (ch0Var != null) {
-                        ch0Var.invalidate();
-                        break;
-                    }
-                }
-                break;
-        }
+    public static float d(float f7, float f10, float f11) {
+        return (org.telegram.messenger.i0.N(f7) * f10) + f11;
+    }
+
+    public static float e(float f7, float f10, float f11, float f12) {
+        return Math.min(f12, (f7 / f10) + f11);
+    }
+
+    public static int f(int i10, int i11, Drawable drawable) {
+        return (drawable.getIntrinsicHeight() / i10) + i11;
+    }
+
+    public static int g(Float f7, float f10) {
+        return org.telegram.messenger.i0.L(f7.floatValue() * f10);
+    }
+
+    public static int h(zz zzVar, int i10) {
+        return zzVar.c(zzVar.getMeasuredWidth()) + i10;
+    }
+
+    public static Bundle i(int i10, String str) {
+        Bundle bundle = new Bundle();
+        bundle.putInt(str, i10);
+        return bundle;
+    }
+
+    public static Bundle j(int i10, String str, String str2, boolean z10) {
+        Bundle bundle = new Bundle();
+        bundle.putBoolean(str, z10);
+        bundle.putInt(str2, i10);
+        return bundle;
+    }
+
+    public static Bundle k(long j10, String str) {
+        Bundle bundle = new Bundle();
+        bundle.putLong(str, j10);
+        return bundle;
+    }
+
+    public static TextView l(FrameLayout frameLayout, TextView textView, FrameLayout.LayoutParams layoutParams, Context context) {
+        frameLayout.addView(textView, layoutParams);
+        return new TextView(context);
+    }
+
+    public static Integer m(int i10, ArrayList arrayList, int i11, ArrayList arrayList2, int i12) {
+        arrayList.add(cd.L0(i10, null));
+        arrayList2.add(Integer.valueOf(i11));
+        return Integer.valueOf(i12);
+    }
+
+    public static String n(long j10, String str, String str2) {
+        return str + j10 + str2;
+    }
+
+    public static String o(String str, String str2, String str3, String str4, String str5) {
+        return str + str2 + str3 + str4 + str5;
+    }
+
+    public static o1.k p(float f7, float f10, float f11) {
+        o1.k kVar = new o1.k(f7);
+        kVar.b(f10);
+        kVar.a(f11);
+        return kVar;
+    }
+
+    public static void q(int i10, String str, ArrayList arrayList) {
+        arrayList.add(new t6(i10, str));
+    }
+
+    public static void r(int i10, ArrayList arrayList, ArrayList arrayList2, Integer num) {
+        arrayList.add(cd.L0(i10, null));
+        arrayList2.add(num);
+    }
+
+    public static void s(FrameLayout frameLayout, org.telegram.ui.ActionBar.p6 p6Var, TLRPC.TL_error tL_error, boolean z10) {
+        new cc(frameLayout, p6Var).f0(tL_error, z10);
+    }
+
+    public static void t(String str, int i10, ArrayList arrayList, int i11, ArrayList arrayList2) {
+        arrayList.add(cd.L0(i10, str));
+        arrayList2.add(Integer.valueOf(i11));
+    }
+
+    public static /* synthetic */ boolean u(TLRPC.TL_game tL_game) {
+        return tL_game != null;
+    }
+
+    public static float v(float f7, float f10, float f11, float f12) {
+        return Math.max(f12, f11 - (f7 / f10));
+    }
+
+    public static int w(int i10, int i11, Drawable drawable) {
+        return (drawable.getIntrinsicWidth() / i10) + i11;
+    }
+
+    public static float x(float f7, float f10, float f11, float f12) {
+        return f12 - ((f7 * f10) * f11);
+    }
+
+    public static int y(int i10, int i11, Drawable drawable) {
+        return i11 - (drawable.getIntrinsicHeight() / i10);
+    }
+
+    public static int z(int i10, int i11, Drawable drawable) {
+        return i11 - (drawable.getIntrinsicWidth() / i10);
     }
 }

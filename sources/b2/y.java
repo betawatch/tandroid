@@ -2,174 +2,172 @@ package b2;
 
 import java.util.List;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class y implements e1 {
-    public final m4.n1 a;
-    public final e1 b;
+public final class y implements d1 {
+    public final d1 a;
 
-    public y(m4.n1 n1Var, e1 e1Var) {
-        this.a = n1Var;
-        this.b = e1Var;
+    public y(m4.n1 n1Var, d1 d1Var) {
+        this.a = d1Var;
     }
 
-    @Override // b2.e1
-    public final void onAudioAttributesChanged(f fVar) {
-        this.b.onAudioAttributesChanged(fVar);
+    @Override // b2.d1
+    public final void A(d2.d dVar) {
+        this.a.A(dVar);
     }
 
-    @Override // b2.e1
-    public final void onAudioSessionIdChanged(int i10) {
-        this.b.onAudioSessionIdChanged(i10);
+    @Override // b2.d1
+    public final void C(int i10, p0 p0Var) {
+        this.a.C(i10, p0Var);
     }
 
-    @Override // b2.e1
-    public final void onAvailableCommandsChanged(c1 c1Var) {
-        this.b.onAvailableCommandsChanged(c1Var);
+    @Override // b2.d1
+    public final void D(c1 c1Var) {
+        this.a.D(c1Var);
     }
 
-    @Override // b2.e1
-    public final void onCues(List list) {
-        this.b.onCues(list);
+    @Override // b2.d1
+    public final void F(u0 u0Var) {
+        this.a.F(u0Var);
     }
 
-    @Override // b2.e1
-    public final void onEvents(g1 g1Var, d1 d1Var) {
-        this.b.onEvents(this.a, d1Var);
+    @Override // b2.d1
+    public final void H(y0 y0Var) {
+        this.a.H(y0Var);
     }
 
-    @Override // b2.e1
-    public final void onIsLoadingChanged(boolean z10) {
-        this.b.onIsLoadingChanged(z10);
+    @Override // b2.d1
+    public final void I(List list) {
+        this.a.I(list);
     }
 
-    @Override // b2.e1
-    public final void onIsPlayingChanged(boolean z10) {
-        this.b.onIsPlayingChanged(z10);
+    @Override // b2.d1
+    public final void K(int i10, boolean z10) {
+        this.a.K(i10, z10);
     }
 
-    @Override // b2.e1
-    public final void onLoadingChanged(boolean z10) {
-        this.b.onIsLoadingChanged(z10);
+    @Override // b2.d1
+    public final void M(int i10, int i11) {
+        this.a.M(i10, i11);
     }
 
-    @Override // b2.e1
-    public final void onMediaItemTransition(p0 p0Var, int i10) {
-        this.b.onMediaItemTransition(p0Var, i10);
+    @Override // b2.d1
+    public final void N(w1 w1Var) {
+        this.a.N(w1Var);
     }
 
-    @Override // b2.e1
-    public final void onMediaMetadataChanged(s0 s0Var) {
-        this.b.onMediaMetadataChanged(s0Var);
+    @Override // b2.d1
+    public final void O(o1 o1Var, int i10) {
+        this.a.O(o1Var, i10);
     }
 
-    @Override // b2.e1
-    public final void onMetadata(u0 u0Var) {
-        this.b.onMetadata(u0Var);
+    @Override // b2.d1
+    public final void P(boolean z10) {
+        this.a.P(z10);
     }
 
-    @Override // b2.e1
-    public final void onPlayWhenReadyChanged(boolean z10, int i10) {
-        this.b.onPlayWhenReadyChanged(z10, i10);
+    @Override // b2.d1
+    public final void a(int i10) {
+        this.a.a(i10);
     }
 
-    @Override // b2.e1
-    public final void onPlaybackParametersChanged(a1 a1Var) {
-        this.b.onPlaybackParametersChanged(a1Var);
+    @Override // b2.d1
+    public final void c(int i10) {
+        this.a.c(i10);
     }
 
-    @Override // b2.e1
-    public final void onPlaybackStateChanged(int i10) {
-        this.b.onPlaybackStateChanged(i10);
+    @Override // b2.d1
+    public final void d(b2 b2Var) {
+        this.a.d(b2Var);
     }
 
-    @Override // b2.e1
-    public final void onPlaybackSuppressionReasonChanged(int i10) {
-        this.b.onPlaybackSuppressionReasonChanged(i10);
+    @Override // b2.d1
+    public final void e(boolean z10) {
+        this.a.e(z10);
     }
 
-    @Override // b2.e1
-    public final void onPlayerError(z0 z0Var) {
-        this.b.onPlayerError(z0Var);
+    @Override // b2.d1
+    public final void f(int i10) {
+        this.a.f(i10);
     }
 
-    @Override // b2.e1
-    public final void onPlayerErrorChanged(z0 z0Var) {
-        this.b.onPlayerErrorChanged(z0Var);
+    @Override // b2.d1
+    public final void g(boolean z10) {
+        this.a.k(z10);
     }
 
-    @Override // b2.e1
-    public final void onPlayerStateChanged(boolean z10, int i10) {
-        this.b.onPlayerStateChanged(z10, i10);
+    @Override // b2.d1
+    public final void h(int i10) {
+        this.a.h(i10);
     }
 
-    @Override // b2.e1
-    public final void onPlaylistMetadataChanged(s0 s0Var) {
-        this.b.onPlaylistMetadataChanged(s0Var);
+    @Override // b2.d1
+    public final void i(s0 s0Var) {
+        this.a.i(s0Var);
     }
 
-    @Override // b2.e1
-    public final void onPositionDiscontinuity(int i10) {
-        this.b.onPositionDiscontinuity(i10);
+    @Override // b2.d1
+    public final void k(boolean z10) {
+        this.a.k(z10);
     }
 
-    @Override // b2.e1
+    @Override // b2.d1
+    public final void m(s0 s0Var) {
+        this.a.m(s0Var);
+    }
+
+    @Override // b2.d1
+    public final void o(int i10, boolean z10) {
+        this.a.o(i10, z10);
+    }
+
+    @Override // b2.d1
     public final void onRenderedFirstFrame() {
-        this.b.onRenderedFirstFrame();
+        this.a.onRenderedFirstFrame();
     }
 
-    @Override // b2.e1
-    public final void onRepeatModeChanged(int i10) {
-        this.b.onRepeatModeChanged(i10);
+    @Override // b2.d1
+    public final void p(b1 b1Var) {
+        this.a.p(b1Var);
     }
 
-    @Override // b2.e1
-    public final void onShuffleModeEnabledChanged(boolean z10) {
-        this.b.onShuffleModeEnabledChanged(z10);
+    @Override // b2.d1
+    public final void q(float f7) {
+        this.a.q(f7);
     }
 
-    @Override // b2.e1
-    public final void onSkipSilenceEnabledChanged(boolean z10) {
-        this.b.onSkipSilenceEnabledChanged(z10);
+    @Override // b2.d1
+    public final void s(e1 e1Var, e1 e1Var2, int i10) {
+        this.a.s(e1Var, e1Var2, i10);
     }
 
-    @Override // b2.e1
-    public final void onSurfaceSizeChanged(int i10, int i11) {
-        this.b.onSurfaceSizeChanged(i10, i11);
+    @Override // b2.d1
+    public final void u(int i10) {
+        this.a.u(i10);
     }
 
-    @Override // b2.e1
-    public final void onTimelineChanged(p1 p1Var, int i10) {
-        this.b.onTimelineChanged(p1Var, i10);
+    @Override // b2.d1
+    public final void v(y0 y0Var) {
+        this.a.v(y0Var);
     }
 
-    @Override // b2.e1
-    public final void onTrackSelectionParametersChanged(u1 u1Var) {
-        this.b.onTrackSelectionParametersChanged(u1Var);
+    @Override // b2.d1
+    public final void w(u1 u1Var) {
+        this.a.w(u1Var);
     }
 
-    @Override // b2.e1
-    public final void onTracksChanged(w1 w1Var) {
-        this.b.onTracksChanged(w1Var);
+    @Override // b2.d1
+    public final void x(boolean z10) {
+        this.a.x(z10);
     }
 
-    @Override // b2.e1
-    public final void onVideoSizeChanged(b2 b2Var) {
-        this.b.onVideoSizeChanged(b2Var);
+    @Override // b2.d1
+    public final void y(f fVar) {
+        this.a.y(fVar);
     }
 
-    @Override // b2.e1
-    public final void onVolumeChanged(float f7) {
-        this.b.onVolumeChanged(f7);
-    }
-
-    @Override // b2.e1
-    public final void onCues(d2.c cVar) {
-        this.b.onCues(cVar);
-    }
-
-    @Override // b2.e1
-    public final void onPositionDiscontinuity(f1 f1Var, f1 f1Var2, int i10) {
-        this.b.onPositionDiscontinuity(f1Var, f1Var2, i10);
+    @Override // b2.d1
+    public final void z(z0 z0Var) {
+        this.a.z(z0Var);
     }
 }

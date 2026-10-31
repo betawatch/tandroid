@@ -1,41 +1,35 @@
 package jf;
 
-import com.google.android.gms.internal.cast.f4;
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.PriorityBlockingQueue;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
-import org.telegram.messenger.FileLog;
+import android.app.Activity;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.messenger.i0;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class a extends ThreadPoolExecutor implements AutoCloseable {
-    public final /* synthetic */ c a;
+public final class a extends FrameLayout {
+    public final Activity a;
+    public int b;
+    public int c;
+    public boolean d;
 
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public a(c cVar, PriorityBlockingQueue priorityBlockingQueue) {
-        super(1, 1, 60L, r5, priorityBlockingQueue);
-        TimeUnit timeUnit = TimeUnit.SECONDS;
-        this.a = cVar;
+    public a(LaunchActivity launchActivity) {
+        super(launchActivity);
+        this.a = launchActivity;
     }
 
-    @Override // java.util.concurrent.ThreadPoolExecutor
-    public final void beforeExecute(Thread thread, Runnable runnable) {
-        CountDownLatch countDownLatch = this.a.b;
-        if (countDownLatch != null) {
-            try {
-                countDownLatch.await();
-            } catch (InterruptedException e) {
-                FileLog.e(e);
-            }
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        int size = View.MeasureSpec.getSize(i10);
+        int size2 = View.MeasureSpec.getSize(i11);
+        boolean H1 = i0.H1(this.a);
+        if (!H1) {
+            this.b = size;
+            this.c = size2;
         }
-    }
-
-    @Override // java.lang.AutoCloseable
-    public final /* synthetic */ void close() {
-        f4.f(this);
+        this.d = H1 && size < this.b && size2 < this.c;
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
     }
 }

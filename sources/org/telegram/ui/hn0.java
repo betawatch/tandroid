@@ -1,37 +1,34 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.view.View;
-import java.util.HashSet;
-import org.telegram.messenger.FileLog;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class hn0 extends View implements org.telegram.ui.ActionBar.p6 {
-    public Paint a;
-    public Paint b;
-    public float c;
+public final class hn0 extends s4.s0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ nn0 b;
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        float measuredWidth = (int) (getMeasuredWidth() * this.c);
-        canvas.drawRect(0.0f, 0.0f, measuredWidth, getMeasuredHeight(), this.b);
-        canvas.drawRect(measuredWidth, 0.0f, getMeasuredWidth(), getMeasuredHeight(), this.a);
+    public hn0(nn0 nn0Var, int i10) {
+        this.b = nn0Var;
+        this.a = i10;
     }
 
-    @Override // org.telegram.ui.ActionBar.p6
-    public final void updateColors() {
-        try {
-            this.a.setColor(org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.gi, false));
-            this.b.setColor(org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.hi, false));
-            invalidate();
-        } catch (Exception e) {
-            FileLog.e(e);
+    @Override // s4.s0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        nn0 nn0Var = this.b;
+        tn0 tn0Var = nn0Var.p0;
+        nn0Var.h();
+        if (nn0Var.K != null) {
+            if (nn0Var.J == null || !nn0Var.c()) {
+                return;
+            }
+            nn0Var.J.g(false);
+            return;
         }
-    }
-
-    @Override // org.telegram.ui.ActionBar.p6
-    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
+        rh.v5 v5Var = this.a == 1 ? tn0Var.c : tn0Var.b;
+        if (v5Var == null || !nn0Var.c()) {
+            return;
+        }
+        v5Var.b();
     }
 }

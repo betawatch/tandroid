@@ -1,33 +1,37 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.Utilities;
+import java.io.File;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final /* synthetic */ class pe implements Runnable {
+public final class pe extends File {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Utilities.Callback2 c;
 
-    public /* synthetic */ pe(int i10, int i11, Utilities.Callback2 callback2) {
-        this.a = i11;
-        this.b = i10;
-        this.c = callback2;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ pe(int i10, File file, String str) {
+        super(file, str);
+        this.a = i10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // java.io.File
+    public final boolean delete() {
         switch (this.a) {
             case 0:
-                MessagesController.1.lambda$getLocal$1(this.b, this.c);
+                if (v2.a) {
+                    f8.d("delete voice file (trimmed)");
+                }
                 break;
             case 1:
-                MessagesController.4.lambda$getLocal$1(this.b, this.c);
+                if (v2.a) {
+                    f8.d("delete voice file (from resume)");
+                }
                 break;
             default:
-                MessagesController.5.lambda$getLocal$2(this.b, this.c);
+                if (v2.a) {
+                    f8.d("delete camera file");
+                }
                 break;
         }
+        return super.delete();
     }
 }

@@ -1,72 +1,61 @@
 package org.telegram.ui.ActionBar;
 
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import android.graphics.Canvas;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.os.Build;
 import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.kb1;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.ui.Components.ju0;
+import org.telegram.ui.Components.tk0;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class y1 extends FrameLayout {
-    public final TextView a;
-    public final ImageView b;
+public final /* synthetic */ class y1 implements r0.m, ju0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ FrameLayout b;
 
-    public y1(Context context, u6 u6Var) {
-        super(context);
-        int i10 = y6.I5;
-        Drawable g02 = y6.g0(y6.w0(i10, u6Var), 2, -1);
-        b7 N = f7.N(i10);
-        setBackground(g02);
-        f7.k(this, g02, null, N, u6Var);
-        setPadding(AndroidUtilities.dp(23.0f), 0, AndroidUtilities.dp(23.0f), 0);
-        ImageView imageView = new ImageView(context);
-        this.b = imageView;
-        imageView.setScaleType(ImageView.ScaleType.CENTER);
-        f7.t(imageView, y6.J5, u6Var, PorterDuff.Mode.MULTIPLY);
-        addView(imageView, kb1.i(-2, 40, (LocaleController.isRTL ? 5 : 3) | 16));
-        TextView textView = new TextView(context);
-        this.a = textView;
-        textView.setLines(1);
-        textView.setSingleLine(true);
-        textView.setGravity(1);
-        textView.setEllipsize(TextUtils.TruncateAt.END);
-        f7.V(textView, y6.j5, u6Var);
-        textView.setTextSize(1, 16.0f);
-        addView(textView, kb1.i(-2, -2, (LocaleController.isRTL ? 5 : 3) | 16));
+    public /* synthetic */ y1(int i10, FrameLayout frameLayout) {
+        this.a = i10;
+        this.b = frameLayout;
     }
 
-    public final void a(int i10, CharSequence charSequence) {
-        TextView textView = this.a;
-        textView.setText(charSequence);
-        ImageView imageView = this.b;
-        if (i10 == 0) {
-            imageView.setVisibility(4);
-            textView.setPadding(0, 0, 0, 0);
+    @Override // r0.m
+    public r0.j1 R0(View view, r0.j1 j1Var) {
+        r0.g1 g1Var = j1Var.a;
+        Rect rect = new Rect();
+        if (Build.VERSION.SDK_INT >= 30) {
+            i0.c f7 = g1Var.f(527);
+            rect.set(f7.a, f7.b, f7.c, f7.d);
         } else {
-            imageView.setImageResource(i10);
-            imageView.setVisibility(0);
-            textView.setPadding(LocaleController.isRTL ? 0 : AndroidUtilities.dp(56.0f), 0, LocaleController.isRTL ? AndroidUtilities.dp(56.0f) : 0, 0);
+            rect.set(g1Var.i().a, g1Var.i().b, g1Var.i().c, g1Var.i().d);
         }
+        int i10 = rect.left;
+        int i11 = rect.top;
+        int i12 = rect.right;
+        int i13 = rect.bottom + org.telegram.messenger.i0.n;
+        FrameLayout frameLayout = this.b;
+        frameLayout.setPadding(i10, i11, i12, i13);
+        frameLayout.requestLayout();
+        return j1Var;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30));
-    }
-
-    public void setGravity(int i10) {
-        this.a.setGravity(i10);
-    }
-
-    public void setTextColor(int i10) {
-        this.a.setTextColor(i10);
+    @Override // org.telegram.ui.Components.ju0
+    public void a(Canvas canvas, RectF rectF, RecyclerView recyclerView) {
+        switch (this.a) {
+            case 1:
+                tk0 tk0Var = (tk0) recyclerView;
+                yg.d.a(tk0Var, canvas, rectF, tk0Var, this.b);
+                break;
+            case 2:
+                tk0 tk0Var2 = (tk0) recyclerView;
+                yg.d.a(tk0Var2, canvas, rectF, tk0Var2, this.b);
+                break;
+            default:
+                tk0 tk0Var3 = (tk0) recyclerView;
+                yg.d.a(tk0Var3, canvas, rectF, tk0Var3, this.b);
+                break;
+        }
     }
 }

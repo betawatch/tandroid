@@ -1,46 +1,55 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class mo implements q8 {
-    public final /* synthetic */ org.telegram.ui.ActionBar.o1[] a;
-    public final /* synthetic */ po b;
+public final /* synthetic */ class mo implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ dp b;
 
-    public mo(po poVar, org.telegram.ui.ActionBar.o1[] o1VarArr) {
-        this.b = poVar;
-        this.a = o1VarArr;
+    public /* synthetic */ mo(dp dpVar, int i10) {
+        this.a = i10;
+        this.b = dpVar;
     }
 
-    @Override // org.telegram.ui.Components.q8
-    public final void T0(int i10, int i11) {
-        org.telegram.ui.wn wnVar = this.b.G;
-        if (wnVar == null) {
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.n1.f();
+                break;
+            case 1:
+                this.b.K0(true);
+                break;
+            case 2:
+                dp dpVar = this.b;
+                org.telegram.ui.un unVar = dpVar.r1;
+                org.telegram.ui.ActionBar.k2 f02 = org.telegram.ui.u61.f0(unVar.getMessagesController().L0(Long.valueOf(-unVar.a())), true);
+                org.telegram.ui.ActionBar.i2 i2Var = new org.telegram.ui.ActionBar.i2();
+                i2Var.a = true;
+                f02.setResourceProvider(unVar.getResourceProvider());
+                i2Var.c = new org.telegram.messenger.rz(17);
+                i2Var.d = new mo(dpVar, 3);
+                i2Var.b = new mo(dpVar, 4);
+                i2Var.e = true;
+                dpVar.N1 = f02;
+                unVar.showAsSheet(f02, i2Var);
+                break;
+            case 3:
+                this.b.O0();
+                break;
+            case 4:
+                this.b.N1 = null;
+                break;
+            case 5:
+                this.b.O0();
+                break;
+            case 6:
+                this.b.N1 = null;
+                break;
+            default:
+                dp dpVar2 = this.b;
+                dpVar2.K1.f(dpVar2.w1, true);
+                break;
         }
-        wnVar.getMessagesController().setDialogHistoryTTL(wnVar.a(), i10);
-        TLRPC.ChatFull chatFull = wnVar.p8;
-        TLRPC.UserFull userFull = wnVar.q8;
-        if (userFull == null && chatFull == null) {
-            return;
-        }
-        wnVar.Z7();
-        UndoView undoView = wnVar.K3;
-        if (undoView != null) {
-            undoView.k(wnVar.a(), i11, wnVar.i(), Integer.valueOf(userFull != null ? userFull.ttl_period : chatFull.ttl_period), null, null);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.q8
-    public final void dismiss() {
-        org.telegram.ui.ActionBar.o1 o1Var = this.a[0];
-        if (o1Var != null) {
-            o1Var.dismiss();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.q8
-    public final /* synthetic */ void e1() {
     }
 }

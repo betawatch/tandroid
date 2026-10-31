@@ -1,16 +1,42 @@
 package org.telegram.ui.ActionBar;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+import android.view.View;
+
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class c4 extends e2 {
-    @Override // org.telegram.ui.ActionBar.e2
-    public final int f(int i10) {
-        if (i10 == y6.h5) {
-            return -14277082;
+public final class c4 {
+    public final s4 a;
+    public boolean b;
+    public boolean c;
+    public boolean d;
+    public boolean e = true;
+    public boolean f;
+    public long g;
+
+    public c4(s4 s4Var) {
+        this.a = s4Var;
+    }
+
+    public final void a() {
+        if (this.f) {
+            boolean z10 = this.b;
+            s4 s4Var = this.a;
+            if (z10 || this.c || this.d || !this.e) {
+                q4 q4Var = s4Var.b;
+                if (q4Var.f()) {
+                    q4Var.G = true;
+                    q4Var.x.start();
+                    q4Var.D.setEmpty();
+                    return;
+                }
+                return;
+            }
+            View view = s4Var.a;
+            f4 f4Var = s4Var.l;
+            view.removeOnLayoutChangeListener(f4Var);
+            s4Var.a.addOnLayoutChangeListener(f4Var);
+            s4Var.c();
+            this.g = System.currentTimeMillis();
         }
-        if (i10 == y6.j5 || i10 == y6.H5 || i10 == y6.A5) {
-            return -1;
-        }
-        return y6.w0(i10, this.T0);
     }
 }

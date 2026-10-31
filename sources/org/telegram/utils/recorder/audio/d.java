@@ -8,9 +8,10 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.atomic.AtomicInteger;
-import ui.h;
+import ki.g;
+import ki.i;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes4.dex */
 public final class d {
     public long A;
@@ -19,9 +20,9 @@ public final class d {
     public final File b;
     public final long c;
     public final long d;
-    public final h e;
-    public final ui.b f;
-    public final dc.e g;
+    public final i e;
+    public final ki.b f;
+    public final g g;
     public final HandlerThread h;
     public final Handler i;
     public final HandlerThread j;
@@ -42,14 +43,14 @@ public final class d {
     public final AtomicInteger m = new AtomicInteger();
     public final ByteBuffer s = ByteBuffer.allocateDirect(1920).order(ByteOrder.nativeOrder());
 
-    public d(File file, File file2, long j10, long j11, h hVar, ui.b bVar, dc.e eVar) {
+    public d(File file, File file2, long j10, long j11, i iVar, ki.b bVar, g gVar) {
         this.a = file;
         this.b = file2;
         this.c = j10;
         this.d = j11;
-        this.e = hVar;
+        this.e = iVar;
         this.f = bVar;
-        this.g = eVar;
+        this.g = gVar;
         HandlerThread handlerThread = new HandlerThread("AudioRecorderCapture", -16);
         this.h = handlerThread;
         handlerThread.start();
@@ -75,7 +76,7 @@ public final class d {
             this.z++;
             this.A += nanoTime2;
             this.B = Math.max(this.B, nanoTime2);
-            ui.b bVar = this.f;
+            ki.b bVar = this.f;
             if (!b10) {
                 bVar.b("RNNoise processing failed; recording unprocessed PCM");
                 this.u.c();
@@ -104,7 +105,7 @@ public final class d {
         if (this.o) {
             return;
         }
-        this.i.postAtFrontOfQueue(new ui.a(this, 1));
+        this.i.postAtFrontOfQueue(new ki.a(this, 1));
     }
 
     public final void e(Exception exc) {

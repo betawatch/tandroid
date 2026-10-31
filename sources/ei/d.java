@@ -1,133 +1,20 @@
 package ei;
 
-import android.graphics.Paint;
-import android.view.MotionEvent;
-import android.view.View;
-import java.util.HashSet;
-import java.util.List;
-import java.util.regex.Pattern;
-import org.telegram.ui.ActionBar.k3;
-import org.telegram.ui.Cells.v2;
-import org.telegram.ui.Components.ChatActivityEnterView;
-import org.telegram.ui.Components.UndoView;
-import org.telegram.ui.Components.bw0;
-import org.telegram.ui.Components.dv;
-import org.telegram.ui.Components.dz0;
-import org.telegram.ui.Components.ej0;
-import org.telegram.ui.Components.fp0;
-import org.telegram.ui.Components.g5;
-import org.telegram.ui.Components.m8;
-import org.telegram.ui.Components.me0;
-import org.telegram.ui.Components.nk;
-import org.telegram.ui.Components.nr0;
-import org.telegram.ui.Components.sl;
-import org.telegram.ui.Components.ti;
-import org.telegram.ui.Components.uz;
-import org.telegram.ui.Components.zp;
-import org.telegram.ui.j4;
-import org.telegram.ui.l9;
-import org.telegram.ui.qj0;
-import org.telegram.ui.ro0;
-import org.telegram.ui.ta;
-import org.telegram.ui.wb;
-import org.telegram.ui.wn;
+import android.graphics.Canvas;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class d implements View.OnTouchListener {
-    public final /* synthetic */ int a;
+public final class d implements hi.a {
+    public final int a;
+    public final /* synthetic */ e b;
 
-    public /* synthetic */ d(int i10) {
+    public d(e eVar, int i10) {
+        this.b = eVar;
         this.a = i10;
     }
 
-    @Override // android.view.View.OnTouchListener
-    public final boolean onTouch(View view, MotionEvent motionEvent) {
-        switch (this.a) {
-            case 0:
-                int i10 = r.a0;
-                break;
-            case 1:
-                int i11 = k3.a;
-                break;
-            case 3:
-                HashSet hashSet = j4.c1;
-            case 2:
-                return true;
-            case 4:
-                int i12 = l9.e;
-                break;
-            case 5:
-                int i13 = v2.w;
-                break;
-            case 6:
-                Paint paint = ta.H;
-                break;
-            case 7:
-                int i14 = wb.Q0;
-                break;
-            case 8:
-                int i15 = wn.fd;
-                break;
-            case 10:
-                Pattern pattern = g5.a;
-            case 9:
-                return true;
-            case 11:
-                m8 m8Var = m8.Y0;
-                break;
-            case 12:
-                int i16 = ChatActivityEnterView.r5;
-                break;
-            case 13:
-                int i17 = ti.N2;
-                break;
-            case 14:
-                int i18 = nk.g0;
-                break;
-            case 15:
-                int i19 = sl.B0;
-                break;
-            case 16:
-                int i20 = zp.l0;
-                break;
-            case 17:
-                dv dvVar = dv.S;
-                break;
-            case 18:
-                int i21 = uz.h;
-                break;
-            case 19:
-                int[] iArr = me0.i0;
-                break;
-            case 20:
-                int i22 = ej0.R;
-                break;
-            case 21:
-                int i23 = fp0.a1;
-                break;
-            case 22:
-                int i24 = nr0.Z0;
-                break;
-            case 23:
-                int[] iArr2 = bw0.p2;
-                break;
-            case 24:
-                int i25 = dz0.w0;
-                break;
-            case 25:
-                int i26 = UndoView.i0;
-                break;
-            case 26:
-                int i27 = UndoView.i0;
-                break;
-            case 27:
-                int i28 = qj0.e0;
-                break;
-            default:
-                List list = ro0.g1;
-                break;
-        }
-        return true;
+    @Override // hi.a
+    public final void e(Canvas canvas, float f7, float f10, float f11, float f12) {
+        e.a(this.b, canvas, this.a, f7, f10, f11, f12);
     }
 }

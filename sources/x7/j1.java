@@ -1,21 +1,28 @@
 package x7;
 
-import org.telegram.ui.Components.b10;
+import android.os.IBinder;
+import android.os.IInterface;
+import android.os.Parcel;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class j1 implements ka.d {
-    public static final j1 a = new j1();
-
-    static {
-        b10.s(b10.n(d.class, b10.q(3, b10.n(d.class, b10.q(2, b10.n(d.class, new a(1)))))));
-    }
-
-    @Override // ka.a
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
+public final class j1 extends a9.a implements l3 {
+    public final m0 X0(x6.b bVar, n6 n6Var) {
+        m0 m0Var;
+        Parcel P0 = P0();
+        int i10 = y.a;
+        P0.writeStrongBinder(bVar);
+        P0.writeInt(1);
+        n6Var.writeToParcel(P0, 0);
+        Parcel R0 = R0(P0, 1);
+        IBinder readStrongBinder = R0.readStrongBinder();
+        if (readStrongBinder == null) {
+            m0Var = null;
+        } else {
+            IInterface queryLocalInterface = readStrongBinder.queryLocalInterface("com.google.android.gms.vision.label.internal.client.INativeImageLabeler");
+            m0Var = queryLocalInterface instanceof m0 ? (m0) queryLocalInterface : new m0(readStrongBinder, "com.google.android.gms.vision.label.internal.client.INativeImageLabeler", 10);
         }
-        throw null;
+        R0.recycle();
+        return m0Var;
     }
 }

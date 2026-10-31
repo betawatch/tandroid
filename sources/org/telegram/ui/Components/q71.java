@@ -1,25 +1,42 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes3.dex */
-public final class q71 extends g.o {
-    public final /* synthetic */ p71 c;
-    public final /* synthetic */ s71 d;
+import android.content.Context;
+import android.view.View;
 
-    public q71(s71 s71Var, p71 p71Var) {
-        this.d = s71Var;
-        this.c = p71Var;
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final class q71 extends s4.b0 {
+    public final /* synthetic */ org.telegram.ui.br r;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public q71(org.telegram.ui.br brVar, Context context) {
+        super(context);
+        this.r = brVar;
     }
 
-    @Override // g.o
-    public final int i(int i10) {
-        int i11;
-        k71 k71Var = this.d.g3;
-        p71 p71Var = this.c;
-        if (k71Var == null) {
-            return p71Var.J;
+    /* JADX WARN: Code restructure failed: missing block: B:10:0x0033, code lost:
+    
+        if ((org.telegram.messenger.i0.L(21.0f) + r6.getRight()) > ((org.telegram.ui.Components.v71) r5.r.J).getMeasuredWidth()) goto L13;
+     */
+    @Override // s4.b0, s4.y0
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void g(View view, s4.x0 x0Var) {
+        int j10 = j(o(), view);
+        if (j10 > 0 || (j10 == 0 && view.getLeft() - org.telegram.messenger.i0.L(21.0f) < 0)) {
+            j10 += org.telegram.messenger.i0.L(60.0f);
+        } else {
+            if (j10 >= 0) {
+                if (j10 == 0) {
+                }
+            }
+            j10 -= org.telegram.messenger.i0.L(60.0f);
         }
-        u61 G = k71Var.G(i10);
-        return (G == null || (i11 = G.u) == -1) ? p71Var.J : i11;
+        int k10 = k(p(), view);
+        int max = Math.max(org.telegram.messenger.zs.K2, m((int) Math.sqrt((k10 * k10) + (j10 * j10))));
+        if (max > 0) {
+            x0Var.b(-j10, -k10, max, this.j);
+        }
     }
 }

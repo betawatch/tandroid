@@ -1,79 +1,104 @@
 package org.telegram.ui.Components;
 
-import java.util.Iterator;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocationController;
-import org.telegram.messenger.MediaController;
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class t10 implements org.telegram.ui.ActionBar.r0, oe.k, org.telegram.ui.ActionBar.b2, ew0 {
-    public final /* synthetic */ FragmentContextView a;
+public abstract class t10 extends org.telegram.ui.ActionBar.z2 {
+    public static final /* synthetic */ int i1 = 0;
 
-    public /* synthetic */ t10(FragmentContextView fragmentContextView) {
-        this.a = fragmentContextView;
-    }
-
-    @Override // oe.k
-    public void b(oe.l lVar) {
-        FragmentContextView fragmentContextView = this.a;
-        oe.l lVar2 = fragmentContextView.U0;
-        float f7 = 1.0f - lVar2.a.d.c.a;
-        fragmentContextView.d.setAlpha(f7);
-        fragmentContextView.d.setScaleX(AndroidUtilities.lerp(0.7f, 1.0f, f7));
-        fragmentContextView.d.setScaleY(AndroidUtilities.lerp(0.7f, 1.0f, f7));
-        Iterator it = lVar2.iterator();
-        while (it.hasNext()) {
-            oe.g gVar = (oe.g) it.next();
-            float c10 = gVar.c();
-            Object obj = gVar.a;
-            float lerp = AndroidUtilities.lerp(0.7f, 1.0f, c10);
-            nh.c cVar = ((f20) obj).b;
-            cVar.setAlpha(gVar.c());
-            cVar.setScaleX(lerp);
-            cVar.setScaleY(lerp);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.ew0
-    public void d(LocationController.SharingLocationInfo sharingLocationInfo) {
-        float[] fArr = FragmentContextView.W0;
-        this.a.k(sharingLocationInfo);
-    }
-
-    @Override // org.telegram.ui.ActionBar.r0
-    public void g(int i10) {
-        float[] fArr = FragmentContextView.W0;
-        if (i10 >= 0) {
-            float[] fArr2 = FragmentContextView.W0;
-            if (i10 >= 6) {
+    public t10(Context context, org.telegram.ui.ActionBar.k2 k2Var) {
+        super(context, true);
+        int i10 = 0;
+        this.v0 = false;
+        this.u0 = false;
+        LinearLayout f7 = org.telegram.messenger.m5.f(context, 1);
+        this.N = f7;
+        ei0 ei0Var = new ei0(context);
+        ei0Var.setAutoRepeat(true);
+        ei0Var.f(R.raw.utyan_gigagroup, 120, 120, null);
+        ei0Var.d();
+        f7.addView(ei0Var, w7.b6.t(org.telegram.messenger.zs.q2, org.telegram.messenger.zs.q2, 49, 17, 30, 17, 0));
+        TextView textView = new TextView(context);
+        org.telegram.messenger.z20.n(textView, 1, 24.0f);
+        org.telegram.messenger.z20.p(textView, org.telegram.ui.ActionBar.t6.j5, null, null, 2131749563);
+        f7.addView(textView, w7.b6.t(-2, -2, 49, 17, 18, 17, 0));
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setOrientation(1);
+        f7.addView(linearLayout, w7.b6.t(-2, -2, 1, 0, 12, 0, 0));
+        int i11 = 0;
+        while (true) {
+            int i12 = 16;
+            if (i11 >= 3) {
+                int i13 = i10;
+                s10 s10Var = new s10(context);
+                View view = new View(context);
+                s10Var.a = view;
+                int i14 = org.telegram.ui.ActionBar.t6.Ci;
+                float[] fArr = new float[1];
+                fArr[i13] = 4.0f;
+                view.setBackground(org.telegram.ui.ActionBar.j6.f(i14, fArr));
+                s10Var.addView(view, w7.b6.d(-1, -1.0f, 0, 16.0f, 16.0f, 16.0f, 16.0f));
+                TextView textView2 = new TextView(context);
+                s10Var.b = textView2;
+                textView2.setLines(1);
+                textView2.setSingleLine(true);
+                textView2.setGravity(1);
+                textView2.setEllipsize(TextUtils.TruncateAt.END);
+                textView2.setGravity(17);
+                org.telegram.messenger.m5.m(textView2, org.telegram.ui.ActionBar.t6.Gi, null, 1, 14.0f);
+                s10Var.addView(textView2, w7.b6.e(-2, -2, 17));
+                s10Var.setBackground(null);
+                s10Var.setText(org.telegram.messenger.cd.L0(2131749564, null));
+                view.setOnClickListener(new ag.i(this, context, k2Var, i12));
+                f7.addView(s10Var, w7.b6.t(-1, 50, 51, 0, 29, 0, 0));
+                TextView textView3 = new TextView(context);
+                textView3.setTextSize(1, 14.0f);
+                org.telegram.messenger.z20.p(textView3, org.telegram.ui.ActionBar.t6.n5, null, null, 2131749569);
+                textView3.setGravity(17);
+                f7.addView(textView3, w7.b6.t(-2, 48, 49, 17, 0, 17, 16));
+                textView3.setOnClickListener(new h0(this, 18));
                 return;
             }
-            MediaController mediaController = MediaController.getInstance();
-            FragmentContextView fragmentContextView = this.a;
-            float playbackSpeed = mediaController.getPlaybackSpeed(fragmentContextView.W);
-            float f7 = fArr2[i10];
-            MediaController.getInstance().setPlaybackSpeed(fragmentContextView.W, f7);
-            if (playbackSpeed != f7) {
-                fragmentContextView.l(playbackSpeed, f7, false);
+            LinearLayout f10 = org.telegram.messenger.m5.f(context, i10);
+            linearLayout.addView(f10, w7.b6.t(-2, -2, org.telegram.messenger.cd.X ? 5 : 3, 0, 8, 0, 0));
+            ImageView imageView = new ImageView(context);
+            int i15 = org.telegram.ui.ActionBar.t6.r5;
+            org.telegram.ui.ActionBar.a7.t(imageView, i15, null, PorterDuff.Mode.MULTIPLY);
+            imageView.setImageResource(R.drawable.list_circle);
+            TextView textView4 = new TextView(context);
+            int i16 = i10;
+            textView4.setTextSize(1, 15.0f);
+            org.telegram.ui.ActionBar.a7.V(textView4, i15, null);
+            textView4.setGravity((org.telegram.messenger.cd.X ? 5 : 3) | 16);
+            textView4.setMaxWidth(org.telegram.messenger.i0.L(260.0f));
+            if (i11 == 0) {
+                textView4.setText(org.telegram.messenger.cd.L0(2131749567, null));
+            } else if (i11 == 1) {
+                textView4.setText(org.telegram.messenger.cd.L0(2131749566, null));
+            } else if (i11 == 2) {
+                textView4.setText(org.telegram.messenger.cd.L0(2131749565, null));
             }
+            if (org.telegram.messenger.cd.X) {
+                f10.addView(textView4, w7.b6.o(-2, -2));
+                f10.addView(imageView, w7.b6.k(8.0f, 7.0f, 0.0f, 0.0f, -2, -2));
+            } else {
+                f10.addView(imageView, w7.b6.k(0.0f, 8.0f, 8.0f, 0.0f, -2, -2));
+                f10.addView(textView4, w7.b6.o(-2, -2));
+            }
+            i11++;
+            i10 = i16;
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.b2
-    public void h(org.telegram.ui.ActionBar.e2 e2Var, int i10) {
-        FragmentContextView fragmentContextView = this.a;
-        org.telegram.ui.ActionBar.r2 r2Var = fragmentContextView.h;
-        if (!(r2Var instanceof org.telegram.ui.ey)) {
-            LocationController.getInstance(r2Var.getCurrentAccount()).removeSharingLocation(fragmentContextView.n.a());
-            return;
-        }
-        for (int i11 = 0; i11 < 4; i11++) {
-            LocationController.getInstance(i11).removeAllLocationSharings();
-        }
-    }
+    public abstract void I0();
 
-    @Override // oe.k
-    public /* synthetic */ void a() {
-    }
+    public abstract void J0();
 }

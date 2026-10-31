@@ -1,45 +1,25 @@
 package li;
 
-import android.view.View;
-import android.view.ViewTreeObserver;
+import android.util.Size;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class i implements ViewTreeObserver.OnGlobalFocusChangeListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class i {
+    public final q0 a;
+    public final r0 b;
+    public final s0 c;
+    public final Size d;
+    public final Size e;
+    public final float f;
+    public final boolean g;
 
-    public /* synthetic */ i(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
-    }
-
-    @Override // android.view.ViewTreeObserver.OnGlobalFocusChangeListener
-    public final void onGlobalFocusChanged(View view, View view2) {
-        switch (this.a) {
-            case 0:
-                ((q) this.b).c0();
-                break;
-            case 1:
-                ((b2) this.b).x0();
-                break;
-            case 2:
-                v3 v3Var = (v3) this.b;
-                v3Var.i3 = (view2 == null || v3Var.F(view2) == null) ? false : true;
-                if (view2 instanceof g1) {
-                    v3Var.T3 = (g1) view2;
-                    break;
-                }
-                break;
-            default:
-                p5 p5Var = (p5) this.b;
-                p5Var.w();
-                r5 r5Var = p5Var.v;
-                if (r5Var != null) {
-                    r5Var.invalidate();
-                    break;
-                }
-                break;
-        }
+    public i(q0 q0Var, r0 r0Var, s0 s0Var, Size size, Size size2, float f7, boolean z10) {
+        this.a = q0Var;
+        this.b = r0Var;
+        this.c = s0Var;
+        this.d = size;
+        this.e = size2;
+        this.f = f7;
+        this.g = z10;
     }
 }

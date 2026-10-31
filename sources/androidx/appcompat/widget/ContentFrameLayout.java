@@ -8,15 +8,15 @@ import android.util.TypedValue;
 import android.view.View;
 import android.widget.FrameLayout;
 import g.r;
-import l.k;
+import l.l;
 import m.h;
 import m.i1;
 import m.j1;
-import m.n3;
+import m.l3;
 import org.telegram.tgnet.TLObject;
-import r0.l0;
+import r0.k0;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public class ContentFrameLayout extends FrameLayout {
     public TypedValue a;
@@ -89,12 +89,12 @@ public class ContentFrameLayout extends FrameLayout {
         super.onDetachedFromWindow();
         i1 i1Var = this.n;
         if (i1Var != null) {
-            r rVar = (r) ((rb.c) i1Var).b;
+            r rVar = (r) ((k6.h) i1Var).b;
             j1 j1Var = rVar.s;
             if (j1Var != null) {
                 ActionBarOverlayLayout actionBarOverlayLayout = (ActionBarOverlayLayout) j1Var;
                 actionBarOverlayLayout.e();
-                ActionMenuView actionMenuView = ((n3) actionBarOverlayLayout.e).a.a;
+                ActionMenuView actionMenuView = ((l3) actionBarOverlayLayout.e).a.a;
                 if (actionMenuView != null && (hVar = actionMenuView.J) != null) {
                     hVar.f();
                     m.d dVar = hVar.J;
@@ -113,13 +113,13 @@ public class ContentFrameLayout extends FrameLayout {
                 }
                 rVar.E = null;
             }
-            l0 l0Var = rVar.G;
-            if (l0Var != null) {
-                l0Var.b();
+            k0 k0Var = rVar.G;
+            if (k0Var != null) {
+                k0Var.b();
             }
-            k kVar = rVar.o(0).h;
-            if (kVar != null) {
-                kVar.c(true);
+            l lVar = rVar.o(0).h;
+            if (lVar != null) {
+                lVar.c(true);
             }
         }
     }

@@ -1,16 +1,11 @@
 package ce;
 
-import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class e {
-    public static final /* synthetic */ AtomicIntegerFieldUpdater b = AtomicIntegerFieldUpdater.newUpdater(e.class, "notCompletedCount$volatile");
-    public final i0[] a;
-    private volatile /* synthetic */ int notCompletedCount$volatile;
+public abstract class e {
+    public static final ea.a a = new ea.a("NO_OWNER");
 
-    public e(i0[] i0VarArr) {
-        this.a = i0VarArr;
-        this.notCompletedCount$volatile = i0VarArr.length;
+    public static d a() {
+        return new d(false);
     }
 }

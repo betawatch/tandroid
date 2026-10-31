@@ -1,11 +1,10 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import org.telegram.messenger.ChatObject;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class vo implements org.telegram.ui.Components.r90 {
+public final class vo implements org.telegram.ui.Components.i80 {
     public final /* synthetic */ Context a;
     public final /* synthetic */ cp b;
 
@@ -14,25 +13,25 @@ public final class vo implements org.telegram.ui.Components.r90 {
         this.a = context;
     }
 
-    @Override // org.telegram.ui.Components.r90
+    @Override // org.telegram.ui.Components.i80
     public final void d() {
-        this.b.Z(true);
+        this.b.c0(true);
     }
 
-    @Override // org.telegram.ui.Components.r90
-    public final void e() {
+    @Override // org.telegram.ui.Components.i80
+    public final void g() {
         cp cpVar = this.b;
-        org.telegram.ui.Components.o70 o70Var = new org.telegram.ui.Components.o70(this.a, cpVar.l0, cpVar.Y, cpVar.o0, cpVar, cpVar.Z, true, ChatObject.isChannel(cpVar.X));
+        org.telegram.ui.Components.c60 c60Var = new org.telegram.ui.Components.c60(this.a, cpVar.l0, cpVar.Y, cpVar.o0, cpVar, cpVar.Z, true, org.telegram.messenger.w3.T(cpVar.X));
         cp cpVar2 = this.b;
-        cpVar2.p0 = o70Var;
+        cpVar2.p0 = c60Var;
         cpVar2.p0.show();
     }
 
-    @Override // org.telegram.ui.Components.r90
-    public final /* synthetic */ void a() {
+    @Override // org.telegram.ui.Components.i80
+    public final /* synthetic */ void b() {
     }
 
-    @Override // org.telegram.ui.Components.r90
-    public final /* synthetic */ void k() {
+    @Override // org.telegram.ui.Components.i80
+    public final /* synthetic */ void n() {
     }
 }

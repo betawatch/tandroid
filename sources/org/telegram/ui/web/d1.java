@@ -1,35 +1,40 @@
 package org.telegram.ui.web;
 
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.r2;
+import java.io.File;
+import java.io.FileInputStream;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes4.dex */
-public final class d1 extends org.telegram.ui.ActionBar.j {
-    public final /* synthetic */ f1 a;
+public final class d1 extends FileInputStream {
+    public final long a;
 
-    public d1(f1 f1Var) {
-        this.a = f1Var;
+    public d1(long j10, long j11, File file) {
+        super(file);
+        this.a = j11;
+        if (j10 > 0 && skip(j10) != j10) {
+            throw new RuntimeException("BoundedInputStream failed to skip");
+        }
     }
 
-    @Override // org.telegram.ui.ActionBar.j
-    public final void b(int i10) {
-        org.telegram.ui.ActionBar.k kVar;
-        org.telegram.ui.ActionBar.k kVar2;
-        if (i10 == -1) {
-            f1 f1Var = this.a;
-            kVar = ((r2) f1Var).actionBar;
-            if (!kVar.q()) {
-                f1Var.finishFragment();
-                return;
-            }
-            kVar2 = ((r2) f1Var).actionBar;
-            kVar2.p();
-            f1Var.v.clear();
-            AndroidUtilities.forEachViews((RecyclerView) f1Var.a, (Utilities.Callback<View>) new di.e(23));
+    @Override // java.io.FileInputStream, java.io.InputStream
+    public final int read() {
+        if (getChannel().position() >= this.a) {
+            return -1;
         }
+        return super.read();
+    }
+
+    @Override // java.io.FileInputStream, java.io.InputStream
+    public final int read(byte[] bArr, int i10, int i11) {
+        long position = getChannel().position();
+        long j10 = this.a;
+        if (position >= j10) {
+            return -1;
+        }
+        long position2 = j10 - getChannel().position();
+        if (i11 > position2) {
+            i11 = (int) position2;
+        }
+        return super.read(bArr, i10, i11);
     }
 }

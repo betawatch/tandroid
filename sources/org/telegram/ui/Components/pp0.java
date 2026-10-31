@@ -1,254 +1,174 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Paint;
-import android.media.MediaCodec;
-import android.os.Build;
-import java.nio.ByteBuffer;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.tgnet.TLObject;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class pp0 {
-    public final int a;
-    public long b;
-    public final Object c;
-    public final Object d;
-    public Object e;
-    public Object f;
-    public Object g;
+public final class pp0 extends Drawable {
+    public long a = 0;
+    public final float[] b = {0.0f, -0.5f};
+    public final Drawable c;
+    public final Drawable d;
+    public final Drawable e;
+    public final int f;
 
-    public pp0(a8.h0 h0Var) {
-        int i10;
-        this.c = h0Var;
-        synchronized (h0Var) {
-            i10 = ((i2.i) h0Var.d).c.b;
-        }
-        this.a = i10;
-        this.d = new e2.x(32);
-        u2.z0 z0Var = new u2.z0(0L, i10);
-        this.e = z0Var;
-        this.f = z0Var;
-        this.g = z0Var;
-    }
-
-    public static u2.z0 d(u2.z0 z0Var, long j10, ByteBuffer byteBuffer, int i10) {
-        while (j10 >= z0Var.b) {
-            z0Var = (u2.z0) z0Var.d;
-        }
-        while (i10 > 0) {
-            int min = Math.min(i10, (int) (z0Var.b - j10));
-            y2.a aVar = (y2.a) z0Var.c;
-            byteBuffer.put(aVar.a, ((int) (j10 - z0Var.a)) + aVar.b, min);
-            i10 -= min;
-            j10 += min;
-            if (j10 == z0Var.b) {
-                z0Var = (u2.z0) z0Var.d;
-            }
-        }
-        return z0Var;
-    }
-
-    public static u2.z0 e(u2.z0 z0Var, long j10, byte[] bArr, int i10) {
-        while (j10 >= z0Var.b) {
-            z0Var = (u2.z0) z0Var.d;
-        }
-        int i11 = i10;
-        while (i11 > 0) {
-            int min = Math.min(i11, (int) (z0Var.b - j10));
-            y2.a aVar = (y2.a) z0Var.c;
-            System.arraycopy(aVar.a, ((int) (j10 - z0Var.a)) + aVar.b, bArr, i10 - i11, min);
-            i11 -= min;
-            j10 += min;
-            if (j10 == z0Var.b) {
-                z0Var = (u2.z0) z0Var.d;
-            }
-        }
-        return z0Var;
-    }
-
-    public static u2.z0 f(u2.z0 z0Var, h2.h hVar, k5.b bVar, e2.x xVar) {
-        if (hVar.getFlag(TLObject.FLAG_30)) {
-            long j10 = bVar.a;
-            int i10 = 1;
-            xVar.K(1);
-            u2.z0 e = e(z0Var, j10, xVar.a, 1);
-            long j11 = j10 + 1;
-            byte b10 = xVar.a[0];
-            boolean z10 = (b10 & 128) != 0;
-            int i11 = b10 & Byte.MAX_VALUE;
-            h2.d dVar = hVar.b;
-            byte[] bArr = dVar.a;
-            if (bArr == null) {
-                dVar.a = new byte[16];
-            } else {
-                Arrays.fill(bArr, (byte) 0);
-            }
-            z0Var = e(e, j11, dVar.a, i11);
-            long j12 = j11 + i11;
-            if (z10) {
-                xVar.K(2);
-                z0Var = e(z0Var, j12, xVar.a, 2);
-                j12 += 2;
-                i10 = xVar.H();
-            }
-            int[] iArr = dVar.d;
-            if (iArr == null || iArr.length < i10) {
-                iArr = new int[i10];
-            }
-            int[] iArr2 = dVar.e;
-            if (iArr2 == null || iArr2.length < i10) {
-                iArr2 = new int[i10];
-            }
-            if (z10) {
-                int i12 = i10 * 6;
-                xVar.K(i12);
-                z0Var = e(z0Var, j12, xVar.a, i12);
-                j12 += i12;
-                xVar.N(0);
-                for (int i13 = 0; i13 < i10; i13++) {
-                    iArr[i13] = xVar.H();
-                    iArr2[i13] = xVar.E();
-                }
-            } else {
-                iArr[0] = 0;
-                iArr2[0] = bVar.b - ((int) (j12 - bVar.a));
-            }
-            c3.i0 i0Var = (c3.i0) bVar.c;
-            String str = e2.n0.a;
-            byte[] bArr2 = i0Var.b;
-            byte[] bArr3 = dVar.a;
-            int i14 = i0Var.a;
-            int i15 = i0Var.c;
-            int i16 = i0Var.d;
-            dVar.f = i10;
-            dVar.d = iArr;
-            dVar.e = iArr2;
-            dVar.b = bArr2;
-            dVar.a = bArr3;
-            dVar.c = i14;
-            dVar.g = i15;
-            dVar.h = i16;
-            MediaCodec.CryptoInfo cryptoInfo = dVar.i;
-            cryptoInfo.numSubSamples = i10;
-            cryptoInfo.numBytesOfClearData = iArr;
-            cryptoInfo.numBytesOfEncryptedData = iArr2;
-            cryptoInfo.key = bArr2;
-            cryptoInfo.iv = bArr3;
-            cryptoInfo.mode = i14;
-            if (Build.VERSION.SDK_INT >= 24) {
-                h2.c cVar = dVar.j;
-                cVar.getClass();
-                h2.c.a(cVar, i15, i16);
-            }
-            long j13 = bVar.a;
-            int i17 = (int) (j12 - j13);
-            bVar.a = j13 + i17;
-            bVar.b -= i17;
-        }
-        if (!hVar.hasSupplementalData()) {
-            hVar.b(bVar.b);
-            return d(z0Var, bVar.a, hVar.c, bVar.b);
-        }
-        xVar.K(4);
-        u2.z0 e10 = e(z0Var, bVar.a, xVar.a, 4);
-        int E = xVar.E();
-        bVar.a += 4;
-        bVar.b -= 4;
-        hVar.b(E);
-        u2.z0 d = d(e10, bVar.a, hVar.c, E);
-        bVar.a += E;
-        int i18 = bVar.b - E;
-        bVar.b = i18;
-        ByteBuffer byteBuffer = hVar.f;
-        if (byteBuffer == null || byteBuffer.capacity() < i18) {
-            hVar.f = ByteBuffer.allocate(i18);
+    public pp0(Context context, int i10) {
+        this.f = i10;
+        if (i10 == 4) {
+            this.c = i0.a.f(context, R.drawable.filled_extend_location);
+            this.d = i0.a.f(context, R.drawable.smallanimationpinleft);
+            this.e = i0.a.f(context, R.drawable.smallanimationpinright);
+        } else if (i10 == 5) {
+            this.c = i0.a.f(context, R.drawable.filled_stop_location);
+            this.d = i0.a.f(context, R.drawable.smallanimationpinleft);
+            this.e = i0.a.f(context, R.drawable.smallanimationpinright);
+        } else if (i10 == 1) {
+            this.c = i0.a.f(context, R.drawable.smallanimationpin);
+            this.d = i0.a.f(context, R.drawable.smallanimationpinleft);
+            this.e = i0.a.f(context, R.drawable.smallanimationpinright);
         } else {
-            hVar.f.clear();
+            this.c = i0.a.f(context, R.drawable.animationpin);
+            this.d = i0.a.f(context, R.drawable.animationpinleft);
+            this.e = i0.a.f(context, R.drawable.animationpinright);
         }
-        return d(d, bVar.a, hVar.f, bVar.b);
     }
 
-    public void a(u2.z0 z0Var) {
-        if (((y2.a) z0Var.c) == null) {
-            return;
-        }
-        a8.h0 h0Var = (a8.h0) this.c;
-        synchronized (h0Var) {
-            ((i2.i) h0Var.d).c.b(z0Var);
-            u2.z0 z0Var2 = z0Var;
-            while (z0Var2 != null) {
-                y2.a aVar = (y2.a) z0Var2.c;
-                aVar.getClass();
-                h0Var.t(aVar);
-                z0Var2 = (u2.z0) z0Var2.d;
-                if (z0Var2 == null || ((y2.a) z0Var2.c) == null) {
-                    z0Var2 = null;
-                }
-            }
-        }
-        z0Var.c = null;
-        z0Var.d = null;
-    }
-
-    public void b(long j10) {
-        u2.z0 z0Var;
-        if (j10 == -1) {
-            return;
-        }
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        float[] fArr;
+        int L;
+        int L2;
+        int L3;
+        int D;
+        int i10;
+        Drawable drawable = this.c;
+        int intrinsicWidth = drawable.getIntrinsicWidth();
+        int intrinsicHeight = drawable.getIntrinsicHeight();
+        int i11 = 3;
+        int i12 = 5;
+        int i13 = 1;
+        int i14 = this.f;
+        int i15 = 4;
+        int L4 = (i14 == 4 || i14 == 5) ? org.telegram.messenger.i0.L(24.0f) : i14 == 3 ? org.telegram.messenger.i0.L(44.0f) : i14 == 2 ? org.telegram.messenger.i0.L(32.0f) : i14 == 1 ? org.telegram.messenger.i0.L(30.0f) : org.telegram.messenger.i0.L(120.0f);
+        int intrinsicHeight2 = ((getIntrinsicHeight() - L4) / 2) + getBounds().top;
+        int intrinsicWidth2 = ((getIntrinsicWidth() - L4) / 2) + getBounds().left;
+        int i16 = intrinsicWidth + intrinsicWidth2;
+        drawable.setBounds(intrinsicWidth2, intrinsicHeight2, i16, intrinsicHeight2 + intrinsicHeight);
+        drawable.draw(canvas);
+        int i17 = 0;
         while (true) {
-            z0Var = (u2.z0) this.e;
-            if (j10 < z0Var.b) {
+            fArr = this.b;
+            if (i17 >= 2) {
                 break;
             }
-            a8.h0 h0Var = (a8.h0) this.c;
-            y2.a aVar = (y2.a) z0Var.c;
-            synchronized (h0Var) {
-                ((i2.i) h0Var.d).c.c(aVar);
-                h0Var.t(aVar);
-            }
-            u2.z0 z0Var2 = (u2.z0) this.e;
-            z0Var2.c = null;
-            u2.z0 z0Var3 = (u2.z0) z0Var2.d;
-            z0Var2.d = null;
-            this.e = z0Var3;
-        }
-        if (((u2.z0) this.f).a < z0Var.a) {
-            this.f = z0Var;
-        }
-    }
-
-    public int c(int i10) {
-        y2.a a2;
-        u2.z0 z0Var = (u2.z0) this.g;
-        if (((y2.a) z0Var.c) == null) {
-            a8.h0 h0Var = (a8.h0) this.c;
-            synchronized (h0Var) {
-                a2 = ((i2.i) h0Var.d).c.a();
-                ((HashMap) h0Var.b).put(a2, (j2.j) h0Var.c);
-                i2.h hVar = (i2.h) ((i2.i) h0Var.d).p.get((j2.j) h0Var.c);
-                if (hVar != null) {
-                    hVar.a();
+            float f7 = fArr[i17];
+            if (f7 >= 0.0f) {
+                float f10 = (f7 * 0.5f) + 0.5f;
+                if (i14 == i15 || i14 == i12) {
+                    int L5 = org.telegram.messenger.i0.L(2.5f * f10);
+                    L = org.telegram.messenger.i0.L(f10 * 6.5f);
+                    int L6 = org.telegram.messenger.i0.L(fArr[i17] * 6.0f);
+                    L2 = (org.telegram.messenger.i0.L(3.0f) + intrinsicWidth2) - L6;
+                    L3 = ((intrinsicHeight / 2) + intrinsicHeight2) - org.telegram.messenger.i0.L(2.0f);
+                    D = org.telegram.messenger.z20.D(3.0f, i16, L6);
+                    i10 = L5;
+                } else if (i14 == i11) {
+                    i10 = org.telegram.messenger.i0.L(5.0f * f10);
+                    L = org.telegram.messenger.i0.L(f10 * 18.0f);
+                    int L7 = org.telegram.messenger.i0.L(fArr[i17] * 15.0f);
+                    L2 = (org.telegram.messenger.i0.L(2.0f) + intrinsicWidth2) - L7;
+                    L3 = ((intrinsicHeight / 2) + intrinsicHeight2) - org.telegram.messenger.i0.L(7.0f);
+                    D = org.telegram.messenger.z20.D(2.0f, i16, L7);
+                } else if (i14 == 2) {
+                    i10 = org.telegram.messenger.i0.L(5.0f * f10);
+                    L = org.telegram.messenger.i0.L(f10 * 18.0f);
+                    int L8 = org.telegram.messenger.i0.L(fArr[i17] * 15.0f);
+                    L2 = (org.telegram.messenger.i0.L(2.0f) + intrinsicWidth2) - L8;
+                    L3 = (intrinsicHeight / 2) + intrinsicHeight2;
+                    D = org.telegram.messenger.z20.D(2.0f, i16, L8);
+                } else if (i14 == i13) {
+                    int L9 = org.telegram.messenger.i0.L(2.5f * f10);
+                    L = org.telegram.messenger.i0.L(f10 * 6.5f);
+                    int L10 = org.telegram.messenger.i0.L(fArr[i17] * 6.0f);
+                    L2 = (org.telegram.messenger.i0.L(7.0f) + intrinsicWidth2) - L10;
+                    L3 = (intrinsicHeight / 2) + intrinsicHeight2;
+                    i10 = L9;
+                    D = org.telegram.messenger.z20.D(7.0f, i16, L10);
+                } else {
+                    i10 = org.telegram.messenger.i0.L(5.0f * f10);
+                    L = org.telegram.messenger.i0.L(f10 * 18.0f);
+                    int L11 = org.telegram.messenger.i0.L(fArr[i17] * 15.0f);
+                    L2 = (org.telegram.messenger.i0.L(42.0f) + intrinsicWidth2) - L11;
+                    L3 = ((intrinsicHeight / 2) + intrinsicHeight2) - org.telegram.messenger.i0.L(7.0f);
+                    D = org.telegram.messenger.z20.D(42.0f, i16, L11);
                 }
+                float f11 = fArr[i17];
+                int y3 = (int) ((f11 < 0.5f ? f11 / 0.5f : org.telegram.messenger.m5.y(f11, 0.5f, 0.5f, 1.0f)) * 255.0f);
+                Drawable drawable2 = this.d;
+                drawable2.setAlpha(y3);
+                int i18 = L3 - L;
+                int i19 = L3 + L;
+                drawable2.setBounds(L2 - i10, i18, L2 + i10, i19);
+                drawable2.draw(canvas);
+                Drawable drawable3 = this.e;
+                drawable3.setAlpha(y3);
+                drawable3.setBounds(D - i10, i18, D + i10, i19);
+                drawable3.draw(canvas);
             }
-            u2.z0 z0Var2 = new u2.z0(((u2.z0) this.g).b, this.a);
-            z0Var.c = a2;
-            z0Var.d = z0Var2;
+            i17++;
+            i11 = 3;
+            i12 = 5;
+            i13 = 1;
+            i15 = 4;
         }
-        return Math.min(i10, (int) (((u2.z0) this.g).b - this.b));
+        long currentTimeMillis = System.currentTimeMillis();
+        long j10 = currentTimeMillis - this.a;
+        this.a = currentTimeMillis;
+        if (j10 > 16) {
+            j10 = 16;
+        }
+        for (int i20 = 0; i20 < 2; i20++) {
+            if (fArr[i20] >= 1.0f) {
+                fArr[i20] = 0.0f;
+            }
+            float f12 = (j10 / 1300.0f) + fArr[i20];
+            fArr[i20] = f12;
+            if (f12 > 1.0f) {
+                fArr[i20] = 1.0f;
+            }
+        }
+        invalidateSelf();
     }
 
-    public pp0(np0 np0Var) {
-        this.d = new ArrayList(50);
-        this.e = new ArrayList(50);
-        Paint paint = new Paint(1);
-        this.f = paint;
-        this.a = MediaDataController.MAX_LINKS_COUNT;
-        this.c = np0Var;
-        paint.setStrokeWidth(AndroidUtilities.dp(1.33f));
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        int i10 = this.f;
+        return (i10 == 4 || i10 == 5) ? org.telegram.messenger.i0.L(42.0f) : i10 == 3 ? org.telegram.messenger.i0.L(100.0f) : i10 == 2 ? org.telegram.messenger.i0.L(74.0f) : i10 == 1 ? org.telegram.messenger.i0.L(40.0f) : org.telegram.messenger.i0.L(180.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        int i10 = this.f;
+        return (i10 == 4 || i10 == 5) ? org.telegram.messenger.i0.L(42.0f) : i10 == 3 ? org.telegram.messenger.i0.L(100.0f) : i10 == 2 ? org.telegram.messenger.i0.L(74.0f) : i10 == 1 ? org.telegram.messenger.i0.L(40.0f) : org.telegram.messenger.i0.L(120.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        this.c.setColorFilter(colorFilter);
+        this.d.setColorFilter(colorFilter);
+        this.e.setColorFilter(colorFilter);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
     }
 }

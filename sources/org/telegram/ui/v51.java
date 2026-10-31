@@ -1,25 +1,10 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class v51 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ w51 b;
-
-    public /* synthetic */ v51(w51 w51Var, int i10) {
-        this.a = i10;
-        this.b = w51Var;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                super/*android.widget.PopupWindow*/.dismiss();
-                break;
-            default:
-                this.b.dismiss();
-                break;
-        }
+public final class v51 extends s4.j {
+    @Override // s4.j
+    public final long K(long j10, long j11, long j12) {
+        return j10;
     }
 }

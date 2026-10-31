@@ -1,6 +1,5 @@
 package androidx.emoji2.text;
 
-import a8.mf;
 import android.os.Handler;
 import android.os.Looper;
 import android.text.Spannable;
@@ -9,8 +8,9 @@ import android.text.Spanned;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
+import w7.q6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class l {
     public static final Object i = new Object();
@@ -171,8 +171,8 @@ public final class l {
             throw new IllegalArgumentException("end should be < than charSequence length");
         }
         if (charSequence.length() != 0 && i10 != i11) {
-            n4.s sVar = (n4.s) this.e.a;
-            sVar.getClass();
+            hf.b bVar = (hf.b) this.e.a;
+            bVar.getClass();
             boolean z10 = charSequence instanceof u;
             if (z10) {
                 ((u) charSequence).a();
@@ -195,11 +195,11 @@ public final class l {
                             }
                         }
                         if (i10 != i11 && i10 < charSequence.length()) {
-                            s sVar2 = (s) ((com.google.firebase.messaging.q) sVar.b).c;
+                            s sVar = (s) ((ji.f) bVar.b).d;
                             pVar = new p();
                             pVar.a = 1;
-                            pVar.d = sVar2;
-                            pVar.e = sVar2;
+                            pVar.d = sVar;
+                            pVar.e = sVar;
                             codePointAt = Character.codePointAt(charSequence, i10);
                             int i13 = 0;
                             yVar = yVar2;
@@ -219,7 +219,7 @@ public final class l {
                                             codePointAt = Character.codePointAt(charSequence, i10);
                                         }
                                     } else if (a2 == 3) {
-                                        if (!sVar.z(charSequence, i12, i10, ((s) pVar.f).b)) {
+                                        if (!bVar.g0(charSequence, i12, i10, ((s) pVar.f).b)) {
                                             if (yVar == null) {
                                                 yVar = new y((Spannable) new SpannableString(charSequence));
                                             }
@@ -229,7 +229,7 @@ public final class l {
                                     }
                                 }
                             }
-                            if (pVar.a == 2 && ((s) pVar.e).b != null && ((pVar.c > 1 || pVar.e()) && i13 < Integer.MAX_VALUE && !sVar.z(charSequence, i12, i10, ((s) pVar.e).b))) {
+                            if (pVar.a == 2 && ((s) pVar.e).b != null && ((pVar.c > 1 || pVar.e()) && i13 < Integer.MAX_VALUE && !bVar.g0(charSequence, i12, i10, ((s) pVar.e).b))) {
                                 if (yVar == null) {
                                     yVar = new y(charSequence);
                                 }
@@ -257,11 +257,11 @@ public final class l {
                 }
             }
             if (i10 != i11) {
-                s sVar22 = (s) ((com.google.firebase.messaging.q) sVar.b).c;
+                s sVar2 = (s) ((ji.f) bVar.b).d;
                 pVar = new p();
                 pVar.a = 1;
-                pVar.d = sVar22;
-                pVar.e = sVar22;
+                pVar.d = sVar2;
+                pVar.e = sVar2;
                 codePointAt = Character.codePointAt(charSequence, i10);
                 int i132 = 0;
                 yVar = yVar2;
@@ -286,7 +286,7 @@ public final class l {
     }
 
     public final void f(i iVar) {
-        mf.a(iVar, "initCallback cannot be null");
+        q6.a(iVar, "initCallback cannot be null");
         this.a.writeLock().lock();
         try {
             if (this.c != 1 && this.c != 2) {

@@ -1,61 +1,53 @@
 package sg;
 
-import android.text.TextUtils;
-import org.telegram.tgnet.InputSerializedData;
-import org.telegram.tgnet.OutputSerializedData;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class n0 extends TLObject {
-    public static final /* synthetic */ int j = 0;
-    public int a;
-    public String b;
-    public String c;
-    public TLRPC.WebPage d;
-    public boolean e;
-    public boolean f = true;
-    public int i;
+public final class n0 extends m0 {
+    public final /* synthetic */ p0 g0;
 
-    @Override // org.telegram.tgnet.TLObject
-    public final void readParams(InputSerializedData inputSerializedData, boolean z10) {
-        int readInt32 = inputSerializedData.readInt32(z10);
-        this.a = readInt32;
-        this.e = (readInt32 & 8) != 0;
-        this.f = (readInt32 & 16) != 0;
-        this.c = inputSerializedData.readString(z10);
-        if ((this.a & 1) != 0) {
-            this.d = TLRPC.WebPage.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-        }
-        if ((this.a & 2) != 0) {
-            this.b = inputSerializedData.readString(z10);
-        }
-        if ((this.a & 4) != 0) {
-            this.i = inputSerializedData.readInt32(z10);
-        }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public n0(p0 p0Var, m0 m0Var, TLRPC.ReactionCount reactionCount, boolean z10) {
+        super(m0Var, p0Var.l, p0Var.w, reactionCount, z10, p0Var.y);
+        this.g0 = p0Var;
     }
 
-    @Override // org.telegram.tgnet.TLObject
-    public final void serializeToStream(OutputSerializedData outputSerializedData) {
-        outputSerializedData.writeInt32(-625858389);
-        this.a = this.d != null ? this.a | 1 : this.a & (-2);
-        int i10 = !TextUtils.isEmpty(this.b) ? this.a | 2 : this.a & (-3);
-        this.a = i10;
-        int i11 = this.e ? i10 | 8 : i10 & (-9);
-        this.a = i11;
-        int i12 = this.f ? i11 | 16 : i11 & (-17);
-        this.a = i12;
-        outputSerializedData.writeInt32(i12);
-        outputSerializedData.writeString(this.c);
-        if ((this.a & 1) != 0) {
-            this.d.serializeToStream(outputSerializedData);
+    @Override // sg.m0
+    public final float j() {
+        return this.g0.a;
+    }
+
+    @Override // sg.m0
+    public final ImageReceiver k() {
+        return (ImageReceiver) this.g0.E.get(this.r);
+    }
+
+    @Override // sg.m0
+    public final boolean l() {
+        return this.g0.x.P3();
+    }
+
+    @Override // sg.m0
+    public final boolean m() {
+        p0 p0Var = this.g0;
+        int f12 = p0Var.x.f1();
+        long d12 = p0Var.x.d1();
+        k0 k0Var = k0.B;
+        if (k0Var == null) {
+            return false;
         }
-        if ((this.a & 2) != 0) {
-            outputSerializedData.writeString(this.b);
+        int i10 = k0Var.a;
+        if (i10 != 2 && i10 != 0) {
+            return false;
         }
-        if ((this.a & 4) != 0) {
-            outputSerializedData.writeInt32(this.i);
-        }
+        long j10 = k0Var.o;
+        return ((j10 != 0 && d12 == j10) || f12 == k0Var.n) && k0Var.p.equals(this.r);
+    }
+
+    @Override // sg.m0
+    public final void n() {
+        this.g0.E.remove(this.r);
     }
 }

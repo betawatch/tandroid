@@ -5,20 +5,20 @@ import androidx.media3.exoplayer.hls.HlsMediaSource$Factory;
 import java.lang.reflect.GenericDeclaration;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class p {
     public final c3.m a;
-    public rf.b d;
-    public qb.a f;
+    public hf.b d;
+    public t7.u f;
     public final HashMap b = new HashMap();
     public final HashMap c = new HashMap();
     public boolean e = true;
     public int g = 3;
 
-    public p(c3.m mVar, qb.a aVar) {
+    public p(c3.m mVar, t7.u uVar) {
         this.a = mVar;
-        this.f = aVar;
+        this.f = uVar;
     }
 
     public static void a(p pVar) {
@@ -29,8 +29,8 @@ public final class p {
     }
 
     public final f0 b(int i10) {
-        e9.t tVar;
-        e9.t nVar;
+        d9.t tVar;
+        d9.t mVar;
         Integer valueOf = Integer.valueOf(i10);
         HashMap hashMap = this.c;
         f0 f0Var = (f0) hashMap.get(valueOf);
@@ -39,9 +39,9 @@ public final class p {
         }
         Integer valueOf2 = Integer.valueOf(i10);
         HashMap hashMap2 = this.b;
-        e9.t tVar2 = (e9.t) hashMap2.get(valueOf2);
+        d9.t tVar2 = (d9.t) hashMap2.get(valueOf2);
         if (tVar2 == null) {
-            final rf.b bVar = this.d;
+            final hf.b bVar = this.d;
             bVar.getClass();
             if (i10 != 0) {
                 final int i11 = 1;
@@ -50,13 +50,13 @@ public final class p {
                     if (i10 != 2) {
                         final int i13 = 3;
                         if (i10 == 3) {
-                            nVar = new i2.n(Class.forName("androidx.media3.exoplayer.rtsp.RtspMediaSource$Factory").asSubclass(f0.class), 3);
+                            mVar = new i2.m(Class.forName("androidx.media3.exoplayer.rtsp.RtspMediaSource$Factory").asSubclass(f0.class), 3);
                         } else {
                             if (i10 != 4) {
-                                throw new IllegalArgumentException(ic.a.i(i10, "Unrecognized contentType: "));
+                                throw new IllegalArgumentException(i0.a.i(i10, "Unrecognized contentType: "));
                             }
-                            nVar = new e9.t() { // from class: u2.o
-                                @Override // e9.t
+                            mVar = new d9.t() { // from class: u2.o
+                                @Override // d9.t
                                 public final Object get() {
                                     switch (i13) {
                                         case 0:
@@ -71,11 +71,11 @@ public final class p {
                                 }
                             };
                         }
-                        tVar2 = nVar;
+                        tVar2 = mVar;
                     } else {
                         final Class asSubclass = HlsMediaSource$Factory.class.asSubclass(f0.class);
-                        tVar = new e9.t() { // from class: u2.o
-                            @Override // e9.t
+                        tVar = new d9.t() { // from class: u2.o
+                            @Override // d9.t
                             public final Object get() {
                                 switch (i12) {
                                     case 0:
@@ -92,8 +92,8 @@ public final class p {
                     }
                 } else {
                     final GenericDeclaration asSubclass2 = Class.forName("androidx.media3.exoplayer.smoothstreaming.SsMediaSource$Factory").asSubclass(f0.class);
-                    tVar = new e9.t() { // from class: u2.o
-                        @Override // e9.t
+                    tVar = new d9.t() { // from class: u2.o
+                        @Override // d9.t
                         public final Object get() {
                             switch (i11) {
                                 case 0:
@@ -112,8 +112,8 @@ public final class p {
             } else {
                 final Class asSubclass3 = DashMediaSource$Factory.class.asSubclass(f0.class);
                 final int i14 = 0;
-                tVar2 = new e9.t() { // from class: u2.o
-                    @Override // e9.t
+                tVar2 = new d9.t() { // from class: u2.o
+                    @Override // d9.t
                     public final Object get() {
                         switch (i14) {
                             case 0:
@@ -131,9 +131,9 @@ public final class p {
             hashMap2.put(Integer.valueOf(i10), tVar2);
         }
         f0 f0Var2 = (f0) tVar2.get();
-        f0Var2.b(this.f);
-        f0Var2.c(this.e);
-        f0Var2.d(this.g);
+        f0Var2.d(this.f);
+        f0Var2.b(this.e);
+        f0Var2.c(this.g);
         hashMap.put(Integer.valueOf(i10), f0Var2);
         return f0Var2;
     }

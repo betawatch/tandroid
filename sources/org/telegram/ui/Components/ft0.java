@@ -1,26 +1,43 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+import android.content.Context;
+
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class ft0 extends s4.t {
-    public final /* synthetic */ bw0 Q;
+public final class ft0 extends org.telegram.ui.Cells.q1 {
+    public final /* synthetic */ int hd = 1;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ft0(bw0 bw0Var) {
-        super(3);
-        this.Q = bw0Var;
+    public /* synthetic */ ft0(Context context, int i10) {
+        super(context, i10);
     }
 
-    @Override // s4.t, s4.c0, s4.p0
-    public final int o0(int i10, rf.e eVar, s4.b1 b1Var) {
-        if (this.Q.q1) {
-            i10 = 0;
+    @Override // org.telegram.ui.Cells.q1
+    public int getParentWidth() {
+        int i10;
+        int L;
+        switch (this.hd) {
+            case 1:
+                if (getMeasuredWidth() != 0) {
+                    i10 = getMeasuredWidth();
+                    L = org.telegram.messenger.i0.L(24.0f);
+                } else {
+                    i10 = org.telegram.messenger.i0.q.x;
+                    L = org.telegram.messenger.i0.L(24.0f);
+                }
+                return i10 - L;
+            default:
+                return super.getParentWidth();
         }
-        return super.o0(i10, eVar, b1Var);
     }
 
-    @Override // s4.t, s4.c0, s4.p0
-    public final boolean y0() {
+    @Override // android.view.View
+    public final boolean isPressed() {
+        switch (this.hd) {
+        }
         return false;
+    }
+
+    public /* synthetic */ ft0(Context context, int i10, boolean z10, li.k kVar, org.telegram.ui.ActionBar.p6 p6Var) {
+        super(context, i10, z10, kVar, p6Var);
     }
 }

@@ -1,32 +1,36 @@
 package org.telegram.ui.Wallet;
 
-import org.telegram.messenger.Utilities;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import org.telegram.ui.Components.bi;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class r6 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ WalletEngine2 b;
-    public final /* synthetic */ Utilities.Callback2 c;
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final class r6 extends AnimatorListenerAdapter {
+    public final /* synthetic */ bi a;
+    public final /* synthetic */ a7 b;
+    public final /* synthetic */ s6 c;
 
-    public /* synthetic */ r6(WalletEngine2 walletEngine2, Utilities.Callback2 callback2, int i10) {
-        this.a = i10;
-        this.b = walletEngine2;
-        this.c = callback2;
+    public r6(s6 s6Var, bi biVar, a7 a7Var) {
+        this.c = s6Var;
+        this.a = biVar;
+        this.b = a7Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.lambda$emulateRotateKey$30(this.c);
-                break;
-            case 1:
-                this.b.lambda$balance$14(this.c);
-                break;
-            default:
-                this.b.lambda$prepareSendNFT$24(this.c);
-                break;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationCancel(Animator animator) {
+        this.c.a(false);
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        this.c.a(true);
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationStart(Animator animator) {
+        if (this.a != null) {
+            org.telegram.messenger.i0.v1(this.b);
         }
     }
 }

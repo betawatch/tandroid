@@ -1,51 +1,49 @@
 package org.telegram.ui.web;
 
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.u61;
+import java.io.Serializable;
+import org.telegram.messenger.f8;
+import org.telegram.messenger.jj;
+import org.telegram.messenger.o20;
+import org.telegram.ui.Components.a51;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class a implements org.telegram.ui.ActionBar.b2, Utilities.Callback5 {
-    public final /* synthetic */ l a;
+public final /* synthetic */ class a implements org.telegram.ui.ActionBar.u1, o20 {
+    public final /* synthetic */ j a;
 
-    public /* synthetic */ a(l lVar) {
-        this.a = lVar;
+    public /* synthetic */ a(j jVar) {
+        this.a = jVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.b2
-    public void h(org.telegram.ui.ActionBar.e2 e2Var, int i10) {
-        l lVar = this.a;
-        lVar.getContext().getSharedPreferences("webhistory", 0).edit().remove("queries_json").apply();
-        lVar.w.g3.O(true);
+    @Override // org.telegram.ui.ActionBar.u1
+    public void h(org.telegram.ui.ActionBar.x1 x1Var, int i10) {
+        j jVar = this.a;
+        jVar.getContext().getSharedPreferences("webhistory", 0).edit().remove("queries_json").apply();
+        jVar.x.f3.O(true);
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback5
-    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        org.telegram.ui.q qVar;
-        u61 u61Var = (u61) obj;
-        ((Integer) obj3).getClass();
-        ((Float) obj4).getClass();
-        ((Float) obj5).getClass();
-        boolean H = u61Var.H(e.class);
-        l lVar = this.a;
+    @Override // org.telegram.messenger.o20
+    public void k(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
+        org.telegram.ui.p pVar;
+        a51 a51Var = (a51) obj;
+        boolean H = a51Var.H(c.class);
+        j jVar = this.a;
         if (H) {
-            String charSequence = u61Var.l.toString();
-            org.telegram.ui.y yVar = lVar.L;
-            if (yVar != null) {
-                yVar.run(charSequence);
+            String charSequence = a51Var.l.toString();
+            org.telegram.ui.w wVar = jVar.L;
+            if (wVar != null) {
+                wVar.a(charSequence);
                 return;
             }
             return;
         }
-        if (!u61Var.H(h.class) || (qVar = lVar.N) == null) {
+        if (!a51Var.H(f.class) || (pVar = jVar.N) == null) {
             return;
         }
         try {
-            qVar.run(l.a((MessageObject) u61Var.H));
+            pVar.a(j.a((jj) a51Var.H));
         } catch (Exception e) {
-            FileLog.e(e);
+            f8.g(e, true);
         }
     }
 }

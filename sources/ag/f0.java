@@ -1,44 +1,70 @@
 package ag;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes.dex */
-public enum f0 {
-    /* JADX INFO: Fake field, exist only in values array */
-    EF8(0, "unknown delay"),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF18(1, "input"),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF28(2, "animation"),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF38(3, "layout"),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF48(4, "draw"),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF59(5, "sync"),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF69(6, "cmd issue"),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF84(7, "swap buffers"),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF99(31, "GPU_DURATION", "gpu"),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF119(8, "total");
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.p6;
+import org.telegram.ui.ActionBar.t6;
+import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.ui.Components.e6;
+import org.telegram.ui.Components.gr;
+import org.telegram.ui.Components.w4;
 
-    public final int a;
-    public final String b;
-    public final int c;
-    public long d;
-    public double e;
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final class f0 extends EditTextBoldCursor {
+    public final w4 G1;
+    public int H1;
+    public final e6 I1;
+    public final /* synthetic */ p6 J1;
 
-    f0(int i10, String str) {
-        this(24, r7, str);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public f0(Context context, p6 p6Var) {
+        super(context);
+        this.J1 = p6Var;
+        this.G1 = new w4(this);
+        e6 e6Var = new e6(false, true, true);
+        this.I1 = e6Var;
+        e6Var.n(0.2f, 160L, gr.h);
+        e6Var.w(org.telegram.messenger.i0.L(15.33f));
+        e6Var.setCallback(this);
+        e6Var.b = 5;
     }
 
-    f0(int i10, String str, String str2) {
-        this.d = Long.MIN_VALUE;
-        this.e = 0.0d;
-        this.a = r4;
-        this.b = str2;
-        this.c = i10;
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        int a2 = this.G1.a(t6.w0(this.H1 < 0 ? t6.p7 : t6.P5, this.J1), false);
+        e6 e6Var = this.I1;
+        e6Var.u(a2);
+        e6Var.setBounds(getScrollX(), 0, getWidth() + getScrollX(), getHeight());
+        e6Var.draw(canvas);
+    }
+
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.i0.L(36.0f), TLObject.FLAG_30));
+    }
+
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.qt, android.widget.TextView
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        super.onTextChanged(charSequence, i10, i11, i12);
+        e6 e6Var = this.I1;
+        if (e6Var != null) {
+            this.H1 = 32 - charSequence.length();
+            e6Var.a();
+            String str = "";
+            if (this.H1 <= 4) {
+                str = "" + this.H1;
+            }
+            e6Var.t(str, true, true);
+        }
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public final boolean verifyDrawable(Drawable drawable) {
+        return drawable == this.I1 || super.verifyDrawable(drawable);
     }
 }

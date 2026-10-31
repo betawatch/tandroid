@@ -1,21 +1,19 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class ym extends AnimatorListenerAdapter {
-    public final /* synthetic */ zm a;
+public final class ym extends s4.j {
+    public final /* synthetic */ jn F;
 
-    public ym(zm zmVar) {
-        this.a = zmVar;
+    public ym(jn jnVar) {
+        this.F = jnVar;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        zm zmVar = this.a;
-        zmVar.b.isChatPreviewSpoilerRevealed = true;
-        zmVar.O.z.invalidate();
+    @Override // s4.j
+    public final void P(s4.c1 c1Var) {
+        if (c1Var.b() == 0) {
+            jn jnVar = this.F;
+            jnVar.b.L1(jnVar, 0);
+        }
     }
 }

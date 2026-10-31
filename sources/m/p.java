@@ -1,6 +1,5 @@
 package m;
 
-import a8.kc;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.Resources;
@@ -14,8 +13,9 @@ import android.widget.CompoundButton;
 import android.widget.TextView;
 import java.util.Iterator;
 import java.util.Map;
+import v7.r7;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class p {
     public Parcelable a;
@@ -122,33 +122,33 @@ public final class p {
         CompoundButton compoundButton = (CompoundButton) this.f;
         Context context = compoundButton.getContext();
         int[] iArr = f.a.m;
-        k6.c D = k6.c.D(context, attributeSet, iArr, i10);
-        TypedArray typedArray = (TypedArray) D.c;
-        r0.i0.j(compoundButton, compoundButton.getContext(), iArr, attributeSet, (TypedArray) D.c, i10);
+        li.k G = li.k.G(context, attributeSet, iArr, i10);
+        TypedArray typedArray = (TypedArray) G.c;
+        r0.h0.i(compoundButton, compoundButton.getContext(), iArr, attributeSet, (TypedArray) G.c, i10);
         try {
             if (typedArray.hasValue(1) && (resourceId2 = typedArray.getResourceId(1, 0)) != 0) {
                 try {
-                    compoundButton.setButtonDrawable(kc.b(compoundButton.getContext(), resourceId2));
+                    compoundButton.setButtonDrawable(r7.b(compoundButton.getContext(), resourceId2));
                 } catch (Resources.NotFoundException unused) {
                 }
                 if (typedArray.hasValue(2)) {
-                    compoundButton.setButtonTintList(D.v(2));
+                    compoundButton.setButtonTintList(G.v(2));
                 }
                 if (typedArray.hasValue(3)) {
                     compoundButton.setButtonTintMode(l1.b(typedArray.getInt(3, -1), null));
                 }
-                D.E();
+                G.I();
             }
             if (typedArray.hasValue(0) && (resourceId = typedArray.getResourceId(0, 0)) != 0) {
-                compoundButton.setButtonDrawable(kc.b(compoundButton.getContext(), resourceId));
+                compoundButton.setButtonDrawable(r7.b(compoundButton.getContext(), resourceId));
             }
             if (typedArray.hasValue(2)) {
             }
             if (typedArray.hasValue(3)) {
             }
-            D.E();
+            G.I();
         } catch (Throwable th2) {
-            D.E();
+            G.I();
             throw th2;
         }
     }
@@ -157,9 +157,9 @@ public final class p {
         Object obj;
         kotlin.jvm.internal.i.e(provider, "provider");
         o.f fVar = (o.f) this.f;
-        o.c h = fVar.h(str);
-        if (h != null) {
-            obj = h.b;
+        o.c l4 = fVar.l(str);
+        if (l4 != null) {
+            obj = l4.b;
         } else {
             o.c cVar = new o.c(str, provider);
             fVar.d++;

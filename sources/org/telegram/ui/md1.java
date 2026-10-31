@@ -1,71 +1,138 @@
 package org.telegram.ui;
 
-import android.text.TextUtils;
-import android.widget.EditText;
-import org.telegram.messenger.DispatchQueue2;
-import org.telegram.messenger.Utilities;
+import android.animation.ValueAnimator;
+import android.content.SharedPreferences;
+import android.view.ViewPropertyAnimator;
+import android.view.animation.LinearInterpolator;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class md1 extends org.telegram.ui.ActionBar.s0 {
-    public boolean a = false;
-    public final /* synthetic */ rd1 b;
+public final /* synthetic */ class md1 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ be1 b;
 
-    public md1(rd1 rd1Var) {
-        this.b = rd1Var;
+    public /* synthetic */ md1(be1 be1Var, int i10) {
+        this.a = i10;
+        this.b = be1Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.s0
-    public final void h() {
-        rd1 rd1Var = this.b;
-        if (rd1Var.a.getVisibility() != 0) {
-            rd1Var.a.setVisibility(0);
-            rd1Var.a.setAlpha(0.0f);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.u0.b();
+                break;
+            case 1:
+                this.b.u0.b();
+                break;
+            case 2:
+                this.b.u0.b();
+                break;
+            case 3:
+                this.b.u0.b();
+                break;
+            case 4:
+                org.telegram.ui.Components.voip.b1 b1Var = this.b.Z;
+                b1Var.c0 = false;
+                b1Var.invalidate();
+                break;
+            case 5:
+                be1 be1Var = this.b;
+                be1Var.q0 = be1Var.p0;
+                be1Var.G();
+                break;
+            case 6:
+                this.b.A();
+                break;
+            case 7:
+                int[] iArr = new int[2];
+                be1 be1Var2 = this.b;
+                be1Var2.e0.getLocationOnScreen(iArr);
+                int i10 = iArr[0];
+                int i11 = iArr[1];
+                be1Var2.e.getLocationOnScreen(iArr);
+                be1Var2.e.setTranslationX(org.telegram.messenger.i0.L(42.0f) + (i10 - iArr[0]));
+                be1Var2.e.setTranslationY(org.telegram.messenger.i0.L(44.0f) + (i11 - iArr[1]));
+                be1Var2.h.getLocationOnScreen(iArr);
+                be1Var2.h.setTranslationX(org.telegram.messenger.i0.L(42.0f) + (i10 - iArr[0]));
+                be1Var2.h.setTranslationY(org.telegram.messenger.i0.L(44.0f) + (i11 - iArr[1]));
+                be1Var2.f.getLocationOnScreen(iArr);
+                be1Var2.f.setTranslationX(org.telegram.messenger.i0.L(42.0f) + (i10 - iArr[0]));
+                be1Var2.f.setTranslationY(org.telegram.messenger.i0.L(44.0f) + (i11 - iArr[1]));
+                be1Var2.n.getLocationOnScreen(iArr);
+                be1Var2.n.setTranslationX((((be1Var2.e0.getWidth() + i10) - iArr[0]) - org.telegram.messenger.i0.L(49.0f)) - org.telegram.messenger.i0.L(60.0f));
+                be1Var2.n.setTranslationY(org.telegram.messenger.i0.L(44.0f) + (i11 - iArr[1]));
+                be1Var2.n.setAlpha(1.0f);
+                be1Var2.e.setAlpha(1.0f);
+                be1Var2.h.setAlpha(1.0f);
+                be1Var2.f.setAlpha(1.0f);
+                ViewPropertyAnimator translationX = be1Var2.n.animate().setStartDelay(0L).translationY(0.0f).setInterpolator(new LinearInterpolator()).translationX(0.0f);
+                long j10 = org.telegram.messenger.zs.e3;
+                translationX.setDuration(j10).start();
+                be1Var2.e.animate().setStartDelay(0L).translationY(0.0f).setInterpolator(new LinearInterpolator()).translationX(0.0f).setDuration(j10).start();
+                be1Var2.h.animate().setStartDelay(0L).translationY(0.0f).setInterpolator(new LinearInterpolator()).translationX(0.0f).setDuration(j10).start();
+                be1Var2.f.animate().setStartDelay(0L).translationY(0.0f).setInterpolator(new LinearInterpolator()).translationX(0.0f).setDuration(j10).start();
+                break;
+            case 8:
+                this.b.u0.b();
+                break;
+            case 9:
+                int i12 = org.telegram.messenger.tz.f1;
+                if (i12 < 2) {
+                    org.telegram.messenger.tz.f1 = i12 + 1;
+                    SharedPreferences.Editor edit = org.telegram.messenger.vp.d1().edit();
+                    edit.putInt("callEncryptionHintDisplayedCount", org.telegram.messenger.tz.f1);
+                    edit.apply();
+                    be1 be1Var3 = this.b;
+                    be1Var3.O0.setTranslationY(be1Var3.N.getY() + org.telegram.messenger.i0.L(36.0f));
+                    be1Var3.O0.u();
+                    break;
+                }
+                break;
+            case 10:
+                this.b.u0.b();
+                break;
+            case 11:
+                be1 be1Var4 = this.b;
+                be1Var4.u0.setAlpha(1.0f);
+                be1Var4.u0.invalidate();
+                ValueAnimator b10 = be1Var4.b(true);
+                be1Var4.H.setAlpha(0.0f);
+                be1Var4.I.setAlpha(0.0f);
+                be1Var4.N.setAlpha(0.0f);
+                be1Var4.X.setAlpha(0.0f);
+                be1Var4.j0.setAlpha(0.0f);
+                be1Var4.h0.setAlpha(0.0f);
+                be1Var4.i0.setAlpha(0.0f);
+                be1Var4.K.setAlpha(0.0f);
+                be1Var4.M0.setAlpha(0.0f);
+                be1Var4.Y.b0 = true;
+                org.telegram.messenger.i0.h3(new t11(22, be1Var4, b10), 32L);
+                break;
+            case 12:
+                be1 be1Var5 = this.b;
+                be1Var5.R0 = false;
+                org.telegram.ui.Components.voip.k2 k2Var = be1Var5.N0;
+                boolean z10 = k2Var != null && k2Var.V;
+                if (be1Var5.z0 && be1Var5.x0 && !be1Var5.C0 && !z10) {
+                    be1Var5.K0 = System.currentTimeMillis();
+                    be1Var5.z(false);
+                    be1Var5.q0 = be1Var5.p0;
+                    be1Var5.G();
+                    break;
+                }
+                break;
+            default:
+                be1 be1Var6 = this.b;
+                if (be1Var6.p0 == 3) {
+                    be1Var6.D.b(true, false);
+                    org.telegram.ui.Components.voip.j2 j2Var = be1Var6.w;
+                    if (!j2Var.R) {
+                        j2Var.R = true;
+                        break;
+                    }
+                }
+                break;
         }
-        rd1Var.r.setVisibility(8);
-        rd1Var.d.l();
-        rd1Var.a.animate().alpha(1.0f).setDuration(150L).setListener(null).start();
-        rd1Var.s.animate().alpha(0.0f).setDuration(150L).setListener(new ld1(this, 0)).start();
-        this.a = false;
-    }
-
-    @Override // org.telegram.ui.ActionBar.s0
-    public final void l(EditText editText) {
-        String obj = editText.getText().toString();
-        qd1 qd1Var = this.b.e;
-        if (qd1Var.e != null) {
-            Utilities.searchQueue.cancelRunnable(qd1Var.e);
-            qd1Var.e = null;
-        }
-        if (TextUtils.isEmpty(obj)) {
-            qd1Var.c.clear();
-            qd1Var.d.clear();
-            qd1Var.l();
-            qd1Var.h.r.setVisibility(8);
-        } else {
-            int i10 = qd1Var.f + 1;
-            qd1Var.f = i10;
-            DispatchQueue2 dispatchQueue2 = Utilities.searchQueue;
-            pd1 pd1Var = new pd1(qd1Var, obj, i10, 0);
-            qd1Var.e = pd1Var;
-            dispatchQueue2.postRunnable(pd1Var, 300L);
-        }
-        if (this.a || TextUtils.isEmpty(obj)) {
-            if (this.a && TextUtils.isEmpty(obj)) {
-                h();
-                return;
-            }
-            return;
-        }
-        if (this.b.s.getVisibility() != 0) {
-            this.b.s.setVisibility(0);
-            this.b.s.setAlpha(0.0f);
-        }
-        this.b.a.animate().alpha(0.0f).setDuration(150L).setListener(new ld1(this, 1)).start();
-        this.b.e.d.clear();
-        this.b.e.c.clear();
-        this.b.e.l();
-        this.b.s.animate().setListener(null).alpha(1.0f).setDuration(150L).start();
-        this.a = true;
     }
 }

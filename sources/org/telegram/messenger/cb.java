@@ -1,51 +1,13 @@
 package org.telegram.messenger;
 
-import java.util.Comparator;
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final /* synthetic */ class cb implements Comparator {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesController b;
+public final class cb {
+    public final double a;
+    public final double b;
 
-    public /* synthetic */ cb(MessagesController messagesController, int i10) {
-        this.a = i10;
-        this.b = messagesController;
-    }
-
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        int lambda$processUpdatesQueue$328;
-        int lambda$renameSavedReactionTag$490;
-        int lambda$updateSavedReactionTags$489;
-        int lambda$new$9;
-        int lambda$new$10;
-        int lambda$new$11;
-        int lambda$new$12;
-        switch (this.a) {
-            case 0:
-                lambda$processUpdatesQueue$328 = this.b.lambda$processUpdatesQueue$328((TLRPC.Updates) obj, (TLRPC.Updates) obj2);
-                return lambda$processUpdatesQueue$328;
-            case 1:
-                lambda$renameSavedReactionTag$490 = this.b.lambda$renameSavedReactionTag$490((TLRPC.TL_savedReactionTag) obj, (TLRPC.TL_savedReactionTag) obj2);
-                return lambda$renameSavedReactionTag$490;
-            case 2:
-                lambda$updateSavedReactionTags$489 = this.b.lambda$updateSavedReactionTags$489((TLRPC.TL_savedReactionTag) obj, (TLRPC.TL_savedReactionTag) obj2);
-                return lambda$updateSavedReactionTags$489;
-            case 3:
-                lambda$new$9 = this.b.lambda$new$9((TLRPC.Dialog) obj, (TLRPC.Dialog) obj2);
-                return lambda$new$9;
-            case 4:
-                lambda$new$10 = this.b.lambda$new$10((TLRPC.Dialog) obj, (TLRPC.Dialog) obj2);
-                return lambda$new$10;
-            case 5:
-                lambda$new$11 = this.b.lambda$new$11((MessagesController.CommunityPeerDialog) obj, (MessagesController.CommunityPeerDialog) obj2);
-                return lambda$new$11;
-            default:
-                lambda$new$12 = this.b.lambda$new$12((TLRPC.Update) obj, (TLRPC.Update) obj2);
-                return lambda$new$12;
-        }
+    public cb(double d, double d10) {
+        this.a = d;
+        this.b = d10;
     }
 }

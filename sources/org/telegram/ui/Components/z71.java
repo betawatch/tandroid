@@ -1,114 +1,134 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import java.io.File;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.IUpdateLayout;
+import android.content.Context;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
+import android.view.WindowManager;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class z71 extends IUpdateLayout {
-    public FrameLayout a;
-    public RadialProgress2 b;
-    public org.telegram.ui.Cells.v1 c;
-    public final Activity d;
-    public final ViewGroup e;
+public final class z71 implements SensorEventListener {
+    public final float[] a = new float[3];
+    public final float[] b = new float[3];
+    public int c;
+    public final WindowManager d;
+    public final SensorManager e;
+    public final Sensor f;
+    public boolean h;
+    public y71 n;
 
-    public z71(Activity activity, ViewGroup viewGroup) {
-        super(activity, viewGroup);
-        this.d = activity;
-        this.e = viewGroup;
+    public z71(Context context) {
+        this.d = (WindowManager) context.getSystemService("window");
+        SensorManager sensorManager = (SensorManager) context.getSystemService("sensor");
+        this.e = sensorManager;
+        this.f = sensorManager.getDefaultSensor(1);
     }
 
-    @Override // org.telegram.ui.IUpdateLayout
-    public final void createUpdateUI(int i10) {
-        ViewGroup viewGroup = this.e;
-        if (viewGroup == null || this.a != null) {
-            return;
-        }
-        Activity activity = this.d;
-        FrameLayout frameLayout = new FrameLayout(activity);
-        this.a = frameLayout;
-        frameLayout.setVisibility(4);
-        this.a.setTranslationY(AndroidUtilities.dp(44.0f));
-        this.a.setBackground(org.telegram.ui.ActionBar.y6.g0(1090519039, 2, -1));
-        viewGroup.addView(this.a, kb1.i(-1, 44, 83));
-        this.a.setOnClickListener(new ai.w(this, i10, 20));
-        org.telegram.ui.Cells.v1 v1Var = new org.telegram.ui.Cells.v1(this, activity);
-        this.c = v1Var;
-        v1Var.setTextSize(AndroidUtilities.dp(15.0f));
-        this.c.setTypeface(AndroidUtilities.bold());
-        this.c.setTextColor(-1);
-        this.c.setGravity(17);
-        this.a.addView(this.c, kb1.k());
-        this.c.c(LocaleController.getString(R.string.AppUpdateBeta), false, true);
-        RadialProgress2 radialProgress2 = new RadialProgress2(this.c, null);
-        this.b = radialProgress2;
-        int i11 = org.telegram.ui.ActionBar.y6.Oh;
-        radialProgress2.setColors(-1, -1, org.telegram.ui.ActionBar.y6.x0(null, i11, false), org.telegram.ui.ActionBar.y6.x0(null, i11, false));
-        this.b.r(0, 0, AndroidUtilities.dp(22.0f), AndroidUtilities.dp(22.0f));
-        this.b.setCircleRadius(AndroidUtilities.dp(11.0f));
-        this.b.setAsMini();
+    public static float a(int i10, int i11) {
+        float f7 = i10;
+        float L = org.telegram.messenger.i0.L(16.0f) * 2;
+        float f10 = (f7 + L) / f7;
+        float f11 = i11;
+        return Math.max(f10, (L + f11) / f11);
     }
 
-    @Override // org.telegram.ui.IUpdateLayout
-    public final void updateAppUpdateViews(int i10, boolean z10) {
-        if (this.e == null) {
-            return;
-        }
-        if (ApplicationLoader.applicationLoaderInstance.getUpdate() == null) {
-            FrameLayout frameLayout = this.a;
-            if (frameLayout == null || frameLayout.getTag() == null) {
+    public final void b(org.telegram.ui.c81 c81Var) {
+        this.n = c81Var;
+    }
+
+    public final void c(boolean z10) {
+        if (this.h != z10) {
+            this.h = z10;
+            Sensor sensor = this.f;
+            if (sensor == null) {
                 return;
             }
-            this.a.setTag(null);
+            SensorManager sensorManager = this.e;
             if (z10) {
-                this.a.animate().translationY(AndroidUtilities.dp(44.0f)).setInterpolator(ds.g).setListener(new i31(this, 5)).setDuration(180L).start();
-                return;
+                sensorManager.registerListener(this, sensor, 1);
             } else {
-                this.a.setTranslationY(AndroidUtilities.dp(44.0f));
-                this.a.setVisibility(4);
-                return;
+                sensorManager.unregisterListener(this);
             }
-        }
-        createUpdateUI(i10);
-        File downloadedUpdateFile = ApplicationLoader.applicationLoaderInstance.getDownloadedUpdateFile();
-        if (downloadedUpdateFile != null && downloadedUpdateFile.exists()) {
-            this.b.setIcon(15, true, z10);
-            this.c.c(LocaleController.getString(R.string.AppUpdateNow), z10, true);
-        } else if (ApplicationLoader.applicationLoaderInstance.isDownloadingUpdate()) {
-            this.b.setIcon(3, true, z10);
-            this.b.p(ApplicationLoader.applicationLoaderInstance.getDownloadingUpdateProgress(), true);
-            this.c.c(LocaleController.formatString(R.string.AppUpdateDownloading, Integer.valueOf((int) (ApplicationLoader.applicationLoaderInstance.getDownloadingUpdateProgress() * 100.0f))), z10, true);
-        } else {
-            this.b.setIcon(2, true, z10);
-            this.c.c(LocaleController.getString(R.string.AppUpdateBeta), z10, true);
-        }
-        if (this.a.getTag() != null) {
-            return;
-        }
-        this.a.setVisibility(0);
-        this.a.setTag(1);
-        if (z10) {
-            this.a.animate().translationY(0.0f).setInterpolator(ds.g).setListener(null).setDuration(180L).start();
-        } else {
-            this.a.setTranslationY(0.0f);
         }
     }
 
-    @Override // org.telegram.ui.IUpdateLayout
-    public final void updateFileProgress(Object[] objArr) {
-        if (this.a == null || this.c == null || !ApplicationLoader.applicationLoaderInstance.isDownloadingUpdate()) {
+    /* JADX WARN: Removed duplicated region for block: B:20:0x00d9  */
+    /* JADX WARN: Removed duplicated region for block: B:23:? A[RETURN, SYNTHETIC] */
+    @Override // android.hardware.SensorEventListener
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void onSensorChanged(SensorEvent sensorEvent) {
+        y71 y71Var;
+        float f7;
+        int rotation = this.d.getDefaultDisplay().getRotation();
+        float[] fArr = sensorEvent.values;
+        float f10 = fArr[0] / 9.80665f;
+        float f11 = fArr[1] / 9.80665f;
+        float f12 = fArr[2] / 9.80665f;
+        float f13 = f12 * f12;
+        float atan2 = (float) ((Math.atan2(f10, Math.sqrt((f11 * f11) + f13)) / 3.141592653589793d) * 2.0d);
+        float atan22 = (float) ((Math.atan2(f11, Math.sqrt((f10 * f10) + f13)) / 3.141592653589793d) * 2.0d);
+        if (rotation != 1) {
+            if (rotation == 2) {
+                float f14 = -atan22;
+                atan22 = -atan2;
+                atan2 = f14;
+            } else if (rotation != 3) {
+                atan2 = atan22;
+                atan22 = atan2;
+            } else {
+                atan2 = -atan2;
+            }
+        }
+        int i10 = this.c;
+        float[] fArr2 = this.a;
+        fArr2[i10] = atan2;
+        float[] fArr3 = this.b;
+        fArr3[i10] = atan22;
+        this.c = (i10 + 1) % fArr2.length;
+        float f15 = 0.0f;
+        float f16 = 0.0f;
+        for (int i11 = 0; i11 < fArr2.length; i11++) {
+            f15 += fArr2[i11];
+            f16 += fArr3[i11];
+        }
+        float length = f15 / fArr2.length;
+        float length2 = f16 / fArr2.length;
+        if (length <= 1.0f) {
+            f7 = length < -1.0f ? -2.0f : 2.0f;
+            int round = Math.round(org.telegram.messenger.i0.N(16.0f) * length2);
+            int round2 = Math.round(org.telegram.messenger.i0.N(16.0f) * length);
+            float max = Math.max(-1.0f, Math.min(1.0f, (-length2) / 0.45f));
+            float max2 = Math.max(-1.0f, Math.min(1.0f, (-length) / 0.45f));
+            float sqrt = (float) Math.sqrt((max2 * max2) + (max * max));
+            float f17 = max / sqrt;
+            float f18 = max2 / sqrt;
+            Math.atan2((f17 * (-1.0f)) - (f18 * 0.0f), (f18 * (-1.0f)) + (f17 * 0.0f));
+            y71Var = this.n;
+            if (y71Var == null) {
+                y71Var.e(round, round2);
+                return;
+            }
             return;
         }
-        float downloadingUpdateProgress = ApplicationLoader.applicationLoaderInstance.getDownloadingUpdateProgress();
-        this.b.p(downloadingUpdateProgress, true);
-        this.c.setText(LocaleController.formatString(R.string.AppUpdateDownloading, Integer.valueOf((int) (downloadingUpdateProgress * 100.0f))));
-        this.a.invalidate();
+        length = f7 - length;
+        int round3 = Math.round(org.telegram.messenger.i0.N(16.0f) * length2);
+        int round22 = Math.round(org.telegram.messenger.i0.N(16.0f) * length);
+        float max3 = Math.max(-1.0f, Math.min(1.0f, (-length2) / 0.45f));
+        float max22 = Math.max(-1.0f, Math.min(1.0f, (-length) / 0.45f));
+        float sqrt2 = (float) Math.sqrt((max22 * max22) + (max3 * max3));
+        float f172 = max3 / sqrt2;
+        float f182 = max22 / sqrt2;
+        Math.atan2((f172 * (-1.0f)) - (f182 * 0.0f), (f182 * (-1.0f)) + (f172 * 0.0f));
+        y71Var = this.n;
+        if (y71Var == null) {
+        }
+    }
+
+    @Override // android.hardware.SensorEventListener
+    public final void onAccuracyChanged(Sensor sensor, int i10) {
     }
 }

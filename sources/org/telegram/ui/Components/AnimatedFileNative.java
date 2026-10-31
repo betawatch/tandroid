@@ -5,7 +5,7 @@ import android.os.Trace;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.messenger.AnimatedFileDrawableStream;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
 public class AnimatedFileNative {
     public final int[] a;
@@ -57,7 +57,7 @@ public class AnimatedFileNative {
 
     private static native void nStopDecoder(long j10);
 
-    public final int b(Bitmap bitmap, long j10) {
+    public final int b(long j10, Bitmap bitmap) {
         this.c.get();
         long j11 = this.b;
         int[] iArr = this.a;

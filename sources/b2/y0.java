@@ -1,50 +1,36 @@
 package b2;
 
-import a8.yb;
 import android.os.Bundle;
-import j$.util.Objects;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class y0 extends h1 {
-    public static final String c;
-    public final float b;
+public abstract class y0 extends Exception {
+    public static final String d;
+    public static final String e;
+    public static final String f;
+    public static final String h;
+    public static final String n;
+    public static final String r;
+    public final int a;
+    public final long b;
+    public final Bundle c;
 
     static {
-        String str = e2.n0.a;
-        c = Integer.toString(1, 36);
+        String str = e2.l0.a;
+        d = Integer.toString(0, 36);
+        e = Integer.toString(1, 36);
+        f = Integer.toString(2, 36);
+        h = Integer.toString(3, 36);
+        n = Integer.toString(4, 36);
+        r = Integer.toString(5, 36);
     }
 
-    public y0() {
-        this.b = -1.0f;
-    }
-
-    @Override // b2.h1
-    public final boolean b() {
-        return this.b != -1.0f;
-    }
-
-    @Override // b2.h1
-    public final Bundle c() {
-        Bundle bundle = new Bundle();
-        bundle.putInt(h1.a, 1);
-        bundle.putFloat(c, this.b);
-        return bundle;
-    }
-
-    public final boolean equals(Object obj) {
-        if (obj instanceof y0) {
-            return this.b == ((y0) obj).b;
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        return Objects.hash(Float.valueOf(this.b));
-    }
-
-    public y0(float f7) {
-        yb.f("percent must be in the range of [0, 100]", f7 >= 0.0f && f7 <= 100.0f);
-        this.b = f7;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public y0(String str, Throwable th2, int i10, long j10) {
+        super(str, th2);
+        Bundle bundle = Bundle.EMPTY;
+        this.a = i10;
+        this.c = bundle;
+        this.b = j10;
     }
 }

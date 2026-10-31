@@ -8,9 +8,9 @@ import android.widget.LinearLayout;
 import java.util.WeakHashMap;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
-import r0.i0;
+import r0.h0;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public class ButtonBarLayout extends LinearLayout {
     public boolean a;
@@ -22,7 +22,7 @@ public class ButtonBarLayout extends LinearLayout {
         this.c = -1;
         int[] iArr = f.a.k;
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, iArr);
-        i0.j(this, context, iArr, attributeSet, obtainStyledAttributes, 0);
+        h0.i(this, context, iArr, attributeSet, obtainStyledAttributes, 0);
         this.a = obtainStyledAttributes.getBoolean(0, true);
         obtainStyledAttributes.recycle();
         if (getOrientation() == 1) {
@@ -110,7 +110,7 @@ public class ButtonBarLayout extends LinearLayout {
                 i14 = getPaddingBottom() + measuredHeight;
             }
         }
-        WeakHashMap weakHashMap = i0.a;
+        WeakHashMap weakHashMap = h0.a;
         if (getMinimumHeight() != i14) {
             setMinimumHeight(i14);
             if (i11 == 0) {

@@ -9,7 +9,7 @@ import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public class h {
     public final MediaController a;
@@ -40,13 +40,13 @@ public class h {
         while (i10 < size) {
             Object obj = arrayList.get(i10);
             i10++;
-            androidx.mediarouter.app.r rVar = (androidx.mediarouter.app.r) obj;
-            g gVar = new g(rVar);
-            this.d.put(rVar, gVar);
-            rVar.c = gVar;
+            androidx.mediarouter.app.q qVar = (androidx.mediarouter.app.q) obj;
+            g gVar = new g(qVar);
+            this.d.put(qVar, gVar);
+            qVar.c = gVar;
             try {
-                mediaSessionCompat$Token.a().o(gVar);
-                rVar.e(13, null, null);
+                mediaSessionCompat$Token.a().p(gVar);
+                qVar.e(13, null, null);
             } catch (RemoteException e) {
                 Log.e("MediaControllerCompat", "Dead object in registerCallback.", e);
             }
@@ -54,21 +54,21 @@ public class h {
         arrayList.clear();
     }
 
-    public final void b(androidx.mediarouter.app.r rVar) {
-        this.a.unregisterCallback(rVar.a);
+    public final void b(androidx.mediarouter.app.q qVar) {
+        this.a.unregisterCallback(qVar.a);
         synchronized (this.b) {
             if (this.e.a() != null) {
                 try {
-                    g gVar = (g) this.d.remove(rVar);
+                    g gVar = (g) this.d.remove(qVar);
                     if (gVar != null) {
-                        rVar.c = null;
-                        this.e.a().L(gVar);
+                        qVar.c = null;
+                        this.e.a().N(gVar);
                     }
                 } catch (RemoteException e) {
                     Log.e("MediaControllerCompat", "Dead object in unregisterCallback.", e);
                 }
             } else {
-                this.c.remove(rVar);
+                this.c.remove(qVar);
             }
         }
     }

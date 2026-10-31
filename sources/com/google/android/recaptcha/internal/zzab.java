@@ -1,16 +1,17 @@
 package com.google.android.recaptcha.internal;
 
-import a8.jd;
+import cd.c;
+import dd.a;
+import ed.j;
 import java.util.Collections;
 import java.util.Map;
-import ld.c;
-import md.a;
-import nd.i;
-import ud.p;
+import kotlin.jvm.internal.i;
+import l9.b;
+import ld.p;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-final class zzab extends i implements p {
+final class zzab extends j implements p {
     final /* synthetic */ zzxp zza;
     final /* synthetic */ zzad zzb;
 
@@ -21,20 +22,20 @@ final class zzab extends i implements p {
         this.zzb = zzadVar;
     }
 
-    @Override // nd.a
+    @Override // ed.a
     public final c create(Object obj, c cVar) {
         return new zzab(this.zza, this.zzb, cVar);
     }
 
-    @Override // ud.p
+    @Override // ld.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzab) create((zzhk) obj, (c) obj2)).invokeSuspend(jd.i.a);
+        return ((zzab) create((zzhk) obj, (c) obj2)).invokeSuspend(ad.j.a);
     }
 
-    @Override // nd.a
+    @Override // ed.a
     public final Object invokeSuspend(Object obj) {
         a aVar = a.a;
-        jd.b(obj);
+        b.b(obj);
         zzxp zzxpVar = this.zza;
         if (zzxpVar.zzl().length() == 0) {
             this.zzb.zzj(false);
@@ -42,8 +43,8 @@ final class zzab extends i implements p {
         }
         zzci zzb = zzad.zzb(this.zzb);
         Map singletonMap = Collections.singletonMap("_GRECAPTCHA_KC", zzxpVar.zzl());
-        kotlin.jvm.internal.i.d(singletonMap, "singletonMap(...)");
+        i.d(singletonMap, "singletonMap(...)");
         zzb.zzb(singletonMap);
-        return jd.i.a;
+        return ad.j.a;
     }
 }

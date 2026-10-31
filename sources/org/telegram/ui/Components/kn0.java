@@ -1,0 +1,520 @@
+package org.telegram.ui.Components;
+
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.os.SystemClock;
+import android.text.SpannableString;
+import android.text.SpannableStringBuilder;
+import android.text.Spanned;
+import android.text.StaticLayout;
+import android.text.TextPaint;
+import android.util.Pair;
+import android.view.View;
+import java.util.ArrayList;
+import java.util.Collections;
+import org.telegram.messenger.Utilities;
+
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public class kn0 {
+    public static Paint D;
+    public static int E;
+    public static float[] F;
+    public static Path G;
+    public TextPaint A;
+    public long C;
+    public float a;
+    public int f;
+    public int g;
+    public jn0 h;
+    public int i;
+    public int j;
+    public int k;
+    public int l;
+    public int m;
+    public boolean p;
+    public float q;
+    public float r;
+    public View s;
+    public ArrayList u;
+    public CharSequence v;
+    public long w;
+    public StaticLayout[] z;
+    public int b = 0;
+    public int c = 0;
+    public int d = 0;
+    public boolean e = false;
+    public final RectF n = new RectF();
+    public final int o = org.telegram.messenger.i0.L(2.0f);
+    public float t = 1.0f;
+    public float x = 0.0f;
+    public int y = -1;
+    public float B = 1.0f;
+
+    public kn0(View view) {
+        if (D == null) {
+            D = new Paint(1);
+        }
+        this.s = view;
+        E = org.telegram.messenger.i0.L(24.0f);
+        this.r = org.telegram.messenger.i0.L(6.0f);
+    }
+
+    public final void a() {
+        this.u = null;
+        this.y = -1;
+        this.x = 0.0f;
+        StaticLayout[] staticLayoutArr = this.z;
+        if (staticLayoutArr != null) {
+            staticLayoutArr[1] = null;
+            staticLayoutArr[0] = null;
+        }
+        this.v = null;
+        this.w = -1L;
+    }
+
+    public final void b(Canvas canvas) {
+        Canvas canvas2;
+        float f7 = this.t;
+        if (f7 <= 0.0f) {
+            return;
+        }
+        if (f7 < 1.0f) {
+            canvas2 = canvas;
+            canvas2.saveLayerAlpha(0.0f, 0.0f, this.f, this.g, (int) (f7 * 255.0f), 31);
+        } else {
+            canvas2 = canvas;
+        }
+        int i10 = E / 2;
+        int i11 = this.g / 2;
+        int i12 = this.o / 2;
+        RectF rectF = this.n;
+        rectF.set(i10, i11 - i12, this.f - i10, i11 + i12);
+        D.setColor(this.p ? this.m : this.i);
+        c(canvas2, rectF, D);
+        if (this.q > 0.0f) {
+            D.setColor(this.p ? this.m : this.j);
+            float f10 = E / 2;
+            int i13 = this.g / 2;
+            rectF.set(f10, i13 - i12, (this.q * (this.f - r12)) + f10, i13 + i12);
+            c(canvas2, rectF, D);
+        }
+        float f11 = E / 2;
+        int i14 = this.g / 2;
+        rectF.set(f11, i14 - i12, r12 + (this.e ? this.c : this.b), i12 + i14);
+        D.setColor(this.l);
+        c(canvas2, rectF, D);
+        D.setColor(this.k);
+        float L = org.telegram.messenger.i0.L(this.e ? 8.0f : 6.0f);
+        if (this.r != L) {
+            long elapsedRealtime = SystemClock.elapsedRealtime();
+            if (elapsedRealtime > 18) {
+                elapsedRealtime = 16;
+            }
+            float f12 = this.r;
+            if (f12 < L) {
+                float c10 = a1.g.c(elapsedRealtime, 60.0f, org.telegram.messenger.i0.L(1.0f), f12);
+                this.r = c10;
+                if (c10 > L) {
+                    this.r = L;
+                }
+            } else {
+                float v = org.telegram.messenger.z20.v(elapsedRealtime, 60.0f, org.telegram.messenger.i0.L(1.0f), f12);
+                this.r = v;
+                if (v < L) {
+                    this.r = L;
+                }
+            }
+            View view = this.s;
+            if (view != null) {
+                view.invalidate();
+            }
+        }
+        canvas2.drawCircle((E / 2) + (this.e ? this.c : this.b), this.g / 2, this.r, D);
+        if (this.t < 1.0f) {
+            canvas2.restore();
+        }
+        ArrayList arrayList = this.u;
+        if (arrayList == null || arrayList.isEmpty()) {
+            return;
+        }
+        float f13 = (this.e ? this.c : this.b) / (this.f - E);
+        int size = this.u.size() - 1;
+        while (true) {
+            if (size < 0) {
+                size = -1;
+                break;
+            } else if (((Float) ((Pair) this.u.get(size)).first).floatValue() - 0.001f <= f13) {
+                break;
+            } else {
+                size--;
+            }
+        }
+        if (this.z == null) {
+            this.z = new StaticLayout[2];
+        }
+        float f14 = E / 2.0f;
+        Math.abs(f14 - (this.f - f14));
+        org.telegram.messenger.i0.L(66.0f);
+        if (size != this.y) {
+            if (this.e) {
+                org.telegram.messenger.i0.b4(this.s);
+            }
+            this.y = size;
+            if (size >= 0 && size < this.u.size()) {
+                d((e51) ((Pair) this.u.get(this.y)).second);
+            }
+        }
+        if (this.B < 1.0f) {
+            this.B = Math.min((Math.min(17L, Math.abs(SystemClock.elapsedRealtime() - this.C)) / (this.u.size() > 8 ? 160.0f : 220.0f)) + this.B, 1.0f);
+            View view2 = this.s;
+            if (view2 != null) {
+                view2.invalidate();
+            }
+            this.C = SystemClock.elapsedRealtime();
+        }
+        if (this.x < 1.0f) {
+            this.x = Math.min((Math.min(17L, Math.abs(SystemClock.elapsedRealtime() - this.C)) / 200.0f) + this.x, 1.0f);
+            View view3 = this.s;
+            if (view3 != null) {
+                view3.invalidate();
+            }
+            SystemClock.elapsedRealtime();
+        }
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:65:0x0172, code lost:
+    
+        if (r14.left >= r27.left) goto L78;
+     */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x01db A[EDGE_INSN: B:70:0x01db->B:71:0x01db BREAK  A[LOOP:2: B:27:0x00a5->B:75:0x01d1], SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:74:0x01d1 A[SYNTHETIC] */
+    /* JADX WARN: Type inference failed for: r17v0 */
+    /* JADX WARN: Type inference failed for: r17v1 */
+    /* JADX WARN: Type inference failed for: r17v2 */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void c(Canvas canvas, RectF rectF, Paint paint) {
+        int i10;
+        char c10;
+        float floatValue;
+        ?? r17;
+        char c11;
+        kn0 kn0Var = this;
+        float f7 = E / 2.0f;
+        ArrayList arrayList = kn0Var.u;
+        if (arrayList == null || arrayList.isEmpty()) {
+            canvas.drawRoundRect(rectF, f7, f7, paint);
+            return;
+        }
+        float f10 = rectF.bottom;
+        int i11 = E;
+        float f11 = i11 / 2.0f;
+        float f12 = kn0Var.f - (i11 / 2.0f);
+        org.telegram.messenger.i0.P.set(rectF);
+        float L = org.telegram.messenger.i0.L(kn0Var.x * 1.0f) / 2.0f;
+        if (G == null) {
+            G = new Path();
+        }
+        G.reset();
+        float L2 = org.telegram.messenger.i0.L(4.0f) / (f12 - f11);
+        int i12 = 0;
+        while (true) {
+            i10 = -1;
+            if (i12 >= kn0Var.u.size()) {
+                i12 = -1;
+                break;
+            } else if (((Float) ((Pair) kn0Var.u.get(i12)).first).floatValue() >= L2) {
+                break;
+            } else {
+                i12++;
+            }
+        }
+        if (i12 < 0) {
+            i12 = 0;
+        }
+        boolean z10 = true;
+        int size = kn0Var.u.size() - 1;
+        while (true) {
+            if (size < 0) {
+                break;
+            }
+            if (1.0f - ((Float) ((Pair) kn0Var.u.get(size)).first).floatValue() >= L2) {
+                i10 = size + 1;
+                break;
+            }
+            size--;
+        }
+        if (i10 < 0) {
+            i10 = kn0Var.u.size();
+        }
+        int i13 = i12;
+        while (i13 <= i10) {
+            if (i13 == i12) {
+                floatValue = 0.0f;
+                c10 = 0;
+            } else {
+                c10 = 0;
+                floatValue = ((Float) ((Pair) kn0Var.u.get(i13 - 1)).first).floatValue();
+            }
+            float floatValue2 = i13 == i10 ? 1.0f : ((Float) ((Pair) kn0Var.u.get(i13)).first).floatValue();
+            while (i13 != i10 && i13 != 0) {
+                r17 = z10;
+                if (i13 >= kn0Var.u.size() - 1 || ((Float) ((Pair) kn0Var.u.get(i13)).first).floatValue() - floatValue > L2) {
+                    break;
+                }
+                i13++;
+                floatValue2 = ((Float) ((Pair) kn0Var.u.get(i13)).first).floatValue();
+                z10 = r17 == true ? 1 : 0;
+            }
+            r17 = z10;
+            RectF rectF2 = org.telegram.messenger.i0.P;
+            rectF2.left = org.telegram.messenger.i0.T1(f11, f12, floatValue) + (i13 > 0 ? L : 0.0f);
+            float T1 = org.telegram.messenger.i0.T1(f11, f12, floatValue2) - (i13 < i10 ? L : 0.0f);
+            rectF2.right = T1;
+            float f13 = rectF.right;
+            char c12 = T1 > f13 ? r17 : c10;
+            if (c12 != 0) {
+                rectF2.right = f13;
+            }
+            float f14 = rectF2.right;
+            float f15 = rectF.left;
+            if (f14 >= f15) {
+                if (rectF2.left < f15) {
+                    rectF2.left = f15;
+                }
+                if (F == null) {
+                    F = new float[8];
+                }
+                if (i13 != i12) {
+                    if (c12 != 0) {
+                        c11 = 4;
+                    } else {
+                        c11 = 4;
+                    }
+                    if (i13 >= i10) {
+                        float[] fArr = F;
+                        float f16 = 0.7f * f7 * kn0Var.x;
+                        fArr[7] = f16;
+                        fArr[6] = f16;
+                        fArr[r17] = f16;
+                        fArr[c10] = f16;
+                        fArr[5] = f7;
+                        fArr[c11] = f7;
+                        fArr[3] = f7;
+                        fArr[2] = f7;
+                    } else {
+                        float[] fArr2 = F;
+                        float f17 = 0.7f * f7 * kn0Var.x;
+                        fArr2[5] = f17;
+                        fArr2[c11] = f17;
+                        fArr2[3] = f17;
+                        fArr2[2] = f17;
+                        fArr2[7] = f17;
+                        fArr2[6] = f17;
+                        fArr2[r17] = f17;
+                        fArr2[c10] = f17;
+                    }
+                    G.addRoundRect(rectF2, F, Path.Direction.CW);
+                    if (c12 == 0) {
+                        break;
+                    }
+                } else {
+                    c11 = 4;
+                }
+                float[] fArr3 = F;
+                fArr3[7] = f7;
+                fArr3[6] = f7;
+                fArr3[r17] = f7;
+                fArr3[c10] = f7;
+                float f18 = 0.7f * f7 * kn0Var.x;
+                fArr3[5] = f18;
+                fArr3[c11] = f18;
+                fArr3[3] = f18;
+                fArr3[2] = f18;
+                G.addRoundRect(rectF2, F, Path.Direction.CW);
+                if (c12 == 0) {
+                }
+            }
+            i13++;
+            kn0Var = this;
+            z10 = r17;
+        }
+        canvas.drawPath(G, paint);
+    }
+
+    public final boolean e(float f7, float f10, int i10) {
+        jn0 jn0Var;
+        if (i10 == 0) {
+            int i11 = this.g;
+            int i12 = E;
+            int i13 = (i11 - i12) / 2;
+            if (f7 >= (-i13)) {
+                int i14 = this.f;
+                if (f7 <= i14 + i13 && f10 >= 0.0f && f10 <= i11) {
+                    int i15 = this.b;
+                    if (i15 - i13 > f7 || f7 > i15 + i12 + i13) {
+                        int i16 = ((int) f7) - (i12 / 2);
+                        this.b = i16;
+                        if (i16 < 0) {
+                            this.b = 0;
+                        } else {
+                            int i17 = i14 - i12;
+                            if (i16 > i17) {
+                                this.b = i17;
+                            }
+                        }
+                    }
+                    this.e = true;
+                    int i18 = this.b;
+                    this.c = i18;
+                    this.d = (int) (f7 - i18);
+                    return true;
+                }
+            }
+        } else if (i10 == 1 || i10 == 3) {
+            if (this.e) {
+                int i19 = this.c;
+                this.b = i19;
+                if (i10 == 1 && (jn0Var = this.h) != null) {
+                    jn0Var.c(i19 / (this.f - E));
+                }
+                this.e = false;
+                return true;
+            }
+        } else if (i10 == 2 && this.e) {
+            int i20 = (int) (f7 - this.d);
+            this.c = i20;
+            if (i20 < 0) {
+                this.c = 0;
+            } else {
+                int i21 = this.f - E;
+                if (i20 > i21) {
+                    this.c = i21;
+                }
+            }
+            jn0 jn0Var2 = this.h;
+            if (jn0Var2 != null) {
+                jn0Var2.d(this.c / (this.f - E));
+            }
+            return true;
+        }
+        return false;
+    }
+
+    public final void f(float f7) {
+        this.t = f7;
+    }
+
+    public final void g(int i10, int i11, int i12, int i13, int i14) {
+        this.i = i10;
+        this.j = i11;
+        this.k = i13;
+        this.l = i12;
+        this.m = i14;
+    }
+
+    public final void h(float f7) {
+        this.a = f7;
+        int ceil = (int) Math.ceil((this.f - E) * f7);
+        this.b = ceil;
+        if (ceil < 0) {
+            this.b = 0;
+            return;
+        }
+        int i10 = this.f;
+        int i11 = E;
+        if (ceil > i10 - i11) {
+            this.b = i10 - i11;
+        }
+    }
+
+    public final void i(int i10, int i11) {
+        if (this.f == i10 && this.g == i11) {
+            return;
+        }
+        this.f = i10;
+        this.g = i11;
+        h(this.a);
+    }
+
+    public final void j(org.telegram.messenger.jj jjVar) {
+        String str;
+        if (jjVar == null) {
+            a();
+            return;
+        }
+        Long valueOf = Long.valueOf(((long) jjVar.L0()) * 1000);
+        if (valueOf.longValue() < 0) {
+            a();
+            return;
+        }
+        CharSequence charSequence = jjVar.z;
+        if (jjVar.e5()) {
+            if (jjVar.B == null && (str = jjVar.k.media.webpage.description) != null) {
+                jjVar.B = SpannableString.valueOf(str);
+                org.telegram.messenger.jj.h(jjVar.N3(), jjVar.B, false, 3, (int) valueOf.longValue(), false);
+            }
+            charSequence = jjVar.B;
+        }
+        if (charSequence == this.v && this.w == valueOf.longValue()) {
+            return;
+        }
+        this.v = charSequence;
+        this.w = valueOf.longValue();
+        if (!(charSequence instanceof Spanned)) {
+            this.u = null;
+            this.y = -1;
+            this.x = 0.0f;
+            StaticLayout[] staticLayoutArr = this.z;
+            if (staticLayoutArr != null) {
+                staticLayoutArr[1] = null;
+                staticLayoutArr[0] = null;
+                return;
+            }
+            return;
+        }
+        Spanned spanned = (Spanned) charSequence;
+        try {
+            e51[] e51VarArr = (e51[]) spanned.getSpans(0, spanned.length(), e51.class);
+            this.u = new ArrayList();
+            this.x = 0.0f;
+            if (this.A == null) {
+                TextPaint textPaint = new TextPaint(1);
+                this.A = textPaint;
+                textPaint.setTextSize(org.telegram.messenger.i0.L(12.0f));
+                this.A.setColor(-1);
+            }
+            for (e51 e51Var : e51VarArr) {
+                try {
+                    if (e51Var != null && e51Var.getURL() != null && e51Var.d != null && e51Var.getURL().startsWith("audio?")) {
+                        if (Utilities.z(e51Var.getURL().substring(6)).intValue() >= 0) {
+                            org.telegram.messenger.k6.l(new SpannableStringBuilder(e51Var.d), this.A.getFontMetricsInt(), false);
+                            this.u.add(new Pair(Float.valueOf((r5.intValue() * 1000) / valueOf.longValue()), e51Var));
+                        }
+                    }
+                } catch (Exception e) {
+                    org.telegram.messenger.f8.g(e, true);
+                }
+            }
+            Collections.sort(this.u, new org.telegram.ui.f6(16));
+        } catch (Exception e7) {
+            org.telegram.messenger.f8.g(e7, true);
+            this.u = null;
+            this.y = -1;
+            this.x = 0.0f;
+            StaticLayout[] staticLayoutArr2 = this.z;
+            if (staticLayoutArr2 != null) {
+                staticLayoutArr2[1] = null;
+                staticLayoutArr2[0] = null;
+            }
+        }
+    }
+
+    public void d(e51 e51Var) {
+    }
+}

@@ -1,45 +1,33 @@
 package jg;
 
-import android.content.DialogInterface;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Cells.g6;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import android.view.KeyEvent;
+import org.telegram.messenger.m20;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class s implements DialogInterface.OnShowListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ EditTextBoldCursor b;
+public final /* synthetic */ class s implements org.telegram.ui.ActionBar.i1, m20 {
+    public final /* synthetic */ r0 a;
 
-    public /* synthetic */ s(EditTextBoldCursor editTextBoldCursor, int i10) {
-        this.a = i10;
-        this.b = editTextBoldCursor;
+    public /* synthetic */ s(r0 r0Var) {
+        this.a = r0Var;
     }
 
-    @Override // android.content.DialogInterface.OnShowListener
-    public final void onShow(DialogInterface dialogInterface) {
-        switch (this.a) {
-            case 0:
-                t tVar = (t) this.b;
-                tVar.requestFocus();
-                AndroidUtilities.showKeyboard(tVar);
-                break;
-            case 1:
-                EditTextBoldCursor editTextBoldCursor = this.b;
-                editTextBoldCursor.requestFocus();
-                AndroidUtilities.showKeyboard(editTextBoldCursor);
-                editTextBoldCursor.setSelection(0, editTextBoldCursor.length());
-                break;
-            case 2:
-                g6 g6Var = (g6) this.b;
-                g6Var.requestFocus();
-                AndroidUtilities.showKeyboard(g6Var);
-                break;
-            default:
-                zh.y1 y1Var = (zh.y1) this.b;
-                y1Var.requestFocus();
-                AndroidUtilities.showKeyboard(y1Var);
-                break;
+    @Override // org.telegram.messenger.m20
+    public void i(Object obj, TLRPC.Document document, Boolean bool) {
+        g0 g02 = this.a.g0(obj, document, true);
+        if (bool.booleanValue()) {
+            g02.setScale(1.5f);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.i1
+    public void r(KeyEvent keyEvent) {
+        org.telegram.ui.ActionBar.k1 k1Var;
+        r0 r0Var = this.a;
+        r0Var.getClass();
+        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (k1Var = r0Var.A1) != null && k1Var.isShowing()) {
+            r0Var.A1.d(true);
         }
     }
 }

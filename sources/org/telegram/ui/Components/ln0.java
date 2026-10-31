@@ -1,91 +1,81 @@
 package org.telegram.ui.Components;
 
+import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.accessibility.AccessibilityNodeInfo;
+import java.util.HashMap;
+import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class ln0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ qn0 b;
+public abstract class ln0 extends View.AccessibilityDelegate {
+    public static final String c = "android.widget.SeekBar";
+    public final HashMap a = new HashMap(4);
+    public final l.d b = new l.d(this, 9);
 
-    public /* synthetic */ ln0(qn0 qn0Var, int i10) {
-        this.a = i10;
-        this.b = qn0Var;
+    public abstract boolean a();
+
+    public abstract boolean b();
+
+    public abstract void c(boolean z10);
+
+    public CharSequence d() {
+        return null;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:15:0x0039, code lost:
-    
-        if (r2.q0 != false) goto L8;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:17:0x0048, code lost:
-    
-        if (r2.q0 != false) goto L8;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:6:0x0022, code lost:
-    
-        if (r2.q0 != false) goto L8;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:7:0x0024, code lost:
-    
-        r4 = 1;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:9:0x004b, code lost:
-    
-        r2.scrollBy(r0 * r4, 0);
-        org.telegram.messenger.AndroidUtilities.runOnUIThread(r2.s0);
-     */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        int tabSize;
-        int max;
-        switch (this.a) {
-            case 0:
-                qn0 qn0Var = this.b;
-                org.telegram.ui.za1 za1Var = qn0Var.e;
-                qn0Var.b0 = false;
-                qn0Var.V = qn0Var.getScrollX() + qn0Var.W;
-                tabSize = qn0Var.getTabSize();
-                int ceil = ((int) Math.ceil(r3 / tabSize)) - 1;
-                qn0Var.U = ceil;
-                qn0Var.T = ceil;
-                if (qn0Var.e(ceil) && ceil >= 0 && ceil < za1Var.getChildCount()) {
-                    try {
-                        qn0Var.performHapticFeedback(0);
-                    } catch (Exception unused) {
-                    }
-                    qn0Var.d0 = 0.0f;
-                    qn0Var.v = 0.0f;
-                    View childAt = za1Var.getChildAt(ceil);
-                    qn0Var.s = childAt;
-                    qn0Var.c0 = childAt.getX() - qn0Var.getScrollX();
-                    qn0Var.s.invalidate();
-                    za1Var.invalidate();
-                    qn0Var.j();
-                    qn0Var.invalidate();
-                    break;
-                }
-                break;
-            default:
-                long currentTimeMillis = System.currentTimeMillis();
-                qn0 qn0Var2 = this.b;
-                long j10 = currentTimeMillis - qn0Var2.r0;
-                int i10 = -1;
-                if (j10 >= 3000) {
-                    if (j10 >= 5000) {
-                        max = Math.max(1, AndroidUtilities.dp(4.0f));
-                        break;
-                    } else {
-                        max = Math.max(1, AndroidUtilities.dp(2.0f));
-                        break;
-                    }
-                } else {
-                    max = Math.max(1, AndroidUtilities.dp(1.0f));
-                    break;
-                }
+    public void e(View view, AccessibilityNodeInfo accessibilityNodeInfo) {
+        accessibilityNodeInfo.setClassName(c);
+        CharSequence d = d();
+        if (!TextUtils.isEmpty(d)) {
+            accessibilityNodeInfo.setText(d);
         }
+        if (a()) {
+            accessibilityNodeInfo.addAction(AccessibilityNodeInfo.AccessibilityAction.ACTION_SCROLL_BACKWARD);
+        }
+        if (b()) {
+            accessibilityNodeInfo.addAction(AccessibilityNodeInfo.AccessibilityAction.ACTION_SCROLL_FORWARD);
+        }
+    }
+
+    public final void f(AccessibilityNodeInfo accessibilityNodeInfo) {
+        e(null, accessibilityNodeInfo);
+    }
+
+    public boolean g(View view, int i10, Bundle bundle) {
+        if (i10 != 4096 && i10 != 8192) {
+            return false;
+        }
+        c(i10 == 8192);
+        if (view != null) {
+            WeakHashMap weakHashMap = r0.h0.a;
+            if (view.isAttachedToWindow()) {
+                HashMap hashMap = this.a;
+                Runnable runnable = (Runnable) hashMap.get(view);
+                if (runnable == null) {
+                    runnable = new gi0(3, this, view);
+                    hashMap.put(view, runnable);
+                    view.addOnAttachStateChangeListener(this.b);
+                } else {
+                    view.removeCallbacks(runnable);
+                }
+                view.postDelayed(runnable, 400L);
+            }
+        }
+        return true;
+    }
+
+    @Override // android.view.View.AccessibilityDelegate
+    public final void onInitializeAccessibilityNodeInfo(View view, AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(view, accessibilityNodeInfo);
+        e(view, accessibilityNodeInfo);
+    }
+
+    @Override // android.view.View.AccessibilityDelegate
+    public final boolean performAccessibilityAction(View view, int i10, Bundle bundle) {
+        if (super.performAccessibilityAction(view, i10, bundle)) {
+            return true;
+        }
+        return g(view, i10, bundle);
     }
 }

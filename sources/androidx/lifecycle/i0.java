@@ -16,7 +16,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class i0 {
     public static final Class[] f = {Boolean.TYPE, boolean[].class, Double.TYPE, double[].class, Integer.TYPE, int[].class, Long.TYPE, long[].class, String.class, String[].class, Binder.class, Bundle.class, Byte.TYPE, byte[].class, Character.TYPE, char[].class, CharSequence.class, CharSequence[].class, ArrayList.class, Float.TYPE, float[].class, Parcelable.class, Parcelable[].class, Serializable.class, Short.TYPE, short[].class, SparseArray.class, Size.class, SizeF.class};
@@ -43,7 +43,7 @@ public final class i0 {
         kotlin.jvm.internal.i.e(linkedHashMap2, "<this>");
         int size = linkedHashMap2.size();
         if (size == 0) {
-            map = kd.p.a;
+            map = bd.r.a;
         } else if (size != 1) {
             map = new LinkedHashMap(linkedHashMap2);
         } else {
@@ -63,12 +63,12 @@ public final class i0 {
                     arrayList.add(str);
                     arrayList2.add(linkedHashMap.get(str));
                 }
-                jd.d[] dVarArr = {new jd.d("keys", arrayList), new jd.d("values", arrayList2)};
+                ad.e[] eVarArr = {new ad.e("keys", arrayList), new ad.e("values", arrayList2)};
                 Bundle bundle = new Bundle(2);
                 while (i10 < 2) {
-                    jd.d dVar = dVarArr[i10];
-                    String str2 = (String) dVar.a;
-                    Object obj = dVar.b;
+                    ad.e eVar = eVarArr[i10];
+                    String str2 = (String) eVar.a;
+                    Object obj = eVar.b;
                     if (obj == null) {
                         bundle.putString(str2, null);
                     } else if (obj instanceof Boolean) {
@@ -142,28 +142,28 @@ public final class i0 {
             }
             Map.Entry entry2 = (Map.Entry) it.next();
             String key = (String) entry2.getKey();
-            Bundle a2 = ((t4.d) entry2.getValue()).a();
+            Bundle c10 = ((t4.d) entry2.getValue()).c();
             kotlin.jvm.internal.i.e(key, "key");
-            if (a2 != null) {
+            if (c10 != null) {
                 while (i10 < 29) {
                     Class cls = f[i10];
                     kotlin.jvm.internal.i.b(cls);
-                    if (!cls.isInstance(a2)) {
+                    if (!cls.isInstance(c10)) {
                         i10++;
                     }
                 }
-                throw new IllegalArgumentException("Can't put value with type " + a2.getClass() + " into saved state");
+                throw new IllegalArgumentException("Can't put value with type " + c10.getClass() + " into saved state");
             }
             Object obj2 = i0Var.c.get(key);
             z zVar = obj2 instanceof z ? (z) obj2 : null;
             if (zVar != null) {
-                zVar.j(a2);
+                zVar.j(c10);
             } else {
-                linkedHashMap.put(key, a2);
+                linkedHashMap.put(key, c10);
             }
-            fe.k kVar = (fe.k) i0Var.d.get(key);
+            wd.k kVar = (wd.k) i0Var.d.get(key);
             if (kVar != null) {
-                ((fe.m) kVar).d(a2);
+                ((wd.m) kVar).d(c10);
             }
         }
     }

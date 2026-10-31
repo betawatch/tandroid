@@ -1,8 +1,5 @@
 package k2;
 
-import a8.ed;
-import a8.ld;
-import a8.ng;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
@@ -12,44 +9,45 @@ import android.os.Build;
 import android.provider.Settings;
 import android.util.Pair;
 import android.util.SparseArray;
-import f9.s1;
+import e9.x1;
 import j$.util.Objects;
 import java.util.List;
+import v7.c8;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class b {
-    public static final s1 e;
+    public static final x1 e;
     public static final b f;
-    public static final s1 g;
-    public static final f9.l0 h;
+    public static final x1 g;
+    public static final e9.q0 h;
     public final SparseArray a = new SparseArray();
     public final int b;
-    public final f9.i0 c;
-    public final f9.i0 d;
+    public final e9.n0 c;
+    public final e9.n0 d;
 
     static {
-        s1 y3 = f9.i0.y(12);
+        x1 y3 = e9.n0.y(12);
         e = y3;
-        f = new b(f9.i0.y(a.d), y3, s1.e);
+        f = new b(e9.n0.y(a.d), y3, x1.e);
         Object[] objArr = {2, 5, 6};
-        f9.o.d(3, objArr);
-        g = f9.i0.s(3, objArr);
-        ng ngVar = new ng(4, 7);
-        ngVar.w(5, 6);
-        ngVar.w(17, 6);
-        ngVar.w(7, 6);
-        ngVar.w(30, 10);
-        ngVar.w(18, 6);
-        ngVar.w(6, 8);
-        ngVar.w(8, 8);
-        ngVar.w(14, 8);
-        h = ngVar.c(true);
+        e9.s.d(3, objArr);
+        g = e9.n0.s(3, objArr);
+        a5.a aVar = new a5.a(4, 6);
+        aVar.w(5, 6);
+        aVar.w(17, 6);
+        aVar.w(7, 6);
+        aVar.w(30, 10);
+        aVar.w(18, 6);
+        aVar.w(6, 8);
+        aVar.w(8, 8);
+        aVar.w(14, 8);
+        h = aVar.d(true);
     }
 
-    public b(s1 s1Var, List list, List list2) {
-        for (int i10 = 0; i10 < s1Var.d; i10++) {
-            a aVar = (a) s1Var.get(i10);
+    public b(x1 x1Var, List list, List list2) {
+        for (int i10 = 0; i10 < x1Var.d; i10++) {
+            a aVar = (a) x1Var.get(i10);
             this.a.put(aVar.a, aVar);
         }
         int i11 = 0;
@@ -57,12 +55,12 @@ public final class b {
             i11 = Math.max(i11, ((a) this.a.valueAt(i12)).b);
         }
         this.b = i11;
-        this.c = f9.i0.u(list);
-        this.d = f9.i0.u(list2);
+        this.c = e9.n0.u(list);
+        this.d = e9.n0.u(list2);
     }
 
-    public static s1 a(int i10, int[] iArr) {
-        f9.f0 t10 = f9.i0.t();
+    public static x1 a(int[] iArr, int i10) {
+        e9.k0 t10 = e9.n0.t();
         if (iArr == null) {
             iArr = new int[0];
         }
@@ -72,7 +70,7 @@ public final class b {
         return t10.f();
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:45:0x00c8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:45:0x00c7, code lost:
     
         if (r0.equals("Xiaomi") == false) goto L51;
      */
@@ -80,26 +78,26 @@ public final class b {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public static b b(Context context, Intent intent, b2.f fVar, AudioDeviceInfo audioDeviceInfo, List list) {
-        AudioManager e10 = c2.j.e(context);
+        AudioManager e7 = c2.h.e(context);
         if (audioDeviceInfo == null) {
-            audioDeviceInfo = Build.VERSION.SDK_INT >= 33 ? g0.a.b(e10, fVar) : null;
+            audioDeviceInfo = Build.VERSION.SDK_INT >= 33 ? g0.a.d(e7, fVar) : null;
         }
-        f9.i0 b10 = audioDeviceInfo != null ? a1.b(audioDeviceInfo) : e;
-        if (Build.VERSION.SDK_INT >= 33 && (e2.n0.P(context) || context.getPackageManager().hasSystemFeature("android.hardware.type.automotive"))) {
-            return g0.a.a(e10, fVar, b10, list);
+        e9.n0 b10 = audioDeviceInfo != null ? c1.b(audioDeviceInfo) : e;
+        if (Build.VERSION.SDK_INT >= 33 && (e2.l0.P(context) || context.getPackageManager().hasSystemFeature("android.hardware.type.automotive"))) {
+            return g0.a.c(e7, fVar, b10, list);
         }
-        for (AudioDeviceInfo audioDeviceInfo2 : audioDeviceInfo == null ? e10.getDevices(2) : new AudioDeviceInfo[]{audioDeviceInfo}) {
-            if (ld.a(audioDeviceInfo2.getType())) {
-                return new b(f9.i0.y(a.d), b10, list);
+        for (AudioDeviceInfo audioDeviceInfo2 : audioDeviceInfo == null ? e7.getDevices(2) : new AudioDeviceInfo[]{audioDeviceInfo}) {
+            if (w7.h.a(audioDeviceInfo2.getType())) {
+                return new b(e9.n0.y(a.d), b10, list);
             }
         }
-        f9.s0 s0Var = new f9.s0(4);
-        s0Var.c(2);
-        if (Build.VERSION.SDK_INT >= 29 && (e2.n0.P(context) || context.getPackageManager().hasSystemFeature("android.hardware.type.automotive"))) {
-            s1 e11 = b2.d.e(fVar);
-            e11.getClass();
-            s0Var.d(e11);
-            return new b(a(10, ed.f(s0Var.g())), b10, list);
+        e9.x0 x0Var = new e9.x0(4);
+        x0Var.c(2);
+        if (Build.VERSION.SDK_INT >= 29 && (e2.l0.P(context) || context.getPackageManager().hasSystemFeature("android.hardware.type.automotive"))) {
+            x1 e10 = b2.d.e(fVar);
+            e10.getClass();
+            x0Var.d(e10);
+            return new b(a(c8.f(x0Var.g()), 10), b10, list);
         }
         ContentResolver contentResolver = context.getContentResolver();
         boolean z10 = Settings.Global.getInt(contentResolver, "use_external_surround_sound_flag", 0) == 1;
@@ -109,20 +107,20 @@ public final class b {
             }
         }
         if (Settings.Global.getInt(contentResolver, "external_surround_sound_enabled", 0) == 1) {
-            s1 s1Var = g;
-            s1Var.getClass();
-            s0Var.d(s1Var);
+            x1 x1Var = g;
+            x1Var.getClass();
+            x0Var.d(x1Var);
         }
         if (intent == null || z10 || intent.getIntExtra("android.media.extra.AUDIO_PLUG_STATE", 0) != 1) {
-            return new b(a(10, ed.f(s0Var.g())), b10, list);
+            return new b(a(c8.f(x0Var.g()), 10), b10, list);
         }
         int[] intArrayExtra = intent.getIntArrayExtra("android.media.extra.ENCODINGS");
         if (intArrayExtra != null) {
-            List a2 = ed.a(intArrayExtra);
+            List a2 = c8.a(intArrayExtra);
             a2.getClass();
-            s0Var.d(a2);
+            x0Var.d(a2);
         }
-        return new b(a(intent.getIntExtra("android.media.extra.MAX_CHANNEL_COUNT", 10), ed.f(s0Var.g())), b10, list);
+        return new b(a(c8.f(x0Var.g()), intent.getIntExtra("android.media.extra.MAX_CHANNEL_COUNT", 10)), b10, list);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:40:0x00ca, code lost:
@@ -138,26 +136,26 @@ public final class b {
         int t10;
         String str = xVar.s;
         str.getClass();
-        int c10 = b2.w0.c(str, xVar.k);
+        int c10 = b2.v0.c(str, xVar.k);
         Integer valueOf = Integer.valueOf(c10);
-        f9.l0 l0Var = h;
-        if (!l0Var.containsKey(valueOf)) {
+        e9.q0 q0Var = h;
+        if (!q0Var.containsKey(valueOf)) {
             return null;
         }
         int i10 = 6;
         SparseArray sparseArray = this.a;
-        if (c10 == 18 && !e2.n0.k(sparseArray, 18)) {
+        if (c10 == 18 && !e2.l0.k(sparseArray, 18)) {
             c10 = 6;
-        } else if ((c10 == 8 && !e2.n0.k(sparseArray, 8)) || (c10 == 30 && !e2.n0.k(sparseArray, 30))) {
+        } else if ((c10 == 8 && !e2.l0.k(sparseArray, 8)) || (c10 == 30 && !e2.l0.k(sparseArray, 30))) {
             c10 = 7;
         }
-        if (!e2.n0.k(sparseArray, c10)) {
+        if (!e2.l0.k(sparseArray, c10)) {
             return null;
         }
         a aVar = (a) sparseArray.get(c10);
         aVar.getClass();
         int i11 = aVar.b;
-        f9.t0 t0Var = aVar.c;
+        e9.y0 y0Var = aVar.c;
         int i12 = xVar.K;
         boolean z10 = false;
         if (i12 == -1 || c10 == 18) {
@@ -166,20 +164,20 @@ public final class b {
                 i13 = 48000;
             }
             int i14 = aVar.a;
-            if (t0Var == null) {
+            if (y0Var == null) {
                 if (Build.VERSION.SDK_INT >= 29) {
                     i11 = b2.d.f(i14, i13, fVar);
                 } else {
-                    Object obj = l0Var.get(Integer.valueOf(i14));
+                    Object obj = q0Var.get(Integer.valueOf(i14));
                     i11 = ((Integer) (obj != null ? obj : 0)).intValue();
                 }
             }
             i12 = i11;
         } else if (!xVar.s.equals("audio/vnd.dts.uhd;profile=p2") || Build.VERSION.SDK_INT >= 33) {
-            if (t0Var != null) {
-                int t11 = e2.n0.t(i12);
+            if (y0Var != null) {
+                int t11 = e2.l0.t(i12);
                 if (t11 != 0) {
-                    z10 = t0Var.contains(Integer.valueOf(t11));
+                    z10 = y0Var.contains(Integer.valueOf(t11));
                 }
             } else if (i12 <= i11) {
                 z10 = true;
@@ -201,7 +199,7 @@ public final class b {
             if (i15 <= 26 && "fugu".equals(Build.DEVICE) && i10 == 1) {
                 i10 = 2;
             }
-            t10 = e2.n0.t(i10);
+            t10 = e2.l0.t(i10);
             if (t10 != 0) {
                 return null;
             }
@@ -211,7 +209,7 @@ public final class b {
         if (i15 <= 26) {
             i10 = 2;
         }
-        t10 = e2.n0.t(i10);
+        t10 = e2.l0.t(i10);
         if (t10 != 0) {
         }
     }
@@ -224,11 +222,11 @@ public final class b {
             return false;
         }
         b bVar = (b) obj;
-        return e2.n0.m(this.a, bVar.a) && this.b == bVar.b && Objects.equals(this.c, bVar.c) && Objects.equals(this.d, bVar.d);
+        return e2.l0.m(this.a, bVar.a) && this.b == bVar.b && Objects.equals(this.c, bVar.c) && Objects.equals(this.d, bVar.d);
     }
 
     public final int hashCode() {
-        return Objects.hashCode(this.d) + ((Objects.hashCode(this.c) + ((e2.n0.n(this.a) + (this.b * 31)) * 31)) * 31);
+        return Objects.hashCode(this.d) + ((Objects.hashCode(this.c) + ((e2.l0.n(this.a) + (this.b * 31)) * 31)) * 31);
     }
 
     public final String toString() {

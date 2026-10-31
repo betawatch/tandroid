@@ -1,117 +1,35 @@
 package org.telegram.ui;
 
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BillingController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Rect;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class o81 implements TextWatcher {
-    public boolean a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ EditTextBoldCursor c;
-    public final /* synthetic */ org.telegram.ui.Components.sd0 d;
-    public final /* synthetic */ int[] e;
-    public final /* synthetic */ TextView f;
+public final class o81 extends FrameLayout {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Rect b;
+    public final /* synthetic */ m91 c;
 
-    public o81(int i10, EditTextBoldCursor editTextBoldCursor, org.telegram.ui.Components.sd0 sd0Var, int[] iArr, TextView textView) {
-        this.b = i10;
-        this.c = editTextBoldCursor;
-        this.d = sd0Var;
-        this.e = iArr;
-        this.f = textView;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public o81(m91 m91Var, Context context, int i10, Rect rect) {
+        super(context);
+        this.c = m91Var;
+        this.a = i10;
+        this.b = rect;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:16:0x00cd  */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x00dd  */
-    @Override // android.text.TextWatcher
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void afterTextChanged(Editable editable) {
-        double d;
-        double d10;
-        double d11;
-        int[] iArr;
-        org.telegram.ui.Components.sd0 sd0Var = this.d;
-        int i10 = this.b;
-        EditTextBoldCursor editTextBoldCursor = this.c;
-        if (this.a) {
-            return;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        int i10 = this.a;
+        Rect rect = this.b;
+        m91 m91Var = this.c;
+        if (i10 == 0) {
+            m91Var.r.setBounds(m91Var.W.getLeft() - rect.left, 0, m91Var.W.getRight() + rect.right, getMeasuredHeight());
+        } else {
+            m91Var.r.setBounds(-rect.left, 0, getMeasuredWidth() + rect.right, getMeasuredHeight());
         }
-        try {
-            d10 = TextUtils.isEmpty(editable) ? 0.0d : Double.parseDouble(editable.toString());
-            try {
-                d11 = MessagesController.getInstance(i10).tonStakeddiceStakeAmountMax / 1.0E9d;
-                iArr = this.e;
-            } catch (Exception unused) {
-                d = 0.0d;
-            }
-        } catch (Exception unused2) {
-            d = 0.0d;
-            d10 = 0.0d;
-        }
-        if (d10 > d11) {
-            this.a = true;
-            d10 = MessagesController.getInstance(i10).tonStakeddiceStakeAmountMax / 1.0E9d;
-            editTextBoldCursor.setText(Double.toString(d10));
-            editTextBoldCursor.setSelection(editTextBoldCursor.getText().length());
-            int i11 = -iArr[0];
-            iArr[0] = i11;
-            AndroidUtilities.shakeViewSpring(sd0Var, i11);
-        } else if (d10 > 0.0d) {
-            d = 0.0d;
-            try {
-                if (d10 < MessagesController.getInstance(i10).tonStakeddiceStakeAmountMin / 1.0E9d) {
-                    this.a = true;
-                    d10 = MessagesController.getInstance(i10).tonStakeddiceStakeAmountMin / 1.0E9d;
-                    editTextBoldCursor.setText(Double.toString(d10));
-                    editTextBoldCursor.setSelection(editTextBoldCursor.getText().length());
-                    int i12 = -iArr[0];
-                    iArr[0] = i12;
-                    AndroidUtilities.shakeViewSpring(sd0Var, i12);
-                }
-            } catch (Exception unused3) {
-                this.a = true;
-                editTextBoldCursor.setText(d10 <= d ? "" : Double.toString(d10));
-                editTextBoldCursor.setSelection(editTextBoldCursor.getText().length());
-                this.a = false;
-                sd0Var.c(editTextBoldCursor.isFocused(), !TextUtils.isEmpty(editTextBoldCursor.getText()));
-                TextView textView = this.f;
-                if (d10 == d) {
-                }
-            }
-            this.a = false;
-            sd0Var.c(editTextBoldCursor.isFocused(), !TextUtils.isEmpty(editTextBoldCursor.getText()));
-            TextView textView2 = this.f;
-            if (d10 == d) {
-                textView2.animate().alpha(0.0f).start();
-                textView2.setText("");
-                return;
-            } else {
-                textView2.animate().alpha(1.0f).start();
-                textView2.setText("≈" + BillingController.getInstance().formatCurrency((long) (MessagesController.getInstance(i10).config.tonUsdRate.get() * d10 * 100.0d), "USD", 2));
-                return;
-            }
-        }
-        d = 0.0d;
-        this.a = false;
-        sd0Var.c(editTextBoldCursor.isFocused(), !TextUtils.isEmpty(editTextBoldCursor.getText()));
-        TextView textView22 = this.f;
-        if (d10 == d) {
-        }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        m91Var.r.draw(canvas);
     }
 }

@@ -1,45 +1,171 @@
 package e9;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+import java.util.AbstractMap;
+import java.util.ConcurrentModificationException;
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+import v7.t6;
+
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class v implements t {
-    public static final a3.s d = new a3.s(1);
-    public final Object a = new Object();
-    public volatile t b;
-    public Object c;
+public abstract class v implements Iterator {
+    public final /* synthetic */ int a = 0;
+    public int b;
+    public int c;
+    public int d;
+    public final /* synthetic */ AbstractMap e;
 
-    public v(t tVar) {
-        this.b = tVar;
+    public v(x7.j jVar) {
+        this.e = jVar;
+        this.b = jVar.e;
+        this.c = jVar.isEmpty() ? -1 : 0;
+        this.d = -1;
     }
 
-    @Override // e9.t
-    public final Object get() {
-        t tVar = this.b;
-        a3.s sVar = d;
-        if (tVar != sVar) {
-            synchronized (this.a) {
-                try {
-                    if (this.b != sVar) {
-                        Object obj = this.b.get();
-                        this.c = obj;
-                        this.b = sVar;
-                        return obj;
-                    }
-                } finally {
+    public abstract Object a(int i10);
+
+    public abstract Object b(int i10);
+
+    @Override // java.util.Iterator
+    public final boolean hasNext() {
+        switch (this.a) {
+            case 0:
+                if (this.c >= 0) {
                 }
-            }
+                break;
+            case 1:
+                if (this.c >= 0) {
+                }
+                break;
+            default:
+                if (this.c >= 0) {
+                }
+                break;
         }
-        return this.c;
+        return false;
     }
 
-    public final String toString() {
-        Object obj = this.b;
-        StringBuilder sb2 = new StringBuilder("Suppliers.memoize(");
-        if (obj == d) {
-            obj = "<supplier that returned " + this.c + ">";
+    @Override // java.util.Iterator
+    public final Object next() {
+        switch (this.a) {
+            case 0:
+                x xVar = (x) this.e;
+                if (xVar.e != this.b) {
+                    throw new ConcurrentModificationException();
+                }
+                if (!hasNext()) {
+                    throw new NoSuchElementException();
+                }
+                int i10 = this.c;
+                this.d = i10;
+                Object a2 = a(i10);
+                int i11 = this.c + 1;
+                if (i11 >= xVar.f) {
+                    i11 = -1;
+                }
+                this.c = i11;
+                return a2;
+            case 1:
+                x7.j jVar = (x7.j) this.e;
+                if (jVar.e != this.b) {
+                    throw new ConcurrentModificationException();
+                }
+                if (!hasNext()) {
+                    throw new NoSuchElementException();
+                }
+                int i12 = this.c;
+                this.d = i12;
+                Object b10 = b(i12);
+                int i13 = this.c + 1;
+                if (i13 >= jVar.f) {
+                    i13 = -1;
+                }
+                this.c = i13;
+                return b10;
+            default:
+                z7.d dVar = (z7.d) this.e;
+                if (dVar.e != this.b) {
+                    throw new ConcurrentModificationException();
+                }
+                if (!hasNext()) {
+                    throw new NoSuchElementException();
+                }
+                int i14 = this.c;
+                this.d = i14;
+                Object b11 = b(i14);
+                int i15 = this.c + 1;
+                if (i15 >= dVar.f) {
+                    i15 = -1;
+                }
+                this.c = i15;
+                return b11;
         }
-        sb2.append(obj);
-        sb2.append(")");
-        return sb2.toString();
+    }
+
+    @Override // java.util.Iterator
+    public final void remove() {
+        switch (this.a) {
+            case 0:
+                x xVar = (x) this.e;
+                if (xVar.e != this.b) {
+                    throw new ConcurrentModificationException();
+                }
+                t6.o("no calls to next() since the last call to remove()", this.d >= 0);
+                this.b += 32;
+                xVar.remove(xVar.j()[this.d]);
+                this.c--;
+                this.d = -1;
+                return;
+            case 1:
+                x7.j jVar = (x7.j) this.e;
+                int i10 = jVar.e;
+                int i11 = this.b;
+                if (i10 != i11) {
+                    throw new ConcurrentModificationException();
+                }
+                int i12 = this.d;
+                if (!(i12 >= 0)) {
+                    throw new IllegalStateException("no calls to next() since the last call to remove()");
+                }
+                this.b = i11 + 32;
+                Object[] objArr = jVar.c;
+                objArr.getClass();
+                jVar.remove(objArr[i12]);
+                this.c--;
+                this.d = -1;
+                return;
+            default:
+                z7.d dVar = (z7.d) this.e;
+                int i13 = dVar.e;
+                int i14 = this.b;
+                if (i13 != i14) {
+                    throw new ConcurrentModificationException();
+                }
+                int i15 = this.d;
+                if (!(i15 >= 0)) {
+                    throw new IllegalStateException("no calls to next() since the last call to remove()");
+                }
+                this.b = i14 + 32;
+                Object[] objArr2 = dVar.c;
+                objArr2.getClass();
+                dVar.remove(objArr2[i15]);
+                this.c--;
+                this.d = -1;
+                return;
+        }
+    }
+
+    public v(z7.d dVar) {
+        this.e = dVar;
+        this.b = dVar.e;
+        this.c = dVar.isEmpty() ? -1 : 0;
+        this.d = -1;
+    }
+
+    public v(x xVar) {
+        this.e = xVar;
+        this.b = xVar.e;
+        this.c = xVar.isEmpty() ? -1 : 0;
+        this.d = -1;
     }
 }

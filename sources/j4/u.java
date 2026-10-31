@@ -1,10 +1,11 @@
 package j4;
 
-import a8.yb;
-import b2.w0;
-import c3.j0;
+import b2.v0;
+import c3.k0;
+import org.telegram.tgnet.TLObject;
+import v7.t6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class u implements i {
     public final e2.x a;
@@ -12,7 +13,7 @@ public final class u implements i {
     public final String c;
     public final int d;
     public final String e;
-    public j0 f;
+    public k0 f;
     public String g;
     public int h = 0;
     public int i;
@@ -34,7 +35,7 @@ public final class u implements i {
     }
 
     @Override // j4.i
-    public final void a(e2.x xVar) {
+    public final void c(e2.x xVar) {
         this.f.getClass();
         while (xVar.a() > 0) {
             int i10 = this.h;
@@ -77,9 +78,9 @@ public final class u implements i {
                             this.l = (zVar.f * 1000000) / zVar.c;
                             b2.w wVar = new b2.w();
                             wVar.a = this.g;
-                            wVar.q = w0.n(this.e);
-                            wVar.r = w0.n((String) zVar.g);
-                            wVar.s = 4096;
+                            wVar.q = v0.n(this.e);
+                            wVar.r = v0.n((String) zVar.g);
+                            wVar.s = TLObject.FLAG_12;
                             wVar.J = zVar.d;
                             wVar.K = zVar.c;
                             wVar.d = this.c;
@@ -104,7 +105,7 @@ public final class u implements i {
                 int i14 = this.i + min2;
                 this.i = i14;
                 if (i14 >= this.m) {
-                    yb.p(this.n != -9223372036854775807L);
+                    t6.p(this.n != -9223372036854775807L);
                     this.f.c(this.n, 1, this.m, 0, null);
                     this.n += this.l;
                     this.i = 0;
@@ -115,7 +116,7 @@ public final class u implements i {
     }
 
     @Override // j4.i
-    public final void c() {
+    public final void e() {
         this.h = 0;
         this.i = 0;
         this.k = false;
@@ -123,20 +124,20 @@ public final class u implements i {
     }
 
     @Override // j4.i
-    public final void d(c3.q qVar, f0 f0Var) {
-        f0Var.b();
-        f0Var.c();
-        this.g = (String) f0Var.e;
-        f0Var.c();
-        this.f = qVar.F1(f0Var.c, 1);
+    public final void f(c3.q qVar, g0 g0Var) {
+        g0Var.b();
+        g0Var.c();
+        this.g = (String) g0Var.e;
+        g0Var.c();
+        this.f = qVar.I1(g0Var.c, 1);
     }
 
     @Override // j4.i
-    public final void f(int i10, long j10) {
+    public final void h(int i10, long j10) {
         this.n = j10;
     }
 
     @Override // j4.i
-    public final void e(boolean z10) {
+    public final void g(boolean z10) {
     }
 }

@@ -13,9 +13,9 @@ import android.util.Log;
 import android.util.SparseArray;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
-import org.telegram.ui.web.h1;
+import org.telegram.ui.ActionBar.w5;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class g extends p {
     public final String f;
@@ -27,7 +27,7 @@ public final class g extends p {
     public final /* synthetic */ k p;
     public final SparseArray j = new SparseArray();
     public final AtomicInteger l = new AtomicInteger(1);
-    public final h1 m = new h1(this, 5);
+    public final w5 m = new w5(this, 22);
     public int n = -1;
 
     public g(k kVar, MediaRouter2.RoutingController routingController, String str) {
@@ -36,7 +36,7 @@ public final class g extends p {
         this.f = str;
         Messenger n10 = k.n(routingController);
         this.h = n10;
-        this.i = n10 == null ? null : new Messenger(new androidx.mediarouter.app.c(this));
+        this.i = n10 == null ? null : new Messenger(new android.support.v4.media.session.q(this));
         this.k = new Handler(Looper.getMainLooper());
     }
 
@@ -54,9 +54,9 @@ public final class g extends p {
         routingController.setVolume(i10);
         this.n = i10;
         Handler handler = this.k;
-        h1 h1Var = this.m;
-        handler.removeCallbacks(h1Var);
-        handler.postDelayed(h1Var, 1000L);
+        w5 w5Var = this.m;
+        handler.removeCallbacks(w5Var);
+        handler.postDelayed(w5Var, 1000L);
     }
 
     @Override // p4.q
@@ -73,9 +73,9 @@ public final class g extends p {
         this.n = max;
         this.g.setVolume(max);
         Handler handler = this.k;
-        h1 h1Var = this.m;
-        handler.removeCallbacks(h1Var);
-        handler.postDelayed(h1Var, 1000L);
+        w5 w5Var = this.m;
+        handler.removeCallbacks(w5Var);
+        handler.postDelayed(w5Var, 1000L);
     }
 
     @Override // p4.p

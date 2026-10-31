@@ -1,171 +1,61 @@
 package n4;
 
-import android.content.Intent;
-import android.net.Uri;
-import android.os.Build;
+import android.content.Context;
+import android.media.session.MediaSession;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.ResultReceiver;
-import android.view.KeyEvent;
-import android.view.ViewConfiguration;
-import java.lang.ref.WeakReference;
+import android.os.RemoteCallbackList;
+import java.util.List;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public abstract class l {
-    public boolean c;
-    public androidx.mediarouter.app.c e;
-    public final Object a = new Object();
-    public final k b = new k(this);
-    public WeakReference d = new WeakReference(null);
+public class l {
+    public final MediaSession a;
+    public final k b;
+    public final p c;
+    public final Bundle e;
+    public w g;
+    public List h;
+    public i i;
+    public int j;
+    public int k;
+    public android.support.v4.media.session.s l;
+    public r m;
+    public final Object d = new Object();
+    public final RemoteCallbackList f = new RemoteCallbackList();
 
-    public final void C(n nVar, Handler handler) {
-        synchronized (this.a) {
-            try {
-                this.d = new WeakReference(nVar);
-                androidx.mediarouter.app.c cVar = this.e;
-                if (cVar != null) {
-                    cVar.removeCallbacksAndMessages(null);
-                }
-                this.e = new androidx.mediarouter.app.c(this, handler.getLooper(), 7);
-            } catch (Throwable th2) {
-                throw th2;
-            }
+    public l(Context context, String str, Bundle bundle) {
+        MediaSession a2 = a(context, str, bundle);
+        this.a = a2;
+        k kVar = new k(this);
+        this.b = kVar;
+        this.c = new p(a2.getSessionToken(), kVar);
+        this.e = bundle;
+        a2.setFlags(3);
+    }
+
+    public MediaSession a(Context context, String str, Bundle bundle) {
+        return new MediaSession(context, str);
+    }
+
+    public final android.support.v4.media.session.s b() {
+        android.support.v4.media.session.s sVar;
+        synchronized (this.d) {
+            sVar = this.l;
         }
+        return sVar;
     }
 
-    public final void a(n nVar, Handler handler) {
-        if (this.c) {
-            this.c = false;
-            handler.removeMessages(1);
-            z zVar = nVar.g;
-            long j10 = zVar == null ? 0L : zVar.e;
-            boolean z10 = zVar != null && zVar.a == 3;
-            boolean z11 = (516 & j10) != 0;
-            boolean z12 = (j10 & 514) != 0;
-            if (z10 && z12) {
-                h();
-            } else {
-                if (z10 || !z11) {
-                    return;
-                }
-                i();
-            }
+    public r c() {
+        r rVar;
+        synchronized (this.d) {
+            rVar = this.m;
         }
+        return rVar;
     }
 
-    public boolean g(Intent intent) {
-        n nVar;
-        androidx.mediarouter.app.c cVar;
-        KeyEvent keyEvent;
-        if (Build.VERSION.SDK_INT < 27) {
-            synchronized (this.a) {
-                nVar = (n) this.d.get();
-                cVar = this.e;
-            }
-            if (nVar != null && cVar != null && (keyEvent = (KeyEvent) intent.getParcelableExtra("android.intent.extra.KEY_EVENT")) != null && keyEvent.getAction() == 0) {
-                t c10 = nVar.c();
-                int keyCode = keyEvent.getKeyCode();
-                if (keyCode != 79 && keyCode != 85) {
-                    a(nVar, cVar);
-                    return false;
-                }
-                if (keyEvent.getRepeatCount() != 0) {
-                    a(nVar, cVar);
-                    return true;
-                }
-                if (!this.c) {
-                    this.c = true;
-                    cVar.sendMessageDelayed(cVar.obtainMessage(1, c10), ViewConfiguration.getDoubleTapTimeout());
-                    return true;
-                }
-                cVar.removeMessages(1);
-                this.c = false;
-                z zVar = nVar.g;
-                if (((zVar == null ? 0L : zVar.e) & 32) != 0) {
-                    y();
-                }
-                return true;
-            }
+    public void d(r rVar) {
+        synchronized (this.d) {
+            this.m = rVar;
         }
-        return false;
-    }
-
-    public void B() {
-    }
-
-    public void f() {
-    }
-
-    public void h() {
-    }
-
-    public void i() {
-    }
-
-    public void m() {
-    }
-
-    public void r() {
-    }
-
-    public void y() {
-    }
-
-    public void z() {
-    }
-
-    public void A(long j10) {
-    }
-
-    public void b(h hVar) {
-    }
-
-    public void q(h hVar) {
-    }
-
-    public void s(long j10) {
-    }
-
-    public void t(float f7) {
-    }
-
-    public void u(a0 a0Var) {
-    }
-
-    public void v(a0 a0Var) {
-    }
-
-    public void w(int i10) {
-    }
-
-    public void x(int i10) {
-    }
-
-    public void c(h hVar, int i10) {
-    }
-
-    public void e(String str, Bundle bundle) {
-    }
-
-    public void j(String str, Bundle bundle) {
-    }
-
-    public void k(String str, Bundle bundle) {
-    }
-
-    public void l(Uri uri, Bundle bundle) {
-    }
-
-    public void n(String str, Bundle bundle) {
-    }
-
-    public void o(String str, Bundle bundle) {
-    }
-
-    public void p(Uri uri, Bundle bundle) {
-    }
-
-    public void d(String str, Bundle bundle, ResultReceiver resultReceiver) {
     }
 }

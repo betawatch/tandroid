@@ -1,92 +1,158 @@
 package lg;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
+import android.opengl.GLES20;
+import android.opengl.GLSurfaceView;
+import javax.microedition.khronos.egl.EGLConfig;
+import javax.microedition.khronos.opengles.GL10;
+import org.telegram.messenger.f8;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class e extends b {
-    public long[] l;
-    public long[][] m;
-    public int n;
+public final class e implements GLSurfaceView.Renderer {
+    public long a;
+    public boolean b;
+    public int c;
+    public final /* synthetic */ g d;
 
-    public e(b bVar, long j10) {
-        this.d = new ArrayList();
-        this.e = 0L;
-        this.f = Long.MAX_VALUE;
-        this.g = 0.0f;
-        this.h = 0.0f;
-        this.i = 0;
-        this.j = 0;
-        int binarySearch = Arrays.binarySearch(bVar.a, j10);
-        int i10 = binarySearch - 4;
-        int i11 = binarySearch + 4;
-        if (i10 < 0) {
-            i11 += -i10;
-            i10 = 0;
-        }
-        long[] jArr = bVar.a;
-        if (i11 > jArr.length - 1) {
-            i10 -= i11 - jArr.length;
-            i11 = jArr.length - 1;
-        }
-        i10 = i10 < 0 ? 0 : i10;
-        int i12 = (i11 - i10) + 1;
-        this.a = new long[i12];
-        this.b = new float[i12];
-        this.d = new ArrayList();
-        for (int i13 = 0; i13 < bVar.d.size(); i13++) {
-            a aVar = new a();
-            aVar.a = new long[i12];
-            aVar.c = ((a) bVar.d.get(i13)).c;
-            aVar.d = ((a) bVar.d.get(i13)).d;
-            aVar.g = ((a) bVar.d.get(i13)).g;
-            aVar.h = ((a) bVar.d.get(i13)).h;
-            aVar.i = ((a) bVar.d.get(i13)).i;
-            this.d.add(aVar);
-        }
-        int i14 = 0;
-        while (i10 <= i11) {
-            this.a[i14] = bVar.a[i10];
-            for (int i15 = 0; i15 < this.d.size(); i15++) {
-                ((a) this.d.get(i15)).a[i14] = ((a) bVar.d.get(i15)).a[i10];
-            }
-            i14++;
-            i10++;
-        }
-        this.k = 86400000L;
-        e();
+    public e(g gVar) {
+        this.d = gVar;
     }
 
-    @Override // lg.b
-    public final void e() {
-        super.e();
-        this.n = 0;
-        int length = this.b.length;
-        int size = this.d.size();
-        int max = Math.max(1, Math.round(length / 140.0f));
-        int i10 = length / max;
-        this.m = (long[][]) Array.newInstance((Class<?>) Long.TYPE, size, i10);
-        long[] jArr = new long[size];
-        for (int i11 = 0; i11 < length; i11++) {
-            for (int i12 = 0; i12 < size; i12++) {
-                long j10 = ((a) this.d.get(i12)).a[i11];
-                if (j10 > jArr[i12]) {
-                    jArr[i12] = j10;
-                }
+    @Override // android.opengl.GLSurfaceView.Renderer
+    public final void onDrawFrame(GL10 gl10) {
+        if (this.d.r) {
+            GLES20.glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
+            GLES20.glClear(TLObject.FLAG_14);
+            return;
+        }
+        if (!this.d.y) {
+            GLES20.glBindFramebuffer(36160, 0);
+            GLES20.glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
+            GLES20.glClear(TLObject.FLAG_14);
+            if (this.d.D) {
+                return;
             }
-            if (i11 % max == 0) {
-                for (int i13 = 0; i13 < size; i13++) {
-                    this.m[i13][this.n] = jArr[i13];
-                    jArr[i13] = 0;
+            this.d.D = true;
+            final int i10 = this.d.E;
+            final int i11 = 0;
+            this.d.post(new Runnable(this) { // from class: lg.d
+                public final /* synthetic */ e b;
+
+                {
+                    this.b = this;
                 }
-                int i14 = this.n + 1;
-                this.n = i14;
-                if (i14 >= i10) {
-                    return;
+
+                @Override // java.lang.Runnable
+                public final void run() {
+                    switch (i11) {
+                        case 0:
+                            e eVar = this.b;
+                            g.a(eVar.d, i10);
+                            break;
+                        default:
+                            e eVar2 = this.b;
+                            int i12 = i10;
+                            g gVar = eVar2.d;
+                            if (gVar.e && !gVar.r && i12 == eVar2.d.G) {
+                                g gVar2 = eVar2.d;
+                                gVar2.s = true;
+                                Runnable runnable = gVar2.w;
+                                gVar2.w = null;
+                                if (runnable != null) {
+                                    runnable.run();
+                                    break;
+                                }
+                            }
+                            break;
+                    }
                 }
+            });
+            return;
+        }
+        try {
+            long nanoTime = System.nanoTime();
+            this.d.a.G = this.a == 0 ? 0.016666668f : Math.min(0.1f, (nanoTime - r5) / 1.0E9f);
+            this.a = nanoTime;
+            g gVar = this.d;
+            gVar.a.c.A = gVar.x;
+            this.d.a.onDrawFrame(gl10);
+            int glGetError = GLES20.glGetError();
+            if (glGetError != 0) {
+                throw new IllegalStateException("Diamond GL error: " + glGetError);
             }
+            if (this.b) {
+                return;
+            }
+            this.b = true;
+            final int i12 = this.c;
+            final int i13 = 1;
+            this.d.post(new Runnable(this) { // from class: lg.d
+                public final /* synthetic */ e b;
+
+                {
+                    this.b = this;
+                }
+
+                @Override // java.lang.Runnable
+                public final void run() {
+                    switch (i13) {
+                        case 0:
+                            e eVar = this.b;
+                            g.a(eVar.d, i12);
+                            break;
+                        default:
+                            e eVar2 = this.b;
+                            int i122 = i12;
+                            g gVar2 = eVar2.d;
+                            if (gVar2.e && !gVar2.r && i122 == eVar2.d.G) {
+                                g gVar22 = eVar2.d;
+                                gVar22.s = true;
+                                Runnable runnable = gVar22.w;
+                                gVar22.w = null;
+                                if (runnable != null) {
+                                    runnable.run();
+                                    break;
+                                }
+                            }
+                            break;
+                    }
+                }
+            });
+        } catch (RuntimeException e) {
+            f8.g(e, true);
+            this.d.r = true;
+            this.d.post(new gg.c(this, 29));
+        }
+    }
+
+    @Override // android.opengl.GLSurfaceView.Renderer
+    public final void onSurfaceChanged(GL10 gl10, int i10, int i11) {
+        this.b = false;
+        this.c = this.d.G;
+        if (this.d.r) {
+            return;
+        }
+        this.d.a.onSurfaceChanged(gl10, i10, i11);
+    }
+
+    @Override // android.opengl.GLSurfaceView.Renderer
+    public final void onSurfaceCreated(GL10 gl10, EGLConfig eGLConfig) {
+        g gVar = this.d;
+        int i10 = gVar.G + 1;
+        gVar.G = i10;
+        this.c = i10;
+        this.b = false;
+        this.a = 0L;
+        this.d.r = false;
+        h hVar = this.d.a;
+        hVar.c = null;
+        try {
+            hVar.onSurfaceCreated(gl10, eGLConfig);
+        } catch (RuntimeException e) {
+            f8.g(e, true);
+            this.d.r = true;
+            this.d.post(new gg.c(this, 29));
         }
     }
 }

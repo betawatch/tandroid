@@ -1,121 +1,81 @@
 package x2;
 
-import android.view.View;
-import b2.q1;
-import bi.h0;
-import com.google.android.gms.tasks.Continuation;
-import com.google.android.gms.tasks.Task;
-import f9.f0;
-import f9.s1;
-import java.util.ArrayList;
-import java.util.Iterator;
+import e9.b0;
+import e9.v1;
+import e9.z;
+import java.io.File;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
-import java.util.concurrent.CountDownLatch;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BillingController;
-import org.telegram.ui.ActionBar.b2;
-import org.telegram.ui.ActionBar.e2;
-import r0.k1;
-import zh.i0;
-import zh.p1;
+import org.telegram.tgnet.TLRPC;
+import z9.d0;
+import z9.h1;
+import zf.k1;
+import zf.y;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final /* synthetic */ class e implements l, Continuation, e2.j, ag.s, b2, r0.n, BillingController.ProductDetailsResponseListenerLegacy {
+public final /* synthetic */ class e implements Comparator {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
 
-    public /* synthetic */ e(Object obj, int i10) {
+    public /* synthetic */ e(int i10) {
         this.a = i10;
-        this.b = obj;
     }
 
-    @Override // r0.n
-    public k1 P0(View view, k1 k1Var) {
-        ((i0) this.b).h.j(k1Var);
-        return k1.b;
-    }
-
-    @Override // x2.l
-    public s1 a(int i10, q1 q1Var, int[] iArr) {
-        j jVar = (j) this.b;
-        f0 t10 = f9.i0.t();
-        for (int i11 = 0; i11 < q1Var.a; i11++) {
-            t10.c(new g(i10, q1Var, i11, jVar, iArr[i11]));
-        }
-        return t10.f();
-    }
-
-    @Override // e2.j
-    public void accept(Object obj) {
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
         switch (this.a) {
+            case 0:
+                List list = (List) obj;
+                List list2 = (List) obj2;
+                int i10 = 4;
+                return z.f(n.c((n) Collections.max(list, new e(3)), (n) Collections.max(list2, new e(3)))).a(list.size(), list2.size()).b((n) Collections.max(list, new e(i10)), (n) Collections.max(list2, new e(i10)), new e(i10)).e();
+            case 1:
+                return ((f) Collections.max((List) obj)).compareTo((f) Collections.max((List) obj2));
             case 2:
-                z3.h hVar = (z3.h) this.b;
-                z3.a aVar = (z3.a) obj;
-                z3.g gVar = new z3.g(aVar.b, pa.d.f(aVar.a, aVar.c));
-                hVar.c.add(gVar);
-                long j10 = hVar.j;
-                if (j10 == -9223372036854775807L || aVar.d >= j10) {
-                    hVar.g(gVar);
-                    break;
+                return ((k) ((List) obj).get(0)).compareTo((k) ((List) obj2).get(0));
+            case 3:
+                return n.c((n) obj, (n) obj2);
+            case 4:
+                n nVar = (n) obj;
+                n nVar2 = (n) obj2;
+                boolean z10 = nVar.e;
+                int i11 = nVar.s;
+                v1 a2 = (z10 && nVar.n) ? o.l : o.l.a();
+                boolean z11 = nVar.f.F;
+                b0 b0Var = b0.a;
+                if (z11) {
+                    b0Var = b0Var.b(Integer.valueOf(i11), Integer.valueOf(nVar2.s), o.l.a());
                 }
-                break;
+                b0 b10 = b0Var.c(nVar.O, nVar2.O).b(Integer.valueOf(nVar.w), Integer.valueOf(nVar2.w), a2);
+                if (nVar.K && nVar.M) {
+                    b10 = b10.a(nVar.N, nVar2.N);
+                }
+                return b10.c(nVar.L, nVar2.L).b(Integer.valueOf(i11), Integer.valueOf(nVar2.s), a2).e();
+            case 5:
+                return Long.compare(((File) obj2).lastModified(), ((File) obj).lastModified());
+            case 6:
+                return ((d0) ((h1) obj)).a.compareTo(((d0) ((h1) obj2)).a);
+            case 7:
+                return ((y2.p) obj).a - ((y2.p) obj2).a;
+            case 8:
+                return Float.compare(((y2.p) obj).c, ((y2.p) obj2).c);
+            case 9:
+                int i12 = ((y) obj).b;
+                int i13 = ((y) obj2).b;
+                if (i12 < i13) {
+                    return 1;
+                }
+                return i12 > i13 ? -1 : 0;
+            case 10:
+                return Double.compare(((TLRPC.TL_topPeer) obj2).rating, ((TLRPC.TL_topPeer) obj).rating);
             default:
-                ((f0) this.b).c((z3.a) obj);
-                break;
-        }
-    }
-
-    @Override // ag.s
-    public void f(long j10) {
-        ((zh.d) this.b).a(j10, true);
-    }
-
-    @Override // org.telegram.ui.ActionBar.b2
-    public void h(e2 e2Var, int i10) {
-        ((h0) this.b).run();
-    }
-
-    @Override // org.telegram.messenger.BillingController.ProductDetailsResponseListenerLegacy
-    public void onProductDetailsResponse(d5.i iVar, List list) {
-        int i10;
-        p1 p1Var = (p1) this.b;
-        ArrayList arrayList = p1Var.n0;
-        Iterator it = list.iterator();
-        long j10 = 0;
-        while (true) {
-            i10 = 0;
-            if (!it.hasNext()) {
-                break;
-            }
-            d5.o oVar = (d5.o) it.next();
-            int size = arrayList.size();
-            while (true) {
-                if (i10 < size) {
-                    Object obj = arrayList.get(i10);
-                    i10++;
-                    tg.k kVar = (tg.k) obj;
-                    if (kVar.h() != null && kVar.h().equals(oVar.c)) {
-                        kVar.h = oVar;
-                        if (kVar.f() > j10) {
-                            j10 = kVar.f();
-                        }
-                    }
+                int i14 = ((k1) obj).b;
+                int i15 = ((k1) obj2).b;
+                if (i14 < i15) {
+                    return 1;
                 }
-            }
+                return i14 > i15 ? -1 : 0;
         }
-        int size2 = arrayList.size();
-        while (i10 < size2) {
-            Object obj2 = arrayList.get(i10);
-            i10++;
-            ((tg.k) obj2).g = j10;
-        }
-        AndroidUtilities.runOnUIThread(new ti.g(p1Var, 19));
-    }
-
-    @Override // com.google.android.gms.tasks.Continuation
-    public Object then(Task task) {
-        ((CountDownLatch) this.b).countDown();
-        return null;
     }
 }

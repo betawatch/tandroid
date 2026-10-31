@@ -1,28 +1,31 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class fh implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ NotificationsController b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ int d;
+import org.telegram.tgnet.TLRPC;
 
-    public /* synthetic */ fh(NotificationsController notificationsController, long j10, int i10, int i11) {
-        this.a = i11;
-        this.b = notificationsController;
-        this.c = j10;
-        this.d = i10;
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes.dex */
+public final /* synthetic */ class fh implements q20 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ui b;
+    public final /* synthetic */ TLRPC.StickerSet c;
+
+    public /* synthetic */ fh(ui uiVar, TLRPC.StickerSet stickerSet, int i10) {
+        this.a = i10;
+        this.b = uiVar;
+        this.c = stickerSet;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
+    @Override // org.telegram.messenger.q20
+    public final void a(Object obj) {
+        int i10 = this.a;
+        ui uiVar = this.b;
+        uiVar.getClass();
+        switch (i10) {
             case 0:
-                this.b.lambda$processDeleteStory$16(this.c, this.d);
+                uiVar.f1(this.c.id, false);
                 break;
             default:
-                this.b.lambda$processReadStories$17(this.c, this.d);
+                uiVar.g1(this.c.id, false);
                 break;
         }
     }

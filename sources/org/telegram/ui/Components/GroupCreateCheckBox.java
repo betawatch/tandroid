@@ -3,11 +3,10 @@ package org.telegram.ui.Components;
 import android.graphics.Canvas;
 import android.view.View;
 import java.util.HashSet;
-import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public class GroupCreateCheckBox extends View implements org.telegram.ui.ActionBar.p6 {
+public class GroupCreateCheckBox extends View implements org.telegram.ui.ActionBar.k6 {
     public float a;
 
     public float getProgress() {
@@ -31,7 +30,7 @@ public class GroupCreateCheckBox extends View implements org.telegram.ui.ActionB
         if (getVisibility() == 0 && this.a != 0.0f) {
             getMeasuredWidth();
             getMeasuredHeight();
-            AndroidUtilities.dp(30.0f);
+            org.telegram.messenger.i0.L(30.0f);
             throw null;
         }
     }
@@ -44,13 +43,13 @@ public class GroupCreateCheckBox extends View implements org.telegram.ui.ActionB
         invalidate();
     }
 
-    @Override // org.telegram.ui.ActionBar.p6
+    @Override // org.telegram.ui.ActionBar.k6
     public final void updateColors() {
-        org.telegram.ui.ActionBar.y6.v0(0);
+        org.telegram.ui.ActionBar.t6.v0(0);
         throw null;
     }
 
-    @Override // org.telegram.ui.ActionBar.p6
+    @Override // org.telegram.ui.ActionBar.k6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 

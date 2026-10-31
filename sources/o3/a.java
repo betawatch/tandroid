@@ -3,12 +3,12 @@ package o3;
 import a1.g;
 import b2.r0;
 import b2.t0;
-import b2.w0;
+import b2.v0;
 import e2.x;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class a implements t0 {
     public final int a;
@@ -33,7 +33,7 @@ public final class a implements t0 {
 
     public static a d(x xVar) {
         int m10 = xVar.m();
-        String n10 = w0.n(xVar.y(xVar.m(), StandardCharsets.US_ASCII));
+        String n10 = v0.n(xVar.y(xVar.m(), StandardCharsets.US_ASCII));
         String y3 = xVar.y(xVar.m(), StandardCharsets.UTF_8);
         int m11 = xVar.m();
         int m12 = xVar.m();

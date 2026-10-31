@@ -6,9 +6,10 @@ import java.nio.ByteOrder;
 import java.security.AccessController;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.telegram.messenger.zs;
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public abstract class x2 {
     public static final Unsafe a;
@@ -19,13 +20,13 @@ public abstract class x2 {
     public static final long f;
     public static final boolean g;
 
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0131  */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x0295  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x02a7  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x02aa  */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x0137 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:65:0x0067 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:9:0x005f  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x012b  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x028a  */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x029c  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x029f  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x0131 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:65:0x0062 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:9:0x005a  */
     static {
         w2 w2Var;
         Class<?> cls;
@@ -38,28 +39,28 @@ public abstract class x2 {
         Class<?> cls4;
         Field m10;
         w2 w2Var2;
-        Unsafe g7 = g();
-        a = g7;
+        Unsafe g10 = g();
+        a = g10;
         b = m0.a;
         Class<?> cls5 = Long.TYPE;
         boolean k10 = k(cls5);
         Class<?> cls6 = Integer.TYPE;
         boolean k11 = k(cls6);
-        if (g7 != null) {
+        if (g10 != null) {
             if (!m0.a()) {
-                w2Var = new v2(g7);
+                w2Var = new v2(g10);
             } else if (k10) {
-                w2Var = new u2(g7, 1);
+                w2Var = new u2(g10, 1);
             } else if (k11) {
-                w2Var = new u2(g7, 0);
+                w2Var = new u2(g10, 0);
             }
             c = w2Var;
             Class<?> cls7 = Byte.TYPE;
-            if (g7 != null) {
+            if (g10 != null) {
                 cls = cls5;
             } else {
                 try {
-                    cls3 = g7.getClass();
+                    cls3 = g10.getClass();
                     cls = cls5;
                     try {
                         cls3.getMethod("objectFieldOffset", Field.class);
@@ -294,7 +295,7 @@ public abstract class x2 {
         w2Var = null;
         c = w2Var;
         Class<?> cls72 = Byte.TYPE;
-        if (g7 != null) {
+        if (g10 != null) {
         }
         cls2 = cls6;
         z10 = false;
@@ -330,8 +331,8 @@ public abstract class x2 {
     public static Object b(Class cls) {
         try {
             return a.allocateInstance(cls);
-        } catch (InstantiationException e10) {
-            throw new IllegalStateException(e10);
+        } catch (InstantiationException e7) {
+            throw new IllegalStateException(e7);
         }
     }
 
@@ -372,13 +373,13 @@ public abstract class x2 {
         long j11 = (-4) & j10;
         int k10 = c.k(obj, j11);
         int i10 = ((~((int) j10)) & 3) << 3;
-        c(j11, obj, ((255 & b10) << i10) | (k10 & (~(255 << i10))));
+        c(j11, obj, ((255 & b10) << i10) | (k10 & (~(zs.e4 << i10))));
     }
 
     public static void j(Object obj, long j10, byte b10) {
         long j11 = (-4) & j10;
         int i10 = (((int) j10) & 3) << 3;
-        c(j11, obj, ((255 & b10) << i10) | (c.k(obj, j11) & (~(255 << i10))));
+        c(j11, obj, ((255 & b10) << i10) | (c.k(obj, j11) & (~(zs.e4 << i10))));
     }
 
     /* JADX WARN: Multi-variable type inference failed */

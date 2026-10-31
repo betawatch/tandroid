@@ -4,7 +4,7 @@ import a4.g;
 import android.graphics.Rect;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class a {
     public boolean d;
@@ -19,7 +19,7 @@ public final class a {
     public int j = -1;
     public int k = -1;
 
-    public static int a(int i10, int[] iArr) {
+    public static int a(int[] iArr, int i10) {
         return (i10 < 0 || i10 >= iArr.length) ? iArr[0] : iArr[i10];
     }
 
@@ -44,7 +44,7 @@ public final class a {
                         i11 = 0;
                         break;
                     }
-                    i15 = (i15 << 4) | gVar.g(4);
+                    i15 = (i15 << 4) | gVar.i(4);
                 }
                 i10 = i15 & 3;
                 i11 = i15 < 4 ? width : i15 >> 2;

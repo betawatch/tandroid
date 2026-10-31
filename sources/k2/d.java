@@ -1,28 +1,27 @@
 package k2;
 
-import android.media.AudioDeviceCallback;
-import android.media.AudioDeviceInfo;
+import android.content.ContentResolver;
+import android.database.ContentObserver;
+import android.net.Uri;
+import android.os.Handler;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class d extends AudioDeviceCallback {
-    public final /* synthetic */ f a;
+public final class d extends ContentObserver {
+    public final ContentResolver a;
+    public final Uri b;
+    public final /* synthetic */ e c;
 
-    public d(f fVar) {
-        this.a = fVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public d(e eVar, Handler handler, ContentResolver contentResolver, Uri uri) {
+        super(handler);
+        this.c = eVar;
+        this.a = contentResolver;
+        this.b = uri;
     }
 
-    @Override // android.media.AudioDeviceCallback
-    public final void onAudioDevicesAdded(AudioDeviceInfo[] audioDeviceInfoArr) {
-        this.a.c();
-    }
-
-    @Override // android.media.AudioDeviceCallback
-    public final void onAudioDevicesRemoved(AudioDeviceInfo[] audioDeviceInfoArr) {
-        f fVar = this.a;
-        if (e2.n0.l(audioDeviceInfoArr, fVar.i)) {
-            fVar.i = null;
-        }
-        fVar.c();
+    @Override // android.database.ContentObserver
+    public final void onChange(boolean z10) {
+        this.c.c();
     }
 }

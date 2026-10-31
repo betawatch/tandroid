@@ -1,9 +1,9 @@
 package b2;
 
-import a8.yb;
 import java.util.Arrays;
+import v7.t6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class v1 {
     public static final String f;
@@ -11,25 +11,25 @@ public final class v1 {
     public static final String h;
     public static final String i;
     public final int a;
-    public final q1 b;
+    public final p1 b;
     public final boolean c;
     public final int[] d;
     public final boolean[] e;
 
     static {
-        String str = e2.n0.a;
+        String str = e2.l0.a;
         f = Integer.toString(0, 36);
         g = Integer.toString(1, 36);
         h = Integer.toString(3, 36);
         i = Integer.toString(4, 36);
     }
 
-    public v1(q1 q1Var, boolean z10, int[] iArr, boolean[] zArr) {
-        int i10 = q1Var.a;
+    public v1(p1 p1Var, boolean z10, int[] iArr, boolean[] zArr) {
+        int i10 = p1Var.a;
         this.a = i10;
         boolean z11 = false;
-        yb.g(i10 == iArr.length && i10 == zArr.length);
-        this.b = q1Var;
+        t6.f(i10 == iArr.length && i10 == zArr.length);
+        this.b = p1Var;
         if (z10 && i10 > 1) {
             z11 = true;
         }

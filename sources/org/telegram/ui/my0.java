@@ -1,33 +1,41 @@
 package org.telegram.ui;
 
-import android.view.View;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class my0 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Runnable b;
+public final class my0 implements org.telegram.messenger.mc {
+    public final /* synthetic */ Runnable[] a;
 
-    public /* synthetic */ my0(int i10, Runnable runnable) {
-        this.a = i10;
-        this.b = runnable;
+    public my0(Runnable[] runnableArr) {
+        this.a = runnableArr;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        int i10 = this.a;
-        Runnable runnable = this.b;
-        switch (i10) {
-            case 0:
-                int i11 = ProfileActivity.R6;
-                runnable.run();
-                break;
-            default:
-                if (runnable != null) {
-                    runnable.run();
-                    break;
+    @Override // org.telegram.messenger.mc
+    public final void o(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
+        if (imageReceiver.I()) {
+            Runnable[] runnableArr = this.a;
+            if (runnableArr[0] != null) {
+                org.telegram.ui.Components.bi0 B = imageReceiver.B();
+                if (B == null) {
+                    runnableArr[0].run();
+                    runnableArr[0] = null;
+                } else if (B.y()) {
+                    B.A0 = new wv0(runnableArr, 9);
+                } else {
+                    runnableArr[0].run();
+                    runnableArr[0] = null;
                 }
-                break;
+            }
         }
+    }
+
+    @Override // org.telegram.messenger.mc
+    public final /* synthetic */ void j(ImageReceiver imageReceiver) {
+    }
+
+    @Override // org.telegram.messenger.mc
+    public final /* synthetic */ void q(int i10, Drawable drawable) {
     }
 }

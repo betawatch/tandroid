@@ -1,163 +1,85 @@
 package org.telegram.ui.Components;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
 import android.content.Context;
-import android.graphics.Point;
-import android.util.Property;
-import android.view.View;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.TLObject;
+import android.graphics.Canvas;
+import android.graphics.LinearGradient;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.graphics.Shader;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class p20 extends ViewGroup {
-    public AnimatorSet a;
-    public boolean b;
-    public final ArrayList c;
-    public x30 d;
-    public final ArrayList e;
-    public int f;
-    public int h;
-    public int n;
-    public final /* synthetic */ q20 r;
+public final class p20 extends TextView {
+    public final Paint[] a;
+    public final /* synthetic */ org.telegram.ui.b40 b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public p20(q20 q20Var, Context context) {
+    public p20(org.telegram.ui.b40 b40Var, Context context) {
         super(context);
-        this.r = q20Var;
-        this.c = new ArrayList();
-        this.e = new ArrayList();
-        this.f = -1;
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        int childCount = getChildCount();
-        for (int i14 = 0; i14 < childCount; i14++) {
-            View childAt = getChildAt(i14);
-            childAt.layout(0, 0, childAt.getMeasuredWidth(), childAt.getMeasuredHeight());
-        }
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        ArrayList arrayList;
-        int B;
-        int i12;
-        int i13;
-        int childCount = getChildCount();
-        int size = View.MeasureSpec.getSize(i10);
-        int dp = size - AndroidUtilities.dp(26.0f);
-        int dp2 = AndroidUtilities.dp(10.0f);
-        int dp3 = AndroidUtilities.dp(10.0f);
-        int i14 = 0;
-        if (!this.b) {
-            this.n = 0;
-        }
-        int i15 = 0;
-        int i16 = 0;
-        int i17 = 0;
+        this.b = b40Var;
+        this.a = new Paint[b40Var.l1.length];
+        int i10 = 0;
         while (true) {
-            arrayList = this.c;
-            if (i15 >= childCount) {
-                break;
+            Paint[] paintArr = this.a;
+            if (i10 >= paintArr.length) {
+                return;
             }
-            View childAt = getChildAt(i15);
-            if (childAt instanceof x30) {
-                childAt.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f), TLObject.FLAG_30));
-                ArrayList arrayList2 = this.e;
-                boolean contains = arrayList2.contains(childAt);
-                if (contains) {
-                    i13 = i14;
-                } else {
-                    i13 = i14;
-                    if (childAt.getMeasuredWidth() + i16 > dp) {
-                        dp2 = org.telegram.messenger.t.D(8.0f, childAt.getMeasuredHeight(), dp2);
-                        i16 = i13;
-                    }
-                }
-                if (childAt.getMeasuredWidth() + i17 > dp) {
-                    dp3 = org.telegram.messenger.t.D(8.0f, childAt.getMeasuredHeight(), dp3);
-                    i17 = i13;
-                }
-                int dp4 = AndroidUtilities.dp(13.0f) + i16;
-                if (!this.b) {
-                    if (contains) {
-                        childAt.setTranslationX(AndroidUtilities.dp(13.0f) + i17);
-                        childAt.setTranslationY(dp3);
-                    } else if (arrayList2.isEmpty()) {
-                        childAt.setTranslationX(dp4);
-                        childAt.setTranslationY(dp2);
-                        this.n = Math.max(this.n, dp2);
-                    } else {
-                        float f7 = dp4;
-                        if (childAt.getTranslationX() != f7) {
-                            float[] fArr = new float[1];
-                            fArr[i13] = f7;
-                            arrayList.add(ObjectAnimator.ofFloat(childAt, (Property<View, Float>) View.TRANSLATION_X, fArr));
-                        }
-                        float f10 = dp2;
-                        if (childAt.getTranslationY() != f10) {
-                            float[] fArr2 = new float[1];
-                            fArr2[i13] = f10;
-                            arrayList.add(ObjectAnimator.ofFloat(childAt, (Property<View, Float>) View.TRANSLATION_Y, fArr2));
-                        }
-                        this.n = Math.max(this.n, dp2);
-                    }
-                }
-                if (!contains) {
-                    i16 = org.telegram.messenger.t.D(9.0f, childAt.getMeasuredWidth(), i16);
-                }
-                i17 = org.telegram.messenger.t.D(9.0f, childAt.getMeasuredWidth(), i17);
+            paintArr[i10] = new Paint(1);
+            i10++;
+        }
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        int i10;
+        RectF rectF = org.telegram.messenger.i0.P;
+        rectF.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
+        org.telegram.ui.b40 b40Var = this.b;
+        int i11 = b40Var.n1;
+        Paint[] paintArr = this.a;
+        paintArr[i11].setAlpha(org.telegram.messenger.zs.e4);
+        canvas.drawRoundRect(rectF, org.telegram.messenger.i0.L(6.0f), org.telegram.messenger.i0.L(6.0f), paintArr[b40Var.n1]);
+        float f7 = b40Var.m1;
+        if (f7 > 0.0f && (i10 = b40Var.n1 + 1) < paintArr.length) {
+            paintArr[i10].setAlpha((int) (f7 * 255.0f));
+            canvas.drawRoundRect(rectF, org.telegram.messenger.i0.L(6.0f), org.telegram.messenger.i0.L(6.0f), paintArr[b40Var.n1 + 1]);
+        }
+        super.onDraw(canvas);
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:12:0x003e  */
+    /* JADX WARN: Removed duplicated region for block: B:9:0x0029  */
+    @Override // android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
+        int i14;
+        int i15;
+        super.onSizeChanged(i10, i11, i12, i13);
+        int i16 = 0;
+        while (true) {
+            Paint[] paintArr = this.a;
+            if (i16 >= paintArr.length) {
+                return;
+            }
+            int i17 = -9015575;
+            if (i16 == 0) {
+                i14 = -9015575;
+                i17 = -11033346;
+            } else if (i16 == 1) {
+                i17 = -8919716;
+                i14 = -11089922;
             } else {
-                i13 = i14;
+                i14 = -1026983;
+                i15 = -1792170;
+                paintArr[i16].setShader(i15 == 0 ? new LinearGradient(0.0f, 0.0f, getMeasuredWidth(), 0.0f, new int[]{i17, i14, i15}, (float[]) null, Shader.TileMode.CLAMP) : new LinearGradient(0.0f, 0.0f, getMeasuredWidth(), 0.0f, new int[]{i17, i14}, (float[]) null, Shader.TileMode.CLAMP));
+                i16++;
             }
-            i15++;
-            i14 = i13;
-        }
-        int i18 = i14;
-        if (AndroidUtilities.isTablet()) {
-            B = AndroidUtilities.dp(372.0f) / 3;
-        } else {
-            Point point = AndroidUtilities.displaySize;
-            B = org.telegram.messenger.wh.B(158.0f, Math.min(point.x, point.y), 3);
-        }
-        if (dp - i16 < B) {
-            dp2 += AndroidUtilities.dp(40.0f);
-        }
-        if (dp - i17 < B) {
-            dp3 += AndroidUtilities.dp(40.0f);
-        }
-        boolean z10 = this.b;
-        q20 q20Var = this.r;
-        if (z10) {
-            i12 = i18;
-        } else {
-            int dp5 = AndroidUtilities.dp(42.0f) + dp3;
-            q20Var.n = dp2;
-            if (this.a != null) {
-                this.h = AndroidUtilities.dp(42.0f) + dp2;
-                this.a.playTogether(arrayList);
-                i12 = i18;
-                this.a.addListener(new o20(this, i12));
-                this.f = NotificationCenter.getInstance(q20Var.a).setAnimationInProgress(this.f, null);
-                this.a.start();
-                this.b = true;
-            } else {
-                i12 = i18;
-                this.h = dp5;
-            }
-        }
-        int i19 = this.n;
-        q20Var.e = i19 > 0 ? AndroidUtilities.dp(40.0f) + i19 : i12;
-        setMeasuredDimension(size, this.h);
-        n20 n20Var = q20Var.f;
-        if (n20Var != null) {
-            n20Var.a(q20Var.e);
+            i15 = 0;
+            paintArr[i16].setShader(i15 == 0 ? new LinearGradient(0.0f, 0.0f, getMeasuredWidth(), 0.0f, new int[]{i17, i14, i15}, (float[]) null, Shader.TileMode.CLAMP) : new LinearGradient(0.0f, 0.0f, getMeasuredWidth(), 0.0f, new int[]{i17, i14}, (float[]) null, Shader.TileMode.CLAMP));
+            i16++;
         }
     }
 }

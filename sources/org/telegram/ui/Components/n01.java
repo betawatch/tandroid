@@ -1,11 +1,21 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes3.dex */
-public final class n01 {
-    public int a;
+import android.content.Context;
+import org.telegram.ui.Components.ThemeEditorView;
 
-    public n01(int i10) {
-        this.a = i10;
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final class n01 extends tk0 {
+    public final /* synthetic */ ThemeEditorView.EditorAlert e3;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public n01(ThemeEditorView.EditorAlert editorAlert, Context context) {
+        super(context, null);
+        this.e3 = editorAlert;
+    }
+
+    @Override // org.telegram.ui.Components.tk0
+    public final boolean E0(float f7) {
+        return f7 >= ((float) ((org.telegram.messenger.i0.L(48.0f) + this.e3.v1) + org.telegram.messenger.i0.m));
     }
 }

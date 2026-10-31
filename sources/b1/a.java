@@ -8,11 +8,11 @@ import org.telegram.tgnet.ConnectionsManager;
 import w0.j;
 import w0.k;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class a {
     public static w0.d a(String str, String str2) {
-        return i.a(str, "CREATE_CANCELED") ? new w0.b(str2) : i.a(str, "CREATE_INTERRUPTED") ? new w0.e(str2) : new w0.c(str2, 2);
+        return i.a(str, "CREATE_CANCELED") ? new w0.b(str2) : i.a(str, "CREATE_INTERRUPTED") ? new w0.e(str2) : new w0.c(2, str2);
     }
 
     public static w0.i b(String str, String str2) {
@@ -30,7 +30,7 @@ public final class a {
                 return new w0.g(str2);
             }
         }
-        return new w0.h(str2, 2);
+        return new w0.h(2, str2);
     }
 
     public static void c(ResultReceiver resultReceiver, String str, String errMsg) {

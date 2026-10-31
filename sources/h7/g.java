@@ -1,30 +1,9 @@
 package h7;
 
-import a8.df;
-import android.os.Bundle;
-import android.os.Parcel;
-import android.os.Parcelable;
+import com.google.android.gms.common.api.j;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class g extends p6.a {
-    public static final Parcelable.Creator<g> CREATOR = new f6.i(18);
-    public final String a;
-    public final Bundle b;
-
-    public g(String type, Bundle data) {
-        kotlin.jvm.internal.i.e(type, "type");
-        kotlin.jvm.internal.i.e(data, "data");
-        this.a = type;
-        this.b = data;
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel dest, int i10) {
-        kotlin.jvm.internal.i.e(dest, "dest");
-        int q5 = df.q(dest, 20293);
-        df.l(dest, 1, this.a);
-        df.b(dest, 2, this.b);
-        df.r(dest, q5);
-    }
+public final class g extends j {
+    public static final com.google.android.gms.common.api.e k = new com.google.android.gms.common.api.e("IdentityCredentials.API", new a8.d(4), new com.google.android.gms.common.api.d());
 }

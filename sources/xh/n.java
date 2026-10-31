@@ -1,429 +1,372 @@
 package xh;
 
+import android.app.Activity;
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Path;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.Rect;
-import android.graphics.Region;
-import android.text.Layout;
-import android.text.SpannableString;
-import android.text.Spanned;
-import android.text.style.CharacterStyle;
-import android.text.style.ClickableSpan;
-import android.view.GestureDetector;
-import android.view.MotionEvent;
-import android.view.ViewConfiguration;
-import android.widget.TextView;
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
+import android.content.SharedPreferences;
+import android.os.Build;
+import android.security.keystore.KeyGenParameterSpec;
+import android.text.TextUtils;
+import android.util.Pair;
+import java.nio.charset.StandardCharsets;
+import java.security.KeyStore;
+import java.security.SecureRandom;
 import java.util.ArrayList;
-import java.util.Stack;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.FileLog;
-import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Cells.ba;
-import org.telegram.ui.Components.ba0;
-import org.telegram.ui.Components.c6;
-import org.telegram.ui.Components.ea0;
-import org.telegram.ui.Components.oy0;
-import org.telegram.ui.Components.t90;
-import org.telegram.ui.Components.x90;
-import org.telegram.ui.Components.y5;
-import org.telegram.ui.Components.z90;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.WeakHashMap;
+import javax.crypto.Cipher;
+import javax.crypto.KeyGenerator;
+import javax.crypto.SecretKey;
+import javax.crypto.spec.IvParameterSpec;
+import org.json.JSONObject;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.cd;
+import org.telegram.messenger.f8;
+import org.telegram.messenger.h20;
+import org.telegram.messenger.hs;
+import org.telegram.messenger.l20;
+import org.telegram.messenger.q20;
+import org.telegram.messenger.vp;
+import org.telegram.messenger.zs;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.c11;
+import org.telegram.ui.Components.pc0;
+import org.telegram.ui.LaunchActivity;
+import rh.s6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes4.dex */
-public class n extends TextView implements ba {
-    public static Field R;
-    public static Class S;
-    public static Method T;
-    public CharacterStyle E;
-    public z90 F;
-    public z90 G;
-    public ba0 H;
-    public PorterDuffColorFilter I;
-    public final boolean J;
-    public boolean K;
-    public boolean L;
-    public boolean M;
-    public Layout N;
-    public int O;
-    public boolean P;
-    public Object Q;
-    public final l a;
-    public final ArrayList b;
-    public final Stack c;
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes.dex */
+public final class n {
+    public static final WeakHashMap k = new WeakHashMap();
+    public static KeyStore l;
+    public final Context a;
+    public final int b;
+    public final long c;
     public boolean d;
     public boolean e;
     public boolean f;
-    public int h;
-    public final Path n;
-    public boolean r;
-    public int s;
-    public y5 v;
-    public boolean w;
-    public final x90 x;
-    public final u6 y;
+    public String g;
+    public String h;
+    public k6.h i;
+    public s6 j;
 
-    public n(Context context) {
-        this(context, null, true);
+    public n(Context context, int i10, long j10) {
+        this.a = context;
+        this.b = i10;
+        this.c = j10;
+        h();
     }
 
-    public ClickableSpan a(int i10, int i11) {
-        Layout layout = getLayout();
-        if (layout == null) {
-            return null;
+    public static void b() {
+        Context context = org.telegram.messenger.w0.b;
+        if (context == null) {
+            return;
         }
-        int paddingLeft = i10 - getPaddingLeft();
-        int paddingTop = i11 - getPaddingTop();
-        int lineForVertical = layout.getLineForVertical(paddingTop);
-        float f7 = paddingLeft;
-        int offsetForHorizontal = layout.getOffsetForHorizontal(lineForVertical, f7);
-        float lineLeft = layout.getLineLeft(lineForVertical);
-        if (lineLeft <= f7 && layout.getLineWidth(lineForVertical) + lineLeft >= f7 && paddingTop >= 0 && paddingTop <= layout.getHeight()) {
-            ClickableSpan[] clickableSpanArr = (ClickableSpan[]) new SpannableString(layout.getText()).getSpans(offsetForHorizontal, offsetForHorizontal, ClickableSpan.class);
-            if (clickableSpanArr.length != 0 && !AndroidUtilities.isAccessibilityScreenReaderEnabled()) {
-                return clickableSpanArr[0];
-            }
+        for (int i10 = 0; i10 < 4; i10++) {
+            context.getSharedPreferences("2botbiometry_" + i10, 0).edit().clear().apply();
         }
-        return null;
+        k.clear();
     }
 
-    public final void b() {
-        ArrayList arrayList = this.b;
-        if (arrayList == null) {
-            return;
+    public static n c(Context context, int i10, long j10) {
+        Pair pair = new Pair(Integer.valueOf(i10), Long.valueOf(j10));
+        WeakHashMap weakHashMap = k;
+        n nVar = (n) weakHashMap.get(pair);
+        if (nVar != null) {
+            return nVar;
         }
-        Stack stack = this.c;
-        stack.addAll(arrayList);
-        arrayList.clear();
-        if (this.d) {
-            invalidate();
-            return;
-        }
-        if (getLayout() != null && (getText() instanceof Spanned)) {
-            int i10 = g.A;
-            int measuredWidth = getMeasuredWidth();
-            Layout layout = getLayout();
-            if (measuredWidth <= 0) {
-                measuredWidth = -2;
-            }
-            g.a(this, layout, 0, measuredWidth, (Spanned) getText(), stack, arrayList, null);
-        }
-        invalidate();
+        n nVar2 = new n(context, i10, j10);
+        weakHashMap.put(pair, nVar2);
+        return nVar2;
     }
 
-    public final void c(float f7, float f10) {
-        this.e = false;
-        ArrayList arrayList = this.b;
-        if (arrayList.isEmpty()) {
-            this.d = true;
-            b();
-            return;
-        }
-        this.f = true;
-        int i10 = this.h + 1;
-        this.h = i10;
-        ((g) arrayList.get(0)).q = new m(this, i10, 0);
-        float hypot = (float) Math.hypot(getWidth(), getHeight());
-        int size = arrayList.size();
+    public static void d(Activity activity, int i10, q20 q20Var) {
         int i11 = 0;
+        SharedPreferences sharedPreferences = activity.getSharedPreferences("2botbiometry_" + i10, 0);
+        ArrayList arrayList = new ArrayList();
+        Iterator<Map.Entry<String, ?>> it = sharedPreferences.getAll().entrySet().iterator();
+        while (it.hasNext()) {
+            String key = it.next().getKey();
+            if (key.endsWith("_requested")) {
+                try {
+                    arrayList.add(Long.valueOf(Long.parseLong(key.substring(0, key.length() - 10))));
+                } catch (Exception e) {
+                    f8.g(e, true);
+                }
+            }
+        }
+        HashMap hashMap = new HashMap();
+        int size = arrayList.size();
         while (i11 < size) {
             Object obj = arrayList.get(i11);
             i11++;
-            ((g) obj).j(f7, f10, hypot, false);
-        }
-    }
-
-    public final void d(boolean z10) {
-        int length = (getLayout() == null || getLayout().getText() == null) ? 0 : getLayout().getText().length();
-        if (!z10 && this.N == getLayout() && this.O == length) {
-            return;
-        }
-        this.v = c6.update(this.s, this, this.v, getLayout());
-        this.N = getLayout();
-        this.O = length;
-    }
-
-    @Override // android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        CharacterStyle characterStyle;
-        x90 x90Var = this.x;
-        if (x90Var != null) {
-            Layout layout = getLayout();
-            ClickableSpan a2 = a((int) motionEvent.getX(), (int) motionEvent.getY());
-            if (a2 != null && motionEvent.getAction() == 0) {
-                ba0 ba0Var = new ba0(a2, this.y, motionEvent.getX(), motionEvent.getY(), 0);
-                ba0Var.d(y6.w0(y6.Ld, this.y));
-                this.H = ba0Var;
-                x90Var.a(ba0Var, null);
-                SpannableString spannableString = new SpannableString(layout.getText());
-                int spanStart = spannableString.getSpanStart(this.H.i);
-                int spanEnd = spannableString.getSpanEnd(this.H.i);
-                t90 b10 = this.H.b();
-                b10.d(layout, spanStart, this.J ? 0.0f : getPaddingTop());
-                layout.getSelectionPath(spanStart, spanEnd, b10);
-                AndroidUtilities.runOnUIThread(new oy0(this, ba0Var, a2, 28), ViewConfiguration.getLongPressTimeout());
-                return true;
+            Long l4 = (Long) obj;
+            n c10 = c(activity, i10, l4.longValue());
+            if (c10.e && c10.f) {
+                hashMap.put(l4, Boolean.valueOf(!c10.d));
             }
-            if (motionEvent.getAction() == 1) {
-                x90Var.d(true);
-                ba0 ba0Var2 = this.H;
-                if (ba0Var2 != null && (characterStyle = ba0Var2.i) == a2) {
-                    z90 z90Var = this.F;
-                    if (z90Var != null) {
-                        z90Var.a((ClickableSpan) characterStyle);
-                    } else if (characterStyle != null) {
-                        ((ClickableSpan) characterStyle).onClick(this);
-                    }
-                    this.H = null;
-                    return true;
-                }
-                this.H = null;
-            }
-            if (motionEvent.getAction() == 3) {
-                x90Var.d(true);
-                this.H = null;
-            }
-        }
-        if (this.H == null && !(this.r && ((GestureDetector) this.a.a.b).onTouchEvent(motionEvent))) {
-            return super.dispatchTouchEvent(motionEvent);
-        }
-        return true;
-    }
-
-    @Override // org.telegram.ui.Cells.ba
-    public Layout getStaticTextLayout() {
-        return getLayout();
-    }
-
-    @Override // android.view.View, org.telegram.ui.Cells.aa
-    public final void invalidate() {
-        if (!this.P) {
-            this.P = true;
-            try {
-                if (S == null) {
-                    Field declaredField = TextView.class.getDeclaredField("mEditor");
-                    R = declaredField;
-                    declaredField.setAccessible(true);
-                    Class<?> cls = Class.forName("android.widget.Editor");
-                    S = cls;
-                    try {
-                        Method declaredMethod = cls.getDeclaredMethod("invalidateTextDisplayList", null);
-                        T = declaredMethod;
-                        declaredMethod.setAccessible(true);
-                    } catch (Exception unused) {
-                    }
-                }
-            } catch (Throwable th2) {
-                FileLog.e(th2);
-            }
-        }
-        super.invalidate();
-        if (isHardwareAccelerated()) {
-            try {
-                if (T != null) {
-                    if (this.Q == null) {
-                        this.Q = R.get(this);
-                    }
-                    Object obj = this.Q;
-                    if (obj != null) {
-                        T.invoke(obj, null);
-                    }
-                }
-            } catch (Exception unused2) {
-            }
-        }
-    }
-
-    @Override // android.widget.TextView, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        d(true);
-    }
-
-    @Override // android.widget.TextView, android.view.View
-    public void onDraw(Canvas canvas) {
-        ArrayList arrayList;
-        Canvas canvas2;
-        int paddingLeft = getPaddingLeft();
-        int paddingTop = getPaddingTop();
-        canvas.save();
-        if (!this.K) {
-            canvas.translate(this.L ? 0.0f : paddingLeft, this.M ? 0.0f : paddingTop);
-        }
-        x90 x90Var = this.x;
-        if (x90Var != null && x90Var.f(canvas)) {
-            invalidate();
-        }
-        canvas.restore();
-        ArrayList arrayList2 = this.b;
-        boolean isEmpty = arrayList2.isEmpty();
-        Path path = this.n;
-        if (isEmpty) {
-            super.onDraw(canvas);
-        } else {
-            canvas.save();
-            path.rewind();
-            int size = arrayList2.size();
-            int i10 = 0;
-            while (i10 < size) {
-                Object obj = arrayList2.get(i10);
-                i10++;
-                Rect bounds = ((g) obj).getBounds();
-                path.addRect(bounds.left + paddingLeft, bounds.top + paddingTop, bounds.right + paddingLeft, bounds.bottom + paddingTop, Path.Direction.CW);
-            }
-            canvas.clipPath(path, Region.Op.DIFFERENCE);
-            Emoji.emojiDrawingUseAlpha = this.w;
-            super.onDraw(canvas);
-            Emoji.emojiDrawingUseAlpha = true;
-            canvas.restore();
-            g gVar = (g) arrayList2.get(0);
-            if (gVar.m > 0.0f && gVar.n > 0.0f) {
-                canvas.save();
-                canvas.clipPath(path);
-                path.rewind();
-                ((g) arrayList2.get(0)).e(path);
-                canvas.clipPath(path);
-                super.onDraw(canvas);
-                canvas.restore();
-            }
-        }
-        d(false);
-        if (this.v != null) {
-            canvas.save();
-            canvas.translate(paddingLeft, paddingTop);
-            c6.drawAnimatedEmojis(canvas, getLayout(), this.v, 0.0f, arrayList2, 0.0f, getHeight(), 0.0f, 1.0f, this.I);
-            arrayList = arrayList2;
-            canvas.restore();
-        } else {
-            arrayList = arrayList2;
         }
         if (arrayList.isEmpty()) {
-            return;
-        }
-        boolean z10 = ((g) arrayList.get(0)).n != -1.0f;
-        if (z10) {
-            canvas2 = canvas;
-            canvas2.saveLayer(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), null, 31);
+            q20Var.a(new ArrayList());
         } else {
-            canvas2 = canvas;
-            canvas2.save();
-        }
-        canvas2.translate(paddingLeft, AndroidUtilities.dp(2.0f) + paddingTop);
-        int size2 = arrayList.size();
-        int i11 = 0;
-        while (i11 < size2) {
-            Object obj2 = arrayList.get(i11);
-            i11++;
-            g gVar2 = (g) obj2;
-            gVar2.h(getPaint().getColor());
-            gVar2.draw(canvas2);
-        }
-        if (z10) {
-            path.rewind();
-            ((g) arrayList.get(0)).e(path);
-            canvas2.drawPath(path, y6.Nl);
-        }
-        canvas2.restore();
-    }
-
-    @Override // android.widget.TextView, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        b();
-        if (this.e) {
-            c((getWidth() / 2.0f) - getPaddingLeft(), ((getHeight() / 2.0f) - getPaddingTop()) + getScrollY());
+            hs.a0(i10).a.c(new c11(i10, arrayList, hashMap, q20Var, 21));
         }
     }
 
-    @Override // android.view.View
-    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
-        super.onSizeChanged(i10, i11, i12, i13);
-        b();
+    public final boolean a() {
+        return this.f;
     }
 
-    @Override // android.widget.TextView
-    public void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        super.onTextChanged(charSequence, i10, i11, i12);
-        b();
-        d(true);
+    public final SecretKey e() {
+        if (l == null) {
+            KeyStore keyStore = KeyStore.getInstance("AndroidKeyStore");
+            l = keyStore;
+            keyStore.load(null);
+        }
+        KeyStore keyStore2 = l;
+        StringBuilder sb2 = new StringBuilder("9bot_");
+        long j10 = this.c;
+        sb2.append(j10);
+        if (keyStore2.containsAlias(sb2.toString())) {
+            return (SecretKey) l.getKey("9bot_" + j10, null);
+        }
+        KeyGenParameterSpec.Builder builder = new KeyGenParameterSpec.Builder("9bot_" + j10, 3);
+        builder.setBlockModes("CBC");
+        builder.setEncryptionPaddings("PKCS7Padding");
+        builder.setUserAuthenticationRequired(true);
+        int i10 = Build.VERSION.SDK_INT;
+        if (i10 >= 30) {
+            builder.setUserAuthenticationParameters(60, 2);
+        }
+        if (i10 >= 24) {
+            builder.setInvalidatedByBiometricEnrollment(true);
+        }
+        KeyGenerator keyGenerator = KeyGenerator.getInstance("AES", "AndroidKeyStore");
+        keyGenerator.init(builder.build());
+        return keyGenerator.generateKey();
     }
 
-    public void setDisablePaddingsOffset(boolean z10) {
-        this.K = z10;
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0084  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0034  */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x002b  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final JSONObject f() {
+        String str;
+        String string;
+        JSONObject jSONObject = new JSONObject();
+        Context context = this.a;
+        try {
+        } catch (Exception e) {
+            f8.g(e, true);
+        }
+        if (new android.support.v4.media.session.a0(new androidx.biometric.s(context, 0)).h(15) == 0) {
+            str = "unknown";
+            if (str == null) {
+                jSONObject.put("available", true);
+                jSONObject.put(TeXSymbolParser.TYPE_ATTR, str);
+            } else {
+                jSONObject.put("available", false);
+            }
+            jSONObject.put("access_requested", this.f);
+            jSONObject.put("access_granted", (this.e || this.d) ? false : true);
+            jSONObject.put("token_saved", true ^ TextUtils.isEmpty(this.g));
+            SharedPreferences sharedPreferences = context.getSharedPreferences("2botbiometry_" + this.b, 0);
+            StringBuilder sb2 = new StringBuilder("device_id");
+            long j10 = this.c;
+            sb2.append(j10);
+            string = sharedPreferences.getString(sb2.toString(), null);
+            if (string == null) {
+                byte[] bArr = new byte[32];
+                new SecureRandom().nextBytes(bArr);
+                SharedPreferences.Editor edit = sharedPreferences.edit();
+                String l4 = a1.g.l(j10, "device_id");
+                string = Utilities.f(bArr);
+                edit.putString(l4, string).apply();
+            }
+            jSONObject.put("device_id", string);
+            return jSONObject;
+        }
+        str = null;
+        if (str == null) {
+        }
+        jSONObject.put("access_requested", this.f);
+        jSONObject.put("access_granted", (this.e || this.d) ? false : true);
+        jSONObject.put("token_saved", true ^ TextUtils.isEmpty(this.g));
+        SharedPreferences sharedPreferences2 = context.getSharedPreferences("2botbiometry_" + this.b, 0);
+        StringBuilder sb22 = new StringBuilder("device_id");
+        long j102 = this.c;
+        sb22.append(j102);
+        string = sharedPreferences2.getString(sb22.toString(), null);
+        if (string == null) {
+        }
+        jSONObject.put("device_id", string);
+        return jSONObject;
     }
 
-    public void setDisablePaddingsOffsetX(boolean z10) {
-        this.L = z10;
+    public final boolean g() {
+        return this.e;
     }
 
-    public void setDisablePaddingsOffsetY(boolean z10) {
-        this.M = z10;
-    }
-
-    public void setLoading(CharacterStyle characterStyle) {
-        if (this.E != characterStyle) {
-            x90 x90Var = this.x;
-            x90Var.e();
-            this.E = characterStyle;
-            ea0 i10 = x90.i(getLayout(), characterStyle, getPaddingTop());
-            if (i10 != null) {
-                int w02 = y6.w0(y6.Ld, this.y);
-                i10.g(y6.o1(0.8f, w02), y6.o1(1.3f, w02), y6.o1(1.0f, w02), y6.o1(4.0f, w02));
-                i10.x.setStrokeWidth(AndroidUtilities.dpf2(1.25f));
-                x90Var.b(i10, null);
+    public final void h() {
+        SharedPreferences sharedPreferences = this.a.getSharedPreferences("2botbiometry_" + this.b, 0);
+        long j10 = this.c;
+        this.g = sharedPreferences.getString(String.valueOf(j10), null);
+        this.h = sharedPreferences.getString(String.valueOf(j10) + "_iv", null);
+        boolean z10 = true;
+        boolean z11 = this.g != null;
+        this.e = z11;
+        if (!z11) {
+            if (!sharedPreferences.getBoolean(j10 + "_requested", false)) {
+                z10 = false;
             }
         }
+        this.f = z10;
+        this.d = sharedPreferences.getBoolean(j10 + "_disabled", false);
     }
 
-    public void setOnLinkLongPressListener(z90 z90Var) {
-        this.G = z90Var;
+    public final androidx.biometric.u i(boolean z10) {
+        try {
+            Cipher cipher = Cipher.getInstance("AES/CBC/PKCS7Padding");
+            SecretKey e = e();
+            if (z10) {
+                cipher.init(2, e, new IvParameterSpec(Utilities.v(this.h)));
+            } else {
+                cipher.init(1, e);
+            }
+            return new androidx.biometric.u(cipher);
+        } catch (Exception e7) {
+            f8.g(e7, true);
+            return null;
+        }
     }
 
-    public void setOnLinkPressListener(z90 z90Var) {
-        this.F = z90Var;
+    public final void j(String str, boolean z10, String str2, l20 l20Var) {
+        int i10;
+        this.j = null;
+        try {
+            if (this.i == null) {
+                this.i = new k6.h(LaunchActivity.I1, f0.c.d(this.a), new pc0(this, 1));
+            }
+            androidx.biometric.u i11 = i(z10);
+            TLRPC.User Z1 = vp.r1(this.b).Z1(Long.valueOf(this.c));
+            j6.m mVar = new j6.m(1);
+            mVar.b = h20.p(Z1);
+            mVar.d = cd.L0(2131753756, null);
+            mVar.a = 15;
+            if (!TextUtils.isEmpty(str)) {
+                mVar.c = str;
+            }
+            j6.m c10 = mVar.c();
+            if (i11 != null) {
+                Cipher cipher = i11.b;
+                if (!z10 && Build.VERSION.SDK_INT >= 30) {
+                    try {
+                        if (TextUtils.isEmpty(str2)) {
+                            this.g = null;
+                        } else {
+                            this.g = Utilities.f(cipher.doFinal(str2.getBytes(StandardCharsets.UTF_8)));
+                            this.h = Utilities.f(cipher.getIV());
+                        }
+                        k();
+                        l20Var.a(Boolean.TRUE, null, null);
+                        return;
+                    } catch (Exception e) {
+                        f8.g(e, true);
+                        i11 = i(z10);
+                    }
+                }
+            }
+            this.j = new s6(6, l20Var, (i11 == null || Build.VERSION.SDK_INT >= 30) ? null : i11);
+            if (i11 == null || (i10 = Build.VERSION.SDK_INT) >= 30) {
+                this.i.a(c10, null);
+                return;
+            }
+            k6.h hVar = this.i;
+            hVar.getClass();
+            int i12 = c10.a;
+            int i13 = i12 != 0 ? i12 : 15;
+            if ((i13 & zs.e4) == 255) {
+                throw new IllegalArgumentException("Crypto-based authentication is not supported for Class 2 (Weak) biometrics.");
+            }
+            if (i10 < 30 && v7.k.a(i13)) {
+                throw new IllegalArgumentException("Crypto-based authentication is not supported for device credential prior to API 30.");
+            }
+            hVar.a(c10, i11);
+        } catch (Exception e7) {
+            f8.g(e7, true);
+            l20Var.a(Boolean.FALSE, null, null);
+        }
     }
 
-    @Override // android.widget.TextView
-    public void setText(CharSequence charSequence, TextView.BufferType bufferType) {
-        this.h++;
-        this.e = false;
-        this.f = false;
-        this.d = false;
-        super.setText(charSequence, bufferType);
+    public final void k() {
+        SharedPreferences.Editor edit = this.a.getSharedPreferences("2botbiometry_" + this.b, 0).edit();
+        boolean z10 = this.f;
+        long j10 = this.c;
+        if (z10) {
+            edit.putBoolean(j10 + "_requested", true);
+        } else {
+            edit.remove(j10 + "_requested");
+        }
+        if (this.e) {
+            String valueOf = String.valueOf(j10);
+            String str = this.g;
+            if (str == null) {
+                str = "";
+            }
+            edit.putString(valueOf, str);
+            String str2 = String.valueOf(j10) + "_iv";
+            String str3 = this.h;
+            edit.putString(str2, str3 != null ? str3 : "");
+        } else {
+            edit.remove(String.valueOf(j10));
+            edit.remove(String.valueOf(j10) + "_iv");
+        }
+        if (this.d) {
+            edit.putBoolean(j10 + "_disabled", true);
+        } else {
+            edit.remove(j10 + "_disabled");
+        }
+        edit.apply();
     }
 
-    @Override // android.widget.TextView
-    public void setTextColor(int i10) {
-        super.setTextColor(i10);
-        this.I = new PorterDuffColorFilter(i10, PorterDuff.Mode.SRC_IN);
-    }
-
-    public void setUseAlphaForEmoji(boolean z10) {
-        this.w = z10;
-    }
-
-    public n(Context context, u6 u6Var, boolean z10) {
-        super(context);
-        ArrayList arrayList = new ArrayList();
-        this.b = arrayList;
-        this.c = new Stack();
-        this.n = new Path();
-        this.r = true;
-        this.s = 0;
-        this.w = true;
-        this.J = true;
-        this.N = null;
-        this.x = new x90(this);
-        this.y = u6Var;
-        this.a = new l(this, arrayList, new di.f(12, this, z10));
-    }
-
-    public void setClearLinkOnLongPress(boolean z10) {
+    public final void l(String str, final String str2, final kg.d0 d0Var) {
+        j(str, false, str2, new l20() { // from class: xh.l
+            @Override // org.telegram.messenger.l20
+            public final void a(Object obj, Object obj2, Object obj3) {
+                String str3 = str2;
+                Boolean bool = (Boolean) obj;
+                androidx.biometric.t tVar = (androidx.biometric.t) obj2;
+                androidx.biometric.u uVar = (androidx.biometric.u) obj3;
+                n nVar = n.this;
+                nVar.getClass();
+                if (tVar != null) {
+                    try {
+                        if (TextUtils.isEmpty(str3)) {
+                            nVar.g = null;
+                            nVar.h = null;
+                        } else {
+                            if (Build.VERSION.SDK_INT >= 30) {
+                                uVar = nVar.i(false);
+                            }
+                            if (uVar == null) {
+                                throw new RuntimeException("No cryptoObject found");
+                            }
+                            Cipher cipher = uVar.b;
+                            nVar.g = Utilities.f(cipher.doFinal(str3.getBytes(StandardCharsets.UTF_8)));
+                            nVar.h = Utilities.f(cipher.getIV());
+                        }
+                        nVar.k();
+                    } catch (Exception e) {
+                        f8.g(e, true);
+                        bool = Boolean.FALSE;
+                    }
+                }
+                d0Var.a(bool);
+            }
+        });
     }
 }

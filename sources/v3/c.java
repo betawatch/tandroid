@@ -3,9 +3,9 @@ package v3;
 import android.util.Pair;
 import c3.a0;
 import c3.c0;
-import e2.n0;
+import e2.l0;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class c implements h {
     public final long[] a;
@@ -15,11 +15,11 @@ public final class c implements h {
     public c(long j10, long[] jArr, long[] jArr2) {
         this.a = jArr;
         this.b = jArr2;
-        this.c = j10 == -9223372036854775807L ? n0.S(jArr2[jArr2.length - 1]) : j10;
+        this.c = j10 == -9223372036854775807L ? l0.S(jArr2[jArr2.length - 1]) : j10;
     }
 
     public static Pair i(long j10, long[] jArr, long[] jArr2) {
-        int f7 = n0.f(jArr, j10, true);
+        int f7 = l0.f(jArr, j10, true);
         long j11 = jArr[f7];
         long j12 = jArr2[f7];
         int i10 = f7 + 1;
@@ -31,7 +31,7 @@ public final class c implements h {
 
     @Override // v3.h
     public final long a(long j10) {
-        return n0.S(((Long) i(j10, this.a, this.b).second).longValue());
+        return l0.S(((Long) i(j10, this.a, this.b).second).longValue());
     }
 
     @Override // v3.h
@@ -56,8 +56,8 @@ public final class c implements h {
 
     @Override // c3.b0
     public final a0 f(long j10) {
-        Pair i10 = i(n0.h0(n0.j(j10, 0L, this.c)), this.b, this.a);
-        c0 c0Var = new c0(n0.S(((Long) i10.first).longValue()), ((Long) i10.second).longValue());
+        Pair i10 = i(l0.h0(l0.j(j10, 0L, this.c)), this.b, this.a);
+        c0 c0Var = new c0(l0.S(((Long) i10.first).longValue()), ((Long) i10.second).longValue());
         return new a0(c0Var, c0Var);
     }
 

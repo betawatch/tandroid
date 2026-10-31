@@ -1,7 +1,5 @@
 package p3;
 
-import a8.wb;
-import a8.wd;
 import b2.u0;
 import java.nio.ByteBuffer;
 import java.nio.charset.CharacterCodingException;
@@ -9,15 +7,17 @@ import java.nio.charset.CharsetDecoder;
 import java.nio.charset.StandardCharsets;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import v7.r6;
+import w7.l;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class a extends wd {
+public final class a extends l {
     public static final Pattern c = Pattern.compile("(.+?)='(.*?)';", 32);
     public final CharsetDecoder a = StandardCharsets.UTF_8.newDecoder();
     public final CharsetDecoder b = StandardCharsets.ISO_8859_1.newDecoder();
 
-    @Override // a8.wd
+    @Override // w7.l
     public final u0 b(l3.a aVar, ByteBuffer byteBuffer) {
         String str;
         CharsetDecoder charsetDecoder = this.b;
@@ -47,7 +47,7 @@ public final class a extends wd {
         byte[] bArr = new byte[byteBuffer.limit()];
         byteBuffer.get(bArr);
         if (str == null) {
-            return new u0(new c(null, null, bArr));
+            return new u0(new c(bArr, null, null));
         }
         Matcher matcher = c.matcher(str);
         String str3 = null;
@@ -55,7 +55,7 @@ public final class a extends wd {
             String group = matcher.group(1);
             String group2 = matcher.group(2);
             if (group != null) {
-                String c10 = wb.c(group);
+                String c10 = r6.c(group);
                 c10.getClass();
                 if (c10.equals("streamurl")) {
                     str3 = group2;
@@ -64,6 +64,6 @@ public final class a extends wd {
                 }
             }
         }
-        return new u0(new c(str2, str3, bArr));
+        return new u0(new c(bArr, str2, str3));
     }
 }

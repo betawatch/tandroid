@@ -1,9 +1,41 @@
 package ig;
 
-import java.util.ArrayList;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public interface b {
-    void a(ArrayList arrayList);
+public final class b extends h {
+    @Override // ig.h
+    public final float a() {
+        return 1.0f;
+    }
+
+    @Override // ig.h
+    public final float d() {
+        return 1.0f;
+    }
+
+    @Override // ig.h
+    public final int e() {
+        return R.raw.photo_blur;
+    }
+
+    @Override // ig.h
+    public final float g() {
+        return 0.35f;
+    }
+
+    @Override // ig.h
+    public final String i(int i10) {
+        if (i10 == 0) {
+            return "blitWithMaskBlurer";
+        }
+        if (i10 == 1) {
+            return "compositeWithMaskBlurer";
+        }
+        if (i10 != 2) {
+            return null;
+        }
+        return "brush";
+    }
 }

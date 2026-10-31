@@ -1,45 +1,71 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.view.View;
-import java.util.HashSet;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class u6 extends View implements org.telegram.ui.ActionBar.p6 {
-    public Paint a;
-    public Paint b;
-    public float c;
-    public org.telegram.ui.Components.h6 d;
+public final class u6 extends hg.b {
+    public final int c;
+    public CharSequence d;
+    public String e;
+    public int f;
+    public long g;
+    public int h;
+    public boolean i;
+    public boolean j;
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
-        canvas.drawRoundRect(rectF, AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f), this.b);
-        rectF.set(0.0f, 0.0f, this.d.d(this.c, false) * getMeasuredWidth(), getMeasuredHeight());
-        canvas.drawRoundRect(rectF, AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f), this.a);
+    public u6(int i10, String str) {
+        super(i10, true);
+        this.c = -1;
+        this.d = str;
     }
 
-    @Override // org.telegram.ui.ActionBar.p6
-    public final void updateColors() {
-        try {
-            Paint paint = this.a;
-            int i10 = org.telegram.ui.ActionBar.y6.N6;
-            paint.setColor(org.telegram.ui.ActionBar.y6.x0(null, i10, false));
-            this.b.setColor(org.telegram.ui.ActionBar.y6.o1(0.2f, org.telegram.ui.ActionBar.y6.x0(null, i10, false)));
-            invalidate();
-        } catch (Exception e) {
-            FileLog.e(e);
+    public static u6 b(int i10, long j10, String str, int i11) {
+        u6 u6Var = new u6(11);
+        u6Var.f = i10;
+        u6Var.d = str;
+        u6Var.g = j10;
+        u6Var.h = i11;
+        u6Var.j = false;
+        return u6Var;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this != obj) {
+            if (obj == null || u6.class != obj.getClass()) {
+                return false;
+            }
+            u6 u6Var = (u6) obj;
+            int i10 = this.a;
+            if (i10 != u6Var.a) {
+                return false;
+            }
+            if (i10 != 9 && i10 != 10 && i10 != 8 && i10 != 4 && i10 != 2 && i10 != 0 && i10 != 13) {
+                if (i10 == 3) {
+                    return Objects.equals(this.d, u6Var.d);
+                }
+                if (i10 == 1) {
+                    return Objects.equals(this.e, u6Var.e);
+                }
+                if (i10 == 11) {
+                    if (this.f != u6Var.f || this.g != u6Var.g) {
+                        return false;
+                    }
+                } else if (i10 != 7 || this.c != u6Var.c) {
+                    return false;
+                }
+            }
         }
+        return true;
     }
 
-    @Override // org.telegram.ui.ActionBar.p6
-    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
+    public u6(int i10, int i11) {
+        super(7, true);
+        this.c = i10;
+    }
+
+    public u6(int i10) {
+        super(i10, true);
+        this.c = -1;
     }
 }

@@ -11,10 +11,11 @@ import java.util.WeakHashMap;
 import m.v1;
 import m.w1;
 import org.telegram.messenger.beta.R;
+import org.telegram.messenger.zs;
 import org.telegram.tgnet.TLObject;
-import r0.i0;
+import r0.h0;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public class AlertDialogLayout extends w1 {
     public AlertDialogLayout(Context context) {
@@ -22,7 +23,7 @@ public class AlertDialogLayout extends w1 {
     }
 
     public static int i(View view) {
-        WeakHashMap weakHashMap = i0.a;
+        WeakHashMap weakHashMap = h0.a;
         int minimumHeight = view.getMinimumHeight();
         if (minimumHeight > 0) {
             return minimumHeight;
@@ -42,7 +43,7 @@ public class AlertDialogLayout extends w1 {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        int A;
+        int u10;
         int i14;
         int i15;
         int paddingLeft = getPaddingLeft();
@@ -52,7 +53,7 @@ public class AlertDialogLayout extends w1 {
         int measuredHeight = getMeasuredHeight();
         int childCount = getChildCount();
         int gravity = getGravity();
-        int i17 = gravity & 112;
+        int i17 = gravity & zs.x1;
         int i18 = gravity & 8388615;
         int paddingTop = i17 != 16 ? i17 != 80 ? getPaddingTop() : ((getPaddingTop() + i13) - i11) - measuredHeight : (((i13 - i11) - measuredHeight) / 2) + getPaddingTop();
         Drawable dividerDrawable = getDividerDrawable();
@@ -67,10 +68,10 @@ public class AlertDialogLayout extends w1 {
                 if (i20 < 0) {
                     i20 = i18;
                 }
-                WeakHashMap weakHashMap = i0.a;
+                WeakHashMap weakHashMap = h0.a;
                 int absoluteGravity = Gravity.getAbsoluteGravity(i20, getLayoutDirection()) & 7;
                 if (absoluteGravity == 1) {
-                    A = ic.a.A(paddingRight2, measuredWidth, 2, paddingLeft) + ((LinearLayout.LayoutParams) v1Var).leftMargin;
+                    u10 = i0.a.u(paddingRight2, measuredWidth, 2, paddingLeft) + ((LinearLayout.LayoutParams) v1Var).leftMargin;
                     i14 = ((LinearLayout.LayoutParams) v1Var).rightMargin;
                 } else if (absoluteGravity != 5) {
                     i15 = ((LinearLayout.LayoutParams) v1Var).leftMargin + paddingLeft;
@@ -81,10 +82,10 @@ public class AlertDialogLayout extends w1 {
                     childAt.layout(i15, i21, measuredWidth + i15, i21 + measuredHeight2);
                     paddingTop = measuredHeight2 + ((LinearLayout.LayoutParams) v1Var).bottomMargin + i21;
                 } else {
-                    A = paddingRight - measuredWidth;
+                    u10 = paddingRight - measuredWidth;
                     i14 = ((LinearLayout.LayoutParams) v1Var).rightMargin;
                 }
-                i15 = A - i14;
+                i15 = u10 - i14;
                 if (h(i19)) {
                 }
                 int i212 = paddingTop + ((LinearLayout.LayoutParams) v1Var).topMargin;

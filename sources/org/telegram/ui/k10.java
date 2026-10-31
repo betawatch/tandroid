@@ -1,36 +1,55 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class k10 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ FiltersSetupActivity b;
+import android.graphics.RectF;
+import android.text.style.URLSpan;
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
 
-    public /* synthetic */ k10(FiltersSetupActivity filtersSetupActivity, int i10) {
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class k10 implements org.telegram.messenger.r20 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+
+    public /* synthetic */ k10(Object obj, int i10) {
         this.a = i10;
-        this.b = filtersSetupActivity;
+        this.b = obj;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
+    @Override // org.telegram.messenger.r20
+    public final Object a(Object obj) {
+        int i10 = this.a;
+        Object obj2 = this.b;
+        switch (i10) {
             case 0:
-                FiltersSetupActivity filtersSetupActivity = this.b;
-                filtersSetupActivity.getClass();
-                filtersSetupActivity.presentFragment(new PremiumPreviewFragment(0, "settings"));
-                break;
+                p10 p10Var = (p10) obj2;
+                p10Var.getClass();
+                if (((View) obj).getParent() == p10Var.c) {
+                    break;
+                } else {
+                    break;
+                }
             case 1:
-                FiltersSetupActivity filtersSetupActivity2 = this.b;
-                filtersSetupActivity2.a.e1(new st(filtersSetupActivity2, 11), 700, true);
-                break;
-            case 2:
-                FiltersSetupActivity filtersSetupActivity3 = this.b;
-                filtersSetupActivity3.getClass();
-                filtersSetupActivity3.showDialog(new tg.y0((org.telegram.ui.ActionBar.r2) filtersSetupActivity3, 9, true));
+                se0 se0Var = (se0) obj2;
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj;
+                if (tL_error != null && "PHONE_CODE_EXPIRED".equalsIgnoreCase(tL_error.text)) {
+                    org.telegram.messenger.i0.g3(new ne0(se0Var, 3));
+                    break;
+                } else {
+                    break;
+                }
                 break;
             default:
-                this.b.getMessagesController().loadRemoteFilters(true);
-                break;
+                ProfileActivity profileActivity = (ProfileActivity) obj2;
+                URLSpan uRLSpan = (URLSpan) obj;
+                RectF rectF = ProfileActivity.R6;
+                if (uRLSpan == null) {
+                    break;
+                } else {
+                    profileActivity.O4(uRLSpan.getURL(), null);
+                    break;
+                }
         }
+        return Boolean.FALSE;
     }
 }

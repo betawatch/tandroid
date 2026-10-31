@@ -1,48 +1,7 @@
 package org.telegram.ui.Components;
 
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class j61 extends s4.u0 {
-    public final /* synthetic */ q61 a;
-
-    public j61(q61 q61Var) {
-        this.a = q61Var;
-    }
-
-    @Override // s4.u0
-    public final void a(RecyclerView recyclerView, int i10) {
-        s4.u0 u0Var = this.a.y;
-        if (u0Var != null) {
-            u0Var.a(recyclerView, i10);
-        }
-    }
-
-    @Override // s4.u0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        q61 q61Var = this.a;
-        p61 p61Var = q61Var.s;
-        g61 g61Var = q61Var.n;
-        s4.u0 u0Var = q61Var.y;
-        if (u0Var != null) {
-            u0Var.b(g61Var, i10, i11);
-        }
-        if (i11 <= 0 || g61Var.getAdapter() != p61Var || !q61Var.J || p61Var.r || p61Var.s) {
-            return;
-        }
-        if (q61Var.r.N0() >= ((p61Var.w + 1) - ((p61Var.v + 1) * 10)) - 1) {
-            q61 q61Var2 = p61Var.x;
-            if (!q61Var2.J || p61Var.r || p61Var.s) {
-                return;
-            }
-            p61Var.r = true;
-            TLRPC.TL_messages_getOldFeaturedStickers tL_messages_getOldFeaturedStickers = new TLRPC.TL_messages_getOldFeaturedStickers();
-            tL_messages_getOldFeaturedStickers.offset = p61Var.n.size();
-            tL_messages_getOldFeaturedStickers.limit = 40;
-            ConnectionsManager.getInstance(q61Var2.a).sendRequest(tL_messages_getOldFeaturedStickers, new b2(p61Var, 17));
-        }
-    }
+public interface j61 {
+    void b(gz gzVar);
 }

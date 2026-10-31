@@ -1,27 +1,219 @@
 package bi;
 
-import android.text.TextPaint;
-import android.text.style.ClickableSpan;
+import android.animation.ValueAnimator;
+import android.view.VelocityTracker;
 import android.view.View;
+import java.util.ArrayList;
+import java.util.List;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.cd;
+import org.telegram.tgnet.tl.TL_iv;
+import org.telegram.ui.Components.z60;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes4.dex */
-public final class b5 extends ClickableSpan {
-    public final /* synthetic */ long a;
-    public final /* synthetic */ h7 b;
+public final /* synthetic */ class b5 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ f5 b;
 
-    public b5(h7 h7Var, long j10) {
-        this.b = h7Var;
-        this.a = j10;
+    public /* synthetic */ b5(f5 f5Var, int i10) {
+        this.a = i10;
+        this.b = f5Var;
     }
 
-    @Override // android.text.style.ClickableSpan
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
-        this.b.u2(this.a);
-    }
-
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        textPaint.setColor(textPaint.linkColor);
+        a aVar;
+        a aVar2;
+        TL_iv.pageBlockSlideshow pageblockslideshow;
+        int i10 = this.a;
+        final int i11 = 1;
+        final f5 f5Var = this.b;
+        final int i12 = 0;
+        switch (i10) {
+            case 0:
+                ArrayList arrayList = f5Var.E;
+                int indexOf = arrayList.indexOf(view);
+                if (f5Var.N != null && f5Var.a != null) {
+                    List o10 = f5Var.o();
+                    if (indexOf >= 0 && indexOf < o10.size() && indexOf < arrayList.size()) {
+                        final w wVar = (w) o10.get(indexOf);
+                        z60 U = f5Var.N.a.o3.U((View) arrayList.get(indexOf));
+                        boolean z10 = wVar.n;
+                        U.c(z10 ? R.drawable.msg_spoiler_off : R.drawable.msg_spoiler, cd.L0(z10 ? 2131751431 : 2131751155, null), new Runnable() { // from class: bi.c5
+                            @Override // java.lang.Runnable
+                            public final void run() {
+                                a aVar3;
+                                a aVar4;
+                                switch (i12) {
+                                    case 0:
+                                        f5 f5Var2 = f5Var;
+                                        w3 w3Var = f5Var2.N;
+                                        if (w3Var != null && (aVar3 = f5Var2.a) != null) {
+                                            d4 d4Var = w3Var.a;
+                                            d4Var.getClass();
+                                            w wVar2 = wVar;
+                                            if (wVar2 != null) {
+                                                o2 o2Var = d4Var.Q3;
+                                                if (o2Var != null) {
+                                                    o2Var.d();
+                                                }
+                                                wVar2.n = !wVar2.n;
+                                                TL_iv.PageBlock Q3 = d4.Q3(aVar3, wVar2);
+                                                if (Q3 instanceof TL_iv.pageBlockPhoto) {
+                                                    ((TL_iv.pageBlockPhoto) Q3).spoiler = wVar2.n;
+                                                } else if (Q3 instanceof TL_iv.pageBlockVideo) {
+                                                    ((TL_iv.pageBlockVideo) Q3).spoiler = wVar2.n;
+                                                }
+                                                d4Var.q4(aVar3);
+                                                o2 o2Var2 = d4Var.Q3;
+                                                if (o2Var2 != null) {
+                                                    o2Var2.h();
+                                                }
+                                                d4Var.o3.onContentChanged();
+                                                break;
+                                            }
+                                        }
+                                        break;
+                                    default:
+                                        f5 f5Var3 = f5Var;
+                                        w3 w3Var2 = f5Var3.N;
+                                        if (w3Var2 != null && (aVar4 = f5Var3.a) != null) {
+                                            d4.Q1(aVar4, wVar, w3Var2.a);
+                                            break;
+                                        }
+                                        break;
+                                }
+                            }
+                        }, false);
+                        U.c(R.drawable.msg_delete, cd.L0(2131751599, null), new Runnable() { // from class: bi.c5
+                            @Override // java.lang.Runnable
+                            public final void run() {
+                                a aVar3;
+                                a aVar4;
+                                switch (i11) {
+                                    case 0:
+                                        f5 f5Var2 = f5Var;
+                                        w3 w3Var = f5Var2.N;
+                                        if (w3Var != null && (aVar3 = f5Var2.a) != null) {
+                                            d4 d4Var = w3Var.a;
+                                            d4Var.getClass();
+                                            w wVar2 = wVar;
+                                            if (wVar2 != null) {
+                                                o2 o2Var = d4Var.Q3;
+                                                if (o2Var != null) {
+                                                    o2Var.d();
+                                                }
+                                                wVar2.n = !wVar2.n;
+                                                TL_iv.PageBlock Q3 = d4.Q3(aVar3, wVar2);
+                                                if (Q3 instanceof TL_iv.pageBlockPhoto) {
+                                                    ((TL_iv.pageBlockPhoto) Q3).spoiler = wVar2.n;
+                                                } else if (Q3 instanceof TL_iv.pageBlockVideo) {
+                                                    ((TL_iv.pageBlockVideo) Q3).spoiler = wVar2.n;
+                                                }
+                                                d4Var.q4(aVar3);
+                                                o2 o2Var2 = d4Var.Q3;
+                                                if (o2Var2 != null) {
+                                                    o2Var2.h();
+                                                }
+                                                d4Var.o3.onContentChanged();
+                                                break;
+                                            }
+                                        }
+                                        break;
+                                    default:
+                                        f5 f5Var3 = f5Var;
+                                        w3 w3Var2 = f5Var3.N;
+                                        if (w3Var2 != null && (aVar4 = f5Var3.a) != null) {
+                                            d4.Q1(aVar4, wVar, w3Var2.a);
+                                            break;
+                                        }
+                                        break;
+                                }
+                            }
+                        }, true);
+                        U.a0(0.0f, -org.telegram.messenger.i0.L(38.0f));
+                        if (f5Var.H) {
+                            U.u = false;
+                            U.v = true;
+                            U.s = 0;
+                        }
+                        U.Z();
+                        break;
+                    }
+                }
+                break;
+            case 1:
+                w3 w3Var = f5Var.N;
+                if (w3Var != null && (aVar = f5Var.a) != null) {
+                    d4 d4Var = w3Var.a;
+                    d4Var.i4 = aVar;
+                    d4Var.o3.p(0);
+                    break;
+                }
+                break;
+            default:
+                w3 w3Var2 = f5Var.N;
+                if (w3Var2 != null && (aVar2 = f5Var.a) != null) {
+                    d4 d4Var2 = w3Var2.a;
+                    d4Var2.getClass();
+                    if (d4.E3(aVar2.b)) {
+                        o2 o2Var = d4Var2.Q3;
+                        if (o2Var != null) {
+                            o2Var.d();
+                        }
+                        ArrayList<TL_iv.PageBlock> j32 = d4.j3(aVar2.b);
+                        TL_iv.PageBlock pageBlock = aVar2.b;
+                        TL_iv.PageCaption pageCaption = pageBlock.caption;
+                        if (pageBlock instanceof TL_iv.pageBlockSlideshow) {
+                            TL_iv.pageBlockCollage pageblockcollage = new TL_iv.pageBlockCollage();
+                            if (j32 == null) {
+                                j32 = new ArrayList<>();
+                            }
+                            pageblockcollage.items = j32;
+                            pageblockcollage.caption = pageCaption;
+                            pageblockslideshow = pageblockcollage;
+                        } else {
+                            TL_iv.pageBlockSlideshow pageblockslideshow2 = new TL_iv.pageBlockSlideshow();
+                            if (j32 == null) {
+                                j32 = new ArrayList<>();
+                            }
+                            pageblockslideshow2.items = j32;
+                            pageblockslideshow2.caption = pageCaption;
+                            pageblockslideshow = pageblockslideshow2;
+                        }
+                        aVar2.b = pageblockslideshow;
+                        o2 o2Var2 = d4Var2.Q3;
+                        if (o2Var2 != null) {
+                            o2Var2.h();
+                        }
+                        View C1 = d4Var2.C1(aVar2);
+                        if (C1 instanceof f5) {
+                            f5 f5Var2 = (f5) C1;
+                            ValueAnimator valueAnimator = f5Var2.i0;
+                            if (valueAnimator != null) {
+                                valueAnimator.cancel();
+                                f5Var2.i0 = null;
+                            }
+                            if (f5Var2.getParent() != null) {
+                                f5Var2.getParent().requestDisallowInterceptTouchEvent(false);
+                            }
+                            VelocityTracker velocityTracker = f5Var2.h0;
+                            if (velocityTracker != null) {
+                                velocityTracker.recycle();
+                                f5Var2.h0 = null;
+                            }
+                            f5Var2.W = 0;
+                            f5Var2.a0 = 0.0f;
+                            f5Var2.q(true);
+                            f5Var2.requestLayout();
+                            f5Var2.invalidate();
+                            break;
+                        }
+                    }
+                }
+                break;
+        }
     }
 }

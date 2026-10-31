@@ -26,33 +26,32 @@ import android.view.View;
 import android.view.Window;
 import android.view.accessibility.AccessibilityNodeInfo;
 import androidx.core.graphics.drawable.IconCompat;
-import c2.i;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
-import org.telegram.messenger.MediaDataController;
+import org.telegram.tgnet.TLObject;
 import p4.l;
 import p4.m;
-import p4.w;
+import p4.x;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public abstract class f {
     public static volatile e a;
     public static volatile ArrayList b;
 
     public static void a(Context context, ArrayList arrayList) {
-        List p10 = p(arrayList);
+        List p5 = p(arrayList);
         int i10 = Build.VERSION.SDK_INT;
         if (i10 <= 29) {
-            c(context, p10);
+            c(context, p5);
         }
         if (i10 >= 25) {
             ArrayList arrayList2 = new ArrayList();
-            ArrayList arrayList3 = (ArrayList) p10;
+            ArrayList arrayList3 = (ArrayList) p5;
             int size = arrayList3.size();
             int i11 = 0;
             while (i11 < size) {
@@ -64,10 +63,10 @@ public abstract class f {
                 return;
             }
         }
-        j(context).a(p10);
+        j(context).a(p5);
         Iterator it = ((ArrayList) i(context)).iterator();
         if (it.hasNext()) {
-            throw g.j(it);
+            throw g.h(it);
         }
     }
 
@@ -122,7 +121,7 @@ public abstract class f {
                 return new ArrayList();
             }
         }
-        List<ShortcutInfo> dynamicShortcuts = i.c(context.getSystemService(i.e())).getDynamicShortcuts();
+        List<ShortcutInfo> dynamicShortcuts = d2.c.e(context.getSystemService(d2.c.g())).getDynamicShortcuts();
         ArrayList arrayList = new ArrayList(dynamicShortcuts.size());
         Iterator<ShortcutInfo> it = dynamicShortcuts.iterator();
         while (it.hasNext()) {
@@ -138,7 +137,7 @@ public abstract class f {
     public static int g(Context context) {
         context.getClass();
         if (Build.VERSION.SDK_INT >= 25) {
-            return i.c(context.getSystemService(i.e())).getMaxShortcutCountPerActivity();
+            return d2.c.e(context.getSystemService(d2.c.g())).getMaxShortcutCountPerActivity();
         }
         return 5;
     }
@@ -222,8 +221,8 @@ public abstract class f {
         context.getClass();
         cVar.getClass();
         int i10 = Build.VERSION.SDK_INT;
-        int g7 = g(context);
-        if (g7 == 0) {
+        int g10 = g(context);
+        if (g10 == 0) {
             return;
         }
         if (i10 <= 29) {
@@ -238,7 +237,7 @@ public abstract class f {
                 return;
             }
             List<ShortcutInfo> dynamicShortcuts = shortcutManager.getDynamicShortcuts();
-            if (dynamicShortcuts.size() >= g7) {
+            if (dynamicShortcuts.size() >= g10) {
                 int i12 = -1;
                 String str = null;
                 for (ShortcutInfo shortcutInfo : dynamicShortcuts) {
@@ -254,7 +253,7 @@ public abstract class f {
         e j10 = j(context);
         try {
             List<c> b10 = j10.b();
-            if (b10.size() >= g7) {
+            if (b10.size() >= g10) {
                 String str2 = null;
                 for (c cVar2 : b10) {
                     int i13 = cVar2.m;
@@ -300,12 +299,12 @@ public abstract class f {
 
     public static void n(Context context) {
         if (Build.VERSION.SDK_INT >= 25) {
-            i.c(context.getSystemService(i.e())).removeAllDynamicShortcuts();
+            d2.c.e(context.getSystemService(d2.c.g())).removeAllDynamicShortcuts();
         }
         j(context).c();
         Iterator it = ((ArrayList) i(context)).iterator();
         if (it.hasNext()) {
-            throw g.j(it);
+            throw g.h(it);
         }
     }
 
@@ -316,7 +315,7 @@ public abstract class f {
         j(context).d(arrayList);
         Iterator it = ((ArrayList) i(context)).iterator();
         if (it.hasNext()) {
-            throw g.j(it);
+            throw g.h(it);
         }
     }
 
@@ -339,7 +338,7 @@ public abstract class f {
         context.getClass();
         str.getClass();
         if (Build.VERSION.SDK_INT >= 25) {
-            i.c(context.getSystemService(i.e())).reportShortcutUsed(str);
+            d2.c.e(context.getSystemService(d2.c.g())).reportShortcutUsed(str);
         }
         Iterator it = ((ArrayList) i(context)).iterator();
         if (it.hasNext()) {
@@ -399,7 +398,7 @@ public abstract class f {
                             } else {
                                 PackageManager packageManager = context2.getPackageManager();
                                 try {
-                                    ApplicationInfo applicationInfo = packageManager.getApplicationInfo(h, 8192);
+                                    ApplicationInfo applicationInfo = packageManager.getApplicationInfo(h, TLObject.FLAG_13);
                                     if (applicationInfo != null) {
                                         resources = packageManager.getResourcesForApplication(applicationInfo);
                                     }
@@ -422,8 +421,8 @@ public abstract class f {
                 } else if (i11 == 2) {
                     try {
                         intent.putExtra("android.intent.extra.shortcut.ICON_RESOURCE", Intent.ShortcutIconResource.fromContext(context2.createPackageContext(iconCompat.h(), 0), iconCompat.e));
-                    } catch (PackageManager.NameNotFoundException e10) {
-                        throw new IllegalArgumentException("Can't find package " + iconCompat.b, e10);
+                    } catch (PackageManager.NameNotFoundException e7) {
+                        throw new IllegalArgumentException("Can't find package " + iconCompat.b, e7);
                     }
                 } else {
                     if (i11 != 5) {
@@ -436,7 +435,7 @@ public abstract class f {
             if (intentSender == null) {
                 context.sendBroadcast(intent);
             } else {
-                context.sendOrderedBroadcast(intent, null, new androidx.mediarouter.app.g(intentSender, 4), null, -1, null, null);
+                context.sendOrderedBroadcast(intent, null, new androidx.mediarouter.app.f(intentSender, 3), null, -1, null, null);
             }
         }
     }
@@ -463,12 +462,12 @@ public abstract class f {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:37:0x00df  */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x00ef  */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x011d  */
-    /* JADX WARN: Removed duplicated region for block: B:53:0x012c  */
-    /* JADX WARN: Removed duplicated region for block: B:56:0x0147  */
-    /* JADX WARN: Removed duplicated region for block: B:60:0x0121  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x00dc  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x00eb  */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x0119  */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x0128  */
+    /* JADX WARN: Removed duplicated region for block: B:56:0x0142  */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x011d  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -496,8 +495,8 @@ public abstract class f {
             bundle2.putBoolean("enabled", true);
             bundle2.putBoolean("canDisconnect", false);
             if (Build.VERSION.SDK_INT >= 34) {
-                bundle2.putStringArrayList("deduplicationIds", new ArrayList<>(w.b(mediaRoute2Info)));
-                int c10 = w.c(mediaRoute2Info);
+                bundle2.putStringArrayList("deduplicationIds", new ArrayList<>(x.b(mediaRoute2Info)));
+                int c10 = x.c(mediaRoute2Info);
                 i10 = 2;
                 if (c10 == 2) {
                     i10 = 12;
@@ -565,7 +564,7 @@ public abstract class f {
                             }
                     }
                 } else {
-                    i10 = MediaDataController.MAX_STYLE_RUNS_COUNT;
+                    i10 = 1000;
                 }
                 description = mediaRoute2Info.getDescription();
                 if (description != null) {
@@ -621,14 +620,14 @@ public abstract class f {
     }
 
     public static void x(Context context, ArrayList arrayList) {
-        List p10 = p(arrayList);
+        List p5 = p(arrayList);
         int i10 = Build.VERSION.SDK_INT;
         if (i10 <= 29) {
-            c(context, p10);
+            c(context, p5);
         }
         if (i10 >= 25) {
             ArrayList arrayList2 = new ArrayList();
-            ArrayList arrayList3 = (ArrayList) p10;
+            ArrayList arrayList3 = (ArrayList) p5;
             int size = arrayList3.size();
             int i11 = 0;
             while (i11 < size) {
@@ -640,10 +639,10 @@ public abstract class f {
                 return;
             }
         }
-        j(context).a(p10);
+        j(context).a(p5);
         Iterator it = ((ArrayList) i(context)).iterator();
         if (it.hasNext()) {
-            throw g.j(it);
+            throw g.h(it);
         }
     }
 }

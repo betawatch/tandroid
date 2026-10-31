@@ -1,83 +1,70 @@
 package org.telegram.ui;
 
-import java.util.Locale;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.tl.TL_stats;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.LinearLayout;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class t91 {
-    public String A;
-    public boolean B;
-    public boolean C;
-    public String D;
-    public String E;
-    public String F;
-    public boolean G;
-    public boolean H;
-    public String a;
-    public String b;
-    public String c;
-    public boolean d;
-    public String e;
-    public String f;
-    public String g;
-    public boolean h;
-    public String i;
-    public String j;
-    public String k;
-    public boolean l;
-    public String m;
-    public String n;
-    public String o;
-    public String p;
-    public String q;
-    public boolean r;
-    public boolean s;
-    public String t;
-    public String u;
-    public String v;
-    public boolean w;
-    public boolean x;
-    public String y;
-    public String z;
+public final class t91 implements View.OnClickListener {
+    public final /* synthetic */ rg0 a;
+    public final /* synthetic */ un b;
+    public final /* synthetic */ org.telegram.ui.Components.tk0 c;
+    public final /* synthetic */ LinearLayout d;
+    public final /* synthetic */ org.telegram.ui.Components.z60 e;
+    public final /* synthetic */ org.telegram.ui.Components.z60 f;
+    public final /* synthetic */ x91 h;
 
-    public static ti.e a(TL_stats.TL_statsAbsValueAndPrev tL_statsAbsValueAndPrev) {
-        String str;
-        double d = tL_statsAbsValueAndPrev.current;
-        double d10 = tL_statsAbsValueAndPrev.previous;
-        int i10 = (int) (d - d10);
-        float abs = d10 == 0.0d ? 0.0f : Math.abs((i10 / ((float) d10)) * 100.0f);
-        String formatWholeNumber = AndroidUtilities.formatWholeNumber((int) tL_statsAbsValueAndPrev.current, 0);
-        boolean z10 = true;
-        str = "";
-        if (i10 != 0 && abs != 0.0f) {
-            int i11 = (int) abs;
-            if (abs == i11) {
-                Locale locale = Locale.ENGLISH;
-                StringBuilder sb2 = new StringBuilder();
-                sb2.append(i10 > 0 ? "+" : "");
-                sb2.append(AndroidUtilities.formatWholeNumber(i10, 0));
-                str = sb2.toString() + " (" + i11 + "%)";
-            } else {
-                Locale locale2 = Locale.ENGLISH;
-                StringBuilder sb3 = new StringBuilder();
-                sb3.append(i10 > 0 ? "+" : "");
-                sb3.append(AndroidUtilities.formatWholeNumber(i10, 0));
-                str = String.format(locale2, "%s (%.1f%s)", sb3.toString(), Float.valueOf(abs), "%");
+    public t91(x91 x91Var, rg0 rg0Var, un unVar, org.telegram.ui.Components.tk0 tk0Var, LinearLayout linearLayout, org.telegram.ui.Components.z60 z60Var, org.telegram.ui.Components.z60 z60Var2) {
+        this.h = x91Var;
+        this.a = rg0Var;
+        this.b = unVar;
+        this.c = tk0Var;
+        this.d = linearLayout;
+        this.e = z60Var;
+        this.f = z60Var2;
+    }
+
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        rg0 rg0Var = this.a;
+        ArrayList arrayList = rg0Var.b;
+        ArrayList arrayList2 = rg0Var.c;
+        if (arrayList2.isEmpty()) {
+            return;
+        }
+        int size = arrayList2.size();
+        x91 x91Var = this.h;
+        un unVar = this.b;
+        if (size == 1 && (arrayList.size() <= 0 || ((Integer) arrayList.get(0)).intValue() <= 0)) {
+            TLObject tLObject = (TLObject) arrayList2.get(0);
+            if (tLObject == null) {
+                return;
             }
+            Bundle bundle = new Bundle();
+            if (tLObject instanceof TLRPC.User) {
+                bundle.putLong("user_id", ((TLRPC.User) tLObject).id);
+            } else if (tLObject instanceof TLRPC.Chat) {
+                bundle.putLong("chat_id", ((TLRPC.Chat) tLObject).id);
+            }
+            unVar.presentFragment(new ProfileActivity(bundle, null));
+            x91Var.c(false);
+            return;
         }
-        boolean z11 = i10 >= 0;
-        if (i10 == 0 && tL_statsAbsValueAndPrev.current == 0.0d) {
-            z10 = false;
+        if (org.telegram.messenger.tz.c1 > 0 && unVar.l1.getKeyboardHeight() < org.telegram.messenger.i0.L(20.0f)) {
+            org.telegram.ui.Components.wb t10 = new org.telegram.ui.Components.cc(org.telegram.ui.Components.ra.a(x91Var.getContext()), x91Var.a).t(org.telegram.messenger.i0.W2(org.telegram.messenger.cd.L0(2131748503, null)), null);
+            unVar.B1 = t10;
+            t10.j = 4000;
+            t10.j();
+            org.telegram.messenger.tz.S(org.telegram.messenger.tz.c1 - 1);
         }
-        Boolean valueOf = Boolean.valueOf(z11);
-        Boolean valueOf2 = Boolean.valueOf(z10);
-        ti.e eVar = new ti.e(9, false);
-        eVar.b = formatWholeNumber;
-        eVar.c = str;
-        eVar.d = valueOf;
-        eVar.e = valueOf2;
-        return eVar;
+        org.telegram.ui.Components.tk0 tk0Var = this.c;
+        tk0Var.requestLayout();
+        this.d.requestLayout();
+        tk0Var.getAdapter().f();
+        this.e.K(this.f);
     }
 }

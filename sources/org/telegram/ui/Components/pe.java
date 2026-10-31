@@ -1,28 +1,31 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.view.accessibility.AccessibilityNodeInfo;
+import android.content.Context;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class pe extends View.AccessibilityDelegate {
-    public final /* synthetic */ int a;
+public final class pe extends org.telegram.ui.kh0 {
+    public final /* synthetic */ Object A0;
+    public final /* synthetic */ int z0;
 
-    @Override // android.view.View.AccessibilityDelegate
-    public final void onInitializeAccessibilityNodeInfo(View view, AccessibilityNodeInfo accessibilityNodeInfo) {
-        switch (this.a) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ pe(Object obj, Context context, org.telegram.ui.ActionBar.p6 p6Var, int i10) {
+        super(context, p6Var);
+        this.z0 = i10;
+        this.A0 = obj;
+    }
+
+    @Override // org.telegram.ui.kh0
+    public final void l(long j10) {
+        switch (this.z0) {
             case 0:
-                super.onInitializeAccessibilityNodeInfo(view, accessibilityNodeInfo);
-                accessibilityNodeInfo.setClassName("android.widget.ImageButton");
-                accessibilityNodeInfo.setClickable(true);
-                accessibilityNodeInfo.setLongClickable(true);
+                ((ChatActivityEnterView) this.A0).setEffectId(j10);
                 break;
             default:
-                super.onInitializeAccessibilityNodeInfo(view, accessibilityNodeInfo);
-                if (view.isEnabled()) {
-                    accessibilityNodeInfo.addAction(16);
-                    break;
-                }
+                bi biVar = (bi) this.A0;
+                ih ihVar = biVar.C2;
+                biVar.H2 = j10;
+                ihVar.setEffect(j10);
                 break;
         }
     }

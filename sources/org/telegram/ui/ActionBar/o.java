@@ -1,55 +1,25 @@
 package org.telegram.ui.ActionBar;
 
-import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.FileLog;
+import android.view.View;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class o implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ActionBarLayout b;
+public final /* synthetic */ class o implements r0.m, ei.o {
+    public final /* synthetic */ k2 a;
 
-    public /* synthetic */ o(ActionBarLayout actionBarLayout, int i10) {
-        this.a = i10;
-        this.b = actionBarLayout;
+    public /* synthetic */ o(k2 k2Var) {
+        this.a = k2Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        ActionBarLayout actionBarLayout = this.b;
-        switch (i10) {
-            case 0:
-                actionBarLayout.invalidate();
-                break;
-            case 1:
-                actionBarLayout.requestLayout();
-                actionBarLayout.s.requestLayout();
-                actionBarLayout.v.requestLayout();
-                actionBarLayout.w.requestLayout();
-                break;
-            case 2:
-                if (actionBarLayout.a && actionBarLayout.getLastFragment() != null && actionBarLayout.s.getChildCount() == 0) {
-                    if (BuildVars.DEBUG_VERSION) {
-                        FileLog.e(new RuntimeException(TextUtils.join(", ", actionBarLayout.o1)));
-                    }
-                    actionBarLayout.W(true, true);
-                    break;
-                }
-                break;
-            case 3:
-                Drawable drawable = ActionBarLayout.v1;
-                actionBarLayout.G(false);
-                break;
-            case 4:
-                Drawable drawable2 = ActionBarLayout.v1;
-                actionBarLayout.G(false);
-                break;
-            default:
-                actionBarLayout.H0.setVisibility(8);
-                break;
-        }
+    @Override // r0.m
+    public r0.j1 R0(View view, r0.j1 j1Var) {
+        return this.a.onInsetsInternal(view, j1Var);
+    }
+
+    @Override // ei.o
+    public int c() {
+        k2 k2Var = this.a;
+        k2Var.getClass();
+        return k2Var.getThemedColor(t6.a7);
     }
 }

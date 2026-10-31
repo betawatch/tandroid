@@ -1,30 +1,24 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class fs0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ uu0 b;
-    public final /* synthetic */ int c;
+import android.content.Context;
+import android.os.Bundle;
 
-    public /* synthetic */ fs0(uu0 uu0Var, int i10, int i11) {
-        this.a = i11;
-        this.b = uu0Var;
-        this.c = i10;
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final class fs0 extends org.telegram.ui.wn {
+    public final /* synthetic */ zt0 f;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public fs0(zt0 zt0Var, Context context, org.telegram.ui.ActionBar.z4 z4Var, Bundle bundle) {
+        super(context, z4Var, bundle);
+        this.f = zt0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.h.scrollBy(0, this.c);
-                break;
-            case 1:
-                this.b.h.scrollBy(0, this.c);
-                break;
-            default:
-                this.b.h.scrollBy(0, this.c);
-                break;
+    @Override // org.telegram.ui.wn
+    public final void b(boolean z10) {
+        org.telegram.ui.ActionBar.t0 t0Var = this.f.p0;
+        if (t0Var != null) {
+            t0Var.setShowSearchProgress(z10);
         }
     }
 }

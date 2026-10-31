@@ -1,38 +1,18 @@
 package li;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Components.k71;
-import org.telegram.ui.Components.nm0;
-import org.telegram.ui.Components.s71;
-import org.telegram.ui.Components.t61;
-import org.telegram.ui.Components.u61;
+import android.media.MediaCodec;
+import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes4.dex */
-public final class x extends t61 {
-    public static final /* synthetic */ int a = 0;
+public final class x {
+    public final boolean a;
+    public final ByteBuffer b;
+    public final MediaCodec.BufferInfo c;
 
-    static {
-        t61.setup(new x());
-    }
-
-    @Override // org.telegram.ui.Components.t61
-    public final void bindView(View view, u61 u61Var, boolean z10, k71 k71Var, s71 s71Var) {
-        ((y) view).h((a) u61Var.G, (p3) u61Var.H);
-    }
-
-    @Override // org.telegram.ui.Components.t61
-    public final View createView(Context context, nm0 nm0Var, int i10, int i11, u6 u6Var) {
-        y yVar = new y(context, i10, u6Var);
-        yVar.setBackground(new y1(y6.w0(y6.d6, u6Var)));
-        return yVar;
-    }
-
-    @Override // org.telegram.ui.Components.t61
-    public final boolean isClickable() {
-        return false;
+    public x(boolean z10, ByteBuffer byteBuffer, MediaCodec.BufferInfo bufferInfo) {
+        this.a = z10;
+        this.b = byteBuffer;
+        this.c = bufferInfo;
     }
 }

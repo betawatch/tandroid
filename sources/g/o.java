@@ -5,7 +5,7 @@ import android.content.IntentFilter;
 import android.util.SparseIntArray;
 import android.view.MenuItem;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public abstract class o {
     public Object a;
@@ -16,10 +16,10 @@ public abstract class o {
     }
 
     public void c() {
-        androidx.mediarouter.app.g gVar = (androidx.mediarouter.app.g) this.a;
-        if (gVar != null) {
+        androidx.mediarouter.app.f fVar = (androidx.mediarouter.app.f) this.a;
+        if (fVar != null) {
             try {
-                ((r) this.b).e.unregisterReceiver(gVar);
+                ((r) this.b).e.unregisterReceiver(fVar);
             } catch (IllegalArgumentException unused) {
             }
             this.a = null;
@@ -42,9 +42,9 @@ public abstract class o {
         if (menuItem2 != null) {
             return menuItem2;
         }
-        l.r rVar = new l.r((Context) this.a, aVar);
-        ((a0.l) this.b).put(aVar, rVar);
-        return rVar;
+        l.s sVar = new l.s((Context) this.a, aVar);
+        ((a0.l) this.b).put(aVar, sVar);
+        return sVar;
     }
 
     public int g(int i10, int i11) {
@@ -100,10 +100,10 @@ public abstract class o {
         if (d.countActions() == 0) {
             return;
         }
-        if (((androidx.mediarouter.app.g) this.a) == null) {
-            this.a = new androidx.mediarouter.app.g(this, 3);
+        if (((androidx.mediarouter.app.f) this.a) == null) {
+            this.a = new androidx.mediarouter.app.f(this, 2);
         }
-        ((r) this.b).e.registerReceiver((androidx.mediarouter.app.g) this.a, d);
+        ((r) this.b).e.registerReceiver((androidx.mediarouter.app.f) this.a, d);
     }
 
     public o() {

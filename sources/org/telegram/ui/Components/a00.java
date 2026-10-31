@@ -1,81 +1,71 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Point;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.SharedConfig;
+import android.os.Bundle;
+import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class a00 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ e00 b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ int d;
+public abstract class a00 extends ln0 {
+    public final boolean d;
 
-    public /* synthetic */ a00(e00 e00Var, int i10, int i11, int i12) {
-        this.a = i12;
-        this.b = e00Var;
-        this.c = i10;
-        this.d = i11;
+    public a00(boolean z10) {
+        this.d = z10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10;
-        switch (this.a) {
-            case 0:
-                e00 e00Var = this.b;
-                int i11 = this.c;
-                int i12 = this.d;
-                if (e00Var.W != i11 || e00Var.X != i12) {
-                    e00Var.W = i11;
-                    e00Var.X = i12;
-                    int devicePerformanceClass = SharedConfig.getDevicePerformanceClass();
-                    int i13 = 1920;
-                    if (devicePerformanceClass != 1) {
-                        if (devicePerformanceClass != 2) {
-                            i13 = 720;
-                        } else {
-                            Point point = AndroidUtilities.displaySize;
-                            i13 = Math.min(1920, Math.max(point.x, point.y));
-                        }
-                    }
-                    if (SharedConfig.getDevicePerformanceClass() == 0 && ((i10 = e00Var.W) > 1280 || e00Var.X > 1280)) {
-                        e00Var.W = i10 / 2;
-                        e00Var.X /= 2;
-                    }
-                    int i14 = e00Var.W;
-                    if (i14 > i13 || e00Var.X > i13) {
-                        int i15 = e00Var.X;
-                        if (i14 > i15) {
-                            e00Var.X = (int) (i15 / (i13 / i14));
-                            e00Var.W = i13;
-                        } else {
-                            e00Var.W = (int) (i14 / (i13 / i15));
-                            e00Var.X = i13;
-                        }
-                    }
-                    e00Var.Z = false;
-                    e00Var.g();
-                    e00Var.d0.run();
-                    break;
-                }
-                break;
-            case 1:
-                e00 e00Var2 = this.b;
-                int i16 = this.c;
-                int i17 = this.d;
-                e00Var2.n = i16;
-                e00Var2.r = i17;
-                break;
-            default:
-                e00 e00Var3 = this.b;
-                int i18 = this.c;
-                int i19 = this.d;
-                ra raVar = e00Var3.I;
-                raVar.l = i18;
-                raVar.m = i19;
-                break;
+    @Override // org.telegram.ui.Components.ln0
+    public final boolean a() {
+        return k() > j();
+    }
+
+    @Override // org.telegram.ui.Components.ln0
+    public final boolean b() {
+        return k() < i();
+    }
+
+    @Override // org.telegram.ui.Components.ln0
+    public final void c(boolean z10) {
+        float h = h();
+        if (z10) {
+            h *= -1.0f;
+        }
+        l(Math.min(i(), Math.max(j(), k() + h)));
+    }
+
+    @Override // org.telegram.ui.Components.ln0
+    public final void e(View view, AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.e(view, accessibilityNodeInfo);
+        if (this.d) {
+            accessibilityNodeInfo.addAction((AccessibilityNodeInfo.AccessibilityAction) s0.b.h.a);
+            accessibilityNodeInfo.setRangeInfo(AccessibilityNodeInfo.RangeInfo.obtain(1, j(), i(), k()));
         }
     }
+
+    @Override // org.telegram.ui.Components.ln0
+    public final boolean g(View view, int i10, Bundle bundle) {
+        if (super.g(view, i10, bundle)) {
+            return true;
+        }
+        if (i10 != ((AccessibilityNodeInfo.AccessibilityAction) s0.b.h.a).getId()) {
+            return false;
+        }
+        l(bundle.getFloat("android.view.accessibility.action.ARGUMENT_PROGRESS_VALUE"));
+        return true;
+    }
+
+    public float h() {
+        return 0.05f;
+    }
+
+    public float i() {
+        return 1.0f;
+    }
+
+    public float j() {
+        return 0.0f;
+    }
+
+    public abstract float k();
+
+    public abstract void l(float f7);
 }

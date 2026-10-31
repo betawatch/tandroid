@@ -1,28 +1,27 @@
 package bb;
 
-import a8.jd;
-import a8.qe;
 import android.util.Log;
 import com.google.android.gms.tasks.Task;
 import org.telegram.tgnet.TLObject;
+import v7.x6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class k0 implements g0 {
     public static final double f = Math.random();
     public static final /* synthetic */ int g = 0;
-    public final m9.h a;
-    public final sa.d b;
+    public final l9.h a;
+    public final ra.d b;
     public final db.h c;
-    public final a4.l d;
-    public final ld.h e;
+    public final k6.h d;
+    public final cd.h e;
 
-    public k0(m9.h hVar, sa.d dVar, db.h hVar2, a4.l lVar, ld.h hVar3) {
+    public k0(l9.h hVar, ra.d dVar, db.h hVar2, k6.h hVar3, cd.h hVar4) {
         this.a = hVar;
         this.b = dVar;
         this.c = hVar2;
-        this.d = lVar;
-        this.e = hVar3;
+        this.d = hVar3;
+        this.e = hVar4;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:17:0x002f  */
@@ -30,7 +29,7 @@ public final class k0 implements g0 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final Object a(k0 k0Var, nd.c cVar) {
+    public static final Object a(k0 k0Var, ed.c cVar) {
         h0 h0Var;
         int i10;
         try {
@@ -40,14 +39,14 @@ public final class k0 implements g0 {
                 if ((i11 & TLObject.FLAG_31) != 0) {
                     h0Var.c = i11 - TLObject.FLAG_31;
                     Object obj = h0Var.a;
-                    md.a aVar = md.a.a;
+                    dd.a aVar = dd.a.a;
                     i10 = h0Var.c;
                     if (i10 != 0) {
-                        jd.b(obj);
-                        Task d = ((sa.c) k0Var.b).d();
+                        l9.b.b(obj);
+                        Task d = ((ra.c) k0Var.b).d();
                         kotlin.jvm.internal.i.d(d, "firebaseInstallations.id");
                         h0Var.c = 1;
-                        obj = qe.a(d, h0Var);
+                        obj = x6.a(d, h0Var);
                         if (obj == aVar) {
                             return aVar;
                         }
@@ -55,7 +54,7 @@ public final class k0 implements g0 {
                         if (i10 != 1) {
                             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                         }
-                        jd.b(obj);
+                        l9.b.b(obj);
                     }
                     return (String) obj;
                 }
@@ -69,7 +68,7 @@ public final class k0 implements g0 {
         }
         h0Var = new h0(k0Var, cVar);
         Object obj2 = h0Var.a;
-        md.a aVar2 = md.a.a;
+        dd.a aVar2 = dd.a.a;
         i10 = h0Var.c;
     }
 
@@ -82,22 +81,22 @@ public final class k0 implements g0 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final Object b(k0 k0Var, nd.c cVar) {
+    public static final Object b(k0 k0Var, ed.c cVar) {
         j0 j0Var;
         int i10;
         boolean z10;
-        Boolean R;
+        Boolean r10;
         if (cVar instanceof j0) {
             j0Var = (j0) cVar;
             int i11 = j0Var.d;
             if ((i11 & TLObject.FLAG_31) != 0) {
                 j0Var.d = i11 - TLObject.FLAG_31;
                 Object obj = j0Var.b;
-                md.a aVar = md.a.a;
+                dd.a aVar = dd.a.a;
                 i10 = j0Var.d;
                 z10 = true;
                 if (i10 != 0) {
-                    jd.b(obj);
+                    l9.b.b(obj);
                     Log.d("SessionFirelogPublisher", "Data Collection is enabled for at least one Subscriber");
                     db.h hVar = k0Var.c;
                     j0Var.a = k0Var;
@@ -110,12 +109,12 @@ public final class k0 implements g0 {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
                     k0Var = j0Var.a;
-                    jd.b(obj);
+                    l9.b.b(obj);
                 }
                 db.h hVar2 = k0Var.c;
-                R = hVar2.a.R();
-                if (R == null) {
-                    z10 = R.booleanValue();
+                r10 = hVar2.a.r();
+                if (r10 == null) {
+                    z10 = r10.booleanValue();
                 } else {
                     Boolean a2 = hVar2.b.a();
                     if (a2 != null) {
@@ -135,14 +134,14 @@ public final class k0 implements g0 {
         }
         j0Var = new j0(k0Var, cVar);
         Object obj2 = j0Var.b;
-        md.a aVar2 = md.a.a;
+        dd.a aVar2 = dd.a.a;
         i10 = j0Var.d;
         z10 = true;
         if (i10 != 0) {
         }
         db.h hVar22 = k0Var.c;
-        R = hVar22.a.R();
-        if (R == null) {
+        r10 = hVar22.a.r();
+        if (r10 == null) {
         }
         if (z10) {
         }

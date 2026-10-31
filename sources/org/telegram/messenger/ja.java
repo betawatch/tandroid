@@ -1,29 +1,28 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.TLRPC;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ja implements Runnable {
+public final /* synthetic */ class ja {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ TLRPC.User c;
+    public final /* synthetic */ fg.i b;
 
-    public /* synthetic */ ja(MessagesController messagesController, TLRPC.User user, int i10) {
+    public /* synthetic */ ja(fg.i iVar, int i10) {
         this.a = i10;
-        this.b = messagesController;
-        this.c = user;
+        this.b = iVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    public final Boolean a(Object obj) {
+        Boolean valueOf;
+        Boolean valueOf2;
         switch (this.a) {
             case 0:
-                this.b.lambda$processUpdateArray$414(this.c);
-                break;
+                valueOf = Boolean.valueOf(super/*android.widget.FrameLayout*/.dispatchTouchEvent((MotionEvent) obj));
+                return valueOf;
             default:
-                this.b.lambda$loadFullUser$70(this.c);
-                break;
+                valueOf2 = Boolean.valueOf(super/*android.widget.FrameLayout*/.onInterceptTouchEvent((MotionEvent) obj));
+                return valueOf2;
         }
     }
 }

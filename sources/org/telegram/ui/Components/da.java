@@ -1,68 +1,41 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Paint;
+import android.content.Context;
 import android.view.MotionEvent;
-import android.view.View;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class da extends View {
-    public Bitmap a;
-    public Bitmap b;
-    public Paint c;
-    public int d;
-    public int e;
-    public ca f;
+public final class da extends org.telegram.ui.ActionBar.l {
+    public final /* synthetic */ uu0 E1;
+    public final /* synthetic */ ha F1;
 
-    public int getRating() {
-        return this.e;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public da(ha haVar, Context context, uu0 uu0Var) {
+        super(context, null);
+        this.F1 = haVar;
+        this.E1 = uu0Var;
+    }
+
+    @Override // org.telegram.ui.ActionBar.l, android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        ha haVar = this.F1;
+        if (haVar.C1 && haVar.D1) {
+            return false;
+        }
+        return super.dispatchTouchEvent(motionEvent);
     }
 
     @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        Paint paint = this.c;
-        int i10 = 0;
-        while (i10 < this.d) {
-            paint.setColor(org.telegram.ui.ActionBar.y6.x0(null, i10 < this.e ? org.telegram.ui.ActionBar.y6.m5 : org.telegram.ui.ActionBar.y6.t5, false));
-            canvas.drawBitmap(i10 < this.e ? this.a : this.b, AndroidUtilities.dp(48.0f) * i10, 0.0f, paint);
-            i10++;
+    public final void setAlpha(float f7) {
+        if (getAlpha() != f7) {
+            super.setAlpha(f7);
+            this.E1.invalidate();
         }
     }
 
     @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int i12 = this.d;
-        setMeasuredDimension(org.telegram.messenger.wh.b(16.0f, i12 - 1, AndroidUtilities.dp(32.0f) * i12), AndroidUtilities.dp(32.0f));
-    }
-
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        int i10;
-        float dp = AndroidUtilities.dp(-8.0f);
-        for (int i11 = 0; i11 < this.d; i11++) {
-            if (motionEvent.getX() > dp && motionEvent.getX() < AndroidUtilities.dp(48.0f) + dp && this.e != (i10 = i11 + 1)) {
-                this.e = i10;
-                ca caVar = this.f;
-                if (caVar != null) {
-                    View view = ((oe.a) caVar).a;
-                    view.setEnabled(i10 > 0);
-                    ((TextView) view).setText(LocaleController.getString(i10 < 4 ? R.string.Next : R.string.Send).toUpperCase());
-                }
-                invalidate();
-                return true;
-            }
-            dp += AndroidUtilities.dp(48.0f);
-        }
-        return true;
-    }
-
-    public void setOnRatingChangeListener(ca caVar) {
-        this.f = caVar;
+    public final void setTag(Object obj) {
+        super.setTag(obj);
+        this.F1.a1();
     }
 }

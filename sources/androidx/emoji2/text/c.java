@@ -3,11 +3,11 @@ package androidx.emoji2.text;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class c extends u7.s {
-    @Override // u7.s
-    public final Signature[] M0(PackageManager packageManager, String str) {
+public final class c extends t7.u {
+    @Override // t7.u
+    public final Signature[] D(PackageManager packageManager, String str) {
         return packageManager.getPackageInfo(str, 64).signatures;
     }
 }

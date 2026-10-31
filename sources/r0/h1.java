@@ -1,114 +1,35 @@
 package r0;
 
-import android.os.Build;
-import android.view.View;
-import j$.util.Objects;
+import android.view.WindowInsets;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public class h1 {
-    public static final k1 b;
-    public final k1 a;
-
-    static {
-        int i10 = Build.VERSION.SDK_INT;
-        b = (i10 >= 34 ? new z0() : i10 >= 30 ? new y0() : i10 >= 29 ? new x0() : new w0()).b().a.a().a.b().a.c();
-    }
-
-    public h1(k1 k1Var) {
-        this.a = k1Var;
-    }
-
-    public k1 a() {
-        return this.a;
-    }
-
-    public k1 b() {
-        return this.a;
-    }
-
-    public k1 c() {
-        return this.a;
-    }
-
-    public i e() {
-        return null;
-    }
-
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+public abstract class h1 {
+    public static int a(int i10) {
+        int statusBars;
+        int i11 = 0;
+        for (int i12 = 1; i12 <= 512; i12 <<= 1) {
+            if ((i10 & i12) != 0) {
+                if (i12 == 1) {
+                    statusBars = WindowInsets.Type.statusBars();
+                } else if (i12 == 2) {
+                    statusBars = WindowInsets.Type.navigationBars();
+                } else if (i12 == 4) {
+                    statusBars = WindowInsets.Type.captionBar();
+                } else if (i12 == 8) {
+                    statusBars = WindowInsets.Type.ime();
+                } else if (i12 == 16) {
+                    statusBars = WindowInsets.Type.systemGestures();
+                } else if (i12 == 32) {
+                    statusBars = WindowInsets.Type.mandatorySystemGestures();
+                } else if (i12 == 64) {
+                    statusBars = WindowInsets.Type.tappableElement();
+                } else if (i12 == 128) {
+                    statusBars = WindowInsets.Type.displayCutout();
+                }
+                i11 |= statusBars;
+            }
         }
-        if (!(obj instanceof h1)) {
-            return false;
-        }
-        h1 h1Var = (h1) obj;
-        return o() == h1Var.o() && n() == h1Var.n() && Objects.equals(k(), h1Var.k()) && Objects.equals(i(), h1Var.i()) && Objects.equals(e(), h1Var.e());
-    }
-
-    public i0.b f(int i10) {
-        return i0.b.e;
-    }
-
-    public i0.b g(int i10) {
-        if ((i10 & 8) == 0) {
-            return i0.b.e;
-        }
-        throw new IllegalArgumentException("Unable to query the maximum insets for IME");
-    }
-
-    public i0.b h() {
-        return k();
-    }
-
-    public int hashCode() {
-        return Objects.hash(Boolean.valueOf(o()), Boolean.valueOf(n()), k(), i(), e());
-    }
-
-    public i0.b i() {
-        return i0.b.e;
-    }
-
-    public i0.b j() {
-        return k();
-    }
-
-    public i0.b k() {
-        return i0.b.e;
-    }
-
-    public i0.b l() {
-        return k();
-    }
-
-    public k1 m(int i10, int i11, int i12, int i13) {
-        return b;
-    }
-
-    public boolean n() {
-        return false;
-    }
-
-    public boolean o() {
-        return false;
-    }
-
-    public boolean p(int i10) {
-        return true;
-    }
-
-    public void d(View view) {
-    }
-
-    public void q(i0.b[] bVarArr) {
-    }
-
-    public void r(k1 k1Var) {
-    }
-
-    public void s(i0.b bVar) {
-    }
-
-    public void t(int i10) {
+        return i11;
     }
 }

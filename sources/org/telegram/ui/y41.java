@@ -1,52 +1,34 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import java.util.ArrayList;
+import android.content.Context;
+import android.view.View;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class y41 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ f61 c;
+public final class y41 extends org.telegram.ui.Components.z41 {
+    public static final /* synthetic */ int b = 0;
 
-    public /* synthetic */ y41(f61 f61Var, boolean z10, int i10) {
-        this.a = i10;
-        this.c = f61Var;
-        this.b = z10;
+    static {
+        org.telegram.ui.Components.z41.h(new y41());
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        ArrayList arrayList;
-        ArrayList arrayList2;
-        switch (this.a) {
-            case 0:
-                f61 f61Var = this.c;
-                s41 s41Var = f61Var.i0;
-                boolean z10 = this.b;
-                s41Var.setVisibility(z10 ? 0 : 8);
-                f61Var.h0.setVisibility(z10 ? 8 : 0);
-                f61Var.F1 = null;
-                if (!z10 && (arrayList2 = f61Var.B1) != null) {
-                    arrayList2.clear();
-                    ArrayList arrayList3 = f61Var.E1;
-                    if (arrayList3 != null) {
-                        arrayList3.clear();
-                    }
-                    f61Var.q0.E(false);
-                }
-                if (!z10 && (arrayList = f61Var.C1) != null) {
-                    arrayList.clear();
-                    break;
-                }
-                break;
-            default:
-                f61 f61Var2 = this.c;
-                f61Var2.j0.setVisibility((this.b && f61Var2.i0.getVisibility() == 0) ? 0 : 8);
-                f61Var2.I1 = null;
-                break;
-        }
+    @Override // org.telegram.ui.Components.z41
+    public final void b(View view, org.telegram.ui.Components.a51 a51Var, boolean z10, org.telegram.ui.Components.p51 p51Var, org.telegram.ui.Components.u51 u51Var) {
+        ((z41) view).set(a51Var.z);
+    }
+
+    @Override // org.telegram.ui.Components.z41
+    public final boolean c(org.telegram.ui.Components.a51 a51Var, org.telegram.ui.Components.a51 a51Var2) {
+        return a51Var.z == a51Var2.z;
+    }
+
+    @Override // org.telegram.ui.Components.z41
+    public final View d(Context context, org.telegram.ui.Components.tk0 tk0Var, int i10, org.telegram.ui.ActionBar.p6 p6Var) {
+        return new z41(context, p6Var);
+    }
+
+    @Override // org.telegram.ui.Components.z41
+    public final boolean e(org.telegram.ui.Components.a51 a51Var, org.telegram.ui.Components.a51 a51Var2) {
+        return a51Var.d == a51Var2.d;
     }
 }

@@ -1,37 +1,21 @@
 package org.telegram.ui.Components;
 
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
 import android.widget.TextView;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class zk implements TextWatcher {
-    public boolean a;
-    public final /* synthetic */ TextView b;
+public final class zk extends TextView {
+    public float a;
+    public float b;
 
-    public zk(jg.a1 a1Var, TextView textView) {
-        this.b = textView;
-        this.a = TextUtils.isEmpty(a1Var.getText());
+    @Override // android.view.View
+    public final float getTranslationX() {
+        return this.a;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        boolean isEmpty = TextUtils.isEmpty(editable);
-        if (isEmpty != this.a) {
-            this.a = isEmpty;
-            this.b.setText(LocaleController.getString(isEmpty ? R.string.Remove : R.string.Add));
-        }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    @Override // android.view.View
+    public final void setTranslationX(float f7) {
+        this.a = f7;
+        setTranslationY(this.b + f7);
     }
 }

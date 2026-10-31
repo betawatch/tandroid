@@ -1,63 +1,20 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
+import android.app.Activity;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class fc implements Utilities.Callback3 {
-    public final /* synthetic */ bd a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ View c;
+public final class fc extends kg.q0 {
+    public final /* synthetic */ int P2;
 
-    public /* synthetic */ fc(bd bdVar, int i10, View view) {
-        this.a = bdVar;
-        this.b = i10;
-        this.c = view;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public fc(zc zcVar, Activity activity, int i10, int i11, org.telegram.ui.ActionBar.p6 p6Var, int i12) {
+        super(i10, i11, activity, zcVar, p6Var);
+        this.P2 = i12;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback3
-    public final void run(Object obj, Object obj2, Object obj3) {
-        Long l4 = (Long) obj;
-        Integer num = (Integer) obj2;
-        TL_stars.TL_starGiftUnique tL_starGiftUnique = (TL_stars.TL_starGiftUnique) obj3;
-        bd bdVar = this.a;
-        int i10 = bdVar.U;
-        int i11 = this.b;
-        if (i11 == i10) {
-            bdVar.n = l4.longValue();
-            bdVar.d1(true);
-        } else if (i11 == bdVar.c0) {
-            bdVar.w = l4.longValue();
-            bdVar.e1();
-        } else if (i11 == bdVar.f0) {
-            if (l4.longValue() == 0) {
-                bdVar.y = null;
-            } else if (tL_starGiftUnique != null) {
-                TLRPC.TL_emojiStatusCollectible emojiStatusCollectibleFromGift = MessagesController.emojiStatusCollectibleFromGift(tL_starGiftUnique);
-                if (num != null) {
-                    emojiStatusCollectibleFromGift.flags |= 1;
-                    emojiStatusCollectibleFromGift.until = num.intValue();
-                }
-                bdVar.y = emojiStatusCollectibleFromGift;
-                bdVar.s = -1;
-                bdVar.w = 0L;
-            } else {
-                TLRPC.TL_emojiStatus tL_emojiStatus = new TLRPC.TL_emojiStatus();
-                tL_emojiStatus.document_id = l4.longValue();
-                if (num != null) {
-                    tL_emojiStatus.flags |= 1;
-                    tL_emojiStatus.until = num.intValue();
-                }
-                bdVar.y = tL_emojiStatus;
-            }
-            bdVar.e1();
-        }
-        bdVar.a1(true);
-        ((pc) this.c).c(l4.longValue(), tL_starGiftUnique != null, true);
-        bdVar.c1(true);
+    @Override // kg.q0
+    public final int j1() {
+        return this.P2;
     }
 }

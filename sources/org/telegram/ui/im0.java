@@ -1,56 +1,34 @@
 package org.telegram.ui;
 
-import android.text.Editable;
-import android.text.TextWatcher;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import org.json.JSONObject;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class im0 implements TextWatcher {
-    public final /* synthetic */ EditTextBoldCursor a;
-    public final /* synthetic */ String b;
-    public final /* synthetic */ kn0 c;
-
-    public im0(kn0 kn0Var, EditTextBoldCursor editTextBoldCursor, String str) {
-        this.c = kn0Var;
-        this.a = editTextBoldCursor;
-        this.b = str;
-    }
-
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        boolean z10;
-        EditTextBoldCursor editTextBoldCursor = this.a;
-        int intValue = ((Integer) editTextBoldCursor.getTag()).intValue();
-        int i10 = 0;
-        while (true) {
-            if (i10 >= editable.length()) {
-                z10 = false;
+public final class im0 extends JSONObject {
+    public im0(sm0 sm0Var, int i10) {
+        switch (i10) {
+            case 3:
+                put(TeXSymbolParser.TYPE_ATTR, "PAYMENT_GATEWAY");
+                Object obj = sm0Var.M0;
+                if (obj == null) {
+                    im0 im0Var = new im0();
+                    im0Var.put("gateway", "stripe");
+                    im0Var.put("stripe:publishableKey", sm0Var.j0);
+                    im0Var.put("stripe:version", "3.5.0");
+                    put("parameters", im0Var);
+                    break;
+                } else {
+                    put("parameters", obj);
+                    break;
+                }
+            default:
+                put(TeXSymbolParser.TYPE_ATTR, "DIRECT");
+                im0 im0Var2 = new im0();
+                im0Var2.put("protocolVersion", "ECv2");
+                im0Var2.put("publicKey", sm0Var.K0);
+                put("parameters", im0Var2);
                 break;
-            }
-            char charAt = editable.charAt(i10);
-            if ((charAt < '0' || charAt > '9') && ((charAt < 'a' || charAt > 'z') && !((charAt >= 'A' && charAt <= 'Z') || charAt == ' ' || charAt == '\'' || charAt == ',' || charAt == '.' || charAt == '&' || charAt == '-' || charAt == '/'))) {
-                z10 = true;
-                break;
-            }
-            i10++;
         }
-        kn0 kn0Var = this.c;
-        if (z10 && !kn0Var.u0) {
-            editTextBoldCursor.setErrorText(LocaleController.getString(R.string.PassportUseLatinOnly));
-        } else {
-            kn0Var.t0[intValue] = z10;
-            kn0.J0(kn0Var, editTextBoldCursor, this.b, editable, false);
-        }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

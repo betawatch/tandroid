@@ -1,54 +1,34 @@
 package c1;
 
-import java.util.concurrent.Executor;
-import ud.l;
-import w0.i;
+import kotlin.jvm.internal.h;
+import ld.p;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final /* synthetic */ class b implements l {
+public final /* synthetic */ class b extends h implements p {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
 
-    public /* synthetic */ b(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ b(int i10, Object obj, Class cls, String str, String str2, int i11, int i12) {
+        super(i10, obj, cls, str, str2, i11);
+        this.a = i12;
     }
 
-    @Override // ud.l
-    public final Object invoke(Object obj) {
+    @Override // ld.p
+    public final Object invoke(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                e eVar = (e) this.b;
-                i e = (i) obj;
-                kotlin.jvm.internal.i.e(e, "e");
-                eVar.f().execute(new a(eVar, e, 2));
-                break;
+                ((b1.a) this.receiver).getClass();
+                return b1.a.b((String) obj, (String) obj2);
             case 1:
-                d1.e eVar2 = (d1.e) this.b;
-                w0.d e10 = (w0.d) obj;
-                kotlin.jvm.internal.i.e(e10, "e");
-                Executor executor = eVar2.g;
-                if (executor == null) {
-                    kotlin.jvm.internal.i.h("executor");
-                    throw null;
-                }
-                executor.execute(new d1.a(eVar2, e10, 0));
-                break;
+                ((b1.a) this.receiver).getClass();
+                return b1.a.a((String) obj, (String) obj2);
             case 2:
-                e1.e eVar3 = (e1.e) this.b;
-                w0.d e11 = (w0.d) obj;
-                kotlin.jvm.internal.i.e(e11, "e");
-                Executor executor2 = eVar3.g;
-                if (executor2 == null) {
-                    kotlin.jvm.internal.i.h("executor");
-                    throw null;
-                }
-                executor2.execute(new e1.d(eVar3, e11, 0));
-                break;
+                ((b1.a) this.receiver).getClass();
+                return b1.a.a((String) obj, (String) obj2);
             default:
-                return obj == ((kd.c) this.b) ? "(this Collection)" : String.valueOf(obj);
+                ((b1.a) this.receiver).getClass();
+                return b1.a.b((String) obj, (String) obj2);
         }
-        return jd.i.a;
     }
 }

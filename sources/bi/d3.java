@@ -1,36 +1,45 @@
 package bi;
 
-import org.telegram.messenger.Utilities;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class d3 implements Utilities.Callback {
+public final /* synthetic */ class d3 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ h7 b;
-    public final /* synthetic */ Long c;
-    public final /* synthetic */ vg.n1[] d;
+    public final /* synthetic */ n1 b;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ d3(h7 h7Var, Long l4, vg.n1[] n1VarArr, int i10) {
-        this.a = i10;
-        this.b = h7Var;
-        this.c = l4;
-        this.d = n1VarArr;
+    public /* synthetic */ d3(n1 n1Var, int i10, int i11) {
+        this.a = i11;
+        this.b = n1Var;
+        this.c = i10;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                qf.c cVar = (qf.c) obj;
-                cVar.d();
-                long longValue = this.c.longValue();
-                h7 h7Var = this.b;
-                h7Var.P1(longValue, new v3(h7Var, cVar, this.d, 0));
+                n1 n1Var = this.b;
+                n1Var.N();
+                n1Var.setSelection(Math.max(0, Math.min(this.c, n1Var.length())));
+                break;
+            case 1:
+                n1 n1Var2 = this.b;
+                n1Var2.N();
+                n1Var2.setSelection(Math.max(0, Math.min(this.c, n1Var2.length())));
+                break;
+            case 2:
+                n1 n1Var3 = this.b;
+                n1Var3.N();
+                n1Var3.setSelection(Math.max(0, Math.min(this.c, n1Var3.length())));
+                break;
+            case 3:
+                n1 n1Var4 = this.b;
+                n1Var4.N();
+                n1Var4.setSelection(Math.min(this.c, n1Var4.length()));
                 break;
             default:
-                h7 h7Var2 = this.b;
-                h7Var2.getClass();
-                h7Var2.O1(this.c.longValue(), null, (qf.c) obj, this.d[0]);
+                n1 n1Var5 = this.b;
+                n1Var5.N();
+                n1Var5.setSelection(Math.max(0, Math.min(this.c, n1Var5.length())));
                 break;
         }
     }

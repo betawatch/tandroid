@@ -1,389 +1,167 @@
 package org.telegram.ui.Components.voip;
 
 import android.content.Context;
-import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
 import android.view.MotionEvent;
-import android.view.View;
-import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import java.io.File;
-import java.io.FileOutputStream;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.voip.VideoCapturerDevice;
-import org.telegram.messenger.voip.VoIPService;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.f7;
-import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Components.bk0;
-import org.telegram.ui.Components.i31;
-import org.telegram.ui.Components.kb1;
-import org.telegram.ui.Components.l51;
-import org.telegram.ui.Components.yj0;
-import org.telegram.ui.ga;
-import org.telegram.ui.i40;
-import org.telegram.ui.x50;
-import org.webrtc.RendererCommon;
+import org.telegram.messenger.beta.R;
+import org.telegram.ui.ActionBar.t6;
+import org.telegram.ui.Components.ei0;
+import org.telegram.ui.kd1;
+import w7.b6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes4.dex */
-public abstract class v0 extends FrameLayout implements VoIPService.StateListener {
-    public boolean a;
-    public final a5.m b;
-    public final ei.n c;
-    public final LinearLayout d;
-    public final bk0 e;
-    public final TextView[] f;
-    public final t2 h;
-    public int n;
-    public int r;
-    public boolean s;
-    public boolean v;
-    public float w;
-    public int x;
-    public final boolean y;
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final class v0 extends FrameLayout {
+    public final ei0 a;
+    public final ei0 b;
+    public final org.telegram.ui.Cells.y c;
+    public org.telegram.ui.Components.f2 d;
+    public u0 e;
+    public int f;
 
-    public v0(Context context, boolean z10) {
+    public v0(Context context) {
         super(context);
-        this.n = 1;
-        this.r = 1;
-        this.y = z10;
-        this.f = new TextView[z10 ? 3 : 2];
-        a5.m mVar = new a5.m(context);
-        this.b = mVar;
-        AndroidUtilities.setViewPagerEdgeEffectColor(mVar, 2130706432);
-        mVar.setAdapter(new u0(this));
-        mVar.setPageMargin(0);
-        mVar.setOffscreenPageLimit(1);
-        addView(mVar, kb1.g(-1.0f, -1));
-        mVar.b(new s0(this));
-        t2 t2Var = new t2(context, false, false);
-        this.h = t2Var;
-        RendererCommon.ScalingType scalingType = RendererCommon.ScalingType.SCALE_ASPECT_FILL;
-        s2 s2Var = t2Var.d;
-        s2Var.setScalingType(scalingType);
-        t2Var.a0 = 1;
-        t2Var.c0 = true;
-        s2Var.setAlpha(0.0f);
-        s2Var.setRotateTextureWithScreen(true);
-        s2Var.setUseCameraRotation(true);
-        addView(t2Var, kb1.g(-1.0f, -1));
-        org.telegram.ui.ActionBar.k kVar = new org.telegram.ui.ActionBar.k(context, null);
-        kVar.setBackButtonDrawable(new org.telegram.ui.ActionBar.j2(false));
-        kVar.setBackgroundColor(0);
-        f7.m(kVar, 1, y6.hg, null);
-        kVar.setOccupyStatusBar(true);
-        kVar.setActionBarMenuOnItemClick(new ga(this, 18));
-        addView(kVar);
-        ei.n nVar = new ei.n(this, getContext());
-        this.c = nVar;
-        nVar.setMinWidth(AndroidUtilities.dp(64.0f));
-        nVar.setTag(-1);
-        nVar.setTextSize(1, 14.0f);
-        int i10 = y6.ng;
-        f7.V(nVar, i10, null);
-        nVar.setGravity(17);
-        nVar.setTypeface(AndroidUtilities.bold());
-        nVar.setText(LocaleController.getString(R.string.VoipShareVideo));
-        int dp = AndroidUtilities.dp(6.0f);
-        int o10 = i0.a.o(y6.x0(null, i10, false), 76);
-        nVar.setForeground(y6.j0(dp, dp, dp, dp, 0, o10, o10));
-        nVar.setPadding(0, AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f));
-        nVar.setOnClickListener(new ig.d0(this, 13));
-        addView(nVar, kb1.h(-1, 48.0f, 80, 0.0f, 0.0f, 0.0f, 64.0f));
-        LinearLayout linearLayout = new LinearLayout(context);
-        this.d = linearLayout;
-        addView(linearLayout, kb1.i(-2, 64, 80));
-        int i11 = 0;
-        while (true) {
-            TextView[] textViewArr = this.f;
-            if (i11 >= textViewArr.length) {
-                break;
-            }
-            textViewArr[i11] = new TextView(context);
-            this.f[i11].setTextSize(1, 12.0f);
-            this.f[i11].setTextColor(-1);
-            this.f[i11].setTypeface(AndroidUtilities.bold());
-            this.f[i11].setPadding(AndroidUtilities.dp(10.0f), 0, AndroidUtilities.dp(10.0f), 0);
-            this.f[i11].setGravity(16);
-            this.f[i11].setSingleLine(true);
-            this.d.addView(this.f[i11], kb1.r(-2, -1));
-            if (i11 == 0 && this.y) {
-                this.f[i11].setText(LocaleController.getString(R.string.VoipPhoneScreen));
-            } else if (i11 == 0 || (i11 == 1 && this.y)) {
-                this.f[i11].setText(LocaleController.getString(R.string.VoipFrontCamera));
-            } else {
-                this.f[i11].setText(LocaleController.getString(R.string.VoipBackCamera));
-            }
-            this.f[i11].setOnClickListener(new ai.w(this, i11, 21));
-            i11++;
-        }
-        setAlpha(0.0f);
-        setTranslationX(AndroidUtilities.dp(32.0f));
-        animate().alpha(1.0f).translationX(0.0f).setDuration(150L).start();
+        this.f = 0;
         setWillNotDraw(false);
-        VoIPService sharedInstance = VoIPService.getSharedInstance();
-        if (sharedInstance != null) {
-            this.h.d.setMirror(sharedInstance.isFrontFaceCamera());
-            this.h.d.init(VideoCapturerDevice.getEglBase().getEglBaseContext(), new t0());
-            sharedInstance.setLocalSink(this.h.d, false);
-        }
-        this.b.setCurrentItem(this.y ? 1 : 0);
-        bk0 bk0Var = new bk0(context);
-        this.e = bk0Var;
-        bk0Var.setPadding(AndroidUtilities.dp(9.0f), AndroidUtilities.dp(9.0f), AndroidUtilities.dp(9.0f), AndroidUtilities.dp(9.0f));
-        bk0Var.setBackground(y6.K(AndroidUtilities.dp(48.0f), i0.a.o(-16777216, 76)));
-        yj0 yj0Var = new yj0(R.raw.voice_mini, AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f), true, null);
-        bk0Var.setAnimation(yj0Var);
-        bk0Var.setScaleType(ImageView.ScaleType.FIT_CENTER);
-        this.v = true;
-        yj0Var.M(69);
-        bk0Var.setOnClickListener(new l51(5, this, yj0Var));
-        addView(bk0Var, kb1.h(48, 48.0f, 83, 24.0f, 0.0f, 0.0f, 136.0f));
+        ei0 ei0Var = new ei0(context);
+        this.a = ei0Var;
+        ei0 ei0Var2 = new ei0(context);
+        this.b = ei0Var2;
+        ei0Var.f(R.raw.star_stroke, 37, 37, null);
+        ei0Var2.f(R.raw.star_fill, 37, 37, null);
+        ei0Var2.setAlpha(0.0f);
+        addView(ei0Var, b6.c(37.0f, 37));
+        addView(ei0Var2, b6.c(37.0f, 37));
+        org.telegram.ui.Cells.y j02 = t6.j0(org.telegram.messenger.i0.L(37.0f), 0, i0.b.o(-1, 76));
+        this.c = j02;
+        j02.setCallback(this);
+        setClickable(true);
     }
 
-    public static void a(v0 v0Var) {
-        VoIPService sharedInstance = VoIPService.getSharedInstance();
-        if (v0Var.n == v0Var.r || sharedInstance == null) {
-            return;
-        }
-        boolean isFrontFaceCamera = sharedInstance.isFrontFaceCamera();
-        int i10 = v0Var.n;
-        if ((i10 == 1 && !isFrontFaceCamera) || (i10 == 2 && isFrontFaceCamera)) {
-            v0Var.c();
-            v0Var.s = false;
-            VoIPService.getSharedInstance().switchCamera();
-            v0Var.h.setAlpha(0.0f);
-        }
-        v0Var.r = v0Var.n;
-    }
-
-    public final void b(boolean z10, boolean z11) {
-        if (this.a) {
-            return;
-        }
-        this.a = true;
-        c();
-        x50 x50Var = ((i40) this).E;
-        boolean z12 = x50Var.z0.v;
-        x50Var.z0 = null;
-        VoIPService sharedInstance = VoIPService.getSharedInstance();
-        if (z11) {
-            if (sharedInstance != null) {
-                sharedInstance.setupCaptureDevice(z10, z12);
-            }
-            if (z10 && sharedInstance != null) {
-                sharedInstance.setVideoState(false, 0);
-            }
-            x50Var.O1(true, false);
-            x50Var.a1.sortParticipants();
-            x50Var.O0(true);
-            x50Var.e.requestLayout();
-        } else if (sharedInstance != null) {
-            sharedInstance.setVideoState(false, 0);
-        }
-        animate().alpha(0.0f).translationX(AndroidUtilities.dp(32.0f)).setDuration(150L).setListener(new i31(this, 12));
-        invalidate();
-    }
-
-    public final void c() {
-        t2 t2Var = this.h;
-        if (this.s) {
-            try {
-                Bitmap bitmap = t2Var.d.getBitmap();
-                if (bitmap != null) {
-                    Bitmap createBitmap = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), t2Var.d.getMatrix(), true);
-                    bitmap.recycle();
-                    Bitmap createScaledBitmap = Bitmap.createScaledBitmap(createBitmap, 80, (int) (createBitmap.getHeight() / (createBitmap.getWidth() / 80.0f)), true);
-                    if (createScaledBitmap != null) {
-                        if (createScaledBitmap != createBitmap) {
-                            createBitmap.recycle();
-                        }
-                        Utilities.blurBitmap(createScaledBitmap, 7);
-                        createScaledBitmap.compress(Bitmap.CompressFormat.JPEG, 87, new FileOutputStream(new File(ApplicationLoader.getFilesDirFixed(), "cthumb" + this.r + ".jpg")));
-                        View findViewWithTag = this.b.findViewWithTag(Integer.valueOf(this.r - (1 ^ (this.y ? 1 : 0))));
-                        if (findViewWithTag instanceof ImageView) {
-                            ((ImageView) findViewWithTag).setImageBitmap(createScaledBitmap);
-                        }
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        int i10;
+        u0 u0Var;
+        int action = motionEvent.getAction();
+        int i11 = 0;
+        if (action == 0) {
+            u0 u0Var2 = this.e;
+            if (u0Var2 != null) {
+                v0[] v0VarArr = (v0[]) ((jg.b1) ((mg.l) u0Var2).b).d;
+                while (true) {
+                    i10 = this.f;
+                    if (i11 > i10) {
+                        break;
                     }
+                    v0 v0Var = v0VarArr[i11];
+                    ei0 ei0Var = v0Var.a;
+                    ei0 ei0Var2 = v0Var.b;
+                    ei0Var.animate().alpha(0.0f).scaleX(0.8f).scaleY(0.8f).setDuration(250L).start();
+                    ei0Var2.animate().alpha(1.0f).scaleX(0.8f).scaleY(0.8f).setDuration(250L).start();
+                    i11++;
                 }
-            } catch (Throwable unused) {
-            }
-        }
-    }
-
-    public final void d() {
-        int i10 = this.x;
-        TextView[] textViewArr = this.f;
-        TextView textView = textViewArr[i10];
-        TextView textView2 = i10 < textViewArr.length + (-1) ? textViewArr[i10 + 1] : null;
-        getMeasuredWidth();
-        float measuredWidth = (textView.getMeasuredWidth() / 2) + textView.getLeft();
-        float measuredWidth2 = (getMeasuredWidth() / 2) - measuredWidth;
-        if (textView2 != null) {
-            measuredWidth2 -= (((textView2.getMeasuredWidth() / 2) + textView2.getLeft()) - measuredWidth) * this.w;
-        }
-        for (int i11 = 0; i11 < textViewArr.length; i11++) {
-            int i12 = this.x;
-            float f7 = 0.9f;
-            float f10 = 0.7f;
-            if (i11 >= i12 && i11 <= i12 + 1) {
-                if (i11 == i12) {
-                    float f11 = this.w;
-                    f10 = 1.0f - (0.3f * f11);
-                    f7 = 1.0f - (f11 * 0.1f);
-                } else {
-                    float f12 = this.w;
-                    f10 = 0.7f + (0.3f * f12);
-                    f7 = 0.9f + (f12 * 0.1f);
+                for (int i12 = i10 + 1; i12 < v0VarArr.length; i12++) {
+                    v0 v0Var2 = v0VarArr[i12];
+                    ei0 ei0Var3 = v0Var2.a;
+                    ei0 ei0Var4 = v0Var2.b;
+                    ei0Var3.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(250L).start();
+                    ei0Var4.animate().alpha(0.0f).scaleX(1.0f).scaleY(1.0f).setDuration(250L).start();
                 }
             }
-            textViewArr[i11].setAlpha(f10);
-            textViewArr[i11].setScaleX(f7);
-            textViewArr[i11].setScaleY(f7);
+        } else if (action == 1) {
+            u0 u0Var3 = this.e;
+            if (u0Var3 != null) {
+                v0[] v0VarArr2 = (v0[]) ((jg.b1) ((mg.l) u0Var3).b).d;
+                for (int i13 = 0; i13 <= this.f; i13++) {
+                    v0 v0Var3 = v0VarArr2[i13];
+                    ei0 ei0Var5 = v0Var3.a;
+                    ei0 ei0Var6 = v0Var3.b;
+                    ei0Var5.animate().scaleX(1.0f).scaleY(1.0f).setDuration(250L).start();
+                    ei0Var6.animate().scaleX(1.0f).scaleY(1.0f).setDuration(250L).start();
+                }
+            }
+            if (this.d != null) {
+                int[] iArr = new int[2];
+                getLocationOnScreen(iArr);
+                int i14 = iArr[0];
+                int i15 = iArr[1];
+                org.telegram.ui.Components.f2 f2Var = this.d;
+                float width = (getWidth() / 2.0f) + i14;
+                float height = (getHeight() / 2.0f) + i15;
+                int i16 = this.f + 1;
+                jg.b1 b1Var = (jg.b1) f2Var.b;
+                Context context = (Context) f2Var.c;
+                if (i16 >= 4) {
+                    ei0 ei0Var7 = new ei0(context);
+                    int L = org.telegram.messenger.i0.L(133.0f);
+                    ei0Var7.f(R.raw.rate, 133, 133, null);
+                    int[] iArr2 = new int[2];
+                    b1Var.getLocationOnScreen(iArr2);
+                    int i17 = iArr2[0];
+                    int i18 = iArr2[1];
+                    b1Var.addView(ei0Var7, b6.c(133.0f, 133));
+                    float f7 = L / 2.0f;
+                    ei0Var7.setTranslationX((width - i17) - f7);
+                    ei0Var7.setTranslationY((height - i18) - f7);
+                    ei0Var7.setOnAnimationEndListener(new t0(b1Var, ei0Var7, i11));
+                    ei0Var7.d();
+                }
+                kd1 kd1Var = (kd1) b1Var.e;
+                if (kd1Var != null) {
+                    kd1Var.b.L = i16;
+                }
+            }
+        } else if (action == 3 && (u0Var = this.e) != null) {
+            v0[] v0VarArr3 = (v0[]) ((jg.b1) ((mg.l) u0Var).b).d;
+            int length = v0VarArr3.length;
+            while (i11 < length) {
+                v0 v0Var4 = v0VarArr3[i11];
+                ei0 ei0Var8 = v0Var4.a;
+                ei0 ei0Var9 = v0Var4.b;
+                ei0Var8.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(250L).start();
+                ei0Var9.animate().alpha(0.0f).scaleX(1.0f).scaleY(1.0f).setDuration(250L).start();
+                i11++;
+            }
         }
-        this.d.setTranslationX(measuredWidth2);
-        this.c.invalidate();
-        boolean z10 = this.y;
-        t2 t2Var = this.h;
-        if (z10 && this.x == 0 && this.w <= 0.0f) {
-            t2Var.setVisibility(4);
-            return;
-        }
-        t2Var.setVisibility(0);
-        if (this.x + (!z10 ? 1 : 0) == this.n) {
-            t2Var.setTranslationX((-this.w) * getMeasuredWidth());
-        } else {
-            t2Var.setTranslationX((1.0f - this.w) * getMeasuredWidth());
-        }
+        return super.dispatchTouchEvent(motionEvent);
     }
 
-    public int getBackgroundColor() {
-        return i0.a.o(y6.x0(null, y6.gg, false), (int) (getAlpha() * 1.0f * 255.0f));
-    }
-
-    @Override // android.view.View
-    public final void invalidate() {
-        super.invalidate();
-        if (getParent() != null) {
-            ((View) getParent()).invalidate();
+    @Override // android.view.ViewGroup, android.view.View
+    public final void drawableStateChanged() {
+        super.drawableStateChanged();
+        org.telegram.ui.Cells.y yVar = this.c;
+        if (yVar != null) {
+            yVar.setState(getDrawableState());
         }
     }
 
     @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        VoIPService sharedInstance = VoIPService.getSharedInstance();
-        if (sharedInstance != null) {
-            sharedInstance.registerStateListener(this);
+    public final void jumpDrawablesToCurrentState() {
+        super.jumpDrawablesToCurrentState();
+        org.telegram.ui.Cells.y yVar = this.c;
+        if (yVar != null) {
+            yVar.jumpToCurrentState();
         }
-    }
-
-    @Override // org.telegram.messenger.voip.VoIPService.StateListener
-    public final /* synthetic */ void onAudioSettingsChanged() {
-        org.telegram.messenger.voip.t0.a(this);
-    }
-
-    @Override // org.telegram.messenger.voip.VoIPService.StateListener
-    public final void onCameraFirstFrameAvailable() {
-        if (this.s) {
-            return;
-        }
-        this.s = true;
-        this.h.animate().alpha(1.0f).setDuration(250L);
-    }
-
-    @Override // org.telegram.messenger.voip.VoIPService.StateListener
-    public final void onCameraSwitch(boolean z10) {
-        if (VoIPService.getSharedInstance() != null) {
-            this.h.d.setMirror(VoIPService.getSharedInstance().isFrontFaceCamera());
-        }
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        VoIPService sharedInstance = VoIPService.getSharedInstance();
-        if (sharedInstance != null) {
-            sharedInstance.unregisterStateListener(this);
-        }
-    }
-
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        d();
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        boolean z10 = View.MeasureSpec.getSize(i10) > View.MeasureSpec.getSize(i11);
-        ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) this.c.getLayoutParams();
-        if (z10) {
-            int dp = AndroidUtilities.dp(80.0f);
-            marginLayoutParams.leftMargin = dp;
-            marginLayoutParams.rightMargin = dp;
-        } else {
-            int dp2 = AndroidUtilities.dp(16.0f);
-            marginLayoutParams.leftMargin = dp2;
-            marginLayoutParams.rightMargin = dp2;
-        }
-        bk0 bk0Var = this.e;
-        if (bk0Var != null) {
-            ViewGroup.MarginLayoutParams marginLayoutParams2 = (ViewGroup.MarginLayoutParams) bk0Var.getLayoutParams();
-            if (z10) {
-                int dp3 = AndroidUtilities.dp(88.0f);
-                marginLayoutParams2.leftMargin = dp3;
-                marginLayoutParams2.rightMargin = dp3;
-            } else {
-                int dp4 = AndroidUtilities.dp(24.0f);
-                marginLayoutParams2.leftMargin = dp4;
-                marginLayoutParams2.rightMargin = dp4;
-            }
-        }
-        super.onMeasure(i10, i11);
-        measureChildWithMargins(this.d, View.MeasureSpec.makeMeasureSpec(0, 0), 0, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(64.0f), TLObject.FLAG_30), 0);
-    }
-
-    @Override // org.telegram.messenger.voip.VoIPService.StateListener
-    public final /* synthetic */ void onMediaStateUpdated(int i10, int i11) {
-        org.telegram.messenger.voip.t0.d(this, i10, i11);
-    }
-
-    @Override // org.telegram.messenger.voip.VoIPService.StateListener
-    public final /* synthetic */ void onScreenOnChange(boolean z10) {
-        org.telegram.messenger.voip.t0.e(this, z10);
-    }
-
-    @Override // org.telegram.messenger.voip.VoIPService.StateListener
-    public final /* synthetic */ void onSignalBarsCountChanged(int i10) {
-        org.telegram.messenger.voip.t0.f(this, i10);
-    }
-
-    @Override // org.telegram.messenger.voip.VoIPService.StateListener
-    public final /* synthetic */ void onStateChanged(int i10) {
-        org.telegram.messenger.voip.t0.g(this, i10);
     }
 
     @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        return true;
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        int width = getWidth();
+        int height = getHeight();
+        org.telegram.ui.Cells.y yVar = this.c;
+        yVar.setBounds(0, 0, width, height);
+        yVar.draw(canvas);
     }
 
-    @Override // org.telegram.messenger.voip.VoIPService.StateListener
-    public final /* synthetic */ void onVideoAvailableChange(boolean z10) {
-        org.telegram.messenger.voip.t0.h(this, z10);
+    public void setAllStarsProvider(u0 u0Var) {
+        this.e = u0Var;
     }
 
-    public void setBottomPadding(int i10) {
-        ((FrameLayout.LayoutParams) this.c.getLayoutParams()).bottomMargin = AndroidUtilities.dp(64.0f) + i10;
-        ((FrameLayout.LayoutParams) this.d.getLayoutParams()).bottomMargin = i10;
-        ((FrameLayout.LayoutParams) this.e.getLayoutParams()).bottomMargin = AndroidUtilities.dp(136.0f) + i10;
+    @Override // android.view.View
+    public final boolean verifyDrawable(Drawable drawable) {
+        return this.c == drawable || super.verifyDrawable(drawable);
     }
 }

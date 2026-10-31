@@ -1,16 +1,42 @@
 package p4;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class t {
-    public final x a;
-    public final s b;
-    public r c = r.c;
-    public int d;
-    public long e;
+public abstract class t {
+    public abstract void e(w wVar);
 
-    public t(x xVar, s sVar) {
-        this.a = xVar;
-        this.b = sVar;
+    public void h(y yVar, w wVar, int i10) {
+        g(wVar);
+    }
+
+    public void j(y yVar, w wVar, int i10) {
+        i();
+    }
+
+    public void a() {
+    }
+
+    public void b() {
+    }
+
+    public void c() {
+    }
+
+    public void i() {
+    }
+
+    public void d(w wVar) {
+    }
+
+    public void f(w wVar) {
+    }
+
+    public void g(w wVar) {
+    }
+
+    public void k(w wVar) {
+    }
+
+    public void l(a0 a0Var) {
     }
 }

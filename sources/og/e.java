@@ -1,0 +1,38 @@
+package og;
+
+import android.content.Context;
+import org.telegram.messenger.cd;
+import org.telegram.messenger.i0;
+import org.telegram.ui.ActionBar.p6;
+import w7.b6;
+
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public class e extends d {
+    public static final /* synthetic */ int w = 0;
+    public int s;
+
+    public e(Context context, p6 p6Var) {
+        super(context, p6Var);
+        this.d.setTypeface(i0.o());
+    }
+
+    @Override // og.d
+    public boolean b() {
+        return !(this instanceof f);
+    }
+
+    @Override // og.d
+    public void d() {
+        this.c.setLayoutParams(b6.d(40, 40.0f, (cd.X ? 5 : 3) | 16, 57.0f, 0.0f, 57.0f, 0.0f));
+        boolean z10 = cd.X;
+        this.d.setLayoutParams(b6.d(-1, -2.0f, (z10 ? 5 : 3) | 16, z10 ? 20.0f : 109.0f, 0.0f, z10 ? 109.0f : 20.0f, 0.0f));
+        boolean z11 = cd.X;
+        this.e.setLayoutParams(b6.d(-1, -2.0f, (z11 ? 5 : 3) | 16, z11 ? 20.0f : 109.0f, 0.0f, z11 ? 109.0f : 20.0f, 0.0f));
+        this.f.setLayoutParams(b6.d(22, 22.0f, (cd.X ? 5 : 3) | 16, 16.0f, 0.0f, 15.0f, 0.0f));
+    }
+
+    public int getSelectedType() {
+        return this.s;
+    }
+}

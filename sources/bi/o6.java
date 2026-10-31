@@ -1,83 +1,36 @@
 package bi;
 
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.tl.TL_stars;
+import android.content.Context;
+import android.view.View;
+import org.telegram.ui.Components.a51;
+import org.telegram.ui.Components.p51;
+import org.telegram.ui.Components.tk0;
+import org.telegram.ui.Components.u51;
+import org.telegram.ui.Components.z41;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes4.dex */
-public final class o6 {
-    public final b7 a;
-    public t6 b;
-    public t6 c;
-    public t6 d;
-    public k6 h;
-    public k6 i;
-    public k6 j;
-    public k6 k;
-    public TL_stars.TL_starGiftUnique l;
-    public long m;
-    public a2 r;
-    public a2 s;
-    public float t;
-    public boolean u;
-    public boolean v;
-    public final ArrayList e = new ArrayList();
-    public final ArrayList f = new ArrayList();
-    public final ArrayList g = new ArrayList();
-    public float n = 0.0f;
-    public boolean o = false;
-    public boolean p = false;
-    public boolean q = false;
+public final class o6 extends z41 {
+    public static final /* synthetic */ int b = 0;
 
-    public o6(b7 b7Var) {
-        this.a = b7Var;
-        b7Var.c.addOnAttachStateChangeListener(new i6(this, 0));
+    static {
+        z41.h(new o6());
     }
 
-    public final void a() {
-        this.o = false;
-        this.a.c.c();
-        k6 k6Var = this.h;
-        if (k6Var != null) {
-            k6Var.a();
-        }
-        k6 k6Var2 = this.i;
-        if (k6Var2 != null) {
-            k6Var2.a();
-        }
-        k6 k6Var3 = this.j;
-        if (k6Var3 != null) {
-            k6Var3.a();
-        }
-        k6 k6Var4 = this.k;
-        if (k6Var4 != null) {
-            k6Var4.a();
-        }
-        c();
+    @Override // org.telegram.ui.Components.z41
+    public final void b(View view, a51 a51Var, boolean z10, p51 p51Var, u51 u51Var) {
+        ((q6) view).f((a) a51Var.G, (n6) a51Var.H, a51Var.r);
     }
 
-    public final void b() {
-        if (this.o && !this.v) {
-            this.v = true;
-            AndroidUtilities.runOnUIThread(new h6(this, 1));
-        }
+    @Override // org.telegram.ui.Components.z41
+    public final View d(Context context, tk0 tk0Var, int i10, org.telegram.ui.ActionBar.p6 p6Var) {
+        q6 q6Var = new q6(context, p6Var);
+        q6Var.setBackground(new h2(org.telegram.ui.ActionBar.t6.w0(org.telegram.ui.ActionBar.t6.d6, p6Var)));
+        return q6Var;
     }
 
-    public final void c() {
-        if (this.o) {
-            return;
-        }
-        ArrayList arrayList = this.e;
-        int size = arrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
-            ((m6) obj).a();
-        }
-        arrayList.clear();
-        this.f.clear();
-        this.g.clear();
+    @Override // org.telegram.ui.Components.z41
+    public final boolean f() {
+        return false;
     }
 }

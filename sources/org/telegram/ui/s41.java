@@ -1,20 +1,61 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.view.View;
+import android.widget.Toast;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class s41 extends h51 {
-    public final /* synthetic */ f61 n3;
+public final /* synthetic */ class s41 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ e51 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public s41(f61 f61Var, Context context) {
-        super(f61Var, context);
-        this.n3 = f61Var;
+    public /* synthetic */ s41(e51 e51Var, int i10) {
+        this.a = i10;
+        this.b = e51Var;
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView
-    public final void l0(int i10) {
-        this.n3.h();
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        int i10 = this.a;
+        e51 e51Var = this.b;
+        switch (i10) {
+            case 0:
+                gf.f.r(e51Var.getParentActivity(), e51Var.getMessagesController().M5);
+                e51Var.getMessagesController().h4(0L, "PREMIUM_GRACE");
+                break;
+            case 1:
+                e51Var.getClass();
+                e51Var.presentFragment(new f(3));
+                break;
+            case 2:
+                e51Var.getMessagesController().h4(0L, "VALIDATE_PHONE_NUMBER");
+                break;
+            case 3:
+                e51Var.getClass();
+                e51Var.presentFragment(new tc1(8, null));
+                break;
+            case 4:
+                e51Var.getMessagesController().h4(0L, "VALIDATE_PASSWORD");
+                break;
+            case 5:
+                e51.Z(e51Var);
+                break;
+            default:
+                int i11 = e51Var.Q + 1;
+                e51Var.Q = i11;
+                if (i11 >= 2) {
+                    e51Var.presentFragment(new su());
+                    break;
+                } else {
+                    boolean z10 = org.telegram.messenger.v2.a;
+                    try {
+                        Toast.makeText(e51Var.getParentActivity(), org.telegram.messenger.cd.L0(2131751626, null), 0).show();
+                        break;
+                    } catch (Exception e) {
+                        org.telegram.messenger.f8.g(e, true);
+                        return;
+                    }
+                }
+        }
     }
 }

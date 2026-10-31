@@ -1,31 +1,44 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
+import android.R;
+import android.content.Context;
+import android.view.ActionMode;
+import android.view.Menu;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class gn implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ go b;
+public final class gn extends org.telegram.ui.Cells.e6 {
+    public final /* synthetic */ fg.j F;
 
-    public /* synthetic */ gn(go goVar, int i10) {
-        this.a = i10;
-        this.b = goVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public gn(fg.j jVar, Context context, int i10) {
+        super(context, i10, null, null);
+        this.F = jVar;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                go goVar = this.b;
-                goVar.getClass();
-                goVar.E.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
-            default:
-                go goVar2 = this.b;
-                goVar2.getClass();
-                goVar2.E.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
+    @Override // org.telegram.ui.Cells.e6
+    public final void g(ih.b bVar, ActionMode actionMode) {
+        if (bVar.isFocused() && bVar.hasSelection()) {
+            Menu menu = actionMode.getMenu();
+            if (menu.findItem(R.id.copy) == null) {
+                return;
+            }
+            org.telegram.ui.un.t8(menu, ((org.telegram.ui.un) ((jn) this.F.e).b.W1).h, false, true, true, true);
         }
+    }
+
+    @Override // org.telegram.ui.Cells.e6
+    public final void i(boolean z10) {
+        jn.P((jn) this.F.e, this, z10);
+    }
+
+    @Override // org.telegram.ui.Cells.e6
+    public final void j(org.telegram.ui.Cells.e6 e6Var) {
+        jn.Q((jn) this.F.e, e6Var);
+    }
+
+    @Override // org.telegram.ui.Cells.e6
+    public final void k(ih.b bVar) {
+        ((jn) this.F.e).b.g1(bVar, true);
     }
 }

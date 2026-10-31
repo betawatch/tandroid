@@ -1,26 +1,37 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.widget.TextView;
+import android.view.View;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class tc extends rp0 {
-    public final /* synthetic */ uc G;
+public final /* synthetic */ class tc implements org.telegram.messenger.q20 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ xc b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public tc(uc ucVar, Context context, int i10, long j10, org.telegram.ui.ActionBar.u6 u6Var) {
-        super(i10, j10, context, u6Var);
-        this.G = ucVar;
+    public /* synthetic */ tc(xc xcVar, int i10) {
+        this.a = i10;
+        this.b = xcVar;
     }
 
-    @Override // org.telegram.ui.rp0
-    public final void b(int i10, boolean z10) {
-        super.b(i10, z10);
-        uc ucVar = this.G;
-        TextView textView = ucVar.d;
-        if (textView != null) {
-            textView.setTextColor(ucVar.b.h.getTextColor());
+    @Override // org.telegram.messenger.q20
+    public final void a(Object obj) {
+        View view = (View) obj;
+        switch (this.a) {
+            case 0:
+                xc xcVar = this.b;
+                xcVar.getClass();
+                if (view instanceof org.telegram.ui.Components.e11) {
+                    view.setBackgroundColor(org.telegram.ui.ActionBar.t6.w0(org.telegram.ui.ActionBar.t6.i5, xcVar.b));
+                    break;
+                }
+                break;
+            default:
+                if (view instanceof org.telegram.ui.Components.e11) {
+                    org.telegram.ui.Components.e11 e11Var = (org.telegram.ui.Components.e11) view;
+                    e11Var.setFallbackWallpaper(e11Var.G.a.b ? null : this.b.w);
+                    break;
+                }
+                break;
         }
     }
 }

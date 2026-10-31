@@ -1,117 +1,109 @@
 package sg;
 
-import android.content.Context;
-import android.graphics.PointF;
-import android.view.ViewGroup;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.wh;
-import org.telegram.ui.Components.il0;
-import org.telegram.ui.Components.kb1;
+import android.graphics.Paint;
+import android.text.SpannableString;
+import android.text.SpannableStringBuilder;
+import android.text.TextUtils;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import org.telegram.messenger.d20;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.ActionBar.k2;
+import org.telegram.ui.Components.f5;
+import org.telegram.ui.Components.o5;
+import org.telegram.ui.LaunchActivity;
+import rh.r1;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class q0 extends j {
-    public final o0 q0;
-    public int r0;
-    public int s0;
-    public boolean t0;
-    public n0 u0;
-
-    public q0(Context context, PointF pointF, int i10, n0 n0Var, float f7, int i11) {
-        super(context, pointF);
-        o0 o0Var = new o0(context, f7);
-        this.q0 = o0Var;
-        o0Var.setMaxWidth(i11);
-        this.u0 = n0Var;
-        o0Var.b(i10, n0Var, false);
-        m();
-        this.s0 = 3;
-        o0Var.c(3, this.r0);
-        addView(o0Var, kb1.i(-2, -2, 51));
-        setClipChildren(false);
-        setClipToPadding(false);
-        k();
-    }
-
-    @Override // sg.j
-    public final i a() {
-        return new p0(this, getContext());
-    }
-
-    public int getColor() {
-        return this.r0;
-    }
-
-    @Override // sg.j
-    public float getMaxScale() {
-        return 1.5f;
-    }
-
-    public int getNextType() {
-        int i10 = this.s0 + 1;
-        return i10 == 4 ? !this.t0 ? 1 : 0 : i10;
-    }
-
-    @Override // sg.j
-    public il0 getSelectionBounds() {
-        ViewGroup viewGroup = (ViewGroup) getParent();
-        if (viewGroup == null) {
-            return new il0();
+public abstract class q0 {
+    public static void a(TLRPC.TL_availableReaction tL_availableReaction, LinkedHashMap linkedHashMap, ArrayList arrayList, SpannableStringBuilder spannableStringBuilder, m mVar, Paint.FontMetricsInt fontMetricsInt) {
+        TLRPC.Document document = tL_availableReaction.activate_animation;
+        long j10 = document.id;
+        o5 e = e(document, Long.valueOf(j10), fontMetricsInt);
+        linkedHashMap.put(Long.valueOf(j10), e);
+        arrayList.add(Long.valueOf(j10));
+        SpannableString spannableString = new SpannableString(tL_availableReaction.reaction);
+        spannableString.setSpan(e, 0, spannableString.length(), 33);
+        spannableStringBuilder.append((CharSequence) spannableString);
+        if (mVar != null) {
+            mVar.x(Long.valueOf(j10), false);
         }
-        float scaleX = viewGroup.getScaleX();
-        float dp = (AndroidUtilities.dp(64.0f) / scaleX) + (getScale() * getMeasuredWidth());
-        float dp2 = (AndroidUtilities.dp(64.0f) / scaleX) + (getScale() * getMeasuredHeight());
-        float y3 = wh.y(dp, 2.0f, getPositionX(), scaleX);
-        return new il0(y3, wh.y(dp2, 2.0f, getPositionY(), scaleX), ((dp * scaleX) + y3) - y3, dp2 * scaleX);
     }
 
-    @Override // sg.j
-    public float getStickyPaddingBottom() {
-        return this.q0.h;
+    public static void b(TLRPC.Reaction reaction, TLRPC.Reaction reaction2, TL_stories.StoryViews storyViews) {
+        if (storyViews == null) {
+            return;
+        }
+        int i10 = 0;
+        boolean z10 = false;
+        while (i10 < storyViews.reactions.size()) {
+            TLRPC.ReactionCount reactionCount = storyViews.reactions.get(i10);
+            if (reaction != null && c(reactionCount.reaction, reaction)) {
+                int i11 = reactionCount.count - 1;
+                reactionCount.count = i11;
+                if (i11 <= 0) {
+                    storyViews.reactions.remove(i10);
+                    i10--;
+                    i10++;
+                }
+            }
+            if (reaction2 != null && c(reactionCount.reaction, reaction2)) {
+                reactionCount.count++;
+                z10 = true;
+            }
+            i10++;
+        }
+        if (z10) {
+            return;
+        }
+        TLRPC.TL_reactionCount tL_reactionCount = new TLRPC.TL_reactionCount();
+        tL_reactionCount.count = 1;
+        tL_reactionCount.reaction = reaction2;
+        storyViews.reactions.add(tL_reactionCount);
     }
 
-    @Override // sg.j
-    public float getStickyPaddingLeft() {
-        return this.q0.f;
+    public static boolean c(TLRPC.Reaction reaction, TLRPC.Reaction reaction2) {
+        if ((reaction instanceof TLRPC.TL_reactionEmoji) && (reaction2 instanceof TLRPC.TL_reactionEmoji) && TextUtils.equals(((TLRPC.TL_reactionEmoji) reaction).emoticon, ((TLRPC.TL_reactionEmoji) reaction2).emoticon)) {
+            return true;
+        }
+        return (reaction instanceof TLRPC.TL_reactionCustomEmoji) && (reaction2 instanceof TLRPC.TL_reactionCustomEmoji) && ((TLRPC.TL_reactionCustomEmoji) reaction).document_id == ((TLRPC.TL_reactionCustomEmoji) reaction2).document_id;
     }
 
-    @Override // sg.j
-    public float getStickyPaddingRight() {
-        return this.q0.f;
+    public static boolean d(TLRPC.Reaction reaction, o0 o0Var) {
+        if ((reaction instanceof TLRPC.TL_reactionEmoji) && o0Var.g == 0 && TextUtils.equals(((TLRPC.TL_reactionEmoji) reaction).emoticon, o0Var.f)) {
+            return true;
+        }
+        if (!(reaction instanceof TLRPC.TL_reactionCustomEmoji)) {
+            return false;
+        }
+        long j10 = o0Var.g;
+        return j10 != 0 && ((TLRPC.TL_reactionCustomEmoji) reaction).document_id == j10;
     }
 
-    @Override // sg.j
-    public float getStickyPaddingTop() {
-        return this.q0.h;
+    public static o5 e(TLRPC.Document document, Long l4, Paint.FontMetricsInt fontMetricsInt) {
+        o5 o5Var;
+        if (document != null) {
+            o5Var = new o5(document.id, 1.0f, fontMetricsInt);
+            o5Var.document = document;
+        } else {
+            o5Var = new o5(l4.longValue(), 1.0f, fontMetricsInt);
+        }
+        o5Var.cacheType = f5.f();
+        return o5Var;
     }
 
-    public int getType() {
-        return this.s0;
-    }
-
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        k();
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        k();
-    }
-
-    public void setColor(int i10) {
-        this.t0 = true;
-        this.r0 = i10;
-    }
-
-    public void setMaxWidth(int i10) {
-        this.q0.setMaxWidth(i10);
-    }
-
-    public void setType(int i10) {
-        this.s0 = i10;
-        this.q0.c(i10, this.r0);
+    public static void f(long j10, int i10, TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus) {
+        k2 Q = LaunchActivity.Q();
+        if (Q == null || tL_premium_boostsStatus == null) {
+            return;
+        }
+        kg.q0 q0Var = new kg.q0(21, d20.s0, Q.getContext(), Q, Q.getResourceProvider());
+        q0Var.J2 = i10;
+        q0Var.z1(tL_premium_boostsStatus, true);
+        q0Var.B1(j10);
+        q0Var.I2 = new r1(Q, j10);
+        q0Var.show();
     }
 }

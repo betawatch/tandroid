@@ -1,102 +1,134 @@
 package jg;
 
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ContactsController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.ActionBar.r2;
-import org.telegram.ui.fg1;
-import org.telegram.ui.wn;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.SweepGradient;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import org.telegram.ui.er0;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class n0 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
+public final class n0 extends FrameLayout {
+    public float a;
+    public float b;
+    public final /* synthetic */ er0 c;
 
-    public /* synthetic */ n0(Object obj, Object obj2, Object obj3, Object obj4, boolean z10, int i10) {
-        this.a = i10;
-        this.d = obj;
-        this.c = z10;
-        this.e = obj2;
-        this.b = obj3;
-        this.f = obj4;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public n0(er0 er0Var, Context context) {
+        super(context);
+        this.c = er0Var;
+        new Path();
+        setWillNotDraw(false);
+        Paint paint = er0Var.q1;
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeWidth(org.telegram.messenger.i0.L(2.0f));
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                AndroidUtilities.runOnUIThread(new q0((t0) this.d, tL_error, tLObject, (int[]) this.e, (ArrayList) this.b, this.c, (TLRPC.User) this.f));
-                break;
-            case 1:
-                ((ContactsController) this.d).lambda$deleteContact$57((ArrayList) this.b, (ArrayList) this.e, this.c, (String) this.f, tLObject, tL_error);
-                break;
-            case 2:
-                ((SendMessagesHelper) this.d).lambda$requestUrlAuth$40((TLRPC.TL_messages_requestUrlAuth) this.e, (wn) this.b, (String) this.f, this.c, tLObject, tL_error);
-                break;
-            case 3:
-                ((SendMessagesHelper) this.d).lambda$sendEditRichMessageRequest$29(this.c, (MessageObject) this.e, (TLRPC.TL_messages_editMessage) this.b, (r2) this.f, tLObject, tL_error);
-                break;
-            case 4:
-                AndroidUtilities.runOnUIThread(new q0((fg1) this.d, tL_error, this.c, tLObject, (byte[]) this.e, (String) this.b, (TL_account.passwordInputSettings) this.f));
-                break;
-            default:
-                yh.k kVar = (yh.k) this.d;
-                TLRPC.TL_chatInviteImporter tL_chatInviteImporter = (TLRPC.TL_chatInviteImporter) this.e;
-                TLRPC.User user = (TLRPC.User) this.f;
-                TLRPC.TL_messages_hideChatJoinRequest tL_messages_hideChatJoinRequest = (TLRPC.TL_messages_hideChatJoinRequest) this.b;
-                if (tL_error == null) {
-                    MessagesController.getInstance(kVar.k).lambda$processUpdates$379((TLRPC.TL_updates) tLObject, false);
-                }
-                AndroidUtilities.runOnUIThread(new q0(kVar, tL_error, tLObject, tL_chatInviteImporter, this.c, user, tL_messages_hideChatJoinRequest));
-                break;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        ViewGroup barView;
+        Canvas canvas2 = canvas;
+        super.onDraw(canvas);
+        er0 er0Var = this.c;
+        ig.q1 q1Var = er0Var.t1;
+        Paint paint = er0Var.r1;
+        Paint paint2 = er0Var.q1;
+        Paint paint3 = er0Var.s1;
+        barView = er0Var.getBarView();
+        Rect rect = org.telegram.messenger.i0.Q;
+        int left = barView.getLeft();
+        m0 m0Var = er0Var.p1;
+        rect.set(org.telegram.messenger.i0.W1(er0Var.w1, left, m0Var.getLeft()), org.telegram.messenger.i0.W1(er0Var.w1, barView.getTop(), m0Var.getTop()), org.telegram.messenger.i0.W1(er0Var.w1, barView.getRight(), m0Var.getRight()), org.telegram.messenger.i0.W1(er0Var.w1, barView.getBottom(), m0Var.getBottom()));
+        RectF rectF = org.telegram.messenger.i0.P;
+        rectF.set(rect);
+        float W1 = org.telegram.messenger.i0.W1(er0Var.w1, org.telegram.messenger.i0.L(32.0f), org.telegram.messenger.i0.L(24.0f));
+        if (er0Var.L1 != null) {
+            rect.inset(-org.telegram.messenger.i0.L(4.0f), -org.telegram.messenger.i0.L(4.0f));
+            er0Var.L1.q(W1);
+            er0Var.L1.setBounds(rect);
+            er0Var.L1.draw(canvas2);
+        } else {
+            canvas2.drawRoundRect(rectF, W1, W1, er0Var.x1);
         }
+        if (barView.getChildCount() < 1 || er0Var.w1 == 1.0f) {
+            return;
+        }
+        canvas2.save();
+        canvas2.translate(barView.getLeft(), barView.getTop());
+        View childAt = barView.getChildAt(0);
+        if (barView instanceof t1) {
+            childAt = ((t1) barView).getColorClickableView();
+        }
+        if (childAt.getAlpha() != 0.0f) {
+            canvas2.scale(childAt.getScaleX(), childAt.getScaleY(), childAt.getPivotX(), childAt.getPivotY());
+            paint2.setAlpha((int) (childAt.getAlpha() * (1.0f - er0Var.w1) * 255.0f));
+            int width = (childAt.getWidth() - childAt.getPaddingLeft()) - childAt.getPaddingRight();
+            int height = (childAt.getHeight() - childAt.getPaddingTop()) - childAt.getPaddingBottom();
+            float x10 = (width / 2.0f) + childAt.getX() + childAt.getPaddingLeft();
+            float y3 = (height / 2.0f) + childAt.getY() + childAt.getPaddingTop();
+            int i10 = q1Var.a;
+            int i11 = er0Var.Q0;
+            View view = childAt;
+            if (i11 != -1) {
+                ViewGroup viewGroup = i11 == 0 ? er0Var.c1 : i11 == 2 ? er0Var.d1 : null;
+                View childAt2 = (viewGroup == null ? barView : viewGroup).getChildAt(0);
+                if (viewGroup instanceof t1) {
+                    childAt2 = ((t1) viewGroup).getColorClickableView();
+                }
+                x10 = org.telegram.messenger.i0.T1(x10, (((childAt2.getWidth() - childAt2.getPaddingLeft()) - childAt2.getPaddingRight()) / 2.0f) + childAt2.getX() + childAt2.getPaddingLeft(), er0Var.R0);
+                y3 = org.telegram.messenger.i0.T1(y3, (((childAt2.getHeight() - childAt2.getPaddingTop()) - childAt2.getPaddingBottom()) / 2.0f) + childAt2.getY() + childAt2.getPaddingTop(), er0Var.R0);
+            }
+            if (m0Var != null && m0Var.getChildCount() > 0) {
+                View childAt3 = m0Var.getChildAt(0);
+                x10 = org.telegram.messenger.i0.T1(x10, (childAt3.getWidth() / 2.0f) + childAt3.getX() + (m0Var.getX() - barView.getLeft()), er0Var.w1);
+                y3 = org.telegram.messenger.i0.T1(y3, (childAt3.getHeight() / 2.0f) + childAt3.getY() + (m0Var.getY() - barView.getTop()), er0Var.w1);
+                i10 = i0.b.f(er0Var.w1, q1Var.a, er0Var.E1.b(0));
+            }
+            float f7 = x10;
+            float f10 = y3;
+            if (f7 != this.a || f10 != this.b) {
+                this.a = f7;
+                this.b = f10;
+                paint2.setShader(new SweepGradient(f7, f10, new int[]{-1356981, -1146130, -10452764, -16711681, -7352832, -256, -23296, -1356981}, (float[]) null));
+            }
+            float min = (Math.min(width, height) / 2.0f) - org.telegram.messenger.i0.L(0.5f);
+            if (m0Var != null && m0Var.getChildCount() > 0) {
+                View childAt4 = m0Var.getChildAt(0);
+                min = org.telegram.messenger.i0.T1(min, (Math.min((childAt4.getWidth() - childAt4.getPaddingLeft()) - childAt4.getPaddingRight(), (childAt4.getHeight() - childAt4.getPaddingTop()) - childAt4.getPaddingBottom()) / 2.0f) - org.telegram.messenger.i0.L(2.0f), er0Var.w1);
+            }
+            float f11 = min;
+            rectF.set(f7 - f11, f10 - f11, f7 + f11, f10 + f11);
+            canvas2 = canvas;
+            canvas2.drawArc(rectF, 0.0f, 360.0f, false, paint2);
+            paint.setColor(i10);
+            paint.setAlpha((int) (view.getAlpha() * paint.getAlpha()));
+            paint3.setColor(i10);
+            paint3.setAlpha((int) (view.getAlpha() * 255.0f));
+            float L = f11 - org.telegram.messenger.i0.L(3.0f);
+            if (m0Var != null && m0Var.getSelectedColorIndex() != 0) {
+                L = org.telegram.messenger.i0.T1(f11 - org.telegram.messenger.i0.L(3.0f), org.telegram.messenger.i0.L(2.0f) + f11, er0Var.w1);
+            }
+            n1.A1(f7, f10, L, paint.getColor(), canvas2);
+            if (m0Var != null && m0Var.getSelectedColorIndex() == 0) {
+                paint3.setAlpha((int) (view.getAlpha() * paint3.getAlpha() * er0Var.w1));
+                canvas2.drawCircle(f7, f10, sc.e.z(1.0f, er0Var.w1, paint3.getStrokeWidth() + org.telegram.messenger.i0.L(3.0f), f11), paint3);
+            }
+        }
+        canvas2.restore();
     }
 
-    public /* synthetic */ n0(t0 t0Var, int[] iArr, ArrayList arrayList, boolean z10, TLRPC.User user) {
-        this.a = 0;
-        this.d = t0Var;
-        this.e = iArr;
-        this.b = arrayList;
-        this.c = z10;
-        this.f = user;
-    }
-
-    public /* synthetic */ n0(ContactsController contactsController, ArrayList arrayList, ArrayList arrayList2, boolean z10, String str) {
-        this.a = 1;
-        this.d = contactsController;
-        this.b = arrayList;
-        this.e = arrayList2;
-        this.c = z10;
-        this.f = str;
-    }
-
-    public /* synthetic */ n0(SendMessagesHelper sendMessagesHelper, TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth, wn wnVar, String str, boolean z10) {
-        this.a = 2;
-        this.d = sendMessagesHelper;
-        this.e = tL_messages_requestUrlAuth;
-        this.b = wnVar;
-        this.f = str;
-        this.c = z10;
-    }
-
-    public /* synthetic */ n0(yh.k kVar, TLRPC.TL_chatInviteImporter tL_chatInviteImporter, boolean z10, TLRPC.User user, TLRPC.TL_messages_hideChatJoinRequest tL_messages_hideChatJoinRequest) {
-        this.a = 5;
-        this.d = kVar;
-        this.e = tL_chatInviteImporter;
-        this.c = z10;
-        this.f = user;
-        this.b = tL_messages_hideChatJoinRequest;
+    @Override // android.view.View
+    public final void setTranslationY(float f7) {
+        super.setTranslationY(f7);
+        l0 l0Var = this.c.M0;
+        if (l0Var != null) {
+            l0Var.invalidate();
+        }
     }
 }

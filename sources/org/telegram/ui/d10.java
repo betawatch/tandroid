@@ -1,42 +1,54 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessageObject;
+import android.text.TextUtils;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class d10 extends org.telegram.ui.Cells.n7 {
-    public final /* synthetic */ e10 l0;
+public final class d10 extends hg.b {
+    public CharSequence c;
+    public org.telegram.messenger.ap d;
+    public TLRPC.TL_dialogFilterSuggested e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d10(e10 e10Var, Context context) {
-        super(context, 1, null);
-        this.l0 = e10Var;
-    }
-
-    @Override // org.telegram.ui.Cells.n7
-    public final boolean d(MessageObject messageObject) {
-        boolean isVoice = messageObject.isVoice();
-        e10 e10Var = this.l0;
-        if (isVoice || messageObject.isRoundVideo()) {
-            boolean playMessage = MediaController.getInstance().playMessage(messageObject);
-            MediaController.getInstance().setVoiceMessagesPlaylist(playMessage ? e10Var.v.f : null, false);
-            return playMessage;
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
         }
-        if (!messageObject.isMusic()) {
+        if (!(obj instanceof d10)) {
             return false;
         }
-        j10 j10Var = e10Var.v;
-        String str = j10Var.Q;
-        long j10 = j10Var.E;
-        long j11 = j10Var.H;
-        MediaController.PlaylistGlobalSearchParams playlistGlobalSearchParams = new MediaController.PlaylistGlobalSearchParams(str, j10, j11, j11, j10Var.y);
-        j10 j10Var2 = e10Var.v;
-        playlistGlobalSearchParams.endReached = j10Var2.N;
-        playlistGlobalSearchParams.nextSearchRate = j10Var2.v;
-        playlistGlobalSearchParams.totalCount = j10Var2.O;
-        playlistGlobalSearchParams.folderId = j10Var2.J ? 1 : 0;
-        return MediaController.getInstance().setPlaylist(e10Var.v.f, messageObject, 0L, playlistGlobalSearchParams);
+        d10 d10Var = (d10) obj;
+        int i10 = d10Var.a;
+        int i11 = this.a;
+        if (i10 != i11) {
+            return false;
+        }
+        if ((i11 == 0 || i11 == 4 || i11 == 3 || i11 == 6) && !TextUtils.equals(this.c, d10Var.c)) {
+            return false;
+        }
+        int i12 = this.a;
+        if (i12 == 2) {
+            org.telegram.messenger.ap apVar = this.d;
+            boolean z10 = apVar == null;
+            org.telegram.messenger.ap apVar2 = d10Var.d;
+            if (z10 != (apVar2 == null)) {
+                return false;
+            }
+            if (apVar != null && apVar.a != apVar2.a) {
+                return false;
+            }
+        }
+        if (i12 == 5) {
+            TLRPC.TL_dialogFilterSuggested tL_dialogFilterSuggested = this.e;
+            boolean z11 = tL_dialogFilterSuggested == null;
+            TLRPC.TL_dialogFilterSuggested tL_dialogFilterSuggested2 = d10Var.e;
+            if (z11 != (tL_dialogFilterSuggested2 == null)) {
+                return false;
+            }
+            if (tL_dialogFilterSuggested != null && tL_dialogFilterSuggested.filter.id != tL_dialogFilterSuggested2.filter.id) {
+                return false;
+            }
+        }
+        return true;
     }
 }

@@ -1,14 +1,13 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.widget.ScrollView;
-import org.telegram.messenger.AndroidUtilities;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class i80 extends ScrollView {
-    @Override // android.widget.ScrollView, android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(Math.min(AndroidUtilities.dp(260.0f), View.MeasureSpec.getSize(i11)), View.MeasureSpec.getMode(i11)));
-    }
+public interface i80 {
+    void b();
+
+    void d();
+
+    void g();
+
+    void n();
 }

@@ -1,29 +1,28 @@
 package db;
 
-import a8.h0;
-import a8.jd;
-import a8.qe;
 import android.os.Build;
+import android.support.v4.media.session.a0;
 import android.util.Log;
-import ce.f0;
+import bd.t;
 import com.google.android.gms.tasks.Task;
 import java.util.Arrays;
 import java.util.Map;
 import java.util.regex.Pattern;
-import kd.r;
 import org.telegram.tgnet.TLObject;
+import td.e0;
+import v7.x6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class d {
-    public final sa.d a;
-    public final h0 b;
+    public final ra.d a;
+    public final a0 b;
     public final k c;
-    public final le.d d = le.e.a();
+    public final ce.d d = ce.e.a();
 
-    public d(ld.h hVar, sa.d dVar, bb.b bVar, h0 h0Var, k1.f fVar) {
+    public d(cd.h hVar, ra.d dVar, bb.b bVar, a0 a0Var, k1.f fVar) {
         this.a = dVar;
-        this.b = h0Var;
+        this.b = a0Var;
         this.c = new k(fVar);
     }
 
@@ -54,11 +53,11 @@ public final class d {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object c(ld.c cVar) {
+    public final Object c(cd.c cVar) {
         a aVar;
         ?? r42;
-        le.a aVar2;
-        le.a aVar3;
+        ce.a aVar2;
+        ce.a aVar3;
         d dVar;
         String str;
         try {
@@ -68,14 +67,14 @@ public final class d {
                 if ((i10 & TLObject.FLAG_31) != 0) {
                     aVar.e = i10 - TLObject.FLAG_31;
                     Object obj = aVar.c;
-                    md.a aVar4 = md.a.a;
+                    dd.a aVar4 = dd.a.a;
                     r42 = aVar.e;
-                    jd.i iVar = jd.i.a;
+                    ad.j jVar = ad.j.a;
                     if (r42 != 0) {
-                        jd.b(obj);
-                        le.d dVar2 = this.d;
+                        l9.b.b(obj);
+                        ce.d dVar2 = this.d;
                         if (!dVar2.c() && !this.c.b()) {
-                            return iVar;
+                            return jVar;
                         }
                         aVar.a = this;
                         aVar.b = dVar2;
@@ -91,68 +90,68 @@ public final class d {
                             if (r42 != 3) {
                                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                             }
-                            aVar2 = (le.a) aVar.a;
+                            aVar2 = (ce.a) aVar.a;
                             try {
-                                jd.b(obj);
-                                ((le.d) aVar2).e(null);
-                                return iVar;
+                                l9.b.b(obj);
+                                ((ce.d) aVar2).e(null);
+                                return jVar;
                             } catch (Throwable th2) {
                                 th = th2;
-                                ((le.d) aVar2).e(null);
+                                ((ce.d) aVar2).e(null);
                                 throw th;
                             }
                         }
                         aVar3 = aVar.b;
                         dVar = (d) aVar.a;
-                        jd.b(obj);
+                        l9.b.b(obj);
                         str = (String) obj;
                         if (str != null) {
                             Log.w("SessionConfigFetcher", "Error getting Firebase Installation ID. Skipping this Session Event.");
-                            ((le.d) aVar3).e(null);
-                            return iVar;
+                            ((ce.d) aVar3).e(null);
+                            return jVar;
                         }
-                        jd.d dVar3 = new jd.d("X-Crashlytics-Installation-ID", str);
+                        ad.e eVar = new ad.e("X-Crashlytics-Installation-ID", str);
                         String format = String.format("%s/%s", Arrays.copyOf(new Object[]{Build.MANUFACTURER, Build.MODEL}, 2));
                         dVar.getClass();
-                        jd.d dVar4 = new jd.d("X-Crashlytics-Device-Model", b(format));
+                        ad.e eVar2 = new ad.e("X-Crashlytics-Device-Model", b(format));
                         String INCREMENTAL = Build.VERSION.INCREMENTAL;
                         kotlin.jvm.internal.i.d(INCREMENTAL, "INCREMENTAL");
-                        jd.d dVar5 = new jd.d("X-Crashlytics-OS-Build-Version", b(INCREMENTAL));
+                        ad.e eVar3 = new ad.e("X-Crashlytics-OS-Build-Version", b(INCREMENTAL));
                         String RELEASE = Build.VERSION.RELEASE;
                         kotlin.jvm.internal.i.d(RELEASE, "RELEASE");
-                        Map b10 = r.b(dVar3, dVar4, dVar5, new jd.d("X-Crashlytics-OS-Display-Version", b(RELEASE)), new jd.d("X-Crashlytics-API-Client-Version", "1.2.0"));
+                        Map b10 = t.b(eVar, eVar2, eVar3, new ad.e("X-Crashlytics-OS-Display-Version", b(RELEASE)), new ad.e("X-Crashlytics-API-Client-Version", "1.2.0"));
                         Log.d("SessionConfigFetcher", "Fetching settings from server.");
-                        h0 h0Var = dVar.b;
+                        a0 a0Var = dVar.b;
                         b bVar = new b(dVar, null);
                         c cVar2 = new c(2, null);
                         aVar.a = aVar3;
                         aVar.b = null;
                         aVar.e = 3;
-                        Object w10 = f0.w((ld.h) h0Var.c, new b(h0Var, b10, bVar, cVar2, null), aVar);
-                        if (w10 != aVar4) {
-                            w10 = iVar;
+                        Object w9 = e0.w((cd.h) a0Var.c, new b(a0Var, b10, bVar, cVar2, null), aVar);
+                        if (w9 != aVar4) {
+                            w9 = jVar;
                         }
-                        if (w10 != aVar4) {
+                        if (w9 != aVar4) {
                             aVar2 = aVar3;
-                            ((le.d) aVar2).e(null);
-                            return iVar;
+                            ((ce.d) aVar2).e(null);
+                            return jVar;
                         }
                         return aVar4;
                     }
                     aVar3 = aVar.b;
                     dVar = (d) aVar.a;
-                    jd.b(obj);
+                    l9.b.b(obj);
                     if (dVar.c.b()) {
                         Log.d("SessionConfigFetcher", "Remote settings cache not expired. Using cached values.");
-                        ((le.d) aVar3).e(null);
-                        return iVar;
+                        ((ce.d) aVar3).e(null);
+                        return jVar;
                     }
-                    Task d = ((sa.c) dVar.a).d();
+                    Task d = ((ra.c) dVar.a).d();
                     kotlin.jvm.internal.i.d(d, "firebaseInstallationsApi.id");
                     aVar.a = dVar;
                     aVar.b = aVar3;
                     aVar.e = 2;
-                    obj = qe.a(d, aVar);
+                    obj = x6.a(d, aVar);
                     if (obj == aVar4) {
                         return aVar4;
                     }
@@ -169,10 +168,10 @@ public final class d {
             th = th3;
             aVar2 = r42;
         }
-        aVar = new a(this, (nd.c) cVar);
+        aVar = new a(this, (ed.c) cVar);
         Object obj2 = aVar.c;
-        md.a aVar42 = md.a.a;
+        dd.a aVar42 = dd.a.a;
         r42 = aVar.e;
-        jd.i iVar2 = jd.i.a;
+        ad.j jVar2 = ad.j.a;
     }
 }

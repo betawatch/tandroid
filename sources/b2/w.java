@@ -2,7 +2,7 @@ package b2;
 
 import java.util.List;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class w {
     public int A;
@@ -26,7 +26,7 @@ public final class w {
     public int S;
     public String a;
     public String b;
-    public f9.i0 c;
+    public e9.n0 c;
     public String d;
     public int e;
     public int f;
@@ -52,8 +52,8 @@ public final class w {
     public int z;
 
     public w() {
-        f9.g0 g0Var = f9.i0.b;
-        this.c = f9.s1.e;
+        e9.l0 l0Var = e9.n0.b;
+        this.c = e9.x1.e;
         this.h = -1;
         this.i = -1;
         this.s = -1;

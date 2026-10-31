@@ -2,9 +2,9 @@ package org.telegram.messenger.camera;
 
 import android.graphics.Rect;
 import java.util.concurrent.CountDownLatch;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.i0;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public class CameraSessionWrapper {
     public CameraSession camera1Session;
@@ -188,7 +188,7 @@ public class CameraSessionWrapper {
     public void setZoom(float f7) {
         Camera2Session camera2Session = this.camera2Session;
         if (camera2Session != null) {
-            camera2Session.setZoom(AndroidUtilities.lerp(camera2Session.getMinZoom(), this.camera2Session.getMaxZoom(), f7));
+            camera2Session.setZoom(i0.T1(camera2Session.getMinZoom(), this.camera2Session.getMaxZoom(), f7));
             return;
         }
         CameraSession cameraSession = this.camera1Session;

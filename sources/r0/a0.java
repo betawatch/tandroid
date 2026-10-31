@@ -1,72 +1,24 @@
 package r0;
 
-import android.content.res.ColorStateList;
-import android.graphics.PorterDuff;
-import android.graphics.Rect;
-import android.os.Build;
 import android.view.View;
 import android.view.WindowInsets;
-import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public abstract class a0 {
-    public static void a(WindowInsets windowInsets, View view) {
-        View.OnApplyWindowInsetsListener onApplyWindowInsetsListener = (View.OnApplyWindowInsetsListener) view.getTag(R.id.tag_window_insets_animation_callback);
-        if (onApplyWindowInsetsListener != null) {
-            onApplyWindowInsetsListener.onApplyWindowInsets(view, windowInsets);
+    public static j1 a(View view) {
+        WindowInsets rootWindowInsets = view.getRootWindowInsets();
+        if (rootWindowInsets == null) {
+            return null;
         }
+        j1 h = j1.h(null, rootWindowInsets);
+        g1 g1Var = h.a;
+        g1Var.r(h);
+        g1Var.d(view.getRootView());
+        return h;
     }
 
-    public static k1 b(View view, k1 k1Var, Rect rect) {
-        WindowInsets g7 = k1Var.g();
-        if (g7 != null) {
-            return k1.h(view, view.computeSystemWindowInsets(g7, rect));
-        }
-        rect.setEmpty();
-        return k1Var;
-    }
-
-    public static ColorStateList c(View view) {
-        return view.getBackgroundTintList();
-    }
-
-    public static PorterDuff.Mode d(View view) {
-        return view.getBackgroundTintMode();
-    }
-
-    public static float e(View view) {
-        return view.getElevation();
-    }
-
-    public static void f(View view, ColorStateList colorStateList) {
-        view.setBackgroundTintList(colorStateList);
-    }
-
-    public static void g(View view, PorterDuff.Mode mode) {
-        view.setBackgroundTintMode(mode);
-    }
-
-    public static void h(View view, float f7) {
-        view.setElevation(f7);
-    }
-
-    public static void i(View view, n nVar) {
-        z zVar = nVar != null ? new z(view, nVar) : null;
-        if (Build.VERSION.SDK_INT < 30) {
-            view.setTag(R.id.tag_on_apply_window_listener, zVar);
-        }
-        if (view.getTag(R.id.tag_compat_insets_dispatch) != null) {
-            return;
-        }
-        if (zVar != null) {
-            view.setOnApplyWindowInsetsListener(zVar);
-        } else {
-            view.setOnApplyWindowInsetsListener((View.OnApplyWindowInsetsListener) view.getTag(R.id.tag_window_insets_animation_callback));
-        }
-    }
-
-    public static void j(View view) {
-        view.stopNestedScroll();
+    public static void b(View view, int i10, int i11) {
+        view.setScrollIndicators(i10, i11);
     }
 }

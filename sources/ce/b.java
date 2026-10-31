@@ -1,11 +1,34 @@
 package ce;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes.dex */
-public final class b implements y1 {
-    public static final b a = new b();
+import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
+import ld.l;
 
-    public final String toString() {
-        return "Active";
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes.dex */
+public final class b extends kotlin.jvm.internal.j implements l {
+    public final /* synthetic */ int b;
+    public final /* synthetic */ d c;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ b(d dVar, c cVar, int i10) {
+        super(1);
+        this.b = i10;
+        this.c = dVar;
+    }
+
+    @Override // ld.l
+    public final Object invoke(Object obj) {
+        switch (this.b) {
+            case 0:
+                this.c.e(null);
+                break;
+            default:
+                AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = d.g;
+                d dVar = this.c;
+                atomicReferenceFieldUpdater.set(dVar, null);
+                dVar.e(null);
+                break;
+        }
+        return ad.j.a;
     }
 }

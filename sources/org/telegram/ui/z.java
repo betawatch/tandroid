@@ -1,252 +1,185 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.graphics.drawable.Drawable;
-import android.os.Bundle;
-import android.text.TextUtils;
-import android.util.LongSparseArray;
-import android.view.View;
-import java.io.File;
+import android.graphics.RectF;
+import android.os.SystemClock;
 import java.util.ArrayList;
-import org.telegram.messenger.AccountInstance;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SaveToGallerySettingsHelper;
-import org.telegram.messenger.Utilities;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.telegram.SQLite.SQLiteDatabase;
+import org.telegram.SQLite.SQLitePreparedStatement;
+import org.telegram.tgnet.NativeByteBuffer;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.tgnet.tl.TL_wallet;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class z implements View.OnClickListener {
+public final /* synthetic */ class z implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ long c;
     public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
 
-    public /* synthetic */ z(Object obj, Object obj2, Object obj3, int i10) {
-        this.a = i10;
-        this.b = obj;
-        this.c = obj2;
-        this.d = obj3;
+    public /* synthetic */ z(int i10, int i11, long j10, Object obj, Object obj2) {
+        this.a = i11;
+        this.d = obj;
+        this.e = obj2;
+        this.b = i10;
+        this.c = j10;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        Runnable runnable;
-        TLRPC.Document document;
-        ey eyVar;
-        org.telegram.ui.ActionBar.k3 k3Var;
+    @Override // java.lang.Runnable
+    public final void run() {
         int i10 = this.a;
-        int i11 = 3;
-        int i12 = 1;
-        Object obj = this.d;
-        Object obj2 = this.c;
-        Object obj3 = this.b;
+        SQLitePreparedStatement sQLitePreparedStatement = null;
+        sQLitePreparedStatement = null;
+        sQLitePreparedStatement = null;
+        long j10 = this.c;
+        int i11 = this.b;
+        Object obj = this.e;
+        Object obj2 = this.d;
         switch (i10) {
             case 0:
-                j4 j4Var = (j4) obj3;
-                String str = (String) obj2;
-                m3 m3Var = (m3) obj;
-                j4Var.h0.k(false);
-                AndroidUtilities.hideKeyboard(j4Var.h0.b0);
-                if (TextUtils.isEmpty(str)) {
-                    str = "about:blank";
+                h4 h4Var = (h4) obj2;
+                TLObject tLObject = (TLObject) obj;
+                if (h4Var.H0 == 0) {
+                    return;
                 }
-                AndroidUtilities.addToClipboard(str);
-                new org.telegram.ui.Components.wc(m3Var.f, null).k(false).k(true);
-                break;
-            case 1:
-                h7 h7Var = (h7) obj3;
-                c7 c7Var = (c7) obj;
-                Bundle bundle = new Bundle();
-                ci.a aVar = ((q7) obj2).d;
-                long j10 = aVar.b;
-                if (j10 > 0) {
-                    bundle.putLong("user_id", j10);
-                } else {
-                    bundle.putLong("chat_id", -j10);
-                }
-                bundle.putInt("message_id", aVar.g);
-                c7Var.presentFragment(new wn(bundle));
-                h7Var.f.F.dismiss();
-                org.telegram.ui.ActionBar.o1 o1Var = h7Var.a;
-                if (o1Var != null) {
-                    o1Var.d(true);
-                    break;
-                }
-                break;
-            case 2:
-                org.telegram.ui.Components.qk0 qk0Var = (org.telegram.ui.Components.qk0) obj3;
-                ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = (ActionBarPopupWindow$ActionBarPopupWindowLayout) obj2;
-                int[] iArr = (int[]) obj;
-                if (qk0Var == null || qk0Var.w) {
-                    actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack().e(iArr[0]);
-                    break;
-                }
-                break;
-            case 3:
-                wn wnVar = (wn) obj3;
-                TL_keyboard.KeyboardInlineButton keyboardInlineButton = (TL_keyboard.KeyboardInlineButton) obj2;
-                MessageObject messageObject = (MessageObject) obj;
-                if (wnVar.getParentActivity() != null) {
-                    if (wnVar.a1.getVisibility() != 0 || bg.c.c(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeSwitchInline.class) || bg.c.c(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeCallback.class) || bg.c.c(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeGame.class) || bg.c.c(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeUrl.class) || bg.c.c(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeBuy.class) || bg.c.c(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeUrlAuth.class) || bg.c.c(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeUserProfile.class)) {
-                        wnVar.Y.Y(keyboardInlineButton, messageObject, messageObject, null);
-                        break;
+                h4Var.H0 = 0;
+                h4Var.Z(false);
+                if (tLObject != null) {
+                    TLRPC.TL_contacts_resolvedPeer tL_contacts_resolvedPeer = (TLRPC.TL_contacts_resolvedPeer) tLObject;
+                    org.telegram.messenger.vp.r1(i11).V3(tL_contacts_resolvedPeer.users, false);
+                    org.telegram.messenger.hs.a0(i11).m1(tL_contacts_resolvedPeer.users, tL_contacts_resolvedPeer.chats, false, true);
+                    if (tL_contacts_resolvedPeer.users.isEmpty()) {
+                        return;
                     }
+                    h4Var.N(j10, tL_contacts_resolvedPeer.users.get(0));
+                    return;
                 }
-                break;
+                return;
+            case 1:
+                ((n6) obj2).a(Float.valueOf(((int[]) obj)[0] / i11), Boolean.valueOf(System.currentTimeMillis() - j10 > 250));
+                return;
+            case 2:
+                RectF rectF = ProfileActivity.R6;
+                ((ProfileActivity) obj2).getMessagesController().O1().b(i11, j10, (ArrayList) obj);
+                return;
+            case 3:
+                lc.v vVar = (lc.v) obj;
+                org.telegram.ui.Wallet.z0 z0Var = ((org.telegram.ui.Wallet.y0) obj2).c;
+                if (!z0Var.c(vVar, i11)) {
+                    z0Var.d("closing stale connected websocket; attempt=" + i11);
+                    vVar.c();
+                    return;
+                }
+                z0Var.d("websocket connected after " + (SystemClock.elapsedRealtime() - j10) + " ms");
+                org.telegram.ui.Wallet.v0 v0Var = z0Var.o;
+                try {
+                    JSONArray put = new JSONArray().put(z0Var.b);
+                    StringBuilder sb2 = new StringBuilder("wallet-");
+                    int i12 = z0Var.g + 1;
+                    z0Var.g = i12;
+                    sb2.append(i12);
+                    z0Var.f = sb2.toString();
+                    JSONObject put2 = new JSONObject().put("operation", "subscribe").put("id", z0Var.f).put("types", new JSONArray().put("transactions").put("account_state_change")).put("include_address_book", true).put("addresses", put).put("min_finality", "pending");
+                    org.telegram.messenger.i0.r(v0Var);
+                    org.telegram.messenger.i0.h3(v0Var, 30000L);
+                    z0Var.g(put2.toString());
+                    return;
+                } catch (JSONException unused) {
+                    z0Var.f("could not encode subscription");
+                    return;
+                }
             case 4:
-                ((wn) obj3).Ha((org.telegram.ui.Cells.z) obj2, (TLRPC.ReactionCount) obj, 0.0f, 0.0f);
-                break;
+                org.telegram.ui.Wallet.e2 e2Var = (org.telegram.ui.Wallet.e2) obj2;
+                e2Var.getClass();
+                TL_wallet.tonConnectGetPending tonconnectgetpending = new TL_wallet.tonConnectGetPending();
+                long j11 = this.c;
+                tonconnectgetpending.session_id = Long.valueOf(j11);
+                e2Var.f.sendRequestTyped(tonconnectgetpending, new a3.b(1), new org.telegram.ui.Wallet.o1(e2Var, (j70) obj, j11, this.b, 0));
+                return;
             case 5:
-                wn.i0((wn) obj3, (boolean[]) obj2, (Context) obj);
-                break;
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, (Context) obj2, (org.telegram.ui.ActionBar.p6) obj);
+                String L0 = org.telegram.messenger.cd.L0(2131743099, null);
+                org.telegram.ui.ActionBar.x1 x1Var = alertDialog$Builder.a;
+                x1Var.R = L0;
+                x1Var.T = org.telegram.messenger.i0.V2(org.telegram.messenger.cd.V(null, null, 2131743097, org.telegram.ui.Wallet.k0.x(i11).m(j10, true)));
+                i0.a.w(null, 2131743089, alertDialog$Builder, null);
+                return;
             case 6:
-                wn.c1((wn) obj3, (lk) obj2, (boolean[]) obj);
-                break;
-            case 7:
-                hn hnVar = (hn) obj3;
-                TLRPC.Chat chat = (TLRPC.Chat) obj2;
-                org.telegram.ui.Cells.s1 s1Var = (org.telegram.ui.Cells.s1) obj;
-                org.telegram.ui.ActionBar.r2 r2Var = hnVar.a;
-                r2Var.finishPreviewFragment();
-                chat.left = false;
-                if (s1Var != null && s1Var.v != null) {
-                    r2Var.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.channelRecommendationsLoaded, Long.valueOf(s1Var.v.e));
-                }
-                r2Var.getMessagesController().addUserToChat(chat.id, r2Var.getUserConfig().getCurrentUser(), 0, null, r2Var, new vm(hnVar, chat, i11));
-                break;
-            case 8:
-                oo ooVar = (oo) obj3;
-                org.telegram.ui.Cells.n6[] n6VarArr = (org.telegram.ui.Cells.n6[]) obj2;
-                org.telegram.ui.ActionBar.e3 e3Var = (org.telegram.ui.ActionBar.e3) obj;
-                Integer num = (Integer) view.getTag();
-                n6VarArr[0].a(num.intValue() == 0);
-                n6VarArr[1].a(num.intValue() == 1);
-                ooVar.I0 = num.intValue() == 1;
-                runnable = e3Var.a.dismissRunnable;
-                runnable.run();
-                ooVar.q0(true, true);
-                break;
-            case 9:
-                MessageObject messageObject2 = (MessageObject) obj2;
-                PhotoViewer photoViewer = ((qr) obj3).c.a;
-                Drawable[] drawableArr = PhotoViewer.U8;
-                ArrayList arrayList = ((org.telegram.ui.Components.p81) obj).d;
-                if (arrayList.isEmpty()) {
-                    document = null;
-                } else {
-                    int size = arrayList.size();
-                    int i13 = 0;
-                    while (true) {
-                        if (i13 < size) {
-                            Object obj4 = arrayList.get(i13);
-                            i13++;
-                            org.telegram.ui.Components.r81 r81Var = (org.telegram.ui.Components.r81) obj4;
-                            if (r81Var.b()) {
-                                document = r81Var.g;
+                ArrayList arrayList = (ArrayList) obj;
+                SQLiteDatabase sQLiteDatabase = ((org.telegram.messenger.hs) obj2).b;
+                try {
+                    try {
+                        sQLiteDatabase.executeFast("DELETE FROM star_gifts2").stepThis().dispose();
+                        if (arrayList != null) {
+                            sQLitePreparedStatement = sQLiteDatabase.executeFast("REPLACE INTO star_gifts2 VALUES(?, ?, ?, ?, ?)");
+                            for (int i13 = 0; i13 < arrayList.size(); i13++) {
+                                TL_stars.StarGift starGift = (TL_stars.StarGift) arrayList.get(i13);
+                                sQLitePreparedStatement.requery();
+                                sQLitePreparedStatement.bindLong(1, starGift.id);
+                                NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(starGift.getObjectSize());
+                                starGift.serializeToStream(nativeByteBuffer);
+                                sQLitePreparedStatement.bindByteBuffer(2, nativeByteBuffer);
+                                sQLitePreparedStatement.bindLong(3, i11);
+                                sQLitePreparedStatement.bindLong(4, j10);
+                                sQLitePreparedStatement.bindInteger(5, i13);
+                                sQLitePreparedStatement.step();
+                                nativeByteBuffer.reuse();
                             }
-                        } else {
-                            long j11 = Long.MAX_VALUE;
-                            org.telegram.ui.Components.r81 r81Var2 = null;
-                            for (int i14 = 0; i14 < arrayList.size(); i14++) {
-                                org.telegram.ui.Components.r81 r81Var3 = (org.telegram.ui.Components.r81) arrayList.get(i14);
-                                if (r81Var3.k < j11 && org.telegram.ui.Components.t81.Y(r81Var3.m)) {
-                                    j11 = r81Var3.k;
-                                    r81Var2 = r81Var3;
-                                }
-                            }
-                            document = r81Var2 != null ? r81Var2.g : ((org.telegram.ui.Components.r81) arrayList.get(0)).g;
+                        }
+                        if (sQLitePreparedStatement == null) {
+                            return;
+                        }
+                    } catch (Exception e) {
+                        org.telegram.messenger.f8.g(e, true);
+                        if (sQLitePreparedStatement == null) {
+                            return;
                         }
                     }
-                }
-                if (document != null) {
-                    File pathToAttach = FileLoader.getInstance(photoViewer.T).getPathToAttach(document, null, false, true);
-                    if (pathToAttach == null || !pathToAttach.exists()) {
-                        pathToAttach = FileLoader.getInstance(photoViewer.T).getPathToAttach(document, null, true, true);
+                    sQLitePreparedStatement.dispose();
+                    return;
+                } catch (Throwable th2) {
+                    if (sQLitePreparedStatement != null) {
+                        sQLitePreparedStatement.dispose();
                     }
-                    if (pathToAttach == null || !pathToAttach.exists()) {
-                        ArrayList arrayList2 = new ArrayList();
-                        messageObject2.qualityToSave = document;
-                        arrayList2.add(messageObject2);
-                        MediaController.saveFilesFromMessages(photoViewer.y, AccountInstance.getInstance(photoViewer.T), arrayList2, new wa(photoViewer, i11));
-                    } else {
-                        MediaController.saveFile(pathToAttach.toString(), photoViewer.y, 1, null, null, new fr0(photoViewer, i12));
-                    }
-                    photoViewer.o0.U(null, null);
-                    break;
+                    throw th2;
                 }
-                break;
-            case 10:
-                ls lsVar = (ls) obj3;
-                TLRPC.User user = (TLRPC.User) obj;
-                org.telegram.ui.Components.g5.N((Context) obj2, LocaleController.getString(R.string.ResetToOriginalPhotoTitle), LocaleController.formatString(R.string.ResetToOriginalPhotoMessage, user.first_name), LocaleController.getString(R.string.Reset), new ds(lsVar, user, i12), lsVar.r).p();
-                break;
-            case 11:
-                rg0 rg0Var = (rg0) obj3;
-                ((org.telegram.ui.Components.l80) obj2).u();
-                int i15 = ((MessagesController.DialogFilter) obj).id;
-                if (rg0Var.c.getCurrentPosition() != 0 || (eyVar = rg0Var.I) == null) {
-                    if (rg0Var.I == null) {
-                        rg0Var.i0(null);
-                    }
-                    rg0Var.H = Integer.valueOf(i15);
-                    rg0Var.j0(0, true);
-                    rg0Var.c.E(0);
-                    break;
-                } else {
-                    eyVar.E4(i15);
-                    break;
-                }
-            case 12:
-                org.telegram.ui.ActionBar.k3[] k3VarArr = (org.telegram.ui.ActionBar.k3[]) obj3;
-                Utilities.Callback callback = (Utilities.Callback) obj;
-                String str2 = (String) obj2;
-                org.telegram.ui.ActionBar.k3 k3Var2 = k3VarArr[0];
-                if (k3Var2 != null) {
-                    k3Var2.dismiss();
-                    k3VarArr[0] = null;
-                    callback.run(str2);
-                    break;
-                }
-                break;
-            case 13:
-                org.telegram.ui.ActionBar.k3[] k3VarArr2 = (org.telegram.ui.ActionBar.k3[]) obj2;
-                Runnable runnable2 = (Runnable) obj;
-                if (!((fi.d) obj3).Q && (k3Var = k3VarArr2[0]) != null) {
-                    k3Var.dismiss();
-                    k3VarArr2[0] = null;
-                    runnable2.run();
-                    break;
-                }
-                break;
-            case 14:
-                ProfileActivity.n0((ProfileActivity) obj3, (TLRPC.User) obj2, (org.telegram.ui.ActionBar.b6) obj);
-                break;
             default:
-                SaveToGallerySettingsActivity saveToGallerySettingsActivity = (SaveToGallerySettingsActivity) obj3;
-                saveToGallerySettingsActivity.getClass();
-                ((org.telegram.ui.ActionBar.o1) obj2).dismiss();
-                LongSparseArray<SaveToGallerySettingsHelper.DialogException> saveGalleryExceptions = saveToGallerySettingsActivity.getUserConfig().getSaveGalleryExceptions(saveToGallerySettingsActivity.a);
-                saveGalleryExceptions.remove(((SaveToGallerySettingsHelper.DialogException) obj).dialogId);
-                saveToGallerySettingsActivity.getUserConfig().updateSaveGalleryExceptions(saveToGallerySettingsActivity.a, saveGalleryExceptions);
-                saveToGallerySettingsActivity.b0();
-                break;
+                ((vh.d) obj2).setLoading(false);
+                org.telegram.ui.ActionBar.z2 z2Var = ((org.telegram.ui.ActionBar.z2[]) obj)[0];
+                if (z2Var != null) {
+                    z2Var.dismiss();
+                }
+                rh.e6.y(i11, false).R();
+                org.telegram.ui.ActionBar.k2 T = LaunchActivity.T();
+                if (T == null) {
+                    return;
+                }
+                T.presentFragment(un.ha(j10));
+                return;
         }
     }
 
-    public /* synthetic */ z(org.telegram.ui.ActionBar.k3[] k3VarArr, Utilities.Callback callback, String str) {
-        this.a = 12;
-        this.b = k3VarArr;
-        this.d = callback;
-        this.c = str;
+    public /* synthetic */ z(ProfileActivity profileActivity, long j10, int i10, ArrayList arrayList) {
+        this.a = 2;
+        this.d = profileActivity;
+        this.c = j10;
+        this.b = i10;
+        this.e = arrayList;
+    }
+
+    public /* synthetic */ z(org.telegram.ui.Wallet.e2 e2Var, long j10, j70 j70Var, int i10) {
+        this.a = 4;
+        this.d = e2Var;
+        this.c = j10;
+        this.e = j70Var;
+        this.b = i10;
     }
 }

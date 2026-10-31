@@ -1,6 +1,6 @@
 package m4;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class k0 implements o0 {
     public final /* synthetic */ int a;
@@ -14,7 +14,7 @@ public final /* synthetic */ class k0 implements o0 {
     }
 
     @Override // m4.o0
-    public final void i(w wVar) {
+    public final void b(w wVar) {
         int i10 = this.a;
         int i11 = 0;
         r0 = false;
@@ -25,7 +25,7 @@ public final /* synthetic */ class k0 implements o0 {
         p0 p0Var = this.b;
         switch (i10) {
             case 0:
-                n1 n1Var = p0Var.g.t;
+                n1 n1Var = p0Var.h.t;
                 int i13 = o.a;
                 if (i12 != -1 && i12 != 0) {
                     if (i12 == 1) {
@@ -36,14 +36,14 @@ public final /* synthetic */ class k0 implements o0 {
                         e2.a.l("LegacyConversions", "Unrecognized PlaybackStateCompat.RepeatMode: " + i12 + " was converted to `Player.REPEAT_MODE_OFF`");
                     }
                 }
-                n1Var.j(i11);
+                n1Var.k(i11);
                 return;
             default:
-                n1 n1Var2 = p0Var.g.t;
+                n1 n1Var2 = p0Var.h.t;
                 int i14 = o.a;
                 if (i12 != -1 && i12 != 0) {
                     if (i12 != 1 && i12 != 2) {
-                        throw new IllegalArgumentException(ic.a.i(i12, "Unrecognized ShuffleMode: "));
+                        throw new IllegalArgumentException(i0.a.i(i12, "Unrecognized ShuffleMode: "));
                     }
                     z10 = true;
                 }

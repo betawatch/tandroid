@@ -1,282 +1,62 @@
 package org.telegram.ui.web;
 
-import android.animation.ValueAnimator;
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
 import android.view.View;
-import bi.dd;
-import bi.n7;
-import bi.rc;
-import bi.t9;
-import di.y2;
-import fi.e4;
-import fi.kc;
-import hi.p4;
-import j$.util.Objects;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Iterator;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.bk;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.go;
-import org.telegram.ui.Components.kb1;
-import org.telegram.ui.wn;
-import sg.o2;
-import vg.b0;
-import vg.j;
-import zh.f4;
-import zh.g4;
-import zh.h4;
-import zh.i4;
-import zh.l4;
+import android.widget.ImageView;
+import android.widget.TextView;
+import org.telegram.messenger.beta.R;
+import org.telegram.ui.ActionBar.p6;
+import org.telegram.ui.ActionBar.t6;
+import org.telegram.ui.Components.a51;
+import org.telegram.ui.Components.p51;
+import org.telegram.ui.Components.tk0;
+import org.telegram.ui.Components.u51;
+import org.telegram.ui.Components.z41;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class c implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
+public final class c extends z41 {
+    public static final /* synthetic */ int b = 0;
 
-    public /* synthetic */ c(int i10, Object obj, Object obj2) {
-        this.a = i10;
-        this.b = obj;
-        this.c = obj2;
+    static {
+        z41.h(new c());
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        sg.l2 j10;
-        TL_stars.SavedStarGift savedStarGift;
-        int i10 = 5;
-        final int i11 = 0;
-        final int i12 = 1;
-        switch (this.a) {
-            case 0:
-                l lVar = (l) this.b;
-                org.telegram.ui.x xVar = (org.telegram.ui.x) this.c;
-                lVar.b = true;
-                xVar.run();
-                lVar.w.g3.O(true);
-                break;
-            case 1:
-                rg.y yVar = (rg.y) this.b;
-                Context context = (Context) this.c;
-                if (!yVar.n.c()) {
-                    Bitmap snapshotView = AndroidUtilities.snapshotView(yVar.n.e());
-                    Bitmap createBitmap = Bitmap.createBitmap(snapshotView.getWidth(), snapshotView.getHeight(), Bitmap.Config.ARGB_8888);
-                    Canvas canvas = new Canvas(createBitmap);
-                    canvas.drawColor(-16777216);
-                    yVar.n.b(canvas);
-                    canvas.drawBitmap(snapshotView, 0.0f, 0.0f, (Paint) null);
-                    snapshotView.recycle();
-                    rg.n nVar = new rg.n(yVar, context, createBitmap);
-                    yVar.n.f().addView(nVar, kb1.g(-1.0f, -1));
-                    rg.v vVar = yVar.n;
-                    Objects.requireNonNull(vVar);
-                    nVar.setColorListener(new n7(vVar, i10));
-                    ValueAnimator duration = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration(150L);
-                    duration.setInterpolator(ds.f);
-                    duration.addUpdateListener(new e4(nVar, 22));
-                    duration.start();
-                    yVar.n.a();
-                    yVar.dismiss();
-                    break;
-                }
-                break;
-            case 2:
-                o2 o2Var = (o2) this.b;
-                kc kcVar = (kc) this.c;
-                sg.l2[] l2VarArr = o2Var.H;
-                if (l2VarArr != null && l2VarArr.length != 0 && o2Var.I != null && (j10 = o2Var.j(o2Var.n0, o2Var.o0)) != null) {
-                    kcVar.run(j10);
-                    break;
-                }
-                break;
-            case 3:
-                go.g0((wn) this.c, 41026, new ig.o((sh.c) this.b, 20), null);
-                break;
-            case 4:
-                tg.j0.V((tg.j0) this.b, (Context) this.c);
-                break;
-            case 5:
-                vg.s0 s0Var = (vg.s0) this.b;
-                TLRPC.Chat chat = (TLRPC.Chat) this.c;
-                ArrayList arrayList = s0Var.X;
-                if (!arrayList.isEmpty()) {
-                    vg.d0 d0Var = s0Var.a0;
-                    if (!d0Var.Q) {
-                        d0Var.setLoading(true);
-                        ArrayList arrayList2 = new ArrayList();
-                        HashSet hashSet = new HashSet();
-                        int size = arrayList.size();
-                        while (i11 < size) {
-                            Object obj = arrayList.get(i11);
-                            i11++;
-                            TL_stories.TL_myBoost tL_myBoost = (TL_stories.TL_myBoost) obj;
-                            arrayList2.add(Integer.valueOf(tL_myBoost.slot));
-                            hashSet.add(Long.valueOf(DialogObject.getPeerDialogId(tL_myBoost.peer)));
-                        }
-                        vg.s.a(chat.id, arrayList2, new y2(s0Var, chat, arrayList2, hashSet, 17), new ig.o(s0Var, 24));
-                        break;
-                    }
-                }
-                break;
-            case 6:
-                vg.n1 n1Var = (vg.n1) this.b;
-                ArrayList arrayList3 = (ArrayList) this.c;
-                HashSet hashSet2 = n1Var.h0;
-                int size2 = arrayList3.size();
-                while (i11 < size2) {
-                    Object obj2 = arrayList3.get(i11);
-                    i11++;
-                    Long l4 = (Long) obj2;
-                    l4.getClass();
-                    hashSet2.remove(l4);
-                    n1Var.n0.remove(l4);
-                }
-                n1Var.W();
-                n1Var.Z.b(true, hashSet2, new vg.a1(n1Var, i10), null);
-                n1Var.i0(true, true);
-                n1Var.X();
-                break;
-            case 7:
-                vg.n1.S((vg.n1) this.b, (TLRPC.User) this.c, view);
-                break;
-            case 8:
-                final wg.e eVar = (wg.e) this.b;
-                final xg.a aVar = (xg.a) this.c;
-                if (!eVar.d) {
-                    ((vg.b0) eVar).r.dismiss();
-                    break;
-                } else if (!aVar.a.Q) {
-                    aVar.b(true);
-                    String str = eVar.h;
-                    Utilities.Callback callback = new Utilities.Callback() { // from class: wg.d
-                        @Override // org.telegram.messenger.Utilities.Callback
-                        public final void run(Object obj3) {
-                            switch (i11) {
-                                case 0:
-                                    aVar.b(false);
-                                    b0 b0Var = (b0) eVar;
-                                    AndroidUtilities.runOnUIThread(new ti.g(b0Var, 10), 200L);
-                                    b0Var.r.dismiss();
-                                    break;
-                                default:
-                                    aVar.b(false);
-                                    e eVar2 = eVar;
-                                    j.c((TLRPC.TL_error) obj3, eVar2.n, eVar2.c, new c(eVar2, 1));
-                                    break;
-                            }
-                        }
-                    };
-                    Utilities.Callback callback2 = new Utilities.Callback() { // from class: wg.d
-                        @Override // org.telegram.messenger.Utilities.Callback
-                        public final void run(Object obj3) {
-                            switch (i12) {
-                                case 0:
-                                    aVar.b(false);
-                                    b0 b0Var = (b0) eVar;
-                                    AndroidUtilities.runOnUIThread(new ti.g(b0Var, 10), 200L);
-                                    b0Var.r.dismiss();
-                                    break;
-                                default:
-                                    aVar.b(false);
-                                    e eVar2 = eVar;
-                                    j.c((TLRPC.TL_error) obj3, eVar2.n, eVar2.c, new c(eVar2, 1));
-                                    break;
-                            }
-                        }
-                    };
-                    ConnectionsManager connectionsManager = ConnectionsManager.getInstance(UserConfig.selectedAccount);
-                    TLRPC.TL_payments_applyGiftCode tL_payments_applyGiftCode = new TLRPC.TL_payments_applyGiftCode();
-                    tL_payments_applyGiftCode.slug = str;
-                    connectionsManager.sendRequest(tL_payments_applyGiftCode, new vg.p(callback2, callback, i11), 2);
-                    break;
-                }
-                break;
-            case 9:
-                xg.g gVar = (xg.g) this.b;
-                TLRPC.Chat chat2 = (TLRPC.Chat) this.c;
-                xg.f fVar = gVar.v;
-                if (fVar != null) {
-                    vg.a0 a0Var = ((vg.u) fVar).a;
-                    a0Var.c0.remove(chat2);
-                    a0Var.a0(true, true);
-                    break;
-                }
-                break;
-            case 10:
-                ((ig.o) this.b).run((TLRPC.TL_payments_checkedGiftCode) this.c);
-                break;
-            case 11:
-                ((ig.o) this.b).run((TLRPC.Chat) this.c);
-                break;
-            case 12:
-                zh.c.P((zh.c) this.b, (TL_stars.TL_StarGiftAuctionAcquiredGift) this.c);
-                break;
-            case 13:
-                h4 h4Var = (h4) this.b;
-                rc rcVar = (rc) this.c;
-                h4Var.getClass();
-                if (rcVar.f > 0) {
-                    h4Var.presentFragment(new dd());
-                    break;
-                }
-                break;
-            case 14:
-                g4.P((g4) this.b, (f4) this.c);
-                break;
-            case 15:
-                l4 l4Var = (l4) this.b;
-                p4 p4Var = (p4) this.c;
-                HashSet hashSet3 = l4Var.Z;
-                if (!hashSet3.isEmpty()) {
-                    ArrayList arrayList4 = new ArrayList();
-                    Iterator it = hashSet3.iterator();
-                    while (it.hasNext()) {
-                        long longValue = ((Long) it.next()).longValue();
-                        ArrayList arrayList5 = l4Var.Y.l;
-                        int size3 = arrayList5.size();
-                        int i13 = 0;
-                        while (true) {
-                            if (i13 < size3) {
-                                Object obj3 = arrayList5.get(i13);
-                                i13++;
-                                savedStarGift = (TL_stars.SavedStarGift) obj3;
-                                int i14 = savedStarGift.msg_id;
-                                if ((i14 == 0 || i14 != longValue) && savedStarGift.saved_id != longValue) {
-                                }
-                            } else {
-                                savedStarGift = null;
-                            }
-                        }
-                        if (savedStarGift != null) {
-                            arrayList4.add(savedStarGift);
-                        }
-                    }
-                    p4Var.run(arrayList4);
-                    l4Var.dismiss();
-                    break;
-                }
-                break;
-            default:
-                i4 i4Var = (i4) this.b;
-                bk bkVar = (bk) this.c;
-                t9 t9Var = i4Var.c.Y;
-                t9Var.e = !t9Var.e;
-                bkVar.run();
-                t9Var.j(true);
-                break;
+    @Override // org.telegram.ui.Components.z41
+    public final void b(View view, a51 a51Var, boolean z10, p51 p51Var, u51 u51Var) {
+        d dVar = (d) view;
+        if (a51Var.G == null) {
+            dVar.setAsShowMore((j) a51Var.H);
+            return;
         }
+        int i10 = a51Var.z;
+        String charSequence = a51Var.l.toString();
+        View.OnClickListener onClickListener = a51Var.D;
+        j jVar = (j) a51Var.H;
+        ImageView imageView = dVar.a;
+        imageView.setVisibility(0);
+        int i11 = jVar.F;
+        int i12 = jVar.H;
+        TextView textView = dVar.b;
+        textView.setTextColor(i12);
+        int r12 = t6.r1(0.6f, i12);
+        PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
+        imageView.setColorFilter(new PorterDuffColorFilter(r12, mode));
+        ImageView imageView2 = dVar.c;
+        imageView2.setColorFilter(new PorterDuffColorFilter(t6.r1(0.6f, i12), mode));
+        imageView2.setBackground(t6.b0(0, t6.r1(0.15f, i12), org.telegram.messenger.i0.L(4.0f), org.telegram.messenger.i0.L(4.0f)));
+        imageView.setImageResource(i10 == 0 ? R.drawable.msg_clear_recent : R.drawable.msg_search);
+        textView.setText(charSequence);
+        imageView2.setOnClickListener(onClickListener);
+        dVar.d.setColor(t6.r1(0.1f, jVar.H));
+        dVar.e = z10;
+        dVar.setWillNotDraw(!z10);
+    }
+
+    @Override // org.telegram.ui.Components.z41
+    public final View d(Context context, tk0 tk0Var, int i10, p6 p6Var) {
+        return new d(context);
     }
 }

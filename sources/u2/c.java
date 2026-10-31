@@ -1,6 +1,6 @@
 package u2;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class c implements d1 {
     public final d1 a;
@@ -13,8 +13,8 @@ public final class c implements d1 {
     }
 
     @Override // u2.d1
-    public final void d() {
-        this.a.d();
+    public final void a() {
+        this.a.a();
     }
 
     @Override // u2.d1
@@ -23,7 +23,15 @@ public final class c implements d1 {
     }
 
     @Override // u2.d1
-    public final int f(n4.s sVar, h2.h hVar, int i10) {
+    public final int i(long j10) {
+        if (this.c.a()) {
+            return -3;
+        }
+        return this.a.i(j10);
+    }
+
+    @Override // u2.d1
+    public final int r(hf.b bVar, h2.h hVar, int i10) {
         d dVar = this.c;
         if (dVar.a()) {
             return -3;
@@ -32,15 +40,15 @@ public final class c implements d1 {
             hVar.setFlags(4);
             return -4;
         }
-        long q5 = dVar.q();
-        int f7 = this.a.f(sVar, hVar, i10);
-        if (dVar.e != -9223372036854775807L && f7 != -3) {
+        long s10 = dVar.s();
+        int r10 = this.a.r(bVar, hVar, i10);
+        if (dVar.e != -9223372036854775807L && r10 != -3) {
             dVar.e = -9223372036854775807L;
         }
-        if (f7 != -5) {
+        if (r10 != -5) {
             long j10 = dVar.h;
-            if (j10 == Long.MIN_VALUE || ((f7 != -4 || hVar.e < j10) && !(f7 == -3 && q5 == Long.MIN_VALUE && !hVar.d))) {
-                return f7;
+            if (j10 == Long.MIN_VALUE || ((r10 != -4 || hVar.e < j10) && !(r10 == -3 && s10 == Long.MIN_VALUE && !hVar.d))) {
+                return r10;
             }
             hVar.clear();
             hVar.setFlags(4);
@@ -49,7 +57,7 @@ public final class c implements d1 {
         }
         long j11 = dVar.f;
         long j12 = dVar.h;
-        b2.x xVar = (b2.x) sVar.c;
+        b2.x xVar = (b2.x) bVar.c;
         xVar.getClass();
         int i11 = xVar.O;
         int i12 = xVar.N;
@@ -63,16 +71,8 @@ public final class c implements d1 {
             b2.w a2 = xVar.a();
             a2.M = i12;
             a2.N = i11;
-            sVar.c = new b2.x(a2);
+            bVar.c = new b2.x(a2);
         }
         return -5;
-    }
-
-    @Override // u2.d1
-    public final int j(long j10) {
-        if (this.c.a()) {
-            return -3;
-        }
-        return this.a.j(j10);
     }
 }

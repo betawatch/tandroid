@@ -1,45 +1,24 @@
 package wf;
 
-import android.view.View;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import java.util.ArrayList;
-import oi.h;
-import org.telegram.messenger.R;
+import java.util.List;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class b implements View.OnAttachStateChangeListener {
-    @Override // android.view.View.OnAttachStateChangeListener
-    public final void onViewAttachedToWindow(View view) {
-        a a2;
-        c cVar = (c) view.getTag(R.id.tag_view_on_post_draw_state);
-        if (cVar == null || (a2 = d.a(view, cVar)) == null) {
-            return;
-        }
-        ArrayList arrayList = cVar.a;
-        int size = arrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
-            ((se.b) a2.a.b).add((h) obj);
-        }
+public final class b extends BitmapDrawable {
+    public final List a;
+
+    public b(Bitmap bitmap, List list) {
+        super(bitmap);
+        this.a = list;
     }
 
-    @Override // android.view.View.OnAttachStateChangeListener
-    public final void onViewDetachedFromWindow(View view) {
-        a aVar;
-        c cVar = (c) view.getTag(R.id.tag_view_on_post_draw_state);
-        if (cVar == null || (aVar = cVar.b) == null) {
-            return;
+    public static BitmapDrawable a(Bitmap bitmap, ArrayList arrayList) {
+        if (bitmap == null) {
+            return null;
         }
-        ArrayList arrayList = cVar.a;
-        int size = arrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
-            ((se.b) aVar.a.b).remove((h) obj);
-        }
-        cVar.b = null;
+        return (arrayList == null || arrayList.isEmpty()) ? new BitmapDrawable(bitmap) : new b(bitmap, arrayList);
     }
 }

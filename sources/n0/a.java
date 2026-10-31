@@ -3,9 +3,8 @@ package n0;
 import android.os.Build;
 import java.util.Locale;
 import kotlin.jvm.internal.i;
-import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public abstract class a {
     public static final /* synthetic */ int a = 0;
@@ -22,7 +21,7 @@ public abstract class a {
             g0.f.f(33);
         }
         if (i10 >= 30) {
-            g0.f.f(MediaController.VIDEO_BITRATE_480);
+            g0.f.f(1000000);
         }
     }
 

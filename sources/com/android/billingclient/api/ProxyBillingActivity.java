@@ -7,12 +7,13 @@ import android.content.IntentSender;
 import android.os.Bundle;
 import android.os.ResultReceiver;
 import c3.a;
+import c5.a0;
+import c5.g;
 import com.google.android.gms.internal.play_billing.m3;
 import com.google.android.gms.internal.play_billing.u;
-import d5.c0;
-import d5.i;
+import org.telegram.messenger.zs;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public class ProxyBillingActivity extends Activity {
     public ResultReceiver a;
@@ -26,12 +27,12 @@ public class ProxyBillingActivity extends Activity {
         Intent b10 = b();
         b10.putExtra("RESPONSE_CODE", 6);
         b10.putExtra("DEBUG_MESSAGE", "An internal error occurred.");
-        a a2 = i.a();
+        a a2 = g.a();
         a2.b = 6;
         a2.a = "An internal error occurred.";
-        i a10 = a2.a();
-        int i11 = c0.a;
-        b10.putExtra("FAILURE_LOGGING_PAYLOAD", c0.b(i10, 2, a10, null, m3.b).a());
+        g a10 = a2.a();
+        int i11 = a0.a;
+        b10.putExtra("FAILURE_LOGGING_PAYLOAD", a0.b(i10, 2, a10, null, m3.b).a());
         b10.putExtra("INTENT_SOURCE", "LAUNCH_BILLING_FLOW");
         b10.putExtra("billingClientTransactionId", j10);
         b10.putExtra("wasServiceAutoReconnected", this.f);
@@ -46,8 +47,8 @@ public class ProxyBillingActivity extends Activity {
 
     /* JADX WARN: Removed duplicated region for block: B:11:0x0034  */
     /* JADX WARN: Removed duplicated region for block: B:29:0x0083  */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x011b  */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x00df  */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x011a  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x00de  */
     @Override // android.app.Activity
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -66,7 +67,7 @@ public class ProxyBillingActivity extends Activity {
                     i11 = -1;
                     if (intent != null) {
                         u.h("ProxyBillingActivity", "Got null data with resultCode " + i11 + "!");
-                        a2 = a(i11 != -1 ? i11 != 0 ? i11 != 3 ? i11 != 4 ? i11 != 5 ? 117 : 118 : 116 : 115 : 114 : 113, this.e);
+                        a2 = a(i11 != -1 ? i11 != 0 ? i11 != 3 ? i11 != 4 ? i11 != 5 ? zs.C1 : zs.D1 : zs.B1 : zs.A1 : zs.z1 : zs.y1, this.e);
                     } else if (intent.getExtras() != null) {
                         String string = intent.getExtras().getString("ALTERNATIVE_BILLING_USER_CHOICE_DATA");
                         if (string != null) {
@@ -152,7 +153,7 @@ public class ProxyBillingActivity extends Activity {
             pendingIntent = (PendingIntent) getIntent().getParcelableExtra("BUY_INTENT");
             if (getIntent().hasExtra("IS_FLOW_FROM_FIRST_PARTY_CLIENT") && getIntent().getBooleanExtra("IS_FLOW_FROM_FIRST_PARTY_CLIENT", false)) {
                 this.c = true;
-                this.d = 110;
+                this.d = zs.v1;
             }
         } else if (getIntent().hasExtra("IN_APP_MESSAGE_INTENT")) {
             pendingIntent = (PendingIntent) getIntent().getParcelableExtra("IN_APP_MESSAGE_INTENT");
@@ -176,7 +177,7 @@ public class ProxyBillingActivity extends Activity {
             if (resultReceiver != null) {
                 resultReceiver.send(0, null);
             } else {
-                Intent a2 = a(137, this.e);
+                Intent a2 = a(zs.T1, this.e);
                 if (this.c) {
                     a2.putExtra("IS_FIRST_PARTY_PURCHASE", true);
                 }

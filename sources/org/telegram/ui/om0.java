@@ -1,73 +1,66 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.widget.FrameLayout;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class om0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ kn0 c;
+public final class om0 extends FrameLayout {
+    public final Paint a;
+    public float b;
+    public o1.j c;
+    public final /* synthetic */ sm0 d;
 
-    public /* synthetic */ om0(kn0 kn0Var, boolean z10, int i10) {
-        this.a = i10;
-        this.c = kn0Var;
-        this.b = z10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public om0(sm0 sm0Var, Context context) {
+        super(context);
+        this.d = sm0Var;
+        this.a = new Paint(1);
+        setWillNotDraw(false);
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationCancel(Animator animator) {
-        switch (this.a) {
-            case 0:
-                kn0 kn0Var = this.c;
-                AnimatorSet animatorSet = kn0Var.M;
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    kn0Var.M = null;
-                    break;
-                }
-                break;
-            default:
-                kn0 kn0Var2 = this.c;
-                AnimatorSet animatorSet2 = kn0Var2.M;
-                if (animatorSet2 != null && animatorSet2.equals(animator)) {
-                    kn0Var2.M = null;
-                    break;
-                }
-                break;
+    public final void a(boolean z10, boolean z11) {
+        o1.j jVar = this.c;
+        if (jVar != null) {
+            jVar.d();
         }
+        float f7 = z10 ? 1.0f : 0.0f;
+        if (!z11) {
+            this.b = f7;
+            TextView textView = this.d.U;
+            if (textView != null) {
+                textView.setAlpha((f7 * 0.2f) + 0.8f);
+            }
+            invalidate();
+            return;
+        }
+        float f10 = this.b;
+        if (f10 == f7) {
+            return;
+        }
+        o1.j jVar2 = new o1.j(new o1.i(f10 * 100.0f));
+        o1.k kVar = new o1.k(f7 * 100.0f);
+        kVar.b(z10 ? 500.0f : 650.0f);
+        kVar.a(1.0f);
+        jVar2.m = kVar;
+        this.c = jVar2;
+        jVar2.b(new jc0(this, 1));
+        this.c.a(new m9(this, 1));
+        this.c.h();
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                kn0 kn0Var = this.c;
-                AnimatorSet animatorSet = kn0Var.M;
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    if (!this.b) {
-                        kn0Var.N.setVisibility(4);
-                        break;
-                    } else {
-                        kn0Var.L.getContentView().setVisibility(4);
-                        break;
-                    }
-                }
-                break;
-            default:
-                kn0 kn0Var2 = this.c;
-                AnimatorSet animatorSet2 = kn0Var2.M;
-                if (animatorSet2 != null && animatorSet2.equals(animator)) {
-                    if (!this.b) {
-                        kn0Var2.P.setVisibility(4);
-                        break;
-                    } else {
-                        kn0Var2.O.setVisibility(4);
-                        break;
-                    }
-                }
-                break;
-        }
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        int i10 = org.telegram.ui.ActionBar.t6.O6;
+        sm0 sm0Var = this.d;
+        canvas.drawColor(sm0Var.getThemedColor(i10));
+        int themedColor = sm0Var.getThemedColor(org.telegram.ui.ActionBar.t6.Si);
+        Paint paint = this.a;
+        paint.setColor(themedColor);
+        canvas.drawCircle(org.telegram.messenger.cd.X ? getWidth() - org.telegram.messenger.i0.L(28.0f) : org.telegram.messenger.i0.L(28.0f), -org.telegram.messenger.i0.L(28.0f), Math.max(getWidth(), getHeight()) * this.b, paint);
     }
 }

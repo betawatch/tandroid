@@ -1,68 +1,36 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.AndroidUtilities;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class hj0 extends Drawable {
-    public Path a;
-    public Paint b;
-    public float c;
+public final class hj0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ kj0 b;
 
-    public final void a() {
-        int dp = AndroidUtilities.dp(18.0f);
-        Path path = this.a;
-        path.reset();
-        float f7 = dp >> 1;
-        path.moveTo(f7, AndroidUtilities.dpf2(4.98f));
-        path.lineTo(AndroidUtilities.dpf2(4.95f), AndroidUtilities.dpf2(9.0f));
-        path.lineTo(dp - AndroidUtilities.dpf2(4.95f), AndroidUtilities.dpf2(9.0f));
-        path.lineTo(f7, AndroidUtilities.dpf2(4.98f));
-        Paint paint = this.b;
-        paint.setStyle(Paint.Style.FILL_AND_STROKE);
-        paint.setStrokeJoin(Paint.Join.ROUND);
-        paint.setStrokeWidth(AndroidUtilities.dpf2(1.0f));
-        this.c = AndroidUtilities.density;
+    public /* synthetic */ hj0(kj0 kj0Var, int i10) {
+        this.a = i10;
+        this.b = kj0Var;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        Paint paint = this.b;
-        if (this.c != AndroidUtilities.density) {
-            a();
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                if (this.b.a.getImageReceiver().B() != null && !this.b.a.getImageReceiver().B().k0 && !this.b.a.getImageReceiver().B().y()) {
+                    this.b.a.getImageReceiver().B().start();
+                }
+                this.b.E = false;
+                break;
+            default:
+                kj0 kj0Var = this.b;
+                mj0 mj0Var = kj0Var.P;
+                try {
+                    kj0Var.performHapticFeedback(0);
+                } catch (Exception unused) {
+                }
+                mj0Var.m0 = mj0Var.T.indexOf(kj0Var.e);
+                mj0Var.l0 = kj0Var.e;
+                mj0Var.invalidate();
+                break;
         }
-        canvas.save();
-        canvas.translate(getBounds().left, getBounds().top);
-        canvas.drawPath(this.a, paint);
-        canvas.drawRect(AndroidUtilities.dpf2(7.56f), AndroidUtilities.dpf2(8.0f), AndroidUtilities.dp(18.0f) - AndroidUtilities.dpf2(7.56f), AndroidUtilities.dpf2(11.1f), paint);
-        canvas.restore();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return AndroidUtilities.dp(18.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return AndroidUtilities.dp(18.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return 0;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

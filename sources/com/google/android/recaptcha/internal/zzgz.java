@@ -1,21 +1,21 @@
 package com.google.android.recaptcha.internal;
 
-import a8.id;
-import a8.pe;
+import ad.d;
 import android.content.Context;
-import androidx.car.app.j;
-import ce.f0;
+import bd.p;
+import bd.w;
+import ib.a;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.RandomAccess;
 import java.util.Timer;
-import kd.n;
-import kd.u;
 import kotlin.jvm.internal.i;
-import zd.c;
+import qd.c;
+import td.e0;
+import v7.w6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class zzgz implements zzgs {
     private static Timer zza;
@@ -66,12 +66,12 @@ public final class zzgz implements zzgs {
                 Iterator iterator = zzd.iterator();
                 i.e(iterator, "iterator");
                 if (iterator.hasNext()) {
-                    u uVar = new u(iterator, null);
+                    w wVar = new w(iterator, null);
                     c cVar = new c();
-                    cVar.c = pe.a(cVar, cVar, uVar);
+                    cVar.c = w6.a(cVar, cVar, wVar);
                     it = cVar;
                 } else {
-                    it = n.a;
+                    it = p.a;
                 }
                 while (it.hasNext()) {
                     arrayList.add((List) it.next());
@@ -114,7 +114,7 @@ public final class zzgz implements zzgs {
             } else if (i10 == 1) {
                 zzi.zzr(zzk.zzg());
             } else if (i10 != 2) {
-                throw new j();
+                throw new d();
             }
             arrayList.add(zzgpVar);
         }
@@ -124,7 +124,7 @@ public final class zzgz implements zzgs {
         byte[] zzd = ((zzwq) zzi.zzk()).zzd();
         try {
             int i11 = zzby.zza;
-            if (!((zzha) id.a(zzgt.zza).a()).zza(zzd) || (zzgoVar = this.zzc) == null) {
+            if (!((zzha) a.a(zzgt.zza).a()).zza(zzd) || (zzgoVar = this.zzc) == null) {
                 return;
             }
             zzgoVar.zza(arrayList);
@@ -144,7 +144,7 @@ public final class zzgz implements zzgs {
     public final void zza(zzzm zzzmVar) {
         try {
             int i10 = zzby.zza;
-            f0.q(((zzcr) id.a(zzgx.zza).a()).zza(), new zzgy(this, zzzmVar, null));
+            e0.q(((zzcr) a.a(zzgx.zza).a()).zza(), new zzgy(this, zzzmVar, null));
         } catch (Exception unused) {
         }
         zzh();

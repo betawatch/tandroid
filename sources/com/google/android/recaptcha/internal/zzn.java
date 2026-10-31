@@ -1,24 +1,24 @@
 package com.google.android.recaptcha.internal;
 
-import a8.jd;
-import ce.c0;
-import ce.f0;
-import ce.i0;
+import ad.f;
+import ad.g;
+import cd.c;
+import dd.a;
+import ed.j;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
-import jd.e;
-import jd.f;
-import ld.c;
-import md.a;
-import nd.i;
-import ud.p;
+import l9.b;
+import ld.p;
+import td.c0;
+import td.e0;
+import td.h0;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-final class zzn extends i implements p {
+final class zzn extends j implements p {
     int zza;
     final /* synthetic */ zzq zzb;
     final /* synthetic */ zzgr zzc;
@@ -35,34 +35,34 @@ final class zzn extends i implements p {
         this.zze = zzxnVar;
     }
 
-    @Override // nd.a
+    @Override // ed.a
     public final c create(Object obj, c cVar) {
         zzn zznVar = new zzn(this.zzb, this.zzc, this.zzd, this.zze, cVar);
         zznVar.zzf = obj;
         return zznVar;
     }
 
-    @Override // ud.p
+    @Override // ld.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzn) create((c0) obj, (c) obj2)).invokeSuspend(jd.i.a);
+        return ((zzn) create((c0) obj, (c) obj2)).invokeSuspend(ad.j.a);
     }
 
-    @Override // nd.a
+    @Override // ed.a
     public final Object invokeSuspend(Object obj) {
         a aVar = a.a;
         int i10 = this.zza;
-        jd.b(obj);
+        b.b(obj);
         if (i10 == 0) {
             c0 c0Var = (c0) this.zzf;
             ArrayList arrayList = new ArrayList();
             Iterator it = this.zzb.zzd().iterator();
             while (it.hasNext()) {
-                arrayList.add(f0.c(c0Var, new zzm(this.zzc, (zzg) it.next(), this.zzd, this.zze, null)));
+                arrayList.add(e0.c(c0Var, new zzm(this.zzc, (zzg) it.next(), this.zzd, this.zze, null)));
             }
-            i0[] i0VarArr = (i0[]) arrayList.toArray(new i0[0]);
-            i0[] i0VarArr2 = (i0[]) Arrays.copyOf(i0VarArr, i0VarArr.length);
+            h0[] h0VarArr = (h0[]) arrayList.toArray(new h0[0]);
+            h0[] h0VarArr2 = (h0[]) Arrays.copyOf(h0VarArr, h0VarArr.length);
             this.zza = 1;
-            obj = f0.d(i0VarArr2, this);
+            obj = e0.d(h0VarArr2, this);
             if (obj == aVar) {
                 return aVar;
             }
@@ -71,8 +71,8 @@ final class zzn extends i implements p {
         if (!(list instanceof Collection) || !list.isEmpty()) {
             Iterator it2 = list.iterator();
             while (it2.hasNext()) {
-                if (!(((f) it2.next()).a instanceof e)) {
-                    return jd.i.a;
+                if (!(((g) it2.next()).a instanceof f)) {
+                    return ad.j.a;
                 }
             }
         }

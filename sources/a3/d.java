@@ -1,75 +1,127 @@
 package a3;
 
-import a8.i1;
-import a8.j1;
-import a8.sc;
-import a8.tc;
-import android.animation.ValueAnimator;
+import ag.h2;
+import ag.i3;
+import ag.j1;
+import ag.m2;
+import ag.t1;
+import ag.v1;
 import android.content.Context;
-import android.graphics.Bitmap;
 import android.graphics.Typeface;
-import android.opengl.Matrix;
+import android.os.SystemClock;
 import android.os.Trace;
-import androidx.fragment.app.t0;
-import bi.b1;
-import bi.f7;
-import bi.g1;
-import bi.g7;
-import bi.k1;
-import bi.o5;
-import bi.p5;
-import bi.q0;
-import bi.q5;
-import bi.r5;
-import bi.s5;
-import bi.u5;
-import bi.uc;
-import bi.x1;
-import bi.y5;
-import bi.z5;
+import android.telephony.TelephonyManager;
+import android.text.TextUtils;
+import androidx.fragment.app.u0;
+import bi.o2;
 import java.nio.MappedByteBuffer;
-import java.util.Arrays;
 import java.util.Iterator;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.ActionBar.r2;
-import org.telegram.ui.Components.lx0;
+import java.util.Locale;
+import m.p3;
+import org.telegram.messenger.voip.GroupCallMessage;
+import org.telegram.messenger.zs;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.Cells.k3;
+import org.telegram.ui.Cells.m3;
+import org.telegram.ui.Components.cc;
+import org.telegram.ui.Components.p51;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.Wallet.s4;
-import org.telegram.ui.Wallet.t4;
-import org.telegram.ui.Wallet.t7;
-import org.telegram.ui.wn;
-import tg.y0;
+import v7.r6;
+import v7.x7;
+import v7.y7;
+import w7.m8;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
-    public /* synthetic */ d(androidx.fragment.app.k kVar, t0 t0Var) {
-        this.a = 10;
-        this.b = kVar;
+    public /* synthetic */ d(androidx.fragment.app.l lVar, u0 u0Var) {
+        this.a = 15;
+        this.b = lVar;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:37:0x017b  */
-    /* JADX WARN: Removed duplicated region for block: B:39:0x0181  */
-    /* JADX WARN: Removed duplicated region for block: B:46:0x01b0  */
-    /* JADX WARN: Removed duplicated region for block: B:48:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x017e  */
+    private final void a() {
+        androidx.emoji2.text.q qVar = (androidx.emoji2.text.q) this.b;
+        synchronized (qVar.d) {
+            try {
+                if (qVar.h == null) {
+                    return;
+                }
+                try {
+                    o0.h d = qVar.d();
+                    int i10 = d.e;
+                    if (i10 == 2) {
+                        synchronized (qVar.d) {
+                        }
+                    }
+                    if (i10 != 0) {
+                        throw new RuntimeException("fetchFonts result is not OK. (" + i10 + ")");
+                    }
+                    try {
+                        int i11 = n0.g.a;
+                        Trace.beginSection("EmojiCompat.FontRequestEmojiCompatConfig.buildTypeface");
+                        jb.b bVar = qVar.c;
+                        Context context = qVar.a;
+                        bVar.getClass();
+                        o0.h[] hVarArr = {d};
+                        x7 x7Var = i0.f.a;
+                        m8.a("TypefaceCompat.createFromFontInfo");
+                        try {
+                            Typeface b10 = i0.f.a.b(context, hVarArr, 0);
+                            Trace.endSection();
+                            MappedByteBuffer e = y7.e(qVar.a, d.a);
+                            if (e == null || b10 == null) {
+                                throw new RuntimeException("Unable to open file.");
+                            }
+                            try {
+                                Trace.beginSection("EmojiCompat.MetadataRepo.create");
+                                ji.f fVar = new ji.f(b10, v7.u.a(e));
+                                Trace.endSection();
+                                synchronized (qVar.d) {
+                                    try {
+                                        v7.t tVar = qVar.h;
+                                        if (tVar != null) {
+                                            tVar.b(fVar);
+                                        }
+                                    } finally {
+                                    }
+                                }
+                                qVar.b();
+                            } finally {
+                                int i12 = n0.g.a;
+                            }
+                        } finally {
+                            Trace.endSection();
+                        }
+                    } catch (Throwable th2) {
+                        throw th2;
+                    }
+                } catch (Throwable th3) {
+                    synchronized (qVar.d) {
+                        try {
+                            v7.t tVar2 = qVar.h;
+                            if (tVar2 != null) {
+                                tVar2.a(th3);
+                            }
+                            qVar.b();
+                        } finally {
+                        }
+                    }
+                }
+            } finally {
+            }
+        }
+    }
+
     @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public final void run() {
-        char c10;
-        char c11;
-        char c12;
-        int i10;
-        int i11 = 0;
+        String d;
+        TelephonyManager telephonyManager;
         switch (this.a) {
             case 0:
-                ((f) this.b).h.A();
+                ((f) this.b).h.X();
                 return;
             case 1:
                 ((w) this.b).m--;
@@ -78,132 +130,74 @@ public final /* synthetic */ class d implements Runnable {
                 r0.a.postVsyncCallback((e0) this.b);
                 return;
             case 3:
-                try {
-                    ((Bitmap) this.b).recycle();
-                    return;
-                } catch (Exception unused) {
-                    return;
-                }
+                ag.f fVar = (ag.f) this.b;
+                fVar.b.f3.O(true);
+                fVar.Z(true);
+                return;
             case 4:
-                ag.t tVar = (ag.t) this.b;
-                long j10 = tVar.b;
-                if (j10 > 0) {
-                    long j11 = j10 - 1;
-                    tVar.b = j11;
-                    tVar.a.f(j11);
-                }
-                if (tVar.b <= 0) {
-                    tVar.c = false;
-                }
-                if (tVar.c) {
-                    AndroidUtilities.runOnUIThread(tVar.d, 1000L);
-                    return;
-                }
+                org.telegram.messenger.i0.g(((TL_account.TL_businessChatLink) this.b).link);
+                cc.a0(LaunchActivity.Q()).k(false).j();
                 return;
             case 5:
-                ((ai.y) this.b).e();
+                j1 j1Var = (j1) this.b;
+                p51 p51Var = j1Var.W1;
+                if (p51Var != null) {
+                    p51Var.O(true);
+                }
+                j1Var.d1(true);
                 return;
             case 6:
-                ((androidx.activity.l) this.b).invalidateOptionsMenu();
+                t1 t1Var = (t1) ((a6.i) this.b).b;
+                t1Var.c.f3.O(true);
+                t1Var.f0();
                 return;
             case 7:
-                androidx.activity.k kVar = (androidx.activity.k) this.b;
-                Runnable runnable = kVar.b;
+                v1 v1Var = (v1) this.b;
+                v1Var.b.f3.O(true);
+                v1Var.Z(true);
+                return;
+            case 8:
+                h2 h2Var = (h2) this.b;
+                h2Var.a.f3.O(true);
+                h2Var.c0(true);
+                return;
+            case 9:
+                ((m2) this.b).a(Boolean.FALSE);
+                return;
+            case 10:
+                zs.f(((i3) this.b).a).k(zs.F1, new Object[0]);
+                return;
+            case 11:
+                ((androidx.activity.m) this.b).invalidateOptionsMenu();
+                return;
+            case 12:
+                androidx.activity.l lVar = (androidx.activity.l) this.b;
+                Runnable runnable = lVar.b;
                 if (runnable != null) {
                     runnable.run();
-                    kVar.b = null;
+                    lVar.b = null;
                     return;
                 }
                 return;
-            case 8:
-                androidx.activity.m.a((androidx.activity.m) this.b);
+            case 13:
+                androidx.activity.n.a((androidx.activity.n) this.b);
                 return;
-            case 9:
-                androidx.emoji2.text.q qVar = (androidx.emoji2.text.q) this.b;
-                synchronized (qVar.d) {
-                    try {
-                        if (qVar.h == null) {
-                            return;
-                        }
-                        try {
-                            o0.h d = qVar.d();
-                            int i12 = d.e;
-                            if (i12 == 2) {
-                                synchronized (qVar.d) {
-                                }
-                            }
-                            if (i12 != 0) {
-                                throw new RuntimeException("fetchFonts result is not OK. (" + i12 + ")");
-                            }
-                            try {
-                                int i13 = n0.g.a;
-                                Trace.beginSection("EmojiCompat.FontRequestEmojiCompatConfig.buildTypeface");
-                                qb.a aVar = qVar.c;
-                                Context context = qVar.a;
-                                aVar.getClass();
-                                o0.h[] hVarArr = {d};
-                                sc scVar = i0.e.a;
-                                w7.b0.a("TypefaceCompat.createFromFontInfo");
-                                try {
-                                    Typeface b10 = i0.e.a.b(context, hVarArr, 0);
-                                    Trace.endSection();
-                                    MappedByteBuffer e = tc.e(qVar.a, d.a);
-                                    if (e == null || b10 == null) {
-                                        throw new RuntimeException("Unable to open file.");
-                                    }
-                                    try {
-                                        Trace.beginSection("EmojiCompat.MetadataRepo.create");
-                                        com.google.firebase.messaging.q qVar2 = new com.google.firebase.messaging.q(b10, j1.a(e));
-                                        Trace.endSection();
-                                        synchronized (qVar.d) {
-                                            try {
-                                                i1 i1Var = qVar.h;
-                                                if (i1Var != null) {
-                                                    i1Var.b(qVar2);
-                                                }
-                                            } finally {
-                                            }
-                                        }
-                                        qVar.b();
-                                        return;
-                                    } finally {
-                                        int i14 = n0.g.a;
-                                    }
-                                } finally {
-                                    Trace.endSection();
-                                }
-                            } catch (Throwable th2) {
-                                throw th2;
-                            }
-                        } catch (Throwable th3) {
-                            synchronized (qVar.d) {
-                                try {
-                                    i1 i1Var2 = qVar.h;
-                                    if (i1Var2 != null) {
-                                        i1Var2.a(th3);
-                                    }
-                                    qVar.b();
-                                    return;
-                                } finally {
-                                }
-                            }
-                        }
-                    } finally {
-                    }
-                }
-            case 10:
-                androidx.fragment.app.k this$0 = (androidx.fragment.app.k) this.b;
+            case 14:
+                a();
+                return;
+            case 15:
+                androidx.fragment.app.l this$0 = (androidx.fragment.app.l) this.b;
                 kotlin.jvm.internal.i.e(this$0, "this$0");
                 kotlin.jvm.internal.i.e(null, "$operation");
                 this$0.a(null);
                 return;
-            case 11:
-                Iterator it = ((androidx.fragment.app.i0) this.b).n.iterator();
+            case 16:
+                Iterator it = ((androidx.fragment.app.j0) this.b).n.iterator();
                 if (it.hasNext()) {
-                    throw a1.g.j(it);
+                    throw a1.g.h(it);
                 }
                 return;
-            case 12:
+            case 17:
                 androidx.lifecycle.e0 e0Var = (androidx.lifecycle.e0) this.b;
                 androidx.lifecycle.v vVar = e0Var.f;
                 if (e0Var.b == 0) {
@@ -216,207 +210,106 @@ public final /* synthetic */ class d implements Runnable {
                     return;
                 }
                 return;
-            case 13:
-                bh.x xVar = (bh.x) ((rb.c) this.b).b;
-                bh.w wVar = xVar.b;
-                if (wVar != null) {
-                    wVar.d(true);
-                }
-                xVar.a.I7(true);
-                return;
-            case 14:
-                ((ValueAnimator) this.b).start();
-                return;
-            case 15:
-                r2 r2Var = ((bh.d0) this.b).g2.r;
-                if (r2Var instanceof wn) {
-                    r2Var.showDialog(new y0(r2Var, 11, false));
-                    return;
-                }
-                r2 R = LaunchActivity.R();
-                if (R != null) {
-                    R.showDialog(new y0(r2Var, 11, false));
-                    return;
-                }
-                return;
-            case 16:
-                bi.c cVar = (bi.c) this.b;
-                cVar.getClass();
-                new uc(cVar.getContext(), cVar.b).show();
-                return;
-            case 17:
-                bi.x xVar2 = (bi.x) this.b;
-                if (!xVar2.isAttachedToWindow() || xVar2.c.canScrollVertically(1)) {
-                    return;
-                }
-                xVar2.a();
-                return;
             case 18:
-                new lx0(((q0) this.b).getContext()).show();
+                k3 k3Var = ((m3) this.b).d;
+                k3Var.requestFocus();
+                org.telegram.messenger.i0.J3(k3Var);
                 return;
             case 19:
-                AndroidUtilities.showKeyboard(((b1) this.b).e0);
+                org.telegram.messenger.i0.J3(((bi.z) this.b).W1.d);
                 return;
             case 20:
-                AndroidUtilities.showKeyboard(((g1) this.b).h);
+                ((bi.g0) this.b).invalidate();
                 return;
             case 21:
-                AndroidUtilities.showKeyboard(((k1) this.b).c);
+                p3 p3Var = (p3) this.b;
+                p3Var.c = null;
+                p3Var.d = null;
+                p3Var.e = null;
+                p3Var.f = null;
+                p3Var.e(null);
                 return;
             case 22:
-                ((x1) this.b).onBackPressed();
+                ((bi.h2) this.b).invalidateSelf();
                 return;
             case 23:
-                s4 s4Var = (s4) ((g7) this.b);
-                t7 t7Var = s4Var.c.j0;
-                if (t7Var != null) {
-                    TL_wallet.nftItem nftitem = s4Var.b;
-                    if (t7Var.A()) {
-                        t7Var.c0(t7Var.v(nftitem));
-                        return;
-                    }
-                    return;
-                }
+                ((o2) this.b).c();
                 return;
             case 24:
-                t4 t4Var = (t4) ((f7) this.b);
-                t7 t7Var2 = t4Var.b.j0;
-                if (t7Var2 != null) {
-                    t7Var2.b0(t4Var.a);
+                ((c1.d) this.b).e().g(new w0.h(2, "Failed to launch the selector UI. Hint: ensure the `context` parameter is an Activity-based context."));
+                return;
+            case 25:
+                ac.a aVar = (ac.a) this.b;
+                ((Context) aVar.b).unregisterReceiver((c2.a) aVar.c);
+                return;
+            case 26:
+                c2.a aVar2 = (c2.a) this.b;
+                if (aVar2.c.a) {
+                    aVar2.a.a.C1(3, false);
                     return;
                 }
                 return;
-            case 25:
-                z5 z5Var = (z5) this.b;
-                z5Var.h0 = false;
-                z5Var.j0 = false;
-                z5Var.a(z5Var.W, z5Var.a0, z5Var.b0, z5Var.c0);
-                return;
-            case 26:
-                ((o5) this.b).invalidateSelf();
-                return;
             case 27:
-                s5 s5Var = (s5) this.b;
-                r5 r5Var = s5Var.H;
-                if (r5Var != null) {
-                    s5 s5Var2 = r5Var.a;
-                    float[] fArr = r5Var.h;
-                    if (!r5Var.e && (i10 = r5Var.c) != 0) {
-                        if (r5Var.l) {
-                            s5Var2.a();
-                        } else {
-                            int c13 = m1.j.c(((q5) r5Var.b.get(i10 - 1)).a);
-                            if (c13 == 1 || c13 == 2) {
-                                c10 = 2;
-                                c11 = 1;
-                                s5Var2.a();
-                                int i15 = r5Var.f - 1;
-                                r5Var.f = i15;
-                                if (i15 <= 0) {
-                                    r5Var.b();
-                                }
-                            } else if (c13 == 3) {
-                                char c14 = 1;
-                                float pow = 1.0f - ((float) Math.pow(1.0f - (1.0f - (r5Var.f / r5Var.g)), 3.0d));
-                                float f7 = 1.0f - pow;
-                                if (Math.abs(r5Var.j * f7) > 1.0E-4f || Math.abs(r5Var.k * f7) > 1.0E-4f) {
-                                    float[] fArr2 = new float[16];
-                                    c10 = 2;
-                                    float f10 = r5Var.j * f7 * 0.96f;
-                                    s5Var2.getClass();
-                                    s5.b(1.0f, 0.0f, f10, fArr2);
-                                    s5Var2.getClass();
-                                    s5.d(fArr2, fArr, fArr);
-                                    float f11 = r5Var.k * f7 * 0.96f;
-                                    s5Var2.getClass();
-                                    s5.b(0.0f, 1.0f, f11, fArr2);
-                                    s5.d(fArr2, fArr, fArr);
-                                } else {
-                                    c10 = 2;
-                                }
-                                float[] fArr3 = r5Var.i;
-                                float[] fArr4 = s5Var2.c;
-                                int i16 = 0;
-                                while (i16 < 16) {
-                                    float f12 = fArr[i16];
-                                    fArr4[i16] = c3.h0.z(fArr3[i16], f12, pow, f12);
-                                    i16++;
-                                    c14 = c14;
-                                }
-                                c11 = c14;
-                                float f13 = fArr4[0];
-                                float f14 = fArr4[c11];
-                                float f15 = fArr4[c10];
-                                float[] fArr5 = new float[3];
-                                fArr5[0] = f13;
-                                fArr5[c11] = f14;
-                                fArr5[c10] = f15;
-                                float f16 = fArr4[4];
-                                float f17 = fArr4[5];
-                                float f18 = fArr4[6];
-                                float[] fArr6 = new float[3];
-                                fArr6[0] = f16;
-                                fArr6[c11] = f17;
-                                fArr6[c10] = f18;
-                                float[] fArr7 = new float[3];
-                                s5.e(fArr5);
-                                s5.c(fArr5, fArr6, fArr7);
-                                s5.e(fArr7);
-                                s5.c(fArr7, fArr5, fArr6);
-                                fArr4[0] = fArr5[0];
-                                fArr4[c11] = fArr5[c11];
-                                fArr4[c10] = fArr5[c10];
-                                fArr4[4] = fArr6[0];
-                                fArr4[5] = fArr6[c11];
-                                fArr4[6] = fArr6[c10];
-                                fArr4[8] = fArr7[0];
-                                fArr4[9] = fArr7[c11];
-                                fArr4[10] = fArr7[c10];
-                                int i17 = r5Var.f - 1;
-                                r5Var.f = i17;
-                                if (i17 <= 0) {
-                                    System.arraycopy(r5Var.i, 0, s5Var2.c, 0, 16);
-                                    s5Var2.d = 0.0f;
-                                    s5Var2.e = 0.0f;
-                                    r5Var.b();
-                                }
-                            }
-                        }
-                    }
-                    c10 = 2;
-                    c11 = 1;
-                } else {
-                    c10 = 2;
-                    c11 = 1;
-                    if (Math.abs(s5Var.d) <= 1.0E-4f && Math.abs(s5Var.e) <= 1.0E-4f) {
-                        c12 = 0;
-                        if ((s5Var.G == null ? c11 : c12) != 0) {
-                            for (int i18 = 0; i18 < 6; i18++) {
-                                Matrix.multiplyMV(s5Var.n, 0, s5Var.c, 0, s5Var.h[i18], 0);
-                                s5Var.r[i18] = s5Var.n[c10];
-                            }
-                            Arrays.sort(s5Var.s, new p5(s5Var, i11));
-                            s5Var.invalidate();
-                        }
-                        if (s5Var.isAttachedToWindow()) {
-                            return;
-                        }
-                        AndroidUtilities.runOnUIThread(s5Var.I, 16L);
-                        return;
-                    }
-                    s5Var.a();
-                }
-                c12 = c11;
-                if ((s5Var.G == null ? c11 : c12) != 0) {
-                }
-                if (s5Var.isAttachedToWindow()) {
-                }
-                break;
+                ((ch.b) this.b).invalidate();
+                return;
             case 28:
-                ((u5) this.b).invalidate();
+                dh.d dVar = (dh.d) this.b;
+                GroupCallMessage groupCallMessage = dVar.H;
+                if (groupCallMessage != null) {
+                    dVar.a.a(groupCallMessage.isSendDelayed(), true);
+                    dVar.b.a(dVar.H.isSendError(), true);
+                    return;
+                }
                 return;
             default:
-                ((y5) this.b).invalidateSelf();
+                e2.v vVar2 = (e2.v) this.b;
+                y2.e eVar = (y2.e) vVar2.a.get();
+                if (eVar != null) {
+                    int b10 = vVar2.c.b();
+                    y2.f fVar2 = eVar.a;
+                    synchronized (fVar2) {
+                        synchronized (fVar2) {
+                            int i10 = fVar2.n;
+                            if (i10 == 0 || fVar2.e) {
+                                if (i10 != b10 || fVar2.o == null) {
+                                    fVar2.n = b10;
+                                    if (b10 != 1 && b10 != 0 && b10 != 8) {
+                                        if (fVar2.o == null) {
+                                            Context context = fVar2.a;
+                                            String str = e2.l0.a;
+                                            if (context != null && (telephonyManager = (TelephonyManager) context.getSystemService("phone")) != null) {
+                                                String networkCountryIso = telephonyManager.getNetworkCountryIso();
+                                                if (!TextUtils.isEmpty(networkCountryIso)) {
+                                                    d = r6.d(networkCountryIso);
+                                                    fVar2.o = d;
+                                                }
+                                            }
+                                            d = r6.d(Locale.getDefault().getCountry());
+                                            fVar2.o = d;
+                                        }
+                                        fVar2.l = fVar2.b(b10);
+                                        fVar2.d.getClass();
+                                        long elapsedRealtime = SystemClock.elapsedRealtime();
+                                        fVar2.d(fVar2.i, fVar2.g > 0 ? (int) (elapsedRealtime - fVar2.h) : 0, fVar2.l);
+                                        fVar2.h = elapsedRealtime;
+                                        fVar2.i = 0L;
+                                        fVar2.k = 0L;
+                                        fVar2.j = 0L;
+                                        y2.q qVar = fVar2.f;
+                                        qVar.a.clear();
+                                        qVar.c = -1;
+                                        qVar.d = 0;
+                                        qVar.e = 0;
+                                        return;
+                                    }
+                                    return;
+                                }
+                                return;
+                            }
+                            return;
+                        }
+                    }
+                }
                 return;
         }
     }

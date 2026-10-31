@@ -1,93 +1,28 @@
 package cg;
 
-import java.nio.ShortBuffer;
-import org.telegram.messenger.video.AudioBufferConverter;
-import org.telegram.messenger.video.AudioConversions;
-import org.telegram.messenger.video.AudioDecoder;
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final class c extends b {
+    public float[] l;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes.dex */
-public final class c extends a {
-    public final AudioDecoder b;
-    public final AudioBufferConverter c = new AudioBufferConverter();
-    public long d;
-    public int e;
-    public int f;
-    public int g;
-    public int h;
-    public ShortBuffer i;
-    public boolean j;
-
-    public c(String str) {
-        this.b = new AudioDecoder(str);
-    }
-
-    @Override // cg.a
-    public final short a() {
-        if (!this.j) {
-            throw new RuntimeException("Audio input has no remaining value.");
-        }
-        int i10 = this.f;
-        if (i10 < this.e) {
-            this.f = i10 + 1;
-            return (short) 0;
-        }
-        f();
-        ShortBuffer shortBuffer = this.i;
-        short s10 = (shortBuffer == null || shortBuffer.remaining() <= 0) ? (short) 0 : this.i.get();
-        f();
-        ShortBuffer shortBuffer2 = this.i;
-        if (shortBuffer2 != null && shortBuffer2.remaining() >= 1) {
-            return s10;
-        }
-        this.j = false;
-        return s10;
-    }
-
-    @Override // cg.a
-    public final int b() {
-        return this.b.getSampleRate();
-    }
-
-    @Override // cg.a
-    public final boolean c() {
-        return this.j;
-    }
-
-    @Override // cg.a
-    public final void d() {
-        this.i = null;
-        this.j = false;
-        AudioDecoder audioDecoder = this.b;
-        audioDecoder.stop();
-        audioDecoder.release();
-    }
-
-    @Override // cg.a
-    public final void e(int i10, int i11) {
-        this.g = i10;
-        this.h = i11;
-        this.j = true;
-        this.b.start();
-        this.e = AudioConversions.usToShorts(this.d, this.g, this.h);
-        this.f = 0;
-    }
-
-    public final void f() {
-        ShortBuffer shortBuffer = this.i;
-        if (shortBuffer == null || shortBuffer.remaining() <= 0) {
-            AudioDecoder audioDecoder = this.b;
-            AudioDecoder.DecodedBufferData decode = audioDecoder.decode();
-            if (decode.index < 0) {
-                this.i = null;
-                return;
+    @Override // cg.b
+    public final void e() {
+        super.e();
+        int size = this.d.size();
+        long j10 = 0;
+        for (int i10 = 0; i10 < size; i10++) {
+            long j11 = ((a) this.d.get(i10)).e;
+            if (j11 > j10) {
+                j10 = j11;
             }
-            this.i = this.c.convert(decode.byteBuffer.asShortBuffer(), audioDecoder.getSampleRate(), audioDecoder.getChannelCount(), this.g, this.h);
-            audioDecoder.releaseOutputBuffer(decode.index);
         }
-    }
-
-    public c(String str, int i10) {
-        this.b = new AudioDecoder(str, i10);
+        this.l = new float[size];
+        for (int i11 = 0; i11 < size; i11++) {
+            if (j10 == ((a) this.d.get(i11)).e) {
+                this.l[i11] = 1.0f;
+            } else {
+                this.l[i11] = j10 / r4;
+            }
+        }
     }
 }

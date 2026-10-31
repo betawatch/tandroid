@@ -1,17 +1,38 @@
 package androidx.activity;
 
-import android.window.OnBackInvokedCallback;
+import android.window.BackEvent;
+import android.window.OnBackAnimationCallback;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class t {
-    public static final t a = new t();
+public final class t implements OnBackAnimationCallback {
+    public final /* synthetic */ ld.l a;
+    public final /* synthetic */ ld.l b;
+    public final /* synthetic */ ld.a c;
+    public final /* synthetic */ ld.a d;
 
-    public final OnBackInvokedCallback a(ud.l onBackStarted, ud.l onBackProgressed, ud.a onBackInvoked, ud.a onBackCancelled) {
-        kotlin.jvm.internal.i.e(onBackStarted, "onBackStarted");
-        kotlin.jvm.internal.i.e(onBackProgressed, "onBackProgressed");
-        kotlin.jvm.internal.i.e(onBackInvoked, "onBackInvoked");
-        kotlin.jvm.internal.i.e(onBackCancelled, "onBackCancelled");
-        return new s(onBackStarted, onBackProgressed, onBackInvoked, onBackCancelled);
+    public t(ld.l lVar, ld.l lVar2, ld.a aVar, ld.a aVar2) {
+        this.a = lVar;
+        this.b = lVar2;
+        this.c = aVar;
+        this.d = aVar2;
+    }
+
+    public final void onBackCancelled() {
+        this.d.invoke();
+    }
+
+    public final void onBackInvoked() {
+        this.c.invoke();
+    }
+
+    public final void onBackProgressed(BackEvent backEvent) {
+        kotlin.jvm.internal.i.e(backEvent, "backEvent");
+        this.b.invoke(new b(backEvent));
+    }
+
+    public final void onBackStarted(BackEvent backEvent) {
+        kotlin.jvm.internal.i.e(backEvent, "backEvent");
+        this.a.invoke(new b(backEvent));
     }
 }

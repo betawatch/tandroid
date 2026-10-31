@@ -1,20 +1,20 @@
 package com.google.android.recaptcha.internal;
 
+import ad.e;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkCapabilities;
 import android.os.Build;
+import bd.s;
+import bd.t;
 import j$.util.concurrent.ConcurrentHashMap;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.Map;
 import java.util.Set;
-import jd.d;
-import kd.q;
-import kd.r;
 import kotlin.jvm.internal.i;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class zzch {
     public zzch() {
@@ -46,14 +46,14 @@ public final class zzch {
             }
             return linkedHashSet;
         } catch (Exception unused) {
-            return q.a;
+            return s.a;
         }
     }
 
     private static final Map zzb() {
-        d[] dVarArr = {new d(0, zzvs.zzb), new d(1, zzvs.zzc), new d(2, zzvs.zzd), new d(3, zzvs.zze), new d(4, zzvs.zzf), new d(5, zzvs.zzg), new d(6, zzvs.zzh), new d(7, zzvs.zzi), new d(8, zzvs.zzj), new d(9, zzvs.zzk), new d(10, zzvs.zzl), new d(11, zzvs.zzm), new d(12, zzvs.zzn), new d(13, zzvs.zzo), new d(14, zzvs.zzp), new d(15, zzvs.zzq)};
-        LinkedHashMap linkedHashMap = new LinkedHashMap(r.a(16));
-        r.c(linkedHashMap, dVarArr);
+        e[] eVarArr = {new e(0, zzvs.zzb), new e(1, zzvs.zzc), new e(2, zzvs.zzd), new e(3, zzvs.zze), new e(4, zzvs.zzf), new e(5, zzvs.zzg), new e(6, zzvs.zzh), new e(7, zzvs.zzi), new e(8, zzvs.zzj), new e(9, zzvs.zzk), new e(10, zzvs.zzl), new e(11, zzvs.zzm), new e(12, zzvs.zzn), new e(13, zzvs.zzo), new e(14, zzvs.zzp), new e(15, zzvs.zzq)};
+        LinkedHashMap linkedHashMap = new LinkedHashMap(t.a(16));
+        t.c(linkedHashMap, eVarArr);
         int i10 = Build.VERSION.SDK_INT;
         linkedHashMap.put(17, zzvs.zzs);
         linkedHashMap.put(16, zzvs.zzr);

@@ -1,64 +1,120 @@
 package org.telegram.ui.Components.voip;
 
 import android.graphics.Canvas;
-import android.graphics.ColorFilter;
+import android.graphics.LinearGradient;
 import android.graphics.Matrix;
+import android.graphics.Paint;
 import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.SvgHelper;
+import android.graphics.Shader;
+import android.view.View;
+import org.telegram.messenger.zs;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes4.dex */
-public final class g extends Drawable {
-    public float a;
-    public final SvgHelper.SvgDrawable b;
-    public final /* synthetic */ h c;
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final class g {
+    public final Paint a;
+    public LinearGradient b;
+    public final Paint c;
+    public LinearGradient d;
+    public final int e;
+    public int f;
+    public float g;
+    public long h;
+    public final Matrix i;
+    public boolean j;
+    public boolean k;
+    public boolean l;
+    public float m;
+    public float n;
+    public kg.k2 o;
+    public gg.c p;
 
-    public g(h hVar, SvgHelper.SvgDrawable svgDrawable) {
-        this.c = hVar;
-        this.b = svgDrawable;
+    public g() {
+        this(64, zs.i3, zs.q2);
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        h hVar = this.c;
-        int i10 = hVar.e;
-        Matrix matrix = hVar.i;
-        hVar.f = getBounds().width();
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(getBounds());
-        hVar.a(this.a, canvas, rectF, null);
-        SvgHelper.SvgDrawable svgDrawable = this.b;
-        if (svgDrawable != null) {
-            svgDrawable.setPaint(hVar.a);
-            int i11 = hVar.f;
-            float f7 = (((i10 * 2) + i11) * hVar.g) - i10;
-            float scale = svgDrawable.getScale(getBounds().width(), getBounds().height());
-            matrix.reset();
-            matrix.setScale(1.0f / scale, 0.0f, i10 / 2.0f, 0.0f);
-            matrix.setTranslate((f7 - svgDrawable.getBounds().left) - (i10 / scale), 0.0f);
-            hVar.b.setLocalMatrix(matrix);
-            int i12 = ((int) (i11 * 0.5f)) / 2;
-            svgDrawable.setBounds(getBounds().centerX() - i12, getBounds().centerY() - i12, getBounds().centerX() + i12, getBounds().centerY() + i12);
-            svgDrawable.draw(canvas);
+    public final void a(float f7, Canvas canvas, RectF rectF, View view) {
+        c(view);
+        canvas.drawRoundRect(rectF, f7, f7, this.a);
+        if (this.k) {
+            boolean z10 = this.l;
+            Paint paint = this.c;
+            if (z10) {
+                rectF.inset(paint.getStrokeWidth() / 2.0f, paint.getStrokeWidth() / 2.0f);
+            }
+            canvas.drawRoundRect(rectF, f7, f7, paint);
         }
-        hVar.o.invalidate();
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -3;
+    public final void b(int i10, int i11) {
+        float f7 = this.e;
+        int[] iArr = {0, i0.b.o(i10, i11), 0};
+        Shader.TileMode tileMode = Shader.TileMode.CLAMP;
+        this.b = new LinearGradient(0.0f, 0.0f, f7, 0.0f, iArr, (float[]) null, tileMode);
+        this.d = new LinearGradient(0.0f, 0.0f, f7, 0.0f, new int[]{0, i0.b.o(i10, zs.i3), 0}, (float[]) null, tileMode);
+        this.a.setShader(this.b);
+        this.c.setShader(this.d);
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        h hVar = this.c;
-        hVar.a.setAlpha(i10);
-        hVar.c.setAlpha(i10);
+    public final void c(View view) {
+        if (this.j || this.g < 1.0f) {
+            if (view != null) {
+                view.invalidate();
+            }
+            long currentTimeMillis = System.currentTimeMillis();
+            long j10 = this.h;
+            if (j10 != 0) {
+                long j11 = currentTimeMillis - j10;
+                if (j11 > 10) {
+                    float f7 = ((j11 / 1200.0f) * this.n) + this.g;
+                    this.g = f7;
+                    if (f7 > this.m) {
+                        this.g = 0.0f;
+                        gg.c cVar = this.p;
+                        if (cVar != null) {
+                            cVar.run();
+                        }
+                    }
+                    this.h = currentTimeMillis;
+                }
+            } else {
+                this.h = currentTimeMillis;
+            }
+        }
+        int i10 = this.f;
+        float f10 = (((r0 * 2) + i10) * this.g) - this.e;
+        Matrix matrix = this.i;
+        matrix.reset();
+        matrix.setTranslate(f10, 0.0f);
+        this.b.setLocalMatrix(matrix);
+        this.d.setLocalMatrix(matrix);
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    public g(int i10, int i11) {
+        this(i10, i11, zs.q2);
+    }
+
+    public g(int i10, int i11, int i12) {
+        Paint paint = new Paint(1);
+        this.a = paint;
+        Paint paint2 = new Paint(1);
+        this.c = paint2;
+        this.i = new Matrix();
+        this.j = true;
+        this.k = true;
+        this.l = false;
+        this.m = 1.2f;
+        this.n = 1.0f;
+        int L = org.telegram.messenger.i0.L(i12);
+        this.e = L;
+        float f7 = L;
+        int[] iArr = {0, i0.b.o(-1, i10), 0};
+        Shader.TileMode tileMode = Shader.TileMode.CLAMP;
+        this.b = new LinearGradient(0.0f, 0.0f, f7, 0.0f, iArr, (float[]) null, tileMode);
+        this.d = new LinearGradient(0.0f, 0.0f, f7, 0.0f, new int[]{0, i0.b.o(-1, i11), 0}, (float[]) null, tileMode);
+        paint.setShader(this.b);
+        paint2.setShader(this.d);
+        paint2.setStyle(Paint.Style.STROKE);
+        paint2.setStrokeWidth(org.telegram.messenger.i0.L(2.0f));
     }
 }

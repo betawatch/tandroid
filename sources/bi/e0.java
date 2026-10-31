@@ -1,67 +1,104 @@
 package bi;
 
-import org.telegram.messenger.AccountInstance;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
+import android.graphics.Rect;
+import android.text.Layout;
+import org.telegram.ui.Cells.u9;
+import org.telegram.ui.Components.gl0;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class e0 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
+public final class e0 implements u9 {
+    public final /* synthetic */ int a = 0;
+    public final Object b;
     public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
 
-    public /* synthetic */ e0(Object obj, Object obj2, long j10, Object obj3, int i10) {
-        this.a = i10;
-        this.c = obj;
-        this.d = obj2;
-        this.b = j10;
-        this.e = obj3;
+    public e0(Layout layout, Rect rect) {
+        this.b = layout;
+        this.c = rect;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // org.telegram.ui.Cells.u9
+    public final Layout a() {
         switch (this.a) {
             case 0:
-                AndroidUtilities.runOnUIThread(new a0((m0) this.c, (org.telegram.ui.ActionBar.e2) this.d, tLObject, this.b, (Utilities.Callback) this.e, 0));
-                break;
-            case 1:
-                AndroidUtilities.runOnUIThread(new m3((h7) this.c, tLObject, (String) this.d, (TL_stars.InputSavedStarGift) this.e, tL_error, this.b));
-                break;
-            case 2:
-                AndroidUtilities.runOnUIThread(new a0((ca) this.c, tLObject, (MessageObject) this.d, this.b, (Runnable) this.e));
-                break;
-            case 3:
-                AndroidUtilities.runOnUIThread(new a0((org.telegram.ui.ActionBar.e2) this.d, tLObject, this.b, (AccountInstance) this.c, (MessagesStorage.BooleanCallback) this.e));
-                break;
+                return (Layout) this.b;
             default:
-                AndroidUtilities.runOnUIThread(new m3((org.telegram.ui.ActionBar.r2) this.c, tLObject, (MessagesController.DialogFilter) this.d, tL_error, (Runnable) this.e, this.b));
-                break;
+                org.telegram.utils.twidget.o0 o0Var = (org.telegram.utils.twidget.o0) this.b;
+                if (o0Var.h == null) {
+                    o0Var.h = new org.telegram.utils.twidget.p0(o0Var);
+                }
+                return o0Var.h;
         }
     }
 
-    public /* synthetic */ e0(Object obj, Object obj2, Object obj3, long j10, int i10) {
-        this.a = i10;
-        this.c = obj;
-        this.d = obj2;
-        this.e = obj3;
-        this.b = j10;
+    @Override // org.telegram.ui.Cells.u9
+    public final Rect c() {
+        switch (this.a) {
+            case 0:
+                return (Rect) this.c;
+            default:
+                return null;
+        }
     }
 
-    public /* synthetic */ e0(org.telegram.ui.ActionBar.e2 e2Var, long j10, AccountInstance accountInstance, MessagesStorage.BooleanCallback booleanCallback) {
-        this.a = 3;
-        this.d = e2Var;
-        this.b = j10;
-        this.c = accountInstance;
-        this.e = booleanCallback;
+    @Override // org.telegram.ui.Cells.u9
+    public final /* synthetic */ CharSequence getPrefix() {
+        switch (this.a) {
+        }
+        return null;
+    }
+
+    @Override // org.telegram.ui.Cells.u9
+    public final int getRow() {
+        switch (this.a) {
+            case 0:
+                return 0;
+            default:
+                return ((gl0) this.c).U;
+        }
+    }
+
+    @Override // org.telegram.ui.Cells.u9
+    public final CharSequence getText() {
+        switch (this.a) {
+            case 0:
+                Layout a2 = a();
+                if (a2 == null) {
+                    return null;
+                }
+                return a2.getText();
+            default:
+                Layout a10 = a();
+                if (a10 == null) {
+                    return null;
+                }
+                return a10.getText();
+        }
+    }
+
+    @Override // org.telegram.ui.Cells.u9
+    public final int getX() {
+        switch (this.a) {
+            case 0:
+                return 0;
+            default:
+                gl0 gl0Var = (gl0) this.c;
+                return (gl0Var.S - gl0Var.j0) + ((org.telegram.utils.twidget.o0) this.b).b;
+        }
+    }
+
+    @Override // org.telegram.ui.Cells.u9
+    public final int getY() {
+        switch (this.a) {
+            case 0:
+                return 0;
+            default:
+                return ((gl0) this.c).T + ((org.telegram.utils.twidget.o0) this.b).c;
+        }
+    }
+
+    public e0(gl0 gl0Var, org.telegram.utils.twidget.o0 o0Var) {
+        this.c = gl0Var;
+        this.b = o0Var;
     }
 }

@@ -1,82 +1,35 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.View;
-import android.view.ViewPropertyAnimator;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.tl.TL_payments;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class ht extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ s4.e1 b;
-    public final /* synthetic */ View c;
-    public final /* synthetic */ ViewPropertyAnimator d;
-    public final /* synthetic */ mt e;
+public final /* synthetic */ class ht implements org.telegram.ui.ActionBar.u1 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Object c;
 
-    public ht(mt mtVar, s4.e1 e1Var, ViewPropertyAnimator viewPropertyAnimator, View view) {
-        this.e = mtVar;
-        this.b = e1Var;
-        this.d = viewPropertyAnimator;
-        this.c = view;
+    public /* synthetic */ ht(int i10, int i11, org.telegram.ui.ActionBar.k2 k2Var) {
+        this.a = i10;
+        this.b = i11;
+        this.c = k2Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationCancel(Animator animator) {
-        switch (this.a) {
-            case 1:
-                this.c.setAlpha(1.0f);
-                break;
-            default:
-                super.onAnimationCancel(animator);
-                break;
-        }
+    @Override // org.telegram.ui.ActionBar.u1
+    public void h(org.telegram.ui.ActionBar.x1 x1Var, int i10) {
+        org.telegram.ui.ActionBar.k2 k2Var = (org.telegram.ui.ActionBar.k2) this.c;
+        gf.e h = x1Var.h(-1, true, true);
+        h.d();
+        TL_payments.TL_resolveStarGiftOffer tL_resolveStarGiftOffer = new TL_payments.TL_resolveStarGiftOffer();
+        tL_resolveStarGiftOffer.offer_msg_id = this.a;
+        int i11 = this.b;
+        ConnectionsManager.getInstance(i11).sendRequestTyped(tL_resolveStarGiftOffer, new org.telegram.ui.f0(i11, k2Var, h, x1Var));
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                this.d.setListener(null);
-                this.c.setAlpha(1.0f);
-                mt mtVar = this.e;
-                s4.e1 e1Var = this.b;
-                mtVar.d(e1Var);
-                mtVar.x.remove(e1Var);
-                mtVar.A();
-                break;
-            default:
-                this.d.setListener(null);
-                mt mtVar2 = this.e;
-                s4.e1 e1Var2 = this.b;
-                mtVar2.u(e1Var2);
-                mtVar2.v.remove(e1Var2);
-                mtVar2.A();
-                View view = e1Var2.a;
-                if (view instanceof org.telegram.ui.Cells.p2) {
-                    ((org.telegram.ui.Cells.p2) view).setMoving(false);
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationStart(Animator animator) {
-        switch (this.a) {
-            case 0:
-                this.e.y();
-                break;
-            default:
-                this.e.getClass();
-                break;
-        }
-    }
-
-    public ht(mt mtVar, s4.e1 e1Var, View view, ViewPropertyAnimator viewPropertyAnimator) {
-        this.e = mtVar;
-        this.b = e1Var;
-        this.c = view;
-        this.d = viewPropertyAnimator;
+    public /* synthetic */ ht(mt mtVar, int i10, int i11) {
+        this.c = mtVar;
+        this.a = i10;
+        this.b = i11;
     }
 }

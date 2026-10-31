@@ -2,13 +2,13 @@ package m4;
 
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class m0 implements v {
-    public final n4.t a;
+    public final n4.r a;
 
-    public m0(n4.t tVar) {
-        this.a = tVar;
+    public m0(n4.r rVar) {
+        this.a = rVar;
     }
 
     public final boolean equals(Object obj) {
@@ -38,7 +38,7 @@ public final class m0 implements v {
     }
 
     @Override // m4.v
-    public final /* synthetic */ void c(int i10, b2.c1 c1Var) {
+    public final /* synthetic */ void c(int i10, b2.b1 b1Var) {
     }
 
     @Override // m4.v
@@ -58,6 +58,6 @@ public final class m0 implements v {
     }
 
     @Override // m4.v
-    public final /* synthetic */ void h(int i10, l1 l1Var, b2.c1 c1Var, boolean z10, boolean z11) {
+    public final /* synthetic */ void h(int i10, l1 l1Var, b2.b1 b1Var, boolean z10, boolean z11) {
     }
 }

@@ -1,406 +1,132 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.LinearGradient;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.Shader;
-import android.text.Layout;
-import android.view.Choreographer;
-import android.view.View;
-import java.util.ArrayList;
-import java.util.List;
-import org.telegram.messenger.AndroidUtilities;
+import android.text.TextUtils;
+import java.util.Arrays;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class hj0 implements Choreographer.FrameCallback {
-    public static final Matrix E = new Matrix();
-    public static final Paint x;
-    public static final LinearGradient y;
-    public final Choreographer a = Choreographer.getInstance();
-    public List b = new ArrayList();
-    public final ArrayList c = new ArrayList();
-    public int d = 0;
-    public int e = 0;
-    public float f = 0.0f;
-    public boolean h = false;
-    public boolean n = true;
-    public long r = 0;
-    public float s = AndroidUtilities.dp(40.0f);
-    public View v;
-    public bi.ga w;
+public final /* synthetic */ class hj0 implements Runnable {
+    public final /* synthetic */ org.telegram.ui.ActionBar.p6 D;
+    public final /* synthetic */ boolean E;
+    public final /* synthetic */ String F;
+    public final /* synthetic */ org.telegram.ui.web.z0 G;
+    public final /* synthetic */ vh.d a;
+    public final /* synthetic */ vh.d b;
+    public final /* synthetic */ TLRPC.TL_urlAuthResultRequest c;
+    public final /* synthetic */ TL_wallet.inputTonConnectOauthSession[] d;
+    public final /* synthetic */ TLRPC.TL_messages_requestUrlAuth e;
+    public final /* synthetic */ String[] f;
+    public final /* synthetic */ org.telegram.ui.Cells.t8 h;
+    public final /* synthetic */ boolean[] n;
+    public final /* synthetic */ boolean[] r;
+    public final /* synthetic */ int[] s;
+    public final /* synthetic */ boolean[] w;
+    public final /* synthetic */ org.telegram.ui.ActionBar.z2 x;
+    public final /* synthetic */ String y;
 
-    static {
-        Paint paint = new Paint(1);
-        x = paint;
-        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
-        LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, 1.0f, 0.0f, -1, 16777215, Shader.TileMode.CLAMP);
-        y = linearGradient;
-        paint.setShader(linearGradient);
+    public /* synthetic */ hj0(vh.d dVar, vh.d dVar2, TLRPC.TL_urlAuthResultRequest tL_urlAuthResultRequest, TL_wallet.inputTonConnectOauthSession[] inputtonconnectoauthsessionArr, TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth, String[] strArr, org.telegram.ui.Cells.t8 t8Var, boolean[] zArr, boolean[] zArr2, int[] iArr, boolean[] zArr3, org.telegram.ui.ActionBar.z2 z2Var, String str, org.telegram.ui.ActionBar.p6 p6Var, boolean z10, String str2, org.telegram.ui.web.z0 z0Var) {
+        this.a = dVar;
+        this.b = dVar2;
+        this.c = tL_urlAuthResultRequest;
+        this.d = inputtonconnectoauthsessionArr;
+        this.e = tL_messages_requestUrlAuth;
+        this.f = strArr;
+        this.h = t8Var;
+        this.n = zArr;
+        this.r = zArr2;
+        this.s = iArr;
+        this.w = zArr3;
+        this.x = z2Var;
+        this.y = str;
+        this.D = p6Var;
+        this.E = z10;
+        this.F = str2;
+        this.G = z0Var;
     }
 
-    public static void b(Canvas canvas, Layout layout, int i10, float f7, gj0 gj0Var) {
-        if (layout == null) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        final vh.d dVar = this.a;
+        if (dVar.Q || this.b.Q) {
             return;
         }
-        int lineCount = layout.getLineCount();
-        if (i10 < 0 || i10 >= lineCount) {
+        final TLRPC.TL_urlAuthResultRequest tL_urlAuthResultRequest = this.c;
+        boolean z10 = tL_urlAuthResultRequest.request_wallet;
+        TL_wallet.inputTonConnectOauthSession[] inputtonconnectoauthsessionArr = this.d;
+        if (z10 && inputtonconnectoauthsessionArr[0] == null) {
             return;
         }
-        gj0 stVar = gj0Var != null ? gj0Var : new st(layout, 24);
-        int width = layout.getWidth();
-        layout.getHeight();
-        int lineTop = layout.getLineTop(i10);
-        int lineBottom = layout.getLineBottom(i10);
-        if (lineTop > 0) {
-            canvas.save();
-            canvas.clipRect(0.0f, 0.0f, width, lineTop);
-            stVar.a(canvas);
-            canvas.restore();
+        dVar.setLoading(true);
+        final TLRPC.TL_messages_acceptUrlAuth tL_messages_acceptUrlAuth = new TLRPC.TL_messages_acceptUrlAuth();
+        final TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth = this.e;
+        if (TLObject.hasFlag(tL_messages_requestUrlAuth.flags, 2)) {
+            tL_messages_acceptUrlAuth.flags |= 2;
+            tL_messages_acceptUrlAuth.peer = tL_messages_requestUrlAuth.peer;
+            tL_messages_acceptUrlAuth.msg_id = tL_messages_requestUrlAuth.msg_id;
+            tL_messages_acceptUrlAuth.button_id = tL_messages_requestUrlAuth.button_id;
         }
-        float lineLeft = layout.getLineLeft(i10);
-        float lineRight = layout.getLineRight(i10);
-        float min = Math.min(lineLeft, lineRight);
-        float max = Math.max(lineLeft, lineRight);
-        if (max <= min) {
-            return;
+        if (TLObject.hasFlag(tL_messages_requestUrlAuth.flags, 4)) {
+            tL_messages_acceptUrlAuth.flags |= 4;
+            tL_messages_acceptUrlAuth.url = tL_messages_requestUrlAuth.url;
         }
-        int paragraphDirection = layout.getParagraphDirection(i10);
-        float f10 = max - min;
-        float a2 = a8.ee.a(f7, 0.0f, f10);
-        float f11 = a2 / f10;
-        if (a2 <= 0.0f) {
-            return;
+        String str = this.f[0];
+        if (str != null) {
+            tL_messages_acceptUrlAuth.match_code = str;
         }
-        if (a2 >= f10) {
-            canvas.save();
-            canvas.clipRect(0.0f, lineTop, width, lineBottom);
-            stVar.a(canvas);
-            canvas.restore();
-            return;
-        }
-        float lerp = AndroidUtilities.lerp(-AndroidUtilities.dp(50.0f), f10, f11);
-        AndroidUtilities.dp(50.0f);
-        float f12 = lineTop;
-        float f13 = lineBottom;
-        int saveLayer = canvas.saveLayer(min, f12, max, f13, null);
-        canvas.save();
-        canvas.clipRect(min, f12, max, f13);
-        stVar.a(canvas);
-        canvas.restore();
-        Matrix matrix = E;
-        matrix.reset();
-        if (paragraphDirection >= 0) {
-            matrix.setScale(AndroidUtilities.dp(50.0f), 1.0f);
-            matrix.postTranslate(lerp, 0.0f);
-        } else {
-            matrix.setScale(-AndroidUtilities.dp(50.0f), 1.0f);
-            matrix.postTranslate(f10 - lerp, 0.0f);
-        }
-        y.setLocalMatrix(matrix);
-        canvas.drawRect(min, f12, max, f13, x);
-        canvas.restoreToCount(saveLayer);
-    }
-
-    public static float i(Layout layout, int i10) {
-        float lineRight = layout.getLineRight(i10) - layout.getLineLeft(i10);
-        return lineRight >= 0.0f ? lineRight : -lineRight;
-    }
-
-    public final void a(float f7) {
-        int size = this.b.size();
-        View view = null;
-        int i10 = 0;
-        while (i10 < size) {
-            fj0 fj0Var = (fj0) this.b.get(i10);
-            float f10 = (this.n || i10 <= this.d) ? 1.0f : 0.0f;
-            ArrayList arrayList = this.c;
-            float floatValue = i10 < arrayList.size() ? ((Float) arrayList.get(i10)).floatValue() : f10;
-            if (floatValue == f10) {
-                f10 = floatValue;
-            } else if (f7 > 0.0f) {
-                float f11 = f7 / 0.2f;
-                f10 = f10 > floatValue ? Math.min(f10, f11 + floatValue) : Math.max(f10, floatValue - f11);
-            }
-            if (i10 < arrayList.size() && f10 != floatValue) {
-                arrayList.set(i10, Float.valueOf(f10));
-            }
-            View parentView = fj0Var.getParentView();
-            if (parentView != null && parentView != view) {
-                if (parentView.getAlpha() != f10) {
-                    parentView.setAlpha(f10);
-                }
-                view = parentView;
-            }
-            i10++;
-        }
-    }
-
-    public final float c(fj0 fj0Var) {
-        int d = d(fj0Var);
-        if (d < 0) {
-            return 1.0f;
-        }
-        ArrayList arrayList = this.c;
-        if (d >= arrayList.size()) {
-            return 1.0f;
-        }
-        return ((Float) arrayList.get(d)).floatValue();
-    }
-
-    public final int d(fj0 fj0Var) {
-        int size = this.b.size();
-        for (int i10 = 0; i10 < size; i10++) {
-            if (this.b.get(i10) == fj0Var) {
-                return i10;
-            }
-        }
-        return -1;
-    }
-
-    @Override // android.view.Choreographer.FrameCallback
-    public final void doFrame(long j10) {
-        if (this.h) {
-            float f7 = 0.0f;
-            if (this.r != 0) {
-                float f10 = (j10 - r0) * 1.0E-9f;
-                if (this.b.isEmpty() || f10 <= 0.0f) {
-                    this.n = this.b.isEmpty();
-                } else {
-                    float f11 = this.s * f10;
-                    while (true) {
-                        if (f11 <= 0.0f) {
-                            break;
-                        }
-                        if (this.d >= this.b.size()) {
-                            this.n = true;
-                            break;
-                        }
-                        Layout layout = ((fj0) this.b.get(this.d)).getLayout();
-                        if (layout != null && layout.getLineCount() != 0) {
-                            if (this.e >= layout.getLineCount()) {
-                                int lineCount = layout.getLineCount() - 1;
-                                this.e = lineCount;
-                                this.f = i(layout, lineCount);
-                            }
-                            float i10 = i(layout, this.e);
-                            if (i10 <= 0.001f) {
-                                if (k(layout)) {
-                                    break;
-                                }
-                            } else {
-                                float f12 = this.f;
-                                float f13 = i10 - f12;
-                                if (f13 <= 0.001f) {
-                                    if (k(layout)) {
-                                        break;
-                                    }
-                                } else {
-                                    if (f11 < f13) {
-                                        f13 = f11;
-                                    }
-                                    float f14 = f12 + f13;
-                                    this.f = f14;
-                                    f11 -= f13;
-                                    if (i10 - f14 <= 0.001f && !k(layout)) {
-                                        f11 = 0.0f;
-                                    }
-                                }
-                            }
-                        } else {
-                            this.d++;
-                            this.e = 0;
-                            this.f = 0.0f;
-                        }
-                    }
-                    this.n = f();
-                }
-                f7 = f10;
-            }
-            this.r = j10;
-            a(f7);
-            e();
-            if (!this.n) {
-                this.a.postFrameCallback(this);
+        org.telegram.ui.Cells.t8 t8Var = this.h;
+        tL_messages_acceptUrlAuth.write_allowed = t8Var != null && t8Var.e.h;
+        tL_messages_acceptUrlAuth.share_phone_number = this.n[0];
+        TL_wallet.inputTonConnectOauthSession inputtonconnectoauthsession = inputtonconnectoauthsessionArr[0];
+        tL_messages_acceptUrlAuth.tonconnect_session = inputtonconnectoauthsession;
+        inputtonconnectoauthsessionArr[0] = null;
+        if (this.r[0]) {
+            if (inputtonconnectoauthsession != null) {
+                Arrays.fill(inputtonconnectoauthsession.challenge_answer, (byte) 0);
                 return;
             }
-            this.h = false;
-            ArrayList arrayList = this.c;
-            int size = arrayList.size();
-            for (int i11 = 0; i11 < size; i11++) {
-                arrayList.set(i11, Float.valueOf(1.0f));
-            }
-            int size2 = this.b.size();
-            View view = null;
-            for (int i12 = 0; i12 < size2; i12++) {
-                View parentView = ((fj0) this.b.get(i12)).getParentView();
-                if (parentView != null && parentView != view) {
-                    if (parentView.getAlpha() != 1.0f) {
-                        parentView.setAlpha(1.0f);
-                    }
-                    view = parentView;
+            return;
+        }
+        final int[] iArr = this.s;
+        ConnectionsManager connectionsManager = ConnectionsManager.getInstance(iArr[0]);
+        a3.b bVar = new a3.b(1);
+        final boolean[] zArr = this.w;
+        final org.telegram.ui.ActionBar.z2 z2Var = this.x;
+        final String str2 = this.y;
+        final org.telegram.ui.ActionBar.p6 p6Var = this.D;
+        final boolean z11 = this.E;
+        final String str3 = this.F;
+        final org.telegram.ui.web.z0 z0Var = this.G;
+        connectionsManager.sendRequestTyped(tL_messages_acceptUrlAuth, bVar, new org.telegram.messenger.j20() { // from class: org.telegram.ui.ej0
+            @Override // org.telegram.messenger.j20
+            public final void a(Object obj, Object obj2) {
+                TLRPC.UrlAuthResult urlAuthResult = (TLRPC.UrlAuthResult) obj;
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
+                vh.d.this.setLoading(false);
+                TLRPC.TL_messages_acceptUrlAuth tL_messages_acceptUrlAuth2 = tL_messages_acceptUrlAuth;
+                TL_wallet.inputTonConnectOauthSession inputtonconnectoauthsession2 = tL_messages_acceptUrlAuth2.tonconnect_session;
+                if (inputtonconnectoauthsession2 != null) {
+                    Arrays.fill(inputtonconnectoauthsession2.challenge_answer, (byte) 0);
                 }
-            }
-            bi.ga gaVar = this.w;
-            if (gaVar != null) {
-                gaVar.run();
-                this.w = null;
-            }
-        }
-    }
-
-    public final void e() {
-        fj0 fj0Var;
-        int i10 = this.d;
-        View parentView = (i10 < 0 || i10 >= this.b.size() || (fj0Var = (fj0) this.b.get(this.d)) == null) ? null : fj0Var.getParentView();
-        if (parentView != null) {
-            parentView.invalidate();
-            View view = this.v;
-            if (view != null && view != parentView) {
-                view.invalidate();
-            }
-            this.v = parentView;
-        }
-    }
-
-    public final boolean f() {
-        if (!this.b.isEmpty()) {
-            int size = this.b.size() - 1;
-            Layout layout = null;
-            while (size >= 0) {
-                layout = ((fj0) this.b.get(size)).getLayout();
-                if (layout != null && layout.getLineCount() > 0) {
-                    break;
+                zArr[0] = true;
+                z2Var.dismiss();
+                if (tL_error == null) {
+                    jj0.b(z11, iArr[0], tL_messages_requestUrlAuth, urlAuthResult, str3, tL_urlAuthResultRequest, null, tL_messages_acceptUrlAuth2.share_phone_number, z0Var);
+                    return;
                 }
-                size--;
-            }
-            if (size >= 0 && layout != null) {
-                int i10 = this.d;
-                if (i10 < size) {
-                    return false;
+                if (!"URL_EXPIRED".equalsIgnoreCase(tL_error.text)) {
+                    jj0.a().f0(tL_error, false);
+                    return;
                 }
-                if (i10 <= size) {
-                    int lineCount = layout.getLineCount() - 1;
-                    float i11 = i(layout, lineCount);
-                    if (this.e < lineCount || this.f < i11 - 0.001f) {
-                        return false;
-                    }
-                }
+                org.telegram.ui.Components.cc a2 = jj0.a();
+                String L0 = org.telegram.messenger.cd.L0(2131753128, null);
+                String str4 = str2;
+                a2.I(R.raw.error, L0, TextUtils.isEmpty(str4) ? org.telegram.messenger.cd.L0(2131753129, null) : org.telegram.messenger.i0.O2(org.telegram.ui.ActionBar.t6.w0(org.telegram.ui.ActionBar.t6.uj, p6Var), org.telegram.messenger.cd.a0(null, null, 2131753130, str4))).j();
             }
-        }
-        return true;
-    }
-
-    public final boolean g(fj0 fj0Var) {
-        Layout layout;
-        return d(fj0Var) == this.d && (layout = fj0Var.getLayout()) != null && this.e < layout.getLineCount();
-    }
-
-    public final boolean h() {
-        return this.h;
-    }
-
-    public final boolean j(fj0 fj0Var) {
-        int d = d(fj0Var);
-        if (d < 0 || this.b.isEmpty()) {
-            return false;
-        }
-        int i10 = this.d;
-        return d < i10 || d <= i10;
-    }
-
-    public final boolean k(Layout layout) {
-        int i10 = this.e + 1;
-        this.e = i10;
-        this.f = 0.0f;
-        if (i10 >= layout.getLineCount()) {
-            int i11 = this.d + 1;
-            this.d = i11;
-            this.e = 0;
-            this.f = 0.0f;
-            if (i11 >= this.b.size()) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public final void l(List list) {
-        float f7;
-        ArrayList arrayList;
-        boolean z10;
-        if (!this.b.isEmpty() && this.d >= this.b.size()) {
-            int size = this.b.size() - 1;
-            this.d = size;
-            Layout layout = ((fj0) this.b.get(size)).getLayout();
-            int max = Math.max(0, layout == null ? 0 : layout.getLineCount() - 1);
-            this.e = max;
-            this.f = layout == null ? 0.0f : layout.getLineWidth(max);
-        }
-        if (list == null) {
-            list = new ArrayList();
-        }
-        this.b = list;
-        if (list.isEmpty()) {
-            f7 = 0.0f;
-        } else {
-            int i10 = this.d;
-            f7 = 0.0f;
-            while (i10 < this.b.size()) {
-                Layout layout2 = ((fj0) this.b.get(i10)).getLayout();
-                if (layout2 != null) {
-                    int min = i10 == this.d ? Math.min(Math.max(this.e, 0), Math.max(0, layout2.getLineCount() - 1)) : 0;
-                    for (int i11 = min; i11 < layout2.getLineCount(); i11++) {
-                        float i12 = i(layout2, i11);
-                        if (i12 > 0.001f) {
-                            if (i10 == this.d && i11 == min) {
-                                i12 -= this.f;
-                                if (i12 <= 0.001f) {
-                                }
-                            }
-                            f7 += i12;
-                        }
-                    }
-                }
-                i10++;
-            }
-        }
-        float dp = AndroidUtilities.dp(40.0f);
-        if (f7 <= 0.001f) {
-            this.s = dp;
-        } else {
-            this.s = Math.max(dp, f7 / 1.05f);
-        }
-        this.n = f();
-        while (true) {
-            arrayList = this.c;
-            if (arrayList.size() <= this.b.size()) {
-                break;
-            } else {
-                a1.g.A(1, arrayList);
-            }
-        }
-        int size2 = arrayList.size();
-        while (size2 < this.b.size()) {
-            arrayList.add(Float.valueOf((this.n || size2 <= this.d) ? 1.0f : 0.0f));
-            size2++;
-        }
-        if (!this.n && !(z10 = this.h) && !z10) {
-            this.h = true;
-            if (f()) {
-                this.n = true;
-            }
-            this.r = 0L;
-            this.a.postFrameCallback(this);
-        }
-        a(0.0f);
-        e();
-    }
-
-    public final void m(bi.ga gaVar) {
-        this.w = gaVar;
+        });
     }
 }

@@ -1,34 +1,40 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.PopupWindow;
+
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public abstract class v60 extends kp0 {
-    @Override // org.telegram.ui.Components.kp0
-    public final boolean a() {
-        return j() > 0;
+public final class v60 implements PopupWindow.OnDismissListener {
+    public final /* synthetic */ ViewGroup a;
+    public final /* synthetic */ z60 b;
+
+    public v60(z60 z60Var, ViewGroup viewGroup) {
+        this.b = z60Var;
+        this.a = viewGroup;
     }
 
-    @Override // org.telegram.ui.Components.kp0
-    public final boolean b() {
-        return j() < i();
-    }
-
-    @Override // org.telegram.ui.Components.kp0
-    public final void c(boolean z10) {
-        int h = h();
-        if (z10) {
-            h *= -1;
+    @Override // android.widget.PopupWindow.OnDismissListener
+    public final void onDismiss() {
+        View view;
+        z60 z60Var = this.b;
+        z60Var.m = null;
+        z60.a(z60Var, this.a);
+        View view2 = z60Var.p0;
+        if (view2 != null) {
+            view2.setPressed(false);
+            z60Var.p0 = null;
         }
-        k(Math.min(i(), Math.max(0, j() + h)));
+        if (z60Var.o0 != null && (view = z60Var.f) != null) {
+            view.setOnTouchListener(null);
+        }
+        z60Var.o0 = null;
+        z60Var.N();
+        Runnable runnable = z60Var.p;
+        if (runnable != null) {
+            runnable.run();
+            z60Var.p = null;
+        }
     }
-
-    public int h() {
-        return 1;
-    }
-
-    public abstract int i();
-
-    public abstract int j();
-
-    public abstract void k(int i10);
 }

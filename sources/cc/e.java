@@ -1,50 +1,63 @@
 package cc;
 
-import a8.ef;
-import a8.me;
-import java.util.Arrays;
-import o6.l;
+import android.support.v4.media.session.a0;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class e {
-    public final boolean a;
-    public final boolean b;
-    public final boolean c;
+    public final ac.f a;
+    public final int b;
+    public final int c;
+    public final int d;
+    public final /* synthetic */ a0 e;
 
-    public /* synthetic */ e(d dVar) {
-        this.a = dVar.a;
-        this.b = dVar.b;
-        this.c = dVar.c;
+    public e(a0 a0Var, ac.f fVar, int i10, int i11, int i12) {
+        this.e = a0Var;
+        this.a = fVar;
+        this.b = i10;
+        this.c = i11;
+        this.d = i12;
     }
 
-    public final ef a() {
-        me meVar = new me();
-        Boolean bool = Boolean.FALSE;
-        meVar.a = bool;
-        meVar.b = Boolean.valueOf(this.a);
-        meVar.c = Boolean.valueOf(this.b);
-        meVar.d = bool;
-        meVar.e = Boolean.valueOf(this.c);
-        return new ef(meVar);
-    }
-
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
+    public final int a() {
+        ac.f fVar = this.a;
+        ac.f fVar2 = ac.f.h;
+        int i10 = this.d;
+        if (fVar != fVar2) {
+            return i10;
         }
-        if (!(obj instanceof e)) {
-            return false;
-        }
-        e eVar = (e) obj;
-        return this.a == eVar.a && this.b == eVar.b && this.c == eVar.c && l.l(null, null);
+        ac.a aVar = (ac.a) this.e.c;
+        wb.d dVar = (wb.d) aVar.c;
+        String str = (String) aVar.b;
+        int i11 = this.b;
+        return str.substring(i11, i10 + i11).getBytes(dVar.a[this.c].charset()).length;
     }
 
-    public final int hashCode() {
-        Boolean valueOf = Boolean.valueOf(this.a);
-        Boolean valueOf2 = Boolean.valueOf(this.b);
-        Boolean valueOf3 = Boolean.valueOf(this.c);
-        Boolean bool = Boolean.FALSE;
-        return Arrays.hashCode(new Object[]{bool, valueOf, valueOf2, bool, valueOf3, null});
+    public final String toString() {
+        ac.a aVar = (ac.a) this.e.c;
+        StringBuilder sb2 = new StringBuilder();
+        ac.f fVar = this.a;
+        sb2.append(fVar);
+        sb2.append('(');
+        if (fVar == ac.f.n) {
+            wb.d dVar = (wb.d) aVar.c;
+            sb2.append(dVar.a[this.c].charset().displayName());
+        } else {
+            String str = (String) aVar.b;
+            int i10 = this.d;
+            int i11 = this.b;
+            String substring = str.substring(i11, i10 + i11);
+            StringBuilder sb3 = new StringBuilder();
+            for (int i12 = 0; i12 < substring.length(); i12++) {
+                if (substring.charAt(i12) < ' ' || substring.charAt(i12) > '~') {
+                    sb3.append('.');
+                } else {
+                    sb3.append(substring.charAt(i12));
+                }
+            }
+            sb2.append(sb3.toString());
+        }
+        sb2.append(')');
+        return sb2.toString();
     }
 }

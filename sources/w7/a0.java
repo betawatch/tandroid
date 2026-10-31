@@ -2,16 +2,15 @@ package w7;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.telegram.messenger.BuildConfig;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public abstract class a0 {
-    public static String a(String str, Object... objArr) {
+    public static String a(Object... objArr) {
         int length;
         int length2;
         int indexOf;
-        String sb2;
+        String o10;
         int i10 = 0;
         int i11 = 0;
         while (true) {
@@ -21,44 +20,41 @@ public abstract class a0 {
             }
             Object obj = objArr[i11];
             if (obj == null) {
-                sb2 = BuildConfig.BETA_URL;
+                o10 = "null";
             } else {
                 try {
-                    sb2 = obj.toString();
+                    o10 = obj.toString();
                 } catch (Exception e) {
-                    String str2 = obj.getClass().getName() + '@' + Integer.toHexString(System.identityHashCode(obj));
-                    Logger.getLogger("com.google.common.base.Strings").logp(Level.WARNING, "com.google.common.base.Strings", "lenientToString", "Exception during lenientFormat for ".concat(str2), (Throwable) e);
-                    StringBuilder v = a1.g.v("<", str2, " threw ");
-                    v.append(e.getClass().getName());
-                    v.append(">");
-                    sb2 = v.toString();
+                    String C = a1.g.C(obj.getClass().getName(), "@", Integer.toHexString(System.identityHashCode(obj)));
+                    Logger.getLogger("com.google.common.base.Strings").logp(Level.WARNING, "com.google.common.base.Strings", "lenientToString", "Exception during lenientFormat for ".concat(C), (Throwable) e);
+                    o10 = org.telegram.ui.Cells.f1.o("<", C, " threw ", e.getClass().getName(), ">");
                 }
             }
-            objArr[i11] = sb2;
+            objArr[i11] = o10;
             i11++;
         }
-        StringBuilder sb3 = new StringBuilder((length * 16) + str.length());
+        StringBuilder sb2 = new StringBuilder((length * 16) + 29);
         int i12 = 0;
         while (true) {
             length2 = objArr.length;
-            if (i10 >= length2 || (indexOf = str.indexOf("%s", i12)) == -1) {
+            if (i10 >= length2 || (indexOf = "expected a non-null reference".indexOf("%s", i12)) == -1) {
                 break;
             }
-            sb3.append((CharSequence) str, i12, indexOf);
-            sb3.append(objArr[i10]);
+            sb2.append((CharSequence) "expected a non-null reference", i12, indexOf);
+            sb2.append(objArr[i10]);
             i10++;
             i12 = indexOf + 2;
         }
-        sb3.append((CharSequence) str, i12, str.length());
+        sb2.append((CharSequence) "expected a non-null reference", i12, 29);
         if (i10 < length2) {
-            sb3.append(" [");
-            sb3.append(objArr[i10]);
+            sb2.append(" [");
+            sb2.append(objArr[i10]);
             for (int i13 = i10 + 1; i13 < objArr.length; i13++) {
-                sb3.append(", ");
-                sb3.append(objArr[i13]);
+                sb2.append(", ");
+                sb2.append(objArr[i13]);
             }
-            sb3.append(']');
+            sb2.append(']');
         }
-        return sb3.toString();
+        return sb2.toString();
     }
 }

@@ -1,64 +1,41 @@
 package org.telegram.messenger;
 
-import android.content.SharedPreferences;
 import java.util.ArrayList;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.InputSerializedData;
+import org.telegram.tgnet.OutputSerializedData;
 import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.Vector;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final /* synthetic */ class x1 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
+public final class x1 extends TLObject {
+    public static final /* synthetic */ int b = 0;
+    public ArrayList a = new ArrayList();
 
-    public /* synthetic */ x1(int i10, Object obj, Object obj2) {
-        this.a = i10;
-        this.b = obj;
-        this.c = obj2;
+    @Override // org.telegram.tgnet.TLObject
+    public final void readParams(InputSerializedData inputSerializedData, boolean z10) {
+        int readInt32 = inputSerializedData.readInt32(z10);
+        if (readInt32 != 481674261) {
+            if (z10) {
+                throw new RuntimeException(String.format("wrong Vector magic, got %x", Integer.valueOf(readInt32)));
+            }
+        } else {
+            int readInt322 = inputSerializedData.readInt32(z10);
+            for (int i10 = 0; i10 < readInt322; i10++) {
+                this.a.add(TL_account.TL_contactBirthday.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10));
+            }
+        }
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                ((ContactsController) this.b).lambda$reloadContactsStatuses$59((SharedPreferences.Editor) this.c, tLObject, tL_error);
-                break;
-            case 1:
-                ((ContactsController) this.b).lambda$deleteAllContacts$9((Runnable) this.c, tLObject, tL_error);
-                break;
-            case 2:
-                ((ContactsController) this.b).lambda$addContact$52((TLRPC.User) this.c, tLObject, tL_error);
-                break;
-            case 3:
-                ((MediaDataController) this.b).lambda$removeRecentGif$24((TLRPC.TL_messages_saveGif) this.c, tLObject, tL_error);
-                break;
-            case 4:
-                ((MediaDataController) this.b).lambda$saveToRingtones$205((TLRPC.Document) this.c, tLObject, tL_error);
-                break;
-            case 5:
-                ((MediaDataController) this.b).lambda$loadAttachMenuBots$4((Runnable) this.c, tLObject, tL_error);
-                break;
-            case 6:
-                ((MessagesController) this.b).lambda$requestIsUserContactBlocked$501((ArrayList) this.c, tLObject, tL_error);
-                break;
-            case 7:
-                ((MessagesController) this.b).lambda$changeChatTitle$318((Runnable) this.c, tLObject, tL_error);
-                break;
-            case 8:
-                ((SavedMessagesController) this.b).lambda$loadDialogs$3((ArrayList) this.c, tLObject, tL_error);
-                break;
-            case 9:
-                ((SendMessagesHelper) this.b).lambda$performSendDelayedMessage$53((SendMessagesHelper.DelayedMessage) this.c, tLObject, tL_error);
-                break;
-            case 10:
-                ((SendMessagesHelper) this.b).lambda$sendReaction$38((Runnable) this.c, tLObject, tL_error);
-                break;
-            default:
-                ((UserNameResolver) this.b).lambda$resolve$1((String) this.c, tLObject, tL_error);
-                break;
+    @Override // org.telegram.tgnet.TLObject
+    public final void serializeToStream(OutputSerializedData outputSerializedData) {
+        outputSerializedData.writeInt32(TL_account.contactBirthdays.constructor);
+        outputSerializedData.writeInt32(Vector.constructor);
+        int size = this.a.size();
+        outputSerializedData.writeInt32(size);
+        for (int i10 = 0; i10 < size; i10++) {
+            ((TL_account.TL_contactBirthday) this.a.get(i10)).serializeToStream(outputSerializedData);
         }
     }
 }

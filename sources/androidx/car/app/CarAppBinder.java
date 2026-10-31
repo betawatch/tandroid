@@ -6,11 +6,12 @@ import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
 import androidx.car.app.ICarApp;
+import androidx.lifecycle.o;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 final class CarAppBinder extends ICarApp.Stub {
-    private n mCurrentSession;
+    private m mCurrentSession;
     private final SessionInfo mCurrentSessionInfo;
     private HandshakeInfo mHandshakeInfo;
     private y.a mHostValidator;
@@ -20,7 +21,7 @@ final class CarAppBinder extends ICarApp.Stub {
         this.mCurrentSessionInfo = sessionInfo;
     }
 
-    private androidx.lifecycle.o getCurrentLifecycle() {
+    private o getCurrentLifecycle() {
         return null;
     }
 
@@ -70,7 +71,7 @@ final class CarAppBinder extends ICarApp.Stub {
         throw null;
     }
 
-    private void onConfigurationChangedInternal(n nVar, Configuration configuration) {
+    private void onConfigurationChangedInternal(m mVar, Configuration configuration) {
         Handler handler = androidx.car.app.utils.i.a;
         if (Looper.getMainLooper() != Looper.myLooper()) {
             throw new IllegalStateException("Not running on main thread when it is required to");
@@ -81,7 +82,7 @@ final class CarAppBinder extends ICarApp.Stub {
         throw null;
     }
 
-    private void onNewIntentInternal(n nVar, Intent intent) {
+    private void onNewIntentInternal(m mVar, Intent intent) {
         Handler handler = androidx.car.app.utils.i.a;
         if (Looper.getMainLooper() != Looper.myLooper()) {
             throw new IllegalStateException("Not running on main thread when it is required to");
@@ -99,7 +100,7 @@ final class CarAppBinder extends ICarApp.Stub {
         throw null;
     }
 
-    public n getCurrentSession() {
+    public m getCurrentSession() {
         return null;
     }
 
@@ -177,7 +178,7 @@ final class CarAppBinder extends ICarApp.Stub {
     public void setHandshakeInfo(HandshakeInfo handshakeInfo) {
         int hostCarAppApiLevel = handshakeInfo.getHostCarAppApiLevel();
         if (hostCarAppApiLevel < 1 || hostCarAppApiLevel > z.a.a()) {
-            throw new IllegalArgumentException(ic.a.i(hostCarAppApiLevel, "Invalid Car App API level received: "));
+            throw new IllegalArgumentException(i0.a.i(hostCarAppApiLevel, "Invalid Car App API level received: "));
         }
         this.mHandshakeInfo = handshakeInfo;
     }

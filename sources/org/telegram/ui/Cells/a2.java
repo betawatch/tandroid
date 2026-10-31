@@ -1,134 +1,137 @@
 package org.telegram.ui.Cells;
 
-import android.text.TextUtils;
-import java.io.File;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.ImageLoader;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.drawable.ShapeDrawable;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.b61;
+import org.telegram.ui.Components.rf0;
+import org.telegram.ui.Components.tf0;
+import org.telegram.ui.za0;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class a2 implements Runnable {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ d2 b;
+public final class a2 extends org.telegram.ui.Components.f6 {
+    public final /* synthetic */ int s;
+    public Object w;
 
-    public a2(d2 d2Var, boolean z10) {
-        this.b = d2Var;
-        this.a = z10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ a2(Context context, boolean z10, boolean z11, boolean z12) {
+        super(context, z10, z11, z12);
+        this.s = 3;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:14:0x00fe  */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        File file;
-        File file2;
-        String str;
-        String attachFileName;
-        File pathToAttach;
-        TLRPC.Document document;
-        d2 d2Var = this.b;
-        int i10 = d2Var.d;
-        int i11 = d2Var.P;
-        String str2 = null;
-        if (i11 == 5 || i11 == 3) {
-            TLRPC.Document document2 = d2Var.L;
-            if (document2 != null) {
-                str2 = FileLoader.getAttachFileName(document2);
-                file = FileLoader.getInstance(i10).getPathToAttach(d2Var.L);
-            } else {
-                if (d2Var.J.content instanceof TLRPC.TL_webDocument) {
-                    StringBuilder sb2 = new StringBuilder();
-                    sb2.append(Utilities.MD5(d2Var.J.content.url));
-                    sb2.append(".");
-                    sb2.append(ImageLoader.getHttpUrlExtension(d2Var.J.content.url, d2Var.P == 5 ? "mp3" : "ogg"));
-                    str2 = sb2.toString();
-                    file = new File(FileLoader.getDirectory(4), str2);
+    @Override // android.view.View
+    public void invalidate() {
+        switch (this.s) {
+            case 1:
+                super.invalidate();
+                rf0 rf0Var = (rf0) this.w;
+                tf0 tf0Var = rf0Var.d;
+                if (rf0Var == tf0Var.i1.getPinnedHeader()) {
+                    tf0Var.i1.invalidate();
+                    break;
                 }
-                str = null;
-                file2 = null;
-            }
-            file2 = file;
-            str = str2;
-        } else {
-            if (d2Var.Q) {
-                TLRPC.BotInlineResult botInlineResult = d2Var.J;
-                if (botInlineResult != null) {
-                    TLRPC.Document document3 = botInlineResult.document;
-                    if (document3 instanceof TLRPC.TL_document) {
-                        attachFileName = FileLoader.getAttachFileName(document3);
-                        pathToAttach = FileLoader.getInstance(i10).getPathToAttach(d2Var.J.document);
-                    } else {
-                        TLRPC.Photo photo = botInlineResult.photo;
-                        if (photo instanceof TLRPC.TL_photo) {
-                            TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(photo.sizes, AndroidUtilities.getPhotoSize(), true);
-                            d2Var.O = closestPhotoSizeWithSize;
-                            attachFileName = FileLoader.getAttachFileName(closestPhotoSizeWithSize);
-                            pathToAttach = FileLoader.getInstance(i10).getPathToAttach(d2Var.O);
-                        } else if (botInlineResult.content instanceof TLRPC.TL_webDocument) {
-                            StringBuilder sb3 = new StringBuilder();
-                            sb3.append(Utilities.MD5(d2Var.J.content.url));
-                            sb3.append(".");
-                            TLRPC.WebDocument webDocument = d2Var.J.content;
-                            sb3.append(ImageLoader.getHttpUrlExtension(webDocument.url, FileLoader.getMimeTypePart(webDocument.mime_type)));
-                            attachFileName = sb3.toString();
-                            pathToAttach = new File(FileLoader.getDirectory(4), attachFileName);
-                            if (d2Var.P == 2) {
-                                TLRPC.WebDocument webDocument2 = d2Var.J.thumb;
-                                if ((webDocument2 instanceof TLRPC.TL_webDocument) && "video/mp4".equals(webDocument2.mime_type)) {
-                                    attachFileName = null;
-                                }
-                            }
-                        } else {
-                            if (botInlineResult.thumb instanceof TLRPC.TL_webDocument) {
-                                StringBuilder sb4 = new StringBuilder();
-                                sb4.append(Utilities.MD5(d2Var.J.thumb.url));
-                                sb4.append(".");
-                                TLRPC.WebDocument webDocument3 = d2Var.J.thumb;
-                                sb4.append(ImageLoader.getHttpUrlExtension(webDocument3.url, FileLoader.getMimeTypePart(webDocument3.mime_type)));
-                                attachFileName = sb4.toString();
-                                pathToAttach = new File(FileLoader.getDirectory(4), attachFileName);
-                            }
-                            pathToAttach = null;
-                            attachFileName = null;
-                        }
-                    }
-                    document = d2Var.L;
-                    if (document == null && d2Var.P == 2 && MessageObject.getDocumentVideoThumb(document) != null) {
-                        file2 = pathToAttach;
-                        str = str2;
-                    } else {
-                        file2 = pathToAttach;
-                        str = attachFileName;
-                    }
-                } else {
-                    TLRPC.Document document4 = d2Var.L;
-                    if (document4 != null) {
-                        attachFileName = FileLoader.getAttachFileName(document4);
-                        pathToAttach = FileLoader.getInstance(i10).getPathToAttach(d2Var.L);
-                        document = d2Var.L;
-                        if (document == null) {
-                        }
-                        file2 = pathToAttach;
-                        str = attachFileName;
-                    }
-                    pathToAttach = null;
-                    attachFileName = null;
-                    document = d2Var.L;
-                    if (document == null) {
-                    }
-                    file2 = pathToAttach;
-                    str = attachFileName;
-                }
-            }
-            str = null;
-            file2 = null;
+                break;
+            default:
+                super.invalidate();
+                break;
         }
-        AndroidUtilities.runOnUIThread(new e2.p0(this, str, file2, !TextUtils.isEmpty(str) && file2.exists(), this.a));
+    }
+
+    @Override // org.telegram.ui.Components.f6, android.view.View
+    public void onDraw(Canvas canvas) {
+        int r12;
+        switch (this.s) {
+            case 0:
+                super.onDraw(canvas);
+                ((c2) this.w).f();
+                break;
+            case 1:
+            default:
+                super.onDraw(canvas);
+                break;
+            case 2:
+                canvas.save();
+                canvas.translate(org.telegram.messenger.i0.L(15.0f), 0.0f);
+                super.onDraw(canvas);
+                canvas.translate(((getMeasuredWidth() - d()) / 2.0f) - org.telegram.messenger.i0.L(30.0f), org.telegram.messenger.i0.L(11.0f));
+                ((b61) this.w).b.draw(canvas);
+                canvas.restore();
+                break;
+            case 3:
+                ShapeDrawable shapeDrawable = (ShapeDrawable) this.w;
+                if (shapeDrawable != null && shapeDrawable.getPaint().getColor() != (r12 = org.telegram.ui.ActionBar.t6.r1(0.15f, org.telegram.ui.ActionBar.t6.x0(null, org.telegram.ui.ActionBar.t6.L6, false)))) {
+                    shapeDrawable.getPaint().setColor(r12);
+                }
+                shapeDrawable.setBounds(0, 0, (int) (getDrawable().c() + getPaddingLeft() + getPaddingRight()), getMeasuredHeight());
+                shapeDrawable.draw(canvas);
+                super.onDraw(canvas);
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.f6, android.view.View
+    public void onMeasure(int i10, int i11) {
+        switch (this.s) {
+            case 4:
+                za0 za0Var = (za0) this.w;
+                int size = View.MeasureSpec.getSize(i10);
+                if (size <= 0) {
+                    size = org.telegram.messenger.i0.q.x - org.telegram.messenger.i0.L(20.0f);
+                }
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) ((size - za0Var.d.getPaint().measureText(za0Var.d.getText().toString())) - za0Var.f.getPaint().measureText(za0Var.f.getText().toString())), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.i0.L(24.0f), TLObject.FLAG_30));
+                break;
+            default:
+                super.onMeasure(i10, i11);
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public boolean post(Runnable runnable) {
+        switch (this.s) {
+            case 1:
+                tf0 tf0Var = ((rf0) this.w).d;
+                mh.g gVar = tf0.I1;
+                return tf0Var.b.post(runnable);
+            default:
+                return super.post(runnable);
+        }
+    }
+
+    @Override // android.view.View
+    public boolean postDelayed(Runnable runnable, long j10) {
+        switch (this.s) {
+            case 1:
+                tf0 tf0Var = ((rf0) this.w).d;
+                mh.g gVar = tf0.I1;
+                return tf0Var.b.postDelayed(runnable, j10);
+            default:
+                return super.postDelayed(runnable, j10);
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ a2(FrameLayout frameLayout, Context context, int i10) {
+        super(context, false, false, false);
+        this.s = i10;
+        this.w = frameLayout;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public a2(b61 b61Var, Context context) {
+        super(context, true, true, true);
+        this.s = 2;
+        this.w = b61Var;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public a2(za0 za0Var, Context context) {
+        super(context, false, true, true);
+        this.s = 4;
+        this.w = za0Var;
     }
 }

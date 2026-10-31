@@ -1,41 +1,29 @@
 package l5;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+import java.util.HashMap;
+
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class n extends v {
-    public final u a;
-    public final t b;
+public abstract class n {
+    public static final li.k a;
 
-    public n(u uVar, t tVar) {
-        this.a = uVar;
-        this.b = tVar;
-    }
-
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
-        }
-        if (obj instanceof v) {
-            v vVar = (v) obj;
-            u uVar = this.a;
-            if (uVar != null ? uVar.equals(((n) vVar).a) : ((n) vVar).a == null) {
-                t tVar = this.b;
-                if (tVar != null ? tVar.equals(((n) vVar).b) : ((n) vVar).b == null) {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        u uVar = this.a;
-        int hashCode = ((uVar == null ? 0 : uVar.hashCode()) ^ 1000003) * 1000003;
-        t tVar = this.b;
-        return (tVar != null ? tVar.hashCode() : 0) ^ hashCode;
-    }
-
-    public final String toString() {
-        return "NetworkConnectionInfo{networkType=" + this.a + ", mobileSubtype=" + this.b + "}";
+    static {
+        HashMap hashMap = new HashMap();
+        HashMap hashMap2 = new HashMap();
+        hashMap.put(n.class, e.a);
+        hashMap2.remove(n.class);
+        hashMap.put(o5.a.class, a.a);
+        hashMap2.remove(o5.a.class);
+        hashMap.put(o5.g.class, g.a);
+        hashMap2.remove(o5.g.class);
+        hashMap.put(o5.e.class, d.a);
+        hashMap2.remove(o5.e.class);
+        hashMap.put(o5.d.class, c.a);
+        hashMap2.remove(o5.d.class);
+        hashMap.put(o5.b.class, b.a);
+        hashMap2.remove(o5.b.class);
+        hashMap.put(o5.f.class, f.a);
+        hashMap2.remove(o5.f.class);
+        a = new li.k(new HashMap(hashMap), new HashMap(hashMap2), ma.g.a, 6);
     }
 }

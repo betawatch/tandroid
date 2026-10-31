@@ -1,26 +1,27 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
+import android.content.DialogInterface;
+import android.widget.EditText;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class i1 implements View.OnClickListener {
+public final /* synthetic */ class i1 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.Cells.y1 b;
+    public final /* synthetic */ EditText b;
 
-    public /* synthetic */ i1(org.telegram.ui.Cells.y1 y1Var, int i10) {
+    public /* synthetic */ i1(EditText editText, int i10) {
         this.a = i10;
-        this.b = y1Var;
+        this.b = editText;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                this.b.c(!r3.b(), true);
+                org.telegram.messenger.i0.v1(this.b);
                 break;
             default:
-                this.b.c(!r3.b(), true);
+                org.telegram.messenger.i0.v1(this.b);
                 break;
         }
     }

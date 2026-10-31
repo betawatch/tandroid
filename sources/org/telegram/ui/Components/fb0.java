@@ -1,44 +1,32 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Rect;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class fb0 extends s4.n0 {
-    public final /* synthetic */ gb0 a;
+public final class fb0 extends org.telegram.ui.ActionBar.u5 {
+    public final Paint M0;
+    public final /* synthetic */ org.telegram.ui.ActionBar.p6 N0;
 
-    public fb0(gb0 gb0Var) {
-        this.a = gb0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public fb0(Context context, org.telegram.ui.ActionBar.p6 p6Var) {
+        super(context);
+        this.N0 = p6Var;
+        this.M0 = new Paint(1);
     }
 
-    @Override // s4.n0
-    public final void d(Rect rect, View view, RecyclerView recyclerView, s4.b1 b1Var) {
-        int R;
-        rect.left = 0;
-        rect.right = 0;
-        rect.top = 0;
-        rect.bottom = 0;
-        s4.p0 layoutManager = recyclerView.getLayoutManager();
-        hb0 hb0Var = this.a.j3;
-        if (layoutManager != hb0Var.d || (R = RecyclerView.R(view)) == 0 || hb0Var.f.N()) {
-            return;
-        }
-        if (hb0Var.f.I() == null && hb0Var.f.U == null) {
-            rect.top = AndroidUtilities.dp(2.0f);
-        } else {
-            if (R == 0) {
-                return;
-            }
-            R--;
-            ab0 ab0Var = hb0Var.d;
-            ab0Var.C1();
-            if (R > ab0Var.U) {
-                rect.top = AndroidUtilities.dp(2.0f);
-            }
-        }
-        rect.right = hb0Var.d.F1(R) ? 0 : AndroidUtilities.dp(2.0f);
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        int w02 = org.telegram.ui.ActionBar.t6.w0(org.telegram.ui.ActionBar.t6.K5, this.N0);
+        Paint paint = this.M0;
+        paint.setColor(w02);
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeWidth(1.0f);
+        float height = getHeight() / 2.0f;
+        canvas.drawLine(0.0f, height, ((getWidth() / 2.0f) - (getTextWidth() / 2.0f)) - org.telegram.messenger.i0.L(8.0f), height, paint);
+        canvas.drawLine((getTextWidth() / 2.0f) + (getWidth() / 2.0f) + org.telegram.messenger.i0.L(8.0f), height, getWidth(), height, paint);
+        super.dispatchDraw(canvas);
     }
 }

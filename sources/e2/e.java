@@ -5,24 +5,24 @@ import android.opengl.EGL14;
 import android.opengl.EGLDisplay;
 import android.os.Bundle;
 import android.text.TextUtils;
-import f9.s1;
+import e9.x1;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public abstract class e {
     public static void a(String str, boolean z10) {
         if (z10) {
             return;
         }
-        f9.g0 g0Var = f9.i0.b;
-        throw new m(str, s1.e);
+        e9.l0 l0Var = e9.n0.b;
+        throw new m(str, x1.e);
     }
 
-    public static s1 b(e9.k kVar, ArrayList arrayList) {
-        f9.f0 t10 = f9.i0.t();
+    public static x1 b(d9.k kVar, ArrayList arrayList) {
+        e9.k0 t10 = e9.n0.t();
         for (int i10 = 0; i10 < arrayList.size(); i10++) {
             Bundle bundle = (Bundle) arrayList.get(i10);
             bundle.getClass();
@@ -80,7 +80,7 @@ public abstract class e {
             String eglQueryString = EGL14.eglQueryString(eglGetDisplay, 12373);
             return eglQueryString != null && eglQueryString.contains(str);
         }
-        throw new m("Error in getDefaultEglDisplay, error code: 0x" + Integer.toHexString(eglGetError), f9.i0.y(Integer.valueOf(eglGetError)));
+        throw new m("Error in getDefaultEglDisplay, error code: 0x" + Integer.toHexString(eglGetError), e9.n0.y(Integer.valueOf(eglGetError)));
     }
 
     public static String e(StringBuilder sb2, int i10, int i11) {
@@ -180,7 +180,7 @@ public abstract class e {
         return Uri.parse(f(str, str2));
     }
 
-    public static ArrayList h(Collection collection, e9.k kVar) {
+    public static ArrayList h(Collection collection, d9.k kVar) {
         ArrayList arrayList = new ArrayList(collection.size());
         Iterator it = collection.iterator();
         while (it.hasNext()) {

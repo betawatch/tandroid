@@ -1,29 +1,20 @@
 package rd;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+import java.nio.charset.Charset;
+
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public abstract class a {
-    public static final Integer a;
+    public static final Charset a;
 
     static {
-        Integer num;
-        Object obj;
-        Integer num2 = null;
-        try {
-            obj = Class.forName("android.os.Build$VERSION").getField("SDK_INT").get(null);
-        } catch (Throwable unused) {
-        }
-        if (obj instanceof Integer) {
-            num = (Integer) obj;
-            if (num != null && num.intValue() > 0) {
-                num2 = num;
-            }
-            a = num2;
-        }
-        num = null;
-        if (num != null) {
-            num2 = num;
-        }
-        a = num2;
+        Charset forName = Charset.forName("UTF-8");
+        kotlin.jvm.internal.i.d(forName, "forName(...)");
+        a = forName;
+        kotlin.jvm.internal.i.d(Charset.forName("UTF-16"), "forName(...)");
+        kotlin.jvm.internal.i.d(Charset.forName("UTF-16BE"), "forName(...)");
+        kotlin.jvm.internal.i.d(Charset.forName("UTF-16LE"), "forName(...)");
+        kotlin.jvm.internal.i.d(Charset.forName("US-ASCII"), "forName(...)");
+        kotlin.jvm.internal.i.d(Charset.forName("ISO-8859-1"), "forName(...)");
     }
 }

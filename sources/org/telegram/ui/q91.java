@@ -1,38 +1,28 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class q91 implements fq {
-    public final /* synthetic */ TLRPC.TL_chatChannelParticipant a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ boolean[] c;
+public final /* synthetic */ class q91 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ x91 b;
 
-    public q91(TLRPC.TL_chatChannelParticipant tL_chatChannelParticipant, boolean z10, boolean[] zArr) {
-        this.a = tL_chatChannelParticipant;
-        this.b = z10;
-        this.c = zArr;
+    public /* synthetic */ q91(x91 x91Var, int i10) {
+        this.a = i10;
+        this.b = x91Var;
     }
 
-    @Override // org.telegram.ui.fq
-    public final void b(int i10, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str) {
-        TLRPC.TL_chatChannelParticipant tL_chatChannelParticipant = this.a;
-        if (i10 == 0) {
-            TLRPC.ChannelParticipant channelParticipant = tL_chatChannelParticipant.channelParticipant;
-            channelParticipant.admin_rights = null;
-            channelParticipant.rank = "";
-        } else {
-            TLRPC.ChannelParticipant channelParticipant2 = tL_chatChannelParticipant.channelParticipant;
-            channelParticipant2.admin_rights = tL_chatAdminRights;
-            channelParticipant2.rank = str;
-            if (this.b) {
-                this.c[0] = true;
-            }
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.c(false);
+                break;
+            case 1:
+                super/*android.app.Dialog*/.dismiss();
+                break;
+            default:
+                this.b.c(false);
+                break;
         }
-    }
-
-    @Override // org.telegram.ui.fq
-    public final void a(TLRPC.User user) {
     }
 }

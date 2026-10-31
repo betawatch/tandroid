@@ -1,32 +1,40 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.TLObject;
+import android.location.Location;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final /* synthetic */ class hd implements Runnable {
+public final /* synthetic */ class hd implements q0.a {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ TLObject c;
-    public final /* synthetic */ org.telegram.ui.ActionBar.x6 d;
-    public final /* synthetic */ org.telegram.ui.ActionBar.w6 e;
+    public final /* synthetic */ nd b;
 
-    public /* synthetic */ hd(MessagesController messagesController, TLObject tLObject, org.telegram.ui.ActionBar.x6 x6Var, org.telegram.ui.ActionBar.w6 w6Var, int i10) {
+    public /* synthetic */ hd(nd ndVar, int i10) {
         this.a = i10;
-        this.b = messagesController;
-        this.c = tLObject;
-        this.d = x6Var;
-        this.e = w6Var;
+        this.b = ndVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // q0.a
+    public final void accept(Object obj) {
         switch (this.a) {
             case 0:
-                this.b.lambda$didReceivedNotification$47(this.c, this.d, this.e);
+                this.b.m((Location) obj);
                 break;
             default:
-                this.b.lambda$didReceivedNotification$45(this.c, this.d, this.e);
+                nd ndVar = this.b;
+                Integer num = (Integer) obj;
+                ndVar.getClass();
+                int intValue = num.intValue();
+                boolean z10 = true;
+                if (intValue == 0) {
+                    Utilities.d.c(new c20(3, ndVar, z10));
+                    break;
+                } else if (intValue == 1) {
+                    Utilities.d.c(new id(ndVar, num, 0));
+                    break;
+                } else if (intValue == 2) {
+                    Utilities.d.c(new ed(ndVar, 4));
+                    break;
+                }
                 break;
         }
     }

@@ -1,30 +1,52 @@
 package org.telegram.ui.Wallet;
 
+import android.app.Activity;
 import android.view.View;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class i3 implements Runnable {
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class i3 implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ m3 b;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ i3(m3 m3Var, int i10) {
+    public /* synthetic */ i3(Object obj, int i10) {
         this.a = i10;
-        this.b = m3Var;
+        this.b = obj;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                org.telegram.ui.Cells.v0 v0Var = this.b.a;
-                if (v0Var.getParent() instanceof View) {
-                    ((View) v0Var.getParent()).invalidate();
+                ((p3) this.b).dismiss();
+                break;
+            case 1:
+                gf.f.t((Activity) this.b, "https://fragment.com/");
+                break;
+            case 2:
+                ((x4) this.b).dismiss();
+                break;
+            case 3:
+                ((Runnable) this.b).run();
+                break;
+            case 4:
+                a7 a7Var = (a7) this.b;
+                if (!a7Var.y && a7Var.r && !a7Var.h.b()) {
+                    a7Var.h.setProgress(0.0f);
+                    a7Var.h.d();
                     break;
                 }
                 break;
+            case 5:
+                ((y8) this.b).b(!r3.y);
+                break;
+            case 6:
+                ((org.telegram.ui.Cells.c2) this.b).c(!r3.b(), true);
+                break;
             default:
-                this.b.p();
+                m9 m9Var = ((q9) this.b).c;
+                m9Var.requestFocus();
+                org.telegram.messenger.i0.J3(m9Var);
                 break;
         }
     }

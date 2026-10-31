@@ -4,7 +4,7 @@ import android.net.Uri;
 import j$.util.Objects;
 import java.util.List;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class k0 {
     public static final String i;
@@ -21,11 +21,11 @@ public final class k0 {
     public final c0 d;
     public final List e;
     public final String f;
-    public final f9.i0 g;
+    public final e9.n0 g;
     public final long h;
 
     static {
-        String str = e2.n0.a;
+        String str = e2.l0.a;
         i = Integer.toString(0, 36);
         j = Integer.toString(1, 36);
         k = Integer.toString(2, 36);
@@ -36,26 +36,26 @@ public final class k0 {
         p = Integer.toString(7, 36);
     }
 
-    public k0(Uri uri, String str, h0 h0Var, c0 c0Var, List list, String str2, f9.i0 i0Var, long j10) {
+    public k0(Uri uri, String str, h0 h0Var, c0 c0Var, List list, String str2, e9.n0 n0Var, long j10) {
         this.a = uri;
-        this.b = w0.n(str);
+        this.b = v0.n(str);
         this.c = h0Var;
         this.d = c0Var;
         this.e = list;
         this.f = str2;
-        this.g = i0Var;
-        f9.f0 t10 = f9.i0.t();
-        for (int i10 = 0; i10 < i0Var.size(); i10++) {
-            o0 o0Var = (o0) i0Var.get(i10);
-            n0 n0Var = new n0();
-            n0Var.c = o0Var.a;
-            n0Var.d = o0Var.b;
-            n0Var.e = o0Var.c;
-            n0Var.a = o0Var.d;
-            n0Var.b = o0Var.e;
-            n0Var.f = o0Var.f;
-            n0Var.g = o0Var.g;
-            t10.c(new m0(n0Var));
+        this.g = n0Var;
+        e9.k0 t10 = e9.n0.t();
+        for (int i10 = 0; i10 < n0Var.size(); i10++) {
+            o0 o0Var = (o0) n0Var.get(i10);
+            n0 n0Var2 = new n0();
+            n0Var2.c = o0Var.a;
+            n0Var2.d = o0Var.b;
+            n0Var2.e = o0Var.c;
+            n0Var2.a = o0Var.d;
+            n0Var2.b = o0Var.e;
+            n0Var2.f = o0Var.f;
+            n0Var2.g = o0Var.g;
+            t10.c(new m0(n0Var2));
         }
         t10.f();
         this.h = j10;

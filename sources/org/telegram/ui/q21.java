@@ -1,37 +1,38 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.messenger.AndroidUtilities;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class q21 implements s21 {
-    public final /* synthetic */ org.telegram.messenger.video.a a;
-    public final /* synthetic */ org.telegram.ui.Components.wc b;
-    public final /* synthetic */ Context c;
-    public final /* synthetic */ di.k0 d;
-    public final /* synthetic */ org.telegram.messenger.video.d e;
+public final class q21 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ s21 b;
 
-    public q21(org.telegram.messenger.video.a aVar, org.telegram.ui.Components.wc wcVar, Context context, di.k0 k0Var, org.telegram.messenger.video.d dVar) {
-        this.a = aVar;
-        this.b = wcVar;
-        this.c = context;
-        this.d = k0Var;
-        this.e = dVar;
+    public /* synthetic */ q21(s21 s21Var, int i10) {
+        this.a = i10;
+        this.b = s21Var;
     }
 
-    @Override // org.telegram.ui.s21
-    public final void a() {
-        AndroidUtilities.runOnUIThread(new m21(this.a, this.b, this.c, this.d, 2), 200L);
-    }
-
-    @Override // org.telegram.ui.s21
-    public final void b() {
-        AndroidUtilities.runOnUIThread(new by0(16, this.a, this.b), 200L);
-    }
-
-    @Override // org.telegram.ui.s21
-    public final void c() {
-        this.e.run();
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                super.onAnimationEnd(animator);
+                this.b.I = null;
+                break;
+            case 1:
+                super.onAnimationEnd(animator);
+                this.b.I = null;
+                break;
+            default:
+                super.onAnimationEnd(animator);
+                s21 s21Var = this.b;
+                s21Var.N = 0.0f;
+                s21Var.I = null;
+                s21Var.M = false;
+                s21Var.d(true, false);
+                break;
+        }
     }
 }

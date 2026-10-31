@@ -5,10 +5,10 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.support.v4.media.MediaDescriptionCompat;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class MediaSessionCompat$QueueItem implements Parcelable {
-    public static final Parcelable.Creator<MediaSessionCompat$QueueItem> CREATOR = new a0(1);
+    public static final Parcelable.Creator<MediaSessionCompat$QueueItem> CREATOR = new z(1);
     public final MediaDescriptionCompat a;
     public final long b;
     public MediaSession.QueueItem c;
@@ -34,7 +34,7 @@ public final class MediaSessionCompat$QueueItem implements Parcelable {
         StringBuilder sb2 = new StringBuilder("MediaSession.QueueItem {Description=");
         sb2.append(this.a);
         sb2.append(", Id=");
-        return a1.g.r(sb2, this.b, " }");
+        return a1.g.q(sb2, this.b, " }");
     }
 
     @Override // android.os.Parcelable

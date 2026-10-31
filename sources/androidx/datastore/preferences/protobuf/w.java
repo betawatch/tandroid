@@ -5,7 +5,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Map;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public abstract class w extends a {
     private static Map<Object, w> defaultInstanceMap = new ConcurrentHashMap();
@@ -44,8 +44,8 @@ public abstract class w extends a {
             return method.invoke(wVar, objArr);
         } catch (IllegalAccessException e) {
             throw new RuntimeException("Couldn't use Java reflection to implement protocol message reflection.", e);
-        } catch (InvocationTargetException e10) {
-            Throwable cause = e10.getCause();
+        } catch (InvocationTargetException e7) {
+            Throwable cause = e7.getCause();
             if (cause instanceof RuntimeException) {
                 throw ((RuntimeException) cause);
             }
@@ -65,7 +65,7 @@ public abstract class w extends a {
         if (this.memoizedSerializedSize == -1) {
             y0 y0Var = y0.c;
             y0Var.getClass();
-            this.memoizedSerializedSize = y0Var.a(getClass()).d(this);
+            this.memoizedSerializedSize = y0Var.a(getClass()).e(this);
         }
         return this.memoizedSerializedSize;
     }
@@ -106,9 +106,9 @@ public abstract class w extends a {
         }
         y0 y0Var = y0.c;
         y0Var.getClass();
-        boolean e = y0Var.a(getClass()).e(this);
+        boolean f7 = y0Var.a(getClass()).f(this);
         d(2);
-        return e;
+        return f7;
     }
 
     public final int hashCode() {

@@ -1,44 +1,49 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AccountInstance;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ka0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ la0 b;
-    public final /* synthetic */ AccountInstance c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ org.telegram.ui.ActionBar.r2 e;
+public final class ka0 extends org.telegram.ui.Cells.m3 {
+    public boolean E;
+    public final /* synthetic */ ma0 F;
 
-    public /* synthetic */ ka0(la0 la0Var, AccountInstance accountInstance, long j10, org.telegram.ui.ActionBar.r2 r2Var, int i10) {
-        this.a = i10;
-        this.b = la0Var;
-        this.c = accountInstance;
-        this.d = j10;
-        this.e = r2Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ka0(ma0 ma0Var, Context context, String str, org.telegram.ui.ActionBar.p6 p6Var) {
+        super(context, str, false, false, -1, p6Var);
+        this.F = ma0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                AndroidUtilities.runOnUIThread(new ka0(this.b, this.c, this.d, this.e, 1));
-                break;
-            default:
-                AccountInstance accountInstance = this.c;
-                MessagesController messagesController = accountInstance.getMessagesController();
-                long j10 = this.d;
-                long j11 = -j10;
-                ChatObject.Call groupCall = messagesController.getGroupCall(j11, false);
-                TLRPC.Chat chat = accountInstance.getMessagesController().getChat(Long.valueOf(j11));
-                accountInstance.getMessagesController().getInputPeer(j10);
-                org.telegram.ui.Components.voip.g2.l(chat, null, false, Boolean.valueOf(groupCall == null || !groupCall.call.rtmp_stream), this.b.g, this.e, accountInstance);
-                break;
+    @Override // org.telegram.ui.Cells.m3
+    public final void b(Editable editable) {
+        int i10;
+        if (this.E) {
+            return;
+        }
+        boolean isEmpty = TextUtils.isEmpty(editable);
+        ma0 ma0Var = this.F;
+        if (isEmpty) {
+            ma0Var.s.setText("");
+            return;
+        }
+        try {
+            long parseLong = Long.parseLong(editable.toString());
+            if (parseLong > ma0Var.getMessagesController().b6) {
+                this.E = true;
+                parseLong = ma0Var.getMessagesController().b6;
+                setText(Long.toString(parseLong));
+                this.E = false;
+            }
+            TextView textView = ma0Var.s;
+            int i11 = ma0Var.getConnectionsManager().isTestBackend() ? 2131746169 : 2131746172;
+            org.telegram.messenger.u1 i12 = org.telegram.messenger.u1.i();
+            i10 = ((org.telegram.ui.ActionBar.k2) ma0Var).currentAccount;
+            textView.setText(org.telegram.messenger.cd.a0(null, null, i11, i12.f((long) ((parseLong / 1000.0d) * org.telegram.messenger.vp.r1(i10).d6), "USD")));
+        } catch (Exception e) {
+            org.telegram.messenger.f8.g(e, true);
         }
     }
 }

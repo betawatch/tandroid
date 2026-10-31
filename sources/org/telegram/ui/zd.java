@@ -1,48 +1,82 @@
 package org.telegram.ui;
 
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
+import android.view.MotionEvent;
+import android.view.View;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class zd implements TextWatcher {
-    public final /* synthetic */ ke a;
+public final class zd extends EditTextBoldCursor {
+    public final /* synthetic */ int G1;
 
-    public zd(ke keVar) {
-        this.a = keVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ zd(Context context, int i10) {
+        super(context);
+        this.G1 = i10;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        ke keVar = this.a;
-        qd qdVar = keVar.f1;
-        bi.t tVar = keVar.O0;
-        if (keVar.L0) {
-            return;
+    @Override // org.telegram.ui.Components.qt, android.view.View
+    public boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        switch (this.G1) {
+            case 5:
+                return false;
+            default:
+                return super.dispatchTouchEvent(motionEvent);
         }
-        long parseLong = TextUtils.isEmpty(editable) ? 0L : Long.parseLong(editable.toString());
-        keVar.N0 = parseLong;
-        long j10 = keVar.D0.amount;
-        if (parseLong > j10) {
-            keVar.N0 = j10;
-            keVar.L0 = true;
-            tVar.setText(Long.toString(j10));
-            tVar.setSelection(tVar.getText().length());
-            keVar.L0 = false;
+    }
+
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.qt, android.view.View
+    public void onDetachedFromWindow() {
+        switch (this.G1) {
+            case 0:
+                super.onDetachedFromWindow();
+                org.telegram.messenger.i0.v1(this);
+                break;
+            case 4:
+                super.onDetachedFromWindow();
+                org.telegram.messenger.i0.v1(this);
+                break;
+            default:
+                super.onDetachedFromWindow();
+                break;
         }
-        keVar.M0 = keVar.N0 == keVar.D0.amount;
-        AndroidUtilities.cancelRunOnUIThread(qdVar);
-        qdVar.run();
-        keVar.M0 = false;
     }
 
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+    public void onMeasure(int i10, int i11) {
+        switch (this.G1) {
+            case 1:
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.i0.L(64.0f), TLObject.FLAG_30));
+                break;
+            default:
+                super.onMeasure(i10, i11);
+                break;
+        }
     }
 
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+    public boolean onTouchEvent(MotionEvent motionEvent) {
+        switch (this.G1) {
+            case 2:
+                if (motionEvent.getAction() == 0 && !org.telegram.messenger.i0.J3(this)) {
+                    clearFocus();
+                    requestFocus();
+                }
+                break;
+            case 3:
+                if (motionEvent.getAction() == 0 && !org.telegram.messenger.i0.J3(this)) {
+                    clearFocus();
+                    requestFocus();
+                }
+                break;
+            case 6:
+                if (isEnabled()) {
+                    break;
+                }
+                break;
+        }
+        return super.onTouchEvent(motionEvent);
     }
 }

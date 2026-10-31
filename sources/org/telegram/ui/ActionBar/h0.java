@@ -1,27 +1,59 @@
 package org.telegram.ui.ActionBar;
 
-import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.ui.Components.hm0;
+import org.telegram.ui.Components.iy;
+import org.telegram.ui.Components.vp;
+import org.telegram.ui.a21;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class h0 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ g1 b;
+public final class h0 extends vp {
+    public final /* synthetic */ int h;
+    public final /* synthetic */ Object i;
 
-    public /* synthetic */ h0(g1 g1Var, int i10) {
-        this.a = i10;
-        this.b = g1Var;
+    public /* synthetic */ h0(int i10, FrameLayout frameLayout) {
+        this.h = i10;
+        this.i = frameLayout;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
+    @Override // org.telegram.ui.Components.vp
+    public final int a() {
+        switch (this.h) {
             case 0:
-                this.b.b();
-                break;
+                return ((t0) this.i).c.b.r0;
+            case 1:
+                return t6.w0(t6.yf, ((iy) this.i).G.Z1);
+            case 2:
+                return t6.w0(t6.Q5, ((hm0) this.i).e);
+            case 3:
+                return t6.w0(t6.yf, ((a21) this.i).F.Z0);
             default:
-                this.b.b();
-                break;
+                return t6.w0(t6.yf, (p6) this.i);
         }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public h0(iy iyVar) {
+        super(1.25f);
+        this.h = 1;
+        this.i = iyVar;
+        this.f = org.telegram.messenger.i0.L(7.0f);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public h0(p6 p6Var) {
+        super(1.25f);
+        this.h = 4;
+        this.i = p6Var;
+        this.f = org.telegram.messenger.i0.L(7.0f);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public h0(a21 a21Var) {
+        super(1.25f);
+        this.h = 3;
+        this.i = a21Var;
+        this.f = org.telegram.messenger.i0.L(7.0f);
     }
 }

@@ -1,34 +1,28 @@
 package org.telegram.messenger.voip;
 
-import java.util.ArrayList;
+import org.telegram.messenger.j20;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final /* synthetic */ class v implements Runnable {
+public final /* synthetic */ class v implements j20 {
     public final /* synthetic */ int a;
     public final /* synthetic */ VoIPService b;
-    public final /* synthetic */ ArrayList c;
-    public final /* synthetic */ ArrayList d;
-    public final /* synthetic */ ArrayList e;
-    public final /* synthetic */ String f;
 
-    public /* synthetic */ v(VoIPService voIPService, ArrayList arrayList, ArrayList arrayList2, ArrayList arrayList3, String str, int i10) {
+    public /* synthetic */ v(VoIPService voIPService, int i10) {
         this.a = i10;
         this.b = voIPService;
-        this.c = arrayList;
-        this.d = arrayList2;
-        this.e = arrayList3;
-        this.f = str;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.messenger.j20
+    public final void a(Object obj, Object obj2) {
+        Boolean bool = (Boolean) obj;
+        Boolean bool2 = (Boolean) obj2;
         switch (this.a) {
             case 0:
-                this.b.lambda$startConferenceGroupCall$47(this.c, this.d, this.e, this.f);
+                this.b.lambda$switchToSpeaker$91(bool, bool2);
                 break;
             default:
-                this.b.lambda$startConferenceGroupCall$39(this.c, this.d, this.e, this.f);
+                this.b.lambda$toggleSpeakerphoneOrShowRouteSheet$95(bool, bool2);
                 break;
         }
     }

@@ -1,46 +1,25 @@
 package n4;
 
-import android.media.session.MediaSession;
-import android.os.Parcel;
-import android.os.Parcelable;
+import android.os.Build;
+import android.text.TextUtils;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class r implements Parcelable {
-    public static final Parcelable.Creator<r> CREATOR = new h8.j(29);
-    public final MediaSession.Token b;
-    public d c;
-    public final Object a = new Object();
-    public z4.d d = null;
+public final class r {
+    public t a;
 
-    public r(MediaSession.Token token, m mVar) {
-        this.b = token;
-        this.c = mVar;
-    }
-
-    public final d a() {
-        d dVar;
-        synchronized (this.a) {
-            dVar = this.c;
+    public r(String str, int i10, int i11) {
+        if (str == null) {
+            throw new NullPointerException("package shouldn't be null");
         }
-        return dVar;
-    }
-
-    public final void b(d dVar) {
-        synchronized (this.a) {
-            this.c = dVar;
+        if (TextUtils.isEmpty(str)) {
+            throw new IllegalArgumentException("packageName should be nonempty");
         }
-    }
-
-    public final void c(z4.d dVar) {
-        synchronized (this.a) {
-            this.d = dVar;
+        if (Build.VERSION.SDK_INT >= 28) {
+            this.a = new s(str, i10, i11);
+        } else {
+            this.a = new t(str, i10, i11);
         }
-    }
-
-    @Override // android.os.Parcelable
-    public final int describeContents() {
-        return 0;
     }
 
     public final boolean equals(Object obj) {
@@ -48,17 +27,12 @@ public final class r implements Parcelable {
             return true;
         }
         if (obj instanceof r) {
-            return this.b.equals(((r) obj).b);
+            return this.a.equals(((r) obj).a);
         }
         return false;
     }
 
     public final int hashCode() {
-        return this.b.hashCode();
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        parcel.writeParcelable(this.b, i10);
+        return this.a.hashCode();
     }
 }

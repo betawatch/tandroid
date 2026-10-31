@@ -76,8 +76,8 @@ public abstract class d {
         return h.booleanValue();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:29:0x00cc A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x00cd  */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x00cd A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x00ce  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -89,7 +89,7 @@ public abstract class d {
         }
         this.a.getClass();
         Object obj = null;
-        if (e() ? ((Boolean) c(new e("gms:phenotype:phenotype_flag:debug_bypass_phenotype"))).booleanValue() : false) {
+        if (e() ? ((Boolean) c(new e("gms:phenotype:phenotype_flag:debug_bypass_phenotype", 0))).booleanValue() : false) {
             String valueOf = String.valueOf(this.b);
             Log.w("PhenotypeFlag", valueOf.length() != 0 ? "Bypass reading Phenotype values for flag: ".concat(valueOf) : new String("Bypass reading Phenotype values for flag: "));
         } else if (this.a.a != null) {
@@ -109,7 +109,7 @@ public abstract class d {
                 }
                 this.e = bVar;
             }
-            String str = (String) c(new n4.s(11, this, this.e));
+            String str = (String) c(new hf.b(13, this, this.e));
             if (str != null) {
                 obj = d(str);
             }
@@ -121,11 +121,11 @@ public abstract class d {
         this.a.getClass();
         if (e()) {
             try {
-                b10 = d2.b(g.getContentResolver(), str2);
+                b10 = f2.b(g.getContentResolver(), str2);
             } catch (SecurityException unused) {
                 long clearCallingIdentity = Binder.clearCallingIdentity();
                 try {
-                    b10 = d2.b(g.getContentResolver(), str2);
+                    b10 = f2.b(g.getContentResolver(), str2);
                 } finally {
                     Binder.restoreCallingIdentity(clearCallingIdentity);
                 }

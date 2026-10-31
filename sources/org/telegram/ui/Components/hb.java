@@ -1,73 +1,70 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class hb implements o1.f {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+import org.telegram.messenger.support.SparseLongArray;
 
-    public /* synthetic */ hb(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final class hb extends eb implements org.telegram.messenger.us {
+    public final fb d;
+    public SparseLongArray e;
+    public final org.telegram.ui.ActionBar.k2 f;
+    public final int h;
+    public wb n;
+
+    public hb(int i10, org.telegram.ui.ActionBar.k2 k2Var) {
+        super(k2Var.getContext(), k2Var.getResourceProvider());
+        this.f = k2Var;
+        this.h = i10;
+        this.b.setLayoutParams(w7.b6.i(-2.0f, -2.0f, 8388659, 56.0f, 6.0f, 8.0f, 0.0f));
+        this.a.setLayoutParams(w7.b6.h(56.0f, 48.0f, 8388659));
+        fb fbVar = new fb(this, k2Var, getContext(), k2Var.getCurrentAccount(), k2Var.getResourceProvider());
+        this.d = fbVar;
+        fbVar.setPadding(org.telegram.messenger.i0.L(4.0f), org.telegram.messenger.i0.L(24.0f), org.telegram.messenger.i0.L(4.0f), org.telegram.messenger.i0.L(0.0f));
+        this.d.setDelegate(new gb(this));
+        this.d.setTop(true);
+        this.d.setClipChildren(false);
+        this.d.setClipToPadding(false);
+        this.d.setVisibility(0);
+        this.d.setBubbleOffset(-org.telegram.messenger.i0.L(80.0f));
+        this.d.setHint(org.telegram.messenger.cd.L0(2131745892, null));
+        addView(this.d, w7.b6.d(-2, 92.5f, 1, 0.0f, 36.0f, 0.0f, 0.0f));
+        this.d.p(null, null, true);
     }
 
-    @Override // o1.f
-    public final void a(o1.h hVar, boolean z10, float f7, float f10) {
-        switch (this.a) {
-            case 0:
-                qc qcVar = (qc) this.b;
-                if (qcVar.d == hVar) {
-                    qcVar.d = null;
-                    break;
-                }
-                break;
-            case 1:
-                db dbVar = (db) this.b;
-                if (!z10) {
-                    dbVar.run();
-                    break;
-                }
-                break;
-            case 2:
-                al alVar = (al) this.b;
-                alVar.l0 = null;
-                alVar.m0 = 1.0f;
-                alVar.k0();
-                break;
-            case 3:
-                cq0 cq0Var = (cq0) this.b;
-                cq0Var.q = false;
-                cq0Var.dismiss();
-                break;
-            case 4:
-                dq0 dq0Var = (dq0) this.b;
-                dq0Var.s = false;
-                dq0Var.r = false;
-                if (!z10) {
-                    hVar.c();
-                }
-                if (hVar == dq0Var.f) {
-                    dq0Var.f = null;
-                    break;
-                }
-                break;
-            case 5:
-                nr0 nr0Var = (nr0) this.b;
-                nr0Var.F.setVisibility(8);
-                nr0Var.A0.setVisibility(8);
-                kr0 kr0Var = nr0Var.M;
-                kr0Var.f = null;
-                kr0Var.l();
-                nr0Var.C0 = null;
-                nr0Var.N0 = false;
-                break;
-            default:
-                nr0 nr0Var2 = ((uq0) this.b).d;
-                nr0Var2.G.setVisibility(8);
-                nr0Var2.H.setVisibility(8);
-                nr0Var2.z0.setVisibility(8);
-                nr0Var2.C0 = null;
-                break;
+    @Override // org.telegram.messenger.us
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        if (i10 == org.telegram.messenger.zs.k3) {
+            this.e = (SparseLongArray) objArr[0];
         }
+    }
+
+    public final void f() {
+        if (this.d.getReactionsWindow() != null) {
+            this.d.e();
+            if (this.d.getReactionsWindow().a != null) {
+                this.d.getReactionsWindow().a.animate().alpha(0.0f).setDuration(180L).start();
+            }
+        }
+    }
+
+    @Override // org.telegram.ui.Components.bb
+    public int getMeasuredBackgroundHeight() {
+        return org.telegram.messenger.i0.L(30.0f) + this.b.getMeasuredHeight();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        org.telegram.messenger.zs.f(org.telegram.messenger.d20.s0).c(this, org.telegram.messenger.zs.k3);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        org.telegram.messenger.zs.f(org.telegram.messenger.d20.s0).n(this, org.telegram.messenger.zs.k3);
+    }
+
+    public void setBulletin(wb wbVar) {
+        this.n = wbVar;
     }
 }

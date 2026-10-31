@@ -1,38 +1,9 @@
 package pd;
 
-import java.lang.reflect.Method;
-import kotlin.jvm.internal.i;
+import java.util.List;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public abstract class a {
-    public static final Method a;
-
-    static {
-        Method method;
-        Method[] methods = Throwable.class.getMethods();
-        i.b(methods);
-        int length = methods.length;
-        int i10 = 0;
-        while (true) {
-            method = null;
-            if (i10 >= length) {
-                break;
-            }
-            Method method2 = methods[i10];
-            if (i.a(method2.getName(), "addSuppressed")) {
-                Class<?>[] parameterTypes = method2.getParameterTypes();
-                i.d(parameterTypes, "getParameterTypes(...)");
-                if (i.a(parameterTypes.length == 1 ? parameterTypes[0] : null, Throwable.class)) {
-                    method = method2;
-                    break;
-                }
-            }
-            i10++;
-        }
-        a = method;
-        int length2 = methods.length;
-        for (int i11 = 0; i11 < length2 && !i.a(methods[i11].getName(), "getSuppressed"); i11++) {
-        }
-    }
+public interface a {
+    List getAnnotations();
 }

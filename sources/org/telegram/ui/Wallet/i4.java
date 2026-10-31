@@ -1,28 +1,41 @@
 package org.telegram.ui.Wallet;
 
-import android.app.Activity;
-import android.content.Context;
-import org.telegram.messenger.FileLog;
+import android.content.Intent;
+import android.net.Uri;
+import android.view.View;
+import java.io.Serializable;
+import org.telegram.messenger.o20;
+import org.telegram.messenger.p20;
+import org.telegram.ui.Components.a51;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes4.dex */
-public final class i4 extends org.telegram.ui.ActionBar.k3 {
-    public i4(Activity activity, org.telegram.ui.ActionBar.u6 u6Var) {
-        super(1, (Context) activity, u6Var, false);
-        this.behindKeyboardColorKey = org.telegram.ui.ActionBar.y6.a7;
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class i4 implements org.telegram.ui.ActionBar.u1, o20, p20 {
+    public final /* synthetic */ b6 a;
+
+    public /* synthetic */ i4(b6 b6Var) {
+        this.a = b6Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.k3
-    public final void onThemeColorsChanged() {
-        super.onThemeColorsChanged();
+    @Override // org.telegram.messenger.p20
+    public Boolean a(a51 a51Var, View view, Integer num, Float f7, Float f10) {
+        return Boolean.valueOf(this.a.b0(a51Var, view));
+    }
+
+    @Override // org.telegram.ui.ActionBar.u1
+    public void h(org.telegram.ui.ActionBar.x1 x1Var, int i10) {
+        b6 b6Var = this.a;
         try {
-            int themedColor = getThemedColor(org.telegram.ui.ActionBar.y6.a7);
-            setBackgroundColor(themedColor);
-            if (this.navBarColor != themedColor) {
-                fixNavigationBar(themedColor);
-            }
+            Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
+            intent.setData(Uri.parse("package:" + org.telegram.messenger.w0.b.getPackageName()));
+            b6Var.getParentActivity().startActivity(intent);
         } catch (Exception e) {
-            FileLog.e(e);
+            org.telegram.messenger.f8.g(e, true);
         }
+    }
+
+    @Override // org.telegram.messenger.o20
+    public void k(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
+        this.a.a0((a51) obj, (View) obj2);
     }
 }

@@ -1,15 +1,15 @@
 package org.telegram.ui.Wallet;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.cd;
+import org.telegram.messenger.j20;
+import org.telegram.messenger.q20;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.r80;
+import org.telegram.ui.nc;
+import org.telegram.ui.r70;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class k implements Utilities.Callback {
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class k implements q20 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -18,40 +18,40 @@ public final /* synthetic */ class k implements Utilities.Callback {
         this.b = obj;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
+    @Override // org.telegram.messenger.q20
+    public final void a(Object obj) {
         int i10 = this.a;
         Object obj2 = this.b;
         switch (i10) {
             case 0:
-                ((bi.t8) obj2).run(Boolean.valueOf(((String) obj) == null));
+                ((nc) obj2).a(Boolean.valueOf(((String) obj) == null));
                 break;
             case 1:
-                i0 i0Var = (i0) obj;
-                ((Utilities.Callback2) obj2).run(i0Var, i0Var == null ? "LOCAL_STORAGE_ERROR" : null);
+                h0 h0Var = (h0) obj;
+                ((j20) obj2).a(h0Var, h0Var == null ? "LOCAL_STORAGE_ERROR" : null);
                 break;
             case 2:
                 String str = (String) obj;
-                e2.k("approve session", str);
-                ((r80) obj2).run(str);
+                e2.m("disconnect session", str);
+                ((q20) obj2).a(str);
                 break;
             case 3:
                 String str2 = (String) obj;
-                e2.k("disconnect session", str2);
-                ((Utilities.Callback) obj2).run(str2);
+                e2.m("approve session", str2);
+                ((r70) obj2).a(str2);
                 break;
             case 4:
-                AndroidUtilities.runOnUIThread(new a6(2, (t7) obj2, (TLRPC.UserFull) obj));
+                org.telegram.messenger.i0.g3(new k3(r2, (h8) obj2, (TLRPC.UserFull) obj));
                 break;
             default:
-                w7 w7Var = (w7) obj2;
-                w7Var.getClass();
-                int i11 = ((Integer) obj).intValue() == 0 ? 12 : 24;
-                if (w7Var.a != i11) {
-                    w7Var.a = i11;
-                    w7Var.X(w7Var.getParentActivity());
-                    w7Var.Z();
-                    w7Var.h.setText(w7Var.s != null ? LocaleController.formatSpannable(R.string.WalletImportCurrentPhraseInfo, Integer.valueOf(i11)) : LocaleController.formatSpannable(R.string.WalletImportPhraseInfo, Integer.valueOf(i11)));
+                k8 k8Var = (k8) obj2;
+                k8Var.getClass();
+                r2 = ((Integer) obj).intValue() != 0 ? 24 : 12;
+                if (k8Var.a != r2) {
+                    k8Var.a = r2;
+                    k8Var.a0(k8Var.getParentActivity());
+                    k8Var.c0();
+                    k8Var.h.setText(k8Var.s != null ? cd.V(null, null, 2131743119, Integer.valueOf(r2)) : cd.V(null, null, 2131743117, Integer.valueOf(r2)));
                     break;
                 }
                 break;

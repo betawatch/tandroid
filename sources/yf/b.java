@@ -1,61 +1,61 @@
 package yf;
 
-import android.os.Binder;
-import android.os.Bundle;
-import android.os.Handler;
-import android.os.IBinder;
-import android.os.IInterface;
-import android.os.Looper;
-import android.os.Parcel;
+import android.text.TextUtils;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes.dex */
-public final class b extends Binder implements IInterface {
-    public final Handler a;
-    public final /* synthetic */ qb.a b;
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final class b {
+    public final String a;
+    public final String b;
 
-    public b(qb.a aVar) {
-        this.b = aVar;
-        attachInterface(this, "android.support.customtabs.ICustomTabsCallback");
-        this.a = new Handler(Looper.getMainLooper());
+    public b(String str, String str2) {
+        this.a = str;
+        this.b = str2;
     }
 
-    @Override // android.os.Binder
-    public final boolean onTransact(int i10, Parcel parcel, Parcel parcel2, int i11) {
-        Handler handler = this.a;
-        if (i10 == 2) {
-            parcel.enforceInterface("android.support.customtabs.ICustomTabsCallback");
-            handler.post(new a(this, parcel.readInt(), parcel.readInt() != 0 ? (Bundle) Bundle.CREATOR.createFromParcel(parcel) : null));
-            parcel2.writeNoException();
+    public static boolean a(b bVar, b bVar2) {
+        if (bVar == bVar2) {
             return true;
         }
-        if (i10 == 3) {
-            parcel.enforceInterface("android.support.customtabs.ICustomTabsCallback");
-            handler.post(new a(this, parcel.readString(), parcel.readInt() != 0 ? (Bundle) Bundle.CREATOR.createFromParcel(parcel) : null, 1));
-            parcel2.writeNoException();
-            return true;
+        if (bVar == null || bVar2 == null) {
+            return false;
         }
-        if (i10 == 4) {
-            parcel.enforceInterface("android.support.customtabs.ICustomTabsCallback");
-            handler.post(new a(this, parcel.readInt() != 0 ? (Bundle) Bundle.CREATOR.createFromParcel(parcel) : null));
-            parcel2.writeNoException();
-            return true;
+        return bVar.equals(bVar2);
+    }
+
+    public static b c(TLRPC.ChatTheme chatTheme) {
+        if (chatTheme instanceof TLRPC.TL_chatTheme) {
+            return new b(((TLRPC.TL_chatTheme) chatTheme).emoticon, null);
         }
-        if (i10 != 5) {
-            if (i10 != 1598968902) {
-                return super.onTransact(i10, parcel, parcel2, i11);
+        if (chatTheme instanceof TLRPC.TL_chatThemeUniqueGift) {
+            return new b(null, ((TLRPC.TL_chatThemeUniqueGift) chatTheme).gift.slug);
+        }
+        return null;
+    }
+
+    public static b d(String str) {
+        return new b(str, null);
+    }
+
+    public final boolean b() {
+        return TextUtils.isEmpty(this.a) && TextUtils.isEmpty(this.b);
+    }
+
+    public final boolean equals(Object obj) {
+        if (obj instanceof b) {
+            b bVar = (b) obj;
+            if (TextUtils.equals(this.a, bVar.a) && TextUtils.equals(this.b, bVar.b)) {
+                return true;
             }
-            parcel2.writeString("android.support.customtabs.ICustomTabsCallback");
-            return true;
         }
-        parcel.enforceInterface("android.support.customtabs.ICustomTabsCallback");
-        handler.post(new a(this, parcel.readString(), parcel.readInt() != 0 ? (Bundle) Bundle.CREATOR.createFromParcel(parcel) : null, 3));
-        parcel2.writeNoException();
-        return true;
+        return false;
     }
 
-    @Override // android.os.IInterface
-    public final IBinder asBinder() {
-        return this;
+    public final int hashCode() {
+        String str = this.a;
+        int hashCode = str != null ? str.hashCode() : 0;
+        String str2 = this.b;
+        return (str2 != null ? str2.hashCode() : 0) ^ hashCode;
     }
 }

@@ -1,47 +1,36 @@
 package a;
 
-import a6.c;
-import a8.ng;
-import android.content.Context;
-import android.content.Intent;
-import android.os.Looper;
-import b6.h;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.common.api.Status;
-import com.google.android.gms.common.api.i;
-import com.google.android.gms.tasks.Task;
-import com.google.android.gms.tasks.Tasks;
-import o6.l;
+import b5.b;
+import b5.c;
+import b5.e;
+import b5.m;
+import j$.util.DesugarCollections;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public abstract class a {
-    public static a6.a a(Context context, GoogleSignInOptions googleSignInOptions) {
-        l.h(googleSignInOptions);
-        return new a6.a(context, x5.a.a, googleSignInOptions, new i(new com.google.android.gms.common.api.internal.a(), Looper.getMainLooper()));
-    }
-
-    public static Task b(Intent intent) {
-        c cVar;
-        GoogleSignInAccount googleSignInAccount;
-        ng ngVar = h.a;
-        Status status = Status.h;
-        if (intent == null) {
-            cVar = new c(null, status);
-        } else {
-            Status status2 = (Status) intent.getParcelableExtra("googleSignInStatus");
-            GoogleSignInAccount googleSignInAccount2 = (GoogleSignInAccount) intent.getParcelableExtra("googleSignInAccount");
-            if (googleSignInAccount2 == null) {
-                if (status2 != null) {
-                    status = status2;
-                }
-                cVar = new c(null, status);
-            } else {
-                cVar = new c(googleSignInAccount2, Status.e);
+    public static boolean a(String str) {
+        b bVar = m.a;
+        Set<e> unmodifiableSet = DesugarCollections.unmodifiableSet(c.c);
+        HashSet hashSet = new HashSet();
+        for (e eVar : unmodifiableSet) {
+            if (((c) eVar).a.equals(str)) {
+                hashSet.add(eVar);
             }
         }
-        Status status3 = cVar.a;
-        return (!status3.b() || (googleSignInAccount = cVar.b) == null) ? Tasks.forException(l.m(status3)) : Tasks.forResult(googleSignInAccount);
+        if (hashSet.isEmpty()) {
+            throw new RuntimeException("Unknown feature ".concat(str));
+        }
+        Iterator it = hashSet.iterator();
+        while (it.hasNext()) {
+            c cVar = (c) ((e) it.next());
+            if (cVar.a() || cVar.b()) {
+                return true;
+            }
+        }
+        return false;
     }
 }

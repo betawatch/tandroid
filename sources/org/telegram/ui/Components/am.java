@@ -1,51 +1,23 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import org.telegram.messenger.MediaController;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.view.View;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class am implements Comparator {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class am extends q8 {
+    public final /* synthetic */ bm E;
 
-    public /* synthetic */ am(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public am(bm bmVar, Context context) {
+        super(context);
+        this.E = bmVar;
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        int indexOf;
-        int indexOf2;
-        int i10 = this.a;
-        Object obj3 = this.b;
-        switch (i10) {
-            case 0:
-                ArrayList arrayList = (ArrayList) obj3;
-                MediaController.AlbumEntry albumEntry = (MediaController.AlbumEntry) obj;
-                MediaController.AlbumEntry albumEntry2 = (MediaController.AlbumEntry) obj2;
-                boolean z10 = ChatAttachAlertPhotoLayout.q1;
-                int i11 = albumEntry.bucketId;
-                if (i11 != 0 || albumEntry2.bucketId == 0) {
-                    if ((i11 != 0 && albumEntry2.bucketId == 0) || (indexOf = arrayList.indexOf(albumEntry)) > (indexOf2 = arrayList.indexOf(albumEntry2))) {
-                        return 1;
-                    }
-                    if (indexOf >= indexOf2) {
-                        return 0;
-                    }
-                }
-                return -1;
-            default:
-                sz szVar = ((dx) obj3).G0;
-                int indexOf3 = szVar.d1.indexOf((TLRPC.TL_messages_stickerSet) obj);
-                int indexOf4 = szVar.d1.indexOf((TLRPC.TL_messages_stickerSet) obj2);
-                if (indexOf3 < 0 || indexOf4 < 0) {
-                    return 0;
-                }
-                return indexOf3 - indexOf4;
-        }
+    @Override // org.telegram.ui.Components.q8, android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        bm bmVar = this.E;
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(bmVar.w.K0, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(bmVar.w.K0, TLObject.FLAG_30));
     }
 }

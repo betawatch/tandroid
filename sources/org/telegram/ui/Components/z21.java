@@ -1,64 +1,41 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.Components.ThemeEditorView;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class z21 extends FrameLayout {
-    public final ImageView a;
-    public final x21 b;
-    public final /* synthetic */ ThemeEditorView.EditorAlert c;
+public final class z21 extends s4.s0 {
+    public final /* synthetic */ m31 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z21(ThemeEditorView.EditorAlert editorAlert, Context context) {
-        super(context);
-        this.c = editorAlert;
-        View view = new View(context);
-        view.setBackgroundDrawable(org.telegram.ui.ActionBar.y6.c0(AndroidUtilities.dp(18.0f), -854795));
-        addView(view, kb1.h(-1, 36.0f, 51, 14.0f, 11.0f, 14.0f, 0.0f));
-        ImageView imageView = new ImageView(context);
-        ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
-        imageView.setScaleType(scaleType);
-        imageView.setImageResource(R.drawable.smiles_inputsearch);
-        imageView.setColorFilter(new PorterDuffColorFilter(-6182737, PorterDuff.Mode.MULTIPLY));
-        addView(imageView, kb1.h(36, 36.0f, 51, 16.0f, 11.0f, 0.0f, 0.0f));
-        ImageView imageView2 = new ImageView(context);
-        this.a = imageView2;
-        imageView2.setScaleType(scaleType);
-        w21 w21Var = new w21();
-        imageView2.setImageDrawable(w21Var);
-        w21Var.f = AndroidUtilities.dp(7.0f);
-        imageView2.setScaleX(0.1f);
-        imageView2.setScaleY(0.1f);
-        imageView2.setAlpha(0.0f);
-        addView(imageView2, kb1.h(36, 36.0f, 53, 14.0f, 11.0f, 14.0f, 0.0f));
-        imageView2.setOnClickListener(new x80(this, 19));
-        x21 x21Var = new x21(this, context);
-        this.b = x21Var;
-        x21Var.setTextSize(1, 16.0f);
-        x21Var.setHintTextColor(-6774617);
-        x21Var.setTextColor(-14540254);
-        x21Var.setBackgroundDrawable(null);
-        x21Var.setPadding(0, 0, 0, 0);
-        x21Var.setMaxLines(1);
-        x21Var.setLines(1);
-        x21Var.setSingleLine(true);
-        x21Var.setImeOptions(268435459);
-        x21Var.setHint(LocaleController.getString(R.string.Search));
-        x21Var.setCursorColor(-11491093);
-        x21Var.setCursorSize(AndroidUtilities.dp(20.0f));
-        x21Var.setCursorWidth(1.5f);
-        addView(x21Var, kb1.h(-1, 40.0f, 51, 54.0f, 9.0f, 46.0f, 0.0f));
-        x21Var.addTextChangedListener(new y21(this));
-        x21Var.setOnEditorActionListener(new d1(this, 10));
+    public z21(m31 m31Var) {
+        this.a = m31Var;
+    }
+
+    @Override // s4.s0
+    public final void a(RecyclerView recyclerView, int i10) {
+        m31 m31Var = this.a;
+        y21 y21Var = m31Var.D1;
+        if (i10 == 0) {
+            m31Var.C1 = false;
+        }
+        if ((i10 == 0 || i10 == 2) && m31Var.L0(false) > 0.0f && m31Var.L0(false) < org.telegram.messenger.i0.L(96.0f) && y21Var.canScrollVertically(1) && m31.I0(m31Var)) {
+            m31Var.C1 = true;
+            y21Var.w0(0, (int) m31Var.L0(false), null);
+        }
+    }
+
+    @Override // s4.s0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        m31 m31Var = this.a;
+        m31Var.b.invalidate();
+        boolean canScrollVertically = m31Var.D1.canScrollVertically(1);
+        View view = m31Var.H1;
+        Boolean bool = m31Var.N1;
+        if (bool == null || bool.booleanValue() != canScrollVertically) {
+            m31Var.N1 = Boolean.valueOf(canScrollVertically);
+            view.animate().cancel();
+            org.telegram.messenger.z20.m(view.animate().alpha(canScrollVertically ? 1.0f : 0.0f), gr.h, 320L);
+        }
     }
 }

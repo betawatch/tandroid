@@ -1,82 +1,81 @@
 package org.telegram.ui;
 
-import android.content.Intent;
-import android.net.Uri;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.UserConfig;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import android.content.Context;
+import android.view.View;
+import android.widget.LinearLayout;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class xl0 implements org.telegram.ui.ActionBar.b2, pt, ym0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ kn0 b;
+public final class xl0 extends LinearLayout {
+    public boolean a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int[] c;
+    public final /* synthetic */ int[] d;
 
-    public /* synthetic */ xl0(kn0 kn0Var, int i10) {
-        this.a = i10;
-        this.b = kn0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public xl0(Context context, int i10, int[] iArr, int[] iArr2) {
+        super(context);
+        this.b = i10;
+        this.c = iArr;
+        this.d = iArr2;
     }
 
-    @Override // org.telegram.ui.pt
-    public void Y0(lt ltVar) {
-        switch (this.a) {
-            case 2:
-                kn0 kn0Var = this.b;
-                kn0Var.Y[5].setText(ltVar.a);
-                kn0Var.s = ltVar.d;
-                break;
-            default:
-                kn0 kn0Var2 = this.b;
-                kn0Var2.Y[0].setText(ltVar.a);
-                if (kn0Var2.U0.indexOf(ltVar.a) != -1) {
-                    kn0Var2.Z0 = true;
-                    String str = (String) kn0Var2.V0.get(ltVar.a);
-                    kn0Var2.Y[1].setText(str);
-                    String str2 = (String) kn0Var2.X0.get(str);
-                    kn0Var2.Y[2].setHintText(str2 != null ? str2.replace('X', (char) 8211) : null);
-                    kn0Var2.Z0 = false;
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        int size = View.MeasureSpec.getSize(i10);
+        this.a = true;
+        int L = org.telegram.messenger.i0.L(9.0f);
+        int i12 = this.b;
+        int i13 = (i12 - 1) * L;
+        int[] iArr = this.c;
+        float f7 = 1.0f;
+        if ((iArr[0] * i12) + i13 <= size) {
+            setWeightSum(1.0f);
+            int childCount = getChildCount();
+            for (int i14 = 0; i14 < childCount; i14++) {
+                getChildAt(i14).getLayoutParams().width = 0;
+                ((LinearLayout.LayoutParams) getChildAt(i14).getLayoutParams()).weight = 1.0f / childCount;
+            }
+        } else if (this.d[0] + i13 <= size) {
+            setWeightSum(1.0f);
+            int i15 = size - i13;
+            int childCount2 = getChildCount();
+            for (int i16 = 0; i16 < childCount2; i16++) {
+                LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) getChildAt(i16).getLayoutParams();
+                layoutParams.width = 0;
+                float intValue = ((Integer) r10.getTag(R.id.width_tag)).intValue() / i15;
+                layoutParams.weight = intValue;
+                f7 -= intValue;
+            }
+            float f10 = f7 / (i12 - 1);
+            if (f10 > 0.0f) {
+                int childCount3 = getChildCount();
+                for (int i17 = 0; i17 < childCount3; i17++) {
+                    View childAt = getChildAt(i17);
+                    LinearLayout.LayoutParams layoutParams2 = (LinearLayout.LayoutParams) childAt.getLayoutParams();
+                    if (((Integer) childAt.getTag(R.id.width_tag)).intValue() != iArr[0]) {
+                        layoutParams2.weight += f10;
+                    }
                 }
-                AndroidUtilities.runOnUIThread(new ul0(kn0Var2, 3), 300L);
-                kn0Var2.Y[2].requestFocus();
-                EditTextBoldCursor editTextBoldCursor = kn0Var2.Y[2];
-                editTextBoldCursor.setSelection(editTextBoldCursor.length());
-                break;
+            }
+        } else {
+            setWeightSum(0.0f);
+            int childCount4 = getChildCount();
+            for (int i18 = 0; i18 < childCount4; i18++) {
+                getChildAt(i18).getLayoutParams().width = -2;
+                ((LinearLayout.LayoutParams) getChildAt(i18).getLayoutParams()).weight = 0.0f;
+            }
         }
+        this.a = false;
+        super.onMeasure(i10, i11);
     }
 
-    @Override // org.telegram.ui.ym0
-    public void d(String str, String str2) {
-        this.b.x1();
-    }
-
-    @Override // org.telegram.ui.ActionBar.b2
-    public void h(org.telegram.ui.ActionBar.e2 e2Var, int i10) {
-        switch (this.a) {
-            case 0:
-                kn0 kn0Var = this.b;
-                kn0Var.getClass();
-                try {
-                    Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
-                    intent.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
-                    kn0Var.getParentActivity().startActivity(intent);
-                    break;
-                } catch (Exception e) {
-                    FileLog.e(e);
-                    return;
-                }
-            case 1:
-                this.b.finishFragment();
-                break;
-            case 2:
-            case 3:
-            default:
-                kn0.b0(this.b);
-                break;
-            case 4:
-                qf.d.r(r3.getParentActivity(), "https://telegram.org/deactivate?phone=" + UserConfig.getInstance(this.b.currentAccount).getClientPhone());
-                break;
+    @Override // android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.a) {
+            return;
         }
+        super.requestLayout();
     }
 }

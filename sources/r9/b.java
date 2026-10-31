@@ -1,92 +1,19 @@
 package r9;
 
-import a8.df;
-import android.os.Bundle;
-import android.os.Parcel;
-import android.os.Parcelable;
-import androidx.car.app.j;
-import q7.m;
+import java.util.Set;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class b extends p6.a {
-    public static final Parcelable.Creator<b> CREATOR = new m(2);
-    public final String a;
-    public final String b;
-    public final String c;
-    public final String d;
-    public final a e;
-    public final String f;
-    public final Bundle h;
+public interface b {
+    Object b(Class cls);
 
-    public b(String str, String str2, String str3, String str4, a aVar, String str5, Bundle bundle) {
-        this.a = str;
-        this.b = str2;
-        this.c = str3;
-        this.d = str4;
-        this.e = aVar;
-        this.f = str5;
-        if (bundle != null) {
-            this.h = bundle;
-        } else {
-            this.h = Bundle.EMPTY;
-        }
-        ClassLoader classLoader = b.class.getClassLoader();
-        if (classLoader != null) {
-            this.h.setClassLoader(classLoader);
-        } else {
-            StringBuilder sb2 = new StringBuilder(29);
-            sb2.append((CharSequence) "expected a non-null reference", 0, 29);
-            throw new j(sb2.toString());
-        }
-    }
+    qa.b c(Class cls);
 
-    public final String toString() {
-        StringBuilder sb2 = new StringBuilder("ActionImpl { { actionType: '");
-        sb2.append(this.a);
-        sb2.append("' } { objectName: '");
-        sb2.append(this.b);
-        sb2.append("' } { objectUrl: '");
-        sb2.append(this.c);
-        sb2.append("' } ");
-        String str = this.d;
-        if (str != null) {
-            sb2.append("{ objectSameAs: '");
-            sb2.append(str);
-            sb2.append("' } ");
-        }
-        a aVar = this.e;
-        if (aVar != null) {
-            sb2.append("{ metadata: '");
-            sb2.append(aVar.toString());
-            sb2.append("' } ");
-        }
-        String str2 = this.f;
-        if (str2 != null) {
-            sb2.append("{ actionStatus: '");
-            sb2.append(str2);
-            sb2.append("' } ");
-        }
-        Bundle bundle = this.h;
-        if (!bundle.isEmpty()) {
-            sb2.append("{ ");
-            sb2.append(bundle);
-            sb2.append(" } ");
-        }
-        sb2.append("}");
-        return sb2.toString();
-    }
+    Object d(r rVar);
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        int q5 = df.q(parcel, 20293);
-        df.l(parcel, 1, this.a);
-        df.l(parcel, 2, this.b);
-        df.l(parcel, 3, this.c);
-        df.l(parcel, 4, this.d);
-        df.k(parcel, 5, this.e, i10);
-        df.l(parcel, 6, this.f);
-        df.b(parcel, 7, this.h);
-        df.r(parcel, q5);
-    }
+    qa.b e(r rVar);
+
+    Set i(r rVar);
+
+    p j(r rVar);
 }

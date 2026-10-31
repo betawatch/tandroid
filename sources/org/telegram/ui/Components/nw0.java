@@ -1,108 +1,51 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class nw0 extends View {
-    public final ImageReceiver a;
-    public final j9 b;
-    public final Paint c;
-    public float d;
-    public boolean e;
-    public ValueAnimator f;
+public final /* synthetic */ class nw0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ TLObject b;
+    public final /* synthetic */ org.telegram.messenger.q20 c;
 
-    public nw0(Context context) {
-        super(context);
-        ImageReceiver imageReceiver = new ImageReceiver(this);
-        this.a = imageReceiver;
-        this.b = new j9((org.telegram.ui.ActionBar.u6) null);
-        Paint paint = new Paint(1);
-        this.c = paint;
-        imageReceiver.setRoundRadius(AndroidUtilities.dp(28.0f));
-        paint.setStrokeWidth(AndroidUtilities.dp(2.0f));
-        paint.setStyle(Paint.Style.STROKE);
+    public /* synthetic */ nw0(TLObject tLObject, org.telegram.messenger.q20 q20Var, int i10) {
+        this.a = i10;
+        this.b = tLObject;
+        this.c = q20Var;
     }
 
-    public final void a(boolean z10, boolean z11) {
-        ValueAnimator valueAnimator = this.f;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
+    @Override // java.lang.Runnable
+    public final void run() {
+        boolean z10;
+        switch (this.a) {
+            case 0:
+                TLObject tLObject = this.b;
+                if (tLObject instanceof TLRPC.TL_messages_stickerSet) {
+                    TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) tLObject;
+                    z10 = true;
+                    org.telegram.messenger.ui.b0(org.telegram.messenger.d20.s0).I1(tL_messages_stickerSet, true);
+                    if (!org.telegram.messenger.ui.b0(org.telegram.messenger.d20.s0).B0(tL_messages_stickerSet.set.id, true)) {
+                        org.telegram.messenger.ui.b0(org.telegram.messenger.d20.s0).f2(null, tL_messages_stickerSet, 2, null, false, false);
+                    }
+                } else {
+                    z10 = false;
+                }
+                this.c.a(Boolean.valueOf(z10));
+                break;
+            default:
+                TLObject tLObject2 = this.b;
+                boolean z11 = tLObject2 instanceof TL_account.paidMessagesRevenue;
+                org.telegram.messenger.q20 q20Var = this.c;
+                if (!z11) {
+                    q20Var.a(0L);
+                    break;
+                } else {
+                    q20Var.a(Long.valueOf(((TL_account.paidMessagesRevenue) tLObject2).stars_amount));
+                    break;
+                }
         }
-        if (!z11) {
-            this.d = z10 ? 1.0f : 0.0f;
-            invalidate();
-            return;
-        }
-        ValueAnimator duration = ValueAnimator.ofFloat(this.d, z10 ? 1.0f : 0.0f).setDuration(200L);
-        duration.setInterpolator(ds.f);
-        duration.addUpdateListener(new f80(this, 22));
-        duration.addListener(new i10(this, 23));
-        duration.start();
-        this.f = duration;
-    }
-
-    @Override // android.view.View
-    public final boolean isSelected() {
-        return this.d == 1.0f;
-    }
-
-    @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.a.onAttachedToWindow();
-    }
-
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.a.onDetachedFromWindow();
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        canvas.save();
-        float f7 = (this.d * 0.1f) + 0.9f;
-        canvas.scale(f7, f7);
-        int x02 = org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.m5, false);
-        Paint paint = this.c;
-        paint.setColor(x02);
-        paint.setAlpha((int) (Color.alpha(paint.getColor()) * this.d));
-        float strokeWidth = paint.getStrokeWidth();
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(strokeWidth, strokeWidth, getWidth() - strokeWidth, getHeight() - strokeWidth);
-        canvas.drawArc(rectF, -90.0f, this.d * 360.0f, false, paint);
-        canvas.restore();
-        if (this.e) {
-            return;
-        }
-        float strokeWidth2 = paint.getStrokeWidth() * 2.5f * this.d;
-        float f10 = 2.0f * strokeWidth2;
-        float width = getWidth() - f10;
-        float height = getHeight() - f10;
-        ImageReceiver imageReceiver = this.a;
-        imageReceiver.setImageCoords(strokeWidth2, strokeWidth2, width, height);
-        imageReceiver.draw(canvas);
-    }
-
-    public void setAvatar(TLObject tLObject) {
-        j9 j9Var = this.b;
-        j9Var.p(tLObject);
-        this.a.setForUserOrChat(tLObject, j9Var);
-    }
-
-    public void setHideAvatar(boolean z10) {
-        this.e = z10;
-        invalidate();
     }
 }

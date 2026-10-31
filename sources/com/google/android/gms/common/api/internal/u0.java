@@ -1,13 +1,18 @@
 package com.google.android.gms.common.api.internal;
 
-import android.os.Bundle;
+import android.os.Looper;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public interface u0 {
-    void p(int i10);
+public final class u0 extends com.google.android.gms.common.api.m {
+    public final com.google.android.gms.common.api.j b;
 
-    void s(Bundle bundle);
+    public u0(com.google.android.gms.common.api.j jVar) {
+        this.b = jVar;
+    }
 
-    void w(l6.a aVar);
+    @Override // com.google.android.gms.common.api.m
+    public final Looper a() {
+        return this.b.f;
+    }
 }

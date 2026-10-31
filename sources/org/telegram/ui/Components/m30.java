@@ -1,47 +1,108 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
 import android.content.Context;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.PremiumPreviewFragment;
+import android.text.TextUtils;
+import java.util.ArrayList;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class m30 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Context b;
+public abstract class m30 extends p51 {
+    public final int P;
+    public final ArrayList Q;
+    public boolean R;
+    public th.r4 S;
+    public boolean T;
+    public boolean U;
+    public int V;
+    public int W;
+    public boolean X;
+    public int Y;
+    public String Z;
+    public String a0;
+    public int b0;
+    public ag.o0 c0;
+    public final boolean[] d0;
 
-    public /* synthetic */ m30(Context context, int i10) {
-        this.a = i10;
-        this.b = context;
+    public m30(tk0 tk0Var, Context context, int i10) {
+        super(tk0Var, context, i10, 0, false, null, null);
+        this.Q = new ArrayList();
+        this.V = 0;
+        this.W = -1;
+        this.d0 = new boolean[1];
+        this.w = new d(this, 16);
+        this.P = i10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                k30.j(this.b);
-                break;
-            case 1:
-                qf.d.r(this.b, LocaleController.getString(R.string.StarsTOSLink));
-                break;
-            case 2:
-                Activity findActivity = AndroidUtilities.findActivity(this.b);
-                if (findActivity instanceof LaunchActivity) {
-                    ((LaunchActivity) findActivity).u0(new PremiumPreviewFragment(0, tg.j0.E1(10)));
-                    break;
-                }
-                break;
-            default:
-                Activity findActivity2 = AndroidUtilities.findActivity(this.b);
-                if (findActivity2 instanceof LaunchActivity) {
-                    ((LaunchActivity) findActivity2).u0(new PremiumPreviewFragment(0, tg.j0.E1(9)));
-                    break;
-                }
-                break;
+    public static String Y(String str, boolean[] zArr) {
+        if (zArr != null) {
+            zArr[0] = false;
         }
+        if (str == null || str.isEmpty()) {
+            return null;
+        }
+        String trim = str.trim();
+        if (trim.length() <= 1) {
+            return null;
+        }
+        if ((trim.charAt(0) != '#' && trim.charAt(0) != '$') || trim.indexOf(64) >= 0) {
+            return null;
+        }
+        if (zArr != null) {
+            zArr[0] = trim.charAt(0) == '$';
+        }
+        return trim.substring(1);
+    }
+
+    public final void W() {
+        th.r4 r4Var = this.S;
+        if (r4Var != null && r4Var.I != 0) {
+            ConnectionsManager.getInstance(r4Var.c).cancelRequest(r4Var.I, true);
+            r4Var.I = 0;
+        }
+        this.R = false;
+        if (this.W >= 0) {
+            ConnectionsManager.getInstance(this.P).cancelRequest(this.W, true);
+            this.W = -1;
+        }
+        org.telegram.messenger.i0.r(this.c0);
+        this.V++;
+        this.U = false;
+    }
+
+    public final void X() {
+        tk0 tk0Var;
+        if (TextUtils.isEmpty(this.Z) || this.X || this.U || (tk0Var = this.d) == null) {
+            return;
+        }
+        for (int i10 = 0; i10 < tk0Var.getChildCount(); i10++) {
+            if (tk0Var.getChildAt(i10) instanceof zz) {
+                Z(this.Z);
+                return;
+            }
+        }
+    }
+
+    public final void Z(String str) {
+        this.Z = str;
+        String Y = Y(str, this.d0);
+        if (!TextUtils.equals(this.a0, Y)) {
+            this.Q.clear();
+            this.X = false;
+            this.Y = 0;
+            W();
+        } else if (this.U) {
+            return;
+        }
+        int i10 = this.V + 1;
+        this.V = i10;
+        if (Y == null) {
+            return;
+        }
+        this.U = true;
+        O(true);
+        ag.o0 o0Var = new ag.o0(this, i10, Y, 27);
+        this.c0 = o0Var;
+        org.telegram.messenger.i0.h3(o0Var, 300L);
     }
 }

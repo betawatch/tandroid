@@ -1,106 +1,50 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.os.Build;
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.graphics.LinearGradient;
+import android.graphics.Shader;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class z40 implements org.telegram.ui.Components.fl0 {
-    public final Path a = new Path();
-    public final Paint b;
-    public final /* synthetic */ x50 c;
+public final class z40 extends LinearLayout {
+    public final org.telegram.ui.Components.f6 a;
+    public float b;
+    public final /* synthetic */ b50 c;
 
-    public z40(x50 x50Var) {
-        this.c = x50Var;
-        Paint paint = new Paint(1);
-        this.b = paint;
-        paint.setColor(-14603467);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public z40(b50 b50Var, Context context) {
+        super(context);
+        this.c = b50Var;
+        this.b = 0.0f;
+        setOrientation(1);
+        setGravity(17);
+        org.telegram.ui.Components.f6 f6Var = new org.telegram.ui.Components.f6(context, true, false, false);
+        this.a = f6Var;
+        f6Var.setTextColor(-1);
+        f6Var.setTextSize(org.telegram.messenger.i0.L(46.0f));
+        f6Var.setTypeface(org.telegram.messenger.i0.o());
+        f6Var.setGravity(1);
+        TextView textView = new TextView(context);
+        textView.setTextColor(-1);
+        textView.setTextSize(1, 14.0f);
+        textView.setTypeface(org.telegram.messenger.i0.o());
+        textView.setText(org.telegram.messenger.cd.L0(2131743472, null));
+        addView(f6Var, w7.b6.o(-1, 46));
+        addView(textView, w7.b6.o(-2, -2));
     }
 
-    @Override // org.telegram.ui.Components.fl0
-    public final boolean f() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.fl0
-    public final /* synthetic */ boolean i() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.fl0
-    public final void l(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
-        Paint paint = this.b;
-        if (f7 > 0.0f) {
-            canvas.drawRoundRect(rectF, f7, f7, paint);
-        } else {
-            canvas.drawRect(rectF, paint);
+    public void setWatchersCount(int i10) {
+        String E = org.telegram.messenger.cd.E(i10, ',');
+        org.telegram.ui.Components.f6 f6Var = this.a;
+        float measureText = f6Var.getPaint().measureText((CharSequence) E, 0, E.length());
+        if (this.b != measureText) {
+            int i11 = org.telegram.ui.ActionBar.t6.zk;
+            b50 b50Var = this.c;
+            f6Var.getPaint().setShader(new LinearGradient(0.0f, 0.0f, measureText, 0.0f, new int[]{org.telegram.ui.ActionBar.t6.w0(i11, b50Var.I0), org.telegram.ui.ActionBar.t6.w0(org.telegram.ui.ActionBar.t6.Bk, b50Var.I0)}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP));
+            this.b = measureText;
         }
-        if (Build.VERSION.SDK_INT < 29 || !canvas.isHardwareAccelerated()) {
-            return;
-        }
-        x50 x50Var = this.c;
-        if (x50Var.Q2 != null) {
-            canvas.save();
-            if (f7 > 0.0f) {
-                Path path = this.a;
-                path.rewind();
-                path.addRoundRect(rectF, f7, f7, Path.Direction.CW);
-                path.close();
-                canvas.clipPath(path);
-            } else {
-                canvas.clipRect(rectF);
-            }
-            canvas.translate(-x50Var.K.getX(), -x50Var.K.getY());
-            float f12 = x50Var.R2;
-            canvas.scale(f12, f12);
-            canvas.drawRenderNode(x50Var.Q2);
-            canvas.restore();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.fl0
-    public final boolean o() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.fl0
-    public final void p(View view, bh.x0 x0Var, boolean z10, boolean z11) {
-        TLRPC.TL_messageEntityCustomEmoji tL_messageEntityCustomEmoji = new TLRPC.TL_messageEntityCustomEmoji();
-        String str = x0Var.f;
-        if (str == null) {
-            str = "👍";
-        }
-        TLRPC.TL_textWithEntities tL_textWithEntities = new TLRPC.TL_textWithEntities();
-        tL_textWithEntities.text = str;
-        long j10 = x0Var.g;
-        if (j10 != 0) {
-            tL_messageEntityCustomEmoji.document_id = j10;
-            tL_messageEntityCustomEmoji.offset = 0;
-            tL_messageEntityCustomEmoji.length = str.length();
-            tL_textWithEntities.entities.add(tL_messageEntityCustomEmoji);
-        }
-        x50 x50Var = this.c;
-        x50Var.A1(tL_textWithEntities);
-        w30 w30Var = x50Var.H;
-        if (w30Var.m()) {
-            w30Var.j();
-        } else {
-            w30Var.d();
-        }
-        bh.i0 reactionsWindow = x50Var.K.getReactionsWindow();
-        if (reactionsWindow == null || reactionsWindow.q) {
-            return;
-        }
-        x50Var.K.getReactionsWindow().e();
-        x50Var.K.n();
-    }
-
-    @Override // org.telegram.ui.Components.fl0
-    public final /* synthetic */ void m() {
+        f6Var.setText(E);
     }
 }

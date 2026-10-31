@@ -1,19 +1,19 @@
 package b1;
 
-import a8.t1;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CancellationSignal;
 import android.os.Parcel;
 import android.os.ResultReceiver;
+import bd.t;
 import java.util.LinkedHashSet;
 import java.util.concurrent.Executor;
-import kd.r;
 import kotlin.jvm.internal.i;
-import ud.l;
-import ud.p;
+import ld.l;
+import ld.p;
+import v7.c0;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public abstract class d {
     public static final a a = new a();
@@ -23,7 +23,7 @@ public abstract class d {
 
     static {
         Integer[] numArr = {7, 20};
-        LinkedHashSet linkedHashSet = new LinkedHashSet(r.a(2));
+        LinkedHashSet linkedHashSet = new LinkedHashSet(t.a(2));
         for (int i10 = 0; i10 < 2; i10++) {
             linkedHashSet.add(numArr[i10]);
         }
@@ -45,13 +45,13 @@ public abstract class d {
         intent.setFlags(65536);
     }
 
-    public static boolean b(Bundle bundle, p pVar, Executor executor, v0.i callback, CancellationSignal cancellationSignal) {
+    public static boolean b(Bundle bundle, p pVar, Executor executor, v0.h callback, CancellationSignal cancellationSignal) {
         i.e(executor, "executor");
         i.e(callback, "callback");
         if (!bundle.getBoolean("FAILURE_RESPONSE")) {
             return false;
         }
-        t1.a(cancellationSignal, new b(executor, callback, pVar.invoke(bundle.getString("EXCEPTION_TYPE"), bundle.getString("EXCEPTION_MESSAGE")), 0));
+        c0.a(cancellationSignal, new b(executor, callback, pVar.invoke(bundle.getString("EXCEPTION_TYPE"), bundle.getString("EXCEPTION_MESSAGE")), 0));
         return true;
     }
 
@@ -60,7 +60,7 @@ public abstract class d {
             return false;
         }
         kotlin.jvm.internal.p pVar2 = new kotlin.jvm.internal.p();
-        pVar2.a = new w0.c(ic.a.j(i10, "activity with result code: ", " indicating not RESULT_OK"), 2);
+        pVar2.a = new w0.c(2, i0.a.j(i10, "activity with result code: ", " indicating not RESULT_OK"));
         if (i10 == 0) {
             pVar2.a = new w0.b("activity is cancelled by the user.");
         }

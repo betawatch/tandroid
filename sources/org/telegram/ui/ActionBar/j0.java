@@ -1,69 +1,52 @@
 package org.telegram.ui.ActionBar;
 
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
-import android.widget.FrameLayout;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.View;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class j0 implements TextWatcher {
+public final class j0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ FrameLayout b;
+    public final /* synthetic */ ArrayList b;
+    public final /* synthetic */ t0 c;
 
-    public /* synthetic */ j0(int i10, FrameLayout frameLayout) {
+    public /* synthetic */ j0(t0 t0Var, ArrayList arrayList, int i10) {
         this.a = i10;
-        this.b = frameLayout;
+        this.c = t0Var;
+        this.b = arrayList;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        int i10 = this.a;
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        int i13 = this.a;
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        s0 searchListener;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                w0 w0Var = (w0) this.b;
-                s0 s0Var = w0Var.H;
-                if (s0Var != null) {
-                    s0Var.l(w0Var.e);
+                t0 t0Var = this.c;
+                t0Var.F.setAlpha(0.0f);
+                int i10 = 0;
+                while (true) {
+                    ArrayList arrayList = this.b;
+                    if (i10 >= arrayList.size()) {
+                        t0Var.F.setVisibility(8);
+                        break;
+                    } else {
+                        ((View) arrayList.get(i10)).setAlpha(1.0f);
+                        i10++;
+                    }
                 }
-                w0Var.j();
-                if (!w0Var.g0.isEmpty() && !TextUtils.isEmpty(w0Var.e.getText()) && w0Var.h0 >= 0) {
-                    w0Var.h0 = -1;
-                    w0Var.D();
-                    break;
-                }
-                break;
             default:
-                r5 r5Var = (r5) this.b;
-                r5Var.d();
-                searchListener = r5Var.getSearchListener();
-                if (searchListener != null) {
-                    searchListener.l(r5Var.s);
-                    break;
+                this.c.F.setAlpha(1.0f);
+                int i11 = 0;
+                while (true) {
+                    ArrayList arrayList2 = this.b;
+                    if (i11 >= arrayList2.size()) {
+                        break;
+                    } else {
+                        ((View) arrayList2.get(i11)).setAlpha(0.0f);
+                        i11++;
+                    }
                 }
-                break;
         }
-    }
-
-    private final void a(Editable editable) {
-    }
-
-    private final void b(Editable editable) {
-    }
-
-    private final void c(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void d(int i10, int i11, int i12, CharSequence charSequence) {
     }
 }

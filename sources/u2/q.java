@@ -1,20 +1,21 @@
 package u2;
 
-import a8.yb;
 import android.content.Context;
 import android.net.Uri;
+import e9.x1;
 import j$.util.Objects;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
-import org.telegram.ui.bh1;
+import org.telegram.tgnet.TLObject;
+import v7.t6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class q implements f0 {
     public final p a;
-    public final rf.b b;
-    public qb.a c;
+    public final hf.b b;
+    public t7.u c;
     public final long d;
     public final long e;
     public final long f;
@@ -23,11 +24,11 @@ public final class q implements f0 {
     public boolean i;
 
     public q(Context context, c3.m mVar) {
-        rf.b bVar = new rf.b(context, 19);
-        qb.a aVar = new qb.a(28);
+        hf.b bVar = new hf.b(context);
+        t7.u uVar = new t7.u(28);
         this.b = bVar;
-        this.c = aVar;
-        p pVar = new p(mVar, aVar);
+        this.c = uVar;
+        p pVar = new p(mVar, uVar);
         this.a = pVar;
         if (bVar != pVar.d) {
             pVar.d = bVar;
@@ -70,11 +71,11 @@ public final class q implements f0 {
         }
         if (Objects.equals(p0Var2.b.b, "application/x-image-uri")) {
             long j11 = p0Var2.b.h;
-            String str3 = e2.n0.a;
+            String str3 = e2.l0.a;
             throw null;
         }
         b2.k0 k0Var = p0Var2.b;
-        int K = e2.n0.K(k0Var.a, k0Var.b);
+        int K = e2.l0.K(k0Var.a, k0Var.b);
         if (p0Var2.b.h != -9223372036854775807L) {
             c3.m mVar = this.a.a;
             synchronized (mVar) {
@@ -109,7 +110,7 @@ public final class q implements f0 {
             } else {
                 b2.g0 g0Var2 = new b2.g0();
                 List list = Collections.EMPTY_LIST;
-                f9.i0 i0Var = f9.s1.e;
+                e9.n0 n0Var = x1.e;
                 b2.l0 l0Var = b2.l0.d;
                 b2.f0 f0Var = p0Var2.e;
                 b2.d0 d0Var = new b2.d0();
@@ -129,7 +130,7 @@ public final class q implements f0 {
                     String str6 = k0Var2.b;
                     Uri uri3 = k0Var2.a;
                     list = k0Var2.e;
-                    i0Var = k0Var2.g;
+                    n0Var = k0Var2.g;
                     uri = null;
                     b2.h0 h0Var = k0Var2.c;
                     if (h0Var != null) {
@@ -168,10 +169,10 @@ public final class q implements f0 {
                     str2 = null;
                 }
                 List list2 = list;
-                f9.i0 i0Var2 = i0Var;
+                e9.n0 n0Var2 = n0Var;
                 b2.i0 a10 = j0Var2.a();
-                yb.p((g0Var2.b == null || g0Var2.a != null) ? z10 : z11 ? 1 : 0);
-                b2.k0 k0Var3 = uri2 != null ? new b2.k0(uri2, str, g0Var2.a != null ? new b2.h0(g0Var2) : uri, c0Var, list2, str2, i0Var2, j10) : uri;
+                t6.p((g0Var2.b == null || g0Var2.a != null) ? z10 : z11 ? 1 : 0);
+                b2.k0 k0Var3 = uri2 != null ? new b2.k0(uri2, str, g0Var2.a != null ? new b2.h0(g0Var2) : uri, c0Var, list2, str2, n0Var2, j10) : uri;
                 if (str4 == null) {
                     str4 = "";
                 }
@@ -184,51 +185,51 @@ public final class q implements f0 {
                 p0Var2 = new b2.p0(str7, f0Var2, k0Var3, j0Var3, s0Var, l0Var2);
             }
             a a11 = b10.a(p0Var2);
-            f9.i0 i0Var3 = p0Var2.b.g;
-            if (!i0Var3.isEmpty()) {
-                a[] aVarArr = new a[i0Var3.size() + 1];
+            e9.n0 n0Var3 = p0Var2.b.g;
+            if (!n0Var3.isEmpty()) {
+                a[] aVarArr = new a[n0Var3.size() + 1];
                 aVarArr[z11 ? 1 : 0] = a11;
-                for (int i10 = z11 ? 1 : 0; i10 < i0Var3.size(); i10++) {
+                for (int i10 = z11 ? 1 : 0; i10 < n0Var3.size(); i10++) {
                     if (this.i) {
                         b2.w wVar = new b2.w();
-                        wVar.r = b2.w0.n(((b2.o0) i0Var3.get(i10)).b);
-                        wVar.d = ((b2.o0) i0Var3.get(i10)).c;
-                        wVar.e = ((b2.o0) i0Var3.get(i10)).d;
-                        wVar.f = ((b2.o0) i0Var3.get(i10)).e;
-                        wVar.b = ((b2.o0) i0Var3.get(i10)).f;
-                        wVar.a = ((b2.o0) i0Var3.get(i10)).g;
+                        wVar.r = b2.v0.n(((b2.o0) n0Var3.get(i10)).b);
+                        wVar.d = ((b2.o0) n0Var3.get(i10)).c;
+                        wVar.e = ((b2.o0) n0Var3.get(i10)).d;
+                        wVar.f = ((b2.o0) n0Var3.get(i10)).e;
+                        wVar.b = ((b2.o0) n0Var3.get(i10)).f;
+                        wVar.a = ((b2.o0) n0Var3.get(i10)).g;
                         b2.x xVar = new b2.x(wVar);
-                        bh1 bh1Var = new bh1(16, this, xVar);
-                        rf.b bVar = this.b;
-                        org.telegram.ui.Components.voip.j1 j1Var = new org.telegram.ui.Components.voip.j1(bh1Var, 22);
-                        k6.c cVar = new k6.c(8);
-                        u7.s sVar = new u7.s(26);
-                        if (this.c.i1(xVar)) {
+                        org.telegram.ui.web.k0 k0Var4 = new org.telegram.ui.web.k0(21, this, xVar);
+                        hf.b bVar = this.b;
+                        rh.d0 d0Var2 = new rh.d0(k0Var4, 19);
+                        li.k kVar = new li.k(7);
+                        hb.a aVar = new hb.a(27);
+                        if (this.c.F(xVar)) {
                             b2.w a12 = xVar.a();
-                            a12.r = b2.w0.n("application/x-media3-cues");
+                            a12.r = b2.v0.n("application/x-media3-cues");
                             a12.j = xVar.s;
-                            a12.P = this.c.B0(xVar);
+                            a12.P = this.c.y(xVar);
                             xVar = new b2.x(a12);
                         }
                         b2.x xVar2 = xVar;
                         int i11 = i10 + 1;
-                        String uri4 = ((b2.o0) i0Var3.get(i10)).a.toString();
-                        b2.d0 d0Var2 = new b2.d0();
+                        String uri4 = ((b2.o0) n0Var3.get(i10)).a.toString();
+                        b2.d0 d0Var3 = new b2.d0();
                         b2.g0 g0Var4 = new b2.g0();
                         List list3 = Collections.EMPTY_LIST;
-                        f9.s1 s1Var = f9.s1.e;
-                        b2.i0 i0Var4 = new b2.i0();
+                        x1 x1Var = x1.e;
+                        b2.i0 i0Var = new b2.i0();
                         b2.l0 l0Var3 = b2.l0.d;
                         Uri parse = uri4 == null ? uri : Uri.parse(uri4);
-                        yb.p((g0Var4.b == null || g0Var4.a != null) ? z10 : z11 ? 1 : 0);
-                        b2.k0 k0Var4 = parse != null ? new b2.k0(parse, null, g0Var4.a != null ? new b2.h0(g0Var4) : uri, null, list3, null, s1Var, -9223372036854775807L) : uri;
-                        b2.p0 p0Var3 = new b2.p0("", new b2.f0(d0Var2), k0Var4, new b2.j0(i0Var4), b2.s0.L, l0Var3);
-                        k0Var4.getClass();
-                        aVarArr[i11] = new y0(p0Var3, bVar, j1Var, cVar.u(p0Var3), sVar, 1048576, xVar2);
+                        t6.p((g0Var4.b == null || g0Var4.a != null) ? z10 : z11 ? 1 : 0);
+                        b2.k0 k0Var5 = parse != null ? new b2.k0(parse, null, g0Var4.a != null ? new b2.h0(g0Var4) : uri, null, list3, null, x1Var, -9223372036854775807L) : uri;
+                        b2.p0 p0Var3 = new b2.p0("", new b2.f0(d0Var3), k0Var5, new b2.j0(i0Var), b2.s0.L, l0Var3);
+                        k0Var5.getClass();
+                        aVarArr[i11] = new y0(p0Var3, bVar, d0Var2, kVar.u(p0Var3), aVar, TLObject.FLAG_20, xVar2);
                     } else {
-                        rf.b bVar2 = this.b;
+                        hf.b bVar2 = this.b;
                         bVar2.getClass();
-                        aVarArr[i10 + 1] = new n1((b2.o0) i0Var3.get(i10), bVar2, new u7.s(26));
+                        aVarArr[i10 + 1] = new n1((b2.o0) n0Var3.get(i10), bVar2, new hb.a(27));
                     }
                 }
                 a11 = new o0(aVarArr);
@@ -240,25 +241,25 @@ public final class q implements f0 {
                 if (j12 >= 0) {
                     z11 = z10;
                 }
-                yb.g(z11);
-                yb.p(!eVar.h);
+                t6.f(z11);
+                t6.p(!eVar.h);
                 eVar.b = j12;
                 long j13 = f0Var3.d;
-                yb.p(!eVar.h);
+                t6.p(!eVar.h);
                 eVar.c = j13;
                 boolean z12 = !f0Var3.g;
-                yb.p(!eVar.h);
+                t6.p(!eVar.h);
                 eVar.d = z12;
                 boolean z13 = f0Var3.e;
-                yb.p(!eVar.h);
+                t6.p(!eVar.h);
                 eVar.e = z13;
                 boolean z14 = f0Var3.f;
-                yb.p(!eVar.h);
+                t6.p(!eVar.h);
                 eVar.f = z14;
                 boolean z15 = f0Var3.h;
-                yb.p(!eVar.h);
+                t6.p(!eVar.h);
                 eVar.g = z15;
-                yb.p(!eVar.h);
+                t6.p(!eVar.h);
                 eVar.h = z10;
                 a11 = new h(eVar);
             }
@@ -274,23 +275,7 @@ public final class q implements f0 {
     }
 
     @Override // u2.f0
-    public final f0 b(qb.a aVar) {
-        this.c = aVar;
-        p pVar = this.a;
-        pVar.f = aVar;
-        c3.m mVar = pVar.a;
-        synchronized (mVar) {
-            mVar.c = aVar;
-        }
-        Iterator it = pVar.c.values().iterator();
-        while (it.hasNext()) {
-            ((f0) it.next()).b(aVar);
-        }
-        return this;
-    }
-
-    @Override // u2.f0
-    public final f0 c(boolean z10) {
+    public final f0 b(boolean z10) {
         this.i = z10;
         p pVar = this.a;
         pVar.e = z10;
@@ -300,18 +285,34 @@ public final class q implements f0 {
         }
         Iterator it = pVar.c.values().iterator();
         while (it.hasNext()) {
-            ((f0) it.next()).c(z10);
+            ((f0) it.next()).b(z10);
         }
         return this;
     }
 
     @Override // u2.f0
-    public final f0 d(int i10) {
+    public final f0 c(int i10) {
         p pVar = this.a;
         pVar.g = i10;
         c3.m mVar = pVar.a;
         synchronized (mVar) {
             mVar.d = i10;
+        }
+        return this;
+    }
+
+    @Override // u2.f0
+    public final f0 d(t7.u uVar) {
+        this.c = uVar;
+        p pVar = this.a;
+        pVar.f = uVar;
+        c3.m mVar = pVar.a;
+        synchronized (mVar) {
+            mVar.c = uVar;
+        }
+        Iterator it = pVar.c.values().iterator();
+        while (it.hasNext()) {
+            ((f0) it.next()).d(uVar);
         }
         return this;
     }

@@ -4,13 +4,13 @@ import android.net.Uri;
 import android.os.Looper;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class y0 extends a {
     public final g2.g h;
-    public final org.telegram.ui.Components.voip.j1 i;
+    public final rh.d0 i;
     public final n2.m j;
-    public final u7.s k;
+    public final hb.a k;
     public final int l;
     public final b2.x m;
     public boolean n = true;
@@ -18,15 +18,15 @@ public final class y0 extends a {
     public boolean p;
     public boolean q;
     public boolean r;
-    public g2.c0 s;
+    public g2.d0 s;
     public b2.p0 t;
 
-    public y0(b2.p0 p0Var, g2.g gVar, org.telegram.ui.Components.voip.j1 j1Var, n2.m mVar, u7.s sVar, int i10, b2.x xVar) {
+    public y0(b2.p0 p0Var, g2.g gVar, rh.d0 d0Var, n2.m mVar, hb.a aVar, int i10, b2.x xVar) {
         this.t = p0Var;
         this.h = gVar;
-        this.i = j1Var;
+        this.i = d0Var;
         this.j = mVar;
-        this.k = sVar;
+        this.k = aVar;
         this.l = i10;
         this.m = xVar;
     }
@@ -40,17 +40,17 @@ public final class y0 extends a {
     }
 
     @Override // u2.a
-    public final e0 c(g0 g0Var, a8.h0 h0Var, long j10) {
+    public final e0 c(g0 g0Var, android.support.v4.media.session.a0 a0Var, long j10) {
         g2.h createDataSource = this.h.createDataSource();
-        g2.c0 c0Var = this.s;
-        if (c0Var != null) {
-            createDataSource.addTransferListener(c0Var);
+        g2.d0 d0Var = this.s;
+        if (d0Var != null) {
+            createDataSource.addTransferListener(d0Var);
         }
         b2.k0 k0Var = i().b;
         k0Var.getClass();
         Uri uri = k0Var.a;
         this.g.getClass();
-        return new w0(uri, createDataSource, new s4.d((c3.r) this.i.b), this.j, new n2.j(this.d.c, 0, g0Var), this.k, b(g0Var), this, h0Var, k0Var.f, this.l, this.m, e2.n0.S(k0Var.h), null);
+        return new w0(uri, createDataSource, new q5.d((c3.r) this.i.b), this.j, new n2.j(this.d.c, 0, g0Var), this.k, b(g0Var), this, a0Var, k0Var.f, this.l, this.m, e2.l0.S(k0Var.h), null);
     }
 
     @Override // u2.a
@@ -59,14 +59,14 @@ public final class y0 extends a {
     }
 
     @Override // u2.a
-    public final void m(g2.c0 c0Var) {
-        this.s = c0Var;
+    public final void m(g2.d0 d0Var) {
+        this.s = d0Var;
         Looper myLooper = Looper.myLooper();
         myLooper.getClass();
-        j2.j jVar = this.g;
-        jVar.getClass();
+        j2.l lVar = this.g;
+        lVar.getClass();
         n2.m mVar = this.j;
-        mVar.f(myLooper, jVar);
+        mVar.g(myLooper, lVar);
         mVar.a();
         u();
     }
@@ -85,7 +85,7 @@ public final class y0 extends a {
                 }
             }
         }
-        w0Var.x.e(w0Var);
+        w0Var.y.e(w0Var);
         w0Var.H.removeCallbacksAndMessages(null);
         w0Var.I = null;
         w0Var.h0 = true;
@@ -106,7 +106,7 @@ public final class y0 extends a {
         boolean z10 = this.p;
         boolean z11 = this.q;
         b2.p0 i10 = i();
-        b2.p1 j1Var = new j1(-9223372036854775807L, -9223372036854775807L, j10, j10, 0L, 0L, z10, false, false, null, i10, z11 ? i10.c : null);
+        b2.o1 j1Var = new j1(-9223372036854775807L, -9223372036854775807L, j10, j10, 0L, 0L, z10, false, false, null, i10, z11 ? i10.c : null);
         if (this.n) {
             j1Var = new v(j1Var, 1);
         }

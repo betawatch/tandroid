@@ -1,27 +1,25 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.FileLoadOperation;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final /* synthetic */ class s2 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ FileLoadOperation.RequestInfo b;
+public final class s2 extends q2 {
+    public final int a;
+    public final int b;
+    public final int c;
 
-    public /* synthetic */ s2(FileLoadOperation.RequestInfo requestInfo, int i10) {
+    public s2(int i10, int i11, int i12) {
         this.a = i10;
-        this.b = requestInfo;
+        this.c = i11;
+        this.b = i12;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                FileLoadOperation.lambda$clearOperation$26(this.b);
-                break;
-            default:
-                FileLoadOperation.lambda$cancelRequests$17(this.b);
-                break;
-        }
+    @Override // org.telegram.messenger.q2
+    public final int c() {
+        return this.b;
+    }
+
+    @Override // org.telegram.messenger.q2
+    public final String d() {
+        return cd.L0(this.c, null);
     }
 }

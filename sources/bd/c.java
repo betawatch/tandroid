@@ -1,36 +1,56 @@
 package bd;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
+import java.util.ListIterator;
+import java.util.NoSuchElementException;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class c implements Iterable {
-    public final HashMap a = new HashMap();
-    public final ArrayList b = new ArrayList();
+public final class c extends b implements ListIterator {
+    public final /* synthetic */ e d;
 
-    public c(HashMap hashMap) {
-        String str = (String) hashMap.get("cookie");
-        if (str != null) {
-            for (String str2 : str.split(";")) {
-                String[] split = str2.trim().split("=");
-                if (split.length == 2) {
-                    this.a.put(split[0], split[1]);
-                }
-            }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public c(e eVar, int i10) {
+        super(eVar);
+        this.d = eVar;
+        int l4 = eVar.l();
+        if (i10 < 0 || i10 > l4) {
+            throw new IndexOutOfBoundsException(a1.g.j(i10, l4, "index: ", ", size: "));
         }
+        this.b = i10;
     }
 
-    public final void h() {
-        Iterator it = this.b.iterator();
-        if (it.hasNext()) {
-            throw a1.g.j(it);
-        }
+    @Override // java.util.ListIterator
+    public final void add(Object obj) {
+        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
 
-    @Override // java.lang.Iterable
-    public final Iterator iterator() {
-        return this.a.keySet().iterator();
+    @Override // java.util.ListIterator
+    public final boolean hasPrevious() {
+        return this.b > 0;
+    }
+
+    @Override // java.util.ListIterator
+    public final int nextIndex() {
+        return this.b;
+    }
+
+    @Override // java.util.ListIterator
+    public final Object previous() {
+        if (!hasPrevious()) {
+            throw new NoSuchElementException();
+        }
+        int i10 = this.b - 1;
+        this.b = i10;
+        return this.d.get(i10);
+    }
+
+    @Override // java.util.ListIterator
+    public final int previousIndex() {
+        return this.b - 1;
+    }
+
+    @Override // java.util.ListIterator
+    public final void set(Object obj) {
+        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
 }

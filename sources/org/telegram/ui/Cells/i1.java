@@ -1,30 +1,21 @@
 package org.telegram.ui.Cells;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import org.telegram.ui.Components.e51;
+import org.telegram.ui.Components.kn0;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class i1 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ s1 b;
+public final class i1 extends kn0 {
+    public final /* synthetic */ q1 H;
 
-    public /* synthetic */ i1(int i10, s1 s1Var) {
-        this.a = i10;
-        this.b = s1Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public i1(q1 q1Var, q1 q1Var2) {
+        super(q1Var2);
+        this.H = q1Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                s1 s1Var = this.b;
-                s1Var.y7.isMediaSpoilersRevealed = true;
-                s1Var.invalidate();
-                break;
-            default:
-                this.b.setSelectedBackgroundProgress(0.0f);
-                break;
-        }
+    @Override // org.telegram.ui.Components.kn0
+    public final void d(e51 e51Var) {
+        this.H.m3(e51Var);
     }
 }

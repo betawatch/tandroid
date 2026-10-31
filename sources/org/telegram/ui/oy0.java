@@ -1,188 +1,188 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserObject;
-import org.telegram.messenger.voip.VoIPService;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Canvas;
+import android.graphics.PointF;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class oy0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class oy0 extends View {
+    public static final String[] s = {"🎉", "🎆", "🎈"};
+    public final ProfileActivity a;
+    public ly0 b;
+    public ly0 c;
+    public final PointF d;
+    public boolean e;
+    public boolean f;
+    public float h;
+    public long n;
+    public boolean r;
 
-    public /* synthetic */ oy0(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public oy0(ProfileActivity profileActivity, ly0 ly0Var) {
+        super(profileActivity.getParentActivity());
+        this.d = new PointF();
+        this.h = 1.0f;
+        this.r = false;
+        this.a = profileActivity;
+        this.b = ly0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        int i11 = 0;
-        Object obj = this.b;
-        switch (i10) {
-            case 0:
-                int i12 = ProfileActivity.R6;
-                AndroidUtilities.addToClipboard("@" + UserObject.getPublicUsername((TLRPC.User) obj));
-                break;
-            case 1:
-                sy0 sy0Var = (sy0) obj;
-                sy0Var.G.getNotificationCenter().onAnimationFinish(sy0Var.F);
-                break;
-            case 2:
-                ProfileActivity profileActivity = (ProfileActivity) ((bh.p) obj).c;
-                if (profileActivity.t5 != 1.0f) {
-                    bz0 bz0Var = profileActivity.n0;
-                    while (bz0Var.D0.k(i11) != bz0Var.getRealCount() - 1) {
-                        i11++;
-                    }
-                    bz0Var.x(i11, true);
-                    break;
+    public final boolean a() {
+        ly0 ly0Var = this.b;
+        if (!ly0Var.b || this.h < 1.0f) {
+            return false;
+        }
+        if (ly0Var.c.B() != null) {
+            this.b.c.B().N(0, false, false);
+            this.b.c.B().H(true);
+        }
+        this.r = true;
+        this.h = 0.0f;
+        invalidate();
+        return true;
+    }
+
+    public final void b(ly0 ly0Var) {
+        if (this.b == ly0Var || ly0Var == null) {
+            return;
+        }
+        ArrayList arrayList = ly0Var.e;
+        if (this.r) {
+            this.c = ly0Var;
+            return;
+        }
+        if (this.f) {
+            for (int i10 = 0; i10 < this.b.e.size(); i10++) {
+                ((ny0) this.b.e.get(i10)).H0(null);
+            }
+            this.f = false;
+        }
+        ly0 ly0Var2 = this.b;
+        ArrayList arrayList2 = ly0Var2.j;
+        arrayList2.remove(this);
+        if (arrayList2.isEmpty() && ly0Var2.i) {
+            ly0Var2.b(true);
+            ly0Var2.i = false;
+        }
+        this.b = ly0Var;
+        if (this.f) {
+            return;
+        }
+        for (int i11 = 0; i11 < arrayList.size(); i11++) {
+            ((ny0) arrayList.get(i11)).H0(this);
+        }
+        this.f = true;
+    }
+
+    @Override // android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.b.j.add(this);
+    }
+
+    @Override // android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        if (this.f) {
+            for (int i10 = 0; i10 < this.b.e.size(); i10++) {
+                ((ny0) this.b.e.get(i10)).H0(null);
+            }
+            this.f = false;
+        }
+        ly0 ly0Var = this.b;
+        ArrayList arrayList = ly0Var.j;
+        arrayList.remove(this);
+        if (arrayList.isEmpty() && ly0Var.i) {
+            ly0Var.b(true);
+            ly0Var.i = false;
+        }
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (this.b.b) {
+            boolean z10 = true;
+            if (!this.f) {
+                for (int i10 = 0; i10 < this.b.e.size(); i10++) {
+                    ((ny0) this.b.e.get(i10)).H0(this);
                 }
-                break;
-            case 3:
-                ProfileActivity profileActivity2 = ((tz0) obj).b;
-                int i13 = ProfileActivity.R6;
-                profileActivity2.getMessagesController().toggleChatNoForwards(profileActivity2.e1, 0, true, new fi.ga(2, profileActivity2, true));
-                break;
-            case 4:
-                xz0 xz0Var = (xz0) obj;
-                xz0Var.T0(xz0Var.getTabProgress());
-                break;
-            case 5:
-                ((o01) obj).c();
-                break;
-            case 6:
-                ((d11) obj).a();
-                break;
-            case 7:
-                a11 a11Var = (a11) obj;
-                a11Var.f.add(a11Var.c);
-                a11Var.a();
-                break;
-            case 8:
-                Runnable[] runnableArr = (Runnable[]) obj;
-                runnableArr[0].run();
-                runnableArr[0] = null;
-                break;
-            case 9:
-                ((di.v6) obj).e();
-                break;
-            case 10:
-                org.telegram.ui.Components.wc wcVar = (org.telegram.ui.Components.wc) obj;
-                if (LaunchActivity.U() != null) {
-                    if (wcVar == null) {
-                        wcVar = org.telegram.ui.Components.wc.b0(LaunchActivity.U());
-                    }
-                    if (wcVar != null) {
-                        org.telegram.ui.Components.qc M = wcVar.M(LocaleController.getString(R.string.ReportChatSent), LocaleController.getString(R.string.Reported2), R.raw.msg_antispam);
-                        M.j = 5000;
-                        M.j();
-                        break;
-                    }
+                this.f = true;
+                if (!this.e) {
+                    this.e = true;
+                    post(new wv0(this, 7));
                 }
-                break;
-            case 11:
-                ((g31) obj).invalidate();
-                break;
-            case 12:
-                SaveToGallerySettingsActivity saveToGallerySettingsActivity = (SaveToGallerySettingsActivity) obj;
-                saveToGallerySettingsActivity.v.clear();
-                saveToGallerySettingsActivity.getUserConfig().updateSaveGalleryExceptions(saveToGallerySettingsActivity.a, saveToGallerySettingsActivity.v);
-                saveToGallerySettingsActivity.b0();
-                break;
-            case 13:
-                o31 o31Var = (o31) obj;
-                o31Var.dismiss();
-                qf.d.r(o31Var.getContext(), LocaleController.getString(R.string.PromoteUrl));
-                break;
-            case 14:
-                SecretMediaViewer secretMediaViewer = (SecretMediaViewer) ((org.telegram.ui.Components.ml0) obj).c;
-                Runnable runnable = secretMediaViewer.o0;
-                if (runnable != null) {
-                    runnable.run();
-                    secretMediaViewer.o0 = null;
-                    break;
-                }
-                break;
-            case 15:
-                f41 f41Var = ((e41) obj).a;
-                f41Var.Q = true;
-                f41Var.N.invalidate();
-                break;
-            case 16:
-                ((NotificationCenter) obj).runDelayedNotifications();
-                break;
-            case 17:
-                AndroidUtilities.updateViewShow(((u51) obj).c, true);
-                break;
-            case 18:
-                org.telegram.ui.Components.k71 k71Var = ((p61) obj).i0;
-                if (k71Var != null) {
-                    k71Var.O(true);
-                    break;
-                }
-                break;
-            case 19:
-                ((i61) obj).a();
-                break;
-            case 20:
-                jg.f.a(((SessionsActivity) obj).currentAccount).b();
-                break;
-            case 21:
-                y91 y91Var = (y91) obj;
-                y91Var.m0.a(y91Var.j0.e0, y91Var.k0.isAttachedToWindow());
-                break;
-            case 22:
-                ((ee1) obj).J.r.l();
-                break;
-            case 23:
-                ((me1) obj).b.C0();
-                break;
-            case 24:
-                ((VoIPFeedbackActivity) obj).finish();
-                break;
-            case 25:
-                ((gh1) obj).a.G();
-                break;
-            case 26:
-                ((hh1) obj).a.G();
-                break;
-            case 27:
-                rh1 rh1Var = ((fh1) obj).b;
-                rh1Var.L0.unlock();
-                org.telegram.ui.Components.voip.n2.k().getClass();
-                if (VoIPService.getSharedInstance() != null) {
-                    VoIPService.getSharedInstance().swapSinks();
-                }
-                rh1Var.Y.setCornerRadius(-1.0f);
-                rh1Var.c0.d.release();
-                rh1Var.d0.d.release();
-                rh1Var.b0.release();
-                rh1Var.k();
-                rh1Var.u0.d();
-                org.telegram.ui.Components.voip.n2.U = false;
-                rh1Var.E0 = false;
-                rh1.n1 = null;
-                break;
-            case 28:
-                ph1 ph1Var = (ph1) obj;
-                ph1Var.getClass();
-                if (VoIPService.getSharedState() != null) {
-                    VoIPService.getSharedState().acceptIncomingCall();
-                    if (ph1Var.a.n0 && VoIPService.getSharedInstance() != null) {
-                        VoIPService.getSharedInstance().requestVideoCall(false);
-                        break;
+            }
+            if (this.r) {
+                long currentTimeMillis = System.currentTimeMillis();
+                this.h = Utilities.i(this.h + (Utilities.k(currentTimeMillis - this.n, 20L, 0L) / 4200.0f), 1.0f, 0.0f);
+                this.n = currentTimeMillis;
+                ProfileActivity profileActivity = this.a;
+                bw0 bw0Var = profileActivity.a;
+                int i11 = profileActivity.T2;
+                PointF pointF = this.d;
+                float f7 = 2.0f;
+                if (i11 >= 0) {
+                    int i12 = 0;
+                    while (true) {
+                        if (i12 >= bw0Var.getChildCount()) {
+                            break;
+                        }
+                        View childAt = bw0Var.getChildAt(i12);
+                        if (i11 == RecyclerView.R(childAt) && (childAt instanceof org.telegram.ui.Cells.z8)) {
+                            nh.p pVar = ((org.telegram.ui.Cells.z8) childAt).a;
+                            pointF.set(pVar.getX() + childAt.getX() + bw0Var.getX() + org.telegram.messenger.i0.L(12.0f), (pVar.getMeasuredHeight() / 2.0f) + pVar.getY() + childAt.getY() + bw0Var.getY());
+                            break;
+                        }
+                        i12++;
                     }
                 }
-                break;
-            default:
-                ((VoIPPermissionActivity) obj).finish();
-                break;
+                float f10 = ly.f();
+                this.b.c.y0((getWidth() - org.telegram.messenger.i0.L(f10)) / 2.0f, Math.max(0.0f, pointF.y - (org.telegram.messenger.i0.L(f10) * 0.5f)), org.telegram.messenger.i0.L(f10), org.telegram.messenger.i0.L(f10));
+                canvas.save();
+                canvas.scale(-1.0f, 1.0f, getWidth() / 2.0f, 0.0f);
+                ly0 ly0Var = null;
+                this.b.c.h(canvas, null);
+                this.b.c.setAlpha(1.0f - ((this.h - 0.9f) / 0.1f));
+                canvas.restore();
+                int L = org.telegram.messenger.i0.L(110.0f);
+                int size = this.b.d.size() - 1;
+                while (size >= 0) {
+                    ny0 ny0Var = (ny0) this.b.d.get(size);
+                    float f11 = size;
+                    float s10 = org.telegram.messenger.i0.s(this.h, f11, this.b.d.size(), 1.8f);
+                    float f12 = L;
+                    boolean z11 = z10;
+                    float f13 = f12 * 0.88f;
+                    float g10 = c3.i0.g(f13, this.b.d.size() - 1, getWidth(), f7);
+                    float f14 = pointF.x;
+                    float f15 = f7;
+                    float f16 = pointF.y;
+                    float f17 = ((g10 - f14) * s10) + (f13 * f11) + f14;
+                    PointF pointF2 = pointF;
+                    float pow = f16 - ((f16 + f12) * ((float) Math.pow(this.h, 2.0d)));
+                    float interpolation = org.telegram.ui.Components.gr.h.getInterpolation(Utilities.i(s10 / 0.4f, 1.0f, 0.0f));
+                    float f18 = (f12 / f15) * interpolation;
+                    float f19 = f12 * interpolation;
+                    ny0Var.y0(f17 - f18, pow - f18, f19, f19);
+                    ny0Var.h(canvas, null);
+                    size--;
+                    ly0Var = null;
+                    pointF = pointF2;
+                    z10 = z11;
+                    f7 = f15;
+                }
+                ly0 ly0Var2 = ly0Var;
+                if (this.h < 1.0f) {
+                    invalidate();
+                    return;
+                }
+                this.r = false;
+                b(this.c);
+                this.c = ly0Var2;
+            }
         }
     }
 }

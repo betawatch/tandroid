@@ -1,40 +1,77 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.text.TextUtils;
-import java.util.ArrayList;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class zo0 extends et {
-    public final /* synthetic */ org.telegram.ui.ey f0;
-    public final /* synthetic */ org.telegram.ui.mx g0;
+public final class zo0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ op0 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zo0(org.telegram.ui.mx mxVar, nm0 nm0Var, Context context, int i10, int i11, org.telegram.ui.ey eyVar) {
-        super(nm0Var, context, i10, i11);
-        this.g0 = mxVar;
-        this.f0 = eyVar;
+    public /* synthetic */ zo0(op0 op0Var, boolean z10, int i10) {
+        this.a = i10;
+        this.c = op0Var;
+        this.b = z10;
     }
 
-    @Override // org.telegram.ui.Components.k71
-    public final void O(boolean z10) {
-        ArrayList arrayList;
-        ArrayList arrayList2;
-        ArrayList arrayList3;
-        ArrayList arrayList4;
-        super.O(z10);
-        ro0 ro0Var = this.g0.i0;
-        ro0Var.e(this.Y || this.Z || (arrayList = this.R) == null || !arrayList.isEmpty() || (arrayList2 = this.S) == null || !arrayList2.isEmpty() || (arrayList3 = this.U) == null || !arrayList3.isEmpty() || (arrayList4 = this.T) == null || !arrayList4.isEmpty(), z10);
-        if (!TextUtils.isEmpty(this.d0)) {
-            ro0Var.d.setText(LocaleController.getString(R.string.NoResult));
-            ro0Var.e.setVisibility(8);
-        } else {
-            ro0Var.d.setText(LocaleController.getString(R.string.NoChannelsTitle));
-            ro0Var.e.setVisibility(0);
-            ro0Var.e.setText(LocaleController.getString(R.string.NoChannelsMessage));
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationCancel(Animator animator) {
+        switch (this.a) {
+            case 0:
+                AnimatorSet[] animatorSetArr = this.c.L1;
+                AnimatorSet animatorSet = animatorSetArr[0];
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    animatorSetArr[0] = null;
+                    break;
+                }
+                break;
+            default:
+                op0 op0Var = this.c;
+                if (animator.equals(op0Var.v1)) {
+                    op0Var.v1 = null;
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                op0 op0Var = this.c;
+                AnimatorSet[] animatorSetArr = op0Var.L1;
+                AnimatorSet animatorSet = animatorSetArr[0];
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    if (!this.b) {
+                        op0Var.K1[0].setVisibility(4);
+                    }
+                    animatorSetArr[0] = null;
+                    break;
+                }
+                break;
+            default:
+                op0 op0Var2 = this.c;
+                FrameLayout frameLayout = op0Var2.n1;
+                if (animator.equals(op0Var2.v1)) {
+                    if (!this.b) {
+                        op0Var2.j1.setVisibility(4);
+                        FrameLayout frameLayout2 = op0Var2.U1;
+                        if (frameLayout2 != null && frameLayout == null) {
+                            frameLayout2.setVisibility(4);
+                        }
+                        op0Var2.m1.setVisibility(4);
+                    } else if (frameLayout != null) {
+                        frameLayout.setVisibility(4);
+                    }
+                    op0Var2.v1 = null;
+                    break;
+                }
+                break;
         }
     }
 }

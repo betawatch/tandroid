@@ -1,64 +1,27 @@
 package org.telegram.ui.ActionBar;
 
-import android.app.Activity;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.Window;
-import android.widget.FrameLayout;
-import java.util.List;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public interface j5 {
-    r2 getBackgroundFragment();
+public final class j5 {
+    public static final j5 a;
+    public static final j5 b;
+    public static final /* synthetic */ j5[] c;
 
-    k3 getBottomSheet();
+    static {
+        j5 j5Var = new j5("ICON", 0);
+        a = j5Var;
+        j5 j5Var2 = new j5("TEXT", 1);
+        b = j5Var2;
+        c = new j5[]{j5Var, j5Var2};
+    }
 
-    List getFragmentStack();
+    public static j5 valueOf(String str) {
+        return (j5) Enum.valueOf(j5.class, str);
+    }
 
-    r2 getLastFragment();
-
-    l5 getMessageDrawableOutMediaStart();
-
-    l5 getMessageDrawableOutStart();
-
-    FrameLayout getOverlayContainerView();
-
-    Activity getParentActivity();
-
-    List getPulledDialogs();
-
-    r2 getSafeLastFragment();
-
-    float getThemeAnimationValue();
-
-    ViewGroup getView();
-
-    Window getWindow();
-
-    void setBackgroundView(View view);
-
-    void setDelegate(f5 f5Var);
-
-    void setDrawerLayoutContainer(d4 d4Var);
-
-    void setFragmentPanTranslationOffset(int i10);
-
-    void setFragmentStack(List list);
-
-    void setHighlightActionButtons(boolean z10);
-
-    void setInBubbleMode(boolean z10);
-
-    void setIsSheet(boolean z10);
-
-    void setNavigationBarColor(int i10);
-
-    void setPulledDialogs(List list);
-
-    void setRemoveActionBarExtraHeight(boolean z10);
-
-    void setUseAlphaAnimations(boolean z10);
-
-    void setWindow(Window window);
+    public static j5[] values() {
+        return (j5[]) c.clone();
+    }
 }

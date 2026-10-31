@@ -1,31 +1,108 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.FileLog;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.view.MotionEvent;
+import android.view.View;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class de0 extends a8.a1 {
-    public final /* synthetic */ me0 a;
+public final class de0 extends View {
+    public Paint a;
+    public Paint b;
+    public int c;
+    public int d;
+    public float e;
+    public boolean f;
+    public int h;
+    public int n;
+    public ce0 r;
 
-    public de0(me0 me0Var) {
-        this.a = me0Var;
+    public final void a(int i10, boolean z10) {
+        ce0 ce0Var;
+        int i11 = this.h;
+        if (i10 < i11) {
+            i10 = i11;
+        } else {
+            int i12 = this.n;
+            if (i10 > i12) {
+                i10 = i12;
+            }
+        }
+        this.e = (i10 - i11) / (this.n - i11);
+        invalidate();
+        if (!z10 || (ce0Var = this.r) == null) {
+            return;
+        }
+        ce0Var.p(((Integer) getTag()).intValue(), getProgress());
     }
 
-    @Override // a8.a1
-    public final void a(int i10, CharSequence charSequence) {
-        FileLog.d("PasscodeView onAuthenticationError " + i10 + " \"" + ((Object) charSequence) + "\"");
-        this.a.o(true);
+    public int getProgress() {
+        return (int) ((this.e * (this.n - r0)) + this.h);
     }
 
-    @Override // a8.a1
-    public final void b() {
-        FileLog.d("PasscodeView onAuthenticationFailed");
-        this.a.o(true);
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        Paint paint = this.b;
+        int measuredHeight = getMeasuredHeight();
+        int i10 = this.c;
+        int i11 = (measuredHeight - i10) / 2;
+        int measuredWidth = (int) ((getMeasuredWidth() - i10) * this.e);
+        float f7 = i10 / 2;
+        canvas.drawRect(f7, (getMeasuredHeight() / 2) - org.telegram.messenger.i0.L(1.0f), getMeasuredWidth() - r9, org.telegram.messenger.i0.L(1.0f) + (getMeasuredHeight() / 2), this.a);
+        if (this.h == 0) {
+            canvas.drawRect(f7, (getMeasuredHeight() / 2) - org.telegram.messenger.i0.L(1.0f), measuredWidth, org.telegram.messenger.i0.L(1.0f) + (getMeasuredHeight() / 2), paint);
+        } else if (this.e > 0.5f) {
+            canvas.drawRect((getMeasuredWidth() / 2) - org.telegram.messenger.i0.L(1.0f), (getMeasuredHeight() - i10) / 2, getMeasuredWidth() / 2, (getMeasuredHeight() + i10) / 2, paint);
+            canvas.drawRect(getMeasuredWidth() / 2, (getMeasuredHeight() / 2) - org.telegram.messenger.i0.L(1.0f), measuredWidth, org.telegram.messenger.i0.L(1.0f) + (getMeasuredHeight() / 2), paint);
+        } else {
+            canvas.drawRect(getMeasuredWidth() / 2, (getMeasuredHeight() - i10) / 2, org.telegram.messenger.i0.L(1.0f) + (getMeasuredWidth() / 2), (getMeasuredHeight() + i10) / 2, paint);
+            canvas.drawRect(measuredWidth, (getMeasuredHeight() / 2) - org.telegram.messenger.i0.L(1.0f), getMeasuredWidth() / 2, org.telegram.messenger.i0.L(1.0f) + (getMeasuredHeight() / 2), paint);
+        }
+        canvas.drawCircle(measuredWidth + r9, r9 + i11, f7, paint);
     }
 
-    @Override // a8.a1
-    public final void c(androidx.biometric.s sVar) {
-        FileLog.d("PasscodeView onAuthenticationSucceeded");
-        this.a.n(true);
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        int i10 = this.c;
+        if (motionEvent != null) {
+            float x10 = motionEvent.getX();
+            float y3 = motionEvent.getY();
+            float measuredWidth = (int) ((getMeasuredWidth() - i10) * this.e);
+            if (motionEvent.getAction() == 0) {
+                float measuredHeight = (getMeasuredHeight() - i10) / 2;
+                if (measuredWidth - measuredHeight <= x10 && x10 <= i10 + measuredWidth + measuredHeight && y3 >= 0.0f && y3 <= getMeasuredHeight()) {
+                    this.f = true;
+                    this.d = (int) (x10 - measuredWidth);
+                    getParent().requestDisallowInterceptTouchEvent(true);
+                    invalidate();
+                    return true;
+                }
+            } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
+                if (this.f) {
+                    this.f = false;
+                    invalidate();
+                    return true;
+                }
+            } else if (motionEvent.getAction() == 2 && this.f) {
+                float f7 = (int) (x10 - this.d);
+                this.e = (f7 >= 0.0f ? f7 > ((float) (getMeasuredWidth() - i10)) ? getMeasuredWidth() - i10 : f7 : 0.0f) / (getMeasuredWidth() - i10);
+                ce0 ce0Var = this.r;
+                if (ce0Var != null) {
+                    ce0Var.p(((Integer) getTag()).intValue(), getProgress());
+                }
+                invalidate();
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void setDelegate(ce0 ce0Var) {
+        this.r = ce0Var;
+    }
+
+    public void setProgress(int i10) {
+        a(i10, true);
     }
 }

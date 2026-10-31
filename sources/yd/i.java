@@ -1,25 +1,77 @@
 package yd;
 
-import a8.we;
+import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
+import td.a0;
+import td.f2;
+import td.g0;
+import td.j0;
+import td.o0;
+import td.z1;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class i {
-    public static final /* synthetic */ i[] a;
+public final class i extends a0 implements j0 {
+    public static final /* synthetic */ AtomicIntegerFieldUpdater n = AtomicIntegerFieldUpdater.newUpdater(i.class, "runningWorkers$volatile");
+    public final a0 c;
+    public final int d;
+    public final /* synthetic */ j0 e;
+    public final l f;
+    public final Object h;
+    private volatile /* synthetic */ int runningWorkers$volatile;
 
-    static {
-        i[] iVarArr = {new i("PUBLIC", 0), new i("PROTECTED", 1), new i("INTERNAL", 2), new i("PRIVATE", 3)};
-        a = iVarArr;
-        we.a(iVarArr);
+    /* JADX WARN: Multi-variable type inference failed */
+    public i(a0 a0Var, int i10) {
+        this.c = a0Var;
+        this.d = i10;
+        j0 j0Var = a0Var instanceof j0 ? (j0) a0Var : null;
+        this.e = j0Var == null ? g0.a : j0Var;
+        this.f = new l();
+        this.h = new Object();
     }
 
-    public static i valueOf(String str) {
-        return (i) Enum.valueOf(i.class, str);
+    @Override // td.j0
+    public final void a(long j10, td.m mVar) {
+        this.e.a(j10, mVar);
     }
 
-    public static i[] values() {
-        return (i[]) a.clone();
+    @Override // td.j0
+    public final o0 b(long j10, f2 f2Var, cd.h hVar) {
+        return this.e.b(j10, f2Var, hVar);
+    }
+
+    @Override // td.a0
+    public final void c(cd.h hVar, Runnable runnable) {
+        this.f.a(runnable);
+        AtomicIntegerFieldUpdater atomicIntegerFieldUpdater = n;
+        if (atomicIntegerFieldUpdater.get(this) < this.d) {
+            synchronized (this.h) {
+                if (atomicIntegerFieldUpdater.get(this) >= this.d) {
+                    return;
+                }
+                atomicIntegerFieldUpdater.incrementAndGet(this);
+                Runnable f7 = f();
+                if (f7 == null) {
+                    return;
+                }
+                this.c.c(this, new z1(this, f7, false, 13));
+            }
+        }
+    }
+
+    public final Runnable f() {
+        while (true) {
+            Runnable runnable = (Runnable) this.f.d();
+            if (runnable != null) {
+                return runnable;
+            }
+            synchronized (this.h) {
+                AtomicIntegerFieldUpdater atomicIntegerFieldUpdater = n;
+                atomicIntegerFieldUpdater.decrementAndGet(this);
+                if (this.f.c() == 0) {
+                    return null;
+                }
+                atomicIntegerFieldUpdater.incrementAndGet(this);
+            }
+        }
     }
 }

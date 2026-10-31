@@ -1,35 +1,36 @@
 package jg;
 
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.View;
+import org.telegram.ui.ActionBar.v5;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class u1 implements TextWatcher {
-    public final /* synthetic */ TextView a;
-    public final /* synthetic */ Runnable[] b;
+public final /* synthetic */ class u1 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ View b;
 
-    public u1(TextView textView, Runnable[] runnableArr) {
-        this.a = textView;
-        this.b = runnableArr;
+    public /* synthetic */ u1(int i10, View view) {
+        this.a = i10;
+        this.b = view;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        if (this.a.getAlpha() > 0.0f) {
-            Runnable[] runnableArr = this.b;
-            AndroidUtilities.cancelRunOnUIThread(runnableArr[0]);
-            AndroidUtilities.runOnUIThread(runnableArr[0]);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.performClick();
+                break;
+            default:
+                View view = this.b;
+                if (view instanceof v5) {
+                    v5 v5Var = (v5) view;
+                    if (!v5Var.a) {
+                        v5Var.a = true;
+                        v5Var.invalidate();
+                        break;
+                    }
+                }
+                break;
         }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

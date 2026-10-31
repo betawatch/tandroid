@@ -1,39 +1,71 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Point;
-import android.view.View;
-import android.widget.FrameLayout;
-import java.util.HashMap;
-import java.util.Map;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.IMapsProvider;
+import android.view.MotionEvent;
+import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class pl extends FrameLayout {
-    public final HashMap a;
-    public final /* synthetic */ sl b;
+public final class pl extends tk0 {
+    public final /* synthetic */ int e3;
+    public final /* synthetic */ ChatAttachAlertPhotoLayout f3;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public pl(sl slVar, Context context) {
-        super(context);
-        this.b = slVar;
-        this.a = new HashMap();
+    public /* synthetic */ pl(ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout, Context context, org.telegram.ui.ActionBar.p6 p6Var, int i10) {
+        super(context, p6Var);
+        this.e3 = i10;
+        this.f3 = chatAttachAlertPhotoLayout;
     }
 
-    public final void a() {
-        IMapsProvider.IMap iMap = this.b.F;
-        if (iMap == null) {
-            return;
+    @Override // org.telegram.ui.Components.tk0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        switch (this.e3) {
+            case 1:
+                if (motionEvent.getAction() != 0 || motionEvent.getY() >= this.f3.b.V3[0] - org.telegram.messenger.i0.L(80.0f)) {
+                    break;
+                }
+                break;
         }
-        IMapsProvider.IProjection projection = iMap.getProjection();
-        for (Map.Entry entry : this.a.entrySet()) {
-            IMapsProvider.IMarker iMarker = (IMapsProvider.IMarker) entry.getKey();
-            View view = (View) entry.getValue();
-            Point screenLocation = projection.toScreenLocation(iMarker.getPosition());
-            view.setTranslationX(screenLocation.x - (view.getMeasuredWidth() / 2));
-            view.setTranslationY(AndroidUtilities.dp(22.0f) + (screenLocation.y - view.getMeasuredHeight()));
+        return super.onInterceptTouchEvent(motionEvent);
+    }
+
+    @Override // org.telegram.ui.Components.tk0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    public void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        switch (this.e3) {
+            case 1:
+                super.onLayout(z10, i10, i11, i12, i13);
+                PhotoViewer.v1().z0();
+                break;
+            default:
+                super.onLayout(z10, i10, i11, i12, i13);
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.tk0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public boolean onTouchEvent(MotionEvent motionEvent) {
+        switch (this.e3) {
+            case 1:
+                if (motionEvent.getAction() != 0 || motionEvent.getY() >= this.f3.b.V3[0] - org.telegram.messenger.i0.L(80.0f)) {
+                    break;
+                }
+                break;
+        }
+        return super.onTouchEvent(motionEvent);
+    }
+
+    @Override // org.telegram.ui.Components.tk0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
+    public void requestLayout() {
+        switch (this.e3) {
+            case 0:
+                if (!this.f3.J0) {
+                    super.requestLayout();
+                    break;
+                }
+                break;
+            default:
+                super.requestLayout();
+                break;
         }
     }
 }

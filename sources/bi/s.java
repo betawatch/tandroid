@@ -1,57 +1,189 @@
 package bi;
 
-import android.content.Context;
-import android.view.MotionEvent;
-import org.telegram.ui.Components.s71;
-import org.telegram.ui.Components.sd0;
-import org.telegram.ui.ke;
+import android.text.SpannableString;
+import android.view.KeyEvent;
+import android.view.View;
+import java.util.ArrayList;
+import org.telegram.messenger.fj;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.vx;
+import org.telegram.ui.Components.w41;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes4.dex */
-public final class s extends sd0 {
-    public final /* synthetic */ int L;
-    public final /* synthetic */ Object M;
+public final class s implements vx {
+    public final /* synthetic */ t a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ s(Object obj, Context context, int i10) {
-        super(context, null);
-        this.L = i10;
-        this.M = obj;
+    public s(t tVar) {
+        this.a = tVar;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        switch (this.L) {
-            case 0:
-                y yVar = (y) this.M;
-                t tVar = yVar.Z;
-                if (tVar != null && !tVar.isFocusable()) {
-                    yVar.Z.setFocusable(true);
-                    yVar.Z.setFocusableInTouchMode(true);
-                    int D1 = yVar.e.D1(1);
-                    if (D1 >= 0 && D1 < yVar.e.g3.y.size()) {
-                        yVar.e.C0();
-                        yVar.e.y0(D1);
-                    }
-                    yVar.Z.requestFocus();
-                }
-                break;
-            default:
-                ke keVar = (ke) this.M;
-                s71 s71Var = keVar.X0;
-                t tVar2 = keVar.O0;
-                if (tVar2 != null && !tVar2.isFocusable()) {
-                    tVar2.setFocusable(true);
-                    tVar2.setFocusableInTouchMode(true);
-                    int D12 = s71Var.D1(3);
-                    if (D12 >= 0 && D12 < s71Var.g3.y.size()) {
-                        s71Var.C0();
-                        s71Var.y0(D12);
-                    }
-                    tVar2.requestFocus();
-                }
-                break;
+    @Override // org.telegram.ui.Components.vx
+    public final /* synthetic */ boolean A() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.vx
+    public final /* synthetic */ long a() {
+        return 0L;
+    }
+
+    @Override // org.telegram.ui.Components.vx
+    public final /* synthetic */ boolean b() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.vx
+    public final /* synthetic */ boolean c() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.vx
+    public final /* synthetic */ int f() {
+        return 0;
+    }
+
+    @Override // org.telegram.ui.Components.vx
+    public final /* synthetic */ boolean g() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.vx
+    public final void i(int i10) {
+        n1 focusedEditTextOrNull;
+        t tVar = this.a;
+        if (i10 != 0 && (focusedEditTextOrNull = tVar.r.getFocusedEditTextOrNull()) != null) {
+            tVar.F = focusedEditTextOrNull;
+            tVar.G = Math.max(0, focusedEditTextOrNull.getSelectionEnd());
         }
-        return super.dispatchTouchEvent(motionEvent);
+        tVar.D = i10 != 0;
+        tVar.V();
+    }
+
+    @Override // org.telegram.ui.Components.vx
+    public final /* synthetic */ boolean j() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.vx
+    public final boolean k() {
+        n1 P = t.P(this.a);
+        if (P == null || P.length() == 0) {
+            return false;
+        }
+        P.dispatchKeyEvent(new KeyEvent(0, 67));
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.vx
+    public final void l(String str) {
+        t tVar = this.a;
+        n1 P = t.P(tVar);
+        if (P == null) {
+            return;
+        }
+        int Q = t.Q(tVar, P);
+        try {
+            CharSequence m10 = org.telegram.messenger.k6.m(str, P.getPaint().getFontMetricsInt(), false, null, 0);
+            P.setText(P.getText().insert(Q, m10));
+            int length = Q + m10.length();
+            P.setSelection(length, length);
+            if (P == tVar.F) {
+                tVar.G = length;
+            }
+        } catch (Exception unused) {
+        }
+    }
+
+    @Override // org.telegram.ui.Components.vx
+    public final /* synthetic */ float p() {
+        return 0.0f;
+    }
+
+    @Override // org.telegram.ui.Components.vx
+    public final void x(long j10, TLRPC.Document document, String str, boolean z10) {
+        t tVar = this.a;
+        n1 P = t.P(tVar);
+        if (P == null) {
+            return;
+        }
+        int Q = t.Q(tVar, P);
+        try {
+            if (str == null) {
+                str = "😀";
+            }
+            SpannableString spannableString = new SpannableString(str);
+            org.telegram.ui.Components.o5 o5Var = document != null ? new org.telegram.ui.Components.o5(document, P.getPaint().getFontMetricsInt()) : new org.telegram.ui.Components.o5(j10, P.getPaint().getFontMetricsInt());
+            o5Var.cacheType = org.telegram.ui.Components.f5.f();
+            spannableString.setSpan(o5Var, 0, spannableString.length(), 33);
+            P.setText(P.getText().insert(Q, spannableString));
+            int length = Q + spannableString.length();
+            P.setSelection(length, length);
+            if (P == tVar.F) {
+                tVar.G = length;
+            }
+        } catch (Exception unused) {
+        }
+    }
+
+    @Override // org.telegram.ui.Components.vx
+    public final boolean z() {
+        return this.a.D;
+    }
+
+    @Override // org.telegram.ui.Components.vx
+    public final /* synthetic */ void n() {
+    }
+
+    @Override // org.telegram.ui.Components.vx
+    public final /* synthetic */ void q() {
+    }
+
+    @Override // org.telegram.ui.Components.vx
+    public final /* synthetic */ void u() {
+    }
+
+    @Override // org.telegram.ui.Components.vx
+    public final /* synthetic */ void w() {
+    }
+
+    @Override // org.telegram.ui.Components.vx
+    public final /* synthetic */ void h(TLRPC.StickerSetCovered stickerSetCovered) {
+    }
+
+    @Override // org.telegram.ui.Components.vx
+    public final /* synthetic */ void o(w41 w41Var) {
+    }
+
+    @Override // org.telegram.ui.Components.vx
+    public final /* synthetic */ void r(TLRPC.StickerSetCovered stickerSetCovered) {
+    }
+
+    @Override // org.telegram.ui.Components.vx
+    public final /* synthetic */ void s(int i10) {
+    }
+
+    @Override // org.telegram.ui.Components.vx
+    public final /* synthetic */ void t(ArrayList arrayList) {
+    }
+
+    @Override // org.telegram.ui.Components.vx
+    public final /* synthetic */ void y(long j10) {
+    }
+
+    @Override // org.telegram.ui.Components.vx
+    public final /* synthetic */ void m(View view, TLRPC.Document document, String str, Object obj, fj fjVar, boolean z10, int i10) {
+    }
+
+    @Override // org.telegram.ui.Components.vx
+    public final /* synthetic */ void v(View view, Object obj, String str, Object obj2, boolean z10, int i10, int i11) {
+    }
+
+    @Override // org.telegram.ui.Components.vx
+    public final /* synthetic */ void e(Object obj, Object obj2) {
+    }
+
+    @Override // org.telegram.ui.Components.vx
+    public final /* synthetic */ void d(TLRPC.StickerSet stickerSet, TLRPC.InputStickerSet inputStickerSet, boolean z10) {
     }
 }

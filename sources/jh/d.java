@@ -1,54 +1,69 @@
 package jh;
 
-import android.graphics.RectF;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Canvas;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.ef;
+import org.telegram.messenger.i0;
+import org.telegram.messenger.ic;
+import org.telegram.messenger.pz;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes4.dex */
-public final class d {
-    public final int a;
-    public final long b;
-    public long e;
-    public long f;
-    public long g;
-    public long h;
-    public boolean i;
-    public final RectF c = new RectF();
-    public float j = 0.0f;
-    public float k = 0.0f;
-    public float l = Float.MAX_VALUE;
-    public float m = 0.0f;
-    public final long d = Utilities.random.nextLong();
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final class d extends ih.f {
+    public final ef b;
+    public final pz c;
 
-    public d(int i10, long j10) {
-        this.a = i10;
-        this.b = j10;
+    /* JADX WARN: Removed duplicated region for block: B:6:0x0081  */
+    /* JADX WARN: Removed duplicated region for block: B:9:0x008a  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public d(pz pzVar) {
+        ic icVar;
+        ic icVar2;
+        this.c = pzVar;
+        ef efVar = pzVar.y;
+        this.b = efVar;
+        this.a.J0(i0.L(7.0f));
+        ImageReceiver imageReceiver = this.a;
+        imageReceiver.G0(0, 0, true);
+        String str = efVar.g;
+        int i10 = efVar.C;
+        String str2 = efVar.I;
+        if (str != null) {
+            icVar = ic.g(str);
+        } else {
+            String str3 = efVar.c;
+            if (str3 != null) {
+                icVar = ic.g(str3);
+            } else if (str2 == null) {
+                imageReceiver.f();
+                icVar = null;
+            } else {
+                if (!efVar.b || efVar.d()) {
+                    ic g10 = ic.g("thumb://" + i10 + ":" + str2);
+                    imageReceiver.G0(efVar.J, efVar.K, true);
+                    icVar2 = g10;
+                    if (icVar2 == null) {
+                        imageReceiver.q0(icVar2, null, null, null, null, 0);
+                        return;
+                    } else {
+                        imageReceiver.f();
+                        return;
+                    }
+                }
+                icVar = ic.g("vthumb://" + i10 + ":" + str2);
+            }
+        }
+        icVar2 = icVar;
+        if (icVar2 == null) {
+        }
     }
 
-    public final TLRPC.TL_inputMessageReadMetric a() {
-        TLRPC.TL_inputMessageReadMetric tL_inputMessageReadMetric = new TLRPC.TL_inputMessageReadMetric();
-        tL_inputMessageReadMetric.msg_id = this.a;
-        tL_inputMessageReadMetric.view_id = this.d;
-        tL_inputMessageReadMetric.time_in_view_ms = (int) this.g;
-        tL_inputMessageReadMetric.active_time_in_view_ms = (int) this.h;
-        float f7 = this.k;
-        tL_inputMessageReadMetric.height_to_viewport_ratio_permille = f7 == 0.0f ? MediaDataController.MAX_STYLE_RUNS_COUNT : Math.round((this.j / f7) * 1000.0f);
-        tL_inputMessageReadMetric.seen_range_ratio_permille = b();
-        return tL_inputMessageReadMetric;
-    }
-
-    public final int b() {
-        float f7 = this.j;
-        if (f7 == 0.0f) {
-            return 0;
-        }
-        float f10 = this.l;
-        float f11 = this.m;
-        if (f10 > f11) {
-            return 0;
-        }
-        return Math.round(((f11 - f10) / f7) * 1000.0f);
+    @Override // ih.f
+    public final void c(Canvas canvas, int i10, int i11) {
+        ImageReceiver imageReceiver = this.a;
+        imageReceiver.y0(0.0f, 0.0f, i10, i11);
+        imageReceiver.h(canvas, null);
     }
 }

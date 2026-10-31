@@ -1,14 +1,15 @@
 package w3;
 
 import b2.x;
-import c3.j0;
-import e2.n0;
+import c3.k0;
+import e2.l0;
+import org.telegram.messenger.zs;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class g {
-    public final j0 a;
+    public final k0 a;
     public t d;
     public d e;
     public int f;
@@ -22,14 +23,14 @@ public final class g {
     public final e2.x k = new e2.x(1);
     public final e2.x l = new e2.x();
 
-    public g(j0 j0Var, t tVar, d dVar, x xVar) {
-        this.a = j0Var;
+    public g(k0 k0Var, t tVar, d dVar, x xVar) {
+        this.a = k0Var;
         this.d = tVar;
         this.e = dVar;
         this.j = xVar;
         this.d = tVar;
         this.e = dVar;
-        j0Var.b(xVar);
+        k0Var.b(xVar);
         e();
     }
 
@@ -44,7 +45,7 @@ public final class g {
         }
         s sVar = this.b;
         d dVar = sVar.a;
-        String str = n0.a;
+        String str = l0.a;
         int i10 = dVar.a;
         r rVar = sVar.m;
         if (rVar == null) {
@@ -85,7 +86,7 @@ public final class g {
             xVar = sVar.n;
         } else {
             byte[] bArr = b10.e;
-            String str = n0.a;
+            String str = l0.a;
             int length = bArr.length;
             e2.x xVar2 = this.l;
             xVar2.L(length, bArr);
@@ -97,9 +98,9 @@ public final class g {
         e2.x xVar3 = this.k;
         xVar3.a[0] = (byte) ((z11 ? 128 : 0) | i12);
         xVar3.N(0);
-        j0 j0Var = this.a;
-        j0Var.g(xVar3, 1, 1);
-        j0Var.g(xVar, i12, 1);
+        k0 k0Var = this.a;
+        k0Var.g(xVar3, 1, 1);
+        k0Var.g(xVar, i12, 1);
         if (!z11) {
             return i12 + 1;
         }
@@ -110,12 +111,12 @@ public final class g {
             bArr2[0] = 0;
             bArr2[1] = 1;
             bArr2[2] = (byte) 0;
-            bArr2[3] = (byte) (i11 & 255);
-            bArr2[4] = (byte) ((i10 >> 24) & 255);
-            bArr2[5] = (byte) ((i10 >> 16) & 255);
-            bArr2[6] = (byte) ((i10 >> 8) & 255);
-            bArr2[7] = (byte) (i10 & 255);
-            j0Var.g(xVar4, 8, 1);
+            bArr2[3] = (byte) (i11 & zs.e4);
+            bArr2[4] = (byte) ((i10 >> 24) & zs.e4);
+            bArr2[5] = (byte) ((i10 >> 16) & zs.e4);
+            bArr2[6] = (byte) ((i10 >> 8) & zs.e4);
+            bArr2[7] = (byte) (i10 & zs.e4);
+            k0Var.g(xVar4, 8, 1);
             return i12 + 9;
         }
         e2.x xVar5 = sVar.n;
@@ -127,12 +128,12 @@ public final class g {
             byte[] bArr3 = xVar4.a;
             xVar5.k(0, i13, bArr3);
             int i14 = (((bArr3[2] & 255) << 8) | (bArr3[3] & 255)) + i11;
-            bArr3[2] = (byte) ((i14 >> 8) & 255);
-            bArr3[3] = (byte) (i14 & 255);
+            bArr3[2] = (byte) ((i14 >> 8) & zs.e4);
+            bArr3[3] = (byte) (i14 & zs.e4);
         } else {
             xVar4 = xVar5;
         }
-        j0Var.g(xVar4, i13, 1);
+        k0Var.g(xVar4, i13, 1);
         return i12 + 1 + i13;
     }
 

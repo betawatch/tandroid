@@ -1,116 +1,150 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.animation.ValueAnimator;
 import android.view.View;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.TranslateController;
+import android.view.ViewTreeObserver;
+import android.view.WindowManager;
+import android.widget.PopupWindow;
+import java.lang.reflect.Field;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class z21 extends org.telegram.ui.Components.mm0 {
-    public final Context c;
-    public final boolean d;
-    public final /* synthetic */ a31 e;
+public abstract class z21 extends PopupWindow {
+    public static final Field c;
+    public static final org.telegram.ui.ActionBar.c1 d = new org.telegram.ui.ActionBar.c1(2);
+    public final ViewTreeObserver.OnScrollChangedListener a;
+    public ViewTreeObserver b;
 
-    public z21(a31 a31Var, Context context, boolean z10) {
-        this.e = a31Var;
-        this.c = context;
-        this.d = z10;
-    }
-
-    @Override // org.telegram.ui.Components.mm0
-    public final boolean D(s4.e1 e1Var) {
-        return e1Var.f == 0;
-    }
-
-    @Override // s4.h0
-    public final int h() {
-        boolean z10 = this.d;
-        a31 a31Var = this.e;
-        if (!z10) {
-            return a31Var.h.size() + (a31Var.e >= 0 ? 1 : 0);
+    static {
+        Field field = null;
+        try {
+            field = PopupWindow.class.getDeclaredField("mOnScrollChangedListener");
+            field.setAccessible(true);
+        } catch (NoSuchFieldException unused) {
         }
-        ArrayList arrayList = a31Var.f;
-        if (arrayList == null) {
-            return 0;
-        }
-        return arrayList.size();
+        c = field;
     }
 
-    @Override // s4.h0
-    public final int j(int i10) {
-        return (!this.d && i10 == this.e.e) ? 1 : 0;
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:15:0x0031, code lost:
-    
-        if (r8 == (r3.f.size() - 1)) goto L16;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:16:0x0033, code lost:
-    
-        r8 = true;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:33:0x0057, code lost:
-    
-        if (r8 == (r3.h.size() - 1)) goto L16;
-     */
-    @Override // s4.h0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void v(s4.e1 e1Var, int i10) {
-        boolean z10;
-        int i11 = e1Var.f;
-        View view = e1Var.a;
-        if (i11 != 0) {
-            if (i11 != 1) {
-                return;
+    public z21(i31 i31Var) {
+        super(i31Var, -2, -2);
+        setFocusable(true);
+        setAnimationStyle(0);
+        setOutsideTouchable(true);
+        setClippingEnabled(true);
+        setInputMethodMode(0);
+        setSoftInputMode(4);
+        Field field = c;
+        if (field != null) {
+            try {
+                this.a = (ViewTreeObserver.OnScrollChangedListener) field.get(this);
+                field.set(this, d);
+            } catch (Exception unused) {
+                this.a = null;
             }
+        }
+    }
+
+    public final void b() {
+        View rootView = getContentView().getRootView();
+        WindowManager windowManager = (WindowManager) getContentView().getContext().getSystemService("window");
+        WindowManager.LayoutParams layoutParams = (WindowManager.LayoutParams) rootView.getLayoutParams();
+        layoutParams.flags |= 2;
+        layoutParams.dimAmount = 0.2f;
+        windowManager.updateViewLayout(rootView, layoutParams);
+    }
+
+    public final void c(View view) {
+        if (getContentView() instanceof i31) {
+            ((i31) getContentView()).s(new y21(this, 1));
+        }
+        if (this.a != null) {
+            ViewTreeObserver viewTreeObserver = view.getWindowToken() != null ? view.getViewTreeObserver() : null;
+            ViewTreeObserver viewTreeObserver2 = this.b;
+            if (viewTreeObserver != viewTreeObserver2) {
+                if (viewTreeObserver2 != null && viewTreeObserver2.isAlive()) {
+                    this.b.removeOnScrollChangedListener(this.a);
+                }
+                this.b = viewTreeObserver;
+                if (viewTreeObserver != null) {
+                    viewTreeObserver.addOnScrollChangedListener(this.a);
+                }
+            }
+        }
+    }
+
+    @Override // android.widget.PopupWindow
+    public void dismiss() {
+        if (!(getContentView() instanceof i31)) {
+            super.dismiss();
             return;
         }
-        org.telegram.ui.Cells.b9 b9Var = (org.telegram.ui.Cells.b9) view;
-        boolean z11 = this.d;
-        a31 a31Var = this.e;
-        TranslateController.Language language = null;
-        if (!z11) {
-            int i12 = a31Var.e;
-            if (i12 >= 0 && i10 > i12) {
-                i10--;
-            }
-            if (i10 >= 0 && i10 < a31Var.h.size()) {
-                language = (TranslateController.Language) a31Var.h.get(i10);
-            }
-            z10 = false;
-        } else if (i10 >= 0 && i10 < a31Var.f.size()) {
-            language = (TranslateController.Language) a31Var.f.get(i10);
+        i31 i31Var = (i31) getContentView();
+        y21 y21Var = new y21(this, 0);
+        Integer num = i31Var.Z1;
+        if (num != null) {
+            i31.d2.put(num, i31Var.r0.e0());
         }
-        if (language == null) {
+        ValueAnimator valueAnimator = i31Var.W1;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+            i31Var.W1 = null;
+        }
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+        i31Var.W1 = ofFloat;
+        ofFloat.addUpdateListener(new j11(i31Var, 3));
+        i31Var.W1.addListener(new org.telegram.ui.Components.iw0(10, (Object) i31Var, (Object) y21Var));
+        i31Var.W1.setDuration(200L);
+        i31Var.W1.setInterpolator(org.telegram.ui.Components.gr.h);
+        i31Var.W1.start();
+        a21 a21Var = i31Var.f0;
+        if (a21Var != null) {
+            org.telegram.messenger.i0.v1(a21Var.h);
+        }
+        View rootView = getContentView().getRootView();
+        WindowManager windowManager = (WindowManager) getContentView().getContext().getSystemService("window");
+        if (rootView.getLayoutParams() == null || !(rootView.getLayoutParams() instanceof WindowManager.LayoutParams)) {
             return;
         }
-        String str = language.ownDisplayName;
-        if (str == null) {
-            str = language.displayName;
+        WindowManager.LayoutParams layoutParams = (WindowManager.LayoutParams) rootView.getLayoutParams();
+        try {
+            int i10 = layoutParams.flags;
+            if ((i10 & 2) != 0) {
+                layoutParams.flags = i10 & (-3);
+                layoutParams.dimAmount = 0.0f;
+                windowManager.updateViewLayout(rootView, layoutParams);
+            }
+        } catch (Exception unused) {
         }
-        b9Var.b(str, language.displayName, false, !z10);
-        b9Var.setChecked(a31Var.r.contains(language.code));
     }
 
-    @Override // s4.h0
-    public final s4.e1 x(ViewGroup viewGroup, int i10) {
-        View view;
-        Context context = this.c;
-        if (i10 == 0) {
-            view = new org.telegram.ui.Cells.b9(context);
-        } else if (i10 != 2) {
-            view = new org.telegram.ui.Cells.f7(context, (d3) null);
-        } else {
-            org.telegram.ui.Cells.q4 q4Var = new org.telegram.ui.Cells.q4(context);
-            q4Var.setText(LocaleController.getString(R.string.ChooseLanguages));
-            view = q4Var;
+    @Override // android.widget.PopupWindow
+    public final void showAsDropDown(View view) {
+        super.showAsDropDown(view);
+        c(view);
+    }
+
+    @Override // android.widget.PopupWindow
+    public final void showAtLocation(View view, int i10, int i11, int i12) {
+        ViewTreeObserver viewTreeObserver;
+        super.showAtLocation(view, i10, i11, i12);
+        if (this.a == null || (viewTreeObserver = this.b) == null) {
+            return;
         }
-        return new org.telegram.ui.Components.wl0(view);
+        if (viewTreeObserver.isAlive()) {
+            this.b.removeOnScrollChangedListener(this.a);
+        }
+        this.b = null;
+    }
+
+    @Override // android.widget.PopupWindow
+    public final void showAsDropDown(View view, int i10, int i11) {
+        super.showAsDropDown(view, i10, i11);
+        c(view);
+    }
+
+    @Override // android.widget.PopupWindow
+    public final void showAsDropDown(View view, int i10, int i11, int i12) {
+        super.showAsDropDown(view, i10, i11, i12);
+        c(view);
     }
 }

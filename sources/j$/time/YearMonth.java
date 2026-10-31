@@ -9,7 +9,6 @@ import java.io.InvalidObjectException;
 import java.io.ObjectInputStream;
 import java.io.Serializable;
 import java.util.Locale;
-import org.telegram.messenger.MediaDataController;
 
 /* loaded from: classes2.dex */
 public final class YearMonth implements Temporal, j$.time.temporal.m, Comparable<YearMonth>, Serializable {
@@ -211,7 +210,7 @@ public final class YearMonth implements Temporal, j$.time.temporal.m, Comparable
             case 4:
                 return J(j$.com.android.tools.r8.a.S(j10, 100));
             case 5:
-                return J(j$.com.android.tools.r8.a.S(j10, MediaDataController.MAX_STYLE_RUNS_COUNT));
+                return J(j$.com.android.tools.r8.a.S(j10, 1000));
             case 6:
                 j$.time.temporal.a aVar = j$.time.temporal.a.ERA;
                 return c(j$.com.android.tools.r8.a.N(y(aVar), j10), aVar);

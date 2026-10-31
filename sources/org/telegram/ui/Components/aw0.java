@@ -1,23 +1,16 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class aw0 {
-    public final int a;
-    public final int b;
-    public final zv0 c;
-    public final yv0 d;
-    public final /* synthetic */ bw0 e;
-
-    public aw0(bw0 bw0Var, Context context, int i10) {
-        this.e = bw0Var;
-        this.b = i10;
-        int i11 = bw0Var.l2;
-        bw0Var.l2 = i11 + 1;
-        this.a = (i11 & 65535) | 65536;
-        this.c = new zv0(this, context, i10);
-        this.d = new yv0(bw0Var, context, i10, false);
+public final class aw0 extends org.telegram.messenger.b3 {
+    @Override // org.telegram.messenger.b3
+    public final void f(int i10, Object obj, long j10, org.telegram.messenger.a3 a3Var) {
+        TLRPC.TL_messages_searchCustomEmoji tL_messages_searchCustomEmoji = new TLRPC.TL_messages_searchCustomEmoji();
+        tL_messages_searchCustomEmoji.emoticon = (String) obj;
+        tL_messages_searchCustomEmoji.hash = j10;
+        ConnectionsManager.getInstance(i10).sendRequest(tL_messages_searchCustomEmoji, new yv0(a3Var, 1));
     }
 }

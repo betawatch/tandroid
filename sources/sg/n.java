@@ -1,74 +1,39 @@
 package sg;
 
-import fi.b5;
-import java.util.List;
-import org.telegram.ui.Components.h21;
-import org.telegram.ui.Components.kb1;
-import org.telegram.ui.fx;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.beta.R;
+import org.telegram.ui.Components.o5;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class n implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ m0 b;
+public final class n extends o5 {
+    public final Bitmap a;
 
-    public /* synthetic */ n(m0 m0Var, int i10) {
-        this.a = i10;
-        this.b = m0Var;
+    public n(o oVar) {
+        super(-1L, (Paint.FontMetricsInt) null);
+        Bitmap createBitmap = Bitmap.createBitmap(org.telegram.messenger.i0.L(24.0f), org.telegram.messenger.i0.L(24.0f), Bitmap.Config.ARGB_8888);
+        this.a = createBitmap;
+        Drawable mutate = oVar.getParentActivity().getResources().getDrawable(R.drawable.star_small_inner).mutate();
+        mutate.setBounds(0, 0, org.telegram.messenger.i0.L(24.0f), org.telegram.messenger.i0.L(24.0f));
+        mutate.draw(new Canvas(createBitmap));
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                m0 m0Var = this.b;
-                h21 h21Var = m0Var.P0;
-                if (h21Var != null) {
-                    m0Var.P0 = null;
-                    m0Var.removeView(h21Var);
-                    break;
-                }
-                break;
-            case 1:
-                m0 m0Var2 = this.b;
-                if (m0Var2.t0 != null) {
-                    m0Var2.v0.postRunnable(new n(m0Var2, 3), 200L);
-                    break;
-                }
-                break;
-            case 2:
-                x1 x1Var = this.b.a1;
-                if (x1Var != null) {
-                    x1Var.invalidate();
-                    break;
-                }
-                break;
-            case 3:
-                m0.Y(this.b);
-                break;
-            default:
-                m0 m0Var3 = this.b;
-                boolean z10 = rg.s0.e(m0Var3.E1).k;
-                int i10 = 0;
-                while (true) {
-                    List list = rg.l.b;
-                    if (i10 >= list.size()) {
-                        break;
-                    } else {
-                        rg.l lVar = (rg.l) list.get(i10);
-                        int m10 = z10 ? lVar.m() : lVar.e();
-                        String n10 = lVar.n();
-                        fx fxVar = new fx(m0Var3, lVar, m10, 25);
-                        l0 l0Var = new l0(m0Var3, m0Var3.getContext());
-                        l0Var.setIcon(m10);
-                        l0Var.setText(n10);
-                        l0Var.setSelected(false);
-                        l0Var.setOnClickListener(new ig.d0(fxVar, 18));
-                        l0Var.setOnLongClickListener(new b5(m0Var3, 6));
-                        m0Var3.H1.a(l0Var, kb1.r(-1, 48));
-                        i10++;
-                    }
-                }
-        }
+    @Override // org.telegram.ui.Components.o5, android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
+        super.draw(canvas, charSequence, i10, i11, f7, i12, i13, i14, paint);
+        canvas.save();
+        canvas.translate(f7, ((i12 + i14) / 2.0f) - org.telegram.messenger.i0.L(12.0f));
+        float f10 = this.extraScale;
+        canvas.scale(f10, f10, f7 + org.telegram.messenger.i0.L(12.0f), org.telegram.messenger.i0.L(12.0f));
+        canvas.drawBitmap(this.a, 0.0f, 0.0f, (Paint) null);
+        canvas.restore();
+    }
+
+    @Override // org.telegram.ui.Components.o5, android.text.style.ReplacementSpan
+    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
+        return org.telegram.messenger.i0.L(5.0f) + super.getSize(paint, charSequence, i10, i11, fontMetricsInt);
     }
 }

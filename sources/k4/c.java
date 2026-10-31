@@ -1,29 +1,28 @@
 package k4;
 
-import a8.yb;
 import android.util.Pair;
-import b2.x0;
-import c3.j0;
+import b2.w0;
+import c3.k0;
 import c3.o;
 import c3.p;
 import c3.q;
 import c3.s;
-import e2.n0;
 import e2.x;
+import e9.l0;
+import e9.n0;
+import e9.x1;
 import f2.u;
-import f9.g0;
-import f9.i0;
-import f9.s1;
-import g2.l;
+import g2.m;
 import java.nio.ByteOrder;
 import java.util.Arrays;
 import java.util.List;
+import v7.t6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class c implements o {
     public q a;
-    public j0 b;
+    public k0 b;
     public int c;
     public long d;
     public b e;
@@ -38,7 +37,7 @@ public final class c implements o {
     @Override // c3.o
     public final void c(q qVar) {
         this.a = qVar;
-        this.b = qVar.F1(0, 1);
+        this.b = qVar.I1(0, 1);
         qVar.Q0();
     }
 
@@ -53,20 +52,20 @@ public final class c implements o {
 
     @Override // c3.o
     public final List e() {
-        g0 g0Var = i0.b;
-        return s1.e;
+        l0 l0Var = n0.b;
+        return x1.e;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:73:0x0214, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:73:0x0213, code lost:
     
         if (r9 != 65534) goto L78;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:80:0x021b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:80:0x021a, code lost:
     
         if (r2 == 32) goto L81;
      */
-    /* JADX WARN: Removed duplicated region for block: B:76:0x0229  */
-    /* JADX WARN: Removed duplicated region for block: B:77:0x023b  */
+    /* JADX WARN: Removed duplicated region for block: B:76:0x0228  */
+    /* JADX WARN: Removed duplicated region for block: B:77:0x023a  */
     @Override // c3.o
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -75,21 +74,21 @@ public final class c implements o {
         byte[] bArr;
         int i10;
         this.b.getClass();
-        String str = n0.a;
+        String str = e2.l0.a;
         int i11 = this.c;
         int i12 = 4;
         if (i11 == 0) {
-            yb.p(pVar.getPosition() == 0);
+            t6.p(pVar.getPosition() == 0);
             int i13 = this.f;
             if (i13 != -1) {
-                pVar.r(i13);
+                pVar.q(i13);
                 this.c = 4;
                 return 0;
             }
             if (!e.a(pVar)) {
-                throw x0.a(null, "Unsupported or unrecognized wav file type.");
+                throw w0.a(null, "Unsupported or unrecognized wav file type.");
             }
-            pVar.r((int) (pVar.i() - pVar.getPosition()));
+            pVar.q((int) (pVar.k() - pVar.getPosition()));
             this.c = 1;
             return 0;
         }
@@ -98,13 +97,13 @@ public final class c implements o {
             x xVar = new x(8);
             d b10 = d.b(pVar, xVar);
             if (b10.a != 1685272116) {
-                pVar.p();
+                pVar.m();
             } else {
-                pVar.j(8);
+                pVar.l(8);
                 xVar.N(0);
                 pVar.b(0, 8, xVar.a);
                 j10 = xVar.p();
-                pVar.r(((int) b10.b) + 8);
+                pVar.q(((int) b10.b) + 8);
             }
             this.d = j10;
             this.c = 2;
@@ -115,15 +114,15 @@ public final class c implements o {
                 if (i11 != 4) {
                     throw new IllegalStateException();
                 }
-                yb.p(this.g != -1);
+                t6.p(this.g != -1);
                 long position = this.g - pVar.getPosition();
                 b bVar = this.e;
                 bVar.getClass();
                 return bVar.b(pVar, position) ? -1 : 0;
             }
-            pVar.p();
+            pVar.m();
             d b11 = e.b(1684108385, pVar, new x(8));
-            pVar.r(8);
+            pVar.q(8);
             Pair create = Pair.create(Long.valueOf(pVar.getPosition()), Long.valueOf(b11.b));
             this.f = ((Long) create.first).intValue();
             long longValue = ((Long) create.second).longValue();
@@ -145,7 +144,7 @@ public final class c implements o {
         }
         x xVar2 = new x(16);
         long j12 = e.b(1718449184, pVar, xVar2).b;
-        yb.p(j12 >= 16);
+        t6.p(j12 >= 16);
         pVar.b(0, 16, xVar2.a);
         xVar2.N(0);
         int t10 = xVar2.t();
@@ -163,26 +162,26 @@ public final class c implements o {
                 xVar3.t();
                 int t14 = xVar3.t();
                 if (t14 != 0 && t14 != t13) {
-                    throw x0.c("validBits ( " + t14 + ")  != bitsPerSample( " + t13 + ") are not supported");
+                    throw w0.c("validBits ( " + t14 + ")  != bitsPerSample( " + t13 + ") are not supported");
                 }
                 int s11 = xVar3.s();
                 if ((s11 >> 18) != 0) {
-                    throw x0.c("invalid channel mask " + s11);
+                    throw w0.c("invalid channel mask " + s11);
                 }
                 if (s11 != 0 && Integer.bitCount(s11) != t11) {
-                    throw x0.c("invalid number of channels (" + Integer.bitCount(s11) + ") in channel mask " + s11);
+                    throw w0.c("invalid number of channels (" + Integer.bitCount(s11) + ") in channel mask " + s11);
                 }
                 t10 = xVar3.t();
                 byte[] bArr2 = new byte[14];
                 xVar3.k(0, 14, bArr2);
                 if (!Arrays.equals(bArr2, e.a) && !Arrays.equals(bArr2, e.b)) {
-                    throw x0.c("invalid wav format extension guid");
+                    throw w0.c("invalid wav format extension guid");
                 }
             }
         } else {
-            bArr = n0.b;
+            bArr = e2.l0.b;
         }
-        pVar.r((int) (pVar.i() - pVar.getPosition()));
+        pVar.q((int) (pVar.k() - pVar.getPosition()));
         u uVar = new u();
         uVar.a = t11;
         uVar.b = s10;
@@ -192,20 +191,20 @@ public final class c implements o {
         if (t10 == 17) {
             this.e = new a(this.a, this.b, uVar);
         } else if (t10 == 6) {
-            this.e = new l(this.a, this.b, uVar, "audio/g711-alaw", -1);
+            this.e = new m(this.a, this.b, uVar, "audio/g711-alaw", -1);
         } else if (t10 == 7) {
-            this.e = new l(this.a, this.b, uVar, "audio/g711-mlaw", -1);
+            this.e = new m(this.a, this.b, uVar, "audio/g711-mlaw", -1);
         } else {
             if (t10 != 1) {
                 if (t10 != 3) {
                 }
                 i10 = 0;
                 if (i10 != 0) {
-                    throw x0.c("Unsupported WAV format type: " + t10);
+                    throw w0.c("Unsupported WAV format type: " + t10);
                 }
-                this.e = new l(this.a, this.b, uVar, "audio/raw", i10);
+                this.e = new m(this.a, this.b, uVar, "audio/raw", i10);
             }
-            i12 = n0.D(t13, ByteOrder.LITTLE_ENDIAN);
+            i12 = e2.l0.D(t13, ByteOrder.LITTLE_ENDIAN);
             i10 = i12;
             if (i10 != 0) {
             }

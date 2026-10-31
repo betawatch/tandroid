@@ -1,37 +1,68 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.MessagesStorage;
+import java.util.HashMap;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final /* synthetic */ class hf implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesStorage b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ MessagesStorage.IntCallback d;
+public final class hf extends ze {
+    public String B;
+    public String C;
+    public String D;
+    public int E;
+    public int F;
+    public int G;
+    public int H;
+    public CharSequence I;
+    public TLRPC.Document J;
+    public TLRPC.Photo K;
+    public TLRPC.PhotoSize L;
+    public TLRPC.PhotoSize M;
+    public TLRPC.BotInlineResult N;
+    public HashMap O;
 
-    public /* synthetic */ hf(MessagesStorage messagesStorage, long j10, MessagesStorage.IntCallback intCallback, int i10) {
-        this.a = i10;
-        this.b = messagesStorage;
-        this.c = j10;
-        this.d = intCallback;
+    @Override // org.telegram.messenger.ze
+    public final String a() {
+        if (this.L != null) {
+            b8.G(d20.s0);
+            return b8.K(this.L, null, true, true).getAbsolutePath();
+        }
+        if (this.J == null) {
+            return hc.A(this.C).getAbsolutePath();
+        }
+        b8.G(d20.s0);
+        return b8.K(this.J, null, true, true).getAbsolutePath();
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.lambda$getDialogMaxMessageId$259(this.c, this.d);
-                break;
-            case 1:
-                this.b.lambda$getDialogFolderId$247(this.c, this.d);
-                break;
-            case 2:
-                this.b.lambda$getMessagesCount$162(this.c, this.d);
-                break;
-            default:
-                this.b.lambda$getSavedDialogMaxMessageId$56(this.c, this.d);
-                break;
+    /* renamed from: f, reason: merged with bridge method [inline-methods] */
+    public final hf clone() {
+        hf hfVar = new hf();
+        hfVar.B = this.B;
+        hfVar.C = this.C;
+        hfVar.D = this.D;
+        hfVar.E = this.E;
+        hfVar.F = this.F;
+        hfVar.G = this.G;
+        hfVar.H = this.H;
+        hfVar.I = this.I;
+        hfVar.J = this.J;
+        hfVar.K = this.K;
+        hfVar.L = this.L;
+        hfVar.M = this.M;
+        hfVar.N = this.N;
+        hfVar.O = this.O;
+        return hfVar;
+    }
+
+    public final String g() {
+        if (this.L != null) {
+            b8.G(d20.s0);
+            return b8.K(this.L, null, true, true).getAbsolutePath();
         }
+        if (this.J == null) {
+            return this.C;
+        }
+        b8.G(d20.s0);
+        return b8.K(this.J, null, true, true).getAbsolutePath();
     }
 }

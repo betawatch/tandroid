@@ -4,47 +4,45 @@ import android.graphics.Point;
 import android.graphics.Rect;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class d1 extends s4.n0 {
+public final class d1 extends s4.m0 {
     public final /* synthetic */ j1 a;
 
     public d1(j1 j1Var) {
         this.a = j1Var;
     }
 
-    @Override // s4.n0
-    public final void d(Rect rect, View view, RecyclerView recyclerView, s4.b1 b1Var) {
-        i1 i1Var = this.a.v;
+    @Override // s4.m0
+    public final void c(Rect rect, View view, RecyclerView recyclerView, s4.z0 z0Var) {
+        i1 i1Var = this.a.w;
         int i10 = 0;
         rect.bottom = 0;
-        MessageObject.GroupedMessagePosition groupedMessagePosition = view instanceof c2 ? (MessageObject.GroupedMessagePosition) i1Var.b.get(((c2) view).N) : view instanceof w2 ? (MessageObject.GroupedMessagePosition) i1Var.b.get(((w2) view).L) : null;
-        if (groupedMessagePosition == null || groupedMessagePosition.siblingHeights == null) {
+        org.telegram.messenger.bj bjVar = view instanceof b2 ? (org.telegram.messenger.bj) i1Var.b.get(((b2) view).N) : view instanceof v2 ? (org.telegram.messenger.bj) i1Var.b.get(((v2) view).L) : null;
+        if (bjVar == null || bjVar.m == null) {
             return;
         }
-        Point point = AndroidUtilities.displaySize;
+        Point point = org.telegram.messenger.i0.q;
         float max = Math.max(point.x, point.y) * 0.5f;
         int i11 = 0;
         int i12 = 0;
         while (true) {
-            if (i11 >= groupedMessagePosition.siblingHeights.length) {
+            if (i11 >= bjVar.m.length) {
                 break;
             }
             i12 += (int) Math.ceil(r3[i11] * max);
             i11++;
         }
-        int dp2 = (AndroidUtilities.dp2(11.0f) * (groupedMessagePosition.maxY - groupedMessagePosition.minY)) + i12;
+        int M = (org.telegram.messenger.i0.M(11.0f) * (bjVar.d - bjVar.c)) + i12;
         int size = i1Var.a.size();
         while (true) {
             if (i10 < size) {
-                MessageObject.GroupedMessagePosition groupedMessagePosition2 = (MessageObject.GroupedMessagePosition) i1Var.a.get(i10);
-                byte b10 = groupedMessagePosition2.minY;
-                byte b11 = groupedMessagePosition.minY;
-                if (b10 == b11 && ((groupedMessagePosition2.minX != groupedMessagePosition.minX || groupedMessagePosition2.maxX != groupedMessagePosition.maxX || b10 != b11 || groupedMessagePosition2.maxY != groupedMessagePosition.maxY) && b10 == b11)) {
-                    dp2 = org.telegram.messenger.t.B(4.0f, (int) Math.ceil(max * groupedMessagePosition2.ph), dp2);
+                org.telegram.messenger.bj bjVar2 = (org.telegram.messenger.bj) i1Var.a.get(i10);
+                byte b10 = bjVar2.c;
+                byte b11 = bjVar.c;
+                if (b10 == b11 && ((bjVar2.a != bjVar.a || bjVar2.b != bjVar.b || b10 != b11 || bjVar2.d != bjVar.d) && b10 == b11)) {
+                    M = org.telegram.messenger.m5.B(4.0f, (int) Math.ceil(max * bjVar2.f), M);
                     break;
                 }
                 i10++;
@@ -52,6 +50,6 @@ public final class d1 extends s4.n0 {
                 break;
             }
         }
-        rect.bottom = -dp2;
+        rect.bottom = -M;
     }
 }

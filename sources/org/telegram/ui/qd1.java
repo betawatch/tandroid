@@ -1,44 +1,88 @@
 package org.telegram.ui;
 
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class qd1 extends org.telegram.ui.Components.mm0 {
-    public final ArrayList c = new ArrayList();
-    public final ArrayList d = new ArrayList();
-    public pd1 e;
-    public int f;
-    public final /* synthetic */ rd1 h;
+public final class qd1 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ be1 b;
 
-    public qd1(rd1 rd1Var) {
-        this.h = rd1Var;
+    public /* synthetic */ qd1(be1 be1Var, int i10) {
+        this.a = i10;
+        this.b = be1Var;
     }
 
-    @Override // org.telegram.ui.Components.mm0
-    public final boolean D(s4.e1 e1Var) {
-        return true;
-    }
-
-    @Override // s4.h0
-    public final int h() {
-        return this.c.size();
-    }
-
-    @Override // s4.h0
-    public final void v(s4.e1 e1Var, int i10) {
-        ArrayList arrayList = this.c;
-        TLRPC.Chat chat = (TLRPC.Chat) arrayList.get(i10);
-        String str = (String) this.d.get(i10);
-        org.telegram.ui.Cells.k4 k4Var = (org.telegram.ui.Cells.k4) e1Var.a;
-        k4Var.e(chat, chat.title, str, i10 != arrayList.size() - 1);
-        k4Var.c(this.h.w.contains(Long.valueOf(chat.id)), false);
-    }
-
-    @Override // s4.h0
-    public final s4.e1 x(ViewGroup viewGroup, int i10) {
-        return new org.telegram.ui.Components.wl0(new org.telegram.ui.Cells.k4(viewGroup.getContext(), 1, 0, false));
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        ag.c2 c2Var;
+        ag.c2 c2Var2;
+        int i10 = this.a;
+        be1 be1Var = this.b;
+        switch (i10) {
+            case 0:
+                be1Var.i1 = null;
+                be1Var.f1 = 1.0f;
+                be1Var.Y0 = 0.0f;
+                be1Var.Z0 = 0.0f;
+                be1Var.s.invalidate();
+                break;
+            case 1:
+                org.telegram.ui.Components.voip.t1.d().a.setAlpha(1.0f);
+                org.telegram.messenger.i0.h3(new wv0(this, 28), 200L);
+                break;
+            case 2:
+                be1Var.L0.e();
+                be1Var.Y.setCornerRadius(-1.0f);
+                be1Var.E0 = false;
+                be1Var.Y.b0 = false;
+                be1Var.q0 = be1Var.p0;
+                be1Var.G();
+                break;
+            case 3:
+                for (org.telegram.ui.Components.g9 g9Var : be1Var.V) {
+                    org.telegram.ui.Components.f5 f5Var = g9Var.e;
+                    if (f5Var != null && (c2Var = f5Var.k) != null) {
+                        c2Var.t0 = true;
+                        c2Var.P0(false);
+                    }
+                }
+                break;
+            case 4:
+                be1Var.A();
+                for (org.telegram.ui.Components.g9 g9Var2 : be1Var.V) {
+                    org.telegram.ui.Components.f5 f5Var2 = g9Var2.e;
+                    if (f5Var2 != null && (c2Var2 = f5Var2.k) != null) {
+                        c2Var2.t0 = false;
+                        c2Var2.Q0();
+                    }
+                }
+                be1Var.R.setVisibility(8);
+                break;
+            case 5:
+                be1Var.E.setText(org.telegram.messenger.cd.L0(2131743516, null));
+                be1Var.E.animate().alpha(1.0f).setDuration(70L).setListener(null).start();
+                break;
+            case 6:
+                if (be1Var.Z.getTag() == null) {
+                    be1Var.Z.setVisibility(8);
+                    break;
+                }
+                break;
+            case 7:
+                be1Var.Y.setTranslationX(0.0f);
+                be1Var.Y.setTranslationY(0.0f);
+                be1Var.Y.setScaleY(1.0f);
+                be1Var.Y.setScaleX(1.0f);
+                be1Var.Y.setVisibility(8);
+                break;
+            case 8:
+                be1Var.D.setVisibility(8);
+                break;
+            default:
+                be1Var.e0.setVisibility(8);
+                break;
+        }
     }
 }

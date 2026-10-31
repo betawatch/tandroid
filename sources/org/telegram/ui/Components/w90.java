@@ -1,27 +1,43 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class w90 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ x90 b;
-    public final /* synthetic */ ba0 c;
+import android.graphics.Rect;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
 
-    public /* synthetic */ w90(x90 x90Var, ba0 ba0Var, int i10) {
-        this.a = i10;
-        this.b = x90Var;
-        this.c = ba0Var;
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final class w90 extends s4.m0 {
+    public final /* synthetic */ x90 a;
+
+    public w90(x90 x90Var) {
+        this.a = x90Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.k(this.c, false);
-                break;
-            default:
-                this.b.k(this.c, false);
-                break;
+    @Override // s4.m0
+    public final void c(Rect rect, View view, RecyclerView recyclerView, s4.z0 z0Var) {
+        int R;
+        rect.left = 0;
+        rect.right = 0;
+        rect.top = 0;
+        rect.bottom = 0;
+        s4.n0 layoutManager = recyclerView.getLayoutManager();
+        y90 y90Var = this.a.i3;
+        if (layoutManager != y90Var.d || (R = RecyclerView.R(view)) == 0 || y90Var.f.N()) {
+            return;
         }
+        if (y90Var.f.I() == null && y90Var.f.U == null) {
+            rect.top = org.telegram.messenger.i0.L(2.0f);
+        } else {
+            if (R == 0) {
+                return;
+            }
+            R--;
+            r90 r90Var = y90Var.d;
+            r90Var.B1();
+            if (R > r90Var.U) {
+                rect.top = org.telegram.messenger.i0.L(2.0f);
+            }
+        }
+        rect.right = y90Var.d.E1(R) ? 0 : org.telegram.messenger.i0.L(2.0f);
     }
 }

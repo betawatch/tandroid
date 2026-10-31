@@ -1,9 +1,9 @@
 package com.google.android.gms.vision.clearcut;
 
-import a8.uf;
 import android.content.Context;
 import android.util.Log;
-import com.google.android.gms.internal.clearcut.v1;
+import com.google.android.gms.common.api.internal.r;
+import com.google.android.gms.internal.clearcut.x1;
 import com.google.android.gms.internal.vision.c;
 import com.google.android.gms.internal.vision.e0;
 import com.google.android.gms.internal.vision.f0;
@@ -13,10 +13,11 @@ import com.google.android.gms.internal.vision.r0;
 import com.google.android.gms.internal.vision.u0;
 import com.google.android.gms.internal.vision.y1;
 import com.google.android.gms.internal.vision.z0;
-import j6.a;
+import i6.a;
 import java.io.IOException;
+import w7.s6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public class VisionClearcutLogger {
     private final a zza;
@@ -57,9 +58,9 @@ public class VisionClearcutLogger {
                 if (this.zzb) {
                     a aVar = this.zza;
                     aVar.getClass();
-                    bi.a aVar2 = new bi.a(aVar, bArr);
-                    ((v1) aVar2.e).c = i10;
-                    aVar2.b();
+                    r rVar = new r(aVar, bArr);
+                    ((x1) rVar.e).c = i10;
+                    rVar.b();
                     return;
                 }
                 e0 k10 = f0.k();
@@ -84,19 +85,19 @@ public class VisionClearcutLogger {
                         Log.e("Vision", "Would have logged:\n" + obj);
                     }
                 } catch (Exception e) {
-                    uf.a(e, "Parsing error", new Object[0]);
+                    s6.a(e, "Parsing error", new Object[0]);
                 }
-            } catch (Exception e10) {
-                c.a.q(e10);
-                uf.a(e10, "Failed to log", new Object[0]);
+            } catch (Exception e7) {
+                c.a.q(e7);
+                s6.a(e7, "Failed to log", new Object[0]);
             }
-        } catch (IOException e11) {
+        } catch (IOException e10) {
             String name = f0.class.getName();
             StringBuilder sb2 = new StringBuilder(name.length() + 72);
             sb2.append("Serializing ");
             sb2.append(name);
             sb2.append(" to a byte array threw an IOException (should never happen).");
-            throw new RuntimeException(sb2.toString(), e11);
+            throw new RuntimeException(sb2.toString(), e10);
         }
     }
 }

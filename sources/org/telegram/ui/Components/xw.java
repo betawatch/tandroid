@@ -1,65 +1,25 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class xw extends FrameLayout {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ sz b;
+public final class xw extends w7.d6 {
+    public final /* synthetic */ vy a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public xw(sz szVar, Context context, boolean z10) {
-        super(context);
-        this.b = szVar;
-        this.a = z10;
+    public xw(vy vyVar) {
+        this.a = vyVar;
     }
 
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j10) {
-        sz szVar = this.b;
-        dx dxVar = szVar.B0;
-        zw zwVar = szVar.D0;
-        cx cxVar = szVar.G0;
-        if (this.a || !(view == zwVar || view == cxVar)) {
-            return super.drawChild(canvas, view, j10);
-        }
-        canvas.save();
-        float y3 = dxVar.getY() + dxVar.getMeasuredHeight() + 1.0f;
-        if (view == zwVar) {
-            y3 = Math.max(y3, cxVar.getY() + cxVar.getMeasuredHeight() + 1.0f);
-        }
-        canvas.clipRect(0.0f, y3 - (AndroidUtilities.dp(16.0f) * szVar.a.e), getMeasuredWidth(), getMeasuredHeight());
-        boolean drawChild = super.drawChild(canvas, view, j10);
-        canvas.restore();
-        return drawChild;
+    @Override // w7.d6
+    public final void a() {
+        vy vyVar = this.a;
+        vyVar.f0 = false;
+        vyVar.P.B1();
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        sz szVar = this.b;
-        szVar.K0 = true;
-        szVar.Z();
-        ig.f1 f1Var = szVar.T0;
-        if (f1Var != null) {
-            f1Var.a();
-        }
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        sz szVar = this.b;
-        szVar.K0 = false;
-        szVar.Z();
-        ig.f1 f1Var = szVar.T0;
-        if (f1Var != null) {
-            f1Var.a();
-        }
+    @Override // w7.d6
+    public final void b() {
+        vy vyVar = this.a;
+        vyVar.P.B1();
+        vyVar.f0 = true;
     }
 }

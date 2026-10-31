@@ -1,64 +1,41 @@
 package s4;
 
-import java.util.ArrayList;
+import android.content.Context;
+import android.util.DisplayMetrics;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.ui.Wallet.x5;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public abstract class g1 extends m0 {
-    public boolean m;
-    public boolean n;
+public final class g1 extends b0 {
+    public final /* synthetic */ x5 r;
 
-    public g1() {
-        this.a = null;
-        this.b = new ArrayList();
-        this.c = 120L;
-        this.d = 120L;
-        this.e = 250L;
-        this.f = 250L;
-        this.g = 250L;
-        this.l = 0L;
-        this.m = true;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public g1(x5 x5Var, Context context) {
+        super(context);
+        this.r = x5Var;
     }
 
-    @Override // s4.m0
-    public boolean a(e1 e1Var, b2.v0 v0Var, b2.v0 v0Var2) {
-        int i10;
-        int i11;
-        if (v0Var != null && ((i10 = v0Var.a) != (i11 = v0Var2.a) || v0Var.b != v0Var2.b || this.n)) {
-            return r(e1Var, v0Var, i10, v0Var.b, i11, v0Var2.b);
+    @Override // s4.b0, s4.y0
+    public final void g(View view, x0 x0Var) {
+        RecyclerView recyclerView = this.r.a;
+        if (recyclerView == null) {
+            return;
         }
-        p(e1Var);
-        return true;
+        n0 layoutManager = recyclerView.getLayoutManager();
+        layoutManager.getClass();
+        int[] iArr = {0, n0.z(view) - layoutManager.F()};
+        int i10 = iArr[0];
+        int i11 = iArr[1];
+        int m10 = m(Math.max(Math.abs(i10), Math.abs(i11)));
+        if (m10 > 0) {
+            x0Var.b(i10, i11, m10, this.j);
+        }
     }
 
-    public abstract void p(e1 e1Var);
-
-    public abstract boolean q(e1 e1Var, e1 e1Var2, b2.v0 v0Var, int i10, int i11, int i12, int i13);
-
-    public abstract boolean r(e1 e1Var, b2.v0 v0Var, int i10, int i11, int i12, int i13);
-
-    public abstract void s(e1 e1Var, b2.v0 v0Var);
-
-    public boolean t(e1 e1Var) {
-        return !this.m || e1Var.h();
-    }
-
-    public final void u(e1 e1Var) {
-        w(e1Var);
-        d(e1Var);
-    }
-
-    public final void v(e1 e1Var) {
-        x(e1Var);
-        d(e1Var);
-    }
-
-    public void y() {
-    }
-
-    public void w(e1 e1Var) {
-    }
-
-    public void x(e1 e1Var) {
+    @Override // s4.b0
+    public final float l(DisplayMetrics displayMetrics) {
+        return 100.0f / displayMetrics.densityDpi;
     }
 }

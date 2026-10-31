@@ -1,18 +1,20 @@
 package x2;
 
-import b2.q1;
+import b2.p1;
 import b2.x;
-import c3.h0;
-import f9.i0;
-import f9.n1;
+import e9.b0;
+import e9.n0;
+import e9.s1;
+import e9.v1;
 import j$.util.Objects;
-import org.telegram.messenger.MediaController;
 import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
 import r2.w;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class n extends m {
+    public final int D;
     public final int E;
     public final int F;
     public final boolean G;
@@ -31,14 +33,13 @@ public final class n extends m {
     public final boolean n;
     public final boolean r;
     public final int s;
-    public final int v;
     public final int w;
     public final int x;
     public final int y;
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Removed duplicated region for block: B:106:0x01a6  */
-    /* JADX WARN: Removed duplicated region for block: B:115:0x01c8  */
+    /* JADX WARN: Removed duplicated region for block: B:106:0x01a1  */
+    /* JADX WARN: Removed duplicated region for block: B:115:0x01c3  */
     /* JADX WARN: Removed duplicated region for block: B:156:0x0147  */
     /* JADX WARN: Removed duplicated region for block: B:157:0x013c  */
     /* JADX WARN: Removed duplicated region for block: B:162:0x0120 A[EDGE_INSN: B:162:0x0120->B:84:0x0120 BREAK  A[LOOP:1: B:77:0x0109->B:160:0x011d], SYNTHETIC] */
@@ -59,8 +60,8 @@ public final class n extends m {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public n(int i10, q1 q1Var, int i11, j jVar, int i12, String str, int i13, boolean z10) {
-        super(i10, q1Var, i11);
+    public n(int i10, p1 p1Var, int i11, j jVar, int i12, String str, int i13, boolean z10) {
+        super(i10, p1Var, i11);
         boolean z11;
         boolean z12;
         int i14;
@@ -90,8 +91,8 @@ public final class n extends m {
         int i26;
         this.f = jVar;
         boolean z17 = jVar.x0;
-        i0 i0Var = jVar.m;
-        i0 i0Var2 = jVar.o;
+        n0 n0Var = jVar.m;
+        n0 n0Var2 = jVar.o;
         int i27 = z17 ? 24 : 16;
         int i28 = 0;
         this.I = false;
@@ -105,23 +106,23 @@ public final class n extends m {
                     if ((f7 != -1.0f || f7 >= jVar.g) && ((i23 = xVar2.j) == -1 || i23 >= jVar.h)) {
                         z12 = true;
                         this.h = z12;
-                        this.n = h0.e(i12, false);
+                        this.n = i0.a.b(i12, false);
                         x xVar4 = this.d;
                         float f11 = xVar4.D;
                         this.r = f11 == -1.0f && f11 >= 10.0f;
                         this.s = xVar4.j;
                         int i29 = xVar4.z;
-                        this.v = (i29 != -1 || (i20 = xVar4.A) == -1) ? -1 : i29 * i20;
+                        this.w = (i29 != -1 || (i20 = xVar4.A) == -1) ? -1 : i29 * i20;
                         i14 = 0;
                         while (true) {
-                            size = i0Var2.size();
+                            size = n0Var2.size();
                             i15 = ConnectionsManager.DEFAULT_DATACENTER_ID;
                             if (i14 < size) {
                                 i16 = 0;
                                 i14 = Integer.MAX_VALUE;
                                 break;
                             } else {
-                                i16 = o.i(this.d, (String) i0Var2.get(i14), false);
+                                i16 = o.i(this.d, (String) n0Var2.get(i14), false);
                                 if (i16 > 0) {
                                     break;
                                 } else {
@@ -129,11 +130,11 @@ public final class n extends m {
                                 }
                             }
                         }
-                        this.x = i14;
-                        this.y = i16;
+                        this.y = i14;
+                        this.D = i16;
                         int i30 = this.d.f;
                         int i31 = jVar.p;
-                        f9.q1 q1Var2 = o.l;
+                        v1 v1Var = o.l;
                         this.E = (i30 == 0 && i30 == i31) ? Integer.MAX_VALUE : Integer.bitCount(i30 & i31);
                         int i32 = this.d.f;
                         this.G = (i32 == 0 && (i32 & 1) == 0) ? false : true;
@@ -146,8 +147,8 @@ public final class n extends m {
                         }
                         i18 = 0;
                         while (true) {
-                            if (i18 < i0Var.size()) {
-                                if (str2 != null && str2.equals(i0Var.get(i18))) {
+                            if (i18 < n0Var.size()) {
+                                if (str2 != null && str2.equals(n0Var.get(i18))) {
                                     i15 = i18;
                                     break;
                                 }
@@ -156,7 +157,7 @@ public final class n extends m {
                                 break;
                             }
                         }
-                        this.w = i15;
+                        this.x = i15;
                         this.F = o.c(this.d, jVar.n);
                         this.K = i17 != 128 || i17 == 256;
                         z13 = i17 != 128;
@@ -188,7 +189,7 @@ public final class n extends m {
                                     z16 = -1;
                                     break;
                                 case 1331836730:
-                                    if (str2.equals(MediaController.VIDEO_MIME_TYPE)) {
+                                    if (str2.equals("video/avc")) {
                                         z16 = 3;
                                         break;
                                     }
@@ -230,8 +231,8 @@ public final class n extends m {
                                         z15 = this.e;
                                         jVar2 = this.f;
                                         xVar = this.d;
-                                        if ((xVar.f & 16384) == 0 && h0.e(i12, jVar2.B0) && (z15 || jVar2.w0)) {
-                                            i28 = (h0.e(i12, false) || !this.h || !z15 || xVar.j == -1 || jVar2.G || jVar2.F || (i27 & i12) == 0) ? 1 : 2;
+                                        if ((xVar.f & TLObject.FLAG_14) == 0 && i0.a.b(i12, jVar2.B0) && (z15 || jVar2.w0)) {
+                                            i28 = (i0.a.b(i12, false) || !this.h || !z15 || xVar.j == -1 || jVar2.G || jVar2.F || (i27 & i12) == 0) ? 1 : 2;
                                         }
                                         this.J = i28;
                                     }
@@ -244,8 +245,8 @@ public final class n extends m {
                             z15 = this.e;
                             jVar2 = this.f;
                             xVar = this.d;
-                            if ((xVar.f & 16384) == 0) {
-                                if (h0.e(i12, false)) {
+                            if ((xVar.f & TLObject.FLAG_14) == 0) {
+                                if (i0.a.b(i12, false)) {
                                 }
                             }
                             this.J = i28;
@@ -259,33 +260,33 @@ public final class n extends m {
                         z15 = this.e;
                         jVar2 = this.f;
                         xVar = this.d;
-                        if ((xVar.f & 16384) == 0) {
+                        if ((xVar.f & TLObject.FLAG_14) == 0) {
                         }
                         this.J = i28;
                     }
                 }
                 z12 = false;
                 this.h = z12;
-                this.n = h0.e(i12, false);
+                this.n = i0.a.b(i12, false);
                 x xVar42 = this.d;
                 float f112 = xVar42.D;
                 this.r = f112 == -1.0f && f112 >= 10.0f;
                 this.s = xVar42.j;
                 int i292 = xVar42.z;
-                this.v = (i292 != -1 || (i20 = xVar42.A) == -1) ? -1 : i292 * i20;
+                this.w = (i292 != -1 || (i20 = xVar42.A) == -1) ? -1 : i292 * i20;
                 i14 = 0;
                 while (true) {
-                    size = i0Var2.size();
+                    size = n0Var2.size();
                     i15 = ConnectionsManager.DEFAULT_DATACENTER_ID;
                     if (i14 < size) {
                     }
                     i14++;
                 }
-                this.x = i14;
-                this.y = i16;
+                this.y = i14;
+                this.D = i16;
                 int i302 = this.d.f;
                 int i312 = jVar.p;
-                f9.q1 q1Var22 = o.l;
+                v1 v1Var2 = o.l;
                 this.E = (i302 == 0 && i302 == i312) ? Integer.MAX_VALUE : Integer.bitCount(i302 & i312);
                 int i322 = this.d.f;
                 this.G = (i322 == 0 && (i322 & 1) == 0) ? false : true;
@@ -298,11 +299,11 @@ public final class n extends m {
                 }
                 i18 = 0;
                 while (true) {
-                    if (i18 < i0Var.size()) {
+                    if (i18 < n0Var.size()) {
                     }
                     i18++;
                 }
-                this.w = i15;
+                this.x = i15;
                 this.F = o.c(this.d, jVar.n);
                 this.K = i17 != 128 || i17 == 256;
                 if (i17 != 128) {
@@ -321,7 +322,7 @@ public final class n extends m {
                 z15 = this.e;
                 jVar2 = this.f;
                 xVar = this.d;
-                if ((xVar.f & 16384) == 0) {
+                if ((xVar.f & TLObject.FLAG_14) == 0) {
                 }
                 this.J = i28;
             }
@@ -334,26 +335,26 @@ public final class n extends m {
             }
             z12 = true;
             this.h = z12;
-            this.n = h0.e(i12, false);
+            this.n = i0.a.b(i12, false);
             x xVar422 = this.d;
             float f1122 = xVar422.D;
             this.r = f1122 == -1.0f && f1122 >= 10.0f;
             this.s = xVar422.j;
             int i2922 = xVar422.z;
-            this.v = (i2922 != -1 || (i20 = xVar422.A) == -1) ? -1 : i2922 * i20;
+            this.w = (i2922 != -1 || (i20 = xVar422.A) == -1) ? -1 : i2922 * i20;
             i14 = 0;
             while (true) {
-                size = i0Var2.size();
+                size = n0Var2.size();
                 i15 = ConnectionsManager.DEFAULT_DATACENTER_ID;
                 if (i14 < size) {
                 }
                 i14++;
             }
-            this.x = i14;
-            this.y = i16;
+            this.y = i14;
+            this.D = i16;
             int i3022 = this.d.f;
             int i3122 = jVar.p;
-            f9.q1 q1Var222 = o.l;
+            v1 v1Var22 = o.l;
             this.E = (i3022 == 0 && i3022 == i3122) ? Integer.MAX_VALUE : Integer.bitCount(i3022 & i3122);
             int i3222 = this.d.f;
             this.G = (i3222 == 0 && (i3222 & 1) == 0) ? false : true;
@@ -365,11 +366,11 @@ public final class n extends m {
             }
             i18 = 0;
             while (true) {
-                if (i18 < i0Var.size()) {
+                if (i18 < n0Var.size()) {
                 }
                 i18++;
             }
-            this.w = i15;
+            this.x = i15;
             this.F = o.c(this.d, jVar.n);
             this.K = i17 != 128 || i17 == 256;
             if (i17 != 128) {
@@ -388,32 +389,32 @@ public final class n extends m {
             z15 = this.e;
             jVar2 = this.f;
             xVar = this.d;
-            if ((xVar.f & 16384) == 0) {
+            if ((xVar.f & TLObject.FLAG_14) == 0) {
             }
             this.J = i28;
         }
         z12 = false;
         this.h = z12;
-        this.n = h0.e(i12, false);
+        this.n = i0.a.b(i12, false);
         x xVar4222 = this.d;
         float f11222 = xVar4222.D;
         this.r = f11222 == -1.0f && f11222 >= 10.0f;
         this.s = xVar4222.j;
         int i29222 = xVar4222.z;
-        this.v = (i29222 != -1 || (i20 = xVar4222.A) == -1) ? -1 : i29222 * i20;
+        this.w = (i29222 != -1 || (i20 = xVar4222.A) == -1) ? -1 : i29222 * i20;
         i14 = 0;
         while (true) {
-            size = i0Var2.size();
+            size = n0Var2.size();
             i15 = ConnectionsManager.DEFAULT_DATACENTER_ID;
             if (i14 < size) {
             }
             i14++;
         }
-        this.x = i14;
-        this.y = i16;
+        this.y = i14;
+        this.D = i16;
         int i30222 = this.d.f;
         int i31222 = jVar.p;
-        f9.q1 q1Var2222 = o.l;
+        v1 v1Var222 = o.l;
         this.E = (i30222 == 0 && i30222 == i31222) ? Integer.MAX_VALUE : Integer.bitCount(i30222 & i31222);
         int i32222 = this.d.f;
         this.G = (i32222 == 0 && (i32222 & 1) == 0) ? false : true;
@@ -425,11 +426,11 @@ public final class n extends m {
         }
         i18 = 0;
         while (true) {
-            if (i18 < i0Var.size()) {
+            if (i18 < n0Var.size()) {
             }
             i18++;
         }
-        this.w = i15;
+        this.x = i15;
         this.F = o.c(this.d, jVar.n);
         this.K = i17 != 128 || i17 == 256;
         if (i17 != 128) {
@@ -448,17 +449,17 @@ public final class n extends m {
         z15 = this.e;
         jVar2 = this.f;
         xVar = this.d;
-        if ((xVar.f & 16384) == 0) {
+        if ((xVar.f & TLObject.FLAG_14) == 0) {
         }
         this.J = i28;
     }
 
     public static int c(n nVar, n nVar2) {
-        f9.w c10 = f9.w.a.c(nVar.n, nVar2.n);
-        Integer valueOf = Integer.valueOf(nVar.x);
-        Integer valueOf2 = Integer.valueOf(nVar2.x);
-        n1 n1Var = n1.c;
-        return c10.b(valueOf, valueOf2, n1Var).a(nVar.y, nVar2.y).a(nVar.E, nVar2.E).b(Integer.valueOf(nVar.F), Integer.valueOf(nVar2.F), n1Var).c(nVar.G, nVar2.G).a(nVar.H, nVar2.H).c(nVar.r, nVar2.r).c(nVar.e, nVar2.e).c(nVar.h, nVar2.h).b(Integer.valueOf(nVar.w), Integer.valueOf(nVar2.w), n1Var).c(nVar.K, nVar2.K).c(nVar.M, nVar2.M).e();
+        b0 c10 = b0.a.c(nVar.n, nVar2.n);
+        Integer valueOf = Integer.valueOf(nVar.y);
+        Integer valueOf2 = Integer.valueOf(nVar2.y);
+        s1 s1Var = s1.c;
+        return c10.b(valueOf, valueOf2, s1Var).a(nVar.D, nVar2.D).a(nVar.E, nVar2.E).b(Integer.valueOf(nVar.F), Integer.valueOf(nVar2.F), s1Var).c(nVar.G, nVar2.G).a(nVar.H, nVar2.H).c(nVar.r, nVar2.r).c(nVar.e, nVar2.e).c(nVar.h, nVar2.h).b(Integer.valueOf(nVar.x), Integer.valueOf(nVar2.x), s1Var).c(nVar.K, nVar2.K).c(nVar.M, nVar2.M).e();
     }
 
     @Override // x2.m

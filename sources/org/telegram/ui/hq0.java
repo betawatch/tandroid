@@ -1,34 +1,11 @@
 package org.telegram.ui;
 
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class hq0 extends s4.u0 {
-    public final /* synthetic */ tq0 a;
-
-    public hq0(tq0 tq0Var) {
-        this.a = tq0Var;
-    }
-
-    @Override // s4.u0
-    public final void a(RecyclerView recyclerView, int i10) {
-        if (i10 == 1) {
-            AndroidUtilities.hideKeyboard(this.a.getParentActivity().getCurrentFocus());
-        }
-    }
-
-    @Override // s4.u0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        tq0 tq0Var = this.a;
-        if (tq0Var.J == null) {
-            int L0 = tq0Var.M.L0();
-            int abs = L0 == -1 ? 0 : Math.abs(tq0Var.M.N0() - L0) + 1;
-            if (abs <= 0 || L0 + abs <= tq0Var.M.B() - 2 || tq0Var.r || tq0Var.s) {
-                return;
-            }
-            tq0Var.e0(tq0Var.v, tq0Var.w, tq0Var.a == 1, true);
-        }
+public final class hq0 extends org.telegram.ui.Components.bt {
+    public hq0(Context context, String str) {
+        super(context, str);
     }
 }

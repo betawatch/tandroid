@@ -8,29 +8,30 @@ import android.text.TextUtils;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public class SmsReceiver extends BroadcastReceiver {
-    /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$onReceive$0(String str) {
-        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didReceiveSmsCode, str);
-    }
+    public static final /* synthetic */ int a = 0;
 
     @Override // android.content.BroadcastReceiver
-    public void onReceive(Context context, Intent intent) {
-        String str;
+    public final void onReceive(Context context, Intent intent) {
+        boolean z10;
         if (intent == null) {
             return;
         }
         try {
-            SharedPreferences sharedPreferences = ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", 0);
+            String str = "";
+            SharedPreferences sharedPreferences = w0.b.getSharedPreferences("mainconfig", 0);
             String string = sharedPreferences.getString("sms_hash", null);
-            if (!"com.google.android.gms.auth.api.phone.SMS_RETRIEVED".equals(intent.getAction())) {
-                str = "";
-            } else if (!AndroidUtilities.isWaitingForSms()) {
-                return;
-            } else {
-                str = (String) intent.getExtras().get("com.google.android.gms.auth.api.phone.EXTRA_SMS_MESSAGE");
+            if ("com.google.android.gms.auth.api.phone.SMS_RETRIEVED".equals(intent.getAction())) {
+                synchronized (i0.k) {
+                    z10 = i0.j;
+                }
+                if (!z10) {
+                    return;
+                } else {
+                    str = (String) intent.getExtras().get("com.google.android.gms.auth.api.phone.EXTRA_SMS_MESSAGE");
+                }
             }
             if (TextUtils.isEmpty(str)) {
                 return;
@@ -42,11 +43,11 @@ public class SmsReceiver extends BroadcastReceiver {
                     if (string != null) {
                         sharedPreferences.edit().putString("sms_hash_code", string + "|" + replace).commit();
                     }
-                    AndroidUtilities.runOnUIThread(new y1(replace, 5));
+                    i0.g3(new o4(replace, 5));
                 }
             }
         } catch (Throwable th2) {
-            FileLog.e(th2);
+            f8.g(th2, true);
         }
     }
 }

@@ -1,10 +1,18 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+import android.util.Property;
+import org.telegram.ui.Components.ChatActivityEnterView;
+
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class we extends rq {
-    @Override // org.telegram.ui.Components.rq
-    public final int a() {
-        return org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.of, false);
+public final class we extends Property {
+    @Override // android.util.Property
+    public final Object get(Object obj) {
+        return Float.valueOf(((ChatActivityEnterView.RecordCircle) obj).getScale());
+    }
+
+    @Override // android.util.Property
+    public final void set(Object obj, Object obj2) {
+        ((ChatActivityEnterView.RecordCircle) obj).setScale(((Float) obj2).floatValue());
     }
 }

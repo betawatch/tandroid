@@ -1,144 +1,45 @@
 package org.telegram.ui;
 
 import android.os.Bundle;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLObject;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.play.core.integrity.IntegrityTokenResponse;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class dc0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
+public final /* synthetic */ class dc0 implements OnSuccessListener {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ hf0 b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ TLRPC.auth_SentCode d;
+    public final /* synthetic */ Bundle e;
+    public final /* synthetic */ boolean f;
 
-    public /* synthetic */ dc0(Object obj, long j10, Object obj2, int i10) {
-        this.a = i10;
-        this.c = obj;
-        this.b = j10;
-        this.d = obj2;
+    public /* synthetic */ dc0(hf0 hf0Var, Bundle bundle, TLRPC.auth_SentCode auth_sentcode, String str, boolean z10) {
+        this.b = hf0Var;
+        this.e = bundle;
+        this.d = auth_sentcode;
+        this.c = str;
+        this.f = z10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // com.google.android.gms.tasks.OnSuccessListener
+    public final void onSuccess(Object obj) {
         switch (this.a) {
             case 0:
-                rc0 rc0Var = (rc0) this.c;
-                TLObject tLObject = (TLObject) this.d;
-                long j10 = this.b;
-                if (rc0Var.I == null) {
-                    return;
-                }
-                TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject;
-                int i10 = 0;
-                while (i10 < messages_messages.messages.size()) {
-                    if (!(messages_messages.messages.get(i10).media instanceof TLRPC.TL_messageMediaGeoLive)) {
-                        messages_messages.messages.remove(i10);
-                        i10--;
-                    }
-                    i10++;
-                }
-                rc0Var.getMessagesStorage().putUsersAndChats(messages_messages.users, messages_messages.chats, true, true);
-                rc0Var.getMessagesController().putUsers(messages_messages.users, false);
-                rc0Var.getMessagesController().putChats(messages_messages.chats, false);
-                rc0Var.getLocationController().locationsCache.k(messages_messages.messages, j10);
-                rc0Var.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.liveLocationsCacheChanged, Long.valueOf(j10));
-                rc0Var.j0(messages_messages.messages);
-                rc0Var.getLocationController().markLiveLoactionsAsRead(rc0Var.e0);
-                if (rc0Var.I0 == null) {
-                    zb0 zb0Var = new zb0(rc0Var, 4);
-                    rc0Var.I0 = zb0Var;
-                    AndroidUtilities.runOnUIThread(zb0Var, 5000L);
-                    return;
-                }
-                return;
-            case 1:
-                zv0 zv0Var = (zv0) this.c;
-                long j11 = this.b;
-                org.telegram.ui.ActionBar.r2 r2Var = (org.telegram.ui.ActionBar.r2) this.d;
-                zv0Var.getClass();
-                Bundle bundle = new Bundle();
-                if (j11 > 0) {
-                    bundle.putLong("user_id", j11);
-                } else {
-                    bundle.putLong("chat_id", -j11);
-                }
-                r2Var.presentFragment(new ProfileActivity(bundle, null));
-                zv0Var.c(false);
-                return;
-            case 2:
-                ti.e eVar = (ti.e) this.c;
-                ti.d dVar = (ti.d) this.d;
-                long j12 = this.b;
-                if (((ti.d) eVar.c) != dVar) {
-                    return;
-                }
-                ti.b bVar = (ti.b) eVar.e;
-                if (bVar != null) {
-                    AndroidUtilities.cancelRunOnUIThread(bVar);
-                    eVar.e = null;
-                }
-                synchronized (ti.j.y) {
-                    try {
-                        ti.j jVar = ti.j.A;
-                        if (jVar != null) {
-                            jVar.o();
-                            ti.j.A = null;
-                        }
-                    } catch (Throwable th2) {
-                        throw th2;
-                    }
-                }
-                eVar.c = null;
-                dVar.c.run(j12);
-                eVar.r();
-                return;
-            case 3:
-                dc.e eVar2 = (dc.e) this.c;
-                long j13 = this.b;
-                Exception exc = (Exception) this.d;
-                ui.o oVar = (ui.o) eVar2.c;
-                if (j13 != oVar.p) {
-                    return;
-                }
-                oVar.o = null;
-                ui.m mVar = oVar.n;
-                if (mVar != ui.m.s && mVar != ui.m.r) {
-                    oVar.g(exc);
-                    return;
-                }
-                oVar.h.a("capture error after session end", exc);
-                oVar.c();
-                oVar.s();
-                return;
+                hf0.Z(this.b, this.e, this.d, this.c, this.f, (IntegrityTokenResponse) obj);
+                break;
             default:
-                zh.p1 p1Var = (zh.p1) this.c;
-                Utilities.Callback callback = (Utilities.Callback) this.d;
-                long j14 = this.b;
-                p1Var.getClass();
-                org.telegram.ui.ActionBar.r2 U = LaunchActivity.U();
-                if (U == null) {
-                    return;
-                }
-                p1Var.dismiss();
-                if (callback != null) {
-                    callback.run(Boolean.FALSE);
-                }
-                Bundle bundle2 = new Bundle();
-                bundle2.putLong("user_id", j14);
-                bundle2.putBoolean("open_gifts", true);
-                U.presentFragment(new ProfileActivity(bundle2, null));
-                return;
+                hf0.b0(this.b, this.c, this.d, this.e, this.f, (m8.d) obj);
+                break;
         }
     }
 
-    public /* synthetic */ dc0(Object obj, Object obj2, long j10, int i10) {
-        this.a = i10;
-        this.c = obj;
-        this.d = obj2;
-        this.b = j10;
+    public /* synthetic */ dc0(hf0 hf0Var, String str, TLRPC.auth_SentCode auth_sentcode, Bundle bundle, boolean z10) {
+        this.b = hf0Var;
+        this.c = str;
+        this.d = auth_sentcode;
+        this.e = bundle;
+        this.f = z10;
     }
 }

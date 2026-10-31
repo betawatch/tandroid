@@ -5,5 +5,5 @@ import java.util.RandomAccess;
 
 /* loaded from: classes.dex */
 public interface c0 extends List, RandomAccess {
-    c0 f(int i10);
+    c0 g(int i10);
 }

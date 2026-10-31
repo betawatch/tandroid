@@ -1,14 +1,14 @@
 package p2;
 
-import a8.yb;
 import android.net.Uri;
-import b2.x0;
-import f9.i0;
+import b2.w0;
+import e9.n0;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import v7.t6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class w {
     public final v a;
@@ -29,7 +29,7 @@ public final class w {
         }
     }
 
-    public static i0 a(List list) {
+    public static n0 a(List list) {
         ArrayList arrayList = new ArrayList();
         HashMap hashMap = new HashMap();
         HashMap hashMap2 = new HashMap();
@@ -38,13 +38,13 @@ public final class w {
             Uri uri = nVar.a;
             try {
                 d(nVar.a, null, i10, arrayList, new v(nVar.b, nVar.d, nVar.c), hashMap, hashMap2);
-            } catch (x0 unused) {
+            } catch (w0 unused) {
             }
         }
-        return i0.u(arrayList);
+        return n0.u(arrayList);
     }
 
-    public static i0 b(List list) {
+    public static n0 b(List list) {
         ArrayList arrayList = new ArrayList();
         HashMap hashMap = new HashMap();
         HashMap hashMap2 = new HashMap();
@@ -52,7 +52,7 @@ public final class w {
             o oVar = (o) list.get(i10);
             d(oVar.a, oVar.g, i10, arrayList, new v(oVar.b, oVar.h, null), hashMap, hashMap2);
         }
-        return i0.u(arrayList);
+        return n0.u(arrayList);
     }
 
     public static void d(Uri uri, String str, int i10, ArrayList arrayList, v vVar, HashMap hashMap, HashMap hashMap2) {
@@ -76,13 +76,13 @@ public final class w {
             num2.getClass();
             int intValue = num2.intValue() + 1;
             if (intValue <= 1) {
-                yb.b(intValue, "invalid count: %s", intValue >= 0);
+                t6.c(intValue, "invalid count: %s", intValue >= 0);
                 str2 = intValue == 0 ? "" : ".";
             } else {
                 long j10 = 1 * intValue;
                 int i13 = (int) j10;
                 if (i13 != j10) {
-                    throw new ArrayIndexOutOfBoundsException(a1.g.o(j10, "Required array size too large: "));
+                    throw new ArrayIndexOutOfBoundsException(a1.g.l(j10, "Required array size too large: "));
                 }
                 char[] cArr = new char[i13];
                 ".".getChars(0, 1, cArr, 0);
@@ -103,7 +103,7 @@ public final class w {
         w wVar2 = (w) arrayList.get(num.intValue());
         Uri uri2 = (Uri) wVar2.b.get(str);
         if (uri2 != null && !uri.equals(uri2)) {
-            throw x0.b("Different playlist URLs are found for pathway ID " + str + " within the HlsRedundantGroup", null);
+            throw w0.b("Different playlist URLs are found for pathway ID " + str + " within the HlsRedundantGroup", null);
         }
         wVar2.b.put(str, uri);
         if (i10 != -1) {

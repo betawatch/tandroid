@@ -13,29 +13,30 @@ import android.view.ViewGroup;
 import android.view.accessibility.AccessibilityEvent;
 import android.widget.LinearLayout;
 import androidx.appcompat.view.menu.ActionMenuItemView;
-import jg.i;
-import jg.s0;
-import l.j;
+import k2.m0;
+import l.a0;
 import l.k;
-import l.m;
-import l.z;
+import l.l;
+import l.n;
 import m.g;
 import m.h;
-import m.u3;
+import m.i;
+import m.j;
+import m.s3;
 import m.v1;
 import m.w1;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public class ActionMenuView extends w1 implements j, z {
-    public k F;
+public class ActionMenuView extends w1 implements k, a0 {
+    public l F;
     public Context G;
     public int H;
     public boolean I;
     public h J;
-    public i K;
+    public m0 K;
     public boolean L;
     public int M;
     public final int N;
@@ -46,24 +47,24 @@ public class ActionMenuView extends w1 implements j, z {
         this(context, null);
     }
 
-    public static m.j i() {
-        m.j jVar = new m.j(-2, -2);
+    public static j i() {
+        j jVar = new j(-2, -2);
         jVar.a = false;
         ((LinearLayout.LayoutParams) jVar).gravity = 16;
         return jVar;
     }
 
-    public static m.j j(ViewGroup.LayoutParams layoutParams) {
-        m.j jVar;
+    public static j j(ViewGroup.LayoutParams layoutParams) {
+        j jVar;
         if (layoutParams == null) {
             return i();
         }
-        if (layoutParams instanceof m.j) {
-            m.j jVar2 = (m.j) layoutParams;
-            jVar = new m.j(jVar2);
+        if (layoutParams instanceof j) {
+            j jVar2 = (j) layoutParams;
+            jVar = new j(jVar2);
             jVar.a = jVar2.a;
         } else {
-            jVar = new m.j(layoutParams);
+            jVar = new j(layoutParams);
         }
         if (((LinearLayout.LayoutParams) jVar).gravity <= 0) {
             ((LinearLayout.LayoutParams) jVar).gravity = 16;
@@ -71,19 +72,19 @@ public class ActionMenuView extends w1 implements j, z {
         return jVar;
     }
 
-    @Override // l.j
-    public final boolean a(m mVar) {
-        return this.F.q(mVar, null, 0);
+    @Override // l.k
+    public final boolean a(n nVar) {
+        return this.F.q(nVar, null, 0);
     }
 
-    @Override // l.z
-    public final void b(k kVar) {
-        this.F = kVar;
+    @Override // l.a0
+    public final void b(l lVar) {
+        this.F = lVar;
     }
 
     @Override // m.w1, android.view.ViewGroup
     public final boolean checkLayoutParams(ViewGroup.LayoutParams layoutParams) {
-        return layoutParams instanceof m.j;
+        return layoutParams instanceof j;
     }
 
     @Override // android.view.View
@@ -100,7 +101,7 @@ public class ActionMenuView extends w1 implements j, z {
     @Override // m.w1
     /* renamed from: f */
     public final v1 generateLayoutParams(AttributeSet attributeSet) {
-        return new m.j(getContext(), attributeSet);
+        return new j(getContext(), attributeSet);
     }
 
     @Override // m.w1
@@ -122,14 +123,14 @@ public class ActionMenuView extends w1 implements j, z {
     public Menu getMenu() {
         if (this.F == null) {
             Context context = getContext();
-            k kVar = new k(context);
-            this.F = kVar;
-            kVar.e = new s0(this, 8);
+            l lVar = new l(context);
+            this.F = lVar;
+            lVar.e = new za.c(this, 29);
             h hVar = new h(context);
             this.J = hVar;
-            hVar.w = true;
             hVar.x = true;
-            hVar.e = new pa.d();
+            hVar.y = true;
+            hVar.e = new kb.a(11);
             this.F.b(hVar, this.G);
             h hVar2 = this.J;
             hVar2.n = this;
@@ -145,7 +146,7 @@ public class ActionMenuView extends w1 implements j, z {
         if (gVar != null) {
             return gVar.getDrawable();
         }
-        if (hVar.v) {
+        if (hVar.w) {
             return hVar.s;
         }
         return null;
@@ -166,10 +167,10 @@ public class ActionMenuView extends w1 implements j, z {
         }
         KeyEvent.Callback childAt = getChildAt(i10 - 1);
         KeyEvent.Callback childAt2 = getChildAt(i10);
-        if (i10 < getChildCount() && (childAt instanceof m.i)) {
-            z10 = ((m.i) childAt).a();
+        if (i10 < getChildCount() && (childAt instanceof i)) {
+            z10 = ((i) childAt).a();
         }
-        return (i10 <= 0 || !(childAt2 instanceof m.i)) ? z10 : ((m.i) childAt2).c() | z10;
+        return (i10 <= 0 || !(childAt2 instanceof i)) ? z10 : ((i) childAt2).c() | z10;
     }
 
     @Override // android.view.View
@@ -212,13 +213,13 @@ public class ActionMenuView extends w1 implements j, z {
         int dividerWidth = getDividerWidth();
         int i16 = i12 - i10;
         int paddingRight = (i16 - getPaddingRight()) - getPaddingLeft();
-        boolean a2 = u3.a(this);
+        boolean a2 = s3.a(this);
         int i17 = 0;
         int i18 = 0;
         for (int i19 = 0; i19 < childCount; i19++) {
             View childAt = getChildAt(i19);
             if (childAt.getVisibility() != 8) {
-                m.j jVar = (m.j) childAt.getLayoutParams();
+                j jVar = (j) childAt.getLayoutParams();
                 if (jVar.a) {
                     int measuredWidth = childAt.getMeasuredWidth();
                     if (k(i19)) {
@@ -258,7 +259,7 @@ public class ActionMenuView extends w1 implements j, z {
             int width2 = getWidth() - getPaddingRight();
             for (int i24 = 0; i24 < childCount; i24++) {
                 View childAt3 = getChildAt(i24);
-                m.j jVar2 = (m.j) childAt3.getLayoutParams();
+                j jVar2 = (j) childAt3.getLayoutParams();
                 if (childAt3.getVisibility() != 8 && !jVar2.a) {
                     int i25 = width2 - ((LinearLayout.LayoutParams) jVar2).rightMargin;
                     int measuredWidth3 = childAt3.getMeasuredWidth();
@@ -273,7 +274,7 @@ public class ActionMenuView extends w1 implements j, z {
         int paddingLeft = getPaddingLeft();
         for (int i27 = 0; i27 < childCount; i27++) {
             View childAt4 = getChildAt(i27);
-            m.j jVar3 = (m.j) childAt4.getLayoutParams();
+            j jVar3 = (j) childAt4.getLayoutParams();
             if (childAt4.getVisibility() != 8 && !jVar3.a) {
                 int i28 = paddingLeft + ((LinearLayout.LayoutParams) jVar3).leftMargin;
                 int measuredWidth4 = childAt4.getMeasuredWidth();
@@ -296,7 +297,7 @@ public class ActionMenuView extends w1 implements j, z {
         ?? r11;
         int i14;
         int i15;
-        k kVar;
+        l lVar;
         boolean z10 = this.L;
         boolean z11 = View.MeasureSpec.getMode(i10) == 1073741824;
         this.L = z11;
@@ -304,14 +305,14 @@ public class ActionMenuView extends w1 implements j, z {
             this.M = 0;
         }
         int size = View.MeasureSpec.getSize(i10);
-        if (this.L && (kVar = this.F) != null && size != this.M) {
+        if (this.L && (lVar = this.F) != null && size != this.M) {
             this.M = size;
-            kVar.p(true);
+            lVar.p(true);
         }
         int childCount = getChildCount();
         if (!this.L || childCount <= 0) {
             for (int i16 = 0; i16 < childCount; i16++) {
-                m.j jVar = (m.j) getChildAt(i16).getLayoutParams();
+                j jVar = (j) getChildAt(i16).getLayoutParams();
                 ((LinearLayout.LayoutParams) jVar).rightMargin = 0;
                 ((LinearLayout.LayoutParams) jVar).leftMargin = 0;
             }
@@ -357,7 +358,7 @@ public class ActionMenuView extends w1 implements j, z {
                 if (z13) {
                     childAt.setPadding(i12, 0, i12, 0);
                 }
-                m.j jVar2 = (m.j) childAt.getLayoutParams();
+                j jVar2 = (j) childAt.getLayoutParams();
                 jVar2.f = false;
                 jVar2.c = 0;
                 jVar2.b = 0;
@@ -366,7 +367,7 @@ public class ActionMenuView extends w1 implements j, z {
                 ((LinearLayout.LayoutParams) jVar2).rightMargin = 0;
                 jVar2.e = z13 && !TextUtils.isEmpty(((ActionMenuItemView) childAt).getText());
                 int i29 = jVar2.a ? 1 : i19;
-                m.j jVar3 = (m.j) childAt.getLayoutParams();
+                j jVar3 = (j) childAt.getLayoutParams();
                 int i30 = i19;
                 i14 = i21;
                 int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(childMeasureSpec) - i28, View.MeasureSpec.getMode(childMeasureSpec));
@@ -420,7 +421,7 @@ public class ActionMenuView extends w1 implements j, z {
             int i37 = 0;
             while (i37 < childCount2) {
                 int i38 = i22;
-                m.j jVar4 = (m.j) getChildAt(i37).getLayoutParams();
+                j jVar4 = (j) getChildAt(i37).getLayoutParams();
                 boolean z18 = z16;
                 if (jVar4.d) {
                     int i39 = jVar4.b;
@@ -447,7 +448,7 @@ public class ActionMenuView extends w1 implements j, z {
             int i41 = 0;
             while (i41 < childCount2) {
                 View childAt2 = getChildAt(i41);
-                m.j jVar5 = (m.j) childAt2.getLayoutParams();
+                j jVar5 = (j) childAt2.getLayoutParams();
                 boolean z20 = z12;
                 long j12 = 1 << i41;
                 if ((j11 & j12) != 0) {
@@ -478,11 +479,11 @@ public class ActionMenuView extends w1 implements j, z {
         if (i34 > 0 && j10 != 0 && (i34 < i23 - 1 || z21 || i24 > 1)) {
             float bitCount = Long.bitCount(j10);
             if (!z21) {
-                if ((j10 & 1) != 0 && !((m.j) getChildAt(0).getLayoutParams()).e) {
+                if ((j10 & 1) != 0 && !((j) getChildAt(0).getLayoutParams()).e) {
                     bitCount -= 0.5f;
                 }
                 int i42 = childCount2 - 1;
-                if ((j10 & (1 << i42)) != 0 && !((m.j) getChildAt(i42).getLayoutParams()).e) {
+                if ((j10 & (1 << i42)) != 0 && !((j) getChildAt(i42).getLayoutParams()).e) {
                     bitCount -= 0.5f;
                 }
             }
@@ -491,7 +492,7 @@ public class ActionMenuView extends w1 implements j, z {
             for (int i44 = 0; i44 < childCount2; i44++) {
                 if ((j10 & (1 << i44)) != 0) {
                     View childAt3 = getChildAt(i44);
-                    m.j jVar6 = (m.j) childAt3.getLayoutParams();
+                    j jVar6 = (j) childAt3.getLayoutParams();
                     if (childAt3 instanceof ActionMenuItemView) {
                         jVar6.c = i43;
                         jVar6.f = true;
@@ -519,7 +520,7 @@ public class ActionMenuView extends w1 implements j, z {
         if (z17) {
             for (int i45 = 0; i45 < childCount2; i45++) {
                 View childAt4 = getChildAt(i45);
-                m.j jVar7 = (m.j) childAt4.getLayoutParams();
+                j jVar7 = (j) childAt4.getLayoutParams();
                 if (jVar7.f) {
                     childAt4.measure(View.MeasureSpec.makeMeasureSpec((jVar7.b * i33) + jVar7.c, TLObject.FLAG_30), childMeasureSpec);
                 }
@@ -543,7 +544,7 @@ public class ActionMenuView extends w1 implements j, z {
         if (gVar != null) {
             gVar.setImageDrawable(drawable);
         } else {
-            hVar.v = true;
+            hVar.w = true;
             hVar.s = drawable;
         }
     }
@@ -581,6 +582,6 @@ public class ActionMenuView extends w1 implements j, z {
 
     @Override // m.w1, android.view.ViewGroup
     public final ViewGroup.LayoutParams generateLayoutParams(AttributeSet attributeSet) {
-        return new m.j(getContext(), attributeSet);
+        return new j(getContext(), attributeSet);
     }
 }

@@ -1,25 +1,56 @@
 package org.telegram.ui;
 
+import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
+import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
-import android.text.style.ImageSpan;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class xz extends ImageSpan {
-    public int a;
+public final class xz extends org.telegram.ui.Components.f6 {
+    public final /* synthetic */ int s = 0;
+    public final Object w;
+    public final /* synthetic */ ViewGroup x;
 
-    @Override // android.text.style.DynamicDrawableSpan, android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
-        if (paint.getColor() != this.a && getDrawable() != null) {
-            Drawable drawable = getDrawable();
-            int color = paint.getColor();
-            this.a = color;
-            drawable.setColorFilter(new PorterDuffColorFilter(color, PorterDuff.Mode.MULTIPLY));
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public xz(rh.w7 w7Var, Context context, Drawable drawable) {
+        super(context, false, false, false);
+        this.x = w7Var;
+        this.w = drawable;
+    }
+
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        switch (this.s) {
+            case 0:
+                yz yzVar = (yz) this.x;
+                int a2 = yzVar.x.a(yzVar.w, false);
+                setTextColor(a2);
+                Paint paint = (Paint) this.w;
+                paint.setColor(org.telegram.ui.ActionBar.t6.r1(org.telegram.ui.ActionBar.t6.I.q() ? 0.2f : 0.1f, a2));
+                RectF rectF = org.telegram.messenger.i0.P;
+                rectF.set((getWidth() - getDrawable().c()) - org.telegram.messenger.i0.N(9.32f), (getHeight() - org.telegram.messenger.i0.N(14.66f)) / 2.0f, getWidth(), (org.telegram.messenger.i0.N(14.66f) + getHeight()) / 2.0f);
+                canvas.drawRoundRect(rectF, org.telegram.messenger.i0.L(4.0f), org.telegram.messenger.i0.L(4.0f), paint);
+                super.dispatchDraw(canvas);
+                break;
+            default:
+                Drawable drawable = (Drawable) this.w;
+                if (!((rh.w7) this.x).d) {
+                    int measuredWidth = (int) ((getMeasuredWidth() - getDrawable().c()) - org.telegram.messenger.i0.L(20.0f));
+                    drawable.setBounds(measuredWidth, org.telegram.messenger.z20.y(17.0f, getMeasuredHeight(), 2), org.telegram.messenger.i0.L(17.0f) + measuredWidth, (org.telegram.messenger.i0.L(17.0f) + getMeasuredHeight()) / 2);
+                    drawable.draw(canvas);
+                }
+                super.dispatchDraw(canvas);
+                break;
         }
-        super.draw(canvas, charSequence, i10, i11, f7, i12, i13, i14, paint);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public xz(yz yzVar, Context context) {
+        super(context, false, true, true);
+        this.x = yzVar;
+        this.w = new Paint(1);
     }
 }

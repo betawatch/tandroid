@@ -2,7 +2,7 @@ package org.scilab.forge.jlatexmath;
 
 import a1.g;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public class AccentedAtom extends Atom {
     private boolean acc;
@@ -37,21 +37,21 @@ public class AccentedAtom extends Atom {
         float width = strutBox.getWidth();
         Atom atom2 = this.underbase;
         float skew = atom2 instanceof CharSymbol ? teXFont.getSkew(((CharSymbol) atom2).getCharFont(teXFont), style) : 0.0f;
-        Char r6 = teXFont.getChar(this.accent.getName(), style);
-        while (teXFont.hasNextLarger(r6)) {
-            Char nextLarger = teXFont.getNextLarger(r6, style);
+        Char r62 = teXFont.getChar(this.accent.getName(), style);
+        while (teXFont.hasNextLarger(r62)) {
+            Char nextLarger = teXFont.getNextLarger(r62, style);
             if (nextLarger.getWidth() > width) {
                 break;
             }
-            r6 = nextLarger;
+            r62 = nextLarger;
         }
         float f7 = -SpaceAtom.getFactor(5, teXEnvironment);
         if (!this.acc) {
-            f7 = Math.min(strutBox.getHeight(), teXFont.getXHeight(style, r6.getFontCode()));
+            f7 = Math.min(strutBox.getHeight(), teXFont.getXHeight(style, r62.getFontCode()));
         }
         VerticalBox verticalBox = new VerticalBox();
-        float italic = r6.getItalic();
-        Box charBox = new CharBox(r6);
+        float italic = r62.getItalic();
+        Box charBox = new CharBox(r62);
         if (this.acc) {
             SymbolAtom symbolAtom = this.accent;
             if (this.changeSize) {
@@ -107,7 +107,7 @@ public class AccentedAtom extends Atom {
                 return;
             }
         }
-        throw new InvalidSymbolTypeException(g.p("The symbol with the name '", str, "' is not defined as an accent (type='acc') in 'TeXSymbols.xml'!"));
+        throw new InvalidSymbolTypeException(g.n("The symbol with the name '", str, "' is not defined as an accent (type='acc') in 'TeXSymbols.xml'!"));
     }
 
     public AccentedAtom(Atom atom, TeXFormula teXFormula) {

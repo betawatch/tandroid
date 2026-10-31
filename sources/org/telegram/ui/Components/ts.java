@@ -1,87 +1,219 @@
 package org.telegram.ui.Components;
 
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
-import android.graphics.RectF;
+import android.graphics.Paint;
 import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class ts {
-    public final org.telegram.ui.Cells.p2 a;
-    public final ArrayList b = new ArrayList();
-    public final ArrayList c = new ArrayList();
-    public ss d = null;
+public abstract class ts implements org.telegram.messenger.us {
+    public static tm L;
+    public final org.telegram.messenger.s5 D;
+    public boolean E;
+    public boolean G;
+    public boolean I;
+    public int J;
+    public final int K;
+    public boolean a;
+    public Bitmap b;
+    public Canvas c;
+    public Bitmap d;
+    public Canvas e;
+    public boolean f;
+    public int n;
+    public boolean r;
+    public int w;
+    public int x;
+    public int y;
+    public int h = 1;
+    public final Paint s = new Paint(1);
+    public final ss F = new ss(this, 0);
+    public final ss H = new ss(this, 1);
 
-    public ts(org.telegram.ui.Cells.p2 p2Var) {
-        this.a = p2Var;
+    public ts() {
+        if (L == null) {
+            tm tmVar = new tm();
+            tmVar.b = new org.telegram.messenger.s5[2];
+            L = tmVar;
+        }
+        tm tmVar2 = L;
+        int i10 = tmVar2.a + 1;
+        tmVar2.a = i10;
+        if (i10 > 1) {
+            tmVar2.a = 0;
+        }
+        org.telegram.messenger.s5[] s5VarArr = (org.telegram.messenger.s5[]) tmVar2.b;
+        int i11 = tmVar2.a;
+        org.telegram.messenger.s5 s5Var = s5VarArr[i11];
+        if (s5Var == null) {
+            s5Var = new org.telegram.messenger.s5("draw_background_queue_" + tmVar2.a, true);
+            s5VarArr[i11] = s5Var;
+        }
+        this.D = s5Var;
+        this.K = L.a;
     }
 
-    public final void a(Canvas canvas, int i10) {
-        ArrayList arrayList;
-        canvas.clipRect(0, 0, i10, AndroidUtilities.dp(14.66f));
-        RectF rectF = AndroidUtilities.rectTmp;
-        float f7 = i10;
-        rectF.set(0.0f, 0.0f, f7, AndroidUtilities.dp(14.66f));
-        canvas.saveLayerAlpha(rectF, 255, 31);
-        if (LocaleController.isRTL) {
-            canvas.translate(f7, 0.0f);
+    public void a(Canvas canvas, long j10, int i10, int i11, float f7) {
+        if (this.E) {
+            boolean z10 = org.telegram.messenger.v2.a;
+            return;
         }
-        int dp = i10 - AndroidUtilities.dp(25.0f);
-        int i11 = 0;
-        while (true) {
-            arrayList = this.c;
-            if (i11 >= arrayList.size()) {
-                break;
+        this.x = i11;
+        this.y = i10;
+        if (this.G) {
+            this.G = false;
+            Bitmap bitmap = this.d;
+            Canvas canvas2 = this.e;
+            this.d = this.b;
+            this.e = this.c;
+            this.b = bitmap;
+            this.c = canvas2;
+        }
+        Bitmap bitmap2 = this.d;
+        if (bitmap2 == null || this.I) {
+            this.I = false;
+            if (bitmap2 != null) {
+                ArrayList arrayList = new ArrayList();
+                arrayList.add(this.d);
+                org.telegram.messenger.i0.A2(arrayList);
+                this.d = null;
             }
-            ss ssVar = (ss) arrayList.get(i11);
-            dp = org.telegram.messenger.wh.z(4.0f, ssVar.g, dp);
-            if (dp < 0) {
-                break;
-            }
-            if (LocaleController.isRTL) {
-                canvas.translate(-ssVar.g, 0.0f);
-                ssVar.a(canvas);
-                canvas.translate(-AndroidUtilities.dp(4.0f), 0.0f);
+            int i12 = this.x + 0;
+            Bitmap bitmap3 = this.d;
+            if (bitmap3 != null && bitmap3.getHeight() == i12 && this.d.getWidth() == this.y) {
+                this.d.eraseColor(0);
             } else {
-                ssVar.a(canvas);
-                canvas.translate(AndroidUtilities.dp(4.0f) + ssVar.g, 0.0f);
+                this.d = Bitmap.createBitmap(this.y, i12, Bitmap.Config.ARGB_8888);
+                this.e = new Canvas(this.d);
             }
-            i11++;
+            this.e.save();
+            this.e.translate(0.0f, 0);
+            d(this.e, f7);
+            this.e.restore();
         }
-        if (i11 < arrayList.size()) {
-            int size = arrayList.size() - i11;
-            ss ssVar2 = this.d;
-            if (ssVar2 == null || ssVar2.a != size) {
-                ss ssVar3 = new ss();
-                ssVar3.a = size;
-                r11 r11Var = new r11(ic.a.i(size, "+"), 10.0f, AndroidUtilities.bold());
-                r11Var.s(this.a);
-                ssVar3.c = r11Var;
-                int dp2 = AndroidUtilities.dp(9.32f);
-                r11 r11Var2 = ssVar3.c;
-                ssVar3.g = dp2 + ((int) r11Var2.c);
-                r11Var2.j();
-                int i12 = org.telegram.ui.ActionBar.y6.n8;
-                ssVar3.f = i12;
-                ssVar3.e = true;
-                ssVar3.d = org.telegram.ui.ActionBar.y6.x0(null, i12, false);
-                this.d = ssVar3;
-            }
-            if (LocaleController.isRTL) {
-                canvas.translate(-this.d.g, 0.0f);
-                this.d.a(canvas);
-                canvas.translate(-AndroidUtilities.dp(4.0f), 0.0f);
-            } else {
-                this.d.a(canvas);
-                canvas.translate(AndroidUtilities.dp(4.0f) + this.d.g, 0.0f);
-            }
+        if (!this.f && !this.r) {
+            this.f = true;
+            i(j10);
+            this.J = this.w;
+            this.D.postRunnable(this.F);
         }
-        canvas.restore();
+        Bitmap bitmap4 = this.d;
+        if (bitmap4 != null) {
+            Paint paint = this.s;
+            paint.setAlpha((int) (f7 * 255.0f));
+            canvas.save();
+            canvas.translate(0.0f, -0);
+            b(canvas, bitmap4, paint);
+            canvas.restore();
+        }
     }
 
-    public final boolean b() {
-        return this.c.isEmpty();
+    public void b(Canvas canvas, Bitmap bitmap, Paint paint) {
+        canvas.drawBitmap(bitmap, 0.0f, 0.0f, paint);
+    }
+
+    public abstract void c(Canvas canvas);
+
+    public abstract void d(Canvas canvas, float f7);
+
+    @Override // org.telegram.messenger.us
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        int i12;
+        if (i10 == org.telegram.messenger.zs.j1) {
+            Integer num = (Integer) objArr[0];
+            if (this.h < num.intValue()) {
+                if (num.intValue() != 512 || org.telegram.messenger.tz.o() < 2) {
+                    int intValue = num.intValue() | this.n;
+                    this.n = intValue;
+                    if (intValue == 0 || this.r) {
+                        return;
+                    }
+                    this.r = true;
+                    return;
+                }
+                return;
+            }
+            return;
+        }
+        if (i10 == org.telegram.messenger.zs.k1) {
+            Integer num2 = (Integer) objArr[0];
+            if (this.h >= num2.intValue() || (i12 = this.n) == 0) {
+                return;
+            }
+            int i13 = (~num2.intValue()) & i12;
+            this.n = i13;
+            if (i13 == 0 && this.r) {
+                this.r = false;
+            }
+        }
+    }
+
+    public final void e() {
+        if (this.a) {
+            return;
+        }
+        this.a = true;
+        this.E = false;
+        int i10 = org.telegram.messenger.zs.e().p & (~this.h);
+        this.n = i10;
+        if (i10 == 0 && this.r) {
+            this.r = false;
+        }
+        org.telegram.messenger.zs.e().c(this, org.telegram.messenger.zs.j1);
+        org.telegram.messenger.zs.e().c(this, org.telegram.messenger.zs.k1);
+    }
+
+    public final void f() {
+        if (this.a) {
+            if (!this.f) {
+                j();
+            }
+            this.a = false;
+            org.telegram.messenger.zs.e().n(this, org.telegram.messenger.zs.j1);
+            org.telegram.messenger.zs.e().n(this, org.telegram.messenger.zs.k1);
+        }
+    }
+
+    public abstract void g();
+
+    public abstract void i(long j10);
+
+    public final void j() {
+        ArrayList arrayList = new ArrayList();
+        Bitmap bitmap = this.d;
+        if (bitmap != null) {
+            arrayList.add(bitmap);
+        }
+        Bitmap bitmap2 = this.b;
+        if (bitmap2 != null) {
+            arrayList.add(bitmap2);
+        }
+        this.d = null;
+        this.b = null;
+        this.c = null;
+        this.e = null;
+        org.telegram.messenger.i0.A2(arrayList);
+    }
+
+    public final void k() {
+        this.I = true;
+        this.w++;
+        if (this.d != null) {
+            ArrayList arrayList = new ArrayList();
+            arrayList.add(this.d);
+            this.d = null;
+            org.telegram.messenger.i0.A2(arrayList);
+        }
+    }
+
+    public final void l(int i10) {
+        this.h = 7;
+        if (this.a) {
+            this.n = org.telegram.messenger.zs.e().p & (~this.h);
+        }
+    }
+
+    public void h() {
     }
 }

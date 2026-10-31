@@ -1,30 +1,71 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.BitmapShader;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import org.telegram.ui.Components.bi0;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final /* synthetic */ class jc implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesController.ErrorDelegate b;
-    public final /* synthetic */ TLRPC.TL_error c;
+public final class jc {
+    public Paint A;
+    public Path B;
+    public boolean a;
+    public float b;
+    public long c;
+    public int d;
+    public BitmapShader e;
+    public org.telegram.ui.Components.s5 f;
+    public bi0 g;
+    public int[] h;
+    public BitmapShader i;
+    public Drawable j;
+    public BitmapShader k;
+    public Drawable l;
+    public Drawable m;
+    public BitmapShader n;
+    public Drawable o;
+    public float p;
+    public float q;
+    public BitmapShader r;
+    public float s;
+    public float t;
+    public float u;
+    public float v;
+    public boolean w;
+    public Drawable x;
+    public RectF y;
+    public ColorFilter z;
 
-    public /* synthetic */ jc(MessagesController.ErrorDelegate errorDelegate, TLRPC.TL_error tL_error, int i10) {
-        this.a = i10;
-        this.b = errorDelegate;
-        this.c = tL_error;
+    public final void a() {
+        this.f = null;
+        this.g = null;
+        for (int i10 = 0; i10 < 4; i10++) {
+            int[] iArr = this.h;
+            iArr[i10] = iArr[i10];
+        }
+        this.j = null;
+        this.i = null;
+        this.l = null;
+        this.k = null;
+        this.m = null;
+        this.n = null;
+        this.e = null;
+        this.o = null;
+        this.x = null;
+        this.z = null;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.run(this.c);
-                break;
-            default:
-                this.b.run(this.c);
-                break;
+    public final void b(Rect rect) {
+        if (rect != null) {
+            this.u = rect.left;
+            this.v = rect.top;
+            this.t = rect.width();
+            this.s = rect.height();
         }
     }
 }

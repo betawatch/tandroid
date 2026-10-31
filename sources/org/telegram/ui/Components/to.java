@@ -1,46 +1,23 @@
 package org.telegram.ui.Components;
 
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.ImageReceiver;
+import android.graphics.Bitmap;
+import org.telegram.ui.m91;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class to implements ImageReceiver.ImageReceiverDelegate {
-    public boolean a;
-    public final /* synthetic */ jg.g b;
-    public final /* synthetic */ vo c;
+public final class to extends m91 {
+    public final /* synthetic */ int l2;
 
-    public to(jg.j jVar, jg.g gVar) {
-        this.c = jVar;
-        this.b = gVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ to(Object obj, Bitmap bitmap, boolean z10, int i10) {
+        super(obj, bitmap, z10);
+        this.l2 = i10;
     }
 
-    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
-    public final void didSetImageBitmap(int i10, String str, Drawable drawable) {
-        yj0 yj0Var;
-        ag.k kVar;
-        if (this.a) {
-            return;
+    @Override // org.telegram.ui.m91
+    public final boolean Y0() {
+        switch (this.l2) {
         }
-        if ((i10 == 0 || i10 == 3) && drawable != null) {
-            this.a = true;
-            boolean z10 = drawable instanceof yj0;
-            jg.g gVar = this.b;
-            if (z10 && (kVar = (yj0Var = (yj0) drawable).B0) != null && kVar.g()) {
-                yj0Var.A0 = new so(0, this, gVar);
-            } else {
-                vo.a(this.c);
-                gVar.run();
-            }
-        }
-    }
-
-    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
-    public final /* synthetic */ void onAnimationReady(ImageReceiver imageReceiver) {
-        org.telegram.messenger.p5.b(this, imageReceiver);
-    }
-
-    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
-    public final void didSetImage(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
+        return true;
     }
 }

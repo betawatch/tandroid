@@ -1,24 +1,45 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
+
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class qw0 extends o1.i {
-    public final ow0 a;
-    public final pw0 b;
-    public float c = 1.0f;
+public final class qw0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ cx0 c;
 
-    public qw0(ow0 ow0Var, pw0 pw0Var) {
-        this.a = ow0Var;
-        this.b = pw0Var;
+    public qw0(cx0 cx0Var, int i10, boolean z10) {
+        this.c = cx0Var;
+        this.a = i10;
+        this.b = z10;
     }
 
-    @Override // o1.i
-    public final float a(Object obj) {
-        return this.a.get(obj) * this.c;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationCancel(Animator animator) {
+        AnimatorSet[] animatorSetArr = this.c.z1;
+        int i10 = this.a;
+        AnimatorSet animatorSet = animatorSetArr[i10];
+        if (animatorSet == null || !animatorSet.equals(animator)) {
+            return;
+        }
+        animatorSetArr[i10] = null;
     }
 
-    @Override // o1.i
-    public final void b(Object obj, float f7) {
-        this.b.b(obj, f7 / this.c);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        cx0 cx0Var = this.c;
+        AnimatorSet[] animatorSetArr = cx0Var.z1;
+        int i10 = this.a;
+        AnimatorSet animatorSet = animatorSetArr[i10];
+        if (animatorSet == null || !animatorSet.equals(animator)) {
+            return;
+        }
+        if (!this.b) {
+            cx0Var.A1[i10].setVisibility(4);
+        }
+        animatorSetArr[i10] = null;
     }
 }

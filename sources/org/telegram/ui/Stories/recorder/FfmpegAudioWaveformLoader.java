@@ -1,19 +1,20 @@
 package org.telegram.ui.Stories.recorder;
 
-import ai.h0;
-import di.s8;
-import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.i0;
+import org.telegram.messenger.j20;
+import org.telegram.ui.Wallet.x0;
+import vh.d0;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes4.dex */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
 public class FfmpegAudioWaveformLoader {
-    private Utilities.Callback2<short[], Integer> onChunkReceived;
+    private j20 onChunkReceived;
     private volatile boolean running = true;
 
-    public FfmpegAudioWaveformLoader(String str, int i10, Utilities.Callback2<short[], Integer> callback2) {
-        this.onChunkReceived = callback2;
-        Utilities.phoneBookQueue.postRunnable(new h0(this, str, i10, 10));
+    public FfmpegAudioWaveformLoader(String str, int i10, j20 j20Var) {
+        this.onChunkReceived = j20Var;
+        Utilities.h.c(new x0(this, str, i10, 19));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -27,14 +28,14 @@ public class FfmpegAudioWaveformLoader {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$receiveChunk$1(short[] sArr, int i10) {
-        this.onChunkReceived.run(sArr, Integer.valueOf(i10));
+        this.onChunkReceived.a(sArr, Integer.valueOf(i10));
     }
 
     private void receiveChunk(short[] sArr, int i10) {
-        AndroidUtilities.runOnUIThread(new h0(this, sArr, i10, 11));
+        i0.g3(new x0(this, sArr, i10, 20));
     }
 
     public void destroy() {
-        Utilities.phoneBookQueue.postRunnable(new s8(this, 19));
+        Utilities.h.c(new d0(this, 7));
     }
 }

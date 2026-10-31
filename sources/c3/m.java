@@ -1,22 +1,22 @@
 package c3;
 
-import a8.u1;
 import android.net.Uri;
-import f9.s1;
+import e9.n0;
+import e9.x1;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class m implements r {
     public static final int[] h = {5, 4, 12, 8, 3, 10, 9, 11, 6, 2, 0, 1, 7, 16, 15, 14, 17, 18, 19, 20, 21};
-    public static final n4.s n = new n4.s(new c2.i(1));
-    public static final n4.s r = new n4.s(new c2.i(2));
-    public s1 a;
+    public static final n4.q n = new n4.q(new aa.a(28));
+    public static final n4.q r = new n4.q(new aa.a(29));
+    public x1 a;
     public int e;
     public int f;
-    public qb.a c = new qb.a(28);
+    public t7.u c = new t7.u(28);
     public boolean b = true;
     public int d = 3;
 
@@ -35,12 +35,12 @@ public final class m implements r {
                 arrayList.add(new d3.a(1));
                 break;
             case 4:
-                o w10 = n.w(0);
-                if (w10 == null) {
+                o m10 = n.m(0);
+                if (m10 == null) {
                     arrayList.add(new h3.b());
                     break;
                 } else {
-                    arrayList.add(w10);
+                    arrayList.add(m10);
                     break;
                 }
             case 5:
@@ -53,30 +53,30 @@ public final class m implements r {
                 arrayList.add(new v3.d(1));
                 break;
             case 8:
-                qb.a aVar = this.c;
-                int g7 = w3.h.g(this.d) | (this.b ? 0 : 32);
-                f9.g0 g0Var = f9.i0.b;
-                arrayList.add(new w3.h(aVar, g7, null, s1.e, null));
-                qb.a aVar2 = this.c;
+                t7.u uVar = this.c;
+                int g10 = w3.h.g(this.d) | (this.b ? 0 : 32);
+                e9.l0 l0Var = n0.b;
+                arrayList.add(new w3.h(uVar, g10, null, x1.e, null));
+                t7.u uVar2 = this.c;
                 int i11 = this.d;
                 int i12 = (i11 & 1) == 0 ? 0 : 32;
                 if ((2 & i11) != 0) {
                     i12 |= 128;
                 }
-                arrayList.add(new w3.l(aVar2, i12 | (this.b ? 0 : 16)));
+                arrayList.add(new w3.l(uVar2, i12 | (this.b ? 0 : 16)));
                 break;
             case 9:
                 arrayList.add(new x3.d());
                 break;
             case 10:
-                arrayList.add(new j4.z());
+                arrayList.add(new j4.a0());
                 break;
             case 11:
                 if (this.a == null) {
-                    f9.g0 g0Var2 = f9.i0.b;
-                    this.a = s1.e;
+                    e9.l0 l0Var2 = n0.b;
+                    this.a = x1.e;
                 }
-                arrayList.add(new j4.d0(1, !this.b ? 1 : 0, this.c, new e2.k0(0L), new j4.f(0, this.a)));
+                arrayList.add(new j4.e0(1, !this.b ? 1 : 0, this.c, new e2.k0(0L), new j4.f(0, this.a)));
                 break;
             case 12:
                 k4.c cVar = new k4.c();
@@ -90,9 +90,9 @@ public final class m implements r {
                 arrayList.add(new k3.a(this.e));
                 break;
             case 15:
-                o w11 = r.w(new Object[0]);
-                if (w11 != null) {
-                    arrayList.add(w11);
+                o m11 = r.m(new Object[0]);
+                if (m11 != null) {
+                    arrayList.add(m11);
                     break;
                 }
                 break;
@@ -123,7 +123,7 @@ public final class m implements r {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final synchronized o[] d(Uri uri, Map map) {
+    public final synchronized o[] e(Uri uri, Map map) {
         ArrayList arrayList;
         String str;
         int a2;
@@ -135,11 +135,11 @@ public final class m implements r {
             List list = (List) map.get("Content-Type");
             if (list != null && !list.isEmpty()) {
                 str = (String) list.get(0);
-                a2 = u1.a(str);
+                a2 = v7.d0.a(str);
                 if (a2 != -1) {
                     a(a2, arrayList);
                 }
-                b10 = u1.b(uri);
+                b10 = v7.d0.b(uri);
                 if (b10 != -1 && b10 != a2) {
                     a(b10, arrayList);
                 }
@@ -151,10 +151,10 @@ public final class m implements r {
                 }
             }
             str = null;
-            a2 = u1.a(str);
+            a2 = v7.d0.a(str);
             if (a2 != -1) {
             }
-            b10 = u1.b(uri);
+            b10 = v7.d0.b(uri);
             if (b10 != -1) {
                 a(b10, arrayList);
             }

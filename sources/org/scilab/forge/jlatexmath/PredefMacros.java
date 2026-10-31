@@ -6,12 +6,12 @@ import java.util.Map;
 import java.util.StringTokenizer;
 import org.scilab.forge.jlatexmath.TeXFormula;
 import org.scilab.forge.jlatexmath.dynamic.DynamicAtom;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.RichMessageLayout;
-import org.telegram.ui.Components.b10;
+import org.telegram.messenger.zs;
+import org.telegram.tgnet.TLObject;
 import ru.noties.jlatexmath.awt.Color;
+import sc.e;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public class PredefMacros {
     static {
@@ -127,7 +127,7 @@ public class PredefMacros {
     }
 
     public static final Atom Braket_macro(TeXParser teXParser, String[] strArr) {
-        return new TeXFormula(teXParser, g.p("\\left\\langle ", strArr[1].replaceAll("\\|", "\\\\middle\\\\vert "), "\\right\\rangle")).root;
+        return new TeXFormula(teXParser, g.n("\\left\\langle ", strArr[1].replaceAll("\\|", "\\\\middle\\\\vert "), "\\right\\rangle")).root;
     }
 
     public static final Atom DeclareMathSizes_macro(TeXParser teXParser, String[] strArr) {
@@ -149,7 +149,7 @@ public class PredefMacros {
         TeXFormula teXFormula = new TeXFormula("\\mathbb{G}\\mathsf{e}");
         teXFormula.add(new GeoGebraLogoAtom());
         teXFormula.add("\\mathsf{Gebra}");
-        return new ColorAtom(teXFormula.root, (Color) null, new Color(102, 102, 102));
+        return new ColorAtom(teXFormula.root, (Color) null, new Color(zs.n1, zs.n1, zs.n1));
     }
 
     public static final Atom Hstrok_macro(TeXParser teXParser, String[] strArr) {
@@ -175,7 +175,7 @@ public class PredefMacros {
     }
 
     public static final Atom Set_macro(TeXParser teXParser, String[] strArr) {
-        return new TeXFormula(teXParser, g.p("\\left\\{", strArr[1].replaceFirst("\\|", "\\\\middle\\\\vert "), "\\right\\}")).root;
+        return new TeXFormula(teXParser, g.n("\\left\\{", strArr[1].replaceFirst("\\|", "\\\\middle\\\\vert "), "\\right\\}")).root;
     }
 
     public static final Atom TStroke_macro(TeXParser teXParser, String[] strArr) {
@@ -258,13 +258,13 @@ public class PredefMacros {
             str = "mathring";
         } else if (charAt != '~') {
             switch (charAt) {
-                case 't':
+                case zs.B1 /* 116 */:
                     str = "tie";
                     break;
-                case 'u':
+                case zs.C1 /* 117 */:
                     str = "breve";
                     break;
-                case 'v':
+                case zs.D1 /* 118 */:
                     str = "check";
                     break;
                 default:
@@ -814,7 +814,7 @@ public class PredefMacros {
         int i10 = 1;
         int parseInt = Integer.parseInt(strArr[1]);
         if (parseInt >= 1) {
-            i10 = 4096;
+            i10 = TLObject.FLAG_12;
             if (parseInt <= 4096) {
                 i10 = parseInt;
             }
@@ -1253,7 +1253,7 @@ public class PredefMacros {
     public static final Atom newcommand_macro(TeXParser teXParser, String[] strArr) {
         String str = strArr[1];
         if (!teXParser.isValidName(str)) {
-            throw new ParseException(b10.j("Invalid name for the command :", str));
+            throw new ParseException(e.h("Invalid name for the command :", str));
         }
         String str2 = strArr[3];
         Integer num = str2 == null ? new Integer(0) : Integer.valueOf(Integer.parseInt(str2));
@@ -1412,7 +1412,7 @@ public class PredefMacros {
     public static final Atom renewcommand_macro(TeXParser teXParser, String[] strArr) {
         String str = strArr[1];
         if (!teXParser.isValidName(str)) {
-            throw new ParseException(b10.j("Invalid name for the command :", str));
+            throw new ParseException(e.h("Invalid name for the command :", str));
         }
         String str2 = strArr[3];
         NewCommandMacro.addReNewCommand(str.substring(1), strArr[2], (str2 == null ? new Integer(0) : Integer.valueOf(Integer.parseInt(str2))).intValue());
@@ -1447,7 +1447,7 @@ public class PredefMacros {
     }
 
     public static final Atom romannumeral_macro(TeXParser teXParser, String[] strArr) {
-        int[] iArr = {MediaDataController.MAX_STYLE_RUNS_COUNT, RichMessageLayout.PART_MAX_HEIGHT_DP, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
+        int[] iArr = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
         String[] strArr2 = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
         int parseInt = Integer.parseInt(strArr[1].trim());
         if (parseInt > 4000000) {
@@ -1456,9 +1456,9 @@ public class PredefMacros {
         String str = "";
         for (int i10 = 0; i10 < 13; i10++) {
             while (parseInt >= iArr[i10]) {
-                StringBuilder u10 = g.u(str);
-                u10.append(strArr2[i10]);
-                str = u10.toString();
+                StringBuilder t10 = g.t(str);
+                t10.append(strArr2[i10]);
+                str = t10.toString();
                 parseInt -= iArr[i10];
             }
         }

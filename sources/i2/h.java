@@ -1,14 +1,161 @@
 package i2;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes.dex */
-public final class h {
-    public int a;
-    public boolean b;
-    public int c;
-    public int d;
+import android.text.TextUtils;
+import e9.x1;
+import j$.util.concurrent.ConcurrentHashMap;
+import java.util.Iterator;
+import java.util.Map;
+import v7.t6;
 
-    public final synchronized void a() {
-        this.d++;
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes.dex */
+public final class h implements u0 {
+    public static final x1 r;
+    public final b2.n1 a;
+    public final b2.l1 b;
+    public final y2.d c;
+    public final long d;
+    public final long e;
+    public final long f;
+    public final long g;
+    public final long h;
+    public final long i;
+    public final long j;
+    public final long k;
+    public final int l;
+    public final boolean m;
+    public final long n;
+    public final e9.q0 o;
+    public final ConcurrentHashMap p;
+    public long q;
+
+    static {
+        e9.l0 l0Var = e9.n0.b;
+        Object[] objArr = {"file", "content", "data", "android.resource", "rawresource", "asset"};
+        e9.s.d(6, objArr);
+        r = e9.n0.s(6, objArr);
+    }
+
+    public h(y2.d dVar, int i10, int i11, int i12, int i13, int i14, boolean z10, Map map) {
+        a(i11, 0, "bufferForPlaybackMs", "0");
+        a(i12, 0, "bufferForPlaybackForLocalPlaybackMs", "0");
+        a(i13, 0, "bufferForPlaybackAfterRebufferMs", "0");
+        a(i14, 0, "bufferForPlaybackAfterRebufferForLocalPlaybackMs", "0");
+        a(50000, i11, "minBufferMs", "bufferForPlaybackMs");
+        a(i10, i12, "minBufferForLocalPlaybackMs", "bufferForPlaybackForLocalPlaybackMs");
+        a(50000, i13, "minBufferMs", "bufferForPlaybackAfterRebufferMs");
+        a(i10, i14, "minBufferForLocalPlaybackMs", "bufferForPlaybackAfterRebufferForLocalPlaybackMs");
+        a(50000, 50000, "maxBufferMs", "minBufferMs");
+        a(50000, i10, "maxBufferForLocalPlaybackMs", "minBufferForLocalPlaybackMs");
+        a(0, 0, "backBufferDurationMs", "0");
+        this.a = new b2.n1();
+        this.b = new b2.l1();
+        this.c = dVar;
+        long j10 = 50000;
+        this.d = e2.l0.S(j10);
+        this.e = e2.l0.S(i10);
+        this.f = e2.l0.S(j10);
+        this.g = e2.l0.S(j10);
+        this.h = e2.l0.S(i11);
+        this.i = e2.l0.S(i12);
+        this.j = e2.l0.S(i13);
+        this.k = e2.l0.S(i14);
+        this.l = -1;
+        this.m = z10;
+        this.n = e2.l0.S(0);
+        this.p = new ConcurrentHashMap();
+        this.o = e9.q0.a(map);
+        this.q = -1L;
+    }
+
+    public static void a(int i10, int i11, String str, String str2) {
+        t6.i(i10 >= i11, "%s cannot be less than %s", str, str2);
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:22:0x0079  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0080  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x008d  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x00a0  */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x00bb  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x0083  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x007c  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean b(t0 t0Var) {
+        int i10;
+        boolean z10;
+        long j10;
+        float f7;
+        j2.l lVar = t0Var.a;
+        long j11 = t0Var.d;
+        g gVar = (g) this.p.get(lVar);
+        gVar.getClass();
+        g gVar2 = (g) this.p.get(lVar);
+        gVar2.getClass();
+        synchronized (gVar2) {
+            i10 = gVar2.d;
+        }
+        int i11 = i10 * this.c.b;
+        g gVar3 = (g) this.p.get(lVar);
+        gVar3.getClass();
+        boolean z11 = i11 >= gVar3.c;
+        if (lVar.equals(j2.l.c)) {
+            return !z11;
+        }
+        b2.o1 o1Var = t0Var.b;
+        b2.k0 k0Var = o1Var.m(o1Var.g(t0Var.c.a, this.b).c, this.a, 0L).c.b;
+        if (k0Var != null) {
+            String scheme = k0Var.a.getScheme();
+            if (TextUtils.isEmpty(scheme) || r.contains(scheme)) {
+                z10 = true;
+                j10 = !z10 ? this.e : this.d;
+                long j12 = !z10 ? this.g : this.f;
+                f7 = t0Var.e;
+                if (f7 > 1.0f) {
+                    j10 = Math.min(e2.l0.B(j10, f7), j12);
+                }
+                if (j11 >= Math.max(j10, 500000L)) {
+                    boolean z12 = (z10 ? this.m : false) || !z11;
+                    gVar.b = z12;
+                    if (!z12 && j11 < 500000) {
+                        e2.a.l("DefaultLoadControl", "Target buffer size reached with less than 500ms of buffered media data.");
+                    }
+                } else if (j11 >= j12 || z11) {
+                    gVar.b = false;
+                }
+                return gVar.b;
+            }
+        }
+        z10 = false;
+        if (!z10) {
+        }
+        if (!z10) {
+        }
+        f7 = t0Var.e;
+        if (f7 > 1.0f) {
+        }
+        if (j11 >= Math.max(j10, 500000L)) {
+        }
+        return gVar.b;
+    }
+
+    public final void c() {
+        int i10 = 0;
+        if (this.p.isEmpty()) {
+            y2.d dVar = this.c;
+            synchronized (dVar) {
+                if (dVar.a) {
+                    dVar.d(0);
+                }
+            }
+            return;
+        }
+        y2.d dVar2 = this.c;
+        Iterator it = this.p.values().iterator();
+        while (it.hasNext()) {
+            i10 += ((g) it.next()).c;
+        }
+        dVar2.d(i10);
     }
 }

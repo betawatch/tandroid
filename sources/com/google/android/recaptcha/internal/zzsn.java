@@ -2,7 +2,7 @@ package com.google.android.recaptcha.internal;
 
 import com.google.android.recaptcha.internal.zzsh;
 import com.google.android.recaptcha.internal.zzsn;
-import ic.a;
+import i0.a;
 import j$.util.concurrent.ConcurrentHashMap;
 import java.io.IOException;
 import java.io.InputStream;
@@ -12,7 +12,7 @@ import java.util.Map;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public abstract class zzsn<MessageType extends zzsn<MessageType, BuilderType>, BuilderType extends zzsh<MessageType, BuilderType>> extends zzpw<MessageType, BuilderType> {
     private static final Map zzb = new ConcurrentHashMap();
@@ -37,8 +37,8 @@ public abstract class zzsn<MessageType extends zzsn<MessageType, BuilderType>, B
             return method.invoke(obj, objArr);
         } catch (IllegalAccessException e) {
             throw new RuntimeException("Couldn't use Java reflection to implement protocol message reflection.", e);
-        } catch (InvocationTargetException e10) {
-            Throwable cause = e10.getCause();
+        } catch (InvocationTargetException e7) {
+            Throwable cause = e7.getCause();
             if (cause instanceof RuntimeException) {
                 throw ((RuntimeException) cause);
             }
@@ -85,13 +85,13 @@ public abstract class zzsn<MessageType extends zzsn<MessageType, BuilderType>, B
                 throw new zzsx(e);
             }
             throw e;
-        } catch (zzuu e10) {
-            throw e10.zza();
-        } catch (IOException e11) {
-            if (e11.getCause() instanceof zzsx) {
-                throw ((zzsx) e11.getCause());
+        } catch (zzuu e7) {
+            throw e7.zza();
+        } catch (IOException e10) {
+            if (e10.getCause() instanceof zzsx) {
+                throw ((zzsx) e10.getCause());
             }
-            throw new zzsx(e11);
+            throw new zzsx(e10);
         } catch (IndexOutOfBoundsException unused) {
             throw new zzsx("While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either that the input has been truncated or that an embedded message misreported its own length.");
         }
@@ -146,7 +146,7 @@ public abstract class zzsn<MessageType extends zzsn<MessageType, BuilderType>, B
             int length = bArr.length;
             zzqoVar = zzqq.zzH(bArr, 0, 0, false);
         } else {
-            zzqoVar = new zzqo(inputStream, 4096, null);
+            zzqoVar = new zzqo(inputStream, TLObject.FLAG_12, null);
         }
         int i10 = zzry.zzb;
         int i11 = zzuc.zza;
@@ -163,18 +163,18 @@ public abstract class zzsn<MessageType extends zzsn<MessageType, BuilderType>, B
                 throw new zzsx(e);
             }
             throw e;
-        } catch (zzuu e10) {
-            throw e10.zza();
-        } catch (IOException e11) {
+        } catch (zzuu e7) {
+            throw e7.zza();
+        } catch (IOException e10) {
+            if (e10.getCause() instanceof zzsx) {
+                throw ((zzsx) e10.getCause());
+            }
+            throw new zzsx(e10);
+        } catch (RuntimeException e11) {
             if (e11.getCause() instanceof zzsx) {
                 throw ((zzsx) e11.getCause());
             }
-            throw new zzsx(e11);
-        } catch (RuntimeException e12) {
-            if (e12.getCause() instanceof zzsx) {
-                throw ((zzsx) e12.getCause());
-            }
-            throw e12;
+            throw e11;
         }
     }
 

@@ -1,35 +1,33 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MessagesStorage;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class mv implements MessagesStorage.IntCallback {
+public final /* synthetic */ class mv implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ey b;
+    public final /* synthetic */ ay b;
 
-    public /* synthetic */ mv(ey eyVar, int i10) {
+    public /* synthetic */ mv(ay ayVar, int i10) {
         this.a = i10;
-        this.b = eyVar;
+        this.b = ayVar;
     }
 
-    @Override // org.telegram.messenger.MessagesStorage.IntCallback
-    public final void run(int i10) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                ey eyVar = this.b;
-                eyVar.getClass();
-                eyVar.U1 = i10 != 0;
-                MessagesController.getGlobalNotificationsSettings().edit().putBoolean("askAboutContacts", eyVar.U1).apply();
-                eyVar.r3(false);
+                this.b.O4(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
+            case 1:
+                ay ayVar = this.b;
+                ayVar.getClass();
+                ayVar.Q4(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
             default:
-                ey eyVar2 = this.b;
-                eyVar2.getClass();
-                eyVar2.U1 = i10 != 0;
-                MessagesController.getGlobalNotificationsSettings().edit().putBoolean("askAboutContacts", eyVar2.U1).commit();
-                eyVar2.r3(false);
+                ay ayVar2 = this.b;
+                ayVar2.getClass();
+                ayVar2.K4(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
         }
     }

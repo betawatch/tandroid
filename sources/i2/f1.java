@@ -2,16 +2,16 @@ package i2;
 
 import android.util.Pair;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f1 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ g1 b;
+    public final /* synthetic */ i1 b;
     public final /* synthetic */ Pair c;
 
-    public /* synthetic */ f1(g1 g1Var, Pair pair, int i10) {
+    public /* synthetic */ f1(i1 i1Var, Pair pair, int i10) {
         this.a = i10;
-        this.b = g1Var;
+        this.b = i1Var;
         this.c = pair;
     }
 
@@ -19,14 +19,14 @@ public final /* synthetic */ class f1 implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                j2.e eVar = this.b.b.h;
+                j2.g gVar = this.b.b.h;
                 Pair pair = this.c;
-                eVar.g(((Integer) pair.first).intValue(), (u2.g0) pair.second);
+                gVar.E(((Integer) pair.first).intValue(), (u2.g0) pair.second);
                 break;
             default:
-                j2.e eVar2 = this.b.b.h;
+                j2.g gVar2 = this.b.b.h;
                 Pair pair2 = this.c;
-                eVar2.i(((Integer) pair2.first).intValue(), (u2.g0) pair2.second);
+                gVar2.J(((Integer) pair2.first).intValue(), (u2.g0) pair2.second);
                 break;
         }
     }

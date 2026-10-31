@@ -1,33 +1,38 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final /* synthetic */ class w7 implements Utilities.Callback2 {
+public final /* synthetic */ class w7 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MediaDataController b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ Utilities.Callback d;
+    public final /* synthetic */ b8 b;
 
-    public /* synthetic */ w7(MediaDataController mediaDataController, String str, Utilities.Callback callback, int i10) {
+    public /* synthetic */ w7(b8 b8Var, int i10) {
         this.a = i10;
-        this.b = mediaDataController;
-        this.c = str;
-        this.d = callback;
+        this.b = b8Var;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback2
-    public final void run(Object obj, Object obj2) {
-        Boolean bool = (Boolean) obj;
-        TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) obj2;
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$getStickerSet$32(this.c, this.d, bool, tL_messages_stickerSet);
+                b8 b8Var = this.b;
+                bg.h[] hVarArr = b8Var.c;
+                bg.h[] hVarArr2 = b8Var.b;
+                for (int i10 = 0; i10 < hVarArr2.length; i10++) {
+                    if (((ArrayList) hVarArr2[i10].d).size() > 0 || ((ArrayList) hVarArr[i10].d).size() > 0) {
+                        f8.b("download queue: dc" + (i10 + 1) + " account=" + b8Var.currentAccount + " small_operations=" + ((ArrayList) hVarArr2[i10].d).size() + " large_operations=" + ((ArrayList) hVarArr[i10].d).size());
+                    }
+                }
+                if (v2.a) {
+                    b8.J.a(b8Var.H);
+                    b8.J.d(b8Var.H, 10000L);
+                    break;
+                }
                 break;
             default:
-                this.b.lambda$getStickerSet$35(this.c, this.d, bool, tL_messages_stickerSet);
+                this.b.getNotificationCenter().k(zs.b5, new Object[0]);
                 break;
         }
     }

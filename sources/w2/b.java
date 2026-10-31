@@ -8,7 +8,7 @@ import z3.i;
 import z3.j;
 import z3.m;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class b extends l implements z3.e {
     public final String o;
@@ -54,15 +54,15 @@ public final class b extends l implements z3.e {
             if (z10) {
                 mVar.reset();
             }
-            z3.d j10 = mVar.j(0, limit, array);
-            long j11 = iVar.e;
-            long j12 = iVar.r;
-            jVar2.timeUs = j11;
-            jVar2.a = j10;
-            if (j12 != Long.MAX_VALUE) {
-                j11 = j12;
+            z3.d l4 = mVar.l(0, limit, array);
+            long j10 = iVar.e;
+            long j11 = iVar.r;
+            jVar2.timeUs = j10;
+            jVar2.a = l4;
+            if (j11 != Long.MAX_VALUE) {
+                j10 = j11;
             }
-            jVar2.b = j11;
+            jVar2.b = j10;
             jVar2.shouldBeSkipped = false;
             return null;
         } catch (z3.f e) {

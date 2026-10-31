@@ -1,38 +1,34 @@
 package sc;
 
-import java.nio.ByteBuffer;
-import java.nio.channels.ByteChannel;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class b implements ByteChannel {
-    public ByteBuffer a;
+public final class b {
+    public static final Pattern d = Pattern.compile("[ |\t]*([^/^ ^;^,]+/[^ ^;^,]+)", 2);
+    public static final Pattern e = Pattern.compile("[ |\t]*(charset)[ |\t]*=[ |\t]*['|\"]?([^\"^'^;^,]*)['|\"]?", 2);
+    public static final Pattern f = Pattern.compile("[ |\t]*(boundary)[ |\t]*=[ |\t]*['|\"]?([^\"^'^;^,]*)['|\"]?", 2);
+    public final String a;
+    public final String b;
+    public final String c;
 
-    @Override // java.nio.channels.Channel
-    public final boolean isOpen() {
-        return true;
-    }
-
-    @Override // java.nio.channels.ReadableByteChannel
-    public final int read(ByteBuffer byteBuffer) {
-        int remaining = byteBuffer.remaining();
-        ByteBuffer byteBuffer2 = this.a;
-        if (byteBuffer2.remaining() <= 0) {
-            return -1;
+    public b(String str) {
+        this.a = str;
+        if (str != null) {
+            Matcher matcher = d.matcher(str);
+            this.b = matcher.find() ? matcher.group(1) : "";
+            Matcher matcher2 = e.matcher(str);
+            this.c = matcher2.find() ? matcher2.group(2) : null;
+        } else {
+            this.b = "";
+            this.c = "UTF-8";
         }
-        byteBuffer.put((ByteBuffer) byteBuffer2.duplicate().limit(byteBuffer.remaining() + byteBuffer2.position()));
-        byteBuffer2.position(byteBuffer2.position() + remaining);
-        return remaining;
-    }
-
-    @Override // java.nio.channels.WritableByteChannel
-    public final int write(ByteBuffer byteBuffer) {
-        int remaining = byteBuffer.remaining();
-        this.a.put(byteBuffer);
-        return remaining;
-    }
-
-    @Override // java.nio.channels.Channel, java.io.Closeable, java.lang.AutoCloseable
-    public final void close() {
+        if ("multipart/form-data".equalsIgnoreCase(this.b)) {
+            Matcher matcher3 = f.matcher(str);
+            if (matcher3.find()) {
+                matcher3.group(2);
+            }
+        }
     }
 }

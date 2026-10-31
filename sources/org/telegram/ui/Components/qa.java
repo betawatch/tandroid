@@ -1,83 +1,53 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.text.TextUtils;
-import org.telegram.messenger.DispatchQueue2;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.Utilities;
+import android.content.Context;
+import android.view.View;
+import android.view.WindowManager;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class qa {
-    public String a;
-    public Bitmap b;
-    public final Paint c;
-    public final int d;
-    public final Runnable e;
-    public org.telegram.messenger.d8 f;
+public final class qa extends FrameLayout {
+    public final /* synthetic */ ra a;
 
-    public qa(int i10, Runnable runnable) {
-        Paint paint = new Paint(1);
-        this.c = paint;
-        this.d = i10;
-        this.e = runnable;
-        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public qa(ra raVar, Context context) {
+        super(context);
+        this.a = raVar;
     }
 
-    public final void a() {
-        this.a = null;
-        if (this.f != null) {
-            Utilities.globalQueue.cancelRunnable(this.f);
-        }
-        Bitmap bitmap = this.b;
-        if (bitmap != null && !bitmap.isRecycled()) {
-            this.b.recycle();
-        }
-        this.b = null;
+    @Override // android.view.ViewGroup
+    public final void addView(View view) {
+        super.addView(view);
+        this.a.show();
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:11:0x0019, code lost:
-    
-        if (r8.f != null) goto L5;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final Bitmap b(Bitmap bitmap, String str, int i10, int i11, boolean z10) {
-        if (bitmap != null && !bitmap.isRecycled()) {
-            if (TextUtils.equals(this.a, str)) {
-                Bitmap bitmap2 = this.b;
-                if (bitmap2 != null) {
-                    return bitmap2;
-                }
-            }
-            if (this.f != null) {
-                Utilities.globalQueue.cancelRunnable(this.f);
-            }
-            this.a = str;
-            DispatchQueue2 dispatchQueue2 = Utilities.globalQueue;
-            org.telegram.messenger.d8 d8Var = new org.telegram.messenger.d8(this, bitmap, i10, i11, str, z10);
-            this.f = d8Var;
-            dispatchQueue2.postRunnable(d8Var);
-            return this.b;
-        }
-        return null;
+    public WindowManager.LayoutParams getLayout() {
+        return this.a.b;
     }
 
-    public final Bitmap c(ImageReceiver.BitmapHolder bitmapHolder) {
-        if (bitmapHolder == null) {
-            return null;
+    @Override // android.view.ViewGroup, android.view.ViewManager
+    public final void removeView(View view) {
+        ra raVar = this.a;
+        super.removeView(view);
+        try {
+            raVar.dismiss();
+        } catch (Exception unused) {
         }
-        return b(bitmapHolder.bitmap, bitmapHolder.getKey(), bitmapHolder.orientation, 0, false);
+        wb.h(raVar.a);
     }
 
-    public final Bitmap d(ImageReceiver imageReceiver) {
-        if (imageReceiver == null) {
-            return null;
+    public void setTouchable(boolean z10) {
+        ra raVar = this.a;
+        WindowManager.LayoutParams layoutParams = raVar.b;
+        if (layoutParams == null) {
+            return;
         }
-        return b(imageReceiver.getBitmap(), imageReceiver.getImageKey(), imageReceiver.getOrientation(), imageReceiver.getInvert(), false);
+        if (z10) {
+            layoutParams.flags &= -17;
+        } else {
+            layoutParams.flags |= 16;
+        }
+        raVar.getWindow().setAttributes(raVar.b);
     }
 }

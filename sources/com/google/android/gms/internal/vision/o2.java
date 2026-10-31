@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public abstract class o2 {
     public static final Class a;
@@ -232,7 +232,7 @@ public abstract class o2 {
             c10 = n2Var.zzb(l0Var);
             l0Var.b(c10);
         }
-        return c3.h0.v(c10, c10, T);
+        return c3.i0.v(c10, c10, T);
     }
 
     public static int b(int i10, List list, n2 n2Var) {
@@ -248,7 +248,7 @@ public abstract class o2 {
                 c10 = n2Var.zzb(l0Var);
                 l0Var.b(c10);
             }
-            y3 = c3.h0.v(c10, c10, y3);
+            y3 = c3.i0.v(c10, c10, y3);
         }
         return y3;
     }
@@ -319,13 +319,13 @@ public abstract class o2 {
                     try {
                         r0Var.H(bytes.length);
                         r0Var.L(bytes, 0, bytes.length);
-                    } catch (s0 e10) {
-                        throw e10;
-                    } catch (IndexOutOfBoundsException e11) {
-                        throw new s0(e11);
+                    } catch (s0 e7) {
+                        throw e7;
+                    } catch (IndexOutOfBoundsException e10) {
+                        throw new s0(e10);
                     }
-                } catch (IndexOutOfBoundsException e12) {
-                    throw new s0(e12);
+                } catch (IndexOutOfBoundsException e11) {
+                    throw new s0(e11);
                 }
             }
             return;
@@ -352,20 +352,20 @@ public abstract class o2 {
                         r0Var.H(a3.a(str2));
                         r0Var.e = a3.a.h(str2, bArr2, r0Var.e, r0Var.F());
                     }
-                } catch (b3 e13) {
+                } catch (b3 e12) {
                     r0Var.e = i15;
-                    r0.f.logp(Level.WARNING, "com.google.protobuf.CodedOutputStream", "inefficientWriteStringNoTag", "Converting ill-formed UTF-16. Your Protocol Buffer will not round trip correctly!", (Throwable) e13);
+                    r0.f.logp(Level.WARNING, "com.google.protobuf.CodedOutputStream", "inefficientWriteStringNoTag", "Converting ill-formed UTF-16. Your Protocol Buffer will not round trip correctly!", (Throwable) e12);
                     byte[] bytes2 = str2.getBytes(j1.a);
                     try {
                         r0Var.H(bytes2.length);
                         r0Var.L(bytes2, 0, bytes2.length);
-                    } catch (s0 e14) {
-                        throw e14;
-                    } catch (IndexOutOfBoundsException e15) {
-                        throw new s0(e15);
+                    } catch (s0 e13) {
+                        throw e13;
+                    } catch (IndexOutOfBoundsException e14) {
+                        throw new s0(e14);
                     }
-                } catch (IndexOutOfBoundsException e16) {
-                    throw new s0(e16);
+                } catch (IndexOutOfBoundsException e15) {
+                    throw new s0(e15);
                 }
             } else {
                 q0 q0Var = (q0) a2;
@@ -452,7 +452,7 @@ public abstract class o2 {
                 Object obj = list.get(i11);
                 if (obj instanceof q0) {
                     int m10 = ((q0) obj).m();
-                    y3 = c3.h0.v(m10, m10, y3);
+                    y3 = c3.i0.v(m10, m10, y3);
                 } else {
                     y3 = r0.G((String) obj) + y3;
                 }
@@ -465,7 +465,7 @@ public abstract class o2 {
             Object a2 = t1Var.a(i11);
             if (a2 instanceof q0) {
                 int m11 = ((q0) a2).m();
-                y3 = c3.h0.v(m11, m11, y3);
+                y3 = c3.i0.v(m11, m11, y3);
             } else {
                 y3 = r0.G((String) a2) + y3;
             }
@@ -555,7 +555,7 @@ public abstract class o2 {
         int y3 = r0.y(i10) * size;
         for (int i11 = 0; i11 < list.size(); i11++) {
             int m10 = ((q0) list.get(i11)).m();
-            y3 = c3.h0.v(m10, m10, y3);
+            y3 = c3.i0.v(m10, m10, y3);
         }
         return y3;
     }

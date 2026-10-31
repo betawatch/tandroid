@@ -1,0 +1,13 @@
+package x4;
+
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes.dex */
+public abstract class j {
+    public boolean a() {
+        return false;
+    }
+
+    public boolean b(int[] iArr) {
+        return false;
+    }
+}

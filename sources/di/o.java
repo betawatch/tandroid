@@ -1,25 +1,23 @@
 package di;
 
-import j$.util.Objects;
+import com.google.android.gms.internal.play_billing.s0;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes4.dex */
-public final class o extends qg.a {
-    public final long c;
+public final class o {
+    public final n4.q a;
+    public final long b;
 
-    public o(long j10) {
-        super(0, false);
-        this.c = j10;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    public o(q qVar, n4.q qVar2) {
+        long length;
+        this.a = qVar2;
+        long length2 = ((qVar.b.length() + qVar.a.length()) * 2) + 128;
+        s0 s0Var = (s0) qVar2.a;
+        if (s0Var == null) {
+            length = 1024;
+        } else {
+            length = (((int[]) s0Var.c) == null ? 0L : ((int[]) s0Var.c).length * 4) + (((int[]) s0Var.a).length * 4) + 64;
         }
-        return (obj instanceof o) && this.c == ((o) obj).c;
-    }
-
-    public final int hashCode() {
-        return Objects.hash(Long.valueOf(this.c));
+        this.b = length2 + length;
     }
 }

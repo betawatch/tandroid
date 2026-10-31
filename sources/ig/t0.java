@@ -1,139 +1,86 @@
 package ig;
 
-import android.content.Context;
-import android.view.View;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.Cells.y4;
-import org.telegram.ui.Cells.z3;
-import org.telegram.ui.Components.c10;
-import org.telegram.ui.Components.wl0;
+import android.graphics.Bitmap;
+import android.graphics.PointF;
+import org.telegram.ui.Components.pu0;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public abstract class t0 extends c {
-    public final Context K;
-    public final u6 L;
-    public boolean M;
+public final class t0 {
+    public final float a;
+    public final float b;
+    public final PointF c;
+    public final PointF d;
+    public final float e;
+    public final PointF f;
+    public final PointF g;
 
-    public t0(Context context, u6 u6Var, boolean z10, boolean z11) {
-        super(z10, z11);
-        this.M = false;
-        this.K = context;
-        this.L = u6Var;
-        new c10(context, null).setIsSingleCell(true);
-    }
-
-    @Override // org.telegram.ui.Components.mm0
-    public final boolean D(s4.e1 e1Var) {
-        return true;
-    }
-
-    public final TLRPC.TL_messageMediaVenue I(int i10) {
-        ArrayList arrayList = this.r;
-        if (!arrayList.isEmpty()) {
-            i10--;
-        }
-        if (i10 >= 0 && i10 < arrayList.size()) {
-            return (TLRPC.TL_messageMediaVenue) arrayList.get(i10);
-        }
-        if (this.J) {
-            return null;
-        }
-        int size = i10 - arrayList.size();
-        if (!arrayList.isEmpty()) {
-            size--;
-        }
-        if (size < 0) {
-            return null;
-        }
-        ArrayList arrayList2 = this.s;
-        if (size < arrayList2.size()) {
-            return (TLRPC.TL_messageMediaVenue) arrayList2.get(size);
-        }
-        return null;
-    }
-
-    @Override // s4.h0
-    public final int h() {
-        ArrayList arrayList = this.r;
-        int size = !arrayList.isEmpty() ? arrayList.size() + 1 : 0;
-        if (this.M) {
-            return size;
-        }
-        if (this.J) {
-            return size + 3;
-        }
-        boolean isEmpty = arrayList.isEmpty();
-        ArrayList arrayList2 = this.s;
-        if (!isEmpty && !arrayList2.isEmpty()) {
-            size++;
-        }
-        return arrayList2.size() + size;
-    }
-
-    @Override // s4.h0
-    public final int j(int i10) {
-        ArrayList arrayList = this.r;
-        return ((i10 == 0 || i10 == arrayList.size() + 1) && !arrayList.isEmpty()) ? 1 : 0;
-    }
-
-    @Override // s4.h0
-    public final void v(s4.e1 e1Var, int i10) {
-        TLRPC.TL_messageMediaVenue tL_messageMediaVenue;
-        int i11;
-        int i12 = e1Var.f;
-        View view = e1Var.a;
-        boolean z10 = true;
-        ArrayList arrayList = this.r;
-        if (i12 != 0) {
-            if (i12 == 1) {
-                if (i10 != 0 || arrayList.isEmpty()) {
-                    ((z3) view).setText(LocaleController.getString(R.string.NearbyVenue));
-                    return;
-                } else {
-                    ((z3) view).setText(LocaleController.getString(R.string.LocationOnMap));
-                    return;
-                }
+    public t0(t8.a aVar, Bitmap bitmap, pu0 pu0Var, boolean z10) {
+        PointF pointF = null;
+        PointF pointF2 = null;
+        PointF pointF3 = null;
+        PointF pointF4 = null;
+        for (t8.c cVar : aVar.b) {
+            PointF pointF5 = cVar.a;
+            int i10 = cVar.b;
+            if (i10 == 4) {
+                pointF = b(pointF5, bitmap, pu0Var, z10);
+            } else if (i10 == 5) {
+                pointF3 = b(pointF5, bitmap, pu0Var, z10);
+            } else if (i10 == 10) {
+                pointF2 = b(pointF5, bitmap, pu0Var, z10);
+            } else if (i10 == 11) {
+                pointF4 = b(pointF5, bitmap, pu0Var, z10);
             }
+        }
+        if (pointF != null && pointF2 != null) {
+            if (pointF.x < pointF2.x) {
+                PointF pointF6 = pointF2;
+                pointF2 = pointF;
+                pointF = pointF6;
+            }
+            PointF pointF7 = new PointF((pointF2.x * 0.5f) + (pointF.x * 0.5f), (pointF2.y * 0.5f) + (pointF.y * 0.5f));
+            this.d = pointF7;
+            float hypot = (float) Math.hypot(pointF2.x - pointF.x, pointF2.y - pointF.y);
+            this.e = hypot;
+            this.b = (float) Math.toDegrees(Math.atan2(pointF2.y - pointF.y, pointF2.x - pointF.x) + 3.141592653589793d);
+            this.a = 2.35f * hypot;
+            float f7 = hypot * 0.8f;
+            double radians = (float) Math.toRadians(r0 - 90.0f);
+            this.c = new PointF((((float) Math.cos(radians)) * f7) + pointF7.x, (f7 * ((float) Math.sin(radians))) + pointF7.y);
+        }
+        if (pointF3 == null || pointF4 == null) {
             return;
         }
-        int i13 = !arrayList.isEmpty() ? i10 - 1 : i10;
-        if (i13 < 0 || i13 >= arrayList.size()) {
-            if (!this.J) {
-                int size = i13 - arrayList.size();
-                if (!this.n && !arrayList.isEmpty()) {
-                    size--;
-                }
-                i11 = size;
-                if (i11 >= 0) {
-                    ArrayList arrayList2 = this.s;
-                    if (i11 < arrayList2.size()) {
-                        tL_messageMediaVenue = (TLRPC.TL_messageMediaVenue) arrayList2.get(i11);
-                    }
-                }
-            }
-            tL_messageMediaVenue = null;
-            i11 = i10;
-        } else {
-            tL_messageMediaVenue = (TLRPC.TL_messageMediaVenue) arrayList.get(i13);
-            i11 = 2;
+        if (pointF3.x < pointF4.x) {
+            PointF pointF8 = pointF4;
+            pointF4 = pointF3;
+            pointF3 = pointF8;
         }
-        y4 y4Var = (y4) view;
-        if (i10 == h() - 1 || (!this.n && !arrayList.isEmpty() && i10 == arrayList.size())) {
-            z10 = false;
-        }
-        y4Var.b(tL_messageMediaVenue, i11, z10, false);
+        PointF pointF9 = new PointF((pointF4.x * 0.5f) + (pointF3.x * 0.5f), (pointF4.y * 0.5f) + (pointF3.y * 0.5f));
+        this.f = pointF9;
+        float f10 = this.e * 0.7f;
+        double radians2 = (float) Math.toRadians(this.b + 90.0f);
+        this.g = new PointF((((float) Math.cos(radians2)) * f10) + pointF9.x, (f10 * ((float) Math.sin(radians2))) + pointF9.y);
     }
 
-    @Override // s4.h0
-    public final s4.e1 x(ViewGroup viewGroup, int i10) {
-        u6 u6Var = this.L;
-        Context context = this.K;
-        return new wl0(i10 == 0 ? new y4(context, u6Var) : new z3(context, u6Var));
+    public static PointF b(PointF pointF, Bitmap bitmap, pu0 pu0Var, boolean z10) {
+        return new PointF((pu0Var.a * pointF.x) / (z10 ? bitmap.getHeight() : bitmap.getWidth()), (pu0Var.b * pointF.y) / (z10 ? bitmap.getWidth() : bitmap.getHeight()));
+    }
+
+    public final PointF a(int i10) {
+        if (i10 == 0) {
+            return this.c;
+        }
+        if (i10 == 1) {
+            return this.d;
+        }
+        if (i10 == 2) {
+            return this.f;
+        }
+        if (i10 != 3) {
+            return null;
+        }
+        return this.g;
     }
 }

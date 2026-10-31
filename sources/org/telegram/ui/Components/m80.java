@@ -1,80 +1,27 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import org.telegram.messenger.AccountInstance;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class m80 implements RequestDelegate {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ Context b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object g;
-    public final /* synthetic */ Object h;
-    public final /* synthetic */ Object i;
+public final /* synthetic */ class m80 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ji.a b;
+    public final /* synthetic */ q80 c;
 
-    public /* synthetic */ m80(Context context, di.k0 k0Var, long j10, byte[] bArr, org.telegram.messenger.video.a aVar, wc wcVar, org.telegram.messenger.video.d dVar, int i10) {
-        this.b = context;
-        this.e = k0Var;
-        this.c = j10;
-        this.f = bArr;
-        this.g = aVar;
-        this.h = wcVar;
-        this.i = dVar;
-        this.d = i10;
+    public /* synthetic */ m80(ji.a aVar, q80 q80Var, int i10) {
+        this.a = i10;
+        this.b = aVar;
+        this.c = q80Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                AndroidUtilities.runOnUIThread(new hi.k1((org.telegram.ui.ActionBar.e2) this.e, tLObject, (AccountInstance) this.f, (s80) this.g, this.c, this.b, (org.telegram.ui.ActionBar.r2) this.h, this.d, (TLRPC.Peer) this.i));
+                this.b.m(this.c, false);
                 break;
             default:
-                di.k0 k0Var = (di.k0) this.e;
-                byte[] bArr = (byte[]) this.f;
-                org.telegram.messenger.video.a aVar = (org.telegram.messenger.video.a) this.g;
-                wc wcVar = (wc) this.h;
-                org.telegram.messenger.video.d dVar = (org.telegram.messenger.video.d) this.i;
-                Context context = this.b;
-                if (tLObject == null) {
-                    if (tL_error != null && "AD_EXPIRED".equalsIgnoreCase(tL_error.text)) {
-                        AndroidUtilities.runOnUIThread(new org.telegram.ui.m21(aVar, wcVar, context, k0Var, 1), 200L);
-                        break;
-                    }
-                } else if (!(tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultChooseOption)) {
-                    if (!(tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultReported)) {
-                        if (tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultAdsHidden) {
-                            AndroidUtilities.runOnUIThread(new org.telegram.ui.fx(aVar, wcVar, this.d, 13), 200L);
-                            break;
-                        }
-                    } else {
-                        AndroidUtilities.runOnUIThread(new org.telegram.ui.m21(aVar, wcVar, context, k0Var, 0), 200L);
-                        break;
-                    }
-                } else {
-                    AndroidUtilities.runOnUIThread(new bi.l4(tLObject, context, k0Var, this.c, bArr, aVar, wcVar, dVar));
-                    break;
-                }
+                this.b.m(this.c, false);
                 break;
         }
-    }
-
-    public /* synthetic */ m80(org.telegram.ui.ActionBar.e2 e2Var, AccountInstance accountInstance, s80 s80Var, long j10, Context context, org.telegram.ui.ActionBar.r2 r2Var, int i10, TLRPC.Peer peer) {
-        this.e = e2Var;
-        this.f = accountInstance;
-        this.g = s80Var;
-        this.c = j10;
-        this.b = context;
-        this.h = r2Var;
-        this.d = i10;
-        this.i = peer;
     }
 }

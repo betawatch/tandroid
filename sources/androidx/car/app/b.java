@@ -7,7 +7,7 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.Map;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements androidx.car.app.utils.b, androidx.activity.result.b {
     public final /* synthetic */ int a;
@@ -35,7 +35,7 @@ public final /* synthetic */ class b implements androidx.car.app.utils.b, androi
     }
 
     @Override // androidx.activity.result.b
-    public void d(Object obj) {
+    public void m(Object obj) {
         CarAppPermissionActivity carAppPermissionActivity = (CarAppPermissionActivity) this.b;
         IOnRequestPermissionsListener iOnRequestPermissionsListener = (IOnRequestPermissionsListener) this.c;
         int i10 = CarAppPermissionActivity.J;

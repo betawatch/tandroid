@@ -1,39 +1,17 @@
 package org.telegram.messenger;
 
-import org.telegram.ui.wn;
-import org.webrtc.TextureViewRenderer;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final /* synthetic */ class gf implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ Object f;
+public final class gf {
+    public final jj a;
+    public final float b;
+    public final int c;
+    public final int d;
 
-    public /* synthetic */ gf(Object obj, int i10, int i11, int i12, int i13, int i14) {
-        this.a = i14;
-        this.f = obj;
-        this.b = i10;
-        this.c = i11;
-        this.d = i12;
-        this.e = i13;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                ((MessagesStorage) this.f).lambda$saveDiffParams$35(this.b, this.c, this.d, this.e);
-                break;
-            case 1:
-                wn.x1((wn) this.f, this.b, this.c, this.d, this.e);
-                break;
-            default:
-                ((TextureViewRenderer) this.f).lambda$onFrameResolutionChanged$0(this.b, this.c, this.d, this.e);
-                break;
-        }
+    public gf(jj jjVar) {
+        this.a = jjVar;
+        this.b = jjVar.b0;
+        this.c = jjVar.d0;
+        this.d = jjVar.g0;
     }
 }

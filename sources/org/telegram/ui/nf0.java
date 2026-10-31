@@ -1,46 +1,59 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.text.TextPaint;
+import android.text.style.ReplacementSpan;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class nf0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ qf0 b;
+public final class nf0 extends ReplacementSpan {
+    public final String a;
+    public final boolean b;
+    public final TextPaint c;
+    public final Paint d;
+    public final float e;
+    public final /* synthetic */ pf0 f;
 
-    public /* synthetic */ nf0(qf0 qf0Var, int i10) {
-        this.a = i10;
-        this.b = qf0Var;
+    public nf0(pf0 pf0Var, int i10, boolean z10) {
+        this.f = pf0Var;
+        TextPaint textPaint = new TextPaint(1);
+        this.c = textPaint;
+        this.d = new Paint(1);
+        String valueOf = String.valueOf(i10);
+        this.a = valueOf;
+        this.b = z10;
+        textPaint.setTextSize(org.telegram.messenger.i0.N(11.0f));
+        textPaint.setTypeface(org.telegram.messenger.i0.o());
+        this.e = Math.max(org.telegram.messenger.i0.L(7.333f), textPaint.measureText(valueOf)) + org.telegram.messenger.i0.L(10.0f);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10;
-        switch (this.a) {
-            case 0:
-                ig0 ig0Var = this.b.v;
-                ig0Var.z1(0, true, null, true);
-                ig0Var.q1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString(R.string.CodeExpired));
-                break;
-            case 1:
-                ig0 ig0Var2 = this.b.v;
-                ig0Var2.z1(0, true, null, true);
-                ig0Var2.q1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString(R.string.CodeExpired));
-                break;
-            case 2:
-                this.b.o();
-                break;
-            case 3:
-                this.b.b.setLoading(false);
-                break;
-            default:
-                PremiumPreviewFragment premiumPreviewFragment = new PremiumPreviewFragment(0, "sms");
-                ig0 ig0Var3 = this.b.v;
-                i10 = ((org.telegram.ui.ActionBar.r2) ig0Var3).currentAccount;
-                premiumPreviewFragment.setCurrentAccount(i10);
-                ig0Var3.presentFragment(premiumPreviewFragment);
-                break;
-        }
+    @Override // android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
+        float L = f7 + org.telegram.messenger.i0.L(5.0f);
+        float L2 = ((i12 + i14) / 2.0f) + org.telegram.messenger.i0.L(1.0f);
+        float L3 = org.telegram.messenger.i0.L(17.333f) / 2.0f;
+        int i15 = this.b ? org.telegram.ui.ActionBar.t6.Ci : org.telegram.ui.ActionBar.t6.U9;
+        pf0 pf0Var = this.f;
+        int themedColor = pf0Var.getThemedColor(i15);
+        Paint paint2 = this.d;
+        paint2.setColor(themedColor);
+        int themedColor2 = pf0Var.getThemedColor(org.telegram.ui.ActionBar.t6.s8);
+        TextPaint textPaint = this.c;
+        textPaint.setColor(themedColor2);
+        RectF rectF = org.telegram.messenger.i0.P;
+        float f10 = this.e;
+        rectF.set(L, L2 - L3, L + f10, L2 + L3);
+        canvas.drawRoundRect(rectF, L3, L3, paint2);
+        Paint.FontMetrics fontMetrics = textPaint.getFontMetrics();
+        float f11 = L2 - ((fontMetrics.ascent + fontMetrics.descent) / 2.0f);
+        String str = this.a;
+        canvas.drawText(str, ((f10 - textPaint.measureText(str)) / 2.0f) + L, f11, textPaint);
+    }
+
+    @Override // android.text.style.ReplacementSpan
+    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
+        return (int) Math.ceil(org.telegram.messenger.i0.L(5.0f) + this.e);
     }
 }

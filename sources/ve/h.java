@@ -1,0 +1,18 @@
+package ve;
+
+import w7.j8;
+
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes.dex */
+public final class h extends a {
+    public char g;
+    public int h;
+    public int i;
+    public String j;
+    public String k;
+
+    @Override // df.c
+    public final void a(j8 j8Var) {
+        j8Var.f(this);
+    }
+}

@@ -1,325 +1,180 @@
 package s4;
 
+import android.os.Trace;
+import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
+import java.util.concurrent.TimeUnit;
+import org.telegram.messenger.f8;
+import ph.x1;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public abstract class p {
-    public static final a5.b a = new a5.b(6);
+public final class p implements Runnable {
+    public static final ThreadLocal e = new ThreadLocal();
+    public static final lc.s f = new lc.s(4);
+    public ArrayList a;
+    public long b;
+    public long c;
+    public ArrayList d;
 
-    /* JADX WARN: Code restructure failed: missing block: B:101:0x0189, code lost:
-    
-        r0 = r25 + 2;
-        r17 = true;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:106:0x0164, code lost:
-    
-        r25 = r0;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:108:0x013f, code lost:
-    
-        r10 = r22[(r18 + r5) - 1];
-        r11 = false;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:110:0x018e, code lost:
-    
-        r8 = r8 + 1;
-        r0 = r19;
-        r10 = r20;
-        r5 = r21;
-        r2 = r22;
-        r11 = r24;
-        r17 = true;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:17:0x0099, code lost:
-    
-        if (r5[r20 - 1] < r21[r20 + 1]) goto L25;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:75:0x0111, code lost:
-    
-        r22 = r2;
-        r21 = r5;
-        r20 = r10;
-        r24 = r11;
-        r0 = r6;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:77:0x011b, code lost:
-    
-        if (r0 > r8) goto L115;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:78:0x011d, code lost:
-    
-        r5 = r0 + r14;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:79:0x0121, code lost:
-    
-        if (r5 == (r8 + r14)) goto L54;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:81:0x0125, code lost:
-    
-        if (r5 == (r6 + r14)) goto L53;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:82:0x0127, code lost:
-    
-        r10 = r18 + r5;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:83:0x0131, code lost:
-    
-        if (r22[r10 - 1] >= r22[r10 + 1]) goto L53;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:84:0x0134, code lost:
-    
-        r10 = r22[(r18 + r5) + 1] - 1;
-        r11 = r17;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:85:0x0146, code lost:
-    
-        r16 = r10 - r5;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:86:0x0148, code lost:
-    
-        if (r10 <= 0) goto L120;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:87:0x014a, code lost:
-    
-        if (r16 <= 0) goto L122;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:88:0x014c, code lost:
-    
-        r25 = r0;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:89:0x015a, code lost:
-    
-        if (r27.b((r20 + r10) - 1, (r12 + r16) - 1) == false) goto L121;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:90:0x015c, code lost:
-    
-        r10 = r10 - 1;
-        r16 = r16 - 1;
-        r0 = r25;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:92:0x0166, code lost:
-    
-        r0 = r18 + r5;
-        r22[r0] = r10;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:93:0x016a, code lost:
-    
-        if (r19 != 0) goto L116;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:94:0x016c, code lost:
-    
-        if (r5 < r6) goto L117;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:95:0x016e, code lost:
-    
-        if (r5 > r8) goto L118;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:96:0x0170, code lost:
-    
-        r0 = r21[r0];
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:97:0x0172, code lost:
-    
-        if (r0 < r10) goto L119;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:99:0x0174, code lost:
-    
-        r6 = new s4.o();
-        r6.a = r10;
-        r6.b = r10 - r5;
-        r6.c = r0 - r10;
-        r6.d = r11;
-        r6.e = r17;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x00d0 A[LOOP:3: B:20:0x00be->B:24:0x00d0, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x00d9 A[EDGE_INSN: B:25:0x00d9->B:26:0x00d9 BREAK  A[LOOP:3: B:20:0x00be->B:24:0x00d0], SYNTHETIC] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static m4.d c(p pVar, boolean z10) {
-        int i10;
-        int[] iArr;
-        int[] iArr2;
-        o oVar;
-        int i11;
-        boolean z11;
-        int i12;
-        int i13;
-        int i14;
-        int i15;
-        int i16;
-        int e = pVar.e();
-        int d = pVar.d();
-        ArrayList arrayList = new ArrayList();
-        ArrayList arrayList2 = new ArrayList();
-        n nVar = new n();
-        int i17 = 0;
-        nVar.a = 0;
-        nVar.b = e;
-        nVar.c = 0;
-        nVar.d = d;
-        arrayList2.add(nVar);
-        int abs = Math.abs(e - d) + e + d;
-        int i18 = abs * 2;
-        int[] iArr3 = new int[i18];
-        int[] iArr4 = new int[i18];
-        ArrayList arrayList3 = new ArrayList();
-        while (!arrayList2.isEmpty()) {
-            n nVar2 = (n) ic.a.y(1, arrayList2);
-            int i19 = nVar2.a;
-            int i20 = nVar2.b;
-            int i21 = nVar2.c;
-            int i22 = i20 - i19;
-            int i23 = nVar2.d - i21;
-            if (i22 >= 1 && i23 >= 1) {
-                int i24 = i22 - i23;
-                int i25 = ((i22 + i23) + 1) / 2;
-                boolean z12 = true;
-                int i26 = (abs - i25) - 1;
-                i10 = abs;
-                int i27 = abs + i25 + 1;
-                Arrays.fill(iArr3, i26, i27, i17);
-                Arrays.fill(iArr4, i26 + i24, i27 + i24, i22);
-                int i28 = i24 % 2 != 0 ? 1 : i17;
-                int i29 = i17;
-                while (i29 <= i25) {
-                    int i30 = -i29;
-                    int i31 = i28;
-                    int i32 = i30;
-                    while (true) {
-                        if (i32 > i29) {
-                            break;
-                        }
-                        if (i32 != i30) {
-                            if (i32 != i29) {
-                                int i33 = i10 + i32;
-                                iArr = iArr4;
-                                iArr2 = iArr3;
-                            } else {
-                                iArr = iArr4;
-                                iArr2 = iArr3;
-                            }
-                            i11 = iArr2[(i10 + i32) - 1] + 1;
-                            z11 = z12;
-                            i12 = i19;
-                            i13 = i11 - i32;
-                            while (i11 < i22 && i13 < i23) {
-                                i16 = i13;
-                                i14 = i22;
-                                if (pVar.b(i12 + i11, i21 + i16)) {
-                                    break;
-                                }
-                                i11++;
-                                i13 = i16 + 1;
-                                i22 = i14;
-                            }
-                            i14 = i22;
-                            int i34 = i10 + i32;
-                            iArr2[i34] = i11;
-                            if (i31 == 0 && i32 >= (i24 - i29) + 1 && i32 <= (i24 + i29) - 1 && i11 >= (i15 = iArr[i34])) {
-                                oVar = new o();
-                                oVar.a = i15;
-                                oVar.b = i15 - i32;
-                                oVar.c = i11 - i15;
-                                oVar.d = z11;
-                                oVar.e = false;
-                                break;
-                            }
-                            i32 += 2;
-                            i19 = i12;
-                            iArr3 = iArr2;
-                            iArr4 = iArr;
-                            i22 = i14;
-                        } else {
-                            iArr = iArr4;
-                            iArr2 = iArr3;
-                        }
-                        i11 = iArr2[i10 + i32 + 1];
-                        z11 = false;
-                        i12 = i19;
-                        i13 = i11 - i32;
-                        while (i11 < i22) {
-                            i16 = i13;
-                            i14 = i22;
-                            if (pVar.b(i12 + i11, i21 + i16)) {
-                            }
-                        }
-                        i14 = i22;
-                        int i342 = i10 + i32;
-                        iArr2[i342] = i11;
-                        if (i31 == 0) {
-                        }
-                        i32 += 2;
-                        i19 = i12;
-                        iArr3 = iArr2;
-                        iArr4 = iArr;
-                        i22 = i14;
+    public static c1 c(RecyclerView recyclerView, int i10, long j10) {
+        int r10 = recyclerView.e.r();
+        for (int i11 = 0; i11 < r10; i11++) {
+            c1 U = RecyclerView.U(recyclerView.e.q(i11));
+            if (U.c == i10 && !U.h()) {
+                return null;
+            }
+        }
+        hf.e eVar = recyclerView.b;
+        try {
+            try {
+                recyclerView.h0();
+                c1 j11 = eVar.j(i10, j10);
+                if (j11 != null) {
+                    if (!j11.g() || j11.h()) {
+                        eVar.a(j11, false);
+                    } else {
+                        eVar.g(j11.a);
                     }
                 }
-                throw new IllegalStateException("DiffUtil hit an unexpected case while trying to calculate the optimal path. Please make sure your data is not changing during the diff calculation.");
+                recyclerView.i0(false);
+                return j11;
+            } catch (Exception e7) {
+                f8.g(e7, true);
+                org.telegram.messenger.i0.g3(new x1(recyclerView, 28));
+                recyclerView.i0(false);
+                return null;
             }
-            i10 = abs;
-            iArr = iArr4;
-            iArr2 = iArr3;
-            oVar = null;
-            if (oVar != null) {
-                if (oVar.c > 0) {
-                    arrayList.add(oVar);
-                }
-                oVar.a += nVar2.a;
-                oVar.b += nVar2.c;
-                n nVar3 = arrayList3.isEmpty() ? new n() : (n) ic.a.y(1, arrayList3);
-                nVar3.a = nVar2.a;
-                nVar3.c = nVar2.c;
-                if (oVar.e) {
-                    nVar3.b = oVar.a;
-                    nVar3.d = oVar.b;
-                } else if (oVar.d) {
-                    nVar3.b = oVar.a - 1;
-                    nVar3.d = oVar.b;
-                } else {
-                    nVar3.b = oVar.a;
-                    nVar3.d = oVar.b - 1;
-                }
-                arrayList2.add(nVar3);
-                if (!oVar.e) {
-                    int i35 = oVar.a;
-                    int i36 = oVar.c;
-                    nVar2.a = i35 + i36;
-                    nVar2.c = oVar.b + i36;
-                } else if (oVar.d) {
-                    int i37 = oVar.a;
-                    int i38 = oVar.c;
-                    nVar2.a = i37 + i38 + 1;
-                    nVar2.c = oVar.b + i38;
-                } else {
-                    int i39 = oVar.a;
-                    int i40 = oVar.c;
-                    nVar2.a = i39 + i40;
-                    nVar2.c = oVar.b + i40 + 1;
-                }
-                arrayList2.add(nVar2);
-            } else {
-                arrayList3.add(nVar2);
-            }
-            abs = i10;
-            iArr3 = iArr2;
-            iArr4 = iArr;
-            i17 = 0;
+        } catch (Throwable th2) {
+            recyclerView.i0(false);
+            throw th2;
         }
-        int[] iArr5 = iArr3;
-        Collections.sort(arrayList, a);
-        return new m4.d(pVar, arrayList, iArr5, iArr4, z10);
     }
 
-    public abstract boolean a(int i10, int i11);
+    public final void a(RecyclerView recyclerView, int i10, int i11) {
+        if (recyclerView.G && this.b == 0) {
+            this.b = recyclerView.getNanoTime();
+            recyclerView.post(this);
+        }
+        e2.f fVar = recyclerView.t0;
+        fVar.a = i10;
+        fVar.b = i11;
+    }
 
-    public abstract boolean b(int i10, int i11);
+    public final void b(long j10) {
+        o oVar;
+        RecyclerView recyclerView;
+        RecyclerView recyclerView2;
+        o oVar2;
+        ArrayList arrayList = this.d;
+        ArrayList arrayList2 = this.a;
+        int size = arrayList2.size();
+        int i10 = 0;
+        for (int i11 = 0; i11 < size; i11++) {
+            RecyclerView recyclerView3 = (RecyclerView) arrayList2.get(i11);
+            int windowVisibility = recyclerView3.getWindowVisibility();
+            e2.f fVar = recyclerView3.t0;
+            if (windowVisibility == 0) {
+                fVar.c(recyclerView3, false);
+                i10 += fVar.c;
+            }
+        }
+        arrayList.ensureCapacity(i10);
+        int i12 = 0;
+        for (int i13 = 0; i13 < size; i13++) {
+            RecyclerView recyclerView4 = (RecyclerView) arrayList2.get(i13);
+            if (recyclerView4.getWindowVisibility() == 0) {
+                e2.f fVar2 = recyclerView4.t0;
+                int abs = Math.abs(fVar2.b) + Math.abs(fVar2.a);
+                for (int i14 = 0; i14 < fVar2.c * 2; i14 += 2) {
+                    if (i12 >= arrayList.size()) {
+                        oVar2 = new o();
+                        arrayList.add(oVar2);
+                    } else {
+                        oVar2 = (o) arrayList.get(i12);
+                    }
+                    int[] iArr = fVar2.d;
+                    int i15 = iArr[i14 + 1];
+                    oVar2.a = i15 <= abs;
+                    oVar2.b = abs;
+                    oVar2.c = i15;
+                    oVar2.d = recyclerView4;
+                    oVar2.e = iArr[i14];
+                    i12++;
+                }
+            }
+        }
+        Collections.sort(arrayList, f);
+        for (int i16 = 0; i16 < arrayList.size() && (recyclerView = (oVar = (o) arrayList.get(i16)).d) != null; i16++) {
+            c1 c10 = c(recyclerView, oVar.e, oVar.a ? Long.MAX_VALUE : j10);
+            if (c10 != null && c10.b != null && c10.g() && !c10.h() && (recyclerView2 = (RecyclerView) c10.b.get()) != null) {
+                if (recyclerView2.Q && recyclerView2.e.r() != 0) {
+                    recyclerView2.p0();
+                }
+                e2.f fVar3 = recyclerView2.t0;
+                fVar3.c(recyclerView2, true);
+                if (fVar3.c != 0) {
+                    try {
+                        int i17 = n0.g.a;
+                        Trace.beginSection("RV Nested Prefetch");
+                        z0 z0Var = recyclerView2.u0;
+                        g0 g0Var = recyclerView2.x;
+                        z0Var.d = 1;
+                        z0Var.e = g0Var.b();
+                        z0Var.g = false;
+                        z0Var.h = false;
+                        z0Var.i = false;
+                        for (int i18 = 0; i18 < fVar3.c * 2; i18 += 2) {
+                            c(recyclerView2, fVar3.d[i18], j10);
+                        }
+                        Trace.endSection();
+                        oVar.a = false;
+                        oVar.b = 0;
+                        oVar.c = 0;
+                        oVar.d = null;
+                        oVar.e = 0;
+                    } catch (Throwable th2) {
+                        int i19 = n0.g.a;
+                        Trace.endSection();
+                        throw th2;
+                    }
+                }
+            }
+            oVar.a = false;
+            oVar.b = 0;
+            oVar.c = 0;
+            oVar.d = null;
+            oVar.e = 0;
+        }
+    }
 
-    public abstract int d();
-
-    public abstract int e();
+    @Override // java.lang.Runnable
+    public final void run() {
+        ArrayList arrayList = this.a;
+        try {
+            int i10 = n0.g.a;
+            Trace.beginSection("RV Prefetch");
+            if (!arrayList.isEmpty()) {
+                int size = arrayList.size();
+                long j10 = 0;
+                for (int i11 = 0; i11 < size; i11++) {
+                    RecyclerView recyclerView = (RecyclerView) arrayList.get(i11);
+                    if (recyclerView.getWindowVisibility() == 0) {
+                        j10 = Math.max(recyclerView.getDrawingTime(), j10);
+                    }
+                }
+                if (j10 != 0) {
+                    b(TimeUnit.MILLISECONDS.toNanos(j10) + this.c);
+                }
+            }
+            this.b = 0L;
+            Trace.endSection();
+        } catch (Throwable th2) {
+            this.b = 0L;
+            int i12 = n0.g.a;
+            Trace.endSection();
+            throw th2;
+        }
+    }
 }

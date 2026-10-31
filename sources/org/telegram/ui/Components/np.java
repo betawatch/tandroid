@@ -1,32 +1,31 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.uc1;
+import android.content.Context;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class np implements uc1 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ti b;
-    public final /* synthetic */ org.telegram.ui.gc c;
+public abstract class np extends z4.g {
+    public mp w0;
 
-    public /* synthetic */ np(ti tiVar, org.telegram.ui.gc gcVar, int i10) {
-        this.a = i10;
-        this.b = tiVar;
-        this.c = gcVar;
+    public np(Context context) {
+        super(context);
+        b(new lp((ug0) this));
     }
 
-    @Override // org.telegram.ui.uc1
-    public final void a(TLRPC.TL_wallPaper tL_wallPaper) {
-        switch (this.a) {
-            case 0:
-                this.b.dismissInternal();
-                this.c.run(tL_wallPaper);
-                break;
-            default:
-                this.b.dismissInternal();
-                this.c.run(tL_wallPaper);
-                break;
+    @Override // z4.g
+    @Deprecated
+    public void setAdapter(z4.a aVar) {
+        if (!(aVar instanceof mp)) {
+            throw new IllegalArgumentException();
+        }
+        setAdapter((mp) aVar);
+    }
+
+    public void setAdapter(mp mpVar) {
+        this.w0 = mpVar;
+        super.setAdapter((z4.a) mpVar);
+        if (mpVar != null) {
+            x(mpVar.j(), false);
         }
     }
 }

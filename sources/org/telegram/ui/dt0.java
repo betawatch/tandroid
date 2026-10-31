@@ -1,86 +1,68 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class dt0 extends org.telegram.ui.Components.t81 {
-    public final /* synthetic */ PhotoViewer m0;
+public final /* synthetic */ class dt0 implements Runnable {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ kt0 b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ TLRPC.PollAnswer d;
+    public final /* synthetic */ org.telegram.ui.ActionBar.k2 e;
+    public final /* synthetic */ ArrayList f;
 
-    public dt0(PhotoViewer photoViewer) {
-        this.m0 = photoViewer;
+    public /* synthetic */ dt0(kt0 kt0Var, boolean z10, TLRPC.PollAnswer pollAnswer, org.telegram.ui.ActionBar.k2 k2Var, ArrayList arrayList) {
+        this.b = kt0Var;
+        this.c = z10;
+        this.d = pollAnswer;
+        this.e = k2Var;
+        this.f = arrayList;
     }
 
-    @Override // org.telegram.ui.Components.t81
-    public final void B() {
-        super.B();
-        PhotoViewer photoViewer = this.m0;
-        if (photoViewer.u4 == 0) {
-            PhotoViewer.Z(photoViewer, false);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                kt0 kt0Var = this.b;
+                kt0Var.getClass();
+                boolean z10 = this.c;
+                org.telegram.ui.ActionBar.k2 k2Var = this.e;
+                if (z10) {
+                    ArrayList arrayList = this.f;
+                    arrayList.remove(this.d);
+                    k2Var.getSendMessagesHelper().w0(kt0Var.H, arrayList, null);
+                } else {
+                    k2Var.getSendMessagesHelper().w0(kt0Var.H, null, null);
+                }
+                kt0Var.c(true);
+                break;
+            default:
+                kt0 kt0Var2 = this.b;
+                kt0Var2.getClass();
+                boolean z11 = this.c;
+                TLRPC.PollAnswer pollAnswer = this.d;
+                org.telegram.ui.ActionBar.k2 k2Var2 = this.e;
+                if (z11) {
+                    ArrayList arrayList2 = this.f;
+                    arrayList2.add(pollAnswer);
+                    k2Var2.getSendMessagesHelper().w0(kt0Var2.H, arrayList2, null);
+                } else {
+                    ArrayList arrayList3 = new ArrayList(1);
+                    arrayList3.add(pollAnswer);
+                    k2Var2.getSendMessagesHelper().w0(kt0Var2.H, arrayList3, null);
+                }
+                kt0Var2.c(true);
+                break;
         }
-        if (photoViewer.O8) {
-            return;
-        }
-        c5.d.D(n());
-        c5.d.x(false);
     }
 
-    @Override // org.telegram.ui.Components.t81
-    public final void C() {
-        super.C();
-        PhotoViewer photoViewer = this.m0;
-        PhotoViewer.Z(photoViewer, true);
-        if (photoViewer.O8) {
-            return;
-        }
-        c5.d.D(n());
-        c5.d.x(true);
-    }
-
-    @Override // org.telegram.ui.Components.t81
-    public final void K(long j10) {
-        L(j10, false);
-        PhotoViewer photoViewer = this.m0;
-        if (photoViewer.r1) {
-            PhotoViewer.a0(photoViewer, j10);
-        }
-        if (photoViewer.O8) {
-            return;
-        }
-        c5.d.D(j10);
-    }
-
-    @Override // org.telegram.ui.Components.t81
-    public final void Q(float f7) {
-        super.Q(f7);
-        if (this.m0.O8) {
-            return;
-        }
-        c5.d.z(f7);
-    }
-
-    @Override // org.telegram.ui.Components.t81, b2.e1
-    public final void onRenderedFirstFrame() {
-        b2.a1 h;
-        super.onRenderedFirstFrame();
-        PhotoViewer photoViewer = this.m0;
-        boolean z10 = true;
-        photoViewer.R = true;
-        if (photoViewer.D2) {
-            photoViewer.e0.invalidate();
-        }
-        photoViewer.C3();
-        if (!c5.d.u() && !photoViewer.r) {
-            z10 = false;
-        }
-        O(z10);
-        if (photoViewer.O8) {
-            return;
-        }
-        c5.d.D(n());
-        i2.j0 j0Var = this.d;
-        float f7 = 1.0f;
-        if (j0Var != null && (h = j0Var.h()) != null) {
-            f7 = h.a;
-        }
-        c5.d.z(f7);
+    public /* synthetic */ dt0(kt0 kt0Var, boolean z10, org.telegram.ui.ActionBar.k2 k2Var, ArrayList arrayList, TLRPC.PollAnswer pollAnswer) {
+        this.b = kt0Var;
+        this.c = z10;
+        this.e = k2Var;
+        this.f = arrayList;
+        this.d = pollAnswer;
     }
 }

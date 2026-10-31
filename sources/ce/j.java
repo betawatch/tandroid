@@ -1,44 +1,12 @@
 package ce;
 
-import java.util.concurrent.ScheduledFuture;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class j implements k {
-    public final /* synthetic */ int a;
-    public final Object b;
-
-    public /* synthetic */ j(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
-    }
-
-    @Override // ce.k
-    public final void a(Throwable th2) {
-        switch (this.a) {
-            case 0:
-                if (th2 != null) {
-                    ((ScheduledFuture) this.b).cancel(false);
-                    break;
-                }
-                break;
-            case 1:
-                ((ud.l) this.b).invoke(th2);
-                break;
-            default:
-                ((p0) this.b).dispose();
-                break;
-        }
-    }
-
-    public final String toString() {
-        switch (this.a) {
-            case 0:
-                return "CancelFutureOnCancel[" + ((ScheduledFuture) this.b) + ']';
-            case 1:
-                return "CancelHandler.UserSupplied[" + ((ud.l) this.b).getClass().getSimpleName() + '@' + f0.k(this) + ']';
-            default:
-                return "DisposeOnCancel[" + ((p0) this.b) + ']';
-        }
-    }
+public abstract class j {
+    public static final int a = yd.a.j(100, 12, "kotlinx.coroutines.semaphore.maxSpinCycles");
+    public static final ea.a b = new ea.a("PERMIT");
+    public static final ea.a c = new ea.a("TAKEN");
+    public static final ea.a d = new ea.a("BROKEN");
+    public static final ea.a e = new ea.a("CANCELLED");
+    public static final int f = yd.a.j(16, 12, "kotlinx.coroutines.semaphore.segmentSize");
 }

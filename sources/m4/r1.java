@@ -1,10 +1,10 @@
 package m4;
 
-import a8.yb;
 import android.os.Bundle;
 import j$.util.Objects;
+import v7.t6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class r1 {
     public static final String d;
@@ -15,7 +15,7 @@ public final class r1 {
     public final Bundle c;
 
     static {
-        String str = e2.n0.a;
+        String str = e2.l0.a;
         d = Integer.toString(0, 36);
         e = Integer.toString(1, 36);
         f = Integer.toString(2, 36);
@@ -56,7 +56,7 @@ public final class r1 {
         if (i10 >= 0 && i10 != 1) {
             z10 = false;
         }
-        yb.g(z10);
+        t6.f(z10);
         this.a = i10;
         this.b = str;
         this.c = bundle;

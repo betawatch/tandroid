@@ -1,113 +1,65 @@
 package vg;
 
-import bi.k3;
-import java.io.File;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.wc;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Rect;
+import android.graphics.drawable.NinePatchDrawable;
+import g.y;
+import w7.k8;
+import w7.k9;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class c implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final class c extends k8 {
+    public NinePatchDrawable c;
+    public long d;
+    public final /* synthetic */ f f;
+    public final y a = new y();
+    public final Rect b = new Rect();
+    public final Bitmap[] e = new Bitmap[1];
 
-    public /* synthetic */ c(wc wcVar, boolean z10, TLRPC.Chat chat, u6 u6Var) {
-        this.c = wcVar;
-        this.b = z10;
-        this.d = chat;
-        this.e = u6Var;
+    public c(f fVar) {
+        this.f = fVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        String string;
-        File file;
-        int i10;
-        switch (this.a) {
-            case 0:
-                wc wcVar = (wc) this.c;
-                boolean z10 = this.b;
-                TLRPC.Chat chat = (TLRPC.Chat) this.d;
-                u6 u6Var = (u6) this.e;
-                int i11 = R.raw.star_premium_2;
-                String string2 = z10 ? LocaleController.getString("BoostingGiveawayCreated", R.string.BoostingGiveawayCreated) : LocaleController.getString("BoostingAwardsCreated", R.string.BoostingAwardsCreated);
-                if (z10) {
-                    string = LocaleController.getString(ChatObject.isChannelAndNotMegaGroup(chat) ? R.string.BoostingCheckStatistic : R.string.BoostingCheckStatisticGroup);
-                } else {
-                    string = LocaleController.getString(ChatObject.isChannelAndNotMegaGroup(chat) ? R.string.BoostingCheckGiftsStatistic : R.string.BoostingCheckGiftsStatisticGroup);
-                }
-                qc M = wcVar.M(string2, AndroidUtilities.replaceSingleTag(string, y6.Gi, 0, new k3(chat), u6Var), i11);
-                M.j = 5000;
-                M.j();
-                return;
-            default:
-                vi.u0 u0Var = (vi.u0) this.c;
-                vi.w wVar = (vi.w) this.d;
-                boolean z11 = this.b;
-                vi.q0 q0Var = (vi.q0) this.e;
-                long j10 = u0Var.q;
-                long nanoTime = System.nanoTime();
-                try {
-                    wVar.g();
-                    long h = wVar.h();
-                    u0Var.m.b("active output finalized: size=" + wVar.a.length() + ", durationMs=" + h + ", elapsedMs=" + vi.u0.f(nanoTime));
-                    u0Var.g();
-                    boolean z12 = h > j10;
-                    if (z11 && !z12) {
-                        try {
-                            u0Var.k.execute(new vi.g0(u0Var, q0Var, wVar.a, h, true));
-                            return;
-                        } catch (Exception e) {
-                            e = e;
-                            u0Var = u0Var;
-                            u0Var.i.post(new vi.e0(u0Var, e, 2));
-                            return;
-                        }
-                    }
-                    File file2 = wVar.a;
-                    try {
-                        synchronized (wVar) {
-                            file = file2;
-                            try {
-                                i10 = wVar.s;
-                            } catch (Throwable th2) {
-                                th = th2;
-                            }
-                        }
-                    } catch (Throwable th3) {
-                        th = th3;
-                        file = file2;
-                    }
-                    try {
-                        u0Var.t(file, i10, 0L, Math.min(j10, h), z11, z12 ? 1 : 2);
-                        w7.x.c(file);
-                        return;
-                    } catch (Throwable th4) {
-                        th = th4;
-                        file = file;
-                        w7.x.c(file);
-                        throw th;
-                    }
-                } catch (Exception e10) {
-                    e = e10;
-                }
+    @Override // w7.k8
+    public final void b(Canvas canvas, hi.a aVar) {
+        hi.a u10 = f.u(aVar);
+        f fVar = this.f;
+        c(canvas, i0.b.k(fVar.s, (Color.alpha(fVar.s) == 255 || !(u10 instanceof hi.c)) ? 0 : ((hi.c) u10).b));
+    }
+
+    public final void c(Canvas canvas, int i10) {
+        f fVar = this.f;
+        e eVar = fVar.M;
+        if (Color.alpha(i10) == 0 && Color.alpha(fVar.r) == 0) {
+            return;
         }
-    }
-
-    public /* synthetic */ c(vi.u0 u0Var, vi.w wVar, boolean z10, vi.q0 q0Var) {
-        this.c = u0Var;
-        this.d = wVar;
-        this.b = z10;
-        this.e = q0Var;
+        y yVar = this.a;
+        yVar.a = 0L;
+        yVar.b = false;
+        yVar.a(i10);
+        yVar.a(fVar.r);
+        for (float f7 : eVar.b) {
+            yVar.c(f7);
+        }
+        yVar.c(fVar.P);
+        yVar.c(0.0f);
+        yVar.c(fVar.Q);
+        long j10 = yVar.b ? -1L : yVar.a;
+        NinePatchDrawable ninePatchDrawable = this.c;
+        Rect rect = this.b;
+        if (ninePatchDrawable == null || this.d != j10) {
+            this.d = j10;
+            NinePatchDrawable b10 = k9.b(this.e, i10, eVar.b, fVar.P, fVar.r, fVar.Q, Color.alpha(i10) == 255 ? i10 : 1);
+            this.c = b10;
+            b10.getPadding(rect);
+        }
+        NinePatchDrawable ninePatchDrawable2 = this.c;
+        Rect rect2 = eVar.m;
+        ninePatchDrawable2.setBounds(rect2.left - rect.left, rect2.top - rect.top, rect2.right + rect.right, rect2.bottom + rect.bottom);
+        ninePatchDrawable2.setAlpha(fVar.c);
+        ninePatchDrawable2.draw(canvas);
     }
 }

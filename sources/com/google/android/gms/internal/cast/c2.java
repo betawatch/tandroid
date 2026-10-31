@@ -1,44 +1,178 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes.dex */
-public final class c2 extends c5 {
-    private static final c2 zzb;
-    private int zzd;
-    private long zzf;
-    private long zzg;
-    private int zzi;
-    private boolean zzj;
-    private long zzl;
-    private long zzm;
-    private String zze = "";
-    private h5 zzh = c6.d;
-    private String zzk = "";
+import android.content.SharedPreferences;
+import android.os.Looper;
+import java.util.HashSet;
+import java.util.Iterator;
+import org.telegram.messenger.zs;
 
-    static {
-        c2 c2Var = new c2();
-        zzb = c2Var;
-        c5.e(c2.class, c2Var);
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes.dex */
+public final class c2 {
+    public static final g6.b i = new g6.b("FeatureUsageAnalytics", null);
+    public static final String j = "21.4.0";
+    public static c2 k;
+    public final o0 a;
+    public final SharedPreferences b;
+    public final String c;
+    public long h;
+    public final HashSet f = new HashSet();
+    public final HashSet g = new HashSet();
+    public final z e = new z(Looper.getMainLooper(), 0);
+    public final v d = new v(this, 2);
+
+    public c2(SharedPreferences sharedPreferences, o0 o0Var, String str) {
+        this.b = sharedPreferences;
+        this.a = o0Var;
+        this.c = str;
     }
 
-    @Override // com.google.android.gms.internal.cast.c5
-    public final Object h(int i10, c5 c5Var) {
-        int i11 = i10 - 1;
-        if (i11 == 0) {
-            return (byte) 1;
+    public static void a(c1 c1Var) {
+        c2 c2Var;
+        if (!o0.j || (c2Var = k) == null) {
+            return;
         }
-        if (i11 == 2) {
-            return new d6(zzb, "\u0001\t\u0000\u0001\u0001\t\t\u0000\u0001\u0000\u0001ဈ\u0000\u0002ဂ\u0001\u0003ဂ\u0002\u0004\u001b\u0005င\u0003\u0006ဇ\u0004\u0007ဈ\u0005\bဂ\u0006\tဂ\u0007", new Object[]{"zzd", "zze", "zzf", "zzg", "zzh", b2.class, "zzi", "zzj", "zzk", "zzl", "zzm"});
+        SharedPreferences sharedPreferences = c2Var.b;
+        String num = Integer.toString(c1Var.a);
+        SharedPreferences.Editor edit = sharedPreferences.edit();
+        String h = sc.e.h("feature_usage_timestamp_reported_feature_", num);
+        if (!sharedPreferences.contains(h)) {
+            h = sc.e.h("feature_usage_timestamp_detected_feature_", num);
         }
-        if (i11 == 3) {
-            return new c2();
+        edit.putLong(h, System.currentTimeMillis()).apply();
+        c2Var.f.add(c1Var);
+        c2Var.e.post(c2Var.d);
+    }
+
+    public static c1 b(String str) {
+        c1 c1Var = c1.b;
+        switch (Integer.parseInt(str)) {
+            case 0:
+                return c1Var;
+            case 1:
+                return c1.c;
+            case 2:
+                return c1.d;
+            case 3:
+                return c1.e;
+            case 4:
+                return c1.f;
+            case 5:
+                return c1.h;
+            case 6:
+                return c1.n;
+            case 7:
+                return c1.r;
+            case 8:
+                return c1.s;
+            case 9:
+                return c1.w;
+            case 10:
+                return c1.x;
+            case 11:
+                return c1.y;
+            case 12:
+                return c1.D;
+            case 13:
+                return c1.E;
+            case 14:
+                return c1.F;
+            case 15:
+                return c1.G;
+            case 16:
+                return c1.H;
+            case 17:
+                return c1.I;
+            case 18:
+                return c1.J;
+            case 19:
+                return c1.K;
+            case 20:
+                return c1.L;
+            case 21:
+                return c1.M;
+            case 22:
+                return c1.N;
+            case 23:
+                return c1.O;
+            case 24:
+                return c1.P;
+            case 25:
+                return c1.Q;
+            case 26:
+                return c1.R;
+            case 27:
+                return c1.S;
+            case 28:
+                return c1.T;
+            case 29:
+                return c1.U;
+            case zs.T /* 30 */:
+                return c1.V;
+            case zs.U /* 31 */:
+                return c1.W;
+            case 32:
+                return c1.X;
+            case 33:
+                return c1.Y;
+            case 34:
+                return c1.Z;
+            case 35:
+                return c1.a0;
+            case 36:
+                return c1.b0;
+            case 37:
+                return c1.c0;
+            case 38:
+                return c1.d0;
+            case 39:
+                return c1.e0;
+            case 40:
+                return c1.f0;
+            case 41:
+                return c1.g0;
+            case 42:
+                return c1.h0;
+            case 43:
+                return c1.i0;
+            case 44:
+                return c1.j0;
+            case 45:
+                return c1.k0;
+            case 46:
+                return c1.l0;
+            case 47:
+                return c1.m0;
+            case 48:
+                return c1.n0;
+            case 49:
+                return c1.o0;
+            case 50:
+                return c1.p0;
+            case zs.o0 /* 51 */:
+                return c1.q0;
+            case zs.p0 /* 52 */:
+                return c1.r0;
+            case zs.q0 /* 53 */:
+                return c1.s0;
+            case zs.r0 /* 54 */:
+                return c1.t0;
+            case zs.s0 /* 55 */:
+                return c1.u0;
+            default:
+                return null;
         }
-        if (i11 == 4) {
-            return new s0(zzb);
+    }
+
+    public final void c(HashSet hashSet) {
+        if (hashSet.isEmpty()) {
+            return;
         }
-        if (i11 != 5) {
-            return null;
+        SharedPreferences.Editor edit = this.b.edit();
+        Iterator it = hashSet.iterator();
+        while (it.hasNext()) {
+            edit.remove((String) it.next());
         }
-        return zzb;
+        edit.apply();
     }
 }

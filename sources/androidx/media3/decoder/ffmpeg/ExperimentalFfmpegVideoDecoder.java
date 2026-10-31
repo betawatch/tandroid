@@ -3,7 +3,7 @@ package androidx.media3.decoder.ffmpeg;
 import android.view.Surface;
 import androidx.media3.decoder.VideoDecoderOutputBuffer;
 import b2.x;
-import e2.n0;
+import e2.l0;
 import h2.f;
 import h2.h;
 import h2.j;
@@ -12,7 +12,7 @@ import java.nio.ByteBuffer;
 import java.util.ArrayDeque;
 import java.util.List;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 final class ExperimentalFfmpegVideoDecoder extends l {
     public final String o;
@@ -20,7 +20,7 @@ final class ExperimentalFfmpegVideoDecoder extends l {
     public volatile int q;
     public final ArrayDeque r;
 
-    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+    /* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
     public static final class PendingInput {
         public final ByteBuffer a;
         public final long b;
@@ -105,7 +105,7 @@ final class ExperimentalFfmpegVideoDecoder extends l {
             this.r.clear();
         }
         ByteBuffer byteBuffer = hVar.c;
-        String str = n0.a;
+        String str = l0.a;
         boolean l4 = l(hVar.e);
         boolean z11 = !l4;
         while (!this.r.isEmpty()) {
@@ -176,7 +176,7 @@ final class ExperimentalFfmpegVideoDecoder extends l {
         }
         int ffmpegRenderFrame = ffmpegRenderFrame(this.p, surface, videoDecoderOutputBuffer, videoDecoderOutputBuffer.width, videoDecoderOutputBuffer.height);
         if (ffmpegRenderFrame == -2 || ffmpegRenderFrame == -4) {
-            throw new FfmpegDecoderException(ic.a.i(ffmpegRenderFrame, "Buffer render error: "));
+            throw new FfmpegDecoderException(i0.a.i(ffmpegRenderFrame, "Buffer render error: "));
         }
     }
 

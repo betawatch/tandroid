@@ -1,22 +1,21 @@
 package j4;
 
-import a8.bd;
-import a8.nc;
-import a8.yb;
+import b2.v0;
 import b2.w0;
-import b2.x0;
-import c3.j0;
-import di.b7;
-import e2.n0;
-import f9.i0;
-import f9.s1;
-import org.telegram.messenger.OneUIUtilities;
+import c3.k0;
+import e2.l0;
+import e9.n0;
+import e9.x1;
+import org.telegram.tgnet.TLObject;
+import v7.k8;
+import v7.o7;
+import v7.t6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class v implements i {
     public String e;
-    public j0 f;
+    public k0 f;
     public boolean i;
     public int k;
     public int l;
@@ -28,7 +27,7 @@ public final class v implements i {
     public final e2.x a = new e2.x(new byte[15], 2);
     public final a4.g b = new a4.g();
     public final e2.x c = new e2.x();
-    public final b7 p = new b7();
+    public final w p = new w();
     public int q = -2147483647;
     public int r = -1;
     public long t = -1;
@@ -39,16 +38,16 @@ public final class v implements i {
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
     /* JADX WARN: Removed duplicated region for block: B:219:0x02c0  */
-    /* JADX WARN: Removed duplicated region for block: B:42:0x045f  */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x0487 A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x046e A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:54:0x046b  */
-    /* JADX WARN: Removed duplicated region for block: B:63:0x0421  */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x045e  */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x0486 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x046d A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:54:0x046a  */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x0420  */
     @Override // j4.i
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void a(e2.x xVar) {
+    public final void c(e2.x xVar) {
         int i10;
         int i11;
         int i12;
@@ -70,7 +69,7 @@ public final class v implements i {
             int i20 = 1;
             if (i17 != 0) {
                 e2.x xVar2 = this.c;
-                b7 b7Var = this.p;
+                w wVar = this.p;
                 if (i17 == 1) {
                     int a2 = xVar.a();
                     e2.x xVar3 = this.a;
@@ -81,46 +80,46 @@ public final class v implements i {
                         int i21 = xVar3.c;
                         byte[] bArr2 = xVar3.a;
                         a4.g gVar = this.b;
-                        gVar.k(i21, bArr2);
+                        gVar.b0(i21, bArr2);
                         gVar.d();
-                        int a10 = bd.a(gVar, 3, 8, 8);
-                        b7Var.b = a10;
+                        int a10 = k8.a(gVar, 3, 8, 8);
+                        wVar.c = a10;
                         if (a10 != -1) {
-                            yb.g(Math.max(Math.max(2, 8), 32) <= 63);
-                            nc.a(nc.a(3L, 255L), 4294967296L);
+                            t6.f(Math.max(Math.max(2, 8), 32) <= 63);
+                            o7.a(o7.a(3L, 255L), 4294967296L);
                             if (gVar.b() >= 2) {
-                                long i22 = gVar.i(2);
-                                if (i22 == 3) {
+                                long k10 = gVar.k(2);
+                                if (k10 == 3) {
                                     if (gVar.b() >= 8) {
-                                        long i23 = gVar.i(8);
-                                        i22 += i23;
-                                        if (i23 == 255) {
+                                        long k11 = gVar.k(8);
+                                        k10 += k11;
+                                        if (k11 == 255) {
                                             if (gVar.b() >= 32) {
-                                                i22 = gVar.i(32) + i22;
+                                                k10 = gVar.k(32) + k10;
                                             }
                                         }
                                     }
                                 }
-                                j12 = i22;
-                                b7Var.c = j12;
+                                j12 = k10;
+                                wVar.b = j12;
                                 if (j12 != -1) {
                                     if (j12 > 16) {
-                                        throw x0.c("Contains sub-stream with an invalid packet label " + b7Var.c);
+                                        throw w0.c("Contains sub-stream with an invalid packet label " + wVar.b);
                                     }
                                     if (j12 == 0) {
-                                        int i24 = b7Var.b;
-                                        if (i24 == 1) {
-                                            throw x0.a(null, "Mpegh3daConfig packet with invalid packet label 0");
+                                        int i22 = wVar.c;
+                                        if (i22 == 1) {
+                                            throw w0.a(null, "Mpegh3daConfig packet with invalid packet label 0");
                                         }
-                                        if (i24 == 2) {
-                                            throw x0.a(null, "Mpegh3daFrame packet with invalid packet label 0");
+                                        if (i22 == 2) {
+                                            throw w0.a(null, "Mpegh3daFrame packet with invalid packet label 0");
                                         }
-                                        if (i24 == 17) {
-                                            throw x0.a(null, "AudioTruncation packet with invalid packet label 0");
+                                        if (i22 == 17) {
+                                            throw w0.a(null, "AudioTruncation packet with invalid packet label 0");
                                         }
                                     }
-                                    int a11 = bd.a(gVar, 11, 24, 24);
-                                    b7Var.d = a11;
+                                    int a11 = k8.a(gVar, 11, 24, 24);
+                                    wVar.d = a11;
                                     if (a11 != -1) {
                                         z10 = true;
                                         if (z10) {
@@ -128,19 +127,19 @@ public final class v implements i {
                                         } else {
                                             i16 = 0;
                                             this.n = 0;
-                                            this.o = b7Var.d + i21 + this.o;
+                                            this.o = wVar.d + i21 + this.o;
                                         }
                                         if (z10) {
-                                            int i25 = xVar3.c;
-                                            if (i25 < 15) {
-                                                xVar3.M(i25 + 1);
+                                            int i23 = xVar3.c;
+                                            if (i23 < 15) {
+                                                xVar3.M(i23 + 1);
                                                 this.m = false;
                                             }
                                         } else {
                                             xVar3.N(i16);
                                             this.f.d(xVar3.c, xVar3);
                                             xVar3.K(2);
-                                            xVar2.K(b7Var.d);
+                                            xVar2.K(wVar.d);
                                             this.m = true;
                                             this.d = 2;
                                         }
@@ -148,7 +147,7 @@ public final class v implements i {
                                 }
                             }
                             j12 = -1;
-                            b7Var.c = j12;
+                            wVar.b = j12;
                             if (j12 != -1) {
                             }
                         }
@@ -164,29 +163,29 @@ public final class v implements i {
                     if (i17 != 2) {
                         throw new IllegalStateException();
                     }
-                    int i26 = b7Var.b;
-                    if (i26 == 1 || i26 == 17) {
-                        int i27 = xVar.b;
+                    int i24 = wVar.c;
+                    if (i24 == 1 || i24 == 17) {
+                        int i25 = xVar.b;
                         int min2 = Math.min(xVar.a(), xVar2.a());
                         xVar.k(xVar2.b, min2, xVar2.a);
                         xVar2.O(min2);
-                        xVar.N(i27);
+                        xVar.N(i25);
                     }
-                    int min3 = Math.min(xVar.a(), b7Var.d - this.n);
+                    int min3 = Math.min(xVar.a(), wVar.d - this.n);
                     this.f.d(min3, xVar);
-                    int i28 = this.n + min3;
-                    this.n = i28;
-                    if (i28 != b7Var.d) {
+                    int i26 = this.n + min3;
+                    this.n = i26;
+                    if (i26 != wVar.d) {
                         continue;
                     } else {
-                        int i29 = b7Var.b;
-                        if (i29 == 1) {
+                        int i27 = wVar.c;
+                        if (i27 == 1) {
                             byte[] bArr3 = xVar2.a;
                             a4.g gVar2 = new a4.g(bArr3, bArr3.length);
-                            int g7 = gVar2.g(8);
-                            int g10 = gVar2.g(5);
-                            if (g10 != 31) {
-                                switch (g10) {
+                            int i28 = gVar2.i(8);
+                            int i29 = gVar2.i(5);
+                            if (i29 != 31) {
+                                switch (i29) {
                                     case 0:
                                         i13 = 96000;
                                         break;
@@ -229,7 +228,7 @@ public final class v implements i {
                                     case 13:
                                     case 14:
                                     default:
-                                        throw x0.c("Unsupported sampling rate index " + g10);
+                                        throw w0.c("Unsupported sampling rate index " + i29);
                                     case 15:
                                         i13 = 57600;
                                         break;
@@ -237,7 +236,7 @@ public final class v implements i {
                                         i13 = 51200;
                                         break;
                                     case 17:
-                                        i13 = OneUIUtilities.ONE_UI_4_0;
+                                        i13 = 40000;
                                         break;
                                     case 18:
                                         i13 = 38400;
@@ -271,144 +270,144 @@ public final class v implements i {
                                         break;
                                 }
                             } else {
-                                i13 = gVar2.g(24);
+                                i13 = gVar2.i(24);
                             }
-                            int g11 = gVar2.g(3);
-                            if (g11 == 0) {
+                            int i30 = gVar2.i(3);
+                            if (i30 == 0) {
                                 i14 = 768;
-                            } else if (g11 == 1) {
+                            } else if (i30 == 1) {
                                 i14 = 1024;
-                            } else if (g11 == 2 || g11 == 3) {
+                            } else if (i30 == 2 || i30 == 3) {
                                 i14 = 2048;
                             } else {
-                                if (g11 != 4) {
-                                    throw x0.c("Unsupported coreSbrFrameLengthIndex " + g11);
+                                if (i30 != 4) {
+                                    throw w0.c("Unsupported coreSbrFrameLengthIndex " + i30);
                                 }
-                                i14 = 4096;
+                                i14 = TLObject.FLAG_12;
                             }
-                            int i30 = i14;
-                            if (g11 == 0 || g11 == 1) {
+                            int i31 = i14;
+                            if (i30 == 0 || i30 == 1) {
                                 c10 = 0;
-                            } else if (g11 == 2) {
+                            } else if (i30 == 2) {
                                 c10 = 2;
-                            } else if (g11 == 3) {
+                            } else if (i30 == 3) {
                                 c10 = 3;
                             } else {
-                                if (g11 != 4) {
-                                    throw x0.c("Unsupported coreSbrFrameLengthIndex " + g11);
+                                if (i30 != 4) {
+                                    throw w0.c("Unsupported coreSbrFrameLengthIndex " + i30);
                                 }
                                 c10 = 1;
                             }
-                            gVar2.o(2);
-                            bd.c(gVar2);
-                            int g12 = gVar2.g(5);
-                            int i31 = 0;
-                            int i32 = 0;
+                            gVar2.f0(2);
+                            k8.c(gVar2);
+                            int i32 = gVar2.i(5);
+                            int i33 = 0;
+                            int i34 = 0;
                             while (true) {
-                                int i33 = i20;
-                                int i34 = 16;
-                                if (i31 < g12 + 1) {
-                                    int g13 = gVar2.g(3);
-                                    i32 = bd.a(gVar2, 5, 8, 16) + 1 + i32;
-                                    if ((g13 == 0 || g13 == 2) && gVar2.f()) {
-                                        bd.c(gVar2);
+                                int i35 = i20;
+                                int i36 = 16;
+                                if (i33 < i32 + 1) {
+                                    int i37 = gVar2.i(3);
+                                    i34 = k8.a(gVar2, 5, 8, 16) + 1 + i34;
+                                    if ((i37 == 0 || i37 == 2) && gVar2.h()) {
+                                        k8.c(gVar2);
                                     }
-                                    i31++;
-                                    i20 = i33;
+                                    i33++;
+                                    i20 = i35;
                                 } else {
-                                    int a12 = bd.a(gVar2, 4, 8, 16) + 1;
-                                    gVar2.n();
-                                    int i35 = 0;
+                                    int a12 = k8.a(gVar2, 4, 8, 16) + 1;
+                                    gVar2.e0();
+                                    int i38 = 0;
                                     while (true) {
                                         double d = 2.0d;
-                                        if (i35 < a12) {
-                                            int g14 = gVar2.g(2);
-                                            if (g14 == 0) {
-                                                gVar2.o(i19);
-                                                if (gVar2.f()) {
-                                                    gVar2.o(13);
+                                        if (i38 < a12) {
+                                            int i39 = gVar2.i(2);
+                                            if (i39 == 0) {
+                                                gVar2.f0(i19);
+                                                if (gVar2.h()) {
+                                                    gVar2.f0(13);
                                                 }
                                                 if (c10 > 0) {
-                                                    bd.b(gVar2);
+                                                    k8.b(gVar2);
                                                 }
-                                            } else if (g14 == i33) {
-                                                gVar2.o(i19);
-                                                boolean f7 = gVar2.f();
-                                                if (f7) {
-                                                    gVar2.o(13);
+                                            } else if (i39 == i35) {
+                                                gVar2.f0(i19);
+                                                boolean h = gVar2.h();
+                                                if (h) {
+                                                    gVar2.f0(13);
                                                 }
-                                                if (f7) {
-                                                    gVar2.n();
+                                                if (h) {
+                                                    gVar2.e0();
                                                 }
                                                 if (c10 > 0) {
-                                                    bd.b(gVar2);
-                                                    i15 = gVar2.g(2);
+                                                    k8.b(gVar2);
+                                                    i15 = gVar2.i(2);
                                                 } else {
                                                     i15 = 0;
                                                 }
                                                 if (i15 > 0) {
-                                                    gVar2.o(6);
-                                                    int g15 = gVar2.g(2);
-                                                    gVar2.o(4);
-                                                    if (gVar2.f()) {
-                                                        gVar2.o(5);
+                                                    gVar2.f0(6);
+                                                    int i40 = gVar2.i(2);
+                                                    gVar2.f0(4);
+                                                    if (gVar2.h()) {
+                                                        gVar2.f0(5);
                                                     }
                                                     if (i15 == 2 || i15 == i19) {
-                                                        gVar2.o(6);
+                                                        gVar2.f0(6);
                                                     }
-                                                    if (g15 == 2) {
-                                                        gVar2.n();
+                                                    if (i40 == 2) {
+                                                        gVar2.e0();
                                                     }
                                                 }
-                                                int floor = ((int) Math.floor(Math.log(i32 - 1) / Math.log(2.0d))) + 1;
-                                                int g16 = gVar2.g(2);
-                                                if (g16 > 0 && gVar2.f()) {
-                                                    gVar2.o(floor);
+                                                int floor = ((int) Math.floor(Math.log(i34 - 1) / Math.log(2.0d))) + 1;
+                                                int i41 = gVar2.i(2);
+                                                if (i41 > 0 && gVar2.h()) {
+                                                    gVar2.f0(floor);
                                                 }
-                                                if (gVar2.f()) {
-                                                    gVar2.o(floor);
+                                                if (gVar2.h()) {
+                                                    gVar2.f0(floor);
                                                 }
-                                                if (c10 == 0 && g16 == 0) {
-                                                    gVar2.n();
+                                                if (c10 == 0 && i41 == 0) {
+                                                    gVar2.e0();
                                                 }
-                                            } else if (g14 == i19) {
-                                                bd.a(gVar2, 4, i18, i34);
-                                                int a13 = bd.a(gVar2, 4, i18, i34);
-                                                if (gVar2.f()) {
-                                                    bd.a(gVar2, i18, i34, 0);
+                                            } else if (i39 == i19) {
+                                                k8.a(gVar2, 4, i18, i36);
+                                                int a13 = k8.a(gVar2, 4, i18, i36);
+                                                if (gVar2.h()) {
+                                                    k8.a(gVar2, i18, i36, 0);
                                                 }
-                                                gVar2.n();
+                                                gVar2.e0();
                                                 if (a13 > 0) {
-                                                    gVar2.o(a13 * 8);
+                                                    gVar2.f0(a13 * 8);
                                                 }
                                             }
-                                            i35++;
+                                            i38++;
                                             i18 = 8;
                                             i19 = 3;
-                                            i34 = 16;
-                                            i33 = 1;
+                                            i36 = 16;
+                                            i35 = 1;
                                         } else {
-                                            if (gVar2.f()) {
-                                                int i36 = 8;
-                                                int a14 = bd.a(gVar2, 2, 4, 8) + 1;
-                                                int i37 = 0;
+                                            if (gVar2.h()) {
+                                                int i42 = 8;
+                                                int a14 = k8.a(gVar2, 2, 4, 8) + 1;
+                                                int i43 = 0;
                                                 bArr = null;
-                                                while (i37 < a14) {
-                                                    int a15 = bd.a(gVar2, 4, i36, 16);
-                                                    int a16 = bd.a(gVar2, 4, i36, 16);
+                                                while (i43 < a14) {
+                                                    int a15 = k8.a(gVar2, 4, i42, 16);
+                                                    int a16 = k8.a(gVar2, 4, i42, 16);
                                                     if (a15 == 7) {
-                                                        int g17 = gVar2.g(4) + 1;
-                                                        gVar2.o(4);
-                                                        byte[] bArr4 = new byte[g17];
-                                                        for (int i38 = 0; i38 < g17; i38++) {
-                                                            bArr4[i38] = (byte) gVar2.g(i36);
+                                                        int i44 = gVar2.i(4) + 1;
+                                                        gVar2.f0(4);
+                                                        byte[] bArr4 = new byte[i44];
+                                                        for (int i45 = 0; i45 < i44; i45++) {
+                                                            bArr4[i45] = (byte) gVar2.i(i42);
                                                         }
                                                         bArr = bArr4;
                                                     } else {
-                                                        gVar2.o(a16 * i36);
+                                                        gVar2.f0(a16 * i42);
                                                     }
-                                                    i37++;
-                                                    i36 = 8;
+                                                    i43++;
+                                                    i42 = 8;
                                                 }
                                             } else {
                                                 bArr = null;
@@ -418,21 +417,21 @@ public final class v implements i {
                                                 case androidx.car.app.media.b.AUDIO_CONTENT_SAMPLING_RATE /* 16000 */:
                                                     d = 3.0d;
                                                     this.q = (int) (i13 * d);
-                                                    this.r = (int) (i30 * d);
+                                                    this.r = (int) (i31 * d);
                                                     j10 = this.t;
-                                                    j11 = b7Var.c;
+                                                    j11 = wVar.b;
                                                     if (j10 != j11) {
                                                         this.t = j11;
-                                                        String concat = g7 != -1 ? "mhm1".concat(String.format(".%02X", Integer.valueOf(g7))) : "mhm1";
-                                                        s1 z11 = (bArr == null || bArr.length <= 0) ? null : i0.z(n0.b, bArr);
-                                                        b2.w wVar = new b2.w();
-                                                        wVar.a = this.e;
-                                                        wVar.q = w0.n("video/mp2t");
-                                                        wVar.r = w0.n("audio/mhm1");
-                                                        wVar.K = this.q;
-                                                        wVar.j = concat;
-                                                        wVar.u = z11;
-                                                        this.f.b(new b2.x(wVar));
+                                                        String concat = i28 != -1 ? "mhm1".concat(String.format(".%02X", Integer.valueOf(i28))) : "mhm1";
+                                                        x1 z11 = (bArr == null || bArr.length <= 0) ? null : n0.z(l0.b, bArr);
+                                                        b2.w wVar2 = new b2.w();
+                                                        wVar2.a = this.e;
+                                                        wVar2.q = v0.n("video/mp2t");
+                                                        wVar2.r = v0.n("audio/mhm1");
+                                                        wVar2.K = this.q;
+                                                        wVar2.j = concat;
+                                                        wVar2.u = z11;
+                                                        this.f.b(new b2.x(wVar2));
                                                     }
                                                     i11 = 1;
                                                     this.u = true;
@@ -440,9 +439,9 @@ public final class v implements i {
                                                 case 22050:
                                                 case 24000:
                                                     this.q = (int) (i13 * d);
-                                                    this.r = (int) (i30 * d);
+                                                    this.r = (int) (i31 * d);
                                                     j10 = this.t;
-                                                    j11 = b7Var.c;
+                                                    j11 = wVar.b;
                                                     if (j10 != j11) {
                                                     }
                                                     i11 = 1;
@@ -454,9 +453,9 @@ public final class v implements i {
                                                 case 64000:
                                                     d = 1.5d;
                                                     this.q = (int) (i13 * d);
-                                                    this.r = (int) (i30 * d);
+                                                    this.r = (int) (i31 * d);
                                                     j10 = this.t;
-                                                    j11 = b7Var.c;
+                                                    j11 = wVar.b;
                                                     if (j10 != j11) {
                                                     }
                                                     i11 = 1;
@@ -468,33 +467,33 @@ public final class v implements i {
                                                 case 96000:
                                                     d = 1.0d;
                                                     this.q = (int) (i13 * d);
-                                                    this.r = (int) (i30 * d);
+                                                    this.r = (int) (i31 * d);
                                                     j10 = this.t;
-                                                    j11 = b7Var.c;
+                                                    j11 = wVar.b;
                                                     if (j10 != j11) {
                                                     }
                                                     i11 = 1;
                                                     this.u = true;
                                                     break;
                                                 default:
-                                                    throw x0.c("Unsupported sampling rate " + i13);
+                                                    throw w0.c("Unsupported sampling rate " + i13);
                                             }
                                         }
                                     }
                                 }
                             }
                         } else {
-                            if (i29 == 17) {
+                            if (i27 == 17) {
                                 byte[] bArr5 = xVar2.a;
                                 a4.g gVar3 = new a4.g(bArr5, bArr5.length);
-                                if (gVar3.f()) {
-                                    gVar3.o(2);
-                                    i12 = gVar3.g(13);
+                                if (gVar3.h()) {
+                                    gVar3.f0(2);
+                                    i12 = gVar3.i(13);
                                 } else {
                                     i12 = 0;
                                 }
                                 this.s = i12;
-                            } else if (i29 == 2) {
+                            } else if (i27 == 2) {
                                 if (this.u) {
                                     this.j = false;
                                     i10 = 1;
@@ -520,15 +519,15 @@ public final class v implements i {
                     }
                 }
             } else {
-                int i39 = this.k;
-                if ((i39 & 2) == 0) {
+                int i46 = this.k;
+                if ((i46 & 2) == 0) {
                     xVar.N(xVar.c);
                 } else {
-                    if ((i39 & 4) == 0) {
+                    if ((i46 & 4) == 0) {
                         while (xVar.a() > 0) {
-                            int i40 = this.l << 8;
-                            this.l = i40;
-                            int A = i40 | xVar.A();
+                            int i47 = this.l << 8;
+                            this.l = i47;
+                            int A = i47 | xVar.A();
                             this.l = A;
                             if ((A & 16777215) == 12583333) {
                                 xVar.N(xVar.b - 3);
@@ -543,7 +542,7 @@ public final class v implements i {
     }
 
     @Override // j4.i
-    public final void c() {
+    public final void e() {
         this.d = 0;
         this.l = 0;
         this.a.K(2);
@@ -562,16 +561,16 @@ public final class v implements i {
     }
 
     @Override // j4.i
-    public final void d(c3.q qVar, f0 f0Var) {
-        f0Var.b();
-        f0Var.c();
-        this.e = (String) f0Var.e;
-        f0Var.c();
-        this.f = qVar.F1(f0Var.c, 1);
+    public final void f(c3.q qVar, g0 g0Var) {
+        g0Var.b();
+        g0Var.c();
+        this.e = (String) g0Var.e;
+        g0Var.c();
+        this.f = qVar.I1(g0Var.c, 1);
     }
 
     @Override // j4.i
-    public final void f(int i10, long j10) {
+    public final void h(int i10, long j10) {
         this.k = i10;
         if (!this.j && (this.o != 0 || !this.m)) {
             this.i = true;
@@ -586,6 +585,6 @@ public final class v implements i {
     }
 
     @Override // j4.i
-    public final void e(boolean z10) {
+    public final void g(boolean z10) {
     }
 }

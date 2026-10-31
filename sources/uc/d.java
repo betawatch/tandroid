@@ -1,372 +1,350 @@
 package uc;
 
-import e2.j0;
+import j$.util.DesugarCollections;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Locale;
+import java.util.Map;
+import java.util.Set;
+import m1.j;
+import org.webrtc.MediaStreamTrack;
+import w7.b8;
+import w7.c8;
+import xc.h;
+import xc.i;
+import xc.k;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public abstract class d {
-    public static final int[] a = {16, 17, 18, 0, 8, 7, 9, 6, 10, 5, 11, 4, 12, 3, 13, 2, 14, 1, 15};
-    public static final byte[] b = {65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 43, 47};
+public final class d extends c8 {
+    public static final Set g = DesugarCollections.unmodifiableSet(new HashSet(Arrays.asList("a", "abbr", "acronym", "b", "bdo", "big", "br", "button", "cite", "code", "dfn", "em", "i", "img", "input", "kbd", "label", "map", "object", "q", "samp", "script", "select", "small", "span", "strong", "sub", "sup", "textarea", "time", "tt", "var")));
+    public static final Set h = DesugarCollections.unmodifiableSet(new HashSet(Arrays.asList("area", "base", "br", "col", "embed", "hr", "img", "input", "keygen", "link", "meta", "param", "source", "track", "wbr")));
+    public static final Set i = DesugarCollections.unmodifiableSet(new HashSet(Arrays.asList("address", "article", "aside", "blockquote", "canvas", "dd", "div", "dl", "dt", "fieldset", "figcaption", "figure", "footer", "form", "h1", "h2", "h3", "h4", "h5", "h6", "header", "hgroup", "hr", "li", "main", "nav", "noscript", "ol", "output", "p", "pre", "section", "table", "tfoot", "ul", MediaStreamTrack.VIDEO_TRACK_KIND)));
+    public final jb.b a;
+    public final kb.a b;
+    public final ArrayList c = new ArrayList(0);
+    public a d = new a("", 0, Collections.EMPTY_MAP, null);
+    public boolean e;
+    public boolean f;
 
-    public static String a(byte[] bArr) {
-        int i10;
-        int i11;
-        int i12;
-        int i13;
-        if (bArr == 0) {
-            return null;
+    public d(jb.b bVar, kb.a aVar) {
+        this.a = bVar;
+        this.b = aVar;
+    }
+
+    public static Map a(i iVar) {
+        wc.b bVar = iVar.k;
+        int i10 = bVar.a;
+        if (i10 <= 0) {
+            return Collections.EMPTY_MAP;
         }
-        int length = (((((bArr.length * 8) + 5) / 6) + 3) / 4) * 4;
-        StringBuilder sb2 = new StringBuilder(length);
-        int i14 = 0;
+        HashMap hashMap = new HashMap(i10);
+        int i11 = 0;
         while (true) {
-            int i15 = i14 / 8;
-            if (bArr.length <= i15) {
-                i11 = -1;
-            } else {
-                int i16 = bArr.length - 1 == i15 ? 0 : bArr[i15 + 1];
-                int i17 = (i14 % 24) / 6;
-                if (i17 != 0) {
-                    if (i17 == 1) {
-                        i12 = (bArr[i15] << 4) & 48;
-                        i13 = (i16 >> 4) & 15;
-                    } else if (i17 == 2) {
-                        i12 = (bArr[i15] << 2) & 60;
-                        i13 = (i16 >> 6) & 3;
-                    } else if (i17 != 3) {
-                        i11 = 0;
-                    } else {
-                        i10 = bArr[i15];
-                    }
-                    i11 = i12 | i13;
-                } else {
-                    i10 = bArr[i15] >> 2;
-                }
-                i11 = i10 & 63;
+            if (!(i11 < bVar.a)) {
+                return DesugarCollections.unmodifiableMap(hashMap);
             }
-            if (i11 < 0) {
-                break;
+            String str = bVar.c[i11];
+            String str2 = bVar.b[i11];
+            if (str == null) {
+                str = "";
             }
-            sb2.append((char) b[i11]);
-            i14 += 6;
+            wc.a aVar = new wc.a();
+            if (str2 == null) {
+                throw new IllegalArgumentException("Object must not be null");
+            }
+            aVar.a = str2.trim();
+            if (str2.length() == 0) {
+                throw new IllegalArgumentException("String must not be empty");
+            }
+            aVar.b = str;
+            aVar.c = bVar;
+            i11++;
+            hashMap.put(aVar.a.toLowerCase(Locale.US), aVar.b);
         }
-        for (int length2 = sb2.length(); length2 < length; length2++) {
-            sb2.append('=');
-        }
-        return sb2.toString();
     }
 
-    public static boolean b(String str) {
-        if (str == null || str.length() == 0) {
-            return false;
-        }
-        int length = str.length();
-        for (int i10 = 0; i10 < length; i10++) {
-            char charAt = str.charAt(i10);
-            if (charAt != '\t' && charAt != ' ' && charAt != '\"' && charAt != ',' && charAt != '/' && charAt != '{' && charAt != '}' && charAt != '(' && charAt != ')') {
-                switch (charAt) {
-                    case ':':
-                    case ';':
-                    case '<':
-                    case '=':
-                    case '>':
-                    case '?':
-                    case '@':
-                        break;
-                    default:
-                        switch (charAt) {
-                            case '[':
-                            case '\\':
-                            case ']':
-                                break;
-                            default:
-                        }
-                }
-            }
-            return false;
-        }
-        return true;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:17:0x0052 A[LOOP:1: B:16:0x0050->B:17:0x0052, LOOP_END] */
+    /* JADX WARN: Code restructure failed: missing block: B:100:0x0178, code lost:
+    
+        if (r8 == null) goto L102;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:102:0x017a, code lost:
+    
+        r17.append(r8);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:104:0x017e, code lost:
+    
+        r0 = move-exception;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:106:0x0184, code lost:
+    
+        throw new java.lang.RuntimeException(r0);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:107:0x0185, code lost:
+    
+        r6.b(r12.length());
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:108:0x018e, code lost:
+    
+        if (r4 != r6.d) goto L105;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:109:0x0191, code lost:
+    
+        r16.f = r11.contains(r6.a);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:111:0x019d, code lost:
+    
+        if ("p".equals(r3) == false) goto L109;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:112:0x019f, code lost:
+    
+        w7.b8.a(r17, '\n');
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:113:0x01a2, code lost:
+    
+        r16.d = r6.e;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:94:0x015e, code lost:
+    
+        r4 = r6.b;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:95:0x0164, code lost:
+    
+        if ("pre".equals(r3) == false) goto L93;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:96:0x0166, code lost:
+    
+        r16.e = false;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:97:0x0168, code lost:
+    
+        r12 = (java.lang.CharSequence) r17;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:98:0x016f, code lost:
+    
+        if (r4 != r12.length()) goto L102;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:99:0x0171, code lost:
+    
+        r8.getClass();
+        r8 = jb.b.A4(r6);
+     */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r17v0, types: [java.lang.Appendable] */
+    /* JADX WARN: Type inference failed for: r7v1, types: [f2.f] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static void c(d5.z zVar, int[] iArr, int[] iArr2, j0 j0Var) {
-        int i10;
-        int p10;
-        int p11;
-        int i11;
-        int i12 = 0;
-        while (i12 < iArr2.length) {
-            int i13 = j0Var.i(zVar, iArr);
-            if (i13 < 0 || i13 > 15) {
-                switch (i13) {
-                    case 16:
-                        i10 = iArr2[i12 - 1];
-                        p10 = zVar.p(2, iArr) + 3;
-                        for (i11 = 0; i11 < p10; i11++) {
-                            iArr2[i12 + i11] = i10;
-                        }
-                        i12 += p10 - 1;
-                        break;
-                    case 17:
-                        p11 = zVar.p(3, iArr) + 3;
-                        p10 = p11;
-                        i10 = 0;
-                        while (i11 < p10) {
-                        }
-                        i12 += p10 - 1;
-                        break;
-                    case 18:
-                        p11 = zVar.p(7, iArr) + 11;
-                        p10 = p11;
-                        i10 = 0;
-                        while (i11 < p10) {
-                        }
-                        i12 += p10 - 1;
-                        break;
-                    default:
-                        throw new com.google.firebase.messaging.p(String.format("[%s] Bad code length '%d' at the bit index '%d'.", d.class.getSimpleName(), Integer.valueOf(i13), iArr));
+    public final void b(Appendable appendable, String str) {
+        xc.d dVar;
+        b bVar;
+        int length;
+        k kVar = new k(new xc.a(str), new xc.b(0));
+        while (true) {
+            if (kVar.e) {
+                StringBuilder sb2 = kVar.g;
+                int length2 = sb2.length();
+                xc.d dVar2 = kVar.l;
+                if (length2 > 0) {
+                    String sb3 = sb2.toString();
+                    sb2.delete(0, sb2.length());
+                    kVar.f = null;
+                    dVar2.c = sb3;
+                    dVar = dVar2;
+                } else {
+                    String str2 = kVar.f;
+                    if (str2 != null) {
+                        dVar2.c = str2;
+                        kVar.f = null;
+                        dVar = dVar2;
+                    } else {
+                        kVar.e = false;
+                        dVar = kVar.d;
+                    }
                 }
+                int i10 = dVar.b;
+                if (6 == i10) {
+                    return;
+                }
+                int c10 = j.c(i10);
+                jb.b bVar2 = this.a;
+                Set set = i;
+                ArrayList arrayList = this.c;
+                Set set2 = g;
+                if (c10 == 1) {
+                    i iVar = (i) dVar;
+                    boolean contains = set2.contains(iVar.d);
+                    Set set3 = h;
+                    if (contains) {
+                        String str3 = iVar.d;
+                        CharSequence charSequence = (CharSequence) appendable;
+                        b bVar3 = new b(charSequence.length(), str3, a(iVar));
+                        if (this.f) {
+                            int length3 = charSequence.length();
+                            if (length3 > 0 && '\n' != charSequence.charAt(length3 - 1)) {
+                                b8.a(appendable, '\n');
+                            }
+                            this.f = false;
+                        }
+                        if (set3.contains(str3) || iVar.j) {
+                            bVar2.getClass();
+                            String A4 = jb.b.A4(bVar3);
+                            if (A4 != null && A4.length() > 0) {
+                                try {
+                                    appendable.append(A4);
+                                } catch (IOException e) {
+                                    throw new RuntimeException(e);
+                                }
+                            }
+                            int length4 = charSequence.length();
+                            if (bVar3.d <= -1) {
+                                bVar3.d = length4;
+                            }
+                        }
+                        arrayList.add(bVar3);
+                    } else {
+                        String str4 = iVar.d;
+                        if ("p".equals(this.d.a)) {
+                            this.d.b(((CharSequence) appendable).length());
+                            b8.a(appendable, '\n');
+                            this.d = this.d.e;
+                        } else if ("li".equals(str4) && "li".equals(this.d.a)) {
+                            this.d.b(((CharSequence) appendable).length());
+                            this.d = this.d.e;
+                        }
+                        if (set.contains(str4)) {
+                            this.e = "pre".equals(str4);
+                            CharSequence charSequence2 = (CharSequence) appendable;
+                            int length5 = charSequence2.length();
+                            if (length5 > 0 && '\n' != charSequence2.charAt(length5 - 1)) {
+                                b8.a(appendable, '\n');
+                            }
+                        } else if (this.f) {
+                            CharSequence charSequence3 = (CharSequence) appendable;
+                            int length6 = charSequence3.length();
+                            if (length6 > 0 && '\n' != charSequence3.charAt(length6 - 1)) {
+                                b8.a(appendable, '\n');
+                            }
+                            this.f = false;
+                        }
+                        CharSequence charSequence4 = (CharSequence) appendable;
+                        int length7 = charSequence4.length();
+                        Map a2 = a(iVar);
+                        a aVar = this.d;
+                        a aVar2 = new a(str4, length7, a2, aVar);
+                        boolean z10 = set3.contains(str4) || iVar.j;
+                        if (z10) {
+                            bVar2.getClass();
+                            String A42 = jb.b.A4(aVar2);
+                            if (A42 != null && A42.length() > 0) {
+                                try {
+                                    appendable.append(A42);
+                                } catch (IOException e7) {
+                                    throw new RuntimeException(e7);
+                                }
+                            }
+                            aVar2.b(charSequence4.length());
+                        }
+                        ArrayList arrayList2 = aVar.f;
+                        if (arrayList2 == null) {
+                            arrayList2 = new ArrayList(2);
+                            aVar.f = arrayList2;
+                        }
+                        arrayList2.add(aVar2);
+                        if (!z10) {
+                            this.d = aVar2;
+                        }
+                    }
+                } else if (c10 == 2) {
+                    h hVar = (h) dVar;
+                    if (set2.contains(hVar.d)) {
+                        String str5 = hVar.d;
+                        int size = arrayList.size() - 1;
+                        while (true) {
+                            if (size <= -1) {
+                                bVar = null;
+                                break;
+                            }
+                            bVar = (b) arrayList.get(size);
+                            if (str5.equals(bVar.a) && bVar.d < 0) {
+                                break;
+                            } else {
+                                size--;
+                            }
+                        }
+                        if (bVar != null) {
+                            CharSequence charSequence5 = (CharSequence) appendable;
+                            if (bVar.b == charSequence5.length()) {
+                                bVar2.getClass();
+                                String A43 = jb.b.A4(bVar);
+                                if (A43 != null) {
+                                    try {
+                                        appendable.append(A43);
+                                    } catch (IOException e10) {
+                                        throw new RuntimeException(e10);
+                                    }
+                                }
+                            }
+                            int length8 = charSequence5.length();
+                            if (bVar.d <= -1) {
+                                bVar.d = length8;
+                            }
+                        }
+                    } else {
+                        String str6 = hVar.d;
+                        a aVar3 = this.d;
+                        while (aVar3 != null && !str6.equals(aVar3.a) && aVar3.d <= -1) {
+                            aVar3 = aVar3.e;
+                        }
+                    }
+                } else if (c10 == 4) {
+                    xc.d dVar3 = dVar;
+                    if (this.e) {
+                        try {
+                            appendable.append(dVar3.c);
+                        } catch (IOException e11) {
+                            throw new RuntimeException(e11);
+                        }
+                    } else {
+                        if (this.f) {
+                            CharSequence charSequence6 = (CharSequence) appendable;
+                            int length9 = charSequence6.length();
+                            if (length9 > 0 && '\n' != charSequence6.charAt(length9 - 1)) {
+                                b8.a(appendable, '\n');
+                            }
+                            this.f = false;
+                        }
+                        String str7 = dVar3.c;
+                        this.b.getClass();
+                        CharSequence charSequence7 = (CharSequence) appendable;
+                        int length10 = charSequence7.length();
+                        int length11 = str7.length();
+                        boolean z11 = false;
+                        for (int i11 = 0; i11 < length11; i11++) {
+                            char charAt = str7.charAt(i11);
+                            if (Character.isWhitespace(charAt)) {
+                                z11 = true;
+                            } else {
+                                if (z11 && (length = charSequence7.length()) > 0 && !Character.isWhitespace(charSequence7.charAt(length - 1))) {
+                                    b8.a(appendable, ' ');
+                                }
+                                b8.a(appendable, charAt);
+                                z11 = false;
+                            }
+                        }
+                        if (z11 && length10 < charSequence7.length()) {
+                            b8.a(appendable, ' ');
+                        }
+                    }
+                }
+                dVar.b();
             } else {
-                iArr2[i12] = i13;
+                kVar.c.d(kVar, kVar.a);
             }
-            i12++;
-        }
-    }
-
-    public static int d(d5.z zVar, int[] iArr, j0 j0Var) {
-        int i10;
-        int i11 = j0Var.i(zVar, iArr);
-        int i12 = 2;
-        int i13 = 5;
-        switch (i11) {
-            case 0:
-            case 1:
-            case 2:
-            case 3:
-                return i11 + 1;
-            case 4:
-                i12 = 1;
-                return zVar.p(i12, iArr) + i13;
-            case 5:
-                i12 = 1;
-                i13 = 7;
-                return zVar.p(i12, iArr) + i13;
-            case 6:
-                i13 = 9;
-                return zVar.p(i12, iArr) + i13;
-            case 7:
-                i13 = 13;
-                return zVar.p(i12, iArr) + i13;
-            case 8:
-                i13 = 17;
-                i12 = 3;
-                return zVar.p(i12, iArr) + i13;
-            case 9:
-                i13 = 25;
-                i12 = 3;
-                return zVar.p(i12, iArr) + i13;
-            case 10:
-                i13 = 33;
-                i12 = 4;
-                return zVar.p(i12, iArr) + i13;
-            case 11:
-                i13 = 49;
-                i12 = 4;
-                return zVar.p(i12, iArr) + i13;
-            case 12:
-                i10 = 65;
-                i12 = 5;
-                i13 = i10;
-                return zVar.p(i12, iArr) + i13;
-            case 13:
-                i10 = 97;
-                i12 = 5;
-                i13 = i10;
-                return zVar.p(i12, iArr) + i13;
-            case 14:
-                i13 = 129;
-                i12 = 6;
-                return zVar.p(i12, iArr) + i13;
-            case 15:
-                i13 = 193;
-                i12 = 6;
-                return zVar.p(i12, iArr) + i13;
-            case 16:
-                i13 = 257;
-                i12 = 7;
-                return zVar.p(i12, iArr) + i13;
-            case 17:
-                i13 = 385;
-                i12 = 7;
-                return zVar.p(i12, iArr) + i13;
-            case 18:
-                i13 = 513;
-                i12 = 8;
-                return zVar.p(i12, iArr) + i13;
-            case 19:
-                i13 = 769;
-                i12 = 8;
-                return zVar.p(i12, iArr) + i13;
-            case 20:
-                i13 = 1025;
-                i12 = 9;
-                return zVar.p(i12, iArr) + i13;
-            case 21:
-                i13 = 1537;
-                i12 = 9;
-                return zVar.p(i12, iArr) + i13;
-            case 22:
-                i13 = 2049;
-                i12 = 10;
-                return zVar.p(i12, iArr) + i13;
-            case 23:
-                i13 = 3073;
-                i12 = 10;
-                return zVar.p(i12, iArr) + i13;
-            case 24:
-                i13 = 4097;
-                i12 = 11;
-                return zVar.p(i12, iArr) + i13;
-            case 25:
-                i13 = 6145;
-                i12 = 11;
-                return zVar.p(i12, iArr) + i13;
-            case 26:
-                i13 = 8193;
-                i12 = 12;
-                return zVar.p(i12, iArr) + i13;
-            case 27:
-                i13 = 12289;
-                i12 = 12;
-                return zVar.p(i12, iArr) + i13;
-            case 28:
-                i13 = 16385;
-                i12 = 13;
-                return zVar.p(i12, iArr) + i13;
-            case 29:
-                i13 = 24577;
-                i12 = 13;
-                return zVar.p(i12, iArr) + i13;
-            default:
-                throw new com.google.firebase.messaging.p(String.format("[%s] Bad distance code '%d' at the bit index '%d'.", d.class.getSimpleName(), Integer.valueOf(i11), Integer.valueOf(iArr[0])));
-        }
-    }
-
-    public static void e(d5.z zVar, int[] iArr, j0[] j0VarArr) {
-        int p10 = zVar.p(5, iArr) + 257;
-        int p11 = zVar.p(5, iArr) + 1;
-        int p12 = zVar.p(4, iArr) + 4;
-        int[] iArr2 = new int[19];
-        for (int i10 = 0; i10 < p12; i10++) {
-            iArr2[a[i10]] = (byte) zVar.p(3, iArr);
-        }
-        j0 j0Var = new j0(iArr2);
-        int[] iArr3 = new int[p10];
-        c(zVar, iArr, iArr3, j0Var);
-        j0 j0Var2 = new j0(iArr3);
-        int[] iArr4 = new int[p11];
-        c(zVar, iArr, iArr4, j0Var);
-        j0 j0Var3 = new j0(iArr4);
-        j0VarArr[0] = j0Var2;
-        j0VarArr[1] = j0Var3;
-    }
-
-    public static int f(d5.z zVar, int[] iArr, int i10) {
-        int i11;
-        int i12 = 1;
-        switch (i10) {
-            case 257:
-            case 258:
-            case 259:
-            case 260:
-            case 261:
-            case 262:
-            case 263:
-            case 264:
-                return i10 - 254;
-            case 265:
-                i11 = 11;
-                return zVar.p(i12, iArr) + i11;
-            case 266:
-                i11 = 13;
-                return zVar.p(i12, iArr) + i11;
-            case 267:
-                i11 = 15;
-                return zVar.p(i12, iArr) + i11;
-            case 268:
-                i11 = 17;
-                return zVar.p(i12, iArr) + i11;
-            case 269:
-                i11 = 19;
-                i12 = 2;
-                return zVar.p(i12, iArr) + i11;
-            case 270:
-                i11 = 23;
-                i12 = 2;
-                return zVar.p(i12, iArr) + i11;
-            case 271:
-                i11 = 27;
-                i12 = 2;
-                return zVar.p(i12, iArr) + i11;
-            case 272:
-                i11 = 31;
-                i12 = 2;
-                return zVar.p(i12, iArr) + i11;
-            case 273:
-                i11 = 35;
-                i12 = 3;
-                return zVar.p(i12, iArr) + i11;
-            case 274:
-                i11 = 43;
-                i12 = 3;
-                return zVar.p(i12, iArr) + i11;
-            case 275:
-                i11 = 51;
-                i12 = 3;
-                return zVar.p(i12, iArr) + i11;
-            case 276:
-                i11 = 59;
-                i12 = 3;
-                return zVar.p(i12, iArr) + i11;
-            case 277:
-                i11 = 67;
-                i12 = 4;
-                return zVar.p(i12, iArr) + i11;
-            case 278:
-                i11 = 83;
-                i12 = 4;
-                return zVar.p(i12, iArr) + i11;
-            case 279:
-                i11 = 99;
-                i12 = 4;
-                return zVar.p(i12, iArr) + i11;
-            case 280:
-                i11 = 115;
-                i12 = 4;
-                return zVar.p(i12, iArr) + i11;
-            case 281:
-                i11 = 131;
-                i12 = 5;
-                return zVar.p(i12, iArr) + i11;
-            case 282:
-                i11 = 163;
-                i12 = 5;
-                return zVar.p(i12, iArr) + i11;
-            case 283:
-                i11 = 195;
-                i12 = 5;
-                return zVar.p(i12, iArr) + i11;
-            case 284:
-                i11 = 227;
-                i12 = 5;
-                return zVar.p(i12, iArr) + i11;
-            case 285:
-                return 258;
-            default:
-                throw new com.google.firebase.messaging.p(String.format("[%s] Bad literal/length code '%d' at the bit index '%d'.", d.class.getSimpleName(), Integer.valueOf(i10), Integer.valueOf(iArr[0])));
         }
     }
 }

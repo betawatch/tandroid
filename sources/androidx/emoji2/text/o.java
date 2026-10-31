@@ -2,16 +2,16 @@ package androidx.emoji2.text;
 
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class o {
     public static final ThreadLocal d = new ThreadLocal();
     public final int a;
-    public final com.google.firebase.messaging.q b;
+    public final ji.f b;
     public volatile int c = 0;
 
-    public o(com.google.firebase.messaging.q qVar, int i10) {
-        this.b = qVar;
+    public o(ji.f fVar, int i10) {
+        this.b = fVar;
         this.a = i10;
     }
 
@@ -33,7 +33,7 @@ public final class o {
             aVar = new p1.a();
             threadLocal.set(aVar);
         }
-        p1.b bVar = (p1.b) this.b.a;
+        p1.b bVar = (p1.b) this.b.b;
         int a2 = bVar.a(6);
         if (a2 != 0) {
             int i10 = a2 + bVar.a;

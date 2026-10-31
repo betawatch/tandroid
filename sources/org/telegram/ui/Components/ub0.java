@@ -1,34 +1,33 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.MediaDataController;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ub0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ic0 b;
+public final class ub0 extends ln0 {
+    public final /* synthetic */ ac0 d;
 
-    public /* synthetic */ ub0(ic0 ic0Var, int i10) {
-        this.a = i10;
-        this.b = ic0Var;
+    public ub0(ac0 ac0Var) {
+        this.d = ac0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                ic0 ic0Var = this.b;
-                bc0 bc0Var = ic0Var.f;
-                if (!ic0Var.c0.d.webpageTop) {
-                    bc0Var.x0(bc0Var.computeVerticalScrollRange() - (bc0Var.computeVerticalScrollExtent() + bc0Var.computeVerticalScrollOffset()), MediaDataController.MAX_LINKS_COUNT, mi.m.V);
-                    break;
-                } else {
-                    bc0Var.x0(-bc0Var.computeVerticalScrollOffset(), MediaDataController.MAX_LINKS_COUNT, mi.m.V);
-                    break;
-                }
-            default:
-                this.b.h(true, false);
-                break;
-        }
+    @Override // org.telegram.ui.Components.ln0
+    public final boolean a() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.ln0
+    public final boolean b() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.ln0
+    public final void c(boolean z10) {
+        this.d.a(!z10);
+    }
+
+    @Override // org.telegram.ui.Components.ln0
+    public final CharSequence d() {
+        ac0 ac0Var = this.d;
+        org.telegram.messenger.r20 r20Var = ac0Var.u0;
+        return r20Var != null ? (CharSequence) r20Var.a(Integer.valueOf(ac0Var.H)) : ac0Var.d(ac0Var.H);
     }
 }

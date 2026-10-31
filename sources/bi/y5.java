@@ -1,102 +1,43 @@
 package bi;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.LinearGradient;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.RadialGradient;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.Shader;
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.ds;
+import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes4.dex */
-public final class y5 extends Drawable {
-    public Drawable g;
-    public int h;
-    public int i;
-    public final Paint b = new Paint(1);
-    public final Shader[] c = new Shader[2];
-    public final Matrix d = new Matrix();
-    public final org.telegram.ui.Components.h6 e = new org.telegram.ui.Components.h6(1.0f, new a3.d(this, 29), 0, 420, ds.h);
-    public final RectF f = new RectF();
-    public final int a = 1;
+public final class y5 extends ViewGroup {
+    public final int a;
+    public final /* synthetic */ z5 b;
 
-    public final void a(int i10, int i11) {
-        if (this.h == i10 && this.i == i11) {
-            return;
-        }
-        Shader[] shaderArr = this.c;
-        shaderArr[0] = shaderArr[1];
-        if (this.a == 0) {
-            this.h = i10;
-            this.i = i11;
-            shaderArr[1] = new LinearGradient(0.0f, 0.0f, 100.0f, 0.0f, new int[]{i10, i11}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
-        } else {
-            float dp = AndroidUtilities.dp(340.0f);
-            this.h = i10;
-            this.i = i11;
-            shaderArr[1] = new RadialGradient(0.0f, 0.0f, dp, new int[]{i10, i11}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
-        }
-        this.e.d(0.0f, true);
-        invalidateSelf();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public y5(z5 z5Var, Context context) {
+        super(context);
+        this.b = z5Var;
+        this.a = org.telegram.messenger.i0.L(16.0f);
+        setClipChildren(false);
+        setClipToPadding(false);
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        Rect bounds = getBounds();
-        RectF rectF = this.f;
-        rectF.set(bounds);
-        rectF.right = rectF.width() + rectF.left;
-        int i10 = 0;
-        float d = this.e.d(1.0f, false);
-        while (true) {
-            Shader[] shaderArr = this.c;
-            if (i10 >= shaderArr.length) {
-                break;
-            }
-            if (shaderArr[i10] != null) {
-                float pow = (float) Math.pow(1.0f - Math.abs(i10 - d), 0.25d);
-                if (pow > 0.0f) {
-                    Matrix matrix = this.d;
-                    matrix.reset();
-                    if (this.a == 1) {
-                        matrix.postTranslate(rectF.centerX(), AndroidUtilities.dp(145.0f));
-                    } else {
-                        matrix.postScale(getBounds().width() / 100.0f, 1.0f);
-                    }
-                    shaderArr[i10].setLocalMatrix(matrix);
-                    Shader shader = shaderArr[i10];
-                    Paint paint = this.b;
-                    paint.setShader(shader);
-                    paint.setAlpha((int) (pow * 255.0f));
-                    canvas.drawRoundRect(rectF, 0.0f, 0.0f, paint);
-                }
-            }
-            i10++;
-        }
-        if (this.g != null) {
-            canvas.save();
-            canvas.translate(rectF.centerX(), AndroidUtilities.dp(145.0f));
-            l1.a(canvas, 0, this.g, rectF.width(), AndroidUtilities.dp(290.0f), 2.0f, 1.0f);
-            canvas.restore();
-        }
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        z5 z5Var = this.b;
+        int measuredWidth = z5Var.w.getMeasuredWidth();
+        int measuredHeight = z5Var.w.getMeasuredHeight();
+        b6 b6Var = z5Var.w;
+        int i14 = this.a;
+        b6Var.layout(-i14, 0, measuredWidth - i14, measuredHeight);
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        int size = View.MeasureSpec.getSize(i10);
+        int i12 = this.a;
+        int max = Math.max(0, size + i12);
+        z5 z5Var = this.b;
+        z5Var.w.measure(View.MeasureSpec.makeMeasureSpec(max, TLObject.FLAG_31), i11);
+        int measuredWidth = z5Var.w.getMeasuredWidth();
+        setMeasuredDimension(Math.max(0, measuredWidth - i12), z5Var.w.getMeasuredHeight());
     }
 }

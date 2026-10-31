@@ -1,101 +1,24 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import org.telegram.messenger.AndroidUtilities;
+import android.app.Activity;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class si extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ wn b;
+public final class si extends org.telegram.ui.Components.cv {
+    public final /* synthetic */ un N1;
 
-    public /* synthetic */ si(wn wnVar, int i10) {
-        this.a = i10;
-        this.b = wnVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public si(un unVar, org.telegram.ui.ActionBar.k2 k2Var, Activity activity, org.telegram.ui.ActionBar.p6 p6Var, ArrayList arrayList) {
+        super(k2Var, activity, p6Var, arrayList);
+        this.N1 = unVar;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        rj rjVar;
-        switch (this.a) {
-            case 0:
-                wn wnVar = this.b;
-                org.telegram.ui.Components.u60 u60Var = wnVar.n3;
-                if (u60Var != null) {
-                    u60Var.setIsMessageTransition(false);
-                    wnVar.n3.c(true);
-                    wnVar.n3.setVisibility(4);
-                    break;
-                }
-                break;
-            case 1:
-                float dp = AndroidUtilities.dp(30.0f);
-                wn wnVar2 = this.b;
-                wnVar2.Q9 = dp;
-                wnVar2.A9();
-                break;
-            case 2:
-                wn wnVar3 = this.b;
-                if (wnVar3.fragmentView != null && (rjVar = wnVar3.x0) != null) {
-                    rjVar.invalidate();
-                    wnVar3.fragmentView.invalidate();
-                    break;
-                }
-                break;
-            case 3:
-                this.b.P.setVisibility(4);
-                break;
-            case 4:
-                AndroidUtilities.runOnUIThread(new xi(this, 4), 2000L);
-                break;
-            case 5:
-                wn wnVar4 = this.b;
-                if (animator.equals(wnVar4.s3)) {
-                    wnVar4.s3 = null;
-                    break;
-                }
-                break;
-            case 6:
-                wn wnVar5 = this.b;
-                if (animator.equals(wnVar5.s3)) {
-                    wnVar5.s3 = null;
-                    break;
-                }
-                break;
-            case 7:
-                wn wnVar6 = this.b;
-                if (animator.equals(wnVar6.t3)) {
-                    wnVar6.u3 = 1.0f;
-                    wnVar6.Cc();
-                    wnVar6.t3 = null;
-                    break;
-                }
-                break;
-            case 8:
-                wn wnVar7 = this.b;
-                if (animator.equals(wnVar7.t3)) {
-                    wnVar7.u3 = 0.0f;
-                    wnVar7.Cc();
-                    wnVar7.t3 = null;
-                    break;
-                }
-                break;
-            case 9:
-                this.b.f5 = null;
-                break;
-            case 10:
-                wn wnVar8 = this.b;
-                wnVar8.Ua = 1.0f;
-                wnVar8.Y.setVisibility(4);
-                wnVar8.a1.setVisibility(4);
-                wnVar8.A9();
-                break;
-            default:
-                wn wnVar9 = this.b;
-                wnVar9.Ua = 0.0f;
-                wnVar9.A9();
-                break;
-        }
+    @Override // org.telegram.ui.Components.cv, org.telegram.ui.ActionBar.z2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.g2
+    public final void dismiss() {
+        super.dismiss();
+        un unVar = this.N1;
+        unVar.getClass();
+        unVar.o8(false, true, 0.0f);
     }
 }

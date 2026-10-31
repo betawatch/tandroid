@@ -1,30 +1,29 @@
 package org.telegram.ui;
 
 import android.app.Activity;
-import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
 public final class gx extends UndoView {
-    public final /* synthetic */ ey j0;
+    public final /* synthetic */ ay j0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public gx(ey eyVar, Activity activity) {
+    public gx(ay ayVar, Activity activity) {
         super(activity);
-        this.j0 = eyVar;
+        this.j0 = ayVar;
     }
 
     @Override // org.telegram.ui.Components.UndoView
     public final boolean a() {
         int i10 = 0;
         while (true) {
-            dy[] dyVarArr = this.j0.e0;
-            if (i10 >= dyVarArr.length) {
+            zx[] zxVarArr = this.j0.e0;
+            if (i10 >= zxVarArr.length) {
                 return true;
             }
-            if (dyVarArr[i10].x.k()) {
+            if (zxVarArr[i10].y.k()) {
                 return false;
             }
             i10++;
@@ -34,43 +33,42 @@ public final class gx extends UndoView {
     @Override // org.telegram.ui.Components.UndoView
     public final void g(int i10, long j10) {
         if (i10 == 1 || i10 == 27) {
-            ey eyVar = this.j0;
-            eyVar.z3 = 1;
-            eyVar.I4(true, true);
-            if (eyVar.R1 != null) {
+            ay ayVar = this.j0;
+            ayVar.L4(true, true);
+            if (ayVar.R1 != null) {
                 int i11 = 0;
                 while (true) {
-                    if (i11 >= eyVar.R1.size()) {
+                    if (i11 >= ayVar.R1.size()) {
                         i11 = -1;
                         break;
-                    } else if (((TLRPC.Dialog) eyVar.R1.get(i11)).id == j10) {
+                    } else if (((TLRPC.Dialog) ayVar.R1.get(i11)).id == j10) {
                         break;
                     } else {
                         i11++;
                     }
                 }
                 if (i11 >= 0) {
-                    TLRPC.Dialog dialog = (TLRPC.Dialog) eyVar.R1.remove(i11);
-                    eyVar.e0[0].d.l();
-                    AndroidUtilities.runOnUIThread(new fx(this, i11, dialog, 0));
+                    TLRPC.Dialog dialog = (TLRPC.Dialog) ayVar.R1.remove(i11);
+                    ayVar.e0[0].d.f();
+                    org.telegram.messenger.i0.g3(new org.telegram.ui.Components.ji0(this, i11, dialog, 15));
                 } else {
-                    eyVar.I4(false, true);
+                    ayVar.L4(false, true);
                 }
             }
-            eyVar.w3();
+            ayVar.y3();
         }
     }
 
     @Override // android.view.View
     public final void setTranslationY(float f7) {
         super.setTranslationY(f7);
-        ey eyVar = this.j0;
-        UndoView[] undoViewArr = eyVar.y0;
+        ay ayVar = this.j0;
+        UndoView[] undoViewArr = ayVar.y0;
         if (this == undoViewArr[0]) {
             UndoView undoView = undoViewArr[1];
             if (undoView == null || undoView.getVisibility() != 0) {
-                eyVar.u1 = Math.max(0.0f, (AndroidUtilities.dp(8.0f) + getMeasuredHeight()) - f7);
-                eyVar.g5();
+                ayVar.u1 = Math.max(0.0f, (org.telegram.messenger.i0.L(8.0f) + getMeasuredHeight()) - f7);
+                ayVar.j5();
             }
         }
     }

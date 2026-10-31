@@ -1,10 +1,7 @@
 package org.telegram.ui.Wallet;
 
-import a8.af;
-import org.telegram.messenger.AndroidUtilities;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes4.dex */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
 public final /* synthetic */ class q0 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ String b;
@@ -18,17 +15,17 @@ public final /* synthetic */ class q0 implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                v0 v0Var = af.b;
-                if (v0Var != null) {
-                    if (this.b.equals(v0Var.d)) {
-                        af.b.c("STORAGE_CANCELED");
-                        af.b.e();
+                u0 u0Var = w7.k6.b;
+                if (u0Var != null) {
+                    if (this.b.equals(u0Var.d)) {
+                        w7.k6.b.c("STORAGE_CANCELED");
+                        w7.k6.b.e();
                         break;
                     }
                 }
                 break;
             default:
-                AndroidUtilities.addToClipboard(this.b);
+                org.telegram.messenger.i0.g(this.b);
                 break;
         }
     }

@@ -1,7 +1,6 @@
 package o0;
 
 import a0.l;
-import a8.sc;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.graphics.Typeface;
@@ -11,9 +10,10 @@ import java.util.List;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
-import w7.b0;
+import v7.x7;
+import w7.m8;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public abstract class g {
     public static final a0.j a = new a0.j(16);
@@ -54,7 +54,7 @@ public abstract class g {
         int i11;
         Typeface b10;
         a0.j jVar = a;
-        b0.a("getFontSync");
+        m8.a("getFontSync");
         try {
             typeface = (Typeface) jVar.a(str);
         } catch (PackageManager.NameNotFoundException unused) {
@@ -77,9 +77,9 @@ public abstract class g {
                 }
                 if (list2.size() <= 1 || Build.VERSION.SDK_INT < 29) {
                     h[] hVarArr = (h[]) list2.get(0);
-                    sc scVar = i0.e.a;
-                    b0.a("TypefaceCompat.createFromFontInfo");
-                    b10 = i0.e.a.b(context, hVarArr, i10);
+                    x7 x7Var = i0.f.a;
+                    m8.a("TypefaceCompat.createFromFontInfo");
+                    b10 = i0.f.a.b(context, hVarArr, i10);
                     Trace.endSection();
                     if (b10 != null) {
                         return new f(-3);
@@ -87,9 +87,9 @@ public abstract class g {
                     jVar.b(str, b10);
                     return new f(b10);
                 }
-                sc scVar2 = i0.e.a;
-                b0.a("TypefaceCompat.createFromFontInfoWithFallback");
-                b10 = i0.e.a.c(context, list2, i10);
+                x7 x7Var2 = i0.f.a;
+                m8.a("TypefaceCompat.createFromFontInfoWithFallback");
+                b10 = i0.f.a.c(context, list2, i10);
                 Trace.endSection();
                 if (b10 != null) {
                 }

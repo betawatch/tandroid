@@ -1,34 +1,34 @@
 package u2;
 
-import a8.yb;
 import org.telegram.tgnet.ConnectionsManager;
+import v7.t6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class w extends i2.a {
-    public final b2.p1 h;
+    public final b2.o1 h;
     public final int i;
     public final int j;
     public final int k;
 
-    public w(b2.p1 p1Var, int i10) {
+    public w(b2.o1 o1Var, int i10) {
         super(new h1(i10));
-        this.h = p1Var;
-        int h = p1Var.h();
+        this.h = o1Var;
+        int h = o1Var.h();
         this.i = h;
-        this.j = p1Var.o();
+        this.j = o1Var.o();
         this.k = i10;
         if (h > 0) {
-            yb.o("LoopingMediaSource contains too many periods", i10 <= ConnectionsManager.DEFAULT_DATACENTER_ID / h);
+            t6.o("LoopingMediaSource contains too many periods", i10 <= ConnectionsManager.DEFAULT_DATACENTER_ID / h);
         }
     }
 
-    @Override // b2.p1
+    @Override // b2.o1
     public final int h() {
         return this.i * this.k;
     }
 
-    @Override // b2.p1
+    @Override // b2.o1
     public final int o() {
         return this.j * this.k;
     }
@@ -67,7 +67,7 @@ public final class w extends i2.a {
     }
 
     @Override // i2.a
-    public final b2.p1 x(int i10) {
+    public final b2.o1 x(int i10) {
         return this.h;
     }
 }

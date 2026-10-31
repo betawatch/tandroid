@@ -1,32 +1,10 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+import org.telegram.tgnet.TLObject;
+
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final /* synthetic */ class t8 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ MediaDataController b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ int d;
-
-    public /* synthetic */ t8(MediaDataController mediaDataController, boolean z10, int i10, int i11) {
-        this.a = i11;
-        this.b = mediaDataController;
-        this.c = z10;
-        this.d = i10;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.lambda$loadRecents$49(this.c, this.d);
-                break;
-            case 1:
-                this.b.lambda$processLoadedFeaturedStickers$62(this.c, this.d);
-                break;
-            default:
-                this.b.lambda$loadFeaturedStickers$56(this.c, this.d);
-                break;
-        }
-    }
+public final class t8 {
+    public TLObject a;
+    public long b;
 }

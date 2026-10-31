@@ -1,45 +1,85 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
+import android.content.res.Configuration;
+import android.content.res.Resources;
+import android.security.keystore.KeyGenParameterSpec;
+import java.security.InvalidAlgorithmParameterException;
+import java.security.KeyPairGenerator;
+import java.util.Iterator;
+import java.util.Locale;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class i9 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MediaDataController b;
-    public final /* synthetic */ TLRPC.messages_Messages c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ long e;
-    public final /* synthetic */ ArrayList f;
-    public final /* synthetic */ int h;
-    public final /* synthetic */ int n;
-    public final /* synthetic */ boolean r;
-    public final /* synthetic */ int s;
-    public final /* synthetic */ int v;
+    public final /* synthetic */ boolean b;
 
-    public /* synthetic */ i9(MediaDataController mediaDataController, TLRPC.messages_Messages messages_messages, int i10, long j10, ArrayList arrayList, int i11, int i12, boolean z10, int i13, int i14, int i15) {
-        this.a = i15;
-        this.b = mediaDataController;
-        this.c = messages_messages;
-        this.d = i10;
-        this.e = j10;
-        this.f = arrayList;
-        this.h = i11;
-        this.n = i12;
-        this.r = z10;
-        this.s = i13;
-        this.v = i14;
+    public /* synthetic */ i9(int i10, boolean z10) {
+        this.a = i10;
+        this.b = z10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
+        int i10 = 1;
         switch (this.a) {
             case 0:
-                this.b.lambda$processLoadedMedia$134(this.c, this.d, this.e, this.f, this.h, this.n, this.r, this.s, this.v);
+                boolean z10 = this.b;
+                KeyPairGenerator keyPairGenerator = d6.e;
+                if (keyPairGenerator == null) {
+                    try {
+                        keyPairGenerator = KeyPairGenerator.getInstance("RSA", "AndroidKeyStore");
+                        d6.e = keyPairGenerator;
+                    } catch (Exception e) {
+                        f8.g(e, true);
+                        keyPairGenerator = null;
+                    }
+                }
+                if (keyPairGenerator != null) {
+                    try {
+                        Locale locale = Locale.getDefault();
+                        Locale locale2 = Locale.ENGLISH;
+                        Locale.setDefault(locale2);
+                        Resources resources = w0.b.getResources();
+                        Configuration configuration = resources.getConfiguration();
+                        configuration.setLocale(locale2);
+                        resources.updateConfiguration(configuration, resources.getDisplayMetrics());
+                        keyPairGenerator.initialize(new KeyGenParameterSpec.Builder("tmessages_passcode", 3).setDigests("SHA-256", "SHA-512").setEncryptionPaddings("OAEPPadding").setUserAuthenticationRequired(true).build());
+                        keyPairGenerator.generateKeyPair();
+                        Locale.setDefault(locale);
+                        Resources resources2 = w0.b.getResources();
+                        Configuration configuration2 = resources2.getConfiguration();
+                        configuration2.setLocale(locale);
+                        resources2.updateConfiguration(configuration2, resources2.getDisplayMetrics());
+                        i0.g3(new i9(i10, z10));
+                        break;
+                    } catch (InvalidAlgorithmParameterException e7) {
+                        f8.g(e7, true);
+                        return;
+                    } catch (Exception e10) {
+                        if (e10.getClass().getName().equals("android.security.KeyStoreException")) {
+                            return;
+                        }
+                        f8.g(e10, true);
+                        return;
+                    }
+                }
+                break;
+            case 1:
+                zs.e().k(zs.Q1, Boolean.valueOf(this.b));
+                break;
+            case 2:
+                boolean z11 = this.b;
+                Iterator it = sc.n.iterator();
+                while (it.hasNext()) {
+                    q20 q20Var = (q20) it.next();
+                    if (q20Var != null) {
+                        q20Var.a(Boolean.valueOf(z11));
+                    }
+                }
                 break;
             default:
-                this.b.lambda$processLoadedMedia$133(this.c, this.d, this.e, this.f, this.h, this.n, this.r, this.s, this.v);
+                zs.e().k(zs.n4, Boolean.FALSE, Boolean.valueOf(this.b));
                 break;
         }
     }

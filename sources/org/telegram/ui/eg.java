@@ -4,10 +4,8 @@ import android.animation.ValueAnimator;
 import android.view.View;
 import android.widget.ImageView;
 import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class eg implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -24,12 +22,12 @@ public final /* synthetic */ class eg implements ValueAnimator.AnimatorUpdateLis
     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                wn wnVar = (wn) this.c;
-                wnVar.getClass();
+                un unVar = (un) this.c;
+                unVar.getClass();
                 float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                wnVar.X8 = floatValue;
-                wnVar.b9 = floatValue / this.b;
-                View view = wnVar.fragmentView;
+                unVar.V8 = floatValue;
+                unVar.Z8 = floatValue / this.b;
+                View view = unVar.fragmentView;
                 if (view != null) {
                     view.invalidate();
                     break;
@@ -46,26 +44,26 @@ public final /* synthetic */ class eg implements ValueAnimator.AnimatorUpdateLis
                 }
                 break;
             case 2:
-                ((org.telegram.ui.Components.go) this.c).E.setTranslationY(AndroidUtilities.lerp(this.b, 0.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
+                ((org.telegram.ui.Components.jn) this.c).E.setTranslationY(org.telegram.messenger.i0.T1(this.b, 0.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
                 break;
             case 3:
-                ((ov0) this.c).R.setTranslationY(AndroidUtilities.lerp(this.b, 0.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
+                ((at0) this.c).R.setTranslationY(org.telegram.messenger.i0.T1(this.b, 0.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
                 break;
             case 4:
-                u11 u11Var = (u11) this.c;
-                u11Var.getClass();
+                cz0 cz0Var = (cz0) this.c;
+                cz0Var.getClass();
                 float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                float lerp = AndroidUtilities.lerp(0.0f, this.b, floatValue3);
-                u11Var.a.setTranslationX(lerp);
-                u11Var.b.setTranslationX(lerp);
-                ImageView imageView = u11Var.c;
-                imageView.setTranslationX(lerp);
-                org.telegram.ui.Components.aq aqVar = u11Var.f;
-                aqVar.setTranslationX((LocaleController.isRTL ? AndroidUtilities.dp(32.0f) : -AndroidUtilities.dp(32.0f)) + lerp);
+                float T1 = org.telegram.messenger.i0.T1(0.0f, this.b, floatValue3);
+                cz0Var.a.setTranslationX(T1);
+                cz0Var.b.setTranslationX(T1);
+                ImageView imageView = cz0Var.c;
+                imageView.setTranslationX(T1);
+                org.telegram.ui.Components.ep epVar = cz0Var.f;
+                epVar.setTranslationX((org.telegram.messenger.cd.X ? org.telegram.messenger.i0.L(32.0f) : -org.telegram.messenger.i0.L(32.0f)) + T1);
                 float f7 = (floatValue3 * 0.5f) + 0.5f;
-                aqVar.setScaleX(f7);
-                aqVar.setScaleY(f7);
-                aqVar.setAlpha(floatValue3);
+                epVar.setScaleX(f7);
+                epVar.setScaleY(f7);
+                epVar.setAlpha(floatValue3);
                 float f10 = 1.0f - floatValue3;
                 float f11 = (f10 * 0.5f) + 0.5f;
                 imageView.setScaleX(f11);
@@ -73,18 +71,18 @@ public final /* synthetic */ class eg implements ValueAnimator.AnimatorUpdateLis
                 imageView.setAlpha(f10);
                 break;
             case 5:
-                org.telegram.ui.Wallet.m3 m3Var = (org.telegram.ui.Wallet.m3) this.c;
-                m3Var.getClass();
-                m3Var.R = ((((Float) valueAnimator.getAnimatedValue()).floatValue() * 240.0f) + this.b) % 360.0f;
-                m3Var.a.invalidate();
+                org.telegram.ui.Wallet.d4 d4Var = (org.telegram.ui.Wallet.d4) this.c;
+                d4Var.getClass();
+                d4Var.R = ((((Float) valueAnimator.getAnimatedValue()).floatValue() * 240.0f) + this.b) % 360.0f;
+                d4Var.a.invalidate();
                 break;
             default:
-                org.telegram.ui.Wallet.i8 i8Var = (org.telegram.ui.Wallet.i8) this.c;
-                i8Var.getClass();
+                org.telegram.ui.Wallet.u8 u8Var = (org.telegram.ui.Wallet.u8) this.c;
+                u8Var.getClass();
                 float floatValue4 = 1.0f - ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                i8Var.c = i8Var.c();
-                i8Var.d = this.b * floatValue4;
-                i8Var.s = floatValue4 > 0.0f;
+                u8Var.c = u8Var.c();
+                u8Var.d = this.b * floatValue4;
+                u8Var.s = floatValue4 > 0.0f;
                 break;
         }
     }

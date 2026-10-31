@@ -4,7 +4,7 @@ import java.util.AbstractList;
 import java.util.Arrays;
 import java.util.RandomAccess;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class z0 extends b implements RandomAccess {
     public static final z0 d;
@@ -24,7 +24,7 @@ public final class z0 extends b implements RandomAccess {
 
     @Override // androidx.datastore.preferences.protobuf.b, java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
     public final boolean add(Object obj) {
-        h();
+        l();
         int i10 = this.c;
         Object[] objArr = this.b;
         if (i10 == objArr.length) {
@@ -54,15 +54,15 @@ public final class z0 extends b implements RandomAccess {
 
     public final void m(int i10) {
         if (i10 < 0 || i10 >= this.c) {
-            StringBuilder k10 = ic.a.k(i10, "Index:", ", Size:");
-            k10.append(this.c);
-            throw new IndexOutOfBoundsException(k10.toString());
+            StringBuilder l4 = i0.a.l(i10, "Index:", ", Size:");
+            l4.append(this.c);
+            throw new IndexOutOfBoundsException(l4.toString());
         }
     }
 
     @Override // java.util.AbstractList, java.util.List
     public final Object remove(int i10) {
-        h();
+        l();
         m(i10);
         Object[] objArr = this.b;
         Object obj = objArr[i10];
@@ -76,7 +76,7 @@ public final class z0 extends b implements RandomAccess {
 
     @Override // java.util.AbstractList, java.util.List
     public final Object set(int i10, Object obj) {
-        h();
+        l();
         m(i10);
         Object[] objArr = this.b;
         Object obj2 = objArr[i10];
@@ -93,7 +93,7 @@ public final class z0 extends b implements RandomAccess {
     @Override // java.util.AbstractList, java.util.List
     public final void add(int i10, Object obj) {
         int i11;
-        h();
+        l();
         if (i10 >= 0 && i10 <= (i11 = this.c)) {
             Object[] objArr = this.b;
             if (i11 < objArr.length) {
@@ -109,8 +109,8 @@ public final class z0 extends b implements RandomAccess {
             ((AbstractList) this).modCount++;
             return;
         }
-        StringBuilder k10 = ic.a.k(i10, "Index:", ", Size:");
-        k10.append(this.c);
-        throw new IndexOutOfBoundsException(k10.toString());
+        StringBuilder l4 = i0.a.l(i10, "Index:", ", Size:");
+        l4.append(this.c);
+        throw new IndexOutOfBoundsException(l4.toString());
     }
 }

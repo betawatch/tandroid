@@ -1,35 +1,46 @@
 package nh;
 
-import android.graphics.RenderNode;
 import android.view.View;
 import android.view.ViewGroup;
-import org.telegram.messenger.AndroidUtilities;
-import s4.e1;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes4.dex */
-public final class e extends d {
-    public final /* synthetic */ h h;
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class e implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ h b;
 
-    public e(h hVar) {
-        this.h = hVar;
-        this.e = -1;
+    public /* synthetic */ e(h hVar, int i10) {
+        this.a = i10;
+        this.b = hVar;
     }
 
-    @Override // s4.h0
-    public final e1 x(ViewGroup viewGroup, int i10) {
-        c cVar = new c(viewGroup.getContext());
-        cVar.setPadding(AndroidUtilities.dp(22.0f), 0, AndroidUtilities.dp(22.0f), 0);
-        b bVar = new b(cVar);
-        h hVar = this.h;
-        View view = hVar.W0;
-        RenderNode renderNode = hVar.U0;
-        float f7 = hVar.V0;
-        c cVar2 = bVar.v;
-        cVar2.G = view;
-        cVar2.E = renderNode;
-        cVar2.F = f7;
-        cVar2.setDelegate(hVar.Y0);
-        return bVar;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                h hVar = this.b;
+                if (hVar.j.isEmpty()) {
+                    hVar.i = true;
+                    h.n = null;
+                    g gVar = hVar.f;
+                    if (gVar != null) {
+                        gVar.a = false;
+                        hVar.f = null;
+                    }
+                    hVar.d.removeView(hVar.e);
+                    if (hVar.d.getParent() instanceof ViewGroup) {
+                        ((ViewGroup) hVar.d.getParent()).removeView(hVar.d);
+                        break;
+                    }
+                }
+                break;
+            default:
+                ArrayList arrayList = this.b.j;
+                for (int i10 = 0; i10 < arrayList.size(); i10++) {
+                    ((View) arrayList.get(i10)).invalidate();
+                }
+                break;
+        }
     }
 }

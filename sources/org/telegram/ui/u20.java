@@ -1,67 +1,48 @@
 package org.telegram.ui;
 
+import android.graphics.Canvas;
 import android.view.View;
-import android.view.ViewGroup;
 import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class u20 extends s4.u0 {
-    public final /* synthetic */ x50 a;
+public final class u20 extends org.telegram.ui.Components.tk0 {
+    public final /* synthetic */ b50 e3;
 
-    public u20(x50 x50Var) {
-        this.a = x50Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public u20(b50 b50Var, LaunchActivity launchActivity) {
+        super(launchActivity, null);
+        this.e3 = b50Var;
     }
 
-    @Override // s4.u0
-    public final void a(RecyclerView recyclerView, int i10) {
-        int i11;
-        org.telegram.ui.Components.wl0 wl0Var;
-        x50 x50Var = this.a;
-        d50 d50Var = x50Var.Q;
-        if (i10 != 0) {
-            org.telegram.ui.Components.t40 t40Var = x50Var.m0;
-            if (t40Var != null) {
-                t40Var.b(true);
-            }
-            org.telegram.ui.Components.t40 t40Var2 = x50Var.n0;
-            if (t40Var2 != null) {
-                t40Var2.b(true);
-                return;
-            }
-            return;
+    @Override // org.telegram.ui.Components.tk0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j10) {
+        org.telegram.ui.Components.y10 y10Var = (org.telegram.ui.Components.y10) view;
+        b50 b50Var = this.e3;
+        i40 i40Var = b50Var.H1;
+        y20 y20Var = b50Var.R3;
+        if (y20Var.r == null && !b50Var.E4.k()) {
+            y10Var.setAlpha(1.0f);
+            y10Var.setTranslationX(0.0f);
+            y10Var.setTranslationY(0.0f);
         }
-        float dp = x50Var.y0 - AndroidUtilities.dp(74.0f);
-        d50Var.getChildAt(0);
-        i11 = ((org.telegram.ui.ActionBar.k3) x50Var).backgroundPaddingTop;
-        if (dp + i11 >= org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() || !d50Var.canScrollVertically(1) || (wl0Var = (org.telegram.ui.Components.wl0) d50Var.K(0)) == null) {
-            return;
+        u20 u20Var = b50Var.d4;
+        y10Var.getClass();
+        u20Var.getClass();
+        if (RecyclerView.R(y10Var) == -1 && y10Var.getRenderer() != null) {
+            return true;
         }
-        View view = wl0Var.a;
-        if (view.getTop() > 0) {
-            d50Var.w0(0, view.getTop(), null);
+        if (y10Var.getTranslationY() == 0.0f || y10Var.getRenderer() == null || y10Var.getRenderer().c == null) {
+            return super.drawChild(canvas, view, j10);
         }
-    }
-
-    @Override // s4.u0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        ChatObject.Call call;
-        ViewGroup viewGroup;
-        x50 x50Var = this.a;
-        if (x50Var.Q.getChildCount() <= 0 || (call = x50Var.a1) == null) {
-            return;
-        }
-        if (!call.loadingMembers && !call.membersLoadEndReached && x50Var.Y.N0() > x50Var.P.F - 5) {
-            x50Var.a1.loadMembers(false);
-        }
-        x50.J0(x50Var);
-        m50 m50Var = x50Var.U0;
-        if (m50Var != null) {
-            m50Var.invalidate();
-        }
-        viewGroup = ((org.telegram.ui.ActionBar.k3) x50Var).containerView;
-        viewGroup.invalidate();
+        float top = i40Var.getTop() - getTop();
+        float measuredHeight = i40Var.getMeasuredHeight() + top;
+        float f7 = y20Var.c;
+        canvas.save();
+        float f10 = 1.0f - f7;
+        canvas.clipRect(0.0f, top * f10, getMeasuredWidth(), (getMeasuredHeight() * f7) + (measuredHeight * f10));
+        boolean drawChild = super.drawChild(canvas, view, j10);
+        canvas.restore();
+        return drawChild;
     }
 }

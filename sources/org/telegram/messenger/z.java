@@ -1,35 +1,35 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.ChannelBoostsController;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
+import android.view.animation.Interpolator;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final /* synthetic */ class z implements Utilities.Callback {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
+public final class z implements Interpolator {
+    public final /* synthetic */ double a;
+    public final /* synthetic */ double b;
+    public final /* synthetic */ double c;
+    public final /* synthetic */ double d;
 
-    public /* synthetic */ z(int i10, Object obj, Object obj2) {
-        this.a = i10;
-        this.b = obj;
-        this.c = obj2;
+    public z(double d, double d10, double d11, double d12) {
+        this.a = d;
+        this.b = d10;
+        this.c = d11;
+        this.d = d12;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        switch (this.a) {
-            case 0:
-                ((BetaUpdaterController) this.b).lambda$checkForUpdate$2((Runnable) this.c, (String) obj);
-                break;
-            case 1:
-                ChannelBoostsController.lambda$userCanBoostChannel$3((ChannelBoostsController.CanApplyBoost) this.b, (Utilities.Callback) this.c, (TLRPC.TL_error) obj);
-                break;
-            default:
-                ((SendMessagesHelper) this.b).lambda$sendMessage$51((SendMessagesHelper.SendMessageParams) this.c, (Long) obj);
-                break;
+    @Override // android.animation.TimeInterpolator
+    public final float getInterpolation(float f7) {
+        double exp;
+        double d = this.a;
+        double d10 = this.d;
+        double d11 = this.b;
+        if (d < 1.0d) {
+            double exp2 = Math.exp((-f7) * d * d11);
+            double d12 = this.c * f7;
+            exp = 1.0d - (((Math.sin(d12) * d10) + (Math.cos(d12) * 1.0d)) * exp2);
+        } else {
+            exp = 1.0d - (Math.exp((-f7) * d11) * ((d10 * f7) + 1.0d));
         }
+        return (float) exp;
     }
 }

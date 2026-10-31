@@ -1,23 +1,25 @@
 package u2;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+import org.telegram.tgnet.TLObject;
+
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class x0 implements f0 {
     public final g2.g a;
-    public final org.telegram.ui.Components.voip.j1 b;
-    public final k6.c c;
-    public final u7.s d;
+    public final rh.d0 b;
+    public final li.k c;
+    public final hb.a d;
     public final int e;
 
     public x0(g2.g gVar, c3.m mVar) {
-        org.telegram.ui.Components.voip.j1 j1Var = new org.telegram.ui.Components.voip.j1(mVar, 22);
-        k6.c cVar = new k6.c(8);
-        u7.s sVar = new u7.s(26);
+        rh.d0 d0Var = new rh.d0(mVar, 19);
+        li.k kVar = new li.k(7);
+        hb.a aVar = new hb.a(27);
         this.a = gVar;
-        this.b = j1Var;
-        this.c = cVar;
-        this.d = sVar;
-        this.e = 1048576;
+        this.b = d0Var;
+        this.c = kVar;
+        this.d = aVar;
+        this.e = TLObject.FLAG_20;
     }
 
     @Override // u2.f0
@@ -28,17 +30,17 @@ public final class x0 implements f0 {
     }
 
     @Override // u2.f0
-    public final f0 b(qb.a aVar) {
+    public final f0 b(boolean z10) {
         return this;
     }
 
     @Override // u2.f0
-    public final f0 c(boolean z10) {
+    public final f0 c(int i10) {
         return this;
     }
 
     @Override // u2.f0
-    public final f0 d(int i10) {
+    public final f0 d(t7.u uVar) {
         return this;
     }
 }

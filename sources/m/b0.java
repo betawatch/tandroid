@@ -9,7 +9,7 @@ import android.view.DragEvent;
 import android.view.View;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public abstract class b0 {
     public static boolean a(DragEvent dragEvent, TextView textView, Activity activity) {
@@ -21,14 +21,14 @@ public abstract class b0 {
             Selection.setSelection((Spannable) textView.getText(), offsetForPosition);
             ClipData clipData = dragEvent.getClipData();
             if (Build.VERSION.SDK_INT >= 31) {
-                dVar = new j2.i(clipData, 3);
+                dVar = new j2.k(clipData, 3);
             } else {
                 r0.e eVar = new r0.e();
                 eVar.b = clipData;
                 eVar.c = 3;
                 dVar = eVar;
             }
-            r0.i0.i(textView, dVar.build());
+            r0.h0.h(textView, dVar.build());
             textView.endBatchEdit();
             return true;
         } catch (Throwable th2) {
@@ -42,14 +42,14 @@ public abstract class b0 {
         activity.requestDragAndDropPermissions(dragEvent);
         ClipData clipData = dragEvent.getClipData();
         if (Build.VERSION.SDK_INT >= 31) {
-            dVar = new j2.i(clipData, 3);
+            dVar = new j2.k(clipData, 3);
         } else {
             r0.e eVar = new r0.e();
             eVar.b = clipData;
             eVar.c = 3;
             dVar = eVar;
         }
-        r0.i0.i(view, dVar.build());
+        r0.h0.h(view, dVar.build());
         return true;
     }
 }

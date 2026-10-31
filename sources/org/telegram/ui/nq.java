@@ -1,54 +1,95 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.messenger.MediaController;
-import org.telegram.tgnet.TLObject;
+import android.os.SystemClock;
+import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class nq implements org.telegram.ui.ActionBar.b2, org.telegram.ui.Components.e5 {
-    public final /* synthetic */ String a;
+public final /* synthetic */ class nq implements org.telegram.messenger.j20 {
+    public final /* synthetic */ int a;
     public final /* synthetic */ boolean b;
-    public final /* synthetic */ Object c;
+    public final /* synthetic */ org.telegram.messenger.us c;
     public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object h;
 
-    public /* synthetic */ nq(mr mrVar, TLRPC.User user, TLObject tLObject, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str, boolean z10) {
-        this.c = mrVar;
-        this.d = user;
-        this.e = tLObject;
-        this.f = tL_chatAdminRights;
-        this.h = tL_chatBannedRights;
-        this.a = str;
+    public /* synthetic */ nq(org.telegram.messenger.us usVar, Object obj, boolean z10, int i10) {
+        this.a = i10;
+        this.c = usVar;
+        this.d = obj;
         this.b = z10;
     }
 
-    @Override // org.telegram.ui.Components.e5
-    public void G(int i10, int i11, boolean z10) {
-        ((org.telegram.ui.Components.gg) this.c).B((View) this.d, this.e, this.a, this.f, z10, i10, i11, (MediaController.PhotoEntry) this.h, this.b);
-    }
-
-    @Override // org.telegram.ui.ActionBar.b2
-    public void h(org.telegram.ui.ActionBar.e2 e2Var, int i10) {
-        mr mrVar = (mr) this.c;
-        TLRPC.User user = (TLRPC.User) this.d;
-        TLObject tLObject = (TLObject) this.e;
-        TLRPC.TL_chatAdminRights tL_chatAdminRights = (TLRPC.TL_chatAdminRights) this.f;
-        TLRPC.TL_chatBannedRights tL_chatBannedRights = (TLRPC.TL_chatBannedRights) this.h;
-        mrVar.getClass();
-        mrVar.u0(user.id, tLObject, tL_chatAdminRights, tL_chatBannedRights, this.a, this.b, mrVar.d1 == 1 ? 0 : 1, false);
-    }
-
-    public /* synthetic */ nq(org.telegram.ui.Components.gg ggVar, View view, Object obj, String str, Object obj2, MediaController.PhotoEntry photoEntry, boolean z10) {
-        this.c = ggVar;
-        this.d = view;
-        this.e = obj;
-        this.a = str;
-        this.f = obj2;
-        this.h = photoEntry;
-        this.b = z10;
+    @Override // org.telegram.messenger.j20
+    public final void a(Object obj, Object obj2) {
+        int i10 = this.a;
+        boolean z10 = this.b;
+        Object obj3 = this.d;
+        org.telegram.messenger.us usVar = this.c;
+        switch (i10) {
+            case 0:
+                pr prVar = (pr) usVar;
+                org.telegram.ui.Cells.p8 p8Var = (org.telegram.ui.Cells.p8) obj3;
+                TLRPC.Updates updates = (TLRPC.Updates) obj;
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
+                if (updates == null) {
+                    prVar.getClass();
+                    if (tL_error != null) {
+                        p8Var.setChecked(z10);
+                        org.telegram.ui.Components.cc.a0(prVar).f0(tL_error, false);
+                        break;
+                    }
+                } else {
+                    prVar.getMessagesController().L3(updates, false);
+                    break;
+                }
+                break;
+            default:
+                qh.m0 m0Var = (qh.m0) usVar;
+                TLRPC.TL_exportedNoPaidMessagesToken tL_exportedNoPaidMessagesToken = (TLRPC.TL_exportedNoPaidMessagesToken) obj;
+                TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
+                qh.x0 x0Var = m0Var.b;
+                if (m0Var.n == ((int[]) obj3)[0] && !m0Var.E) {
+                    m0Var.n = 0;
+                    if (tL_exportedNoPaidMessagesToken != null) {
+                        int i11 = m0Var.d;
+                        if (i11 != 0) {
+                            if (z10 == (i11 == 1)) {
+                                if (tL_exportedNoPaidMessagesToken.expires == 0) {
+                                    m0Var.f().edit().putString("qrNoPaidToken", tL_exportedNoPaidMessagesToken.token).putString("qrNoPaidUrl", tL_exportedNoPaidMessagesToken.url).apply();
+                                }
+                                m0Var.f = tL_exportedNoPaidMessagesToken;
+                                m0Var.h = SystemClock.elapsedRealtime();
+                                x0Var.setFreeLink(m0Var.d(tL_exportedNoPaidMessagesToken));
+                                break;
+                            }
+                        }
+                    } else {
+                        String str = tL_error2 != null ? tL_error2.text : null;
+                        org.telegram.messenger.f8.d("QrShare: exportNoPaidMessagesToken " + str);
+                        TLRPC.TL_exportedNoPaidMessagesToken tL_exportedNoPaidMessagesToken2 = m0Var.f;
+                        if (tL_exportedNoPaidMessagesToken2 != null) {
+                            if ((tL_exportedNoPaidMessagesToken2.expires != 0) == z10) {
+                                if (str != null) {
+                                    x0Var.getClass();
+                                    x0Var.d1(R.drawable.msg_warning, org.telegram.messenger.cd.L0(2131751106, null), null);
+                                    break;
+                                }
+                            }
+                        }
+                        m0Var.d = 0;
+                        m0Var.f().edit().putBoolean("qrNoPaidPermanent", false).apply();
+                        if (!x0Var.v0) {
+                            if (str != null) {
+                                x0Var.d1(R.drawable.msg_warning, org.telegram.messenger.cd.L0(2131751106, null), null);
+                                break;
+                            }
+                        } else {
+                            x0Var.U0(str != null ? org.telegram.messenger.cd.L0(2131751106, null) : null);
+                            break;
+                        }
+                    }
+                }
+                break;
+        }
     }
 }

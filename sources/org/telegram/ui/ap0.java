@@ -1,42 +1,104 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.tgnet.tl.TL_stars;
+import android.graphics.drawable.Drawable;
+import android.util.Pair;
+import android.view.VelocityTracker;
+import java.io.File;
+import java.io.Serializable;
+import java.util.Collections;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class ap0 extends org.telegram.ui.Components.t61 {
-    public static final /* synthetic */ int a = 0;
+public final /* synthetic */ class ap0 implements Runnable {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Serializable f;
+    public final /* synthetic */ Object h;
 
-    static {
-        org.telegram.ui.Components.t61.setup(new ap0());
+    /* JADX WARN: Multi-variable type inference failed */
+    public /* synthetic */ ap0(aq0 aq0Var, int[] iArr, int[] iArr2, boolean z10, boolean z11, boolean z12) {
+        this.e = aq0Var;
+        this.f = iArr;
+        this.h = iArr2;
+        this.b = z10;
+        this.c = z11;
+        this.d = z12;
     }
 
-    @Override // org.telegram.ui.Components.t61
-    public final void bindView(View view, org.telegram.ui.Components.u61 u61Var, boolean z10, org.telegram.ui.Components.k71 k71Var, org.telegram.ui.Components.s71 s71Var) {
-        bp0 bp0Var = (bp0) view;
-        TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) u61Var.G;
-        zh.h1 h1Var = bp0Var.h;
-        zh.d1 d1Var = bp0Var.e;
-        bp0Var.a = savedStarGift.gift.id;
-        bp0Var.setPadding(0, 0, 0, 0);
-        bp0Var.c(savedStarGift.gift.getDocument(), savedStarGift.gift);
-        bp0Var.b = (TL_stars.starGiftAttributeBackdrop) bi.ca.l(savedStarGift.gift.attributes, TL_stars.starGiftAttributeBackdrop.class);
-        bp0Var.c = (TL_stars.starGiftAttributePattern) bi.ca.l(savedStarGift.gift.attributes, TL_stars.starGiftAttributePattern.class);
-        d1Var.d(bp0Var.b);
-        d1Var.e(bp0Var.c);
-        if (h1Var != null) {
-            h1Var.setBackdrop(bp0Var.b);
-            String i10 = org.telegram.messenger.t.i(savedStarGift.gift.num, ',', new StringBuilder("#"));
-            h1Var.b = i10;
-            h1Var.a.f(9, i10, false);
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        Object obj = this.h;
+        Serializable serializable = this.f;
+        Object obj2 = this.e;
+        switch (i10) {
+            case 0:
+                PhotoViewer photoViewer = (PhotoViewer) obj2;
+                File file = (File) serializable;
+                org.telegram.messenger.jj jjVar = (org.telegram.messenger.jj) obj;
+                Drawable[] drawableArr = PhotoViewer.U8;
+                Pair L0 = org.telegram.messenger.i0.L0(file);
+                int i11 = photoViewer.V3;
+                photoViewer.V3 = i11 - 1;
+                String absolutePath = file.getAbsolutePath();
+                boolean z10 = this.b;
+                org.telegram.messenger.ef efVar = new org.telegram.messenger.ef(i11, absolutePath, z10 ? 0 : ((Integer) L0.first).intValue(), z10, 0, 0);
+                efVar.k(L0);
+                photoViewer.c2 = 2;
+                photoViewer.u2 = false;
+                photoViewer.d = new ir0(photoViewer, photoViewer.d, jjVar, efVar, this.c, this.d);
+                photoViewer.p1.f();
+                if (photoViewer.U6 == null) {
+                    photoViewer.U6 = VelocityTracker.obtain();
+                }
+                photoViewer.B7 = 3;
+                photoViewer.s3(false, false);
+                photoViewer.m3(true, false);
+                un unVar = photoViewer.l4;
+                if (unVar == null || unVar.Z == null || !unVar.J9()) {
+                    photoViewer.V1();
+                } else {
+                    photoViewer.l4.Z.L();
+                }
+                photoViewer.L0.setAlpha(org.telegram.messenger.zs.e4);
+                photoViewer.e0.setAlpha(1.0f);
+                photoViewer.c2(null, null, null, null, null, null, Collections.singletonList(efVar), 0, null);
+                photoViewer.P0.setTranslationY(org.telegram.messenger.i0.L(photoViewer.r1 ? 154.0f : 96.0f));
+                photoViewer.S0.setTranslationY(org.telegram.messenger.i0.L(photoViewer.r1 ? 154.0f : 96.0f));
+                photoViewer.F.setTranslationY(-r0.getHeight());
+                photoViewer.Q1.setTranslationY(org.telegram.messenger.i0.L(photoViewer.r1 ? 154.0f : 96.0f));
+                photoViewer.L0();
+                photoViewer.j3();
+                photoViewer.B7 = 0;
+                break;
+            default:
+                aq0 aq0Var = (aq0) obj2;
+                int[] iArr = (int[]) serializable;
+                int i12 = iArr[0] + 1;
+                iArr[0] = i12;
+                int i13 = ((int[]) obj)[0];
+                if (i12 == i13) {
+                    as0 as0Var = aq0Var.b.e0;
+                    boolean z11 = this.b;
+                    int i14 = (this.c ? 1 : 0) + (z11 ? 1 : 0);
+                    boolean z12 = this.d;
+                    new org.telegram.ui.Components.cc(as0Var, null).m(i14 + (z12 ? 1 : 0) > 1 ? org.telegram.ui.Components.bc.w : z12 ? i13 > 1 ? org.telegram.ui.Components.bc.s : org.telegram.ui.Components.bc.r : z11 ? i13 > 1 ? org.telegram.ui.Components.bc.n : org.telegram.ui.Components.bc.h : i13 > 1 ? org.telegram.ui.Components.bc.f : org.telegram.ui.Components.bc.e, i13, -115203550, -1, null).j();
+                    break;
+                }
+                break;
         }
-        bp0Var.b(u61Var.e, false);
     }
 
-    @Override // org.telegram.ui.Components.t61
-    public final View createView(Context context, org.telegram.ui.Components.nm0 nm0Var, int i10, int i11, org.telegram.ui.ActionBar.u6 u6Var) {
-        return new bp0(context, u6Var, true);
+    public /* synthetic */ ap0(PhotoViewer photoViewer, File file, boolean z10, org.telegram.messenger.jj jjVar, boolean z11, boolean z12) {
+        this.e = photoViewer;
+        this.f = file;
+        this.b = z10;
+        this.h = jjVar;
+        this.c = z11;
+        this.d = z12;
     }
 }

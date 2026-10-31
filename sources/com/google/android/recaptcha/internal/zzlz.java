@@ -1,18 +1,18 @@
 package com.google.android.recaptcha.internal;
 
+import ad.e;
 import android.os.Build;
+import bd.t;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import jd.d;
-import kd.r;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class zzlz {
     public static final Map zza() {
-        d[] dVarArr = {new d(-4, zzcd.zzo), new d(-12, zzcd.zzp), new d(-6, zzcd.zzk), new d(-11, zzcd.zzm), new d(-13, zzcd.zzq), new d(-14, zzcd.zzr), new d(-2, zzcd.zzl), new d(-7, zzcd.zzs), new d(-5, zzcd.zzt), new d(-9, zzcd.zzu), new d(-8, zzcd.zzE), new d(-15, zzcd.zzn), new d(-1, zzcd.zzv), new d(-3, zzcd.zzx), new d(-10, zzcd.zzy)};
-        LinkedHashMap linkedHashMap = new LinkedHashMap(r.a(15));
-        r.c(linkedHashMap, dVarArr);
+        e[] eVarArr = {new e(-4, zzcd.zzo), new e(-12, zzcd.zzp), new e(-6, zzcd.zzk), new e(-11, zzcd.zzm), new e(-13, zzcd.zzq), new e(-14, zzcd.zzr), new e(-2, zzcd.zzl), new e(-7, zzcd.zzs), new e(-5, zzcd.zzt), new e(-9, zzcd.zzu), new e(-8, zzcd.zzE), new e(-15, zzcd.zzn), new e(-1, zzcd.zzv), new e(-3, zzcd.zzx), new e(-10, zzcd.zzy)};
+        LinkedHashMap linkedHashMap = new LinkedHashMap(t.a(15));
+        t.c(linkedHashMap, eVarArr);
         int i10 = Build.VERSION.SDK_INT;
         if (i10 >= 26) {
             linkedHashMap.put(-16, zzcd.zzw);

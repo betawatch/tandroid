@@ -1,32 +1,31 @@
 package c3;
 
-import a8.yb;
-import e2.n0;
+import v7.t6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class y implements b0 {
-    public final d5.z a;
-    public final d5.z b;
+    public final c5.x a;
+    public final c5.x b;
     public long c;
 
     public y(long j10, long[] jArr, long[] jArr2) {
-        yb.g(jArr.length == jArr2.length);
+        t6.f(jArr.length == jArr2.length);
         int length = jArr2.length;
         if (length <= 0 || jArr2[0] <= 0) {
-            this.a = new d5.z(length, 3);
-            this.b = new d5.z(length, 3);
+            this.a = new c5.x(length, 4);
+            this.b = new c5.x(length, 4);
         } else {
             int i10 = length + 1;
-            d5.z zVar = new d5.z(i10, 3);
-            this.a = zVar;
-            d5.z zVar2 = new d5.z(i10, 3);
-            this.b = zVar2;
-            zVar.c(0L);
-            zVar2.c(0L);
+            c5.x xVar = new c5.x(i10, 4);
+            this.a = xVar;
+            c5.x xVar2 = new c5.x(i10, 4);
+            this.b = xVar2;
+            xVar.e(0L);
+            xVar2.e(0L);
         }
-        this.a.d(jArr);
-        this.b.d(jArr2);
+        this.a.f(jArr);
+        this.b.f(jArr2);
         this.c = j10;
     }
 
@@ -42,20 +41,20 @@ public final class y implements b0 {
 
     @Override // c3.b0
     public final a0 f(long j10) {
-        d5.z zVar = this.b;
-        if (zVar.b == 0) {
+        c5.x xVar = this.b;
+        if (xVar.b == 0) {
             c0 c0Var = c0.c;
             return new a0(c0Var, c0Var);
         }
-        int c10 = n0.c(zVar, j10);
-        long j11 = zVar.j(c10);
-        d5.z zVar2 = this.a;
-        c0 c0Var2 = new c0(j11, zVar2.j(c10));
-        if (j11 == j10 || c10 == zVar.b - 1) {
+        int c10 = e2.l0.c(xVar, j10);
+        long k10 = xVar.k(c10);
+        c5.x xVar2 = this.a;
+        c0 c0Var2 = new c0(k10, xVar2.k(c10));
+        if (k10 == j10 || c10 == xVar.b - 1) {
             return new a0(c0Var2, c0Var2);
         }
         int i10 = c10 + 1;
-        return new a0(c0Var2, new c0(zVar.j(i10), zVar2.j(i10)));
+        return new a0(c0Var2, new c0(xVar.k(i10), xVar2.k(i10)));
     }
 
     @Override // c3.b0

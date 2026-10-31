@@ -1,26 +1,72 @@
 package org.telegram.ui;
 
-import java.util.TimerTask;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class fn0 extends TimerTask {
-    public final /* synthetic */ gn0 a;
+public final /* synthetic */ class fn0 implements org.telegram.messenger.q20 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ gn0 b;
 
-    public fn0(gn0 gn0Var) {
-        this.a = gn0Var;
+    public /* synthetic */ fn0(gn0 gn0Var, int i10) {
+        this.a = i10;
+        this.b = gn0Var;
     }
 
-    @Override // java.util.TimerTask, java.lang.Runnable
-    public final void run() {
-        gn0 gn0Var = this.a;
-        if (gn0Var.v == null) {
-            return;
+    @Override // org.telegram.messenger.q20
+    public final void a(Object obj) {
+        int i10;
+        rn0 rn0Var;
+        nn0 nn0Var;
+        switch (this.a) {
+            case 0:
+                Integer num = (Integer) obj;
+                gn0 gn0Var = this.b;
+                nn0 nn0Var2 = gn0Var.e;
+                TL_stars.StarGift starGift = num.intValue() == 0 ? null : (TL_stars.StarGift) nn0Var2.M.get(num);
+                nn0Var2.K = starGift;
+                tn0 tn0Var = nn0Var2.p0;
+                if (starGift == null) {
+                    ph.h3 h3Var = nn0Var2.J;
+                    if (h3Var != null) {
+                        h3Var.f();
+                        nn0Var2.J = null;
+                    }
+                } else {
+                    ph.h3 h3Var2 = nn0Var2.J;
+                    if (h3Var2 == null || h3Var2.b != starGift.id) {
+                        i10 = ((org.telegram.ui.ActionBar.k2) tn0Var).currentAccount;
+                        ph.h3 h3Var3 = new ph.h3(i10, nn0Var2.K.id, new fn0(gn0Var, 2));
+                        nn0Var2.J = h3Var3;
+                        h3Var3.g(false);
+                    }
+                }
+                nn0.a(nn0Var2);
+                (tn0Var.I.getCurrentPosition() == 1 ? tn0Var.n : tn0Var.h).e();
+                break;
+            case 1:
+                nn0 nn0Var3 = this.b.e;
+                nn0Var3.h = ((Integer) obj).intValue();
+                nn0Var3.r = null;
+                nn0Var3.s = null;
+                nn0Var3.I = null;
+                nn0Var3.j(true);
+                nn0Var3.i();
+                nn0Var3.f(true);
+                mn0 mn0Var = nn0Var3.D;
+                if (mn0Var != null) {
+                    mn0Var.invalidate();
+                }
+                tn0 tn0Var2 = nn0Var3.p0;
+                nn0 nn0Var4 = tn0Var2.n;
+                if (nn0Var4 != null && (rn0Var = nn0Var4.a) != null && (nn0Var = tn0Var2.h) != null) {
+                    rn0Var.a(nn0Var.h);
+                    break;
+                }
+                break;
+            default:
+                this.b.e.e();
+                break;
         }
-        double currentTimeMillis = System.currentTimeMillis();
-        gn0Var.y = (int) (gn0Var.y - (currentTimeMillis - gn0Var.F));
-        gn0Var.F = currentTimeMillis;
-        AndroidUtilities.runOnUIThread(new nj0(this, 8));
     }
 }

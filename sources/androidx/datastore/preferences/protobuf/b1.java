@@ -1,6 +1,6 @@
 package androidx.datastore.preferences.protobuf;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public interface b1 {
     Object a();
@@ -9,11 +9,11 @@ public interface b1 {
 
     void c(Object obj);
 
-    int d(a aVar);
+    void d(Object obj, a4.g gVar, m mVar);
 
-    boolean e(Object obj);
+    int e(a aVar);
 
-    void f(Object obj, e2.f fVar, m mVar);
+    boolean f(Object obj);
 
     void g(w wVar, w wVar2);
 

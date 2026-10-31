@@ -1,48 +1,38 @@
 package ag;
 
-import j$.util.concurrent.ConcurrentHashMap;
-import java.util.AbstractMap;
-import java.util.ArrayList;
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_ephemeral;
+import android.content.DialogInterface;
+import android.view.KeyEvent;
+import android.view.View;
+import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes.dex */
-public final class y extends x {
-    public final void b(int i10, ConcurrentHashMap concurrentHashMap, ConcurrentHashMap concurrentHashMap2, int i11) {
-        ArrayList arrayList = this.a;
-        int size = arrayList.size();
-        int i12 = 0;
-        while (i12 < size) {
-            Object obj = arrayList.get(i12);
-            i12++;
-            TLRPC.TL_message b10 = b0.b((TL_ephemeral.EphemeralMessage) obj);
-            int i13 = i10;
-            ConcurrentHashMap concurrentHashMap3 = concurrentHashMap;
-            ConcurrentHashMap concurrentHashMap4 = concurrentHashMap2;
-            MessageObject messageObject = new MessageObject(i13, (TLRPC.Message) b10, (AbstractMap<Long, TLRPC.User>) concurrentHashMap3, (AbstractMap<Long, TLRPC.Chat>) concurrentHashMap4, true, true);
-            long dialogId = MessageObject.getDialogId(b10);
-            if (i11 != 0) {
-                b10.edit_date = i11;
-                b10.flags |= 32768;
-            }
-            a0.h hVar = this.b;
-            TLRPC.TL_messages_messages tL_messages_messages = (TLRPC.TL_messages_messages) hVar.f(dialogId);
-            if (tL_messages_messages == null) {
-                tL_messages_messages = new TLRPC.TL_messages_messages();
-                hVar.k(tL_messages_messages, dialogId);
-            }
-            tL_messages_messages.messages.add(b10);
-            a0.h hVar2 = this.c;
-            ArrayList arrayList2 = (ArrayList) hVar2.f(dialogId);
-            if (arrayList2 == null) {
-                arrayList2 = org.telegram.messenger.t.k(dialogId, hVar2);
-            }
-            arrayList2.add(messageObject);
-            i10 = i13;
-            concurrentHashMap = concurrentHashMap3;
-            concurrentHashMap2 = concurrentHashMap4;
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class y implements DialogInterface.OnShowListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ KeyEvent.Callback b;
+    public final /* synthetic */ Object c;
+
+    public /* synthetic */ y(KeyEvent.Callback callback, Object obj, int i10) {
+        this.a = i10;
+        this.b = callback;
+        this.c = obj;
+    }
+
+    @Override // android.content.DialogInterface.OnShowListener
+    public final void onShow(DialogInterface dialogInterface) {
+        switch (this.a) {
+            case 0:
+                View view = (View) this.b;
+                f0 f0Var = (f0) this.c;
+                if (view != null) {
+                    view.clearFocus();
+                }
+                f0Var.requestFocus();
+                org.telegram.messenger.i0.J3(f0Var);
+                break;
+            default:
+                VoIPService.lambda$toggleSpeakerphoneOrShowRouteSheet$94((org.telegram.ui.ActionBar.z2) this.b, (Integer) this.c, dialogInterface);
+                break;
         }
     }
 }

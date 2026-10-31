@@ -2,7 +2,7 @@ package androidx.biometric;
 
 import java.lang.ref.WeakReference;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class o implements Runnable {
     public final /* synthetic */ int a;
@@ -26,28 +26,28 @@ public final class o implements Runnable {
             case 1:
                 WeakReference weakReference2 = this.b;
                 if (weakReference2.get() != null) {
-                    ((x) weakReference2.get()).p = false;
+                    ((y) weakReference2.get()).p = false;
                     break;
                 }
                 break;
             default:
                 WeakReference weakReference3 = this.b;
                 if (weakReference3.get() != null) {
-                    ((x) weakReference3.get()).q = false;
+                    ((y) weakReference3.get()).q = false;
                     break;
                 }
                 break;
         }
     }
 
-    public o(x xVar, int i10) {
+    public o(y yVar, int i10) {
         this.a = i10;
         switch (i10) {
             case 2:
-                this.b = new WeakReference(xVar);
+                this.b = new WeakReference(yVar);
                 break;
             default:
-                this.b = new WeakReference(xVar);
+                this.b = new WeakReference(yVar);
                 break;
         }
     }

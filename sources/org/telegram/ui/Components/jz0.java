@@ -1,13 +1,22 @@
 package org.telegram.ui.Components;
 
-import java.util.LinkedHashMap;
+import java.io.File;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
 public final class jz0 {
-    public long a;
-    public int b;
-    public boolean c;
+    public final File a;
+    public long b;
+    public long c;
     public boolean d;
-    public Object e = new LinkedHashMap();
+    public boolean e;
+    public TLRPC.InputFile f;
+    public TLRPC.InputEncryptedFile g;
+    public byte[] h;
+    public byte[] i;
+
+    public jz0(File file) {
+        this.a = file;
+    }
 }

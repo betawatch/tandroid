@@ -1,34 +1,29 @@
 package org.telegram.ui;
 
-import androidx.recyclerview.widget.RecyclerView;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import java.util.concurrent.atomic.AtomicBoolean;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class b9 extends s4.u0 {
-    public boolean a;
-    public final /* synthetic */ o9 b;
+public final class b9 extends AnimatorListenerAdapter {
+    public final /* synthetic */ AtomicBoolean a;
+    public final /* synthetic */ org.telegram.ui.Components.p80 b;
+    public final /* synthetic */ String c;
 
-    public b9(o9 o9Var) {
-        this.b = o9Var;
+    public b9(AtomicBoolean atomicBoolean, org.telegram.ui.Components.p80 p80Var, String str) {
+        this.a = atomicBoolean;
+        this.b = p80Var;
+        this.c = str;
     }
 
-    @Override // s4.u0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        o9 o9Var = this.b;
-        ArrayList arrayList = o9Var.w;
-        int L0 = o9Var.b.L0();
-        int abs = L0 == -1 ? 0 : Math.abs(o9Var.b.N0() - L0) + 1;
-        if (abs > 0) {
-            int size = o9Var.c.g3.y.size();
-            if (!o9Var.E && !o9Var.x && !arrayList.isEmpty() && L0 + abs >= size - 5) {
-                AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.m0(18, this, (k9) ic.a.g(1, arrayList)));
-            }
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        AtomicBoolean atomicBoolean = this.a;
+        if (atomicBoolean.get()) {
+            return;
         }
-        if (i11 != 0 && this.a) {
-            o9Var.f.e(i11 < 0, true);
-        }
-        this.a = true;
+        atomicBoolean.set(true);
+        this.b.setText(this.c);
     }
 }

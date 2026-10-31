@@ -1,40 +1,96 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import org.telegram.messenger.AndroidUtilities;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import java.util.ArrayList;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class xf extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ChatActivityEnterView b;
+public final class xf extends j1.b {
+    public final int[] o;
+    public final /* synthetic */ ChatActivityEnterView.RecordCircle p;
 
-    public xf(ChatActivityEnterView chatActivityEnterView, int i10) {
-        this.b = chatActivityEnterView;
-        this.a = i10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public xf(ChatActivityEnterView.RecordCircle recordCircle, ChatActivityEnterView.RecordCircle recordCircle2) {
+        super(recordCircle2);
+        this.p = recordCircle;
+        this.o = new int[2];
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        ChatActivityEnterView chatActivityEnterView = this.b;
-        if (animator.equals(chatActivityEnterView.t2)) {
-            int i10 = this.a;
-            if (i10 != 3 && chatActivityEnterView.E0 != null && !AndroidUtilities.isAccessibilityScreenReaderEnabled()) {
-                chatActivityEnterView.E0.requestFocus();
-            }
-            chatActivityEnterView.v();
-            if (i10 != 3) {
-                sg sgVar = chatActivityEnterView.O1;
-                if (sgVar != null) {
-                    sgVar.setVisibility(8);
-                }
-                ChatActivityEnterView.RecordCircle recordCircle = chatActivityEnterView.N1;
-                if (recordCircle != null) {
-                    recordCircle.d();
-                }
-            }
+    @Override // j1.b
+    public final int g(float f7, float f10) {
+        Rect rect;
+        ChatActivityEnterView chatActivityEnterView = ChatActivityEnterView.this;
+        if (!chatActivityEnterView.s4 || chatActivityEnterView.N1 == null) {
+            return -1;
         }
+        if (chatActivityEnterView.T3.contains((int) f7, (int) f10)) {
+            return 1;
+        }
+        if (chatActivityEnterView.S3.contains(f7, f10)) {
+            return 2;
+        }
+        ChatActivityEnterView.SlideTextView slideTextView = chatActivityEnterView.k1;
+        if (slideTextView == null || (rect = slideTextView.K) == null) {
+            return -1;
+        }
+        RectF rectF = org.telegram.messenger.i0.P;
+        rectF.set(rect);
+        ChatActivityEnterView.SlideTextView slideTextView2 = chatActivityEnterView.k1;
+        int[] iArr = this.o;
+        slideTextView2.getLocationOnScreen(iArr);
+        rectF.offset(iArr[0], iArr[1]);
+        chatActivityEnterView.N1.getLocationOnScreen(iArr);
+        rectF.offset(-iArr[0], -iArr[1]);
+        return rectF.contains(f7, f10) ? 3 : -1;
+    }
+
+    @Override // j1.b
+    public final void h(ArrayList arrayList) {
+        if (ChatActivityEnterView.this.s4) {
+            arrayList.add(1);
+            arrayList.add(3);
+        }
+    }
+
+    @Override // j1.b
+    public final boolean k(int i10, int i11) {
+        return true;
+    }
+
+    @Override // j1.b
+    public final void l(int i10, s0.c cVar) {
+        Rect rect;
+        ChatActivityEnterView chatActivityEnterView = ChatActivityEnterView.this;
+        if (i10 == 1) {
+            cVar.h(chatActivityEnterView.T3);
+            cVar.o(org.telegram.messenger.cd.L0(2131745657, "Send"));
+            return;
+        }
+        if (i10 == 2) {
+            Rect rect2 = chatActivityEnterView.U3;
+            RectF rectF = chatActivityEnterView.S3;
+            rect2.set((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
+            cVar.h(chatActivityEnterView.U3);
+            cVar.o(org.telegram.messenger.cd.L0(2131744859, null));
+            return;
+        }
+        if (i10 != 3 || chatActivityEnterView.N1 == null) {
+            return;
+        }
+        ChatActivityEnterView.SlideTextView slideTextView = chatActivityEnterView.k1;
+        if (slideTextView != null && (rect = slideTextView.K) != null) {
+            Rect rect3 = org.telegram.messenger.i0.Q;
+            rect3.set(rect);
+            ChatActivityEnterView.SlideTextView slideTextView2 = chatActivityEnterView.k1;
+            int[] iArr = this.o;
+            slideTextView2.getLocationOnScreen(iArr);
+            rect3.offset(iArr[0], iArr[1]);
+            chatActivityEnterView.N1.getLocationOnScreen(iArr);
+            rect3.offset(-iArr[0], -iArr[1]);
+            cVar.h(rect3);
+        }
+        cVar.o(org.telegram.messenger.cd.L0(2131752589, "Cancel"));
     }
 }

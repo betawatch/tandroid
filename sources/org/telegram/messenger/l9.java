@@ -1,39 +1,7 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final /* synthetic */ class l9 implements Runnable {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ MediaDataController b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ ArrayList e;
-
-    public /* synthetic */ l9(MediaDataController mediaDataController, boolean z10, int i10, ArrayList arrayList) {
-        this.b = mediaDataController;
-        this.c = z10;
-        this.d = i10;
-        this.e = arrayList;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.lambda$loadRecents$48(this.c, this.e, this.d);
-                break;
-            default:
-                this.b.lambda$processLoadedRecentDocuments$53(this.c, this.d, this.e);
-                break;
-        }
-    }
-
-    public /* synthetic */ l9(MediaDataController mediaDataController, boolean z10, ArrayList arrayList, int i10) {
-        this.b = mediaDataController;
-        this.c = z10;
-        this.e = arrayList;
-        this.d = i10;
-    }
+public interface l9 {
+    Object l(Object obj);
 }

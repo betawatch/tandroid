@@ -1,69 +1,66 @@
 package i2;
 
-import android.os.IBinder;
-import android.os.RemoteException;
-import android.util.Log;
+import android.media.MediaFormat;
+import j$.util.DesugarCollections;
+import java.nio.ByteBuffer;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BuildConfig;
+import java.util.Set;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class c {
-    public final HashMap a;
+    public static final c b = new c(new HashMap());
+    public final Map a;
 
-    public c(int i10) {
-        switch (i10) {
-            case 1:
-                this.a = new HashMap();
-                break;
-            case 2:
-                this.a = new HashMap();
-                break;
-            default:
-                this.a = new HashMap();
-                break;
-        }
+    public c(HashMap hashMap) {
+        this.a = DesugarCollections.unmodifiableMap(hashMap);
     }
 
-    public void a(Runnable runnable) {
-        Runnable runnable2 = (Runnable) this.a.remove(runnable);
-        if (runnable2 != null) {
-            AndroidUtilities.cancelRunOnUIThread(runnable2);
-        }
-    }
-
-    public void b() {
-        HashMap hashMap = this.a;
-        Iterator it = hashMap.entrySet().iterator();
+    public static a6.i a(MediaFormat mediaFormat, Set set) {
+        a6.i iVar = new a6.i(26);
+        HashMap hashMap = (HashMap) iVar.b;
+        Iterator it = set.iterator();
         while (it.hasNext()) {
-            AndroidUtilities.cancelRunOnUIThread((Runnable) ((Map.Entry) it.next()).getValue());
+            String str = (String) it.next();
+            if (mediaFormat.containsKey(str)) {
+                int valueTypeForKey = mediaFormat.getValueTypeForKey(str);
+                if (valueTypeForKey == 1) {
+                    hashMap.put(str, Integer.valueOf(mediaFormat.getInteger(str)));
+                } else if (valueTypeForKey == 2) {
+                    hashMap.put(str, Long.valueOf(mediaFormat.getLong(str)));
+                } else if (valueTypeForKey == 3) {
+                    hashMap.put(str, Float.valueOf(mediaFormat.getFloat(str)));
+                } else if (valueTypeForKey == 4) {
+                    hashMap.put(str, mediaFormat.getString(str));
+                } else if (valueTypeForKey == 5) {
+                    ByteBuffer byteBuffer = mediaFormat.getByteBuffer(str);
+                    if (byteBuffer == null) {
+                        hashMap.put(str, null);
+                    } else {
+                        ByteBuffer allocate = ByteBuffer.allocate(byteBuffer.remaining());
+                        allocate.put(byteBuffer.duplicate());
+                        allocate.flip();
+                        hashMap.put(str, allocate);
+                    }
+                }
+            }
         }
-        hashMap.clear();
+        return iVar;
     }
 
-    public void c(IBinder iBinder) {
-        synchronized (this.a) {
-            if (iBinder != null) {
-                try {
-                    iBinder.queryLocalInterface("com.google.android.gms.wearable.internal.IWearableService");
-                } catch (Throwable th2) {
-                    throw th2;
-                }
-            }
-            new z8.x0();
-            for (Map.Entry entry : this.a.entrySet()) {
-                if (entry.getValue() != null) {
-                    throw new ClassCastException();
-                }
-                try {
-                    throw null;
-                } catch (RemoteException unused) {
-                    Log.w("WearableClient", "onPostInitHandler: Didn't add: " + String.valueOf(entry.getKey()) + "/" + BuildConfig.BETA_URL);
-                }
-            }
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
+        if (obj instanceof c) {
+            return this.a.equals(((c) obj).a);
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        return this.a.hashCode();
     }
 }

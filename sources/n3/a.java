@@ -2,13 +2,13 @@ package n3;
 
 import b2.r0;
 import b2.t0;
+import b2.v0;
 import b2.w;
-import b2.w0;
 import b2.x;
 import j$.util.Objects;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class a implements t0 {
     public static final x g;
@@ -22,10 +22,10 @@ public final class a implements t0 {
 
     static {
         w wVar = new w();
-        wVar.r = w0.n("application/id3");
+        wVar.r = v0.n("application/id3");
         g = new x(wVar);
         w wVar2 = new w();
-        wVar2.r = w0.n("application/x-scte35");
+        wVar2.r = v0.n("application/x-scte35");
         h = new x(wVar2);
     }
 

@@ -6,7 +6,7 @@ import android.view.View;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class u implements View.OnClickListener {
     public final View a;
@@ -35,10 +35,10 @@ public final class u implements View.OnClickListener {
                     } else {
                         str = " with id '" + view2.getContext().getResources().getResourceEntryName(id2) + "'";
                     }
-                    StringBuilder v = a1.g.v("Could not find method ", str2, "(View) in a parent or ancestor Context for android:onClick attribute defined on view ");
-                    v.append(view2.getClass());
-                    v.append(str);
-                    throw new IllegalStateException(v.toString());
+                    StringBuilder u10 = a1.g.u("Could not find method ", str2, "(View) in a parent or ancestor Context for android:onClick attribute defined on view ");
+                    u10.append(view2.getClass());
+                    u10.append(str);
+                    throw new IllegalStateException(u10.toString());
                 }
                 try {
                     if (!context.isRestricted() && (method = context.getClass().getMethod(str2, View.class)) != null) {
@@ -54,8 +54,8 @@ public final class u implements View.OnClickListener {
             this.c.invoke(this.d, view);
         } catch (IllegalAccessException e) {
             throw new IllegalStateException("Could not execute non-public method for android:onClick", e);
-        } catch (InvocationTargetException e10) {
-            throw new IllegalStateException("Could not execute method for android:onClick", e10);
+        } catch (InvocationTargetException e7) {
+            throw new IllegalStateException("Could not execute method for android:onClick", e7);
         }
     }
 }

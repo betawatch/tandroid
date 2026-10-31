@@ -1,34 +1,138 @@
 package org.telegram.ui.Components;
 
-import android.text.TextPaint;
-import android.text.style.ClickableSpan;
-import android.view.View;
+import android.content.Context;
+import android.os.SystemClock;
+import java.io.File;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ProfileActivity;
+import org.telegram.tgnet.tl.TL_phone;
+import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class d70 extends ClickableSpan {
-    public final /* synthetic */ org.telegram.ui.ActionBar.k3[] a;
-    public final /* synthetic */ TLRPC.TL_chatInviteImporter b;
+public final /* synthetic */ class d70 implements Runnable {
+    public final /* synthetic */ int a = 2;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ TLObject e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object h;
+    public final /* synthetic */ Object n;
+    public final /* synthetic */ Object r;
+    public final /* synthetic */ Object s;
 
-    public d70(org.telegram.ui.ActionBar.k3[] k3VarArr, TLRPC.TL_chatInviteImporter tL_chatInviteImporter) {
-        this.a = k3VarArr;
-        this.b = tL_chatInviteImporter;
+    public /* synthetic */ d70(org.telegram.ui.ActionBar.x1 x1Var, Context context, int i10, long j10, TLRPC.TL_messages_preparedInlineMessage tL_messages_preparedInlineMessage, File[] fileArr, org.telegram.ui.ActionBar.p6 p6Var, org.telegram.ui.web.q qVar, org.telegram.tgnet.e eVar) {
+        this.d = x1Var;
+        this.n = context;
+        this.c = i10;
+        this.b = j10;
+        this.e = tL_messages_preparedInlineMessage;
+        this.f = fileArr;
+        this.h = p6Var;
+        this.r = qVar;
+        this.s = eVar;
     }
 
-    @Override // android.text.style.ClickableSpan
-    public final void onClick(View view) {
-        this.a[0].dismiss();
-        org.telegram.ui.ActionBar.r2 U = LaunchActivity.U();
-        if (U != null) {
-            U.presentFragment(ProfileActivity.t4(this.b.user_id));
+    @Override // java.lang.Runnable
+    public final void run() {
+        org.telegram.ui.Wallet.h0 h0Var;
+        String i10;
+        org.telegram.ui.Wallet.a2 a2Var;
+        switch (this.a) {
+            case 0:
+                org.telegram.ui.ActionBar.x1 x1Var = (org.telegram.ui.ActionBar.x1) this.d;
+                org.telegram.messenger.c cVar = (org.telegram.messenger.c) this.f;
+                i70 i70Var = (i70) this.h;
+                Context context = (Context) this.n;
+                org.telegram.ui.ActionBar.k2 k2Var = (org.telegram.ui.ActionBar.k2) this.r;
+                TLRPC.Peer peer = (TLRPC.Peer) this.s;
+                try {
+                    x1Var.dismiss();
+                } catch (Exception e) {
+                    org.telegram.messenger.f8.g(e, true);
+                }
+                TLObject tLObject = this.e;
+                if (tLObject != null) {
+                    TL_phone.joinAsPeers joinaspeers = (TL_phone.joinAsPeers) tLObject;
+                    if (joinaspeers.peers.size() != 1) {
+                        k70.z1 = joinaspeers.peers;
+                        long j10 = this.b;
+                        k70.B1 = j10;
+                        k70.A1 = SystemClock.elapsedRealtime();
+                        int i11 = cVar.a;
+                        k70.C1 = i11;
+                        org.telegram.messenger.vp.r1(i11).P3(joinaspeers.chats, false);
+                        org.telegram.messenger.vp.r1(cVar.a).V3(joinaspeers.users, false);
+                        k70.L0(context, j10, joinaspeers.peers, k2Var, this.c, peer, i70Var);
+                        break;
+                    } else {
+                        i70Var.a(org.telegram.messenger.vp.r1(cVar.a).i1(org.telegram.messenger.jj.C1(joinaspeers.peers.get(0))), false, false, false);
+                        break;
+                    }
+                }
+                break;
+            case 1:
+                org.telegram.ui.Wallet.e2 e2Var = (org.telegram.ui.Wallet.e2) this.d;
+                TL_wallet.tonConnectPending tonconnectpending = (TL_wallet.tonConnectPending) this.e;
+                TL_wallet.tonConnectRequest tonconnectrequest = (TL_wallet.tonConnectRequest) this.f;
+                org.telegram.ui.Wallet.h0 h0Var2 = (org.telegram.ui.Wallet.h0) this.h;
+                String str = (String) this.n;
+                byte[] bArr = (byte[]) this.r;
+                ih.s sVar = (ih.s) this.s;
+                e2Var.getClass();
+                try {
+                    h0Var = h0Var2;
+                } catch (Exception e7) {
+                    e = e7;
+                    h0Var = h0Var2;
+                }
+                try {
+                    a2Var = new org.telegram.ui.Wallet.a2(tonconnectpending, tonconnectrequest, org.telegram.ui.Wallet.e2.g(h0Var2, tonconnectpending.session, str, bArr, tonconnectrequest.body, e2Var.f.getCurrentTime()), str, bArr);
+                    i10 = null;
+                } catch (Exception e10) {
+                    e = e10;
+                    i10 = org.telegram.ui.Wallet.e2.i("decode request", e);
+                    a2Var = null;
+                    org.telegram.messenger.i0.g3(new org.telegram.messenger.qb(e2Var, a2Var, sVar, i10, this.b, this.c, h0Var));
+                    return;
+                }
+                org.telegram.messenger.i0.g3(new org.telegram.messenger.qb(e2Var, a2Var, sVar, i10, this.b, this.c, h0Var));
+            default:
+                org.telegram.ui.ActionBar.x1 x1Var2 = (org.telegram.ui.ActionBar.x1) this.d;
+                Context context2 = (Context) this.n;
+                TLRPC.TL_messages_preparedInlineMessage tL_messages_preparedInlineMessage = (TLRPC.TL_messages_preparedInlineMessage) this.e;
+                File[] fileArr = (File[]) this.f;
+                org.telegram.ui.ActionBar.p6 p6Var = (org.telegram.ui.ActionBar.p6) this.h;
+                org.telegram.ui.web.q qVar = (org.telegram.ui.web.q) this.r;
+                org.telegram.tgnet.e eVar = (org.telegram.tgnet.e) this.s;
+                x1Var2.dismiss();
+                new xh.c1(context2, this.c, this.b, tL_messages_preparedInlineMessage, fileArr[0], null, p6Var, qVar, eVar).show();
+                break;
         }
     }
 
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        textPaint.setUnderlineText(false);
+    public /* synthetic */ d70(org.telegram.ui.ActionBar.x1 x1Var, TLObject tLObject, org.telegram.messenger.c cVar, i70 i70Var, long j10, Context context, org.telegram.ui.ActionBar.k2 k2Var, int i10, TLRPC.Peer peer) {
+        this.d = x1Var;
+        this.e = tLObject;
+        this.f = cVar;
+        this.h = i70Var;
+        this.b = j10;
+        this.n = context;
+        this.r = k2Var;
+        this.c = i10;
+        this.s = peer;
+    }
+
+    public /* synthetic */ d70(org.telegram.ui.Wallet.e2 e2Var, TL_wallet.tonConnectPending tonconnectpending, TL_wallet.tonConnectRequest tonconnectrequest, org.telegram.ui.Wallet.h0 h0Var, String str, byte[] bArr, ih.s sVar, long j10, int i10) {
+        this.d = e2Var;
+        this.e = tonconnectpending;
+        this.f = tonconnectrequest;
+        this.h = h0Var;
+        this.n = str;
+        this.r = bArr;
+        this.s = sVar;
+        this.b = j10;
+        this.c = i10;
     }
 }

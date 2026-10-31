@@ -1,43 +1,59 @@
 package e9;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+import j$.util.Objects;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.Map;
+
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class b extends g {
-    public static final b c = new b("CharMatcher.any()", 0);
-    public static final b d = new b("CharMatcher.ascii()", 1);
-    public static final b e = new b("CharMatcher.javaIsoControl()", 2);
-    public static final b f = new b("CharMatcher.none()", 3);
-    public final /* synthetic */ int b;
+public final class b implements Iterator {
+    public final Iterator a;
+    public Object b = null;
+    public Collection c = null;
+    public Iterator d = d1.a;
+    public final /* synthetic */ p1 e;
+    public final /* synthetic */ int f;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ b(String str, int i10) {
-        super(str);
-        this.b = i10;
+    public b(p1 p1Var, int i10) {
+        this.f = i10;
+        this.e = p1Var;
+        this.a = p1Var.e.entrySet().iterator();
     }
 
-    @Override // e9.i
-    public final boolean c(char c10) {
-        switch (this.b) {
+    @Override // java.util.Iterator
+    public final boolean hasNext() {
+        return this.a.hasNext() || this.d.hasNext();
+    }
+
+    @Override // java.util.Iterator
+    public final Object next() {
+        if (!this.d.hasNext()) {
+            Map.Entry entry = (Map.Entry) this.a.next();
+            this.b = entry.getKey();
+            Collection collection = (Collection) entry.getValue();
+            this.c = collection;
+            this.d = collection.iterator();
+        }
+        Object obj = this.b;
+        Object next = this.d.next();
+        switch (this.f) {
             case 0:
-                return true;
-            case 1:
-                return c10 <= 127;
-            case 2:
-                return c10 <= 31 || (c10 >= 127 && c10 <= 159);
+                return next;
             default:
-                return false;
+                return new j0(obj, next);
         }
     }
 
-    @Override // e9.d, e9.i
-    public i d() {
-        switch (this.b) {
-            case 0:
-                return f;
-            case 3:
-                return c;
-            default:
-                return super.d();
+    @Override // java.util.Iterator
+    public final void remove() {
+        this.d.remove();
+        Collection collection = this.c;
+        Objects.requireNonNull(collection);
+        if (collection.isEmpty()) {
+            this.a.remove();
         }
+        p1 p1Var = this.e;
+        p1Var.f--;
     }
 }

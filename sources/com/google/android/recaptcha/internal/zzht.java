@@ -1,11 +1,11 @@
 package com.google.android.recaptcha.internal;
 
-import a8.id;
-import ce.f0;
-import jd.c;
-import jd.g;
+import ad.c;
+import ad.h;
+import ib.a;
+import td.e0;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class zzht {
     private final c zza;
@@ -13,19 +13,19 @@ public final class zzht {
 
     public zzht() {
         int i10 = zzby.zza;
-        this.zza = id.a(zzhr.zza);
-        this.zzb = id.a(zzhs.zza);
+        this.zza = a.a(zzhr.zza);
+        this.zzb = a.a(zzhs.zza);
     }
 
     public static final /* synthetic */ zzhn zza(zzht zzhtVar) {
-        return (zzhn) ((g) zzhtVar.zzb).a();
+        return (zzhn) ((h) zzhtVar.zzb).a();
     }
 
     public static final /* synthetic */ zzig zzb(zzht zzhtVar) {
-        return (zzig) ((g) zzhtVar.zza).a();
+        return (zzig) ((h) zzhtVar.zza).a();
     }
 
-    public final Object zzc(String str, zzzd zzzdVar, ld.c cVar) {
-        return f0.f(new zzhq(this, str, zzzdVar, null), cVar);
+    public final Object zzc(String str, zzzd zzzdVar, cd.c cVar) {
+        return e0.f(new zzhq(this, str, zzzdVar, null), cVar);
     }
 }

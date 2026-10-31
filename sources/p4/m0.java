@@ -1,80 +1,38 @@
 package p4;
 
-import android.os.Bundle;
-import android.os.DeadObjectException;
-import android.os.IBinder;
-import android.os.Message;
-import android.os.Messenger;
-import android.os.RemoteException;
-import android.util.Log;
 import android.util.SparseArray;
-import org.telegram.ui.Components.b10;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class m0 implements IBinder.DeathRecipient {
-    public final Messenger a;
-    public final g.c b;
-    public final Messenger c;
-    public int f;
-    public int g;
-    public final /* synthetic */ r0 i;
-    public int d = 1;
-    public int e = 1;
-    public final SparseArray h = new SparseArray();
+public final class m0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ n0 b;
 
-    public m0(r0 r0Var, Messenger messenger) {
-        this.i = r0Var;
-        this.a = messenger;
-        g.c cVar = new g.c(this);
-        this.b = cVar;
-        this.c = new Messenger(cVar);
+    public /* synthetic */ m0(n0 n0Var, int i10) {
+        this.a = i10;
+        this.b = n0Var;
     }
 
-    public final void a(int i10) {
-        int i11 = this.d;
-        this.d = i11 + 1;
-        b(5, i11, i10, null, null);
-    }
-
-    public final boolean b(int i10, int i11, int i12, Bundle bundle, Bundle bundle2) {
-        Message obtain = Message.obtain();
-        obtain.what = i10;
-        obtain.arg1 = i11;
-        obtain.arg2 = i12;
-        obtain.obj = bundle;
-        obtain.setData(bundle2);
-        obtain.replyTo = this.c;
-        try {
-            this.a.send(obtain);
-            return true;
-        } catch (DeadObjectException unused) {
-            return false;
-        } catch (RemoteException e) {
-            if (i10 == 2) {
-                return false;
-            }
-            Log.e("MediaRouteProviderProxy", "Could not send message to service.", e);
-            return false;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                SparseArray sparseArray = this.b.h;
+                int size = sparseArray.size();
+                for (int i10 = 0; i10 < size; i10++) {
+                    ((p0) sparseArray.valueAt(i10)).getClass();
+                    p0.a(null, null);
+                }
+                sparseArray.clear();
+                break;
+            default:
+                n0 n0Var = this.b;
+                s0 s0Var = n0Var.i;
+                if (s0Var.D == n0Var) {
+                    s0Var.p();
+                    break;
+                }
+                break;
         }
-    }
-
-    @Override // android.os.IBinder.DeathRecipient
-    public final void binderDied() {
-        this.i.s.post(new l0(this, 1));
-    }
-
-    public final void c(int i10, int i11) {
-        Bundle g7 = b10.g(i11, "volume");
-        int i12 = this.d;
-        this.d = i12 + 1;
-        b(7, i12, i10, null, g7);
-    }
-
-    public final void d(int i10, int i11) {
-        Bundle g7 = b10.g(i11, "volume");
-        int i12 = this.d;
-        this.d = i12 + 1;
-        b(8, i12, i10, null, g7);
     }
 }

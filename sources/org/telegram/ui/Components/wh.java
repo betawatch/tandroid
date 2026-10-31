@@ -1,128 +1,52 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
 import android.content.Context;
-import android.graphics.Canvas;
-import android.text.TextUtils;
-import android.view.ActionMode;
-import android.view.Menu;
-import android.view.MotionEvent;
-import org.telegram.messenger.AndroidUtilities;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class wh extends ru {
-    public boolean V;
-    public int W;
-    public int a0;
-    public ValueAnimator b0;
-    public final /* synthetic */ ti c0;
+public final class wh extends xh {
+    public int b;
+    public final /* synthetic */ bi c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public wh(ti tiVar, Context context, gi giVar, org.telegram.ui.ActionBar.u6 u6Var) {
-        super(context, giVar, null, 1, true, u6Var);
-        this.c0 = tiVar;
+    public wh(bi biVar, Context context) {
+        super(context);
+        this.c = biVar;
+        setWillNotDraw(false);
+        setFocusable(true);
+        int i10 = bi.E4;
+        org.telegram.ui.ActionBar.p6 p6Var = biVar.I0;
+        gh.b bVar = new gh.b(context);
+        bVar.d = p6Var;
+        bVar.Q = true;
+        TextView textView = bVar.a;
+        textView.setTextSize(1, 11.0f);
+        textView.setPadding(org.telegram.messenger.i0.L(8.0f), 0, org.telegram.messenger.i0.L(8.0f), 0);
+        bVar.b(false);
+        bVar.b.setLayoutParams(w7.b6.d(24, 24.0f, 49, 0.0f, 4.0f, 0.0f, 0.0f));
+        bVar.x = org.telegram.ui.ActionBar.t6.w0(org.telegram.ui.ActionBar.t6.Ql, p6Var);
+        bVar.s = org.telegram.ui.ActionBar.t6.w0(org.telegram.ui.ActionBar.t6.Ol, p6Var);
+        bVar.w = org.telegram.ui.ActionBar.t6.w0(org.telegram.ui.ActionBar.t6.Pl, p6Var);
+        bVar.a();
+        this.a = bVar;
+        addView(bVar, w7.b6.c(-1.0f, -1));
     }
 
-    @Override // org.telegram.ui.Components.ru
-    public final void c(float f7) {
-        ti tiVar = this.c0;
-        tiVar.j2 = f7;
-        th thVar = tiVar.G0;
-        thVar.setTranslationY(f7);
-        thVar.invalidate();
-        tiVar.m1();
-        tiVar.f2(tiVar.B0, 0);
+    public final void a(int i10, String str, gh.a aVar) {
+        this.a.setText(str);
+        this.a.setTabAnimation(aVar);
+        this.b = i10;
+    }
+
+    @Override // android.view.View
+    public final boolean hasOverlappingRendering() {
+        return false;
     }
 
     @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        if (this.V) {
-            ju editText = this.c0.H0.getEditText();
-            editText.setOffsetY(editText.getOffsetY() - ((this.a0 - editText.getScrollY()) + (this.W - editText.getMeasuredHeight())));
-            ValueAnimator ofFloat = ValueAnimator.ofFloat(editText.getOffsetY(), 0.0f);
-            ofFloat.addUpdateListener(new bh.b0(15, this, editText));
-            ValueAnimator valueAnimator = this.b0;
-            if (valueAnimator != null) {
-                valueAnimator.cancel();
-            }
-            this.b0 = ofFloat;
-            ofFloat.setDuration(200L);
-            ofFloat.setInterpolator(ds.f);
-            ofFloat.start();
-            this.V = false;
-        }
-        super.dispatchDraw(canvas);
-    }
-
-    @Override // org.telegram.ui.Components.ru
-    public final void e() {
-        super/*org.telegram.ui.ActionBar.k3*/.dismiss();
-    }
-
-    @Override // org.telegram.ui.Components.ru
-    public final void f() {
-        super.f();
-        sz emojiView = getEmojiView();
-        if (emojiView != null) {
-            emojiView.w0 = false;
-            emojiView.x2 = false;
-            emojiView.setShouldDrawBackground(false);
-            emojiView.setBottomInset(AndroidUtilities.navigationBarHeight);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.ru
-    public final void i(ActionMode actionMode, Menu menu) {
-        org.telegram.ui.ActionBar.r2 r2Var = this.c0.f0;
-        if (r2Var instanceof org.telegram.ui.wn) {
-            org.telegram.ui.wn.t8(menu, ((org.telegram.ui.wn) r2Var).h, true, true, true, true);
-        }
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        ti tiVar = this.c0;
-        wh whVar = tiVar.H0;
-        if (!tiVar.x1) {
-            if (motionEvent.getX() <= whVar.getEditText().getLeft() || motionEvent.getX() >= whVar.getEditText().getRight() || motionEvent.getY() <= whVar.getEditText().getTop() || motionEvent.getY() >= whVar.getEditText().getBottom()) {
-                tiVar.z1(whVar.getEditText(), false);
-            } else {
-                tiVar.z1(whVar.getEditText(), true);
-            }
-        }
-        return super.onInterceptTouchEvent(motionEvent);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        this.c0.c2();
-    }
-
-    @Override // org.telegram.ui.Components.ru
-    public final void q(int i10, int i11) {
-        ti tiVar = this.c0;
-        th thVar = tiVar.G0;
-        boolean z10 = false;
-        if (TextUtils.isEmpty(getEditText().getText())) {
-            getEditText().animate().cancel();
-            getEditText().setOffsetY(0.0f);
-            this.V = false;
-        } else {
-            this.V = true;
-            this.W = getEditText().getMeasuredHeight();
-            this.a0 = getEditText().getScrollY();
-            invalidate();
-        }
-        if (!tiVar.c0) {
-            if (i11 > 2 && !TextUtils.isEmpty(getEditText().getText().toString().trim())) {
-                z10 = true;
-            }
-            tiVar.U1(z10);
-        }
-        tiVar.Z1 = thVar.getTop() + tiVar.Y1;
-        thVar.invalidate();
-        tiVar.c2();
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.a.f(((long) this.b) == this.c.Q2, false);
     }
 }

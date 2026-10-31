@@ -1,31 +1,36 @@
 package org.telegram.ui;
 
-import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
+import android.view.View;
+import java.util.Iterator;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class n40 implements ViewTreeObserver.OnPreDrawListener {
-    public final /* synthetic */ ChatObject.VideoParticipant a;
-    public final /* synthetic */ x50 b;
+public final /* synthetic */ class n40 implements org.telegram.ui.Components.l5 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public n40(x50 x50Var, ChatObject.VideoParticipant videoParticipant) {
-        this.b = x50Var;
-        this.a = videoParticipant;
+    public /* synthetic */ n40(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // android.view.ViewTreeObserver.OnPreDrawListener
-    public final boolean onPreDraw() {
-        ViewGroup viewGroup;
-        x50 x50Var = this.b;
-        x50Var.Q.getViewTreeObserver().removeOnPreDrawListener(this);
-        x50Var.q2 = null;
-        x50Var.a2.j(this.a);
-        AndroidUtilities.updateVisibleRows(x50Var.m2);
-        viewGroup = ((org.telegram.ui.ActionBar.k3) x50Var).containerView;
-        viewGroup.requestLayout();
-        return false;
+    @Override // org.telegram.ui.Components.l5
+    public final void invalidate() {
+        switch (this.a) {
+            case 0:
+                Iterator it = ((o40) this.b).i.iterator();
+                while (it.hasNext()) {
+                    ((View) it.next()).invalidate();
+                }
+                break;
+            default:
+                s21 s21Var = (s21) this.b;
+                s21Var.getClass();
+                if (!sg.e0.b && s21Var.getParent() != null) {
+                    ((View) s21Var.getParent()).invalidate();
+                    break;
+                }
+                break;
+        }
     }
 }

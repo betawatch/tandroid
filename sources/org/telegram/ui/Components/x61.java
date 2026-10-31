@@ -1,57 +1,57 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Typeface;
-import android.text.TextPaint;
-import android.text.style.MetricAffectingSpan;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.SharedConfig;
+import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class x61 extends MetricAffectingSpan {
-    public final CharSequence a;
-    public final int b;
-    public final int c;
-    public final byte d;
-    public final z11 e;
+public final /* synthetic */ class x61 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ b71 b;
 
-    public x61(CharSequence charSequence, int i10, int i11, byte b10, z11 z11Var) {
-        this.a = charSequence;
-        this.b = i10;
-        this.c = i11;
-        this.d = b10;
-        this.e = z11Var;
+    public /* synthetic */ x61(b71 b71Var, int i10) {
+        this.a = i10;
+        this.b = b71Var;
     }
 
-    @Override // android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        textPaint.setTextSize(AndroidUtilities.dp(SharedConfig.fontSize - 1));
-        byte b10 = this.d;
-        if (b10 == 2) {
-            textPaint.setColor(-1);
-        } else if (b10 == 1) {
-            textPaint.setColor(org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.fc, false));
-        } else {
-            textPaint.setColor(org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.ec, false));
-        }
-        z11 z11Var = this.e;
-        if (z11Var != null) {
-            z11Var.a(textPaint);
-        } else {
-            textPaint.setTypeface(Typeface.MONOSPACE);
-            textPaint.setUnderlineText(false);
-        }
-    }
-
-    @Override // android.text.style.MetricAffectingSpan
-    public final void updateMeasureState(TextPaint textPaint) {
-        textPaint.setTextSize(AndroidUtilities.dp(SharedConfig.fontSize - 1));
-        textPaint.setFlags(textPaint.getFlags() | 128);
-        z11 z11Var = this.e;
-        if (z11Var != null) {
-            z11Var.a(textPaint);
-        } else {
-            textPaint.setTypeface(Typeface.MONOSPACE);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                b71 b71Var = this.b;
+                b71Var.h = 0.0f;
+                s5 s5Var = b71Var.b;
+                if (s5Var != null) {
+                    s5Var.u();
+                    b71Var.b = null;
+                    break;
+                }
+                break;
+            case 1:
+                b71 b71Var2 = this.b;
+                b71Var2.a = true;
+                b71Var2.e = null;
+                if (b71Var2.b != null) {
+                    b71Var2.s = true;
+                    PhotoViewer photoViewer = b71Var2.M.a;
+                    if (photoViewer.u3) {
+                        photoViewer.e3(true);
+                        break;
+                    }
+                }
+                break;
+            default:
+                b71 b71Var3 = this.b;
+                b71Var3.a = true;
+                b71Var3.e = null;
+                if (b71Var3.b != null) {
+                    b71Var3.s = true;
+                    PhotoViewer photoViewer2 = b71Var3.M.a;
+                    if (photoViewer2.u3) {
+                        photoViewer2.e3(true);
+                        break;
+                    }
+                }
+                break;
         }
     }
 }

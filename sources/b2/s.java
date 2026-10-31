@@ -6,7 +6,7 @@ import j$.util.Objects;
 import java.util.Arrays;
 import java.util.UUID;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class s implements Parcelable {
     public static final Parcelable.Creator<s> CREATOR = new r(1);
@@ -21,7 +21,7 @@ public final class s implements Parcelable {
         this.b = uuid;
         this.c = str;
         str2.getClass();
-        this.d = w0.n(str2);
+        this.d = v0.n(str2);
         this.e = bArr;
     }
 
@@ -70,7 +70,7 @@ public final class s implements Parcelable {
         this.b = new UUID(parcel.readLong(), parcel.readLong());
         this.c = parcel.readString();
         String readString = parcel.readString();
-        String str = e2.n0.a;
+        String str = e2.l0.a;
         this.d = readString;
         this.e = parcel.createByteArray();
     }

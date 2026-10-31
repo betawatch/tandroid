@@ -1,30 +1,6 @@
 package i8;
 
-import android.os.Parcel;
-import android.os.RemoteException;
-import java.util.HashMap;
-import o6.l;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class c {
-    public final j8.f a;
-    public h b;
-
-    public c(j8.f fVar) {
-        new HashMap();
-        l.h(fVar);
-        this.a = fVar;
-    }
-
-    public final void a(int i10) {
-        try {
-            j8.f fVar = this.a;
-            Parcel N0 = fVar.N0();
-            N0.writeInt(i10);
-            fVar.R0(N0, 16);
-        } catch (RemoteException e) {
-            throw new androidx.car.app.j(e);
-        }
-    }
+public final class c extends a9.a {
 }

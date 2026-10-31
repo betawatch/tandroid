@@ -1,10 +1,10 @@
 package e2;
 
-import a8.yb;
 import android.os.Handler;
 import java.util.ArrayList;
+import v7.t6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class i0 {
     public static final ArrayList b = new ArrayList(50);
@@ -44,7 +44,7 @@ public final class i0 {
     }
 
     public final void e(int i10) {
-        yb.g(i10 != 0);
+        t6.f(i10 != 0);
         this.a.removeMessages(i10);
     }
 

@@ -1,53 +1,60 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes3.dex */
-public final class dt0 extends g.o {
-    public final /* synthetic */ bt0 c;
-    public final /* synthetic */ bw0 d;
+import android.view.View;
+import java.util.ArrayList;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.tgnet.TLRPC;
 
-    public dt0(bw0 bw0Var, bt0 bt0Var) {
-        this.d = bw0Var;
-        this.c = bt0Var;
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final class dt0 extends org.telegram.ui.yr0 {
+    public final /* synthetic */ et0 a;
+
+    public dt0(et0 et0Var) {
+        this.a = et0Var;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:12:0x003c, code lost:
-    
-        if (r3.h.getAdapter().j(r9) == 2) goto L22;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:4:0x0020, code lost:
-    
-        if (r5.j(r9) == 2) goto L22;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:5:0x0023, code lost:
-    
-        r1 = 1;
-     */
-    @Override // g.o
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final int i(int i10) {
-        bw0 bw0Var = this.d;
-        int[] iArr = bw0Var.o1;
-        pu0 pu0Var = bw0Var.Q;
-        bt0 bt0Var = this.c;
-        int i11 = iArr[bw0.w0(bt0Var.E) ? 1 : 0];
-        s4.h0 adapter = bt0Var.h.getAdapter();
-        fu0 fu0Var = bw0Var.J;
-        if (adapter != fu0Var) {
-            if (bw0.w(bw0Var, bt0Var.h.getAdapter()) == -1) {
-                if (bt0Var.h.getAdapter() != pu0Var) {
-                    i11 = bt0Var.w.J;
-                } else if (bt0Var.h.getAdapter() == pu0Var && bw0Var.v1[5].a.isEmpty()) {
-                    i11 = bt0Var.w.J;
+    @Override // org.telegram.ui.yr0, org.telegram.ui.es0
+    public final org.telegram.ui.gs0 E(org.telegram.messenger.jj jjVar, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
+        ImageReceiver imageReceiver;
+        org.telegram.ui.Cells.q1 q1Var;
+        org.telegram.messenger.jj messageObject;
+        gt0 gt0Var = this.a.c;
+        rs0 rs0Var = gt0Var.r;
+        if (rs0Var != null) {
+            int childCount = rs0Var.getChildCount();
+            for (int i11 = 0; i11 < childCount; i11++) {
+                View childAt = gt0Var.r.getChildAt(i11);
+                if (!(childAt instanceof org.telegram.ui.Cells.q1) || jjVar == null || (messageObject = (q1Var = (org.telegram.ui.Cells.q1) childAt).getMessageObject()) == null || messageObject.f1() != jjVar.f1()) {
+                    imageReceiver = null;
                 } else {
-                    ct0 ct0Var = bt0Var.w;
-                    ct0Var.C1();
-                    i11 = ct0Var.R.get(i10);
+                    ArrayList arrayList = messageObject.q0;
+                    imageReceiver = (arrayList == null || i10 < 0 || i10 >= arrayList.size()) ? q1Var.Q1(i10) : q1Var.Q1(((Integer) messageObject.q0.get(i10)).intValue());
+                }
+                if (imageReceiver != null) {
+                    int[] iArr = new int[2];
+                    childAt.getLocationInWindow(iArr);
+                    org.telegram.ui.gs0 gs0Var = new org.telegram.ui.gs0();
+                    gs0Var.b = iArr[0];
+                    gs0Var.c = childAt.getPaddingTop() + iArr[1];
+                    gs0Var.d = gt0Var.r;
+                    gs0Var.m = null;
+                    gs0Var.a = imageReceiver;
+                    if (z10) {
+                        gs0Var.e = imageReceiver.p();
+                    }
+                    gs0Var.h = imageReceiver.E();
+                    gs0Var.j = 0;
+                    gs0Var.i = 0;
+                    return gs0Var;
                 }
             }
         }
-        return Math.min(i11, bt0Var.w.J);
+        return null;
+    }
+
+    @Override // org.telegram.ui.yr0, org.telegram.ui.es0
+    public final boolean L() {
+        return true;
     }
 }

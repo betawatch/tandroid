@@ -1,71 +1,97 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.VideoEditedInfo;
-import org.telegram.tgnet.TLRPC;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class fi extends iu0 {
-    public final /* synthetic */ wn a;
+public final class fi extends AnimatorListenerAdapter {
+    public final /* synthetic */ tn a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.u5 c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ jn e;
+    public final /* synthetic */ boolean f;
+    public final /* synthetic */ un h;
 
-    public fi(wn wnVar) {
-        this.a = wnVar;
+    public fi(un unVar, tn tnVar, boolean z10, org.telegram.ui.ActionBar.u5 u5Var, boolean z11, jn jnVar, boolean z12) {
+        this.h = unVar;
+        this.a = tnVar;
+        this.b = z10;
+        this.c = u5Var;
+        this.d = z11;
+        this.e = jnVar;
+        this.f = z12;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:17:0x0076 A[LOOP:0: B:10:0x002a->B:17:0x0076, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x004b A[SYNTHETIC] */
-    @Override // org.telegram.ui.iu0, org.telegram.ui.qu0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final su0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
-        bk bkVar;
-        ImageReceiver imageReceiver;
-        if (i10 >= 0) {
-            wn wnVar = this.a;
-            if (i10 < wnVar.Ya.size() && (bkVar = wnVar.U1) != null && bkVar.getListView() != null) {
-                int childCount = wnVar.U1.getListView().getChildCount();
-                Object obj = wnVar.Ya.get(i10);
-                for (int i11 = 0; i11 < childCount; i11++) {
-                    View childAt = wnVar.U1.getListView().getChildAt(i11);
-                    if (childAt instanceof org.telegram.ui.Cells.d2) {
-                        org.telegram.ui.Cells.d2 d2Var = (org.telegram.ui.Cells.d2) childAt;
-                        if (d2Var.getResult() == obj) {
-                            imageReceiver = d2Var.getPhotoImage();
-                            if (imageReceiver == null) {
-                                int[] iArr = new int[2];
-                                childAt.getLocationInWindow(iArr);
-                                su0 su0Var = new su0();
-                                su0Var.b = iArr[0];
-                                su0Var.c = iArr[1];
-                                su0Var.d = wnVar.U1.getListView();
-                                su0Var.a = imageReceiver;
-                                su0Var.e = imageReceiver.getBitmapSafe();
-                                su0Var.h = imageReceiver.getRoundRadius(true);
-                                return su0Var;
-                            }
-                        }
-                    }
-                    imageReceiver = null;
-                    if (imageReceiver == null) {
-                    }
-                }
-            }
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        un unVar = this.h;
+        if (unVar.T2.getTag() != null) {
+            unVar.T2.setVisibility(4);
+            int T8 = unVar.T8();
+            unVar.T2.a(Math.min(T8 - 1, Math.max(1, T8 - unVar.Y4[0])), false);
+        } else {
+            unVar.T2.setAlpha(1.0f);
         }
-        return null;
-    }
-
-    @Override // org.telegram.ui.iu0, org.telegram.ui.qu0
-    public final void o(int i10, VideoEditedInfo videoEditedInfo, boolean z10, int i11, int i12, boolean z11) {
-        if (i10 >= 0) {
-            wn wnVar = this.a;
-            if (i10 >= wnVar.Ya.size()) {
-                return;
-            }
-            wnVar.qb((TLRPC.BotInlineResult) wnVar.Ya.get(i10), z10, i11, 0L);
+        unVar.T2.setTranslationY(0.0f);
+        unVar.R2[0].setTranslationX(0.0f);
+        unVar.R2[1].setTranslationX(0.0f);
+        unVar.T2.setTranslationX(unVar.U2 + 0.0f);
+        tn tnVar = this.a;
+        tnVar.setTranslationY(0.0f);
+        boolean z10 = this.b;
+        if (!z10) {
+            tnVar.setTranslationY(0.0f);
         }
+        org.telegram.ui.ActionBar.u5 u5Var = this.c;
+        if (!z10) {
+            u5Var.setTranslationY(0.0f);
+        }
+        boolean z11 = this.d;
+        jn jnVar = this.e;
+        if (!z11) {
+            jnVar.setTranslationY(0.0f);
+        }
+        unVar.Q2[0].setTranslationX(0.0f);
+        unVar.Q2[1].setTranslationX(0.0f);
+        unVar.P2[1].setAlpha(1.0f);
+        unVar.P2[1].setScaleX(1.0f);
+        unVar.P2[1].setScaleY(1.0f);
+        unVar.P2[0].setAlpha(1.0f);
+        unVar.P2[0].setScaleX(1.0f);
+        unVar.P2[0].setScaleY(1.0f);
+        org.telegram.ui.ActionBar.u5[] u5VarArr = unVar.R2;
+        org.telegram.ui.ActionBar.u5 u5Var2 = u5VarArr[0];
+        u5VarArr[1] = u5Var2;
+        u5VarArr[0] = u5Var;
+        u5Var2.setVisibility(4);
+        jn[] jnVarArr = unVar.S2;
+        jn jnVar2 = jnVarArr[0];
+        jnVarArr[1] = jnVar2;
+        jnVarArr[0] = jnVar;
+        jnVar2.setVisibility(4);
+        tn[] tnVarArr = unVar.Q2;
+        tn tnVar2 = tnVarArr[0];
+        if (tnVar != tnVar2) {
+            tnVarArr[1] = tnVar2;
+            tnVarArr[0] = tnVar;
+            tnVar2.setVisibility(4);
+        }
+        if (this.f) {
+            unVar.P2[1].setImageBitmap(null);
+            unVar.P2[1].setVisibility(4);
+        }
+        org.telegram.ui.Components.g9[] g9VarArr = unVar.P2;
+        org.telegram.ui.Components.g9 g9Var = g9VarArr[1];
+        org.telegram.ui.Components.g9 g9Var2 = g9VarArr[0];
+        g9VarArr[1] = g9Var2;
+        g9VarArr[0] = g9Var;
+        g9Var2.setAlpha(1.0f);
+        unVar.P2[1].setScaleX(1.0f);
+        unVar.P2[1].setScaleY(1.0f);
+        unVar.P2[1].setVisibility(4);
+        unVar.V2[0] = null;
+        unVar.O2 = false;
     }
 }

@@ -1,326 +1,159 @@
 package s4;
 
-import android.graphics.Rect;
+import android.graphics.Canvas;
 import android.view.View;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import java.util.Arrays;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.tgnet.TLObject;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.WeakHashMap;
+import org.telegram.ui.Cells.p2;
+import org.telegram.ui.gy;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public abstract class u extends t {
-    public final ArrayList Q;
-    public boolean R;
+public abstract class u {
+    public static final p2 b = new p2(2);
+    public static final p2 c = new p2(3);
+    public int a = -1;
 
-    public u(boolean z10) {
-        super(MediaDataController.MAX_STYLE_RUNS_COUNT, z10);
-        this.Q = new ArrayList(4);
-        this.R = true;
-    }
-
-    public abstract boolean C1(int i10);
-
-    public abstract boolean D1(View view);
-
-    /* JADX WARN: Code restructure failed: missing block: B:144:0x00de, code lost:
-    
-        r25.b = r16;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:145:0x00e2, code lost:
-    
-        return;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:90:0x01a6, code lost:
-    
-        if (r24.f != (-1)) goto L88;
-     */
-    @Override // s4.t, s4.c0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void Z0(rf.e eVar, b1 b1Var, a0 a0Var, k2.l lVar) {
-        boolean z10;
-        int i10;
-        int i11;
+    public static int c(int i10, int i11) {
         int i12;
-        int i13;
-        int i14;
-        int i15;
-        int i16;
-        int i17;
-        int i18;
-        boolean z11;
-        boolean z12;
-        View c10;
-        boolean z13;
-        rf.e eVar2 = eVar;
-        b1 b1Var2 = b1Var;
-        int i19 = this.q.i();
-        int i20 = 0;
-        boolean z14 = true;
-        boolean z15 = a0Var.e == 1;
-        lVar.a = 0;
-        int i21 = a0Var.d;
-        boolean z16 = this.v;
-        Rect rect = this.P;
-        ArrayList arrayList = this.Q;
-        int i22 = -1;
-        if (z16 && a0Var.f != -1 && C1(i21) && m(a0Var.d + 1) == null) {
-            if (C1(a0Var.d + 1)) {
-                a0Var.d += 3;
-            } else {
-                a0Var.d += 2;
-            }
-            int i23 = a0Var.d;
-            int i24 = i23;
-            while (i24 > i21) {
-                View c11 = a0Var.c(eVar2);
-                if (c11 != null) {
-                    arrayList.add(c11);
-                    if (i24 != i23) {
-                        c(c11, rect);
-                        x1(c11, i19, false);
-                        z13 = z14;
-                        int b10 = this.q.b(c11);
-                        a0Var.b -= b10;
-                        a0Var.c += b10;
-                        i24--;
-                        z14 = z13;
-                    }
-                }
-                z13 = z14;
-                i24--;
-                z14 = z13;
-            }
-            z10 = z14;
-            a0Var.d = i23;
+        int i13 = i10 & 789516;
+        if (i13 == 0) {
+            return i10;
+        }
+        int i14 = i10 & (~i13);
+        if (i11 == 0) {
+            i12 = i13 << 2;
         } else {
-            z10 = true;
+            int i15 = i13 << 1;
+            i14 |= (-789517) & i15;
+            i12 = (i15 & 789516) << 2;
         }
-        boolean z17 = z10;
-        while (z17) {
-            int i25 = this.J;
-            boolean z18 = !arrayList.isEmpty();
-            int i26 = i20;
-            while (i26 < this.J && a0Var.b(b1Var2) && i25 > 0) {
-                int i27 = a0Var.d;
-                i25 -= w1(i27, eVar2, b1Var2);
-                if (i25 < 0) {
-                    break;
-                }
-                if (arrayList.isEmpty()) {
-                    c10 = a0Var.c(eVar2);
-                } else {
-                    c10 = (View) arrayList.get(i20);
-                    arrayList.remove(i20);
-                    a0Var.d--;
-                }
-                if (c10 == null) {
-                    break;
-                }
-                this.L[i26] = c10;
-                i26++;
-                if (a0Var.f == i22 && i25 <= 0 && C1(i27)) {
-                    z18 = z10;
-                }
-                i20 = 0;
-            }
-            q1(i26, eVar2, b1Var2, z15);
-            float f7 = 0.0f;
-            int i28 = 0;
-            for (int i29 = 0; i29 < i26; i29++) {
-                View view = this.L[i29];
-                if (a0Var.k == null) {
-                    if (z15) {
-                        z12 = false;
-                        a(view, -1, false);
-                    } else {
-                        z12 = false;
-                        a(view, 0, false);
-                    }
-                    z11 = z12;
-                } else if (z15) {
-                    a(view, -1, true);
-                    z11 = false;
-                } else {
-                    z11 = false;
-                    a(view, 0, true);
-                }
-                c(view, rect);
-                x1(view, i19, z11);
-                int b11 = this.q.b(view);
-                if (b11 > i28) {
-                    i28 = b11;
-                }
-                float c12 = (this.q.c(view) * 1.0f) / ((s) view.getLayoutParams()).f;
-                if (c12 > f7) {
-                    f7 = c12;
-                }
-            }
-            int i30 = 0;
-            while (i30 < i26) {
-                View view2 = this.L[i30];
-                if (this.q.b(view2) != i28) {
-                    s sVar = (s) view2.getLayoutParams();
-                    Rect rect2 = sVar.b;
-                    i17 = i30;
-                    i18 = i19;
-                    y1(p0.s(false, this.K[sVar.f], TLObject.FLAG_30, rect2.left + rect2.right + ((ViewGroup.MarginLayoutParams) sVar).leftMargin + ((ViewGroup.MarginLayoutParams) sVar).rightMargin, ((ViewGroup.MarginLayoutParams) sVar).width), View.MeasureSpec.makeMeasureSpec(i28 - (((rect2.top + rect2.bottom) + ((ViewGroup.MarginLayoutParams) sVar).topMargin) + ((ViewGroup.MarginLayoutParams) sVar).bottomMargin), TLObject.FLAG_30), view2, true);
-                } else {
-                    i17 = i30;
-                    i18 = i19;
-                }
-                i30 = i17 + 1;
-                i19 = i18;
-            }
-            int i31 = i19;
-            boolean D1 = D1(this.L[0]);
-            if (D1) {
-                i10 = -1;
-            } else {
-                i10 = -1;
-            }
-            if (D1 || a0Var.f != 1) {
-                if (a0Var.f == -1) {
-                    int i32 = a0Var.b - lVar.a;
-                    int i33 = i32 - i28;
-                    i12 = i32;
-                    i13 = this.m;
-                    i11 = i33;
-                } else {
-                    int i34 = lVar.a + a0Var.b;
-                    i11 = i34;
-                    i12 = i34 + i28;
-                    i13 = 0;
-                }
-                int i35 = i13;
-                int i36 = 0;
-                while (i36 < i26) {
-                    View view3 = this.L[i36];
-                    s sVar2 = (s) view3.getLayoutParams();
-                    int c13 = this.q.c(view3);
-                    int i37 = i36;
-                    boolean z19 = z15;
-                    if (a0Var.f == -1) {
-                        i35 -= c13;
-                    }
-                    int i38 = c13 + i35;
-                    p0.O(view3, i35, i11, i38, i12);
-                    if (a0Var.f == 1) {
-                        i35 = i38;
-                    }
-                    if (sVar2.a.j() || sVar2.a.m()) {
-                        lVar.c = true;
-                    }
-                    lVar.d |= view3.hasFocusable();
-                    i36 = i37 + 1;
-                    z15 = z19;
-                }
-                boolean z20 = z15;
-                lVar.a += i28;
-                Arrays.fill(this.L, (Object) null);
-                b1Var2 = b1Var;
-                z10 = true;
-                z17 = z18;
-                i19 = i31;
-                z15 = z20;
-                i20 = 0;
-                i22 = -1;
-                eVar2 = eVar;
-            }
-            if (a0Var.f == i10) {
-                int i39 = a0Var.b - lVar.a;
-                i16 = i39 - i28;
-                i14 = i39;
-                i15 = 0;
-            } else {
-                int i40 = lVar.a + a0Var.b;
-                i14 = i40 + i28;
-                i15 = this.m;
-                i16 = i40;
-            }
-            for (int i41 = i26 - 1; i41 >= 0; i41--) {
-                View view4 = this.L[i41];
-                s sVar3 = (s) view4.getLayoutParams();
-                int c14 = this.q.c(view4);
-                int i42 = i15;
-                int i43 = a0Var.f == 1 ? i42 - c14 : i42;
-                int i44 = c14 + i43;
-                p0.O(view4, i43, i16, i44, i14);
-                i15 = a0Var.f == -1 ? i44 : i43;
-                if (sVar3.a.j() || sVar3.a.m()) {
-                    lVar.c = true;
-                }
-                lVar.d |= view4.hasFocusable();
-            }
-            boolean z202 = z15;
-            lVar.a += i28;
-            Arrays.fill(this.L, (Object) null);
-            b1Var2 = b1Var;
-            z10 = true;
-            z17 = z18;
-            i19 = i31;
-            z15 = z202;
-            i20 = 0;
-            i22 = -1;
-            eVar2 = eVar;
-        }
+        return i14 | i12;
     }
 
-    @Override // s4.c0, s4.p0
-    public final boolean e() {
-        return this.R;
+    public static int l(int i10, int i11) {
+        int i12 = i11 | i10;
+        return (i10 << 16) | (i11 << 8) | i12;
     }
 
-    @Override // s4.c0
-    public final void e1(rf.e eVar, int i10, int i11) {
-        if (i10 < 0) {
+    public void a(RecyclerView recyclerView, c1 c1Var) {
+        View view = c1Var.a;
+        Object tag = view.getTag();
+        if (tag instanceof Float) {
+            float floatValue = ((Float) tag).floatValue();
+            WeakHashMap weakHashMap = r0.h0.a;
+            r0.z.h(view, floatValue);
+        }
+        view.setTag(null);
+        view.setTranslationX(0.0f);
+        view.setTranslationY(0.0f);
+    }
+
+    public int b(int i10, int i11) {
+        int i12;
+        int i13 = i10 & 3158064;
+        if (i13 == 0) {
+            return i10;
+        }
+        int i14 = i10 & (~i13);
+        if (i11 == 0) {
+            i12 = i13 >> 2;
+        } else {
+            int i15 = i13 >> 1;
+            i14 |= (-3158065) & i15;
+            i12 = (i15 & 3158064) >> 2;
+        }
+        return i14 | i12;
+    }
+
+    public long d(RecyclerView recyclerView, int i10, float f7, float f10) {
+        l0 itemAnimator = recyclerView.getItemAnimator();
+        return itemAnimator == null ? i10 == 8 ? 200L : 250L : i10 == 8 ? itemAnimator.j() : itemAnimator.d;
+    }
+
+    public abstract int e(RecyclerView recyclerView, c1 c1Var);
+
+    public float g() {
+        return 0.5f;
+    }
+
+    public final int i(int i10, int i11, long j10) {
+        if (this.a == -1) {
+            this.a = org.telegram.messenger.i0.L(20.0f);
+        }
+        int interpolation = (int) (b.getInterpolation(j10 <= 500 ? j10 / 500.0f : 1.0f) * ((int) (c.getInterpolation(Math.min(1.0f, (Math.abs(i11) * 1.0f) / i10)) * ((int) Math.signum(i11)) * this.a)));
+        return interpolation == 0 ? i11 > 0 ? 1 : -1 : interpolation;
+    }
+
+    public boolean j() {
+        return true;
+    }
+
+    public boolean k() {
+        return !(this instanceof gy);
+    }
+
+    public void m(Canvas canvas, RecyclerView recyclerView, c1 c1Var, float f7, float f10, int i10, boolean z10) {
+        View view = c1Var.a;
+        if (z10 && view.getTag() == null) {
+            WeakHashMap weakHashMap = r0.h0.a;
+            Float valueOf = Float.valueOf(r0.z.e(view));
+            int childCount = recyclerView.getChildCount();
+            float f11 = 0.0f;
+            for (int i11 = 0; i11 < childCount; i11++) {
+                View childAt = recyclerView.getChildAt(i11);
+                if (childAt != view) {
+                    WeakHashMap weakHashMap2 = r0.h0.a;
+                    float e = r0.z.e(childAt);
+                    if (e > f11) {
+                        f11 = e;
+                    }
+                }
+            }
+            r0.z.h(view, f11 + 1.0f);
+            view.setTag(valueOf);
+        }
+        view.setTranslationX(f7);
+        view.setTranslationY(f10);
+    }
+
+    public abstract boolean n(RecyclerView recyclerView, c1 c1Var, c1 c1Var2);
+
+    public void o(RecyclerView recyclerView, c1 c1Var, c1 c1Var2, int i10, int i11, int i12) {
+        View view = c1Var2.a;
+        n0 layoutManager = recyclerView.getLayoutManager();
+        if (layoutManager instanceof a0) {
+            ((a0) layoutManager).b1(c1Var.a, view, i11, i12);
             return;
         }
-        int r6 = r();
-        if (!this.v) {
-            for (int i12 = 0; i12 < r6; i12++) {
-                View q5 = q(i12);
-                if (q5.getBottom() + ((ViewGroup.MarginLayoutParams) ((q0) q5.getLayoutParams())).bottomMargin <= i10) {
-                    if (q5.getHeight() + q5.getTop() <= i10) {
-                    }
-                }
-                d1(eVar, 0, i12);
-                return;
+        if (layoutManager.d()) {
+            if (n0.x(view) <= recyclerView.getPaddingLeft()) {
+                recyclerView.v0(i10);
             }
-            return;
+            if (n0.y(view) >= recyclerView.getWidth() - recyclerView.getPaddingRight()) {
+                recyclerView.v0(i10);
+            }
         }
-        int i13 = r6 - 1;
-        for (int i14 = i13; i14 >= 0; i14--) {
-            View q9 = q(i14);
-            if (q9.getBottom() + ((ViewGroup.MarginLayoutParams) ((q0) q9.getLayoutParams())).bottomMargin <= i10) {
-                if (q9.getHeight() + q9.getTop() <= i10) {
-                }
+        if (layoutManager.e()) {
+            if (n0.z(view) <= recyclerView.getPaddingTop()) {
+                recyclerView.v0(i10);
             }
-            d1(eVar, i13, i14);
-            return;
+            if (n0.v(view) >= recyclerView.getHeight() - recyclerView.getPaddingBottom()) {
+                recyclerView.v0(i10);
+            }
         }
     }
 
-    @Override // s4.t
-    public final int[] r1(int i10, int i11, int[] iArr) {
-        if (iArr == null || iArr.length != i10 + 1 || iArr[iArr.length - 1] != i11) {
-            iArr = new int[i10 + 1];
-        }
-        iArr[0] = 0;
-        for (int i12 = 1; i12 <= i10; i12++) {
-            iArr[i12] = (int) Math.ceil((i12 / i10) * i11);
-        }
-        return iArr;
+    public abstract void q(c1 c1Var);
+
+    public float f(float f7) {
+        return f7;
     }
 
-    @Override // s4.t
-    public final void x1(View view, int i10, boolean z10) {
-        s sVar = (s) view.getLayoutParams();
-        Rect rect = sVar.b;
-        int i11 = rect.top + rect.bottom + ((ViewGroup.MarginLayoutParams) sVar).topMargin + ((ViewGroup.MarginLayoutParams) sVar).bottomMargin;
-        y1(p0.s(false, this.K[sVar.f], i10, rect.left + rect.right + ((ViewGroup.MarginLayoutParams) sVar).leftMargin + ((ViewGroup.MarginLayoutParams) sVar).rightMargin, ((ViewGroup.MarginLayoutParams) sVar).width), p0.s(true, this.q.k(), this.l, i11, ((ViewGroup.MarginLayoutParams) sVar).height), view, z10);
+    public float h(float f7) {
+        return f7;
+    }
+
+    public void p(c1 c1Var, int i10) {
     }
 }

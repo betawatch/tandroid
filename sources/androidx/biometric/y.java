@@ -1,15 +1,87 @@
 package androidx.biometric;
 
-import android.os.CancellationSignal;
+import android.os.Looper;
+import androidx.lifecycle.p0;
+import java.util.concurrent.Executor;
+import org.telegram.messenger.zs;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public abstract class y {
-    public static void a(CancellationSignal cancellationSignal) {
-        cancellationSignal.cancel();
+public class y extends p0 {
+    public androidx.lifecycle.z A;
+    public Executor d;
+    public v7.l e;
+    public j6.m f;
+    public u g;
+    public android.support.v4.media.session.a0 h;
+    public n4.q i;
+    public x j;
+    public String k;
+    public boolean m;
+    public boolean n;
+    public boolean o;
+    public boolean p;
+    public boolean q;
+    public androidx.lifecycle.z r;
+    public androidx.lifecycle.z s;
+    public androidx.lifecycle.z t;
+    public androidx.lifecycle.z u;
+    public androidx.lifecycle.z v;
+    public androidx.lifecycle.z x;
+    public androidx.lifecycle.z z;
+    public int l = 0;
+    public boolean w = true;
+    public int y = 0;
+
+    public static void h(androidx.lifecycle.z zVar, Object obj) {
+        if (Thread.currentThread() == Looper.getMainLooper().getThread()) {
+            zVar.j(obj);
+        } else {
+            zVar.h(obj);
+        }
     }
 
-    public static CancellationSignal b() {
-        return new CancellationSignal();
+    public final int c() {
+        j6.m mVar = this.f;
+        if (mVar == null) {
+            return 0;
+        }
+        u uVar = this.g;
+        int i10 = mVar.a;
+        if (i10 != 0) {
+            return i10;
+        }
+        if (uVar != null) {
+            return 15;
+        }
+        return zs.e4;
+    }
+
+    public final void d(e eVar) {
+        if (this.s == null) {
+            this.s = new androidx.lifecycle.z();
+        }
+        h(this.s, eVar);
+    }
+
+    public final void e(CharSequence charSequence) {
+        if (this.A == null) {
+            this.A = new androidx.lifecycle.z();
+        }
+        h(this.A, charSequence);
+    }
+
+    public final void f(int i10) {
+        if (this.z == null) {
+            this.z = new androidx.lifecycle.z();
+        }
+        h(this.z, Integer.valueOf(i10));
+    }
+
+    public final void g(boolean z10) {
+        if (this.v == null) {
+            this.v = new androidx.lifecycle.z();
+        }
+        h(this.v, Boolean.valueOf(z10));
     }
 }

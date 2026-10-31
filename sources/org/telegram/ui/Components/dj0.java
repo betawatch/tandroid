@@ -1,79 +1,31 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class dj0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ej0 b;
+public final class dj0 extends hg.b {
+    public final sg.o0 c;
 
-    public /* synthetic */ dj0(ej0 ej0Var, int i10) {
-        this.a = i10;
-        this.b = ej0Var;
+    public dj0(int i10, sg.o0 o0Var) {
+        super(i10, false);
+        this.c = o0Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationCancel(Animator animator) {
-        switch (this.a) {
-            case 1:
-                ej0 ej0Var = this.b;
-                AnimatorSet animatorSet = ej0Var.s;
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    ej0Var.s = null;
-                    ej0Var.getClass();
-                    break;
-                }
-                break;
-            case 2:
-                ej0 ej0Var2 = this.b;
-                AnimatorSet animatorSet2 = ej0Var2.s;
-                if (animatorSet2 != null && animatorSet2.equals(animator)) {
-                    ej0Var2.s = null;
-                    ej0Var2.getClass();
-                    break;
-                }
-                break;
-            default:
-                super.onAnimationCancel(animator);
-                break;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        int i10 = this.a;
-        ej0 ej0Var = this.b;
-        switch (i10) {
-            case 0:
-                AnimatorSet animatorSet = ej0Var.h;
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    ej0Var.h = null;
-                }
-                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 512);
-                break;
-            case 1:
-                AnimatorSet animatorSet2 = ej0Var.s;
-                if (animatorSet2 != null && animatorSet2.equals(animator)) {
-                    ej0Var.s = null;
-                    if (ej0Var.w) {
-                        ej0Var.setLayerType(0, null);
-                    }
-                }
-                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 512);
-                break;
-            default:
-                AnimatorSet animatorSet3 = ej0Var.s;
-                if (animatorSet3 != null && animatorSet3.equals(animator)) {
-                    ej0Var.s = null;
-                    AndroidUtilities.runOnUIThread(new xa0(this, 16));
-                }
-                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 512);
-                break;
+        if (obj != null && dj0.class == obj.getClass()) {
+            dj0 dj0Var = (dj0) obj;
+            int i10 = this.a;
+            int i11 = dj0Var.a;
+            if (i10 == i11 && (i10 == 0 || i10 == 3)) {
+                sg.o0 o0Var = this.c;
+                return o0Var != null && o0Var.equals(dj0Var.c);
+            }
+            if (i10 == i11) {
+                return true;
+            }
         }
+        return false;
     }
 }

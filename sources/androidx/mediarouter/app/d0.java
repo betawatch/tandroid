@@ -1,131 +1,32 @@
 package androidx.mediarouter.app;
 
-import a8.o1;
-import a8.p1;
-import android.content.Context;
-import android.os.Bundle;
-import android.os.SystemClock;
-import android.view.ContextThemeWrapper;
 import android.view.View;
-import android.widget.ImageButton;
-import androidx.recyclerview.widget.RecyclerView;
-import java.util.ArrayList;
-import java.util.Collections;
-import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class d0 extends g.t {
-    public final long E;
-    public long F;
-    public final c G;
-    public final p4.x f;
-    public final d h;
-    public final Context n;
-    public p4.r r;
-    public ArrayList s;
-    public c0 v;
-    public RecyclerView w;
-    public boolean x;
-    public p4.v y;
+public final class d0 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ o0 b;
 
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public d0(Context context) {
-        super(r3, r0 == 0 ? p1.e(r3) : r0);
-        ContextThemeWrapper a2 = p1.a(context, false);
-        int g7 = p1.g(a2, R.attr.mediaRouteTheme);
-        this.r = p4.r.c;
-        this.G = new c(this, 1);
-        Context context2 = getContext();
-        this.f = p4.x.d(context2);
-        this.h = new d(this, 2);
-        this.n = context2;
-        this.E = context2.getResources().getInteger(R.integer.mr_update_routes_delay_ms);
+    public /* synthetic */ d0(o0 o0Var, int i10) {
+        this.a = i10;
+        this.b = o0Var;
     }
 
-    public final void e() {
-        if (this.y == null && this.x) {
-            this.f.getClass();
-            p4.x.b();
-            ArrayList arrayList = new ArrayList(p4.x.c().j);
-            int size = arrayList.size();
-            while (true) {
-                int i10 = size - 1;
-                if (size <= 0) {
-                    break;
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                this.b.dismiss();
+                break;
+            default:
+                o0 o0Var = this.b;
+                if (o0Var.r.g()) {
+                    o0Var.f.getClass();
+                    p4.y.j(2);
                 }
-                p4.v vVar = (p4.v) arrayList.get(i10);
-                if (vVar.d() || !vVar.g || !vVar.h(this.r)) {
-                    arrayList.remove(i10);
-                }
-                size = i10;
-            }
-            Collections.sort(arrayList, f.c);
-            long uptimeMillis = SystemClock.uptimeMillis() - this.F;
-            long j10 = this.E;
-            if (uptimeMillis < j10) {
-                c cVar = this.G;
-                cVar.removeMessages(1);
-                cVar.sendMessageAtTime(cVar.obtainMessage(1, arrayList), this.F + j10);
-            } else {
-                this.F = SystemClock.uptimeMillis();
-                this.s.clear();
-                this.s.addAll(arrayList);
-                this.v.D();
-            }
+                o0Var.dismiss();
+                break;
         }
-    }
-
-    public final void f(p4.r rVar) {
-        if (rVar == null) {
-            throw new IllegalArgumentException("selector must not be null");
-        }
-        if (this.r.equals(rVar)) {
-            return;
-        }
-        this.r = rVar;
-        if (this.x) {
-            p4.x xVar = this.f;
-            d dVar = this.h;
-            xVar.h(dVar);
-            xVar.a(rVar, dVar, 1);
-        }
-        e();
-    }
-
-    @Override // android.app.Dialog, android.view.Window.Callback
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.x = true;
-        this.f.a(this.r, this.h, 1);
-        e();
-    }
-
-    @Override // g.t, androidx.activity.m, android.app.Dialog
-    public final void onCreate(Bundle bundle) {
-        super.onCreate(bundle);
-        setContentView(R.layout.mr_picker_dialog);
-        View decorView = getWindow().getDecorView();
-        Context context = this.n;
-        decorView.setBackgroundColor(context.getColor(p1.h(context) ? R.color.mr_dynamic_dialog_background_light : R.color.mr_dynamic_dialog_background_dark));
-        this.s = new ArrayList();
-        ((ImageButton) findViewById(R.id.mr_picker_close_button)).setOnClickListener(new x(this, 0));
-        this.v = new c0(this);
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.mr_picker_list);
-        this.w = recyclerView;
-        recyclerView.setAdapter(this.v);
-        this.w.setLayoutManager(new s4.c0());
-        getWindow().setLayout(!context.getResources().getBoolean(R.bool.is_tablet) ? -1 : o1.a(context), context.getResources().getBoolean(R.bool.is_tablet) ? -2 : -1);
-    }
-
-    @Override // android.app.Dialog, android.view.Window.Callback
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.x = false;
-        this.f.h(this.h);
-        this.G.removeMessages(1);
     }
 }

@@ -1,111 +1,113 @@
 package org.telegram.messenger;
 
+import android.R;
 import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
-import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public class ImportingService extends Service implements NotificationCenter.NotificationCenterDelegate {
-    private e0.q builder;
+public class ImportingService extends Service implements us {
+    public e0.r a;
 
     public ImportingService() {
         for (int i10 = 0; i10 < 4; i10++) {
-            NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.historyImportProgressChanged);
-            NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.stickersImportProgressChanged);
+            zs.f(i10).b(this, zs.v1);
+            zs.f(i10).b(this, zs.w1);
         }
     }
 
-    private boolean hasImportingHistory() {
+    public static boolean a() {
         for (int i10 = 0; i10 < 4; i10++) {
-            if (SendMessagesHelper.getInstance(i10).isImportingHistory()) {
+            if (qz.C(i10).F.size() != 0) {
                 return true;
             }
         }
         return false;
     }
 
-    private boolean hasImportingStickers() {
-        for (int i10 = 0; i10 < 4; i10++) {
-            if (SendMessagesHelper.getInstance(i10).isImportingStickers()) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if ((i10 != NotificationCenter.historyImportProgressChanged && i10 != NotificationCenter.stickersImportProgressChanged) || hasImportingStickers() || hasImportingStickers()) {
+    @Override // org.telegram.messenger.us
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        if ((i10 != zs.v1 && i10 != zs.w1) || a() || a()) {
             return;
         }
         stopSelf();
     }
 
     @Override // android.app.Service
-    public IBinder onBind(Intent intent) {
+    public final IBinder onBind(Intent intent) {
         return null;
     }
 
     @Override // android.app.Service
-    public void onDestroy() {
+    public final void onDestroy() {
         super.onDestroy();
         try {
             stopForeground(true);
         } catch (Throwable unused) {
         }
-        new e0.j0(ApplicationLoader.applicationContext).b(5, null);
+        new e0.k0(w0.b).b(5, null);
         for (int i10 = 0; i10 < 4; i10++) {
-            NotificationCenter.getInstance(i10).removeObserver(this, NotificationCenter.historyImportProgressChanged);
-            NotificationCenter.getInstance(i10).removeObserver(this, NotificationCenter.stickersImportProgressChanged);
+            zs.f(i10).n(this, zs.v1);
+            zs.f(i10).n(this, zs.w1);
         }
-        if (BuildVars.LOGS_ENABLED) {
-            FileLog.d("destroy import service");
+        if (v2.a) {
+            f8.b("destroy import service");
         }
     }
 
     @Override // android.app.Service
-    public int onStartCommand(Intent intent, int i10, int i11) {
-        if (!hasImportingStickers() && !hasImportingHistory()) {
+    public final int onStartCommand(Intent intent, int i10, int i11) {
+        if (!a()) {
+            for (int i12 = 0; i12 < 4; i12++) {
+                if (qz.C(i12).D.m() == 0) {
+                }
+            }
             stopSelf();
             return 2;
         }
-        if (BuildVars.LOGS_ENABLED) {
-            FileLog.d("start import service");
+        if (v2.a) {
+            f8.b("start import service");
         }
-        if (this.builder == null) {
-            NotificationsController.checkOtherNotificationsChannel();
-            e0.q qVar = new e0.q(ApplicationLoader.applicationContext, null);
-            this.builder = qVar;
-            qVar.F.icon = android.R.drawable.stat_sys_upload;
-            qVar.F.when = System.currentTimeMillis();
-            e0.q qVar2 = this.builder;
-            qVar2.y = NotificationsController.OTHER_NOTIFICATIONS_CHANNEL;
-            qVar2.g(LocaleController.getString(R.string.AppName));
-            if (hasImportingHistory()) {
-                this.builder.p(LocaleController.getString(R.string.ImporImportingService));
-                this.builder.f(LocaleController.getString(R.string.ImporImportingService));
-            } else {
-                this.builder.p(LocaleController.getString(R.string.ImporImportingStickersService));
-                this.builder.f(LocaleController.getString(R.string.ImporImportingStickersService));
+        if (this.a == null) {
+            ot.i();
+            e0.r rVar = new e0.r(w0.b, null);
+            this.a = rVar;
+            rVar.F.icon = R.drawable.stat_sys_upload;
+            rVar.F.when = System.currentTimeMillis();
+            e0.r rVar2 = this.a;
+            rVar2.y = ot.j0;
+            rVar2.g(cd.L0(org.telegram.messenger.beta.R.string.AppName, null));
+            int i13 = 0;
+            while (true) {
+                if (i13 >= 4) {
+                    this.a.p(cd.L0(2131749275, null));
+                    this.a.f(cd.L0(2131749275, null));
+                    break;
+                }
+                if (qz.C(i13).D.m() != 0) {
+                    this.a.p(cd.L0(2131749276, null));
+                    this.a.f(cd.L0(2131749276, null));
+                    break;
+                }
+                i13++;
             }
         }
-        e0.q qVar3 = this.builder;
-        qVar3.n = 100;
-        qVar3.o = 0;
-        qVar3.p = true;
+        e0.r rVar3 = this.a;
+        rVar3.n = 100;
+        rVar3.o = 0;
+        rVar3.p = true;
         try {
-            startForeground(5, qVar3.b());
+            startForeground(5, rVar3.b());
         } catch (Throwable th2) {
-            FileLog.e(th2);
+            f8.g(th2, true);
         }
-        new e0.j0(ApplicationLoader.applicationContext).e(null, 5, this.builder.b());
+        new e0.k0(w0.b).e(null, 5, this.a.b());
         return 2;
     }
 
-    public void onTimeout(int i10, int i11) {
-        FileLog.d("ImportingService timeout, type = " + i11);
+    public final void onTimeout(int i10, int i11) {
+        f8.b("ImportingService timeout, type = " + i11);
         try {
             stopForeground(true);
         } catch (Throwable unused) {

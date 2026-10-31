@@ -1,139 +1,59 @@
 package bi;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.RadialGradient;
-import android.graphics.Shader;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.b10;
-import org.telegram.ui.Components.ds;
+import android.graphics.Rect;
+import android.text.Layout;
+import org.telegram.tgnet.tl.TL_iv;
+import org.telegram.ui.Cells.u9;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes4.dex */
-public final class v5 extends View {
-    public final Paint a;
-    public final Paint b;
-    public final Paint c;
-    public final RadialGradient[] d;
-    public final Matrix e;
-    public final org.telegram.ui.Components.h6 f;
-    public final RadialGradient h;
-    public final Path n;
-    public int r;
-    public int s;
+public final class v5 implements u9 {
+    public final /* synthetic */ Layout a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ TL_iv.pageTableCell e;
 
-    public v5(Context context) {
-        super(context);
-        this.a = new Paint(1);
-        this.b = new Paint(1);
-        Paint paint = new Paint(1);
-        this.c = paint;
-        this.d = new RadialGradient[2];
-        this.e = new Matrix();
-        this.f = new org.telegram.ui.Components.h6(1.0f, this, 0L, 420L, ds.h);
-        this.h = new RadialGradient(0.0f, 0.0f, 100.0f, new int[]{0, -1, -1, 0}, new float[]{0.15f, 0.35f, 0.65f, 0.88f}, Shader.TileMode.CLAMP);
-        this.n = new Path();
-        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
+    public v5(Layout layout, int i10, int i11, int i12, TL_iv.pageTableCell pagetablecell) {
+        this.a = layout;
+        this.b = i10;
+        this.c = i11;
+        this.d = i12;
+        this.e = pagetablecell;
     }
 
-    public final void a(int i10, int i11) {
-        if (this.r == i10 && this.s == i11) {
-            return;
-        }
-        RadialGradient[] radialGradientArr = this.d;
-        radialGradientArr[0] = radialGradientArr[1];
-        this.r = i10;
-        this.s = i11;
-        radialGradientArr[1] = new RadialGradient(0.0f, 0.0f, 100.0f, new int[]{i10, i11}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
-        this.f.d(0.0f, true);
-        invalidate();
+    @Override // org.telegram.ui.Cells.u9
+    public final Layout a() {
+        return this.a;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        float f7;
-        Paint paint;
-        float f10 = 1.0f;
-        int i10 = 0;
-        float d = this.f.d(1.0f, false);
-        float currentTimeMillis = ((System.currentTimeMillis() % 15000) / 15000.0f) * 360.0f;
-        float f11 = 0.0f;
-        if (getAlpha() > 0.0f) {
-            invalidate();
-        }
-        Paint.Style style = Paint.Style.STROKE;
-        Paint paint2 = this.b;
-        paint2.setStyle(style);
-        paint2.setStrokeWidth(AndroidUtilities.dp(2.0f));
-        Path path = this.n;
-        path.rewind();
-        float width = getWidth() / 2.0f;
-        float height = getHeight() / 2.0f;
-        float min = Math.min(getWidth(), getHeight()) / 2.0f;
-        int i11 = 0;
-        while (i11 < 6) {
-            float e = b10.e(i11, 60.0f, 12.5f, currentTimeMillis);
-            path.moveTo(width, height);
-            double d10 = ((e - 12.5f) / 180.0f) * 3.141592653589793d;
-            path.lineTo((((float) Math.cos(d10)) * min) + width, (((float) Math.sin(d10)) * min) + height);
-            double d11 = ((e + 12.5f) / 180.0f) * 3.141592653589793d;
-            path.lineTo((((float) Math.cos(d11)) * min) + width, (((float) Math.sin(d11)) * min) + height);
-            path.lineTo(width, height);
-            i11++;
-            f10 = f10;
-        }
-        float f12 = f10;
-        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), 255, 31);
-        while (true) {
-            RadialGradient[] radialGradientArr = this.d;
-            int length = radialGradientArr.length;
-            Matrix matrix = this.e;
-            if (i10 >= length) {
-                matrix.reset();
-                float f13 = min / 100.0f;
-                matrix.postScale(f13, f13);
-                matrix.postTranslate(width, height);
-                RadialGradient radialGradient = this.h;
-                radialGradient.setLocalMatrix(matrix);
-                Paint paint3 = this.c;
-                paint3.setShader(radialGradient);
-                canvas.drawRect(0.0f, 0.0f, getWidth(), getHeight(), paint3);
-                canvas.restore();
-                return;
-            }
-            if (radialGradientArr[i10] == null) {
-                f7 = f11;
-                paint = paint2;
-            } else {
-                f7 = f11;
-                paint = paint2;
-                float pow = (float) Math.pow(f12 - Math.abs(i10 - d), 0.5d);
-                if (pow > f7) {
-                    matrix.reset();
-                    float f14 = min / 100.0f;
-                    matrix.postScale(f14, f14);
-                    matrix.postTranslate(width, height);
-                    radialGradientArr[i10].setLocalMatrix(matrix);
-                    RadialGradient radialGradient2 = radialGradientArr[i10];
-                    Paint paint4 = this.a;
-                    paint4.setShader(radialGradient2);
-                    float f15 = pow * 255.0f;
-                    paint4.setAlpha((int) (0.3f * f15));
-                    paint.setShader(radialGradientArr[i10]);
-                    paint.setAlpha((int) f15);
-                    canvas.drawPath(path, paint4);
-                    canvas.drawPath(path, paint);
-                }
-            }
-            i10++;
-            f11 = f7;
-            paint2 = paint;
-        }
+    @Override // org.telegram.ui.Cells.u9
+    public final /* synthetic */ Rect c() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.Cells.u9
+    public final /* synthetic */ CharSequence getPrefix() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.Cells.u9
+    public final int getRow() {
+        return this.d;
+    }
+
+    @Override // org.telegram.ui.Cells.u9
+    public final CharSequence getText() {
+        return w6.h(this.e);
+    }
+
+    @Override // org.telegram.ui.Cells.u9
+    public final int getX() {
+        return this.b;
+    }
+
+    @Override // org.telegram.ui.Cells.u9
+    public final int getY() {
+        return this.c;
     }
 }

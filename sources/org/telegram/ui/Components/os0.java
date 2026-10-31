@@ -1,74 +1,82 @@
 package org.telegram.ui.Components;
 
-import android.content.DialogInterface;
-import org.telegram.tgnet.ConnectionsManager;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class os0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.e2[] b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ int d;
+public final /* synthetic */ class os0 implements zf.l1, org.telegram.ui.Cells.d5 {
+    public final /* synthetic */ qs0 a;
 
-    public /* synthetic */ os0(org.telegram.ui.ActionBar.e2[] e2VarArr, int i10, int i11, int i12) {
-        this.a = i12;
-        this.b = e2VarArr;
-        this.c = i10;
-        this.d = i11;
+    public /* synthetic */ os0(qs0 qs0Var) {
+        this.a = qs0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                org.telegram.ui.ActionBar.e2[] e2VarArr = this.b;
-                org.telegram.ui.ActionBar.e2 e2Var = e2VarArr[0];
-                if (e2Var != null) {
-                    final int i10 = 0;
-                    final int i11 = this.c;
-                    final int i12 = this.d;
-                    e2Var.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.Components.ts0
-                        @Override // android.content.DialogInterface.OnCancelListener
-                        public final void onCancel(DialogInterface dialogInterface) {
-                            switch (i10) {
-                                case 0:
-                                    ConnectionsManager.getInstance(i11).cancelRequest(i12, true);
-                                    break;
-                                default:
-                                    ConnectionsManager.getInstance(i11).cancelRequest(i12, true);
-                                    break;
-                            }
-                        }
-                    });
-                    e2VarArr[0].show();
-                    break;
-                }
-                break;
-            default:
-                org.telegram.ui.ActionBar.e2[] e2VarArr2 = this.b;
-                org.telegram.ui.ActionBar.e2 e2Var2 = e2VarArr2[0];
-                if (e2Var2 != null) {
-                    final int i13 = 1;
-                    final int i14 = this.c;
-                    final int i15 = this.d;
-                    e2Var2.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.Components.ts0
-                        @Override // android.content.DialogInterface.OnCancelListener
-                        public final void onCancel(DialogInterface dialogInterface) {
-                            switch (i13) {
-                                case 0:
-                                    ConnectionsManager.getInstance(i14).cancelRequest(i15, true);
-                                    break;
-                                default:
-                                    ConnectionsManager.getInstance(i14).cancelRequest(i15, true);
-                                    break;
-                            }
-                        }
-                    });
-                    e2VarArr2[0].show();
-                    break;
-                }
-                break;
+    @Override // zf.l1
+    public /* synthetic */ a0.h M() {
+        return null;
+    }
+
+    @Override // zf.l1
+    public /* synthetic */ boolean Y(int i10) {
+        return true;
+    }
+
+    @Override // org.telegram.ui.Cells.d5
+    public boolean c(org.telegram.ui.Cells.e5 e5Var, boolean z10) {
+        int intValue = ((Integer) e5Var.getTag()).intValue();
+        qs0 qs0Var = this.a;
+        TLObject E = qs0Var.E(intValue);
+        if (!(E instanceof TLRPC.ChannelParticipant)) {
+            return false;
         }
+        TLRPC.ChannelParticipant channelParticipant = (TLRPC.ChannelParticipant) E;
+        TLRPC.TL_chatChannelParticipant tL_chatChannelParticipant = new TLRPC.TL_chatChannelParticipant();
+        tL_chatChannelParticipant.channelParticipant = channelParticipant;
+        tL_chatChannelParticipant.user_id = org.telegram.messenger.jj.C1(channelParticipant.peer);
+        tL_chatChannelParticipant.inviter_id = channelParticipant.inviter_id;
+        tL_chatChannelParticipant.date = channelParticipant.date;
+        return qs0Var.s.F1.h(tL_chatChannelParticipant, true, !z10, e5Var);
+    }
+
+    @Override // zf.l1
+    public void i(int i10) {
+        qs0 qs0Var = this.a;
+        qs0Var.f();
+        if (i10 != 1) {
+            return;
+        }
+        int i11 = qs0Var.r - 1;
+        qs0Var.r = i11;
+        if (i11 != 0) {
+            return;
+        }
+        int i12 = 0;
+        while (true) {
+            zt0 zt0Var = qs0Var.s;
+            ss0[] ss0VarArr = zt0Var.m0;
+            if (i12 >= ss0VarArr.length) {
+                return;
+            }
+            ss0 ss0Var = ss0VarArr[i12];
+            if (ss0Var.E == 7) {
+                if (qs0Var.h == 0) {
+                    ss0Var.w.e(false, true);
+                } else {
+                    zt0Var.C(ss0Var.h, 0, null);
+                }
+            }
+            i12++;
+        }
+    }
+
+    @Override // zf.l1
+    public /* synthetic */ a0.h x() {
+        return null;
+    }
+
+    @Override // zf.l1
+    public /* synthetic */ void c0(ArrayList arrayList) {
     }
 }

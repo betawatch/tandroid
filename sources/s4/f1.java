@@ -1,107 +1,64 @@
 package s4;
 
-import android.os.Bundle;
-import android.view.View;
-import android.view.accessibility.AccessibilityEvent;
-import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class f1 extends r0.b {
-    public final RecyclerView d;
-    public final a5.h e = new a5.h(this);
+public abstract class f1 extends l0 {
+    public boolean m;
+    public boolean n;
 
-    public f1(RecyclerView recyclerView) {
-        this.d = recyclerView;
+    public f1() {
+        this.a = null;
+        this.b = new ArrayList();
+        this.c = 120L;
+        this.d = 120L;
+        this.e = 250L;
+        this.f = 250L;
+        this.g = 250L;
+        this.l = 0L;
+        this.m = true;
     }
 
-    @Override // r0.b
-    public final void b(View view, AccessibilityEvent accessibilityEvent) {
-        super.b(view, accessibilityEvent);
-        if (!(view instanceof RecyclerView) || this.d.Z()) {
-            return;
+    @Override // s4.l0
+    public boolean a(c1 c1Var, ac.g gVar, ac.g gVar2) {
+        int i10;
+        int i11;
+        if (gVar != null && ((i10 = gVar.a) != (i11 = gVar2.a) || gVar.b != gVar2.b || this.n)) {
+            return r(c1Var, gVar, i10, gVar.b, i11, gVar2.b);
         }
-        RecyclerView recyclerView = (RecyclerView) view;
-        if (recyclerView.getLayoutManager() != null) {
-            c0 c0Var = (c0) recyclerView.getLayoutManager();
-            RecyclerView recyclerView2 = c0Var.b;
-            rf.e eVar = recyclerView2.b;
-            if (accessibilityEvent != null) {
-                boolean z10 = true;
-                if (!recyclerView2.canScrollVertically(1) && !c0Var.b.canScrollVertically(-1) && !c0Var.b.canScrollHorizontally(-1) && !c0Var.b.canScrollHorizontally(1)) {
-                    z10 = false;
-                }
-                accessibilityEvent.setScrollable(z10);
-                h0 h0Var = c0Var.b.w;
-                if (h0Var != null) {
-                    accessibilityEvent.setItemCount(h0Var.h());
-                }
-            }
-            if (c0Var.r() > 0) {
-                accessibilityEvent.setFromIndex(c0Var.L0());
-                accessibilityEvent.setToIndex(c0Var.N0());
-            }
-        }
+        p(c1Var);
+        return true;
     }
 
-    @Override // r0.b
-    public final void c(View view, s0.d dVar) {
-        this.a.onInitializeAccessibilityNodeInfo(view, dVar.a);
-        RecyclerView recyclerView = this.d;
-        if (recyclerView.Z() || recyclerView.getLayoutManager() == null) {
-            return;
-        }
-        p0 layoutManager = recyclerView.getLayoutManager();
-        RecyclerView recyclerView2 = layoutManager.b;
-        layoutManager.S(recyclerView2.b, recyclerView2.u0, dVar);
+    public abstract void p(c1 c1Var);
+
+    public abstract boolean q(c1 c1Var, c1 c1Var2, ac.g gVar, int i10, int i11, int i12, int i13);
+
+    public abstract boolean r(c1 c1Var, ac.g gVar, int i10, int i11, int i12, int i13);
+
+    public abstract void s(c1 c1Var, ac.g gVar);
+
+    public boolean t(c1 c1Var) {
+        return !this.m || c1Var.h();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:15:0x0083 A[ADDED_TO_REGION] */
-    @Override // r0.b
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean d(View view, int i10, Bundle bundle) {
-        int F;
-        int D;
-        if (super.d(view, i10, bundle)) {
-            return true;
-        }
-        RecyclerView recyclerView = this.d;
-        if (!recyclerView.Z() && recyclerView.getLayoutManager() != null) {
-            p0 layoutManager = recyclerView.getLayoutManager();
-            RecyclerView recyclerView2 = layoutManager.b;
-            rf.e eVar = recyclerView2.b;
-            if (i10 == 4096) {
-                F = recyclerView2.canScrollVertically(1) ? (layoutManager.n - layoutManager.F()) - layoutManager.C() : 0;
-                if (layoutManager.b.canScrollHorizontally(1)) {
-                    D = (layoutManager.m - layoutManager.D()) - layoutManager.E();
-                    if (F == 0) {
-                    }
-                    layoutManager.b.w0(D, F, null);
-                    return true;
-                }
-                D = 0;
-                if (F == 0) {
-                }
-                layoutManager.b.w0(D, F, null);
-                return true;
-            }
-            if (i10 != 8192) {
-                D = 0;
-                F = 0;
-            } else {
-                F = recyclerView2.canScrollVertically(-1) ? -((layoutManager.n - layoutManager.F()) - layoutManager.C()) : 0;
-                if (layoutManager.b.canScrollHorizontally(-1)) {
-                    D = -((layoutManager.m - layoutManager.D()) - layoutManager.E());
-                }
-                D = 0;
-            }
-            if (F == 0 || D != 0) {
-                layoutManager.b.w0(D, F, null);
-                return true;
-            }
-        }
-        return false;
+    public final void u(c1 c1Var) {
+        w(c1Var);
+        d(c1Var);
+    }
+
+    public final void v(c1 c1Var) {
+        x(c1Var);
+        d(c1Var);
+    }
+
+    public void y() {
+    }
+
+    public void w(c1 c1Var) {
+    }
+
+    public void x(c1 c1Var) {
     }
 }

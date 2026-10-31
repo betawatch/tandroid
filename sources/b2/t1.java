@@ -4,11 +4,11 @@ import java.util.HashMap;
 import java.util.HashSet;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public class t1 {
     public boolean A;
-    public f9.i0 B;
+    public e9.n0 B;
     public int C;
     public boolean D;
     public boolean E;
@@ -20,19 +20,19 @@ public class t1 {
     public int f;
     public int g;
     public int h;
-    public f9.i0 m;
-    public f9.i0 n;
-    public f9.i0 o;
+    public e9.n0 m;
+    public e9.n0 n;
+    public e9.n0 o;
     public int p;
-    public f9.i0 q;
-    public f9.i0 r;
+    public e9.n0 q;
+    public e9.n0 r;
     public int s;
     public int t;
     public int u;
-    public f9.i0 v;
+    public e9.n0 v;
     public s1 w;
     public boolean x;
-    public f9.i0 y;
+    public e9.n0 y;
     public int z;
     public int a = ConnectionsManager.DEFAULT_DATACENTER_ID;
     public int b = ConnectionsManager.DEFAULT_DATACENTER_ID;
@@ -44,24 +44,24 @@ public class t1 {
     public boolean l = true;
 
     public t1() {
-        f9.g0 g0Var = f9.i0.b;
-        f9.s1 s1Var = f9.s1.e;
-        this.m = s1Var;
-        this.n = s1Var;
-        this.o = s1Var;
+        e9.l0 l0Var = e9.n0.b;
+        e9.x1 x1Var = e9.x1.e;
+        this.m = x1Var;
+        this.n = x1Var;
+        this.o = x1Var;
         this.p = 0;
-        this.q = s1Var;
-        this.r = s1Var;
+        this.q = x1Var;
+        this.r = x1Var;
         this.s = 0;
         this.t = ConnectionsManager.DEFAULT_DATACENTER_ID;
         this.u = ConnectionsManager.DEFAULT_DATACENTER_ID;
-        this.v = s1Var;
+        this.v = x1Var;
         this.w = s1.d;
         this.x = false;
-        this.y = s1Var;
+        this.y = x1Var;
         this.z = 0;
         this.A = true;
-        this.B = s1Var;
+        this.B = x1Var;
         this.C = 0;
         this.D = false;
         this.E = false;
@@ -71,17 +71,17 @@ public class t1 {
         this.I = new HashSet();
     }
 
-    public static f9.s1 e(String[] strArr) {
-        f9.f0 t10 = f9.i0.t();
+    public static e9.x1 e(String[] strArr) {
+        e9.k0 t10 = e9.n0.t();
         for (String str : strArr) {
             str.getClass();
-            t10.c(e2.n0.T(str));
+            t10.c(e2.l0.T(str));
         }
         return t10.f();
     }
 
-    public void a(r1 r1Var) {
-        this.H.put(r1Var.a, r1Var);
+    public void a(q1 q1Var) {
+        this.H.put(q1Var.a, q1Var);
     }
 
     public u1 b() {

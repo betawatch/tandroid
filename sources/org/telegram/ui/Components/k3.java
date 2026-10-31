@@ -1,26 +1,32 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
+import android.os.Vibrator;
+import android.text.Spanned;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class k3 extends FrameLayout {
-    public final /* synthetic */ org.telegram.ui.Cells.y1[] a;
+public final class k3 extends wp {
+    public final /* synthetic */ Context b;
+    public final /* synthetic */ NumberTextView c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k3(Activity activity, org.telegram.ui.Cells.y1[] y1VarArr) {
-        super(activity);
-        this.a = y1VarArr;
+    public k3(int i10, Context context, NumberTextView numberTextView) {
+        super(i10);
+        this.b = context;
+        this.c = numberTextView;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        org.telegram.ui.Cells.y1[] y1VarArr = this.a;
-        if (y1VarArr[0] != null) {
-            setMeasuredDimension(getMeasuredWidth(), AndroidUtilities.dp(7.0f) + y1VarArr[0].getMeasuredHeight() + getMeasuredHeight());
+    @Override // org.telegram.ui.Components.wp, android.text.InputFilter
+    public final CharSequence filter(CharSequence charSequence, int i10, int i11, Spanned spanned, int i12, int i13) {
+        CharSequence filter = super.filter(charSequence, i10, i11, spanned, i12, i13);
+        if (filter != null && charSequence != null && filter.length() != charSequence.length()) {
+            Vibrator vibrator = (Vibrator) this.b.getSystemService("vibrator");
+            if (vibrator != null) {
+                vibrator.vibrate(200L);
+            }
+            org.telegram.messenger.i0.E3(this.c);
         }
+        return filter;
     }
 }

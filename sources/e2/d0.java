@@ -2,7 +2,7 @@ package e2;
 
 import android.os.SystemClock;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class d0 {
     public final int a;
@@ -19,9 +19,9 @@ public final class d0 {
     public final void a() {
         e0 e0Var = this.e;
         i0 i0Var = e0Var.f;
-        i2.j0 j0Var = e0Var.a;
-        int w02 = j0Var.w0();
-        if (!j0Var.t() || j0Var.d() == 1 || j0Var.d() == 4 || w02 == 0 || w02 == 1) {
+        i2.i0 i0Var2 = e0Var.a;
+        int w02 = i0Var2.w0();
+        if (!i0Var2.t() || i0Var2.h() == 1 || i0Var2.h() == 4 || w02 == 0 || w02 == 1) {
             if (this.c) {
                 i0Var.e(4);
             }
@@ -34,7 +34,7 @@ public final class d0 {
         int i10 = this.a;
         if (z10 && this.b == w02) {
             if (elapsedRealtime - this.d >= i10) {
-                e0Var.c.a.A1(new i2.m(2, new f0(4, i10), 1003));
+                e0Var.c.a.A1(new i2.l(2, new f0(4, i10), 1003));
                 return;
             }
             return;

@@ -1,14 +1,14 @@
 package w3;
 
-import a8.yb;
-import c3.i0;
+import c3.j0;
+import v7.t6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class r {
     public final boolean a;
     public final String b;
-    public final i0 c;
+    public final j0 c;
     public final int d;
     public final byte[] e;
 
@@ -23,7 +23,7 @@ public final class r {
     public r(boolean z10, String str, int i10, byte[] bArr, int i11, int i12, byte[] bArr2) {
         char c10 = 0;
         int i13 = 1;
-        yb.g((i10 == 0) ^ (bArr2 == null));
+        t6.f((i10 == 0) ^ (bArr2 == null));
         this.a = z10;
         this.b = str;
         this.d = i10;
@@ -70,6 +70,6 @@ public final class r {
                     break;
             }
         }
-        this.c = new i0(i13, i11, i12, bArr);
+        this.c = new j0(i13, i11, i12, bArr);
     }
 }

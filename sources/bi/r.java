@@ -1,87 +1,57 @@
 package bi;
 
-import android.content.Context;
-import android.view.View;
-import android.widget.LinearLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
+import android.content.Intent;
+import java.util.ArrayList;
+import org.telegram.messenger.f8;
+import org.telegram.messenger.jj;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.bi;
+import org.telegram.ui.Components.nj;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes4.dex */
-public final class r extends LinearLayout {
-    public static float b = 1.0f;
-    public final /* synthetic */ int a;
+public final class r implements nj {
+    public final /* synthetic */ bi a;
+    public final /* synthetic */ t b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ r(Context context, int i10) {
-        super(context);
-        this.a = i10;
+    public r(t tVar, bi biVar) {
+        this.b = tVar;
+        this.a = biVar;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public void dispatchSetPressed(boolean z10) {
-        switch (this.a) {
-            case 7:
-                break;
-            default:
-                super.dispatchSetPressed(z10);
-                break;
+    @Override // org.telegram.ui.Components.nj
+    public final void A() {
+        try {
+            Intent intent = new Intent("android.intent.action.GET_CONTENT");
+            intent.setType("*/*");
+            this.b.b.W1.startActivityForResult(intent, 21);
+        } catch (Exception e) {
+            f8.g(e, true);
         }
     }
 
-    @Override // android.widget.LinearLayout, android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        switch (this.a) {
-            case 4:
-                super.onLayout(z10, i10, i11, i12, i13);
-                setPivotX(getWidth());
-                break;
-            default:
-                super.onLayout(z10, i10, i11, i12, i13);
-                break;
+    @Override // org.telegram.ui.Components.nj
+    public final void m(ArrayList arrayList, String str, ArrayList arrayList2, ArrayList arrayList3, boolean z10, int i10, long j10, boolean z11, long j11) {
+        d4 d4Var = this.b.r;
+        if (!arrayList.isEmpty()) {
+            d4Var.f2((String) arrayList.get(0));
+        } else if (!arrayList3.isEmpty()) {
+            jj jjVar = (jj) arrayList3.get(0);
+            d4Var.getClass();
+            if (jjVar != null && jjVar.F0() != null) {
+                TLRPC.Document F0 = jjVar.F0();
+                TLRPC.Message message = jjVar.k;
+                d4Var.g2(F0, message != null ? message.attachPath : null);
+            }
         }
+        this.a.a(true);
     }
 
-    @Override // android.widget.LinearLayout, android.view.View
-    public void onMeasure(int i10, int i11) {
-        switch (this.a) {
-            case 0:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
-                break;
-            case 1:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
-                break;
-            case 2:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
-                break;
-            case 3:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
-                break;
-            case 4:
-            case 6:
-            case 7:
-            default:
-                super.onMeasure(i10, i11);
-                break;
-            case 5:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(AndroidUtilities.dp(220.0f), View.MeasureSpec.getSize(i10)), View.MeasureSpec.getMode(i10)), i11);
-                break;
-            case 8:
-                super.onMeasure(i10, i11);
-                setPivotY(0.0f);
-                setPivotX(0.0f);
-                break;
-            case 9:
-                super.onMeasure(i10, i11);
-                setPivotY(0.0f);
-                setPivotX(getMeasuredWidth());
-                break;
-            case 10:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i10), AndroidUtilities.dp(600.0f)), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i11), AndroidUtilities.dp(800.0f)), TLObject.FLAG_30));
-                break;
-        }
+    @Override // org.telegram.ui.Components.nj
+    public final /* synthetic */ void S() {
     }
 
-    private final void a(boolean z10) {
+    @Override // org.telegram.ui.Components.nj
+    public final /* synthetic */ void o(ArrayList arrayList, boolean z10, int i10, long j10) {
     }
 }

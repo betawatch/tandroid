@@ -1,212 +1,80 @@
 package e0;
 
 import android.app.Notification;
-import android.content.res.ColorStateList;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
-import android.text.style.TextAppearanceSpan;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class x extends y {
-    public final ArrayList e = new ArrayList();
-    public final ArrayList f = new ArrayList();
-    public final l0 g;
-    public CharSequence h;
-    public Boolean i;
+public final class x {
+    public final CharSequence a;
+    public final long b;
+    public final l0 c;
+    public final Bundle d = new Bundle();
+    public String e;
+    public Uri f;
 
-    public x() {
-        l0 l0Var = new l0();
-        l0Var.a = "";
-        l0Var.b = null;
-        l0Var.c = null;
-        l0Var.d = null;
-        l0Var.e = false;
-        l0Var.f = false;
-        this.g = l0Var;
+    public x(CharSequence charSequence, long j10, l0 l0Var) {
+        this.a = charSequence;
+        this.b = j10;
+        this.c = l0Var;
     }
 
-    @Override // e0.y
-    public final void a(Bundle bundle) {
-        super.a(bundle);
-        l0 l0Var = this.g;
-        bundle.putCharSequence("android.selfDisplayName", l0Var.a);
-        bundle.putBundle("android.messagingStyleUser", l0Var.c());
-        bundle.putCharSequence("android.hiddenConversationTitle", this.h);
-        if (this.h != null && this.i.booleanValue()) {
-            bundle.putCharSequence("android.conversationTitle", this.h);
-        }
-        ArrayList arrayList = this.e;
-        if (!arrayList.isEmpty()) {
-            bundle.putParcelableArray("android.messages", w.a(arrayList));
-        }
-        ArrayList arrayList2 = this.f;
-        if (!arrayList2.isEmpty()) {
-            bundle.putParcelableArray("android.messages.historic", w.a(arrayList2));
-        }
-        Boolean bool = this.i;
-        if (bool != null) {
-            bundle.putBoolean("android.isGroupConversation", bool.booleanValue());
-        }
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:72:0x0130  */
-    @Override // e0.y
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void b(e0 e0Var) {
-        boolean booleanValue;
-        w wVar;
-        boolean z10;
-        int size;
-        Notification.MessagingStyle b10;
-        Notification.Builder builder = (Notification.Builder) e0Var.d;
-        q qVar = this.a;
-        int i10 = 0;
-        if (qVar == null || qVar.a.getApplicationInfo().targetSdkVersion >= 28 || this.i != null) {
-            Boolean bool = this.i;
-            if (bool != null) {
-                booleanValue = bool.booleanValue();
+    public static Bundle[] a(ArrayList arrayList) {
+        Bundle[] bundleArr = new Bundle[arrayList.size()];
+        int size = arrayList.size();
+        for (int i10 = 0; i10 < size; i10++) {
+            x xVar = (x) arrayList.get(i10);
+            l0 l0Var = xVar.c;
+            Bundle bundle = new Bundle();
+            CharSequence charSequence = xVar.a;
+            if (charSequence != null) {
+                bundle.putCharSequence("text", charSequence);
             }
-            booleanValue = false;
-        } else {
-            if (this.h != null) {
-                booleanValue = true;
-            }
-            booleanValue = false;
-        }
-        this.i = Boolean.valueOf(booleanValue);
-        int i11 = Build.VERSION.SDK_INT;
-        ArrayList arrayList = this.e;
-        if (i11 >= 24) {
-            l0 l0Var = this.g;
-            if (i11 >= 28) {
-                l0Var.getClass();
-                b10 = t.a(c5.d.E(l0Var));
-            } else {
-                b10 = r.b(l0Var.a);
-            }
-            int size2 = arrayList.size();
-            int i12 = 0;
-            while (i12 < size2) {
-                Object obj = arrayList.get(i12);
-                i12++;
-                r.a(b10, ((w) obj).b());
-            }
-            if (Build.VERSION.SDK_INT >= 26) {
-                ArrayList arrayList2 = this.f;
-                int size3 = arrayList2.size();
-                while (i10 < size3) {
-                    Object obj2 = arrayList2.get(i10);
-                    i10++;
-                    s.a(b10, ((w) obj2).b());
-                }
-            }
-            if (this.i.booleanValue() || Build.VERSION.SDK_INT >= 28) {
-                r.c(b10, this.h);
-            }
-            if (Build.VERSION.SDK_INT >= 28) {
-                t.b(b10, this.i.booleanValue());
-            }
-            b10.setBuilder(builder);
-            return;
-        }
-        int size4 = arrayList.size() - 1;
-        while (true) {
-            if (size4 >= 0) {
-                wVar = (w) arrayList.get(size4);
-                l0 l0Var2 = wVar.c;
-                if (l0Var2 != null && !TextUtils.isEmpty(l0Var2.a)) {
-                    break;
+            bundle.putLong("time", xVar.b);
+            if (l0Var != null) {
+                bundle.putCharSequence("sender", l0Var.a);
+                if (Build.VERSION.SDK_INT >= 28) {
+                    bundle.putParcelable("sender_person", w.a(b5.d.E(l0Var)));
                 } else {
-                    size4--;
-                }
-            } else {
-                wVar = !arrayList.isEmpty() ? (w) ic.a.g(1, arrayList) : null;
-            }
-        }
-        if (this.h != null && this.i.booleanValue()) {
-            builder.setContentTitle(this.h);
-        } else if (wVar != null) {
-            builder.setContentTitle("");
-            l0 l0Var3 = wVar.c;
-            if (l0Var3 != null) {
-                builder.setContentTitle(l0Var3.a);
-            }
-        }
-        if (wVar != null) {
-            builder.setContentText(this.h != null ? e(wVar) : wVar.a);
-        }
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-        if (this.h == null) {
-            for (int size5 = arrayList.size() - 1; size5 >= 0; size5--) {
-                l0 l0Var4 = ((w) arrayList.get(size5)).c;
-                if (l0Var4 == null || l0Var4.a != null) {
+                    bundle.putBundle("person", l0Var.c());
                 }
             }
-            z10 = false;
-            for (size = arrayList.size() - 1; size >= 0; size--) {
-                w wVar2 = (w) arrayList.get(size);
-                CharSequence e = z10 ? e(wVar2) : wVar2.a;
-                if (size != arrayList.size() - 1) {
-                    spannableStringBuilder.insert(0, (CharSequence) "\n");
-                }
-                spannableStringBuilder.insert(0, e);
+            String str = xVar.e;
+            if (str != null) {
+                bundle.putString(TeXSymbolParser.TYPE_ATTR, str);
             }
-            new Notification.BigTextStyle(builder).setBigContentTitle(null).bigText(spannableStringBuilder);
-        }
-        z10 = true;
-        while (size >= 0) {
-        }
-        new Notification.BigTextStyle(builder).setBigContentTitle(null).bigText(spannableStringBuilder);
-    }
-
-    @Override // e0.y
-    public final String c() {
-        return "androidx.core.app.NotificationCompat$MessagingStyle";
-    }
-
-    public final List d() {
-        return this.e;
-    }
-
-    public final SpannableStringBuilder e(w wVar) {
-        String str = p0.b.b;
-        p0.b bVar = TextUtils.getLayoutDirectionFromLocale(Locale.getDefault()) == 1 ? p0.b.e : p0.b.d;
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-        l0 l0Var = wVar.c;
-        CharSequence charSequence = l0Var == null ? "" : l0Var.a;
-        int i10 = -16777216;
-        if (TextUtils.isEmpty(charSequence)) {
-            charSequence = this.g.a;
-            int i11 = this.a.w;
-            if (i11 != 0) {
-                i10 = i11;
+            Uri uri = xVar.f;
+            if (uri != null) {
+                bundle.putParcelable("uri", uri);
             }
+            Bundle bundle2 = xVar.d;
+            if (bundle2 != null) {
+                bundle.putBundle("extras", bundle2);
+            }
+            bundleArr[i10] = bundle;
         }
-        SpannableStringBuilder c10 = bVar.c(charSequence);
-        spannableStringBuilder.append((CharSequence) c10);
-        spannableStringBuilder.setSpan(new TextAppearanceSpan(null, 0, 0, ColorStateList.valueOf(i10), null), spannableStringBuilder.length() - c10.length(), spannableStringBuilder.length(), 33);
-        CharSequence charSequence2 = wVar.a;
-        spannableStringBuilder.append((CharSequence) "  ").append((CharSequence) bVar.c(charSequence2 != null ? charSequence2 : ""));
-        return spannableStringBuilder;
+        return bundleArr;
     }
 
-    public final void f(String str) {
-        this.h = str;
-    }
-
-    public x(l0 l0Var) {
-        if (!TextUtils.isEmpty(l0Var.a)) {
-            this.g = l0Var;
-            return;
+    public final Notification.MessagingStyle.Message b() {
+        Notification.MessagingStyle.Message a2;
+        int i10 = Build.VERSION.SDK_INT;
+        long j10 = this.b;
+        CharSequence charSequence = this.a;
+        l0 l0Var = this.c;
+        if (i10 >= 28) {
+            a2 = w.b(charSequence, j10, l0Var != null ? b5.d.E(l0Var) : null);
+        } else {
+            a2 = v.a(charSequence, j10, l0Var != null ? l0Var.a : null);
         }
-        throw new IllegalArgumentException("User's name must not be empty.");
+        String str = this.e;
+        if (str != null) {
+            v.b(a2, str, this.f);
+        }
+        return a2;
     }
 }

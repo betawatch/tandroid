@@ -1,29 +1,31 @@
 package y8;
 
-import z8.m0;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class r implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ m0 b;
-    public final /* synthetic */ m c;
+public final class r extends o6.a {
+    public static final Parcelable.Creator<r> CREATOR = new c(15);
+    public final int a;
+    public final boolean b;
+    public final boolean c;
 
-    public /* synthetic */ r(m mVar, m0 m0Var, int i10) {
+    public r(int i10, boolean z10, boolean z11) {
         this.a = i10;
-        this.c = mVar;
-        this.b = m0Var;
+        this.b = z10;
+        this.c = z11;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.c.c.onPeerConnected(this.b);
-                break;
-            default:
-                this.c.c.onPeerDisconnected(this.b);
-                break;
-        }
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i10) {
+        int q6 = w7.h0.q(parcel, 20293);
+        w7.h0.s(parcel, 2, 4);
+        parcel.writeInt(this.a);
+        w7.h0.s(parcel, 3, 4);
+        parcel.writeInt(this.b ? 1 : 0);
+        w7.h0.s(parcel, 4, 4);
+        parcel.writeInt(this.c ? 1 : 0);
+        w7.h0.r(parcel, q6);
     }
 }

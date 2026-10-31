@@ -1,9 +1,9 @@
 package org.webrtc;
 
 import java.nio.ByteBuffer;
-import org.telegram.ui.Components.b10;
+import org.telegram.messenger.zs;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes4.dex */
 public class YuvHelper {
     public static void ABGRToI420(ByteBuffer byteBuffer, int i10, ByteBuffer byteBuffer2, int i11, ByteBuffer byteBuffer3, int i12, ByteBuffer byteBuffer4, int i13, int i14, int i15) {
@@ -18,9 +18,9 @@ public class YuvHelper {
         int i23 = (i17 * i18) + i21;
         int i24 = ((i19 - 1) * i17) + i23 + ((i13 + 1) / 2);
         if (byteBuffer4.capacity() < i24) {
-            StringBuilder k10 = ic.a.k(i24, "Expected destination buffer capacity to be at least ", " was ");
-            k10.append(byteBuffer4.capacity());
-            throw new IllegalArgumentException(k10.toString());
+            StringBuilder l4 = i0.a.l(i24, "Expected destination buffer capacity to be at least ", " was ");
+            l4.append(byteBuffer4.capacity());
+            throw new IllegalArgumentException(l4.toString());
         }
         byteBuffer4.limit(i20);
         byteBuffer4.position(0);
@@ -38,7 +38,7 @@ public class YuvHelper {
         checkNotNull(byteBuffer2, "srcU");
         checkNotNull(byteBuffer3, "srcV");
         checkNotNull(byteBuffer4, "dst");
-        int i16 = i15 % 180;
+        int i16 = i15 % zs.K2;
         int i17 = i16 == 0 ? i13 : i14;
         int i18 = i16 == 0 ? i14 : i13;
         int i19 = (i18 + 1) / 2;
@@ -47,9 +47,9 @@ public class YuvHelper {
         int i22 = i19 * i20;
         int i23 = (i22 * 2) + i21;
         if (byteBuffer4.capacity() < i23) {
-            StringBuilder k10 = ic.a.k(i23, "Expected destination buffer capacity to be at least ", " was ");
-            k10.append(byteBuffer4.capacity());
-            throw new IllegalArgumentException(k10.toString());
+            StringBuilder l4 = i0.a.l(i23, "Expected destination buffer capacity to be at least ", " was ");
+            l4.append(byteBuffer4.capacity());
+            throw new IllegalArgumentException(l4.toString());
         }
         byteBuffer4.position(0);
         ByteBuffer slice = byteBuffer4.slice();
@@ -65,9 +65,9 @@ public class YuvHelper {
         int i19 = i15 * i16;
         int i20 = (((i14 + 1) / 2) * i17 * 2) + i19;
         if (byteBuffer4.capacity() < i20) {
-            StringBuilder k10 = ic.a.k(i20, "Expected destination buffer capacity to be at least ", " was ");
-            k10.append(byteBuffer4.capacity());
-            throw new IllegalArgumentException(k10.toString());
+            StringBuilder l4 = i0.a.l(i20, "Expected destination buffer capacity to be at least ", " was ");
+            l4.append(byteBuffer4.capacity());
+            throw new IllegalArgumentException(l4.toString());
         }
         byteBuffer4.limit(i18);
         byteBuffer4.position(0);
@@ -81,7 +81,7 @@ public class YuvHelper {
         if (t10 != null) {
             return t10;
         }
-        throw new NullPointerException(b10.u(str, " should not be null"));
+        throw new NullPointerException(sc.e.A(str, " should not be null"));
     }
 
     public static void copyPlane(ByteBuffer byteBuffer, int i10, ByteBuffer byteBuffer2, int i11, int i12, int i13) {

@@ -1,12 +1,15 @@
 package b4;
 
-import a8.wb;
-import a8.yb;
+import android.opengl.GLES20;
 import android.text.TextUtils;
+import org.telegram.messenger.beta.R;
+import org.telegram.ui.Components.h40;
+import v7.r6;
+import v7.t6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class b {
+public class b {
     public final int a;
     public final int b;
     public final int c;
@@ -24,9 +27,9 @@ public final class b {
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    public static b a(String str) {
+    public static b b(String str) {
         char c10;
-        yb.g(str.startsWith("Format:"));
+        t6.f(str.startsWith("Format:"));
         String[] split = TextUtils.split(str.substring(7), ",");
         int i10 = -1;
         int i11 = -1;
@@ -34,7 +37,7 @@ public final class b {
         int i13 = -1;
         int i14 = -1;
         for (int i15 = 0; i15 < split.length; i15++) {
-            String c11 = wb.c(split[i15].trim());
+            String c11 = r6.c(split[i15].trim());
             c11.getClass();
             switch (c11.hashCode()) {
                 case 100571:
@@ -98,5 +101,32 @@ public final class b {
             return null;
         }
         return new b(i10, i11, i12, i13, i14, split.length);
+    }
+
+    public void a() {
+        GLES20.glDeleteProgram(this.a);
+        GLES20.glDeleteShader(this.b);
+        GLES20.glDeleteShader(this.c);
+    }
+
+    public b(int i10) {
+        int a2 = h40.a(35633, R.raw.round_blur_vert);
+        this.b = a2;
+        int a10 = h40.a(35632, i10);
+        this.c = a10;
+        int glCreateProgram = GLES20.glCreateProgram();
+        GLES20.glAttachShader(glCreateProgram, a2);
+        GLES20.glAttachShader(glCreateProgram, a10);
+        GLES20.glLinkProgram(glCreateProgram);
+        int[] iArr = new int[1];
+        GLES20.glGetProgramiv(glCreateProgram, 35714, iArr, 0);
+        if (iArr[0] == 0) {
+            GLES20.glDeleteProgram(glCreateProgram);
+            glCreateProgram = 0;
+        }
+        this.a = glCreateProgram;
+        this.d = GLES20.glGetAttribLocation(glCreateProgram, "aPosition");
+        this.e = GLES20.glGetAttribLocation(glCreateProgram, "aTextureCoord");
+        this.f = GLES20.glGetUniformLocation(glCreateProgram, "sTexture");
     }
 }

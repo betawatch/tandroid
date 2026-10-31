@@ -1,63 +1,36 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public abstract class gp extends FrameLayout {
-    public u91 a;
-    public float b;
-    public boolean c;
-    public float d;
-    public ValueAnimator e;
+public final class gp extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ hp b;
 
-    public abstract void a(boolean z10);
+    public /* synthetic */ gp(hp hpVar, int i10) {
+        this.a = i10;
+        this.b = hpVar;
+    }
 
-    public final void b(boolean z10) {
-        this.c = z10;
-        ValueAnimator valueAnimator = this.e;
-        if (valueAnimator != null) {
-            this.e = null;
-            valueAnimator.cancel();
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                hp hpVar = this.b;
+                hpVar.d = null;
+                ho hoVar = new ho(this, 1);
+                hpVar.e = hoVar;
+                org.telegram.messenger.i0.h3(hoVar, 3000L);
+                break;
+            default:
+                hp hpVar2 = this.b;
+                hpVar2.setVisibility(4);
+                hpVar2.getClass();
+                hpVar2.getClass();
+                hpVar2.d = null;
+                break;
         }
-        if (z10) {
-            setVisibility(0);
-        }
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.d, z10 ? 1.0f : 0.0f);
-        this.e = ofFloat;
-        ofFloat.addUpdateListener(new n6(this, 14));
-        this.e.setInterpolator(ds.h);
-        this.e.setDuration(320L);
-        this.e.addListener(new org.telegram.ui.lo(5, this, z10));
-        this.e.start();
-    }
-
-    public int getCurrentHeight() {
-        return (int) (getMeasuredHeight() * this.b);
-    }
-
-    @Override // android.view.View
-    public final boolean isShown() {
-        return this.c;
-    }
-
-    public void setShown(float f7) {
-        this.b = f7;
-        u91 u91Var = this.a;
-        if (u91Var != null) {
-            u91Var.setPivotX(u91Var.getWidth() / 2.0f);
-            this.a.setPivotY(0.0f);
-            this.a.setScaleX(AndroidUtilities.lerp(0.8f, 1.0f, f7));
-            this.a.setScaleY(AndroidUtilities.lerp(0.8f, 1.0f, f7));
-        }
-        setAlpha(f7);
-        invalidate();
-    }
-
-    public void setTabs(u91 u91Var) {
-        this.a = u91Var;
-        addView(u91Var, kb1.g(-1.0f, -1));
     }
 }

@@ -1,115 +1,21 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.AndroidUtilities;
+import android.view.View;
+import java.io.Serializable;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class fi extends org.telegram.ui.ActionBar.q1 {
-    public final /* synthetic */ gi x;
+public final /* synthetic */ class fi implements org.telegram.messenger.o20, org.telegram.messenger.p20 {
+    public final /* synthetic */ mi a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public fi(gi giVar, gi giVar2) {
-        super(giVar2);
-        this.x = giVar;
+    @Override // org.telegram.messenger.p20
+    public Boolean a(a51 a51Var, View view, Integer num, Float f7, Float f10) {
+        this.a.P(a51Var, view);
+        return Boolean.TRUE;
     }
 
-    @Override // org.telegram.ui.ActionBar.q1
-    public final boolean b() {
-        sz szVar;
-        ti tiVar = this.x.q0;
-        if ((!tiVar.isDismissed() || tiVar.x0) && tiVar.v1) {
-            li liVar = tiVar.B0;
-            if (liVar != tiVar.m0 && liVar != tiVar.n0 && !tiVar.s1().m()) {
-                return true;
-            }
-            li liVar2 = tiVar.B0;
-            go goVar = tiVar.m0;
-            if (liVar2 == goVar && ((szVar = goVar.E) == null || szVar.getVisibility() != 0)) {
-                return true;
-            }
-            li liVar3 = tiVar.B0;
-            go goVar2 = tiVar.n0;
-            if (liVar3 == goVar2) {
-                sz szVar2 = goVar2.E;
-                return szVar2 == null || szVar2.getVisibility() != 0;
-            }
-        }
-        return false;
-    }
-
-    @Override // org.telegram.ui.ActionBar.q1
-    public final void e(float f7, float f10, boolean z10) {
-        gi giVar = this.x;
-        ti tiVar = giVar.q0;
-        tiVar.o2 = f7;
-        float f11 = tiVar.g2;
-        if (f11 > 0.0f) {
-            tiVar.o2 = c3.h0.z(f11, tiVar.h2, (tiVar.B0 != tiVar.w0 || z10) ? 1.0f - f10 : f10, f7);
-        }
-        tiVar.a1.setTranslationY(tiVar.o2);
-        tiVar.d1.setTranslationY(tiVar.o2);
-        org.telegram.ui.ActionBar.w0 w0Var = tiVar.h1;
-        if (w0Var != null) {
-            w0Var.setTranslationY(tiVar.o2);
-        }
-        org.telegram.ui.ActionBar.w0 w0Var2 = tiVar.f1;
-        if (w0Var2 != null) {
-            w0Var2.setTranslationY(tiVar.d1.getTranslationY());
-        }
-        fi.v3 v3Var = tiVar.g1;
-        if (v3Var != null) {
-            v3Var.setTranslationY(tiVar.d1.getTranslationY());
-        }
-        tiVar.i1.setTranslationY(tiVar.o2);
-        tiVar.i2(0);
-        tiVar.setCurrentPanTranslationY(tiVar.B0 != tiVar.w0 ? tiVar.o2 : 0.0f);
-        giVar.invalidate();
-        tiVar.G0.invalidate();
-        tiVar.c2();
-        li liVar = tiVar.B0;
-        if (liVar != null) {
-            liVar.m(tiVar.o2, f10);
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.q1
-    public final void f() {
-        boolean z10;
-        ti tiVar = this.x.q0;
-        tiVar.f2(tiVar.B0, 0);
-        tiVar.f2 = tiVar.e2[0];
-        tiVar.B0.x();
-        if (!(tiVar.B0 instanceof hi.o4) || tiVar.G1) {
-            return;
-        }
-        z10 = ((org.telegram.ui.ActionBar.k3) tiVar).keyboardVisible;
-        int dp = z10 ? AndroidUtilities.dp(84.0f) : 0;
-        for (int i10 = 0; i10 < tiVar.A0.size(); i10++) {
-            ((hi.o4) tiVar.A0.valueAt(i10)).setMeasureOffsetY(dp);
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.q1
-    public final void g(int i10, boolean z10) {
-        int i11;
-        gi giVar = this.x;
-        ti tiVar = giVar.q0;
-        int i12 = tiVar.f2;
-        if (i12 <= 0 || i12 == (i11 = tiVar.e2[0]) || !(z10 || tiVar.B0 == tiVar.w0)) {
-            tiVar.g2 = -1.0f;
-        } else {
-            tiVar.g2 = i12;
-            tiVar.h2 = i11;
-        }
-        giVar.invalidate();
-        th thVar = tiVar.A1;
-        if ((tiVar.B0 instanceof hi.o4) && !tiVar.G1) {
-            if (z10) {
-                thVar.setVisibility(8);
-            } else {
-                thVar.setVisibility(0);
-            }
-        }
-        tiVar.B0.y(i10, z10);
+    @Override // org.telegram.messenger.o20
+    public void k(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
+        this.a.P((a51) obj, (View) obj2);
     }
 }

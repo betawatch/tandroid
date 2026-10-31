@@ -1,79 +1,87 @@
 package a8;
 
-import java.util.Map;
+import android.os.BadParcelableException;
+import android.os.Binder;
+import android.os.IBinder;
+import android.os.IInterface;
+import android.os.Parcel;
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.tasks.TaskCompletionSource;
+import kotlin.jvm.internal.i;
+import v7.i5;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class e extends eh {
-    public final Object b;
-    public int c;
-    public final /* synthetic */ g d;
+public final class e extends Binder implements b, IInterface {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ TaskCompletionSource b;
 
-    public e(g gVar, int i10) {
-        super(0, false);
-        this.d = gVar;
-        Object[] objArr = gVar.c;
-        objArr.getClass();
-        this.b = objArr[i10];
-        this.c = i10;
+    public e(int i10, TaskCompletionSource taskCompletionSource) {
+        this.a = i10;
+        this.b = taskCompletionSource;
+        attachInterface(this, "com.google.android.gms.recaptchabase.internal.IRecaptchaBaseCallbacks");
     }
 
-    public final void a() {
-        int i10 = this.c;
-        Object obj = this.b;
-        g gVar = this.d;
-        if (i10 != -1 && i10 < gVar.size()) {
-            int i11 = this.c;
-            Object[] objArr = gVar.c;
-            objArr.getClass();
-            if (n0.a(obj, objArr[i11])) {
-                return;
+    @Override // a8.b
+    public final void T(Status status, l8.b bVar) {
+        switch (this.a) {
+            case 0:
+                i.e(status, "status");
+                i5.a(status, bVar, this.b);
+                break;
+        }
+    }
+
+    @Override // android.os.Binder
+    public final boolean onTransact(int i10, Parcel parcel, Parcel parcel2, int i11) {
+        if (i10 <= 16777215) {
+            parcel.enforceInterface(getInterfaceDescriptor());
+        } else if (super.onTransact(i10, parcel, parcel2, i11)) {
+            return true;
+        }
+        if (i10 == 1) {
+            Status status = (Status) a.a(parcel, Status.CREATOR);
+            l8.d dVar = (l8.d) a.a(parcel, l8.d.CREATOR);
+            int dataAvail = parcel.dataAvail();
+            if (dataAvail > 0) {
+                throw new BadParcelableException(i0.a.i(dataAvail, "Parcel data not fully consumed, unread size: "));
             }
+            t(status, dVar);
+            return true;
         }
-        Object obj2 = g.s;
-        this.c = gVar.e(obj);
+        if (i10 != 2) {
+            return false;
+        }
+        Status status2 = (Status) a.a(parcel, Status.CREATOR);
+        l8.b bVar = (l8.b) a.a(parcel, l8.b.CREATOR);
+        int dataAvail2 = parcel.dataAvail();
+        if (dataAvail2 > 0) {
+            throw new BadParcelableException(i0.a.i(dataAvail2, "Parcel data not fully consumed, unread size: "));
+        }
+        T(status2, bVar);
+        return true;
     }
 
-    @Override // java.util.Map.Entry
-    public final Object getKey() {
-        return this.b;
+    @Override // a8.b
+    public final void t(Status status, l8.d dVar) {
+        switch (this.a) {
+            case 0:
+                break;
+            default:
+                i.e(status, "status");
+                i5.a(status, dVar, this.b);
+                break;
+        }
     }
 
-    @Override // java.util.Map.Entry
-    public final Object getValue() {
-        g gVar = this.d;
-        Map a2 = gVar.a();
-        if (a2 != null) {
-            return a2.get(this.b);
-        }
-        a();
-        int i10 = this.c;
-        if (i10 == -1) {
-            return null;
-        }
-        Object[] objArr = gVar.d;
-        objArr.getClass();
-        return objArr[i10];
+    @Override // android.os.IInterface
+    public final IBinder asBinder() {
+        return this;
     }
 
-    @Override // java.util.Map.Entry
-    public final Object setValue(Object obj) {
-        g gVar = this.d;
-        Map a2 = gVar.a();
-        Object obj2 = this.b;
-        if (a2 != null) {
-            return a2.put(obj2, obj);
-        }
-        a();
-        int i10 = this.c;
-        if (i10 == -1) {
-            gVar.put(obj2, obj);
-            return null;
-        }
-        Object[] objArr = gVar.d;
-        objArr.getClass();
-        Object obj3 = objArr[i10];
-        objArr[i10] = obj;
-        return obj3;
+    private final void H0(Status status, l8.b bVar) {
+    }
+
+    private final void I0(Status status, l8.d dVar) {
     }
 }

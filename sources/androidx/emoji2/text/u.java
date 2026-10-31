@@ -1,21 +1,21 @@
 package androidx.emoji2.text;
 
-import a8.mf;
 import android.text.Editable;
 import android.text.SpannableStringBuilder;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import w7.q6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class u extends SpannableStringBuilder {
     public final Class a;
     public final ArrayList b;
 
-    public u(CharSequence charSequence, Class cls) {
+    public u(Class cls, CharSequence charSequence) {
         super(charSequence);
         this.b = new ArrayList();
-        mf.a(cls, "watcherClass cannot be null");
+        q6.a(cls, "watcherClass cannot be null");
         this.a = cls;
     }
 
@@ -241,7 +241,7 @@ public final class u extends SpannableStringBuilder {
     public u(Class cls, u uVar, int i10, int i11) {
         super(uVar, i10, i11);
         this.b = new ArrayList();
-        mf.a(cls, "watcherClass cannot be null");
+        q6.a(cls, "watcherClass cannot be null");
         this.a = cls;
     }
 

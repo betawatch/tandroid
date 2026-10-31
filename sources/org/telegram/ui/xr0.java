@@ -1,20 +1,15 @@
 package org.telegram.ui;
 
-import android.util.FloatProperty;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class xr0 extends FloatProperty {
-    public xr0() {
-        super("progress");
-    }
-
-    @Override // android.util.Property
-    public final Object get(Object obj) {
-        return Float.valueOf(((zu0) obj).a);
-    }
-
-    public final void setValue(Object obj, float f7) {
-        ((zu0) obj).b(f7);
-    }
+public final class xr0 {
+    public String a;
+    public String b;
+    public org.telegram.messenger.ye c;
+    public org.telegram.messenger.ff d;
+    public ArrayList e;
+    public ArrayList f;
+    public long g;
 }

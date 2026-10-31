@@ -1,7 +1,5 @@
 package androidx.emoji2.text;
 
-import a8.i1;
-import a8.mf;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.Handler;
@@ -11,30 +9,31 @@ import java.util.ArrayList;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
+import w7.q6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class q implements k {
     public final Context a;
     public final o0.d b;
-    public final qb.a c;
+    public final jb.b c;
     public final Object d = new Object();
     public Handler e;
     public ThreadPoolExecutor f;
     public ThreadPoolExecutor g;
-    public i1 h;
+    public v7.t h;
 
     public q(Context context, o0.d dVar) {
-        mf.a(context, "Context cannot be null");
+        q6.a(context, "Context cannot be null");
         this.a = context.getApplicationContext();
         this.b = dVar;
         this.c = r.d;
     }
 
     @Override // androidx.emoji2.text.k
-    public final void a(i1 i1Var) {
+    public final void a(v7.t tVar) {
         synchronized (this.d) {
-            this.h = i1Var;
+            this.h = tVar;
         }
         c();
     }
@@ -72,7 +71,7 @@ public final class q implements k {
                     this.g = threadPoolExecutor;
                     this.f = threadPoolExecutor;
                 }
-                this.f.execute(new a3.d(this, 9));
+                this.f.execute(new a3.d(this, 14));
             } catch (Throwable th2) {
                 throw th2;
             }
@@ -81,10 +80,10 @@ public final class q implements k {
 
     public final o0.h d() {
         try {
-            qb.a aVar = this.c;
+            jb.b bVar = this.c;
             Context context = this.a;
             o0.d dVar = this.b;
-            aVar.getClass();
+            bVar.getClass();
             Object[] objArr = {dVar};
             ArrayList arrayList = new ArrayList(1);
             Object obj = objArr[0];
@@ -93,7 +92,7 @@ public final class q implements k {
             j4.f a2 = o0.c.a(context, DesugarCollections.unmodifiableList(arrayList));
             int i10 = a2.a;
             if (i10 != 0) {
-                throw new RuntimeException(ic.a.j(i10, "fetchFonts failed (", ")"));
+                throw new RuntimeException(i0.a.j(i10, "fetchFonts failed (", ")"));
             }
             o0.h[] hVarArr = (o0.h[]) a2.b.get(0);
             if (hVarArr == null || hVarArr.length == 0) {

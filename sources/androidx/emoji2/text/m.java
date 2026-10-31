@@ -1,20 +1,19 @@
 package androidx.emoji2.text;
 
-import a8.i1;
 import java.util.concurrent.ThreadPoolExecutor;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class m extends i1 {
-    public final /* synthetic */ i1 a;
+public final class m extends v7.t {
+    public final /* synthetic */ v7.t a;
     public final /* synthetic */ ThreadPoolExecutor b;
 
-    public m(i1 i1Var, ThreadPoolExecutor threadPoolExecutor) {
-        this.a = i1Var;
+    public m(v7.t tVar, ThreadPoolExecutor threadPoolExecutor) {
+        this.a = tVar;
         this.b = threadPoolExecutor;
     }
 
-    @Override // a8.i1
+    @Override // v7.t
     public final void a(Throwable th2) {
         ThreadPoolExecutor threadPoolExecutor = this.b;
         try {
@@ -24,11 +23,11 @@ public final class m extends i1 {
         }
     }
 
-    @Override // a8.i1
-    public final void b(com.google.firebase.messaging.q qVar) {
+    @Override // v7.t
+    public final void b(ji.f fVar) {
         ThreadPoolExecutor threadPoolExecutor = this.b;
         try {
-            this.a.b(qVar);
+            this.a.b(fVar);
         } finally {
             threadPoolExecutor.shutdown();
         }

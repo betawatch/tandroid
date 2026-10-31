@@ -1,115 +1,208 @@
 package bi;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.MotionEvent;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
+import android.content.DialogInterface;
 import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.v91;
+import org.telegram.messenger.f8;
+import org.telegram.messenger.hv;
+import org.telegram.messenger.zs;
+import org.telegram.ui.Components.d50;
+import org.telegram.ui.Components.gr;
+import org.telegram.ui.Components.hp;
+import org.telegram.ui.Components.mx;
+import org.telegram.ui.Components.pg0;
+import org.telegram.ui.Components.r7;
+import org.telegram.ui.Components.wj0;
+import org.telegram.ui.Components.zr0;
+import org.telegram.ui.uq;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes4.dex */
-public final class d5 extends v91 {
-    public final /* synthetic */ h7 V;
+public final class d5 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Object c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d5(h7 h7Var, Context context) {
-        super(context, null);
-        this.V = h7Var;
+    public /* synthetic */ d5(Object obj, int i10, int i11) {
+        this.a = i11;
+        this.c = obj;
+        this.b = i10;
     }
 
-    @Override // org.telegram.ui.Components.v91
-    public final void F(View view, float f7) {
-        int i10;
-        View view2;
-        zh.l2 l2Var;
-        zh.l2 l2Var2;
-        g5 g5Var;
-        g5 g5Var2;
-        g5 g5Var3;
-        if (getMeasuredWidth() <= 0) {
-            view.setTranslationX(f7);
-            return;
-        }
-        float clamp = Utilities.clamp(f7 / getMeasuredWidth(), 1.0f, -1.0f);
-        h7 h7Var = this.V;
-        i10 = ((org.telegram.ui.ActionBar.k3) h7Var).backgroundPaddingLeft;
-        view.setTranslationX(((-clamp) * 2.0f * i10) + f7);
-        view.setPivotX(clamp <= 0.0f ? view.getMeasuredWidth() : 0.0f);
-        view.setCameraDistance(view.getMeasuredHeight() * 3.4f);
-        view.setScaleX(1.0f - Math.abs(0.25f * clamp));
-        view.setRotationY(clamp * 10.0f);
-        if (view instanceof FrameLayout) {
-            FrameLayout frameLayout = (FrameLayout) view;
-            if (frameLayout.getChildCount() > 0) {
-                view2 = frameLayout.getChildAt(0);
-                l2Var = h7Var.c0;
-                if (l2Var != null && view2 == l2Var.Y && (g5Var3 = l2Var.e0) != null) {
-                    g5Var3.invalidate();
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationCancel(Animator animator) {
+        switch (this.a) {
+            case 2:
+                AnimatorSet[] animatorSetArr = ((org.telegram.ui.ActionBar.x1) this.c).F;
+                int i10 = this.b;
+                AnimatorSet animatorSet = animatorSetArr[i10];
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    animatorSetArr[i10] = null;
+                    break;
                 }
-                if (view2 == h7Var.Y && (g5Var2 = h7Var.e0) != null) {
-                    g5Var2.invalidate();
+                break;
+            case 3:
+                org.telegram.ui.ActionBar.z2 z2Var = (org.telegram.ui.ActionBar.z2) this.c;
+                AnimatorSet animatorSet2 = z2Var.z0;
+                if (animatorSet2 != null && animatorSet2.equals(animator)) {
+                    z2Var.z0 = null;
+                    z2Var.A0 = 0;
+                    break;
                 }
-                l2Var2 = h7Var.d0;
-                if (l2Var2 == null && view2 == l2Var2.Y && (g5Var = l2Var2.e0) != null) {
-                    g5Var.invalidate();
-                    return;
+                break;
+            default:
+                super.onAnimationCancel(animator);
+                break;
+        }
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        long cameraFlipElapsedMs;
+        int i10 = this.a;
+        int i11 = this.b;
+        Object obj = this.c;
+        switch (i10) {
+            case 0:
+                f5 f5Var = (f5) obj;
+                f5Var.W = i11;
+                f5Var.a0 = 0.0f;
+                f5Var.requestLayout();
+                f5Var.invalidate();
+                break;
+            case 1:
+                hv hvVar = (hv) obj;
+                hvVar.a0 = i11;
+                hvVar.b0 = 0.0f;
+                View view = hvVar.V;
+                if (view != null) {
+                    view.invalidate();
+                    break;
                 }
-                return;
-            }
-        }
-        view2 = null;
-        l2Var = h7Var.c0;
-        if (l2Var != null) {
-            g5Var3.invalidate();
-        }
-        if (view2 == h7Var.Y) {
-            g5Var2.invalidate();
-        }
-        l2Var2 = h7Var.d0;
-        if (l2Var2 == null) {
+                break;
+            case 2:
+                AnimatorSet[] animatorSetArr = ((org.telegram.ui.ActionBar.x1) obj).F;
+                AnimatorSet animatorSet = animatorSetArr[i11];
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    animatorSetArr[i11] = null;
+                    break;
+                }
+                break;
+            case 3:
+                org.telegram.ui.ActionBar.z2 z2Var = (org.telegram.ui.ActionBar.z2) obj;
+                AnimatorSet animatorSet2 = z2Var.z0;
+                if (animatorSet2 != null && animatorSet2.equals(animator)) {
+                    z2Var.z0 = null;
+                    z2Var.A0 = 0;
+                    DialogInterface.OnClickListener onClickListener = z2Var.K;
+                    if (onClickListener != null) {
+                        onClickListener.onClick(z2Var, i11);
+                    }
+                    org.telegram.messenger.i0.g3(new lg.s(this, 21));
+                }
+                zs.e().k(99, 512);
+                break;
+            case 4:
+                org.telegram.ui.Cells.h4 h4Var = (org.telegram.ui.Cells.h4) obj;
+                if (!h4Var.c()) {
+                    h4Var.b(i11);
+                }
+                h4Var.d0 = null;
+                break;
+            case 5:
+                ((org.telegram.ui.Components.e6) obj).u(i11);
+                break;
+            case 6:
+                ((r7) obj).a[i11].setVisibility(8);
+                break;
+            case 7:
+                ((hp) obj).a[i11].animate().scaleX(1.0f).scaleY(1.0f).setInterpolator(gr.g).setStartDelay(0L).setDuration(100L).start();
+                break;
+            case 8:
+                mx mxVar = (mx) obj;
+                mxVar.r.setVisibility(i11 == 1 ? 0 : 8);
+                mxVar.h.setVisibility(i11 == 2 ? 0 : 8);
+                mxVar.n.setVisibility(i11 == 3 ? 0 : 8);
+                break;
+            case 9:
+                d50 d50Var = (d50) obj;
+                if (i11 == d50Var.s0) {
+                    d50Var.x.setRotationY(0.0f);
+                    d50Var.q0 = true;
+                    d50Var.b0 = null;
+                    StringBuilder sb2 = new StringBuilder("RoundVideo camera flip visual animation completed: elapsedMs=");
+                    cameraFlipElapsedMs = d50Var.getCameraFlipElapsedMs();
+                    sb2.append(cameraFlipElapsedMs);
+                    f8.b(sb2.toString());
+                    d50.m(d50Var);
+                    break;
+                }
+                break;
+            case 10:
+                pg0 pg0Var = (pg0) obj;
+                pg0Var.H = null;
+                pg0Var.P.d1.delete(i11);
+                break;
+            case 11:
+                uq uqVar = (uq) obj;
+                ((wj0) uqVar.d).b.remove(i11);
+                wj0 wj0Var = (wj0) uqVar.d;
+                wj0Var.d = true;
+                wj0Var.a.invalidate();
+                break;
+            case 12:
+                zr0 zr0Var = (zr0) obj;
+                zr0Var.e.R1.remove(i11);
+                zr0Var.a.invalidate();
+                break;
+            case 13:
+                org.telegram.ui.Components.voip.l0 l0Var = (org.telegram.ui.Components.voip.l0) obj;
+                l0Var.y = -1;
+                l0Var.w = i11;
+                l0Var.s = 0.0f;
+                l0Var.U = null;
+                l0Var.e();
+                break;
+            case 14:
+                xh.m2 m2Var = (xh.m2) obj;
+                m2Var.Q.setColor(i11);
+                m2Var.F();
+                m2Var.f.invalidate();
+                org.telegram.ui.b3 b3Var = m2Var.Y0;
+                if (b3Var != null) {
+                    b3Var.b(org.telegram.messenger.i0.B(m2Var.Q.getColor()) <= 0.721f, false);
+                    m2Var.Y0.setBackgroundColor(m2Var.Q.getColor());
+                }
+                m2Var.K();
+                break;
+            default:
+                xh.i3 i3Var = (xh.i3) obj;
+                xh.e2 e2Var = i3Var.n;
+                if (e2Var.getWebView() != null) {
+                    e2Var.getWebView().setScrollY(i11);
+                }
+                if (animator == i3Var.r) {
+                    i3Var.r = null;
+                    break;
+                }
+                break;
         }
     }
 
-    /* JADX WARN: Type inference failed for: r1v1, types: [boolean] */
-    @Override // org.telegram.ui.Components.v91
-    public final void G() {
-        super.G();
-        int i10 = this.b;
-        h7 h7Var = this.V;
-        if (i10 != h7Var.f2(false)) {
-            AndroidUtilities.runOnUIThread(new bh.n(3, this, this.b > h7Var.f2(false)));
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationStart(Animator animator) {
+        switch (this.a) {
+            case 8:
+                mx mxVar = (mx) this.c;
+                mxVar.r.setVisibility(0);
+                mxVar.h.setVisibility(0);
+                mxVar.n.setVisibility(0);
+                break;
+            default:
+                super.onAnimationStart(animator);
+                break;
         }
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        int i10;
-        int i11;
-        canvas.save();
-        h7 h7Var = this.V;
-        i10 = ((org.telegram.ui.ActionBar.k3) h7Var).backgroundPaddingLeft;
-        int i12 = -getHeight();
-        int width = getWidth();
-        i11 = ((org.telegram.ui.ActionBar.k3) h7Var).backgroundPaddingLeft;
-        canvas.clipRect(i10, i12, width - i11, getHeight() * 2);
-        super.dispatchDraw(canvas);
-        canvas.restore();
-    }
-
-    @Override // org.telegram.ui.Components.v91
-    public final float getAvailableTranslationX() {
-        int i10;
-        int measuredWidth = getMeasuredWidth();
-        i10 = ((org.telegram.ui.ActionBar.k3) this.V).backgroundPaddingLeft;
-        return Math.max(1, measuredWidth - (i10 * 2));
-    }
-
-    @Override // org.telegram.ui.Components.v91
-    public final boolean i(MotionEvent motionEvent) {
-        c6 c6Var = this.V.b1;
-        return c6Var == null || c6Var.c(0);
     }
 }

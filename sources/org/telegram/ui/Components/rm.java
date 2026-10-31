@@ -1,42 +1,36 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Outline;
-import android.view.View;
-import android.view.ViewOutlineProvider;
-import org.telegram.messenger.AndroidUtilities;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class rm extends ViewOutlineProvider {
-    public final /* synthetic */ tm a;
+public final class rm extends org.telegram.ui.yr0 {
+    public boolean a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ jn c;
 
-    public rm(tm tmVar) {
-        this.a = tmVar;
+    public rm(jn jnVar, int i10) {
+        this.c = jnVar;
+        this.b = i10;
     }
 
-    @Override // android.view.ViewOutlineProvider
-    public final void getOutline(View view, Outline outline) {
-        org.telegram.ui.Cells.x5 x5Var = (org.telegram.ui.Cells.x5) view;
-        if (x5Var.getTag() == null) {
-            return;
+    @Override // org.telegram.ui.yr0, org.telegram.ui.es0
+    public final void D() {
+        if (this.a) {
+            this.c.e0(this.b);
         }
-        int intValue = ((Integer) x5Var.getTag()).intValue();
-        tm tmVar = this.a;
-        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = tmVar.v;
-        if (tmVar.d && chatAttachAlertPhotoLayout.T0 == chatAttachAlertPhotoLayout.U0 && !chatAttachAlertPhotoLayout.O0) {
-            intValue++;
-        }
-        if (chatAttachAlertPhotoLayout.g1) {
-            intValue++;
-        }
-        if (intValue == 0) {
-            int dp = AndroidUtilities.dp(16.0f);
-            outline.setRoundRect(0, 0, view.getMeasuredWidth() + dp, view.getMeasuredHeight() + dp, dp);
-        } else if (intValue != chatAttachAlertPhotoLayout.M0 - 1) {
-            outline.setRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight());
-        } else {
-            int dp2 = AndroidUtilities.dp(16.0f);
-            outline.setRoundRect(-dp2, 0, view.getMeasuredWidth(), view.getMeasuredHeight() + dp2, dp2);
-        }
+    }
+
+    @Override // org.telegram.ui.yr0, org.telegram.ui.es0
+    public final void J() {
+        this.c.h0(this.b, null);
+    }
+
+    @Override // org.telegram.ui.yr0, org.telegram.ui.es0
+    public final void W() {
+        this.a = true;
+    }
+
+    @Override // org.telegram.ui.yr0, org.telegram.ui.es0
+    public final boolean z() {
+        return false;
     }
 }

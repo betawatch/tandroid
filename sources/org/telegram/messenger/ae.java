@@ -1,28 +1,36 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.TLRPC;
+import android.content.DialogInterface;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ae implements Runnable {
+public final /* synthetic */ class ae implements DialogInterface.OnCancelListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ TLRPC.TL_help_peerColors c;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ ae(MessagesController messagesController, TLRPC.TL_help_peerColors tL_help_peerColors, int i10) {
+    public /* synthetic */ ae(Object obj, int i10) {
         this.a = i10;
-        this.b = messagesController;
-        this.c = tL_help_peerColors;
+        this.b = obj;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
+    @Override // android.content.DialogInterface.OnCancelListener
+    public final void onCancel(DialogInterface dialogInterface) {
+        int i10 = this.a;
+        Object obj = this.b;
+        switch (i10) {
             case 0:
-                this.b.lambda$checkPeerColors$496(this.c);
+                String[] strArr = MediaController.U1;
+                ((boolean[]) obj)[0] = true;
+                break;
+            case 1:
+                String[] strArr2 = MediaController.U1;
+                ((boolean[]) obj)[0] = true;
+                break;
+            case 2:
+                ((boolean[]) obj)[0] = true;
                 break;
             default:
-                this.b.lambda$checkPeerColors$498(this.c);
+                ((cf) obj).f = true;
                 break;
         }
     }

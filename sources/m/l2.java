@@ -7,7 +7,7 @@ import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.util.Log;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class l2 {
     public final /* synthetic */ int a;
@@ -34,28 +34,28 @@ public final class l2 {
             case 1:
                 try {
                     break;
-                } catch (Exception e10) {
-                    Log.e("AsldcInflateDelegate", "Exception while inflating <animated-selector>", e10);
+                } catch (Exception e7) {
+                    Log.e("AsldcInflateDelegate", "Exception while inflating <animated-selector>", e7);
                     return null;
                 }
             case 2:
                 try {
                     Resources resources = context.getResources();
-                    y4.d dVar = new y4.d(context);
+                    x4.d dVar = new x4.d(context);
                     dVar.inflate(resources, xmlResourceParser, attributeSet, theme);
                     break;
-                } catch (Exception e11) {
-                    Log.e("AvdcInflateDelegate", "Exception while inflating <animated-vector>", e11);
+                } catch (Exception e10) {
+                    Log.e("AvdcInflateDelegate", "Exception while inflating <animated-vector>", e10);
                     return null;
                 }
             default:
                 try {
                     Resources resources2 = context.getResources();
-                    y4.o oVar = new y4.o();
+                    x4.o oVar = new x4.o();
                     oVar.inflate(resources2, xmlResourceParser, attributeSet, theme);
                     break;
-                } catch (Exception e12) {
-                    Log.e("VdcInflateDelegate", "Exception while inflating <vector>", e12);
+                } catch (Exception e11) {
+                    Log.e("VdcInflateDelegate", "Exception while inflating <vector>", e11);
                     return null;
                 }
         }

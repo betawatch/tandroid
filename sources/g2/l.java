@@ -1,103 +1,61 @@
 package g2;
 
-import a8.yb;
-import android.net.Uri;
-import b2.w0;
-import b2.x0;
-import c3.j0;
-import e2.n0;
-import java.math.RoundingMode;
-import java.util.Map;
+import java.io.InputStream;
+import v7.t6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class l implements k4.b {
-    public int a;
-    public long b;
-    public int c;
-    public long d;
-    public Object e;
-    public Object f;
-    public Object g;
-    public Object h;
+public final class l extends InputStream {
+    public final h a;
+    public final n b;
+    public boolean d = false;
+    public boolean e = false;
+    public final byte[] c = new byte[1];
 
-    public l(c3.q qVar, j0 j0Var, f2.u uVar, String str, int i10) {
-        this.e = qVar;
-        this.f = j0Var;
-        this.g = uVar;
-        int i11 = uVar.a;
-        int i12 = uVar.b;
-        int i13 = (uVar.d * i11) / 8;
-        int i14 = uVar.c;
-        if (i14 != i13) {
-            throw x0.a(null, "Expected block size: " + i13 + "; got: " + i14);
+    public l(h hVar, n nVar) {
+        this.a = hVar;
+        this.b = nVar;
+    }
+
+    public final void a() {
+        if (this.d) {
+            return;
         }
-        int i15 = i12 * i13;
-        int i16 = i15 * 8;
-        int max = Math.max(i13, i15 / 10);
-        this.a = max;
-        b2.w wVar = new b2.w();
-        wVar.q = w0.n("audio/wav");
-        wVar.r = w0.n(str);
-        wVar.h = i16;
-        wVar.i = i16;
-        wVar.s = max;
-        wVar.J = i11;
-        wVar.K = i12;
-        wVar.L = i10;
-        this.h = new b2.x(wVar);
+        this.a.open(this.b);
+        this.d = true;
     }
 
-    @Override // k4.b
-    public void a(long j10) {
-        this.b = j10;
-        this.c = 0;
-        this.d = 0L;
-    }
-
-    @Override // k4.b
-    public boolean b(c3.p pVar, long j10) {
-        int i10;
-        int i11;
-        long j11 = j10;
-        while (j11 > 0 && (i10 = this.c) < (i11 = this.a)) {
-            int a2 = ((j0) this.f).a(pVar, (int) Math.min(i11 - i10, j11), true);
-            if (a2 == -1) {
-                j11 = 0;
-            } else {
-                this.c += a2;
-                j11 -= a2;
-            }
+    @Override // java.io.InputStream, java.io.Closeable, java.lang.AutoCloseable
+    public final void close() {
+        if (this.e) {
+            return;
         }
-        f2.u uVar = (f2.u) this.g;
-        int i12 = uVar.c;
-        int i13 = this.c / i12;
-        if (i13 > 0) {
-            long j12 = this.b;
-            long j13 = this.d;
-            long j14 = uVar.b;
-            String str = n0.a;
-            long a02 = j12 + n0.a0(j13, 1000000L, j14, RoundingMode.DOWN);
-            int i14 = i13 * i12;
-            int i15 = this.c - i14;
-            ((j0) this.f).c(a02, 1, i14, i15, null);
-            this.d += i13;
-            this.c = i15;
+        this.a.close();
+        this.e = true;
+    }
+
+    @Override // java.io.InputStream
+    public final int read() {
+        byte[] bArr = this.c;
+        if (read(bArr, 0, bArr.length) == -1) {
+            return -1;
         }
-        return j11 <= 0;
+        return bArr[0] & 255;
     }
 
-    @Override // k4.b
-    public void c(int i10, long j10) {
-        k4.f fVar = new k4.f((f2.u) this.g, 1, i10, j10);
-        ((c3.q) this.e).D1(fVar);
-        j0 j0Var = (j0) this.f;
-        j0Var.b((b2.x) this.h);
-        j0Var.e(fVar.e);
+    @Override // java.io.InputStream
+    public final int read(byte[] bArr) {
+        return read(bArr, 0, bArr.length);
     }
 
-    public m d() {
-        yb.l((Uri) this.e, "The uri must be set.");
-        return new m((Uri) this.e, this.a, (byte[]) this.f, (Map) this.g, this.b, this.d, (String) this.h, this.c);
+    @Override // java.io.InputStream
+    public final int read(byte[] bArr, int i10, int i11) {
+        t6.p(!this.e);
+        a();
+        int read = this.a.read(bArr, i10, i11);
+        if (read == -1) {
+            return -1;
+        }
+        return read;
     }
 }

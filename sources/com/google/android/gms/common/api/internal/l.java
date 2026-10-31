@@ -9,7 +9,7 @@ import java.io.PrintWriter;
 import java.lang.ref.WeakReference;
 import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public abstract class l {
     protected final m mLifecycleFragment;
@@ -24,57 +24,57 @@ public abstract class l {
 
     public Activity getActivity() {
         Activity e = this.mLifecycleFragment.e();
-        o6.l.h(e);
+        n6.l.g(e);
         return e;
     }
 
     public abstract void onStop();
 
     public static m getFragment(k kVar) {
-        p1 p1Var;
+        q1 q1Var;
         r1 r1Var;
         Activity activity = kVar.a;
-        if (!(activity instanceof androidx.fragment.app.u)) {
+        if (!(activity instanceof androidx.fragment.app.v)) {
             if (activity == null) {
                 throw new IllegalArgumentException("Can't get fragment for unexpected activity.");
             }
-            WeakHashMap weakHashMap = p1.b;
+            WeakHashMap weakHashMap = q1.b;
             WeakReference weakReference = (WeakReference) weakHashMap.get(activity);
-            if (weakReference != null && (p1Var = (p1) weakReference.get()) != null) {
-                return p1Var;
+            if (weakReference != null && (q1Var = (q1) weakReference.get()) != null) {
+                return q1Var;
             }
             try {
-                p1 p1Var2 = (p1) activity.getFragmentManager().findFragmentByTag("LifecycleFragmentImpl");
-                if (p1Var2 == null || p1Var2.isRemoving()) {
-                    p1Var2 = new p1();
-                    activity.getFragmentManager().beginTransaction().add(p1Var2, "LifecycleFragmentImpl").commitAllowingStateLoss();
+                q1 q1Var2 = (q1) activity.getFragmentManager().findFragmentByTag("LifecycleFragmentImpl");
+                if (q1Var2 == null || q1Var2.isRemoving()) {
+                    q1Var2 = new q1();
+                    activity.getFragmentManager().beginTransaction().add(q1Var2, "LifecycleFragmentImpl").commitAllowingStateLoss();
                 }
-                weakHashMap.put(activity, new WeakReference(p1Var2));
-                return p1Var2;
+                weakHashMap.put(activity, new WeakReference(q1Var2));
+                return q1Var2;
             } catch (ClassCastException e) {
                 throw new IllegalStateException("Fragment with tag LifecycleFragmentImpl is not a LifecycleFragmentImpl", e);
             }
         }
-        androidx.fragment.app.u uVar = (androidx.fragment.app.u) activity;
+        androidx.fragment.app.v vVar = (androidx.fragment.app.v) activity;
         WeakHashMap weakHashMap2 = r1.l0;
-        WeakReference weakReference2 = (WeakReference) weakHashMap2.get(uVar);
+        WeakReference weakReference2 = (WeakReference) weakHashMap2.get(vVar);
         if (weakReference2 != null && (r1Var = (r1) weakReference2.get()) != null) {
             return r1Var;
         }
         try {
-            r1 r1Var2 = (r1) uVar.s().D("SLifecycleFragmentImpl");
-            if (r1Var2 == null || r1Var2.w) {
+            r1 r1Var2 = (r1) vVar.s().D("SLifecycleFragmentImpl");
+            if (r1Var2 == null || r1Var2.x) {
                 r1Var2 = new r1();
-                androidx.fragment.app.j0 s10 = uVar.s();
+                androidx.fragment.app.k0 s10 = vVar.s();
                 s10.getClass();
                 androidx.fragment.app.a aVar = new androidx.fragment.app.a(s10);
                 aVar.f(0, r1Var2, "SLifecycleFragmentImpl");
                 aVar.e(true, true);
             }
-            weakHashMap2.put(uVar, new WeakReference(r1Var2));
+            weakHashMap2.put(vVar, new WeakReference(r1Var2));
             return r1Var2;
-        } catch (ClassCastException e10) {
-            throw new IllegalStateException("Fragment with tag SLifecycleFragmentImpl is not a SupportLifecycleFragmentImpl", e10);
+        } catch (ClassCastException e7) {
+            throw new IllegalStateException("Fragment with tag SLifecycleFragmentImpl is not a SupportLifecycleFragmentImpl", e7);
         }
     }
 
@@ -87,14 +87,14 @@ public abstract class l {
     public void onStart() {
     }
 
-    public static m getFragment(ContextWrapper contextWrapper) {
-        throw new UnsupportedOperationException();
-    }
-
     public void onCreate(Bundle bundle) {
     }
 
     public void onSaveInstanceState(Bundle bundle) {
+    }
+
+    public static m getFragment(ContextWrapper contextWrapper) {
+        throw new UnsupportedOperationException();
     }
 
     public void onActivityResult(int i10, int i11, Intent intent) {

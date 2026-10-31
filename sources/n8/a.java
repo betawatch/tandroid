@@ -1,31 +1,22 @@
 package n8;
 
-import a8.df;
-import android.os.Parcel;
-import android.os.Parcelable;
-import n4.x;
+import java.util.Arrays;
+import n6.l;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class a extends p6.a {
-    public static final Parcelable.Creator<a> CREATOR = new x(5);
-    public final String a;
-    public final byte[] b;
-    public final int c;
+public final class a implements com.google.android.gms.common.api.b {
+    public static final a a = new a();
 
-    public a(int i10, String str, byte[] bArr) {
-        this.a = str;
-        this.b = bArr;
-        this.c = i10;
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        return (obj instanceof a) && l.k(null, null) && l.k(null, null) && l.k(null, null) && l.k(null, null) && l.k(null, null);
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        int q5 = df.q(parcel, 20293);
-        df.l(parcel, 2, this.a);
-        df.c(parcel, 3, this.b);
-        df.s(parcel, 4, 4);
-        parcel.writeInt(this.c);
-        df.r(parcel, q5);
+    public final int hashCode() {
+        Boolean bool = Boolean.FALSE;
+        return Arrays.hashCode(new Object[]{bool, bool, null, bool, bool, null, null, null, null});
     }
 }

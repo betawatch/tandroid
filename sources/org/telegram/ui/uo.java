@@ -4,16 +4,15 @@ import android.content.Context;
 import android.graphics.Rect;
 import android.view.MotionEvent;
 import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class uo extends org.telegram.ui.Components.hp0 {
+public final class uo extends org.telegram.ui.Components.in0 {
     public final /* synthetic */ cp N;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public uo(cp cpVar, Context context, org.telegram.ui.Components.gp0 gp0Var, org.telegram.ui.ActionBar.u6 u6Var) {
-        super(context, gp0Var, u6Var, false);
+    public uo(cp cpVar, Context context, org.telegram.ui.Components.hn0 hn0Var, org.telegram.ui.ActionBar.p6 p6Var) {
+        super(context, hn0Var, p6Var, false);
         this.N = cpVar;
     }
 
@@ -29,7 +28,7 @@ public final class uo extends org.telegram.ui.Components.hp0 {
 
     @Override // android.widget.ScrollView, android.view.ViewGroup, android.view.ViewParent
     public final boolean requestChildRectangleOnScreen(View view, Rect rect, boolean z10) {
-        rect.bottom = AndroidUtilities.dp(60.0f) + rect.bottom;
+        rect.bottom = org.telegram.messenger.i0.L(60.0f) + rect.bottom;
         return super.requestChildRectangleOnScreen(view, rect, z10);
     }
 }

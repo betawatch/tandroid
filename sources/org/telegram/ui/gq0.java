@@ -1,77 +1,49 @@
 package org.telegram.ui;
 
-import android.view.KeyEvent;
-import android.view.View;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Path;
+import android.graphics.RectF;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class gq0 implements org.telegram.ui.Components.e5, org.telegram.ui.Components.cm0, org.telegram.ui.ActionBar.m1, org.telegram.ui.ActionBar.b2 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ tq0 b;
+public final class gq0 extends org.telegram.ui.Components.f71 {
+    public final org.telegram.ui.Components.w9 g0;
+    public final /* synthetic */ PhotoViewer h0;
 
-    public /* synthetic */ gq0(tq0 tq0Var, int i10) {
-        this.a = i10;
-        this.b = tq0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public gq0(Context context, PhotoViewer photoViewer) {
+        super(context);
+        this.h0 = photoViewer;
+        new Path();
+        this.g0 = new org.telegram.ui.Components.w9(photoViewer.b0, this, 0, false);
     }
 
-    @Override // org.telegram.ui.Components.e5
-    public void G(int i10, int i11, boolean z10) {
-        switch (this.a) {
-            case 0:
-                this.b.f0(i10, z10);
-                break;
-            default:
-                this.b.f0(i10, z10);
-                break;
-        }
+    @Override // org.telegram.ui.Components.f71
+    public final void b(Canvas canvas, RectF rectF) {
+        canvas.save();
+        canvas.clipRect(rectF);
+        float f7 = -getX();
+        PhotoViewer photoViewer = this.h0;
+        canvas.translate(f7 - photoViewer.R7.getX(), (-getY()) - photoViewer.R7.getY());
+        photoViewer.U0(canvas, this.g0, -14803426, 855638016, false, true, false);
+        canvas.restore();
     }
 
-    @Override // org.telegram.ui.Components.cm0
-    public boolean c(int i10, View view) {
-        tq0 tq0Var = this.b;
-        if (tq0Var.Y) {
-            tq0Var.b0(view, tq0Var.J.photos.get(i10));
-            return true;
-        }
-        if (!(view instanceof org.telegram.ui.Cells.x5)) {
-            return false;
-        }
-        org.telegram.ui.Components.rm0 rm0Var = tq0Var.V;
-        boolean z10 = !((org.telegram.ui.Cells.x5) view).a();
-        tq0Var.X = z10;
-        rm0Var.d(view, i10, z10);
-        return false;
-    }
-
-    @Override // org.telegram.ui.ActionBar.b2
-    public void h(org.telegram.ui.ActionBar.e2 e2Var, int i10) {
-        tq0 tq0Var = this.b;
-        wq0 wq0Var = tq0Var.t0;
-        if (wq0Var == null) {
-            tq0Var.a0();
+    @Override // android.view.View
+    public final void invalidate() {
+        int i10;
+        if (org.telegram.messenger.tz.c0 && ((i10 = this.h0.n4) == 1 || i10 == 2 || i10 == 3)) {
             return;
         }
-        switch (wq0Var.a) {
-            case 0:
-                xq0 xq0Var = wq0Var.b;
-                xq0Var.a.a0();
-                xq0Var.b.a0();
-                break;
-            default:
-                xq0 xq0Var2 = wq0Var.b;
-                xq0Var2.a.a0();
-                xq0Var2.b.a0();
-                break;
-        }
+        super.invalidate();
     }
 
-    @Override // org.telegram.ui.ActionBar.m1
-    public void n(KeyEvent keyEvent) {
-        org.telegram.ui.ActionBar.o1 o1Var;
-        tq0 tq0Var = this.b;
-        tq0Var.getClass();
-        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (o1Var = tq0Var.m0) != null && o1Var.isShowing()) {
-            tq0Var.m0.d(true);
+    @Override // android.view.View
+    public final void setTranslationY(float f7) {
+        if (getTranslationY() != f7) {
+            super.setTranslationY(f7);
+            this.h0.e0.invalidate();
         }
     }
 }

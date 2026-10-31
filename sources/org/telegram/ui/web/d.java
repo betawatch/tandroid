@@ -1,26 +1,63 @@
 package org.telegram.ui.web;
 
 import android.content.Context;
-import org.telegram.ui.ActionBar.h5;
-import org.telegram.ui.Components.s71;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLObject;
+import w7.b6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes4.dex */
-public final class d extends s71 {
-    public final /* synthetic */ l n3;
+public final class d extends FrameLayout {
+    public final ImageView a;
+    public final TextView b;
+    public final ImageView c;
+    public final Paint d;
+    public boolean e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d(l lVar, Context context, int i10, hi.e2 e2Var, a aVar, h5 h5Var) {
-        super(context, i10, 0, false, e2Var, aVar, null, h5Var);
-        this.n3 = lVar;
+    public d(Context context) {
+        super(context);
+        this.d = new Paint(1);
+        ImageView imageView = new ImageView(context);
+        this.a = imageView;
+        ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
+        imageView.setScaleType(scaleType);
+        imageView.setImageResource(R.drawable.menu_clear_recent);
+        addView(imageView, b6.d(32, 32.0f, 19, 10.0f, 8.0f, 8.0f, 8.0f));
+        TextView textView = new TextView(context);
+        this.b = textView;
+        textView.setTextSize(1, 16.0f);
+        addView(textView, b6.d(-1, -2.0f, 19, 64.0f, 8.0f, 64.0f, 8.0f));
+        ImageView imageView2 = new ImageView(context);
+        this.c = imageView2;
+        imageView2.setScaleType(scaleType);
+        imageView2.setImageResource(R.drawable.menu_browser_arrowup);
+        addView(imageView2, b6.d(32, 32.0f, 21, 8.0f, 8.0f, 10.0f, 8.0f));
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView
-    public final void l0(int i10) {
-        j jVar;
-        if (canScrollVertically(1) || (jVar = this.n3.y) == null || !jVar.h) {
-            return;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        if (this.e) {
+            canvas.drawRect(org.telegram.messenger.i0.L(64.0f), getHeight() - Math.max(org.telegram.messenger.i0.L(0.66f), 1), getWidth(), getHeight(), this.d);
         }
-        jVar.d();
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
+    }
+
+    public void setAsShowMore(j jVar) {
+        ImageView imageView = this.a;
+        imageView.setImageResource(R.drawable.arrow_more);
+        imageView.setColorFilter(new PorterDuffColorFilter(jVar.H, PorterDuff.Mode.SRC_IN));
     }
 }

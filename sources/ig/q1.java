@@ -1,42 +1,19 @@
 package ig;
 
-import java.util.ArrayList;
-import org.telegram.ui.ps;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class q1 implements z1 {
-    public final /* synthetic */ ps a;
+public final class q1 {
+    public int a;
+    public float b;
+    public float c;
 
-    public q1(ps psVar) {
-        this.a = psVar;
+    public q1(float f7, float f10, int i10) {
+        this.a = i10;
+        this.b = f7;
+        this.c = f10;
     }
 
-    @Override // ig.z1
-    public final a0.h U() {
-        return null;
-    }
-
-    @Override // ig.z1
-    public final void f(int i10) {
-        ps psVar = this.a;
-        psVar.l();
-        if (i10 != 0) {
-            psVar.F();
-        }
-    }
-
-    @Override // ig.z1
-    public final /* synthetic */ boolean k0(int i10) {
-        return true;
-    }
-
-    @Override // ig.z1
-    public final /* synthetic */ a0.h y() {
-        return null;
-    }
-
-    @Override // ig.z1
-    public final /* synthetic */ void p0(ArrayList arrayList) {
+    public final Object clone() {
+        return new q1(this.b, this.c, this.a);
     }
 }

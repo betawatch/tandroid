@@ -1,21 +1,25 @@
 package ub;
 
-import java.util.Arrays;
-import o6.l;
+import jb.g;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class a {
-    public static final a a = new a();
+public final /* synthetic */ class a implements r9.d {
+    public static final /* synthetic */ a b = new a(0);
+    public static final /* synthetic */ a c = new a(1);
+    public final /* synthetic */ int a;
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        return (obj instanceof a) && l.l(null, null) && l.l(null, null);
+    public /* synthetic */ a(int i10) {
+        this.a = i10;
     }
 
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{null, null});
+    @Override // r9.d
+    public final Object K(bh.d dVar) {
+        switch (this.a) {
+            case 0:
+                return new c((g) dVar.b(g.class));
+            default:
+                return new b((c) dVar.b(c.class), (jb.d) dVar.b(jb.d.class));
+        }
     }
 }

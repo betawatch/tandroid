@@ -1,36 +1,25 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.View;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class r21 implements s21 {
-    public final /* synthetic */ org.telegram.ui.ActionBar.r2 a;
-    public final /* synthetic */ Context b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.u6 c;
-    public final /* synthetic */ org.telegram.ui.Components.u90 d;
+public final class r21 extends kg.l1 {
+    public final /* synthetic */ s21 M;
 
-    public r21(org.telegram.ui.ActionBar.r2 r2Var, Context context, org.telegram.ui.ActionBar.u6 u6Var, org.telegram.ui.Components.u90 u90Var) {
-        this.a = r2Var;
-        this.b = context;
-        this.c = u6Var;
-        this.d = u90Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public r21(s21 s21Var, Context context) {
+        super(2, context, null);
+        this.M = s21Var;
     }
 
-    @Override // org.telegram.ui.s21
-    public final void a() {
-        AndroidUtilities.runOnUIThread(new l21(this.a, this.b, this.c, this.d, 2), 200L);
-    }
-
-    @Override // org.telegram.ui.s21
-    public final void b() {
-        AndroidUtilities.runOnUIThread(new by0(17, this.a, this.d), 200L);
-    }
-
-    @Override // org.telegram.ui.s21
-    public final void c() {
-        org.telegram.ui.ActionBar.r2 r2Var = this.a;
-        r2Var.showDialog(new tg.y0(r2Var, 3, true));
+    @Override // android.view.View
+    public final void invalidate() {
+        super.invalidate();
+        s21 s21Var = this.M;
+        if (s21Var.getParent() instanceof View) {
+            ((View) s21Var.getParent()).invalidate();
+        }
     }
 }

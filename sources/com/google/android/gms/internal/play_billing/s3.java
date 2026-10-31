@@ -1,12 +1,12 @@
 package com.google.android.gms.internal.play_billing;
 
-import a8.fb;
-import a8.xa;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
+import v7.i6;
+import v7.n6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class s3 extends xa {
+public final class s3 extends i6 {
     public final AtomicReferenceFieldUpdater a;
     public final AtomicReferenceFieldUpdater b;
     public final AtomicReferenceFieldUpdater c;
@@ -21,28 +21,28 @@ public final class s3 extends xa {
         this.e = atomicReferenceFieldUpdater5;
     }
 
-    @Override // a8.xa
+    @Override // v7.i6
     public final void a(f4 f4Var, f4 f4Var2) {
         this.b.lazySet(f4Var, f4Var2);
     }
 
-    @Override // a8.xa
+    @Override // v7.i6
     public final void b(f4 f4Var, Thread thread) {
         this.a.lazySet(f4Var, thread);
     }
 
-    @Override // a8.xa
+    @Override // v7.i6
     public final boolean c(g4 g4Var, v2 v2Var, v2 v2Var2) {
-        return fb.a(this.d, g4Var, v2Var, v2Var2);
+        return n6.a(this.d, g4Var, v2Var, v2Var2);
     }
 
-    @Override // a8.xa
+    @Override // v7.i6
     public final boolean d(g4 g4Var, Object obj, Object obj2) {
-        return fb.a(this.e, g4Var, obj, obj2);
+        return n6.a(this.e, g4Var, obj, obj2);
     }
 
-    @Override // a8.xa
+    @Override // v7.i6
     public final boolean e(g4 g4Var, f4 f4Var, f4 f4Var2) {
-        return fb.a(this.c, g4Var, f4Var, f4Var2);
+        return n6.a(this.c, g4Var, f4Var, f4Var2);
     }
 }

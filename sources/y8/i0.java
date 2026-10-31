@@ -1,0 +1,43 @@
+package y8;
+
+import android.os.Parcel;
+import android.os.Parcelable;
+
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes.dex */
+public final class i0 extends o6.a {
+    public static final Parcelable.Creator<i0> CREATOR = new c(27);
+    public final int a;
+    public final String b;
+    public final byte[] c;
+    public final String d;
+
+    public i0(int i10, String str, String str2, byte[] bArr) {
+        this.a = i10;
+        this.b = str;
+        this.c = bArr;
+        this.d = str2;
+    }
+
+    public final String toString() {
+        byte[] bArr = this.c;
+        String obj = (bArr == null ? "null" : Integer.valueOf(bArr.length)).toString();
+        StringBuilder sb2 = new StringBuilder("MessageEventParcelable[");
+        sb2.append(this.a);
+        sb2.append(",");
+        sb2.append(this.b);
+        sb2.append(", size=");
+        return a1.g.r(sb2, obj, "]");
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i10) {
+        int q6 = w7.h0.q(parcel, 20293);
+        w7.h0.s(parcel, 2, 4);
+        parcel.writeInt(this.a);
+        w7.h0.l(parcel, 3, this.b);
+        w7.h0.c(parcel, 4, this.c);
+        w7.h0.l(parcel, 5, this.d);
+        w7.h0.r(parcel, q6);
+    }
+}

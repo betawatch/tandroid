@@ -1,22 +1,30 @@
 package org.telegram.ui.Wallet;
 
-import org.telegram.messenger.DispatchQueue;
+import org.telegram.messenger.cd;
+import org.telegram.ui.Components.cc;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes4.dex */
-public abstract class w9 {
-    public static DispatchQueue a;
-    public static final int[] b = new int[129];
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class w9 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ba b;
 
-    static {
-        int i10 = 0;
-        while (true) {
-            int[] iArr = b;
-            if (i10 >= iArr.length) {
-                return;
-            }
-            iArr[i10] = (int) (Math.max(0.0d, Math.min(1.0d, 7.5d - Math.sqrt(i10))) * 255.0d);
-            i10++;
+    public /* synthetic */ w9(ba baVar, int i10) {
+        this.a = i10;
+        this.b = baVar;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        ba baVar = this.b;
+        switch (i10) {
+            case 0:
+                baVar.d0 = null;
+                break;
+            default:
+                cc.a0(baVar).N(cd.L0(2131745878, null), cd.L0(2131751106, null)).j();
+                break;
         }
     }
 }

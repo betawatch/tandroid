@@ -3,22 +3,22 @@ package q3;
 import j$.util.Objects;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class d extends i {
+public final class d extends j {
     public final String b;
     public final boolean c;
     public final boolean d;
     public final String[] e;
-    public final i[] f;
+    public final j[] f;
 
-    public d(String str, boolean z10, boolean z11, String[] strArr, i[] iVarArr) {
+    public d(String str, boolean z10, boolean z11, String[] strArr, j[] jVarArr) {
         super("CTOC");
         this.b = str;
         this.c = z10;
         this.d = z11;
         this.e = strArr;
-        this.f = iVarArr;
+        this.f = jVarArr;
     }
 
     public final boolean equals(Object obj) {

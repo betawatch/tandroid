@@ -14,7 +14,7 @@ public final class e0 {
     public static final e0 n;
     public static final e0 r;
     public static final e0 s;
-    public static final /* synthetic */ e0[] v;
+    public static final /* synthetic */ e0[] w;
 
     static {
         e0 e0Var = new e0("VOID", 0);
@@ -38,10 +38,10 @@ public final class e0 {
         r = e0Var9;
         e0 e0Var10 = new e0("MESSAGE", 9);
         s = e0Var10;
-        v = new e0[]{e0Var, e0Var2, e0Var3, e0Var4, e0Var5, e0Var6, e0Var7, e0Var8, e0Var9, e0Var10};
+        w = new e0[]{e0Var, e0Var2, e0Var3, e0Var4, e0Var5, e0Var6, e0Var7, e0Var8, e0Var9, e0Var10};
     }
 
     public static e0[] values() {
-        return (e0[]) v.clone();
+        return (e0[]) w.clone();
     }
 }

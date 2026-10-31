@@ -1,45 +1,20 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.text.TextUtils;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class f61 extends eo0 {
-    public final /* synthetic */ q61 f;
+public final class f61 extends ImageReceiver {
+    public final /* synthetic */ g61 J1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f61(q61 q61Var, Context context, org.telegram.ui.ActionBar.u6 u6Var) {
-        super(context, 14.0f, u6Var);
-        this.f = q61Var;
+    public f61(g61 g61Var) {
+        super(null);
+        this.J1 = g61Var;
     }
 
-    @Override // org.telegram.ui.Components.eo0
-    public final void a(String str) {
-        ig.d2 d2Var = this.f.v;
-        ig.b2 b2Var = d2Var.S;
-        int i10 = d2Var.c;
-        if (d2Var.N != 0) {
-            ConnectionsManager.getInstance(i10).cancelRequest(d2Var.N, true);
-            d2Var.N = 0;
-        }
-        if (d2Var.O != 0) {
-            ConnectionsManager.getInstance(i10).cancelRequest(d2Var.O, true);
-            d2Var.O = 0;
-        }
-        if (TextUtils.isEmpty(str)) {
-            d2Var.R = null;
-            d2Var.F.clear();
-            d2Var.I.clear();
-            d2Var.E.clear();
-            d2Var.e.b(false);
-            d2Var.l();
-        } else {
-            d2Var.R = str.toLowerCase();
-        }
-        AndroidUtilities.cancelRunOnUIThread(b2Var);
-        AndroidUtilities.runOnUIThread(b2Var, 300L);
+    @Override // org.telegram.messenger.ImageReceiver, org.telegram.ui.Components.l5
+    public final void invalidate() {
+        this.J1.invalidate();
     }
 }

@@ -1,82 +1,32 @@
 package org.telegram.ui;
 
-import java.util.regex.Pattern;
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.RectF;
+import android.view.View;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.function.ToIntFunction;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ef implements org.telegram.ui.ActionBar.b2, MessagesController.ErrorDelegate, qo0 {
+public final /* synthetic */ class ef implements ToIntFunction {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Runnable b;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ ef(int i10, Runnable runnable) {
+    public /* synthetic */ ef(Object obj, int i10) {
         this.a = i10;
-        this.b = runnable;
+        this.b = obj;
     }
 
-    @Override // org.telegram.ui.qo0
-    public void a(int i10) {
-        int i11 = this.a;
-        Runnable runnable = this.b;
-        switch (i11) {
-            case 9:
-                Pattern pattern = LaunchActivity.D1;
-                if (i10 == 1) {
-                    runnable.run();
-                    break;
-                }
-                break;
-            default:
-                if (i10 == 1) {
-                    runnable.run();
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.b2
-    public void h(org.telegram.ui.ActionBar.e2 e2Var, int i10) {
-        switch (this.a) {
+    @Override // java.util.function.ToIntFunction
+    public final int applyAsInt(Object obj) {
+        int i10 = this.a;
+        Object obj2 = this.b;
+        switch (i10) {
             case 0:
-                this.b.run();
-                break;
-            case 1:
-                this.b.run();
-                break;
+                return ((Integer) ((HashMap) obj2).get((View) obj)).intValue();
             default:
-                Runnable runnable = this.b;
-                if (runnable != null) {
-                    runnable.run();
-                    break;
-                }
-                break;
+                RectF rectF = ProfileActivity.R6;
+                return ((Integer) ((ArrayList) obj2).get(((Integer) obj).intValue())).intValue();
         }
-    }
-
-    @Override // org.telegram.messenger.MessagesController.ErrorDelegate
-    public boolean run(TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 3:
-                this.b.run();
-                break;
-            case 4:
-                this.b.run();
-                break;
-            case 5:
-                this.b.run();
-                break;
-            case 6:
-                this.b.run();
-                break;
-            case 7:
-                this.b.run();
-                break;
-            default:
-                this.b.run();
-                break;
-        }
-        return true;
     }
 }

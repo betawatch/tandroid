@@ -1,32 +1,16 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.View;
-import android.widget.FrameLayout;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class tw extends FrameLayout {
-    public final /* synthetic */ sz a;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public tw(sz szVar, Context context) {
-        super(context);
-        this.a = szVar;
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j10) {
-        sz szVar = this.a;
-        ww wwVar = szVar.o0;
-        if (view != szVar.h0) {
-            return super.drawChild(canvas, view, j10);
+public final class tw extends org.telegram.ui.un {
+    @Override // org.telegram.ui.un, org.telegram.ui.ActionBar.k2
+    public final void onTransitionAnimationEnd(boolean z10, boolean z11) {
+        org.telegram.ui.mk mkVar;
+        super.onTransitionAnimationEnd(z10, z11);
+        if (!z10 || (mkVar = this.Z) == null) {
+            return;
         }
-        canvas.save();
-        canvas.clipRect(0.0f, wwVar.getY() + wwVar.getMeasuredHeight(), getMeasuredWidth(), getMeasuredHeight());
-        boolean drawChild = super.drawChild(canvas, view, j10);
-        canvas.restore();
-        return drawChild;
+        mkVar.q1();
+        this.Z.postDelayed(new ho(this, 14), 100L);
     }
 }

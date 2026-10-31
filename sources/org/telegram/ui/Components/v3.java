@@ -1,45 +1,13 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Point;
-import android.widget.LinearLayout;
-import org.telegram.messenger.AndroidUtilities;
+import android.widget.Button;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class v3 extends LinearLayout {
-    public boolean a;
-    public final /* synthetic */ s3 b;
-    public final /* synthetic */ u3 c;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public v3(Context context, s3 s3Var, u3 u3Var) {
-        super(context);
-        this.b = s3Var;
-        this.c = u3Var;
-        this.a = false;
-    }
-
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        this.a = true;
-        Point point = AndroidUtilities.displaySize;
-        int i12 = point.x > point.y ? 3 : 5;
-        s3 s3Var = this.b;
-        s3Var.setItemCount(i12);
-        u3 u3Var = this.c;
-        u3Var.setItemCount(i12);
-        s3Var.getLayoutParams().height = AndroidUtilities.dp(42.0f) * i12;
-        u3Var.getLayoutParams().height = AndroidUtilities.dp(42.0f) * i12;
-        this.a = false;
-        super.onMeasure(i10, i11);
-    }
-
-    @Override // android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.a) {
-            return;
-        }
-        super.requestLayout();
+public final class v3 extends TextView {
+    @Override // android.widget.TextView, android.view.View
+    public final CharSequence getAccessibilityClassName() {
+        return Button.class.getName();
     }
 }

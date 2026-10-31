@@ -3,25 +3,25 @@ package org.telegram.messenger.video;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.ShortBuffer;
-import u7.s;
+import t7.u;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public class AudioBufferConverter {
     private static final int BYTES_PER_SHORT = 2;
     private static final String TAG = "AudioBufferConverter";
-    private final dg.a mRemixer = new s(5);
-    private final eg.a mResampler = new qb.a(7);
+    private final uf.a mRemixer = new u(22);
+    private final vf.a mResampler = new jb.b(24);
 
     private void checkChannels(int i10, int i11) {
         if (i10 == 6 && (i11 == 1 || i11 == 2)) {
             return;
         }
         if (i10 != 1 && i10 != 2) {
-            throw new UnsupportedOperationException(ic.a.j(i10, "Input channel count (", ") not supported."));
+            throw new UnsupportedOperationException(i0.a.j(i10, "Input channel count (", ") not supported."));
         }
         if (i11 != 1 && i11 != 2) {
-            throw new UnsupportedOperationException(ic.a.j(i11, "Output channel count (", ") not supported."));
+            throw new UnsupportedOperationException(i0.a.j(i11, "Output channel count (", ") not supported."));
         }
     }
 
@@ -41,10 +41,10 @@ public class AudioBufferConverter {
         checkChannels(i11, i13);
         int t12 = this.mRemixer.t1(shortBuffer.remaining(), i11, i13);
         ShortBuffer createBuffer = createBuffer(t12);
-        this.mRemixer.G0(shortBuffer, i11, createBuffer, i13);
+        this.mRemixer.u0(shortBuffer, i11, createBuffer, i13);
         createBuffer.rewind();
         ShortBuffer createBuffer2 = createBuffer(((int) Math.ceil((t12 * i12) / i10)) + 10);
-        this.mResampler.k0(createBuffer, i10, createBuffer2, i12, i13);
+        this.mResampler.L(createBuffer, i10, createBuffer2, i12, i13);
         createBuffer2.limit(createBuffer2.position());
         createBuffer2.rewind();
         return createBuffer2;

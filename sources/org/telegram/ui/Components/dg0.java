@@ -1,79 +1,157 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.text.Layout;
-import android.text.StaticLayout;
-import android.text.TextPaint;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.os.Bundle;
+import android.view.accessibility.AccessibilityEvent;
+import android.view.accessibility.AccessibilityManager;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.view.accessibility.AccessibilityNodeProvider;
+import android.widget.Button;
+import java.util.ArrayList;
+import java.util.List;
+import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class dg0 extends View {
-    public long E;
-    public float F;
-    public float G;
-    public float H;
-    public xa0 I;
-    public TextPaint a;
-    public TextPaint b;
-    public StaticLayout c;
-    public float d;
-    public float e;
-    public StaticLayout f;
-    public float h;
-    public float n;
-    public boolean r;
-    public h6 s;
-    public boolean v;
-    public fg0 w;
-    public fi.p9 x;
-    public boolean y;
+public class dg0 extends AccessibilityNodeProvider {
+    public final /* synthetic */ int a = 0;
+    public final Object b;
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        float e = this.s.e(this.r);
-        if (e <= 0.0f || this.c == null || this.f == null) {
-            return;
+    public dg0(r2.y yVar) {
+        this.b = yVar;
+    }
+
+    @Override // android.view.accessibility.AccessibilityNodeProvider
+    public final AccessibilityNodeInfo createAccessibilityNodeInfo(int i10) {
+        eg0 eg0Var;
+        switch (this.a) {
+            case 0:
+                int[] iArr = {0, 0};
+                hg0 hg0Var = (hg0) this.b;
+                ArrayList arrayList = hg0Var.a;
+                hg0Var.getLocationOnScreen(iArr);
+                if (i10 == -1) {
+                    AccessibilityNodeInfo obtain = AccessibilityNodeInfo.obtain(hg0Var);
+                    hg0Var.onInitializeAccessibilityNodeInfo(obtain);
+                    obtain.setEnabled(true);
+                    for (int i11 = 0; i11 < arrayList.size(); i11++) {
+                        obtain.addChild(hg0Var, ((eg0) arrayList.get(i11)).a);
+                    }
+                    return obtain;
+                }
+                int i12 = 0;
+                while (true) {
+                    if (i12 >= arrayList.size()) {
+                        eg0Var = null;
+                    } else if (((eg0) arrayList.get(i12)).a == i10) {
+                        eg0Var = (eg0) arrayList.get(i12);
+                    } else {
+                        i12++;
+                    }
+                }
+                if (eg0Var != null) {
+                    RectF rectF = eg0Var.d;
+                    if (!rectF.isEmpty()) {
+                        AccessibilityNodeInfo obtain2 = AccessibilityNodeInfo.obtain();
+                        obtain2.setSource(hg0Var, i10);
+                        obtain2.setParent(hg0Var);
+                        obtain2.setPackageName(hg0Var.getContext().getPackageName());
+                        obtain2.addAction(16);
+                        obtain2.addAction(64);
+                        obtain2.setClickable(true);
+                        obtain2.setFocusable(true);
+                        obtain2.setEnabled(true);
+                        obtain2.setVisibleToUser(true);
+                        obtain2.setClassName(Button.class.getName());
+                        obtain2.setText(eg0Var.l.j());
+                        Rect rect = new Rect((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
+                        obtain2.setBoundsInParent(rect);
+                        rect.offset(iArr[0], iArr[1]);
+                        obtain2.setBoundsInScreen(rect);
+                        return obtain2;
+                    }
+                }
+                return null;
+            default:
+                s0.c I = ((r2.y) this.b).I(i10);
+                if (I == null) {
+                    return null;
+                }
+                return I.a;
         }
-        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) (e * 255.0f), 31);
-        canvas.save();
-        canvas.translate(((getWidth() - this.d) / 2.0f) - this.e, getHeight() * 0.22f);
-        this.c.draw(canvas);
-        canvas.restore();
-        canvas.save();
-        canvas.translate(((getWidth() - this.h) / 2.0f) - this.n, (getHeight() * 0.22f) + AndroidUtilities.dp(60.0f));
-        this.f.draw(canvas);
-        canvas.restore();
-        canvas.restore();
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        setMeasuredDimension(View.MeasureSpec.getSize(i10), View.MeasureSpec.getSize(i11));
-        TextPaint textPaint = this.a;
-        textPaint.setColor(-1);
-        textPaint.setShadowLayer(AndroidUtilities.dp(8.0f), 0.0f, 0.0f, 805306368);
-        textPaint.setTextSize(AndroidUtilities.dp(34.0f));
-        TextPaint textPaint2 = this.b;
-        textPaint2.setColor(-1);
-        textPaint2.setShadowLayer(AndroidUtilities.dp(12.0f), 0.0f, 0.0f, 805306368);
-        textPaint2.setTextSize(AndroidUtilities.dp(58.0f));
-        if (this.c == null) {
-            StaticLayout staticLayout = new StaticLayout(LocaleController.getString(R.string.Enhance), textPaint, getMeasuredWidth(), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
-            this.c = staticLayout;
-            this.d = staticLayout.getLineCount() > 0 ? this.c.getLineWidth(0) : 0.0f;
-            this.e = this.c.getLineCount() > 0 ? this.c.getLineLeft(0) : 0.0f;
+    @Override // android.view.accessibility.AccessibilityNodeProvider
+    public List findAccessibilityNodeInfosByText(String str, int i10) {
+        switch (this.a) {
+            case 1:
+                ((r2.y) this.b).getClass();
+                return null;
+            default:
+                return super.findAccessibilityNodeInfosByText(str, i10);
         }
     }
 
-    public void setAllowTouch(boolean z10) {
-        this.v = z10;
+    @Override // android.view.accessibility.AccessibilityNodeProvider
+    public AccessibilityNodeInfo findFocus(int i10) {
+        switch (this.a) {
+            case 1:
+                s0.c Q = ((r2.y) this.b).Q(i10);
+                if (Q == null) {
+                    return null;
+                }
+                return Q.a;
+            default:
+                return super.findFocus(i10);
+        }
     }
 
-    public void setFilterView(fg0 fg0Var) {
-        this.w = fg0Var;
+    @Override // android.view.accessibility.AccessibilityNodeProvider
+    public final boolean performAction(int i10, int i11, Bundle bundle) {
+        eg0 eg0Var;
+        switch (this.a) {
+            case 0:
+                hg0 hg0Var = (hg0) this.b;
+                ArrayList arrayList = hg0Var.a;
+                if (i10 == -1) {
+                    return hg0Var.performAccessibilityAction(i11, bundle);
+                }
+                int i12 = 0;
+                while (true) {
+                    if (i12 >= arrayList.size()) {
+                        eg0Var = null;
+                    } else if (((eg0) arrayList.get(i12)).a == i10) {
+                        eg0Var = (eg0) arrayList.get(i12);
+                    } else {
+                        i12++;
+                    }
+                }
+                if (eg0Var != null) {
+                    if (i11 == 64) {
+                        if (((AccessibilityManager) hg0Var.getContext().getSystemService("accessibility")).isTouchExplorationEnabled()) {
+                            AccessibilityEvent obtain = AccessibilityEvent.obtain(32768);
+                            obtain.setPackageName(hg0Var.getContext().getPackageName());
+                            obtain.setSource(hg0Var, i10);
+                            if (hg0Var.getParent() != null) {
+                                hg0Var.getParent().requestSendAccessibilityEvent(hg0Var, obtain);
+                            }
+                        }
+                    } else if (i11 == 16) {
+                        gg0 gg0Var = hg0Var.y;
+                        if (gg0Var != null) {
+                            ProfileActivity.l0(((org.telegram.ui.bv0) gg0Var).b, i10, 0.0f, 0.0f);
+                        }
+                    }
+                    return true;
+                }
+                return false;
+            default:
+                return ((r2.y) this.b).a0(i10, i11, bundle);
+        }
+    }
+
+    public dg0(hg0 hg0Var) {
+        this.b = hg0Var;
     }
 }

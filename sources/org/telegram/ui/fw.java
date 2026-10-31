@@ -1,26 +1,33 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import org.telegram.messenger.MessagesStorage;
+import android.view.View;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class fw implements y60 {
-    public final /* synthetic */ ey a;
+public final class fw extends org.telegram.ui.Components.ps {
+    public final /* synthetic */ zx E;
 
-    public fw(ey eyVar) {
-        this.a = eyVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public fw(wx wxVar, zx zxVar) {
+        super(wxVar);
+        this.E = zxVar;
     }
 
-    @Override // org.telegram.ui.y60
-    public final void a(z60 z60Var, long j10) {
-        ArrayList arrayList = new ArrayList();
-        arrayList.add(MessagesStorage.TopicKey.of(-j10, 0L));
-        ey eyVar = this.a;
-        xx xxVar = eyVar.C2;
-        if (eyVar.B2) {
-            eyVar.removeSelfFromStack();
+    @Override // s4.f1
+    public final void y() {
+        zx zxVar = this.E;
+        if (zxVar.c.L0() == 0) {
+            View m10 = zxVar.c.m(0);
+            if (m10 != null) {
+                m10.invalidate();
+            }
+            if (zxVar.w == 2) {
+                zxVar.w = 1;
+            }
+            kw kwVar = zxVar.n;
+            if (kwVar != null) {
+                kwVar.b();
+            }
         }
-        xxVar.v(eyVar, arrayList, null, true, eyVar.J2, eyVar.K2, eyVar.L2, null);
     }
 }

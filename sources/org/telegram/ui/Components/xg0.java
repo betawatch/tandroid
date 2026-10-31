@@ -1,38 +1,15 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.graphics.Canvas;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class xg0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ PipRoundVideoView b;
+public interface xg0 {
+    void a(float f7);
 
-    public /* synthetic */ xg0(PipRoundVideoView pipRoundVideoView, int i10) {
-        this.a = i10;
-        this.b = pipRoundVideoView;
-    }
+    void b(px pxVar, Canvas canvas);
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                PipRoundVideoView pipRoundVideoView = this.b;
-                if (animator.equals(pipRoundVideoView.r)) {
-                    pipRoundVideoView.r = null;
-                    break;
-                }
-                break;
-            default:
-                PipRoundVideoView pipRoundVideoView2 = this.b;
-                pipRoundVideoView2.a(false);
-                Runnable runnable = pipRoundVideoView2.s;
-                if (runnable != null) {
-                    runnable.run();
-                    break;
-                }
-                break;
-        }
-    }
+    void c(float f7);
+
+    void d(int i10, int i11);
 }

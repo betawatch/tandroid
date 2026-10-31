@@ -1,10 +1,10 @@
 package a4;
 
-import a8.yb;
-import e2.n0;
+import e2.l0;
 import java.util.ArrayDeque;
+import v7.t6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public abstract class k implements z3.e {
     public final ArrayDeque a = new ArrayDeque();
@@ -43,7 +43,7 @@ public abstract class k implements z3.e {
 
     @Override // h2.e
     public final Object d() {
-        yb.p(this.d == null);
+        t6.p(this.d == null);
         ArrayDeque arrayDeque = this.a;
         if (arrayDeque.isEmpty()) {
             return null;
@@ -56,7 +56,7 @@ public abstract class k implements z3.e {
     @Override // h2.e
     public final void e(Object obj) {
         z3.i iVar = (z3.i) obj;
-        yb.g(iVar == this.d);
+        t6.f(iVar == this.d);
         i iVar2 = (i) iVar;
         if (!iVar2.isEndOfStream()) {
             long j10 = iVar2.e;
@@ -91,7 +91,7 @@ public abstract class k implements z3.e {
                 break;
             }
             i iVar = (i) arrayDeque2.poll();
-            String str = n0.a;
+            String str = l0.a;
             iVar.clear();
             arrayDeque.add(iVar);
         }
@@ -118,7 +118,7 @@ public abstract class k implements z3.e {
                 return null;
             }
             i iVar = (i) arrayDeque2.peek();
-            String str = n0.a;
+            String str = l0.a;
             if (iVar.e > this.e) {
                 return null;
             }

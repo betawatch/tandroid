@@ -1,17 +1,35 @@
 package m5;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes.dex */
-public final class d implements ka.d {
-    public static final d a = new d();
-    public static final ka.c b = new ka.c("logSource", ic.a.m(ic.a.l(na.d.class, new na.a(1))));
-    public static final ka.c c = new ka.c("logEventDropped", ic.a.m(ic.a.l(na.d.class, new na.a(2))));
+import android.content.Context;
+import com.google.android.datatransport.cct.CctBackendFactory;
+import java.util.HashMap;
+import li.k;
 
-    @Override // ka.a
-    public final void a(Object obj, Object obj2) {
-        p5.e eVar = (p5.e) obj;
-        ka.e eVar2 = (ka.e) obj2;
-        eVar2.a(b, eVar.a);
-        eVar2.a(c, eVar.b);
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes.dex */
+public final class d {
+    public final m4.c a;
+    public final k b;
+    public final HashMap c;
+
+    public d(Context context, k kVar) {
+        m4.c cVar = new m4.c(context);
+        this.c = new HashMap();
+        this.a = cVar;
+        this.b = kVar;
+    }
+
+    public final synchronized f a(String str) {
+        if (this.c.containsKey(str)) {
+            return (f) this.c.get(str);
+        }
+        CctBackendFactory E = this.a.E(str);
+        if (E == null) {
+            return null;
+        }
+        k kVar = this.b;
+        f create = E.create(new b((Context) kVar.b, (u5.a) kVar.c, (u5.a) kVar.d, str));
+        this.c.put(str, create);
+        return create;
     }
 }

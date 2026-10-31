@@ -1,44 +1,22 @@
 package sh;
 
-import android.text.TextUtils;
+import c3.m0;
 import java.io.File;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.jj;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes4.dex */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
 public final class a {
-    public final int a;
-    public final TLRPC.Document b;
-    public final String c;
-    public final MessageObject d;
-    public final String e;
-    public boolean f;
-    public boolean g;
+    public final File a;
+    public long b;
+    public long c;
+    public int d;
+    public m0 e;
+    public jj f;
+    public int g;
+    public int h;
 
-    public a(int i10, MessageObject messageObject, TLRPC.Document document, String str) {
-        this.a = i10;
-        this.d = messageObject;
-        this.b = document;
-        this.c = str;
-        this.e = TextUtils.isEmpty(str) ? FileLoader.getAttachFileName(document) : str;
-        a();
-    }
-
-    public final void a() {
-        boolean z10 = false;
-        String str = this.c;
-        boolean exists = str != null ? new File(str).exists() : false;
-        int i10 = this.a;
-        if (!exists) {
-            exists = FileLoader.getInstance(i10).getPathToAttach(this.b).exists();
-        }
-        this.f = exists;
-        String str2 = this.e;
-        if (!TextUtils.isEmpty(str2) && FileLoader.getInstance(i10).isLoadingFile(str2)) {
-            z10 = true;
-        }
-        this.g = z10;
+    public a(File file) {
+        this.a = file;
     }
 }

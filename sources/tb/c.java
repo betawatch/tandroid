@@ -1,0 +1,15 @@
+package tb;
+
+import androidx.lifecycle.b0;
+import androidx.lifecycle.m;
+import androidx.lifecycle.s;
+import com.google.android.gms.common.api.n;
+import java.io.Closeable;
+
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes.dex */
+public interface c extends Closeable, s, n {
+    @Override // java.io.Closeable, java.lang.AutoCloseable
+    @b0(m.ON_DESTROY)
+    void close();
+}

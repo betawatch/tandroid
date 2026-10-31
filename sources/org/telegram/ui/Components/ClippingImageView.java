@@ -9,16 +9,15 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.RectF;
 import android.graphics.Shader;
+import android.graphics.Typeface;
 import android.view.View;
 import java.util.Arrays;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
 public class ClippingImageView extends View {
     public static final float[] Q = new float[8];
+    public final int[] D;
     public BitmapShader E;
     public final Paint F;
     public final RectF G;
@@ -41,19 +40,18 @@ public class ClippingImageView extends View {
     public int n;
     public final RectF r;
     public final Paint s;
-    public ImageReceiver.BitmapHolder v;
-    public final Matrix w;
-    public boolean x;
-    public final int[] y;
+    public org.telegram.messenger.kc w;
+    public final Matrix x;
+    public boolean y;
 
     public ClippingImageView(Context context) {
         super(context);
-        this.y = new int[4];
+        this.D = new int[4];
         this.J = new Path();
         Paint paint = new Paint(2);
         this.s = paint;
         paint.setFilterBitmap(true);
-        this.w = new Matrix();
+        this.x = new Matrix();
         this.r = new RectF();
         this.H = new RectF();
         this.F = new Paint(3);
@@ -66,15 +64,15 @@ public class ClippingImageView extends View {
     }
 
     public Bitmap getBitmap() {
-        ImageReceiver.BitmapHolder bitmapHolder = this.v;
-        if (bitmapHolder != null) {
-            return bitmapHolder.bitmap;
+        org.telegram.messenger.kc kcVar = this.w;
+        if (kcVar != null) {
+            return kcVar.c;
         }
         return null;
     }
 
-    public ImageReceiver.BitmapHolder getBitmapHolder() {
-        return this.v;
+    public org.telegram.messenger.kc getBitmapHolder() {
+        return this.w;
     }
 
     public float getCenterX() {
@@ -112,7 +110,7 @@ public class ClippingImageView extends View {
     }
 
     public int[] getRadius() {
-        return this.y;
+        return this.D;
     }
 
     @Override // android.view.View
@@ -122,36 +120,93 @@ public class ClippingImageView extends View {
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        ImageReceiver.BitmapHolder bitmapHolder;
+        org.telegram.messenger.kc kcVar;
+        Bitmap bitmap;
+        float height;
+        float width;
+        float height2;
+        boolean z10;
         float[] fArr;
-        if (getVisibility() != 0 || (bitmapHolder = this.v) == null || bitmapHolder.isRecycled()) {
+        if (getVisibility() != 0 || (kcVar = this.w) == null || (bitmap = kcVar.c) == null || bitmap.isRecycled()) {
             return;
         }
         float scaleY = getScaleY();
         canvas.save();
-        boolean z10 = this.x;
+        boolean z11 = this.y;
         RectF rectF = this.H;
-        if (z10) {
+        if (z11) {
             Matrix matrix = this.I;
             matrix.reset();
             RectF rectF2 = this.G;
             rectF2.set(this.n / scaleY, this.h / scaleY, getWidth() - (this.n / scaleY), getHeight() - (this.h / scaleY));
-            rectF.set(0.0f, 0.0f, this.v.getWidth(), this.v.getHeight());
-            AndroidUtilities.setRectToRect(matrix, rectF, rectF2, this.e, this.f, false);
+            Bitmap bitmap2 = this.w.c;
+            int i10 = 0;
+            rectF.set(0.0f, 0.0f, bitmap2 != null ? bitmap2.getWidth() : 0, this.w.c != null ? r14.getHeight() : 0);
+            int i11 = this.e;
+            int i12 = this.f;
+            Typeface typeface = org.telegram.messenger.i0.a;
+            if (i11 == 90 || i11 == 270) {
+                height = rectF2.height() / rectF.width();
+                width = rectF2.width();
+                height2 = rectF.height();
+            } else {
+                height = rectF2.width() / rectF.width();
+                width = rectF2.height();
+                height2 = rectF.height();
+            }
+            float f7 = width / height2;
+            if (height < f7) {
+                height = f7;
+                z10 = true;
+            } else {
+                z10 = false;
+            }
+            if (i11 == 90) {
+                matrix.preRotate(90.0f);
+                if (i12 == 1) {
+                    matrix.preScale(-1.0f, 1.0f);
+                } else if (i12 == 2) {
+                    matrix.preScale(1.0f, -1.0f);
+                }
+                matrix.preTranslate(0.0f, -rectF2.width());
+            } else if (i11 == 180) {
+                matrix.preRotate(180.0f);
+                if (i12 == 1) {
+                    matrix.preScale(-1.0f, 1.0f);
+                } else if (i12 == 2) {
+                    matrix.preScale(1.0f, -1.0f);
+                }
+                matrix.preTranslate(-rectF2.width(), -rectF2.height());
+            } else if (i11 == 270) {
+                matrix.preRotate(270.0f);
+                if (i12 == 1) {
+                    matrix.preScale(-1.0f, 1.0f);
+                } else if (i12 == 2) {
+                    matrix.preScale(1.0f, -1.0f);
+                }
+                matrix.preTranslate(-rectF2.height(), 0.0f);
+            }
+            if (z10) {
+                rectF2.width();
+                rectF.width();
+            } else {
+                rectF2.height();
+                rectF.height();
+            }
+            matrix.preScale(height, height);
             this.E.setLocalMatrix(matrix);
             canvas.clipRect(this.b / scaleY, this.d / scaleY, getWidth() - (this.c / scaleY), getHeight() - (this.a / scaleY));
-            int i10 = 0;
             while (true) {
-                int[] iArr = this.y;
+                int[] iArr = this.D;
                 int length = iArr.length;
                 fArr = Q;
                 if (i10 >= length) {
                     break;
                 }
-                int i11 = i10 * 2;
-                float f7 = iArr[i10];
-                fArr[i11] = f7;
-                fArr[i11 + 1] = f7;
+                int i13 = i10 * 2;
+                float f10 = iArr[i10];
+                fArr[i13] = f10;
+                fArr[i13 + 1] = f10;
                 i10++;
             }
             Path path = this.J;
@@ -160,46 +215,46 @@ public class ClippingImageView extends View {
             path.close();
             canvas.drawPath(path, this.F);
         } else {
-            int i12 = this.e;
+            int i14 = this.e;
             RectF rectF3 = this.r;
-            Matrix matrix2 = this.w;
-            if (i12 == 90 || i12 == 270) {
+            Matrix matrix2 = this.x;
+            if (i14 == 90 || i14 == 270) {
                 rectF3.set((-getHeight()) / 2, (-getWidth()) / 2, getHeight() / 2, getWidth() / 2);
                 matrix2.setRectToRect(rectF, rectF3, Matrix.ScaleToFit.FILL);
-                int i13 = this.f;
-                if (i13 == 1) {
+                int i15 = this.f;
+                if (i15 == 1) {
                     matrix2.postScale(-1.0f, 1.0f);
-                } else if (i13 == 2) {
+                } else if (i15 == 2) {
                     matrix2.postScale(1.0f, -1.0f);
                 }
                 matrix2.postRotate(this.e, 0.0f, 0.0f);
                 matrix2.postTranslate(getWidth() / 2, getHeight() / 2);
-            } else if (i12 == 180) {
+            } else if (i14 == 180) {
                 rectF3.set((-getWidth()) / 2, (-getHeight()) / 2, getWidth() / 2, getHeight() / 2);
                 matrix2.setRectToRect(rectF, rectF3, Matrix.ScaleToFit.FILL);
-                int i14 = this.f;
-                if (i14 == 1) {
+                int i16 = this.f;
+                if (i16 == 1) {
                     matrix2.postScale(-1.0f, 1.0f);
-                } else if (i14 == 2) {
+                } else if (i16 == 2) {
                     matrix2.postScale(1.0f, -1.0f);
                 }
                 matrix2.postRotate(this.e, 0.0f, 0.0f);
                 matrix2.postTranslate(getWidth() / 2, getHeight() / 2);
             } else {
                 rectF3.set(0.0f, 0.0f, getWidth(), getHeight());
-                int i15 = this.f;
-                if (i15 == 1) {
+                int i17 = this.f;
+                if (i17 == 1) {
                     matrix2.postScale(-1.0f, 1.0f, getWidth() / 2, getHeight() / 2);
-                } else if (i15 == 2) {
+                } else if (i17 == 2) {
                     matrix2.postScale(1.0f, -1.0f, getWidth() / 2, getHeight() / 2);
                 }
                 matrix2.setRectToRect(rectF, rectF3, Matrix.ScaleToFit.FILL);
             }
             canvas.clipRect(this.b / scaleY, this.d / scaleY, getWidth() - (this.c / scaleY), getHeight() - (this.a / scaleY));
             try {
-                canvas.drawBitmap(this.v.bitmap, matrix2, this.s);
+                canvas.drawBitmap(this.w.c, matrix2, this.s);
             } catch (Exception e) {
-                FileLog.e(e);
+                org.telegram.messenger.f8.g(e, true);
             }
         }
         canvas.restore();
@@ -239,7 +294,7 @@ public class ClippingImageView extends View {
         setClipBottom((int) (((fArr7[1][6] - f17) * this.L) + f17));
         int i10 = 0;
         while (true) {
-            int[] iArr = this.y;
+            int[] iArr = this.D;
             if (i10 >= iArr.length) {
                 break;
             }
@@ -300,21 +355,23 @@ public class ClippingImageView extends View {
         invalidate();
     }
 
-    public void setImageBitmap(ImageReceiver.BitmapHolder bitmapHolder) {
-        ImageReceiver.BitmapHolder bitmapHolder2 = this.v;
-        if (bitmapHolder2 != null) {
-            bitmapHolder2.release();
+    public void setImageBitmap(org.telegram.messenger.kc kcVar) {
+        Bitmap bitmap;
+        Bitmap bitmap2;
+        org.telegram.messenger.kc kcVar2 = this.w;
+        if (kcVar2 != null) {
+            kcVar2.a();
             this.E = null;
         }
-        if (bitmapHolder != null && bitmapHolder.isRecycled()) {
-            bitmapHolder = null;
+        if (kcVar != null && ((bitmap2 = kcVar.c) == null || bitmap2.isRecycled())) {
+            kcVar = null;
         }
-        this.v = bitmapHolder;
-        if (bitmapHolder != null && bitmapHolder.bitmap != null) {
-            this.H.set(0.0f, 0.0f, bitmapHolder.getWidth(), bitmapHolder.getHeight());
-            Bitmap bitmap = this.v.bitmap;
+        this.w = kcVar;
+        if (kcVar != null && (bitmap = kcVar.c) != null) {
+            this.H.set(0.0f, 0.0f, bitmap != null ? bitmap.getWidth() : 0, kcVar.c != null ? r4.getHeight() : 0);
+            Bitmap bitmap3 = this.w.c;
             Shader.TileMode tileMode = Shader.TileMode.CLAMP;
-            BitmapShader bitmapShader = new BitmapShader(bitmap, tileMode, tileMode);
+            BitmapShader bitmapShader = new BitmapShader(bitmap3, tileMode, tileMode);
             this.E = bitmapShader;
             this.F.setShader(bitmapShader);
         }
@@ -335,17 +392,17 @@ public class ClippingImageView extends View {
     }
 
     public void setRadius(int[] iArr) {
-        int[] iArr2 = this.y;
+        int[] iArr2 = this.D;
         if (iArr == null) {
-            this.x = false;
+            this.y = false;
             Arrays.fill(iArr2, 0);
             return;
         }
         System.arraycopy(iArr, 0, iArr2, 0, iArr.length);
-        this.x = false;
+        this.y = false;
         for (int i10 : iArr) {
             if (i10 != 0) {
-                this.x = true;
+                this.y = true;
                 return;
             }
         }

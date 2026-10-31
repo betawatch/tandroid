@@ -1,17 +1,64 @@
 package k2;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+import j$.util.Objects;
+
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class o {
-    public int a;
-    public int b;
-    public int c;
-    public boolean d;
-    public boolean e;
-    public int f;
-    public b2.f g;
-    public int h;
-    public int i;
-    public boolean j;
-    public boolean k;
+    public final int a;
+    public final int b;
+    public final int c;
+    public final boolean d;
+    public final boolean e;
+    public final int f;
+    public final b2.f g;
+    public final int h;
+    public final int i;
+    public final boolean j;
+    public final boolean k;
+
+    public o(n nVar) {
+        this.a = nVar.a;
+        this.b = nVar.b;
+        this.c = nVar.c;
+        this.d = nVar.d;
+        this.e = nVar.e;
+        this.f = nVar.f;
+        this.g = nVar.g;
+        this.h = nVar.h;
+        this.i = nVar.i;
+        this.j = nVar.j;
+        this.k = nVar.k;
+    }
+
+    public final n a() {
+        n nVar = new n();
+        nVar.a = this.a;
+        nVar.b = this.b;
+        nVar.c = this.c;
+        nVar.d = this.d;
+        nVar.e = this.e;
+        nVar.f = this.f;
+        nVar.g = this.g;
+        nVar.h = this.h;
+        nVar.i = this.i;
+        nVar.j = this.j;
+        nVar.k = this.k;
+        return nVar;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || o.class != obj.getClass()) {
+            return false;
+        }
+        o oVar = (o) obj;
+        return this.a == oVar.a && this.b == oVar.b && this.c == oVar.c && this.d == oVar.d && this.e == oVar.e && this.f == oVar.f && this.h == oVar.h && this.i == oVar.i && this.j == oVar.j && this.k == oVar.k && this.g.equals(oVar.g);
+    }
+
+    public final int hashCode() {
+        return Objects.hash(Integer.valueOf(this.a), Integer.valueOf(this.b), Integer.valueOf(this.c), Boolean.valueOf(this.d), Boolean.valueOf(this.e), Integer.valueOf(this.f), this.g, Integer.valueOf(this.h), Integer.valueOf(this.i), Boolean.valueOf(this.k), Boolean.valueOf(this.j));
+    }
 }

@@ -1,37 +1,25 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class wx0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ xx0 b;
+public final /* synthetic */ class wx0 implements wb0, yb0 {
+    public final /* synthetic */ yx0 a;
 
-    public /* synthetic */ wx0(xx0 xx0Var, int i10) {
-        this.a = i10;
-        this.b = xx0Var;
+    @Override // org.telegram.ui.Components.wb0
+    public String e(int i10) {
+        return this.a.n[i10];
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                xx0 xx0Var = this.b;
-                xx0Var.y = 1.0f;
-                xx0Var.invalidate();
-                xx0Var.G = null;
-                break;
-            case 1:
-                xx0 xx0Var2 = this.b;
-                xx0Var2.m(((Float) xx0Var2.v.getAnimatedValue()).floatValue());
-                xx0Var2.v = null;
-                break;
-            default:
-                super.onAnimationEnd(animator);
-                this.b.F = null;
-                break;
+    @Override // org.telegram.ui.Components.yb0
+    public void t(ac0 ac0Var, int i10) {
+        yx0 yx0Var = this.a;
+        yx0Var.b();
+        org.telegram.messenger.tz.r1 = i10;
+        org.telegram.messenger.w0.b.getSharedPreferences("mainconfig", 0).edit().putInt("ChatSwipeAction", org.telegram.messenger.tz.r1).apply();
+        yx0Var.invalidate();
+        try {
+            ac0Var.performHapticFeedback(3, 2);
+        } catch (Exception unused) {
         }
     }
 }

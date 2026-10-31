@@ -1,31 +1,21 @@
 package org.telegram.ui.ActionBar;
 
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.widget.FrameLayout;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class n3 extends FrameLayout implements z3 {
-    public final z3 a;
+public interface n3 {
+    void a(boolean z10);
 
-    public n3(z3 z3Var) {
-        super(z3Var.getContext());
-        this.a = z3Var;
-    }
+    void b(boolean z10);
 
-    @Override // org.telegram.ui.ActionBar.z3
-    public RectF getRect() {
-        return this.a.getRect();
-    }
+    h3 c();
 
-    @Override // org.telegram.ui.ActionBar.z3
-    public void setDrawingFromOverlay(boolean z10) {
-        this.a.setDrawingFromOverlay(z10);
-    }
+    o3 d();
 
-    @Override // org.telegram.ui.ActionBar.z3
-    public final float y(Canvas canvas, RectF rectF, float f7, RectF rectF2, float f10) {
-        return this.a.y(canvas, rectF, f7, rectF2, f10);
-    }
+    int e(int i10);
+
+    boolean g();
+
+    boolean i(d3 d3Var);
+
+    void release();
 }

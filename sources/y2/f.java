@@ -1,39 +1,37 @@
 package y2;
 
-import a8.yb;
 import android.content.Context;
 import android.os.SystemClock;
-import di.s8;
 import e2.g0;
 import e2.v;
 import e2.w;
-import f9.i0;
-import f9.l0;
-import f9.s1;
-import g2.c0;
+import e9.n0;
+import e9.q0;
+import e9.x1;
+import g2.d0;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.Executor;
-import k2.t;
-import s4.o0;
+import k2.s;
+import v7.t6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class f implements c, c0 {
-    public static final s1 p = i0.x(4300000L, 3200000L, 2400000L, 1700000L, 860000L);
-    public static final s1 q = i0.x(1500000L, 980000L, 750000L, 520000L, 290000L);
-    public static final s1 r = i0.x(2000000L, 1300000L, 1000000L, 860000L, 610000L);
-    public static final s1 s = i0.x(2500000L, 1700000L, 1200000L, 970000L, 680000L);
-    public static final s1 t = i0.x(4700000L, 2800000L, 2100000L, 1700000L, 980000L);
-    public static final s1 u = i0.x(2700000L, 2000000L, 1600000L, 1300000L, 1000000L);
+public final class f implements c, d0 {
+    public static final x1 p = n0.x(4300000L, 3200000L, 2400000L, 1700000L, 860000L);
+    public static final x1 q = n0.x(1500000L, 980000L, 750000L, 520000L, 290000L);
+    public static final x1 r = n0.x(2000000L, 1300000L, 1000000L, 860000L, 610000L);
+    public static final x1 s = n0.x(2500000L, 1700000L, 1200000L, 970000L, 680000L);
+    public static final x1 t = n0.x(4700000L, 2800000L, 2100000L, 1700000L, 980000L);
+    public static final x1 u = n0.x(2700000L, 2000000L, 1600000L, 1300000L, 1000000L);
     public static f v;
     public final Context a;
-    public final l0 b;
-    public final o0 c;
+    public final q0 b;
+    public final s9.g c;
     public final g0 d;
     public final boolean e;
-    public final r f;
+    public final q f;
     public int g;
     public long h;
     public long i;
@@ -48,11 +46,11 @@ public final class f implements c, c0 {
         boolean z10;
         g0 g0Var = g0.a;
         this.a = context == null ? null : context.getApplicationContext();
-        this.b = l0.a(hashMap);
-        o0 o0Var = new o0();
-        o0Var.a = new CopyOnWriteArrayList();
-        this.c = o0Var;
-        this.f = new r();
+        this.b = q0.a(hashMap);
+        s9.g gVar = new s9.g();
+        gVar.a = new CopyOnWriteArrayList();
+        this.c = gVar;
+        this.f = new q();
         this.d = g0Var;
         this.e = true;
         if (context == null) {
@@ -80,7 +78,7 @@ public final class f implements c, c0 {
             z10 = a2.a;
         }
         if (z10) {
-            vVar2.b.execute(new s8(vVar2, 6));
+            vVar2.b.execute(new a3.d(vVar2, 29));
         }
     }
 
@@ -117,10 +115,10 @@ public final class f implements c, c0 {
         int[] iArr;
         long longValue;
         Integer valueOf = Integer.valueOf(i10);
-        l0 l0Var = this.b;
-        Long l4 = (Long) l0Var.get(valueOf);
+        q0 q0Var = this.b;
+        Long l4 = (Long) q0Var.get(valueOf);
         if (l4 == null) {
-            l4 = (Long) l0Var.get(0);
+            l4 = (Long) q0Var.get(0);
         } else if (l4.longValue() == -9223372036854775807L) {
             String str = this.o;
             if (str == null) {
@@ -721,9 +719,9 @@ public final class f implements c, c0 {
         return l4.longValue();
     }
 
-    public final void d(int i10, long j10, long j11) {
-        int i11;
+    public final void d(long j10, int i10, long j11) {
         long j12;
+        int i11;
         long j13;
         if (i10 == 0 && j10 == 0 && j11 == this.m) {
             return;
@@ -733,14 +731,14 @@ public final class f implements c, c0 {
         while (it.hasNext()) {
             b bVar = (b) it.next();
             if (bVar.c) {
-                i11 = i10;
                 j12 = j10;
+                i11 = i10;
                 j13 = j11;
             } else {
-                i11 = i10;
                 j12 = j10;
+                i11 = i10;
                 j13 = j11;
-                bVar.a.post(new t(bVar, i11, j12, j13, 1));
+                bVar.a.post(new s(bVar, i11, j12, j13, 1));
             }
             i10 = i11;
             j10 = j12;
@@ -759,12 +757,12 @@ public final class f implements c, c0 {
                 if (this.j < 2000) {
                     if (this.k >= 524288) {
                     }
-                    d((int) j11, j10, this.l);
+                    d(j10, (int) j11, this.l);
                     this.h = elapsedRealtime;
                     this.i = 0L;
                 }
                 this.l = (long) this.f.b();
-                d((int) j11, j10, this.l);
+                d(j10, (int) j11, this.l);
                 this.h = elapsedRealtime;
                 this.i = 0L;
             }
@@ -786,13 +784,13 @@ public final class f implements c, c0 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final synchronized void f(g2.m mVar, boolean z10) {
+    public final synchronized void f(g2.n nVar, boolean z10) {
         Throwable th2;
         boolean z11;
         f fVar;
         try {
             if (z10) {
-                if (mVar != null) {
+                if (nVar != null) {
                     try {
                     } catch (Throwable th3) {
                         th2 = th3;
@@ -804,7 +802,7 @@ public final class f implements c, c0 {
                     return;
                 }
                 try {
-                    yb.p(this.g > 0);
+                    t6.p(this.g > 0);
                     this.d.getClass();
                     long elapsedRealtime = SystemClock.elapsedRealtime();
                     int i10 = (int) (elapsedRealtime - this.h);
@@ -818,7 +816,7 @@ public final class f implements c, c0 {
                         }
                         this.l = (long) this.f.b();
                         fVar = this;
-                        fVar.d(i10, this.i, this.l);
+                        fVar.d(this.i, i10, this.l);
                         fVar.h = elapsedRealtime;
                         fVar.i = 0L;
                     } else {
@@ -849,10 +847,10 @@ public final class f implements c, c0 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final synchronized void g(g2.m mVar, boolean z10) {
+    public final synchronized void g(g2.n nVar, boolean z10) {
         boolean z11;
         if (z10) {
-            if (mVar != null) {
+            if (nVar != null) {
             }
             z11 = true;
             if (z11) {

@@ -1,87 +1,50 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.Vector;
-import org.telegram.tgnet.tl.TL_account;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class vm0 implements Runnable {
+public final /* synthetic */ class vm0 implements org.telegram.messenger.j20 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ wm0 b;
-    public final /* synthetic */ TLRPC.TL_error c;
-    public final /* synthetic */ TLObject d;
+    public final /* synthetic */ TL_stars.TL_starGiftUnique b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ org.telegram.messenger.us d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
 
-    public /* synthetic */ vm0(wm0 wm0Var, TLObject tLObject, TLRPC.TL_error tL_error) {
-        this.a = 0;
-        this.b = wm0Var;
-        this.d = tLObject;
-        this.c = tL_error;
+    public /* synthetic */ vm0(org.telegram.messenger.us usVar, Object obj, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j10, Object obj2, int i10) {
+        this.a = i10;
+        this.d = usVar;
+        this.e = obj;
+        this.b = tL_starGiftUnique;
+        this.c = j10;
+        this.f = obj2;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.messenger.j20
+    public final void a(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                wm0 wm0Var = this.b;
-                TLObject tLObject = this.d;
-                TLRPC.TL_error tL_error = this.c;
-                kn0 kn0Var = wm0Var.e;
-                if (tLObject instanceof Vector) {
-                    kn0Var.y = new TL_account.authorizationForm();
-                    Vector vector = (Vector) tLObject;
-                    int size = vector.objects.size();
-                    for (int i10 = 0; i10 < size; i10++) {
-                        kn0Var.y.values.add((TLRPC.TL_secureValue) vector.objects.get(i10));
-                    }
-                    wm0Var.a();
-                    break;
-                } else {
-                    if ("APP_VERSION_OUTDATED".equals(tL_error.text)) {
-                        org.telegram.ui.Components.g5.w0(kn0Var.getParentActivity(), LocaleController.getString(R.string.UpdateAppAlert), true);
-                    } else {
-                        kn0Var.M1(LocaleController.getString(R.string.AppName), tL_error.text);
-                    }
-                    kn0Var.N1(true, false);
-                    break;
-                }
-            case 1:
-                wm0 wm0Var2 = this.b;
-                TLRPC.TL_error tL_error2 = this.c;
-                TLObject tLObject2 = this.d;
-                if (tL_error2 == null) {
-                    TL_account.Password password = (TL_account.Password) tLObject2;
-                    wm0Var2.e.J = password;
-                    TwoStepVerificationActivity.n0(password);
-                    wm0Var2.b();
-                    break;
-                } else {
-                    wm0Var2.getClass();
-                    break;
-                }
+                tn0.Y((tn0) this.d, (boolean[]) this.e, this.b, this.c, (tm0) this.f, (rh.d3) obj, (gf.e) obj2);
+                break;
             default:
-                wm0 wm0Var3 = this.b;
-                TLRPC.TL_error tL_error3 = this.c;
-                TLObject tLObject3 = this.d;
-                if (tL_error3 == null) {
-                    TL_account.Password password2 = (TL_account.Password) tLObject3;
-                    wm0Var3.e.J = password2;
-                    TwoStepVerificationActivity.n0(password2);
-                    Utilities.globalQueue.postRunnable(new ne0(wm0Var3, wm0Var3.b, wm0Var3.d, 16));
+                rh.e4 e4Var = (rh.e4) this.d;
+                gf.e eVar = (gf.e) this.e;
+                ph.k0 k0Var = (ph.k0) this.f;
+                eVar.b();
+                if (((Boolean) obj).booleanValue()) {
+                    rh.o2 o2Var = e4Var.J2;
+                    if (o2Var != null) {
+                        o2Var.c(this.b, this.c, k0Var != null);
+                    }
+                    if (k0Var != null) {
+                        org.telegram.messenger.i0.g3(new ph.e0(k0Var, 3));
+                        e4Var.N0 = true;
+                    }
+                    e4Var.dismiss();
                     break;
                 }
                 break;
         }
-    }
-
-    public /* synthetic */ vm0(wm0 wm0Var, TLRPC.TL_error tL_error, TLObject tLObject, int i10) {
-        this.a = i10;
-        this.b = wm0Var;
-        this.c = tL_error;
-        this.d = tLObject;
     }
 }

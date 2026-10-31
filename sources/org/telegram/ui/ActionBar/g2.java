@@ -1,55 +1,37 @@
 package org.telegram.ui.ActionBar;
 
-import android.view.animation.Animation;
+import android.app.Dialog;
+import android.view.View;
+import org.telegram.ui.Components.cc;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class g2 implements Animation.AnimationListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public interface g2 {
+    void a(boolean z10);
 
-    public /* synthetic */ g2(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
-    }
+    void b(boolean z10);
 
-    @Override // android.view.animation.Animation.AnimationListener
-    public final void onAnimationEnd(Animation animation) {
-        switch (this.a) {
-            case 0:
-                ((i2) this.b).p1.setAlpha(0.0f);
-                break;
-            default:
-                ((a5) this.b).f.post(new q(this, 12));
-                break;
-        }
-    }
+    View d();
 
-    @Override // android.view.animation.Animation.AnimationListener
-    public final void onAnimationRepeat(Animation animation) {
-        int i10 = this.a;
-    }
+    void dismiss();
 
-    @Override // android.view.animation.Animation.AnimationListener
-    public final void onAnimationStart(Animation animation) {
-        switch (this.a) {
-            case 0:
-                break;
-            default:
-                a5 a5Var = (a5) this.b;
-                a5Var.i.setEnabled(false);
-                a5Var.g.setVisibility(0);
-                a5Var.h.setVisibility(0);
-                break;
-        }
-    }
+    int e(int i10);
 
-    private final void a(Animation animation) {
-    }
+    boolean f();
 
-    private final void b(Animation animation) {
-    }
+    void h(int i10);
 
-    private final void c(Animation animation) {
-    }
+    boolean j();
+
+    cc k();
+
+    void o(Runnable runnable);
+
+    void p();
+
+    boolean s();
+
+    boolean t(Dialog dialog);
+
+    boolean z();
 }

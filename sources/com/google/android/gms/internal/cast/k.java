@@ -2,13 +2,13 @@ package com.google.android.gms.internal.cast;
 
 import java.util.LinkedHashSet;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class k {
     public final LinkedHashSet a = new LinkedHashSet();
-    public final p4.r b;
+    public final p4.s b;
 
-    public k(p4.r rVar) {
-        this.b = rVar;
+    public k(p4.s sVar) {
+        this.b = sVar;
     }
 }

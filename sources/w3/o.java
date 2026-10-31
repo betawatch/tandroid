@@ -1,13 +1,12 @@
 package w3;
 
-import a8.ng;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class o {
-    public static final ng d = new ng(new za.c(new e9.e(':', 0), 18));
-    public static final ng e = new ng(new za.c(new e9.e('*', 0), 18));
+    public static final a5.a d = new a5.a(new k6.h(new d9.e(':', 0), 19));
+    public static final a5.a e = new a5.a(new k6.h(new d9.e('*', 0), 19));
     public final ArrayList a = new ArrayList();
     public int b = 0;
     public int c;

@@ -1,46 +1,55 @@
 package lc;
 
-import java.lang.reflect.Array;
+import java.util.ArrayList;
+import org.telegram.messenger.i0;
+import org.telegram.ui.Components.c11;
+import org.telegram.ui.Wallet.y0;
+import org.telegram.ui.Wallet.z0;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class b {
-    public final byte[][] a;
-    public final int b;
-    public final int c;
+public final class b extends b0 {
+    public final /* synthetic */ int b;
 
-    public b(int i10, int i11) {
-        this.a = (byte[][]) Array.newInstance((Class<?>) Byte.TYPE, i11, i10);
-        this.b = i10;
-        this.c = i11;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ b(String str, v vVar, int i10, int i11) {
+        super(str, vVar, i10);
+        this.b = i11;
     }
 
-    public final byte a(int i10, int i11) {
-        return this.a[i11][i10];
-    }
-
-    public final void b(int i10, int i11, int i12) {
-        this.a[i11][i10] = (byte) i12;
-    }
-
-    public final String toString() {
-        int i10 = this.b;
-        int i11 = this.c;
-        StringBuilder sb2 = new StringBuilder((i10 * 2 * i11) + 2);
-        for (int i12 = 0; i12 < i11; i12++) {
-            byte[] bArr = this.a[i12];
-            for (int i13 = 0; i13 < i10; i13++) {
-                byte b10 = bArr[i13];
-                if (b10 == 0) {
-                    sb2.append(" 0");
-                } else if (b10 != 1) {
-                    sb2.append("  ");
-                } else {
-                    sb2.append(" 1");
+    @Override // lc.b0
+    public final void a() {
+        switch (this.b) {
+            case 0:
+                v vVar = this.a;
+                try {
+                    vVar.b();
+                    break;
+                } catch (w e) {
+                    ac.a aVar = vVar.d;
+                    aVar.d(e);
+                    ArrayList arrayList = (ArrayList) aVar.o();
+                    int size = arrayList.size();
+                    int i10 = 0;
+                    while (i10 < size) {
+                        Object obj = arrayList.get(i10);
+                        i10++;
+                        y0 y0Var = (y0) obj;
+                        try {
+                            try {
+                                v vVar2 = (v) aVar.b;
+                                i0.g3(new c11(y0Var.c, vVar2, y0Var.a, "connect error: " + z0.a(e), 13));
+                            } catch (Throwable unused) {
+                            }
+                        } catch (Throwable unused2) {
+                            y0Var.getClass();
+                        }
+                    }
+                    return;
                 }
-            }
-            sb2.append('\n');
+            default:
+                this.a.d();
+                break;
         }
-        return sb2.toString();
     }
 }

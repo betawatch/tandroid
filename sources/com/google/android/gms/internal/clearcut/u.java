@@ -21,8 +21,8 @@ public final class u {
     public static final u n;
     public static final u r;
     public static final u s;
-    public static final u[] v;
-    public static final /* synthetic */ u[] w;
+    public static final u[] w;
+    public static final /* synthetic */ u[] x;
     public final int a;
 
     /* JADX INFO: Fake field, exist only in values array */
@@ -98,11 +98,11 @@ public final class u {
         r = uVar50;
         u uVar51 = new u("MAP", 50, 50, 4, e0.a);
         s = uVar51;
-        w = new u[]{uVar, uVar2, uVar3, uVar4, uVar5, uVar6, uVar7, uVar8, uVar9, uVar10, uVar11, uVar12, uVar13, uVar14, uVar15, uVar16, uVar17, uVar18, uVar19, uVar20, uVar21, uVar22, uVar23, uVar24, uVar25, uVar26, uVar27, uVar28, uVar29, uVar30, uVar31, uVar32, uVar33, uVar34, uVar35, uVar36, uVar37, uVar38, uVar39, uVar40, uVar41, uVar42, uVar43, uVar44, uVar45, uVar46, uVar47, uVar48, uVar49, uVar50, uVar51};
+        x = new u[]{uVar, uVar2, uVar3, uVar4, uVar5, uVar6, uVar7, uVar8, uVar9, uVar10, uVar11, uVar12, uVar13, uVar14, uVar15, uVar16, uVar17, uVar18, uVar19, uVar20, uVar21, uVar22, uVar23, uVar24, uVar25, uVar26, uVar27, uVar28, uVar29, uVar30, uVar31, uVar32, uVar33, uVar34, uVar35, uVar36, uVar37, uVar38, uVar39, uVar40, uVar41, uVar42, uVar43, uVar44, uVar45, uVar46, uVar47, uVar48, uVar49, uVar50, uVar51};
         u[] values = values();
-        v = new u[values.length];
+        w = new u[values.length];
         for (u uVar52 : values) {
-            v[uVar52.a] = uVar52;
+            w[uVar52.a] = uVar52;
         }
     }
 
@@ -118,6 +118,6 @@ public final class u {
     }
 
     public static u[] values() {
-        return (u[]) w.clone();
+        return (u[]) x.clone();
     }
 }

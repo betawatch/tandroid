@@ -1,61 +1,32 @@
 package org.telegram.ui.Wallet;
 
-import android.content.Context;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.InsetDrawable;
-import android.graphics.drawable.ShapeDrawable;
-import android.view.View;
-import android.widget.FrameLayout;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.kb1;
-import org.telegram.ui.Components.n91;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes4.dex */
-public final class l4 extends n91 {
-    public final /* synthetic */ ArrayList a;
-    public final /* synthetic */ Context b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.u6 c;
-    public final /* synthetic */ Rect d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ j2[] f;
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class l4 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ b6 b;
 
-    public l4(ArrayList arrayList, Context context, org.telegram.ui.ActionBar.u6 u6Var, Rect rect, int i10, j2[] j2VarArr) {
-        this.a = arrayList;
-        this.b = context;
-        this.c = u6Var;
-        this.d = rect;
-        this.e = i10;
-        this.f = j2VarArr;
+    public /* synthetic */ l4(b6 b6Var, int i10) {
+        this.a = i10;
+        this.b = b6Var;
     }
 
-    @Override // org.telegram.ui.Components.n91
-    public final void b(View view, int i10, int i11) {
-        FrameLayout frameLayout = (FrameLayout) view;
-        frameLayout.removeAllViews();
-        frameLayout.addView(m5.p0(this.b, this.e, (TL_wallet.walletTransaction) this.a.get(i10), null, null, null, null, this.c, this.f, true), kb1.g(-2.0f, -1));
-    }
-
-    @Override // org.telegram.ui.Components.n91
-    public final View d(int i10) {
-        FrameLayout frameLayout = new FrameLayout(this.b);
-        int dp = AndroidUtilities.dp(20.0f);
-        int i11 = org.telegram.ui.ActionBar.y6.d6;
-        org.telegram.ui.ActionBar.u6 u6Var = this.c;
-        ShapeDrawable d02 = org.telegram.ui.ActionBar.y6.d0(dp, 0, org.telegram.ui.ActionBar.y6.w0(i11, u6Var));
-        Rect rect = this.d;
-        InsetDrawable insetDrawable = new InsetDrawable((Drawable) d02, rect.left, 0, rect.right, 0);
-        org.telegram.ui.ActionBar.b7 N = org.telegram.ui.ActionBar.f7.N(i11);
-        frameLayout.setBackground(insetDrawable);
-        org.telegram.ui.ActionBar.f7.k(frameLayout, insetDrawable, N, null, u6Var);
-        return frameLayout;
-    }
-
-    @Override // org.telegram.ui.Components.n91
-    public final int e() {
-        return this.a.size();
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                b6 b6Var = this.b;
+                b6Var.getClass();
+                b6Var.L0(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
+            default:
+                b6 b6Var2 = this.b;
+                b6Var2.getClass();
+                b6Var2.H0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                b6Var2.S0();
+                break;
+        }
     }
 }

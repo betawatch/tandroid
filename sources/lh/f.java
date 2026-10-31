@@ -1,122 +1,47 @@
 package lh;
 
 import android.content.Context;
-import android.graphics.Canvas;
 import android.view.View;
-import java.util.HashSet;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.p6;
-import org.telegram.ui.ActionBar.y6;
+import org.telegram.ui.Components.a51;
+import org.telegram.ui.Components.p51;
+import org.telegram.ui.Components.tk0;
+import org.telegram.ui.Components.u51;
+import org.telegram.ui.Components.z41;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes4.dex */
-public final class f extends View implements p6 {
-    public ch.c a;
-    public ch.c b;
-    public int c;
-    public int d;
-    public hh.c e;
-    public int f;
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final class f extends z41 {
+    public static final /* synthetic */ int b = 0;
 
-    public f(Context context) {
-        super(context);
+    static {
+        z41.h(new f());
     }
 
-    public final void a() {
-        this.a.setBounds(0, 0, getMeasuredWidth(), this.c);
-        this.b.setBounds(0, getMeasuredHeight() - this.d, getMeasuredWidth(), getMeasuredHeight());
+    @Override // org.telegram.ui.Components.z41
+    public final void b(View view, a51 a51Var, boolean z10, p51 p51Var, u51 u51Var) {
+        qg.b bVar = (qg.b) view;
+        bVar.w = (TLRPC.TL_help_country) a51Var.G;
+        bVar.f();
+        bVar.setDivider(z10);
+        bVar.c(a51Var.e, false);
     }
 
-    @Override // org.telegram.ui.ActionBar.p6
-    public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(this.f));
+    @Override // org.telegram.ui.Components.z41
+    public final boolean c(a51 a51Var, a51 a51Var2) {
+        return a51Var.I(a51Var2);
     }
 
-    public final void b(ch.b bVar, fh.e eVar) {
-        eh.d c10 = bVar.c(this, null, false);
-        c10.v(eVar);
-        ch.c cVar = new ch.c(c10);
-        this.a = cVar;
-        cVar.b(-AndroidUtilities.dp(30.0f), true);
-        eh.d c11 = bVar.c(this, null, false);
-        c11.v(eVar);
-        ch.c cVar2 = new ch.c(c11);
-        this.b = cVar2;
-        cVar2.b(AndroidUtilities.dp(30.0f), true);
+    @Override // org.telegram.ui.Components.z41
+    public final View d(Context context, tk0 tk0Var, int i10, p6 p6Var) {
+        qg.b bVar = new qg.b(context, p6Var);
+        bVar.setBackground(null);
+        return bVar;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        this.a.draw(canvas);
-        this.b.draw(canvas);
-    }
-
-    @Override // android.view.View
-    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
-        super.onSizeChanged(i10, i11, i12, i13);
-        a();
-    }
-
-    public void setFadeHeightBottom(int i10) {
-        this.b.b(i10, true);
-    }
-
-    public void setFadeHeightTop(int i10) {
-        this.a.b(-i10, true);
-    }
-
-    public void setFadeTopAlpha(int i10) {
-        ch.c cVar = this.a;
-        if (cVar.G != i10) {
-            cVar.G = i10;
-            invalidate();
-        }
-    }
-
-    public void setFadeZoneBottom(int i10) {
-        if (this.d != i10) {
-            this.d = i10;
-            a();
-            invalidate();
-        }
-    }
-
-    public void setFadeZoneTop(int i10) {
-        if (this.c != i10) {
-            this.c = i10;
-            a();
-            invalidate();
-        }
-    }
-
-    public void setIgnoreFastWay(boolean z10) {
-        this.a.F = z10;
-        this.b.F = z10;
-    }
-
-    public void setup(ch.b bVar) {
-        b(bVar, null);
-    }
-
-    public void setupColorKey(int i10) {
-        this.f = i10;
-        if (this.e == null) {
-            hh.c cVar = new hh.c();
-            this.e = cVar;
-            cVar.a(y6.x0(null, i10, false));
-            setup(new ch.b(this.e));
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.p6
-    public final void updateColors() {
-        int i10;
-        hh.c cVar = this.e;
-        if (cVar == null || (i10 = this.f) == -1) {
-            return;
-        }
-        cVar.a(y6.x0(null, i10, false));
-        invalidate();
+    @Override // org.telegram.ui.Components.z41
+    public final boolean e(a51 a51Var, a51 a51Var2) {
+        return a51Var.J(a51Var2);
     }
 }

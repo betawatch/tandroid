@@ -1,6 +1,5 @@
 package androidx.lifecycle;
 
-import a8.ud;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -8,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public abstract class w {
     public static final HashMap a = new HashMap();
@@ -20,10 +19,10 @@ public abstract class w {
             throw new ClassCastException();
         } catch (IllegalAccessException e) {
             throw new RuntimeException(e);
-        } catch (InstantiationException e10) {
+        } catch (InstantiationException e7) {
+            throw new RuntimeException(e7);
+        } catch (InvocationTargetException e10) {
             throw new RuntimeException(e10);
-        } catch (InvocationTargetException e11) {
-            throw new RuntimeException(e11);
         }
     }
 
@@ -50,7 +49,7 @@ public abstract class w {
                     kotlin.jvm.internal.i.d(name, "this as java.lang.String).substring(startIndex)");
                 }
                 kotlin.jvm.internal.i.d(name, "if (fullPackage.isEmpty(…g(fullPackage.length + 1)");
-                String concat = ae.k.g(name, ".", "_").concat("_LifecycleAdapter");
+                String concat = rd.j.g(name, ".", "_").concat("_LifecycleAdapter");
                 if (fullPackage.length() != 0) {
                     concat = fullPackage + '.' + concat;
                 }
@@ -65,7 +64,7 @@ public abstract class w {
             }
             HashMap hashMap2 = b;
             if (constructor != null) {
-                hashMap2.put(cls, ud.a(constructor));
+                hashMap2.put(cls, bd.j.b(constructor));
             } else {
                 d dVar = d.c;
                 HashMap hashMap3 = dVar.b;
@@ -90,8 +89,8 @@ public abstract class w {
                             }
                             i11++;
                         }
-                    } catch (NoClassDefFoundError e10) {
-                        throw new IllegalArgumentException("The observer class has some methods that use newer APIs which are not available in the current OS version. Lifecycles cannot access even other methods so you should make sure that your observer classes only access framework classes that are available in your min API level OR use lifecycle:compiler annotation processor.", e10);
+                    } catch (NoClassDefFoundError e7) {
+                        throw new IllegalArgumentException("The observer class has some methods that use newer APIs which are not available in the current OS version. Lifecycles cannot access even other methods so you should make sure that your observer classes only access framework classes that are available in your min API level OR use lifecycle:compiler annotation processor.", e7);
                     }
                 }
                 if (!z10) {

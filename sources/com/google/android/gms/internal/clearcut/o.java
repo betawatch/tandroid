@@ -71,21 +71,17 @@ public class o implements Serializable, Iterable {
             throw new IllegalArgumentException(sb3.toString());
         }
         byte[] bArr = oVar.b;
-        int h = h() + size;
-        int h10 = h();
-        int h11 = oVar.h();
-        while (h10 < h) {
-            if (this.b[h10] != bArr[h11]) {
+        int l4 = l() + size;
+        int l10 = l();
+        int l11 = oVar.l();
+        while (l10 < l4) {
+            if (this.b[l10] != bArr[l11]) {
                 return false;
             }
-            h10++;
-            h11++;
+            l10++;
+            l11++;
         }
         return true;
-    }
-
-    public int h() {
-        return 0;
     }
 
     public final int hashCode() {
@@ -94,9 +90,9 @@ public class o implements Serializable, Iterable {
             return i10;
         }
         int size = size();
-        int h = h();
+        int l4 = l();
         int i11 = size;
-        for (int i12 = h; i12 < h + size; i12++) {
+        for (int i12 = l4; i12 < l4 + size; i12++) {
             i11 = (i11 * 31) + this.b[i12];
         }
         if (i11 == 0) {
@@ -109,6 +105,10 @@ public class o implements Serializable, Iterable {
     @Override // java.lang.Iterable
     public final /* synthetic */ Iterator iterator() {
         return new androidx.datastore.preferences.protobuf.e(this);
+    }
+
+    public int l() {
+        return 0;
     }
 
     public byte n(int i10) {

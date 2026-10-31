@@ -1,18 +1,18 @@
 package f2;
 
-import a8.yb;
 import b2.r0;
 import b2.t0;
 import b2.x;
+import v7.t6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class g implements t0 {
     public final float a;
     public final float b;
 
     public g(float f7, float f10) {
-        yb.f("Invalid latitude or longitude", f7 >= -90.0f && f7 <= 90.0f && f10 >= -180.0f && f10 <= 180.0f);
+        t6.e("Invalid latitude or longitude", f7 >= -90.0f && f7 <= 90.0f && f10 >= -180.0f && f10 <= 180.0f);
         this.a = f7;
         this.b = f10;
     }

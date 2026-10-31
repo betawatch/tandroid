@@ -1,27 +1,53 @@
 package bi;
 
+import android.content.Context;
 import android.view.View;
+import org.telegram.tgnet.tl.TL_iv;
+import org.telegram.ui.Components.a51;
+import org.telegram.ui.Components.p51;
+import org.telegram.ui.Components.tk0;
+import org.telegram.ui.Components.u51;
+import org.telegram.ui.Components.z41;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes4.dex */
-public final class q5 {
-    public final int a;
-    public final float b;
-    public final float c;
-    public final int d;
-    public final int e;
-    public final float f;
-    public final View g;
-    public final Runnable h;
+public final class q5 extends z41 {
+    public static final /* synthetic */ int b = 0;
 
-    public q5(int i10, float f7, float f10, int i11, int i12, float f11, View view, ai.h0 h0Var) {
-        this.a = i10;
-        this.b = f7;
-        this.c = f10;
-        this.d = i11;
-        this.e = i12;
-        this.f = f11;
-        this.g = view;
-        this.h = h0Var;
+    static {
+        z41.h(new q5());
+    }
+
+    @Override // org.telegram.ui.Components.z41
+    public final void b(View view, a51 a51Var, boolean z10, p51 p51Var, u51 u51Var) {
+        TL_iv.RichText richText;
+        r5 r5Var = (r5) view;
+        a aVar = (a) a51Var.G;
+        p5 p5Var = (p5) a51Var.H;
+        n1 n1Var = r5Var.r;
+        r5Var.a = aVar;
+        r5Var.s = p5Var;
+        r5Var.f(org.telegram.messenger.i0.L(16.0f), org.telegram.messenger.i0.L(1.0f), org.telegram.messenger.i0.L(16.0f), org.telegram.messenger.i0.L(8.0f));
+        r5Var.c(aVar);
+        if (p5Var != null) {
+            richText = (TL_iv.RichText) ((j3) p5Var).a.t3.get(Long.valueOf(aVar.t));
+        } else {
+            richText = null;
+        }
+        if (String.valueOf(n1Var.getText()).equals(s6.l(richText))) {
+            return;
+        }
+        n1Var.setTextSilently(org.telegram.messenger.k6.m(s6.r(richText, null, true), n1Var.getPaint().getFontMetricsInt(), false, null, 0));
+        n1Var.f();
+    }
+
+    @Override // org.telegram.ui.Components.z41
+    public final View d(Context context, tk0 tk0Var, int i10, org.telegram.ui.ActionBar.p6 p6Var) {
+        return new r5(context, p6Var);
+    }
+
+    @Override // org.telegram.ui.Components.z41
+    public final boolean f() {
+        return false;
     }
 }

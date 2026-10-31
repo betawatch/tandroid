@@ -1,233 +1,26 @@
 package androidx.activity;
 
-import android.os.Build;
-import android.util.Log;
-import android.window.OnBackInvokedCallback;
-import android.window.OnBackInvokedDispatcher;
-import androidx.fragment.app.i0;
-import androidx.fragment.app.p0;
-import androidx.fragment.app.s0;
-import androidx.fragment.app.t0;
-import androidx.fragment.app.z;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.ListIterator;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class w {
-    public final Runnable a;
-    public final kd.e b = new kd.e();
-    public z c;
-    public final OnBackInvokedCallback d;
-    public OnBackInvokedDispatcher e;
-    public boolean f;
-    public boolean g;
+public final /* synthetic */ class w extends kotlin.jvm.internal.h implements ld.a {
+    public final /* synthetic */ int a;
 
-    public w(Runnable runnable) {
-        OnBackInvokedCallback a2;
-        this.a = runnable;
-        int i10 = Build.VERSION.SDK_INT;
-        if (i10 >= 33) {
-            if (i10 >= 34) {
-                a2 = t.a.a(new o(this, 0), new o(this, 1), new p(this, 0), new p(this, 1));
-            } else {
-                a2 = r.a.a(new p(this, 2));
-            }
-            this.d = a2;
-        }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ w(int i10, Object obj, Class cls, String str, String str2, int i11, int i12) {
+        super(i10, obj, cls, str, str2, i11);
+        this.a = i12;
     }
 
-    public final void a(androidx.lifecycle.t tVar, z onBackPressedCallback) {
-        kotlin.jvm.internal.i.e(onBackPressedCallback, "onBackPressedCallback");
-        androidx.lifecycle.o m10 = tVar.m();
-        if (((androidx.lifecycle.v) m10).c == androidx.lifecycle.n.a) {
-            return;
+    @Override // ld.a
+    public final Object invoke() {
+        switch (this.a) {
+            case 0:
+                ((x) this.receiver).d();
+                break;
+            default:
+                ((x) this.receiver).d();
+                break;
         }
-        onBackPressedCallback.b.add(new OnBackPressedDispatcher$LifecycleOnBackPressedCancellable(this, m10, onBackPressedCallback));
-        d();
-        onBackPressedCallback.c = new v(0, this, w.class, "updateEnabledCallbacks", "updateEnabledCallbacks()V", 0, 0);
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r3v15 */
-    /* JADX WARN: Type inference failed for: r3v16 */
-    /* JADX WARN: Type inference failed for: r3v17, types: [java.lang.Object] */
-    public final void b() {
-        z zVar;
-        z zVar2 = this.c;
-        if (zVar2 == null) {
-            kd.e eVar = this.b;
-            eVar.getClass();
-            ListIterator listIterator = eVar.listIterator(eVar.c);
-            while (true) {
-                if (listIterator.hasPrevious()) {
-                    zVar = listIterator.previous();
-                    if (((z) zVar).a) {
-                        break;
-                    }
-                } else {
-                    zVar = 0;
-                    break;
-                }
-            }
-            zVar2 = zVar;
-        }
-        this.c = null;
-        if (zVar2 == null) {
-            this.a.run();
-            return;
-        }
-        i0 i0Var = zVar2.d;
-        int i10 = 3;
-        if (i0.K(3)) {
-            Log.d("FragmentManager", "handleOnBackPressed. PREDICTIVE_BACK = true fragment manager " + i0Var);
-        }
-        z zVar3 = i0Var.j;
-        ArrayList arrayList = i0Var.n;
-        i0Var.i = true;
-        i0Var.A(true);
-        int i11 = 0;
-        i0Var.i = false;
-        if (i0Var.h == null) {
-            if (zVar3.a) {
-                if (i0.K(3)) {
-                    Log.d("FragmentManager", "Calling popBackStackImmediate via onBackPressed callback");
-                }
-                i0Var.S();
-                return;
-            } else {
-                if (i0.K(3)) {
-                    Log.d("FragmentManager", "Calling onBackPressed via onBackPressed callback");
-                }
-                i0Var.g.b();
-                return;
-            }
-        }
-        if (!arrayList.isEmpty()) {
-            LinkedHashSet linkedHashSet = new LinkedHashSet(i0.F(i0Var.h));
-            int size = arrayList.size();
-            int i12 = 0;
-            while (i12 < size) {
-                Object obj = arrayList.get(i12);
-                i12++;
-                if (obj != null) {
-                    throw new ClassCastException();
-                }
-                Iterator it = linkedHashSet.iterator();
-                if (it.hasNext()) {
-                    throw null;
-                }
-            }
-        }
-        ArrayList arrayList2 = i0Var.h.a;
-        int size2 = arrayList2.size();
-        int i13 = 0;
-        while (i13 < size2) {
-            Object obj2 = arrayList2.get(i13);
-            i13++;
-            androidx.fragment.app.r rVar = ((p0) obj2).b;
-            if (rVar != null) {
-                rVar.x = false;
-            }
-        }
-        Iterator it2 = i0Var.f(0, 1, new ArrayList(Collections.singletonList(i0Var.h))).iterator();
-        while (it2.hasNext()) {
-            androidx.fragment.app.k kVar = (androidx.fragment.app.k) it2.next();
-            ArrayList operations = kVar.c;
-            if (i0.K(i10)) {
-                Log.d("FragmentManager", "SpecialEffectsController: Completing Back ");
-            }
-            kVar.e(operations);
-            kVar.getClass();
-            kotlin.jvm.internal.i.e(operations, "operations");
-            ArrayList arrayList3 = operations;
-            ArrayList arrayList4 = new ArrayList();
-            Iterator it3 = arrayList3.iterator();
-            while (it3.hasNext()) {
-                ((t0) it3.next()).getClass();
-                kd.m.e(arrayList4, null);
-            }
-            List m10 = kd.g.m(kd.g.p(arrayList4));
-            int size3 = m10.size();
-            int i14 = 0;
-            while (i14 < size3) {
-                ((s0) m10.get(i14)).a(kVar.a);
-                i14++;
-                i10 = i10;
-            }
-            int i15 = i10;
-            int size4 = operations.size();
-            for (int i16 = 0; i16 < size4; i16++) {
-                kVar.a((t0) operations.get(i16));
-            }
-            List m11 = kd.g.m(arrayList3);
-            if (m11.size() > 0) {
-                ((t0) m11.get(0)).getClass();
-                throw null;
-            }
-            i10 = i15;
-        }
-        int i17 = i10;
-        ArrayList arrayList5 = i0Var.h.a;
-        int size5 = arrayList5.size();
-        while (i11 < size5) {
-            Object obj3 = arrayList5.get(i11);
-            i11++;
-            androidx.fragment.app.r rVar2 = ((p0) obj3).b;
-            if (rVar2 != null && rVar2.V == null) {
-                i0Var.g(rVar2).j();
-            }
-        }
-        i0Var.h = null;
-        i0Var.h0();
-        if (i0.K(i17)) {
-            Log.d("FragmentManager", "Op is being set to null");
-            Log.d("FragmentManager", "OnBackPressedCallback enabled=" + zVar3.a + " for  FragmentManager " + i0Var);
-        }
-    }
-
-    public final void c(boolean z10) {
-        OnBackInvokedCallback onBackInvokedCallback;
-        OnBackInvokedDispatcher onBackInvokedDispatcher = this.e;
-        if (onBackInvokedDispatcher == null || (onBackInvokedCallback = this.d) == null) {
-            return;
-        }
-        r rVar = r.a;
-        if (z10 && !this.f) {
-            rVar.b(onBackInvokedDispatcher, 0, onBackInvokedCallback);
-            this.f = true;
-        } else {
-            if (z10 || !this.f) {
-                return;
-            }
-            rVar.c(onBackInvokedDispatcher, onBackInvokedCallback);
-            this.f = false;
-        }
-    }
-
-    public final void d() {
-        boolean z10 = this.g;
-        boolean z11 = false;
-        kd.e eVar = this.b;
-        if (eVar == null || !eVar.isEmpty()) {
-            Iterator it = eVar.iterator();
-            while (true) {
-                if (!it.hasNext()) {
-                    break;
-                } else if (((z) it.next()).a) {
-                    z11 = true;
-                    break;
-                }
-            }
-        }
-        this.g = z11;
-        if (z11 == z10 || Build.VERSION.SDK_INT < 33) {
-            return;
-        }
-        c(z11);
+        return ad.j.a;
     }
 }

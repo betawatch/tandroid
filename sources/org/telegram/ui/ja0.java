@@ -1,26 +1,15 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Canvas;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class ja0 implements fq {
-    public final /* synthetic */ ey a;
-    public final /* synthetic */ int b;
-
-    public ja0(ey eyVar, int i10) {
-        this.a = eyVar;
-        this.b = i10;
-    }
-
-    @Override // org.telegram.ui.fq
-    public final void b(int i10, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str) {
-        this.a.removeSelfFromStack();
-        NotificationCenter.getInstance(this.b).lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeChats, new Object[0]);
-    }
-
-    @Override // org.telegram.ui.fq
-    public final void a(TLRPC.User user) {
+public final class ja0 extends org.telegram.ui.Cells.t8 {
+    @Override // org.telegram.ui.Cells.t8, android.view.View
+    public final void onDraw(Canvas canvas) {
+        canvas.save();
+        canvas.clipRect(0, 0, getWidth(), getHeight());
+        super.onDraw(canvas);
+        canvas.restore();
     }
 }

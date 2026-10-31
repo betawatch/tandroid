@@ -1,11 +1,11 @@
 package p2;
 
-import f9.i0;
-import f9.l0;
+import e9.n0;
+import e9.q0;
 import java.util.List;
 import java.util.Map;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class m extends q {
     public final int d;
@@ -22,12 +22,12 @@ public final class m extends q {
     public final boolean o;
     public final boolean p;
     public final b2.t q;
-    public final i0 r;
-    public final i0 s;
-    public final l0 t;
+    public final n0 r;
+    public final n0 s;
+    public final q0 t;
     public final long u;
     public final l v;
-    public final i0 w;
+    public final n0 w;
     public final j x;
 
     public m(int i10, String str, List list, long j10, boolean z10, long j11, boolean z11, int i11, long j12, int i12, long j13, long j14, boolean z12, boolean z13, boolean z14, b2.t tVar, List list2, List list3, l lVar, Map map, List list4, j jVar) {
@@ -44,18 +44,18 @@ public final class m extends q {
         this.o = z13;
         this.p = z14;
         this.q = tVar;
-        this.r = i0.u(list2);
-        this.s = i0.u(list3);
-        this.t = l0.a(map);
-        this.w = i0.u(list4);
+        this.r = n0.u(list2);
+        this.s = n0.u(list3);
+        this.t = q0.a(map);
+        this.w = n0.u(list4);
         this.x = jVar;
         if (!list3.isEmpty()) {
-            h hVar = (h) f9.o.m(list3);
+            h hVar = (h) e9.s.m(list3);
             this.u = hVar.e + hVar.c;
         } else if (list2.isEmpty()) {
             this.u = 0L;
         } else {
-            j jVar2 = (j) f9.o.m(list2);
+            j jVar2 = (j) e9.s.m(list2);
             this.u = jVar2.e + jVar2.c;
         }
         this.e = j10 != -9223372036854775807L ? j10 >= 0 ? Math.min(this.u, j10) : Math.max(0L, this.u + j10) : -9223372036854775807L;

@@ -1,16 +1,14 @@
 package e2;
 
 import android.util.Pair;
-import androidx.car.app.navigation.model.Maneuver;
-import b2.w0;
+import b2.v0;
 import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.zs;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public abstract class g {
     public static final byte[] a = {0, 0, 0, 1};
@@ -19,7 +17,7 @@ public abstract class g {
 
     public static String a(int i10, int i11, int i12, int i13, boolean z10, int[] iArr) {
         Object[] objArr = {b[i10], Integer.valueOf(i11), Integer.valueOf(i12), Character.valueOf(z10 ? 'H' : 'L'), Integer.valueOf(i13)};
-        String str = n0.a;
+        String str = l0.a;
         StringBuilder sb2 = new StringBuilder(String.format(Locale.US, "hvc1.%s%d.%X.%c%d", objArr));
         int length = iArr.length;
         while (length > 0 && iArr[length - 1] == 0) {
@@ -32,19 +30,19 @@ public abstract class g {
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Removed duplicated region for block: B:153:0x04b7  */
-    /* JADX WARN: Removed duplicated region for block: B:155:0x04bd  */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x014b  */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x0151  */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x021f  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x0225  */
-    /* JADX WARN: Removed duplicated region for block: B:303:0x056f  */
-    /* JADX WARN: Removed duplicated region for block: B:305:0x0575  */
-    /* JADX WARN: Removed duplicated region for block: B:359:0x060b A[Catch: NumberFormatException -> 0x0615, TRY_LEAVE, TryCatch #0 {NumberFormatException -> 0x0615, blocks: (B:343:0x05be, B:345:0x05d2, B:356:0x05f0, B:359:0x060b), top: B:342:0x05be }] */
-    /* JADX WARN: Removed duplicated region for block: B:432:0x0728  */
-    /* JADX WARN: Removed duplicated region for block: B:434:0x072e  */
-    /* JADX WARN: Removed duplicated region for block: B:582:0x0938  */
-    /* JADX WARN: Removed duplicated region for block: B:584:0x093e  */
+    /* JADX WARN: Removed duplicated region for block: B:153:0x04b2  */
+    /* JADX WARN: Removed duplicated region for block: B:155:0x04b8  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x014a  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0150  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x021e  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0224  */
+    /* JADX WARN: Removed duplicated region for block: B:303:0x056a  */
+    /* JADX WARN: Removed duplicated region for block: B:305:0x0570  */
+    /* JADX WARN: Removed duplicated region for block: B:359:0x0606 A[Catch: NumberFormatException -> 0x0610, TRY_LEAVE, TryCatch #7 {NumberFormatException -> 0x0610, blocks: (B:343:0x05b9, B:345:0x05cd, B:356:0x05eb, B:359:0x0606), top: B:342:0x05b9 }] */
+    /* JADX WARN: Removed duplicated region for block: B:432:0x0723  */
+    /* JADX WARN: Removed duplicated region for block: B:434:0x0729  */
+    /* JADX WARN: Removed duplicated region for block: B:582:0x0933  */
+    /* JADX WARN: Removed duplicated region for block: B:584:0x0939  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -71,6 +69,7 @@ public abstract class g {
         Integer num;
         char c14;
         Integer num2 = 1024;
+        Integer valueOf = Integer.valueOf(TLObject.FLAG_12);
         String str = xVar.k;
         b2.o oVar = xVar.I;
         String str2 = xVar.k;
@@ -177,11 +176,11 @@ public abstract class g {
                     c10 = 65535;
                     break;
             }
-            int i23 = 8192;
+            int i23 = TLObject.FLAG_13;
             switch (c10) {
                 case 0:
                     if (split.length != 4) {
-                        c3.h0.p("Ignoring malformed AC-4 codec string: ", str2, "CodecSpecificDataUtil");
+                        c3.i0.q("Ignoring malformed AC-4 codec string: ", str2, "CodecSpecificDataUtil");
                         break;
                     } else {
                         try {
@@ -190,7 +189,7 @@ public abstract class g {
                             int parseInt5 = Integer.parseInt(split[3]);
                             if (parseInt3 == 0) {
                                 if (parseInt4 == 0) {
-                                    i10 = 257;
+                                    i10 = zs.g4;
                                 }
                                 i10 = -1;
                             } else if (parseInt3 != 1) {
@@ -228,7 +227,7 @@ public abstract class g {
                                     if (i11 == i12) {
                                         break;
                                     } else {
-                                        a1.g.z(parseInt5, "Unknown AC-4 level: ", "CodecSpecificDataUtil");
+                                        a1.g.w(parseInt5, "Unknown AC-4 level: ", "CodecSpecificDataUtil");
                                         break;
                                     }
                                 } else {
@@ -239,13 +238,13 @@ public abstract class g {
                                 }
                             }
                         } catch (NumberFormatException unused) {
-                            c3.h0.p("Ignoring malformed AC-4 codec string: ", str2, "CodecSpecificDataUtil");
+                            c3.i0.q("Ignoring malformed AC-4 codec string: ", str2, "CodecSpecificDataUtil");
                             return null;
                         }
                     }
                 case 1:
                     if (split.length < 4) {
-                        c3.h0.p("Ignoring malformed APV codec string: ", str2, "CodecSpecificDataUtil");
+                        c3.i0.q("Ignoring malformed APV codec string: ", str2, "CodecSpecificDataUtil");
                         break;
                     } else {
                         try {
@@ -254,7 +253,7 @@ public abstract class g {
                             int parseInt8 = Integer.parseInt(split[3].substring(4));
                             if (parseInt6 != 33) {
                                 if (parseInt6 != 44) {
-                                    a1.g.z(parseInt6, "Ignoring invalid APV profile: ", "CodecSpecificDataUtil");
+                                    a1.g.w(parseInt6, "Ignoring invalid APV profile: ", "CodecSpecificDataUtil");
                                     break;
                                 }
                             } else {
@@ -272,7 +271,7 @@ public abstract class g {
                     }
                 case 2:
                     if (split.length < 4) {
-                        c3.h0.p("Ignoring malformed AV1 codec string: ", str2, "CodecSpecificDataUtil");
+                        c3.i0.q("Ignoring malformed AV1 codec string: ", str2, "CodecSpecificDataUtil");
                         break;
                     } else {
                         try {
@@ -282,10 +281,10 @@ public abstract class g {
                             if (parseInt9 == 0) {
                                 int i25 = 8;
                                 if (parseInt11 != 8 && parseInt11 != 10) {
-                                    a1.g.z(parseInt11, "Unknown AV1 bit depth: ", "CodecSpecificDataUtil");
+                                    a1.g.w(parseInt11, "Unknown AV1 bit depth: ", "CodecSpecificDataUtil");
                                     break;
                                 } else {
-                                    int i26 = parseInt11 == 8 ? 1 : (oVar == null || !(oVar.d != null || (i13 = oVar.c) == 7 || i13 == 6)) ? 2 : 4096;
+                                    int i26 = parseInt11 == 8 ? 1 : (oVar == null || !(oVar.d != null || (i13 = oVar.c) == 7 || i13 == 6)) ? 2 : TLObject.FLAG_12;
                                     switch (parseInt10) {
                                         case 0:
                                             i25 = 1;
@@ -323,7 +322,7 @@ public abstract class g {
                                             i25 = 2048;
                                             break;
                                         case 12:
-                                            i25 = 4096;
+                                            i25 = TLObject.FLAG_12;
                                             break;
                                         case 13:
                                             i25 = 8192;
@@ -347,7 +346,7 @@ public abstract class g {
                                             i25 = TLObject.FLAG_19;
                                             break;
                                         case 20:
-                                            i25 = 1048576;
+                                            i25 = TLObject.FLAG_20;
                                             break;
                                         case 21:
                                             i25 = TLObject.FLAG_21;
@@ -365,16 +364,16 @@ public abstract class g {
                                     if (i25 != -1) {
                                         break;
                                     } else {
-                                        a1.g.z(parseInt10, "Unknown AV1 level: ", "CodecSpecificDataUtil");
+                                        a1.g.w(parseInt10, "Unknown AV1 level: ", "CodecSpecificDataUtil");
                                         break;
                                     }
                                 }
                             } else {
-                                a1.g.z(parseInt9, "Unknown AV1 profile: ", "CodecSpecificDataUtil");
+                                a1.g.w(parseInt9, "Unknown AV1 profile: ", "CodecSpecificDataUtil");
                                 break;
                             }
                         } catch (NumberFormatException unused2) {
-                            c3.h0.p("Ignoring malformed AV1 codec string: ", str2, "CodecSpecificDataUtil");
+                            c3.i0.q("Ignoring malformed AV1 codec string: ", str2, "CodecSpecificDataUtil");
                             return null;
                         }
                     }
@@ -382,7 +381,7 @@ public abstract class g {
                 case 3:
                 case 4:
                     if (split.length < 2) {
-                        c3.h0.p("Ignoring malformed AVC codec string: ", str2, "CodecSpecificDataUtil");
+                        c3.i0.q("Ignoring malformed AVC codec string: ", str2, "CodecSpecificDataUtil");
                         break;
                     } else {
                         try {
@@ -455,11 +454,11 @@ public abstract class g {
                                                     break;
                                                 default:
                                                     switch (parseInt2) {
-                                                        case MessageObject.TYPE_GIFT_STARS /* 30 */:
+                                                        case zs.T /* 30 */:
                                                             i14 = 256;
                                                             i17 = -1;
                                                             break;
-                                                        case MessageObject.TYPE_GIFT_THEME_UPDATE /* 31 */:
+                                                        case zs.U /* 31 */:
                                                             i17 = -1;
                                                             i14 = 512;
                                                             break;
@@ -469,29 +468,29 @@ public abstract class g {
                                                             break;
                                                         default:
                                                             switch (parseInt2) {
-                                                                case Maneuver.TYPE_DESTINATION_STRAIGHT /* 40 */:
+                                                                case 40:
                                                                     i17 = -1;
                                                                     i14 = 2048;
                                                                     break;
-                                                                case Maneuver.TYPE_DESTINATION_LEFT /* 41 */:
+                                                                case 41:
                                                                     i17 = -1;
-                                                                    i14 = 4096;
+                                                                    i14 = TLObject.FLAG_12;
                                                                     break;
-                                                                case Maneuver.TYPE_DESTINATION_RIGHT /* 42 */:
+                                                                case 42:
                                                                     i14 = 8192;
                                                                     i17 = -1;
                                                                     break;
                                                                 default:
                                                                     switch (parseInt2) {
-                                                                        case Maneuver.TYPE_FERRY_TRAIN_RIGHT /* 50 */:
+                                                                        case 50:
                                                                             i14 = 16384;
                                                                             i17 = -1;
                                                                             break;
-                                                                        case 51:
+                                                                        case zs.o0 /* 51 */:
                                                                             i14 = 32768;
                                                                             i17 = -1;
                                                                             break;
-                                                                        case 52:
+                                                                        case zs.p0 /* 52 */:
                                                                             i14 = 65536;
                                                                             i17 = -1;
                                                                             break;
@@ -507,11 +506,11 @@ public abstract class g {
                                     if (i14 != i17) {
                                         break;
                                     } else {
-                                        a1.g.z(parseInt2, "Unknown AVC level: ", "CodecSpecificDataUtil");
+                                        a1.g.w(parseInt2, "Unknown AVC level: ", "CodecSpecificDataUtil");
                                         break;
                                     }
                                 } else {
-                                    a1.g.z(parseInt, "Unknown AVC profile: ", "CodecSpecificDataUtil");
+                                    a1.g.w(parseInt, "Unknown AVC profile: ", "CodecSpecificDataUtil");
                                     break;
                                 }
                             } else {
@@ -521,13 +520,13 @@ public abstract class g {
                             if (i15 == i16) {
                             }
                         } catch (NumberFormatException unused3) {
-                            c3.h0.p("Ignoring malformed AVC codec string: ", str2, "CodecSpecificDataUtil");
+                            c3.i0.q("Ignoring malformed AVC codec string: ", str2, "CodecSpecificDataUtil");
                             return null;
                         }
                     }
                 case 7:
                     if (split.length < 4) {
-                        c3.h0.p("Ignoring malformed IAMF codec string: ", str2, "CodecSpecificDataUtil");
+                        c3.i0.q("Ignoring malformed IAMF codec string: ", str2, "CodecSpecificDataUtil");
                         break;
                     } else {
                         try {
@@ -585,15 +584,15 @@ public abstract class g {
                                     break;
                             }
                             break;
-                        } catch (NumberFormatException e10) {
-                            a.m("CodecSpecificDataUtil", "Ignoring malformed primary profile in IAMF codec string: " + split[1], e10);
+                        } catch (NumberFormatException e7) {
+                            a.m("CodecSpecificDataUtil", "Ignoring malformed primary profile in IAMF codec string: " + split[1], e7);
                             return null;
                         }
                     }
                 case '\b':
                     if (split.length == 3) {
                         try {
-                            if (MediaController.AUDIO_MIME_TYPE.equals(w0.e(Integer.parseInt(split[1], 16)))) {
+                            if ("audio/mp4a-latm".equals(v0.e(Integer.parseInt(split[1], 16)))) {
                                 int parseInt13 = Integer.parseInt(split[2]);
                                 int i27 = 17;
                                 if (parseInt13 != 17) {
@@ -649,30 +648,30 @@ public abstract class g {
                                 }
                             }
                         } catch (NumberFormatException unused4) {
-                            c3.h0.p("Ignoring malformed MP4A codec string: ", str2, "CodecSpecificDataUtil");
+                            c3.i0.q("Ignoring malformed MP4A codec string: ", str2, "CodecSpecificDataUtil");
                             break;
                         }
                     } else {
-                        c3.h0.p("Ignoring malformed MP4A codec string: ", str2, "CodecSpecificDataUtil");
+                        c3.i0.q("Ignoring malformed MP4A codec string: ", str2, "CodecSpecificDataUtil");
                         break;
                     }
                     break;
                 case '\t':
                     Pair pair = new Pair(1, 1);
                     if (split.length < 3) {
-                        c3.h0.p("Ignoring malformed H263 codec string: ", str2, "CodecSpecificDataUtil");
+                        c3.i0.q("Ignoring malformed H263 codec string: ", str2, "CodecSpecificDataUtil");
                         break;
                     } else {
                         try {
                             break;
                         } catch (NumberFormatException unused5) {
-                            c3.h0.p("Ignoring malformed H263 codec string: ", str2, "CodecSpecificDataUtil");
+                            c3.i0.q("Ignoring malformed H263 codec string: ", str2, "CodecSpecificDataUtil");
                             return pair;
                         }
                     }
                 case '\n':
                     if (split.length < 3) {
-                        c3.h0.p("Ignoring malformed VP9 codec string: ", str2, "CodecSpecificDataUtil");
+                        c3.i0.q("Ignoring malformed VP9 codec string: ", str2, "CodecSpecificDataUtil");
                         break;
                     } else {
                         try {
@@ -680,7 +679,7 @@ public abstract class g {
                             int parseInt15 = Integer.parseInt(split[2]);
                             int i28 = parseInt14 != 0 ? parseInt14 != 1 ? parseInt14 != 2 ? parseInt14 != 3 ? -1 : 8 : 4 : 2 : 1;
                             if (i28 == -1) {
-                                a1.g.z(parseInt14, "Unknown VP9 profile: ", "CodecSpecificDataUtil");
+                                a1.g.w(parseInt14, "Unknown VP9 profile: ", "CodecSpecificDataUtil");
                                 break;
                             } else {
                                 if (parseInt15 != 10) {
@@ -709,15 +708,15 @@ public abstract class g {
                                         i20 = 256;
                                     } else if (parseInt15 != 51) {
                                         switch (parseInt15) {
-                                            case 60:
+                                            case zs.x0 /* 60 */:
                                                 i21 = -1;
                                                 i20 = 2048;
                                                 break;
-                                            case 61:
+                                            case zs.y0 /* 61 */:
                                                 i21 = -1;
-                                                i20 = 4096;
+                                                i20 = TLObject.FLAG_12;
                                                 break;
-                                            case 62:
+                                            case zs.z0 /* 62 */:
                                                 i20 = 8192;
                                                 break;
                                             default:
@@ -732,7 +731,7 @@ public abstract class g {
                                     if (i20 == i21) {
                                         break;
                                     } else {
-                                        a1.g.z(parseInt15, "Unknown VP9 level: ", "CodecSpecificDataUtil");
+                                        a1.g.w(parseInt15, "Unknown VP9 level: ", "CodecSpecificDataUtil");
                                         break;
                                     }
                                 } else {
@@ -743,14 +742,14 @@ public abstract class g {
                                 }
                             }
                         } catch (NumberFormatException unused6) {
-                            c3.h0.p("Ignoring malformed VP9 codec string: ", str2, "CodecSpecificDataUtil");
+                            c3.i0.q("Ignoring malformed VP9 codec string: ", str2, "CodecSpecificDataUtil");
                             return null;
                         }
                     }
                 case 11:
                 case '\f':
                     if (split.length < 3) {
-                        c3.h0.p("Ignoring malformed VVC codec string: ", str2, "CodecSpecificDataUtil");
+                        c3.i0.q("Ignoring malformed VVC codec string: ", str2, "CodecSpecificDataUtil");
                         break;
                     } else {
                         try {
@@ -763,7 +762,7 @@ public abstract class g {
                                     i22 = 4;
                                 }
                             } else {
-                                i22 = (oVar == null || oVar.c != 6) ? (oVar == null || oVar.e != 8) ? 2 : 1 : 4096;
+                                i22 = (oVar == null || oVar.c != 6) ? (oVar == null || oVar.e != 8) ? 2 : 1 : TLObject.FLAG_12;
                             }
                             String str5 = split[2];
                             if (str5 != null) {
@@ -941,10 +940,10 @@ public abstract class g {
                                         num2 = 256;
                                         break;
                                     case 3:
-                                        num2 = 4096;
+                                        num2 = valueOf;
                                         break;
                                     case 4:
-                                        num2 = 16384;
+                                        num2 = Integer.valueOf(TLObject.FLAG_14);
                                         break;
                                     case 5:
                                         num2 = 65536;
@@ -977,7 +976,7 @@ public abstract class g {
                                         num2 = 2048;
                                         break;
                                     case 15:
-                                        num2 = 8192;
+                                        num2 = Integer.valueOf(TLObject.FLAG_13);
                                         break;
                                     case 16:
                                         num2 = 32768;
@@ -986,7 +985,7 @@ public abstract class g {
                                         num2 = 262144;
                                         break;
                                     case 18:
-                                        num2 = 1048576;
+                                        num2 = Integer.valueOf(TLObject.FLAG_20);
                                         break;
                                     case 19:
                                         num2 = Integer.valueOf(TLObject.FLAG_22);
@@ -1004,7 +1003,7 @@ public abstract class g {
                                 if (num2 == null) {
                                     break;
                                 } else {
-                                    c3.h0.p("Unknown VVC level string: ", str5, "CodecSpecificDataUtil");
+                                    c3.i0.q("Unknown VVC level string: ", str5, "CodecSpecificDataUtil");
                                     break;
                                 }
                             }
@@ -1012,7 +1011,7 @@ public abstract class g {
                             if (num2 == null) {
                             }
                         } catch (NumberFormatException unused7) {
-                            c3.h0.p("Ignoring malformed VVC codec string: ", str2, "CodecSpecificDataUtil");
+                            c3.i0.q("Ignoring malformed VVC codec string: ", str2, "CodecSpecificDataUtil");
                             return null;
                         }
                     }
@@ -1021,12 +1020,12 @@ public abstract class g {
             return null;
         }
         if (split.length < 3) {
-            c3.h0.p("Ignoring malformed Dolby Vision codec string: ", str2, "CodecSpecificDataUtil");
+            c3.i0.q("Ignoring malformed Dolby Vision codec string: ", str2, "CodecSpecificDataUtil");
             return null;
         }
         Matcher matcher = c.matcher(split[1]);
         if (!matcher.matches()) {
-            c3.h0.p("Ignoring malformed Dolby Vision codec string: ", str2, "CodecSpecificDataUtil");
+            c3.i0.q("Ignoring malformed Dolby Vision codec string: ", str2, "CodecSpecificDataUtil");
             return null;
         }
         String group = matcher.group(1);
@@ -1149,7 +1148,7 @@ public abstract class g {
                     break;
             }
             if (num != null) {
-                c3.h0.p("Unknown Dolby Vision profile string: ", group, "CodecSpecificDataUtil");
+                c3.i0.q("Unknown Dolby Vision profile string: ", group, "CodecSpecificDataUtil");
                 return null;
             }
             String str6 = split[2];
@@ -1285,13 +1284,13 @@ public abstract class g {
                         num2 = 2048;
                         break;
                     case '\f':
-                        num2 = 4096;
+                        num2 = valueOf;
                         break;
                 }
                 if (num2 == null) {
                     return new Pair(num, num2);
                 }
-                c3.h0.p("Unknown Dolby Vision level string: ", str6, "CodecSpecificDataUtil");
+                c3.i0.q("Unknown Dolby Vision level string: ", str6, "CodecSpecificDataUtil");
                 return null;
             }
             num2 = null;
@@ -1318,12 +1317,12 @@ public abstract class g {
         int i10;
         Integer num;
         if (strArr.length < 4) {
-            c3.h0.p("Ignoring malformed HEVC codec string: ", str, "CodecSpecificDataUtil");
+            c3.i0.q("Ignoring malformed HEVC codec string: ", str, "CodecSpecificDataUtil");
             return null;
         }
         Matcher matcher = c.matcher(strArr[1]);
         if (!matcher.matches()) {
-            c3.h0.p("Ignoring malformed HEVC codec string: ", str, "CodecSpecificDataUtil");
+            c3.i0.q("Ignoring malformed HEVC codec string: ", str, "CodecSpecificDataUtil");
             return null;
         }
         String group = matcher.group(1);
@@ -1334,7 +1333,7 @@ public abstract class g {
             i10 = (oVar == null || oVar.c != 6) ? 2 : 4096;
         } else {
             if (!"6".equals(group)) {
-                c3.h0.p("Unknown HEVC profile string: ", group, "CodecSpecificDataUtil");
+                c3.i0.q("Unknown HEVC profile string: ", group, "CodecSpecificDataUtil");
                 return null;
             }
             i10 = 6;
@@ -1558,7 +1557,7 @@ public abstract class g {
                     num = 2048;
                     break;
                 case 11:
-                    num = 8192;
+                    num = Integer.valueOf(TLObject.FLAG_13);
                     break;
                 case '\f':
                     num = 32768;
@@ -1582,10 +1581,10 @@ public abstract class g {
                     num = 1024;
                     break;
                 case 19:
-                    num = 4096;
+                    num = Integer.valueOf(TLObject.FLAG_12);
                     break;
                 case 20:
-                    num = 16384;
+                    num = Integer.valueOf(TLObject.FLAG_14);
                     break;
                 case 21:
                     num = 65536;
@@ -1594,7 +1593,7 @@ public abstract class g {
                     num = 262144;
                     break;
                 case 23:
-                    num = 1048576;
+                    num = Integer.valueOf(TLObject.FLAG_20);
                     break;
                 case 24:
                     num = Integer.valueOf(TLObject.FLAG_22);
@@ -1606,7 +1605,7 @@ public abstract class g {
             if (num == null) {
                 return new Pair(Integer.valueOf(i10), num);
             }
-            c3.h0.p("Unknown HEVC level string: ", str2, "CodecSpecificDataUtil");
+            c3.i0.q("Unknown HEVC level string: ", str2, "CodecSpecificDataUtil");
             return null;
         }
         num = null;

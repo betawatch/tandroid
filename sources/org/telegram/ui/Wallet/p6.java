@@ -1,35 +1,30 @@
 package org.telegram.ui.Wallet;
 
-import org.telegram.messenger.Utilities;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class p6 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ WalletEngine2 b;
-    public final /* synthetic */ byte[] c;
-    public final /* synthetic */ d2 d;
-    public final /* synthetic */ String e;
-    public final /* synthetic */ Utilities.Callback2 f;
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final class p6 extends FrameLayout {
+    public final /* synthetic */ s6 a;
 
-    public /* synthetic */ p6(WalletEngine2 walletEngine2, byte[] bArr, d2 d2Var, String str, Utilities.Callback2 callback2, int i10) {
-        this.a = i10;
-        this.b = walletEngine2;
-        this.c = bArr;
-        this.d = d2Var;
-        this.e = str;
-        this.f = callback2;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public p6(s6 s6Var, Context context) {
+        super(context);
+        this.a = s6Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.lambda$signMessage$11(this.c, this.d, this.e, this.f);
-                break;
-            default:
-                this.b.lambda$prepareTonConnectTransfer$5(this.c, this.d, this.e, this.f);
-                break;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        canvas.save();
+        canvas.translate(-getLeft(), -getTop());
+        s6 s6Var = this.a;
+        s6Var.j.c(canvas);
+        canvas.restore();
+        super.dispatchDraw(canvas);
+        if (s6Var.j.d()) {
+            postInvalidateOnAnimation();
         }
     }
 }

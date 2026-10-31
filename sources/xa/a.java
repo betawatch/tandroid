@@ -1,46 +1,43 @@
 package xa;
 
-import a8.me;
-import ce.z0;
-import java.util.concurrent.Executor;
-import kotlin.jvm.internal.i;
-import o9.b;
-import o9.c;
-import s9.d;
-import s9.s;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class a implements d {
-    public static final a b = new a(0);
-    public static final a c = new a(1);
-    public static final a d = new a(2);
-    public static final a e = new a(3);
-    public final /* synthetic */ int a;
+public final class a implements ja.d {
+    public static final a a = new a();
+    public static final ja.c b = new ja.c("projectNumber", i0.a.o(i0.a.n(ma.e.class, new ma.a(1))));
+    public static final ja.c c = new ja.c("messageId", i0.a.o(i0.a.n(ma.e.class, new ma.a(2))));
+    public static final ja.c d = new ja.c("instanceId", i0.a.o(i0.a.n(ma.e.class, new ma.a(3))));
+    public static final ja.c e = new ja.c("messageType", i0.a.o(i0.a.n(ma.e.class, new ma.a(4))));
+    public static final ja.c f = new ja.c("sdkPlatform", i0.a.o(i0.a.n(ma.e.class, new ma.a(5))));
+    public static final ja.c g = new ja.c("packageName", i0.a.o(i0.a.n(ma.e.class, new ma.a(6))));
+    public static final ja.c h = new ja.c("collapseKey", i0.a.o(i0.a.n(ma.e.class, new ma.a(7))));
+    public static final ja.c i = new ja.c("priority", i0.a.o(i0.a.n(ma.e.class, new ma.a(8))));
+    public static final ja.c j = new ja.c("ttl", i0.a.o(i0.a.n(ma.e.class, new ma.a(9))));
+    public static final ja.c k = new ja.c("topic", i0.a.o(i0.a.n(ma.e.class, new ma.a(10))));
+    public static final ja.c l = new ja.c("bulkId", i0.a.o(i0.a.n(ma.e.class, new ma.a(11))));
+    public static final ja.c m = new ja.c("event", i0.a.o(i0.a.n(ma.e.class, new ma.a(12))));
+    public static final ja.c n = new ja.c("analyticsLabel", i0.a.o(i0.a.n(ma.e.class, new ma.a(13))));
+    public static final ja.c o = new ja.c("campaignId", i0.a.o(i0.a.n(ma.e.class, new ma.a(14))));
+    public static final ja.c p = new ja.c("composerLabel", i0.a.o(i0.a.n(ma.e.class, new ma.a(15))));
 
-    public /* synthetic */ a(int i10) {
-        this.a = i10;
-    }
-
-    @Override // s9.d
-    public final Object d1(me meVar) {
-        switch (this.a) {
-            case 0:
-                Object n10 = meVar.n(new s(o9.a.class, Executor.class));
-                i.d(n10, "c.get(Qualified.qualifie…a, Executor::class.java))");
-                return new z0((Executor) n10);
-            case 1:
-                Object n11 = meVar.n(new s(c.class, Executor.class));
-                i.d(n11, "c.get(Qualified.qualifie…a, Executor::class.java))");
-                return new z0((Executor) n11);
-            case 2:
-                Object n12 = meVar.n(new s(b.class, Executor.class));
-                i.d(n12, "c.get(Qualified.qualifie…a, Executor::class.java))");
-                return new z0((Executor) n12);
-            default:
-                Object n13 = meVar.n(new s(o9.d.class, Executor.class));
-                i.d(n13, "c.get(Qualified.qualifie…a, Executor::class.java))");
-                return new z0((Executor) n13);
-        }
+    @Override // ja.a
+    public final void a(Object obj, Object obj2) {
+        ya.d dVar = (ya.d) obj;
+        ja.e eVar = (ja.e) obj2;
+        eVar.f(b, dVar.a);
+        eVar.d(c, dVar.b);
+        eVar.d(d, dVar.c);
+        eVar.d(e, dVar.d);
+        eVar.d(f, ya.c.b);
+        eVar.d(g, dVar.e);
+        eVar.d(h, dVar.f);
+        eVar.g(i, 0);
+        eVar.g(j, dVar.g);
+        eVar.d(k, dVar.h);
+        eVar.f(l, 0L);
+        eVar.d(m, ya.a.b);
+        eVar.d(n, dVar.i);
+        eVar.f(o, 0L);
+        eVar.d(p, dVar.j);
     }
 }

@@ -1,17 +1,15 @@
 package a4;
 
-import androidx.car.app.navigation.model.Maneuver;
 import e2.x;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.voip.VoIPService;
+import org.telegram.messenger.zs;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class c extends k {
     public final int i;
@@ -30,10 +28,10 @@ public final class c extends k {
     public static final int[] z = {11, 1, 3, 12, 14, 5, 7, 9};
     public static final int[] A = {0, 4, 8, 12, 16, 20, 24, 28};
     public static final int[] B = {-1, -16711936, -16776961, -16711681, -65536, -256, -65281};
-    public static final int[] C = {32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 225, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, TLRPC.LAYER, 93, 237, 243, MediaDataController.MAX_LINKS_COUNT, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 231, 247, 209, 241, 9632};
-    public static final int[] D = {174, 176, 189, 191, 8482, 162, 163, 9834, 224, 32, 232, 226, 234, 238, 244, 251};
-    public static final int[] E = {193, 201, 211, 218, 220, 252, 8216, 161, 42, 39, 8212, 169, 8480, 8226, 8220, 8221, 192, 194, 199, 200, 202, VoIPService.ID_INCOMING_CALL_PRENOTIFICATION, 235, 206, 207, 239, 212, 217, 249, 219, 171, 187};
-    public static final int[] F = {195, 227, 205, 204, 236, 210, 242, 213, 245, 123, 125, 92, 94, 95, 124, 126, 196, 228, 214, 246, 223, 165, 164, 9474, 197, 229, 216, 248, 9484, 9488, 9492, 9496};
+    public static final int[] C = {32, 33, 34, 35, 36, 37, 38, 39, 40, 41, zs.C3, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, TLRPC.LAYER, 93, zs.M3, zs.S3, zs.Z3, 97, 98, 99, 100, 101, zs.n1, zs.o1, zs.p1, zs.q1, zs.r1, zs.s1, zs.t1, zs.u1, zs.v1, zs.w1, zs.x1, zs.y1, zs.z1, zs.A1, zs.B1, zs.C1, zs.D1, zs.E1, 120, zs.F1, zs.G1, zs.H3, zs.W3, zs.m3, zs.Q3, 9632};
+    public static final int[] D = {zs.E2, zs.G2, zs.T2, zs.V2, 8482, zs.s2, zs.t2, 9834, zs.B3, 32, zs.I3, zs.D3, zs.J3, zs.N3, zs.T3, zs.a4};
+    public static final int[] E = {zs.X2, zs.f3, zs.o3, zs.v3, zs.x3, zs.b4, 8216, zs.r2, 42, 39, 8212, zs.z2, 8480, 8226, 8220, 8221, zs.W2, zs.Y2, zs.d3, zs.e3, zs.g3, 203, zs.K3, zs.k3, zs.l3, zs.O3, zs.p3, zs.u3, zs.Y3, zs.w3, zs.B2, zs.R2};
+    public static final int[] F = {zs.Z2, 227, zs.j3, zs.i3, zs.L3, zs.n3, zs.R3, zs.q3, zs.U3, zs.H1, zs.J1, 92, 94, 95, zs.I1, zs.K1, zs.a3, zs.E3, zs.r3, zs.V3, zs.A3, zs.v2, zs.u2, 9474, zs.b3, zs.F3, zs.t3, zs.X3, 9484, 9488, 9492, 9496};
     public static final boolean[] G = {false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false, true, false, false, true, false, true, true, false, false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false, false, true, true, false, true, false, false, true, false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false, true, false, false, true, false, true, true, false, false, true, true, false, true, false, false, true, false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false, false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false, true, false, false, true, false, true, true, false, false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false, false, true, true, false, true, false, false, true, false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false, false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false, true, false, false, true, false, true, true, false, false, true, true, false, true, false, false, true, false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false, true, false, false, true, false, true, true, false, false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false, false, true, true, false, true, false, false, true, false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false};
     public final x h = new x();
     public final ArrayList m = new ArrayList();
@@ -126,8 +124,8 @@ public final class c extends k {
             int A3 = xVar.A();
             int A4 = xVar.A();
             if ((A2 & 2) == 0 && (A2 & 1) == this.j) {
-                byte b10 = (byte) (A3 & 127);
-                byte b11 = (byte) (A4 & 127);
+                byte b10 = (byte) (A3 & zs.L1);
+                byte b11 = (byte) (A4 & zs.L1);
                 if (b10 != 0 || b11 != 0) {
                     boolean z12 = this.s;
                     if ((A2 & 4) == 4) {
@@ -152,14 +150,14 @@ public final class c extends k {
                                         switch (b11) {
                                             default:
                                                 switch (b11) {
-                                                    case Maneuver.TYPE_DESTINATION_RIGHT /* 42 */:
-                                                    case Maneuver.TYPE_ROUNDABOUT_ENTER_CW /* 43 */:
+                                                    case 42:
+                                                    case 43:
                                                         this.x = false;
                                                         break;
                                                 }
                                             case 37:
                                             case 38:
-                                            case Maneuver.TYPE_DESTINATION /* 39 */:
+                                            case 39:
                                                 this.x = true;
                                                 break;
                                         }
@@ -225,7 +223,7 @@ public final class c extends k {
                                                                 this.r = 3;
                                                                 this.n.h = 3;
                                                                 break;
-                                                            case Maneuver.TYPE_DESTINATION /* 39 */:
+                                                            case 39:
                                                                 l(1);
                                                                 this.r = 4;
                                                                 this.n.h = 4;
@@ -238,13 +236,13 @@ public final class c extends k {
                                                                         break;
                                                                     } else {
                                                                         switch (b11) {
-                                                                            case Maneuver.TYPE_ROUNDABOUT_EXIT_CW /* 44 */:
+                                                                            case 44:
                                                                                 this.o = Collections.EMPTY_LIST;
                                                                                 if (i17 == 1 || i17 == 3) {
                                                                                     k();
                                                                                     break;
                                                                                 }
-                                                                            case Maneuver.TYPE_ROUNDABOUT_ENTER_CCW /* 45 */:
+                                                                            case 45:
                                                                                 if (i17 == 1 && !this.n.e()) {
                                                                                     b bVar5 = this.n;
                                                                                     ArrayList arrayList = bVar5.b;
@@ -258,10 +256,10 @@ public final class c extends k {
                                                                                     break;
                                                                                 }
                                                                                 break;
-                                                                            case Maneuver.TYPE_ROUNDABOUT_EXIT_CCW /* 46 */:
+                                                                            case 46:
                                                                                 k();
                                                                                 break;
-                                                                            case Maneuver.TYPE_FERRY_BOAT_LEFT /* 47 */:
+                                                                            case 47:
                                                                                 this.o = j();
                                                                                 k();
                                                                                 break;

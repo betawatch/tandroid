@@ -1,130 +1,152 @@
 package tg;
 
-import android.content.Context;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.wh;
-import org.telegram.ui.ActionBar.f7;
-import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Cells.x3;
-import org.telegram.ui.Components.Premium.LimitPreviewView;
-import org.telegram.ui.Components.kb1;
-import org.telegram.ui.Components.mm0;
-import org.telegram.ui.r41;
+import android.graphics.RecordingCanvas;
+import android.graphics.RenderEffect;
+import android.graphics.RenderNode;
+import android.graphics.Shader;
+import android.support.v4.media.session.w;
+import org.telegram.messenger.ui;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes4.dex */
-public final class d extends mm0 {
-    public final u6 c;
-    public final int d;
-    public final int e;
-    public final ArrayList f;
-    public final a1 h;
-    public int n;
-    public c r;
-    public final boolean s;
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final class d {
+    public final RenderNode a = w.n();
+    public final RenderNode[] b;
+    public final RenderNode[] c;
+    public final boolean d;
+    public int e;
+    public int f;
+    public float g;
+    public float h;
+    public long i;
+    public final /* synthetic */ f j;
 
-    public d(int i10, u6 u6Var) {
-        ArrayList arrayList = new ArrayList();
-        this.f = arrayList;
-        this.s = true;
-        this.c = u6Var;
-        a1 a1Var = new a1(y6.Lj, y6.Mj, y6.Nj, y6.Oj, u6Var);
-        this.h = a1Var;
-        a1Var.o = 0.0f;
-        a1Var.p = 0.0f;
-        a1Var.q = 1.0f;
-        MessagesController messagesController = MessagesController.getInstance(i10);
-        arrayList.add(new e(messagesController.channelsLimitDefault, messagesController.channelsLimitPremium, LocaleController.getString(R.string.GroupsAndChannelsLimitTitle), LocaleController.formatString(R.string.GroupsAndChannelsLimitSubtitle, Integer.valueOf(messagesController.channelsLimitPremium))));
-        arrayList.add(new e(messagesController.dialogFiltersPinnedLimitDefault, messagesController.dialogFiltersPinnedLimitPremium, LocaleController.getString(R.string.PinChatsLimitTitle), LocaleController.formatString(R.string.PinChatsLimitSubtitle, Integer.valueOf(messagesController.dialogFiltersPinnedLimitPremium))));
-        arrayList.add(new e(messagesController.publicLinksLimitDefault, messagesController.publicLinksLimitPremium, LocaleController.getString(R.string.PublicLinksLimitTitle), LocaleController.formatString(R.string.PublicLinksLimitSubtitle, Integer.valueOf(messagesController.publicLinksLimitPremium))));
-        arrayList.add(new e(messagesController.savedGifsLimitDefault, messagesController.savedGifsLimitPremium, LocaleController.getString(R.string.SavedGifsLimitTitle), LocaleController.formatString(R.string.SavedGifsLimitSubtitle, Integer.valueOf(messagesController.savedGifsLimitPremium))));
-        arrayList.add(new e(messagesController.stickersFavedLimitDefault, messagesController.stickersFavedLimitPremium, LocaleController.getString(R.string.FavoriteStickersLimitTitle), LocaleController.formatString(R.string.FavoriteStickersLimitSubtitle, Integer.valueOf(messagesController.stickersFavedLimitPremium))));
-        arrayList.add(new e(messagesController.aboutLengthLimitDefault, messagesController.aboutLengthLimitPremium, LocaleController.getString(R.string.BioLimitTitle), LocaleController.formatString(R.string.BioLimitSubtitle, Integer.valueOf(messagesController.stickersFavedLimitPremium))));
-        arrayList.add(new e(messagesController.captionLengthLimitDefault, messagesController.captionLengthLimitPremium, LocaleController.getString(R.string.CaptionsLimitTitle), LocaleController.formatString(R.string.CaptionsLimitSubtitle, Integer.valueOf(messagesController.stickersFavedLimitPremium))));
-        arrayList.add(new e(messagesController.dialogFiltersLimitDefault, messagesController.dialogFiltersLimitPremium, LocaleController.getString(R.string.FoldersLimitTitle), LocaleController.formatString(R.string.FoldersLimitSubtitle, Integer.valueOf(messagesController.dialogFiltersLimitPremium))));
-        arrayList.add(new e(messagesController.dialogFiltersChatsLimitDefault, messagesController.dialogFiltersChatsLimitPremium, LocaleController.getString(R.string.ChatPerFolderLimitTitle), LocaleController.formatString(R.string.ChatPerFolderLimitSubtitle, Integer.valueOf(messagesController.dialogFiltersChatsLimitPremium))));
-        arrayList.add(new e(3, 4, LocaleController.getString(R.string.ConnectedAccountsLimitTitle), LocaleController.formatString(R.string.ConnectedAccountsLimitSubtitle, 4)));
-        arrayList.add(new e(messagesController.recommendedChannelsLimitDefault, messagesController.recommendedChannelsLimitPremium, LocaleController.getString(R.string.SimilarChannelsLimitTitle), LocaleController.formatString(R.string.SimilarChannelsLimitSubtitle, Integer.valueOf(messagesController.recommendedChannelsLimitPremium))));
-        this.d = 1;
-        this.e = 1;
-        this.d = arrayList.size() + 1;
-    }
-
-    @Override // org.telegram.ui.Components.mm0
-    public final boolean D(s4.e1 e1Var) {
-        return false;
-    }
-
-    @Override // s4.h0
-    public final int h() {
-        return this.d;
-    }
-
-    @Override // s4.h0
-    public final int j(int i10) {
-        if (i10 == 0) {
-            return 1;
+    public d(f fVar, String str, int i10, boolean z10) {
+        this.j = fVar;
+        int i11 = i10 + 1;
+        this.b = new RenderNode[i11];
+        for (int i12 = 0; i12 < i11; i12++) {
+            RenderNode[] renderNodeArr = this.b;
+            w.l();
+            renderNodeArr[i12] = w.d(str + "_down_" + i10);
         }
-        return i10 == 0 ? 2 : 0;
-    }
-
-    @Override // s4.h0
-    public final void v(s4.e1 e1Var, int i10) {
-        if (e1Var.f == 0) {
-            f fVar = (f) e1Var.a;
-            int i11 = i10 - this.e;
-            ArrayList arrayList = this.f;
-            fVar.a((e) arrayList.get(i11));
-            LimitPreviewView limitPreviewView = fVar.c;
-            limitPreviewView.F = ((e) arrayList.get(i11)).e;
-            limitPreviewView.c = this.n;
-        }
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r1v3, types: [android.view.ViewGroup, org.telegram.ui.r41] */
-    /* JADX WARN: Type inference failed for: r1v7, types: [tg.f] */
-    @Override // s4.h0
-    public final s4.e1 x(ViewGroup viewGroup, int i10) {
-        x3 x3Var;
-        Context context = viewGroup.getContext();
-        u6 u6Var = this.c;
-        if (i10 != 1) {
-            if (i10 != 2) {
-                ?? fVar = new f(context, u6Var);
-                fVar.c.setParentViewForGradien(this.r);
-                fVar.c.setStaticGradinet(this.h);
-                x3Var = fVar;
-            } else {
-                x3Var = new x3(context, 16);
+        if (i10 > 0 || z10) {
+            this.c = new RenderNode[i11];
+            for (int i13 = 0; i13 < i11; i13++) {
+                this.c[i13] = w.n();
             }
-        } else if (this.s) {
-            ?? r41Var = new r41(context, 10);
-            LinearLayout d = wh.d(context, 0);
-            ImageView imageView = new ImageView(context);
-            imageView.setImageDrawable(b1.c(context.getDrawable(R.drawable.other_2x_large), b1.d().a));
-            d.addView(imageView, kb1.h(40, 28.0f, 16, 0.0f, 0.0f, 8.0f, 0.0f));
-            TextView textView = new TextView(context);
-            textView.setText(LocaleController.getString(R.string.DoubledLimits));
-            textView.setGravity(17);
-            textView.setTextSize(1, 20.0f);
-            f7.V(textView, y6.G6, u6Var);
-            textView.setTypeface(AndroidUtilities.bold());
-            d.addView(textView, kb1.i(-2, -2, 16));
-            r41Var.addView(d, kb1.i(-2, -2, 17));
-            x3Var = r41Var;
         } else {
-            x3Var = new x3(context, 64);
+            this.c = this.b;
         }
-        return ic.a.n(x3Var, x3Var, -1, -2);
+        this.d = this.c == this.b;
+        this.f = 1;
+        this.e = 1;
+    }
+
+    public final void a(RenderNode renderNode) {
+        boolean z10;
+        int i10;
+        int width = renderNode.getWidth();
+        int height = renderNode.getHeight();
+        float f7 = width;
+        f fVar = this.j;
+        int round = Math.round((fVar.d * f7) / this.e);
+        float f10 = height;
+        int round2 = Math.round((fVar.d * f10) / this.f);
+        float f11 = round;
+        float f12 = f11 / f7;
+        float f13 = round2;
+        float f14 = f13 / f10;
+        int i11 = fVar.d;
+        float f15 = (f7 * i11) / f11;
+        float f16 = (f10 * i11) / f13;
+        long p5 = ui.p(ui.p(ui.p(ui.p(ui.p(0L, renderNode.getUniqueId()), round), round2), width), height);
+        boolean z11 = (this.a.hasDisplayList() && this.b[0].hasDisplayList()) ? false : true;
+        int i12 = 0;
+        while (true) {
+            int length = this.b.length;
+            z10 = this.d;
+            if (i12 >= length) {
+                break;
+            }
+            z11 |= !r15[i12].hasDisplayList();
+            if (!z10) {
+                z11 |= !this.c[i12].hasDisplayList();
+            }
+            i12++;
+        }
+        if (this.i == p5 && !z11) {
+            return;
+        }
+        this.i = p5;
+        int i13 = 0;
+        this.a.setPosition(0, 0, width, height);
+        this.a.beginRecording(width, height).drawRenderNode(renderNode);
+        this.a.endRecording();
+        this.b[0].setPosition(0, 0, round, round2);
+        RecordingCanvas beginRecording = this.b[0].beginRecording(round, round2);
+        beginRecording.scale(f12, f14);
+        beginRecording.drawRenderNode(this.a);
+        this.b[0].endRecording();
+        int i14 = 0;
+        while (true) {
+            RenderNode[] renderNodeArr = this.b;
+            if (i14 >= renderNodeArr.length) {
+                return;
+            }
+            renderNodeArr[i14].setPosition(i13, i13, round, round2);
+            RecordingCanvas beginRecording2 = this.b[i14].beginRecording(round, round2);
+            if (i14 > 0) {
+                beginRecording2.drawRenderNode(this.b[i13]);
+            } else {
+                beginRecording2.scale(f12, f14);
+                beginRecording2.drawRenderNode(this.a);
+            }
+            this.b[i14].endRecording();
+            if (z10) {
+                this.b[i14].setScaleX(f15);
+                this.b[i14].setScaleY(f16);
+                this.b[i14].setPivotX(0.0f);
+                this.b[i14].setPivotY(0.0f);
+                i10 = 0;
+            } else {
+                i10 = 0;
+                this.c[i14].setPosition(0, 0, width, height);
+                RecordingCanvas beginRecording3 = this.c[i14].beginRecording(width, height);
+                beginRecording3.scale(f15, f16);
+                beginRecording3.drawRenderNode(this.b[i14]);
+                this.c[i14].endRecording();
+            }
+            i14++;
+            i13 = i10;
+        }
+    }
+
+    public final void b(float f7, float f10) {
+        int i10 = this.e;
+        float f11 = i10 >= 2 ? (this.g + f7) % i10 : 0.0f;
+        this.g = f11;
+        int i11 = this.f;
+        this.h = i11 >= 2 ? (this.h + f10) % i11 : 0.0f;
+        if (this.j.b) {
+            this.a.setTranslationX(f11);
+            this.a.setTranslationY(this.h);
+            for (RenderNode renderNode : this.c) {
+                renderNode.setTranslationX(-this.g);
+                renderNode.setTranslationY(-this.h);
+            }
+        }
+    }
+
+    public final void c(float f7) {
+        this.b[0].setRenderEffect(RenderEffect.createBlurEffect(f.a(f7, this.e), f.a(f7, this.f), Shader.TileMode.CLAMP));
+    }
+
+    public final void d(float f7, RenderEffect renderEffect) {
+        this.b[0].setRenderEffect(RenderEffect.createChainEffect(RenderEffect.createBlurEffect(f.a(f7, this.e), f.a(f7, this.f), Shader.TileMode.CLAMP), renderEffect));
+    }
+
+    public final void e(RenderEffect renderEffect) {
+        this.b[1].setRenderEffect(renderEffect);
     }
 }

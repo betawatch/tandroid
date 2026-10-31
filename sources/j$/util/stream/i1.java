@@ -66,7 +66,7 @@ public abstract class i1 extends a implements LongStream {
     @Override // j$.util.stream.a
     public final boolean L0(Spliterator spliterator, j5 j5Var) {
         LongConsumer m0Var;
-        boolean q5;
+        boolean q6;
         j$.util.a1 U0 = U0(spliterator);
         if (j5Var instanceof LongConsumer) {
             m0Var = (LongConsumer) j5Var;
@@ -79,12 +79,12 @@ public abstract class i1 extends a implements LongStream {
             m0Var = new j$.util.m0(j5Var, 1);
         }
         do {
-            q5 = j5Var.q();
-            if (q5) {
+            q6 = j5Var.q();
+            if (q6) {
                 break;
             }
         } while (U0.tryAdvance(m0Var));
-        return q5;
+        return q6;
     }
 
     @Override // j$.util.stream.t3

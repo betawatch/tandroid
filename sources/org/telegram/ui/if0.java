@@ -1,29 +1,32 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.view.View;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class if0 extends xr {
-    public final /* synthetic */ int h;
-    public final /* synthetic */ lf0 n;
+public final /* synthetic */ class if0 implements org.telegram.ui.Components.hk0, org.telegram.ui.ActionBar.u1 {
+    public final /* synthetic */ jf0 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ if0(lf0 lf0Var, Context context, int i10) {
-        super(context);
-        this.h = i10;
-        this.n = lf0Var;
+    public /* synthetic */ if0(jf0 jf0Var) {
+        this.a = jf0Var;
     }
 
-    @Override // org.telegram.ui.xr
-    public final void a() {
-        switch (this.h) {
-            case 0:
-                this.n.h(null);
-                break;
-            default:
-                this.n.h(null);
-                break;
-        }
+    @Override // org.telegram.ui.Components.hk0
+    public void b(float f7, float f10, int i10, View view) {
+        jf0.a0(this.a, i10);
+    }
+
+    @Override // org.telegram.ui.ActionBar.u1
+    public void h(org.telegram.ui.ActionBar.x1 x1Var, int i10) {
+        org.telegram.messenger.vp.r1(this.a.currentAccount).x3(1);
+    }
+
+    @Override // org.telegram.ui.Components.hk0
+    public /* synthetic */ boolean h1(View view) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.hk0
+    public /* synthetic */ void q0(View view, float f7, float f10) {
     }
 }

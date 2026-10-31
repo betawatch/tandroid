@@ -3,16 +3,16 @@ package com.google.mlkit.nl.languageid.bundled.internal;
 import android.content.Context;
 import android.content.res.AssetFileDescriptor;
 import com.google.mlkit.nl.languageid.IdentifiedLanguage;
+import fb.a;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import o6.l;
-import ob.a;
+import n6.l;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public class ThickLanguageIdentifier {
     public static boolean c;
@@ -30,7 +30,7 @@ public class ThickLanguageIdentifier {
     private native long nativeInitFromBuffer(MappedByteBuffer mappedByteBuffer, long j10);
 
     public final ArrayList a(String str) {
-        l.k(this.b != 0);
+        l.j(this.b != 0);
         IdentifiedLanguage[] nativeIdentifyPossibleLanguages = nativeIdentifyPossibleLanguages(this.b, str.getBytes(StandardCharsets.UTF_8), 0.5f);
         ArrayList arrayList = new ArrayList();
         for (IdentifiedLanguage identifiedLanguage : nativeIdentifyPossibleLanguages) {
@@ -40,7 +40,7 @@ public class ThickLanguageIdentifier {
     }
 
     public final void b() {
-        l.k(this.b == 0);
+        l.j(this.b == 0);
         synchronized (ThickLanguageIdentifier.class) {
             if (!c) {
                 try {
@@ -67,8 +67,8 @@ public class ThickLanguageIdentifier {
                 }
             } finally {
             }
-        } catch (IOException e10) {
-            throw new a("Couldn't open language identification model file", e10);
+        } catch (IOException e7) {
+            throw new a("Couldn't open language identification model file", e7);
         }
     }
 

@@ -4,7 +4,7 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public class f implements Iterable {
     public c a;
@@ -61,14 +61,6 @@ public class f implements Iterable {
         return false;
     }
 
-    public c h(Object obj) {
-        c cVar = this.a;
-        while (cVar != null && !cVar.a.equals(obj)) {
-            cVar = cVar.c;
-        }
-        return cVar;
-    }
-
     public final int hashCode() {
         Iterator it = iterator();
         int i10 = 0;
@@ -88,9 +80,17 @@ public class f implements Iterable {
         return bVar;
     }
 
+    public c l(Object obj) {
+        c cVar = this.a;
+        while (cVar != null && !cVar.a.equals(obj)) {
+            cVar = cVar.c;
+        }
+        return cVar;
+    }
+
     public Object m(Object obj) {
-        c h = h(obj);
-        if (h == null) {
+        c l4 = l(obj);
+        if (l4 == null) {
             return null;
         }
         this.d--;
@@ -98,24 +98,24 @@ public class f implements Iterable {
         if (!weakHashMap.isEmpty()) {
             Iterator it = weakHashMap.keySet().iterator();
             while (it.hasNext()) {
-                ((e) it.next()).a(h);
+                ((e) it.next()).a(l4);
             }
         }
-        c cVar = h.d;
+        c cVar = l4.d;
         if (cVar != null) {
-            cVar.c = h.c;
+            cVar.c = l4.c;
         } else {
-            this.a = h.c;
+            this.a = l4.c;
         }
-        c cVar2 = h.c;
+        c cVar2 = l4.c;
         if (cVar2 != null) {
             cVar2.d = cVar;
         } else {
             this.b = cVar;
         }
-        h.c = null;
-        h.d = null;
-        return h.b;
+        l4.c = null;
+        l4.d = null;
+        return l4.b;
     }
 
     public final String toString() {

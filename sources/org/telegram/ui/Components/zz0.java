@@ -1,33 +1,62 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import org.telegram.messenger.AndroidUtilities;
+import android.text.TextPaint;
+import android.text.style.MetricAffectingSpan;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class zz0 extends nd0 {
-    public final /* synthetic */ a01 y0;
+public final class zz0 extends MetricAffectingSpan {
+    public final int a;
+    public final yz0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zz0(a01 a01Var, Context context) {
-        super(context, 13, null);
-        this.y0 = a01Var;
+    public zz0(yz0 yz0Var, int i10) {
+        this.b = yz0Var;
+        if (i10 > 0) {
+            this.a = i10;
+        }
     }
 
-    @Override // org.telegram.ui.Components.nd0, android.widget.LinearLayout, android.view.View
-    public final void onDraw(Canvas canvas) {
-        int x02 = org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.j5, false);
-        a01 a01Var = this.y0;
-        if (x02 != a01Var.a) {
-            a01Var.a = x02;
-            setTextColor(x02);
+    public final void a(TextPaint textPaint) {
+        yz0 yz0Var = this.b;
+        if (v7.u7.a(yz0Var.a, 49152)) {
+            float textSize = textPaint.getTextSize();
+            textPaint.setTextSize(0.75f * textSize);
+            if (v7.u7.a(yz0Var.a, 32768)) {
+                textPaint.baselineShift -= (int) (textSize * 0.35f);
+            } else if (v7.u7.a(yz0Var.a, TLObject.FLAG_14)) {
+                textPaint.baselineShift += (int) (textSize * 0.12f);
+            }
         }
-        super.onDraw(canvas);
-        float dp = AndroidUtilities.dp(31.0f);
-        a01Var.e.setColor(org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.h7, false));
-        canvas.drawLine(AndroidUtilities.dp(2.0f), dp, getMeasuredWidth() - AndroidUtilities.dp(2.0f), dp, a01Var.e);
-        float measuredHeight = getMeasuredHeight() - AndroidUtilities.dp(31.0f);
-        canvas.drawLine(AndroidUtilities.dp(2.0f), measuredHeight, getMeasuredWidth() - AndroidUtilities.dp(2.0f), measuredHeight, a01Var.e);
+    }
+
+    public final yz0 b() {
+        return this.b;
+    }
+
+    public final boolean c() {
+        return (this.b.a & 256) > 0;
+    }
+
+    @Override // android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        int i10 = this.a;
+        if (i10 != 0) {
+            textPaint.setTextSize(i10);
+        }
+        a(textPaint);
+        textPaint.setFlags(textPaint.getFlags() | 128);
+        this.b.a(textPaint);
+    }
+
+    @Override // android.text.style.MetricAffectingSpan
+    public final void updateMeasureState(TextPaint textPaint) {
+        int i10 = this.a;
+        if (i10 != 0) {
+            textPaint.setTextSize(i10);
+        }
+        a(textPaint);
+        textPaint.setFlags(textPaint.getFlags() | 128);
+        this.b.a(textPaint);
     }
 }

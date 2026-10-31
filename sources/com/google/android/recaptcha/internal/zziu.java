@@ -1,13 +1,13 @@
 package com.google.android.recaptcha.internal;
 
+import bd.q;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
-import kd.o;
 import kotlin.jvm.internal.i;
-import ud.p;
+import ld.p;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class zziu extends zzit {
     private final p zza;
@@ -34,7 +34,7 @@ public final class zziu extends zzit {
                 list.add((zzyw) zzf2.zzk());
             }
         } else {
-            list = o.a;
+            list = q.a;
         }
         zzf.zze(list);
         zzyx zzyxVar = (zzyx) zzf.zzk();

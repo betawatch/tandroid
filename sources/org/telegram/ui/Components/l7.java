@@ -1,35 +1,46 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLRPC;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class l7 implements Runnable {
+public final class l7 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ m8 b;
-    public final /* synthetic */ TLRPC.TL_error c;
+    public final /* synthetic */ w7 b;
 
-    public /* synthetic */ l7(m8 m8Var, TLRPC.TL_error tL_error, int i10) {
+    public /* synthetic */ l7(w7 w7Var, int i10) {
         this.a = i10;
-        this.b = m8Var;
-        this.c = tL_error;
+        this.b = w7Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationCancel(Animator animator) {
         switch (this.a) {
-            case 0:
-                m8.t(this.b, this.c);
-                break;
-            case 1:
-                m8.w(this.b, this.c);
-                break;
             case 2:
-                m8.C(this.b, this.c);
+                this.b.s2 = null;
                 break;
             default:
-                m8.y(this.b, this.c);
+                super.onAnimationCancel(animator);
                 break;
         }
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                this.b.c2 = false;
+                break;
+            case 1:
+                w7 w7Var = this.b;
+                w7Var.Y1.setVisibility(4);
+                w7Var.Z1.setImageBitmap(null);
+                w7Var.c2 = false;
+                break;
+        }
+    }
+
+    private final void a(Animator animator) {
     }
 }

@@ -1,163 +1,49 @@
 package com.google.android.gms.internal.cast;
 
-import a8.ea;
-import j$.util.List;
-import java.util.Collection;
-import java.util.Comparator;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
-import java.util.RandomAccess;
-import java.util.function.UnaryOperator;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public abstract class f0 extends c0 implements List, RandomAccess, j$.util.List {
-    public static final d0 b = new d0(j0.e, 0);
+public final class f0 extends g0 {
+    public final transient int c;
+    public final transient int d;
+    public final /* synthetic */ g0 e;
 
-    public static j0 q(int i10, Object[] objArr) {
-        return i10 == 0 ? j0.e : new j0(i10, objArr);
+    public f0(g0 g0Var, int i10, int i11) {
+        this.e = g0Var;
+        this.c = i10;
+        this.d = i11;
     }
 
     @Override // java.util.List
-    public final void add(int i10, Object obj) {
-        throw new UnsupportedOperationException();
+    public final Object get(int i10) {
+        v7.m5.a(i10, this.d);
+        return this.e.get(i10 + this.c);
     }
 
-    @Override // java.util.List
-    public final boolean addAll(int i10, Collection collection) {
-        throw new UnsupportedOperationException();
+    @Override // com.google.android.gms.internal.cast.d0
+    public final int m() {
+        return this.e.n() + this.c + this.d;
+    }
+
+    @Override // com.google.android.gms.internal.cast.d0
+    public final int n() {
+        return this.e.n() + this.c;
+    }
+
+    @Override // com.google.android.gms.internal.cast.d0
+    public final Object[] o() {
+        return this.e.o();
+    }
+
+    @Override // com.google.android.gms.internal.cast.g0, java.util.List
+    /* renamed from: p, reason: merged with bridge method [inline-methods] */
+    public final g0 subList(int i10, int i11) {
+        v7.m5.c(i10, i11, this.d);
+        int i12 = this.c;
+        return this.e.subList(i10 + i12, i11 + i12);
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final boolean contains(Object obj) {
-        return indexOf(obj) >= 0;
-    }
-
-    @Override // java.util.Collection, java.util.List
-    public final boolean equals(Object obj) {
-        Object next;
-        Object next2;
-        int i10;
-        if (obj == this) {
-            return true;
-        }
-        if (obj instanceof List) {
-            List list = (List) obj;
-            int size = size();
-            if (size == list.size()) {
-                if (list instanceof RandomAccess) {
-                    for (0; i10 < size; i10 + 1) {
-                        Object obj2 = get(i10);
-                        Object obj3 = list.get(i10);
-                        i10 = (obj2 == obj3 || (obj2 != null && obj2.equals(obj3))) ? i10 + 1 : 0;
-                    }
-                    return true;
-                }
-                d0 listIterator = listIterator(0);
-                Iterator it = list.iterator();
-                while (true) {
-                    if (listIterator.hasNext()) {
-                        if (!it.hasNext() || ((next = listIterator.next()) != (next2 = it.next()) && (next == null || !next.equals(next2)))) {
-                            break;
-                        }
-                    } else if (!it.hasNext()) {
-                        return true;
-                    }
-                }
-            }
-        }
-        return false;
-    }
-
-    @Override // com.google.android.gms.internal.cast.c0
-    public int h(Object[] objArr) {
-        int size = size();
-        for (int i10 = 0; i10 < size; i10++) {
-            objArr[i10] = get(i10);
-        }
-        return size;
-    }
-
-    @Override // java.util.Collection, java.util.List
-    public final int hashCode() {
-        int size = size();
-        int i10 = 1;
-        for (int i11 = 0; i11 < size; i11++) {
-            i10 = (i10 * 31) + get(i11).hashCode();
-        }
-        return i10;
-    }
-
-    @Override // java.util.List
-    public final int indexOf(Object obj) {
-        if (obj == null) {
-            return -1;
-        }
-        int size = size();
-        for (int i10 = 0; i10 < size; i10++) {
-            if (obj.equals(get(i10))) {
-                return i10;
-            }
-        }
-        return -1;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.List
-    public final /* synthetic */ Iterator iterator() {
-        return listIterator(0);
-    }
-
-    @Override // java.util.List
-    public final int lastIndexOf(Object obj) {
-        if (obj == null) {
-            return -1;
-        }
-        for (int size = size() - 1; size >= 0; size--) {
-            if (obj.equals(get(size))) {
-                return size;
-            }
-        }
-        return -1;
-    }
-
-    @Override // java.util.List
-    public final /* synthetic */ ListIterator listIterator() {
-        return listIterator(0);
-    }
-
-    @Override // java.util.List
-    /* renamed from: p */
-    public f0 subList(int i10, int i11) {
-        ea.c(i10, i11, size());
-        int i12 = i11 - i10;
-        return i12 == size() ? this : i12 == 0 ? j0.e : new e0(this, i10, i12);
-    }
-
-    @Override // java.util.List
-    /* renamed from: r, reason: merged with bridge method [inline-methods] */
-    public final d0 listIterator(int i10) {
-        ea.b(i10, size());
-        return isEmpty() ? b : new d0(this, i10);
-    }
-
-    @Override // java.util.List
-    public final Object remove(int i10) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.List, j$.util.List
-    public /* synthetic */ void replaceAll(UnaryOperator unaryOperator) {
-        List.-CC.$default$replaceAll(this, unaryOperator);
-    }
-
-    @Override // java.util.List
-    public final Object set(int i10, Object obj) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.List, j$.util.List
-    public /* synthetic */ void sort(Comparator comparator) {
-        List.-CC.$default$sort(this, comparator);
+    public final int size() {
+        return this.d;
     }
 }

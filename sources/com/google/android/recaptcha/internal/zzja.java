@@ -1,5 +1,6 @@
 package com.google.android.recaptcha.internal;
 
+import bd.k;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
@@ -7,9 +8,9 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import kd.i;
+import org.telegram.messenger.zs;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class zzja {
     private final Map zza = new LinkedHashMap();
@@ -17,7 +18,7 @@ public final class zzja {
 
     private final List zzh(List list) {
         List list2 = list;
-        ArrayList arrayList = new ArrayList(i.d(list2));
+        ArrayList arrayList = new ArrayList(k.d(list2));
         Iterator it = list2.iterator();
         while (it.hasNext()) {
             arrayList.add(zza((zzzt) it.next()));
@@ -83,8 +84,8 @@ public final class zzja {
     }
 
     public final void zzd(int i10, Object obj) {
-        zze(173, obj);
-        this.zzb.add(173);
+        zze(zs.D2, obj);
+        this.zzb.add(Integer.valueOf(zs.D2));
     }
 
     public final void zze(int i10, Object obj) {
@@ -93,7 +94,7 @@ public final class zzja {
 
     public final Class[] zzf(List list) {
         List zzh = zzh(list);
-        ArrayList arrayList = new ArrayList(i.d(zzh));
+        ArrayList arrayList = new ArrayList(k.d(zzh));
         Iterator it = zzh.iterator();
         while (it.hasNext()) {
             arrayList.add(zziy.zza(it.next()));

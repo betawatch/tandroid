@@ -1,278 +1,126 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Point;
-import android.graphics.Typeface;
-import android.os.Bundle;
-import android.text.TextUtils;
-import android.text.method.PasswordTransformationMethod;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.SerializedData;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class ae0 extends org.telegram.ui.Components.bx0 {
-    public final EditTextBoldCursor a;
-    public final TextView b;
-    public final TextView c;
-    public final TextView d;
-    public final org.telegram.ui.Components.bk0 e;
-    public Bundle f;
-    public boolean h;
-    public TL_account.Password n;
-    public String r;
-    public String s;
-    public String v;
-    public String w;
-    public final org.telegram.ui.Components.sd0 x;
-    public final /* synthetic */ ig0 y;
+public final /* synthetic */ class ae0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ me0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    /* JADX WARN: Removed duplicated region for block: B:10:0x010f  */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0111  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public ae0(ig0 ig0Var, Context context) {
-        super(context);
-        int i10;
-        this.y = ig0Var;
-        setOrientation(1);
-        FrameLayout frameLayout = new FrameLayout(context);
-        org.telegram.ui.Components.bk0 bk0Var = new org.telegram.ui.Components.bk0(context);
-        this.e = bk0Var;
-        bk0Var.f(R.raw.tsv_setup_intro, 120, 120, null);
-        bk0Var.setAutoRepeat(false);
-        frameLayout.addView(bk0Var, org.telegram.ui.Components.kb1.i(120, 120, 1));
-        if (!AndroidUtilities.isSmallScreen()) {
-            Point point = AndroidUtilities.displaySize;
-            if (point.x <= point.y || AndroidUtilities.isTablet()) {
-                i10 = 0;
-                frameLayout.setVisibility(i10);
-                addView(frameLayout, org.telegram.ui.Components.kb1.i(-1, -2, 1));
-                TextView textView = new TextView(context);
-                this.d = textView;
-                ic.a.o(18.0f, 1, textView);
-                textView.setText(LocaleController.getString(R.string.YourPasswordHeader));
-                textView.setGravity(17);
-                textView.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
-                addView(textView, org.telegram.ui.Components.kb1.h(-1, -2.0f, 1, 32.0f, 16.0f, 32.0f, 0.0f));
-                TextView textView2 = new TextView(context);
-                this.b = textView2;
-                textView2.setTextSize(1, 14.0f);
-                textView2.setGravity(1);
-                textView2.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
-                textView2.setText(LocaleController.getString(R.string.LoginPasswordTextShort));
-                addView(textView2, org.telegram.ui.Components.kb1.x(-2, -2, 1, 12, 8, 12, 0));
-                org.telegram.ui.Components.sd0 sd0Var = new org.telegram.ui.Components.sd0(context, null);
-                this.x = sd0Var;
-                sd0Var.setText(LocaleController.getString(R.string.EnterPassword));
-                EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(context);
-                this.a = editTextBoldCursor;
-                editTextBoldCursor.setCursorSize(AndroidUtilities.dp(20.0f));
-                editTextBoldCursor.setCursorWidth(1.5f);
-                editTextBoldCursor.setBackground(null);
-                editTextBoldCursor.setImeOptions(268435461);
-                editTextBoldCursor.setTextSize(1, 18.0f);
-                editTextBoldCursor.setMaxLines(1);
-                int dp = AndroidUtilities.dp(16.0f);
-                editTextBoldCursor.setPadding(dp, dp, dp, dp);
-                editTextBoldCursor.setInputType(129);
-                editTextBoldCursor.setTransformationMethod(PasswordTransformationMethod.getInstance());
-                editTextBoldCursor.setTypeface(Typeface.DEFAULT);
-                editTextBoldCursor.setGravity(!LocaleController.isRTL ? 5 : 3);
-                editTextBoldCursor.setOnFocusChangeListener(new rd(this, 4));
-                sd0Var.e(editTextBoldCursor);
-                sd0Var.addView(editTextBoldCursor, org.telegram.ui.Components.kb1.i(-1, -2, 48));
-                editTextBoldCursor.setOnEditorActionListener(new la(this, 5));
-                addView(sd0Var, org.telegram.ui.Components.kb1.x(-1, -2, 1, 16, 32, 16, 0));
-                TextView textView3 = new TextView(context);
-                this.c = textView3;
-                textView3.setGravity(19);
-                textView3.setText(LocaleController.getString(R.string.ForgotPassword));
-                textView3.setTextSize(1, 15.0f);
-                textView3.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
-                textView3.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
-                FrameLayout frameLayout2 = new FrameLayout(context);
-                frameLayout2.addView(textView3, org.telegram.ui.Components.kb1.h(-1, 56.0f, 80, 0.0f, 0.0f, 0.0f, 32.0f));
-                addView(frameLayout2, org.telegram.ui.Components.kb1.u(-1, -1, 80));
-                k6.c.h(textView3);
-                textView3.setOnClickListener(new zd0(0, this, context));
-            }
-        }
-        i10 = 8;
-        frameLayout.setVisibility(i10);
-        addView(frameLayout, org.telegram.ui.Components.kb1.i(-1, -2, 1));
-        TextView textView4 = new TextView(context);
-        this.d = textView4;
-        ic.a.o(18.0f, 1, textView4);
-        textView4.setText(LocaleController.getString(R.string.YourPasswordHeader));
-        textView4.setGravity(17);
-        textView4.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
-        addView(textView4, org.telegram.ui.Components.kb1.h(-1, -2.0f, 1, 32.0f, 16.0f, 32.0f, 0.0f));
-        TextView textView22 = new TextView(context);
-        this.b = textView22;
-        textView22.setTextSize(1, 14.0f);
-        textView22.setGravity(1);
-        textView22.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
-        textView22.setText(LocaleController.getString(R.string.LoginPasswordTextShort));
-        addView(textView22, org.telegram.ui.Components.kb1.x(-2, -2, 1, 12, 8, 12, 0));
-        org.telegram.ui.Components.sd0 sd0Var2 = new org.telegram.ui.Components.sd0(context, null);
-        this.x = sd0Var2;
-        sd0Var2.setText(LocaleController.getString(R.string.EnterPassword));
-        EditTextBoldCursor editTextBoldCursor2 = new EditTextBoldCursor(context);
-        this.a = editTextBoldCursor2;
-        editTextBoldCursor2.setCursorSize(AndroidUtilities.dp(20.0f));
-        editTextBoldCursor2.setCursorWidth(1.5f);
-        editTextBoldCursor2.setBackground(null);
-        editTextBoldCursor2.setImeOptions(268435461);
-        editTextBoldCursor2.setTextSize(1, 18.0f);
-        editTextBoldCursor2.setMaxLines(1);
-        int dp2 = AndroidUtilities.dp(16.0f);
-        editTextBoldCursor2.setPadding(dp2, dp2, dp2, dp2);
-        editTextBoldCursor2.setInputType(129);
-        editTextBoldCursor2.setTransformationMethod(PasswordTransformationMethod.getInstance());
-        editTextBoldCursor2.setTypeface(Typeface.DEFAULT);
-        editTextBoldCursor2.setGravity(!LocaleController.isRTL ? 5 : 3);
-        editTextBoldCursor2.setOnFocusChangeListener(new rd(this, 4));
-        sd0Var2.e(editTextBoldCursor2);
-        sd0Var2.addView(editTextBoldCursor2, org.telegram.ui.Components.kb1.i(-1, -2, 48));
-        editTextBoldCursor2.setOnEditorActionListener(new la(this, 5));
-        addView(sd0Var2, org.telegram.ui.Components.kb1.x(-1, -2, 1, 16, 32, 16, 0));
-        TextView textView32 = new TextView(context);
-        this.c = textView32;
-        textView32.setGravity(19);
-        textView32.setText(LocaleController.getString(R.string.ForgotPassword));
-        textView32.setTextSize(1, 15.0f);
-        textView32.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
-        textView32.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
-        FrameLayout frameLayout22 = new FrameLayout(context);
-        frameLayout22.addView(textView32, org.telegram.ui.Components.kb1.h(-1, 56.0f, 80, 0.0f, 0.0f, 0.0f, 32.0f));
-        addView(frameLayout22, org.telegram.ui.Components.kb1.u(-1, -1, 80));
-        k6.c.h(textView32);
-        textView32.setOnClickListener(new zd0(0, this, context));
+    public /* synthetic */ ae0(me0 me0Var, int i10) {
+        this.a = i10;
+        this.b = me0Var;
     }
 
-    @Override // org.telegram.ui.Components.bx0
-    public final boolean b() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.bx0
-    public final boolean c(boolean z10) {
-        this.h = false;
-        this.y.p1(true, true);
-        this.f = null;
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.bx0
-    public final void d() {
-        this.h = false;
-    }
-
-    @Override // org.telegram.ui.Components.bx0
-    public String getHeaderName() {
-        return LocaleController.getString("LoginPassword", R.string.LoginPassword);
-    }
-
-    @Override // org.telegram.ui.Components.bx0
-    public final void h(String str) {
-        if (this.h || this.n == null) {
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        bs[] bsVarArr;
+        int i10 = this.a;
+        int i11 = 1;
+        int i12 = 0;
+        me0 me0Var = this.b;
+        switch (i10) {
+            case 0:
+                org.telegram.ui.Components.ei0 ei0Var = me0Var.G;
+                zr zrVar = me0Var.f;
+                int i13 = me0Var.h0;
+                if (i13 != 3 && (bsVarArr = zrVar.f) != null) {
+                    for (int length = bsVarArr.length - 1; length >= 0; length--) {
+                        if (length == 0 || zrVar.f[length].length() != 0) {
+                            zrVar.f[length].requestFocus();
+                            bs bsVar = zrVar.f[length];
+                            bsVar.setSelection(bsVar.length());
+                            hf0.Z0(me0Var.u0, zrVar.f[length]);
+                        }
+                    }
+                }
+                org.telegram.ui.Components.bi0 bi0Var = me0Var.a;
+                if (bi0Var != null) {
+                    bi0Var.start();
+                }
+                if (i13 == 15) {
+                    ei0Var.getAnimatedDrawable().N(0, false, false);
+                    ei0Var.getAnimatedDrawable().start();
+                    break;
+                }
+                break;
+            case 1:
+                org.telegram.messenger.i0.g3(new ae0(me0Var, 6));
+                break;
+            case 2:
+                vc0 vc0Var = me0Var.x;
+                me0Var.s0 = false;
+                while (true) {
+                    bs[] bsVarArr2 = me0Var.f.f;
+                    if (i12 < bsVarArr2.length) {
+                        bsVarArr2[i12].z(0.0f);
+                        i12++;
+                    } else if (vc0Var.getCurrentView() != (me0Var.h0 == 15 ? me0Var.F : me0Var.D)) {
+                        vc0Var.showNext();
+                        break;
+                    }
+                }
+                break;
+            case 3:
+                org.telegram.messenger.i0.g3(new ae0(me0Var, 4));
+                break;
+            case 4:
+                org.telegram.ui.Components.ei0 ei0Var2 = me0Var.s;
+                ei0Var2.setAutoRepeat(true);
+                org.telegram.ui.Components.bi0 bi0Var2 = me0Var.Q;
+                bi0Var2.N(0, false, false);
+                bi0Var2.K(1);
+                ei0Var2.setAnimation(bi0Var2);
+                ei0Var2.d();
+                break;
+            case 5:
+                try {
+                    me0Var.u0.fragmentView.performHapticFeedback(3, 2);
+                } catch (Exception unused) {
+                }
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(me0Var.getContext());
+                String L0 = org.telegram.messenger.cd.L0(2131742823, null);
+                org.telegram.ui.ActionBar.x1 x1Var = alertDialog$Builder.a;
+                x1Var.R = L0;
+                x1Var.T = org.telegram.messenger.cd.a0(null, null, 2131752534, org.telegram.messenger.m5.h(new StringBuilder("+"), me0Var.d, af.b.c()));
+                alertDialog$Builder.k(org.telegram.messenger.cd.L0(2131747847, null), null);
+                x1Var.setOnDismissListener(new ie0(me0Var, i11));
+                alertDialog$Builder.p();
+                break;
+            case 6:
+                org.telegram.ui.Components.bi0 bi0Var3 = me0Var.R;
+                bi0Var3.t0 = new ae0(me0Var, 8);
+                org.telegram.ui.Components.ei0 ei0Var3 = me0Var.s;
+                ei0Var3.setAutoRepeat(false);
+                bi0Var3.N(0, false, false);
+                ei0Var3.setAnimation(bi0Var3);
+                ei0Var3.d();
+                break;
+            case 7:
+                me0Var.postDelayed(new ae0(me0Var, 9), 150L);
+                break;
+            case 8:
+                org.telegram.messenger.i0.g3(new ae0(me0Var, 10));
+                break;
+            case 9:
+                zr zrVar2 = me0Var.f;
+                zrVar2.e = false;
+                zrVar2.f[0].requestFocus();
+                while (true) {
+                    bs[] bsVarArr3 = zrVar2.f;
+                    if (i12 >= bsVarArr3.length) {
+                        break;
+                    } else {
+                        bsVarArr3[i12].z(0.0f);
+                        i12++;
+                    }
+                }
+            default:
+                org.telegram.ui.Components.ei0 ei0Var4 = me0Var.s;
+                ei0Var4.setAutoRepeat(false);
+                ei0Var4.setAnimation(me0Var.a);
+                break;
         }
-        String obj = this.a.getText().toString();
-        if (obj.length() != 0) {
-            this.h = true;
-            this.y.s1(0, true);
-            Utilities.globalQueue.postRunnable(new kb0(6, this, obj));
-        } else {
-            ig0 ig0Var = this.y;
-            if (ig0Var.getParentActivity() == null) {
-                return;
-            }
-            ig0.X0(ig0Var, this.x, true);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.bx0
-    public final void j() {
-        AndroidUtilities.runOnUIThread(new r00(this, 21), ig0.y0);
-    }
-
-    @Override // org.telegram.ui.Components.bx0
-    public final void k(Bundle bundle) {
-        Bundle bundle2 = bundle.getBundle("passview_params");
-        this.f = bundle2;
-        if (bundle2 != null) {
-            m(bundle2, true);
-        }
-        String string = bundle.getString("passview_code");
-        if (string != null) {
-            this.a.setText(string);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.bx0
-    public final void l(Bundle bundle) {
-        String obj = this.a.getText().toString();
-        if (obj.length() != 0) {
-            bundle.putString("passview_code", obj);
-        }
-        Bundle bundle2 = this.f;
-        if (bundle2 != null) {
-            bundle.putBundle("passview_params", bundle2);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.bx0
-    public final void m(Bundle bundle, boolean z10) {
-        if (bundle == null) {
-            return;
-        }
-        boolean isEmpty = bundle.isEmpty();
-        EditTextBoldCursor editTextBoldCursor = this.a;
-        if (isEmpty) {
-            AndroidUtilities.hideKeyboard(editTextBoldCursor);
-            return;
-        }
-        editTextBoldCursor.setText("");
-        this.f = bundle;
-        String string = bundle.getString("password");
-        this.r = string;
-        if (string != null) {
-            SerializedData serializedData = new SerializedData(Utilities.hexToBytes(string));
-            this.n = TL_account.Password.TLdeserialize(serializedData, serializedData.readInt32(false), false);
-        }
-        this.s = bundle.getString("phoneFormated");
-        this.v = bundle.getString("phoneHash");
-        this.w = bundle.getString("code");
-        TL_account.Password password = this.n;
-        if (password == null || TextUtils.isEmpty(password.hint)) {
-            editTextBoldCursor.setHint((CharSequence) null);
-        } else {
-            editTextBoldCursor.setHint(this.n.hint);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.bx0
-    public final void updateColors() {
-        int i10 = org.telegram.ui.ActionBar.y6.G6;
-        this.d.setTextColor(org.telegram.ui.ActionBar.y6.x0(null, i10, false));
-        this.b.setTextColor(org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.D6, false));
-        int x02 = org.telegram.ui.ActionBar.y6.x0(null, i10, false);
-        EditTextBoldCursor editTextBoldCursor = this.a;
-        editTextBoldCursor.setTextColor(x02);
-        editTextBoldCursor.setCursorColor(org.telegram.ui.ActionBar.y6.x0(null, i10, false));
-        editTextBoldCursor.setHintTextColor(org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.H6, false));
-        this.c.setTextColor(org.telegram.ui.ActionBar.y6.x0(null, org.telegram.ui.ActionBar.y6.q6, false));
-        this.x.f();
     }
 }

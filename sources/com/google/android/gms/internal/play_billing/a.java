@@ -4,112 +4,112 @@ import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class a extends a8.a implements c {
-    public final int V0(int i10, String str, String str2, Bundle bundle) {
-        Parcel T0 = T0();
-        T0.writeInt(i10);
-        T0.writeString(str);
-        T0.writeString(str2);
+public final class a extends a9.a implements c {
+    public final int X0(int i10, String str, String str2, Bundle bundle) {
+        Parcel V0 = V0();
+        V0.writeInt(i10);
+        V0.writeString(str);
+        V0.writeString(str2);
         int i11 = d.a;
-        T0.writeInt(1);
-        bundle.writeToParcel(T0, 0);
-        Parcel U0 = U0(T0, 10);
-        int readInt = U0.readInt();
-        U0.recycle();
+        V0.writeInt(1);
+        bundle.writeToParcel(V0, 0);
+        Parcel W0 = W0(V0, 10);
+        int readInt = W0.readInt();
+        W0.recycle();
         return readInt;
     }
 
-    public final Bundle W0(String str, String str2, Bundle bundle) {
-        Parcel T0 = T0();
-        T0.writeInt(9);
-        T0.writeString(str);
-        T0.writeString(str2);
+    public final Bundle Y0(String str, String str2, Bundle bundle) {
+        Parcel V0 = V0();
+        V0.writeInt(9);
+        V0.writeString(str);
+        V0.writeString(str2);
         int i10 = d.a;
-        T0.writeInt(1);
-        bundle.writeToParcel(T0, 0);
-        Parcel U0 = U0(T0, 12);
+        V0.writeInt(1);
+        bundle.writeToParcel(V0, 0);
+        Parcel W0 = W0(V0, 12);
         Parcelable.Creator creator = Bundle.CREATOR;
-        Bundle bundle2 = (Bundle) d.a(U0);
-        U0.recycle();
-        return bundle2;
-    }
-
-    public final Bundle X0(String str, String str2, String str3) {
-        Parcel T0 = T0();
-        T0.writeInt(3);
-        T0.writeString(str);
-        T0.writeString(str2);
-        T0.writeString(str3);
-        T0.writeString(null);
-        Parcel U0 = U0(T0, 3);
-        Parcelable.Creator creator = Bundle.CREATOR;
-        Bundle bundle = (Bundle) d.a(U0);
-        U0.recycle();
-        return bundle;
-    }
-
-    public final Bundle Y0(int i10, String str, String str2, String str3, Bundle bundle) {
-        Parcel T0 = T0();
-        T0.writeInt(i10);
-        T0.writeString(str);
-        T0.writeString(str2);
-        T0.writeString(str3);
-        T0.writeString(null);
-        int i11 = d.a;
-        T0.writeInt(1);
-        bundle.writeToParcel(T0, 0);
-        Parcel U0 = U0(T0, 8);
-        Parcelable.Creator creator = Bundle.CREATOR;
-        Bundle bundle2 = (Bundle) d.a(U0);
-        U0.recycle();
+        Bundle bundle2 = (Bundle) d.a(W0);
+        W0.recycle();
         return bundle2;
     }
 
     public final Bundle Z0(String str, String str2, String str3) {
-        Parcel T0 = T0();
-        T0.writeInt(3);
-        T0.writeString(str);
-        T0.writeString(str2);
-        T0.writeString(str3);
-        Parcel U0 = U0(T0, 4);
+        Parcel V0 = V0();
+        V0.writeInt(3);
+        V0.writeString(str);
+        V0.writeString(str2);
+        V0.writeString(str3);
+        V0.writeString(null);
+        Parcel W0 = W0(V0, 3);
         Parcelable.Creator creator = Bundle.CREATOR;
-        Bundle bundle = (Bundle) d.a(U0);
-        U0.recycle();
+        Bundle bundle = (Bundle) d.a(W0);
+        W0.recycle();
         return bundle;
     }
 
     public final Bundle a1(int i10, String str, String str2, String str3, Bundle bundle) {
-        Parcel T0 = T0();
-        T0.writeInt(i10);
-        T0.writeString(str);
-        T0.writeString(str2);
-        T0.writeString(str3);
+        Parcel V0 = V0();
+        V0.writeInt(i10);
+        V0.writeString(str);
+        V0.writeString(str2);
+        V0.writeString(str3);
+        V0.writeString(null);
         int i11 = d.a;
-        T0.writeInt(1);
-        bundle.writeToParcel(T0, 0);
-        Parcel U0 = U0(T0, 11);
+        V0.writeInt(1);
+        bundle.writeToParcel(V0, 0);
+        Parcel W0 = W0(V0, 8);
         Parcelable.Creator creator = Bundle.CREATOR;
-        Bundle bundle2 = (Bundle) d.a(U0);
-        U0.recycle();
+        Bundle bundle2 = (Bundle) d.a(W0);
+        W0.recycle();
         return bundle2;
     }
 
-    public final Bundle b1(int i10, String str, String str2, Bundle bundle, Bundle bundle2) {
-        Parcel T0 = T0();
-        T0.writeInt(i10);
-        T0.writeString(str);
-        T0.writeString(str2);
-        int i11 = d.a;
-        T0.writeInt(1);
-        bundle.writeToParcel(T0, 0);
-        T0.writeInt(1);
-        bundle2.writeToParcel(T0, 0);
-        Parcel U0 = U0(T0, 901);
+    public final Bundle b1(String str, String str2, String str3) {
+        Parcel V0 = V0();
+        V0.writeInt(3);
+        V0.writeString(str);
+        V0.writeString(str2);
+        V0.writeString(str3);
+        Parcel W0 = W0(V0, 4);
         Parcelable.Creator creator = Bundle.CREATOR;
-        Bundle bundle3 = (Bundle) d.a(U0);
-        U0.recycle();
+        Bundle bundle = (Bundle) d.a(W0);
+        W0.recycle();
+        return bundle;
+    }
+
+    public final Bundle c1(int i10, String str, String str2, String str3, Bundle bundle) {
+        Parcel V0 = V0();
+        V0.writeInt(i10);
+        V0.writeString(str);
+        V0.writeString(str2);
+        V0.writeString(str3);
+        int i11 = d.a;
+        V0.writeInt(1);
+        bundle.writeToParcel(V0, 0);
+        Parcel W0 = W0(V0, 11);
+        Parcelable.Creator creator = Bundle.CREATOR;
+        Bundle bundle2 = (Bundle) d.a(W0);
+        W0.recycle();
+        return bundle2;
+    }
+
+    public final Bundle d1(int i10, String str, String str2, Bundle bundle, Bundle bundle2) {
+        Parcel V0 = V0();
+        V0.writeInt(i10);
+        V0.writeString(str);
+        V0.writeString(str2);
+        int i11 = d.a;
+        V0.writeInt(1);
+        bundle.writeToParcel(V0, 0);
+        V0.writeInt(1);
+        bundle2.writeToParcel(V0, 0);
+        Parcel W0 = W0(V0, 901);
+        Parcelable.Creator creator = Bundle.CREATOR;
+        Bundle bundle3 = (Bundle) d.a(W0);
+        W0.recycle();
         return bundle3;
     }
 }

@@ -1,40 +1,30 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class s20 implements Utilities.Callback2 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ x50 b;
+public final class s20 extends TextView {
+    public final RectF a;
+    public final /* synthetic */ b50 b;
 
-    public /* synthetic */ s20(x50 x50Var, int i10) {
-        this.a = i10;
-        this.b = x50Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public s20(b50 b50Var, Context context) {
+        super(context);
+        this.b = b50Var;
+        this.a = new RectF();
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback2
-    public final void run(Object obj, Object obj2) {
-        TLRPC.Updates updates = (TLRPC.Updates) obj;
-        switch (this.a) {
-            case 0:
-                x50 x50Var = this.b;
-                if (updates != null) {
-                    x50Var.d.getMessagesController().lambda$processUpdates$379(updates, false);
-                }
-                AndroidUtilities.runOnUIThread(new j20(x50Var, 10));
-                break;
-            default:
-                x50 x50Var2 = this.b;
-                if (updates == null) {
-                    x50Var2.getClass();
-                    break;
-                } else {
-                    x50Var2.d.getMessagesController().lambda$processUpdates$379(updates, false);
-                    break;
-                }
-        }
+    @Override // android.widget.TextView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        float width = getWidth();
+        float height = getHeight();
+        RectF rectF = this.a;
+        rectF.set(0.0f, 0.0f, width, height);
+        canvas.drawRoundRect(rectF, org.telegram.messenger.i0.L(12.0f), org.telegram.messenger.i0.L(12.0f), this.b.X2);
+        super.onDraw(canvas);
     }
 }

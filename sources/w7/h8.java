@@ -1,33 +1,36 @@
 package w7;
 
-import a8.ff;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class h8 {
-    public final String a;
-    public final String b;
-    public final String c;
-    public final String d;
-    public final m9 e;
-    public final String f;
-    public final Boolean g;
-    public final Boolean h;
-    public final Boolean i;
-    public final Integer j;
-    public final Integer k;
+public abstract class h8 {
+    public static void a(int i10, int i11) {
+        String a2;
+        if (i10 < 0 || i10 >= i11) {
+            if (i10 < 0) {
+                a2 = i8.a("%s (%s) must not be negative", "index", Integer.valueOf(i10));
+            } else {
+                if (i11 < 0) {
+                    throw new IllegalArgumentException(i0.a.i(i11, "negative size: "));
+                }
+                a2 = i8.a("%s (%s) must be less than size (%s)", "index", Integer.valueOf(i10), Integer.valueOf(i11));
+            }
+            throw new IndexOutOfBoundsException(a2);
+        }
+    }
 
-    public /* synthetic */ h8(ff ffVar) {
-        this.a = ffVar.a;
-        this.b = ffVar.b;
-        this.c = ffVar.d;
-        this.d = ffVar.e;
-        this.e = (m9) ffVar.g;
-        this.f = ffVar.f;
-        this.g = (Boolean) ffVar.h;
-        this.h = (Boolean) ffVar.i;
-        this.i = (Boolean) ffVar.j;
-        this.j = ffVar.c;
-        this.k = (Integer) ffVar.k;
+    public static void b(int i10, int i11, int i12) {
+        if (i10 < 0 || i11 < i10 || i11 > i12) {
+            throw new IndexOutOfBoundsException((i10 < 0 || i10 > i12) ? c(i10, i12, "start index") : (i11 < 0 || i11 > i12) ? c(i11, i12, "end index") : i8.a("end index (%s) must not be less than start index (%s)", Integer.valueOf(i11), Integer.valueOf(i10)));
+        }
+    }
+
+    public static String c(int i10, int i11, String str) {
+        if (i10 < 0) {
+            return i8.a("%s (%s) must not be negative", str, Integer.valueOf(i10));
+        }
+        if (i11 >= 0) {
+            return i8.a("%s (%s) must not be greater than size (%s)", str, Integer.valueOf(i10), Integer.valueOf(i11));
+        }
+        throw new IllegalArgumentException(i0.a.i(i11, "negative size: "));
     }
 }

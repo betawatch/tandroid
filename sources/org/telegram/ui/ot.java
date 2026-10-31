@@ -1,70 +1,61 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Timer;
-import org.telegram.messenger.Emoji;
+import java.util.Comparator;
+import org.telegram.messenger.support.LongSparseIntArray;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class ot extends org.telegram.ui.Components.mm0 {
-    public final Context c;
-    public Timer d;
-    public ArrayList e;
-    public final ArrayList f = new ArrayList();
-    public final /* synthetic */ qt h;
+public final /* synthetic */ class ot implements Comparator {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public ot(qt qtVar, Context context, HashMap hashMap) {
-        this.h = qtVar;
-        this.c = context;
-        Iterator it = hashMap.values().iterator();
-        while (it.hasNext()) {
-            Iterator it2 = ((List) it.next()).iterator();
-            while (it2.hasNext()) {
-                this.f.add((lt) it2.next());
-            }
+    public /* synthetic */ ot(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
+    }
+
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        switch (this.a) {
+            case 0:
+                return ((Comparator) this.b).compare(((nt) obj).a, ((nt) obj2).a);
+            case 1:
+                LongSparseIntArray longSparseIntArray = (LongSparseIntArray) this.b;
+                int i10 = longSparseIntArray.get(((Long) obj).longValue());
+                int i11 = longSparseIntArray.get(((Long) obj2).longValue());
+                if (i10 > i11) {
+                    return 1;
+                }
+                return i10 < i11 ? -1 : 0;
+            case 2:
+                org.telegram.messenger.zc zcVar = (org.telegram.messenger.zc) this.b;
+                org.telegram.messenger.zc zcVar2 = (org.telegram.messenger.zc) obj;
+                org.telegram.messenger.zc zcVar3 = (org.telegram.messenger.zc) obj2;
+                if (zcVar2 != zcVar) {
+                    if (zcVar3 != zcVar) {
+                        int i12 = zcVar2.k;
+                        int i13 = zcVar3.k;
+                        if (i12 == i13) {
+                            return zcVar2.a.compareTo(zcVar3.a);
+                        }
+                        if (i12 <= i13) {
+                            if (i12 >= i13) {
+                                return 0;
+                            }
+                        }
+                    }
+                    return 1;
+                }
+                return -1;
+            default:
+                StickersActivity stickersActivity = (StickersActivity) this.b;
+                int indexOf = stickersActivity.d.indexOf((TLRPC.TL_messages_stickerSet) obj);
+                int indexOf2 = stickersActivity.d.indexOf((TLRPC.TL_messages_stickerSet) obj2);
+                if (indexOf < 0 || indexOf2 < 0) {
+                    return 0;
+                }
+                return indexOf - indexOf2;
         }
-    }
-
-    @Override // org.telegram.ui.Components.mm0
-    public final boolean D(s4.e1 e1Var) {
-        return true;
-    }
-
-    @Override // s4.h0
-    public final int h() {
-        ArrayList arrayList = this.e;
-        if (arrayList == null) {
-            return 0;
-        }
-        return arrayList.size();
-    }
-
-    @Override // s4.h0
-    public final int j(int i10) {
-        return 0;
-    }
-
-    @Override // s4.h0
-    public final void v(s4.e1 e1Var, int i10) {
-        String str;
-        lt ltVar = (lt) this.e.get(i10);
-        org.telegram.ui.Cells.ga gaVar = (org.telegram.ui.Cells.ga) e1Var.a;
-        CharSequence replaceEmoji = Emoji.replaceEmoji(qt.W(ltVar), gaVar.getTextView().getPaint().getFontMetricsInt(), false);
-        if (this.h.h) {
-            str = "+" + ltVar.c;
-        } else {
-            str = null;
-        }
-        gaVar.c(replaceEmoji, str, false, false);
-    }
-
-    @Override // s4.h0
-    public final s4.e1 x(ViewGroup viewGroup, int i10) {
-        return new org.telegram.ui.Components.wl0(qt.V(this.c));
     }
 }

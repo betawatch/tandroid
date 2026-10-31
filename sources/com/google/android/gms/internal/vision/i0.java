@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.vision;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class i0 implements k1 {
     public static final i0 b = new i0(0);
@@ -76,16 +76,16 @@ public final class i0 implements k1 {
                         j0Var = j0.s;
                         break;
                     case 9:
-                        j0Var = j0.v;
-                        break;
-                    case 10:
                         j0Var = j0.w;
                         break;
-                    case 11:
+                    case 10:
                         j0Var = j0.x;
                         break;
-                    case 12:
+                    case 11:
                         j0Var = j0.y;
+                        break;
+                    case 12:
+                        j0Var = j0.D;
                         break;
                     case 13:
                         j0Var = j0.E;
@@ -134,16 +134,16 @@ public final class i0 implements k1 {
                         k0Var = k0.s;
                         break;
                     case 9:
-                        k0Var = k0.v;
-                        break;
-                    case 10:
                         k0Var = k0.w;
                         break;
-                    case 11:
+                    case 10:
                         k0Var = k0.x;
                         break;
-                    case 12:
+                    case 11:
                         k0Var = k0.y;
+                        break;
+                    case 12:
+                        k0Var = k0.D;
                         break;
                     case 13:
                         k0Var = k0.E;

@@ -1,7 +1,7 @@
 package p2;
 
 import android.net.Uri;
-import b2.j1;
+import b2.i1;
 import b2.x;
 import j$.util.DesugarCollections;
 import java.util.ArrayList;
@@ -9,7 +9,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class p extends q {
     public static final p n;
@@ -70,8 +70,8 @@ public final class p extends q {
             int i12 = 0;
             while (true) {
                 if (i12 < list2.size()) {
-                    j1 j1Var = (j1) list2.get(i12);
-                    if (j1Var.b == i10 && j1Var.c == i11) {
+                    i1 i1Var = (i1) list2.get(i12);
+                    if (i1Var.b == i10 && i1Var.c == i11) {
                         arrayList.add(obj);
                         break;
                     }

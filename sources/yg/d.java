@@ -1,0 +1,68 @@
+package yg;
+
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Matrix;
+import android.graphics.RectF;
+import android.view.View;
+import android.view.ViewGroup;
+import org.telegram.messenger.zs;
+import vg.f;
+import zg.h;
+
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public abstract class d {
+    public static final Matrix a = new Matrix();
+    public static final RectF b = new RectF();
+    public static final RectF c = new RectF();
+
+    public static void a(ug.a aVar, Canvas canvas, RectF rectF, View view, ViewGroup viewGroup) {
+        b(aVar, canvas, rectF, view, viewGroup, zs.e4);
+    }
+
+    public static void b(ug.a aVar, Canvas canvas, RectF rectF, View view, ViewGroup viewGroup, int i10) {
+        if (i10 <= 0 || aVar == null) {
+            return;
+        }
+        RectF rectF2 = c;
+        if (h.c(view, viewGroup, rectF2)) {
+            float f7 = rectF2.left;
+            float f10 = rectF2.top;
+            RectF rectF3 = b;
+            rectF3.set(rectF);
+            rectF3.offset(-f7, -f10);
+            boolean z10 = (f7 == 0.0f && f10 == 0.0f) ? false : true;
+            boolean z11 = i10 != 255;
+            if (z10) {
+                canvas.save();
+                canvas.translate(f7, f10);
+            }
+            if (z11) {
+                canvas.saveLayerAlpha(rectF3, i10);
+            }
+            aVar.d(canvas, rectF3);
+            if (z11) {
+                canvas.restore();
+            }
+            if (z10) {
+                canvas.restore();
+            }
+        }
+    }
+
+    public static void c(hi.b bVar, View view) {
+        Bitmap bitmap;
+        if (bVar == null || view == null || view.getWidth() == 0 || view.getHeight() == 0 || (bitmap = bVar.d) == null || bitmap.isRecycled() || bitmap.getWidth() == 0 || bitmap.getHeight() == 0) {
+            return;
+        }
+        Matrix matrix = a;
+        matrix.reset();
+        matrix.setScale(view.getWidth() / bitmap.getWidth(), view.getHeight() / bitmap.getHeight());
+        bVar.b.set(matrix);
+    }
+
+    public static c d(f fVar, int i10, int i11) {
+        return new c(i10, i11, fVar);
+    }
+}

@@ -3,9 +3,9 @@ package androidx.lifecycle;
 import java.io.File;
 import java.util.LinkedHashSet;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class k0 extends kotlin.jvm.internal.j implements ud.a {
+public final class k0 extends kotlin.jvm.internal.j implements ld.a {
     public final /* synthetic */ int b;
     public final /* synthetic */ Object c;
 
@@ -16,7 +16,7 @@ public final class k0 extends kotlin.jvm.internal.j implements ud.a {
         this.c = obj;
     }
 
-    @Override // ud.a
+    @Override // ld.a
     public final Object invoke() {
         switch (this.b) {
             case 0:
@@ -37,7 +37,7 @@ public final class k0 extends kotlin.jvm.internal.j implements ud.a {
                 File file2 = (File) ((m1.b) this.c).invoke();
                 String name = file2.getName();
                 kotlin.jvm.internal.i.d(name, "getName(...)");
-                if (ae.k.j(name, "").equals("preferences_pb")) {
+                if (rd.j.j(name, "").equals("preferences_pb")) {
                     return file2;
                 }
                 throw new IllegalStateException(("File extension for file: " + file2 + " does not match required extension for Preferences file: preferences_pb").toString());

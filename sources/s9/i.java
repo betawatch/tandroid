@@ -1,15 +1,32 @@
 package s9;
 
-import java.util.HashSet;
+import java.util.concurrent.Delayed;
+import java.util.concurrent.ScheduledFuture;
+import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class i {
-    public final a a;
-    public final HashSet b = new HashSet();
-    public final HashSet c = new HashSet();
+public final class i extends c0.h implements ScheduledFuture {
+    public final ScheduledFuture n;
 
-    public i(a aVar) {
-        this.a = aVar;
+    public i(h hVar) {
+        this.n = hVar.a(new g(this));
+    }
+
+    @Override // java.lang.Comparable
+    public final int compareTo(Delayed delayed) {
+        return this.n.compareTo(delayed);
+    }
+
+    @Override // c0.h
+    public final void d() {
+        ScheduledFuture scheduledFuture = this.n;
+        Object obj = this.a;
+        scheduledFuture.cancel((obj instanceof c0.a) && ((c0.a) obj).a);
+    }
+
+    @Override // java.util.concurrent.Delayed
+    public final long getDelay(TimeUnit timeUnit) {
+        return this.n.getDelay(timeUnit);
     }
 }

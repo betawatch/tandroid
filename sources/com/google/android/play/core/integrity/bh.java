@@ -1,13 +1,13 @@
 package com.google.android.play.core.integrity;
 
+import a9.j0;
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.os.RemoteException;
-import b9.h0;
 import com.google.android.gms.tasks.TaskCompletionSource;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 final class bh extends bm {
     final /* synthetic */ Bundle a;
@@ -26,9 +26,9 @@ final class bh extends bm {
         this.e = bnVar;
     }
 
-    @Override // b9.i0
+    @Override // a9.k0
     public final void b() {
-        h0 h0Var;
+        j0 j0Var;
         at atVar;
         if (bn.l(this.e)) {
             a(new StandardIntegrityException(-2, null));
@@ -36,25 +36,25 @@ final class bh extends bm {
         }
         try {
             bn bnVar = this.e;
-            b9.d dVar = bnVar.a;
-            b9.x xVar = (b9.x) dVar.n;
+            a9.e eVar = bnVar.a;
+            a9.z zVar = (a9.z) eVar.n;
             Bundle bundle = this.a;
             atVar = bnVar.e;
-            as a2 = atVar.a(this.b, this.c, dVar);
-            b9.v vVar = (b9.v) xVar;
-            vVar.getClass();
+            as a2 = atVar.a(this.b, this.c, eVar);
+            a9.x xVar = (a9.x) zVar;
+            xVar.getClass();
             Parcel obtain = Parcel.obtain();
-            obtain.writeInterfaceToken(vVar.c);
-            int i10 = b9.t.a;
+            obtain.writeInterfaceToken(xVar.c);
+            int i10 = a9.v.a;
             obtain.writeInt(1);
             bundle.writeToParcel(obtain, 0);
             obtain.writeStrongBinder(a2);
-            vVar.G0(obtain, 6);
+            xVar.I0(obtain, 6);
         } catch (RemoteException e) {
             bn bnVar2 = this.e;
             int i11 = this.d;
-            h0Var = bnVar2.b;
-            h0Var.a(e, "requestAndShowDialog(%s)", Integer.valueOf(i11));
+            j0Var = bnVar2.b;
+            j0Var.a(e, "requestAndShowDialog(%s)", Integer.valueOf(i11));
             this.c.trySetException(new StandardIntegrityException(-100, e));
         }
     }

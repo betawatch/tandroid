@@ -1,10 +1,10 @@
 package k4;
 
-import a8.yb;
 import c3.p;
 import e2.x;
+import v7.t6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class d {
     public final int a;
@@ -27,7 +27,7 @@ public final class d {
     }
 
     public d(int i10, long j10) {
-        yb.g(j10 >= 0);
+        t6.f(j10 >= 0);
         this.a = i10;
         this.b = j10;
     }

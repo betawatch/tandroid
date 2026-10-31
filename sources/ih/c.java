@@ -1,169 +1,442 @@
 package ih;
 
+import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.ColorFilter;
 import android.graphics.Paint;
-import android.graphics.Rect;
+import android.graphics.Path;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.y6;
+import android.os.Trace;
+import android.view.ContextThemeWrapper;
+import android.view.View;
+import android.view.ViewTreeObserver;
+import bi.t0;
+import java.util.Iterator;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.i0;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.k2;
+import org.telegram.ui.ActionBar.p6;
+import org.telegram.ui.ActionBar.t6;
+import org.telegram.ui.Components.e6;
+import org.telegram.ui.Components.gr;
+import org.telegram.ui.Components.j21;
+import org.telegram.ui.Components.jf0;
+import org.telegram.ui.Components.t5;
+import org.telegram.ui.Components.t80;
+import org.telegram.ui.Components.ve0;
+import org.telegram.ui.Components.y5;
+import org.telegram.ui.PhotoViewer;
+import org.telegram.ui.m40;
+import org.telegram.ui.v50;
+import th.z2;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes4.dex */
-public final class c extends Drawable {
-    public final /* synthetic */ int a = 2;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final class c extends View {
+    public final /* synthetic */ int a;
+    public final Object b;
+    public Object c;
     public Object d;
 
-    public c(int i10, int i11, Drawable drawable) {
-        this.b = i10;
-        this.c = i11;
-        this.d = drawable;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        int i10;
-        switch (this.a) {
-            case 0:
-                ((Drawable) this.d).draw(canvas);
-                break;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public c(Context context, int i10) {
+        super(context);
+        this.a = i10;
+        switch (i10) {
             case 1:
-                Rect bounds = getBounds();
-                canvas.drawCircle(bounds.centerX(), bounds.centerY(), this.c / 2.0f, (Paint) this.d);
+                super(context);
+                this.b = new je.b();
+                this.c = new nf.a(0, this);
                 break;
             default:
-                Rect bounds2 = getBounds();
-                int i11 = this.c;
-                int i12 = this.b;
-                if (i12 != 7) {
-                    if (i12 == 1 || i12 == 6) {
-                        if (i11 <= 0) {
-                            i11 = AndroidUtilities.dp(20.0f);
-                        }
-                        i10 = i11;
-                    } else {
-                        i10 = i12 == 3 ? Math.max(bounds2.width(), bounds2.height()) / 2 : (int) Math.ceil(Math.sqrt(((bounds2.top - bounds2.centerY()) * (bounds2.top - bounds2.centerY())) + ((bounds2.left - bounds2.centerX()) * (bounds2.left - bounds2.centerX()))));
-                    }
-                    canvas.drawCircle(bounds2.centerX(), bounds2.centerY(), i10, y6.z);
-                    break;
+                this.b = new fe.b(this, gr.h, 320L);
+                this.c = i0.a.f(context, R.drawable.outline_poll_emoji_24);
+                this.d = i0.a.f(context, R.drawable.input_keyboard);
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public void dispatchDraw(Canvas canvas) {
+        int textColor;
+        Canvas canvas2;
+        org.telegram.ui.ActionBar.l lVar;
+        switch (this.a) {
+            case 3:
+                j21 j21Var = (j21) this.d;
+                e6 e6Var = j21Var.e;
+                float i10 = e6Var.i();
+                if (i10 > 0.0f) {
+                    float T1 = i0.T1(0.6f, 1.0f, i10);
+                    float max = Math.max(i0.L(16.66f), e6Var.c() + i0.L(10.0f));
+                    RectF rectF = i0.P;
+                    rectF.set(0.0f, 0.0f, max, getHeight());
+                    canvas.save();
+                    canvas.scale(T1, T1, rectF.centerX(), rectF.centerY());
+                    float L = i0.L(8.33f);
+                    float L2 = i0.L(8.33f);
+                    y5 y5Var = (y5) this.b;
+                    y5Var.setColor(y5Var.b.a(t6.w0(j21Var.I, y5Var.a), false));
+                    textColor = j21Var.getTextColor();
+                    y5Var.setColor(i0.b.f(j21Var.F, y5Var.getColor(), textColor));
+                    y5Var.setAlpha((int) (y5Var.getAlpha() * i10));
+                    canvas.drawRoundRect(rectF, L, L2, y5Var);
+                    e6Var.p(rectF);
+                    e6Var.B = (int) (i10 * 255.0f);
+                    e6Var.u(t6.w0(t6.W8, (p6) this.c));
+                    e6Var.draw(canvas);
+                    canvas.restore();
+                }
+                super.dispatchDraw(canvas);
+                break;
+            case 4:
+                int[] iArr = (int[]) this.b;
+                t0 t0Var = (t0) this.c;
+                m40 m40Var = (m40) this.d;
+                if (m40Var.h <= 0.0f || m40Var.d == null) {
+                    canvas2 = canvas;
                 } else {
-                    if (((RectF) this.d) == null) {
-                        this.d = new RectF();
+                    m40Var.f.reset();
+                    float width = getWidth() / m40Var.c.getWidth();
+                    m40Var.f.postScale(width, width);
+                    m40Var.e.setLocalMatrix(m40Var.f);
+                    m40Var.d.setAlpha((int) (m40Var.h * 255.0f));
+                    canvas2 = canvas;
+                    canvas2.drawRect(0.0f, 0.0f, getWidth(), getHeight(), m40Var.d);
+                }
+                if (t0Var != null) {
+                    if (!t0Var.isAttachedToWindow() || t0Var.getAlpha() <= 0.5f) {
+                        m40Var.dismiss();
+                    } else {
+                        t0Var.getLocationInWindow(iArr);
                     }
-                    ((RectF) this.d).set(bounds2);
-                    float dp = i11 <= 0 ? AndroidUtilities.dp(6.0f) : i11;
-                    canvas.drawRoundRect((RectF) this.d, dp, dp, y6.z);
+                    canvas2.save();
+                    canvas2.translate(iArr[0] - ((1.0f - t0Var.getScaleX()) * t0Var.getMeasuredWidth()), iArr[1] - ((1.0f - t0Var.getScaleY()) * t0Var.getMeasuredHeight()));
+                    if (((g.b) t0Var.b).a(canvas2, t0Var.getMeasuredWidth(), m40Var.h)) {
+                        invalidate();
+                    }
+                    canvas2.restore();
                     break;
                 }
+                break;
+            case 5:
+                super.dispatchDraw(canvas);
+                int L3 = i0.L(48.0f);
+                v50 v50Var = (v50) this.d;
+                int i11 = L3 + ((int) v50Var.b.f);
+                Paint paint = (Paint) this.c;
+                paint.setColor(v50Var.getThemedColor(t6.s8));
+                RectF rectF2 = (RectF) this.b;
+                float measuredWidth = getMeasuredWidth();
+                lVar = ((k2) v50Var).actionBar;
+                rectF2.set(0.0f, 0.0f, measuredWidth, lVar.getMeasuredHeight() + i11);
+                v50.e0(v50Var, canvas, rectF2, paint);
+                break;
+            default:
+                super.dispatchDraw(canvas);
+                break;
         }
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public int getAlpha() {
+    @Override // android.view.View
+    public void onAttachedToWindow() {
+        switch (this.a) {
+            case 1:
+                super.onAttachedToWindow();
+                ViewTreeObserver viewTreeObserver = getViewTreeObserver();
+                this.d = viewTreeObserver;
+                viewTreeObserver.addOnDrawListener((nf.a) this.c);
+                break;
+            case 7:
+                super.onAttachedToWindow();
+                if (((qh.f) this.c) != null) {
+                    postDelayed((org.telegram.ui.Wallet.l) this.d, 200L);
+                    break;
+                }
+                break;
+            default:
+                super.onAttachedToWindow();
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public void onDetachedFromWindow() {
+        switch (this.a) {
+            case 1:
+                super.onDetachedFromWindow();
+                ViewTreeObserver viewTreeObserver = (ViewTreeObserver) this.d;
+                if (viewTreeObserver != null && viewTreeObserver.isAlive()) {
+                    ((ViewTreeObserver) this.d).removeOnDrawListener((nf.a) this.c);
+                }
+                this.d = null;
+                break;
+            case 7:
+                super.onDetachedFromWindow();
+                org.telegram.ui.Wallet.l lVar = (org.telegram.ui.Wallet.l) this.d;
+                removeCallbacks(lVar);
+                lVar.run();
+                break;
+            default:
+                super.onDetachedFromWindow();
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public void onDraw(Canvas canvas) {
+        ve0 ve0Var;
         switch (this.a) {
             case 0:
-                return ((Drawable) this.d).getAlpha();
-            default:
-                return super.getAlpha();
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public int getIntrinsicHeight() {
-        switch (this.a) {
+                super.onDraw(canvas);
+                float f7 = ((fe.b) this.b).e;
+                rf.o.b(canvas, (Drawable) this.c, 1.0f - f7);
+                rf.o.b(canvas, (Drawable) this.d, f7);
+                return;
             case 1:
-                return this.c + this.b;
+                Trace.beginSection("OnPostDraw");
+                try {
+                    Iterator it = ((je.b) this.b).iterator();
+                    while (it.hasNext()) {
+                        ((ei.i) it.next()).b();
+                    }
+                    return;
+                } finally {
+                    Trace.endSection();
+                }
+            case 2:
+                super.onDraw(canvas);
+                jf0 jf0Var = (jf0) this.d;
+                if (!jf0Var.n || ((ve0Var = jf0Var.r) != null && ve0Var.y)) {
+                    int width = getWidth();
+                    int L = i0.L(10.0f);
+                    float f10 = (width - L) - L;
+                    int i10 = L + ((int) (jf0Var.Z * f10));
+                    float height = getHeight() - i0.L(8.0f);
+                    float f11 = jf0Var.a0;
+                    if (f11 != 0.0f) {
+                        float f12 = L;
+                        canvas.drawLine(f12, height, (f11 * f10) + f12, height, (Paint) this.c);
+                    }
+                    canvas.drawLine(L, height, i10, height, (Paint) this.b);
+                    return;
+                }
+                return;
+            case 3:
+            case 4:
+            case 5:
             default:
-                return super.getIntrinsicHeight();
+                super.onDraw(canvas);
+                return;
+            case 6:
+                float L2 = i0.L(10.0f);
+                float f13 = L2 * 2.0f;
+                float measuredWidth = getMeasuredWidth() - f13;
+                float measuredHeight = getMeasuredHeight() - f13;
+                canvas.save();
+                RectF rectF = i0.P;
+                float f14 = L2 + measuredWidth;
+                rectF.set(L2, L2, f14, f14);
+                rectF.offset(0.0f, (measuredHeight - rectF.height()) / 2.0f);
+                float f15 = measuredWidth / 7.0f;
+                Path path = (Path) this.c;
+                path.rewind();
+                path.addRoundRect(rectF, f15, f15, Path.Direction.CW);
+                canvas.clipPath(path);
+                int L3 = i0.L(10.0f);
+                canvas.save();
+                canvas.translate(rectF.left, rectF.top);
+                float f16 = L3;
+                int width2 = ((int) (rectF.width() / f16)) + 1;
+                int height2 = ((int) (rectF.height() / f16)) + 1;
+                for (int i11 = 0; i11 < height2; i11++) {
+                    canvas.save();
+                    for (int i12 = 0; i12 < width2; i12++) {
+                        int i13 = i12 % 2;
+                        if ((i13 == 0 && i11 % 2 == 0) || (i13 != 0 && i11 % 2 != 0)) {
+                            canvas.drawRect(0.0f, 0.0f, f16, f16, (Paint) this.b);
+                        }
+                        canvas.translate(f16, 0.0f);
+                    }
+                    canvas.restore();
+                    canvas.translate(0.0f, f16);
+                }
+                canvas.restore();
+                canvas.restore();
+                return;
+            case 7:
+                qh.g gVar = (qh.g) this.b;
+                gVar.e(canvas, 0.0f, 0.0f, getWidth());
+                if (gVar.o < 1.0f || gVar.l > 0) {
+                    invalidate();
+                    return;
+                }
+                return;
+            case 8:
+                t80 t80Var = (t80) this.b;
+                super.onDraw(canvas);
+                t5 t5Var = (t5) this.c;
+                t5Var.a = this;
+                ((z2) this.d).getClass();
+                t5Var.e(false, 0.0f);
+                float f17 = t5Var.c;
+                if (f17 != 0.0f) {
+                    if (f17 != 1.0f) {
+                        canvas.saveLayerAlpha(0.0f, 0.0f, getLayoutParams().width, getMeasuredHeight(), (int) (t5Var.c * 255.0f), 31);
+                    } else {
+                        canvas.save();
+                    }
+                    RectF rectF2 = i0.P;
+                    rectF2.set(0.0f, 0.0f, getLayoutParams().width, getMeasuredHeight());
+                    t80Var.e(rectF2);
+                    t80Var.k(24.0f);
+                    t80Var.g(i0.b.o(-1, 20), i0.b.o(-1, 50), i0.b.o(-1, 50), i0.b.o(-1, 70));
+                    t80Var.draw(canvas);
+                    invalidate();
+                    canvas.restore();
+                    return;
+                }
+                return;
         }
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public int getIntrinsicWidth() {
+    @Override // android.view.View
+    public void onMeasure(int i10, int i11) {
         switch (this.a) {
-            case 1:
-                return this.c + this.b;
+            case 3:
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) Math.max(i0.L(16.66f), ((j21) this.d).e.d + i0.L(10.0f)), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i0.L(16.66f), TLObject.FLAG_30));
+                break;
             default:
-                return super.getIntrinsicWidth();
+                super.onMeasure(i10, i11);
+                break;
         }
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
+    @Override // android.view.View
+    public void onSizeChanged(int i10, int i11, int i12, int i13) {
         switch (this.a) {
             case 0:
-                return ((Drawable) this.d).getOpacity();
-            case 1:
-                return -2;
-            default:
-                return 0;
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public void onBoundsChange(Rect rect) {
-        switch (this.a) {
-            case 0:
-                super.onBoundsChange(rect);
-                int width = rect.width();
-                int i10 = this.b;
-                int i11 = (width - i10) / 2;
-                int height = rect.height();
-                int i12 = this.c;
-                int i13 = (height - i12) / 2;
-                ((Drawable) this.d).setBounds(i11, i13, i10 + i11, i12 + i13);
+                super.onSizeChanged(i10, i11, i12, i13);
+                float f7 = i10 / 2.0f;
+                float f10 = i11 / 2.0f;
+                rf.o.d((Drawable) this.c, f7, f10, 17);
+                rf.o.d((Drawable) this.d, f7, f10, 17);
                 break;
             default:
-                super.onBoundsChange(rect);
+                super.onSizeChanged(i10, i11, i12, i13);
                 break;
         }
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
+    @Override // android.view.View
+    public void setAlpha(float f7) {
         switch (this.a) {
-            case 0:
-                ((Drawable) this.d).setAlpha(i10);
+            case 6:
+                super.setAlpha(f7);
+                ((PhotoViewer) this.d).g0.invalidate();
                 break;
-            case 1:
-                ((Paint) this.d).setAlpha(i10);
+            default:
+                super.setAlpha(f7);
                 break;
         }
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    @Override // android.view.View
+    public boolean verifyDrawable(Drawable drawable) {
         switch (this.a) {
-            case 1:
-                ((Paint) this.d).setColorFilter(colorFilter);
-                break;
+            case 3:
+                return ((j21) this.d).e == drawable || super.verifyDrawable(drawable);
+            default:
+                return super.verifyDrawable(drawable);
         }
     }
 
-    public c(int i10, int i11, int i12) {
-        this.b = i10;
-        this.c = i12;
-        Paint paint = new Paint(1);
-        this.d = paint;
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeWidth(i10);
-        paint.setColor(i11);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public c(v50 v50Var, Context context) {
+        super(context);
+        this.a = 5;
+        this.d = v50Var;
+        this.b = new RectF();
+        this.c = new Paint(1);
     }
 
-    public c(int i10, int i11) {
-        this.b = i10;
-        this.c = i11;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public c(jf0 jf0Var, Context context) {
+        super(context);
+        this.a = 2;
+        this.d = jf0Var;
+        Paint paint = new Paint();
+        this.b = paint;
+        Paint paint2 = new Paint();
+        this.c = paint2;
+        paint.setColor(-1);
+        Paint.Style style = Paint.Style.STROKE;
+        paint.setStyle(style);
+        Paint.Cap cap = Paint.Cap.ROUND;
+        paint.setStrokeCap(cap);
+        paint.setStrokeWidth(i0.L(2.0f));
+        paint2.setColor(paint.getColor());
+        paint2.setAlpha((int) (paint.getAlpha() * 0.3f));
+        paint2.setStyle(style);
+        paint2.setStrokeCap(cap);
+        paint2.setStrokeWidth(i0.L(2.0f));
     }
 
-    private final void a(int i10) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public c(j21 j21Var, Context context, p6 p6Var) {
+        super(context);
+        this.a = 3;
+        this.d = j21Var;
+        this.c = p6Var;
+        this.b = new y5(this, p6Var);
+        j21Var.e.setCallback(this);
     }
 
-    private final void b(ColorFilter colorFilter) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public c(Context context, qh.f fVar) {
+        super(context);
+        this.a = 7;
+        qh.g gVar = new qh.g();
+        this.b = gVar;
+        this.d = new org.telegram.ui.Wallet.l(this, 9);
+        if (gVar.y != -16777216 || gVar.z == null) {
+            gVar.y = -16777216;
+            gVar.z = new PorterDuffColorFilter(-16777216, PorterDuff.Mode.SRC_IN);
+        }
+        this.c = fVar;
     }
 
-    private final void c(ColorFilter colorFilter) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public c(z2 z2Var, Context context) {
+        super(context);
+        this.a = 8;
+        this.d = z2Var;
+        this.b = new t80();
+        this.c = new t5(250L, gr.f);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public c(PhotoViewer photoViewer, ContextThemeWrapper contextThemeWrapper) {
+        super(contextThemeWrapper);
+        this.a = 6;
+        this.d = photoViewer;
+        Paint paint = new Paint();
+        this.b = paint;
+        this.c = new Path();
+        paint.setColor(-1);
+        paint.setAlpha(40);
+        setLayerType(2, null);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public c(m40 m40Var, Context context, t0 t0Var) {
+        super(context);
+        this.a = 4;
+        this.d = m40Var;
+        this.c = t0Var;
+        this.b = new int[2];
     }
 }

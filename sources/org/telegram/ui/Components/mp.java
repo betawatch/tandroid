@@ -1,35 +1,17 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class mp implements ValueAnimator.AnimatorUpdateListener {
-    public boolean a = false;
-    public final /* synthetic */ c31 b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ zp e;
+public abstract class mp extends z4.a {
+    public abstract int j();
 
-    public mp(zp zpVar, c31 c31Var, float f7, boolean z10) {
-        this.e = zpVar;
-        this.b = c31Var;
-        this.c = f7;
-        this.d = z10;
-    }
-
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        zp zpVar = this.e;
-        zpVar.R = floatValue;
-        if (!this.d) {
-            floatValue = 1.0f - floatValue;
+    public final int k(int i10) {
+        int size = ((tg0) this).c.size();
+        int j10 = j();
+        if (i10 < j10) {
+            return ((size - (j10 * 2)) - ((j10 - i10) - 1)) - 1;
         }
-        this.b.setRadius(this.c * floatValue);
-        if (this.a || zpVar.R <= 0.5f) {
-            return;
-        }
-        this.a = true;
+        int i11 = size - j10;
+        return i10 >= i11 ? i10 - i11 : i10 - j10;
     }
 }

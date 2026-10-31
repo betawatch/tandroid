@@ -1,27 +1,19 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.R;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class hc implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ bd b;
+public final class hc extends z21 {
+    public final /* synthetic */ zc e;
 
-    public /* synthetic */ hc(bd bdVar, int i10) {
-        this.a = i10;
-        this.b = bdVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public hc(zc zcVar, gc gcVar) {
+        super(gcVar);
+        this.e = zcVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                bd.V(this.b);
-                break;
-            default:
-                org.telegram.messenger.t.q(R.string.ChannelWallpaperUpdated, org.telegram.ui.Components.wc.b0(this.b), R.raw.done, 36);
-                break;
-        }
+    @Override // org.telegram.ui.z21, android.widget.PopupWindow
+    public final void dismiss() {
+        super.dismiss();
+        this.e.Q = null;
     }
 }

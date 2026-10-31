@@ -6,19 +6,19 @@ import android.text.TextUtils;
 import d2.b;
 import e2.j;
 import e2.x;
-import f9.i0;
+import e9.n0;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.b10;
+import sc.e;
 import z3.d;
 import z3.l;
 import z3.m;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class a implements m {
     public static final Pattern d = Pattern.compile("\\s*((?:(\\d+):)?(\\d+):(\\d+)(?:,(\\d{3}))?)\\s*-->\\s*((?:(\\d+):)?(\\d+):(\\d+)(?:,(\\d{3}))?)\\s*");
@@ -28,67 +28,67 @@ public final class a implements m {
     public final x c = new x();
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Code restructure failed: missing block: B:10:0x0079, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:10:0x0070, code lost:
     
         r1 = 2;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:14:0x0095, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:14:0x008c, code lost:
     
         if (r22.equals("{\\an9}") != false) goto L42;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:15:0x00a5, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:15:0x009c, code lost:
     
         r3 = 0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:35:0x009c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:35:0x0093, code lost:
     
         if (r22.equals("{\\an8}") != false) goto L42;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:37:0x00a3, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:37:0x009a, code lost:
     
         if (r22.equals("{\\an7}") != false) goto L42;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:42:0x00ba, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:42:0x00b1, code lost:
     
         if (r22.equals("{\\an3}") != false) goto L54;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:43:0x00ca, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:43:0x00c1, code lost:
     
         r3 = 2;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:45:0x00c1, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:45:0x00b8, code lost:
     
         if (r22.equals("{\\an2}") != false) goto L54;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:47:0x00c8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:47:0x00bf, code lost:
     
         if (r22.equals("{\\an1}") != false) goto L54;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:51:0x005d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:51:0x0054, code lost:
     
         if (r22.equals("{\\an7}") != false) goto L29;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:52:0x0086, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:52:0x007d, code lost:
     
         r1 = 0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:54:0x0064, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:54:0x005b, code lost:
     
         if (r22.equals("{\\an6}") != false) goto L25;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:57:0x0070, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:57:0x0067, code lost:
     
         if (r22.equals("{\\an4}") != false) goto L29;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:59:0x0077, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:59:0x006e, code lost:
     
         if (r22.equals("{\\an3}") != false) goto L25;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:62:0x0084, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:62:0x007b, code lost:
     
         if (r22.equals("{\\an1}") != false) goto L29;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:9:0x0051, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:9:0x0048, code lost:
     
         if (r22.equals("{\\an9}") != false) goto L25;
      */
@@ -208,7 +208,17 @@ public final class a implements m {
     }
 
     @Override // z3.m
-    public final void G(byte[] bArr, int i10, int i11, l lVar, j jVar) {
+    public final /* synthetic */ d l(int i10, int i11, byte[] bArr) {
+        return e.a(this, bArr, i11);
+    }
+
+    @Override // z3.m
+    public final int o() {
+        return 1;
+    }
+
+    @Override // z3.m
+    public final void z(byte[] bArr, int i10, int i11, l lVar, j jVar) {
         String n10;
         String str;
         a aVar = this;
@@ -282,9 +292,9 @@ public final class a implements m {
                         }
                     }
                     if (j13 == j12 || b11 >= j13) {
-                        jVar.accept(new z3.a(b10, b11 - b10, i0.y(a(fromHtml, str))));
+                        jVar.accept(new z3.a(b10, b11 - b10, n0.y(a(fromHtml, str))));
                     } else if (arrayList != null) {
-                        arrayList.add(new z3.a(b10, b11 - b10, i0.y(a(fromHtml, str))));
+                        arrayList.add(new z3.a(b10, b11 - b10, n0.y(a(fromHtml, str))));
                     }
                     aVar = this;
                     j11 = j12;
@@ -304,16 +314,6 @@ public final class a implements m {
                 jVar.accept((z3.a) obj);
             }
         }
-    }
-
-    @Override // z3.m
-    public final /* synthetic */ d j(int i10, int i11, byte[] bArr) {
-        return b10.a(this, bArr, i11);
-    }
-
-    @Override // z3.m
-    public final int y() {
-        return 1;
     }
 
     @Override // z3.m

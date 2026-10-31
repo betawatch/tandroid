@@ -1,6 +1,5 @@
 package h0;
 
-import a8.ee;
 import android.content.res.ColorStateList;
 import android.content.res.Resources;
 import android.content.res.XmlResourceParser;
@@ -10,13 +9,15 @@ import android.util.AttributeSet;
 import android.util.StateSet;
 import android.util.TypedValue;
 import android.util.Xml;
-import c3.h0;
+import c3.i0;
 import java.lang.reflect.Array;
 import org.telegram.messenger.beta.R;
+import org.telegram.messenger.zs;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
+import w7.u;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public abstract class c {
     public static final ThreadLocal a = new ThreadLocal();
@@ -37,13 +38,13 @@ public abstract class c {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:157:0x02c6  */
-    /* JADX WARN: Removed duplicated region for block: B:160:0x00a4  */
-    /* JADX WARN: Removed duplicated region for block: B:39:0x009f  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x00d8  */
-    /* JADX WARN: Removed duplicated region for block: B:77:0x02d9  */
-    /* JADX WARN: Removed duplicated region for block: B:84:0x02ec  */
-    /* JADX WARN: Removed duplicated region for block: B:92:0x0137  */
+    /* JADX WARN: Removed duplicated region for block: B:157:0x02c5  */
+    /* JADX WARN: Removed duplicated region for block: B:160:0x00a3  */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x009e  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x00d7  */
+    /* JADX WARN: Removed duplicated region for block: B:77:0x02d8  */
+    /* JADX WARN: Removed duplicated region for block: B:84:0x02eb  */
+    /* JADX WARN: Removed duplicated region for block: B:92:0x0136  */
     /* JADX WARN: Type inference failed for: r0v0 */
     /* JADX WARN: Type inference failed for: r0v2, types: [android.content.res.Resources] */
     /* JADX WARN: Type inference failed for: r0v4 */
@@ -138,7 +139,7 @@ public abstract class c {
                         float f13 = 100.0f;
                         c10 = (f11 >= 0.0f || f11 > 100.0f) ? (char) 0 : c11;
                         if (f7 == 1.0f || c10 != 0) {
-                            int b10 = ee.b((int) ((Color.alpha(color) * f7) + 0.5f), 0, 255);
+                            int b10 = u.b((int) ((Color.alpha(color) * f7) + 0.5f), 0, zs.e4);
                             if (c10 == 0) {
                                 a a2 = a.a(color);
                                 float f14 = a2.a;
@@ -166,18 +167,18 @@ public abstract class c {
                                                     i11 = depth2;
                                                     break;
                                                 }
-                                                float B = h0.B(f18, f19, 2.0f, f19);
+                                                float B = i0.B(f18, f19, 2.0f, f19);
                                                 float f21 = f18;
                                                 int c13 = a.b(B, f16, min).c(k.k);
                                                 float e = b.e(Color.red(c13));
-                                                float e10 = b.e(Color.green(c13));
-                                                float e11 = b.e(Color.blue(c13));
+                                                float e7 = b.e(Color.green(c13));
+                                                float e10 = b.e(Color.blue(c13));
                                                 float[] fArr = b.d[c11];
-                                                float f22 = (e10 * fArr[c11]) + (e * fArr[0]);
+                                                float f22 = (e7 * fArr[c11]) + (e * fArr[0]);
                                                 float f23 = fArr[2];
                                                 i11 = depth2;
-                                                float x9 = h0.x(e11, f23, f22, 100.0f);
-                                                float cbrt = x9 <= 0.008856452f ? x9 * 903.2963f : (((float) Math.cbrt(x9)) * 116.0f) - 16.0f;
+                                                float x10 = i0.x(e10, f23, f22, 100.0f);
+                                                float cbrt = x10 <= 0.008856452f ? x10 * 903.2963f : (((float) Math.cbrt(x10)) * 116.0f) - 16.0f;
                                                 float abs = Math.abs(f11 - cbrt);
                                                 if (abs < 0.2f) {
                                                     a a10 = a.a(c13);
@@ -214,7 +215,7 @@ public abstract class c {
                                                     aVar = aVar3;
                                                     f12 = f16;
                                                 }
-                                                f16 = h0.B(f15, f12, 2.0f, f12);
+                                                f16 = i0.B(f15, f12, 2.0f, f12);
                                                 trimStateSet = iArr;
                                                 depth2 = i11;
                                                 f13 = 100.0f;
@@ -223,7 +224,7 @@ public abstract class c {
                                                     d = aVar3.c(kVar);
                                                     break;
                                                 }
-                                                f16 = h0.B(f15, f12, 2.0f, f12);
+                                                f16 = i0.B(f15, f12, 2.0f, f12);
                                                 trimStateSet = iArr;
                                                 depth2 = i11;
                                                 f13 = 100.0f;
@@ -289,7 +290,7 @@ public abstract class c {
                 }
                 if (f7 == 1.0f) {
                 }
-                int b102 = ee.b((int) ((Color.alpha(color) * f7) + 0.5f), 0, 255);
+                int b102 = u.b((int) ((Color.alpha(color) * f7) + 0.5f), 0, zs.e4);
                 if (c10 == 0) {
                 }
                 color = (16777215 & color) | (b102 << 24);

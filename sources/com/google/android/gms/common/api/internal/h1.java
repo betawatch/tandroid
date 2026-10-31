@@ -1,120 +1,92 @@
 package com.google.android.gms.common.api.internal;
 
-import android.os.DeadObjectException;
-import android.os.RemoteException;
 import com.google.android.gms.common.api.Status;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
+import j$.util.DesugarCollections;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class h1 extends v0 {
-    public final TaskCompletionSource b;
-    public final /* synthetic */ int c;
-    public final Object d;
+public final class h1 implements OnCompleteListener {
+    public static final Status c = new Status(8, "The connection to Google Play services was lost", null, null);
+    public final Object a;
+    public final Object b;
 
-    public h1(int i10, TaskCompletionSource taskCompletionSource) {
-        super(i10);
-        this.b = taskCompletionSource;
+    public /* synthetic */ h1(e2.w wVar, h1 h1Var) {
+        this.a = wVar;
+        this.b = h1Var;
     }
 
-    @Override // com.google.android.gms.common.api.internal.j1
-    public final void a(Status status) {
-        this.b.trySetException(new com.google.android.gms.common.api.f(status));
-    }
-
-    @Override // com.google.android.gms.common.api.internal.j1
-    public final void b(Exception exc) {
-        this.b.trySetException(exc);
-    }
-
-    @Override // com.google.android.gms.common.api.internal.j1
-    public final void c(o0 o0Var) {
-        try {
-            h(o0Var);
-        } catch (DeadObjectException e) {
-            a(j1.e(e));
-            throw e;
-        } catch (RemoteException e10) {
-            a(j1.e(e10));
-        } catch (RuntimeException e11) {
-            this.b.trySetException(e11);
-        }
-    }
-
-    @Override // com.google.android.gms.common.api.internal.j1
-    public final /* bridge */ /* synthetic */ void d(f1 f1Var, boolean z10) {
-        int i10 = this.c;
-    }
-
-    @Override // com.google.android.gms.common.api.internal.v0
-    public final boolean f(o0 o0Var) {
-        switch (this.c) {
-            case 0:
-                return ((a1) this.d).a.a;
-            default:
-                a1 a1Var = (a1) o0Var.f.get((n) this.d);
-                return a1Var != null && a1Var.a.a;
-        }
-    }
-
-    @Override // com.google.android.gms.common.api.internal.v0
-    public final l6.c[] g(o0 o0Var) {
-        switch (this.c) {
-            case 0:
-                return (l6.c[]) ((a1) this.d).a.d;
-            default:
-                a1 a1Var = (a1) o0Var.f.get((n) this.d);
-                if (a1Var == null) {
-                    return null;
+    public void a() {
+        boolean f7;
+        for (BasePendingResult basePendingResult : (BasePendingResult[]) ((Set) this.a).toArray(new BasePendingResult[0])) {
+            basePendingResult.g.set(null);
+            synchronized (basePendingResult.a) {
+                try {
+                    if (((com.google.android.gms.common.api.m) basePendingResult.c.get()) != null) {
+                        if (!basePendingResult.m) {
+                        }
+                        f7 = basePendingResult.f();
+                    }
+                    basePendingResult.c();
+                    f7 = basePendingResult.f();
+                } catch (Throwable th2) {
+                    throw th2;
                 }
-                return (l6.c[]) a1Var.a.d;
+            }
+            if (f7) {
+                ((Set) this.a).remove(basePendingResult);
+            }
         }
     }
 
-    public final void h(o0 o0Var) {
-        switch (this.c) {
-            case 0:
-                e2.w wVar = ((a1) this.d).a;
-                ((r) ((bi.a) wVar.e).c).accept(o0Var.b, this.b);
-                n nVar = ((p) ((a1) this.d).a.c).c;
-                if (nVar != null) {
-                    o0Var.f.put(nVar, (a1) this.d);
-                    break;
-                }
+    public void b(Status status, boolean z10) {
+        HashMap hashMap;
+        HashMap hashMap2;
+        synchronized (((Map) this.a)) {
+            hashMap = new HashMap((Map) this.a);
+        }
+        synchronized (((Map) this.b)) {
+            hashMap2 = new HashMap((Map) this.b);
+        }
+        for (Map.Entry entry : hashMap.entrySet()) {
+            if (z10 || ((Boolean) entry.getValue()).booleanValue()) {
+                ((BasePendingResult) entry.getKey()).e(status);
+            }
+        }
+        for (Map.Entry entry2 : hashMap2.entrySet()) {
+            if (z10 || ((Boolean) entry2.getValue()).booleanValue()) {
+                ((TaskCompletionSource) entry2.getKey()).trySetException(new com.google.android.gms.common.api.f(status));
+            }
+        }
+    }
+
+    @Override // com.google.android.gms.tasks.OnCompleteListener
+    public void onComplete(Task task) {
+        ((Map) ((h1) this.b).b).remove((TaskCompletionSource) this.a);
+    }
+
+    public /* synthetic */ h1(Object obj, Object obj2) {
+        this.b = obj;
+        this.a = obj2;
+    }
+
+    public h1(int i10) {
+        switch (i10) {
+            case 3:
+                this.a = DesugarCollections.synchronizedMap(new WeakHashMap());
+                this.b = DesugarCollections.synchronizedMap(new WeakHashMap());
                 break;
             default:
-                TaskCompletionSource taskCompletionSource = this.b;
-                a1 a1Var = (a1) o0Var.f.remove((n) this.d);
-                if (a1Var == null) {
-                    taskCompletionSource.trySetResult(Boolean.FALSE);
-                    break;
-                } else {
-                    ((r) ((bi.a) a1Var.b.b).d).accept(o0Var.b, taskCompletionSource);
-                    p pVar = (p) a1Var.a.c;
-                    pVar.b = null;
-                    pVar.c = null;
-                    break;
-                }
+                this.a = DesugarCollections.synchronizedSet(Collections.newSetFromMap(new WeakHashMap()));
+                this.b = new g1(this);
+                break;
         }
-    }
-
-    /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
-    public h1(n nVar, TaskCompletionSource taskCompletionSource) {
-        this(4, taskCompletionSource);
-        this.c = 1;
-        this.d = nVar;
-    }
-
-    /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
-    public h1(a1 a1Var, TaskCompletionSource taskCompletionSource) {
-        this(3, taskCompletionSource);
-        this.c = 0;
-        this.d = a1Var;
-    }
-
-    private final /* bridge */ /* synthetic */ void i(f1 f1Var, boolean z10) {
-    }
-
-    private final /* bridge */ /* synthetic */ void j(f1 f1Var, boolean z10) {
     }
 }

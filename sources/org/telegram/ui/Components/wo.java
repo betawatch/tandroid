@@ -1,51 +1,95 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationsController;
+import android.graphics.Bitmap;
+import android.graphics.Point;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.util.ArrayList;
+import java.util.HashMap;
 import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ne1;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class wo implements Utilities.Callback {
-    public final /* synthetic */ l80 a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ org.telegram.ui.ActionBar.r2 e;
-    public final /* synthetic */ org.telegram.ui.ActionBar.u6 f;
+public final class wo implements ai {
+    public final /* synthetic */ dp a;
 
-    public /* synthetic */ wo(l80 l80Var, int i10, long j10, long j11, org.telegram.ui.wn wnVar, org.telegram.ui.ActionBar.u6 u6Var) {
-        this.a = l80Var;
-        this.b = i10;
-        this.c = j10;
-        this.d = j11;
-        this.e = wnVar;
-        this.f = u6Var;
+    public wo(dp dpVar) {
+        this.a = dpVar;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        Integer num = (Integer) obj;
-        this.a.u();
-        int intValue = num.intValue();
-        int i10 = this.b;
-        long j10 = this.c;
-        long j11 = this.d;
-        org.telegram.ui.ActionBar.r2 r2Var = this.e;
-        org.telegram.ui.ActionBar.u6 u6Var = this.f;
-        if (intValue != 0) {
-            NotificationsController.getInstance(i10).muteUntil(j10, j11, num.intValue());
-            if (wc.a(r2Var)) {
-                wc.z(r2Var, 5, num.intValue(), u6Var).j();
+    @Override // org.telegram.ui.Components.ai
+    public final void C(mg mgVar) {
+        mgVar.run();
+    }
+
+    @Override // org.telegram.ui.Components.ai
+    public final /* synthetic */ boolean D() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.ai
+    public final void H0(int i10, boolean z10, boolean z11, int i11, int i12, long j10, boolean z12, boolean z13, long j11) {
+        dp dpVar = this.a;
+        try {
+            HashMap<Object, Object> selectedPhotos = dpVar.O1.a2.getSelectedPhotos();
+            if (selectedPhotos.isEmpty()) {
                 return;
             }
-            return;
+            org.telegram.messenger.ef efVar = (org.telegram.messenger.ef) selectedPhotos.values().iterator().next();
+            String str = efVar.h;
+            if (str == null) {
+                str = efVar.I;
+            }
+            if (str != null) {
+                File file = new File(org.telegram.messenger.b8.z(4), Utilities.b.nextInt() + ".jpg");
+                Point c12 = org.telegram.messenger.i0.c1();
+                Bitmap K = org.telegram.messenger.hc.K(str, null, (float) c12.x, (float) c12.y, true);
+                K.compress(Bitmap.CompressFormat.JPEG, 87, new FileOutputStream(file));
+                to toVar = new to(new ne1(file, file, ""), K, false, 2);
+                toVar.W1 = dpVar.V1;
+                toVar.G1 = false;
+                toVar.F1 = false;
+                toVar.o1 = 0.2f;
+                toVar.g1(dpVar.r1.a());
+                toVar.J1 = new vo(this, 0);
+                dp.I0(dpVar, toVar);
+            }
+        } catch (Throwable th2) {
+            org.telegram.messenger.f8.g(th2, true);
         }
-        if (MessagesController.getInstance(i10).isDialogMuted(j10, j11)) {
-            NotificationsController.getInstance(i10).muteDialog(j10, j11, false);
-        }
-        if (wc.a(r2Var)) {
-            wc.z(r2Var, 4, num.intValue(), u6Var).j();
-        }
+    }
+
+    @Override // org.telegram.ui.Components.ai
+    public final boolean a1() {
+        System.currentTimeMillis();
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.ai
+    public final void n0(Object obj) {
+        to toVar = new to(obj, null, true, 3);
+        dp dpVar = this.a;
+        toVar.W1 = dpVar.V1;
+        toVar.g1(dpVar.r1.a());
+        toVar.J1 = new vo(this, 1);
+        dp.I0(dpVar, toVar);
+    }
+
+    @Override // org.telegram.ui.Components.ai
+    public final /* synthetic */ void v0(TLRPC.User user) {
+    }
+
+    @Override // org.telegram.ui.Components.ai
+    public final /* synthetic */ void N() {
+    }
+
+    @Override // org.telegram.ui.Components.ai
+    public final /* synthetic */ void j0() {
+    }
+
+    @Override // org.telegram.ui.Components.ai
+    public final /* synthetic */ void b1(ArrayList arrayList, CharSequence charSequence, boolean z10, int i10, int i11, long j10, boolean z11, long j11) {
     }
 }

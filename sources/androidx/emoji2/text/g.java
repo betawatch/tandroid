@@ -3,19 +3,19 @@ package androidx.emoji2.text;
 import android.graphics.Rect;
 import android.view.View;
 import org.telegram.tgnet.TLObject;
-import s4.c0;
+import s4.a0;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public abstract class g {
     public int a;
     public final Object b;
     public final Object c;
 
-    public g(c0 c0Var) {
+    public g(a0 a0Var) {
         this.a = TLObject.FLAG_31;
         this.c = new Rect();
-        this.b = c0Var;
+        this.b = a0Var;
     }
 
     public abstract int a(View view);

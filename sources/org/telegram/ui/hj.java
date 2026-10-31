@@ -1,44 +1,36 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class hj implements MessagesStorage.IntCallback {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ Object c;
+public final class hj extends org.telegram.ui.ActionBar.k1 {
+    public final /* synthetic */ un o;
 
-    public /* synthetic */ hj(int i10, Object obj, boolean z10) {
-        this.a = i10;
-        this.c = obj;
-        this.b = z10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public hj(un unVar, ej ejVar) {
+        super(ejVar, -2, -2);
+        this.o = unVar;
     }
 
-    @Override // org.telegram.messenger.MessagesStorage.IntCallback
-    public final void run(int i10) {
-        switch (this.a) {
-            case 0:
-                wn wnVar = ((jj) this.c).b;
-                if (i10 > 0 && wnVar.getParentActivity() != null) {
-                    org.telegram.ui.Components.wc.b0(wnVar).m(this.b ? org.telegram.ui.Components.vc.G : org.telegram.ui.Components.vc.I, i10, 0, 0, wnVar.ua).j();
-                    break;
-                }
-                break;
-            default:
-                ij ijVar = (ij) this.c;
-                wn wnVar2 = ijVar.b.b;
-                if (i10 < 50) {
-                    wnVar2.Da(wnVar2.p4, true);
-                    break;
-                } else {
-                    TLRPC.Chat chat = wnVar2.e;
-                    TLRPC.User user = wnVar2.f;
-                    boolean z10 = this.b;
-                    org.telegram.ui.Components.g5.r(wnVar2, true, chat, user, false, false, false, z10, new y0(ijVar, z10));
-                    break;
-                }
+    @Override // org.telegram.ui.ActionBar.k1, android.widget.PopupWindow
+    public final void dismiss() {
+        d(true);
+        un unVar = this.o;
+        if (unVar.e9 != this) {
+            return;
         }
+        unVar.e9 = null;
+        unVar.h9 = null;
+        unVar.g9 = null;
+        unVar.B0.R = true;
+        if (unVar.f9) {
+            unVar.o8(false, true, 0.0f);
+        } else {
+            unVar.f9 = true;
+        }
+        mk mkVar = unVar.Z;
+        if (mkVar == null || mkVar.getEditField() == null) {
+            return;
+        }
+        unVar.Z.getEditField().setAllowDrawCursor(true);
     }
 }

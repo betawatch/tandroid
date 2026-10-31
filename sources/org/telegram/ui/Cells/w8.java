@@ -1,56 +1,64 @@
 package org.telegram.ui.Cells;
 
+import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Paint;
 import android.view.View;
-import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.cd;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.CheckBoxSquare;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
 public final class w8 extends FrameLayout {
-    public TextView a;
-    public CheckBoxSquare b;
-    public boolean c;
+    public static Paint d;
+    public final TextView a;
+    public int b;
+    public float c;
 
-    public final void a(String str, boolean z10, boolean z11) {
-        this.a.setText(str);
-        this.b.a(z10, false);
-        this.c = z11;
-        setWillNotDraw(!z11);
+    public w8(Context context) {
+        super(context);
+        this.c = 1.0f;
+        if (d == null) {
+            d = new Paint(1);
+        }
+        TextView textView = new TextView(context);
+        this.a = textView;
+        textView.setTextColor(-14606047);
+        textView.setTextSize(1, 16.0f);
+        textView.setLines(1);
+        textView.setMaxLines(1);
+        textView.setSingleLine(true);
+        textView.setGravity((cd.X ? 5 : 3) | 16);
+        textView.setPadding(0, 0, 0, org.telegram.messenger.i0.L(3.0f));
+        boolean z10 = cd.X;
+        addView(textView, w7.b6.d(-1, -1.0f, (z10 ? 5 : 3) | 48, z10 ? 21 : 57, 0.0f, z10 ? 57 : 21, 0.0f));
     }
 
     @Override // android.view.View
-    public final void invalidate() {
-        super.invalidate();
-        this.b.invalidate();
+    public float getAlpha() {
+        return this.c;
     }
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        if (this.c) {
-            canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.y6.k0);
+        int i10 = this.b;
+        if (i10 != 0) {
+            d.setColor(i10);
+            d.setAlpha((int) (this.c * 255.0f));
+            canvas.drawCircle(!cd.X ? org.telegram.messenger.i0.L(28.0f) : getMeasuredWidth() - org.telegram.messenger.i0.L(28.0f), getMeasuredHeight() / 2, org.telegram.messenger.i0.L(10.0f), d);
         }
-    }
-
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.setClassName("android.widget.CheckBox");
-        accessibilityNodeInfo.setCheckable(true);
-        accessibilityNodeInfo.setChecked(this.b.h);
     }
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f) + (this.c ? 1 : 0), TLObject.FLAG_30));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.i0.L(50.0f), TLObject.FLAG_30));
     }
 
-    public void setChecked(boolean z10) {
-        this.b.a(z10, true);
+    @Override // android.view.View
+    public void setAlpha(float f7) {
+        this.c = f7;
+        invalidate();
     }
 }

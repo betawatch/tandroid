@@ -1,31 +1,43 @@
 package i7;
 
-import android.os.IBinder;
-import android.os.IInterface;
-import android.os.Parcel;
+import android.content.Context;
+import android.content.Intent;
+import android.os.Parcelable;
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.common.api.j;
+import w7.i0;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class b implements d, IInterface {
-    public final IBinder a;
+public final class b extends j {
+    public static final com.google.android.gms.common.api.e l = new com.google.android.gms.common.api.e("Auth.Api.Identity.SignIn.API", new a8.d(6), new com.google.android.gms.common.api.d());
+    public final String k;
 
-    public b(IBinder iBinder) {
-        this.a = iBinder;
+    public b(Context context, x5.h hVar) {
+        super(context, l, hVar, com.google.android.gms.common.api.i.c);
+        this.k = e.a();
     }
 
-    public final void F0(Parcel parcel, int i10) {
-        Parcel obtain = Parcel.obtain();
-        try {
-            this.a.transact(i10, parcel, obtain, 0);
-            obtain.readException();
-        } finally {
-            parcel.recycle();
-            obtain.recycle();
+    public final x5.g f(Intent intent) {
+        Status status = Status.h;
+        if (intent == null) {
+            throw new com.google.android.gms.common.api.f(status);
         }
-    }
-
-    @Override // android.os.IInterface
-    public final IBinder asBinder() {
-        return this.a;
+        Parcelable.Creator<Status> creator = Status.CREATOR;
+        byte[] byteArrayExtra = intent.getByteArrayExtra("status");
+        Status status2 = (Status) (byteArrayExtra == null ? null : i0.a(byteArrayExtra, creator));
+        if (status2 == null) {
+            throw new com.google.android.gms.common.api.f(Status.r);
+        }
+        if (!status2.b()) {
+            throw new com.google.android.gms.common.api.f(status2);
+        }
+        Parcelable.Creator<x5.g> creator2 = x5.g.CREATOR;
+        byte[] byteArrayExtra2 = intent.getByteArrayExtra("sign_in_credential");
+        x5.g gVar = (x5.g) (byteArrayExtra2 != null ? i0.a(byteArrayExtra2, creator2) : null);
+        if (gVar != null) {
+            return gVar;
+        }
+        throw new com.google.android.gms.common.api.f(status);
     }
 }

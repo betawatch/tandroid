@@ -6,10 +6,10 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import kotlin.jvm.internal.i;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class g implements Parcelable {
-    public static final Parcelable.Creator<g> CREATOR = new w.a(6);
+    public static final Parcelable.Creator<g> CREATOR = new w.a(9);
     public final IntentSender a;
     public final Intent b;
     public final int c;

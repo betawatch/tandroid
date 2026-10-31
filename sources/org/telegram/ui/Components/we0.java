@@ -1,65 +1,32 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
-import org.telegram.messenger.Utilities;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class we0 implements Utilities.Callback {
+public final /* synthetic */ class we0 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ String[] b;
-    public final /* synthetic */ Activity c;
-    public final /* synthetic */ Utilities.Callback d;
+    public final /* synthetic */ ye0 b;
 
-    public /* synthetic */ we0(String[] strArr, Activity activity, Utilities.Callback callback, int i10) {
+    public /* synthetic */ we0(ye0 ye0Var, int i10) {
         this.a = i10;
-        this.b = strArr;
-        this.c = activity;
-        this.d = callback;
+        this.b = ye0Var;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                String[] strArr = this.b;
-                int length = strArr.length;
-                boolean z10 = false;
-                int i10 = 0;
-                while (true) {
-                    if (i10 < length) {
-                        if (this.c.checkSelfPermission(strArr[i10]) == 0) {
-                            z10 = true;
-                        } else {
-                            i10++;
-                        }
-                    }
-                }
-                Utilities.Callback callback = this.d;
-                if (callback != null) {
-                    callback.run(Boolean.valueOf(z10));
-                    break;
-                }
+                ye0 ye0Var = this.b;
+                ye0Var.getClass();
+                ye0Var.D = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                ye0Var.invalidate();
                 break;
             default:
-                String[] strArr2 = this.b;
-                int length2 = strArr2.length;
-                boolean z11 = false;
-                int i11 = 0;
-                while (true) {
-                    if (i11 < length2) {
-                        if (this.c.checkSelfPermission(strArr2[i11]) == 0) {
-                            i11++;
-                        }
-                    } else {
-                        z11 = true;
-                    }
-                }
-                Utilities.Callback callback2 = this.d;
-                if (callback2 != null) {
-                    callback2.run(Boolean.valueOf(z11));
-                    break;
-                }
+                ye0 ye0Var2 = this.b;
+                ye0Var2.getClass();
+                ye0Var2.D = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                ye0Var2.invalidate();
                 break;
         }
     }

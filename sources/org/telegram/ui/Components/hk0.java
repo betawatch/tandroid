@@ -1,31 +1,13 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.TLObject;
+import android.view.View;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class hk0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ qk0 b;
-    public final /* synthetic */ TLObject c;
+public interface hk0 {
+    void b(float f7, float f10, int i10, View view);
 
-    public /* synthetic */ hk0(qk0 qk0Var, TLObject tLObject, int i10) {
-        this.a = i10;
-        this.b = qk0Var;
-        this.c = tLObject;
-    }
+    boolean h1(View view);
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                qk0 qk0Var = this.b;
-                NotificationCenter.getInstance(qk0Var.b).doOnIdle(new hk0(qk0Var, this.c, 1));
-                break;
-            default:
-                qk0.a(this.b, this.c);
-                break;
-        }
-    }
+    void q0(View view, float f7, float f10);
 }

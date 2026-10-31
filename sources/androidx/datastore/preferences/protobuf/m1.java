@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.ListIterator;
 import java.util.RandomAccess;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class m1 extends AbstractList implements e0, RandomAccess {
     public final d0 a;
@@ -22,7 +22,7 @@ public final class m1 extends AbstractList implements e0, RandomAccess {
     }
 
     @Override // androidx.datastore.preferences.protobuf.e0
-    public final List g() {
+    public final List f() {
         return DesugarCollections.unmodifiableList(this.a.b);
     }
 
@@ -39,7 +39,7 @@ public final class m1 extends AbstractList implements e0, RandomAccess {
     }
 
     @Override // androidx.datastore.preferences.protobuf.e0
-    public final Object k(int i10) {
+    public final Object j(int i10) {
         return this.a.b.get(i10);
     }
 
@@ -56,7 +56,7 @@ public final class m1 extends AbstractList implements e0, RandomAccess {
     }
 
     @Override // androidx.datastore.preferences.protobuf.e0
-    public final e0 i() {
+    public final e0 h() {
         return this;
     }
 }

@@ -7,21 +7,21 @@ import android.os.Parcel;
 import android.os.RemoteException;
 import java.util.List;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class i extends Binder {
-    public final f9.i0 a;
+    public final e9.n0 a;
 
     public i(List list) {
-        this.a = f9.i0.u(list);
+        this.a = e9.n0.u(list);
     }
 
-    public static f9.i0 a(IBinder iBinder) {
+    public static e9.n0 a(IBinder iBinder) {
         int readInt;
         if (iBinder instanceof i) {
             return ((i) iBinder).a;
         }
-        f9.f0 t10 = f9.i0.t();
+        e9.k0 t10 = e9.n0.t();
         int i10 = 0;
         int i11 = 1;
         while (i11 != 0) {
@@ -63,12 +63,12 @@ public final class i extends Binder {
         if (parcel2 == null) {
             return false;
         }
-        f9.i0 i0Var = this.a;
-        int size = i0Var.size();
+        e9.n0 n0Var = this.a;
+        int size = n0Var.size();
         int readInt = parcel.readInt();
         while (readInt < size && parcel2.dataSize() < n.a) {
             parcel2.writeInt(1);
-            parcel2.writeBundle((Bundle) i0Var.get(readInt));
+            parcel2.writeBundle((Bundle) n0Var.get(readInt));
             readInt++;
         }
         parcel2.writeInt(readInt < size ? 2 : 0);

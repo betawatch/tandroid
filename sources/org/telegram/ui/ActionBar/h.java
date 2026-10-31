@@ -3,18 +3,16 @@ package org.telegram.ui.ActionBar;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.transition.TransitionValues;
-import android.view.View;
-import java.util.Iterator;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
 public final class h extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ TransitionValues b;
 
-    public /* synthetic */ h(Object obj, int i10) {
+    public /* synthetic */ h(TransitionValues transitionValues, int i10) {
         this.a = i10;
-        this.b = obj;
+        this.b = transitionValues;
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
@@ -22,64 +20,25 @@ public final class h extends AnimatorListenerAdapter {
         switch (this.a) {
             case 0:
                 super.onAnimationEnd(animator);
-                ((TransitionValues) this.b).view.setLayerType(0, null);
-                break;
-            case 1:
-                ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = (ActionBarPopupWindow$ActionBarPopupWindowLayout) this.b;
-                actionBarPopupWindow$ActionBarPopupWindowLayout.n = false;
-                int itemsCount = actionBarPopupWindow$ActionBarPopupWindowLayout.getItemsCount();
-                for (int i10 = 0; i10 < itemsCount; i10++) {
-                    View childAt = actionBarPopupWindow$ActionBarPopupWindowLayout.L.getChildAt(i10);
-                    if (!(childAt instanceof l1)) {
-                        childAt.setTranslationY(0.0f);
-                        childAt.setAlpha(childAt.isEnabled() ? 1.0f : 0.5f);
-                    }
-                }
-                break;
-            case 2:
-                q1 q1Var = (q1) this.b;
-                if (!q1Var.e) {
-                    q1Var.j();
-                    break;
-                }
-                break;
-            case 3:
-                s3 s3Var = (s3) this.b;
-                if (s3Var.F == animator) {
-                    s3Var.G = s3Var.H;
-                    Iterator it = s3Var.I.iterator();
-                    while (it.hasNext()) {
-                        ((Runnable) it.next()).run();
-                    }
-                    break;
-                }
+                this.b.view.setLayerType(0, null);
                 break;
             default:
-                b4 b4Var = (b4) this.b;
-                s3 s3Var2 = b4Var.a;
-                if (s3Var2 != null) {
-                    s3Var2.b = true;
-                    s3Var2.invalidate();
-                }
-                b4Var.V = b4Var.U ? 1.0f : 0.0f;
-                b4Var.invalidate();
-                if (!b4Var.U) {
-                    b4Var.R.clear();
-                    break;
-                }
+                super.onAnimationEnd(animator);
+                this.b.view.setEnabled(true);
                 break;
         }
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationStart(Animator animator) {
+    public final void onAnimationStart(Animator animator) {
         switch (this.a) {
             case 0:
                 super.onAnimationStart(animator);
-                ((TransitionValues) this.b).view.setLayerType(2, null);
+                this.b.view.setLayerType(2, null);
                 break;
             default:
                 super.onAnimationStart(animator);
+                this.b.view.setEnabled(false);
                 break;
         }
     }

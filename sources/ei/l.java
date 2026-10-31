@@ -1,31 +1,31 @@
 package ei;
 
-import android.content.Context;
-import di.z6;
-import org.telegram.ui.Components.fy0;
+import org.telegram.ui.Components.in0;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes4.dex */
-public final class l extends q {
-    public final /* synthetic */ r v;
+public final class l implements Runnable {
+    public int a;
+    public int b;
+    public final /* synthetic */ in0 c;
+    public final /* synthetic */ r d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l(r rVar, Context context) {
-        super(rVar, context);
-        this.v = rVar;
+    public l(r rVar, in0 in0Var) {
+        this.d = rVar;
+        this.c = in0Var;
     }
 
-    @Override // ei.q, s4.h0
-    public final void l() {
-        super.l();
-        r rVar = this.v;
-        if (rVar.r.getVisibility() == 0) {
-            rVar.w.l();
-        }
-        fy0 fy0Var = rVar.y;
-        if (fy0Var != null) {
-            z6 z6Var = this.e;
-            fy0Var.e(z6Var != null && z6Var.k(), true);
-        }
+    @Override // java.lang.Runnable
+    public final void run() {
+        in0 in0Var = this.c;
+        int scrollX = in0Var.getScrollX();
+        int scrollY = in0Var.getScrollY();
+        int i10 = scrollX - this.a;
+        r rVar = this.d;
+        rVar.k += i10;
+        rVar.l += scrollY - this.b;
+        this.a = scrollX;
+        this.b = scrollY;
+        rVar.g++;
     }
 }

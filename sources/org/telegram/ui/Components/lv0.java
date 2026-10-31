@@ -1,39 +1,31 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import androidx.recyclerview.widget.RecyclerView;
-import java.util.ArrayList;
-import org.telegram.messenger.SavedMessagesController;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class lv0 extends org.telegram.ui.Cells.p2 {
-    public final /* synthetic */ mv0 a5;
+public final class lv0 {
+    public org.telegram.messenger.kp a;
+    public org.telegram.ui.ActionBar.p6 b;
+    public int c;
+    public int d;
+    public float e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public lv0(mv0 mv0Var, Context context) {
-        super(context, true);
-        this.a5 = mv0Var;
-    }
-
-    @Override // org.telegram.ui.Cells.p2
-    public final boolean P() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Cells.p2
-    public final boolean getIsPinned() {
-        mv0 mv0Var = this.a5;
-        ArrayList arrayList = mv0Var.f;
-        tu0 tu0Var = mv0Var.s;
-        if (tu0Var == null || tu0Var.getAdapter() != mv0Var) {
-            return false;
+    public final void a(org.telegram.messenger.kp kpVar) {
+        this.a = kpVar;
+        if (kpVar == null) {
+            this.c = org.telegram.ui.ActionBar.t6.w0(org.telegram.ui.ActionBar.t6.A8, this.b);
+            this.d = org.telegram.ui.ActionBar.t6.w0(org.telegram.ui.ActionBar.t6.s8, this.b);
+            this.c = i0.b.f(this.e, this.c, 603979776);
+            this.d = i0.b.f(this.e, this.d, -1);
+            return;
         }
-        mv0Var.s.getClass();
-        int R = RecyclerView.R(this);
-        if (R < 0 || R >= arrayList.size()) {
-            return false;
-        }
-        return ((SavedMessagesController.SavedDialog) arrayList.get(R)).pinned;
+        int c10 = kpVar.c(org.telegram.ui.ActionBar.t6.I.q());
+        int d = kpVar.d(org.telegram.ui.ActionBar.t6.I.q());
+        org.telegram.ui.ActionBar.p6 p6Var = this.b;
+        int f7 = i0.b.f(0.75f, d, c10);
+        int w02 = org.telegram.messenger.i0.B(f7) > 0.721f ? org.telegram.ui.ActionBar.t6.w0(org.telegram.ui.ActionBar.t6.v6, p6Var) : org.telegram.ui.ActionBar.t6.b(0.08f, -0.08f, f7);
+        this.c = w02;
+        this.d = org.telegram.messenger.i0.B(w02) > 0.721f ? -16777216 : -1;
+        this.c = i0.b.f(this.e, this.c, 603979776);
+        this.d = i0.b.f(this.e, this.d, -1);
     }
 }

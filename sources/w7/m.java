@@ -1,42 +1,27 @@
 package w7;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+import com.google.android.gms.tasks.Task;
+import com.google.mlkit.nl.languageid.internal.LanguageIdentifierImpl;
+import java.util.concurrent.Executor;
+
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public abstract class m {
-    public static void a(int i10, int i11) {
-        String a2;
-        if (i10 < 0 || i10 >= i11) {
-            if (i10 < 0) {
-                a2 = n.a("%s (%s) must not be negative", "index", Integer.valueOf(i10));
-            } else {
-                if (i11 < 0) {
-                    throw new IllegalArgumentException(ic.a.i(i11, "negative size: "));
-                }
-                a2 = n.a("%s (%s) must be less than size (%s)", "index", Integer.valueOf(i10), Integer.valueOf(i11));
-            }
-            throw new IndexOutOfBoundsException(a2);
-        }
-    }
-
-    public static void b(int i10, int i11) {
-        if (i10 < 0 || i10 > i11) {
-            throw new IndexOutOfBoundsException(d(i10, i11, "index"));
-        }
-    }
-
-    public static void c(int i10, int i11, int i12) {
-        if (i10 < 0 || i11 < i10 || i11 > i12) {
-            throw new IndexOutOfBoundsException((i10 < 0 || i10 > i12) ? d(i10, i12, "start index") : (i11 < 0 || i11 > i12) ? d(i11, i12, "end index") : n.a("end index (%s) must not be less than start index (%s)", Integer.valueOf(i11), Integer.valueOf(i10)));
-        }
-    }
-
-    public static String d(int i10, int i11, String str) {
-        if (i10 < 0) {
-            return n.a("%s (%s) must not be negative", str, Integer.valueOf(i10));
-        }
-        if (i11 >= 0) {
-            return n.a("%s (%s) must not be greater than size (%s)", str, Integer.valueOf(i10), Integer.valueOf(i11));
-        }
-        throw new IllegalArgumentException(ic.a.i(i11, "negative size: "));
+    public static LanguageIdentifierImpl a() {
+        nb.a aVar = (nb.a) jb.g.c().a(nb.a.class);
+        nb.e eVar = aVar.b;
+        eVar.getClass();
+        v7.x8 x8Var = aVar.a;
+        LanguageIdentifierImpl languageIdentifierImpl = new LanguageIdentifierImpl(eVar, x8Var, (Executor) aVar.c.a.get());
+        xa.n nVar = new xa.n();
+        nVar.c = languageIdentifierImpl.f;
+        q5.d dVar = new q5.d(13, false);
+        dVar.c = LanguageIdentifierImpl.k();
+        nVar.d = new v7.d7(dVar);
+        a5.a aVar2 = new a5.a(nVar, 1);
+        Task task = x8Var.e;
+        jb.m.a.execute(new com.google.android.gms.internal.cast.o(x8Var, aVar2, v7.g6.c, task.isSuccessful() ? (String) task.getResult() : n6.i.c.a(x8Var.g), 6));
+        ((nb.e) languageIdentifierImpl.d.get()).b.incrementAndGet();
+        return languageIdentifierImpl;
     }
 }

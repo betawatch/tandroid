@@ -6,7 +6,7 @@ import android.util.Log;
 import android.widget.ListAdapter;
 import androidx.appcompat.app.AlertController$RecycleListView;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class i0 implements o0, DialogInterface.OnClickListener {
     public g.f a;
@@ -38,11 +38,6 @@ public final class i0 implements o0, DialogInterface.OnClickListener {
     }
 
     @Override // m.o0
-    public final CharSequence d() {
-        return this.c;
-    }
-
-    @Override // m.o0
     public final void dismiss() {
         g.f fVar = this.a;
         if (fVar != null) {
@@ -52,63 +47,68 @@ public final class i0 implements o0, DialogInterface.OnClickListener {
     }
 
     @Override // m.o0
-    public final Drawable e() {
+    public final CharSequence e() {
+        return this.c;
+    }
+
+    @Override // m.o0
+    public final Drawable g() {
         return null;
     }
 
     @Override // m.o0
-    public final void g(CharSequence charSequence) {
+    public final void i(CharSequence charSequence) {
         this.c = charSequence;
     }
 
     @Override // m.o0
-    public final void i(Drawable drawable) {
+    public final void j(Drawable drawable) {
         Log.e("AppCompatSpinner", "Cannot set popup background for MODE_DIALOG, ignoring");
     }
 
     @Override // m.o0
-    public final void j(int i10) {
+    public final void k(int i10) {
         Log.e("AppCompatSpinner", "Cannot set vertical offset for MODE_DIALOG, ignoring");
     }
 
     @Override // m.o0
-    public final void k(int i10) {
+    public final void l(int i10) {
         Log.e("AppCompatSpinner", "Cannot set horizontal (original) offset for MODE_DIALOG, ignoring");
     }
 
     @Override // m.o0
-    public final void l(int i10, int i11) {
+    public final void m(int i10, int i11) {
         if (this.b == null) {
             return;
         }
         p0 p0Var = this.d;
-        d5.z zVar = new d5.z(p0Var.getPopupContext());
-        g.b bVar = (g.b) zVar.c;
+        c5.x xVar = new c5.x(p0Var.getPopupContext());
+        g.b bVar = (g.b) xVar.c;
         CharSequence charSequence = this.c;
         if (charSequence != null) {
-            bVar.d = charSequence;
+            bVar.f = charSequence;
         }
         j0 j0Var = this.b;
         int selectedItemPosition = p0Var.getSelectedItemPosition();
-        bVar.i = j0Var;
-        bVar.j = this;
-        bVar.m = selectedItemPosition;
-        bVar.l = true;
-        g.f f7 = zVar.f();
-        this.a = f7;
-        AlertController$RecycleListView alertController$RecycleListView = f7.f.e;
+        bVar.l = j0Var;
+        bVar.m = this;
+        bVar.b = selectedItemPosition;
+        bVar.a = true;
+        g.f g10 = xVar.g();
+        this.a = g10;
+        AlertController$RecycleListView alertController$RecycleListView = g10.f.e;
         g0.d(alertController$RecycleListView, i10);
         g0.c(alertController$RecycleListView, i11);
         this.a.show();
     }
 
     @Override // m.o0
-    public final int m() {
+    public final int n() {
         return 0;
     }
 
     @Override // m.o0
-    public final void n(ListAdapter listAdapter) {
+    public final void o(ListAdapter listAdapter) {
         this.b = (j0) listAdapter;
     }
 

@@ -1,7 +1,5 @@
 package i4;
 
-import a8.jb;
-import a8.yb;
 import android.graphics.Color;
 import android.text.SpannableStringBuilder;
 import android.text.SpannedString;
@@ -14,7 +12,7 @@ import android.text.style.StrikethroughSpan;
 import android.text.style.StyleSpan;
 import android.text.style.TypefaceSpan;
 import android.text.style.UnderlineSpan;
-import e2.n0;
+import e2.l0;
 import e2.x;
 import j$.util.DesugarCollections;
 import java.nio.charset.StandardCharsets;
@@ -28,9 +26,12 @@ import java.util.Map;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import org.telegram.messenger.zs;
 import org.telegram.tgnet.TLObject;
+import v7.p6;
+import v7.t6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public abstract class h {
     public static final Pattern a = Pattern.compile("^(\\S+)\\s+-->\\s+(\\S+)((?:.|\\f)*+)?$");
@@ -40,23 +41,23 @@ public abstract class h {
 
     static {
         HashMap hashMap = new HashMap();
-        hashMap.put("white", Integer.valueOf(Color.rgb(255, 255, 255)));
-        hashMap.put("lime", Integer.valueOf(Color.rgb(0, 255, 0)));
-        hashMap.put("cyan", Integer.valueOf(Color.rgb(0, 255, 255)));
-        hashMap.put("red", Integer.valueOf(Color.rgb(255, 0, 0)));
-        hashMap.put("yellow", Integer.valueOf(Color.rgb(255, 255, 0)));
-        hashMap.put("magenta", Integer.valueOf(Color.rgb(255, 0, 255)));
-        hashMap.put("blue", Integer.valueOf(Color.rgb(0, 0, 255)));
+        hashMap.put("white", Integer.valueOf(Color.rgb(zs.e4, zs.e4, zs.e4)));
+        hashMap.put("lime", Integer.valueOf(Color.rgb(0, zs.e4, 0)));
+        hashMap.put("cyan", Integer.valueOf(Color.rgb(0, zs.e4, zs.e4)));
+        hashMap.put("red", Integer.valueOf(Color.rgb(zs.e4, 0, 0)));
+        hashMap.put("yellow", Integer.valueOf(Color.rgb(zs.e4, zs.e4, 0)));
+        hashMap.put("magenta", Integer.valueOf(Color.rgb(zs.e4, 0, zs.e4)));
+        hashMap.put("blue", Integer.valueOf(Color.rgb(0, 0, zs.e4)));
         hashMap.put("black", Integer.valueOf(Color.rgb(0, 0, 0)));
         c = DesugarCollections.unmodifiableMap(hashMap);
         HashMap hashMap2 = new HashMap();
-        hashMap2.put("bg_white", Integer.valueOf(Color.rgb(255, 255, 255)));
-        hashMap2.put("bg_lime", Integer.valueOf(Color.rgb(0, 255, 0)));
-        hashMap2.put("bg_cyan", Integer.valueOf(Color.rgb(0, 255, 255)));
-        hashMap2.put("bg_red", Integer.valueOf(Color.rgb(255, 0, 0)));
-        hashMap2.put("bg_yellow", Integer.valueOf(Color.rgb(255, 255, 0)));
-        hashMap2.put("bg_magenta", Integer.valueOf(Color.rgb(255, 0, 255)));
-        hashMap2.put("bg_blue", Integer.valueOf(Color.rgb(0, 0, 255)));
+        hashMap2.put("bg_white", Integer.valueOf(Color.rgb(zs.e4, zs.e4, zs.e4)));
+        hashMap2.put("bg_lime", Integer.valueOf(Color.rgb(0, zs.e4, 0)));
+        hashMap2.put("bg_cyan", Integer.valueOf(Color.rgb(0, zs.e4, zs.e4)));
+        hashMap2.put("bg_red", Integer.valueOf(Color.rgb(zs.e4, 0, 0)));
+        hashMap2.put("bg_yellow", Integer.valueOf(Color.rgb(zs.e4, zs.e4, 0)));
+        hashMap2.put("bg_magenta", Integer.valueOf(Color.rgb(zs.e4, 0, zs.e4)));
+        hashMap2.put("bg_blue", Integer.valueOf(Color.rgb(0, 0, zs.e4)));
         hashMap2.put("bg_black", Integer.valueOf(Color.rgb(0, 0, 0)));
         d = DesugarCollections.unmodifiableMap(hashMap2);
     }
@@ -80,35 +81,35 @@ public abstract class h {
                 }
                 c10 = 65535;
                 break;
-            case 98:
+            case zs.j1 /* 98 */:
                 if (str2.equals("b")) {
                     c10 = 1;
                     break;
                 }
                 c10 = 65535;
                 break;
-            case 99:
+            case zs.k1 /* 99 */:
                 if (str2.equals("c")) {
                     c10 = 2;
                     break;
                 }
                 c10 = 65535;
                 break;
-            case 105:
+            case zs.q1 /* 105 */:
                 if (str2.equals("i")) {
                     c10 = 3;
                     break;
                 }
                 c10 = 65535;
                 break;
-            case 117:
+            case zs.C1 /* 117 */:
                 if (str2.equals("u")) {
                     c10 = 4;
                     break;
                 }
                 c10 = 65535;
                 break;
-            case 118:
+            case zs.D1 /* 118 */:
                 if (str2.equals("v")) {
                     c10 = 5;
                     break;
@@ -160,7 +161,7 @@ public abstract class h {
                 spannableStringBuilder.setSpan(new UnderlineSpan(), i13, length, 33);
                 break;
             case 5:
-                spannableStringBuilder.setSpan(new d2.h(eVar.c), i13, length, 33);
+                spannableStringBuilder.setSpan(new d2.i(eVar.c), i13, length, 33);
                 break;
             case 7:
                 int c11 = c(list2, str, eVar);
@@ -181,7 +182,7 @@ public abstract class h {
                         int i19 = dVar.b - i17;
                         CharSequence subSequence = spannableStringBuilder.subSequence(i18, i19);
                         spannableStringBuilder.delete(i18, i19);
-                        spannableStringBuilder.setSpan(new d2.f(subSequence.toString(), c12), i15, i18, 33);
+                        spannableStringBuilder.setSpan(new d2.g(subSequence.toString(), c12), i15, i18, 33);
                         i17 = subSequence.length() + i17;
                         i15 = i18;
                     }
@@ -210,7 +211,7 @@ public abstract class h {
                     i11 = 1;
                     i12 = (i22 == 1 ? 1 : 0) | (bVar.m == 1 ? 2 : 0);
                 }
-                jb.a(new StyleSpan(i12), spannableStringBuilder, i13, length);
+                p6.a(spannableStringBuilder, new StyleSpan(i12), i13, length);
             } else {
                 i11 = 1;
             }
@@ -224,27 +225,27 @@ public abstract class h {
                 if (!bVar.g) {
                     throw new IllegalStateException("Font color not defined");
                 }
-                jb.a(new ForegroundColorSpan(bVar.f), spannableStringBuilder, i13, length);
+                p6.a(spannableStringBuilder, new ForegroundColorSpan(bVar.f), i13, length);
             }
             if (bVar.i) {
                 if (!bVar.i) {
                     throw new IllegalStateException("Background color not defined.");
                 }
-                jb.a(new BackgroundColorSpan(bVar.h), spannableStringBuilder, i13, length);
+                p6.a(spannableStringBuilder, new BackgroundColorSpan(bVar.h), i13, length);
             }
             if (bVar.e != null) {
-                jb.a(new TypefaceSpan(bVar.e), spannableStringBuilder, i13, length);
+                p6.a(spannableStringBuilder, new TypefaceSpan(bVar.e), i13, length);
             }
             int i23 = bVar.n;
             if (i23 == 1) {
-                jb.a(new AbsoluteSizeSpan((int) bVar.o, true), spannableStringBuilder, i13, length);
+                p6.a(spannableStringBuilder, new AbsoluteSizeSpan((int) bVar.o, true), i13, length);
             } else if (i23 == 2) {
-                jb.a(new RelativeSizeSpan(bVar.o), spannableStringBuilder, i13, length);
+                p6.a(spannableStringBuilder, new RelativeSizeSpan(bVar.o), i13, length);
             } else if (i23 == 3) {
-                jb.a(new RelativeSizeSpan(bVar.o / 100.0f), spannableStringBuilder, i13, length);
+                p6.a(spannableStringBuilder, new RelativeSizeSpan(bVar.o / 100.0f), i13, length);
             }
             if (bVar.q) {
-                spannableStringBuilder.setSpan(new d2.e(), i13, length, 33);
+                spannableStringBuilder.setSpan(new d2.f(), i13, length, 33);
             }
         }
     }
@@ -314,11 +315,11 @@ public abstract class h {
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Code restructure failed: missing block: B:101:0x0083, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:101:0x0081, code lost:
     
         if (r6.equals("center") == false) goto L14;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:54:0x00c8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:54:0x00c5, code lost:
     
         if (r7.equals("start") == false) goto L53;
      */
@@ -572,40 +573,40 @@ public abstract class h {
                     String substring2 = str2.substring(i13, i12);
                     if (!substring2.trim().isEmpty()) {
                         String trim = substring2.trim();
-                        yb.g(!trim.isEmpty());
-                        String str4 = n0.a;
+                        t6.f(!trim.isEmpty());
+                        String str4 = l0.a;
                         String str5 = trim.split("[ \\.]", 2)[0];
                         str5.getClass();
                         switch (str5.hashCode()) {
-                            case 98:
+                            case zs.j1 /* 98 */:
                                 if (str5.equals("b")) {
                                     c10 = 0;
                                     break;
                                 }
                                 c10 = 65535;
                                 break;
-                            case 99:
+                            case zs.k1 /* 99 */:
                                 if (str5.equals("c")) {
                                     c10 = 1;
                                     break;
                                 }
                                 c10 = 65535;
                                 break;
-                            case 105:
+                            case zs.q1 /* 105 */:
                                 if (str5.equals("i")) {
                                     c10 = 2;
                                     break;
                                 }
                                 c10 = 65535;
                                 break;
-                            case 117:
+                            case zs.C1 /* 117 */:
                                 if (str5.equals("u")) {
                                     c10 = 3;
                                     break;
                                 }
                                 c10 = 65535;
                                 break;
-                            case 118:
+                            case zs.D1 /* 118 */:
                                 if (str5.equals("v")) {
                                     c10 = 4;
                                     break;
@@ -663,7 +664,7 @@ public abstract class h {
                                 } else if (!z11) {
                                     int length = spannableStringBuilder.length();
                                     String trim2 = substring2.trim();
-                                    yb.g(!trim2.isEmpty());
+                                    t6.f(!trim2.isEmpty());
                                     int indexOf4 = trim2.indexOf(" ");
                                     if (indexOf4 == -1) {
                                         c11 = 0;

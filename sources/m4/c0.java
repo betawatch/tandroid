@@ -1,13 +1,12 @@
 package m4;
 
-import a8.ie;
 import android.os.DeadObjectException;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.os.RemoteException;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class c0 extends Handler {
     public boolean a;
@@ -49,53 +48,53 @@ public final class c0 extends Handler {
         f0Var.s = c10;
         boolean z10 = this.a;
         boolean z11 = this.b;
-        l1 Y0 = j1Var.Y0(c10);
-        com.google.firebase.messaging.q qVar = j1Var.b;
-        f9.i0 k10 = qVar.k();
-        for (int i11 = 0; i11 < k10.size(); i11++) {
-            w wVar2 = (w) k10.get(i11);
+        l1 a12 = j1Var.a1(c10);
+        xa.n nVar = j1Var.b;
+        e9.n0 A = nVar.A();
+        for (int i11 = 0; i11 < A.size(); i11++) {
+            w wVar2 = (w) A.get(i11);
             try {
-                com.google.android.gms.common.api.internal.u p10 = qVar.p(wVar2);
-                if (p10 != null) {
-                    i10 = p10.e();
+                com.google.android.gms.common.api.internal.v G = nVar.G(wVar2);
+                if (G != null) {
+                    i10 = G.e();
                 } else if (!f0Var.h(wVar2)) {
                     break;
                 } else {
                     i10 = 0;
                 }
-                l1 o10 = qVar.o(wVar2);
-                if (o10 == null) {
-                    qVar.n(wVar2);
-                    b2.c1 a2 = ie.a(qVar.j(wVar2), f0Var.t.s());
+                l1 F = nVar.F(wVar2);
+                if (F == null) {
+                    nVar.E(wVar2);
+                    b2.b1 a2 = w7.y.a(nVar.y(wVar2), f0Var.t.s());
                     try {
                         v vVar = wVar2.d;
                         vVar.getClass();
-                        if (o10 == null) {
+                        if (F == null) {
                             wVar = wVar2;
-                            l1Var = Y0;
+                            l1Var = a12;
                         } else {
                             wVar = wVar2;
-                            l1Var = o10;
+                            l1Var = F;
                         }
                         try {
                             vVar.h(i10, l1Var, a2, z10, z11);
                         } catch (DeadObjectException unused) {
-                            j1Var.b.B(wVar);
+                            j1Var.b.U(wVar);
                         } catch (RemoteException e) {
                             e = e;
                             e2.a.m("MediaSessionImpl", "Exception in " + wVar, e);
                         }
                     } catch (DeadObjectException unused2) {
                         wVar = wVar2;
-                    } catch (RemoteException e10) {
-                        e = e10;
+                    } catch (RemoteException e7) {
+                        e = e7;
                         wVar = wVar2;
                     }
                 }
             } catch (DeadObjectException unused3) {
                 wVar = wVar2;
-            } catch (RemoteException e11) {
-                e = e11;
+            } catch (RemoteException e10) {
+                e = e10;
                 wVar = wVar2;
             }
         }

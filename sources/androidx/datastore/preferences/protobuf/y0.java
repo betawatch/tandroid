@@ -2,7 +2,7 @@ package androidx.datastore.preferences.protobuf;
 
 import j$.util.concurrent.ConcurrentHashMap;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class y0 {
     public static final y0 c = new y0();
@@ -10,7 +10,7 @@ public final class y0 {
     public final k0 a = new k0();
 
     public final b1 a(Class cls) {
-        b1 w10;
+        b1 w9;
         Class cls2;
         z.a(cls, "messageType");
         ConcurrentHashMap concurrentHashMap = this.b;
@@ -29,17 +29,17 @@ public final class y0 {
         a aVar = a2.a;
         if ((i10 & 2) == 2) {
             if (w.class.isAssignableFrom(cls)) {
-                w10 = new t0(c1.d, o.a, aVar);
+                w9 = new t0(c1.d, o.a, aVar);
             } else {
                 j1 j1Var = c1.b;
                 n nVar = o.b;
                 if (nVar == null) {
                     throw new IllegalStateException("Protobuf runtime is not correctly loaded.");
                 }
-                w10 = new t0(j1Var, nVar, aVar);
+                w9 = new t0(j1Var, nVar, aVar);
             }
         } else if (w.class.isAssignableFrom(cls)) {
-            w10 = (a2.d & 1) == 1 ? s0.w(a2, v0.b, h0.b, c1.d, o.a, p0.b) : s0.w(a2, v0.b, h0.b, c1.d, null, p0.b);
+            w9 = (a2.d & 1) == 1 ? s0.w(a2, v0.b, h0.b, c1.d, o.a, p0.b) : s0.w(a2, v0.b, h0.b, c1.d, null, p0.b);
         } else if ((a2.d & 1) == 1) {
             u0 u0Var = v0.a;
             f0 f0Var = h0.a;
@@ -48,11 +48,11 @@ public final class y0 {
             if (nVar2 == null) {
                 throw new IllegalStateException("Protobuf runtime is not correctly loaded.");
             }
-            w10 = s0.w(a2, u0Var, f0Var, j1Var2, nVar2, p0.a);
+            w9 = s0.w(a2, u0Var, f0Var, j1Var2, nVar2, p0.a);
         } else {
-            w10 = s0.w(a2, v0.a, h0.a, c1.c, null, p0.a);
+            w9 = s0.w(a2, v0.a, h0.a, c1.c, null, p0.a);
         }
-        b1 b1Var2 = (b1) concurrentHashMap.putIfAbsent(cls, w10);
-        return b1Var2 != null ? b1Var2 : w10;
+        b1 b1Var2 = (b1) concurrentHashMap.putIfAbsent(cls, w9);
+        return b1Var2 != null ? b1Var2 : w9;
     }
 }

@@ -1,52 +1,85 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.SurfaceView;
-import android.view.View;
-import android.widget.ImageView;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
+import android.widget.FrameLayout;
+import androidx.core.widget.NestedScrollView;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class wr0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ View b;
-    public final /* synthetic */ PhotoViewer c;
+public final class wr0 extends org.telegram.ui.Components.a01 {
+    public boolean a;
+    public float b;
+    public NestedScrollView c;
+    public FrameLayout d;
 
-    public /* synthetic */ wr0(PhotoViewer photoViewer, View view, int i10) {
-        this.a = i10;
-        this.c = photoViewer;
-        this.b = view;
+    public wr0(Context context) {
+        super(context);
+        this.a = false;
+        this.b = 1.0f;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                PhotoViewer photoViewer = this.c;
-                photoViewer.B3 = false;
-                this.b.setOutlineProvider(null);
-                ImageView imageView = photoViewer.x3;
-                if (imageView != null) {
-                    imageView.setOutlineProvider(null);
-                }
-                ju0 ju0Var = photoViewer.E2;
-                if (ju0Var != null) {
-                    ju0Var.setOutlineProvider(null);
-                }
-                SurfaceView surfaceView = photoViewer.C2;
-                if (surfaceView != null) {
-                    surfaceView.setVisibility(0);
-                    break;
-                }
-                break;
-            default:
-                PhotoViewer photoViewer2 = this.c;
-                photoViewer2.B3 = false;
-                photoViewer2.i4.run();
-                AndroidUtilities.runOnUIThread(new am0(13, this, this.b), 100L);
-                break;
+    public final void b(int i10, boolean z10) {
+        super.setVisibility(i10);
+        if (this.a && z10) {
+            this.c.setVisibility(i10);
         }
+    }
+
+    @Override // android.view.View
+    public float getAlpha() {
+        return this.a ? this.b : super.getAlpha();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        if (this.d == null || getParent() != this.d) {
+            return;
+        }
+        this.a = true;
+        this.c.setVisibility(getVisibility());
+        this.c.setAlpha(this.b);
+        super.setAlpha(1.0f);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        if (this.a) {
+            this.a = false;
+            this.c.setVisibility(8);
+            super.setAlpha(this.b);
+        }
+    }
+
+    @Override // android.view.View
+    public void setAlpha(float f7) {
+        this.b = f7;
+        if (this.a) {
+            this.c.setAlpha(f7);
+        } else {
+            super.setAlpha(f7);
+        }
+    }
+
+    public void setContainer(FrameLayout frameLayout) {
+        this.d = frameLayout;
+    }
+
+    public void setScrollView(NestedScrollView nestedScrollView) {
+        this.c = nestedScrollView;
+    }
+
+    @Override // android.view.View
+    public void setTranslationY(float f7) {
+        super.setTranslationY(f7);
+        if (this.a) {
+            this.c.invalidate();
+        }
+    }
+
+    @Override // android.view.View
+    public void setVisibility(int i10) {
+        b(i10, true);
     }
 }

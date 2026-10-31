@@ -1,6 +1,6 @@
 package o2;
 
-import a8.h0;
+import android.support.v4.media.session.a0;
 import b2.t0;
 import b2.u0;
 import b2.w;
@@ -8,14 +8,14 @@ import b2.x;
 import java.util.Map;
 import u2.c1;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class p extends c1 {
     public final Map J;
     public b2.t K;
 
-    public p(h0 h0Var, n2.m mVar, n2.j jVar, Map map) {
-        super(h0Var, mVar, jVar);
+    public p(a0 a0Var, n2.m mVar, n2.j jVar, Map map) {
+        super(a0Var, mVar, jVar);
         this.J = map;
     }
 
@@ -42,7 +42,7 @@ public final class p extends c1 {
                     break;
                 }
                 t0 t0Var = t0VarArr[i11];
-                if ((t0Var instanceof q3.m) && "com.apple.streaming.transportStreamTimestamp".equals(((q3.m) t0Var).b)) {
+                if ((t0Var instanceof q3.n) && "com.apple.streaming.transportStreamTimestamp".equals(((q3.n) t0Var).b)) {
                     break;
                 }
                 i11++;

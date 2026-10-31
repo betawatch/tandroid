@@ -1,161 +1,196 @@
 package org.telegram.ui;
 
+import android.text.Editable;
 import android.text.TextUtils;
-import java.io.File;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.ImageLoader;
-import org.telegram.messenger.SecureDocument;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
+import android.text.TextWatcher;
+import java.util.Calendar;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class nm0 implements an0 {
-    public final /* synthetic */ TLRPC.SecureValueType a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ kn0 d;
+public final class nm0 implements TextWatcher {
+    public int a = -1;
+    public boolean b;
+    public int c;
+    public final /* synthetic */ sm0 d;
 
-    public nm0(kn0 kn0Var, TLRPC.SecureValueType secureValueType, boolean z10, int i10) {
-        this.d = kn0Var;
-        this.a = secureValueType;
-        this.b = z10;
-        this.c = i10;
+    public nm0(sm0 sm0Var) {
+        this.d = sm0Var;
     }
 
-    public static void a(nm0 nm0Var, SecureDocument secureDocument, TLRPC.TL_secureFile tL_secureFile) {
-        nm0Var.getClass();
-        File pathToAttach = FileLoader.getInstance(UserConfig.selectedAccount).getPathToAttach(secureDocument);
-        String str = secureDocument.secureFile.dc_id + "_" + secureDocument.secureFile.id;
-        File pathToAttach2 = FileLoader.getInstance(UserConfig.selectedAccount).getPathToAttach(tL_secureFile);
-        String str2 = tL_secureFile.dc_id + "_" + tL_secureFile.id;
-        pathToAttach.renameTo(pathToAttach2);
-        ImageLoader.getInstance().replaceImageInCache(str, str2, null, false);
-    }
-
-    public static TLRPC.InputSecureFile b(SecureDocument secureDocument) {
-        if (secureDocument.inputFile == null) {
-            TLRPC.TL_inputSecureFile tL_inputSecureFile = new TLRPC.TL_inputSecureFile();
-            TLRPC.TL_secureFile tL_secureFile = secureDocument.secureFile;
-            tL_inputSecureFile.id = tL_secureFile.id;
-            tL_inputSecureFile.access_hash = tL_secureFile.access_hash;
-            return tL_inputSecureFile;
-        }
-        TLRPC.TL_inputSecureFileUploaded tL_inputSecureFileUploaded = new TLRPC.TL_inputSecureFileUploaded();
-        TLRPC.TL_inputFile tL_inputFile = secureDocument.inputFile;
-        tL_inputSecureFileUploaded.id = tL_inputFile.id;
-        tL_inputSecureFileUploaded.parts = tL_inputFile.parts;
-        tL_inputSecureFileUploaded.md5_checksum = tL_inputFile.md5_checksum;
-        tL_inputSecureFileUploaded.file_hash = secureDocument.fileHash;
-        tL_inputSecureFileUploaded.secret = secureDocument.fileSecret;
-        return tL_inputSecureFileUploaded;
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    public final void c(TLRPC.TL_secureRequiredType tL_secureRequiredType, String str, String str2, TLRPC.TL_secureRequiredType tL_secureRequiredType2, String str3, ArrayList arrayList, SecureDocument secureDocument, ArrayList arrayList2, SecureDocument secureDocument2, SecureDocument secureDocument3, Runnable runnable, m4.w1 w1Var) {
-        TLRPC.TL_inputSecureValue tL_inputSecureValue;
-        TLRPC.TL_securePlainPhone tL_securePlainPhone;
-        TLRPC.TL_inputSecureValue tL_inputSecureValue2;
+    /* JADX WARN: Removed duplicated region for block: B:51:0x0169  */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x0175  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x0183  */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x019e  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x0189  */
+    @Override // android.text.TextWatcher
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void afterTextChanged(Editable editable) {
         int i10;
-        boolean isEmpty = TextUtils.isEmpty(str2);
-        kn0 kn0Var = this.d;
-        if (!isEmpty) {
-            tL_inputSecureValue = new TLRPC.TL_inputSecureValue();
-            tL_inputSecureValue.type = tL_secureRequiredType.type;
-            tL_inputSecureValue.flags |= 1;
-            a8.me k12 = kn0Var.k1(AndroidUtilities.getStringBytes(str2));
-            TLRPC.TL_secureData tL_secureData = new TLRPC.TL_secureData();
-            tL_inputSecureValue.data = tL_secureData;
-            tL_secureData.data = (byte[]) k12.c;
-            tL_secureData.data_hash = (byte[]) k12.d;
-            tL_secureData.secret = (byte[]) k12.a;
-        } else if (TextUtils.isEmpty(str)) {
-            tL_inputSecureValue = null;
-        } else {
-            TLRPC.SecureValueType secureValueType = this.a;
-            if (secureValueType instanceof TLRPC.TL_secureValueTypeEmail) {
-                TLRPC.TL_securePlainEmail tL_securePlainEmail = new TLRPC.TL_securePlainEmail();
-                tL_securePlainEmail.email = str;
-                tL_securePlainPhone = tL_securePlainEmail;
-            } else {
-                if (!(secureValueType instanceof TLRPC.TL_secureValueTypePhone)) {
-                    return;
-                }
-                TLRPC.TL_securePlainPhone tL_securePlainPhone2 = new TLRPC.TL_securePlainPhone();
-                tL_securePlainPhone2.phone = str;
-                tL_securePlainPhone = tL_securePlainPhone2;
-            }
-            TLRPC.TL_inputSecureValue tL_inputSecureValue3 = new TLRPC.TL_inputSecureValue();
-            tL_inputSecureValue3.type = tL_secureRequiredType.type;
-            tL_inputSecureValue3.flags |= 32;
-            tL_inputSecureValue3.plain_data = tL_securePlainPhone;
-            tL_inputSecureValue = tL_inputSecureValue3;
-        }
-        boolean z10 = this.b;
-        if (!z10 && tL_inputSecureValue == null) {
-            if (w1Var != null) {
-                w1Var.d(null, null);
-                return;
-            }
+        nt ntVar;
+        sm0 sm0Var = this.d;
+        if (sm0Var.o0) {
             return;
         }
-        if (tL_secureRequiredType2 != null) {
-            TLRPC.TL_inputSecureValue tL_inputSecureValue4 = new TLRPC.TL_inputSecureValue();
-            tL_inputSecureValue4.type = tL_secureRequiredType2.type;
-            if (!TextUtils.isEmpty(str3)) {
-                tL_inputSecureValue4.flags |= 1;
-                a8.me k13 = kn0Var.k1(AndroidUtilities.getStringBytes(str3));
-                TLRPC.TL_secureData tL_secureData2 = new TLRPC.TL_secureData();
-                tL_inputSecureValue4.data = tL_secureData2;
-                tL_secureData2.data = (byte[]) k13.c;
-                tL_secureData2.data_hash = (byte[]) k13.d;
-                tL_secureData2.secret = (byte[]) k13.a;
-            }
-            if (secureDocument2 != null) {
-                tL_inputSecureValue4.front_side = b(secureDocument2);
-                tL_inputSecureValue4.flags |= 2;
-            }
-            if (secureDocument3 != null) {
-                tL_inputSecureValue4.reverse_side = b(secureDocument3);
-                tL_inputSecureValue4.flags |= 4;
-            }
-            if (secureDocument != null) {
-                tL_inputSecureValue4.selfie = b(secureDocument);
-                tL_inputSecureValue4.flags |= 8;
-            }
-            if (arrayList2 != null && !arrayList2.isEmpty()) {
-                tL_inputSecureValue4.flags |= 64;
-                int size = arrayList2.size();
-                for (int i11 = 0; i11 < size; i11++) {
-                    tL_inputSecureValue4.translation.add(b((SecureDocument) arrayList2.get(i11)));
-                }
-            }
-            if (arrayList != null && !arrayList.isEmpty()) {
-                tL_inputSecureValue4.flags |= 16;
-                int size2 = arrayList.size();
-                for (int i12 = 0; i12 < size2; i12++) {
-                    tL_inputSecureValue4.files.add(b((SecureDocument) arrayList.get(i12)));
-                }
-            }
-            if (!z10) {
-                tL_inputSecureValue2 = tL_inputSecureValue4;
-                TL_account.saveSecureValue savesecurevalue = new TL_account.saveSecureValue();
-                savesecurevalue.value = tL_inputSecureValue;
-                savesecurevalue.secure_secret_id = kn0Var.b1;
-                i10 = ((org.telegram.ui.ActionBar.r2) kn0Var).currentAccount;
-                ConnectionsManager.getInstance(i10).sendRequest(savesecurevalue, new mm0(this, w1Var, str, savesecurevalue, tL_secureRequiredType2, tL_secureRequiredType, arrayList, secureDocument, secureDocument2, secureDocument3, arrayList2, str2, str3, runnable, this, tL_inputSecureValue2));
-            }
-            tL_inputSecureValue = tL_inputSecureValue4;
+        boolean z10 = true;
+        EditTextBoldCursor editTextBoldCursor = sm0Var.f[1];
+        int selectionStart = editTextBoldCursor.getSelectionStart();
+        String obj = editTextBoldCursor.getText().toString();
+        if (this.a == 3) {
+            obj = obj.substring(0, this.c) + obj.substring(this.c + 1);
+            selectionStart--;
         }
-        tL_inputSecureValue2 = null;
-        TL_account.saveSecureValue savesecurevalue2 = new TL_account.saveSecureValue();
-        savesecurevalue2.value = tL_inputSecureValue;
-        savesecurevalue2.secure_secret_id = kn0Var.b1;
-        i10 = ((org.telegram.ui.ActionBar.r2) kn0Var).currentAccount;
-        ConnectionsManager.getInstance(i10).sendRequest(savesecurevalue2, new mm0(this, w1Var, str, savesecurevalue2, tL_secureRequiredType2, tL_secureRequiredType, arrayList, secureDocument, secureDocument2, secureDocument3, arrayList2, str2, str3, runnable, this, tL_inputSecureValue2));
+        StringBuilder sb2 = new StringBuilder(obj.length());
+        int i11 = 0;
+        while (i11 < obj.length()) {
+            int i12 = i11 + 1;
+            String substring = obj.substring(i11, i12);
+            if ("0123456789".contains(substring)) {
+                sb2.append(substring);
+            }
+            i11 = i12;
+        }
+        sm0Var.o0 = true;
+        org.telegram.ui.ActionBar.a7.V(sm0Var.f[1], org.telegram.ui.ActionBar.t6.G6, sm0Var.Y0);
+        if (sb2.length() > 4) {
+            sb2.setLength(4);
+        }
+        if (sb2.length() < 2) {
+            this.b = false;
+        }
+        if (!this.b) {
+            if (sb2.length() == 1) {
+                int intValue = Utilities.z(sb2.toString()).intValue();
+                if (intValue != 1 && intValue != 0) {
+                    sb2.insert(0, "0");
+                    selectionStart++;
+                }
+            } else if (sb2.length() == 2) {
+                int intValue2 = Utilities.z(sb2.toString()).intValue();
+                if (intValue2 > 12 || intValue2 == 0) {
+                    org.telegram.ui.ActionBar.a7.V(sm0Var.f[1], org.telegram.ui.ActionBar.t6.p7, sm0Var.Y0);
+                } else {
+                    z10 = false;
+                }
+                selectionStart++;
+                if (!z10) {
+                }
+                if (sb2.length() == 2) {
+                }
+                selectionStart++;
+                editTextBoldCursor.setText(sb2);
+                if (selectionStart >= 0) {
+                }
+                sm0Var.o0 = false;
+            }
+            z10 = false;
+            if (!z10) {
+            }
+            if (sb2.length() == 2) {
+            }
+            selectionStart++;
+            editTextBoldCursor.setText(sb2);
+            if (selectionStart >= 0) {
+            }
+            sm0Var.o0 = false;
+        }
+        int i13 = sb2.length() > 2 ? 2 : 1;
+        String[] strArr = new String[i13];
+        strArr[0] = sb2.substring(0, 2);
+        if (i13 == 2) {
+            strArr[1] = sb2.substring(2);
+        }
+        if (sb2.length() == 4 && i13 == 2) {
+            int intValue3 = Utilities.z(strArr[0]).intValue();
+            int intValue4 = Utilities.z(strArr[1]).intValue() + 2000;
+            Calendar calendar = Calendar.getInstance();
+            i10 = ((org.telegram.ui.ActionBar.k2) sm0Var).currentAccount;
+            boolean z11 = org.telegram.messenger.d20.i(i10).d().startsWith("7") || ((ntVar = sm0Var.A0) != null && ntVar.c.equals("7"));
+            int i14 = z11 ? 2022 : calendar.get(1);
+            int i15 = z11 ? 1 : calendar.get(2) + 1;
+            if (intValue4 < i14 || (intValue4 == i14 && intValue3 < i15)) {
+                org.telegram.ui.ActionBar.a7.V(sm0Var.f[1], org.telegram.ui.ActionBar.t6.p7, sm0Var.Y0);
+                if (!z10) {
+                }
+                if (sb2.length() == 2) {
+                }
+                selectionStart++;
+                editTextBoldCursor.setText(sb2);
+                if (selectionStart >= 0) {
+                }
+                sm0Var.o0 = false;
+            }
+            z10 = false;
+            if (!z10) {
+            }
+            if (sb2.length() == 2) {
+            }
+            selectionStart++;
+            editTextBoldCursor.setText(sb2);
+            if (selectionStart >= 0) {
+            }
+            sm0Var.o0 = false;
+        }
+        int intValue5 = Utilities.z(strArr[0]).intValue();
+        if (intValue5 > 12 || intValue5 == 0) {
+            org.telegram.ui.ActionBar.a7.V(sm0Var.f[1], org.telegram.ui.ActionBar.t6.p7, sm0Var.Y0);
+            if (!z10 && sb2.length() == 4) {
+                sm0Var.f[sm0Var.i0 ? (char) 2 : (char) 3].requestFocus();
+            }
+            if (sb2.length() == 2) {
+                if (sb2.length() > 2 && sb2.charAt(2) != '/') {
+                    sb2.insert(2, '/');
+                }
+                editTextBoldCursor.setText(sb2);
+                if (selectionStart >= 0) {
+                    editTextBoldCursor.setSelection(Math.min(selectionStart, editTextBoldCursor.length()));
+                }
+                sm0Var.o0 = false;
+            }
+            sb2.append('/');
+            selectionStart++;
+            editTextBoldCursor.setText(sb2);
+            if (selectionStart >= 0) {
+            }
+            sm0Var.o0 = false;
+        }
+        z10 = false;
+        if (!z10) {
+            sm0Var.f[sm0Var.i0 ? (char) 2 : (char) 3].requestFocus();
+        }
+        if (sb2.length() == 2) {
+        }
+        selectionStart++;
+        editTextBoldCursor.setText(sb2);
+        if (selectionStart >= 0) {
+        }
+        sm0Var.o0 = false;
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        if (i11 == 0 && i12 == 1) {
+            this.b = TextUtils.indexOf((CharSequence) this.d.f[1].getText(), '/') != -1;
+            this.a = 1;
+            return;
+        }
+        if (i11 != 1 || i12 != 0) {
+            this.a = -1;
+            return;
+        }
+        if (charSequence.charAt(i10) != '/' || i10 <= 0) {
+            this.a = 2;
+            return;
+        }
+        this.b = false;
+        this.a = 3;
+        this.c = i10 - 1;
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

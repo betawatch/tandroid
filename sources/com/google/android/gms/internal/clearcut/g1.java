@@ -1,39 +1,52 @@
 package com.google.android.gms.internal.clearcut;
 
+import java.util.Iterator;
+import java.util.Map;
+
 /* loaded from: classes.dex */
-public final class g1 extends h1 {
-    @Override // com.google.android.gms.internal.clearcut.h1
-    public final void c(Object obj, long j10, double d) {
-        this.a.putDouble(obj, j10, d);
+public final class g1 implements Iterator {
+    public final /* synthetic */ int a;
+    public Iterator b;
+
+    @Override // java.util.Iterator
+    public final boolean hasNext() {
+        switch (this.a) {
+        }
+        return this.b.hasNext();
     }
 
-    @Override // com.google.android.gms.internal.clearcut.h1
-    public final void d(Object obj, long j10, float f7) {
-        this.a.putFloat(obj, j10, f7);
+    @Override // java.util.Iterator
+    public final Object next() {
+        switch (this.a) {
+        }
+        return ((Map.Entry) this.b.next()).getValue();
     }
 
-    @Override // com.google.android.gms.internal.clearcut.h1
-    public final void f(Object obj, long j10, boolean z10) {
-        this.a.putBoolean(obj, j10, z10);
+    @Override // java.util.Iterator
+    public final void remove() {
+        switch (this.a) {
+            case 0:
+                throw new UnsupportedOperationException();
+            case 1:
+                this.b.remove();
+                return;
+            default:
+                this.b.remove();
+                return;
+        }
     }
 
-    @Override // com.google.android.gms.internal.clearcut.h1
-    public final boolean i(Object obj, long j10) {
-        return this.a.getBoolean(obj, j10);
-    }
-
-    @Override // com.google.android.gms.internal.clearcut.h1
-    public final float j(Object obj, long j10) {
-        return this.a.getFloat(obj, j10);
-    }
-
-    @Override // com.google.android.gms.internal.clearcut.h1
-    public final double k(Object obj, long j10) {
-        return this.a.getDouble(obj, j10);
-    }
-
-    @Override // com.google.android.gms.internal.clearcut.h1
-    public final byte l(Object obj, long j10) {
-        return this.a.getByte(obj, j10);
+    public g1(Iterator it, int i10) {
+        this.a = i10;
+        switch (i10) {
+            case 2:
+                it.getClass();
+                this.b = it;
+                break;
+            default:
+                it.getClass();
+                this.b = it;
+                break;
+        }
     }
 }

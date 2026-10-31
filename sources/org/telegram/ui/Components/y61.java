@@ -1,53 +1,35 @@
 package org.telegram.ui.Components;
 
-import android.net.Uri;
-import android.text.TextPaint;
-import android.text.style.URLSpan;
-import android.view.View;
-import org.telegram.tgnet.TLObject;
+import java.util.function.ToDoubleFunction;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public class y61 extends URLSpan {
-    public final boolean a;
-    public final z11 b;
-    public TLObject c;
-    public String d;
+public final /* synthetic */ class y61 implements ToDoubleFunction {
+    public final /* synthetic */ int a;
 
-    public y61(String str) {
-        this(str, (z11) null);
+    public /* synthetic */ y61(int i10) {
+        this.a = i10;
     }
 
-    @Override // android.text.style.URLSpan, android.text.style.ClickableSpan
-    public void onClick(View view) {
-        String url = getURL();
-        if (!url.startsWith("@")) {
-            qf.d.r(view.getContext(), url);
-            return;
+    @Override // java.util.function.ToDoubleFunction
+    public final double applyAsDouble(Object obj) {
+        switch (this.a) {
+            case 0:
+                return ((a71) obj).a;
+            case 1:
+                return ((TLRPC.TL_topPeer) obj).rating;
+            case 2:
+                return ((TLRPC.TL_topPeer) obj).rating;
+            case 3:
+                return ((TLRPC.TL_topPeer) obj).rating;
+            case 4:
+                return rh.t0.e1((TL_stars.starGiftAttributeBackdrop) obj);
+            case 5:
+                return rh.t0.e1((TL_stars.starGiftAttributePattern) obj);
+            default:
+                return rh.t0.e1((TL_stars.starGiftAttributeModel) obj);
         }
-        qf.d.o(view.getContext(), Uri.parse("https://t.me/" + url.substring(1)), true, true);
-    }
-
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public void updateDrawState(TextPaint textPaint) {
-        int i10 = textPaint.linkColor;
-        int color = textPaint.getColor();
-        super.updateDrawState(textPaint);
-        z11 z11Var = this.b;
-        if (z11Var != null) {
-            z11Var.a(textPaint);
-        }
-        textPaint.setUnderlineText(i10 == color && !this.a);
-    }
-
-    public y61(String str, int i10) {
-        this(str, (z11) null);
-        this.a = true;
-    }
-
-    public y61(String str, z11 z11Var) {
-        super(str != null ? str.replace((char) 8238, ' ') : str);
-        this.a = false;
-        this.b = z11Var;
     }
 }

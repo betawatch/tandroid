@@ -1,14 +1,28 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class p41 extends FrameLayout {
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
+public final class p41 implements zw0 {
+    public final /* synthetic */ w41 a;
+
+    public p41(w41 w41Var) {
+        this.a = w41Var;
+    }
+
+    @Override // org.telegram.ui.Components.zw0
+    public final void a(TLRPC.Document document, String str, Object obj, org.telegram.messenger.fj fjVar, boolean z10, boolean z11, int i10, int i11) {
+        this.a.b.f(document, obj, z11, i10);
+    }
+
+    @Override // org.telegram.ui.Components.zw0
+    public final boolean b() {
+        return this.a.b.a();
+    }
+
+    @Override // org.telegram.ui.Components.zw0
+    public final boolean c() {
+        return this.a.b.c();
     }
 }

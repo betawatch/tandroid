@@ -1,17 +1,15 @@
 package p4;
 
-import a8.fg;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Executor;
-import li.h5;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public abstract class p extends q {
     public final Object a = new Object();
     public Executor b;
-    public h5 c;
+    public n2.u c;
     public m d;
     public ArrayList e;
 
@@ -32,7 +30,7 @@ public abstract class p extends q {
                 try {
                     Executor executor = this.b;
                     if (executor != null) {
-                        executor.execute(new fg(this, this.c, mVar, arrayList, false, 4));
+                        executor.execute(new com.google.android.gms.internal.cast.o(this, this.c, mVar, arrayList, false, 4));
                     } else {
                         this.d = mVar;
                         this.e = new ArrayList(arrayList);

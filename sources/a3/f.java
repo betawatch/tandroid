@@ -1,13 +1,13 @@
 package a3;
 
-import a8.yb;
 import android.view.Surface;
 import b2.b2;
 import java.util.ArrayDeque;
 import java.util.List;
 import java.util.concurrent.Executor;
+import v7.t6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class f implements p0 {
     public final a0 a;
@@ -25,7 +25,9 @@ public final class f implements p0 {
         this.a = a0Var;
         this.b = b0Var;
         a0Var.l = g0Var;
-        this.c = new g0(new rf.b(this), a0Var, b0Var);
+        n4.q qVar = new n4.q();
+        qVar.b = this;
+        this.c = new g0(qVar, a0Var, b0Var);
         this.d = new ArrayDeque();
         this.f = new b2.x(new b2.w());
         this.g = -9223372036854775807L;
@@ -80,12 +82,18 @@ public final class f implements p0 {
     }
 
     @Override // a3.p0
-    public final void h(long j10) {
+    public final void h(a6.i iVar) {
+        this.h = iVar;
+        this.i = j9.r.a;
+    }
+
+    @Override // a3.p0
+    public final void i(long j10) {
         throw new UnsupportedOperationException();
     }
 
     @Override // a3.p0
-    public final void i() {
+    public final void j() {
         g0 g0Var = this.c;
         if (g0Var.h == -9223372036854775807L) {
             g0Var.h = Long.MIN_VALUE;
@@ -95,7 +103,7 @@ public final class f implements p0 {
     }
 
     @Override // a3.p0
-    public final void j(int i10) {
+    public final void k(int i10) {
         f0 f0Var = this.a.b;
         if (f0Var.j == i10) {
             return;
@@ -105,14 +113,14 @@ public final class f implements p0 {
     }
 
     @Override // a3.p0
-    public final void k() {
+    public final void l() {
         this.e = null;
         this.a.g(null);
     }
 
     @Override // a3.p0
-    public final void l(b2.x xVar, long j10, int i10, List list) {
-        yb.p(list.isEmpty());
+    public final void m(b2.x xVar, long j10, int i10, List list) {
+        t6.p(list.isEmpty());
         int i11 = xVar.z;
         int i12 = xVar.A;
         b2.x xVar2 = this.f;
@@ -142,12 +150,6 @@ public final class f implements p0 {
     }
 
     @Override // a3.p0
-    public final void m(b6.i iVar) {
-        this.h = iVar;
-        this.i = k9.r.a;
-    }
-
-    @Override // a3.p0
     public final void n(boolean z10) {
         if (z10) {
             a0 a0Var = this.a;
@@ -169,23 +171,23 @@ public final class f implements p0 {
         g0Var.i = -9223372036854775807L;
         g0Var.j = -9223372036854775807L;
         e2.j0 j0Var2 = g0Var.e;
-        if (j0Var2.j() > 0) {
-            yb.g(j0Var2.j() > 0);
-            while (j0Var2.j() > 1) {
-                j0Var2.f();
+        if (j0Var2.p() > 0) {
+            t6.f(j0Var2.p() > 0);
+            while (j0Var2.p() > 1) {
+                j0Var2.i();
             }
-            Object f7 = j0Var2.f();
-            f7.getClass();
-            g0Var.l = ((Long) f7).longValue();
+            Object i10 = j0Var2.i();
+            i10.getClass();
+            g0Var.l = ((Long) i10).longValue();
         }
-        if (j0Var.j() > 0) {
-            yb.g(j0Var.j() > 0);
-            while (j0Var.j() > 1) {
-                j0Var.f();
+        if (j0Var.p() > 0) {
+            t6.f(j0Var.p() > 0);
+            while (j0Var.p() > 1) {
+                j0Var.i();
             }
-            Object f10 = j0Var.f();
-            f10.getClass();
-            j0Var.a((b2) f10, 0L);
+            Object i11 = j0Var.i();
+            i11.getClass();
+            j0Var.a((b2) i11, 0L);
         }
         this.d.clear();
     }
@@ -232,7 +234,7 @@ public final class f implements p0 {
     public final void q(long j10, long j11) {
         try {
             this.c.a(j10, j11);
-        } catch (i2.m e) {
+        } catch (i2.l e) {
             throw new o0(e, this.f);
         }
     }

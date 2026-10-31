@@ -1,31 +1,20 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+import org.telegram.tgnet.tl.TL_account;
+
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class ec1 implements mc1 {
-    public boolean a;
-    public final /* synthetic */ wn b;
+public final class ec1 extends tc1 {
+    public final /* synthetic */ TwoStepVerificationActivity k0;
 
-    public ec1(wn wnVar, boolean z10) {
-        this.b = wnVar;
-        this.a = z10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ec1(TwoStepVerificationActivity twoStepVerificationActivity, int i10, TL_account.Password password) {
+        super(i10, 4, password);
+        this.k0 = twoStepVerificationActivity;
     }
 
-    @Override // org.telegram.ui.mc1
-    public final boolean X0() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.mc1
-    public final boolean a() {
-        return this.a;
-    }
-
-    @Override // org.telegram.ui.mc1
-    public final void j1(boolean z10) {
-        boolean z11 = !this.a;
-        this.a = z11;
-        un unVar = this.b.ua;
-        unVar.q(unVar.f, unVar.g, z10, Boolean.valueOf(z11), false);
+    @Override // org.telegram.ui.tc1
+    public final void F0() {
+        this.k0.N = true;
     }
 }

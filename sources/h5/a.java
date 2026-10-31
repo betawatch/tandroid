@@ -1,12 +1,11 @@
 package h5;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public abstract class a extends com.googlecode.mp4parser.b {
-    public int f;
+public abstract class a {
+    public static final /* synthetic */ int a = 0;
 
-    public a(String str) {
-        super(str);
-        this.f = 1;
+    static {
+        a.class.getClassLoader();
     }
 }

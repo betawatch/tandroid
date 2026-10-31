@@ -1,127 +1,132 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
-import android.graphics.ColorFilter;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.AndroidUtilities;
+import android.R;
+import android.content.Context;
+import android.view.ActionMode;
+import android.view.Menu;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class xs0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ PhotoViewer b;
+public final class xs0 extends org.telegram.ui.Cells.e6 {
+    public final /* synthetic */ ys0 F;
 
-    public /* synthetic */ xs0(PhotoViewer photoViewer, int i10) {
-        this.a = i10;
-        this.b = photoViewer;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public xs0(ys0 ys0Var, Context context, int i10, f50 f50Var) {
+        super(context, i10, f50Var, null);
+        this.F = ys0Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        org.telegram.ui.Components.ti tiVar;
-        int i10 = this.a;
-        PhotoViewer photoViewer = this.b;
-        switch (i10) {
-            case 0:
-                photoViewer.p6 = null;
-                org.telegram.ui.Components.pf0 pf0Var = photoViewer.C1;
-                if (pf0Var != null) {
-                    if (pf0Var.b.j()) {
-                        org.telegram.ui.ActionBar.f7.t(photoViewer.a1, org.telegram.ui.ActionBar.y6.zf, photoViewer.v2, PorterDuff.Mode.MULTIPLY);
-                    } else {
-                        photoViewer.a1.setColorFilter((ColorFilter) null);
-                    }
-                    photoViewer.g6 = 0.0f;
-                    photoViewer.e0.invalidate();
-                    break;
-                }
-                break;
-            case 1:
-                photoViewer.t3 = null;
-                break;
-            case 2:
-                Drawable[] drawableArr = PhotoViewer.U8;
-                photoViewer.j3();
-                break;
-            case 3:
-                photoViewer.L1.m0(false);
-                pt0 pt0Var = photoViewer.L1;
-                pt0Var.j1.setTypeface(rg.s0.e(pt0Var.E1).j);
-                pt0Var.O0.setVisibility(0);
-                pt0Var.L0.setVisibility(0);
-                pt0Var.M0.setVisibility(0);
-                org.telegram.ui.Components.zd0 zd0Var = photoViewer.y4;
-                int childCount = zd0Var.getChildCount();
-                for (int i11 = 0; i11 < childCount; i11++) {
-                    zd0Var.getChildAt(i11).setVisibility(4);
-                }
-                photoViewer.p6 = null;
-                photoViewer.u4 = 3;
-                photoViewer.h1().L.b(photoViewer.u4 != 0);
-                fi.z3 z3Var = photoViewer.K1;
-                if (z3Var != null) {
-                    z3Var.b(photoViewer.u4 != 3);
-                }
-                photoViewer.o6 = -1;
-                float u22 = photoViewer.u2(false);
-                photoViewer.a6 = u22;
-                photoViewer.e6 = u22;
-                photoViewer.c6 = 0.0f;
-                photoViewer.d6 = 0.0f;
-                photoViewer.z3(u22);
-                photoViewer.t2 = true;
-                photoViewer.e0.invalidate();
-                qu0 qu0Var = photoViewer.d;
-                if (qu0Var == null || !qu0Var.P()) {
-                    photoViewer.V1();
-                    break;
-                }
-                break;
-            case 4:
-                AnimatorSet animatorSet = photoViewer.B1;
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    photoViewer.o1.setVisibility(8);
-                    photoViewer.B1 = null;
-                    break;
-                }
-                break;
-            case 5:
-                AndroidUtilities.runOnUIThread(new nj0(this, 23));
-                break;
-            case 6:
-                photoViewer.m6 = 1.0f;
-                Runnable runnable = photoViewer.p4;
-                if (runnable != null) {
-                    wn wnVar = photoViewer.l4;
-                    if (wnVar == null && (tiVar = photoViewer.a2) != null) {
-                        org.telegram.ui.ActionBar.r2 r2Var = tiVar.f0;
-                        if (r2Var instanceof wn) {
-                            wnVar = (wn) r2Var;
-                        }
-                    }
-                    if (wnVar != null) {
-                        wnVar.q8(runnable);
-                        break;
-                    } else {
-                        runnable.run();
-                        photoViewer.p4 = null;
-                        break;
-                    }
-                }
-                break;
-            case 7:
-                photoViewer.p6 = null;
-                photoViewer.e0.invalidate();
-                break;
-            case 8:
-                photoViewer.y3[0].setTag(null);
-                break;
-            default:
-                photoViewer.y3[0].setTag(null);
-                break;
+    @Override // org.telegram.ui.Cells.e6
+    public final boolean e() {
+        at0 at0Var = this.F.d;
+        w71 w71Var = at0Var.c;
+        View F = w71Var.F(this);
+        s4.c1 T = F == null ? null : w71Var.T(F);
+        if (T != null) {
+            int b10 = T.b();
+            int i10 = at0Var.D;
+            if (i10 == at0Var.n && b10 == (at0Var.n0 + i10) - 1) {
+                return false;
+            }
         }
+        return true;
+    }
+
+    @Override // org.telegram.ui.Cells.e6
+    public final boolean f(org.telegram.ui.Cells.e6 e6Var) {
+        int b10;
+        at0 at0Var = this.F.d;
+        w71 w71Var = at0Var.c;
+        View F = w71Var.F(e6Var);
+        s4.c1 T = F == null ? null : w71Var.T(F);
+        if (T == null || (b10 = T.b()) == -1) {
+            return false;
+        }
+        return at0Var.x[b10 - at0Var.n0];
+    }
+
+    @Override // org.telegram.ui.Cells.e6
+    public final void g(ih.b bVar, ActionMode actionMode) {
+        if (bVar.isFocused() && bVar.hasSelection()) {
+            Menu menu = actionMode.getMenu();
+            if (menu.findItem(R.id.copy) == null) {
+                return;
+            }
+            un.t8(menu, this.F.d.f.h, false, true, true, true);
+        }
+    }
+
+    @Override // org.telegram.ui.Cells.e6
+    public final void h(org.telegram.ui.Cells.e6 e6Var, boolean z10) {
+        int b10;
+        at0 at0Var = this.F.d;
+        at0Var.c.getChildCount();
+        if (z10 && at0Var.L) {
+            Arrays.fill(at0Var.x, false);
+            for (int i10 = at0Var.n0; i10 < at0Var.n0 + at0Var.D; i10++) {
+                s4.c1 K = at0Var.c.K(i10);
+                if (K != null) {
+                    View view = K.a;
+                    if (view instanceof org.telegram.ui.Cells.e6) {
+                        ((org.telegram.ui.Cells.e6) view).r.a(false, true);
+                    }
+                }
+            }
+        }
+        super.h(e6Var, z10);
+        w71 w71Var = at0Var.c;
+        View F = w71Var.F(e6Var);
+        s4.c1 T = F == null ? null : w71Var.T(F);
+        if (T != null && (b10 = T.b()) != -1) {
+            at0Var.x[b10 - at0Var.n0] = z10;
+        }
+        at0Var.m0();
+    }
+
+    @Override // org.telegram.ui.Cells.e6
+    public final void i(boolean z10) {
+        at0.h0(this.F.d, this, z10);
+    }
+
+    @Override // org.telegram.ui.Cells.e6
+    public final void j(org.telegram.ui.Cells.e6 e6Var) {
+        at0.i0(this.F.d, e6Var);
+    }
+
+    @Override // org.telegram.ui.Cells.e6
+    public final boolean l(ArrayList arrayList) {
+        at0 at0Var = this.F.d;
+        if (!arrayList.isEmpty()) {
+            at0Var.c.getClass();
+            int R = RecyclerView.R(this) - at0Var.n0;
+            if (R >= 0) {
+                ih.b bVar = this.d;
+                bVar.getText().replace(bVar.getSelectionStart(), bVar.getSelectionEnd(), (CharSequence) arrayList.remove(0));
+                int i10 = R + 1;
+                while (!arrayList.isEmpty() && i10 < at0Var.n) {
+                    for (int length = at0Var.w.length - 1; length > i10; length--) {
+                        CharSequence[] charSequenceArr = at0Var.w;
+                        charSequenceArr[length] = charSequenceArr[length - 1];
+                    }
+                    at0Var.w[i10] = (CharSequence) arrayList.remove(0);
+                    at0Var.D++;
+                    i10++;
+                }
+                at0Var.v0();
+                at0Var.g0 = (at0Var.n0 + i10) - 1;
+                at0Var.b.f();
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override // org.telegram.ui.Cells.e6
+    public final boolean o() {
+        return this.F.d.L;
     }
 }

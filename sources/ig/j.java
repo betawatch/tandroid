@@ -1,74 +1,42 @@
 package ig;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.Paint;
+import android.graphics.Path;
 import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
-import android.os.SystemClock;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Cells.i9;
+import android.graphics.RectF;
+import jg.f2;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class j extends i9 {
-    public int E;
-    public int F;
-    public final /* synthetic */ n G;
-    public int w;
-    public float x;
-    public long y;
+public final class j extends f2 {
+    public final /* synthetic */ u D;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j(n nVar, Context context) {
+    public j(u uVar, Context context, Bitmap bitmap) {
         super(context);
-        this.G = nVar;
-    }
-
-    @Override // org.telegram.ui.Cells.i9
-    public final void a() {
-        n nVar = this.G;
-        Drawable drawable = nVar.O;
-        if (drawable != null) {
-            Rect bounds = drawable.getBounds();
-            Drawable drawable2 = nVar.O;
-            int i10 = this.E;
-            drawable2.setBounds(i10, this.F, bounds.width() + i10, bounds.height() + this.F);
-        }
-    }
-
-    @Override // org.telegram.ui.Cells.i9
-    public final void b() {
-        n nVar = this.G;
-        Drawable drawable = nVar.O;
-        if (drawable != null) {
-            Rect bounds = drawable.getBounds();
-            int dp = (int) (this.x * AndroidUtilities.dp(3.0f));
-            int i10 = bounds.left;
-            this.E = i10;
-            int i11 = bounds.top;
-            this.F = i11;
-            nVar.O.setBounds(i10 + dp, AndroidUtilities.dp(1.0f) + i11, bounds.width() + this.E + dp, bounds.height() + AndroidUtilities.dp(1.0f) + this.F);
-            long elapsedRealtime = SystemClock.elapsedRealtime();
-            long j10 = elapsedRealtime - this.y;
-            if (j10 > 17) {
-                j10 = 17;
-            }
-            this.y = elapsedRealtime;
-            if (this.w == 0) {
-                float f7 = (j10 / 664.0f) + this.x;
-                this.x = f7;
-                if (f7 >= 1.0f) {
-                    this.w = 1;
-                    this.x = 1.0f;
-                }
-            } else {
-                float f10 = this.x - (j10 / 664.0f);
-                this.x = f10;
-                if (f10 <= 0.0f) {
-                    this.w = 0;
-                    this.x = 0.0f;
-                }
-            }
-            getTextView().invalidate();
-        }
+        this.D = uVar;
+        Paint paint = new Paint(1);
+        this.b = paint;
+        Paint paint2 = new Paint(1);
+        this.c = paint2;
+        Paint paint3 = new Paint(1);
+        this.d = paint3;
+        this.e = 0.5f;
+        this.f = 0.5f;
+        this.h = new Path();
+        this.n = new Rect();
+        this.r = new RectF();
+        this.a = bitmap;
+        Paint.Style style = Paint.Style.STROKE;
+        paint.setStyle(style);
+        paint.setStrokeWidth(org.telegram.messenger.i0.L(4.0f));
+        paint.setColor(-1);
+        paint2.setStyle(style);
+        paint2.setStrokeWidth(org.telegram.messenger.i0.L(1.0f));
+        paint2.setColor(-1711276033);
+        paint3.setStyle(style);
+        paint3.setStrokeWidth(org.telegram.messenger.i0.L(12.0f));
     }
 }

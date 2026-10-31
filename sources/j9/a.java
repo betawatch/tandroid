@@ -1,82 +1,25 @@
 package j9;
 
-import a8.yb;
-import java.io.Serializable;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class a implements Serializable {
-    public static final a c = new a(new int[0]);
-    public final int[] a;
-    public final int b;
+public final class a {
+    public static final a c;
+    public static final a d;
+    public final boolean a;
+    public final Throwable b;
 
-    public a(int[] iArr) {
-        int length = iArr.length;
-        this.a = iArr;
-        this.b = length;
+    static {
+        if (o.d) {
+            d = null;
+            c = null;
+        } else {
+            d = new a(null, false);
+            c = new a(null, true);
+        }
     }
 
-    public final boolean a(int i10) {
-        int i11 = 0;
-        while (true) {
-            if (i11 >= this.b) {
-                i11 = -1;
-                break;
-            }
-            if (this.a[i11] == i10) {
-                break;
-            }
-            i11++;
-        }
-        return i11 >= 0;
-    }
-
-    public final int b(int i10) {
-        yb.j(i10, this.b);
-        return this.a[i10];
-    }
-
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
-        }
-        if (obj instanceof a) {
-            a aVar = (a) obj;
-            int i10 = aVar.b;
-            int i11 = this.b;
-            if (i11 == i10) {
-                for (int i12 = 0; i12 < i11; i12++) {
-                    if (b(i12) == aVar.b(i12)) {
-                    }
-                }
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        int i10 = 1;
-        for (int i11 = 0; i11 < this.b; i11++) {
-            i10 = (i10 * 31) + this.a[i11];
-        }
-        return i10;
-    }
-
-    public final String toString() {
-        int i10 = this.b;
-        if (i10 == 0) {
-            return "[]";
-        }
-        StringBuilder sb2 = new StringBuilder(i10 * 5);
-        sb2.append('[');
-        int[] iArr = this.a;
-        sb2.append(iArr[0]);
-        for (int i11 = 1; i11 < i10; i11++) {
-            sb2.append(", ");
-            sb2.append(iArr[i11]);
-        }
-        sb2.append(']');
-        return sb2.toString();
+    public a(Throwable th2, boolean z10) {
+        this.a = z10;
+        this.b = th2;
     }
 }

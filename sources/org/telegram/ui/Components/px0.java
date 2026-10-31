@@ -1,192 +1,43 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import java.util.HashSet;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.tl.TL_stars;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class px0 extends View implements org.telegram.ui.ActionBar.p6 {
-    public final z9 a;
-    public final nx0 b;
-    public final h6 c;
-    public boolean d;
-    public ox0 e;
-    public boolean f;
-    public boolean h;
+public final class px0 extends tk0 {
+    public boolean e3;
+    public boolean f3;
+    public final /* synthetic */ sx0 g3;
 
-    public px0(Context context) {
-        super(context);
-        nx0 nx0Var = new nx0();
-        nx0Var.c = -16777216;
-        nx0Var.d = -1;
-        this.b = nx0Var;
-        h6 h6Var = new h6(new mx0(this, 0), 380L, ds.h);
-        this.c = h6Var;
-        z9 z9Var = new z9(context);
-        this.a = z9Var;
-        z9Var.setCallback(this);
-        this.d = false;
-        h6Var.d(0.0f, false);
-        a();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public px0(sx0 sx0Var, Context context) {
+        super(context, null);
+        this.g3 = sx0Var;
     }
 
-    public final void a() {
-        boolean z10 = this.h && this.f;
-        this.d = z10;
-        this.c.e(z10);
-        setEnabled(this.d);
-        setClickable(this.d);
-        invalidate();
-    }
-
-    public float getVisibilityFactor() {
-        return this.c.c;
-    }
-
-    @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.a.getClass();
-    }
-
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.a.getClass();
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        float e = this.c.e(this.d);
-        int B = org.telegram.messenger.wh.B(24.0f, getMeasuredWidth(), 2);
-        int measuredHeight = (getMeasuredHeight() - AndroidUtilities.dp(24.0f)) / 2;
-        canvas.save();
-        canvas.translate(B, measuredHeight);
-        canvas.scale(e, e, 0.0f, AndroidUtilities.dp(12.0f));
-        int dp = AndroidUtilities.dp(24.0f);
-        int dp2 = AndroidUtilities.dp(24.0f);
-        z9 z9Var = this.a;
-        z9Var.setBounds(0, 0, dp, dp2);
-        nx0 nx0Var = this.b;
-        int i10 = nx0Var.c;
-        if (z9Var.f != i10) {
-            z9Var.f = i10;
-            if (z9Var.c != null) {
-                z9Var.d.setColorFilter(i10, PorterDuff.Mode.MULTIPLY);
-                z9Var.invalidateSelf();
-            }
-        }
-        int i11 = nx0Var.d;
-        if (z9Var.e != i11) {
-            z9Var.e = i11;
-            Drawable drawable = z9Var.c;
-            if (drawable != null) {
-                drawable.setColorFilter(i11, PorterDuff.Mode.MULTIPLY);
-                z9Var.invalidateSelf();
-            }
-        }
-        int i12 = nx0Var.c | (-16777216);
-        if (z9Var.h != i12) {
-            z9Var.h = i12;
-            z9Var.b.v(i12, false);
-            z9Var.invalidateSelf();
-        }
-        z9Var.draw(canvas);
-        canvas.restore();
-    }
-
-    public void set(TL_stars.Tl_starsRating tl_starsRating) {
-        int b10;
-        this.f = tl_starsRating != null;
-        a();
-        if (tl_starsRating == null) {
+    @Override // androidx.recyclerview.widget.RecyclerView
+    public final void l0(int i10) {
+        boolean canScrollHorizontally = canScrollHorizontally(-1);
+        boolean canScrollHorizontally2 = canScrollHorizontally(1);
+        if (this.e3 == canScrollHorizontally && this.f3 == canScrollHorizontally2) {
             return;
         }
-        int i10 = tl_starsRating.level;
-        z9 z9Var = this.a;
-        if (z9Var.r != i10 || z9Var.c == null || z9Var.d == null) {
-            z9Var.b.t(i10 >= 0 ? Integer.toString(i10) : "!", true, true);
-            z9Var.r = i10;
-            if (i10 < 0) {
-                b10 = 18;
-            } else {
-                b10 = a8.ee.b(i10 <= 10 ? i10 - 1 : (i10 / 10) + 8, 0, 17);
-            }
-            Context context = z9Var.a;
-            if (z9Var.n != b10 || z9Var.c == null || z9Var.d == null) {
-                int i11 = b10 * 2;
-                Drawable mutate = context.getResources().getDrawable(z9.s[i11]).mutate();
-                z9Var.c = mutate;
-                int i12 = z9Var.e;
-                PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
-                mutate.setColorFilter(i12, mode);
-                Drawable mutate2 = context.getResources().getDrawable(z9.s[i11 + 1]).mutate();
-                z9Var.d = mutate2;
-                mutate2.setColorFilter(z9Var.f, mode);
-                z9Var.n = b10;
-                Drawable drawable = z9Var.c;
-                if (drawable != null) {
-                    drawable.setBounds(z9Var.getBounds());
-                }
-                Drawable drawable2 = z9Var.d;
-                if (drawable2 != null) {
-                    drawable2.setBounds(z9Var.getBounds());
-                }
-            }
-            z9Var.invalidateSelf();
+        jg.l0 l0Var = this.g3.d;
+        if (l0Var != null) {
+            l0Var.invalidate();
         }
-        StringBuilder sb2 = new StringBuilder();
-        org.telegram.ui.d3.p(R.string.AccDescrProfileRatingLevel, " ", sb2);
-        sb2.append(tl_starsRating.level);
-        setContentDescription(sb2.toString());
-        invalidate();
+        this.e3 = canScrollHorizontally;
+        this.f3 = canScrollHorizontally2;
     }
 
-    public void setDelegate(ox0 ox0Var) {
-        this.e = ox0Var;
-    }
-
-    public void setParentExpanded(float f7) {
-        nx0 nx0Var = this.b;
-        nx0Var.e = f7;
-        nx0Var.a(nx0Var.a);
-        invalidate();
-    }
-
-    public void setResourcesProvider(org.telegram.ui.ActionBar.u6 u6Var) {
-        this.b.b = u6Var;
-    }
-
-    public void setVisibility(boolean z10) {
-        this.h = z10;
-        a();
-    }
-
-    @Override // org.telegram.ui.ActionBar.p6
-    public final void updateColors() {
-        try {
-            nx0 nx0Var = this.b;
-            nx0Var.a(nx0Var.a);
-            invalidate();
-        } catch (Exception e) {
-            FileLog.e(e);
-        }
-    }
-
-    @Override // android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return super.verifyDrawable(drawable) || drawable == this.a;
-    }
-
-    @Override // org.telegram.ui.ActionBar.p6
-    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
+    @Override // org.telegram.ui.Components.tk0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        org.telegram.ui.jt previewDelegate;
+        org.telegram.ui.lt p5 = org.telegram.ui.lt.p();
+        sx0 sx0Var = this.g3;
+        px0 px0Var = sx0Var.e;
+        previewDelegate = sx0Var.getPreviewDelegate();
+        return super.onInterceptTouchEvent(motionEvent) || p5.q(motionEvent, px0Var, previewDelegate, this.n2);
     }
 }

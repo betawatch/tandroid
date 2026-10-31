@@ -1,42 +1,29 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.text.TextPaint;
+import android.text.style.URLSpan;
+import android.view.View;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ox0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ PrivacySettingsActivity b;
+public final class ox0 extends URLSpan {
+    public final /* synthetic */ String a;
+    public final /* synthetic */ xx0 b;
 
-    public /* synthetic */ ox0(PrivacySettingsActivity privacySettingsActivity, int i10) {
-        this.a = i10;
-        this.b = privacySettingsActivity;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ox0(xx0 xx0Var, String str, String str2) {
+        super(str);
+        this.b = xx0Var;
+        this.a = str2;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                PrivacySettingsActivity privacySettingsActivity = this.b;
-                privacySettingsActivity.a.l();
-                privacySettingsActivity.R = true;
-                break;
-            case 1:
-                this.b.c.dismiss();
-                break;
-            default:
-                PrivacySettingsActivity privacySettingsActivity2 = this.b;
-                org.telegram.ui.Components.yb ybVar = new org.telegram.ui.Components.yb(privacySettingsActivity2.getParentActivity(), null);
-                ybVar.d(R.raw.email_check_inbox, new String[0]);
-                ybVar.b.setText(LocaleController.getString(R.string.YourLoginEmailChangedSuccess));
-                org.telegram.ui.Components.qc.g(privacySettingsActivity2, ybVar, 1500).j();
-                try {
-                    privacySettingsActivity2.fragmentView.performHapticFeedback(3, 2);
-                } catch (Exception unused) {
-                }
-                privacySettingsActivity2.A0();
-                break;
-        }
+    @Override // android.text.style.URLSpan, android.text.style.ClickableSpan
+    public final void onClick(View view) {
+        gf.f.r(this.b.e.getParentActivity(), this.a);
+    }
+
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        textPaint.setUnderlineText(true);
     }
 }

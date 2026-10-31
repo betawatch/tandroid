@@ -1,11 +1,12 @@
 package androidx.activity;
 
 import android.os.Bundle;
-import androidx.fragment.app.i0;
+import androidx.fragment.app.j0;
+import androidx.lifecycle.i0;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e implements t4.d {
     public final /* synthetic */ int a;
@@ -17,12 +18,12 @@ public final /* synthetic */ class e implements t4.d {
     }
 
     @Override // t4.d
-    public final Bundle a() {
+    public final Bundle c() {
         switch (this.a) {
             case 0:
-                l lVar = (l) this.b;
+                m mVar = (m) this.b;
                 Bundle bundle = new Bundle();
-                h hVar = lVar.w;
+                h hVar = mVar.x;
                 hVar.getClass();
                 HashMap hashMap = hVar.b;
                 bundle.putIntegerArrayList("KEY_COMPONENT_ACTIVITY_REGISTERED_RCS", new ArrayList<>(hashMap.values()));
@@ -31,15 +32,15 @@ public final /* synthetic */ class e implements t4.d {
                 bundle.putBundle("KEY_COMPONENT_ACTIVITY_PENDING_RESULT", (Bundle) hVar.g.clone());
                 return bundle;
             case 1:
-                androidx.fragment.app.u uVar = (androidx.fragment.app.u) this.b;
-                while (androidx.fragment.app.u.t(uVar.s())) {
+                androidx.fragment.app.v vVar = (androidx.fragment.app.v) this.b;
+                while (androidx.fragment.app.v.t(vVar.s())) {
                 }
-                uVar.K.e(androidx.lifecycle.m.ON_STOP);
+                vVar.K.e(androidx.lifecycle.m.ON_STOP);
                 return new Bundle();
             case 2:
-                return ((i0) this.b).Y();
+                return ((j0) this.b).Y();
             default:
-                return androidx.lifecycle.i0.a((androidx.lifecycle.i0) this.b);
+                return i0.a((i0) this.b);
         }
     }
 }

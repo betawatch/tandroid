@@ -1,65 +1,83 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.messenger.MediaController;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import org.telegram.messenger.camera.CameraView;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class yl implements q0.a {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ boolean c;
+public final class yl extends CameraView {
+    public final k7 a;
+    public boolean b;
+    public final /* synthetic */ ChatAttachAlertPhotoLayout c;
 
-    public /* synthetic */ yl(int i10, Object obj, boolean z10) {
-        this.a = i10;
-        this.b = obj;
-        this.c = z10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public yl(ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout, Context context, boolean z10, boolean z11) {
+        super(context, z10, z11);
+        this.c = chatAttachAlertPhotoLayout;
+        this.a = new k7(this, 2);
     }
 
-    @Override // q0.a
-    public final void accept(Object obj) {
-        int i10 = this.a;
-        boolean z10 = false;
-        boolean z11 = this.c;
-        Object obj2 = this.b;
-        switch (i10) {
-            case 0:
-                ArrayList arrayList = (ArrayList) obj2;
-                View view = (View) obj;
-                boolean z12 = ChatAttachAlertPhotoLayout.q1;
-                if (view instanceof org.telegram.ui.Cells.x5) {
-                    org.telegram.ui.Cells.x5 x5Var = (org.telegram.ui.Cells.x5) view;
-                    MediaController.PhotoEntry photoEntry = x5Var.getPhotoEntry();
-                    if (photoEntry != null && arrayList.contains(Integer.valueOf(photoEntry.imageId)) && z11) {
-                        z10 = true;
-                    }
-                    x5Var.setHasSpoiler(z10);
-                    break;
-                }
-                break;
-            case 1:
-                ArrayList arrayList2 = (ArrayList) obj2;
-                View view2 = (View) obj;
-                boolean z13 = ChatAttachAlertPhotoLayout.q1;
-                if (view2 instanceof org.telegram.ui.Cells.x5) {
-                    org.telegram.ui.Cells.x5 x5Var2 = (org.telegram.ui.Cells.x5) view2;
-                    MediaController.PhotoEntry photoEntry2 = x5Var2.getPhotoEntry();
-                    if (photoEntry2 != null && arrayList2.contains(Integer.valueOf(photoEntry2.imageId)) && z11) {
-                        z10 = true;
-                    }
-                    x5Var2.setHighQuality(z10);
-                    break;
-                }
-                break;
-            default:
-                Float f7 = (Float) obj;
-                ob obVar = ((jb) obj2).b.q;
-                if (obVar != null && !z11) {
-                    obVar.c(r0.e.getHeight() - f7.floatValue());
-                    break;
-                }
-                break;
+    @Override // org.telegram.messenger.camera.CameraView, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.c;
+        bi biVar = chatAttachAlertPhotoLayout.b;
+        if (org.telegram.messenger.i0.m0) {
+            return;
         }
+        if (this.b || (!chatAttachAlertPhotoLayout.d0 && chatAttachAlertPhotoLayout.b0)) {
+            super.dispatchDraw(canvas);
+            return;
+        }
+        float translationY = (biVar.b.getTranslationY() + (biVar.A2[1] + chatAttachAlertPhotoLayout.W0)) - chatAttachAlertPhotoLayout.P.getTranslationY();
+        oh ohVar = biVar.y4;
+        int min = (int) Math.min(translationY - (ohVar != null ? ohVar.d() + org.telegram.messenger.i0.L(8.0f) : 0.0f), getMeasuredHeight());
+        boolean z10 = chatAttachAlertPhotoLayout.d0;
+        if (z10) {
+            RectF rectF = org.telegram.messenger.i0.P;
+            float f7 = chatAttachAlertPhotoLayout.n1;
+            boolean z11 = ChatAttachAlertPhotoLayout.q1;
+            float f10 = 1.0f - chatAttachAlertPhotoLayout.e0;
+            rectF.set((0.0f * f10) + f7, (f10 * chatAttachAlertPhotoLayout.W) + chatAttachAlertPhotoLayout.k1, chatAttachAlertPhotoLayout.m1, org.telegram.messenger.i0.T1(Math.min(min, chatAttachAlertPhotoLayout.l1), getMeasuredHeight(), chatAttachAlertPhotoLayout.e0));
+        } else {
+            if (!z10 && !chatAttachAlertPhotoLayout.b0) {
+                RectF rectF2 = org.telegram.messenger.i0.P;
+                boolean z12 = ChatAttachAlertPhotoLayout.q1;
+                rectF2.set(0.0f, chatAttachAlertPhotoLayout.W, getMeasuredWidth(), Math.min(min, getMeasuredHeight()));
+                return;
+            }
+            org.telegram.messenger.i0.P.set(0.0f, 0.0f, getMeasuredWidth(), Math.min(min, getMeasuredHeight()));
+        }
+        canvas.save();
+        canvas.clipRect(org.telegram.messenger.i0.P);
+        super.dispatchDraw(canvas);
+        canvas.restore();
+    }
+
+    @Override // org.telegram.messenger.camera.CameraView, android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.c;
+        wb.a(chatAttachAlertPhotoLayout.P, this.a);
+        chatAttachAlertPhotoLayout.E.invalidate();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        wb.h(this.c.P);
+    }
+
+    @Override // android.view.View
+    public void setVisibility(int i10) {
+        super.setVisibility(i10);
+        this.c.E.invalidate();
+    }
+
+    @Override // org.telegram.messenger.camera.CameraView
+    public final void showTexture(boolean z10, boolean z11) {
+        super.showTexture(z10, z11);
+        this.c.E.invalidate();
     }
 }

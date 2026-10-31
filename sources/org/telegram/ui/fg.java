@@ -1,70 +1,62 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MediaDataController;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class fg implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ wn b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ long d;
+public final /* synthetic */ class fg implements q0.a {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ un b;
 
-    public /* synthetic */ fg(wn wnVar, long j10, boolean z10) {
-        this.b = wnVar;
-        this.d = j10;
-        this.c = z10;
+    public /* synthetic */ fg(un unVar, int i10) {
+        this.a = i10;
+        this.b = unVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // q0.a
+    public final void accept(Object obj) {
         switch (this.a) {
             case 0:
-                wn.u0(this.b, this.d, this.c);
-                break;
-            default:
-                jk jkVar = this.b.Y;
-                if (jkVar != null) {
-                    MediaController mediaController = MediaController.getInstance();
-                    if (!jkVar.Y1 && !jkVar.F2 && mediaController.isRecordingAudio() && !mediaController.isRecordingPaused() && mediaController.getRecordingGuid() == jkVar.G2) {
-                        jkVar.c1 = false;
-                        org.telegram.ui.Components.ve veVar = jkVar.b1;
-                        if (veVar != null) {
-                            veVar.j(org.telegram.ui.Components.yg.a, false);
-                        }
-                        jkVar.F2 = true;
-                        jkVar.I1(0, true);
-                        if (this.c) {
-                            jkVar.O = true;
-                            org.telegram.ui.Components.sg sgVar = jkVar.O1;
-                            if (sgVar != null) {
-                                sgVar.y.d(1, true, false);
-                            }
-                            MediaDataController mediaDataController = MediaDataController.getInstance(jkVar.Q);
-                            long j10 = jkVar.Q2;
-                            wn wnVar = jkVar.P2;
-                            mediaDataController.toggleDraftVoiceOnce(j10, (wnVar == null || !wnVar.t4) ? 0L : wnVar.b(), true);
-                        }
-                        long j11 = this.d;
-                        long currentTimeMillis = j11 > 0 ? System.currentTimeMillis() - j11 : mediaController.recordTimeCount;
-                        jkVar.i1 = currentTimeMillis;
-                        org.telegram.ui.Components.xg xgVar = jkVar.Y0;
-                        if (xgVar != null) {
-                            xgVar.a(currentTimeMillis);
-                        }
-                        jkVar.s4 = true;
-                        jkVar.u1();
-                        break;
+                Integer num = (Integer) obj;
+                un unVar = this.b;
+                unVar.getClass();
+                if (num.intValue() != 0) {
+                    unVar.Vc(true);
+                    unVar.k(num.intValue(), 0, false, 0, true, 0);
+                    break;
+                } else {
+                    unVar.z1 = 0;
+                    unVar.Vc(true);
+                    unVar.getMessagesController().q3(unVar.j6, unVar.b());
+                    break;
+                }
+            case 1:
+                Integer num2 = (Integer) obj;
+                un unVar2 = this.b;
+                unVar2.getClass();
+                if (num2.intValue() != 0) {
+                    int i10 = unVar2.A1 - 1;
+                    unVar2.A1 = i10;
+                    if (i10 <= 0) {
+                        unVar2.getMessagesController().p3(unVar2.j6, unVar2.b());
                     }
+                    unVar2.Uc(true);
+                    unVar2.k(num2.intValue(), 0, false, 0, true, 0);
+                    break;
+                } else {
+                    unVar2.A1 = 0;
+                    unVar2.Uc(true);
+                    unVar2.getMessagesController().p3(unVar2.j6, unVar2.b());
+                    break;
+                }
+            default:
+                un unVar3 = this.b;
+                unVar3.getClass();
+                boolean booleanValue = ((Boolean) obj).booleanValue();
+                unVar3.v7 = booleanValue;
+                if (!booleanValue) {
+                    unVar3.C8();
+                    break;
                 }
                 break;
         }
-    }
-
-    public /* synthetic */ fg(wn wnVar, boolean z10, long j10) {
-        this.b = wnVar;
-        this.c = z10;
-        this.d = j10;
     }
 }

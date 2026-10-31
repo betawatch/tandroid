@@ -4,21 +4,20 @@ import a1.g;
 import android.graphics.Bitmap;
 import android.graphics.Rect;
 import e2.j;
-import e2.n0;
 import e2.x;
-import f9.g0;
-import f9.i0;
-import f9.s1;
+import e9.l0;
+import e9.n0;
+import e9.x1;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.zip.Inflater;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.b10;
+import sc.e;
 import z3.d;
 import z3.l;
 import z3.m;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class b implements m {
     public static final z3.a e;
@@ -28,8 +27,8 @@ public final class b implements m {
     public Inflater d;
 
     static {
-        g0 g0Var = i0.b;
-        e = new z3.a(-9223372036854775807L, -9223372036854775807L, s1.e);
+        l0 l0Var = n0.b;
+        e = new z3.a(-9223372036854775807L, -9223372036854775807L, x1.e);
     }
 
     public b(List list) {
@@ -37,7 +36,7 @@ public final class b implements m {
         a aVar = new a();
         this.c = aVar;
         String trim = new String((byte[]) list.get(0), StandardCharsets.UTF_8).trim();
-        String str = n0.a;
+        String str = e2.l0.a;
         for (String str2 : trim.split("\\r?\\n", -1)) {
             if (str2.startsWith("palette: ")) {
                 String[] split = str2.substring(9).split(",", -1);
@@ -46,8 +45,8 @@ public final class b implements m {
                     int[] iArr = aVar.f;
                     try {
                         i10 = Integer.parseInt(split[i11].trim(), 16);
-                    } catch (RuntimeException e10) {
-                        e2.a.m("VobsubParser", "Parsing color failed", e10);
+                    } catch (RuntimeException e7) {
+                        e2.a.m("VobsubParser", "Parsing color failed", e7);
                         i10 = 0;
                     }
                     iArr[i11] = i10;
@@ -61,12 +60,22 @@ public final class b implements m {
                         aVar.g = Integer.parseInt(split2[0]);
                         aVar.h = Integer.parseInt(split2[1]);
                         aVar.d = true;
-                    } catch (RuntimeException e11) {
-                        e2.a.m("VobsubParser", "Parsing IDX failed", e11);
+                    } catch (RuntimeException e10) {
+                        e2.a.m("VobsubParser", "Parsing IDX failed", e10);
                     }
                 }
             }
         }
+    }
+
+    @Override // z3.m
+    public final /* synthetic */ d l(int i10, int i11, byte[] bArr) {
+        return e.a(this, bArr, i11);
+    }
+
+    @Override // z3.m
+    public final int o() {
+        return 2;
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
@@ -79,7 +88,7 @@ public final class b implements m {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void G(byte[] bArr, int i10, int i11, l lVar, j jVar) {
+    public final void z(byte[] bArr, int i10, int i11, l lVar, j jVar) {
         z3.a aVar;
         boolean z10;
         long j10;
@@ -97,7 +106,7 @@ public final class b implements m {
         }
         Inflater inflater = this.d;
         x xVar2 = this.b;
-        if (n0.Q(xVar, xVar2, inflater)) {
+        if (e2.l0.Q(xVar, xVar2, inflater)) {
             xVar.L(xVar2.c, xVar2.a);
         }
         a aVar2 = this.c;
@@ -158,10 +167,10 @@ public final class b implements m {
                                         if (xVar.a() >= 2) {
                                             int A2 = xVar.A();
                                             int A3 = xVar.A();
-                                            iArr[3] = a.a(A2 >> 4, aVar2.f);
-                                            iArr[2] = a.a(A2 & 15, aVar2.f);
-                                            iArr[1] = a.a(A3 >> 4, aVar2.f);
-                                            iArr[z14 ? 1 : 0] = a.a(A3 & 15, aVar2.f);
+                                            iArr[3] = a.a(aVar2.f, A2 >> 4);
+                                            iArr[2] = a.a(aVar2.f, A2 & 15);
+                                            iArr[1] = a.a(aVar2.f, A3 >> 4);
+                                            iArr[z14 ? 1 : 0] = a.a(aVar2.f, A3 & 15);
                                             aVar2.e = true;
                                             z13 = true;
                                             break;
@@ -214,7 +223,7 @@ public final class b implements m {
                                             break;
                                         }
                                     default:
-                                        g.z(A, "Unrecognized command: ", "VobsubParser");
+                                        g.w(A, "Unrecognized command: ", "VobsubParser");
                                         break;
                                 }
                                 z12 = z14 ? 1 : 0;
@@ -238,10 +247,10 @@ public final class b implements m {
                             int[] iArr2 = new int[rect2.height() * rect2.width()];
                             a4.g gVar = new a4.g();
                             xVar.N(aVar2.j);
-                            gVar.l(xVar);
+                            gVar.c0(xVar);
                             aVar2.b(gVar, true, rect2, iArr2);
                             xVar.N(aVar2.k);
-                            gVar.l(xVar);
+                            gVar.c0(xVar);
                             aVar2.b(gVar, z11, rect2, iArr2);
                             bVar = new d2.b(null, null, null, Bitmap.createBitmap(iArr2, rect2.width(), rect2.height(), Bitmap.Config.ARGB_8888), rect2.top / aVar2.h, 0, 0, rect2.left / aVar2.g, 0, TLObject.FLAG_31, -3.4028235E38f, rect2.width() / aVar2.g, rect2.height() / aVar2.h, false, -16777216, TLObject.FLAG_31, 0.0f, 0);
                         }
@@ -252,7 +261,7 @@ public final class b implements m {
                         } else {
                             j12 = j10;
                         }
-                        aVar = new z3.a(aVar2.b, j12, bVar == null ? i0.y(bVar) : s1.e);
+                        aVar = new z3.a(aVar2.b, j12, bVar == null ? n0.y(bVar) : x1.e);
                     }
                 }
             } else {
@@ -266,19 +275,9 @@ public final class b implements m {
             j11 = aVar2.c;
             if (j11 == j10) {
             }
-            aVar = new z3.a(aVar2.b, j12, bVar == null ? i0.y(bVar) : s1.e);
+            aVar = new z3.a(aVar2.b, j12, bVar == null ? n0.y(bVar) : x1.e);
         }
         jVar.accept(aVar);
-    }
-
-    @Override // z3.m
-    public final /* synthetic */ d j(int i10, int i11, byte[] bArr) {
-        return b10.a(this, bArr, i11);
-    }
-
-    @Override // z3.m
-    public final int y() {
-        return 2;
     }
 
     @Override // z3.m

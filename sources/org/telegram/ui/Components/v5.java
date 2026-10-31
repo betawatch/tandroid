@@ -1,57 +1,195 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
+import android.graphics.RectF;
+import android.view.View;
+import android.widget.LinearLayout;
+import j$.util.Comparator$-CC;
+import j$.util.Comparator$-EL;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class v5 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ float d;
-    public final /* synthetic */ float e;
-    public final /* synthetic */ Object f;
+public abstract class v5 extends LinearLayout {
+    public static final Comparator r = Comparator$-EL.thenComparingInt(Comparator$-CC.comparingInt(new bi.t6(8)), new bi.t6(9));
+    public final HashMap a;
+    public final ArrayList b;
+    public final fe.k c;
+    public boolean d;
+    public int e;
+    public int f;
+    public Runnable h;
+    public float n;
 
-    public /* synthetic */ v5(Object obj, float f7, float f10, float f11, float f12, int i10) {
-        this.a = i10;
-        this.f = obj;
-        this.b = f7;
-        this.c = f10;
-        this.d = f11;
-        this.e = f12;
+    public v5(Context context) {
+        super(context);
+        this.a = new HashMap();
+        this.b = new ArrayList();
+        this.c = new fe.k(new t(this, 11), gr.h, 420L);
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        int i10 = this.a;
-        float f7 = this.e;
-        float f10 = this.d;
-        float f11 = this.c;
-        float f12 = this.b;
-        Object obj = this.f;
-        switch (i10) {
-            case 0:
-                c6 c6Var = (c6) obj;
-                c6Var.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                c6Var.lastDrawnCy = AndroidUtilities.lerp(f12, f11, floatValue);
-                c6Var.lastDrawnCx = AndroidUtilities.lerp(f10, f7, floatValue);
-                break;
-            default:
-                ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) obj;
-                int i11 = ChatActivityEnterView.r5;
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                float z10 = c3.h0.z(f11, f12, floatValue2, f12);
-                dq0 dq0Var = chatActivityEnterView.p0;
-                if (dq0Var != null) {
-                    dq0Var.setAlpha(((f7 - f10) * floatValue2) + f10);
-                    chatActivityEnterView.p0.setTranslationX(z10);
-                }
-                chatActivityEnterView.Q0.setTranslationX(z10);
-                chatActivityEnterView.G = z10;
-                chatActivityEnterView.G1();
-                break;
+    public final void a() {
+        this.f = 0;
+        this.e = 0;
+        int childCount = getChildCount();
+        for (int i10 = 0; i10 < childCount; i10++) {
+            View childAt = getChildAt(i10);
+            u5 u5Var = (u5) this.a.get(childAt);
+            if (childAt.getVisibility() == 0 && u5Var != null && u5Var.b) {
+                this.e = childAt.getMeasuredWidth() + this.e;
+                this.f = childAt.getMeasuredHeight() + this.f;
+            }
         }
+    }
+
+    public final void b() {
+        ArrayList arrayList = this.c.b;
+        int size = arrayList.size();
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            fe.h hVar = (fe.h) obj;
+            View view = ((u5) hVar.a).a;
+            RectF b10 = hVar.b();
+            if (getOrientation() == 1) {
+                view.setTranslationY((getPaddingTop() + b10.top) - view.getTop());
+            } else {
+                view.setTranslationX((getPaddingLeft() + b10.left) - view.getLeft());
+            }
+            f(view, hVar.c());
+        }
+        float f7 = getMetadata().g.a;
+        if (this.n != f7) {
+            this.n = f7;
+            Runnable runnable = this.h;
+            if (runnable != null) {
+                runnable.run();
+            }
+        }
+    }
+
+    public final float c(float f7) {
+        return (f7 * getMetadata().c.a) + getMetadata().g.a;
+    }
+
+    public final boolean d(View view) {
+        u5 u5Var = (u5) this.a.get(view);
+        return u5Var != null && u5Var.b;
+    }
+
+    public abstract void e();
+
+    public void f(View view, float f7) {
+        float T1 = org.telegram.messenger.i0.T1(0.95f, 1.0f, f7);
+        view.setAlpha(f7);
+        view.setScaleX(T1);
+        view.setScaleY(T1);
+    }
+
+    public final void g(View view) {
+    }
+
+    public float getAnimatedHeightWithPadding() {
+        return c(getPaddingBottom() + getPaddingTop());
+    }
+
+    public int getEntriesCount() {
+        return this.c.b.size();
+    }
+
+    public fe.j getMetadata() {
+        return this.c.d;
+    }
+
+    public int getSumHeightOfAllVisibleChild() {
+        return this.f;
+    }
+
+    public int getSumWidthOfAllVisibleChild() {
+        return this.e;
+    }
+
+    public final void h(int i10, View view) {
+        u5 u5Var = (u5) this.a.get(view);
+        if (u5Var != null) {
+            u5Var.d = i10;
+        }
+    }
+
+    public final void i(View view, boolean z10, boolean z11) {
+        u5 u5Var;
+        if (view == null || (u5Var = (u5) this.a.get(view)) == null) {
+            return;
+        }
+        View view2 = u5Var.a;
+        if (u5Var.b != z10) {
+            u5Var.b = z10;
+            if (z10) {
+                view2.setVisibility(0);
+            }
+            if (!z10 && !u5Var.c) {
+                view2.setVisibility(8);
+            }
+            if (!z11) {
+                this.d = true;
+            }
+            requestLayout();
+        }
+    }
+
+    @Override // android.widget.LinearLayout, android.view.ViewGroup, android.view.View
+    public void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        ArrayList arrayList = this.b;
+        arrayList.clear();
+        int childCount = getChildCount();
+        for (int i14 = 0; i14 < childCount; i14++) {
+            View childAt = getChildAt(i14);
+            u5 u5Var = (u5) this.a.get(childAt);
+            if (u5Var != null) {
+                u5Var.e = i14;
+                if (childAt.getVisibility() == 0 && u5Var.b) {
+                    arrayList.add(u5Var);
+                }
+            }
+        }
+        Collections.sort(arrayList, r);
+        this.c.q(arrayList, !this.d);
+        int size = arrayList.size();
+        int i15 = 0;
+        while (i15 < size) {
+            Object obj = arrayList.get(i15);
+            i15++;
+            ((u5) obj).c = true;
+        }
+        this.d = false;
+        b();
+    }
+
+    @Override // android.widget.LinearLayout, android.view.View
+    public void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
+        a();
+    }
+
+    @Override // android.view.ViewGroup
+    public final void onViewAdded(View view) {
+        super.onViewAdded(view);
+        view.setVisibility(8);
+        this.a.put(view, new u5(view));
+    }
+
+    @Override // android.view.ViewGroup
+    public final void onViewRemoved(View view) {
+        super.onViewRemoved(view);
+        this.a.remove(view);
+    }
+
+    public void setOnAnimatedHeightChangedListener(Runnable runnable) {
+        this.h = runnable;
     }
 }

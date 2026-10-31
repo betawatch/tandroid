@@ -1,21 +1,22 @@
 package com.google.android.recaptcha.internal;
 
-import a8.jd;
+import a8.f;
+import ad.g;
 import android.app.Application;
-import ce.i0;
-import com.google.android.gms.common.api.internal.u;
+import cd.c;
 import com.google.android.gms.common.api.internal.v;
+import com.google.android.gms.common.api.internal.w;
 import com.google.android.gms.tasks.Task;
-import jd.f;
-import ld.c;
-import m8.b;
-import md.a;
-import nd.i;
-import ud.p;
+import dd.a;
+import ed.j;
+import kotlin.jvm.internal.i;
+import l9.b;
+import ld.p;
+import td.h0;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-final class zzr extends i implements p {
+final class zzr extends j implements p {
     int zza;
     final /* synthetic */ zzu zzb;
     final /* synthetic */ String zzc;
@@ -27,24 +28,24 @@ final class zzr extends i implements p {
         this.zzc = str;
     }
 
-    @Override // nd.a
+    @Override // ed.a
     public final c create(Object obj, c cVar) {
         return new zzr(this.zzb, this.zzc, cVar);
     }
 
-    @Override // ud.p
+    @Override // ld.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzr) create((zzhk) obj, (c) obj2)).invokeSuspend(jd.i.a);
+        return ((zzr) create((zzhk) obj, (c) obj2)).invokeSuspend(ad.j.a);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:12:0x00b2  */
-    /* JADX WARN: Removed duplicated region for block: B:9:0x008d  */
-    @Override // nd.a
+    /* JADX WARN: Removed duplicated region for block: B:12:0x00b1  */
+    /* JADX WARN: Removed duplicated region for block: B:9:0x008c  */
+    @Override // ed.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
-        i0 i0Var;
+        h0 h0Var;
         String str;
         String str2;
         a aVar = a.a;
@@ -52,20 +53,20 @@ final class zzr extends i implements p {
         try {
             try {
                 if (i10 == 0) {
-                    jd.b(obj);
-                    i0Var = this.zzb.zzc;
-                    if (i0Var == null) {
-                        i0Var = null;
+                    b.b(obj);
+                    h0Var = this.zzb.zzc;
+                    if (h0Var == null) {
+                        h0Var = null;
                     }
                     this.zza = 1;
-                    obj = i0Var.await(this);
+                    obj = h0Var.await(this);
                     if (obj == aVar) {
                         return aVar;
                     }
                 } else {
                     if (i10 != 1) {
-                        jd.b(obj);
-                        str2 = ((b) obj).a;
+                        b.b(obj);
+                        str2 = ((l8.b) obj).a;
                         if (str2 != null) {
                             throw new IllegalStateException("Required value was null.");
                         }
@@ -75,38 +76,38 @@ final class zzr extends i implements p {
                         zzxi zzf2 = zzxj.zzf();
                         zzf2.zze(str2);
                         zzf.zzf((zzxj) zzf2.zzk());
-                        return new f((zzxx) zzf.zzk());
+                        return new g((zzxx) zzf.zzk());
                     }
-                    jd.b(obj);
+                    b.b(obj);
                 }
-                m8.a aVar2 = new m8.a();
+                l8.a aVar2 = new l8.a();
                 zzu zzuVar = this.zzb;
                 str = zzuVar.zzb;
                 aVar2.a = str != null ? str : null;
                 aVar2.b = this.zzc;
                 Application context = zzu.zzl(zzuVar);
-                kotlin.jvm.internal.i.e(context, "context");
-                b8.f fVar = new b8.f(context, b8.f.k, com.google.android.gms.common.api.b.j, com.google.android.gms.common.api.i.c);
-                u b10 = v.b();
-                b10.d = new l6.c[]{m8.f.a};
-                b10.c = new rb.c(aVar2, 7);
+                i.e(context, "context");
+                f fVar = new f(context, f.k, com.google.android.gms.common.api.b.k, com.google.android.gms.common.api.i.c);
+                v b10 = w.b();
+                b10.d = new k6.c[]{l8.f.a};
+                b10.c = new za.c(aVar2, 1);
                 b10.a = 34002;
                 Task e = fVar.e(0, b10.a());
-                kotlin.jvm.internal.i.d(e, "doRead(...)");
-                i0 zza = zzdf.zza(e);
+                i.d(e, "doRead(...)");
+                h0 zza = zzdf.zza(e);
                 this.zza = 2;
                 obj = zza.await(this);
                 if (obj == aVar) {
                     return aVar;
                 }
-                str2 = ((b) obj).a;
+                str2 = ((l8.b) obj).a;
                 if (str2 != null) {
                 }
             } catch (Exception unused) {
-                return new f(jd.a(new zzcg(zzce.zzb, zzcd.zzau, null, null, 12, null)));
+                return new g(b.a(new zzcg(zzce.zzb, zzcd.zzau, null, null, 12, null)));
             }
         } catch (Exception unused2) {
-            return new f(jd.a(new zzcg(zzce.zzb, zzcd.zzat, null, null, 12, null)));
+            return new g(b.a(new zzcg(zzce.zzb, zzcd.zzat, null, null, 12, null)));
         }
     }
 }

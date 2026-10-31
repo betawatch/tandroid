@@ -1,11 +1,12 @@
 package i2;
 
-import a8.yb;
 import android.view.View;
 import java.util.Arrays;
+import org.telegram.messenger.zs;
 import org.telegram.tgnet.TLObject;
+import v7.t6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class p0 {
     public final /* synthetic */ int a = 2;
@@ -112,7 +113,7 @@ public final class p0 {
     }
 
     public void h(int i10) {
-        yb.p(!this.c);
+        t6.p(!this.c);
         boolean z10 = i10 == this.b;
         this.c = z10;
         if (z10) {
@@ -132,12 +133,12 @@ public final class p0 {
 
     public p0(int i10) {
         this.b = i10;
-        byte[] bArr = new byte[131];
+        byte[] bArr = new byte[zs.P1];
         this.f = bArr;
         bArr[2] = 1;
     }
 
-    public p0(k1 k1Var) {
-        this.f = k1Var;
+    public p0(m1 m1Var) {
+        this.f = m1Var;
     }
 }

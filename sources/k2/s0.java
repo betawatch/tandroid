@@ -1,16 +1,13 @@
 package k2;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class s0 {
-    public final b2.a1 a;
-    public final long b;
-    public final long c;
-    public long d;
+    public final o a;
+    public final /* synthetic */ w0 b;
 
-    public s0(b2.a1 a1Var, long j10, long j11) {
-        this.a = a1Var;
-        this.b = j10;
-        this.c = j11;
+    public s0(w0 w0Var, o oVar) {
+        this.b = w0Var;
+        this.a = oVar;
     }
 }

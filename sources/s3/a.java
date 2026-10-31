@@ -3,14 +3,14 @@ package s3;
 import a1.g;
 import e2.x;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class a extends b {
     public final /* synthetic */ int a;
     public final long b;
     public final long c;
 
-    public a(long j10, long j11, int i10) {
+    public a(long j10, int i10, long j11) {
         this.a = i10;
         switch (i10) {
             case 1:
@@ -39,12 +39,12 @@ public final class a extends b {
                 StringBuilder sb2 = new StringBuilder("SCTE-35 PrivateCommand { ptsAdjustment=");
                 sb2.append(this.b);
                 sb2.append(", identifier= ");
-                return g.r(sb2, this.c, " }");
+                return g.q(sb2, this.c, " }");
             default:
                 StringBuilder sb3 = new StringBuilder("SCTE-35 TimeSignalCommand { ptsTime=");
                 sb3.append(this.b);
                 sb3.append(", playbackPositionUs= ");
-                return g.r(sb3, this.c, " }");
+                return g.q(sb3, this.c, " }");
         }
     }
 }

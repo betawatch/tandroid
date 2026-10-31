@@ -1,7 +1,5 @@
 package com.google.android.gms.internal.play_billing;
 
-import a8.oa;
-import a8.ra;
 import j$.util.List;
 import java.util.Collection;
 import java.util.Comparator;
@@ -10,8 +8,10 @@ import java.util.List;
 import java.util.ListIterator;
 import java.util.RandomAccess;
 import java.util.function.UnaryOperator;
+import v7.a6;
+import v7.w5;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public abstract class r extends o implements List, RandomAccess, j$.util.List {
     public static final p b = new p(v.e, 0);
@@ -25,7 +25,7 @@ public abstract class r extends o implements List, RandomAccess, j$.util.List {
         if (!(list instanceof o)) {
             Object[] array = list.toArray();
             int length = array.length;
-            ra.a(length, array);
+            a6.a(length, array);
             return s(length, array);
         }
         r o10 = ((o) list).o();
@@ -87,15 +87,6 @@ public abstract class r extends o implements List, RandomAccess, j$.util.List {
         return false;
     }
 
-    @Override // com.google.android.gms.internal.play_billing.o
-    public int h(Object[] objArr) {
-        int size = size();
-        for (int i10 = 0; i10 < size; i10++) {
-            objArr[i10] = get(i10);
-        }
-        return size;
-    }
-
     @Override // java.util.Collection, java.util.List
     public final int hashCode() {
         int size = size();
@@ -125,6 +116,15 @@ public abstract class r extends o implements List, RandomAccess, j$.util.List {
         return listIterator(0);
     }
 
+    @Override // com.google.android.gms.internal.play_billing.o
+    public int l(Object[] objArr) {
+        int size = size();
+        for (int i10 = 0; i10 < size; i10++) {
+            objArr[i10] = get(i10);
+        }
+        return size;
+    }
+
     @Override // java.util.List
     public final int lastIndexOf(Object obj) {
         if (obj == null) {
@@ -146,7 +146,7 @@ public abstract class r extends o implements List, RandomAccess, j$.util.List {
     @Override // java.util.List
     /* renamed from: r */
     public r subList(int i10, int i11) {
-        oa.c(i10, i11, size());
+        w5.c(i10, i11, size());
         int i12 = i11 - i10;
         return i12 == size() ? this : i12 == 0 ? v.e : new q(this, i10, i12);
     }
@@ -174,7 +174,7 @@ public abstract class r extends o implements List, RandomAccess, j$.util.List {
     @Override // java.util.List
     /* renamed from: u, reason: merged with bridge method [inline-methods] */
     public final p listIterator(int i10) {
-        oa.b(i10, size());
+        w5.b(i10, size());
         return isEmpty() ? b : new p(this, i10);
     }
 

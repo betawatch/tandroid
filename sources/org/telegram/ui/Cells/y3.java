@@ -4,12 +4,11 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.view.View;
 import android.widget.Button;
-import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class y3 extends org.telegram.ui.Components.s6 {
+public final class y3 extends org.telegram.ui.Components.f6 {
     public final /* synthetic */ int s;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -44,7 +43,7 @@ public final class y3 extends org.telegram.ui.Components.s6 {
     public void invalidate() {
         switch (this.s) {
             case 4:
-                if (!bh.m0.b(this)) {
+                if (!sg.e0.b(this)) {
                     super.invalidate();
                     break;
                 }
@@ -55,12 +54,12 @@ public final class y3 extends org.telegram.ui.Components.s6 {
         }
     }
 
-    @Override // org.telegram.ui.Components.s6, android.view.View
+    @Override // org.telegram.ui.Components.f6, android.view.View
     public void onDraw(Canvas canvas) {
         switch (this.s) {
             case 2:
                 canvas.save();
-                canvas.translate(AndroidUtilities.dp(17.0f), 0.0f);
+                canvas.translate(org.telegram.messenger.i0.L(17.0f), 0.0f);
                 super.onDraw(canvas);
                 canvas.restore();
                 break;
@@ -70,7 +69,7 @@ public final class y3 extends org.telegram.ui.Components.s6 {
         }
     }
 
-    @Override // org.telegram.ui.Components.s6, android.view.View
+    @Override // org.telegram.ui.Components.f6, android.view.View
     public void onMeasure(int i10, int i11) {
         switch (this.s) {
             case 3:
@@ -82,7 +81,7 @@ public final class y3 extends org.telegram.ui.Components.s6 {
                 super.onMeasure(i10, i11);
                 break;
             case 5:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.x, TLObject.FLAG_31), i11);
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.i0.q.x, TLObject.FLAG_31), i11);
                 setMeasuredDimension(View.resolveSize((int) Math.ceil(getDrawable().c()), i10), getMeasuredHeight());
                 break;
         }
@@ -98,7 +97,7 @@ public final class y3 extends org.telegram.ui.Components.s6 {
     public void invalidate(int i10, int i11, int i12, int i13) {
         switch (this.s) {
             case 4:
-                if (!bh.m0.b(this)) {
+                if (!sg.e0.b(this)) {
                     super.invalidate(i10, i11, i12, i13);
                     break;
                 }

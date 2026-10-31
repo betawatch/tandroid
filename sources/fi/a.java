@@ -1,174 +1,139 @@
 package fi;
 
-import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Paint;
 import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.Drawable;
-import android.text.Layout;
-import android.text.StaticLayout;
-import android.text.TextPaint;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.LinearLayout;
-import java.util.HashSet;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.R;
-import org.telegram.ui.Components.ar;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import v7.i7;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes4.dex */
-public final class a extends View implements org.telegram.ui.ActionBar.p6 {
-    public final ImageReceiver a;
-    public final String b;
-    public final String c;
-    public final TextPaint d;
-    public StaticLayout e;
-    public float f;
-    public float h;
-    public final TextPaint n;
-    public StaticLayout r;
-    public float s;
-    public float v;
-    public final org.telegram.ui.ActionBar.u6 w;
+public final class a extends i7 {
+    public final boolean a;
+    public final Paint b = new Paint();
+    public final Paint c;
+    public final Paint d;
+    public int e;
+    public int f;
+    public final /* synthetic */ f g;
 
-    public a(Context context, MediaController.PhotoEntry photoEntry, String str, int i10, org.telegram.ui.ActionBar.u6 u6Var) {
-        super(context);
-        String str2;
-        ImageReceiver imageReceiver = new ImageReceiver(this);
-        this.a = imageReceiver;
-        TextPaint textPaint = new TextPaint(1);
-        this.d = textPaint;
-        TextPaint textPaint2 = new TextPaint(1);
-        this.n = textPaint2;
-        this.w = u6Var;
-        setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
-        setBackground(org.telegram.ui.ActionBar.y6.M0(false));
-        setMinimumWidth(AndroidUtilities.dp(196.0f));
-        setLayoutParams(new LinearLayout.LayoutParams(-1, 48));
-        int i11 = org.telegram.ui.ActionBar.y6.E8;
-        textPaint.setColor(org.telegram.ui.ActionBar.y6.w0(i11, u6Var));
-        textPaint.setTextSize(AndroidUtilities.dp(16.0f));
-        textPaint2.setColor(org.telegram.ui.ActionBar.y6.w0(i11, u6Var));
-        textPaint2.setAlpha(102);
-        textPaint2.setTextSize(AndroidUtilities.dp(13.0f));
-        String str3 = "";
-        String str4 = "" + ((Object) str);
-        this.b = str4;
-        this.c = ic.a.i(i10, "");
-        imageReceiver.setRoundRadius(AndroidUtilities.dp(4.0f));
-        Drawable mutate = context.getResources().getDrawable(R.drawable.msg_media_gallery).mutate();
-        mutate.setColorFilter(new PorterDuffColorFilter(1308622847, PorterDuff.Mode.MULTIPLY));
-        ar arVar = new ar(org.telegram.ui.ActionBar.y6.c0(AndroidUtilities.dp(6.0f), -13750737), mutate);
-        arVar.w = false;
-        int dp = AndroidUtilities.dp(18.0f);
-        int dp2 = AndroidUtilities.dp(18.0f);
-        arVar.e = dp;
-        arVar.f = dp2;
-        if (photoEntry != null && (str2 = photoEntry.thumbPath) != null) {
-            imageReceiver.setImage(ImageLocation.getForPath(str2), "30.0_30.0", (ImageLocation) null, (String) null, arVar, (Object) null, 0);
-        } else if (photoEntry == null || photoEntry.path == null) {
-            imageReceiver.setImageBitmap(arVar);
-        } else if (photoEntry.isVideo) {
-            imageReceiver.setImage(ImageLocation.getForPath("vthumb://" + photoEntry.imageId + ":" + photoEntry.path), "30.0_30.0", (ImageLocation) null, (String) null, arVar, (Object) null, 0);
+    public a(f fVar, boolean z10) {
+        this.g = fVar;
+        Paint paint = new Paint(1);
+        this.c = paint;
+        this.d = new Paint(1);
+        this.e = -1;
+        this.f = -1;
+        this.a = z10;
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
+    }
+
+    @Override // v7.i7
+    public final void b() {
+        this.e = -1;
+    }
+
+    @Override // v7.i7
+    public final void c(Canvas canvas) {
+        Paint paint;
+        boolean z10;
+        boolean z11;
+        f fVar;
+        float f7;
+        float f10;
+        f fVar2 = this.g;
+        Rect bounds = fVar2.getBounds();
+        int width = bounds.width();
+        int height = bounds.height();
+        float f11 = width;
+        int ceil = (int) Math.ceil(f11 / 5.0f);
+        float f12 = height;
+        int ceil2 = (int) Math.ceil(f12 / 5.0f);
+        boolean z12 = this.a;
+        boolean z13 = z12 ? fVar2.w : fVar2.x;
+        Paint paint2 = this.c;
+        Paint paint3 = this.d;
+        if (!z13 && this.e == width && this.f == height) {
+            fVar = fVar2;
+            paint = paint3;
+            z10 = z12;
         } else {
-            imageReceiver.setImage(ImageLocation.getForPath("thumb://" + photoEntry.imageId + ":" + photoEntry.path), "30.0_30.0", (ImageLocation) null, (String) null, arVar, (Object) null, 0);
+            int i10 = fVar2.y;
+            if (i10 != 1 && i10 != 4) {
+                f12 = f11;
+            }
+            if (z12) {
+                g gVar = fVar2.D;
+                gVar.getClass();
+                float f13 = 0;
+                paint = paint3;
+                z10 = z12;
+                z11 = false;
+                paint2.setShader(f.l(fVar2, gVar, f12, f13, -1, 5));
+                g gVar2 = fVar2.E;
+                gVar2.getClass();
+                paint.setShader(f.l(fVar2, gVar2, f12, f13, fVar2.H, 5));
+                fVar = fVar2;
+            } else {
+                paint = paint3;
+                z10 = z12;
+                z11 = false;
+                g gVar3 = fVar2.F;
+                gVar3.getClass();
+                fVar = fVar2;
+                paint.setShader(f.l(fVar2, gVar3, f12, 0, fVar2.J, 5));
+            }
+            this.e = width;
+            this.f = height;
+            if (z10) {
+                fVar.w = z11;
+            } else {
+                fVar.x = z11;
+            }
         }
-        StringBuilder sb2 = new StringBuilder();
-        sb2.append((Object) str4);
-        if (i10 > 0) {
-            str3 = " " + LocaleController.formatPluralStringComma("Media", i10);
-        }
-        sb2.append(str3);
-        setContentDescription(sb2.toString());
-    }
-
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        float paddingLeft = getPaddingLeft();
-        float dp = AndroidUtilities.dp(30.0f);
-        float dp2 = AndroidUtilities.dp(30.0f);
-        ImageReceiver imageReceiver = this.a;
-        imageReceiver.setImageCoords(paddingLeft, (getMeasuredHeight() - AndroidUtilities.dp(30.0f)) / 2.0f, dp, dp2);
-        imageReceiver.draw(canvas);
-        float dp3 = paddingLeft + AndroidUtilities.dp(30.0f) + AndroidUtilities.dp(12.0f);
-        if (this.e != null) {
+        canvas.save();
+        canvas.scale(5.0f, 5.0f);
+        float f14 = ceil;
+        float f15 = ceil2;
+        int saveLayer = canvas.saveLayer(0.0f, 0.0f, f14, f15, this.b);
+        if (z10) {
+            canvas.drawColor((fVar.H & 16777215) | (-16777216));
             canvas.save();
-            canvas.translate(dp3 - this.h, (getMeasuredHeight() - this.e.getHeight()) / 2.0f);
-            this.e.draw(canvas);
-            dp3 = dp3 + this.f + AndroidUtilities.dp(6.0f);
+            canvas.scale(0.2f, 0.2f);
+            float f16 = bounds.left;
+            float f17 = fVar.d;
+            float f18 = f16 + f17;
+            float f19 = bounds.top;
+            float f20 = fVar.e;
+            float f21 = f19 + f20;
+            canvas.translate(-f18, -f21);
+            fVar.f.e(canvas, f18, f21, bounds.right + f17, bounds.bottom + f20);
             canvas.restore();
+            f7 = f14;
+            f10 = f15;
+            canvas.drawRect(0.0f, 0.0f, f7, f10, paint2);
+        } else {
+            f7 = f14;
+            f10 = f15;
         }
-        if (this.r != null) {
-            canvas.save();
-            canvas.translate(dp3 - this.v, AndroidUtilities.dpf2(1.6f) + ((getMeasuredHeight() - this.r.getHeight()) / 2.0f));
-            this.r.draw(canvas);
-            canvas.restore();
-        }
+        canvas.drawRect(0.0f, 0.0f, f7, f10, paint);
+        canvas.restoreToCount(saveLayer);
+        canvas.restore();
     }
 
-    @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.a.onAttachedToWindow();
+    @Override // v7.i7
+    public final boolean d() {
+        return false;
     }
 
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.a.onDetachedFromWindow();
+    @Override // v7.i7
+    public final void e(float f7) {
+        this.b.setAlpha(Math.round(f7 * 255.0f));
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int size = (((View.MeasureSpec.getSize(i10) - AndroidUtilities.dp(30.0f)) - AndroidUtilities.dp(12.0f)) - getPaddingLeft()) - getPaddingRight();
-        StaticLayout staticLayout = this.e;
-        if (staticLayout == null || staticLayout.getWidth() != size) {
-            TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
-            String str = this.b;
-            TextPaint textPaint = this.d;
-            CharSequence ellipsize = TextUtils.ellipsize(str, textPaint, size, truncateAt);
-            int max = Math.max(0, size);
-            Layout.Alignment alignment = Layout.Alignment.ALIGN_NORMAL;
-            StaticLayout staticLayout2 = new StaticLayout(ellipsize, textPaint, max, alignment, 1.0f, 0.0f, false);
-            this.e = staticLayout2;
-            this.h = staticLayout2.getLineCount() > 0 ? this.e.getLineLeft(0) : 0.0f;
-            float lineWidth = this.e.getLineCount() > 0 ? this.e.getLineWidth(0) : 0.0f;
-            this.f = lineWidth;
-            int dp = size - ((int) (lineWidth + AndroidUtilities.dp(8.0f)));
-            TextPaint textPaint2 = this.n;
-            StaticLayout staticLayout3 = new StaticLayout(TextUtils.ellipsize(this.c, textPaint2, dp, truncateAt), textPaint2, Math.max(0, dp), alignment, 1.0f, 0.0f, false);
-            this.r = staticLayout3;
-            this.v = staticLayout3.getLineCount() > 0 ? this.r.getLineLeft(0) : 0.0f;
-            this.s = this.r.getLineCount() > 0 ? this.r.getLineWidth(0) : 0.0f;
-        }
-        if (View.MeasureSpec.getMode(i10) == Integer.MIN_VALUE) {
-            setMeasuredDimension((int) Math.min(AndroidUtilities.dp(12.0f) + AndroidUtilities.dp(30.0f) + getPaddingLeft() + this.f + AndroidUtilities.dp(8.0f) + this.s + getPaddingRight(), View.MeasureSpec.getSize(i10)), AndroidUtilities.dp(48.0f));
-        } else if (View.MeasureSpec.getMode(i10) == 1073741824) {
-            setMeasuredDimension(View.MeasureSpec.getSize(i10), AndroidUtilities.dp(48.0f));
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.p6
-    public final void updateColors() {
-        TextPaint textPaint = this.n;
-        try {
-            int w02 = org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.E8, this.w);
-            this.d.setColor(w02);
-            textPaint.setColor(w02);
-            textPaint.setAlpha(102);
-            invalidate();
-        } catch (Exception e) {
-            FileLog.e(e);
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.p6
-    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
+    @Override // v7.i7
+    public final void a(Rect rect, RectF rectF) {
     }
 }

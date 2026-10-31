@@ -1,12 +1,11 @@
 package j4;
 
-import a8.yb;
-import b2.w0;
-import c3.j0;
+import b2.v0;
+import c3.k0;
 import j$.util.Objects;
-import org.telegram.messenger.MediaDataController;
+import v7.t6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class b implements i {
     public final /* synthetic */ int a;
@@ -16,7 +15,7 @@ public final class b implements i {
     public final int e;
     public final String f;
     public String g;
-    public j0 h;
+    public k0 h;
     public int i;
     public int j;
     public boolean k;
@@ -38,7 +37,7 @@ public final class b implements i {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void a(e2.x xVar) {
+    public final void c(e2.x xVar) {
         int i10;
         int i11;
         int i12;
@@ -92,246 +91,246 @@ public final class b implements i {
                         this.j = i28;
                         if (i28 == 128) {
                             a4.g gVar = this.b;
-                            gVar.m(0);
+                            gVar.d0(0);
                             int[] iArr = c3.b.f;
                             int[] iArr2 = c3.b.d;
-                            int e = gVar.e();
-                            gVar.o(40);
-                            Object[] objArr = gVar.g(5) > 10;
-                            gVar.m(e);
+                            int f7 = gVar.f();
+                            gVar.f0(40);
+                            Object[] objArr = gVar.i(5) > 10;
+                            gVar.d0(f7);
                             if (objArr == true) {
-                                gVar.o(16);
-                                int g7 = gVar.g(2);
-                                char c10 = g7 != 0 ? g7 != 1 ? g7 != 2 ? (char) 65535 : (char) 2 : (char) 1 : (char) 0;
-                                gVar.o(3);
-                                i14 = (gVar.g(11) + 1) * 2;
-                                int g10 = gVar.g(2);
-                                if (g10 == 3) {
-                                    i15 = c3.b.e[gVar.g(2)];
+                                gVar.f0(16);
+                                int i29 = gVar.i(2);
+                                char c10 = i29 != 0 ? i29 != 1 ? i29 != 2 ? (char) 65535 : (char) 2 : (char) 1 : (char) 0;
+                                gVar.f0(3);
+                                i14 = (gVar.i(11) + 1) * 2;
+                                int i30 = gVar.i(2);
+                                if (i30 == 3) {
+                                    i15 = c3.b.e[gVar.i(2)];
                                     i16 = 3;
                                     i17 = 6;
                                 } else {
-                                    int g11 = gVar.g(2);
-                                    int i29 = c3.b.c[g11];
-                                    i15 = iArr2[g10];
-                                    i16 = g11;
-                                    i17 = i29;
+                                    int i31 = gVar.i(2);
+                                    int i32 = c3.b.c[i31];
+                                    i15 = iArr2[i30];
+                                    i16 = i31;
+                                    i17 = i32;
                                 }
                                 i12 = i17 * 256;
-                                int i30 = (i14 * i15) / (i17 * 32);
-                                int g12 = gVar.g(3);
-                                boolean f7 = gVar.f();
-                                i11 = iArr[g12] + (f7 ? 1 : 0);
-                                gVar.o(10);
-                                if (gVar.f()) {
-                                    gVar.o(8);
+                                int i33 = (i14 * i15) / (i17 * 32);
+                                int i34 = gVar.i(3);
+                                boolean h = gVar.h();
+                                i11 = iArr[i34] + (h ? 1 : 0);
+                                gVar.f0(10);
+                                if (gVar.h()) {
+                                    gVar.f0(8);
                                 }
-                                if (g12 == 0) {
-                                    gVar.o(5);
-                                    if (gVar.f()) {
-                                        gVar.o(8);
+                                if (i34 == 0) {
+                                    gVar.f0(5);
+                                    if (gVar.h()) {
+                                        gVar.f0(8);
                                     }
                                 }
-                                if (c10 == 1 && gVar.f()) {
-                                    gVar.o(16);
+                                if (c10 == 1 && gVar.h()) {
+                                    gVar.f0(16);
                                 }
-                                if (gVar.f()) {
-                                    if (g12 > 2) {
-                                        gVar.o(2);
+                                if (gVar.h()) {
+                                    if (i34 > 2) {
+                                        gVar.f0(2);
                                     }
-                                    if ((g12 & 1) == 0 || g12 <= 2) {
+                                    if ((i34 & 1) == 0 || i34 <= 2) {
                                         i22 = 6;
                                     } else {
                                         i22 = 6;
-                                        gVar.o(6);
+                                        gVar.f0(6);
                                     }
-                                    if ((g12 & 4) != 0) {
-                                        gVar.o(i22);
+                                    if ((i34 & 4) != 0) {
+                                        gVar.f0(i22);
                                     }
-                                    if (f7 && gVar.f()) {
-                                        gVar.o(5);
+                                    if (h && gVar.h()) {
+                                        gVar.f0(5);
                                     }
                                     if (c10 == 0) {
-                                        if (gVar.f()) {
+                                        if (gVar.h()) {
                                             i23 = 6;
-                                            gVar.o(6);
+                                            gVar.f0(6);
                                         } else {
                                             i23 = 6;
                                         }
-                                        if (g12 == 0 && gVar.f()) {
-                                            gVar.o(i23);
+                                        if (i34 == 0 && gVar.h()) {
+                                            gVar.f0(i23);
                                         }
-                                        if (gVar.f()) {
-                                            gVar.o(i23);
+                                        if (gVar.h()) {
+                                            gVar.f0(i23);
                                         }
-                                        int g13 = gVar.g(2);
-                                        if (g13 == 1) {
-                                            gVar.o(5);
+                                        int i35 = gVar.i(2);
+                                        if (i35 == 1) {
+                                            gVar.f0(5);
                                             i25 = 2;
                                         } else {
-                                            if (g13 == 2) {
-                                                gVar.o(12);
-                                            } else if (g13 == 3) {
-                                                int g14 = gVar.g(5);
-                                                if (gVar.f()) {
-                                                    gVar.o(5);
-                                                    if (gVar.f()) {
+                                            if (i35 == 2) {
+                                                gVar.f0(12);
+                                            } else if (i35 == 3) {
+                                                int i36 = gVar.i(5);
+                                                if (gVar.h()) {
+                                                    gVar.f0(5);
+                                                    if (gVar.h()) {
                                                         i26 = 4;
-                                                        gVar.o(4);
+                                                        gVar.f0(4);
                                                     } else {
                                                         i26 = 4;
                                                     }
-                                                    if (gVar.f()) {
-                                                        gVar.o(i26);
+                                                    if (gVar.h()) {
+                                                        gVar.f0(i26);
                                                     }
-                                                    if (gVar.f()) {
-                                                        gVar.o(i26);
+                                                    if (gVar.h()) {
+                                                        gVar.f0(i26);
                                                     }
-                                                    if (gVar.f()) {
-                                                        gVar.o(i26);
+                                                    if (gVar.h()) {
+                                                        gVar.f0(i26);
                                                     }
-                                                    if (gVar.f()) {
-                                                        gVar.o(i26);
+                                                    if (gVar.h()) {
+                                                        gVar.f0(i26);
                                                     }
-                                                    if (gVar.f()) {
-                                                        gVar.o(i26);
+                                                    if (gVar.h()) {
+                                                        gVar.f0(i26);
                                                     }
-                                                    if (gVar.f()) {
-                                                        gVar.o(i26);
+                                                    if (gVar.h()) {
+                                                        gVar.f0(i26);
                                                     }
-                                                    if (gVar.f()) {
-                                                        if (gVar.f()) {
-                                                            gVar.o(i26);
+                                                    if (gVar.h()) {
+                                                        if (gVar.h()) {
+                                                            gVar.f0(i26);
                                                         }
-                                                        if (gVar.f()) {
-                                                            gVar.o(i26);
+                                                        if (gVar.h()) {
+                                                            gVar.f0(i26);
                                                         }
                                                     }
                                                 }
-                                                if (gVar.f()) {
-                                                    gVar.o(5);
-                                                    if (gVar.f()) {
-                                                        gVar.o(7);
-                                                        if (gVar.f()) {
+                                                if (gVar.h()) {
+                                                    gVar.f0(5);
+                                                    if (gVar.h()) {
+                                                        gVar.f0(7);
+                                                        if (gVar.h()) {
                                                             i24 = 8;
-                                                            gVar.o(8);
+                                                            gVar.f0(8);
                                                             i25 = 2;
-                                                            gVar.o((g14 + 2) * i24);
+                                                            gVar.f0((i36 + 2) * i24);
                                                             gVar.c();
                                                         }
                                                     }
                                                 }
                                                 i24 = 8;
                                                 i25 = 2;
-                                                gVar.o((g14 + 2) * i24);
+                                                gVar.f0((i36 + 2) * i24);
                                                 gVar.c();
                                             }
                                             i25 = 2;
                                         }
-                                        if (g12 < i25) {
-                                            if (gVar.f()) {
-                                                gVar.o(14);
+                                        if (i34 < i25) {
+                                            if (gVar.h()) {
+                                                gVar.f0(14);
                                             }
-                                            if (g12 == 0 && gVar.f()) {
-                                                gVar.o(14);
+                                            if (i34 == 0 && gVar.h()) {
+                                                gVar.f0(14);
                                             }
                                         }
-                                        if (gVar.f()) {
+                                        if (gVar.h()) {
                                             i18 = i16;
                                             if (i18 == 0) {
-                                                gVar.o(5);
+                                                gVar.f0(5);
                                             } else {
-                                                for (int i31 = 0; i31 < i17; i31++) {
-                                                    if (gVar.f()) {
-                                                        gVar.o(5);
+                                                for (int i37 = 0; i37 < i17; i37++) {
+                                                    if (gVar.h()) {
+                                                        gVar.f0(5);
                                                     }
                                                 }
                                             }
-                                            if (gVar.f()) {
+                                            if (gVar.h()) {
                                                 i19 = 3;
                                             } else {
-                                                gVar.o(5);
-                                                if (g12 == 2) {
-                                                    gVar.o(4);
+                                                gVar.f0(5);
+                                                if (i34 == 2) {
+                                                    gVar.f0(4);
                                                 }
-                                                if (g12 >= 6) {
-                                                    gVar.o(2);
+                                                if (i34 >= 6) {
+                                                    gVar.f0(2);
                                                 }
-                                                if (gVar.f()) {
+                                                if (gVar.h()) {
                                                     i21 = 8;
-                                                    gVar.o(8);
+                                                    gVar.f0(8);
                                                 } else {
                                                     i21 = 8;
                                                 }
-                                                if (g12 == 0 && gVar.f()) {
-                                                    gVar.o(i21);
+                                                if (i34 == 0 && gVar.h()) {
+                                                    gVar.f0(i21);
                                                 }
                                                 i19 = 3;
-                                                if (g10 < 3) {
-                                                    gVar.n();
+                                                if (i30 < 3) {
+                                                    gVar.e0();
                                                 }
                                             }
                                             if (c10 == 0 && i18 != i19) {
-                                                gVar.n();
+                                                gVar.e0();
                                             }
-                                            if (c10 == 2 || !(i18 == i19 || gVar.f())) {
+                                            if (c10 == 2 || !(i18 == i19 || gVar.h())) {
                                                 i20 = 6;
                                             } else {
                                                 i20 = 6;
-                                                gVar.o(6);
+                                                gVar.f0(6);
                                             }
-                                            str = (!gVar.f() && gVar.g(i20) == 1 && gVar.g(8) == 1) ? "audio/eac3-joc" : "audio/eac3";
-                                            i13 = i30;
+                                            str = (!gVar.h() && gVar.i(i20) == 1 && gVar.i(8) == 1) ? "audio/eac3-joc" : "audio/eac3";
+                                            i13 = i33;
                                         }
                                     }
                                 }
                                 i18 = i16;
-                                if (gVar.f()) {
+                                if (gVar.h()) {
                                 }
                                 if (c10 == 0) {
-                                    gVar.n();
+                                    gVar.e0();
                                 }
                                 if (c10 == 2) {
                                 }
                                 i20 = 6;
-                                if (!gVar.f()) {
+                                if (!gVar.h()) {
                                 }
-                                i13 = i30;
+                                i13 = i33;
                             } else {
-                                gVar.o(32);
-                                int g15 = gVar.g(2);
-                                String str2 = g15 == 3 ? null : "audio/ac3";
-                                int g16 = gVar.g(6);
-                                int i32 = c3.b.g[g16 / 2] * MediaDataController.MAX_STYLE_RUNS_COUNT;
-                                int e10 = c3.b.e(g15, g16);
-                                gVar.o(8);
-                                int g17 = gVar.g(3);
-                                if ((g17 & 1) == 0 || g17 == 1) {
+                                gVar.f0(32);
+                                int i38 = gVar.i(2);
+                                String str2 = i38 == 3 ? null : "audio/ac3";
+                                int i39 = gVar.i(6);
+                                int i40 = c3.b.g[i39 / 2] * 1000;
+                                int e = c3.b.e(i38, i39);
+                                gVar.f0(8);
+                                int i41 = gVar.i(3);
+                                if ((i41 & 1) == 0 || i41 == 1) {
                                     i10 = 2;
                                 } else {
                                     i10 = 2;
-                                    gVar.o(2);
+                                    gVar.f0(2);
                                 }
-                                if ((g17 & 4) != 0) {
-                                    gVar.o(i10);
+                                if ((i41 & 4) != 0) {
+                                    gVar.f0(i10);
                                 }
-                                if (g17 == i10) {
-                                    gVar.o(i10);
+                                if (i41 == i10) {
+                                    gVar.f0(i10);
                                 }
-                                int i33 = g15 < 3 ? iArr2[g15] : -1;
-                                i11 = iArr[g17] + (gVar.f() ? 1 : 0);
+                                int i42 = i38 < 3 ? iArr2[i38] : -1;
+                                i11 = iArr[i41] + (gVar.h() ? 1 : 0);
                                 i12 = 1536;
                                 str = str2;
-                                i13 = i32;
-                                i14 = e10;
-                                i15 = i33;
+                                i13 = i40;
+                                i14 = e;
+                                i15 = i42;
                             }
                             b2.x xVar3 = this.m;
                             if (xVar3 == null || i11 != xVar3.K || i15 != xVar3.L || !Objects.equals(str, xVar3.s)) {
                                 b2.w wVar = new b2.w();
                                 wVar.a = this.g;
-                                wVar.q = w0.n(this.f);
-                                wVar.r = w0.n(str);
+                                wVar.q = v0.n(this.f);
+                                wVar.r = v0.n(str);
                                 wVar.J = i11;
                                 wVar.K = i15;
                                 wVar.d = this.d;
@@ -353,10 +352,10 @@ public final class b implements i {
                     } else if (i27 == 2) {
                         int min2 = Math.min(xVar.a(), this.n - this.j);
                         this.h.d(min2, xVar);
-                        int i34 = this.j + min2;
-                        this.j = i34;
-                        if (i34 == this.n) {
-                            yb.p(this.o != -9223372036854775807L);
+                        int i43 = this.j + min2;
+                        this.j = i43;
+                        if (i43 == this.n) {
+                            t6.p(this.o != -9223372036854775807L);
                             this.h.c(this.o, 1, this.n, 0, null);
                             this.o += this.l;
                             this.i = 0;
@@ -367,9 +366,9 @@ public final class b implements i {
             default:
                 this.h.getClass();
                 while (xVar.a() > 0) {
-                    int i35 = this.i;
+                    int i44 = this.i;
                     e2.x xVar5 = this.c;
-                    if (i35 == 0) {
+                    if (i44 == 0) {
                         while (xVar.a() > 0) {
                             if (this.k) {
                                 int A2 = xVar.A();
@@ -386,25 +385,25 @@ public final class b implements i {
                                 this.k = xVar.A() == 172;
                             }
                         }
-                    } else if (i35 == 1) {
+                    } else if (i44 == 1) {
                         byte[] bArr4 = xVar5.a;
                         int min3 = Math.min(xVar.a(), 16 - this.j);
                         xVar.k(this.j, min3, bArr4);
-                        int i36 = this.j + min3;
-                        this.j = i36;
-                        if (i36 == 16) {
+                        int i45 = this.j + min3;
+                        this.j = i45;
+                        if (i45 == 16) {
                             a4.g gVar2 = this.b;
-                            gVar2.m(0);
+                            gVar2.d0(0);
                             a3.l m10 = c3.b.m(gVar2);
-                            int i37 = m10.a;
+                            int i46 = m10.a;
                             b2.x xVar6 = this.m;
-                            if (xVar6 == null || 2 != xVar6.K || i37 != xVar6.L || !"audio/ac4".equals(xVar6.s)) {
+                            if (xVar6 == null || 2 != xVar6.K || i46 != xVar6.L || !"audio/ac4".equals(xVar6.s)) {
                                 b2.w wVar2 = new b2.w();
                                 wVar2.a = this.g;
-                                wVar2.q = w0.n(this.f);
-                                wVar2.r = w0.n("audio/ac4");
+                                wVar2.q = v0.n(this.f);
+                                wVar2.r = v0.n("audio/ac4");
                                 wVar2.J = 2;
-                                wVar2.K = i37;
+                                wVar2.K = i46;
                                 wVar2.d = this.d;
                                 wVar2.f = this.e;
                                 b2.x xVar7 = new b2.x(wVar2);
@@ -417,13 +416,13 @@ public final class b implements i {
                             this.h.d(16, xVar5);
                             this.i = 2;
                         }
-                    } else if (i35 == 2) {
+                    } else if (i44 == 2) {
                         int min4 = Math.min(xVar.a(), this.n - this.j);
                         this.h.d(min4, xVar);
-                        int i38 = this.j + min4;
-                        this.j = i38;
-                        if (i38 == this.n) {
-                            yb.p(this.o != -9223372036854775807L);
+                        int i47 = this.j + min4;
+                        this.j = i47;
+                        if (i47 == this.n) {
+                            t6.p(this.o != -9223372036854775807L);
                             this.h.c(this.o, 1, this.n, 0, null);
                             this.o += this.l;
                             this.i = 0;
@@ -435,7 +434,7 @@ public final class b implements i {
     }
 
     @Override // j4.i
-    public final void c() {
+    public final void e() {
         switch (this.a) {
             case 0:
                 this.i = 0;
@@ -453,32 +452,32 @@ public final class b implements i {
     }
 
     @Override // j4.i
-    public final void d(c3.q qVar, f0 f0Var) {
+    public final void f(c3.q qVar, g0 g0Var) {
         switch (this.a) {
             case 0:
-                f0Var.b();
-                f0Var.c();
-                this.g = (String) f0Var.e;
-                f0Var.c();
-                this.h = qVar.F1(f0Var.c, 1);
+                g0Var.b();
+                g0Var.c();
+                this.g = (String) g0Var.e;
+                g0Var.c();
+                this.h = qVar.I1(g0Var.c, 1);
                 break;
             default:
-                f0Var.b();
-                f0Var.c();
-                this.g = (String) f0Var.e;
-                f0Var.c();
-                this.h = qVar.F1(f0Var.c, 1);
+                g0Var.b();
+                g0Var.c();
+                this.g = (String) g0Var.e;
+                g0Var.c();
+                this.h = qVar.I1(g0Var.c, 1);
                 break;
         }
     }
 
     @Override // j4.i
-    public final void e(boolean z10) {
+    public final void g(boolean z10) {
         int i10 = this.a;
     }
 
     @Override // j4.i
-    public final void f(int i10, long j10) {
+    public final void h(int i10, long j10) {
         switch (this.a) {
             case 0:
                 this.o = j10;
@@ -495,7 +494,7 @@ public final class b implements i {
             case 1:
                 a4.g gVar = new a4.g(new byte[16], 16);
                 this.b = gVar;
-                this.c = new e2.x(gVar.b);
+                this.c = new e2.x((byte[]) gVar.b);
                 this.i = 0;
                 this.j = 0;
                 this.k = false;
@@ -507,7 +506,7 @@ public final class b implements i {
             default:
                 a4.g gVar2 = new a4.g(new byte[128], 128);
                 this.b = gVar2;
-                this.c = new e2.x(gVar2.b);
+                this.c = new e2.x((byte[]) gVar2.b);
                 this.i = 0;
                 this.o = -9223372036854775807L;
                 this.d = str;
@@ -517,9 +516,9 @@ public final class b implements i {
         }
     }
 
-    private final void b(boolean z10) {
+    private final void a(boolean z10) {
     }
 
-    private final void g(boolean z10) {
+    private final void b(boolean z10) {
     }
 }

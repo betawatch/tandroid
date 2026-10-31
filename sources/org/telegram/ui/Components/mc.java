@@ -1,46 +1,41 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Typeface;
-import android.text.method.LinkMovementMethod;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public class mc extends nb {
-    public final y9 a;
-    public final TextView b;
-    public final TextView c;
+public final /* synthetic */ class mc implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ nc b;
+    public final /* synthetic */ boolean c;
 
-    public mc(Context context, org.telegram.ui.ActionBar.u6 u6Var) {
-        super(context, u6Var);
-        int i10 = org.telegram.ui.ActionBar.y6.Hi;
-        getThemedColor(i10);
-        y9 y9Var = new y9(context);
-        this.a = y9Var;
-        addView(y9Var, kb1.m(29.0f, 29.0f, 8388627, 12.0f, 12.0f, 12.0f, 12.0f));
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(1);
-        addView(linearLayout, kb1.m(-2.0f, -2.0f, 8388627, 54.0f, 8.0f, 12.0f, 8.0f));
-        TextView textView = new TextView(context);
-        this.b = textView;
-        textView.setSingleLine();
-        org.telegram.messenger.t.r(textView, i10, u6Var, 1, 14.0f);
-        linearLayout.addView(textView);
-        TextView textView2 = new TextView(context);
-        this.c = textView2;
-        textView2.setMaxLines(2);
-        org.telegram.ui.ActionBar.f7.V(textView2, i10, u6Var);
-        org.telegram.ui.ActionBar.f7.H(textView2, org.telegram.ui.ActionBar.y6.Gi, u6Var);
-        textView2.setMovementMethod(new LinkMovementMethod());
-        textView2.setTypeface(Typeface.SANS_SERIF);
-        textView2.setTextSize(1, 13.0f);
-        linearLayout.addView(textView2);
+    public /* synthetic */ mc(nc ncVar, boolean z10, int i10) {
+        this.a = i10;
+        this.b = ncVar;
+        this.c = z10;
     }
 
-    @Override // org.telegram.ui.Components.ub
-    public CharSequence getAccessibilityText() {
-        return ((Object) this.b.getText()) + ".\n" + ((Object) this.c.getText());
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                boolean z10 = this.c;
+                nc ncVar = this.b;
+                if (!z10) {
+                    ncVar.Y0.setVisibility(8);
+                    break;
+                } else {
+                    ncVar.getClass();
+                    break;
+                }
+            default:
+                boolean z11 = this.c;
+                nc ncVar2 = this.b;
+                if (!z11) {
+                    ncVar2.U0.setVisibility(8);
+                    break;
+                } else {
+                    ncVar2.getClass();
+                    break;
+                }
+        }
     }
 }

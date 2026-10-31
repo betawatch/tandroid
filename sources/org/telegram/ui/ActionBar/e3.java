@@ -1,34 +1,43 @@
 package org.telegram.ui.ActionBar;
 
-import android.content.Context;
-import android.view.ViewGroup;
+import android.content.DialogInterface;
+import org.telegram.messenger.q20;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class e3 {
-    public final k3 a;
+public final /* synthetic */ class e3 implements DialogInterface.OnDismissListener {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ q20 b;
+    public final /* synthetic */ boolean[] c;
 
-    public e3(Context context, u6 u6Var) {
-        k3 k3Var = new k3(1, context, u6Var, false);
-        this.a = k3Var;
-        k3Var.fixNavigationBar();
+    public /* synthetic */ e3(q20 q20Var, boolean[] zArr) {
+        this.b = q20Var;
+        this.c = zArr;
     }
 
-    public final void a() {
-        this.a.applyBottomPadding = false;
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
+        switch (this.a) {
+            case 0:
+                boolean[] zArr = this.c;
+                if (!zArr[0]) {
+                    this.b.a(Boolean.FALSE);
+                    zArr[0] = true;
+                    break;
+                }
+                break;
+            default:
+                q20 q20Var = this.b;
+                if (q20Var != null && !this.c[0]) {
+                    q20Var.a(Boolean.FALSE);
+                    break;
+                }
+                break;
+        }
     }
 
-    public final void b(ViewGroup viewGroup) {
-        this.a.customView = viewGroup;
-    }
-
-    public final void c(org.telegram.ui.Components.y6 y6Var) {
-        k3 k3Var = this.a;
-        k3Var.customView = y6Var;
-        k3Var.customViewGravity = 49;
-    }
-
-    public final void d() {
-        this.a.dimBehind = false;
+    public /* synthetic */ e3(boolean[] zArr, q20 q20Var) {
+        this.c = zArr;
+        this.b = q20Var;
     }
 }

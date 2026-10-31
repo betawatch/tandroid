@@ -1,31 +1,32 @@
 package org.telegram.ui.Components;
 
-import android.text.TextUtils;
-import android.view.ViewGroup;
-import org.telegram.messenger.voip.GroupCallMessage;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.View;
+import android.view.WindowManager;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class f20 implements re.a {
-    public final ViewGroup a;
-    public final nh.c b;
+public final class f20 extends AnimatorListenerAdapter {
+    public final /* synthetic */ View a;
+    public final /* synthetic */ View b;
+    public final /* synthetic */ WindowManager c;
+    public final /* synthetic */ View d;
+    public final /* synthetic */ View e;
+    public final /* synthetic */ g20 f;
 
-    public f20(di.i4 i4Var, GroupCallMessage groupCallMessage) {
-        nh.c cVar = new nh.c(i4Var.getContext());
-        this.b = cVar;
-        cVar.setBackgroundColor(i0.a.o(-16777216, 34));
-        xh.n nVar = cVar.v;
-        nVar.setMaxLines(1);
-        nVar.setSingleLine(true);
-        nVar.setEllipsize(TextUtils.TruncateAt.END);
-        cVar.set(groupCallMessage);
-        cVar.setAlpha(0.0f);
-        this.a = i4Var;
-        i4Var.addView(cVar);
+    public f20(g20 g20Var, e20 e20Var, jg.l0 l0Var, WindowManager windowManager, FrameLayout frameLayout, org.telegram.ui.w7 w7Var) {
+        this.f = g20Var;
+        this.a = e20Var;
+        this.b = l0Var;
+        this.c = windowManager;
+        this.d = frameLayout;
+        this.e = w7Var;
     }
 
-    @Override // re.a
-    public final void a() {
-        this.a.removeView(this.b);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        org.telegram.messenger.zs.f(this.f.h).d(new ag.e3(this.a, this.b, this.c, this.d, this.e, 19));
     }
 }

@@ -1,51 +1,39 @@
 package r0;
 
+import android.view.View;
 import android.view.WindowInsets;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public class e1 extends d1 {
-    public i0.b o;
-    public i0.b p;
-    public i0.b q;
+    public static final j1 r;
 
-    public e1(k1 k1Var, WindowInsets windowInsets) {
-        super(k1Var, windowInsets);
-        this.o = null;
-        this.p = null;
-        this.q = null;
+    static {
+        WindowInsets windowInsets;
+        windowInsets = WindowInsets.CONSUMED;
+        r = j1.h(null, windowInsets);
     }
 
-    @Override // r0.h1
-    public i0.b h() {
-        if (this.p == null) {
-            this.p = i0.b.c(this.c.getMandatorySystemGestureInsets());
-        }
-        return this.p;
+    public e1(j1 j1Var, WindowInsets windowInsets) {
+        super(j1Var, windowInsets);
     }
 
-    @Override // r0.h1
-    public i0.b j() {
-        if (this.o == null) {
-            this.o = i0.b.c(this.c.getSystemGestureInsets());
-        }
-        return this.o;
+    @Override // r0.a1, r0.g1
+    public i0.c f(int i10) {
+        return i0.c.c(this.c.getInsets(h1.a(i10)));
     }
 
-    @Override // r0.h1
-    public i0.b l() {
-        if (this.q == null) {
-            this.q = i0.b.c(this.c.getTappableElementInsets());
-        }
-        return this.q;
+    @Override // r0.a1, r0.g1
+    public i0.c g(int i10) {
+        return i0.c.c(this.c.getInsetsIgnoringVisibility(h1.a(i10)));
     }
 
-    @Override // r0.b1, r0.h1
-    public k1 m(int i10, int i11, int i12, int i13) {
-        return k1.h(null, this.c.inset(i10, i11, i12, i13));
+    @Override // r0.a1, r0.g1
+    public boolean p(int i10) {
+        return this.c.isVisible(h1.a(i10));
     }
 
-    @Override // r0.c1, r0.h1
-    public void s(i0.b bVar) {
+    @Override // r0.a1, r0.g1
+    public final void d(View view) {
     }
 }

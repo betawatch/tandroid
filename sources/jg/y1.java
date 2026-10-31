@@ -1,205 +1,231 @@
 package jg;
 
+import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
-import android.text.SpannableString;
-import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.Drawable;
+import android.view.MotionEvent;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.ImageLoader;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.f7;
-import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.ActionBar.y6;
-import org.telegram.ui.Components.aq;
-import org.telegram.ui.Components.j9;
-import org.telegram.ui.Components.kb1;
-import org.telegram.ui.Components.p10;
-import org.telegram.ui.Components.r11;
-import org.telegram.ui.Components.r61;
+import android.widget.LinearLayout;
+import java.util.List;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.m5;
+import org.telegram.ui.Components.bi0;
+import org.telegram.ui.Components.ei0;
+import org.telegram.ui.Components.gr;
+import w7.b6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class y1 extends FrameLayout {
-    public final j9 a;
-    public final ImageReceiver b;
-    public final xh.n c;
-    public final aq d;
-    public final ImageView e;
-    public final u6 f;
-    public boolean h;
-    public final int[] n;
-    public boolean r;
+public final class y1 extends LinearLayout {
+    public final ei0[] a;
+    public x1 b;
+    public final Paint c;
+    public final int d;
+    public boolean e;
+    public int f;
+    public int h;
+    public float n;
+    public ValueAnimator r;
 
-    public y1(Context context, u6 u6Var, boolean z10) {
+    /* JADX WARN: Multi-variable type inference failed */
+    public y1(Context context, boolean z10) {
         super(context);
-        this.a = new j9((u6) null);
-        this.b = new ImageReceiver(this);
-        this.n = new int[1];
-        this.f = u6Var;
+        List list = ig.h.a;
+        this.a = new ei0[list.size() + 2];
+        final int i10 = 1;
+        Paint paint = new Paint(1);
+        this.c = paint;
+        this.f = 1;
+        this.h = -1;
+        this.n = 0.0f;
+        final int i11 = 0;
+        setOrientation(0);
+        setGravity(16);
         setWillNotDraw(false);
-        int i10 = z10 ? 42 : 16;
-        xh.n nVar = new xh.n(context);
-        this.c = nVar;
-        nVar.setLines(2);
-        nVar.setEllipsize(TextUtils.TruncateAt.END);
-        f7.V(nVar, y6.z6, u6Var);
-        nVar.setTextSize(1, 14.0f);
-        boolean z11 = LocaleController.isRTL;
-        addView(nVar, kb1.h(-1, -2.0f, 7, z11 ? i10 : 64.0f, 7.0f, z11 ? 64.0f : i10, 0.0f));
-        if (z10) {
-            ImageView imageView = new ImageView(context);
-            this.e = imageView;
-            imageView.setScaleType(ImageView.ScaleType.CENTER);
-            imageView.setImageResource(R.drawable.list_reorder);
-            f7.t(imageView, y6.Uh, null, PorterDuff.Mode.MULTIPLY);
-            imageView.setAlpha(0.0f);
-            addView(imageView, kb1.i(50, 50, (LocaleController.isRTL ? 3 : 5) | 112));
-        } else {
-            this.e = null;
+        setClipToPadding(false);
+        paint.setColor(822083583);
+        this.d = list.size() - (!z10 ? 1 : 0);
+        int i12 = 0;
+        int i13 = 0;
+        while (true) {
+            List list2 = ig.h.a;
+            if (i12 >= list2.size() + 2) {
+                return;
+            }
+            ei0[] ei0VarArr = this.a;
+            Object[] objArr = i12 == 0;
+            Object[] objArr2 = i12 == list2.size() + 1;
+            ei0 ei0Var = new ei0(getContext());
+            ei0Var.setPadding(org.telegram.messenger.i0.L(objArr != false ? 0.0f : 8.0f), org.telegram.messenger.i0.L(8.0f), org.telegram.messenger.i0.L(objArr2 != false ? 0.0f : 8.0f), org.telegram.messenger.i0.L(8.0f));
+            ei0Var.setLayoutParams(b6.l(1.0f, 0, 40));
+            ei0Var.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
+            ei0VarArr[i13] = ei0Var;
+            if (i12 == 0) {
+                this.a[i13].setOnClickListener(new View.OnClickListener(this) { // from class: jg.v1
+                    public final /* synthetic */ y1 b;
+
+                    {
+                        this.b = this;
+                    }
+
+                    @Override // android.view.View.OnClickListener
+                    public final void onClick(View view) {
+                        switch (i11) {
+                            case 0:
+                                this.b.b.a();
+                                break;
+                            default:
+                                this.b.b.A();
+                                break;
+                        }
+                    }
+                });
+            } else if (i12 > 0 && i12 <= list2.size()) {
+                ig.h hVar = (ig.h) list2.get(i12 - 1);
+                if (z10 || !(hVar instanceof ig.b)) {
+                    this.a[i13].f(hVar.e(), 28, 28, null);
+                    this.a[i13].setOnClickListener(new w1(this, i13, hVar, i11));
+                } else {
+                    i12++;
+                }
+            } else if (i12 == list2.size() + 1) {
+                this.a[i13].setImageResource(R.drawable.msg_add);
+                this.a[i13].setOnClickListener(new View.OnClickListener(this) { // from class: jg.v1
+                    public final /* synthetic */ y1 b;
+
+                    {
+                        this.b = this;
+                    }
+
+                    @Override // android.view.View.OnClickListener
+                    public final void onClick(View view) {
+                        switch (i10) {
+                            case 0:
+                                this.b.b.a();
+                                break;
+                            default:
+                                this.b.b.A();
+                                break;
+                        }
+                    }
+                });
+            }
+            addView(this.a[i13]);
+            i13++;
+            i12++;
         }
-        aq aqVar = new aq(getContext(), 21, u6Var);
-        this.d = aqVar;
-        aqVar.b(-1, y6.d6, y6.k7);
-        aqVar.setDrawUnchecked(false);
-        aqVar.setDrawBackgroundAsArc(3);
-        addView(aqVar, kb1.m(24.0f, 24.0f, 8388659, 33.0f, 25.0f, 0.0f, 0.0f));
     }
 
-    public final void a(b2 b2Var, String str, boolean z10) {
-        TLRPC.WebPage webPage;
-        TLRPC.Photo photo;
-        long j10;
-        String str2;
-        ImageLocation imageLocation;
-        TLRPC.Photo photo2;
-        String str3 = str;
-        this.h = b2Var != null ? b2Var.g : false;
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-        if (str3 != null && str3.length() > 0 && !str3.startsWith("/")) {
-            str3 = "/".concat(str3);
-        }
-        spannableStringBuilder.append((CharSequence) "/").append((CharSequence) b2Var.b);
-        spannableStringBuilder.setSpan(new r61(AndroidUtilities.bold()), 0, spannableStringBuilder.length(), 33);
-        int i10 = y6.G6;
-        u6 u6Var = this.f;
-        spannableStringBuilder.setSpan(new p10(i10, u6Var), 0, spannableStringBuilder.length(), 33);
-        if (str3 != null) {
-            spannableStringBuilder.setSpan(new p10(y6.o6, u6Var), 0, Math.min(str3.length() <= 0 ? 1 : str3.length(), spannableStringBuilder.length()), 33);
-        }
-        MessageObject messageObject = b2Var.e;
-        xh.n nVar = this.c;
-        if (messageObject != null) {
-            spannableStringBuilder.append((CharSequence) " ");
-            CharSequence charSequence = b2Var.e.caption;
-            if (TextUtils.isEmpty(charSequence)) {
-                charSequence = b2Var.e.messageText;
+    public final void a(int i10) {
+        if (i10 >= 0) {
+            ei0[] ei0VarArr = this.a;
+            if (i10 >= ei0VarArr.length) {
+                return;
             }
-            CharSequence replaceEmoji = Emoji.replaceEmoji(new SpannableStringBuilder(charSequence), nVar.getPaint().getFontMetricsInt(), false);
-            TLRPC.Message message = b2Var.e.messageOwner;
-            if (message != null) {
-                MessageObject.replaceAnimatedEmoji(replaceEmoji, message.entities, nVar.getPaint().getFontMetricsInt());
+            if (this.r == null || this.h != i10) {
+                ei0 ei0Var = ei0VarArr[i10];
+                if (ei0Var != null) {
+                    Drawable drawable = ei0Var.getDrawable();
+                    if (drawable instanceof bi0) {
+                        bi0 bi0Var = (bi0) drawable;
+                        bi0Var.M(0);
+                        bi0Var.start();
+                    }
+                }
+                ValueAnimator valueAnimator = this.r;
+                if (valueAnimator != null) {
+                    valueAnimator.cancel();
+                }
+                if (this.f == i10) {
+                    return;
+                }
+                if (this.e) {
+                    this.e = false;
+                    org.telegram.messenger.i0.Q3(ei0VarArr[this.d + 1], R.drawable.msg_add);
+                }
+                this.h = i10;
+                this.n = 0.0f;
+                ValueAnimator duration = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration(250L);
+                this.r = duration;
+                duration.setInterpolator(gr.f);
+                this.r.addUpdateListener(new bg.k(this, 4));
+                this.r.addListener(new bg.e(this, 6));
+                this.r.start();
             }
-            spannableStringBuilder.append(replaceEmoji);
         }
-        if (b2Var.a() > 1) {
-            spannableStringBuilder.append((CharSequence) "  ");
-            int dp = AndroidUtilities.displaySize.x - AndroidUtilities.dp(80.0f);
-            int a2 = b2Var.a() - 1;
-            int i11 = x1.d;
-            SpannableString spannableString = new SpannableString("+");
-            x1 x1Var = new x1(a2);
-            int dp2 = (int) (((r11) x1Var.c).c + AndroidUtilities.dp(10.0f));
-            this.n[0] = dp2;
-            spannableString.setSpan(x1Var, 0, spannableString.length(), 33);
-            SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(TextUtils.ellipsize(spannableStringBuilder, nVar.getPaint(), (dp * 1.5f) - r12[0], TextUtils.TruncateAt.END));
-            if (spannableStringBuilder2.length() > 0 && spannableStringBuilder2.charAt(spannableStringBuilder2.length() - 1) == 8230) {
-                spannableStringBuilder2.append((CharSequence) "  ");
-            }
-            spannableStringBuilder2.append((CharSequence) spannableString);
-            spannableStringBuilder = spannableStringBuilder2;
-        }
-        nVar.setText(spannableStringBuilder);
-        int i12 = UserConfig.selectedAccount;
-        TLRPC.MessageMedia media = MessageObject.getMedia(b2Var.e);
-        ImageReceiver imageReceiver = this.b;
-        if (media != null && (photo2 = media.photo) != null) {
-            TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(photo2.sizes, AndroidUtilities.dp(36.0f), true, null, true);
-            ImageLocation forObject = ImageLocation.getForObject(closestPhotoSizeWithSize, media.photo);
-            MessageObject messageObject2 = b2Var.e;
-            imageReceiver.setImage(forObject, "36_36", messageObject2.strippedThumb, closestPhotoSizeWithSize != null ? closestPhotoSizeWithSize.size : 0L, (String) null, messageObject2, 0);
-            imageReceiver.setRoundRadius(AndroidUtilities.dp(4.0f));
-        } else if (media != null && media.document != null && (b2Var.e.isVideo() || b2Var.e.isSticker())) {
-            TLRPC.PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(media.document.thumbs, AndroidUtilities.dp(36.0f), true, null, true);
-            if (closestPhotoSizeWithSize2 == null) {
-                ImageLocation forDocument = ImageLocation.getForDocument(media.document);
-                j10 = media.document.size;
-                imageLocation = forDocument;
-                str2 = ImageLoader.AUTOPLAY_FILTER;
-            } else {
-                ImageLocation forObject2 = ImageLocation.getForObject(closestPhotoSizeWithSize2, media.document);
-                j10 = closestPhotoSizeWithSize2.size;
-                str2 = "36_36";
-                imageLocation = forObject2;
-            }
-            long j11 = j10;
-            MessageObject messageObject3 = b2Var.e;
-            imageReceiver.setImage(imageLocation, str2, messageObject3.strippedThumb, j11, (String) null, messageObject3, 0);
-            imageReceiver.setRoundRadius(AndroidUtilities.dp(4.0f));
-        } else if (media == null || (webPage = media.webpage) == null || (photo = webPage.photo) == null) {
-            TLRPC.User currentUser = UserConfig.getInstance(i12).getCurrentUser();
-            j9 j9Var = this.a;
-            j9Var.r(currentUser);
-            imageReceiver.setForUserOrChat(UserConfig.getInstance(i12).getCurrentUser(), j9Var);
-            imageReceiver.setRoundRadius(AndroidUtilities.dp(36.0f));
-        } else {
-            TLRPC.PhotoSize closestPhotoSizeWithSize3 = FileLoader.getClosestPhotoSizeWithSize(photo.sizes, AndroidUtilities.dp(36.0f), true, null, true);
-            imageReceiver.setImage(ImageLocation.getForObject(closestPhotoSizeWithSize3, media.webpage.photo), "36_36", b2Var.e.strippedThumb, closestPhotoSizeWithSize3 != null ? closestPhotoSizeWithSize3.size : 0L, (String) null, media.webpage, 0);
-            imageReceiver.setRoundRadius(AndroidUtilities.dp(4.0f));
-        }
-        this.r = z10;
-        invalidate();
     }
 
-    @Override // android.view.View
+    public final void b(int i10) {
+        a(i10);
+        this.b.v().i(i10 - 1, true);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        if (motionEvent.getAction() == 0 || motionEvent.getAction() == 2 || motionEvent.getAction() == 1) {
+            float x10 = motionEvent.getX();
+            motionEvent.getY();
+            for (int i10 = 1; i10 < getChildCount() - 1; i10++) {
+                View childAt = getChildAt(i10);
+                if (x10 >= childAt.getLeft() && x10 <= childAt.getRight()) {
+                    if (this.r != null) {
+                        if (this.h != i10) {
+                            a(i10);
+                            post(new u1(0, childAt));
+                            return true;
+                        }
+                    } else if (this.f != i10) {
+                        a(i10);
+                        post(new u1(0, childAt));
+                        return true;
+                    }
+                }
+            }
+        }
+        return super.dispatchTouchEvent(motionEvent);
+    }
+
+    @Override // android.widget.LinearLayout, android.view.View
     public final void onDraw(Canvas canvas) {
-        float measuredWidth = LocaleController.isRTL ? getMeasuredWidth() - AndroidUtilities.dp(51.0f) : AndroidUtilities.dp(15.0f);
-        float dp = AndroidUtilities.dp(7.0f);
-        float dp2 = AndroidUtilities.dp(36.0f);
-        float dp3 = AndroidUtilities.dp(36.0f);
-        ImageReceiver imageReceiver = this.b;
-        imageReceiver.setImageCoords(measuredWidth, dp, dp2, dp3);
-        imageReceiver.draw(canvas);
         super.onDraw(canvas);
-        if (this.r) {
-            Paint V0 = y6.V0("paintDivider", this.f);
-            if (V0 == null) {
-                V0 = y6.k0;
-            }
-            canvas.drawRect(AndroidUtilities.dp(LocaleController.isRTL ? 0.0f : 64.0f), getMeasuredHeight() - 1, getWidth() - AndroidUtilities.dp(LocaleController.isRTL ? 64.0f : 0.0f), getMeasuredHeight(), V0);
+        int i10 = this.f;
+        ei0[] ei0VarArr = this.a;
+        ei0 ei0Var = ei0VarArr[i10];
+        int i11 = this.h;
+        ei0 ei0Var2 = i11 != -1 ? ei0VarArr[i11] : null;
+        float f7 = 0.0f;
+        float f10 = ei0Var2 != null ? this.n : 0.0f;
+        float f11 = 1.0f;
+        if (f10 > 0.25f && f10 < 0.75f) {
+            f11 = (f10 <= 0.25f || f10 >= 0.5f) ? m5.y(0.75f, f10, 0.25f, 1.0f) : (0.5f - f10) / 0.25f;
         }
+        float L = (org.telegram.messenger.i0.L(3.0f) * f11) + (Math.min((ei0Var.getWidth() - ei0Var.getPaddingLeft()) - ei0Var.getPaddingRight(), (ei0Var.getHeight() - ei0Var.getPaddingTop()) - ei0Var.getPaddingBottom()) / 2.0f) + org.telegram.messenger.i0.L(3.0f);
+        float width = (ei0Var.getWidth() / 2.0f) + ei0Var.getX();
+        int i12 = this.f;
+        int i13 = this.d;
+        float L2 = (i12 == i13 + 1 ? org.telegram.messenger.i0.L(4.0f) : 0.0f) + width;
+        float width2 = ei0Var2 != null ? (ei0Var2.getWidth() / 2.0f) + ei0Var2.getX() : 0.0f;
+        int i14 = this.h;
+        if (i14 != -1 && i14 == i13 + 1) {
+            f7 = org.telegram.messenger.i0.L(4.0f);
+        }
+        canvas.drawCircle(org.telegram.messenger.i0.T1(L2, width2 + f7, f10), (ei0Var.getHeight() / 2.0f) + ei0Var.getY(), L, this.c);
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f) + (this.r ? 1 : 0), TLObject.FLAG_30));
+    public void setDelegate(x1 x1Var) {
+        this.b = x1Var;
     }
 
-    public void setReorder(boolean z10) {
-        this.e.animate().alpha((!z10 || this.h) ? 0.0f : 1.0f).start();
+    public void setSelectedIndex(int i10) {
+        this.f = i10;
+        if (this.e) {
+            this.e = false;
+            org.telegram.messenger.i0.Q3(this.a[this.d + 1], R.drawable.msg_add);
+        }
+        invalidate();
     }
 }

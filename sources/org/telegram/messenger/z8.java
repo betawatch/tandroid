@@ -1,37 +1,48 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.tgnet.TLRPC;
+import android.util.SparseIntArray;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class z8 implements Runnable {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ MediaDataController b;
-    public final /* synthetic */ MessagesStorage.TopicKey c;
-    public final /* synthetic */ TLRPC.Message d;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ d9 b;
 
-    public /* synthetic */ z8(MediaDataController mediaDataController, MessagesStorage.TopicKey topicKey, TLRPC.Message message) {
-        this.b = mediaDataController;
-        this.c = topicKey;
-        this.d = message;
+    public /* synthetic */ z8(d9 d9Var, int i10) {
+        this.a = i10;
+        this.b = d9Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$loadBotKeyboard$196(this.d, this.c);
+                d9 d9Var = this.b;
+                d9Var.L = w0.b.getSharedPreferences("uploadinfo", 0);
+                d9Var.i = w0.p();
+                if (v2.a) {
+                    f8.b("start upload on slow network = " + d9Var.i);
+                }
+                int i10 = d9Var.i ? 1 : 8;
+                for (int i11 = 0; i11 < i10; i11++) {
+                    d9Var.d();
+                }
+                d9Var.e();
+                break;
+            case 1:
+                d9 d9Var2 = this.b;
+                SparseIntArray sparseIntArray = d9Var2.p;
+                for (int i12 = 0; i12 < sparseIntArray.size(); i12++) {
+                    ConnectionsManager.getInstance(d9Var2.a).cancelRequest(sparseIntArray.valueAt(i12), true);
+                }
+                break;
+            case 2:
+                this.b.q.clear();
                 break;
             default:
-                this.b.lambda$putBotKeyboard$201(this.c, this.d);
+                this.b.e();
                 break;
         }
-    }
-
-    public /* synthetic */ z8(MediaDataController mediaDataController, TLRPC.Message message, MessagesStorage.TopicKey topicKey) {
-        this.b = mediaDataController;
-        this.d = message;
-        this.c = topicKey;
     }
 }

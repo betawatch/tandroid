@@ -1,19 +1,18 @@
 package org.telegram.ui;
 
 import android.webkit.JavascriptInterface;
-import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
 class PaymentFormActivity$TelegramWebviewProxy {
-    public final /* synthetic */ ro0 a;
+    public final /* synthetic */ sm0 a;
 
-    public PaymentFormActivity$TelegramWebviewProxy(ro0 ro0Var) {
-        this.a = ro0Var;
+    public PaymentFormActivity$TelegramWebviewProxy(sm0 sm0Var) {
+        this.a = sm0Var;
     }
 
     @JavascriptInterface
     public void postEvent(String str, String str2) {
-        AndroidUtilities.runOnUIThread(new q1(this, str, str2, 1));
+        org.telegram.messenger.i0.g3(new p1(this, str, str2, 1));
     }
 }

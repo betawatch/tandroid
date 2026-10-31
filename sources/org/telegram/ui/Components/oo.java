@@ -1,44 +1,41 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class oo extends AnimatorListenerAdapter {
+public final /* synthetic */ class oo implements org.telegram.messenger.q20 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ po b;
+    public final /* synthetic */ dp b;
 
-    public /* synthetic */ oo(po poVar, int i10) {
+    public /* synthetic */ oo(dp dpVar, int i10) {
         this.a = i10;
-        this.b = poVar;
+        this.b = dpVar;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationCancel(Animator animator) {
+    @Override // org.telegram.messenger.q20
+    public final void a(Object obj) {
         switch (this.a) {
             case 0:
-                this.b.Q = null;
+                dp dpVar = this.b;
+                dpVar.V1 = (TL_stories.TL_premium_boostsStatus) obj;
+                dpVar.U1 = true;
+                dpVar.Z0(true);
+                dpVar.T1 = false;
                 break;
             default:
-                super.onAnimationCancel(animator);
-                break;
-        }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                po poVar = this.b;
-                if (poVar.Q == animator) {
-                    poVar.getSubtitleTextView().setVisibility(4);
-                    poVar.Q = null;
+                org.telegram.messenger.h3 h3Var = (org.telegram.messenger.h3) obj;
+                dp dpVar2 = this.b;
+                if (dpVar2.getContext() != null) {
+                    org.telegram.ui.un unVar = dpVar2.r1;
+                    kg.q0 q0Var = new kg.q0(22, dpVar2.a, dpVar2.getContext(), unVar, dpVar2.I0);
+                    q0Var.A1(h3Var);
+                    q0Var.z1(dpVar2.V1, true);
+                    q0Var.B1(dpVar2.r1.a());
+                    q0Var.I2 = new mo(dpVar2, 2);
+                    q0Var.show();
                     break;
                 }
-                break;
-            default:
-                this.b.Q = null;
                 break;
         }
     }

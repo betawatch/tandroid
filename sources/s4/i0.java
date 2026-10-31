@@ -1,41 +1,21 @@
 package s4;
 
-import android.database.Observable;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class i0 extends Observable {
-    public final boolean a() {
-        return !((Observable) this).mObservers.isEmpty();
+public abstract class i0 {
+    public abstract void a();
+
+    public void c(int i10, int i11, Object obj) {
+        b(i10, i11);
     }
 
-    public final void b() {
-        for (int size = ((Observable) this).mObservers.size() - 1; size >= 0; size--) {
-            ((j0) ((Observable) this).mObservers.get(size)).a();
-        }
+    public abstract void d(int i10, int i11);
+
+    public abstract void f(int i10, int i11);
+
+    public void b(int i10, int i11) {
     }
 
-    public final void c(int i10, int i11) {
-        for (int size = ((Observable) this).mObservers.size() - 1; size >= 0; size--) {
-            ((j0) ((Observable) this).mObservers.get(size)).e(i10, i11);
-        }
-    }
-
-    public final void d(int i10, int i11, Object obj) {
-        for (int size = ((Observable) this).mObservers.size() - 1; size >= 0; size--) {
-            ((j0) ((Observable) this).mObservers.get(size)).c(i10, i11, obj);
-        }
-    }
-
-    public final void e(int i10, int i11) {
-        for (int size = ((Observable) this).mObservers.size() - 1; size >= 0; size--) {
-            ((j0) ((Observable) this).mObservers.get(size)).d(i10, i11);
-        }
-    }
-
-    public final void f(int i10, int i11) {
-        for (int size = ((Observable) this).mObservers.size() - 1; size >= 0; size--) {
-            ((j0) ((Observable) this).mObservers.get(size)).f(i10, i11);
-        }
+    public void e(int i10, int i11) {
     }
 }

@@ -1,16 +1,16 @@
 package com.google.android.recaptcha.internal;
 
-import a8.jd;
-import ce.c0;
+import cd.c;
+import dd.a;
+import ed.j;
 import java.util.Timer;
-import ld.c;
-import md.a;
-import nd.i;
-import ud.p;
+import l9.b;
+import ld.p;
+import td.c0;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-final class zzgv extends i implements p {
+final class zzgv extends j implements p {
     final /* synthetic */ zzgz zza;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -19,22 +19,22 @@ final class zzgv extends i implements p {
         this.zza = zzgzVar;
     }
 
-    @Override // nd.a
+    @Override // ed.a
     public final c create(Object obj, c cVar) {
         return new zzgv(this.zza, cVar);
     }
 
-    @Override // ud.p
+    @Override // ld.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzgv) create((c0) obj, (c) obj2)).invokeSuspend(jd.i.a);
+        return ((zzgv) create((c0) obj, (c) obj2)).invokeSuspend(ad.j.a);
     }
 
-    @Override // nd.a
+    @Override // ed.a
     public final Object invokeSuspend(Object obj) {
         zzgo zzgoVar;
         Timer timer;
         a aVar = a.a;
-        jd.b(obj);
+        b.b(obj);
         zzgz zzgzVar = this.zza;
         synchronized (zzgs.class) {
             try {
@@ -51,6 +51,6 @@ final class zzgv extends i implements p {
                 throw th2;
             }
         }
-        return jd.i.a;
+        return ad.j.a;
     }
 }

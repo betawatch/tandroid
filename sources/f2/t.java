@@ -1,9 +1,9 @@
 package f2;
 
-import a8.yb;
 import java.nio.ByteBuffer;
+import v7.t6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class t {
     public final boolean a;
@@ -25,146 +25,146 @@ public final class t {
     public t(s sVar) {
         int i10 = sVar.a;
         ByteBuffer byteBuffer = sVar.b;
-        yb.g(i10 == 1);
+        t6.f(i10 == 1);
         int remaining = byteBuffer.remaining();
         byte[] bArr = new byte[remaining];
         byteBuffer.asReadOnlyBuffer().get(bArr);
         a4.g gVar = new a4.g(bArr, remaining);
-        this.g = gVar.g(3);
-        gVar.n();
-        boolean f7 = gVar.f();
-        this.a = f7;
-        if (f7) {
-            gVar.g(5);
+        this.g = gVar.i(3);
+        gVar.e0();
+        boolean h = gVar.h();
+        this.a = h;
+        if (h) {
+            gVar.i(5);
             this.b = false;
             this.h = false;
         } else {
-            if (gVar.f()) {
-                gVar.o(64);
-                if (gVar.f()) {
+            if (gVar.h()) {
+                gVar.f0(64);
+                if (gVar.h()) {
                     int i11 = 0;
-                    while (!gVar.f()) {
+                    while (!gVar.h()) {
                         i11++;
                     }
                     if (i11 < 32) {
-                        gVar.o(i11);
+                        gVar.f0(i11);
                     }
                 }
-                boolean f10 = gVar.f();
-                this.b = f10;
-                if (f10) {
-                    gVar.o(47);
+                boolean h10 = gVar.h();
+                this.b = h10;
+                if (h10) {
+                    gVar.f0(47);
                 }
             } else {
                 this.b = false;
             }
-            this.h = gVar.f();
-            int g7 = gVar.g(5);
-            for (int i12 = 0; i12 <= g7; i12++) {
-                gVar.o(12);
-                if (i12 == 0) {
-                    if (gVar.g(5) > 7) {
-                        gVar.f();
+            this.h = gVar.h();
+            int i12 = gVar.i(5);
+            for (int i13 = 0; i13 <= i12; i13++) {
+                gVar.f0(12);
+                if (i13 == 0) {
+                    if (gVar.i(5) > 7) {
+                        gVar.h();
                     }
-                } else if (gVar.g(5) > 7) {
-                    gVar.n();
+                } else if (gVar.i(5) > 7) {
+                    gVar.e0();
                 }
                 if (this.b) {
-                    gVar.n();
+                    gVar.e0();
                 }
-                if (this.h && gVar.f()) {
-                    if (i12 == 0) {
-                        gVar.g(4);
+                if (this.h && gVar.h()) {
+                    if (i13 == 0) {
+                        gVar.i(4);
                     } else {
-                        gVar.o(4);
+                        gVar.f0(4);
                     }
                 }
             }
         }
-        int g10 = gVar.g(4);
-        int g11 = gVar.g(4);
-        gVar.o(g10 + 1);
-        gVar.o(g11 + 1);
+        int i14 = gVar.i(4);
+        int i15 = gVar.i(4);
+        gVar.f0(i14 + 1);
+        gVar.f0(i15 + 1);
         if (this.a) {
             this.c = false;
         } else {
-            this.c = gVar.f();
+            this.c = gVar.h();
         }
         if (this.c) {
-            gVar.o(4);
-            gVar.o(3);
+            gVar.f0(4);
+            gVar.f0(3);
         }
-        gVar.o(3);
+        gVar.f0(3);
         if (this.a) {
             this.e = true;
             this.d = true;
             this.f = 0;
         } else {
-            gVar.o(4);
-            boolean f11 = gVar.f();
-            if (f11) {
-                gVar.o(2);
+            gVar.f0(4);
+            boolean h11 = gVar.h();
+            if (h11) {
+                gVar.f0(2);
             }
-            if (gVar.f()) {
+            if (gVar.h()) {
                 this.d = true;
             } else {
-                this.d = gVar.f();
+                this.d = gVar.h();
             }
             if (!this.d) {
                 this.e = true;
-            } else if (gVar.f()) {
+            } else if (gVar.h()) {
                 this.e = true;
             } else {
-                this.e = gVar.f();
+                this.e = gVar.h();
             }
-            if (f11) {
-                this.f = gVar.g(3) + 1;
+            if (h11) {
+                this.f = gVar.i(3) + 1;
             } else {
                 this.f = 0;
             }
         }
-        gVar.o(3);
-        boolean f12 = gVar.f();
-        if (this.g == 2 && f12) {
-            this.i = gVar.f();
+        gVar.f0(3);
+        boolean h12 = gVar.h();
+        if (this.g == 2 && h12) {
+            this.i = gVar.h();
         } else {
             this.i = false;
         }
         if (this.g != 1) {
-            this.j = gVar.f();
+            this.j = gVar.h();
         } else {
             this.j = false;
         }
-        if (gVar.f()) {
-            this.m = (byte) gVar.g(8);
-            this.n = (byte) gVar.g(8);
-            this.o = (byte) gVar.g(8);
+        if (gVar.h()) {
+            this.m = (byte) gVar.i(8);
+            this.n = (byte) gVar.i(8);
+            this.o = (byte) gVar.i(8);
         } else {
             this.m = (byte) 0;
             this.n = (byte) 0;
             this.o = (byte) 0;
         }
         if (this.j) {
-            gVar.n();
+            gVar.e0();
             this.k = false;
             this.l = false;
         } else if (this.m == 1 && this.n == 13 && this.o == 0) {
             this.k = false;
             this.l = false;
         } else {
-            gVar.n();
-            int i13 = this.g;
-            if (i13 == 0) {
+            gVar.e0();
+            int i16 = this.g;
+            if (i16 == 0) {
                 this.k = true;
                 this.l = true;
-            } else if (i13 == 1) {
+            } else if (i16 == 1) {
                 this.k = false;
                 this.l = false;
             } else if (this.i) {
-                boolean f13 = gVar.f();
-                this.k = f13;
-                if (f13) {
-                    this.l = gVar.f();
+                boolean h13 = gVar.h();
+                this.k = h13;
+                if (h13) {
+                    this.l = gVar.h();
                 } else {
                     this.l = false;
                 }
@@ -173,9 +173,9 @@ public final class t {
                 this.l = false;
             }
             if (this.k && this.l) {
-                gVar.g(2);
+                gVar.i(2);
             }
         }
-        gVar.n();
+        gVar.e0();
     }
 }

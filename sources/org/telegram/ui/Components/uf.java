@@ -1,49 +1,45 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import org.telegram.messenger.SharedConfig;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class uf extends AnimatorListenerAdapter {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ ChatActivityEnterView b;
+public final /* synthetic */ class uf implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ wf b;
+    public final /* synthetic */ vh.p2 c;
 
-    public uf(ChatActivityEnterView chatActivityEnterView, boolean z10) {
-        this.b = chatActivityEnterView;
-        this.a = z10;
+    public /* synthetic */ uf(wf wfVar, vh.p2 p2Var, int i10) {
+        this.a = i10;
+        this.b = wfVar;
+        this.c = p2Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        ChatActivityEnterView chatActivityEnterView = this.b;
-        if (animator.equals(chatActivityEnterView.t2)) {
-            chatActivityEnterView.t2 = null;
-        }
-        chatActivityEnterView.t0();
-        chatActivityEnterView.k1.setAlpha(1.0f);
-        chatActivityEnterView.k1.setTranslationX(0.0f);
-        sg sgVar = chatActivityEnterView.O1;
-        if (sgVar != null && SharedConfig.lockRecordAudioVideoHint < 3) {
-            ChatActivityEnterView chatActivityEnterView2 = sgVar.b0;
-            chatActivityEnterView2.e4 = true;
-            chatActivityEnterView2.f4 = System.currentTimeMillis();
-        }
-        pf pfVar = chatActivityEnterView.E0;
-        if (pfVar != null) {
-            pfVar.setAlpha(0.0f);
-        }
-        if (this.a) {
-            hl0 hl0Var = chatActivityEnterView.h1;
-            if (hl0Var != null) {
-                hl0Var.setVisibility(8);
-            }
-            ke keVar = chatActivityEnterView.e1;
-            if (keVar != null) {
-                keVar.setVisibility(8);
-            }
-            chatActivityEnterView.t0();
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                wf wfVar = this.b;
+                vh.p2 p2Var = this.c;
+                wfVar.removeView(p2Var);
+                if (wfVar.b == p2Var) {
+                    wfVar.b = null;
+                    break;
+                }
+                break;
+            case 1:
+                this.b.removeView(this.c);
+                break;
+            case 2:
+                this.b.removeView(this.c);
+                break;
+            default:
+                wf wfVar2 = this.b;
+                vh.p2 p2Var2 = this.c;
+                wfVar2.removeView(p2Var2);
+                if (wfVar2.a == p2Var2) {
+                    wfVar2.a = null;
+                    break;
+                }
+                break;
         }
     }
 }

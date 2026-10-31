@@ -1,39 +1,30 @@
 package ei;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.messenger.TranslateController;
-import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.Components.k71;
-import org.telegram.ui.Components.nm0;
-import org.telegram.ui.Components.s71;
-import org.telegram.ui.Components.t61;
-import org.telegram.ui.Components.u61;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes4.dex */
-public final class s extends t61 {
-    public static final /* synthetic */ int a = 0;
+public final class s {
+    public final boolean a;
+    public final boolean b;
 
-    static {
-        t61.setup(new s());
+    public s(boolean z10, boolean z11) {
+        this.a = z10;
+        this.b = z11;
     }
 
-    @Override // org.telegram.ui.Components.t61
-    public final void bindView(View view, u61 u61Var, boolean z10, k71 k71Var, s71 s71Var) {
-        t tVar = (t) view;
-        TranslateController.Language language = (TranslateController.Language) u61Var.G;
-        tVar.a.setText(language.displayName);
-        tVar.b.setText(language.ownDisplayName);
-        if (tVar.c != z10) {
-            tVar.invalidate();
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        tVar.c = z10;
-        tVar.setWillNotDraw(!z10);
+        if (!(obj instanceof s)) {
+            return false;
+        }
+        s sVar = (s) obj;
+        return this.a == sVar.a && this.b == sVar.b;
     }
 
-    @Override // org.telegram.ui.Components.t61
-    public final View createView(Context context, nm0 nm0Var, int i10, int i11, u6 u6Var) {
-        return new t(context);
+    public final int hashCode() {
+        return Objects.hash(Boolean.valueOf(this.a), Boolean.valueOf(this.b));
     }
 }

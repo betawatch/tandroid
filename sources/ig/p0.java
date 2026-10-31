@@ -1,45 +1,30 @@
 package ig;
 
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class p0 {
-    public final int a;
-    public final int b;
-    public final String c;
-    public final int d;
-    public final TLRPC.MessagesFilter e;
-    public TLObject f;
-    public n0 g;
-    public boolean h;
+public final class p0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ q0 b;
 
-    public p0(int i10, int i11, String str) {
-        this.h = true;
+    public /* synthetic */ p0(q0 q0Var, int i10) {
         this.a = i10;
-        this.c = str;
-        this.e = null;
-        this.d = i11;
+        this.b = q0Var;
     }
 
-    public final boolean a() {
-        int i10 = this.d;
-        return i10 == 0 || i10 == 1 || i10 == 2 || i10 == 3 || i10 == 5;
-    }
-
-    public final boolean b(p0 p0Var) {
-        if (this.d == p0Var.d) {
-            return true;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                q0 q0Var = this.b;
+                q0Var.K = null;
+                q0Var.f.f(new gg.c(this, 6));
+                break;
+            default:
+                this.b.f.f(new gg.c(this, 7));
+                break;
         }
-        return a() && p0Var.a();
-    }
-
-    public p0(int i10, int i11, TLRPC.MessagesFilter messagesFilter, int i12) {
-        this.h = true;
-        this.a = i10;
-        this.b = i11;
-        this.e = messagesFilter;
-        this.d = i12;
     }
 }

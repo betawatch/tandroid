@@ -1,33 +1,31 @@
 package org.telegram.tgnet;
 
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.r20;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class v implements Utilities.Callback {
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes.dex */
+public final /* synthetic */ class v implements r20 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ OutputSerializedData b;
+    public final /* synthetic */ InputSerializedData b;
 
-    public /* synthetic */ v(OutputSerializedData outputSerializedData, int i10) {
+    public /* synthetic */ v(InputSerializedData inputSerializedData, int i10) {
         this.a = i10;
-        this.b = outputSerializedData;
+        this.b = inputSerializedData;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        switch (this.a) {
+    @Override // org.telegram.messenger.r20
+    public final Object a(Object obj) {
+        int i10 = this.a;
+        boolean booleanValue = ((Boolean) obj).booleanValue();
+        switch (i10) {
             case 0:
-                this.b.writeInt64(((Long) obj).longValue());
-                break;
+                return Long.valueOf(this.b.readInt64(booleanValue));
             case 1:
-                this.b.writeInt32(((Integer) obj).intValue());
-                break;
+                return Integer.valueOf(this.b.readInt32(booleanValue));
             case 2:
-                this.b.writeByteArray((byte[]) obj);
-                break;
+                return this.b.readString(booleanValue);
             default:
-                this.b.writeString((String) obj);
-                break;
+                return this.b.readByteArray(booleanValue);
         }
     }
 }

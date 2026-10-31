@@ -2,14 +2,14 @@ package z3;
 
 import b2.x;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public interface k {
-    public static final sb.b D = new sb.b(28);
+    public static final hb.a C = new hb.a(29);
 
-    int B0(x xVar);
+    boolean F(x xVar);
 
-    m f0(x xVar);
+    m m(x xVar);
 
-    boolean i1(x xVar);
+    int y(x xVar);
 }

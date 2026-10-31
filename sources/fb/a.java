@@ -1,9 +1,23 @@
 package fb;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes.dex */
-public interface a {
-    boolean shouldSkipClass(Class cls);
+import n6.l;
 
-    boolean shouldSkipField(b bVar);
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes.dex */
+public final class a extends Exception {
+    public final int a;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public a(String str, int i10) {
+        super(str);
+        l.f(str, "Provided message must not be empty.");
+        this.a = i10;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public a(String str, Throwable th2) {
+        super(str, th2);
+        l.f(str, "Provided message must not be empty.");
+        this.a = 13;
+    }
 }

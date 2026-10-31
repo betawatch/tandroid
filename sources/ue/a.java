@@ -1,104 +1,47 @@
 package ue;
 
-import java.util.Hashtable;
-import java.util.StringTokenizer;
-import li.e3;
-import ti.e;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import oa.d;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class a {
-    public static final Hashtable b;
-    public static final Object[] c;
-    public static /* synthetic */ Class d;
-    public final ClassLoader a;
+public abstract class a {
+    public static final Pattern a = Pattern.compile("[\\\\&]");
+    public static final Pattern b = Pattern.compile("\\\\[!\"#$%&'()*+,./:;<=>?@\\[\\\\\\]^_`{|}~-]|&(?:#x[a-f0-9]{1,6}|#[0-9]{1,7}|[a-z][a-z0-9]{1,31});", 2);
+    public static final Pattern c;
+    public static final d d;
 
     static {
-        Hashtable hashtable = new Hashtable();
-        b = hashtable;
-        hashtable.put("void", Void.TYPE);
-        hashtable.put("boolean", Boolean.TYPE);
-        hashtable.put("byte", Byte.TYPE);
-        hashtable.put("char", Character.TYPE);
-        hashtable.put("short", Short.TYPE);
-        hashtable.put("int", Integer.TYPE);
-        hashtable.put("long", Long.TYPE);
-        hashtable.put("float", Float.TYPE);
-        hashtable.put("double", Double.TYPE);
-        c = new Object[0];
+        Pattern.compile("(%[a-fA-F0-9]{0,2}|[^:/?#@!$&'()*+,;=a-zA-Z0-9\\-._~])");
+        c = Pattern.compile("[ \t\r\n]+");
+        d = new d(22);
     }
 
-    public a(Class cls, String str) {
-        this.a = cls.getClassLoader();
-    }
-
-    public static Class a(ClassLoader classLoader, String str) {
-        if (str.equals("*")) {
-            return null;
+    public static String a(String str) {
+        if (!a.matcher(str).find()) {
+            return str;
         }
-        Class cls = (Class) b.get(str);
-        if (cls != null) {
-            return cls;
+        Matcher matcher = b.matcher(str);
+        if (!matcher.find()) {
+            return str;
         }
-        try {
-            return classLoader == null ? Class.forName(str) : Class.forName(str, false, classLoader);
-        } catch (ClassNotFoundException unused) {
-            Class<?> cls2 = d;
-            if (cls2 == null) {
-                try {
-                    cls2 = Class.forName("java.lang.ClassNotFoundException");
-                    d = cls2;
-                } catch (ClassNotFoundException e) {
-                    throw new NoClassDefFoundError(e.getMessage());
-                }
+        StringBuilder sb2 = new StringBuilder(str.length() + 16);
+        int i10 = 0;
+        do {
+            sb2.append((CharSequence) str, i10, matcher.start());
+            String group = matcher.group();
+            d.getClass();
+            if (group.charAt(0) == '\\') {
+                sb2.append((CharSequence) group, 1, group.length());
+            } else {
+                sb2.append(b.a(group));
             }
-            return cls2;
+            i10 = matcher.end();
+        } while (matcher.find());
+        if (i10 != str.length()) {
+            sb2.append((CharSequence) str, i10, str.length());
         }
-    }
-
-    public static e b(e3 e3Var, Object obj, Object obj2) {
-        return new e(e3Var, obj, obj2, c);
-    }
-
-    public static e c(e3 e3Var, Object obj, Object obj2, Object obj3) {
-        return new e(e3Var, obj, obj2, new Object[]{obj3});
-    }
-
-    public final s4.b d(String str, String str2, String str3, String str4, String str5) {
-        int parseInt = Integer.parseInt("1", 16);
-        ClassLoader classLoader = this.a;
-        Class a2 = a(classLoader, str2);
-        StringTokenizer stringTokenizer = new StringTokenizer(str3, ":");
-        int countTokens = stringTokenizer.countTokens();
-        Class[] clsArr = new Class[countTokens];
-        for (int i10 = 0; i10 < countTokens; i10++) {
-            clsArr[i10] = a(classLoader, stringTokenizer.nextToken());
-        }
-        StringTokenizer stringTokenizer2 = new StringTokenizer(str4, ":");
-        int countTokens2 = stringTokenizer2.countTokens();
-        String[] strArr = new String[countTokens2];
-        for (int i11 = 0; i11 < countTokens2; i11++) {
-            strArr[i11] = stringTokenizer2.nextToken();
-        }
-        StringTokenizer stringTokenizer3 = new StringTokenizer("", ":");
-        int countTokens3 = stringTokenizer3.countTokens();
-        Class[] clsArr2 = new Class[countTokens3];
-        for (int i12 = 0; i12 < countTokens3; i12++) {
-            clsArr2[i12] = a(classLoader, stringTokenizer3.nextToken());
-        }
-        Class a10 = a(classLoader, str5);
-        s4.b bVar = new s4.b(3);
-        bVar.b = parseInt;
-        bVar.c = str;
-        bVar.e = a2;
-        bVar.g = clsArr;
-        bVar.h = a10;
-        return bVar;
-    }
-
-    public final e3 e(s4.b bVar) {
-        e3 e3Var = new e3(21);
-        e3Var.b = bVar;
-        return e3Var;
+        return sb2.toString();
     }
 }

@@ -9,7 +9,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class k implements Iterable {
     public final Object a = new Object();
@@ -17,7 +17,16 @@ public final class k implements Iterable {
     public Set c = Collections.EMPTY_SET;
     public List d = Collections.EMPTY_LIST;
 
-    public final int h(n2.j jVar) {
+    @Override // java.lang.Iterable
+    public final Iterator iterator() {
+        Iterator it;
+        synchronized (this.a) {
+            it = this.d.iterator();
+        }
+        return it;
+    }
+
+    public final int l(n2.j jVar) {
         int intValue;
         synchronized (this.a) {
             try {
@@ -27,15 +36,6 @@ public final class k implements Iterable {
             }
         }
         return intValue;
-    }
-
-    @Override // java.lang.Iterable
-    public final Iterator iterator() {
-        Iterator it;
-        synchronized (this.a) {
-            it = this.d.iterator();
-        }
-        return it;
     }
 
     public final void m(n2.j jVar) {

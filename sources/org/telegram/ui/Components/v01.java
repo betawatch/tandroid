@@ -1,79 +1,108 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.Path;
-import android.graphics.RectF;
+import android.content.Context;
+import android.text.SpannableStringBuilder;
+import android.text.TextUtils;
+import android.text.style.ForegroundColorSpan;
 import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.ViewGroup;
+import java.util.ArrayList;
+import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class v01 extends FrameLayout {
-    public final x01 a;
-    public boolean b;
-    public boolean c;
-    public boolean d;
+public final class v01 extends sk0 {
+    public final Context c;
+    public int d;
+    public ArrayList e = new ArrayList();
+    public ArrayList f = new ArrayList();
+    public ji0 h;
+    public String n;
+    public final /* synthetic */ ThemeEditorView.EditorAlert r;
 
-    public v01(x01 x01Var, View view, boolean z10) {
-        super(x01Var.getContext());
-        this.a = x01Var;
-        setWillNotDraw(false);
-        if (!z10) {
-            setPadding(AndroidUtilities.dp(12.66f), AndroidUtilities.dp(9.33f), AndroidUtilities.dp(12.66f), AndroidUtilities.dp(9.33f));
-        }
-        addView(view, kb1.g(-1.0f, -1));
+    public v01(ThemeEditorView.EditorAlert editorAlert, Context context) {
+        this.r = editorAlert;
+        this.c = context;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        Canvas canvas2;
-        boolean z10 = this.c;
-        x01 x01Var = this.a;
-        if (z10 || this.d) {
-            canvas2 = canvas;
-            float dp = AndroidUtilities.dp(10.0f);
-            float[] fArr = x01Var.c;
-            boolean z11 = this.c;
-            float f7 = z11 ? dp : 0.0f;
-            fArr[1] = f7;
-            fArr[0] = f7;
-            float f10 = z11 ? dp : 0.0f;
-            fArr[3] = f10;
-            fArr[2] = f10;
-            boolean z12 = this.d;
-            float f11 = z12 ? dp : 0.0f;
-            fArr[5] = f11;
-            fArr[4] = f11;
-            if (!z12) {
-                dp = 0.0f;
+    public static CharSequence E(String str, String str2) {
+        if (TextUtils.isEmpty(str)) {
+            return "";
+        }
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
+        String trim = str.trim();
+        String lowerCase = trim.toLowerCase();
+        int i10 = 0;
+        while (true) {
+            int indexOf = lowerCase.indexOf(str2, i10);
+            if (indexOf == -1) {
+                break;
             }
-            fArr[7] = dp;
-            fArr[6] = dp;
-            x01Var.b.rewind();
-            RectF rectF = AndroidUtilities.rectTmp;
-            float f12 = x01Var.h;
-            rectF.set(f12, f12, getWidth() - x01Var.h, (x01Var.h * (this.d ? -1.0f : 1.0f)) + getHeight());
-            x01Var.b.addRoundRect(rectF, x01Var.c, Path.Direction.CW);
-            if (this.b) {
-                canvas2.drawPath(x01Var.b, x01Var.d);
+            int length = str2.length() + indexOf;
+            if (i10 != 0 && i10 != indexOf + 1) {
+                spannableStringBuilder.append((CharSequence) trim.substring(i10, indexOf));
+            } else if (i10 == 0 && indexOf != 0) {
+                spannableStringBuilder.append((CharSequence) trim.substring(0, indexOf));
             }
-            canvas2.drawPath(x01Var.b, x01Var.e);
+            String substring = trim.substring(indexOf, Math.min(trim.length(), length));
+            if (substring.startsWith(" ")) {
+                spannableStringBuilder.append((CharSequence) " ");
+            }
+            String trim2 = substring.trim();
+            int length2 = spannableStringBuilder.length();
+            spannableStringBuilder.append((CharSequence) trim2);
+            spannableStringBuilder.setSpan(new ForegroundColorSpan(-11697229), length2, trim2.length() + length2, 33);
+            i10 = length;
+        }
+        if (i10 != -1 && i10 < trim.length()) {
+            spannableStringBuilder.append((CharSequence) trim.substring(i10));
+        }
+        return spannableStringBuilder;
+    }
+
+    @Override // org.telegram.ui.Components.sk0
+    public final boolean D(s4.c1 c1Var) {
+        return true;
+    }
+
+    @Override // s4.g0
+    public final int b() {
+        if (this.e.isEmpty()) {
+            return 0;
+        }
+        return this.e.size() + 1;
+    }
+
+    @Override // s4.g0
+    public final int d(int i10) {
+        return i10 == 0 ? 1 : 0;
+    }
+
+    @Override // s4.g0
+    public final void t(s4.c1 c1Var, int i10) {
+        if (c1Var.f == 0) {
+            int i11 = i10 - 1;
+            org.telegram.ui.ActionBar.c7 c7Var = (org.telegram.ui.ActionBar.c7) ((ArrayList) this.e.get(i11)).get(0);
+            int c10 = c7Var.e == org.telegram.ui.ActionBar.t6.Be ? 0 : c7Var.c();
+            org.telegram.ui.Cells.w8 w8Var = (org.telegram.ui.Cells.w8) c1Var.a;
+            w8Var.a.setText((CharSequence) this.f.get(i11));
+            w8Var.b = c10;
+            w8Var.setWillNotDraw(c10 == 0);
+            w8Var.invalidate();
+        }
+    }
+
+    @Override // s4.g0
+    public final s4.c1 w(ViewGroup viewGroup, int i10) {
+        View w8Var;
+        Context context = this.c;
+        if (i10 != 0) {
+            w8Var = new View(context);
+            w8Var.setLayoutParams(new s4.o0(-1, org.telegram.messenger.i0.L(56.0f)));
         } else {
-            if (this.b) {
-                float f13 = x01Var.h;
-                canvas2 = canvas;
-                canvas2.drawRect(f13, f13, getWidth() + x01Var.h, getHeight() + x01Var.h, x01Var.d);
-            } else {
-                canvas2 = canvas;
-            }
-            float f14 = x01Var.h;
-            canvas2.drawRect(f14, f14, getWidth() - x01Var.h, getHeight() + x01Var.h, x01Var.e);
+            w8Var = new org.telegram.ui.Cells.w8(context);
+            w8Var.setLayoutParams(new s4.o0(-1, -2));
         }
-        super.onDraw(canvas2);
-    }
-
-    public void setFilled(boolean z10) {
-        this.b = z10;
+        return new ck0(w8Var);
     }
 }

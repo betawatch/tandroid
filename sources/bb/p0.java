@@ -1,6 +1,5 @@
 package bb;
 
-import a8.s9;
 import android.os.Bundle;
 import android.os.DeadObjectException;
 import android.os.Handler;
@@ -9,8 +8,9 @@ import android.os.Message;
 import android.os.Messenger;
 import android.util.Log;
 import java.util.ArrayList;
+import w7.q7;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class p0 extends Handler {
     public boolean a;
@@ -24,12 +24,12 @@ public final class p0 extends Handler {
 
     public final void a(Messenger messenger) {
         if (this.a) {
-            Object b10 = m9.h.c().b(m0.class);
+            Object b10 = l9.h.c().b(m0.class);
             kotlin.jvm.internal.i.d(b10, "Firebase.app[SessionGenerator::class.java]");
             c(messenger, ((m0) b10).b().a);
             return;
         }
-        Object b11 = m9.h.c().b(t.class);
+        Object b11 = l9.h.c().b(t.class);
         kotlin.jvm.internal.i.d(b11, "Firebase.app[SessionDatastore::class.java]");
         n nVar = (n) ((c0) ((t) b11)).c.get();
         String str = nVar != null ? nVar.a : null;
@@ -40,7 +40,7 @@ public final class p0 extends Handler {
     }
 
     public final void b() {
-        Object b10 = m9.h.c().b(m0.class);
+        Object b10 = l9.h.c().b(m0.class);
         kotlin.jvm.internal.i.d(b10, "Firebase.app[SessionGenerator::class.java]");
         m0 m0Var = (m0) b10;
         int i10 = m0Var.d + 1;
@@ -52,22 +52,22 @@ public final class p0 extends Handler {
         m0Var.e = new d0(i11, System.currentTimeMillis() * 1000, a2, str);
         m0Var.b();
         StringBuilder sb2 = new StringBuilder("Generated new session ");
-        Object b11 = m9.h.c().b(m0.class);
+        Object b11 = l9.h.c().b(m0.class);
         kotlin.jvm.internal.i.d(b11, "Firebase.app[SessionGenerator::class.java]");
         sb2.append(((m0) b11).b().a);
         Log.d("SessionLifecycleService", sb2.toString());
         StringBuilder sb3 = new StringBuilder("Broadcasting new session: ");
-        Object b12 = m9.h.c().b(m0.class);
+        Object b12 = l9.h.c().b(m0.class);
         kotlin.jvm.internal.i.d(b12, "Firebase.app[SessionGenerator::class.java]");
         sb3.append(((m0) b12).b());
         Log.d("SessionLifecycleService", sb3.toString());
-        Object b13 = m9.h.c().b(g0.class);
+        Object b13 = l9.h.c().b(g0.class);
         kotlin.jvm.internal.i.d(b13, "Firebase.app[SessionFirelogPublisher::class.java]");
-        Object b14 = m9.h.c().b(m0.class);
+        Object b14 = l9.h.c().b(m0.class);
         kotlin.jvm.internal.i.d(b14, "Firebase.app[SessionGenerator::class.java]");
         k0 k0Var = (k0) ((g0) b13);
-        ld.c cVar = null;
-        ce.f0.q(ce.f0.b(k0Var.e), new i0(k0Var, ((m0) b14).b(), null));
+        cd.c cVar = null;
+        td.e0.q(td.e0.b(k0Var.e), new i0(k0Var, ((m0) b14).b(), null));
         ArrayList arrayList = new ArrayList(this.c);
         int size = arrayList.size();
         int i12 = 0;
@@ -78,14 +78,14 @@ public final class p0 extends Handler {
             kotlin.jvm.internal.i.d(it, "it");
             a(it);
         }
-        Object b15 = m9.h.c().b(t.class);
+        Object b15 = l9.h.c().b(t.class);
         kotlin.jvm.internal.i.d(b15, "Firebase.app[SessionDatastore::class.java]");
-        Object b16 = m9.h.c().b(m0.class);
+        Object b16 = l9.h.c().b(m0.class);
         kotlin.jvm.internal.i.d(b16, "Firebase.app[SessionGenerator::class.java]");
         String sessionId = ((m0) b16).b().a;
         c0 c0Var = (c0) ((t) b15);
         kotlin.jvm.internal.i.e(sessionId, "sessionId");
-        ce.f0.q(ce.f0.b(c0Var.b), new l(c0Var, sessionId, cVar, 1));
+        td.e0.q(td.e0.b(c0Var.b), new l(c0Var, sessionId, cVar, 1));
     }
 
     public final void c(Messenger messenger, String str) {
@@ -105,11 +105,11 @@ public final class p0 extends Handler {
 
     /* JADX WARN: Code restructure failed: missing block: B:31:0x0124, code lost:
     
-        if (be.a.b(r9) == false) goto L44;
+        if (sd.a.b(r9) == false) goto L44;
      */
     /* JADX WARN: Code restructure failed: missing block: B:50:0x0153, code lost:
     
-        if (be.a.b(r9) == false) goto L44;
+        if (sd.a.b(r9) == false) goto L44;
      */
     @Override // android.os.Handler
     /*
@@ -147,15 +147,15 @@ public final class p0 extends Handler {
         if (this.a) {
             long when = msg.getWhen() - this.b;
             db.h.c.getClass();
-            Object b10 = m9.h.c().b(db.h.class);
+            Object b10 = l9.h.c().b(db.h.class);
             kotlin.jvm.internal.i.d(b10, "Firebase.app[SessionsSettings::class.java]");
             db.h hVar = (db.h) b10;
             Bundle bundle = (Bundle) hVar.a.b;
-            be.a aVar = null;
-            be.a aVar2 = bundle.containsKey("firebase_sessions_sessions_restart_timeout") ? new be.a(s9.a(bundle.getInt("firebase_sessions_sessions_restart_timeout"), be.c.d)) : null;
+            sd.a aVar = null;
+            sd.a aVar2 = bundle.containsKey("firebase_sessions_sessions_restart_timeout") ? new sd.a(q7.a(bundle.getInt("firebase_sessions_sessions_restart_timeout"), sd.c.d)) : null;
             if (aVar2 != null) {
                 a2 = aVar2.a;
-                int i11 = be.a.d;
+                int i11 = sd.a.d;
                 if (a2 > 0) {
                 }
             }
@@ -166,18 +166,18 @@ public final class p0 extends Handler {
             }
             Integer num = eVar.c;
             if (num != null) {
-                int i12 = be.a.d;
-                aVar = new be.a(s9.a(num.intValue(), be.c.d));
+                int i12 = sd.a.d;
+                aVar = new sd.a(q7.a(num.intValue(), sd.c.d));
             }
             if (aVar != null) {
                 a2 = aVar.a;
-                int i13 = be.a.d;
+                int i13 = sd.a.d;
                 if (a2 > 0) {
                 }
             }
-            int i14 = be.a.d;
-            a2 = s9.a(30, be.c.e);
-            if (when > (((((int) a2) & 1) != 1 || be.a.b(a2)) ? be.a.c(a2, be.c.c) : a2 >> 1)) {
+            int i14 = sd.a.d;
+            a2 = q7.a(30, sd.c.e);
+            if (when > (((((int) a2) & 1) != 1 || sd.a.b(a2)) ? sd.a.c(a2, sd.c.c) : a2 >> 1)) {
                 Log.d("SessionLifecycleService", "Session too long in background. Creating new session.");
                 b();
             }

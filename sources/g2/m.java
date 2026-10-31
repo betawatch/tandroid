@@ -1,90 +1,103 @@
 package g2;
 
-import a8.yb;
 import android.net.Uri;
-import b2.q0;
-import j$.util.DesugarCollections;
-import java.util.HashMap;
+import b2.v0;
+import b2.w0;
+import c3.k0;
+import e2.l0;
+import java.math.RoundingMode;
 import java.util.Map;
+import v7.t6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class m {
-    public static final /* synthetic */ int i = 0;
-    public final Uri a;
-    public final int b;
-    public final byte[] c;
-    public final Map d;
-    public final long e;
-    public final long f;
-    public final String g;
-    public final int h;
+public final class m implements k4.b {
+    public int a;
+    public long b;
+    public int c;
+    public long d;
+    public Object e;
+    public Object f;
+    public Object g;
+    public Object h;
 
-    static {
-        q0.a("media3.datasource");
-    }
-
-    public m(Uri uri, int i10, byte[] bArr, Map map, long j10, long j11, String str, int i11) {
-        yb.g(j10 >= 0);
-        yb.g(j10 >= 0);
-        yb.g(j11 > 0 || j11 == -1);
-        uri.getClass();
-        this.a = uri;
-        this.b = i10;
-        this.c = (bArr == null || bArr.length == 0) ? null : bArr;
-        this.d = DesugarCollections.unmodifiableMap(new HashMap(map));
-        this.e = j10;
-        this.f = j11;
-        this.g = str;
-        this.h = i11;
-    }
-
-    public final l a() {
-        l lVar = new l();
-        lVar.e = this.a;
-        lVar.a = this.b;
-        lVar.f = this.c;
-        lVar.g = this.d;
-        lVar.b = this.e;
-        lVar.d = this.f;
-        lVar.h = this.g;
-        lVar.c = this.h;
-        return lVar;
-    }
-
-    public final m b(long j10) {
-        long j11 = this.f;
-        long j12 = j11 != -1 ? j11 - j10 : -1L;
-        if (j10 == 0 && j11 == j12) {
-            return this;
+    public m(c3.q qVar, k0 k0Var, f2.u uVar, String str, int i10) {
+        this.e = qVar;
+        this.f = k0Var;
+        this.g = uVar;
+        int i11 = uVar.a;
+        int i12 = uVar.b;
+        int i13 = (uVar.d * i11) / 8;
+        int i14 = uVar.c;
+        if (i14 != i13) {
+            throw w0.a(null, "Expected block size: " + i13 + "; got: " + i14);
         }
-        return new m(this.a, this.b, this.c, this.d, this.e + j10, j12, this.g, this.h);
+        int i15 = i12 * i13;
+        int i16 = i15 * 8;
+        int max = Math.max(i13, i15 / 10);
+        this.a = max;
+        b2.w wVar = new b2.w();
+        wVar.q = v0.n("audio/wav");
+        wVar.r = v0.n(str);
+        wVar.h = i16;
+        wVar.i = i16;
+        wVar.s = max;
+        wVar.J = i11;
+        wVar.K = i12;
+        wVar.L = i10;
+        this.h = new b2.x(wVar);
     }
 
-    public final String toString() {
-        String str;
-        StringBuilder sb2 = new StringBuilder("DataSpec[");
-        int i10 = this.b;
-        if (i10 == 1) {
-            str = "GET";
-        } else if (i10 == 2) {
-            str = "POST";
-        } else {
-            if (i10 != 3) {
-                throw new IllegalStateException();
+    @Override // k4.b
+    public void a(long j10) {
+        this.b = j10;
+        this.c = 0;
+        this.d = 0L;
+    }
+
+    @Override // k4.b
+    public boolean b(c3.p pVar, long j10) {
+        int i10;
+        int i11;
+        long j11 = j10;
+        while (j11 > 0 && (i10 = this.c) < (i11 = this.a)) {
+            int a2 = ((k0) this.f).a(pVar, (int) Math.min(i11 - i10, j11), true);
+            if (a2 == -1) {
+                j11 = 0;
+            } else {
+                this.c += a2;
+                j11 -= a2;
             }
-            str = "HEAD";
         }
-        sb2.append(str);
-        sb2.append(" ");
-        sb2.append(this.a);
-        sb2.append(", ");
-        sb2.append(this.e);
-        sb2.append(", ");
-        sb2.append(this.f);
-        sb2.append(", ");
-        sb2.append(this.g);
-        sb2.append(", ");
-        return a1.g.n(this.h, "]", sb2);
+        f2.u uVar = (f2.u) this.g;
+        int i12 = uVar.c;
+        int i13 = this.c / i12;
+        if (i13 > 0) {
+            long j12 = this.b;
+            long j13 = this.d;
+            long j14 = uVar.b;
+            String str = l0.a;
+            long a02 = j12 + l0.a0(j13, 1000000L, j14, RoundingMode.DOWN);
+            int i14 = i13 * i12;
+            int i15 = this.c - i14;
+            ((k0) this.f).c(a02, 1, i14, i15, null);
+            this.d += i13;
+            this.c = i15;
+        }
+        return j11 <= 0;
+    }
+
+    @Override // k4.b
+    public void c(int i10, long j10) {
+        k4.f fVar = new k4.f((f2.u) this.g, 1, i10, j10);
+        ((c3.q) this.e).G1(fVar);
+        k0 k0Var = (k0) this.f;
+        k0Var.b((b2.x) this.h);
+        k0Var.e(fVar.e);
+    }
+
+    public n d() {
+        t6.l((Uri) this.e, "The uri must be set.");
+        return new n((Uri) this.e, this.a, (byte[]) this.f, (Map) this.g, this.b, this.d, (String) this.h, this.c);
     }
 }

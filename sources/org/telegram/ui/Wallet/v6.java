@@ -1,36 +1,28 @@
 package org.telegram.ui.Wallet;
 
-import org.telegram.messenger.Utilities;
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class v6 implements o1.f {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class v6 implements Runnable {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ WalletEngine2 b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ Utilities.Callback d;
-
-    public /* synthetic */ v6(WalletEngine2 walletEngine2, String str, Utilities.Callback callback) {
-        this.b = walletEngine2;
-        this.c = str;
-        this.d = callback;
+    public /* synthetic */ v6(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // o1.f
+    public final void a(o1.j jVar, boolean z10, float f7, float f10) {
         switch (this.a) {
             case 0:
-                this.b.lambda$previewSignMessage$7(this.d, this.c);
+                a7.b((a7) this.b, z10, f7);
                 break;
             default:
-                this.b.lambda$getTransactionByHash$39(this.c, this.d);
+                r9 r9Var = (r9) this.b;
+                r9Var.a0 = null;
+                r9Var.b0 = 1.0f;
+                r9Var.F0();
                 break;
         }
-    }
-
-    public /* synthetic */ v6(WalletEngine2 walletEngine2, Utilities.Callback callback, String str) {
-        this.b = walletEngine2;
-        this.d = callback;
-        this.c = str;
     }
 }

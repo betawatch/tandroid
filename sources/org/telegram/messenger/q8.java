@@ -1,131 +1,36 @@
 package org.telegram.messenger;
 
 import java.util.ArrayList;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.messenger.TelegramMediaSession;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.support.LongSparseIntArray;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_update;
+import org.telegram.tgnet.tl.TL_ephemeral;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class q8 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
+    public final /* synthetic */ w8 b;
+    public final /* synthetic */ TL_ephemeral.TL_sendMessage c;
+    public final /* synthetic */ Object[] d;
 
-    public /* synthetic */ q8(Object obj, Object obj2, Object obj3, int i10) {
+    public /* synthetic */ q8(w8 w8Var, TL_ephemeral.TL_sendMessage tL_sendMessage, Object[] objArr, int i10) {
         this.a = i10;
-        this.b = obj;
-        this.d = obj2;
-        this.c = obj3;
+        this.b = w8Var;
+        this.c = tL_sendMessage;
+        this.d = objArr;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                ((MediaDataController) this.b).lambda$putEmojiKeywords$216((TLRPC.TL_emojiKeywordsDifference) this.d, (String) this.c);
-                break;
-            case 1:
-                ((MediaDataController) this.b).lambda$verifyAnimatedStickerMessage$68((TLRPC.Message) this.d, (String) this.c);
-                break;
-            case 2:
-                ((MediaDataController) this.b).lambda$preloadPremiumPreviewStickers$206((TLRPC.TL_error) this.d, (TLObject) this.c);
-                break;
-            case 3:
-                ((MediaDataController) this.b).lambda$clearBotKeyboard$194((ArrayList) this.d, (MessagesStorage.TopicKey) this.c);
-                break;
-            case 4:
-                ((MediaDataController) this.b).lambda$findStickerSetByNameInCache$30((String) this.c, (Utilities.Callback) this.d);
-                break;
-            case 5:
-                ((MediaDataController) this.b).lambda$processLoadedMedia$135((ArrayList) this.d, (i9) this.c);
-                break;
-            case 6:
-                ((MediaDataController) this.b).lambda$findStickerSetByNameInCache$29((TLRPC.TL_messages_stickerSet) this.d, (Utilities.Callback) this.c);
-                break;
-            case 7:
-                ((MessagesController) this.b).lambda$addUsersToChat$295((TLRPC.Chat) this.d, (TLRPC.TL_messages_invitedUsers) this.c);
-                break;
-            case 8:
-                ((MessagesController) this.b).lambda$processMessageIDUpdate$377((long[]) this.d, (TL_update.TL_updateMessageID) this.c);
-                break;
-            case 9:
-                ((MessagesController) this.b).lambda$getChannelDifference$343((ArrayList) this.d, (TLRPC.updates_ChannelDifference) this.c);
-                break;
-            case 10:
-                ((MessagesController) this.b).lambda$setUserAdminRole$103((TLRPC.TL_channels_editAdmin) this.d, (qb) this.c);
-                break;
-            case 11:
-                ((MessagesController) this.b).lambda$setUserAdminRole$108((TLRPC.TL_messages_editChatAdmin) this.d, (rb) this.c);
-                break;
-            case 12:
-                ((MessagesController) this.b).lambda$requestIsUserContactBlocked$500((TLObject) this.d, (ArrayList) this.c);
-                break;
-            case 13:
-                ((MessagesController) this.b).lambda$getDifference$354((ArrayList) this.d, (TLRPC.updates_Difference) this.c);
-                break;
-            case 14:
-                MessagesController.lambda$openByUserName$464((org.telegram.ui.ActionBar.e2[]) this.b, (boolean[]) this.d, (org.telegram.ui.ActionBar.r2) this.c);
-                break;
-            case 15:
-                ((MessagesController) this.b).lambda$updateChatAbout$288((TLRPC.ChatFull) this.d, (String) this.c);
-                break;
-            case 16:
-                ((MessagesController) this.b).lambda$addUserToChat$308((TLRPC.Updates) this.d, (Runnable) this.c);
-                break;
-            case 17:
-                ((MessagesController) this.b).lambda$processDialogsUpdateRead$222((LongSparseIntArray) this.d, (LongSparseIntArray) this.c);
-                break;
-            case 18:
-                ((MessagesController) this.b).lambda$didReceivedNotification$49((org.telegram.ui.ActionBar.x6) this.d, (org.telegram.ui.ActionBar.w6) this.c);
-                break;
-            case 19:
-                ((MessagesController.SavedMusicList) this.b).lambda$load$0((TLObject) this.d, (ArrayList) this.c);
-                break;
-            case 20:
-                ((MessagesStorage) this.b).lambda$applyPhoneBookUpdates$152((String) this.c, (String) this.d);
-                break;
-            case 21:
-                ((MessagesStorage) this.b).lambda$replaceMessageIfExists$236((MessageObject) this.d, (ArrayList) this.c);
-                break;
-            case 22:
-                ((MessagesStorage) this.b).lambda$getNewTask$115((a0.h) this.d, (a0.h) this.c);
-                break;
-            case 23:
-                ((MessagesStorage) this.b).lambda$saveBotCache$130((TLObject) this.d, (String) this.c);
-                break;
-            case 24:
-                ((SavedMessagesController) this.b).lambda$saveCache$11((MessagesStorage) this.d, (ArrayList) this.c);
-                break;
-            case 25:
-                ((SecretChatHelper) this.b).lambda$processUpdateEncryption$2((TLRPC.EncryptedChat) this.d, (TLRPC.EncryptedChat) this.c);
-                break;
-            case 26:
-                ((SendMessagesHelper) this.b).lambda$sendVote$34((String) this.c, (Runnable) this.d);
-                break;
-            case 27:
-                ((SendMessagesHelper) this.b).lambda$performSendDelayedMessage$52((TLObject) this.d, (SendMessagesHelper.DelayedMessage) this.c);
-                break;
-            case 28:
-                ((SendMessagesHelper) this.b).lambda$sendMessage$17((TLRPC.TL_error) this.d, (TLRPC.TL_messages_forwardMessages) this.c);
+                qz sendMessagesHelper = this.b.getSendMessagesHelper();
+                Object[] objArr = this.d;
+                sendMessagesHelper.P(this.c, (ArrayList) objArr[1], (ArrayList) objArr[2], null, (cz) objArr[4], ((Boolean) objArr[5]).booleanValue());
                 break;
             default:
-                ((TelegramMediaSession) this.b).lambda$loadBrowseChildren$3((TelegramMediaSession.BrowseChildrenCallback) this.d, (String) this.c);
+                qz sendMessagesHelper2 = this.b.getSendMessagesHelper();
+                Object[] objArr2 = this.d;
+                sendMessagesHelper2.P(this.c, (ArrayList) objArr2[1], (ArrayList) objArr2[2], null, (cz) objArr2[4], ((Boolean) objArr2[5]).booleanValue());
                 break;
         }
-    }
-
-    public /* synthetic */ q8(BaseController baseController, String str, Object obj, int i10) {
-        this.a = i10;
-        this.b = baseController;
-        this.c = str;
-        this.d = obj;
     }
 }

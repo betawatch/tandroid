@@ -1,174 +1,96 @@
 package ig;
 
-import j$.util.Objects;
-import java.util.HashMap;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.support.LongSparseIntArray;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_chatlists;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.LinearGradient;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.graphics.Shader;
+import android.view.MotionEvent;
+import android.view.View;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class l extends qg.a {
-    public final TLRPC.Dialog c;
-    public final TLRPC.RecentMeUrl d;
-    public final TLRPC.TL_contact e;
-    public final boolean f;
-    public final boolean g;
-    public final boolean h;
-    public final TL_chatlists.TL_chatlists_chatlistUpdates i;
-    public final int j;
-    public final int k;
-    public final String l;
-    public final TLRPC.Chat m;
-    public final TLRPC.User n;
-
-    public l(n nVar, TL_chatlists.TL_chatlists_chatlistUpdates tL_chatlists_chatlistUpdates) {
-        super(17, true);
-        this.i = tL_chatlists_chatlistUpdates;
-        int i10 = nVar.W;
-        nVar.W = i10 + 1;
-        this.k = i10;
-    }
-
-    public final int hashCode() {
-        return Objects.hash(this.c, this.m, this.d, this.e, this.l);
-    }
-
-    public l(n nVar, String str) {
-        super(22, false);
-        HashMap hashMap = nVar.Y;
-        Integer num = (Integer) hashMap.get(str);
-        if (num != null) {
-            this.k = num.intValue();
-        } else {
-            int i10 = nVar.W;
-            nVar.W = i10 + 1;
-            this.k = i10;
-            hashMap.put(str, Integer.valueOf(i10));
-        }
-        this.l = str;
-    }
-
-    public l(n nVar, TLRPC.User user) {
-        super(23, false);
-        this.n = user;
-        long j10 = user.id;
-        LongSparseIntArray longSparseIntArray = nVar.X;
-        int i10 = longSparseIntArray.get(j10, -1);
-        if (i10 >= 0) {
-            this.k = i10;
-            return;
-        }
-        int i11 = nVar.W;
-        nVar.W = i11 + 1;
-        this.k = i11;
-        longSparseIntArray.put(user.id, i11);
-    }
-
-    public l(n nVar, TLRPC.Chat chat) {
-        super(23, false);
-        this.m = chat;
-        long j10 = chat.id;
-        LongSparseIntArray longSparseIntArray = nVar.X;
-        int i10 = longSparseIntArray.get(-j10, -1);
-        if (i10 >= 0) {
-            this.k = i10;
-            return;
-        }
-        int i11 = nVar.W;
-        nVar.W = i11 + 1;
-        this.k = i11;
-        longSparseIntArray.put(-chat.id, i11);
-    }
+public final class l extends View {
+    public final Paint a;
+    public final Paint b;
+    public float c;
+    public final /* synthetic */ u d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l(n nVar, int i10, TLRPC.Dialog dialog) {
-        super(i10, true);
-        LongSparseIntArray longSparseIntArray = nVar.X;
-        this.c = dialog;
-        if (dialog != null) {
-            int i11 = longSparseIntArray.get(dialog.id, -1);
-            if (i11 >= 0) {
-                this.k = i11;
-            } else {
-                int i12 = nVar.W;
-                nVar.W = i12 + 1;
-                this.k = i12;
-                longSparseIntArray.put(dialog.id, i12);
-            }
-        } else if (i10 == 19) {
-            this.k = 5;
-        } else {
-            int i13 = nVar.W;
-            nVar.W = i13 + 1;
-            this.k = i13;
-        }
-        if (dialog != null) {
-            int i14 = nVar.h;
-            int i15 = nVar.F;
-            if (i14 != 7 && i14 != 8) {
-                this.g = dialog.pinned;
-            } else {
-                MessagesController.DialogFilter dialogFilter = MessagesController.getInstance(i15).selectedDialogFilter[nVar.h == 8 ? (char) 1 : (char) 0];
-                this.g = dialogFilter != null && dialogFilter.pinnedDialogs.indexOfKey(dialog.id) >= 0;
-            }
-            this.h = dialog.isFolder;
-            this.f = MessagesController.getInstance(i15).isForum(dialog.id);
-        }
+    public l(u uVar, Context context) {
+        super(context);
+        this.d = uVar;
+        this.a = new Paint(1);
+        Paint paint = new Paint(1);
+        this.b = paint;
+        paint.setColor(-1);
+        paint.setStyle(Paint.Style.FILL_AND_STROKE);
+        paint.setStrokeWidth(org.telegram.messenger.i0.L(3.0f));
     }
 
-    public l(n nVar, TLRPC.RecentMeUrl recentMeUrl) {
-        super(4, true);
-        this.d = recentMeUrl;
-        int i10 = nVar.W;
-        nVar.W = i10 + 1;
-        this.k = i10;
+    public final void a() {
+        this.a.setShader(new LinearGradient(0.0f, 0.0f, getWidth(), 0.0f, new int[]{0, this.d.m1}, (float[]) null, Shader.TileMode.CLAMP));
     }
 
-    public l(n nVar, int i10) {
-        super(i10, true);
-        this.j = i10;
-        if (i10 == 10) {
-            this.k = 1;
-        } else {
-            if (i10 == 19) {
-                this.k = 5;
-                return;
+    public final void b(float f7) {
+        float L = org.telegram.messenger.i0.L(6.0f);
+        float a2 = w7.u.a(((f7 - L) + (org.telegram.messenger.i0.L(13.0f) - (this.b.getStrokeWidth() / 2.0f))) / (getWidth() - (L * 2.0f)), 0.0f, 1.0f);
+        this.c = a2;
+        u uVar = this.d;
+        uVar.I0(i0.b.o(uVar.m1, (int) (a2 * 255.0f)), 1);
+        invalidate();
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        float height = getHeight() / 2.0f;
+        float L = org.telegram.messenger.i0.L(6.0f);
+        RectF rectF = org.telegram.messenger.i0.P;
+        float f7 = height - L;
+        float f10 = height + L;
+        rectF.set(L, f7, getWidth() - L, f10);
+        canvas.save();
+        u uVar = this.d;
+        uVar.l1.rewind();
+        uVar.l1.addRoundRect(rectF, org.telegram.messenger.i0.L(16.0f), org.telegram.messenger.i0.L(16.0f), Path.Direction.CW);
+        canvas.clipPath(uVar.l1);
+        jg.n1.z1(canvas, rectF, org.telegram.messenger.i0.L(6.0f));
+        canvas.restore();
+        rectF.set(L, f7, getWidth() - L, f10);
+        canvas.drawRoundRect(rectF, org.telegram.messenger.i0.L(16.0f), org.telegram.messenger.i0.L(16.0f), this.a);
+        float L2 = org.telegram.messenger.i0.L(13.0f);
+        Paint paint = this.b;
+        float strokeWidth = L2 - (paint.getStrokeWidth() / 2.0f);
+        float max = Math.max(L + strokeWidth, (((getWidth() - (2.0f * L)) * this.c) + L) - strokeWidth);
+        canvas.drawCircle(max, height, L2, paint);
+        jg.n1.A1(max, height, strokeWidth, i0.b.o(uVar.m1, (int) (this.c * 255.0f)), canvas);
+    }
+
+    @Override // android.view.View
+    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
+        super.onSizeChanged(i10, i11, i12, i13);
+        a();
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        int actionMasked = motionEvent.getActionMasked();
+        if (actionMasked != 0) {
+            if (actionMasked == 1) {
+                b(motionEvent.getX());
+                getParent().requestDisallowInterceptTouchEvent(false);
+            } else if (actionMasked != 2) {
+                if (actionMasked == 3) {
+                    getParent().requestDisallowInterceptTouchEvent(false);
+                }
             }
-            int i11 = nVar.W;
-            nVar.W = i11 + 1;
-            this.k = i11;
+            return true;
         }
-    }
-
-    public l(n nVar, int i10, int i11) {
-        super(5, true);
-        this.j = i10;
-        int i12 = nVar.W;
-        nVar.W = i12 + 1;
-        this.k = i12;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l(n nVar, TLRPC.TL_contact tL_contact) {
-        super(6, true);
-        LongSparseIntArray longSparseIntArray = nVar.X;
-        this.e = tL_contact;
-        if (tL_contact != null) {
-            int i10 = longSparseIntArray.get(tL_contact.user_id, -1);
-            if (i10 > 0) {
-                this.k = i10;
-                return;
-            }
-            int i11 = nVar.W;
-            nVar.W = i11 + 1;
-            this.k = i11;
-            longSparseIntArray.put(tL_contact.user_id, i11);
-            return;
-        }
-        int i12 = nVar.W;
-        nVar.W = i12 + 1;
-        this.k = i12;
+        getParent().requestDisallowInterceptTouchEvent(true);
+        b(motionEvent.getX());
+        return true;
     }
 }

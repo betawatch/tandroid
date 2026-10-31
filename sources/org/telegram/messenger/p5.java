@@ -1,14 +1,29 @@
 package org.telegram.messenger;
 
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.ImageReceiver;
+import android.os.Handler;
+import android.os.Message;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public abstract /* synthetic */ class p5 {
-    public static void b(ImageReceiver.ImageReceiverDelegate imageReceiverDelegate, ImageReceiver imageReceiver) {
+public final /* synthetic */ class p5 implements Handler.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Thread b;
+
+    public /* synthetic */ p5(Thread thread, int i10) {
+        this.a = i10;
+        this.b = thread;
     }
 
-    public static void a(ImageReceiver.ImageReceiverDelegate imageReceiverDelegate, int i10, String str, Drawable drawable) {
+    @Override // android.os.Handler.Callback
+    public final boolean handleMessage(Message message) {
+        switch (this.a) {
+            case 0:
+                ((s5) this.b).handleMessage(message);
+                break;
+            default:
+                ((r5) this.b).getClass();
+                break;
+        }
+        return true;
     }
 }

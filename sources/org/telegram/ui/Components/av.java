@@ -1,111 +1,95 @@
 package org.telegram.ui.Components;
 
-import android.net.Uri;
-import java.util.HashMap;
-import java.util.Locale;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.Utilities;
+import android.content.Context;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class av extends org.telegram.ui.ActionBar.m5 {
-    public final /* synthetic */ boolean r;
-    public final /* synthetic */ dv s;
+public abstract class av implements org.telegram.messenger.us {
+    public final ArrayList a;
+    public ArrayList b;
+    public ArrayList[] c;
+    public final int d;
+    public boolean e = false;
+    public final /* synthetic */ cv f;
 
-    public av(dv dvVar, boolean z10) {
-        this.s = dvVar;
-        this.r = z10;
+    public av(int i10, ArrayList arrayList, cv cvVar) {
+        this.f = cvVar;
+        this.d = i10;
+        this.a = arrayList == null ? new ArrayList() : arrayList;
     }
 
-    @Override // org.telegram.ui.ActionBar.m5, org.telegram.ui.ActionBar.d3
-    public final boolean g() {
-        dv dvVar = this.s;
-        na1 na1Var = dvVar.c;
-        boolean z10 = na1Var.T;
-        if (z10) {
-            if (z10) {
-                na1Var.T = false;
-                na1Var.m();
-                na1Var.l(false);
-            }
-            return false;
-        }
-        try {
-            dvVar.r.getWindow().clearFlags(128);
-            return true;
-        } catch (Exception e) {
-            FileLog.e(e);
-            return true;
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.m5, org.telegram.ui.ActionBar.d3
-    public final void onOpenAnimationEnd() {
-        String str;
-        int intValue;
-        dv dvVar = this.s;
-        int i10 = dvVar.Q;
-        RadialProgressView radialProgressView = dvVar.n;
-        xu xuVar = dvVar.b;
-        na1 na1Var = dvVar.c;
-        if (this.r && dvVar.c.g(dvVar.K, null, null, dvVar.I, true)) {
-            radialProgressView.setVisibility(4);
-            xuVar.setVisibility(4);
-            na1Var.setVisibility(0);
-            return;
-        }
-        radialProgressView.setVisibility(0);
-        xuVar.setVisibility(0);
-        dvVar.s.setVisibility(0);
-        dvVar.v.setVisibility(4);
-        xuVar.setKeepScreenOn(true);
-        na1Var.setVisibility(4);
-        na1Var.getControlsView().setVisibility(4);
-        na1Var.getTextureView().setVisibility(4);
-        if (na1Var.getTextureImageView() != null) {
-            na1Var.getTextureImageView().setVisibility(4);
-        }
-        dvVar.c.g(null, null, null, null, false);
-        HashMap hashMap = new HashMap();
-        hashMap.put("Referer", "messenger.telegram.org");
-        try {
-            String youtubeId = na1Var.getYoutubeId();
-            if (youtubeId == null) {
-                xuVar.loadUrl(dvVar.K, hashMap);
+    public final void a(int i10, TLRPC.TL_messages_stickerSet tL_messages_stickerSet) {
+        ArrayList<Long> arrayList;
+        if (i10 >= 0) {
+            ArrayList[] arrayListArr = this.c;
+            if (i10 >= arrayListArr.length) {
                 return;
             }
-            dvVar.h.setVisibility(0);
-            dvVar.y = true;
-            xuVar.addJavascriptInterface(new cv(dvVar), "YoutubeProxy");
-            String str2 = dvVar.I;
-            if (str2 != null) {
-                try {
-                    Uri parse = Uri.parse(str2);
-                    if (i10 > 0) {
-                        str = "" + i10;
-                    } else {
-                        str = null;
-                    }
-                    if (str == null && (str = parse.getQueryParameter("t")) == null) {
-                        str = parse.getQueryParameter("time_continue");
-                    }
-                } catch (Exception e) {
-                    FileLog.e(e);
+            if (tL_messages_stickerSet == null || tL_messages_stickerSet.documents == null) {
+                arrayListArr[i10] = new ArrayList(12);
+                for (int i11 = 0; i11 < 12; i11++) {
+                    this.c[i10].add(null);
                 }
-                if (str != null) {
-                    if (str.contains("m")) {
-                        String[] split = str.split("m");
-                        intValue = (Utilities.parseInt((CharSequence) split[0]).intValue() * 60) + Utilities.parseInt((CharSequence) split[1]).intValue();
-                    } else {
-                        intValue = Utilities.parseInt((CharSequence) str).intValue();
+                return;
+            }
+            arrayListArr[i10] = new ArrayList();
+            for (int i12 = 0; i12 < tL_messages_stickerSet.documents.size(); i12++) {
+                TLRPC.Document document = tL_messages_stickerSet.documents.get(i12);
+                if (document == null) {
+                    this.c[i10].add(null);
+                } else {
+                    ax axVar = new ax();
+                    long j10 = document.id;
+                    for (int i13 = 0; i13 < tL_messages_stickerSet.packs.size() && ((arrayList = tL_messages_stickerSet.packs.get(i13).documents) == null || !arrayList.contains(Long.valueOf(j10))); i13++) {
                     }
-                    dvVar.b.loadDataWithBaseURL("https://messenger.telegram.org/", String.format(Locale.US, "<!DOCTYPE html><html><head><style>body { margin: 0; width:100%%; height:100%%;  background-color:#000; }html { width:100%%; height:100%%; background-color:#000; }.embed-container iframe,.embed-container object,   .embed-container embed {       position: absolute;       top: 0;       left: 0;       width: 100%% !important;       height: 100%% !important;   }   </style></head><body>   <div class=\"embed-container\">       <div id=\"player\"></div>   </div>   <script src=\"https://www.youtube.com/iframe_api\"></script>   <script>   var player;   var observer;   var videoEl;   var playing;   var posted = false;   YT.ready(function() {       player = new YT.Player(\"player\", {                              \"width\" : \"100%%\",                              \"events\" : {                              \"onReady\" : \"onReady\",                              \"onError\" : \"onError\",                              \"onStateChange\" : \"onStateChange\",                              },                              \"videoId\" : \"%1$s\",                              \"height\" : \"100%%\",                              \"playerVars\" : {                              \"start\" : %2$d,                              \"rel\" : 1,                              \"showinfo\" : 0,                              \"modestbranding\" : 0,                              \"iv_load_policy\" : 3,                              \"autohide\" : 1,                              \"autoplay\" : 1,                              \"cc_load_policy\" : 1,                              \"playsinline\" : 1,                              \"controls\" : 1                              }                            });        player.setSize(window.innerWidth, window.innerHeight);    });    function hideControls() {        playing = !videoEl.paused;       videoEl.controls = 0;       observer.observe(videoEl, {attributes: true});    }    function showControls() {        playing = !videoEl.paused;       observer.disconnect();       videoEl.controls = 1;    }    function onError(event) {       if (!posted) {            if (window.YoutubeProxy !== undefined) {                   YoutubeProxy.postEvent(\"loaded\", null);             }            posted = true;       }    }    function onStateChange(event) {       if (event.data == YT.PlayerState.PLAYING && !posted) {            if (window.YoutubeProxy !== undefined) {                   YoutubeProxy.postEvent(\"loaded\", null);             }            posted = true;       }    }    function onReady(event) {       player.playVideo();    }    window.onresize = function() {       player.setSize(window.innerWidth, window.innerHeight);       player.playVideo();    }    </script></body></html>", youtubeId, Integer.valueOf(intValue)), "text/html", "UTF-8", "https://youtube.com");
+                    axVar.a = tL_messages_stickerSet;
+                    axVar.b = document.id;
+                    this.c[i10].add(axVar);
+                    if (this.f.y1) {
+                        TLRPC.StickerSet stickerSet = tL_messages_stickerSet.set;
+                        if (this.c[i10].size() >= ((stickerSet == null || stickerSet.emojis) ? 16 : 10)) {
+                            return;
+                        }
+                    } else {
+                        continue;
+                    }
                 }
             }
-            intValue = 0;
-            dvVar.b.loadDataWithBaseURL("https://messenger.telegram.org/", String.format(Locale.US, "<!DOCTYPE html><html><head><style>body { margin: 0; width:100%%; height:100%%;  background-color:#000; }html { width:100%%; height:100%%; background-color:#000; }.embed-container iframe,.embed-container object,   .embed-container embed {       position: absolute;       top: 0;       left: 0;       width: 100%% !important;       height: 100%% !important;   }   </style></head><body>   <div class=\"embed-container\">       <div id=\"player\"></div>   </div>   <script src=\"https://www.youtube.com/iframe_api\"></script>   <script>   var player;   var observer;   var videoEl;   var playing;   var posted = false;   YT.ready(function() {       player = new YT.Player(\"player\", {                              \"width\" : \"100%%\",                              \"events\" : {                              \"onReady\" : \"onReady\",                              \"onError\" : \"onError\",                              \"onStateChange\" : \"onStateChange\",                              },                              \"videoId\" : \"%1$s\",                              \"height\" : \"100%%\",                              \"playerVars\" : {                              \"start\" : %2$d,                              \"rel\" : 1,                              \"showinfo\" : 0,                              \"modestbranding\" : 0,                              \"iv_load_policy\" : 3,                              \"autohide\" : 1,                              \"autoplay\" : 1,                              \"cc_load_policy\" : 1,                              \"playsinline\" : 1,                              \"controls\" : 1                              }                            });        player.setSize(window.innerWidth, window.innerHeight);    });    function hideControls() {        playing = !videoEl.paused;       videoEl.controls = 0;       observer.observe(videoEl, {attributes: true});    }    function showControls() {        playing = !videoEl.paused;       observer.disconnect();       videoEl.controls = 1;    }    function onError(event) {       if (!posted) {            if (window.YoutubeProxy !== undefined) {                   YoutubeProxy.postEvent(\"loaded\", null);             }            posted = true;       }    }    function onStateChange(event) {       if (event.data == YT.PlayerState.PLAYING && !posted) {            if (window.YoutubeProxy !== undefined) {                   YoutubeProxy.postEvent(\"loaded\", null);             }            posted = true;       }    }    function onReady(event) {       player.playVideo();    }    window.onresize = function() {       player.setSize(window.innerWidth, window.innerHeight);       player.playVideo();    }    </script></body></html>", youtubeId, Integer.valueOf(intValue)), "text/html", "UTF-8", "https://youtube.com");
-        } catch (Exception e10) {
-            FileLog.e(e10);
+        }
+    }
+
+    @Override // org.telegram.messenger.us
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        TLRPC.StickerSet stickerSet;
+        if (i10 == org.telegram.messenger.zs.B0) {
+            for (int i12 = 0; i12 < this.b.size(); i12++) {
+                if (this.b.get(i12) == null) {
+                    TLRPC.TL_messages_stickerSet m0 = org.telegram.messenger.ui.b0(this.d).m0((TLRPC.InputStickerSet) this.a.get(i12), true);
+                    if (this.b.size() == 1 && m0 != null && (stickerSet = m0.set) != null && !stickerSet.emojis) {
+                        cv cvVar = this.f;
+                        cvVar.dismiss();
+                        Context context = cvVar.getContext();
+                        org.telegram.ui.ActionBar.k2 k2Var = cvVar.j1;
+                        TLRPC.InputStickerSet inputStickerSet = (TLRPC.InputStickerSet) this.a.get(i12);
+                        org.telegram.ui.ActionBar.k2 k2Var2 = cvVar.j1;
+                        new cx0(context, k2Var, inputStickerSet, null, k2Var2 instanceof org.telegram.ui.un ? ((org.telegram.ui.un) k2Var2).Z : null, cvVar.I0).show();
+                        return;
+                    }
+                    this.b.set(i12, m0);
+                    if (m0 != null) {
+                        a(i12, m0);
+                    }
+                }
+            }
+            cv cvVar2 = ((ou) this).h;
+            cvVar2.N0();
+            org.telegram.ui.g3 g3Var = cvVar2.n1;
+            if (g3Var == null || g3Var.getAdapter() == null) {
+                return;
+            }
+            g3Var.getAdapter().f();
         }
     }
 }

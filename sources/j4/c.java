@@ -1,14 +1,16 @@
 package j4;
 
-import f9.i0;
-import f9.s1;
+import e9.l0;
+import e9.n0;
+import e9.x1;
 import java.util.List;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class c implements c3.o {
     public final b a = new b(0, 1, null, "audio/ac4");
-    public final e2.x b = new e2.x(16384);
+    public final e2.x b = new e2.x(TLObject.FLAG_14);
     public boolean c;
 
     /* JADX WARN: Code restructure failed: missing block: B:21:0x0089, code lost:
@@ -26,7 +28,7 @@ public final class c implements c3.o {
         int i11 = 0;
         while (true) {
             lVar = (c3.l) pVar;
-            lVar.h(xVar.a, 0, 10, false);
+            lVar.j(xVar.a, 0, 10, false);
             xVar.N(0);
             if (xVar.D() != 4801587) {
                 break;
@@ -34,15 +36,15 @@ public final class c implements c3.o {
             xVar.O(3);
             int z10 = xVar.z();
             i11 += z10 + 10;
-            lVar.u(z10, false);
+            lVar.r(z10, false);
         }
         lVar.f = 0;
-        lVar.u(i11, false);
+        lVar.r(i11, false);
         int i12 = 0;
         int i13 = i11;
         while (true) {
             int i14 = 7;
-            lVar.h(xVar.a, 0, 7, false);
+            lVar.j(xVar.a, 0, 7, false);
             xVar.N(0);
             int H = xVar.H();
             if (H == 44096 || H == 44097) {
@@ -68,14 +70,14 @@ public final class c implements c3.o {
                 if (i10 == -1) {
                     break;
                 }
-                lVar.u(i10 - 7, false);
+                lVar.r(i10 - 7, false);
             } else {
                 lVar.f = 0;
                 i13++;
                 if (i13 - i11 >= 8192) {
                     break;
                 }
-                lVar.u(i13, false);
+                lVar.r(i13, false);
                 i12 = 0;
             }
         }
@@ -83,27 +85,27 @@ public final class c implements c3.o {
 
     @Override // c3.o
     public final void c(c3.q qVar) {
-        this.a.d(qVar, new f0(0, 1));
+        this.a.f(qVar, new g0(0, 1));
         qVar.Q0();
-        qVar.D1(new c3.t(-9223372036854775807L));
+        qVar.G1(new c3.t(-9223372036854775807L));
     }
 
     @Override // c3.o
     public final void d(long j10, long j11) {
         this.c = false;
-        this.a.c();
+        this.a.e();
     }
 
     @Override // c3.o
     public final List e() {
-        f9.g0 g0Var = i0.b;
-        return s1.e;
+        l0 l0Var = n0.b;
+        return x1.e;
     }
 
     @Override // c3.o
     public final int f(c3.p pVar, c3.s sVar) {
         e2.x xVar = this.b;
-        int read = pVar.read(xVar.a, 0, 16384);
+        int read = pVar.read(xVar.a, 0, TLObject.FLAG_14);
         if (read == -1) {
             return -1;
         }
@@ -115,7 +117,7 @@ public final class c implements c3.o {
             bVar.o = 0L;
             this.c = true;
         }
-        bVar.a(xVar);
+        bVar.c(xVar);
         return 0;
     }
 

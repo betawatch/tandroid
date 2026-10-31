@@ -1,71 +1,27 @@
 package org.telegram.messenger;
 
+import android.text.TextUtils;
 import java.util.ArrayList;
-import java.util.List;
-import org.telegram.messenger.ImageLoader;
-import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final /* synthetic */ class f5 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
+public final class f5 {
+    public int a;
+    public String b;
+    public String c;
+    public boolean d;
+    public final ArrayList e = new ArrayList(4);
+    public final ArrayList f = new ArrayList(4);
+    public final ArrayList g = new ArrayList(4);
+    public final ArrayList h = new ArrayList(4);
+    public String i;
+    public String j;
+    public boolean k;
+    public int l;
+    public TLRPC.User m;
 
-    public /* synthetic */ f5(Object obj, Object obj2, int i10, int i11, int i12) {
-        this.a = i12;
-        this.d = obj;
-        this.e = obj2;
-        this.b = i10;
-        this.c = i11;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                ((ImageLoader.5) this.d).lambda$fileDidFailedLoad$6((String) this.e, this.b, this.c);
-                break;
-            case 1:
-                ((MediaDataController) this.d).lambda$loadReactions$11((List) this.e, this.b, this.c);
-                break;
-            case 2:
-                ((MediaDataController) this.d).lambda$putReactionsToCache$16((ArrayList) this.e, this.b, this.c);
-                break;
-            case 3:
-                ((MessagesController) this.d).lambda$getDifference$351((TLRPC.updates_Difference) this.e, this.b, this.c);
-                break;
-            case 4:
-                ((MessagesController.DialogPhotos) this.d).lambda$load$0((TLRPC.photos_Photos) this.e, this.b, this.c);
-                break;
-            case 5:
-                ((MessagesController.DialogPhotos) this.d).lambda$load$2((TLRPC.messages_Messages) this.e, this.b, this.c);
-                break;
-            case 6:
-                ((MessagesStorage) this.d).lambda$saveSecretParams$7(this.b, this.c, (byte[]) this.e);
-                break;
-            default:
-                ((NotificationCenter) this.d).lambda$postNotificationDebounced$2(this.b, (Object[]) this.e, this.c);
-                break;
-        }
-    }
-
-    public /* synthetic */ f5(MessagesStorage messagesStorage, int i10, int i11, byte[] bArr) {
-        this.a = 6;
-        this.d = messagesStorage;
-        this.b = i10;
-        this.c = i11;
-        this.e = bArr;
-    }
-
-    public /* synthetic */ f5(NotificationCenter notificationCenter, int i10, Object[] objArr, int i11) {
-        this.a = 7;
-        this.d = notificationCenter;
-        this.b = i10;
-        this.e = objArr;
-        this.c = i11;
+    public static String a(String str, String str2) {
+        return !TextUtils.isEmpty(str) ? str.substring(0, 1) : !TextUtils.isEmpty(str2) ? str2.substring(0, 1) : "#";
     }
 }

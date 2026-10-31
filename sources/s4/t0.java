@@ -1,14 +1,12 @@
 package s4;
 
-import android.view.MotionEvent;
-import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public interface t0 {
-    void a(RecyclerView recyclerView, MotionEvent motionEvent);
-
-    boolean b(RecyclerView recyclerView, MotionEvent motionEvent);
-
-    void c(boolean z10);
+public final class t0 {
+    public final ArrayList a = new ArrayList();
+    public final int b = 20;
+    public long c = 0;
+    public long d = 0;
 }

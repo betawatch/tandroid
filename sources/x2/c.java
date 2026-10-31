@@ -1,36 +1,36 @@
 package x2;
 
-import a8.yb;
 import android.os.SystemClock;
-import b2.q1;
+import b2.p1;
 import b2.x;
-import e2.n0;
+import e2.l0;
 import java.util.Arrays;
 import java.util.List;
-import org.telegram.ui.dv;
+import org.telegram.ui.ex0;
+import v7.t6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public abstract class c implements q {
-    public final q1 a;
+    public final p1 a;
     public final int b;
     public final int[] c;
     public final x[] d;
     public final long[] e;
     public int f;
 
-    public c(q1 q1Var, int[] iArr) {
+    public c(p1 p1Var, int[] iArr) {
         int i10 = 0;
-        yb.p(iArr.length > 0);
-        q1Var.getClass();
-        this.a = q1Var;
+        t6.p(iArr.length > 0);
+        p1Var.getClass();
+        this.a = p1Var;
         int length = iArr.length;
         this.b = length;
         this.d = new x[length];
         for (int i11 = 0; i11 < iArr.length; i11++) {
-            this.d[i11] = q1Var.d[iArr[i11]];
+            this.d[i11] = p1Var.d[iArr[i11]];
         }
-        Arrays.sort(this.d, new dv(21));
+        Arrays.sort(this.d, new ex0(27));
         this.c = new int[this.b];
         while (true) {
             int i12 = this.b;
@@ -38,7 +38,7 @@ public abstract class c implements q {
                 this.e = new long[i12];
                 return;
             } else {
-                this.c[i10] = q1Var.a(this.d[i10]);
+                this.c[i10] = p1Var.a(this.d[i10]);
                 i10++;
             }
         }
@@ -50,7 +50,7 @@ public abstract class c implements q {
     }
 
     @Override // x2.q
-    public final q1 b() {
+    public final p1 b() {
         return this.a;
     }
 
@@ -122,7 +122,7 @@ public abstract class c implements q {
             return false;
         }
         long[] jArr = this.e;
-        jArr[i10] = Math.max(jArr[i10], n0.a(elapsedRealtime, j10));
+        jArr[i10] = Math.max(jArr[i10], l0.a(elapsedRealtime, j10));
         return true;
     }
 

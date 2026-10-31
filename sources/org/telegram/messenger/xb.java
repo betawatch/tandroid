@@ -1,43 +1,37 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.TLObject;
+import j$.util.concurrent.ConcurrentHashMap;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class xb implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ TLObject c;
+    public final /* synthetic */ yb b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ long d;
 
-    public /* synthetic */ xb(MessagesController messagesController, TLObject tLObject, int i10) {
+    public /* synthetic */ xb(yb ybVar, long j10, long j11, int i10) {
         this.a = i10;
-        this.b = messagesController;
-        this.c = tLObject;
+        this.b = ybVar;
+        this.c = j10;
+        this.d = j11;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$loadGlobalNotificationsSettings$201(this.c);
-                break;
-            case 1:
-                this.b.lambda$reloadReactionsNotifySettings$203(this.c);
-                break;
-            case 2:
-                this.b.lambda$getContentSettings$507(this.c);
-                break;
-            case 3:
-                this.b.lambda$loadSuggestedFilters$24(this.c);
-                break;
-            case 4:
-                this.b.lambda$loadUnreadDialogs$362(this.c);
-                break;
-            case 5:
-                this.b.lambda$loadHintDialogs$194(this.c);
+                yb ybVar = this.b;
+                ConcurrentHashMap concurrentHashMap = ybVar.i.u;
+                String str = ybVar.a;
+                long j10 = this.c;
+                long j11 = this.d;
+                concurrentHashMap.put(str, new long[]{j10, j11});
+                i0.g3(new xb(ybVar, j10, j11, 1));
                 break;
             default:
-                this.b.lambda$loadSignUpNotificationsSettings$205(this.c);
+                yb ybVar2 = this.b;
+                zs.f(ybVar2.h).k(zs.X1, ybVar2.a, Long.valueOf(this.c), Long.valueOf(this.d));
                 break;
         }
     }

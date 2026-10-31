@@ -1,55 +1,82 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.ViewGroup;
-import org.telegram.messenger.MessagesController;
+import android.app.Activity;
+import android.view.MotionEvent;
+import android.view.ViewParent;
+import android.widget.FrameLayout;
+import java.util.ArrayList;
+import java.util.HashSet;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class qc extends org.telegram.ui.Components.mm0 {
-    public final /* synthetic */ Context c;
-    public final /* synthetic */ org.telegram.ui.ActionBar.u6 d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ sc f;
+public final class qc extends FrameLayout implements org.telegram.ui.ActionBar.k6 {
+    public final org.telegram.ui.ActionBar.p6 a;
+    public final w71 b;
+    public final s4.a0 c;
+    public final int d;
+    public int e;
 
-    public qc(sc scVar, Context context, org.telegram.ui.ActionBar.u6 u6Var, int i10) {
-        this.f = scVar;
-        this.c = context;
-        this.d = u6Var;
-        this.e = i10;
+    public qc(int i10, Activity activity, org.telegram.ui.ActionBar.p6 p6Var) {
+        super(activity);
+        this.d = i10;
+        this.a = p6Var;
+        w71 w71Var = new w71(1, activity, p6Var);
+        this.b = w71Var;
+        w71Var.setPadding(org.telegram.messenger.i0.L(6.0f), org.telegram.messenger.i0.L(5.0f), org.telegram.messenger.i0.L(6.0f), 0);
+        w71Var.setClipToPadding(false);
+        w71Var.setAdapter(new oc(this, activity, p6Var, i10));
+        s4.a0 a0Var = new s4.a0();
+        this.c = a0Var;
+        a0Var.j1(0);
+        w71Var.setLayoutManager(a0Var);
+        addView(w71Var, w7.b6.c(-1.0f, -1));
     }
 
-    @Override // org.telegram.ui.Components.mm0
-    public final boolean D(s4.e1 e1Var) {
-        return true;
-    }
-
-    @Override // s4.h0
-    public final int h() {
-        MessagesController.PeerColors peerColors = MessagesController.getInstance(this.e).peerColors;
-        if (peerColors == null) {
-            return 0;
+    public final void a(int i10, boolean z10) {
+        org.telegram.messenger.lp lpVar = org.telegram.messenger.vp.r1(this.d).r4;
+        int i11 = 0;
+        if (lpVar != null) {
+            ArrayList arrayList = lpVar.c;
+            int i12 = 0;
+            while (true) {
+                if (i12 >= arrayList.size()) {
+                    break;
+                }
+                if (((org.telegram.messenger.kp) arrayList.get(i12)).c == i10) {
+                    i11 = i12;
+                    break;
+                }
+                i12++;
+            }
         }
-        return peerColors.colors.size();
-    }
-
-    @Override // s4.h0
-    public final void v(s4.e1 e1Var, int i10) {
-        rc rcVar = (rc) e1Var.a;
-        org.telegram.ui.ActionBar.f7.i(org.telegram.ui.ActionBar.y6.d6, rcVar, this.d);
-        boolean z10 = i10 == this.f.e;
-        rcVar.s = z10;
-        rcVar.v.f(z10, true);
-        rcVar.invalidate();
-        MessagesController.PeerColors peerColors = MessagesController.getInstance(this.e).peerColors;
-        if (peerColors == null || i10 < 0 || i10 >= peerColors.colors.size()) {
-            return;
+        if (i11 != this.e) {
+            this.e = i11;
+            if (!z10) {
+                this.c.h1(i11, (org.telegram.messenger.i0.q.x - org.telegram.messenger.i0.L(56.0f)) / 2);
+            }
+            org.telegram.messenger.i0.d0(this.b, new nc(0, this, z10));
         }
-        rcVar.a(peerColors.colors.get(i10));
     }
 
-    @Override // s4.h0
-    public final s4.e1 x(ViewGroup viewGroup, int i10) {
-        return new org.telegram.ui.Components.wl0(new rc(this.f, this.c));
+    @Override // android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        if (getParent() != null) {
+            ViewParent parent = getParent();
+            boolean z10 = true;
+            if (!canScrollHorizontally(-1) && !canScrollHorizontally(1)) {
+                z10 = false;
+            }
+            parent.requestDisallowInterceptTouchEvent(z10);
+        }
+        return super.onInterceptTouchEvent(motionEvent);
+    }
+
+    @Override // org.telegram.ui.ActionBar.k6
+    public final void updateColors() {
+        org.telegram.messenger.i0.d0(this.b, new ag.e0(14, this, org.telegram.messenger.vp.r1(this.d).r4));
+    }
+
+    @Override // org.telegram.ui.ActionBar.k6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

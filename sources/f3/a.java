@@ -7,12 +7,12 @@ import c3.p;
 import c3.q;
 import c3.s;
 import e2.x;
-import f9.g0;
-import f9.i0;
-import f9.s1;
+import e9.l0;
+import e9.n0;
+import e9.x1;
 import java.util.List;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class a implements o {
     public final /* synthetic */ int a;
@@ -38,13 +38,13 @@ public final class a implements o {
         switch (this.a) {
             case 0:
                 l lVar = (l) pVar;
-                lVar.u(4, false);
+                lVar.r(4, false);
                 x xVar = this.b;
                 xVar.K(4);
-                lVar.h(xVar.a, 0, 4, false);
+                lVar.j(xVar.a, 0, 4, false);
                 if (xVar.C() == 1718909296) {
                     xVar.K(4);
-                    lVar.h(xVar.a, 0, 4, false);
+                    lVar.j(xVar.a, 0, 4, false);
                     if (xVar.C() == 1635150182) {
                     }
                 }
@@ -53,11 +53,11 @@ public final class a implements o {
                 x xVar2 = this.b;
                 xVar2.K(4);
                 l lVar2 = (l) pVar;
-                lVar2.h(xVar2.a, 0, 4, false);
+                lVar2.j(xVar2.a, 0, 4, false);
                 if (xVar2.C() == 1380533830) {
-                    lVar2.u(4, false);
+                    lVar2.r(4, false);
                     xVar2.K(4);
-                    lVar2.h(xVar2.a, 0, 4, false);
+                    lVar2.j(xVar2.a, 0, 4, false);
                     if (xVar2.C() == 1464156752) {
                     }
                 }
@@ -101,8 +101,8 @@ public final class a implements o {
     public final List e() {
         switch (this.a) {
         }
-        g0 g0Var = i0.b;
-        return s1.e;
+        l0 l0Var = n0.b;
+        return x1.e;
     }
 
     @Override // c3.o

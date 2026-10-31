@@ -1,47 +1,88 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
+import android.graphics.Rect;
+import android.view.MotionEvent;
+import android.view.View;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qi implements Runnable {
+public final class qi implements View.OnTouchListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ri b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ org.telegram.ui.Components.gl0 e;
-    public final /* synthetic */ float f;
-    public final /* synthetic */ float h;
-    public final /* synthetic */ bh.x0 n;
+    public final int[] b;
+    public final /* synthetic */ Rect c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ qi(ri riVar, int i10, boolean z10, org.telegram.ui.Components.gl0 gl0Var, float f7, float f10, bh.x0 x0Var, int i11) {
-        this.a = i11;
-        this.b = riVar;
-        this.c = i10;
-        this.d = z10;
-        this.e = gl0Var;
-        this.f = f7;
-        this.h = f10;
-        this.n = x0Var;
+    public qi(b50 b50Var, Rect rect) {
+        this.a = 1;
+        this.d = b50Var;
+        this.c = rect;
+        this.b = new int[2];
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10;
+    @Override // android.view.View.OnTouchListener
+    public final boolean onTouch(View view, MotionEvent motionEvent) {
+        c40 c40Var;
         switch (this.a) {
             case 0:
-                AndroidUtilities.runOnUIThread(new qi(this.b, this.c, this.d, this.e, this.f, this.h, this.n, 1), 50L);
+                un unVar = (un) this.d;
+                if (motionEvent.getActionMasked() != 0) {
+                    if (motionEvent.getActionMasked() == 4) {
+                        unVar.I7(true);
+                        break;
+                    }
+                } else {
+                    org.telegram.ui.ActionBar.k1 k1Var = unVar.e9;
+                    if (k1Var != null && k1Var.isShowing()) {
+                        View contentView = unVar.e9.getContentView();
+                        int[] iArr = this.b;
+                        contentView.getLocationInWindow(iArr);
+                        int i10 = iArr[0];
+                        int i11 = iArr[1];
+                        int measuredWidth = contentView.getMeasuredWidth() + i10;
+                        int measuredHeight = contentView.getMeasuredHeight() + iArr[1];
+                        Rect rect = this.c;
+                        rect.set(i10, i11, measuredWidth, measuredHeight);
+                        if (!rect.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
+                            unVar.I7(true);
+                            break;
+                        }
+                    }
+                }
                 break;
             default:
-                wn wnVar = this.b.s;
-                org.telegram.ui.Cells.z A8 = wnVar.A8(this.c, true);
-                if (this.d) {
-                    i10 = ((org.telegram.ui.ActionBar.r2) wnVar).currentAccount;
-                    bh.s0.d(wnVar, this.e, A8, null, this.f, this.h, this.n, i10, 1);
-                    bh.s0.f();
-                    break;
+                b50 b50Var = (b50) this.d;
+                if (motionEvent.getActionMasked() != 0) {
+                    if (motionEvent.getActionMasked() == 4 && (c40Var = b50Var.W4) != null && c40Var.isShowing()) {
+                        b50Var.W4.dismiss();
+                        break;
+                    }
+                } else {
+                    c40 c40Var2 = b50Var.W4;
+                    if (c40Var2 != null && c40Var2.isShowing()) {
+                        View contentView2 = b50Var.W4.getContentView();
+                        int[] iArr2 = this.b;
+                        contentView2.getLocationInWindow(iArr2);
+                        int i12 = iArr2[0];
+                        int i13 = iArr2[1];
+                        int measuredWidth2 = contentView2.getMeasuredWidth() + i12;
+                        int measuredHeight2 = contentView2.getMeasuredHeight() + iArr2[1];
+                        Rect rect2 = this.c;
+                        rect2.set(i12, i13, measuredWidth2, measuredHeight2);
+                        if (!rect2.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
+                            b50Var.W4.dismiss();
+                            break;
+                        }
+                    }
                 }
                 break;
         }
+        return false;
+    }
+
+    public qi(un unVar, Rect rect) {
+        this.a = 0;
+        this.d = unVar;
+        this.c = rect;
+        this.b = new int[2];
     }
 }

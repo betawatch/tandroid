@@ -1,51 +1,179 @@
 package k6;
 
-import android.os.IBinder;
-import android.os.Messenger;
-import android.os.Parcel;
-import android.os.Parcelable;
+import android.content.Context;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageInstaller;
+import android.content.pm.PackageManager;
+import android.os.Build;
+import android.os.Bundle;
+import android.util.Log;
+import com.google.android.gms.common.GooglePlayServicesIncorrectManifestValueException;
+import com.google.android.gms.common.GooglePlayServicesMissingManifestValueException;
+import java.util.Iterator;
+import java.util.concurrent.atomic.AtomicBoolean;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class g implements Parcelable {
-    public static final Parcelable.Creator<g> CREATOR = new e();
-    public final Messenger a;
+public abstract class g {
+    public static boolean b = false;
+    public static boolean c = false;
+    public static final /* synthetic */ int e = 0;
+    public static final AtomicBoolean a = new AtomicBoolean();
+    public static final AtomicBoolean d = new AtomicBoolean();
 
-    public g(IBinder iBinder) {
-        this.a = new Messenger(iBinder);
+    public static boolean a(Context context) {
+        try {
+            if (!c) {
+                try {
+                    PackageInfo b10 = w6.b.a(context).b(64, "com.google.android.gms");
+                    h.p(context);
+                    if (b10 == null || h.Q(b10, false) || !h.Q(b10, true)) {
+                        b = false;
+                    } else {
+                        b = true;
+                    }
+                    c = true;
+                } catch (PackageManager.NameNotFoundException e7) {
+                    Log.w("GooglePlayServicesUtil", "Cannot find Google Play services package name.", e7);
+                    c = true;
+                }
+            }
+            return b || !"user".equals(Build.TYPE);
+        } catch (Throwable th2) {
+            c = true;
+            throw th2;
+        }
     }
 
-    @Override // android.os.Parcelable
-    public final int describeContents() {
-        return 0;
-    }
-
-    public final boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
+    /* JADX WARN: Removed duplicated region for block: B:100:0x00d7  */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x00d5  */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x0102  */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x0114  */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x0124  */
+    /* JADX WARN: Removed duplicated region for block: B:96:0x00e7 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static int b(Context context, int i10) {
+        boolean z10;
+        String packageName;
+        PackageInfo packageInfo;
+        PackageInfo packageInfo2;
+        Bundle bundle;
+        try {
+            context.getResources().getString(R.string.common_google_play_services_unknown_issue);
+        } catch (Throwable unused) {
+            Log.e("GooglePlayServicesUtil", "The Google Play services resources were not found. Check your project configuration to ensure that the resources are included.");
+        }
+        if (!"com.google.android.gms".equals(context.getPackageName()) && !d.get()) {
+            synchronized (n6.l.a) {
+                try {
+                    if (!n6.l.b) {
+                        n6.l.b = true;
+                        try {
+                            bundle = w6.b.a(context).a.getPackageManager().getApplicationInfo(context.getPackageName(), 128).metaData;
+                        } catch (PackageManager.NameNotFoundException e7) {
+                            Log.wtf("MetadataValueReader", "This should never happen.", e7);
+                        }
+                        if (bundle != null) {
+                            bundle.getString("com.google.app.id");
+                            n6.l.c = bundle.getInt("com.google.android.gms.version");
+                        }
+                    }
+                } finally {
+                }
+            }
+            int i11 = n6.l.c;
+            if (i11 == 0) {
+                throw new GooglePlayServicesMissingManifestValueException();
+            }
+            if (i11 != 12451000) {
+                throw new GooglePlayServicesIncorrectManifestValueException("The meta-data tag in your app's AndroidManifest.xml does not have the right value.  Expected " + e.a + " but found " + i11 + ".  You must have the following declaration within the <application> element:     <meta-data android:name=\"com.google.android.gms.version\" android:value=\"@integer/google_play_services_version\" />");
+            }
         }
         try {
-            Messenger messenger = this.a;
-            messenger.getClass();
-            IBinder binder = messenger.getBinder();
-            Messenger messenger2 = ((g) obj).a;
-            messenger2.getClass();
-            return binder.equals(messenger2.getBinder());
-        } catch (ClassCastException unused) {
-            return false;
+            if (!u6.b.f(context)) {
+                if (u6.b.d == null) {
+                    u6.b.d = Boolean.valueOf(context.getPackageManager().hasSystemFeature("android.hardware.type.iot") || context.getPackageManager().hasSystemFeature("android.hardware.type.embedded"));
+                }
+                if (!u6.b.d.booleanValue()) {
+                    z10 = true;
+                    n6.l.b(i10 < 0);
+                    packageName = context.getPackageName();
+                    PackageManager packageManager = context.getPackageManager();
+                    if (z10) {
+                        packageInfo = null;
+                    } else {
+                        try {
+                            packageInfo = packageManager.getPackageInfo("com.android.vending", 8256);
+                        } catch (PackageManager.NameNotFoundException unused2) {
+                            Log.w("GooglePlayServicesUtil", String.valueOf(packageName).concat(" requires the Google Play Store, but it is missing."));
+                        }
+                    }
+                    packageInfo2 = packageManager.getPackageInfo("com.google.android.gms", 64);
+                    h.p(context);
+                    if (h.Q(packageInfo2, true)) {
+                        Log.w("GooglePlayServicesUtil", String.valueOf(packageName).concat(" requires Google Play services, but their signature is invalid."));
+                    } else {
+                        if (z10) {
+                            n6.l.g(packageInfo);
+                            if (!h.Q(packageInfo, true)) {
+                                Log.w("GooglePlayServicesUtil", String.valueOf(packageName).concat(" requires Google Play Store, but its signature is invalid."));
+                            }
+                        }
+                        if (!z10 || packageInfo == null || packageInfo.signatures[0].equals(packageInfo2.signatures[0])) {
+                            int i12 = packageInfo2.versionCode;
+                            if ((i12 == -1 ? -1 : i12 / 1000) >= (i10 != -1 ? i10 / 1000 : -1)) {
+                                ApplicationInfo applicationInfo = packageInfo2.applicationInfo;
+                                if (applicationInfo == null) {
+                                    try {
+                                        applicationInfo = packageManager.getApplicationInfo("com.google.android.gms", 0);
+                                    } catch (PackageManager.NameNotFoundException e10) {
+                                        Log.wtf("GooglePlayServicesUtil", String.valueOf(packageName).concat(" requires Google Play services, but they're missing when getting application info."), e10);
+                                        return 1;
+                                    }
+                                }
+                                return !applicationInfo.enabled ? 3 : 0;
+                            }
+                            Log.w("GooglePlayServicesUtil", "Google Play services out of date for " + packageName + ".  Requires " + i10 + " but found " + i12);
+                            return 2;
+                        }
+                        Log.w("GooglePlayServicesUtil", String.valueOf(packageName).concat(" requires Google Play Store, but its signature doesn't match that of Google Play services."));
+                    }
+                    return 9;
+                }
+            }
+            packageInfo2 = packageManager.getPackageInfo("com.google.android.gms", 64);
+            h.p(context);
+            if (h.Q(packageInfo2, true)) {
+            }
+            return 9;
+        } catch (PackageManager.NameNotFoundException unused3) {
+            Log.w("GooglePlayServicesUtil", String.valueOf(packageName).concat(" requires Google Play services, but they are missing."));
+            return 1;
+        }
+        z10 = false;
+        n6.l.b(i10 < 0);
+        packageName = context.getPackageName();
+        PackageManager packageManager2 = context.getPackageManager();
+        if (z10) {
         }
     }
 
-    public final int hashCode() {
-        Messenger messenger = this.a;
-        messenger.getClass();
-        return messenger.getBinder().hashCode();
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        Messenger messenger = this.a;
-        messenger.getClass();
-        parcel.writeStrongBinder(messenger.getBinder());
+    public static boolean c(Context context) {
+        try {
+            Iterator<PackageInstaller.SessionInfo> it = context.getPackageManager().getPackageInstaller().getAllSessions().iterator();
+            while (it.hasNext()) {
+                if ("com.google.android.gms".equals(it.next().getAppPackageName())) {
+                    return true;
+                }
+            }
+            return context.getPackageManager().getApplicationInfo("com.google.android.gms", TLObject.FLAG_13).enabled;
+        } catch (PackageManager.NameNotFoundException | Exception unused) {
+            return false;
+        }
     }
 }

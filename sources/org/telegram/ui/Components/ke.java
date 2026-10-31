@@ -1,96 +1,35 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.MotionEvent;
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BotForumHelper;
+import android.app.Dialog;
+import android.view.ViewTreeObserver;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class ke extends FrameLayout {
+public final class ke implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ChatActivityEnterView b;
+    public final /* synthetic */ Dialog b;
+    public final /* synthetic */ ChatActivityEnterView c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ ke(ChatActivityEnterView chatActivityEnterView, Context context, int i10) {
-        super(context);
+    public /* synthetic */ ke(ChatActivityEnterView chatActivityEnterView, Dialog dialog, int i10) {
         this.a = i10;
-        this.b = chatActivityEnterView;
+        this.c = chatActivityEnterView;
+        this.b = dialog;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public boolean dispatchTouchEvent(MotionEvent motionEvent) {
+    @Override // android.view.ViewTreeObserver.OnPreDrawListener
+    public final boolean onPreDraw() {
         switch (this.a) {
             case 0:
-                ChatActivityEnterView chatActivityEnterView = this.b;
-                hi.e4 e4Var = chatActivityEnterView.k0;
-                return (e4Var == null || e4Var.getVisibility() != 0) ? super.dispatchTouchEvent(motionEvent) : chatActivityEnterView.k0.dispatchTouchEvent(motionEvent);
-            case 1:
-                ChatActivityEnterView chatActivityEnterView2 = this.b;
-                if (!chatActivityEnterView2.J || chatActivityEnterView2.T4 == BotForumHelper.SteamingSendButtonState.BLOCKING) {
-                    return false;
-                }
-                return super.dispatchTouchEvent(motionEvent);
-            default:
-                return super.dispatchTouchEvent(motionEvent);
-        }
-    }
-
-    @Override // android.view.ViewGroup
-    public boolean drawChild(Canvas canvas, View view, long j10) {
-        switch (this.a) {
-            case 1:
-                ChatActivityEnterView chatActivityEnterView = this.b;
-                if (view == chatActivityEnterView.J0 && chatActivityEnterView.h0) {
-                    return true;
-                }
-                return super.drawChild(canvas, view, j10);
-            default:
-                return super.drawChild(canvas, view, j10);
-        }
-    }
-
-    @Override // android.view.View
-    public void onSizeChanged(int i10, int i11, int i12, int i13) {
-        switch (this.a) {
-            case 1:
-                super.onSizeChanged(i10, i11, i12, i13);
-                setPivotX(i10 - AndroidUtilities.dp(22.0f));
-                setPivotY(i11 - AndroidUtilities.dp(22.0f));
+                ChatActivityEnterView chatActivityEnterView = this.c;
+                chatActivityEnterView.p0.getViewTreeObserver().removeOnPreDrawListener(this);
+                chatActivityEnterView.p0.postDelayed(new tf(this.b, 20), 100L);
                 break;
             default:
-                super.onSizeChanged(i10, i11, i12, i13);
+                ChatActivityEnterView chatActivityEnterView2 = this.c;
+                chatActivityEnterView2.p0.getViewTreeObserver().removeOnPreDrawListener(this);
+                chatActivityEnterView2.p0.postDelayed(new tf(this.b, 20), 100L);
                 break;
         }
-    }
-
-    @Override // android.view.View
-    public boolean onTouchEvent(MotionEvent motionEvent) {
-        switch (this.a) {
-            case 1:
-                ChatActivityEnterView chatActivityEnterView = this.b;
-                if (!chatActivityEnterView.J || chatActivityEnterView.T4 == BotForumHelper.SteamingSendButtonState.BLOCKING) {
-                    return false;
-                }
-                return super.onTouchEvent(motionEvent);
-            default:
-                return super.onTouchEvent(motionEvent);
-        }
-    }
-
-    @Override // android.view.View
-    public void setVisibility(int i10) {
-        switch (this.a) {
-            case 2:
-                super.setVisibility(i10);
-                this.b.M1(true);
-                break;
-            default:
-                super.setVisibility(i10);
-                break;
-        }
+        return true;
     }
 }

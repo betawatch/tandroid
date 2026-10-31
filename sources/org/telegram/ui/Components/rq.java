@@ -1,220 +1,161 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.view.animation.DecelerateInterpolator;
-import org.telegram.messenger.AndroidUtilities;
+import android.text.TextUtils;
+import java.util.TreeSet;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_bots;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public abstract class rq extends Drawable {
-    public final Paint a;
-    public long b;
-    public final RectF c;
-    public float d;
-    public boolean e;
-    public int f;
-    public int g;
+public final /* synthetic */ class rq implements Runnable {
+    public final /* synthetic */ int D;
+    public final /* synthetic */ qq E;
+    public final /* synthetic */ org.telegram.ui.ActionBar.z2 F;
+    public final /* synthetic */ boolean[] a;
+    public final /* synthetic */ int[] b;
+    public final /* synthetic */ ag.g3 c;
+    public final /* synthetic */ String[] d;
+    public final /* synthetic */ vh.d e;
+    public final /* synthetic */ org.telegram.ui.Cells.m3 f;
+    public final /* synthetic */ TreeSet h;
+    public final /* synthetic */ jg n;
+    public final /* synthetic */ org.telegram.ui.Cells.b9 r;
+    public final /* synthetic */ org.telegram.ui.ActionBar.p6 s;
+    public final /* synthetic */ int[] w;
+    public final /* synthetic */ Runnable[] x;
+    public final /* synthetic */ int[] y;
 
-    public rq() {
-        this(2.0f);
+    public /* synthetic */ rq(boolean[] zArr, int[] iArr, ag.g3 g3Var, String[] strArr, vh.d dVar, org.telegram.ui.Cells.m3 m3Var, TreeSet treeSet, jg jgVar, org.telegram.ui.Cells.b9 b9Var, org.telegram.ui.ActionBar.p6 p6Var, int[] iArr2, Runnable[] runnableArr, int[] iArr3, int i10, qq qqVar, org.telegram.ui.ActionBar.z2 z2Var) {
+        this.a = zArr;
+        this.b = iArr;
+        this.c = g3Var;
+        this.d = strArr;
+        this.e = dVar;
+        this.f = m3Var;
+        this.h = treeSet;
+        this.n = jgVar;
+        this.r = b9Var;
+        this.s = p6Var;
+        this.w = iArr2;
+        this.x = runnableArr;
+        this.y = iArr3;
+        this.D = i10;
+        this.E = qqVar;
+        this.F = z2Var;
     }
 
-    public abstract int a();
-
-    /* JADX WARN: Removed duplicated region for block: B:32:0x014a  */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x015c  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x016e  */
-    /* JADX WARN: Removed duplicated region for block: B:41:0x0180  */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x01b7  */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x01c0  */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x0157  */
-    @Override // android.graphics.drawable.Drawable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void draw(Canvas canvas) {
-        Canvas canvas2;
-        float f7;
-        float f10;
-        float f11;
-        float f12;
-        float y3;
-        Paint paint;
-        float f13;
-        long currentTimeMillis = System.currentTimeMillis();
-        int a2 = a();
-        Paint paint2 = this.a;
-        if (a2 != 0) {
-            this.g = Color.alpha(a2);
-            paint2.setColor(i0.a.o(a2, 255));
+    @Override // java.lang.Runnable
+    public final void run() {
+        final boolean[] zArr = this.a;
+        if (zArr[0] || this.b[0] >= 0) {
+            return;
         }
-        long j10 = this.b;
-        if (j10 != 0) {
-            long j11 = currentTimeMillis - j10;
-            boolean z10 = this.e;
-            if (z10 || this.d != 0.0f) {
-                float f14 = ((j11 * 360) / 500.0f) + this.d;
-                this.d = f14;
-                if (z10 || f14 < 720.0f) {
-                    this.d = f14 - (((int) (f14 / 720.0f)) * 720);
-                } else {
-                    this.d = 0.0f;
+        this.c.run();
+        final String[] strArr = this.d;
+        strArr[0] = null;
+        final vh.d dVar = this.e;
+        dVar.setLoading(false);
+        dVar.setEnabled(false);
+        String charSequence = this.f.getText().toString();
+        StringBuilder t10 = a1.g.t(charSequence);
+        boolean a2 = vq.a(charSequence, "bot");
+        final TreeSet treeSet = this.h;
+        t10.append((a2 || vq.c(charSequence, treeSet) != null) ? "" : "bot");
+        final String sb2 = t10.toString();
+        boolean isEmpty = TextUtils.isEmpty(charSequence);
+        final jg jgVar = this.n;
+        if (isEmpty) {
+            jgVar.run();
+            return;
+        }
+        int length = sb2.length();
+        final org.telegram.ui.Cells.b9 b9Var = this.r;
+        final org.telegram.ui.ActionBar.p6 p6Var = this.s;
+        if (length < 4 || sb2.length() > 32) {
+            b9Var.setText(org.telegram.messenger.cd.L0(sb2.length() < 4 ? 2131743680 : 2131743681, null));
+            org.telegram.ui.ActionBar.a7.V(b9Var.getTextView(), org.telegram.ui.ActionBar.t6.q7, p6Var);
+            return;
+        }
+        b9Var.setText(org.telegram.messenger.cd.L0(2131743692, null));
+        org.telegram.ui.ActionBar.a7.V(b9Var.getTextView(), org.telegram.ui.ActionBar.t6.B6, p6Var);
+        final int[] iArr = this.w;
+        final int i10 = iArr[0];
+        final Runnable[] runnableArr = this.x;
+        final int[] iArr2 = this.y;
+        final int i11 = this.D;
+        final qq qqVar = this.E;
+        final org.telegram.ui.ActionBar.z2 z2Var = this.F;
+        Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.mq
+            @Override // java.lang.Runnable
+            public final void run() {
+                runnableArr[0] = null;
+                final boolean[] zArr2 = zArr;
+                if (zArr2[0]) {
+                    return;
                 }
-                invalidateSelf();
-            }
-        }
-        if (this.g == 255 || getBounds() == null || getBounds().isEmpty()) {
-            canvas2 = canvas;
-            canvas2.save();
-        } else {
-            canvas2 = canvas;
-            canvas2.saveLayerAlpha(getBounds().left, getBounds().top, getBounds().right, getBounds().bottom, this.g, 31);
-        }
-        canvas2.translate(AndroidUtilities.dp(24.0f) / 2, AndroidUtilities.dp(24.0f) / 2);
-        canvas2.rotate(-45.0f);
-        float f15 = this.d;
-        if (f15 < 0.0f || f15 >= 90.0f) {
-            if (f15 >= 90.0f && f15 < 180.0f) {
-                f12 = org.telegram.messenger.t.y(f15, 90.0f, 90.0f, 1.0f);
-                f10 = 0.0f;
-                f7 = 0.0f;
-                f11 = 1.0f;
-            } else if (f15 < 180.0f || f15 >= 270.0f) {
-                if (f15 >= 270.0f && f15 < 360.0f) {
-                    y3 = (f15 - 270.0f) / 90.0f;
-                } else if (f15 >= 360.0f && f15 < 450.0f) {
-                    y3 = org.telegram.messenger.t.y(f15, 360.0f, 90.0f, 1.0f);
-                } else if (f15 >= 450.0f && f15 < 540.0f) {
-                    f10 = (f15 - 450.0f) / 90.0f;
-                    f12 = 0.0f;
-                    f11 = 0.0f;
-                    f7 = 0.0f;
-                } else if (f15 >= 540.0f && f15 < 630.0f) {
-                    f12 = (f15 - 540.0f) / 90.0f;
-                    f11 = 0.0f;
-                    f7 = 0.0f;
-                    f10 = 1.0f;
-                } else if (f15 < 630.0f || f15 >= 720.0f) {
-                    f7 = 0.0f;
-                    f10 = 1.0f;
-                    f12 = f10;
-                } else {
-                    f11 = (f15 - 630.0f) / 90.0f;
-                    f7 = 0.0f;
-                    f10 = 1.0f;
-                    f12 = 1.0f;
+                final int[] iArr3 = iArr;
+                int i12 = iArr3[0];
+                final int i13 = i10;
+                if (i13 != i12) {
+                    return;
                 }
-                f7 = y3;
-                f10 = 0.0f;
-                f12 = f10;
-            } else {
-                f11 = org.telegram.messenger.t.y(f15, 180.0f, 90.0f, 1.0f);
-                f10 = 0.0f;
-                f12 = 0.0f;
-                f7 = 0.0f;
+                TL_bots.checkUsername checkusername = new TL_bots.checkUsername();
+                final String str = sb2;
+                checkusername.username = str;
+                final int i14 = i11;
+                ConnectionsManager connectionsManager = ConnectionsManager.getInstance(i14);
+                a3.b bVar = new a3.b(1);
+                final int[] iArr4 = iArr2;
+                final String[] strArr2 = strArr;
+                final vh.d dVar2 = dVar;
+                final jg jgVar2 = jgVar;
+                final TreeSet treeSet2 = treeSet;
+                final qq qqVar2 = qqVar;
+                final org.telegram.ui.ActionBar.p6 p6Var2 = p6Var;
+                final org.telegram.ui.Cells.b9 b9Var2 = b9Var;
+                final org.telegram.ui.ActionBar.z2 z2Var2 = z2Var;
+                iArr4[0] = connectionsManager.sendRequestTyped(checkusername, bVar, new org.telegram.messenger.j20() { // from class: org.telegram.ui.Components.oq
+                    @Override // org.telegram.messenger.j20
+                    public final void a(Object obj, Object obj2) {
+                        TLRPC.Bool bool = (TLRPC.Bool) obj;
+                        TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
+                        if (zArr2[0]) {
+                            return;
+                        }
+                        if (i13 != iArr3[0]) {
+                            return;
+                        }
+                        iArr4[0] = -1;
+                        boolean z10 = bool instanceof TLRPC.TL_boolTrue;
+                        String str2 = str;
+                        vh.d dVar3 = dVar2;
+                        if (z10) {
+                            strArr2[0] = str2;
+                            dVar3.setEnabled(true);
+                            jgVar2.run();
+                            return;
+                        }
+                        String str3 = tL_error == null ? "USERNAME_OCCUPIED" : tL_error.text;
+                        int i15 = i14;
+                        TreeSet treeSet3 = treeSet2;
+                        qq qqVar3 = qqVar2;
+                        org.telegram.ui.ActionBar.p6 p6Var3 = p6Var2;
+                        CharSequence d = vq.d(i15, str2, treeSet3, str3, qqVar3, p6Var3);
+                        CharSequence L0 = d != null ? d : org.telegram.messenger.cd.L0(2131751728, null);
+                        org.telegram.ui.Cells.b9 b9Var3 = b9Var2;
+                        b9Var3.setText(L0);
+                        org.telegram.ui.ActionBar.a7.V(b9Var3.getTextView(), org.telegram.ui.ActionBar.t6.q7, p6Var3);
+                        if (d != null || tL_error == null) {
+                            return;
+                        }
+                        dVar3.setEnabled(true);
+                        org.telegram.ui.Cells.f1.s(z2Var2.E, p6Var3, tL_error, false);
+                    }
+                });
             }
-            if (f10 == 0.0f) {
-                paint = paint2;
-                canvas2.drawLine(0.0f, 0.0f, 0.0f, this.f * f10, paint);
-            } else {
-                paint = paint2;
-            }
-            if (f12 != 0.0f) {
-                canvas.drawLine((-this.f) * f12, 0.0f, 0.0f, 0.0f, paint);
-            }
-            if (f11 != 0.0f) {
-                canvas.drawLine(0.0f, (-this.f) * f11, 0.0f, 0.0f, paint);
-            }
-            if (f7 != 1.0f) {
-                float f16 = this.f;
-                canvas.drawLine(f16 * f7, 0.0f, f16, 0.0f, paint);
-            }
-            canvas.restore();
-            int centerX = getBounds().centerX();
-            int centerY = getBounds().centerY();
-            int i10 = this.f;
-            float f17 = centerX - i10;
-            float f18 = centerY - i10;
-            float f19 = centerX + i10;
-            float f20 = centerY + i10;
-            RectF rectF = this.c;
-            rectF.set(f17, f18, f19, f20);
-            f13 = this.d;
-            float f21 = (f13 >= 360.0f ? f13 - 360.0f : 0.0f) - 45.0f;
-            if (f13 >= 360.0f) {
-                f13 = 720.0f - f13;
-            }
-            canvas.drawArc(rectF, f21, f13, false, paint);
-            this.b = currentTimeMillis;
-        }
-        f10 = 1.0f - (f15 / 90.0f);
-        f7 = 0.0f;
-        f12 = 1.0f;
-        f11 = f12;
-        if (f10 == 0.0f) {
-        }
-        if (f12 != 0.0f) {
-        }
-        if (f11 != 0.0f) {
-        }
-        if (f7 != 1.0f) {
-        }
-        canvas.restore();
-        int centerX2 = getBounds().centerX();
-        int centerY2 = getBounds().centerY();
-        int i102 = this.f;
-        float f172 = centerX2 - i102;
-        float f182 = centerY2 - i102;
-        float f192 = centerX2 + i102;
-        float f202 = centerY2 + i102;
-        RectF rectF2 = this.c;
-        rectF2.set(f172, f182, f192, f202);
-        f13 = this.d;
-        float f212 = (f13 >= 360.0f ? f13 - 360.0f : 0.0f) - 45.0f;
-        if (f13 >= 360.0f) {
-        }
-        canvas.drawArc(rectF2, f212, f13, false, paint);
-        this.b = currentTimeMillis;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return AndroidUtilities.dp(24.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return AndroidUtilities.dp(24.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    public rq(float f7) {
-        Paint paint = new Paint(1);
-        this.a = paint;
-        new DecelerateInterpolator();
-        this.c = new RectF();
-        this.g = 255;
-        paint.setColor(-1);
-        paint.setStrokeWidth(AndroidUtilities.dp(f7));
-        paint.setStrokeCap(Paint.Cap.ROUND);
-        paint.setStyle(Paint.Style.STROKE);
-        this.f = AndroidUtilities.dp(8.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+        };
+        runnableArr[0] = runnable;
+        org.telegram.messenger.i0.h3(runnable, 300L);
     }
 }

@@ -1,55 +1,47 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class hp implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ zp b;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.util.Property;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
 
-    public /* synthetic */ hp(zp zpVar, int i10) {
-        this.a = i10;
-        this.b = zpVar;
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final class hp extends FrameLayout {
+    public TextView[] a;
+    public ei0[] b;
+    public ImageView c;
+    public AnimatorSet d;
+    public ho e;
+    public float f;
+
+    public final void a() {
+        if (getTag() == null) {
+            return;
+        }
+        setTag(null);
+        ho hoVar = this.e;
+        if (hoVar != null) {
+            org.telegram.messenger.i0.r(hoVar);
+            this.e = null;
+        }
+        AnimatorSet animatorSet = this.d;
+        if (animatorSet != null) {
+            animatorSet.cancel();
+            this.d = null;
+        }
+        AnimatorSet animatorSet2 = new AnimatorSet();
+        this.d = animatorSet2;
+        animatorSet2.playTogether(ObjectAnimator.ofFloat(this, (Property<hp, Float>) View.ALPHA, 0.0f), ObjectAnimator.ofFloat(this, (Property<hp, Float>) View.SCALE_X, 0.0f), ObjectAnimator.ofFloat(this, (Property<hp, Float>) View.SCALE_Y, 0.0f));
+        this.d.addListener(new gp(this, 1));
+        this.d.setDuration(180L);
+        this.d.start();
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.h.l();
-                break;
-            case 1:
-                this.b.u(true);
-                break;
-            case 2:
-                zp zpVar = this.b;
-                org.telegram.ui.wn wnVar = zpVar.v;
-                org.telegram.ui.ActionBar.r2 c02 = org.telegram.ui.y91.c0(wnVar.getMessagesController().getChat(Long.valueOf(-wnVar.a())), true);
-                org.telegram.ui.ActionBar.p2 p2Var = new org.telegram.ui.ActionBar.p2();
-                p2Var.a = true;
-                c02.setResourceProvider(wnVar.getResourceProvider());
-                p2Var.c = new k5(9);
-                p2Var.d = new hp(zpVar, 3);
-                p2Var.b = new hp(zpVar, 4);
-                p2Var.e = true;
-                zpVar.W = c02;
-                wnVar.showAsSheet(c02, p2Var);
-                break;
-            case 3:
-                this.b.y();
-                break;
-            case 4:
-                this.b.W = null;
-                break;
-            case 5:
-                this.b.y();
-                break;
-            case 6:
-                this.b.W = null;
-                break;
-            default:
-                zp zpVar2 = this.b;
-                zpVar2.T.f(zpVar2.F, true);
-                break;
-        }
+    public float getBaseTranslationY() {
+        return this.f;
     }
 }

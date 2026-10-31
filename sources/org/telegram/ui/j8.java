@@ -1,49 +1,69 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.util.SparseArray;
+import android.view.View;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class j8 extends AnimatorListenerAdapter {
-    public final /* synthetic */ m8 a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ float d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ boolean f;
-    public final /* synthetic */ k8 h;
+public final /* synthetic */ class j8 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean[] b;
 
-    public j8(k8 k8Var, m8 m8Var, float f7, float f10, float f11, int i10, boolean z10) {
-        this.h = k8Var;
-        this.a = m8Var;
-        this.b = f7;
-        this.c = f10;
-        this.d = f11;
-        this.e = i10;
-        this.f = z10;
+    public /* synthetic */ j8(int i10, boolean[] zArr) {
+        this.a = i10;
+        this.b = zArr;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationCancel(Animator animator) {
-        float f7 = this.b;
-        m8 m8Var = this.a;
-        m8Var.a = f7;
-        m8Var.b = this.c;
-        m8Var.c = this.d;
-        this.h.invalidate();
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        k8 k8Var = this.h;
-        SparseArray sparseArray = k8Var.v;
-        int i10 = this.e;
-        sparseArray.remove(i10);
-        if (this.f) {
-            return;
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                boolean[] zArr = this.b;
+                boolean z10 = !zArr[0];
+                zArr[0] = z10;
+                ((org.telegram.ui.Cells.c2) view).c(z10, true);
+                break;
+            case 1:
+                boolean[] zArr2 = this.b;
+                boolean z11 = !zArr2[1];
+                zArr2[1] = z11;
+                ((org.telegram.ui.Cells.c2) view).c(z11, true);
+                break;
+            case 2:
+                boolean[] zArr3 = this.b;
+                boolean z12 = !zArr3[0];
+                zArr3[0] = z12;
+                ((org.telegram.ui.Cells.c2) view).c(z12, true);
+                break;
+            case 3:
+                boolean[] zArr4 = this.b;
+                boolean z13 = !zArr4[0];
+                zArr4[0] = z13;
+                ((org.telegram.ui.Cells.c2) view).c(z13, true);
+                break;
+            case 4:
+                if (view.isEnabled()) {
+                    boolean[] zArr5 = this.b;
+                    boolean z14 = !zArr5[0];
+                    zArr5[0] = z14;
+                    ((org.telegram.ui.Cells.c2) view).c(z14, true);
+                    break;
+                }
+                break;
+            case 5:
+                boolean[] zArr6 = this.b;
+                boolean z15 = !zArr6[0];
+                zArr6[0] = z15;
+                ((org.telegram.ui.Cells.c2) view).c(z15, true);
+                break;
+            default:
+                if (view.isEnabled()) {
+                    boolean[] zArr7 = this.b;
+                    boolean z16 = !zArr7[0];
+                    zArr7[0] = z16;
+                    ((org.telegram.ui.Cells.c2) view).c(z16, true);
+                    break;
+                }
+                break;
         }
-        k8Var.w.remove(i10);
     }
 }

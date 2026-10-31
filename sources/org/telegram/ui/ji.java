@@ -1,26 +1,24 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes3.dex */
-public final class ji implements org.telegram.ui.Components.sh0 {
-    public boolean a = true;
-    public final /* synthetic */ org.telegram.ui.Components.gl0 b;
+import android.app.Activity;
+import java.util.ArrayList;
 
-    public ji(org.telegram.ui.Components.gl0 gl0Var) {
-        this.b = gl0Var;
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final class ji extends org.telegram.ui.Components.cv {
+    public final /* synthetic */ ki N1;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ji(ki kiVar, org.telegram.ui.ActionBar.k2 k2Var, Activity activity, org.telegram.ui.ActionBar.p6 p6Var, ArrayList arrayList) {
+        super(k2Var, activity, p6Var, arrayList);
+        this.N1 = kiVar;
     }
 
-    @Override // org.telegram.ui.Components.sh0
-    public final void a(float f7, float f10) {
-        org.telegram.ui.Components.gl0 gl0Var = this.b;
-        if (f7 == 0.0f && !this.a) {
-            gl0Var.r(false);
-            this.a = true;
-        } else if (f7 == 1.0f && this.a) {
-            gl0Var.setAlpha(1.0f - f10);
-            if (f10 == 1.0f) {
-                this.a = false;
-            }
-        }
+    @Override // org.telegram.ui.Components.cv, org.telegram.ui.ActionBar.z2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.g2
+    public final void dismiss() {
+        super.dismiss();
+        un unVar = this.N1.p;
+        unVar.getClass();
+        unVar.o8(false, true, 0.0f);
     }
 }

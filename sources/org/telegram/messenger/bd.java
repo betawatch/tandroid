@@ -1,31 +1,34 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+import android.icu.text.RelativeDateTimeFormatter;
+import java.util.Locale;
+
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final /* synthetic */ class bd implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.r2 b;
-
-    public /* synthetic */ bd(int i10, org.telegram.ui.ActionBar.r2 r2Var) {
-        this.a = i10;
-        this.b = r2Var;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                MessagesController.lambda$checkSensitive$453(this.b);
-                break;
-            case 1:
-                org.telegram.ui.Components.g5.s0(7, this.b, null);
-                break;
-            case 2:
-                org.telegram.ui.Components.g5.s0(8, this.b, null);
-                break;
-            default:
-                TranslateController.lambda$pushToSummarize$18(this.b);
-                break;
+public abstract class bd {
+    public static String a(long j10, Locale locale) {
+        RelativeDateTimeFormatter.RelativeUnit relativeUnit;
+        RelativeDateTimeFormatter relativeDateTimeFormatter = RelativeDateTimeFormatter.getInstance(locale);
+        boolean z10 = j10 > 0;
+        long max = Math.max(1L, Math.round(Math.abs(j10) / 1000.0d));
+        if (max < 60) {
+            relativeUnit = RelativeDateTimeFormatter.RelativeUnit.SECONDS;
+        } else if (max < 3600) {
+            relativeUnit = RelativeDateTimeFormatter.RelativeUnit.MINUTES;
+            max = Math.round(max / 60.0d);
+        } else if (max < 86400) {
+            relativeUnit = RelativeDateTimeFormatter.RelativeUnit.HOURS;
+            max = Math.round(max / 3600.0d);
+        } else if (max < 2592000) {
+            relativeUnit = RelativeDateTimeFormatter.RelativeUnit.DAYS;
+            max = Math.round(max / 86400.0d);
+        } else if (max < 31536000) {
+            relativeUnit = RelativeDateTimeFormatter.RelativeUnit.MONTHS;
+            max = Math.round(max / 2592000.0d);
+        } else {
+            relativeUnit = RelativeDateTimeFormatter.RelativeUnit.YEARS;
+            max = Math.round(max / 3.1536E7d);
         }
+        return relativeDateTimeFormatter.format(max, z10 ? RelativeDateTimeFormatter.Direction.NEXT : RelativeDateTimeFormatter.Direction.LAST, relativeUnit);
     }
 }

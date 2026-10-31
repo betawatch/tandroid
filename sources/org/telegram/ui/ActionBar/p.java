@@ -1,111 +1,53 @@
 package org.telegram.ui.ActionBar;
 
-import android.content.DialogInterface;
-import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
-import android.os.Build;
-import android.view.KeyEvent;
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
+import android.text.TextUtils;
+import org.telegram.messenger.f8;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class p implements r0.n, m1, b2 {
+public final /* synthetic */ class p implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ ActionBarLayout b;
 
-    public /* synthetic */ p(Object obj, int i10) {
+    public /* synthetic */ p(ActionBarLayout actionBarLayout, int i10) {
         this.a = i10;
-        this.b = obj;
+        this.b = actionBarLayout;
     }
 
-    @Override // r0.n
-    public r0.k1 P0(View view, r0.k1 k1Var) {
+    @Override // java.lang.Runnable
+    public final void run() {
         int i10 = this.a;
-        int i11 = 0;
-        Object obj = this.b;
+        ActionBarLayout actionBarLayout = this.b;
         switch (i10) {
             case 0:
-                ActionBarLayout actionBarLayout = (ActionBarLayout) obj;
-                Drawable drawable = ActionBarLayout.v1;
-                i0.b defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(k1Var, false);
-                i0.b defaultWindowInsets2 = AndroidUtilities.getDefaultWindowInsets(k1Var, true);
-                actionBarLayout.t1 = defaultWindowInsets;
-                actionBarLayout.u1 = defaultWindowInsets2;
-                actionBarLayout.s1 = k1Var;
-                int childCount = actionBarLayout.getChildCount();
-                while (i11 < childCount) {
-                    actionBarLayout.o(actionBarLayout.getChildAt(i11), k1Var);
-                    i11++;
-                }
+                actionBarLayout.invalidate();
                 break;
             case 1:
+                actionBarLayout.requestLayout();
+                actionBarLayout.s.requestLayout();
+                actionBarLayout.w.requestLayout();
+                actionBarLayout.x.requestLayout();
+                break;
             case 2:
-            case 4:
-            default:
-                d4 d4Var = (d4) obj;
-                d4Var.e = k1Var;
-                i0.b defaultWindowInsets3 = AndroidUtilities.getDefaultWindowInsets(k1Var, false);
-                i0.b defaultWindowInsets4 = AndroidUtilities.getDefaultWindowInsets(k1Var, true);
-                if (!d4Var.f.equals(defaultWindowInsets3) || !d4Var.h.equals(defaultWindowInsets4)) {
-                    AndroidUtilities.statusBarHeight = defaultWindowInsets3.b;
-                    AndroidUtilities.navigationBarHeight = defaultWindowInsets3.d;
-                    d4Var.f = defaultWindowInsets3;
-                    d4Var.h = defaultWindowInsets4;
-                    d4Var.requestLayout();
+                if (actionBarLayout.a && actionBarLayout.getLastFragment() != null && actionBarLayout.s.getChildCount() == 0) {
+                    boolean z10 = org.telegram.messenger.v2.a;
+                    f8.g(new RuntimeException(TextUtils.join(", ", actionBarLayout.o1)), true);
+                    actionBarLayout.W(true, true);
+                    break;
                 }
-                int childCount2 = d4Var.getChildCount();
-                while (i11 < childCount2) {
-                    View childAt = d4Var.getChildAt(i11);
-                    if ((childAt instanceof ActionBarLayout) || childAt.getTag() == null) {
-                        r0.i0.b(childAt, k1Var);
-                    }
-                    i11++;
-                }
-                d4Var.invalidate();
                 break;
             case 3:
-                r0.h1 h1Var = k1Var.a;
-                FrameLayout frameLayout = (FrameLayout) obj;
-                Rect rect = new Rect();
-                if (Build.VERSION.SDK_INT >= 30) {
-                    i0.b f7 = h1Var.f(527);
-                    rect.set(f7.a, f7.b, f7.c, f7.d);
-                } else {
-                    rect.set(h1Var.i().a, h1Var.i().b, h1Var.i().c, h1Var.i().d);
-                }
-                frameLayout.setPadding(rect.left, rect.top, rect.right, rect.bottom + AndroidUtilities.navigationBarHeight);
-                frameLayout.requestLayout();
+                Drawable drawable = ActionBarLayout.v1;
+                actionBarLayout.G(false);
                 break;
-            case 5:
+            case 4:
+                Drawable drawable2 = ActionBarLayout.v1;
+                actionBarLayout.G(false);
                 break;
-            case 6:
-                b4 b4Var = (b4) obj;
-                b4Var.s = k1Var.a.f(2).d;
-                b4Var.invalidate();
+            default:
+                actionBarLayout.H0.setVisibility(8);
                 break;
-        }
-        return r0.k1.b;
-    }
-
-    @Override // org.telegram.ui.ActionBar.b2
-    public void h(e2 e2Var, int i10) {
-        e2 e2Var2 = (e2) this.b;
-        DialogInterface.OnCancelListener onCancelListener = e2Var2.J;
-        if (onCancelListener != null) {
-            onCancelListener.onCancel(e2Var2);
-        }
-        e2Var2.dismiss();
-    }
-
-    @Override // org.telegram.ui.ActionBar.m1
-    public void n(KeyEvent keyEvent) {
-        o1 o1Var;
-        w0 w0Var = (w0) this.b;
-        w0Var.getClass();
-        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (o1Var = w0Var.d) != null && o1Var.isShowing()) {
-            w0Var.d.d(true);
         }
     }
 }

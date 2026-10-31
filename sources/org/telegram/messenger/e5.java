@@ -1,47 +1,26 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.ImageLoader;
+import java.text.CollationKey;
+import java.text.Collator;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final /* synthetic */ class e5 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ Object e;
-
-    public /* synthetic */ e5(int i10, String str, long j10, long j11) {
-        this.a = 0;
-        this.d = i10;
-        this.e = str;
-        this.b = j10;
-        this.c = j11;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                ImageLoader.5.lambda$fileLoadProgressChanged$8(this.d, (String) this.e, this.b, this.c);
-                break;
-            case 1:
-                ((MediaDataController) this.e).lambda$getMediaCounts$131(this.b, this.c, this.d);
-                break;
-            case 2:
-                ((NotificationsController) this.e).lambda$deleteNotificationChannel$43(this.b, this.c, this.d);
-                break;
-            default:
-                ((TopicsController) this.e).lambda$updateMentionsUnread$21(this.b, this.c, this.d);
-                break;
+public final class e5 extends Collator {
+    @Override // java.text.Collator
+    public final int compare(String str, String str2) {
+        if (str == null || str2 == null) {
+            return 0;
         }
+        return str.compareTo(str2);
     }
 
-    public /* synthetic */ e5(BaseController baseController, long j10, long j11, int i10, int i11) {
-        this.a = i11;
-        this.e = baseController;
-        this.b = j10;
-        this.c = j11;
-        this.d = i10;
+    @Override // java.text.Collator
+    public final CollationKey getCollationKey(String str) {
+        return null;
+    }
+
+    @Override // java.text.Collator
+    public final int hashCode() {
+        return 0;
     }
 }

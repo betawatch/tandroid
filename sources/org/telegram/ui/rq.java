@@ -1,132 +1,88 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.content.SharedPreferences;
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.regex.Pattern;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.ConnectionsManager;
+import java.util.Comparator;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class rq implements Utilities.Callback {
-    public final /* synthetic */ int a = 1;
+public final /* synthetic */ class rq implements Comparator {
+    public final /* synthetic */ int a;
     public final /* synthetic */ int b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object g;
-    public final /* synthetic */ Serializable h;
+    public final /* synthetic */ Object c;
 
-    public /* synthetic */ rq(int i10, long j10, Activity activity, ArrayList arrayList, HashMap hashMap, Utilities.Callback callback, org.telegram.ui.ActionBar.u6 u6Var) {
+    public /* synthetic */ rq(Object obj, int i10, int i11) {
+        this.a = i11;
+        this.c = obj;
         this.b = i10;
-        this.d = arrayList;
-        this.c = j10;
-        this.e = activity;
-        this.f = u6Var;
-        this.g = callback;
-        this.h = hashMap;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        int i10 = this.a;
-        Serializable serializable = this.h;
-        Object obj2 = this.g;
-        Object obj3 = this.f;
-        Object obj4 = this.e;
-        Object obj5 = this.d;
-        switch (i10) {
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        int i10;
+        TLRPC.UserStatus userStatus;
+        TLRPC.UserStatus userStatus2;
+        TLRPC.UserStatus userStatus3;
+        TLRPC.UserStatus userStatus4;
+        switch (this.a) {
             case 0:
-                mr mrVar = (mr) obj5;
-                TLObject tLObject = (TLObject) obj4;
-                TLRPC.TL_chatAdminRights tL_chatAdminRights = (TLRPC.TL_chatAdminRights) obj3;
-                TLRPC.TL_chatBannedRights tL_chatBannedRights = (TLRPC.TL_chatBannedRights) obj2;
-                String str = (String) serializable;
-                int intValue = ((Integer) obj).intValue();
-                boolean[] zArr = new boolean[1];
-                boolean z10 = (tLObject instanceof TLRPC.TL_channelParticipantAdmin) || (tLObject instanceof TLRPC.TL_chatParticipantAdmin);
-                long j10 = mrVar.M;
-                TLRPC.TL_chatBannedRights tL_chatBannedRights2 = mrVar.y;
-                long j11 = this.c;
-                uq uqVar = new uq(mrVar, j11, j10, tL_chatAdminRights, tL_chatBannedRights2, tL_chatBannedRights, str, intValue, zArr, j11);
-                uqVar.X0 = new vq(mrVar, intValue, j11, this.b, z10, zArr);
-                mrVar.presentFragment(uqVar);
-                break;
-            case 1:
-                ArrayList arrayList = (ArrayList) obj5;
-                Activity activity = (Activity) obj4;
-                org.telegram.ui.ActionBar.u6 u6Var = (org.telegram.ui.ActionBar.u6) obj3;
-                Utilities.Callback callback = (Utilities.Callback) obj2;
-                HashMap hashMap = (HashMap) serializable;
-                boolean booleanValue = ((Boolean) obj).booleanValue();
+                pr prVar = (pr) this.c;
+                prVar.getClass();
+                TLRPC.ChannelParticipant channelParticipant = (TLRPC.ChannelParticipant) ((TLObject) obj);
+                TLRPC.ChannelParticipant channelParticipant2 = (TLRPC.ChannelParticipant) ((TLObject) obj2);
+                long C1 = org.telegram.messenger.jj.C1(channelParticipant.peer);
+                long C12 = org.telegram.messenger.jj.C1(channelParticipant2.peer);
                 int i11 = this.b;
-                if (booleanValue) {
-                    SharedPreferences.Editor edit = MessagesController.getInstance(i11).getMainSettings().edit();
-                    int size = arrayList.size();
-                    int i12 = 0;
-                    while (i12 < size) {
-                        Object obj6 = arrayList.get(i12);
-                        i12++;
-                        Long l4 = (Long) obj6;
-                        long longValue = l4.longValue();
-                        long sendPaidMessagesStars = MessagesController.getInstance(i11).getSendPaidMessagesStars(longValue);
-                        if (sendPaidMessagesStars <= 0 && longValue > 0) {
-                            sendPaidMessagesStars = DialogObject.getMessagesStarsPrice(MessagesController.getInstance(i11).isUserContactBlocked(longValue));
-                        }
-                        edit.putLong(org.telegram.ui.Components.b10.i(longValue, "ask_paid_message_", "_price"), sendPaidMessagesStars);
-                        bi.ca.y(i11, false).O.put(l4, Long.valueOf(System.currentTimeMillis()));
-                    }
-                    edit.apply();
-                }
-                org.telegram.ui.Components.k1 k1Var = new org.telegram.ui.Components.k1(i11, this.c, activity, arrayList, hashMap, callback, u6Var);
-                if (!bi.ca.y(i11, false).e) {
-                    bi.ca y3 = bi.ca.y(i11, false);
-                    y3.e = false;
-                    y3.q(false, true, k1Var);
-                    y3.e = true;
-                    break;
+                int i12 = -100;
+                if (C1 > 0) {
+                    TLRPC.User Z1 = prVar.getMessagesController().Z1(Long.valueOf(org.telegram.messenger.jj.C1(channelParticipant.peer)));
+                    i10 = (Z1 == null || (userStatus2 = Z1.status) == null) ? 0 : Z1.self ? i11 + 50000 : userStatus2.expires;
                 } else {
-                    k1Var.run();
-                    break;
+                    i10 = -100;
+                }
+                if (C12 > 0) {
+                    TLRPC.User Z12 = prVar.getMessagesController().Z1(Long.valueOf(org.telegram.messenger.jj.C1(channelParticipant2.peer)));
+                    i12 = (Z12 == null || (userStatus = Z12.status) == null) ? 0 : Z12.self ? i11 + 50000 : userStatus.expires;
+                }
+                if (i10 <= 0 || i12 <= 0) {
+                    if (i10 >= 0 || i12 >= 0) {
+                        if ((i10 >= 0 || i12 <= 0) && (i10 != 0 || i12 == 0)) {
+                            if ((i12 >= 0 || i10 <= 0) && (i12 != 0 || i10 == 0)) {
+                            }
+                        }
+                    } else if (i10 <= i12) {
+                        if (i10 < i12) {
+                        }
+                    }
+                } else if (i10 <= i12) {
+                    if (i10 < i12) {
+                    }
                 }
                 break;
             default:
-                Pattern pattern = LaunchActivity.D1;
-                TLRPC.TL_messages_toggleBotInAttachMenu tL_messages_toggleBotInAttachMenu = new TLRPC.TL_messages_toggleBotInAttachMenu();
+                org.telegram.ui.Components.z20 z20Var = (org.telegram.ui.Components.z20) this.c;
+                z20Var.getClass();
+                TLRPC.User Z13 = org.telegram.messenger.vp.r1(z20Var.a).Z1(Long.valueOf(org.telegram.messenger.jj.C1(((TLRPC.ChannelParticipant) ((TLObject) obj)).peer)));
+                TLRPC.User Z14 = org.telegram.messenger.vp.r1(z20Var.a).Z1(Long.valueOf(org.telegram.messenger.jj.C1(((TLRPC.ChannelParticipant) ((TLObject) obj2)).peer)));
                 int i13 = this.b;
-                tL_messages_toggleBotInAttachMenu.bot = MessagesController.getInstance(i13).getInputUser(this.c);
-                tL_messages_toggleBotInAttachMenu.enabled = true;
-                tL_messages_toggleBotInAttachMenu.write_allowed = true;
-                ConnectionsManager.getInstance(i13).sendRequest(tL_messages_toggleBotInAttachMenu, new org.telegram.messenger.mi((LaunchActivity) obj5, i13, (ey) obj4, (org.telegram.ui.ActionBar.r2) obj3, (TLRPC.User) obj2, (String) serializable), 66);
+                int i14 = (Z13 == null || (userStatus4 = Z13.status) == null) ? 0 : Z13.self ? i13 + 50000 : userStatus4.expires;
+                int i15 = (Z14 == null || (userStatus3 = Z14.status) == null) ? 0 : Z14.self ? i13 + 50000 : userStatus3.expires;
+                if (i14 <= 0 || i15 <= 0) {
+                    if (i14 >= 0 || i15 >= 0) {
+                        if ((i14 >= 0 || i15 <= 0) && (i14 != 0 || i15 == 0)) {
+                            if ((i15 >= 0 || i14 <= 0) && (i15 != 0 || i14 == 0)) {
+                            }
+                        }
+                    } else if (i14 <= i15) {
+                        if (i14 < i15) {
+                        }
+                    }
+                } else if (i14 <= i15) {
+                    if (i14 < i15) {
+                    }
+                }
                 break;
         }
-    }
-
-    public /* synthetic */ rq(mr mrVar, long j10, int i10, TLObject tLObject, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str, boolean z10) {
-        this.d = mrVar;
-        this.c = j10;
-        this.b = i10;
-        this.e = tLObject;
-        this.f = tL_chatAdminRights;
-        this.g = tL_chatBannedRights;
-        this.h = str;
-    }
-
-    public /* synthetic */ rq(LaunchActivity launchActivity, int i10, long j10, ey eyVar, org.telegram.ui.ActionBar.r2 r2Var, TLRPC.User user, String str) {
-        this.d = launchActivity;
-        this.b = i10;
-        this.c = j10;
-        this.e = eyVar;
-        this.f = r2Var;
-        this.g = user;
-        this.h = str;
+        return 0;
     }
 }

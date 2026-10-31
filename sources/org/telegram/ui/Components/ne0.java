@@ -1,39 +1,76 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.LaunchActivity;
+import android.graphics.Canvas;
+import android.text.Layout;
+import android.text.StaticLayout;
+import android.text.TextPaint;
+import android.view.View;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class ne0 extends me0 {
-    public final /* synthetic */ oe0 j0;
+public final class ne0 extends View {
+    public boolean D;
+    public long E;
+    public float F;
+    public float G;
+    public float H;
+    public eb0 I;
+    public TextPaint a;
+    public TextPaint b;
+    public StaticLayout c;
+    public float d;
+    public float e;
+    public StaticLayout f;
+    public float h;
+    public float n;
+    public boolean r;
+    public t5 s;
+    public boolean w;
+    public oe0 x;
+    public vh.y6 y;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ne0(oe0 oe0Var, LaunchActivity launchActivity) {
-        super(launchActivity);
-        this.j0 = oe0Var;
-    }
-
-    @Override // org.telegram.ui.Components.me0
-    public final void h(float f7) {
-        LaunchActivity launchActivity = LaunchActivity.I1;
-        if (launchActivity == null) {
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        float d = this.s.d(this.r);
+        if (d <= 0.0f || this.c == null || this.f == null) {
             return;
         }
-        org.telegram.ui.ActionBar.d4 d4Var = launchActivity.z0;
-        d4Var.setScaleX(AndroidUtilities.lerp(1.0f, 1.25f, f7));
-        d4Var.setScaleY(AndroidUtilities.lerp(1.0f, 1.25f, f7));
+        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) (d * 255.0f), 31);
+        canvas.save();
+        canvas.translate(((getWidth() - this.d) / 2.0f) - this.e, getHeight() * 0.22f);
+        this.c.draw(canvas);
+        canvas.restore();
+        canvas.save();
+        canvas.translate(((getWidth() - this.h) / 2.0f) - this.n, (getHeight() * 0.22f) + org.telegram.messenger.i0.L(60.0f));
+        this.f.draw(canvas);
+        canvas.restore();
+        canvas.restore();
     }
 
-    @Override // org.telegram.ui.Components.me0
-    public final void j() {
-        super/*android.app.Dialog*/.dismiss();
-        LaunchActivity launchActivity = LaunchActivity.I1;
-        if (launchActivity == null) {
-            return;
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        setMeasuredDimension(View.MeasureSpec.getSize(i10), View.MeasureSpec.getSize(i11));
+        TextPaint textPaint = this.a;
+        textPaint.setColor(-1);
+        textPaint.setShadowLayer(org.telegram.messenger.i0.L(8.0f), 0.0f, 0.0f, 805306368);
+        textPaint.setTextSize(org.telegram.messenger.i0.L(34.0f));
+        TextPaint textPaint2 = this.b;
+        textPaint2.setColor(-1);
+        textPaint2.setShadowLayer(org.telegram.messenger.i0.L(12.0f), 0.0f, 0.0f, 805306368);
+        textPaint2.setTextSize(org.telegram.messenger.i0.L(58.0f));
+        if (this.c == null) {
+            StaticLayout staticLayout = new StaticLayout(org.telegram.messenger.cd.L0(2131751127, null), textPaint, getMeasuredWidth(), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+            this.c = staticLayout;
+            this.d = staticLayout.getLineCount() > 0 ? this.c.getLineWidth(0) : 0.0f;
+            this.e = this.c.getLineCount() > 0 ? this.c.getLineLeft(0) : 0.0f;
         }
-        org.telegram.ui.ActionBar.d4 d4Var = launchActivity.z0;
-        d4Var.setScaleX(1.0f);
-        d4Var.setScaleY(1.0f);
+    }
+
+    public void setAllowTouch(boolean z10) {
+        this.w = z10;
+    }
+
+    public void setFilterView(oe0 oe0Var) {
+        this.x = oe0Var;
     }
 }

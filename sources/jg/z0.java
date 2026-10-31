@@ -1,115 +1,160 @@
 package jg;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
-import org.telegram.messenger.wh;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
+import android.content.Context;
+import android.graphics.PointF;
+import android.view.ViewGroup;
+import org.telegram.messenger.z20;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.wc;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.Components.oj0;
+import w7.b6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class z0 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ d1 b;
+public final class z0 extends j {
+    public final y0 q0;
+    public boolean r0;
+    public int s0;
+    public int t0;
+    public TLRPC.MessageMedia u0;
+    public TL_stories.MediaArea v0;
 
-    public /* synthetic */ z0(d1 d1Var, int i10) {
-        this.a = i10;
-        this.b = d1Var;
+    public z0(Context context, PointF pointF, int i10, TLRPC.MessageMedia messageMedia, TL_stories.MediaArea mediaArea, float f7, int i11) {
+        super(context, pointF);
+        y0 y0Var = new y0(context, f7);
+        this.q0 = y0Var;
+        y0Var.setMaxWidth(i11);
+        r(i10, messageMedia, mediaArea);
+        y0Var.e(0, this.s0);
+        addView(y0Var, b6.e(-2, -2, 51));
+        setClipChildren(false);
+        setClipToPadding(false);
+        k();
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                final int i10 = 1;
-                final d1 d1Var = this.b;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: jg.x0
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i10) {
-                            case 0:
-                                d1 d1Var2 = d1Var;
-                                d1Var2.b.b(false);
-                                TLRPC.TL_error tL_error2 = tL_error;
-                                if (tL_error2 == null) {
-                                    if (!(tLObject instanceof TLRPC.TL_boolFalse)) {
-                                        d1Var2.finishFragment();
-                                        break;
-                                    } else {
-                                        wh.n(R.string.UnknownError, wc.b0(d1Var2), null);
-                                        break;
-                                    }
-                                } else {
-                                    wc.e0(tL_error2);
-                                    break;
-                                }
-                            default:
-                                d1 d1Var3 = d1Var;
-                                TLRPC.TL_error tL_error3 = tL_error;
-                                if (tL_error3 == null) {
-                                    if (!(tLObject instanceof TLRPC.TL_boolFalse)) {
-                                        d1Var3.finishFragment();
-                                        break;
-                                    } else {
-                                        d1Var3.b.b(false);
-                                        wh.n(R.string.UnknownError, wc.b0(d1Var3), null);
-                                        break;
-                                    }
-                                } else {
-                                    d1Var3.b.b(false);
-                                    wc.e0(tL_error3);
-                                    break;
-                                }
-                        }
-                    }
-                });
-                break;
-            default:
-                final int i11 = 0;
-                final d1 d1Var2 = this.b;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: jg.x0
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i11) {
-                            case 0:
-                                d1 d1Var22 = d1Var2;
-                                d1Var22.b.b(false);
-                                TLRPC.TL_error tL_error2 = tL_error;
-                                if (tL_error2 == null) {
-                                    if (!(tLObject instanceof TLRPC.TL_boolFalse)) {
-                                        d1Var22.finishFragment();
-                                        break;
-                                    } else {
-                                        wh.n(R.string.UnknownError, wc.b0(d1Var22), null);
-                                        break;
-                                    }
-                                } else {
-                                    wc.e0(tL_error2);
-                                    break;
-                                }
-                            default:
-                                d1 d1Var3 = d1Var2;
-                                TLRPC.TL_error tL_error3 = tL_error;
-                                if (tL_error3 == null) {
-                                    if (!(tLObject instanceof TLRPC.TL_boolFalse)) {
-                                        d1Var3.finishFragment();
-                                        break;
-                                    } else {
-                                        d1Var3.b.b(false);
-                                        wh.n(R.string.UnknownError, wc.b0(d1Var3), null);
-                                        break;
-                                    }
-                                } else {
-                                    d1Var3.b.b(false);
-                                    wc.e0(tL_error3);
-                                    break;
-                                }
-                        }
-                    }
-                });
-                break;
+    public static String q(double d) {
+        double abs = Math.abs(d);
+        double floor = Math.floor(abs);
+        String p5 = a1.g.p(new StringBuilder(""), (int) floor, "°");
+        double floor2 = Math.floor((abs - floor) * 60.0d);
+        StringBuilder t10 = a1.g.t(p5);
+        t10.append(floor2 <= 0.0d ? "0" : "");
+        t10.append(floor2 < 10.0d ? "0" : "");
+        String p9 = a1.g.p(t10, (int) floor2, "'");
+        double floor3 = Math.floor(Math.floor(floor2) * 60.0d);
+        StringBuilder t11 = a1.g.t(p9);
+        t11.append(floor3 <= 0.0d ? "0" : "");
+        t11.append(floor3 < 10.0d ? "0" : "");
+        return a1.g.p(t11, (int) floor3, "\"");
+    }
+
+    @Override // jg.j
+    public final i a() {
+        return new u0(this, getContext());
+    }
+
+    public int getColor() {
+        return this.s0;
+    }
+
+    @Override // jg.j
+    public float getMaxScale() {
+        return 1.5f;
+    }
+
+    @Override // jg.j
+    public oj0 getSelectionBounds() {
+        ViewGroup viewGroup = (ViewGroup) getParent();
+        if (viewGroup == null) {
+            return new oj0();
         }
+        float scaleX = viewGroup.getScaleX();
+        float L = (org.telegram.messenger.i0.L(64.0f) / scaleX) + (getScale() * getMeasuredWidth());
+        float L2 = (org.telegram.messenger.i0.L(64.0f) / scaleX) + (getScale() * getMeasuredHeight());
+        float x10 = z20.x(L, 2.0f, getPositionX(), scaleX);
+        return new oj0(x10, z20.x(L2, 2.0f, getPositionY(), scaleX), ((L * scaleX) + x10) - x10, L2 * scaleX);
+    }
+
+    @Override // jg.j
+    public float getStickyPaddingBottom() {
+        return this.q0.J;
+    }
+
+    @Override // jg.j
+    public float getStickyPaddingLeft() {
+        return this.q0.I;
+    }
+
+    @Override // jg.j
+    public float getStickyPaddingRight() {
+        return this.q0.I;
+    }
+
+    @Override // jg.j
+    public float getStickyPaddingTop() {
+        return this.q0.J;
+    }
+
+    public int getType() {
+        return this.t0;
+    }
+
+    public int getTypesCount() {
+        return this.q0.getTypesCount() - (!this.r0 ? 1 : 0);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        k();
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
+        k();
+    }
+
+    public final void r(int i10, TLRPC.MessageMedia messageMedia, TL_stories.MediaArea mediaArea) {
+        String str;
+        this.u0 = messageMedia;
+        this.v0 = mediaArea;
+        String str2 = null;
+        if (messageMedia instanceof TLRPC.TL_messageMediaGeo) {
+            TLRPC.GeoPoint geoPoint = messageMedia.geo;
+            double d = geoPoint.lat;
+            double d10 = geoPoint._long;
+            StringBuilder sb2 = new StringBuilder();
+            sb2.append(q(d));
+            sb2.append(d > 0.0d ? "N" : "S");
+            sb2.append(" ");
+            sb2.append(q(d10));
+            sb2.append(d10 > 0.0d ? "E" : "W");
+            str = sb2.toString();
+        } else if (messageMedia instanceof TLRPC.TL_messageMediaVenue) {
+            String upperCase = messageMedia.title.toUpperCase();
+            str2 = ((TLRPC.TL_messageMediaVenue) messageMedia).emoji;
+            str = upperCase;
+        } else {
+            str = "";
+        }
+        y0 y0Var = this.q0;
+        y0Var.d(i10, str2);
+        y0Var.setText(str);
+        m();
+    }
+
+    public void setColor(int i10) {
+        this.r0 = true;
+        this.s0 = i10;
+    }
+
+    public void setMaxWidth(int i10) {
+        this.q0.setMaxWidth(i10);
+    }
+
+    public void setType(int i10) {
+        this.t0 = i10;
+        this.q0.e(i10, this.s0);
     }
 }

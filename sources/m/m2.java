@@ -18,7 +18,7 @@ import java.util.WeakHashMap;
 import org.telegram.messenger.beta.R;
 import org.xmlpull.v1.XmlPullParserException;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class m2 {
     public static m2 i;
@@ -28,7 +28,7 @@ public final class m2 {
     public final WeakHashMap d = new WeakHashMap(0);
     public TypedValue e;
     public boolean f;
-    public aa.m0 g;
+    public j2.f g;
     public static final PorterDuff.Mode h = PorterDuff.Mode.SRC_IN;
     public static final k2 j = new k2(6);
 
@@ -111,11 +111,11 @@ public final class m2 {
             if (i10 == R.drawable.abc_cab_background_top_material) {
                 layerDrawable = new LayerDrawable(new Drawable[]{g(context, R.drawable.abc_cab_background_internal_bg), g(context, R.drawable.abc_cab_background_top_mtrl_alpha)});
             } else if (i10 == R.drawable.abc_ratingbar_material) {
-                layerDrawable = aa.m0.p(this, context, R.dimen.abc_star_big);
+                layerDrawable = j2.f.q(this, context, R.dimen.abc_star_big);
             } else if (i10 == R.drawable.abc_ratingbar_indicator_material) {
-                layerDrawable = aa.m0.p(this, context, R.dimen.abc_star_medium);
+                layerDrawable = j2.f.q(this, context, R.dimen.abc_star_medium);
             } else if (i10 == R.drawable.abc_ratingbar_small_material) {
-                layerDrawable = aa.m0.p(this, context, R.dimen.abc_star_small);
+                layerDrawable = j2.f.q(this, context, R.dimen.abc_star_small);
             }
         }
         if (layerDrawable != null) {
@@ -146,8 +146,8 @@ public final class m2 {
         try {
             if (!this.f) {
                 this.f = true;
-                Drawable g7 = g(context, R.drawable.abc_vector_test);
-                if (g7 == null || (!(g7 instanceof y4.o) && !"android.graphics.drawable.VectorDrawable".equals(g7.getClass().getName()))) {
+                Drawable g10 = g(context, R.drawable.abc_vector_test);
+                if (g10 == null || (!(g10 instanceof x4.o) && !"android.graphics.drawable.VectorDrawable".equals(g10.getClass().getName()))) {
                     this.f = false;
                     throw new IllegalStateException("This app has been built with an incorrect configuration. Please configure your build for VectorDrawableCompat.");
                 }
@@ -182,9 +182,9 @@ public final class m2 {
         ColorStateList colorStateList2 = null;
         colorStateList = (weakHashMap == null || (mVar = (a0.m) weakHashMap.get(context)) == null) ? null : (ColorStateList) mVar.c(i10);
         if (colorStateList == null) {
-            aa.m0 m0Var = this.g;
-            if (m0Var != null) {
-                colorStateList2 = m0Var.r(context, i10);
+            j2.f fVar = this.g;
+            if (fVar != null) {
+                colorStateList2 = fVar.s(context, i10);
             }
             if (colorStateList2 != null) {
                 if (this.a == null) {
@@ -255,8 +255,8 @@ public final class m2 {
                     e.setChangingConfigurations(typedValue.changingConfigurations);
                     b(context, j10, e);
                 }
-            } catch (Exception e10) {
-                Log.e("ResourceManagerInternal", "Exception while inflating drawable", e10);
+            } catch (Exception e7) {
+                Log.e("ResourceManagerInternal", "Exception while inflating drawable", e7);
             }
         }
         if (e == null) {
@@ -265,8 +265,8 @@ public final class m2 {
         return e;
     }
 
-    public final synchronized void l(aa.m0 m0Var) {
-        this.g = m0Var;
+    public final synchronized void l(j2.f fVar) {
+        this.g = fVar;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:33:0x00e4  */
@@ -291,39 +291,39 @@ public final class m2 {
             }
             return mutate;
         }
-        aa.m0 m0Var = this.g;
+        j2.f fVar = this.g;
         int i12 = R.attr.colorControlNormal;
-        if (m0Var != null) {
+        if (fVar != null) {
             if (i10 == R.drawable.abc_seekbar_track_material) {
                 LayerDrawable layerDrawable = (LayerDrawable) drawable;
                 Drawable findDrawableByLayerId = layerDrawable.findDrawableByLayerId(android.R.id.background);
-                int c10 = b3.c(context, R.attr.colorControlNormal);
+                int c10 = a3.c(context, R.attr.colorControlNormal);
                 PorterDuff.Mode mode2 = q.b;
-                aa.m0.z(findDrawableByLayerId, c10, mode2);
-                aa.m0.z(layerDrawable.findDrawableByLayerId(android.R.id.secondaryProgress), b3.c(context, R.attr.colorControlNormal), mode2);
-                aa.m0.z(layerDrawable.findDrawableByLayerId(android.R.id.progress), b3.c(context, R.attr.colorControlActivated), mode2);
+                j2.f.A(findDrawableByLayerId, c10, mode2);
+                j2.f.A(layerDrawable.findDrawableByLayerId(android.R.id.secondaryProgress), a3.c(context, R.attr.colorControlNormal), mode2);
+                j2.f.A(layerDrawable.findDrawableByLayerId(android.R.id.progress), a3.c(context, R.attr.colorControlActivated), mode2);
                 return drawable;
             }
             if (i10 == R.drawable.abc_ratingbar_material || i10 == R.drawable.abc_ratingbar_indicator_material || i10 == R.drawable.abc_ratingbar_small_material) {
                 LayerDrawable layerDrawable2 = (LayerDrawable) drawable;
                 Drawable findDrawableByLayerId2 = layerDrawable2.findDrawableByLayerId(android.R.id.background);
-                int b10 = b3.b(context, R.attr.colorControlNormal);
+                int b10 = a3.b(context, R.attr.colorControlNormal);
                 PorterDuff.Mode mode3 = q.b;
-                aa.m0.z(findDrawableByLayerId2, b10, mode3);
-                aa.m0.z(layerDrawable2.findDrawableByLayerId(android.R.id.secondaryProgress), b3.c(context, R.attr.colorControlActivated), mode3);
-                aa.m0.z(layerDrawable2.findDrawableByLayerId(android.R.id.progress), b3.c(context, R.attr.colorControlActivated), mode3);
+                j2.f.A(findDrawableByLayerId2, b10, mode3);
+                j2.f.A(layerDrawable2.findDrawableByLayerId(android.R.id.secondaryProgress), a3.c(context, R.attr.colorControlActivated), mode3);
+                j2.f.A(layerDrawable2.findDrawableByLayerId(android.R.id.progress), a3.c(context, R.attr.colorControlActivated), mode3);
                 return drawable;
             }
         }
-        aa.m0 m0Var2 = this.g;
+        j2.f fVar2 = this.g;
         boolean z12 = false;
-        if (m0Var2 != null) {
+        if (fVar2 != null) {
             PorterDuff.Mode mode4 = q.b;
-            if (!aa.m0.e(i10, (int[]) m0Var2.a)) {
-                if (aa.m0.e(i10, (int[]) m0Var2.c)) {
+            if (!j2.f.e((int[]) fVar2.a, i10)) {
+                if (j2.f.e((int[]) fVar2.c, i10)) {
                     i12 = R.attr.colorControlActivated;
                 } else {
-                    boolean e = aa.m0.e(i10, (int[]) m0Var2.d);
+                    boolean e = j2.f.e((int[]) fVar2.d, i10);
                     i12 = android.R.attr.colorBackground;
                     if (e) {
                         mode4 = PorterDuff.Mode.MULTIPLY;
@@ -334,7 +334,7 @@ public final class m2 {
                         if (z11) {
                             int[] iArr2 = l1.a;
                             Drawable mutate2 = drawable.mutate();
-                            int c11 = b3.c(context, i12);
+                            int c11 = a3.c(context, i12);
                             synchronized (q.class) {
                                 h10 = h(c11, mode4);
                             }

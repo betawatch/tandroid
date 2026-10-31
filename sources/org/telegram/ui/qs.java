@@ -1,109 +1,99 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.messenger.ContactsController;
+import android.app.Activity;
+import android.view.View;
+import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class qs extends ig.e {
-    public final /* synthetic */ ContactsActivity O;
+public final /* synthetic */ class qs implements org.telegram.ui.Components.ik0, r0.m, org.telegram.ui.ActionBar.u1 {
+    public final /* synthetic */ ContactsActivity a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public qs(ContactsActivity contactsActivity, Context context, int i10, boolean z10, a0.h hVar, int i11) {
-        super(context, i10, z10, hVar, i11);
-        this.O = contactsActivity;
+    public /* synthetic */ qs(ContactsActivity contactsActivity) {
+        this.a = contactsActivity;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:19:0x005a  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x0069  */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x005f  */
-    /* JADX WARN: Removed duplicated region for block: B:6:0x0031  */
-    /* JADX WARN: Removed duplicated region for block: B:9:0x0037  */
-    @Override // org.telegram.ui.Components.im0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final int R() {
-        int size;
-        boolean z10;
-        boolean z11;
-        org.telegram.ui.ActionBar.y5 y5Var;
-        boolean z12 = false;
-        this.I = false;
-        int i10 = this.F;
-        int i11 = this.r;
-        int i12 = this.v;
-        int i13 = 2;
-        if (i10 != 2) {
-            size = (i12 == 2 ? ContactsController.getInstance(i11).sortedUsersMutualSectionsArray : ContactsController.getInstance(i11).sortedUsersSectionsArray).size();
-            if (size == 0) {
-                this.I = true;
-            }
-            if (i12 == 0) {
-                size++;
-            }
-            z10 = this.E;
-            if (z10) {
-                size++;
-            }
-            boolean isEmpty = ContactsController.getInstance(i11).phoneBookContacts.isEmpty();
-            this.J = !isEmpty;
-            z11 = !this.I && this.w && !z10 && i12 == 0;
-            this.K = z11;
-            if (z11) {
-                i13 = size;
-            } else if (isEmpty) {
-                i13 = 1;
-            }
-            ContactsActivity contactsActivity = this.O;
-            ContactsActivity.c0(contactsActivity);
-            y5Var = contactsActivity.n;
-            if (y5Var != null) {
-                qs qsVar = contactsActivity.b;
-                if (qsVar != null && !qsVar.I) {
-                    z12 = true;
-                }
-                y5Var.Y(z12, true);
-            }
-            contactsActivity.g0();
-            return i13;
-        }
-        this.I = this.y.isEmpty();
-        size = 1;
-        if (i12 == 0) {
-        }
-        z10 = this.E;
-        if (z10) {
-        }
-        boolean isEmpty2 = ContactsController.getInstance(i11).phoneBookContacts.isEmpty();
-        this.J = !isEmpty2;
-        if (this.I) {
-        }
-        this.K = z11;
-        if (z11) {
-        }
-        ContactsActivity contactsActivity2 = this.O;
-        ContactsActivity.c0(contactsActivity2);
-        y5Var = contactsActivity2.n;
-        if (y5Var != null) {
-        }
-        contactsActivity2.g0();
-        return i13;
+    @Override // r0.m
+    public r0.j1 R0(View view, r0.j1 j1Var) {
+        i0.c I0 = org.telegram.messenger.i0.I0(j1Var, false);
+        int i10 = I0.d;
+        ContactsActivity contactsActivity = this.a;
+        contactsActivity.k0 = i10;
+        ei.b.e(contactsActivity.d, I0.b, i10, org.telegram.ui.ActionBar.l.getCurrentActionBarHeight(), contactsActivity.h0);
+        contactsActivity.i0();
+        contactsActivity.h0();
+        return r0.j1.b;
     }
 
-    @Override // org.telegram.ui.Components.im0, s4.h0
-    public final void l() {
-        X(false);
-        ContactsActivity contactsActivity = this.O;
-        org.telegram.ui.Components.nm0 nm0Var = contactsActivity.d;
-        if (nm0Var == null || nm0Var.getAdapter() != this) {
-            return;
+    @Override // org.telegram.ui.Components.ik0
+    public boolean f(int i10, View view) {
+        ContactsActivity contactsActivity = this.a;
+        s4.g0 adapter = contactsActivity.d.getAdapter();
+        ss ssVar = contactsActivity.b;
+        if (adapter == ssVar) {
+            int S = ssVar.S(i10);
+            int Q = contactsActivity.b.Q(i10);
+            org.telegram.ui.Components.wb wbVar = org.telegram.ui.Components.wb.w;
+            if (wbVar != null) {
+                wbVar.b();
+            }
+            if (Q < 0 || S < 0) {
+                return false;
+            }
         }
-        int h = h();
-        if (contactsActivity.F) {
-            contactsActivity.d.setFastScrollVisible(h != 2);
-        } else {
-            contactsActivity.d.setFastScrollVisible(h != 0);
+        boolean z10 = contactsActivity.I;
+        if (!z10 && !contactsActivity.J && (view instanceof org.telegram.ui.Cells.pa)) {
+            contactsActivity.o0((org.telegram.ui.Cells.pa) view);
+            return true;
         }
+        if (z10 || contactsActivity.J || !(view instanceof org.telegram.ui.Cells.k6)) {
+            return false;
+        }
+        org.telegram.ui.Cells.k6 k6Var = (org.telegram.ui.Cells.k6) view;
+        if (k6Var.getUser() != null && k6Var.getUser().contact) {
+            contactsActivity.o0(k6Var);
+        }
+        return true;
+    }
+
+    @Override // org.telegram.ui.ActionBar.u1
+    public void h(org.telegram.ui.ActionBar.x1 x1Var, int i10) {
+        ContactsActivity contactsActivity = this.a;
+        a0.h hVar = contactsActivity.Z;
+        ArrayList arrayList = new ArrayList(hVar.m());
+        for (int i11 = 0; i11 < hVar.m(); i11++) {
+            arrayList.add((TLRPC.User) hVar.f(hVar.j(i11)));
+        }
+        org.telegram.messenger.i5 contactsController = contactsActivity.getContactsController();
+        Activity parentActivity = contactsActivity.getParentActivity();
+        contactsController.getClass();
+        if (!arrayList.isEmpty()) {
+            HashMap hashMap = new HashMap();
+            int size = arrayList.size();
+            for (int i12 = 0; i12 < size; i12++) {
+                TLRPC.User user = (TLRPC.User) arrayList.get(i12);
+                TLRPC.TL_contact tL_contact = (TLRPC.TL_contact) contactsController.f0.get(Long.valueOf(user.id));
+                user.contact = false;
+                contactsController.e0.remove(tL_contact);
+                contactsController.f0.remove(Long.valueOf(user.id));
+                hashMap.put(user, tL_contact);
+            }
+            contactsController.d(false);
+            org.telegram.messenger.zs notificationCenter = contactsController.getNotificationCenter();
+            int i13 = org.telegram.messenger.vp.D8;
+            notificationCenter.k(org.telegram.messenger.zs.r, 1);
+            contactsController.getNotificationCenter().k(org.telegram.messenger.zs.O, new Object[0]);
+            org.telegram.ui.Components.ob obVar = new org.telegram.ui.Components.ob(parentActivity, contactsActivity.getResourceProvider());
+            obVar.setTimer();
+            obVar.b.setText(org.telegram.messenger.cd.G(hashMap.size(), "ContactsDeletedUndo", new Object[0]));
+            org.telegram.ui.Components.ub ubVar = new org.telegram.ui.Components.ub(parentActivity, contactsActivity.getResourceProvider(), true, true);
+            ubVar.b = new org.telegram.messenger.e4(25, contactsController, hashMap);
+            ubVar.c = new org.telegram.messenger.z4(contactsController, arrayList, 1);
+            obVar.setButton(ubVar);
+            org.telegram.ui.Components.wb.g(contactsActivity, obVar, 5000).j();
+        }
+        contactsActivity.l0();
     }
 }

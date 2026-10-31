@@ -1,40 +1,31 @@
 package org.telegram.ui;
 
+import android.text.style.URLSpan;
 import android.view.View;
-import java.util.ArrayList;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class rf implements View.OnClickListener {
+public final /* synthetic */ class rf implements org.telegram.messenger.r20 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ wn b;
-    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
 
-    public /* synthetic */ rf(wn wnVar, ArrayList arrayList, int i10) {
+    public /* synthetic */ rf(int i10, Object obj, Object obj2) {
         this.a = i10;
-        this.b = wnVar;
-        this.c = arrayList;
+        this.b = obj;
+        this.c = obj2;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // org.telegram.messenger.r20
+    public final Object a(Object obj) {
         switch (this.a) {
             case 0:
-                wn wnVar = this.b;
-                li liVar = new li(wnVar, wnVar, wnVar.getParentActivity(), wnVar.ua, this.c);
-                liVar.setCalcMandatoryInsets(wnVar.I9());
-                liVar.setDimBehind(false);
-                wnVar.J7(false);
-                wnVar.showDialog(liVar);
-                break;
+                un unVar = (un) this.b;
+                View view = (View) this.c;
+                unVar.c8((URLSpan) obj, false, unVar.t5, view instanceof org.telegram.ui.Cells.q1 ? (org.telegram.ui.Cells.q1) view : null);
+                return Boolean.TRUE;
             default:
-                wn wnVar2 = this.b;
-                if (wnVar2.getParentActivity() != null && wnVar2.getParentActivity() != null) {
-                    new org.telegram.ui.Components.aw(wnVar2, wnVar2.getParentActivity(), wnVar2.ua, this.c).show();
-                    wnVar2.J7(true);
-                    break;
-                }
-                break;
+                return jh.c.d((View) obj, (String) this.b, (String) this.c, null, null);
         }
     }
 }

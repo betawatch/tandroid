@@ -1,10 +1,10 @@
 package com.google.android.recaptcha.internal;
 
+import ad.j;
 import java.lang.reflect.Proxy;
-import jd.i;
-import ud.p;
+import ld.p;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class zzjo implements zzjt {
     public static final zzjo zza = new zzjo();
@@ -63,7 +63,7 @@ public final class zzjo implements zzjt {
             }
             Class zza8 = zziy.zza(zza3);
             zzizVar.zzc().zze(i10, Proxy.newProxyInstance(zza8.getClassLoader(), new Class[]{zza8}, new zziu(new p() { // from class: com.google.android.recaptcha.internal.zzjn
-                @Override // ud.p
+                @Override // ld.p
                 public final Object invoke(Object obj, Object obj2) {
                     zziz zzizVar2 = zziz.this;
                     Object[] objArr = (Object[]) obj;
@@ -72,7 +72,7 @@ public final class zzjo implements zzjt {
                     if (i12 != -1) {
                         zzizVar2.zzc().zze(i12, objArr);
                     }
-                    return i.a;
+                    return j.a;
                 }
             }, zza5, zza6)));
         } catch (Exception e) {

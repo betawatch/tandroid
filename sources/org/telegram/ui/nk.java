@@ -1,21 +1,55 @@
 package org.telegram.ui;
 
 import android.content.Context;
+import android.view.View;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class nk extends lh.e {
-    public final /* synthetic */ wn M;
+public final class nk extends org.telegram.ui.Components.rc {
+    public final /* synthetic */ un d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public nk(wn wnVar, Context context, org.telegram.ui.ActionBar.u6 u6Var, fj fjVar, ch.b bVar) {
-        super(context, bVar, fjVar, u6Var);
-        this.M = wnVar;
+    public nk(un unVar, Context context) {
+        super(context);
+        this.d = unVar;
     }
 
-    @Override // lh.e, android.view.View
+    @Override // android.view.View
+    public final boolean hasOverlappingRendering() {
+        return false;
+    }
+
+    @Override // android.view.View
+    public final void setTranslationY(float f7) {
+        super.setTranslationY(f7);
+        un unVar = this.d;
+        mk mkVar = unVar.Z;
+        if (mkVar != null) {
+            mkVar.invalidate();
+        }
+        if (getVisibility() != 8) {
+            unVar.u9(true);
+            FrameLayout frameLayout = unVar.Q;
+            if (frameLayout != null) {
+                frameLayout.setTranslationY(f7);
+            }
+            unVar.A9();
+            unVar.C9();
+            View view = unVar.fragmentView;
+            if (view != null) {
+                view.invalidate();
+            }
+        }
+    }
+
+    @Override // android.view.View
     public final void setVisibility(int i10) {
+        FrameLayout frameLayout;
         super.setVisibility(i10);
-        this.M.cd.h(3, i10 == 0, getMeasuredWidth() > 0);
+        if (i10 != 8 || (frameLayout = this.d.Q) == null) {
+            return;
+        }
+        frameLayout.setTranslationY(0.0f);
     }
 }

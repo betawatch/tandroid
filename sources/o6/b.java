@@ -1,7 +1,9 @@
 package o6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+import android.os.Parcelable;
+
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public interface b {
-    void a(l6.a aVar);
+public interface b extends Parcelable {
+    public static final String NULL = "SAFE_PARCELABLE_NULL_STRING";
 }

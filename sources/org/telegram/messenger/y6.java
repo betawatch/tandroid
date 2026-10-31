@@ -1,71 +1,60 @@
 package org.telegram.messenger;
 
-import java.io.File;
-import java.util.ArrayList;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.Utilities;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.widget.TextView;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final /* synthetic */ class y6 implements Runnable {
-    public final /* synthetic */ int a;
+public final class y6 implements TextWatcher {
+    public boolean a;
     public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
+    public final /* synthetic */ w6 c;
+    public final /* synthetic */ TextView[] d;
+    public final /* synthetic */ TLRPC.TL_factCheck e;
 
-    public /* synthetic */ y6(int i10, Object obj, int i11) {
-        this.a = i11;
+    public y6(int i10, w6 w6Var, TextView[] textViewArr, TLRPC.TL_factCheck tL_factCheck) {
         this.b = i10;
-        this.c = obj;
+        this.c = w6Var;
+        this.d = textViewArr;
+        this.e = tL_factCheck;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                ((MediaController.4) this.c).lambda$onCallStateChanged$0(this.b);
-                break;
-            case 1:
-                MessagesController.1.lambda$setLocal$2(this.b, (TLRPC.TL_help_appConfig) this.c);
-                break;
-            case 2:
-                MessagesController.4.lambda$setLocal$2(this.b, (TLRPC.messages_AvailableEffects) this.c);
-                break;
-            case 3:
-                MessagesController.5.lambda$setLocal$1(this.b, (TL_account.TL_webBrowserSettings) this.c);
-                break;
-            case 4:
-                AutoDeleteMediaTask.lambda$run$1(this.b, (File) this.c);
-                break;
-            case 5:
-                FileLoader.lambda$deleteFiles$18((ArrayList) this.c, this.b);
-                break;
-            case 6:
-                ((FilesMigrationService) this.c).lambda$updateProgress$1(this.b);
-                break;
-            case 7:
-                MediaController.lambda$saveFile$50((org.telegram.ui.ActionBar.e2) this.c, this.b);
-                break;
-            case 8:
-                PushListenerController.lambda$sendRegistrationToServer$1((String) this.c, this.b);
-                break;
-            case 9:
-                PushListenerController.lambda$processRemoteMessage$2(this.b, (TLRPC.TL_updates) this.c);
-                break;
-            case 10:
-                SendMessagesHelper.lambda$handleError$122(this.b, (AccountInstance) this.c);
-                break;
-            default:
-                Utilities.lambda$doCallbacks$0(this.b, (Utilities.Callback[]) this.c);
-                break;
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        if (this.a) {
+            return;
+        }
+        int length = editable.length();
+        boolean z10 = true;
+        int i10 = this.b;
+        if (length > i10) {
+            this.a = true;
+            editable.delete(i10, editable.length());
+            w6 w6Var = this.c;
+            i0.E3(w6Var);
+            try {
+                w6Var.performHapticFeedback(3, 2);
+            } catch (Exception unused) {
+            }
+            this.a = false;
+        }
+        TextView[] textViewArr = this.d;
+        if (textViewArr[0] != null) {
+            if (editable.length() <= 0 && this.e != null) {
+                z10 = false;
+            }
+            textViewArr[0].setText(cd.L0(z10 ? 2131751355 : 2131746336, null));
+            textViewArr[0].setTextColor(org.telegram.ui.ActionBar.t6.x0(null, z10 ? org.telegram.ui.ActionBar.t6.H5 : org.telegram.ui.ActionBar.t6.q7, false));
         }
     }
 
-    public /* synthetic */ y6(Object obj, int i10, int i11) {
-        this.a = i11;
-        this.c = obj;
-        this.b = i10;
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

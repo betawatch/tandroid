@@ -4,12 +4,13 @@ import java.io.FileInputStream;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class h {
     public int a;
-    public e2.f b;
+    public a4.g b;
     public final FileInputStream c;
     public final byte[] d;
     public int e;
@@ -22,7 +23,7 @@ public final class h {
     public h(FileInputStream fileInputStream) {
         Charset charset = z.a;
         this.c = fileInputStream;
-        this.d = new byte[4096];
+        this.d = new byte[TLObject.FLAG_12];
         this.e = 0;
         this.g = 0;
         this.i = 0;
@@ -184,7 +185,7 @@ public final class h {
         int i12 = i11 + i10;
         int i13 = this.e;
         if (i12 <= i13) {
-            throw new IllegalStateException(ic.a.j(i10, "refillBuffer() called when ", " bytes were already available in buffer"));
+            throw new IllegalStateException(i0.a.j(i10, "refillBuffer() called when ", " bytes were already available in buffer"));
         }
         int i14 = this.i;
         if (i10 <= (ConnectionsManager.DEFAULT_DATACENTER_ID - i14) - i11 && i14 + i11 + i10 <= this.j) {
@@ -292,13 +293,13 @@ public final class h {
         this.i += i12;
         this.g = 0;
         this.e = 0;
-        ArrayList p10 = p(i10 - i13);
+        ArrayList p5 = p(i10 - i13);
         byte[] bArr = new byte[i10];
         System.arraycopy(this.d, i11, bArr, 0, i13);
-        int size = p10.size();
+        int size = p5.size();
         int i14 = 0;
         while (i14 < size) {
-            Object obj = p10.get(i14);
+            Object obj = p5.get(i14);
             i14++;
             byte[] bArr2 = (byte[]) obj;
             System.arraycopy(bArr2, 0, bArr, i13, bArr2.length);
@@ -350,7 +351,7 @@ public final class h {
     public final ArrayList p(int i10) {
         ArrayList arrayList = new ArrayList();
         while (i10 > 0) {
-            int min = Math.min(i10, 4096);
+            int min = Math.min(i10, TLObject.FLAG_12);
             byte[] bArr = new byte[min];
             int i11 = 0;
             while (i11 < min) {

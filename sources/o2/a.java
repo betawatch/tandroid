@@ -1,7 +1,7 @@
 package o2;
 
 import android.net.Uri;
-import g2.c0;
+import g2.d0;
 import java.security.InvalidAlgorithmParameterException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
@@ -12,7 +12,7 @@ import javax.crypto.NoSuchPaddingException;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class a implements g2.h {
     public final g2.h a;
@@ -27,9 +27,9 @@ public final class a implements g2.h {
     }
 
     @Override // g2.h
-    public final void addTransferListener(c0 c0Var) {
-        c0Var.getClass();
-        this.a.addTransferListener(c0Var);
+    public final void addTransferListener(d0 d0Var) {
+        d0Var.getClass();
+        this.a.addTransferListener(d0Var);
     }
 
     @Override // g2.h
@@ -51,20 +51,20 @@ public final class a implements g2.h {
     }
 
     @Override // g2.h
-    public final long open(g2.m mVar) {
+    public final long open(g2.n nVar) {
         try {
             Cipher cipher = Cipher.getInstance("AES/CBC/PKCS7Padding");
             try {
                 cipher.init(2, new SecretKeySpec(this.b, "AES"), new IvParameterSpec(this.c));
-                g2.k kVar = new g2.k(this.a, mVar);
-                this.d = new CipherInputStream(kVar, cipher);
-                kVar.a();
+                g2.l lVar = new g2.l(this.a, nVar);
+                this.d = new CipherInputStream(lVar, cipher);
+                lVar.a();
                 return -1L;
             } catch (InvalidAlgorithmParameterException | InvalidKeyException e) {
                 throw new RuntimeException(e);
             }
-        } catch (NoSuchAlgorithmException | NoSuchPaddingException e10) {
-            throw new RuntimeException(e10);
+        } catch (NoSuchAlgorithmException | NoSuchPaddingException e7) {
+            throw new RuntimeException(e7);
         }
     }
 

@@ -5,16 +5,16 @@ import android.os.Handler;
 import android.os.Trace;
 import android.view.Surface;
 import androidx.media3.decoder.VideoDecoderOutputBuffer;
-import b2.w0;
+import b2.v0;
 import b2.x;
-import c3.h0;
-import e2.n0;
+import e2.l0;
 import h2.e;
+import org.telegram.messenger.zs;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class ExperimentalFfmpegVideoRenderer extends a3.a {
-    public static final int r0 = ((n0.g(720, 64) * n0.g(1280, 64)) * 6144) / 2;
+    public static final int r0 = ((l0.g(720, 64) * l0.g(1280, 64)) * 6144) / 2;
     public final int n0;
     public final int o0;
     public final int p0;
@@ -33,16 +33,7 @@ public final class ExperimentalFfmpegVideoRenderer extends a3.a {
     public final int C(x xVar) {
         String str = xVar.s;
         String str2 = FfmpegLibrary.a;
-        if (!w0.m(str)) {
-            return h0.c(0, 0, 0, 0);
-        }
-        if (!FfmpegLibrary.d(str)) {
-            return h0.c(1, 0, 0, 0);
-        }
-        if (xVar.T != 0) {
-            return h0.c(2, 0, 0, 0);
-        }
-        return 140;
+        return !v0.m(str) ? i0.a.a(0, 0, 0, 0) : !FfmpegLibrary.d(str) ? i0.a.a(1, 0, 0, 0) : xVar.T != 0 ? i0.a.a(2, 0, 0, 0) : zs.W1;
     }
 
     @Override // a3.a

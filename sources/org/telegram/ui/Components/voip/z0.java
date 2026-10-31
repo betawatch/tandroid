@@ -1,100 +1,49 @@
 package org.telegram.ui.Components.voip;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.RectF;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.Components.vc0;
-import org.telegram.ui.kh1;
+import android.animation.ValueAnimator;
+import android.view.ViewTreeObserver;
+import org.telegram.ui.Components.gr;
+import org.telegram.ui.s9;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes4.dex */
-public final class z0 extends TextView {
-    public final Paint a;
-    public final Paint[] b;
-    public final /* synthetic */ kh1 c;
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final class z0 implements ViewTreeObserver.OnPreDrawListener {
+    public final /* synthetic */ float a;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ b1 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z0(kh1 kh1Var, Context context) {
-        super(context);
-        this.c = kh1Var;
-        Paint paint = new Paint();
-        this.a = paint;
-        this.b = new Paint[kh1Var.e.length];
-        vc0 vc0Var = kh1Var.R;
-        vc0Var.setBounds(0, 0, 80, 80);
-        vc0 vc0Var2 = kh1Var.S;
-        vc0Var2.setBounds(0, 0, 80, 80);
-        aa.m0 m0Var = kh1Var.P;
-        m0Var.w(0.0f, 0.0f, 80.0f, 80.0f);
-        aa.m0 m0Var2 = kh1Var.Q;
-        m0Var2.w(0.0f, 0.0f, 80.0f, 80.0f);
-        vc0Var.setAlpha(255);
-        vc0Var2.setAlpha(255);
-        Canvas canvas = (Canvas) m0Var.b;
-        PorterDuff.Mode mode = PorterDuff.Mode.CLEAR;
-        canvas.drawColor(0, mode);
-        ((Canvas) m0Var2.b).drawColor(0, mode);
-        vc0Var.draw((Canvas) m0Var.b);
-        vc0Var2.draw((Canvas) m0Var2.b);
-        paint.setColor(-1);
+    public z0(b1 b1Var, float f7, float f10) {
+        this.c = b1Var;
+        this.a = f7;
+        this.b = f10;
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        int i10;
-        kh1 kh1Var = this.c;
-        z0 z0Var = kh1Var.c;
-        kh1Var.P.w(-getX(), -getY(), kh1Var.getWidth() - getX(), kh1Var.getHeight() - getY());
-        kh1Var.Q.w(-getX(), -getY(), kh1Var.getWidth() - getX(), kh1Var.getHeight() - getY());
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
-        int i11 = kh1Var.v;
-        Paint[] paintArr = this.b;
-        paintArr[i11].setAlpha(255);
-        float dp = AndroidUtilities.dp(8.0f) + ((int) ((1.0f - kh1Var.y) * (AndroidUtilities.dp(26.0f) - AndroidUtilities.dp(8.0f))));
-        canvas.drawRoundRect(rectF, dp, dp, paintArr[kh1Var.v]);
-        float f7 = kh1Var.s;
-        if (f7 > 0.0f && (i10 = kh1Var.v + 1) < paintArr.length) {
-            paintArr[i10].setAlpha((int) (f7 * 255.0f));
-            canvas.drawRoundRect(rectF, dp, dp, paintArr[kh1Var.v + 1]);
+    @Override // android.view.ViewTreeObserver.OnPreDrawListener
+    public final boolean onPreDraw() {
+        b1 b1Var = this.c;
+        if (b1Var.P) {
+            b1Var.M = false;
+            b1Var.requestLayout();
+            return false;
         }
-        float f10 = kh1Var.y;
-        if (f10 < 1.0f) {
-            Paint paint = this.a;
-            paint.setAlpha((int) ((1.0f - f10) * 255.0f));
-            canvas.drawRoundRect(rectF, dp, dp, paint);
+        ValueAnimator valueAnimator = b1Var.d0;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
         }
-        super.onDraw(canvas);
-        if (kh1Var.O) {
-            canvas.drawText(LocaleController.getString(R.string.VoipShareVideo), getWidth() / 2, (int) ((getHeight() / 2) - ((z0Var.getPaint().ascent() + z0Var.getPaint().descent()) / 2.0f)), z0Var.getPaint());
-        }
-    }
-
-    @Override // android.view.View
-    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
-        kh1 kh1Var = this.c;
-        aa.m0 m0Var = kh1Var.P;
-        super.onSizeChanged(i10, i11, i12, i13);
-        int i14 = 0;
-        while (true) {
-            Paint[] paintArr = this.b;
-            if (i14 >= paintArr.length) {
-                return;
-            }
-            if (i14 == 0) {
-                paintArr[i14] = (Paint) m0Var.a;
-            } else if (i14 == 1) {
-                paintArr[i14] = (Paint) kh1Var.Q.a;
-            } else {
-                paintArr[i14] = (Paint) m0Var.a;
-            }
-            i14++;
-        }
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(b1Var.J, 0.0f);
+        b1Var.d0 = ofFloat;
+        ofFloat.addUpdateListener(b1Var.e0);
+        b1Var.d0.setDuration(300L);
+        b1Var.d0.start();
+        float measuredWidth = this.a - ((b1Var.getMeasuredWidth() - (b1Var.getMeasuredWidth() * 0.23f)) / 2.0f);
+        float measuredHeight = this.b - ((b1Var.getMeasuredHeight() - (b1Var.getMeasuredHeight() * 0.23f)) / 2.0f);
+        b1Var.getViewTreeObserver().removeOnPreDrawListener(this);
+        b1Var.setTranslationX(measuredWidth);
+        b1Var.setTranslationY(measuredHeight);
+        b1Var.setScaleX(0.23f);
+        b1Var.setScaleY(0.23f);
+        b1Var.animate().setListener(null).cancel();
+        b1Var.animate().setListener(new s9(this, 26)).scaleX(1.0f).scaleY(1.0f).translationX(0.0f).translationY(0.0f).alpha(1.0f).setDuration(300L).setStartDelay(0L).setInterpolator(gr.f).start();
+        return false;
     }
 }

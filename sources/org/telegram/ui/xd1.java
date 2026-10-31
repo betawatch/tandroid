@@ -2,49 +2,42 @@ package org.telegram.ui;
 
 import android.app.Activity;
 import android.text.TextUtils;
-import android.view.View;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.LinearLayout;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.messenger.voip.VoIPServiceState;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class xd1 extends f61 {
-    public boolean e2;
-    public final /* synthetic */ yd1 f2;
+public final class xd1 extends LinearLayout {
+    public final /* synthetic */ be1 a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public xd1(yd1 yd1Var, yd1 yd1Var2, Activity activity) {
-        super(yd1Var2, activity, false, null, 3, null);
-        this.f2 = yd1Var;
-        this.e2 = true;
+    public xd1(be1 be1Var, Activity activity) {
+        super(activity);
+        this.a = be1Var;
     }
 
-    @Override // org.telegram.ui.f61, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        if (this.e2) {
-            this.e2 = false;
-            this.f2.f.s(null);
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        VoIPServiceState sharedState = VoIPService.getSharedState();
+        CharSequence text = this.a.E.getText();
+        if (sharedState == null || TextUtils.isEmpty(text)) {
+            return;
         }
-    }
-
-    @Override // org.telegram.ui.f61
-    public final void p(View view, Long l4, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
-        int i10;
-        int i11;
-        yd1 yd1Var = this.f2;
-        i10 = ((org.telegram.ui.ActionBar.r2) yd1Var).currentAccount;
-        boolean z10 = false;
-        if (!TextUtils.isEmpty(UserConfig.getInstance(i10).defaultTopicIcons)) {
-            MediaDataController mediaDataController = yd1Var.getMediaDataController();
-            i11 = ((org.telegram.ui.ActionBar.r2) yd1Var).currentAccount;
-            TLRPC.TL_messages_stickerSet stickerSetByEmojiOrName = mediaDataController.getStickerSetByEmojiOrName(UserConfig.getInstance(i11).defaultTopicIcons);
-            if ((stickerSetByEmojiOrName == null ? 0L : stickerSetByEmojiOrName.set.id) == MediaDataController.getStickerSetId(document)) {
-                z10 = true;
-            }
+        StringBuilder sb2 = new StringBuilder(text);
+        sb2.append(", ");
+        if (sharedState.getPrivateCall() == null || !sharedState.getPrivateCall().video) {
+            sb2.append(org.telegram.messenger.cd.L0(2131743326, null));
+        } else {
+            sb2.append(org.telegram.messenger.cd.L0(2131743323, null));
         }
-        yd1Var.c0(l4, z10);
+        long callDuration = sharedState.getCallDuration();
+        if (callDuration > 0) {
+            sb2.append(", ");
+            sb2.append(org.telegram.messenger.cd.z((int) (callDuration / 1000)));
+        }
+        accessibilityNodeInfo.setText(sb2);
     }
 }

@@ -1,24 +1,31 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class x implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ BetaUpdaterController b;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.View;
 
-    public /* synthetic */ x(BetaUpdaterController betaUpdaterController, int i10) {
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes.dex */
+public final class x extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ View b;
+
+    public /* synthetic */ x(int i10, View view) {
         this.a = i10;
-        this.b = betaUpdaterController;
+        this.b = view;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                this.b.lambda$downloadUpdate$3();
+                this.b.setTranslationX(0.0f);
+                break;
+            case 1:
+                i0.E2(this.b);
                 break;
             default:
-                this.b.lambda$new$0();
+                i0.E2(this.b);
                 break;
         }
     }

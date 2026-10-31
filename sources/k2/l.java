@@ -1,17 +1,21 @@
 package k2;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class l {
-    public int a = 0;
-    public boolean b;
-    public boolean c;
-    public boolean d;
+    public final boolean a;
+    public final boolean b;
+    public final boolean c;
+    public final int d;
 
-    public m a() {
-        if (this.b || !(this.c || this.d)) {
-            return new m(this);
-        }
-        throw new IllegalStateException("Secondary offload attribute fields are true but primary isFormatSupportedForOffload is false");
+    static {
+        new k().a();
+    }
+
+    public l(k kVar) {
+        this.a = kVar.b;
+        this.b = kVar.c;
+        this.c = kVar.d;
+        this.d = kVar.a;
     }
 }

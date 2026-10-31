@@ -1,34 +1,32 @@
 package org.telegram.ui.Components;
 
-import android.content.DialogInterface;
+import android.view.View;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class j2 implements DialogInterface.OnDismissListener {
+public final /* synthetic */ class j2 implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ boolean[] b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.z2[] b;
 
-    public /* synthetic */ j2(int i10, Runnable runnable, boolean[] zArr) {
+    public /* synthetic */ j2(org.telegram.ui.ActionBar.z2[] z2VarArr, int i10) {
         this.a = i10;
-        this.b = zArr;
+        this.b = z2VarArr;
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
-        int i10 = this.a;
-        boolean[] zArr = this.b;
-        switch (i10) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
             case 0:
-                if (zArr[0]) {
-                    int i11 = go.r1;
-                    break;
-                }
+                this.b[0].dismiss();
+                break;
+            case 1:
+                this.b[0].dismiss();
+                break;
+            case 2:
+                this.b[0].dismiss();
                 break;
             default:
-                if (zArr[0]) {
-                    int i12 = ju.b;
-                    break;
-                }
+                this.b[0].dismiss();
                 break;
         }
     }

@@ -1,69 +1,26 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
-import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.FileLog;
-import org.telegram.ui.LaunchActivity;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class j0 implements org.telegram.ui.ActionBar.b2 {
+public final /* synthetic */ class j0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Context b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.y2 b;
 
-    public /* synthetic */ j0(Context context, int i10) {
+    public /* synthetic */ j0(org.telegram.ui.ActionBar.y2 y2Var, int i10) {
         this.a = i10;
-        this.b = context;
+        this.b = y2Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.b2
-    public final void h(org.telegram.ui.ActionBar.e2 e2Var, int i10) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                Context context = this.b;
-                try {
-                    context.startActivity(new Intent("android.settings.MANAGE_UNKNOWN_APP_SOURCES", Uri.parse("package:" + context.getPackageName())));
-                    break;
-                } catch (Exception e) {
-                    FileLog.e(e);
-                    return;
-                }
-            case 1:
-                Context context2 = this.b;
-                try {
-                    Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
-                    intent.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
-                    context2.startActivity(intent);
-                    break;
-                } catch (Exception e10) {
-                    FileLog.e(e10);
-                    return;
-                }
-            case 2:
-                qf.d.r(this.b, BuildVars.PLAYSTORE_APP_URL);
+                this.b.invalidateSelf();
                 break;
             default:
-                Context context3 = this.b;
-                if (context3 != null) {
-                    try {
-                        Intent intent2 = new Intent("android.settings.action.MANAGE_OVERLAY_PERMISSION", Uri.parse("package:" + context3.getPackageName()));
-                        Activity findActivity = AndroidUtilities.findActivity(context3);
-                        if (findActivity instanceof LaunchActivity) {
-                            findActivity.startActivityForResult(intent2, 105);
-                        } else {
-                            context3.startActivity(intent2);
-                        }
-                        break;
-                    } catch (Exception e11) {
-                        FileLog.e(e11);
-                        return;
-                    }
-                }
+                org.telegram.ui.ActionBar.y2 y2Var = this.b;
+                ((t5) y2Var.d).e(true, 0.0f);
+                y2Var.invalidateSelf();
                 break;
         }
     }

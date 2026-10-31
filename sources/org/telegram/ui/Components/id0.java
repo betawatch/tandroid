@@ -1,20 +1,44 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes3.dex */
-public final class id0 implements Runnable {
-    public boolean a;
-    public final /* synthetic */ nd0 b;
+import android.app.Activity;
+import android.content.Intent;
+import android.net.Uri;
 
-    public id0(nd0 nd0Var) {
-        this.b = nd0Var;
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class id0 implements org.telegram.ui.ActionBar.u1 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Activity b;
+
+    public /* synthetic */ id0(Activity activity, int i10) {
+        this.a = i10;
+        this.b = activity;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        boolean z10 = this.a;
-        nd0 nd0Var = this.b;
-        nd0Var.a(z10);
-        nd0Var.postDelayed(this, nd0Var.M);
+    @Override // org.telegram.ui.ActionBar.u1
+    public final void h(org.telegram.ui.ActionBar.x1 x1Var, int i10) {
+        switch (this.a) {
+            case 0:
+                Activity activity = this.b;
+                try {
+                    Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
+                    intent.setData(Uri.parse("package:" + org.telegram.messenger.w0.b.getPackageName()));
+                    activity.startActivity(intent);
+                    break;
+                } catch (Exception e) {
+                    org.telegram.messenger.f8.g(e, true);
+                    return;
+                }
+            default:
+                Activity activity2 = this.b;
+                try {
+                    Intent intent2 = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
+                    intent2.setData(Uri.parse("package:" + org.telegram.messenger.w0.b.getPackageName()));
+                    activity2.startActivity(intent2);
+                    break;
+                } catch (Exception e7) {
+                    org.telegram.messenger.f8.g(e7, true);
+                }
+        }
     }
 }

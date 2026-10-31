@@ -1,81 +1,56 @@
 package org.telegram.ui.ActionBar;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
-import android.app.Dialog;
-import android.content.DialogInterface;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.view.View;
+import java.util.HashSet;
+import org.telegram.messenger.f8;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class b3 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Dialog c;
+public final class b3 extends View implements k6 {
+    public final /* synthetic */ d3 a;
 
-    public /* synthetic */ b3(Dialog dialog, int i10, int i11) {
-        this.a = i11;
-        this.c = dialog;
-        this.b = i10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public b3(d3 d3Var, Context context) {
+        super(context);
+        this.a = d3Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationCancel(Animator animator) {
-        switch (this.a) {
-            case 0:
-                k3 k3Var = (k3) this.c;
-                AnimatorSet animatorSet = k3Var.currentSheetAnimation;
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    k3Var.currentSheetAnimation = null;
-                    k3Var.currentSheetAnimationType = 0;
-                    break;
-                }
-                break;
-            default:
-                AnimatorSet[] animatorSetArr = ((e2) this.c).F;
-                int i10 = this.b;
-                AnimatorSet animatorSet2 = animatorSetArr[i10];
-                if (animatorSet2 != null && animatorSet2.equals(animator)) {
-                    animatorSetArr[i10] = null;
-                    break;
-                }
-                break;
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        canvas.drawRect(0.0f, 0.0f, getWidth(), getHeight(), this.a.d);
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        setMeasuredDimension(View.MeasureSpec.getSize(i10), org.telegram.messenger.i0.n);
+        setTranslationY(org.telegram.messenger.i0.n);
+    }
+
+    @Override // org.telegram.ui.ActionBar.k6
+    public final void updateColors() {
+        d3 d3Var = this.a;
+        Paint paint = d3Var.d;
+        try {
+            n3 n3Var = d3Var.a;
+            if (n3Var == null) {
+                return;
+            }
+            int e = n3Var.e(t6.x0(null, t6.a7, false));
+            if (paint.getColor() != e) {
+                paint.setColor(e);
+                invalidate();
+                org.telegram.messenger.i0.t3(d3Var, e, true, null);
+                org.telegram.messenger.i0.m3(d3Var, org.telegram.messenger.i0.B(e) >= 0.721f);
+            }
+        } catch (Exception e7) {
+            f8.g(e7, true);
         }
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        DialogInterface.OnClickListener onClickListener;
-        DialogInterface.OnClickListener onClickListener2;
-        int i10 = this.a;
-        int i11 = this.b;
-        Dialog dialog = this.c;
-        switch (i10) {
-            case 0:
-                k3 k3Var = (k3) dialog;
-                AnimatorSet animatorSet = k3Var.currentSheetAnimation;
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    k3Var.currentSheetAnimation = null;
-                    k3Var.currentSheetAnimationType = 0;
-                    onClickListener = k3Var.onClickListener;
-                    if (onClickListener != null) {
-                        onClickListener2 = k3Var.onClickListener;
-                        onClickListener2.onClick(k3Var, i11);
-                    }
-                    AndroidUtilities.runOnUIThread(new q(this, 8));
-                }
-                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 512);
-                break;
-            default:
-                AnimatorSet[] animatorSetArr = ((e2) dialog).F;
-                AnimatorSet animatorSet2 = animatorSetArr[i11];
-                if (animatorSet2 != null && animatorSet2.equals(animator)) {
-                    animatorSetArr[i11] = null;
-                    break;
-                }
-                break;
-        }
+    @Override // org.telegram.ui.ActionBar.k6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

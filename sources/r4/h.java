@@ -7,7 +7,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class h {
     public final int a;
@@ -15,7 +15,7 @@ public final class h {
     public final long c;
     public final long d;
 
-    public h(long j10, int i10, int i11, long j11) {
+    public h(long j10, long j11, int i10, int i11) {
         this.a = i10;
         this.b = i11;
         this.c = j10;
@@ -25,7 +25,7 @@ public final class h {
     public static h a(File file) {
         DataInputStream dataInputStream = new DataInputStream(new FileInputStream(file));
         try {
-            h hVar = new h(dataInputStream.readLong(), dataInputStream.readInt(), dataInputStream.readInt(), dataInputStream.readLong());
+            h hVar = new h(dataInputStream.readLong(), dataInputStream.readLong(), dataInputStream.readInt(), dataInputStream.readInt());
             dataInputStream.close();
             return hVar;
         } finally {

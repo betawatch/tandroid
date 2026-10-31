@@ -1,54 +1,23 @@
 package org.telegram.ui.Cells;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.text.TextPaint;
+import android.text.style.CharacterStyle;
+import android.text.style.UpdateAppearance;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class m8 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ p8 c;
+public final class m8 extends CharacterStyle implements UpdateAppearance {
+    public final int a;
+    public final org.telegram.ui.ActionBar.p6 b;
 
-    public /* synthetic */ m8(p8 p8Var, boolean z10, int i10) {
+    public m8(int i10, org.telegram.ui.ActionBar.p6 p6Var) {
         this.a = i10;
-        this.c = p8Var;
-        this.b = z10;
+        this.b = p6Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                if (!this.b) {
-                    this.c.h.setVisibility(4);
-                    break;
-                }
-                break;
-            default:
-                if (!this.b) {
-                    this.c.x.setVisibility(4);
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationStart(Animator animator) {
-        switch (this.a) {
-            case 0:
-                if (this.b) {
-                    this.c.h.setVisibility(0);
-                    break;
-                }
-                break;
-            default:
-                if (this.b) {
-                    this.c.x.setVisibility(0);
-                    break;
-                }
-                break;
-        }
+    @Override // android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        textPaint.setColor(org.telegram.ui.ActionBar.t6.w0(this.a, this.b));
+        textPaint.setUnderlineText(true);
     }
 }

@@ -8,27 +8,22 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
 public class ShareActivity extends Activity {
     public static final /* synthetic */ int b = 0;
-    public org.telegram.ui.Components.nr0 a;
+    public org.telegram.ui.Components.op0 a;
 
     @Override // android.app.Activity
     public final void onCreate(Bundle bundle) {
-        ApplicationLoader.postInitApplication();
-        AndroidUtilities.checkDisplaySize(this, getResources().getConfiguration());
-        AndroidUtilities.setPreferredMaxRefreshRate(getWindow());
+        org.telegram.messenger.w0.w();
+        org.telegram.messenger.i0.v(this, getResources().getConfiguration());
+        org.telegram.messenger.i0.w3(getWindow());
         requestWindowFeature(1);
         setTheme(R.style.Theme_TMessages_Transparent);
         super.onCreate(bundle);
@@ -46,13 +41,13 @@ public class ShareActivity extends Activity {
             finish();
             return;
         }
-        SharedPreferences sharedPreferences = ApplicationLoader.applicationContext.getSharedPreferences("botshare", 0);
+        SharedPreferences sharedPreferences = org.telegram.messenger.w0.b.getSharedPreferences("botshare", 0);
         String string = sharedPreferences.getString(queryParameter + "_m", null);
         if (TextUtils.isEmpty(string)) {
             finish();
             return;
         }
-        SerializedData serializedData = new SerializedData(Utilities.hexToBytes(string));
+        SerializedData serializedData = new SerializedData(Utilities.v(string));
         TLRPC.Message TLdeserialize = TLRPC.Message.TLdeserialize(serializedData, serializedData.readInt32(false), false);
         if (TLdeserialize == null) {
             finish();
@@ -61,16 +56,16 @@ public class ShareActivity extends Activity {
         TLdeserialize.readAttachPath(serializedData, 0L);
         serializedData.cleanup();
         String string2 = sharedPreferences.getString(queryParameter + "_link", null);
-        MessageObject messageObject = new MessageObject(UserConfig.selectedAccount, TLdeserialize, false, true);
-        messageObject.messageOwner.with_my_score = true;
+        org.telegram.messenger.jj jjVar = new org.telegram.messenger.jj(org.telegram.messenger.d20.s0, TLdeserialize, false, true);
+        jjVar.k.with_my_score = true;
         try {
-            org.telegram.ui.Components.nr0 P0 = org.telegram.ui.Components.nr0.P0(this, messageObject, null, false, string2);
-            this.a = P0;
-            P0.setCanceledOnTouchOutside(true);
-            this.a.setOnDismissListener(new u5(this, 15));
+            org.telegram.ui.Components.op0 N0 = org.telegram.ui.Components.op0.N0(this, jjVar, null, false, string2);
+            this.a = N0;
+            N0.setCanceledOnTouchOutside(true);
+            this.a.setOnDismissListener(new q5(this, 15));
             this.a.show();
         } catch (Exception e) {
-            FileLog.e(e);
+            org.telegram.messenger.f8.g(e, true);
             finish();
         }
     }
@@ -79,14 +74,14 @@ public class ShareActivity extends Activity {
     public final void onPause() {
         super.onPause();
         try {
-            org.telegram.ui.Components.nr0 nr0Var = this.a;
-            if (nr0Var == null || !nr0Var.isShowing()) {
+            org.telegram.ui.Components.op0 op0Var = this.a;
+            if (op0Var == null || !op0Var.isShowing()) {
                 return;
             }
             this.a.dismiss();
             this.a = null;
         } catch (Exception e) {
-            FileLog.e(e);
+            org.telegram.messenger.f8.g(e, true);
         }
     }
 }

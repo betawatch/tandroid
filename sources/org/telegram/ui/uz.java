@@ -1,30 +1,118 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.tl.TL_chatlists;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class uz implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ q00 b;
+public final class uz extends c00 {
+    public final /* synthetic */ vz E;
 
-    public /* synthetic */ uz(q00 q00Var, int i10) {
-        this.a = i10;
-        this.b = q00Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public uz(vz vzVar, Context context, int i10, int i11) {
+        super(context, null, i10, i11);
+        this.E = vzVar;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                AndroidUtilities.runOnUIThread(new kz(3, this.b, tLObject));
-                break;
-            default:
-                AndroidUtilities.runOnUIThread(new pq(this.b, tL_error, tLObject, 6));
-                break;
+    @Override // org.telegram.ui.c00
+    public final void b(TL_chatlists.TL_exportedChatlistInvite tL_exportedChatlistInvite) {
+        vz vzVar = this.E;
+        vzVar.d.R1.remove(tL_exportedChatlistInvite);
+        vzVar.d.g1();
+        vzVar.d.h1(true);
+    }
+
+    @Override // org.telegram.ui.c00
+    public final void c() {
+        org.telegram.ui.Components.z60 F = org.telegram.ui.Components.z60.F(this.E.d.c, null, this);
+        final int i10 = 0;
+        F.c(R.drawable.msg_copy, org.telegram.messenger.cd.L0(2131751762, null), new Runnable(this) { // from class: org.telegram.ui.tz
+            public final /* synthetic */ uz b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // java.lang.Runnable
+            public final void run() {
+                switch (i10) {
+                    case 0:
+                        uz uzVar = this.b;
+                        String str = uzVar.y;
+                        if (str != null && org.telegram.messenger.i0.g(str)) {
+                            new org.telegram.ui.Components.cc(uzVar.E.d.S1, null).k(false).j();
+                            break;
+                        }
+                        break;
+                    case 1:
+                        this.b.d();
+                        break;
+                    default:
+                        this.b.a();
+                        break;
+                }
+            }
+        }, false);
+        final int i11 = 1;
+        F.c(R.drawable.msg_qrcode, org.telegram.messenger.cd.L0(2131750481, null), new Runnable(this) { // from class: org.telegram.ui.tz
+            public final /* synthetic */ uz b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // java.lang.Runnable
+            public final void run() {
+                switch (i11) {
+                    case 0:
+                        uz uzVar = this.b;
+                        String str = uzVar.y;
+                        if (str != null && org.telegram.messenger.i0.g(str)) {
+                            new org.telegram.ui.Components.cc(uzVar.E.d.S1, null).k(false).j();
+                            break;
+                        }
+                        break;
+                    case 1:
+                        this.b.d();
+                        break;
+                    default:
+                        this.b.a();
+                        break;
+                }
+            }
+        }, false);
+        final int i12 = 2;
+        F.c(R.drawable.msg_delete, org.telegram.messenger.cd.L0(2131751535, null), new Runnable(this) { // from class: org.telegram.ui.tz
+            public final /* synthetic */ uz b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // java.lang.Runnable
+            public final void run() {
+                switch (i12) {
+                    case 0:
+                        uz uzVar = this.b;
+                        String str = uzVar.y;
+                        if (str != null && org.telegram.messenger.i0.g(str)) {
+                            new org.telegram.ui.Components.cc(uzVar.E.d.S1, null).k(false).j();
+                            break;
+                        }
+                        break;
+                    case 1:
+                        this.b.d();
+                        break;
+                    default:
+                        this.b.a();
+                        break;
+                }
+            }
+        }, true);
+        if (org.telegram.messenger.cd.X) {
+            F.i = 3;
         }
+        F.Z();
     }
 }

@@ -1,74 +1,66 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.AndroidUtilities;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class uk implements Runnable {
+public final class uk extends s4.s0 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ al b;
+    public final /* synthetic */ bl b;
 
-    public /* synthetic */ uk(al alVar, int i10) {
+    public /* synthetic */ uk(bl blVar, int i10) {
         this.a = i10;
-        this.b = alVar;
+        this.b = blVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // s4.s0
+    public final void a(RecyclerView recyclerView, int i10) {
+        ck0 ck0Var;
         switch (this.a) {
             case 0:
-                this.b.Z();
-                break;
-            case 1:
-                al alVar = this.b;
-                EditTextBoldCursor editTextBoldCursor = alVar.S;
-                if (!alVar.K && !alVar.N0 && !alVar.b.isDismissed() && alVar.L0 && alVar.T0 == null && editTextBoldCursor.hasFocus() && alVar.isShown()) {
-                    AndroidUtilities.showKeyboard(editTextBoldCursor);
-                    break;
+                bl blVar = this.b;
+                ag.b1 b1Var = blVar.N;
+                boolean z10 = i10 != 0;
+                blVar.J = z10;
+                if (!z10 && blVar.H != null) {
+                    blVar.H = null;
                 }
-                break;
-            case 2:
-                al alVar2 = this.b;
-                if (!alVar2.K && alVar2.L0 && alVar2.isShown()) {
-                    alVar2.c0();
-                    break;
-                }
-                break;
-            case 3:
-                al alVar3 = this.b;
-                if (!alVar3.K) {
-                    float f7 = alVar3.m0;
-                    if (f7 < 1.0f && alVar3.l0 == null) {
-                        o1.j jVar = new o1.j(new ac.a(f7));
-                        alVar3.l0 = jVar;
-                        o1.k kVar = new o1.k(1.0f);
-                        kVar.a(0.55f);
-                        kVar.b(65.0f);
-                        jVar.u = kVar;
-                        alVar3.l0.e(0.001f);
-                        alVar3.l0.b(new n7(alVar3, 4));
-                        alVar3.l0.a(new hb(alVar3, 2));
-                        alVar3.l0.h();
-                        break;
-                    }
-                }
-                break;
-            case 4:
-                al alVar4 = this.b;
-                if (alVar4.L0 && !alVar4.K) {
-                    alVar4.b0();
-                    if (alVar4.M0) {
-                        alVar4.c0();
-                        break;
+                if (i10 == 0) {
+                    int L = org.telegram.messenger.i0.L(13.0f);
+                    bi biVar = blVar.b;
+                    int i11 = biVar.s0;
+                    if (((biVar.V3[0] - i11) - L) + i11 < org.telegram.ui.ActionBar.l.getCurrentActionBarHeight() && (ck0Var = (ck0) b1Var.K(0)) != null) {
+                        View view = ck0Var.a;
+                        if (view.getTop() > blVar.x0 - blVar.w0) {
+                            b1Var.w0(0, view.getTop() - (blVar.x0 - blVar.w0), null);
+                            break;
+                        }
                     }
                 }
                 break;
             default:
-                al alVar5 = this.b;
-                if (!alVar5.p0) {
-                    alVar5.o0.setVisibility(4);
-                    break;
+                if (i10 == 1) {
+                    bl blVar2 = this.b;
+                    if (blVar2.i0 && blVar2.j0) {
+                        org.telegram.messenger.i0.v1(blVar2.b.getCurrentFocus());
+                        break;
+                    }
                 }
+                break;
+        }
+    }
+
+    @Override // s4.s0
+    public void b(RecyclerView recyclerView, int i10, int i11) {
+        switch (this.a) {
+            case 0:
+                bl blVar = this.b;
+                blVar.h0();
+                if (blVar.H != null) {
+                    blVar.I += i11;
+                }
+                blVar.b.L1(blVar, i11);
                 break;
         }
     }

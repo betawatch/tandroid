@@ -1,22 +1,13 @@
 package com.google.android.gms.common.api.internal;
 
-import java.io.FileDescriptor;
-import java.io.PrintWriter;
+import android.os.Bundle;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public interface w0 {
-    void a();
+    void t(k6.a aVar);
 
-    boolean b();
+    void w(int i10);
 
-    e c(e eVar);
-
-    void d();
-
-    void e();
-
-    boolean f(b6.d dVar);
-
-    void g(String str, FileDescriptor fileDescriptor, PrintWriter printWriter, String[] strArr);
+    void z(Bundle bundle);
 }

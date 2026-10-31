@@ -1,13 +1,143 @@
 package k2;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+import android.app.PictureInPictureParams;
+import android.content.Context;
+import android.graphics.Point;
+import android.graphics.Rect;
+import android.media.AudioFormat;
+import android.media.AudioManager;
+import android.os.Build;
+import android.util.Rational;
+import org.telegram.messenger.zs;
+
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class q0 {
-    public final p a;
-    public final /* synthetic */ u0 b;
+    public final Object a;
+    public Object b;
 
-    public q0(u0 u0Var, p pVar) {
-        this.b = u0Var;
-        this.a = pVar;
+    public q0() {
+        this.a = new Rect();
+        this.b = new Point();
+    }
+
+    public PictureInPictureParams.Builder a() {
+        int i10;
+        Rect rect = (Rect) this.a;
+        PictureInPictureParams.Builder builder = new PictureInPictureParams.Builder();
+        Point point = (Point) this.b;
+        int i11 = point.x;
+        if (i11 <= 0 || (i10 = point.y) <= 0) {
+            builder.setAspectRatio(null);
+            if (Build.VERSION.SDK_INT >= 33) {
+                builder.setExpandedAspectRatio(null);
+            }
+        } else {
+            double d = i11 / i10;
+            Rational rational = d < 0.45d ? new Rational(45, 100) : d > 2.35d ? new Rational(zs.K3, 100) : new Rational(point.x, point.y);
+            builder.setAspectRatio(rational);
+            if (Build.VERSION.SDK_INT >= 33) {
+                builder.setExpandedAspectRatio(rational);
+            }
+        }
+        if (rect.isEmpty()) {
+            builder.setSourceRectHint(null);
+            return builder;
+        }
+        builder.setSourceRectHint(rect);
+        return builder;
+    }
+
+    public g b(b2.f fVar, b2.x xVar) {
+        boolean booleanValue;
+        xVar.getClass();
+        int i10 = xVar.L;
+        fVar.getClass();
+        int i11 = Build.VERSION.SDK_INT;
+        if (i11 < 29 || i10 == -1) {
+            return g.d;
+        }
+        Context context = (Context) this.a;
+        Boolean bool = (Boolean) this.b;
+        if (bool != null) {
+            booleanValue = bool.booleanValue();
+        } else {
+            if (context != null) {
+                String parameters = c2.h.e(context).getParameters("offloadVariableRateSupported");
+                this.b = Boolean.valueOf(parameters != null && parameters.equals("offloadVariableRateSupported=1"));
+            } else {
+                this.b = Boolean.FALSE;
+            }
+            booleanValue = ((Boolean) this.b).booleanValue();
+        }
+        String str = xVar.s;
+        str.getClass();
+        int c10 = b2.v0.c(str, xVar.k);
+        if (c10 == 0 || i11 < e2.l0.s(c10)) {
+            return g.d;
+        }
+        int t10 = e2.l0.t(xVar.K);
+        if (t10 == 0) {
+            return g.d;
+        }
+        try {
+            AudioFormat build = new AudioFormat.Builder().setSampleRate(i10).setChannelMask(t10).setEncoding(c10).build();
+            if (i11 >= 33) {
+                int directPlaybackSupport = AudioManager.getDirectPlaybackSupport(build, fVar.b());
+                if ((directPlaybackSupport & 1) == 0) {
+                    return g.d;
+                }
+                r4 = (directPlaybackSupport & 3) == 3;
+                ea.b bVar = new ea.b();
+                bVar.a = true;
+                bVar.b = r4;
+                bVar.c = booleanValue;
+                return bVar.a();
+            }
+            if (i11 < 31) {
+                if (!AudioManager.isOffloadedPlaybackSupported(build, fVar.b())) {
+                    return g.d;
+                }
+                ea.b bVar2 = new ea.b();
+                bVar2.a = true;
+                bVar2.c = booleanValue;
+                return bVar2.a();
+            }
+            int playbackOffloadSupport = AudioManager.getPlaybackOffloadSupport(build, fVar.b());
+            if (playbackOffloadSupport == 0) {
+                return g.d;
+            }
+            ea.b bVar3 = new ea.b();
+            if (i11 > 32 && playbackOffloadSupport == 2) {
+                r4 = true;
+            }
+            bVar3.a = true;
+            bVar3.b = r4;
+            bVar3.c = booleanValue;
+            return bVar3.a();
+        } catch (IllegalArgumentException unused) {
+            return g.d;
+        }
+    }
+
+    public boolean c() {
+        if (((Rect) this.a).isEmpty()) {
+            return false;
+        }
+        Point point = (Point) this.b;
+        return point.x > 0 && point.y > 0;
+    }
+
+    public boolean d(int i10, int i11) {
+        Point point = (Point) this.b;
+        if (point.x == i10 && point.y == i11) {
+            return false;
+        }
+        point.set(i10, i11);
+        return true;
+    }
+
+    public q0(Context context) {
+        this.a = context == null ? null : context.getApplicationContext();
     }
 }

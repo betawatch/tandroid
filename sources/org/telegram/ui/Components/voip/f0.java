@@ -1,55 +1,53 @@
 package org.telegram.ui.Components.voip;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.as;
-import org.telegram.ui.o30;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes4.dex */
-public final class f0 extends View {
-    public final /* synthetic */ org.telegram.ui.Cells.y a;
-    public final /* synthetic */ o30 b;
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class f0 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ l0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f0(o30 o30Var, Context context, org.telegram.ui.Cells.y yVar) {
-        super(context);
-        this.b = o30Var;
-        this.a = yVar;
+    public /* synthetic */ f0(l0 l0Var, int i10) {
+        this.a = i10;
+        this.b = l0Var;
     }
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        o30 o30Var = this.b;
-        float measuredWidth = o30Var.d0.getMeasuredWidth();
-        as asVar = o30Var.c0;
-        float measuredWidth2 = (o30Var.e0.getMeasuredWidth() * asVar.g) + ((1.0f - asVar.g) * measuredWidth);
-        canvas.save();
-        int dp = AndroidUtilities.dp(50.0f) + ((int) measuredWidth2);
-        int measuredHeight = getMeasuredHeight();
-        org.telegram.ui.Cells.y yVar = this.a;
-        yVar.setBounds(0, 0, dp, measuredHeight);
-        yVar.draw(canvas);
-        super.dispatchDraw(canvas);
-    }
-
-    @Override // android.view.View
-    public final void drawableStateChanged() {
-        super.drawableStateChanged();
-        this.a.setState(getDrawableState());
-    }
-
-    @Override // android.view.View
-    public final void jumpDrawablesToCurrentState() {
-        super.jumpDrawablesToCurrentState();
-        this.a.jumpToCurrentState();
-    }
-
-    @Override // android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return this.a == drawable || super.verifyDrawable(drawable);
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                l0 l0Var = this.b;
+                l0Var.getClass();
+                l0Var.F = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                l0Var.invalidate();
+                break;
+            case 1:
+                l0 l0Var2 = this.b;
+                l0Var2.getClass();
+                l0Var2.D = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                float L = l0Var2.I + org.telegram.messenger.i0.L(28.0f);
+                float L2 = l0Var2.J + org.telegram.messenger.i0.L(52.0f);
+                float f7 = l0Var2.D;
+                l0Var2.G = L - (L * f7);
+                l0Var2.H = L2 - (f7 * L2);
+                l0Var2.invalidate();
+                break;
+            case 2:
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                l0 l0Var3 = this.b;
+                l0Var3.E = floatValue;
+                int L3 = (org.telegram.messenger.i0.q.x - org.telegram.messenger.i0.L(36.0f)) - org.telegram.messenger.i0.L(52.0f);
+                j0 j0Var = l0Var3.c;
+                j0Var.getLayoutParams().width = org.telegram.messenger.i0.L(52.0f) + ((int) (L3 * l0Var3.E));
+                j0Var.requestLayout();
+                break;
+            default:
+                l0 l0Var4 = this.b;
+                l0Var4.getClass();
+                l0Var4.s = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                l0Var4.e();
+                break;
+        }
     }
 }

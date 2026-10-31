@@ -7,7 +7,7 @@ import java.util.Collection;
 import java.util.RandomAccess;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class h1 extends n0 implements i2, RandomAccess {
     public static final h1 d;
@@ -15,12 +15,12 @@ public final class h1 extends n0 implements i2, RandomAccess {
     public int c;
 
     static {
-        h1 h1Var = new h1(0, new int[0]);
+        h1 h1Var = new h1(new int[0], 0);
         d = h1Var;
         h1Var.a = false;
     }
 
-    public h1(int i10, int[] iArr) {
+    public h1(int[] iArr, int i10) {
         this.b = iArr;
         this.c = i10;
     }
@@ -29,7 +29,7 @@ public final class h1 extends n0 implements i2, RandomAccess {
     public final /* synthetic */ void add(int i10, Object obj) {
         int i11;
         int intValue = ((Integer) obj).intValue();
-        h();
+        l();
         if (i10 < 0 || i10 > (i11 = this.c)) {
             throw new IndexOutOfBoundsException(o(i10));
         }
@@ -49,7 +49,7 @@ public final class h1 extends n0 implements i2, RandomAccess {
 
     @Override // com.google.android.gms.internal.vision.n0, java.util.AbstractCollection, java.util.Collection, java.util.List
     public final boolean addAll(Collection collection) {
-        h();
+        l();
         Charset charset = j1.a;
         collection.getClass();
         if (!(collection instanceof h1)) {
@@ -132,7 +132,7 @@ public final class h1 extends n0 implements i2, RandomAccess {
     }
 
     public final void m(int i10) {
-        h();
+        l();
         int i11 = this.c;
         int[] iArr = this.b;
         if (i11 == iArr.length) {
@@ -164,7 +164,7 @@ public final class h1 extends n0 implements i2, RandomAccess {
 
     @Override // com.google.android.gms.internal.vision.n0, java.util.AbstractList, java.util.List
     public final /* synthetic */ Object remove(int i10) {
-        h();
+        l();
         n(i10);
         int[] iArr = this.b;
         int i11 = iArr[i10];
@@ -178,7 +178,7 @@ public final class h1 extends n0 implements i2, RandomAccess {
 
     @Override // java.util.AbstractList
     public final void removeRange(int i10, int i11) {
-        h();
+        l();
         if (i11 < i10) {
             throw new IndexOutOfBoundsException("toIndex < fromIndex");
         }
@@ -191,7 +191,7 @@ public final class h1 extends n0 implements i2, RandomAccess {
     @Override // java.util.AbstractList, java.util.List
     public final /* synthetic */ Object set(int i10, Object obj) {
         int intValue = ((Integer) obj).intValue();
-        h();
+        l();
         n(i10);
         int[] iArr = this.b;
         int i11 = iArr[i10];
@@ -206,10 +206,10 @@ public final class h1 extends n0 implements i2, RandomAccess {
 
     @Override // com.google.android.gms.internal.vision.o1
     public final /* synthetic */ o1 zza(int i10) {
-        if (i10 < this.c) {
-            throw new IllegalArgumentException();
+        if (i10 >= this.c) {
+            return new h1(Arrays.copyOf(this.b, i10), this.c);
         }
-        return new h1(this.c, Arrays.copyOf(this.b, i10));
+        throw new IllegalArgumentException();
     }
 
     @Override // com.google.android.gms.internal.vision.n0, java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List

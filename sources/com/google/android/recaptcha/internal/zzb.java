@@ -1,15 +1,15 @@
 package com.google.android.recaptcha.internal;
 
-import a8.jd;
-import jd.f;
-import ld.c;
-import md.a;
-import nd.i;
-import ud.p;
+import ad.g;
+import cd.c;
+import dd.a;
+import ed.j;
+import l9.b;
+import ld.p;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-final class zzb extends i implements p {
+final class zzb extends j implements p {
     int zza;
     final /* synthetic */ zzg zzb;
     final /* synthetic */ String zzc;
@@ -24,16 +24,16 @@ final class zzb extends i implements p {
         this.zzd = j10;
     }
 
-    @Override // nd.a
+    @Override // ed.a
     public final c create(Object obj, c cVar) {
         zzb zzbVar = new zzb(this.zzb, this.zzc, this.zzd, cVar);
         zzbVar.zze = obj;
         return zzbVar;
     }
 
-    @Override // ud.p
+    @Override // ld.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzb) create((zzhk) obj, (c) obj2)).invokeSuspend(jd.i.a);
+        return ((zzb) create((zzhk) obj, (c) obj2)).invokeSuspend(ad.j.a);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:16:0x004b, code lost:
@@ -44,7 +44,7 @@ final class zzb extends i implements p {
     
         if (r12 != r0) goto L23;
      */
-    @Override // nd.a
+    @Override // ed.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -61,7 +61,7 @@ final class zzb extends i implements p {
             obj = zzgVar.zza(str, this);
         }
         if (i10 == 0) {
-            jd.b(obj);
+            b.b(obj);
             zzhkVar = (zzhk) this.zze;
             zzg zzgVar2 = this.zzb;
             String str2 = this.zzc;
@@ -76,15 +76,15 @@ final class zzb extends i implements p {
         }
         if (i10 != 1) {
             if (i10 != 2) {
-                jd.b(obj);
-                return new f(obj);
+                b.b(obj);
+                return new g(obj);
             }
-            jd.b(obj);
+            b.b(obj);
             obj = (zzxx) obj;
-            return new f(obj);
+            return new g(obj);
         }
         zzhkVar = (zzhk) this.zze;
-        jd.b(obj);
+        b.b(obj);
         this.zze = null;
         this.zza = 2;
         obj = ((zzhf) obj).zza(zzhkVar, this);

@@ -1,68 +1,67 @@
 package org.telegram.ui.ActionBar;
 
 import android.animation.ValueAnimator;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.oy0;
+import org.telegram.ui.wv0;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ k b;
+    public final /* synthetic */ l b;
 
-    public /* synthetic */ a(k kVar, int i10) {
+    public /* synthetic */ a(l lVar, int i10) {
         this.a = i10;
-        this.b = kVar;
+        this.b = lVar;
     }
 
     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        z zVar;
+        y yVar;
         switch (this.a) {
             case 0:
-                k kVar = this.b;
-                kVar.getClass();
-                kVar.v1 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                kVar.b();
+                wv0 wv0Var = this.b.d1;
+                if (wv0Var != null) {
+                    wv0Var.run();
+                    break;
+                }
                 break;
             case 1:
-                oy0 oy0Var = this.b.W0;
-                if (oy0Var != null) {
-                    oy0Var.run();
+                wv0 wv0Var2 = this.b.d1;
+                if (wv0Var2 != null) {
+                    wv0Var2.run();
                     break;
                 }
                 break;
             case 2:
-                oy0 oy0Var2 = this.b.W0;
-                if (oy0Var2 != null) {
-                    oy0Var2.run();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                l lVar = this.b;
+                lVar.o0 = floatValue;
+                if (lVar.a != null && lVar.R0) {
+                    float L = org.telegram.messenger.i0.L(23.0f);
+                    float W1 = org.telegram.messenger.i0.W1(lVar.o0, org.telegram.messenger.i0.L(18.33f), org.telegram.messenger.i0.L(23.0f));
+                    lVar.a.r(W1, L, L, W1);
+                    lVar.invalidate();
+                }
+                if (lVar.P0 && (yVar = lVar.E) != null) {
+                    yVar.setTranslationX(-org.telegram.messenger.i0.T1(org.telegram.messenger.i0.L(10.0f), org.telegram.messenger.i0.L(5.0f), lVar.o0));
+                }
+                wv0 wv0Var3 = lVar.d1;
+                if (wv0Var3 != null) {
+                    wv0Var3.run();
                     break;
                 }
                 break;
             case 3:
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                k kVar2 = this.b;
-                kVar2.o0 = floatValue;
-                if (kVar2.a != null && kVar2.R0) {
-                    float dp = AndroidUtilities.dp(23.0f);
-                    float lerp = AndroidUtilities.lerp(AndroidUtilities.dp(18.33f), AndroidUtilities.dp(23.0f), kVar2.o0);
-                    kVar2.a.y(lerp, dp, dp, lerp);
-                    kVar2.invalidate();
-                }
-                if (kVar2.P0 && (zVar = kVar2.E) != null) {
-                    zVar.setTranslationX(-AndroidUtilities.lerp(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(5.0f), kVar2.o0));
-                }
-                oy0 oy0Var3 = kVar2.W0;
-                if (oy0Var3 != null) {
-                    oy0Var3.run();
-                    break;
-                }
+                l lVar2 = this.b;
+                lVar2.getClass();
+                lVar2.C1 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                lVar2.f();
                 break;
             default:
-                k kVar3 = this.b;
-                kVar3.getClass();
-                kVar3.v1 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                kVar3.b();
+                l lVar3 = this.b;
+                lVar3.getClass();
+                lVar3.C1 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                lVar3.f();
                 break;
         }
     }

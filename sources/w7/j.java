@@ -1,241 +1,69 @@
 package w7;
 
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStream;
-import java.nio.ByteBuffer;
-import java.nio.ByteOrder;
-import java.nio.charset.Charset;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-import org.telegram.ui.Components.b10;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class j implements ka.e {
-    public static final Charset f = Charset.forName("UTF-8");
-    public static final ka.c g = new ka.c("key", ic.a.m(b10.m(h.class, new e(1))));
-    public static final ka.c h = new ka.c("value", ic.a.m(b10.m(h.class, new e(2))));
-    public static final i i = i.b;
-    public OutputStream a;
-    public final HashMap b;
-    public final HashMap c;
-    public final ka.d d;
-    public final a8.i0 e = new a8.i0(this, 2);
-
-    public j(ByteArrayOutputStream byteArrayOutputStream, HashMap hashMap, HashMap hashMap2, ka.d dVar) {
-        this.a = byteArrayOutputStream;
-        this.b = hashMap;
-        this.c = hashMap2;
-        this.d = dVar;
-    }
-
-    public static int i(ka.c cVar) {
-        h hVar = (h) cVar.b(h.class);
-        if (hVar != null) {
-            return ((e) hVar).a;
-        }
-        throw new ka.b("Field has no @Protobuf config");
-    }
-
-    @Override // ka.e
-    public final ka.e a(ka.c cVar, Object obj) {
-        c(cVar, obj, true);
-        return this;
-    }
-
-    public final void b(ka.c cVar, double d, boolean z10) {
-        if (z10 && d == 0.0d) {
-            return;
-        }
-        k((i(cVar) << 3) | 1);
-        this.a.write(ByteBuffer.allocate(8).order(ByteOrder.LITTLE_ENDIAN).putDouble(d).array());
-    }
-
-    public final void c(ka.c cVar, Object obj, boolean z10) {
-        if (obj == null) {
-            return;
-        }
-        if (obj instanceof CharSequence) {
-            CharSequence charSequence = (CharSequence) obj;
-            if (z10 && charSequence.length() == 0) {
-                return;
+public abstract class j {
+    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
+    /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue
+    java.lang.NullPointerException: Cannot invoke "java.util.List.iterator()" because the return value of "jadx.core.dex.visitors.regions.SwitchOverStringVisitor$SwitchData.getNewCases()" is null
+    	at jadx.core.dex.visitors.regions.SwitchOverStringVisitor.restoreSwitchOverString(SwitchOverStringVisitor.java:109)
+    	at jadx.core.dex.visitors.regions.SwitchOverStringVisitor.visitRegion(SwitchOverStringVisitor.java:66)
+    	at jadx.core.dex.visitors.regions.DepthRegionTraversal.traverseIterativeStepInternal(DepthRegionTraversal.java:77)
+    	at jadx.core.dex.visitors.regions.DepthRegionTraversal.traverseIterativeStepInternal(DepthRegionTraversal.java:82)
+     */
+    public static final Class a(pd.c cVar) {
+        kotlin.jvm.internal.i.e(cVar, "<this>");
+        Class a2 = ((kotlin.jvm.internal.c) cVar).a();
+        if (a2.isPrimitive()) {
+            String name = a2.getName();
+            switch (name.hashCode()) {
+                case -1325958191:
+                    if (name.equals("double")) {
+                        return Double.class;
+                    }
+                    break;
+                case 104431:
+                    if (name.equals("int")) {
+                        return Integer.class;
+                    }
+                    break;
+                case 3039496:
+                    if (name.equals("byte")) {
+                        return Byte.class;
+                    }
+                    break;
+                case 3052374:
+                    if (name.equals("char")) {
+                        return Character.class;
+                    }
+                    break;
+                case 3327612:
+                    if (name.equals("long")) {
+                        return Long.class;
+                    }
+                    break;
+                case 3625364:
+                    if (name.equals("void")) {
+                        return Void.class;
+                    }
+                    break;
+                case 64711720:
+                    if (name.equals("boolean")) {
+                        return Boolean.class;
+                    }
+                    break;
+                case 97526364:
+                    if (name.equals("float")) {
+                        return Float.class;
+                    }
+                    break;
+                case 109413500:
+                    if (name.equals("short")) {
+                        return Short.class;
+                    }
+                    break;
             }
-            k((i(cVar) << 3) | 2);
-            byte[] bytes = charSequence.toString().getBytes(f);
-            k(bytes.length);
-            this.a.write(bytes);
-            return;
         }
-        if (obj instanceof Collection) {
-            Iterator it = ((Collection) obj).iterator();
-            while (it.hasNext()) {
-                c(cVar, it.next(), false);
-            }
-            return;
-        }
-        if (obj instanceof Map) {
-            Iterator it2 = ((Map) obj).entrySet().iterator();
-            while (it2.hasNext()) {
-                j(i, cVar, (Map.Entry) it2.next(), false);
-            }
-            return;
-        }
-        if (obj instanceof Double) {
-            b(cVar, ((Double) obj).doubleValue(), z10);
-            return;
-        }
-        if (obj instanceof Float) {
-            float floatValue = ((Float) obj).floatValue();
-            if (z10 && floatValue == 0.0f) {
-                return;
-            }
-            k((i(cVar) << 3) | 5);
-            this.a.write(ByteBuffer.allocate(4).order(ByteOrder.LITTLE_ENDIAN).putFloat(floatValue).array());
-            return;
-        }
-        if (obj instanceof Number) {
-            long longValue = ((Number) obj).longValue();
-            if (z10 && longValue == 0) {
-                return;
-            }
-            h hVar = (h) cVar.b(h.class);
-            if (hVar == null) {
-                throw new ka.b("Field has no @Protobuf config");
-            }
-            k(((e) hVar).a << 3);
-            l(longValue);
-            return;
-        }
-        if (obj instanceof Boolean) {
-            h(cVar, ((Boolean) obj).booleanValue() ? 1 : 0, z10);
-            return;
-        }
-        if (obj instanceof byte[]) {
-            byte[] bArr = (byte[]) obj;
-            if (z10 && bArr.length == 0) {
-                return;
-            }
-            k((i(cVar) << 3) | 2);
-            k(bArr.length);
-            this.a.write(bArr);
-            return;
-        }
-        ka.d dVar = (ka.d) this.b.get(obj.getClass());
-        if (dVar != null) {
-            j(dVar, cVar, obj, z10);
-            return;
-        }
-        ka.f fVar = (ka.f) this.c.get(obj.getClass());
-        if (fVar != null) {
-            a8.i0 i0Var = this.e;
-            i0Var.b = false;
-            i0Var.d = cVar;
-            i0Var.c = z10;
-            fVar.a(obj, i0Var);
-            return;
-        }
-        if (obj instanceof f) {
-            h(cVar, ((f) obj).zza(), true);
-        } else if (obj instanceof Enum) {
-            h(cVar, ((Enum) obj).ordinal(), true);
-        } else {
-            j(this.d, cVar, obj, z10);
-        }
-    }
-
-    @Override // ka.e
-    public final /* synthetic */ ka.e d(ka.c cVar, boolean z10) {
-        h(cVar, z10 ? 1 : 0, true);
-        return this;
-    }
-
-    @Override // ka.e
-    public final /* synthetic */ ka.e e(ka.c cVar, int i10) {
-        h(cVar, i10, true);
-        return this;
-    }
-
-    @Override // ka.e
-    public final ka.e f(ka.c cVar, long j10) {
-        if (j10 == 0) {
-            return this;
-        }
-        h hVar = (h) cVar.b(h.class);
-        if (hVar == null) {
-            throw new ka.b("Field has no @Protobuf config");
-        }
-        k(((e) hVar).a << 3);
-        l(j10);
-        return this;
-    }
-
-    @Override // ka.e
-    public final ka.e g(ka.c cVar, double d) {
-        b(cVar, d, true);
-        return this;
-    }
-
-    public final void h(ka.c cVar, int i10, boolean z10) {
-        if (z10 && i10 == 0) {
-            return;
-        }
-        h hVar = (h) cVar.b(h.class);
-        if (hVar == null) {
-            throw new ka.b("Field has no @Protobuf config");
-        }
-        k(((e) hVar).a << 3);
-        k(i10);
-    }
-
-    public final void j(ka.d dVar, ka.c cVar, Object obj, boolean z10) {
-        a8.b0 b0Var = new a8.b0(2);
-        b0Var.b = 0L;
-        try {
-            OutputStream outputStream = this.a;
-            this.a = b0Var;
-            try {
-                dVar.a(obj, this);
-                this.a = outputStream;
-                long j10 = b0Var.b;
-                b0Var.close();
-                if (z10 && j10 == 0) {
-                    return;
-                }
-                k((i(cVar) << 3) | 2);
-                l(j10);
-                dVar.a(obj, this);
-            } catch (Throwable th2) {
-                this.a = outputStream;
-                throw th2;
-            }
-        } catch (Throwable th3) {
-            try {
-                b0Var.close();
-            } catch (Throwable th4) {
-                try {
-                    Throwable.class.getDeclaredMethod("addSuppressed", Throwable.class).invoke(th3, th4);
-                } catch (Exception unused) {
-                }
-            }
-            throw th3;
-        }
-    }
-
-    public final void k(int i10) {
-        while ((i10 & (-128)) != 0) {
-            this.a.write((i10 & 127) | 128);
-            i10 >>>= 7;
-        }
-        this.a.write(i10 & 127);
-    }
-
-    public final void l(long j10) {
-        while (((-128) & j10) != 0) {
-            this.a.write((((int) j10) & 127) | 128);
-            j10 >>>= 7;
-        }
-        this.a.write(((int) j10) & 127);
+        return a2;
     }
 }

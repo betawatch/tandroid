@@ -1,33 +1,18 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qh0 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ th0 b;
-
-    public /* synthetic */ qh0(th0 th0Var, int i10) {
-        this.a = i10;
-        this.b = th0Var;
-    }
-
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                th0 th0Var = this.b;
-                th0Var.getClass();
-                th0Var.b = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                th0Var.c(true);
-                break;
-            default:
-                th0 th0Var2 = this.b;
-                th0Var2.getClass();
-                th0Var2.E = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                th0Var2.c(true);
-                break;
-        }
-    }
+public final class qh0 {
+    public float a;
+    public float b;
+    public float c;
+    public float d;
+    public boolean e;
+    public boolean f;
+    public float g;
+    public float h;
+    public int i;
+    public org.telegram.ui.Cells.u9 j;
+    public float k;
+    public float l;
 }

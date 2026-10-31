@@ -3,24 +3,24 @@ package q3;
 import j$.util.Objects;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class c extends i {
+public final class c extends j {
     public final String b;
     public final int c;
     public final int d;
     public final long e;
     public final long f;
-    public final i[] g;
+    public final j[] g;
 
-    public c(String str, int i10, int i11, long j10, long j11, i[] iVarArr) {
+    public c(String str, int i10, int i11, long j10, long j11, j[] jVarArr) {
         super("CHAP");
         this.b = str;
         this.c = i10;
         this.d = i11;
         this.e = j10;
         this.f = j11;
-        this.g = iVarArr;
+        this.g = jVarArr;
     }
 
     public final boolean equals(Object obj) {

@@ -1,16 +1,15 @@
 package p3;
 
-import a8.yb;
 import b2.r0;
 import b2.t0;
 import b2.x;
-import c3.h0;
+import c3.i0;
 import j$.util.Objects;
 import java.util.List;
 import java.util.Map;
-import org.telegram.messenger.MediaDataController;
+import v7.t6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class b implements t0 {
     public final int a;
@@ -21,7 +20,7 @@ public final class b implements t0 {
     public final int f;
 
     public b(int i10, String str, String str2, String str3, boolean z10, int i11) {
-        yb.g(i11 == -1 || i11 > 0);
+        t6.f(i11 == -1 || i11 > 0);
         this.a = i10;
         this.b = str;
         this.c = str2;
@@ -63,7 +62,7 @@ public final class b implements t0 {
         if (list6 != null) {
             String str4 = (String) list6.get(0);
             try {
-                i11 = Integer.parseInt(str4) * MediaDataController.MAX_STYLE_RUNS_COUNT;
+                i11 = Integer.parseInt(str4) * 1000;
                 if (i11 > 0) {
                     z10 = true;
                 } else {
@@ -72,7 +71,7 @@ public final class b implements t0 {
                         z10 = false;
                         i11 = -1;
                     } catch (NumberFormatException unused) {
-                        h0.p("Invalid bitrate header: ", str4, "IcyHeaders");
+                        i0.q("Invalid bitrate header: ", str4, "IcyHeaders");
                         z10 = false;
                         i10 = i11;
                         list = (List) map.get("icy-genre");
@@ -144,7 +143,7 @@ public final class b implements t0 {
                         z12 = z10;
                     } catch (NumberFormatException unused3) {
                         i12 = parseInt;
-                        h0.p("Invalid metadata interval: ", str5, "IcyHeaders");
+                        i0.q("Invalid metadata interval: ", str5, "IcyHeaders");
                         int i132 = i12;
                         if (z10) {
                         }

@@ -1,6 +1,5 @@
 package m;
 
-import a8.kc;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Rect;
@@ -17,13 +16,15 @@ import java.lang.reflect.Method;
 import java.util.WeakHashMap;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
+import v7.r7;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public abstract class d2 implements l.b0 {
+public abstract class d2 implements l.c0 {
     public static final Method P;
     public static final Method Q;
     public static final Method R;
+    public h1.a D;
     public View E;
     public AdapterView.OnItemClickListener F;
     public final c2 H;
@@ -39,13 +40,12 @@ public abstract class d2 implements l.b0 {
     public int h;
     public boolean r;
     public boolean s;
-    public boolean v;
-    public a5.j y;
+    public boolean w;
     public final int d = -2;
     public int e = -2;
     public final int n = 1002;
-    public int w = 0;
-    public final int x = ConnectionsManager.DEFAULT_DATACENTER_ID;
+    public int x = 0;
+    public final int y = ConnectionsManager.DEFAULT_DATACENTER_ID;
     public final a2 G = new a2(this, 1);
     public final b2 I = new b2(this);
     public final Rect L = new Rect();
@@ -94,13 +94,13 @@ public abstract class d2 implements l.b0 {
         if (obtainStyledAttributes2.hasValue(2)) {
             xVar.setOverlapAnchor(obtainStyledAttributes2.getBoolean(2, false));
         }
-        xVar.setBackgroundDrawable((!obtainStyledAttributes2.hasValue(0) || (resourceId = obtainStyledAttributes2.getResourceId(0, 0)) == 0) ? obtainStyledAttributes2.getDrawable(0) : kc.b(context, resourceId));
+        xVar.setBackgroundDrawable((!obtainStyledAttributes2.hasValue(0) || (resourceId = obtainStyledAttributes2.getResourceId(0, 0)) == 0) ? obtainStyledAttributes2.getDrawable(0) : r7.b(context, resourceId));
         obtainStyledAttributes2.recycle();
         this.O = xVar;
         xVar.setInputMethodMode(1);
     }
 
-    @Override // l.b0
+    @Override // l.c0
     public final boolean a() {
         return this.O.isShowing();
     }
@@ -113,7 +113,7 @@ public abstract class d2 implements l.b0 {
         this.f = i10;
     }
 
-    @Override // l.b0
+    @Override // l.c0
     public final void dismiss() {
         x xVar = this.O;
         xVar.dismiss();
@@ -122,16 +122,16 @@ public abstract class d2 implements l.b0 {
         this.K.removeCallbacks(this.G);
     }
 
-    public final Drawable e() {
-        return this.O.getBackground();
-    }
-
-    @Override // l.b0
+    @Override // l.c0
     public final r1 f() {
         return this.c;
     }
 
-    @Override // l.b0
+    public final Drawable g() {
+        return this.O.getBackground();
+    }
+
+    @Override // l.c0
     public final void h() {
         int i10;
         int a2;
@@ -141,9 +141,9 @@ public abstract class d2 implements l.b0 {
         Context context = this.a;
         x xVar = this.O;
         if (r1Var2 == null) {
-            r1 o10 = o(context, !this.N);
-            this.c = o10;
-            o10.setAdapter(this.b);
+            r1 p5 = p(context, !this.N);
+            this.c = p5;
+            p5.setAdapter(this.b);
             this.c.setOnItemClickListener(this.F);
             this.c.setFocusable(true);
             this.c.setFocusableInTouchMode(true);
@@ -192,7 +192,7 @@ public abstract class d2 implements l.b0 {
         xVar.setWindowLayoutType(this.n);
         if (xVar.isShowing()) {
             View view2 = this.E;
-            WeakHashMap weakHashMap = r0.i0.a;
+            WeakHashMap weakHashMap = r0.h0.a;
             if (view2.isAttachedToWindow()) {
                 int i15 = this.e;
                 if (i15 == -1) {
@@ -253,7 +253,7 @@ public abstract class d2 implements l.b0 {
         }
         xVar.setOutsideTouchable(true);
         xVar.setTouchInterceptor(this.H);
-        if (this.v) {
+        if (this.w) {
             xVar.setOverlapAnchor(this.s);
         }
         if (Build.VERSION.SDK_INT <= 28) {
@@ -268,7 +268,7 @@ public abstract class d2 implements l.b0 {
         } else {
             z1.a(xVar, this.M);
         }
-        xVar.showAsDropDown(this.E, this.f, this.h, this.w);
+        xVar.showAsDropDown(this.E, this.f, this.h, this.x);
         this.c.setSelection(-1);
         if ((!this.N || this.c.isInTouchMode()) && (r1Var = this.c) != null) {
             r1Var.setListSelectionHidden(true);
@@ -280,35 +280,35 @@ public abstract class d2 implements l.b0 {
         this.K.post(this.J);
     }
 
-    public final void i(Drawable drawable) {
+    public final void j(Drawable drawable) {
         this.O.setBackgroundDrawable(drawable);
     }
 
-    public final void j(int i10) {
+    public final void k(int i10) {
         this.h = i10;
         this.r = true;
     }
 
-    public final int m() {
+    public final int n() {
         if (this.r) {
             return this.h;
         }
         return 0;
     }
 
-    public void n(ListAdapter listAdapter) {
-        a5.j jVar = this.y;
-        if (jVar == null) {
-            this.y = new a5.j(this, 2);
+    public void o(ListAdapter listAdapter) {
+        h1.a aVar = this.D;
+        if (aVar == null) {
+            this.D = new h1.a(this, 1);
         } else {
             ListAdapter listAdapter2 = this.b;
             if (listAdapter2 != null) {
-                listAdapter2.unregisterDataSetObserver(jVar);
+                listAdapter2.unregisterDataSetObserver(aVar);
             }
         }
         this.b = listAdapter;
         if (listAdapter != null) {
-            listAdapter.registerDataSetObserver(this.y);
+            listAdapter.registerDataSetObserver(this.D);
         }
         r1 r1Var = this.c;
         if (r1Var != null) {
@@ -316,11 +316,11 @@ public abstract class d2 implements l.b0 {
         }
     }
 
-    public r1 o(Context context, boolean z10) {
+    public r1 p(Context context, boolean z10) {
         return new r1(context, z10);
     }
 
-    public final void p(int i10) {
+    public final void q(int i10) {
         Drawable background = this.O.getBackground();
         if (background == null) {
             this.e = i10;

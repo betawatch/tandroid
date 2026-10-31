@@ -1,299 +1,160 @@
 package org.telegram.ui.Components;
 
-import android.content.res.Resources;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.Rect;
-import android.graphics.Region;
-import android.graphics.drawable.Drawable;
-import android.view.View;
+import android.content.Context;
+import android.text.SpannableStringBuilder;
+import android.text.TextUtils;
+import android.widget.TextView;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public abstract class cr extends Drawable {
-    public final /* synthetic */ int a;
-    public Object b;
+public final class cr extends ha {
+    public final boolean P1;
+    public final i70 Q1;
+    public TLRPC.InputPeer R1;
+    public final boolean S1;
+    public String T1;
+    public String U1;
+    public SpannableStringBuilder V1;
+    public p51 W1;
+    public final boolean X1;
+    public jg.z2 Y1;
 
-    public /* synthetic */ cr() {
-        this.a = 1;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public void applyTheme(Resources.Theme theme) {
-        switch (this.a) {
-            case 1:
-                Drawable drawable = (Drawable) this.b;
-                if (drawable != null) {
-                    drawable.applyTheme(theme);
-                    break;
-                }
-                break;
-            default:
-                super.applyTheme(theme);
-                break;
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public void clearColorFilter() {
-        switch (this.a) {
-            case 1:
-                Drawable drawable = (Drawable) this.b;
-                if (drawable == null) {
-                    super.clearColorFilter();
-                    break;
-                } else {
-                    drawable.clearColorFilter();
-                    break;
-                }
-            default:
-                super.clearColorFilter();
-                break;
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public Drawable getCurrent() {
-        switch (this.a) {
-            case 1:
-                Drawable drawable = (Drawable) this.b;
-                if (drawable == null) {
-                    break;
-                } else {
-                    break;
-                }
-        }
-        return super.getCurrent();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public int getMinimumHeight() {
-        switch (this.a) {
-            case 1:
-                Drawable drawable = (Drawable) this.b;
-                if (drawable == null) {
-                    break;
-                } else {
-                    break;
-                }
-        }
-        return super.getMinimumHeight();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public int getMinimumWidth() {
-        switch (this.a) {
-            case 1:
-                Drawable drawable = (Drawable) this.b;
-                if (drawable == null) {
-                    break;
-                } else {
-                    break;
-                }
-        }
-        return super.getMinimumWidth();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public boolean getPadding(Rect rect) {
-        switch (this.a) {
-            case 1:
-                Drawable drawable = (Drawable) this.b;
-                if (drawable == null) {
-                    break;
-                } else {
-                    break;
-                }
-        }
-        return super.getPadding(rect);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public int[] getState() {
-        switch (this.a) {
-            case 1:
-                Drawable drawable = (Drawable) this.b;
-                if (drawable == null) {
-                    break;
-                } else {
-                    break;
-                }
-        }
-        return super.getState();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public Region getTransparentRegion() {
-        switch (this.a) {
-            case 1:
-                Drawable drawable = (Drawable) this.b;
-                if (drawable == null) {
-                    break;
-                } else {
-                    break;
-                }
-        }
-        return super.getTransparentRegion();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public void jumpToCurrentState() {
-        switch (this.a) {
-            case 1:
-                Drawable drawable = (Drawable) this.b;
-                if (drawable != null) {
-                    drawable.jumpToCurrentState();
-                    break;
-                }
-                break;
-            default:
-                super.jumpToCurrentState();
-                break;
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public boolean onLevelChange(int i10) {
-        switch (this.a) {
-            case 1:
-                Drawable drawable = (Drawable) this.b;
-                if (drawable == null) {
-                    break;
-                } else {
-                    break;
-                }
-        }
-        return super.onLevelChange(i10);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public void setAlpha(int i10) {
-        ((Paint) this.b).setAlpha(i10);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public void setChangingConfigurations(int i10) {
-        switch (this.a) {
-            case 1:
-                Drawable drawable = (Drawable) this.b;
-                if (drawable == null) {
-                    super.setChangingConfigurations(i10);
-                    break;
-                } else {
-                    drawable.setChangingConfigurations(i10);
-                    break;
-                }
-            default:
-                super.setChangingConfigurations(i10);
-                break;
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public void setColorFilter(int i10, PorterDuff.Mode mode) {
-        switch (this.a) {
-            case 1:
-                Drawable drawable = (Drawable) this.b;
-                if (drawable == null) {
-                    super.setColorFilter(i10, mode);
-                    break;
-                } else {
-                    drawable.setColorFilter(i10, mode);
-                    break;
-                }
-            default:
-                super.setColorFilter(i10, mode);
-                break;
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public void setFilterBitmap(boolean z10) {
-        switch (this.a) {
-            case 1:
-                Drawable drawable = (Drawable) this.b;
-                if (drawable != null) {
-                    drawable.setFilterBitmap(z10);
-                    break;
-                }
-                break;
-            default:
-                super.setFilterBitmap(z10);
-                break;
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public void setHotspot(float f7, float f10) {
-        switch (this.a) {
-            case 1:
-                Drawable drawable = (Drawable) this.b;
-                if (drawable != null) {
-                    drawable.setHotspot(f7, f10);
-                    break;
-                }
-                break;
-            default:
-                super.setHotspot(f7, f10);
-                break;
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public void setHotspotBounds(int i10, int i11, int i12, int i13) {
-        switch (this.a) {
-            case 1:
-                Drawable drawable = (Drawable) this.b;
-                if (drawable != null) {
-                    drawable.setHotspotBounds(i10, i11, i12, i13);
-                    break;
-                }
-                break;
-            default:
-                super.setHotspotBounds(i10, i11, i12, i13);
-                break;
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public boolean setState(int[] iArr) {
-        switch (this.a) {
-            case 1:
-                Drawable drawable = (Drawable) this.b;
-                if (drawable == null) {
-                    break;
-                } else {
-                    break;
-                }
-        }
-        return super.setState(iArr);
-    }
-
-    public cr(View view) {
-        this.a = 0;
-        this.b = new Paint(1);
-        if (view != null) {
-            view.addOnAttachStateChangeListener(new bi.i6(this, 9));
-            if (view.isAttachedToWindow()) {
-                view.post(new cp(this, 3));
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r0v0, types: [java.lang.Object, org.telegram.ui.ActionBar.z2, org.telegram.ui.Components.cr, org.telegram.ui.Components.ha] */
+    /* JADX WARN: Type inference failed for: r0v3, types: [org.telegram.ui.ActionBar.z2] */
+    public cr(Context context, int i10, TL_phone.getGroupCallStreamRtmpUrl getgroupcallstreamrtmpurl, TL_phone.groupCallStreamRtmpUrl groupcallstreamrtmpurl, rh.e3 e3Var, th.b bVar) {
+        int i11;
+        TLRPC.Chat L0;
+        cr haVar = new ha(context, null, false, false, bVar);
+        haVar.P1 = true;
+        haVar.r1 = 0.126f;
+        haVar.Q1 = null;
+        haVar.S1 = false;
+        long n10 = org.telegram.messenger.o5.n(getgroupcallstreamrtmpurl.peer);
+        boolean z10 = e3Var != null && (n10 >= 0 || ((L0 = org.telegram.messenger.vp.r1(i10).L0(Long.valueOf(-n10))) != null && L0.creator));
+        if (e3Var != null) {
+            haVar.X1 = true;
+            vh.d dVar = new vh.d(context, bVar, true);
+            dVar.i(org.telegram.messenger.cd.L0(2131748812, null), false, true);
+            haVar.b.addView(dVar, w7.b6.d(-1, 48.0f, 80, 16.0f, 0.0f, 16.0f, (z10 ? 52 : 0) + 12));
+            dVar.setOnClickListener(new ag.i(haVar, e3Var, dVar, 12));
+            if (z10) {
+                vh.d dVar2 = new vh.d(context, bVar, false);
+                dVar2.setColor(org.telegram.ui.ActionBar.t6.x0(null, org.telegram.ui.ActionBar.t6.r7, false));
+                dVar2.d.x(org.telegram.messenger.i0.o());
+                dVar2.i(org.telegram.messenger.cd.L0(2131748810, null), false, true);
+                haVar = this;
+                dVar2.setOnClickListener(new org.telegram.ui.vf(this, context, bVar, dVar2, getgroupcallstreamrtmpurl, i10, 2));
+                haVar.b.addView(dVar2, w7.b6.d(-1, 48.0f, 80, 16.0f, 0.0f, 16.0f, 12.0f));
             }
         }
+        s4.j jVar = new s4.j();
+        jVar.m = false;
+        jVar.C = false;
+        jVar.o(gr.h);
+        jVar.n(350L);
+        haVar.k1.setItemAnimator(jVar);
+        tk0 tk0Var = haVar.k1;
+        int i12 = haVar.t0;
+        if (haVar.X1) {
+            i11 = org.telegram.messenger.i0.L(z10 ? 124.0f : 72.0f);
+        } else {
+            i11 = 0;
+        }
+        tk0Var.setPadding(i12, 0, i12, i11);
+        haVar.O();
+        haVar.b1();
+        haVar.T1 = groupcallstreamrtmpurl.url;
+        haVar.U1 = groupcallstreamrtmpurl.key;
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(haVar.U1);
+        haVar.V1 = spannableStringBuilder;
+        yz0 yz0Var = new yz0();
+        yz0Var.a |= 256;
+        yz0Var.b = 0;
+        yz0Var.c = spannableStringBuilder.length();
+        haVar.V1.setSpan(new zz0(yz0Var, 0), 0, haVar.V1.length(), 0);
+        haVar.W1.O(false);
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public void setColorFilter(ColorFilter colorFilter) {
-        ((Paint) this.b).setColorFilter(colorFilter);
+    @Override // org.telegram.ui.ActionBar.z2
+    public final void L() {
+        TLRPC.InputPeer inputPeer;
+        super.L();
+        i70 i70Var = this.Q1;
+        if (i70Var == null || (inputPeer = this.R1) == null) {
+            return;
+        }
+        i70Var.a(inputPeer, this.S1, false, true);
     }
 
-    public void a() {
+    @Override // org.telegram.ui.Components.ha
+    public final sk0 L0(tk0 tk0Var) {
+        p51 p51Var = new p51(tk0Var, getContext(), this.a, 0, true, new d(this, 7), this.I0);
+        this.W1 = p51Var;
+        return p51Var;
     }
 
-    public void b() {
+    @Override // org.telegram.ui.Components.ha
+    public final CharSequence O0() {
+        return org.telegram.messenger.cd.L0(2131744464, null);
+    }
+
+    public cr(org.telegram.ui.ActionBar.k2 k2Var, TLRPC.Peer peer, long j10, boolean z10, i70 i70Var) {
+        super(k2Var, false);
+        this.P1 = false;
+        this.r1 = 0.26f;
+        this.Q1 = i70Var;
+        this.S1 = z10;
+        Context context = this.b.getContext();
+        TLRPC.Chat L0 = org.telegram.messenger.vp.r1(this.a).L0(Long.valueOf(-j10));
+        boolean z11 = L0 != null && L0.creator;
+        this.X1 = true;
+        TextView textView = new TextView(context);
+        textView.setGravity(17);
+        textView.setEllipsize(TextUtils.TruncateAt.END);
+        textView.setSingleLine(true);
+        textView.setTextSize(1, 14.0f);
+        textView.setTypeface(org.telegram.messenger.i0.o());
+        textView.setText(org.telegram.messenger.cd.L0(2131743482, null));
+        org.telegram.ui.ActionBar.a7.V(textView, org.telegram.ui.ActionBar.t6.Gi, this.I0);
+        int L = org.telegram.messenger.i0.L(8.0f);
+        int i10 = org.telegram.ui.ActionBar.t6.Ci;
+        int w02 = org.telegram.ui.ActionBar.t6.w0(i10, this.I0);
+        int i11 = org.telegram.ui.ActionBar.t6.d6;
+        int o10 = i0.b.o(org.telegram.ui.ActionBar.t6.x0(null, i11, false), 120);
+        org.telegram.ui.Cells.y k02 = org.telegram.ui.ActionBar.t6.k0(L, L, L, L, w02, o10, o10);
+        org.telegram.ui.ActionBar.w6 N = org.telegram.ui.ActionBar.a7.N(i10);
+        org.telegram.ui.ActionBar.w6 h = org.telegram.ui.ActionBar.a7.h(i11, 120);
+        org.telegram.ui.ActionBar.p6 p6Var = this.I0;
+        textView.setBackground(k02);
+        org.telegram.ui.ActionBar.a7.k(textView, k02, N, h, p6Var);
+        this.b.addView(textView, w7.b6.d(-1, 48.0f, 80, 16.0f, 0.0f, 16.0f, (z11 ? 52 : 0) + 12));
+        textView.setOnClickListener(new org.telegram.ui.ud(27, this, peer));
+        if (z11) {
+            vh.d dVar = new vh.d(context, this.I0, false);
+            dVar.setColor(org.telegram.ui.ActionBar.t6.x0(null, org.telegram.ui.ActionBar.t6.r7, false));
+            dVar.d.x(org.telegram.messenger.i0.o());
+            dVar.i(org.telegram.messenger.cd.L0(2131748810, null), false, true);
+            dVar.setOnClickListener(new mg.u0(this, context, dVar, j10, 1));
+            this.b.addView(dVar, w7.b6.d(-1, 48.0f, 80, 16.0f, 0.0f, 16.0f, 12.0f));
+        }
+        tk0 tk0Var = this.k1;
+        int i12 = this.t0;
+        tk0Var.setPadding(i12, 0, i12, org.telegram.messenger.i0.L((z11 ? 52 : 0) + 72));
+        s4.j jVar = new s4.j();
+        jVar.m = false;
+        jVar.C = false;
+        jVar.o(gr.h);
+        jVar.n(350L);
+        this.k1.setItemAnimator(jVar);
+        O();
+        b1();
+        TL_phone.getGroupCallStreamRtmpUrl getgroupcallstreamrtmpurl = new TL_phone.getGroupCallStreamRtmpUrl();
+        getgroupcallstreamrtmpurl.peer = org.telegram.messenger.vp.r1(this.a).i1(j10);
+        getgroupcallstreamrtmpurl.revoke = false;
+        ConnectionsManager.getInstance(this.a).sendRequest(getgroupcallstreamrtmpurl, new x1(this, 1));
     }
 }

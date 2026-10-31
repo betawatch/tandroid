@@ -1,32 +1,34 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class dw extends y9 {
-    public final /* synthetic */ gw G;
+public final class dw extends g.o {
+    public final /* synthetic */ vy c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public dw(gw gwVar, Context context) {
-        super(context);
-        this.G = gwVar;
+    public dw(vy vyVar) {
+        this.c = vyVar;
     }
 
-    @Override // android.view.View
-    public final void invalidate() {
-        if (bh.m0.b(this)) {
-            return;
+    @Override // g.o
+    public final int i(int i10) {
+        vy vyVar = this.c;
+        qy qyVar = vyVar.z0;
+        s4.g0 adapter = vyVar.D0.getAdapter();
+        ny nyVar = vyVar.y0;
+        if (adapter != nyVar) {
+            if (i10 == qyVar.y || !(qyVar.r.get(i10) == null || (qyVar.r.get(i10) instanceof TLRPC.Document))) {
+                return nyVar.d;
+            }
+            return 1;
         }
-        super.invalidate();
-        this.G.f();
-    }
-
-    @Override // android.view.View
-    public final void invalidate(int i10, int i11, int i12, int i13) {
-        if (bh.m0.b(this)) {
-            return;
+        if (i10 == 0) {
+            return nyVar.d;
         }
-        super.invalidate(i10, i11, i12, i13);
+        if (i10 == nyVar.s || !(nyVar.h.get(i10) == null || (nyVar.h.get(i10) instanceof TLRPC.Document))) {
+            return nyVar.d;
+        }
+        return 1;
     }
 }

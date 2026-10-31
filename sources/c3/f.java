@@ -1,8 +1,6 @@
 package c3;
 
-import e2.n0;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class f {
     public final long a;
@@ -29,6 +27,6 @@ public final class f {
             return j13;
         }
         long j16 = (long) ((j10 - j11) * ((j14 - j13) / (j12 - j11)));
-        return n0.j(((j16 + j13) - j15) - (j16 / 20), j13, j14 - 1);
+        return e2.l0.j(((j16 + j13) - j15) - (j16 / 20), j13, j14 - 1);
     }
 }

@@ -1,34 +1,32 @@
 package org.telegram.messenger;
 
-import java.util.concurrent.atomic.AtomicInteger;
+import android.text.TextPaint;
+import android.text.style.ClickableSpan;
+import android.view.View;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final /* synthetic */ class b0 implements Runnable {
+public final class b0 extends ClickableSpan {
     public final /* synthetic */ int a;
-    public final /* synthetic */ AtomicInteger b;
-    public final /* synthetic */ AtomicInteger c;
-    public final /* synthetic */ Runnable d;
+    public final /* synthetic */ Runnable b;
 
-    public /* synthetic */ b0(AtomicInteger atomicInteger, AtomicInteger atomicInteger2, Runnable runnable, int i10) {
+    public b0(int i10, Runnable runnable) {
         this.a = i10;
-        this.b = atomicInteger;
-        this.c = atomicInteger2;
-        this.d = runnable;
+        this.b = runnable;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                BillingController.lambda$onPurchasesUpdatedInternal$11(this.b, this.c, this.d);
-                break;
-            case 1:
-                BillingController.lambda$onPurchasesUpdatedInternal$8(this.b, this.c, this.d);
-                break;
-            default:
-                BillingController.lambda$onPurchasesUpdatedInternal$9(this.b, this.c, this.d);
-                break;
+    @Override // android.text.style.ClickableSpan
+    public final void onClick(View view) {
+        Runnable runnable = this.b;
+        if (runnable != null) {
+            runnable.run();
         }
+    }
+
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        super.updateDrawState(textPaint);
+        textPaint.setUnderlineText(false);
+        textPaint.setColor(this.a);
     }
 }

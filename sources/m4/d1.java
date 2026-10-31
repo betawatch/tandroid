@@ -1,8 +1,8 @@
 package m4;
 
-import a8.qd;
+import v7.p8;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d1 implements h1, e2.j {
     public final /* synthetic */ e a;
@@ -17,12 +17,12 @@ public final /* synthetic */ class d1 implements h1, e2.j {
     }
 
     @Override // m4.h1
-    public Object c(f0 f0Var, w wVar, int i10) {
+    public Object f(f0 f0Var, w wVar, int i10) {
         Object obj = this.a.g;
         obj.getClass();
-        qb.a aVar = f0Var.e;
+        oa.d dVar = f0Var.e;
         f0Var.s(wVar);
-        aVar.getClass();
-        return qd.b(new t1(-6));
+        dVar.getClass();
+        return p8.b(new t1(-6));
     }
 }

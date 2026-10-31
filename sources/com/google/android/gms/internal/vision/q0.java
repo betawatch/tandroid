@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public class q0 implements Serializable, Iterable {
     public static final q0 c = new q0(j1.b);
@@ -103,21 +103,17 @@ public class q0 implements Serializable, Iterable {
             throw new IllegalArgumentException(sb3.toString());
         }
         byte[] bArr = q0Var.b;
-        int q5 = q() + m10;
-        int q9 = q();
-        int q10 = q0Var.q();
-        while (q9 < q5) {
-            if (this.b[q9] != bArr[q10]) {
+        int q6 = q() + m10;
+        int q10 = q();
+        int q11 = q0Var.q();
+        while (q10 < q6) {
+            if (this.b[q10] != bArr[q11]) {
                 return false;
             }
-            q9++;
             q10++;
+            q11++;
         }
         return true;
-    }
-
-    public byte h(int i10) {
-        return this.b[i10];
     }
 
     public final int hashCode() {
@@ -126,9 +122,9 @@ public class q0 implements Serializable, Iterable {
             return i10;
         }
         int m10 = m();
-        int q5 = q();
+        int q6 = q();
         int i11 = m10;
-        for (int i12 = q5; i12 < q5 + m10; i12++) {
+        for (int i12 = q6; i12 < q6 + m10; i12++) {
             i11 = (i11 * 31) + this.b[i12];
         }
         if (i11 == 0) {
@@ -141,6 +137,10 @@ public class q0 implements Serializable, Iterable {
     @Override // java.lang.Iterable
     public final /* synthetic */ Iterator iterator() {
         return new androidx.datastore.preferences.protobuf.e(this);
+    }
+
+    public byte l(int i10) {
+        return this.b[i10];
     }
 
     public int m() {
@@ -163,14 +163,14 @@ public class q0 implements Serializable, Iterable {
         if (m() <= 50) {
             concat = e1.k(this);
         } else {
-            int p10 = p(0, 47, m());
-            concat = String.valueOf(e1.k(p10 == 0 ? c : new p0(this.b, q(), p10))).concat("...");
+            int p5 = p(0, 47, m());
+            concat = String.valueOf(e1.k(p5 == 0 ? c : new p0(this.b, q(), p5))).concat("...");
         }
         StringBuilder sb2 = new StringBuilder("<ByteString@");
         sb2.append(hexString);
         sb2.append(" size=");
         sb2.append(m10);
         sb2.append(" contents=\"");
-        return a1.g.s(sb2, concat, "\">");
+        return a1.g.r(sb2, concat, "\">");
     }
 }

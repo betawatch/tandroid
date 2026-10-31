@@ -1,31 +1,9 @@
 package fe;
 
-import ce.g1;
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class l extends nd.c {
-    public m a;
-    public c b;
-    public o c;
-    public g1 d;
-    public Object e;
-    public /* synthetic */ Object f;
-    public final /* synthetic */ m h;
-    public int n;
+public interface l {
+    void a();
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l(m mVar, nd.c cVar) {
-        super(cVar);
-        this.h = mVar;
-    }
-
-    @Override // nd.a
-    public final Object invokeSuspend(Object obj) {
-        this.f = obj;
-        this.n |= TLObject.FLAG_31;
-        this.h.C(null, this);
-        return md.a.a;
-    }
+    void b(m mVar);
 }

@@ -1,29 +1,34 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class d21 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ f21 b;
-    public final /* synthetic */ e21 c;
+import androidx.recyclerview.widget.RecyclerView;
 
-    public /* synthetic */ d21(f21 f21Var, e21 e21Var, int i10) {
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final class d21 extends s4.s0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ o21 b;
+
+    public /* synthetic */ d21(o21 o21Var, int i10) {
         this.a = i10;
-        this.b = f21Var;
-        this.c = e21Var;
+        this.b = o21Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // s4.s0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
         switch (this.a) {
             case 0:
-                this.b.b(this.c);
-                break;
-            case 1:
-                this.b.b(this.c);
+                o21 o21Var = this.b;
+                if (o21Var.l()) {
+                    o21Var.m();
+                    break;
+                }
                 break;
             default:
-                this.b.b(this.c);
+                o21 o21Var2 = this.b;
+                if (o21Var2.l()) {
+                    o21Var2.m();
+                    break;
+                }
                 break;
         }
     }

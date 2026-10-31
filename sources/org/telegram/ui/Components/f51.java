@@ -1,44 +1,18 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
-import android.view.ViewGroup;
+import android.text.TextPaint;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class f51 extends s4.h0 {
-    public Context c;
-    public View d;
-    public int e;
-
-    public final void D(View view) {
-        if (this.d == view) {
-            return;
-        }
-        this.e++;
-        this.d = view;
-        m(1);
+public final class f51 extends e51 {
+    public f51(String str) {
+        super(str != null ? str.replace((char) 8238, ' ') : str, (yz0) null);
     }
 
-    @Override // s4.h0
-    public final int h() {
-        return 2;
-    }
-
-    @Override // s4.h0
-    public final int j(int i10) {
-        if (i10 == 0) {
-            return 0;
-        }
-        return this.e;
-    }
-
-    @Override // s4.h0
-    public final s4.e1 x(ViewGroup viewGroup, int i10) {
-        return i10 == 0 ? new wl0(new vn(this.c, 13)) : new wl0(this.d);
-    }
-
-    @Override // s4.h0
-    public final void v(s4.e1 e1Var, int i10) {
+    @Override // org.telegram.ui.Components.e51, android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        super.updateDrawState(textPaint);
+        textPaint.setTypeface(org.telegram.messenger.i0.o());
+        textPaint.setUnderlineText(false);
     }
 }

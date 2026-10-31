@@ -1,37 +1,35 @@
 package org.telegram.ui.Cells;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.content.Context;
+import org.telegram.ui.Components.p80;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class y8 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ a9 c;
+public final class y8 extends p80 {
+    public final /* synthetic */ int L;
+    public final /* synthetic */ z8 M;
 
-    public /* synthetic */ y8(a9 a9Var, int i10, int i11) {
-        this.a = i11;
-        this.c = a9Var;
-        this.b = i10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ y8(z8 z8Var, Context context, org.telegram.ui.ActionBar.p6 p6Var, int i10) {
+        super(context, p6Var);
+        this.L = i10;
+        this.M = z8Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
+    @Override // org.telegram.ui.Components.p80
+    public final int c() {
+        switch (this.L) {
             case 0:
-                a9 a9Var = this.c;
-                a9Var.r = 0;
-                a9Var.setBackgroundColor(this.b);
-                a9Var.invalidate();
-                break;
+                return this.M.a(super.c());
             default:
-                int i10 = this.b;
-                a9 a9Var2 = this.c;
-                a9Var2.setBackgroundColor(i10);
-                a9Var2.r = 0;
-                a9Var2.invalidate();
-                break;
+                return this.M.a(super.c());
         }
+    }
+
+    @Override // org.telegram.ui.Components.p80
+    public final int d(int i10) {
+        switch (this.L) {
+        }
+        return this.M.a(i10);
     }
 }

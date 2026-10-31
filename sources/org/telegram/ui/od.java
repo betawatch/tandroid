@@ -1,66 +1,105 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.Utilities;
+import android.view.View;
+import android.widget.EditText;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class od implements org.telegram.ui.Components.iw0, org.telegram.ui.ActionBar.b2, Utilities.Callback5, Utilities.Callback5Return {
-    public final /* synthetic */ ke a;
+public final /* synthetic */ class od implements View.OnFocusChangeListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ od(ke keVar) {
-        this.a = keVar;
+    public /* synthetic */ od(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // org.telegram.ui.Components.iw0
-    public int c() {
-        return this.a.R0;
-    }
-
-    @Override // org.telegram.ui.ActionBar.b2
-    public void h(org.telegram.ui.ActionBar.e2 e2Var, int i10) {
-        this.a.m0.presentFragment(new fg1(6, null));
-    }
-
-    @Override // org.telegram.messenger.Utilities.Callback5Return
-    public Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        ((Integer) obj3).intValue();
-        ((Float) obj4).floatValue();
-        ((Float) obj5).floatValue();
-        this.a.getClass();
-        return Boolean.FALSE;
-    }
-
-    @Override // org.telegram.messenger.Utilities.Callback5
-    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        ((Integer) obj3).getClass();
-        ((Float) obj4).getClass();
-        ((Float) obj5).getClass();
-        ke keVar = this.a;
-        pd pdVar = keVar.s1;
-        int i10 = keVar.o0;
-        long j10 = keVar.p0;
-        int i11 = ((org.telegram.ui.Components.u61) obj).d;
-        if (i11 != 1) {
-            if (i11 == 4) {
-                keVar.m0.presentFragment(new hi.d4(j10));
-            }
-        } else {
-            if (keVar.r0 >= MessagesController.getInstance(i10).channelRestrictSponsoredLevelMin) {
-                keVar.j1 = !keVar.j1;
-                AndroidUtilities.cancelRunOnUIThread(pdVar);
-                AndroidUtilities.runOnUIThread(pdVar, 1000L);
-                keVar.X0.g3.O(true);
-                return;
-            }
-            if (keVar.q0 == null) {
-                return;
-            }
-            tg.j0 j0Var = new tg.j0(30, keVar.o0, keVar.getContext(), keVar.m0, keVar.n0);
-            j0Var.L1(j10);
-            j0Var.J1(keVar.q0, true);
-            MessagesController.getInstance(i10).getBoostsController().userCanBoostChannel(j10, keVar.q0, new li.s2(9, keVar, j0Var));
+    @Override // android.view.View.OnFocusChangeListener
+    public final void onFocusChange(View view, boolean z10) {
+        float f7;
+        int i10 = this.a;
+        Object obj = this.b;
+        switch (i10) {
+            case 0:
+                yd ydVar = ((le) obj).K0;
+                f7 = z10 ? 1.0f : 0.0f;
+                ydVar.b(f7, f7, true);
+                break;
+            case 1:
+                ay ayVar = (ay) obj;
+                if (z10) {
+                    ayVar.Y.b(true);
+                    break;
+                }
+                break;
+            case 2:
+                hf0 hf0Var = ((wc0) obj).W;
+                if (z10) {
+                    hf0Var.c.setEditText((EditText) view);
+                    hf0Var.c.setDispatchBackWhenEmpty(true);
+                    break;
+                }
+                break;
+            case 3:
+                org.telegram.ui.Components.ec0 ec0Var = (org.telegram.ui.Components.ec0) obj;
+                f7 = z10 ? 1.0f : 0.0f;
+                ec0Var.b(f7, f7, true);
+                break;
+            case 4:
+                org.telegram.ui.Components.ec0 ec0Var2 = ((ed0) obj).y;
+                f7 = z10 ? 1.0f : 0.0f;
+                ec0Var2.b(f7, f7, true);
+                break;
+            case 5:
+                org.telegram.ui.Components.ec0 ec0Var3 = ((ld0) obj).b;
+                f7 = z10 ? 1.0f : 0.0f;
+                ec0Var3.b(f7, f7, true);
+                break;
+            case 6:
+                hf0 hf0Var2 = ((od0) obj).D;
+                if (z10) {
+                    hf0Var2.c.setEditText((EditText) view);
+                    hf0Var2.c.setDispatchBackWhenEmpty(true);
+                    break;
+                }
+                break;
+            case 7:
+                org.telegram.ui.Components.ec0 ec0Var4 = ((zd0) obj).a;
+                f7 = z10 ? 1.0f : 0.0f;
+                ec0Var4.b(f7, f7, true);
+                break;
+            case 8:
+                hf0 hf0Var3 = ((me0) obj).u0;
+                if (z10) {
+                    hf0Var3.c.setEditText((EditText) view);
+                    hf0Var3.c.setDispatchBackWhenEmpty(true);
+                    break;
+                }
+                break;
+            case 9:
+                org.telegram.ui.Components.ec0 ec0Var5 = ((gf0) obj).e;
+                f7 = z10 ? 1.0f : 0.0f;
+                ec0Var5.b(f7, f7, true);
+                break;
+            case 10:
+                org.telegram.ui.Components.ec0 ec0Var6 = ((PasscodeActivity) obj).f;
+                f7 = z10 ? 1.0f : 0.0f;
+                ec0Var6.b(f7, f7, true);
+                break;
+            case 11:
+                p91 p91Var = (p91) obj;
+                if (!z10) {
+                    p91Var.d.setText(org.telegram.messenger.i0.W2(org.telegram.messenger.cd.L0(2131744210, null)));
+                    break;
+                } else {
+                    p91Var.d.setText(org.telegram.messenger.i0.W2(org.telegram.messenger.cd.L0(2131744209, null)));
+                    break;
+                }
+            default:
+                org.telegram.ui.Components.ec0 ec0Var7 = ((TwoStepVerificationActivity) obj).w;
+                f7 = z10 ? 1.0f : 0.0f;
+                ec0Var7.b(f7, f7, true);
+                break;
         }
     }
 }

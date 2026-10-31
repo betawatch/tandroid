@@ -1,38 +1,35 @@
 package xd;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+import ld.p;
+
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class c extends a {
-    static {
-        new c((char) 1, (char) 0);
+public final class c implements cd.h {
+    public final Throwable a;
+    public final /* synthetic */ cd.h b;
+
+    public c(cd.h hVar, Throwable th2) {
+        this.a = th2;
+        this.b = hVar;
     }
 
-    public final boolean equals(Object obj) {
-        c cVar;
-        char c10;
-        char c11;
-        if (!(obj instanceof c)) {
-            return false;
-        }
-        char c12 = this.a;
-        char c13 = this.b;
-        if (c12 >= c13 && c12 != c13 && (c10 = (cVar = (c) obj).a) >= (c11 = cVar.b) && c10 != c11) {
-            return true;
-        }
-        c cVar2 = (c) obj;
-        return c12 == cVar2.a && c13 == cVar2.b;
+    @Override // cd.h
+    public final Object fold(Object obj, p pVar) {
+        return this.b.fold(obj, pVar);
     }
 
-    public final int hashCode() {
-        char c10 = this.a;
-        char c11 = this.b;
-        if (c10 >= c11 && c10 != c11) {
-            return -1;
-        }
-        return (c10 * 31) + c11;
+    @Override // cd.h
+    public final cd.f get(cd.g gVar) {
+        return this.b.get(gVar);
     }
 
-    public final String toString() {
-        return this.a + ".." + this.b;
+    @Override // cd.h
+    public final cd.h minusKey(cd.g gVar) {
+        return this.b.minusKey(gVar);
+    }
+
+    @Override // cd.h
+    public final cd.h plus(cd.h hVar) {
+        return this.b.plus(hVar);
     }
 }

@@ -1,15 +1,15 @@
 package r2;
 
-import a8.yb;
 import java.nio.ByteBuffer;
 import org.telegram.tgnet.TLObject;
+import v7.t6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class g extends h2.h {
     public long r;
     public int s;
-    public int v;
+    public int w;
 
     @Override // h2.h, h2.a
     public final void clear() {
@@ -17,13 +17,13 @@ public final class g extends h2.h {
         this.s = 0;
     }
 
-    public final boolean f(h2.h hVar) {
+    public final boolean e(h2.h hVar) {
         ByteBuffer byteBuffer;
-        yb.g(!hVar.getFlag(TLObject.FLAG_30));
-        yb.g(!hVar.hasSupplementalData());
-        yb.g(!hVar.isEndOfStream());
-        if (h()) {
-            if (this.s >= this.v) {
+        t6.f(!hVar.getFlag(TLObject.FLAG_30));
+        t6.f(!hVar.hasSupplementalData());
+        t6.f(!hVar.isEndOfStream());
+        if (f()) {
+            if (this.s >= this.w) {
                 return false;
             }
             ByteBuffer byteBuffer2 = hVar.c;
@@ -43,14 +43,14 @@ public final class g extends h2.h {
         }
         ByteBuffer byteBuffer3 = hVar.c;
         if (byteBuffer3 != null) {
-            b(byteBuffer3.remaining());
+            c(byteBuffer3.remaining());
             this.c.put(byteBuffer3);
         }
         this.r = hVar.e;
         return true;
     }
 
-    public final boolean h() {
+    public final boolean f() {
         return this.s > 0;
     }
 }

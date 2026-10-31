@@ -1,22 +1,45 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.widget.LinearLayout;
+import android.graphics.Canvas;
+import android.view.View;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class lq extends LinearLayout {
-    public final /* synthetic */ oq a;
+public final class lq extends View {
+    public final kq a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public lq(oq oqVar, Context context) {
+    public lq(Context context, org.telegram.ui.ActionBar.p6 p6Var) {
         super(context);
-        this.a = oqVar;
+        setVisibility(8);
+        kq kqVar = new kq(this, true, p6Var);
+        this.a = kqVar;
+        kqVar.G = true;
     }
 
-    @Override // android.widget.LinearLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        oq.m(this.a);
+    public float getEnterProgress() {
+        int i10;
+        kq kqVar = this.a;
+        float f7 = kqVar.l;
+        return (f7 == 1.0f || !((i10 = kqVar.c) == 0 || i10 == 1)) ? kqVar.h == 0 ? 0.0f : 1.0f : i10 == 0 ? f7 : 1.0f - f7;
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        this.a.a(canvas);
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
+        this.a.d(getMeasuredHeight(), getMeasuredWidth());
+    }
+
+    public void setGravity(int i10) {
+        this.a.z = i10;
+    }
+
+    public void setReverse(boolean z10) {
+        this.a.D = z10;
     }
 }

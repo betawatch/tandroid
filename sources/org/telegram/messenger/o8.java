@@ -1,51 +1,36 @@
 package org.telegram.messenger;
 
 import java.util.ArrayList;
-import java.util.HashSet;
-import org.telegram.messenger.Timer;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class o8 implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ ArrayList c;
-    public final /* synthetic */ a0.h d;
-    public final /* synthetic */ Runnable e;
-    public final /* synthetic */ BaseController f;
-    public final /* synthetic */ Object h;
-    public final /* synthetic */ Object n;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ w8 b;
+    public final /* synthetic */ TLRPC.TL_messages_sendMultiMedia c;
+    public final /* synthetic */ Object[] d;
 
-    public /* synthetic */ o8(MediaDataController mediaDataController, Timer.Task task, Timer timer, ArrayList arrayList, long j10, a0.h hVar, Runnable runnable) {
-        this.f = mediaDataController;
-        this.h = task;
-        this.n = timer;
-        this.c = arrayList;
-        this.b = j10;
-        this.d = hVar;
-        this.e = runnable;
+    public /* synthetic */ o8(w8 w8Var, TLRPC.TL_messages_sendMultiMedia tL_messages_sendMultiMedia, Object[] objArr, int i10) {
+        this.a = i10;
+        this.b = w8Var;
+        this.c = tL_messages_sendMultiMedia;
+        this.d = objArr;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                ((MediaDataController) this.f).lambda$loadReplyMessagesForMessages$171((Timer.Task) this.h, (Timer) this.n, this.c, this.b, this.d, this.e);
+                qz sendMessagesHelper = this.b.getSendMessagesHelper();
+                Object[] objArr = this.d;
+                sendMessagesHelper.P(this.c, (ArrayList) objArr[1], (ArrayList) objArr[2], null, (cz) objArr[4], ((Boolean) objArr[5]).booleanValue());
                 break;
             default:
-                ((TopicsController) this.f).lambda$reloadTopics$13((TLRPC.TL_messages_savedDialogs) this.h, this.b, this.c, this.d, (HashSet) this.n, this.e);
+                qz sendMessagesHelper2 = this.b.getSendMessagesHelper();
+                Object[] objArr2 = this.d;
+                sendMessagesHelper2.P(this.c, (ArrayList) objArr2[1], (ArrayList) objArr2[2], null, (cz) objArr2[4], ((Boolean) objArr2[5]).booleanValue());
                 break;
         }
-    }
-
-    public /* synthetic */ o8(TopicsController topicsController, TLRPC.TL_messages_savedDialogs tL_messages_savedDialogs, long j10, ArrayList arrayList, a0.h hVar, HashSet hashSet, Runnable runnable) {
-        this.f = topicsController;
-        this.h = tL_messages_savedDialogs;
-        this.b = j10;
-        this.c = arrayList;
-        this.d = hVar;
-        this.n = hashSet;
-        this.e = runnable;
     }
 }

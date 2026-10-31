@@ -1,82 +1,41 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
-import android.widget.LinearLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
+import android.view.KeyEvent;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class un0 extends LinearLayout {
-    public boolean a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int[] c;
-    public final /* synthetic */ int[] d;
+public final /* synthetic */ class un0 implements org.telegram.ui.Components.q4, org.telegram.ui.ActionBar.i1 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ yn0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public un0(Context context, int i10, int[] iArr, int[] iArr2) {
-        super(context);
-        this.b = i10;
-        this.c = iArr;
-        this.d = iArr2;
+    public /* synthetic */ un0(yn0 yn0Var, int i10) {
+        this.a = i10;
+        this.b = yn0Var;
     }
 
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int size = View.MeasureSpec.getSize(i10);
-        this.a = true;
-        int dp = AndroidUtilities.dp(9.0f);
-        int i12 = this.b;
-        int i13 = (i12 - 1) * dp;
-        int[] iArr = this.c;
-        float f7 = 1.0f;
-        if ((iArr[0] * i12) + i13 <= size) {
-            setWeightSum(1.0f);
-            int childCount = getChildCount();
-            for (int i14 = 0; i14 < childCount; i14++) {
-                getChildAt(i14).getLayoutParams().width = 0;
-                ((LinearLayout.LayoutParams) getChildAt(i14).getLayoutParams()).weight = 1.0f / childCount;
-            }
-        } else if (this.d[0] + i13 <= size) {
-            setWeightSum(1.0f);
-            int i15 = size - i13;
-            int childCount2 = getChildCount();
-            for (int i16 = 0; i16 < childCount2; i16++) {
-                LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) getChildAt(i16).getLayoutParams();
-                layoutParams.width = 0;
-                float intValue = ((Integer) r9.getTag(R.id.width_tag)).intValue() / i15;
-                layoutParams.weight = intValue;
-                f7 -= intValue;
-            }
-            float f10 = f7 / (i12 - 1);
-            if (f10 > 0.0f) {
-                int childCount3 = getChildCount();
-                for (int i17 = 0; i17 < childCount3; i17++) {
-                    View childAt = getChildAt(i17);
-                    LinearLayout.LayoutParams layoutParams2 = (LinearLayout.LayoutParams) childAt.getLayoutParams();
-                    if (((Integer) childAt.getTag(R.id.width_tag)).intValue() != iArr[0]) {
-                        layoutParams2.weight += f10;
-                    }
-                }
-            }
-        } else {
-            setWeightSum(0.0f);
-            int childCount4 = getChildCount();
-            for (int i18 = 0; i18 < childCount4; i18++) {
-                getChildAt(i18).getLayoutParams().width = -2;
-                ((LinearLayout.LayoutParams) getChildAt(i18).getLayoutParams()).weight = 0.0f;
-            }
+    @Override // org.telegram.ui.Components.q4
+    public void K(int i10, int i11, boolean z10) {
+        switch (this.a) {
+            case 0:
+                yn0 yn0Var = this.b;
+                yn0Var.Z(yn0Var.b, yn0Var.c, z10, i10);
+                yn0Var.finishFragment();
+                break;
+            default:
+                yn0 yn0Var2 = this.b;
+                yn0Var2.Z(yn0Var2.b, yn0Var2.c, z10, i10);
+                yn0Var2.finishFragment();
+                break;
         }
-        this.a = false;
-        super.onMeasure(i10, i11);
     }
 
-    @Override // android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.a) {
-            return;
+    @Override // org.telegram.ui.ActionBar.i1
+    public void r(KeyEvent keyEvent) {
+        org.telegram.ui.ActionBar.k1 k1Var;
+        yn0 yn0Var = this.b;
+        yn0Var.getClass();
+        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (k1Var = yn0Var.I) != null && k1Var.isShowing()) {
+            yn0Var.I.d(true);
         }
-        super.requestLayout();
     }
 }

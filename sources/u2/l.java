@@ -1,18 +1,17 @@
 package u2;
 
-import a8.ng;
-import a8.yb;
 import android.os.Handler;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
+import v7.t6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public abstract class l extends a {
     public final HashMap h = new HashMap();
     public Handler i;
-    public g2.c0 j;
+    public g2.d0 j;
 
     @Override // u2.a
     public final void e() {
@@ -51,17 +50,17 @@ public abstract class l extends a {
 
     public abstract g0 u(Object obj, g0 g0Var);
 
-    public abstract void x(Object obj, a aVar, b2.p1 p1Var);
+    public abstract void x(Object obj, a aVar, b2.o1 o1Var);
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r1v2, types: [u2.h0, u2.i] */
     public final void y(final Integer num, a aVar) {
         HashMap hashMap = this.h;
-        yb.g(!hashMap.containsKey(num));
+        t6.f(!hashMap.containsKey(num));
         ?? r12 = new h0() { // from class: u2.i
             @Override // u2.h0
-            public final void a(a aVar2, b2.p1 p1Var) {
-                l.this.x(num, aVar2, p1Var);
+            public final void a(a aVar2, b2.o1 o1Var) {
+                l.this.x(num, aVar2, o1Var);
             }
         };
         j jVar = new j(this, num);
@@ -69,9 +68,9 @@ public abstract class l extends a {
         Handler handler = this.i;
         handler.getClass();
         aVar.getClass();
-        ng ngVar = aVar.c;
-        ngVar.getClass();
-        CopyOnWriteArrayList copyOnWriteArrayList = (CopyOnWriteArrayList) ngVar.d;
+        a5.a aVar2 = aVar.c;
+        aVar2.getClass();
+        CopyOnWriteArrayList copyOnWriteArrayList = (CopyOnWriteArrayList) aVar2.d;
         j0 j0Var = new j0();
         j0Var.a = handler;
         j0Var.b = jVar;
@@ -85,10 +84,10 @@ public abstract class l extends a {
         iVar.a = handler2;
         iVar.b = jVar;
         copyOnWriteArrayList2.add(iVar);
-        g2.c0 c0Var = this.j;
-        j2.j jVar3 = this.g;
-        jVar3.getClass();
-        aVar.l(r12, c0Var, jVar3);
+        g2.d0 d0Var = this.j;
+        j2.l lVar = this.g;
+        lVar.getClass();
+        aVar.l(r12, d0Var, lVar);
         if (this.b.isEmpty()) {
             aVar.d(r12);
         }

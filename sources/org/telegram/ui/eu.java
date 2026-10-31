@@ -1,54 +1,20 @@
 package org.telegram.ui;
 
-import android.text.TextUtils;
+import android.text.TextPaint;
+import android.text.style.MetricAffectingSpan;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class eu extends qg.a {
-    public final int c;
-    public final int d;
-    public final int e;
-    public final CharSequence f;
-    public final CharSequence g;
-    public final int h;
+public final class eu extends MetricAffectingSpan {
+    public double a;
 
-    public eu(int i10, String str) {
-        super(i10, false);
-        this.f = str;
+    @Override // android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        textPaint.baselineShift += (int) (textPaint.ascent() * this.a);
     }
 
-    public static eu b(CharSequence charSequence, String str) {
-        return new eu(-1, 0, 0, 0, charSequence, str);
-    }
-
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof eu)) {
-            return false;
-        }
-        eu euVar = (eu) obj;
-        CharSequence charSequence = euVar.f;
-        int i10 = euVar.a;
-        int i11 = this.a;
-        if (i10 != i11) {
-            return false;
-        }
-        CharSequence charSequence2 = this.f;
-        if (i11 == 1 || i11 == 4 || i11 == 3 || i11 == 5) {
-            return TextUtils.equals(charSequence2, charSequence);
-        }
-        if (i11 == 2) {
-            return euVar.h == this.h && TextUtils.equals(charSequence2, charSequence) && euVar.d == this.d && euVar.e == this.e && euVar.c == this.c;
-        }
-        return true;
-    }
-
-    public eu(int i10, int i11, int i12, int i13, CharSequence charSequence, CharSequence charSequence2) {
-        super(2, false);
-        this.h = i10;
-        this.c = i11;
-        this.d = i12;
-        this.e = i13;
-        this.f = charSequence;
-        this.g = charSequence2;
+    @Override // android.text.style.MetricAffectingSpan
+    public final void updateMeasureState(TextPaint textPaint) {
+        textPaint.baselineShift += (int) (textPaint.ascent() * this.a);
     }
 }

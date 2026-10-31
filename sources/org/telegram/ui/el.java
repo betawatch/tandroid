@@ -1,86 +1,174 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.os.Bundle;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagePreviewParams;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import android.util.SparseArray;
+import android.view.View;
+import java.util.ArrayList;
+import java.util.HashSet;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class el extends org.telegram.ui.Components.oc0 {
-    public final /* synthetic */ wn H;
+public final class el implements org.telegram.ui.Components.lj0 {
+    public final /* synthetic */ un a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public el(wn wnVar, Context context, wn wnVar2, ch.b bVar, MessagePreviewParams messagePreviewParams, TLRPC.User user, TLRPC.Chat chat, int i10, org.telegram.ui.Components.kc0 kc0Var, int i11, boolean z10) {
-        super(context, wnVar2, bVar, messagePreviewParams, user, chat, i10, kc0Var, i11, z10);
-        this.H = wnVar;
+    public el(un unVar) {
+        this.a = unVar;
     }
 
-    @Override // org.telegram.ui.Components.oc0
-    public final void b() {
-        MessageObject messageObject;
-        mn mnVar;
-        wn wnVar = this.H;
-        mn mnVar2 = wnVar.B5;
-        if (mnVar2 == null || (messageObject = mnVar2.a) == null || !((mnVar = wnVar.v5.quote) == null || mnVar.a == null || messageObject.getId() == wnVar.v5.quote.a.getId())) {
-            wnVar.B5 = wnVar.v5.quote;
-        }
+    @Override // org.telegram.ui.Components.lj0
+    public final /* synthetic */ boolean A() {
+        return false;
     }
 
-    @Override // org.telegram.ui.Components.oc0
-    public final void c(boolean z10) {
+    @Override // org.telegram.ui.Components.lj0
+    public final /* synthetic */ boolean f() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.lj0
+    public final /* synthetic */ boolean h() {
+        return false;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:23:0x008b, code lost:
+    
+        if (r5 == null) goto L26;
+     */
+    @Override // org.telegram.ui.Components.lj0
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void x(View view, sg.o0 o0Var, boolean z10, boolean z11) {
+        TLRPC.Document e;
+        boolean z12;
+        HashSet hashSet;
         int i10;
-        boolean z11;
-        MessagePreviewParams.Messages messages;
-        a(false);
-        wn wnVar = this.H;
-        MessagePreviewParams messagePreviewParams = wnVar.v5;
-        if (messagePreviewParams != null) {
-            if (!z10) {
-                wnVar.C5 = true;
-            }
-            MessagePreviewParams.Messages messages2 = messagePreviewParams.forwardMessages;
-            if (messages2 != null) {
-                int size = messages2.messages.size();
-                i10 = 0;
-                z11 = false;
-                for (int i11 = 0; i11 < size; i11++) {
-                    MessageObject messageObject = wnVar.v5.forwardMessages.messages.get(i11);
-                    if (messageObject.isTodo()) {
-                        i10 = 3;
-                    } else if (messageObject.isPoll()) {
-                        if (i10 != 2) {
-                            i10 = messageObject.isPublicPoll() ? 2 : 1;
-                        }
-                    } else if (messageObject.isInvoice()) {
-                        z11 = true;
+        int i11;
+        org.telegram.messenger.jj jjVar;
+        TLRPC.Message message;
+        un unVar = this.a;
+        SparseArray[] sparseArrayArr = unVar.m6;
+        if (unVar.wb == null) {
+            return;
+        }
+        if (unVar.a() == unVar.getUserConfig().e() && !unVar.getUserConfig().q()) {
+            new kg.i1((org.telegram.ui.ActionBar.k2) unVar, 24, true).show();
+            unVar.H7(false);
+            return;
+        }
+        boolean contains = unVar.wb.getSelectedReactions().contains(o0Var);
+        HashSet hashSet2 = new HashSet();
+        int i12 = 0;
+        boolean z13 = false;
+        boolean z14 = false;
+        int i13 = 0;
+        while (i12 < sparseArrayArr.length) {
+            boolean z15 = z13;
+            boolean z16 = z14;
+            int i14 = i13;
+            int i15 = 0;
+            while (i15 < sparseArrayArr[i12].size()) {
+                org.telegram.messenger.jj jjVar2 = (org.telegram.messenger.jj) sparseArrayArr[i12].valueAt(i15);
+                if (jjVar2.z2()) {
+                    org.telegram.messenger.ej k92 = unVar.k9(jjVar2);
+                    if (k92 != null && !hashSet2.contains(Long.valueOf(k92.a))) {
+                        hashSet2.add(Long.valueOf(k92.a));
+                        jjVar2 = k92.c();
                     }
-                    wnVar.m6[0].put(messageObject.getId(), messageObject);
+                    z12 = contains;
+                    hashSet = hashSet2;
+                    i10 = i12;
+                    i11 = i15;
+                    i15 = i11 + 1;
+                    hashSet2 = hashSet;
+                    contains = z12;
+                    i12 = i10;
+                }
+                if (jjVar2.v2(o0Var) == contains) {
+                    hashSet = hashSet2;
+                    jjVar = jjVar2;
+                    z12 = contains;
+                    i10 = i12;
+                    i11 = i15;
+                    unVar.qb(unVar.A8(jjVar2.f1(), false), jjVar, null, null, 0.0f, 0.0f, o0Var, false, false, false, true);
+                    if (!z12) {
+                        i14++;
+                    }
+                } else {
+                    z12 = contains;
+                    hashSet = hashSet2;
+                    i10 = i12;
+                    i11 = i15;
+                    jjVar = jjVar2;
+                }
+                if (jjVar.k != null) {
+                    boolean z17 = unVar.C0.N;
+                    if (z17) {
+                        org.telegram.messenger.jj jjVar3 = (org.telegram.messenger.jj) unVar.E6[0].get(jjVar.f1());
+                        if (jjVar3 != null && (message = jjVar3.k) != null) {
+                            message.reactions = jjVar.k.reactions;
+                        }
+                    } else if (!z17 && unVar.E3 != null) {
+                        z15 = true;
+                    }
+                }
+                if (unVar.C0.N && !jjVar.v2(unVar.E3)) {
+                    org.telegram.messenger.ej k93 = unVar.k9(jjVar);
+                    if (k93 != null) {
+                        ArrayList arrayList = k93.d;
+                        for (int i16 = 0; i16 < arrayList.size(); i16++) {
+                            unVar.getMediaDataController().M1(((org.telegram.messenger.jj) arrayList.get(i16)).f1());
+                        }
+                    } else {
+                        unVar.getMediaDataController().M1(jjVar.f1());
+                    }
+                    zf.b1 b1Var = unVar.a4;
+                    if (b1Var != null) {
+                        b1Var.f();
+                    }
+                    z15 = true;
+                    z16 = true;
+                }
+                i15 = i11 + 1;
+                hashSet2 = hashSet;
+                contains = z12;
+                i12 = i10;
+            }
+            i12++;
+            z13 = z15;
+            z14 = z16;
+            i13 = i14;
+        }
+        if (z13) {
+            unVar.Ec(z14);
+        }
+        unVar.H7(true);
+        if (i13 > 0) {
+            long j10 = o0Var.g;
+            if (j10 == 0) {
+                TLRPC.TL_availableReaction tL_availableReaction = (TLRPC.TL_availableReaction) org.telegram.messenger.ui.b0(org.telegram.messenger.d20.s0).r.get(o0Var.f);
+                if (tL_availableReaction == null) {
+                    return;
+                } else {
+                    e = tL_availableReaction.activate_animation;
                 }
             } else {
-                i10 = 0;
-                z11 = false;
+                e = org.telegram.ui.Components.f5.e(org.telegram.messenger.d20.s0, j10);
             }
-            Bundle c10 = org.telegram.messenger.wh.c(3, "onlySelect", "dialogsType", true);
-            c10.putBoolean("quote", !z10);
-            boolean z12 = (z10 || (messages = wnVar.v5.replyMessage) == null || messages.messages.isEmpty() || wnVar.v5.quote != null) ? false : true;
-            c10.putBoolean("reply_to", z12);
-            if (z12) {
-                long peerDialogId = DialogObject.getPeerDialogId(wnVar.v5.replyMessage.messages.get(0).getFromPeer());
-                if (peerDialogId != 0 && peerDialogId != wnVar.a() && peerDialogId != wnVar.getUserConfig().getClientUserId() && peerDialogId > 0) {
-                    c10.putLong("reply_to_author", peerDialogId);
-                }
+            if (e == null) {
+                return;
             }
-            c10.putInt("hasPoll", i10);
-            c10.putBoolean("hasInvoice", z11);
-            MessagePreviewParams.Messages messages3 = wnVar.v5.forwardMessages;
-            c10.putInt("messagesCount", messages3 != null ? messages3.messages.size() : 0);
-            c10.putBoolean("canSelectTopics", true);
-            ey eyVar = new ey(c10);
-            eyVar.C2 = wnVar;
-            wnVar.presentFragment(eyVar);
+            org.telegram.ui.Components.cc.a0(unVar).y(i13, e, null).k(true);
         }
+    }
+
+    @Override // org.telegram.ui.Components.lj0
+    public final /* synthetic */ void t() {
+    }
+
+    @Override // org.telegram.ui.Components.lj0
+    public final /* synthetic */ void r(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
     }
 }

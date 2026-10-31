@@ -1,54 +1,35 @@
 package s4;
 
-import android.util.Log;
-import android.view.animation.Interpolator;
-import androidx.recyclerview.widget.RecyclerView;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class z0 {
     public int a;
     public int b;
     public int c;
     public int d;
-    public Interpolator e;
+    public int e;
     public boolean f;
-    public int g;
+    public boolean g;
+    public boolean h;
+    public boolean i;
+    public boolean j;
+    public boolean k;
+    public int l;
+    public long m;
+    public int n;
 
-    public final void a(RecyclerView recyclerView) {
-        int i10 = this.d;
-        if (i10 >= 0) {
-            this.d = -1;
-            recyclerView.d0(i10);
-            this.f = false;
+    public final void a(int i10) {
+        if ((this.d & i10) != 0) {
             return;
         }
-        if (!this.f) {
-            this.g = 0;
-            return;
-        }
-        Interpolator interpolator = this.e;
-        if (interpolator != null && this.c < 1) {
-            throw new IllegalStateException("If you provide an interpolator, you must set a positive duration");
-        }
-        int i11 = this.c;
-        if (i11 < 1) {
-            throw new IllegalStateException("Scroll duration must be a positive number");
-        }
-        recyclerView.r0.b(this.a, this.b, i11, interpolator);
-        int i12 = this.g + 1;
-        this.g = i12;
-        if (i12 > 10) {
-            Log.e("RecyclerView", "Smooth Scroll action is being updated too frequently. Make sure you are not changing it unless necessary");
-        }
-        this.f = false;
+        throw new IllegalStateException("Layout state should be one of " + Integer.toBinaryString(i10) + " but it is " + Integer.toBinaryString(this.d));
     }
 
-    public final void b(int i10, int i11, int i12, Interpolator interpolator) {
-        this.a = i10;
-        this.b = i11;
-        this.c = i12;
-        this.e = interpolator;
-        this.f = true;
+    public final int b() {
+        return this.g ? this.b - this.c : this.e;
+    }
+
+    public final String toString() {
+        return "State{mTargetPosition=" + this.a + ", mData=null, mItemCount=" + this.e + ", mIsMeasuring=" + this.i + ", mPreviousLayoutItemCount=" + this.b + ", mDeletedInvisibleItemCountSincePreviousLayout=" + this.c + ", mStructureChanged=" + this.f + ", mInPreLayout=" + this.g + ", mRunSimpleAnimations=" + this.j + ", mRunPredictiveAnimations=" + this.k + '}';
     }
 }

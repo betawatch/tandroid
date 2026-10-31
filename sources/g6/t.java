@@ -1,0 +1,26 @@
+package g6;
+
+import com.google.android.gms.common.api.Status;
+
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes.dex */
+public final class t implements com.google.android.gms.common.api.q {
+    public final Status a;
+    public final c6.d b;
+    public final String c;
+    public final String d;
+    public final boolean e;
+
+    public t(Status status, c6.d dVar, String str, String str2, boolean z10) {
+        this.a = status;
+        this.b = dVar;
+        this.c = str;
+        this.d = str2;
+        this.e = z10;
+    }
+
+    @Override // com.google.android.gms.common.api.q
+    public final Status a() {
+        return this.a;
+    }
+}

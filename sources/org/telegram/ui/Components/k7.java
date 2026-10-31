@@ -1,177 +1,281 @@
 package org.telegram.ui.Components;
 
-import android.view.KeyEvent;
-import java.util.ArrayList;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class k7 implements RequestDelegate {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ KeyEvent.Callback e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object g;
-    public final /* synthetic */ Object h;
+public final class k7 implements ua {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ k7(m8 m8Var, boolean z10, MessageObject messageObject, boolean z11, Runnable runnable, long j10, TLRPC.Document document) {
-        this.e = m8Var;
-        this.b = z10;
-        this.f = messageObject;
-        this.c = z11;
-        this.g = runnable;
-        this.d = j10;
-        this.h = document;
+    public /* synthetic */ k7(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
+    @Override // org.telegram.ui.Components.ua
+    public final /* synthetic */ boolean a() {
         switch (this.a) {
-            case 0:
-                m8.o((m8) this.e, this.b, (MessageObject) this.f, this.c, (Runnable) this.g, this.d, (TLRPC.Document) this.h, tL_error);
+        }
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.ua
+    public final void b(wb wbVar) {
+        th.v2 v2Var;
+        switch (this.a) {
+            case 6:
+                bb bbVar = wbVar.e;
+                ph.k0 k0Var = (ph.k0) this.b;
+                vg.f c10 = k0Var.l1.c(bbVar, null, true);
+                wg.d dVar = new wg.d(k0Var.I0);
+                dVar.e = new xg.a(0);
+                float N = org.telegram.messenger.i0.N(0.5f);
+                float N2 = org.telegram.messenger.i0.N(0.5f);
+                dVar.f = N;
+                dVar.h = N2;
+                c10.o(dVar);
+                c10.q(org.telegram.messenger.i0.L(16.0f));
+                bbVar.setCustomBackground(c10);
                 break;
-            default:
-                final xh0 xh0Var = (xh0) this.e;
-                final MessagesController messagesController = (MessagesController) this.f;
-                final TLRPC.TL_channels_searchPosts tL_channels_searchPosts = (TLRPC.TL_channels_searchPosts) this.g;
-                final ConnectionsManager connectionsManager = (ConnectionsManager) this.h;
-                final boolean z10 = this.b;
-                final boolean z11 = this.c;
-                final long j10 = this.d;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.wh0
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        boolean z12;
-                        xh0 xh0Var2 = xh0.this;
-                        int i10 = xh0Var2.b;
-                        s71 s71Var = xh0Var2.c;
-                        xh0Var2.K = -1;
-                        xh0Var2.v = false;
-                        xh0Var2.H.setLoading(false);
-                        TLObject tLObject2 = tLObject;
-                        boolean z13 = tLObject2 instanceof TLRPC.messages_Messages;
-                        long j11 = j10;
-                        if (!z13) {
-                            TLRPC.TL_error tL_error2 = tL_error;
-                            if (tL_error2 == null || !tL_error2.text.startsWith("FLOOD_WAIT_") || !tL_error2.text.contains("_OR_STARS_")) {
-                                if (tL_error2 != null && "PREMIUM_ACCOUNT_REQUIRED".equalsIgnoreCase(tL_error2.text)) {
-                                    xh0Var2.d();
-                                    s71Var.g3.O(true);
-                                    return;
-                                } else {
-                                    if (tL_error2 == null || !"BALANCE_TOO_LOW".equalsIgnoreCase(tL_error2.text)) {
-                                        return;
-                                    }
-                                    xh0Var2.d();
-                                    s71Var.g3.O(true);
-                                    bi.ca.y(i10, false).q(true, true, new bi.r3(xh0Var2, j11, 26));
-                                    return;
-                                }
-                            }
-                            Matcher matcher = Pattern.compile("FLOOD_WAIT_(\\d+)_OR_STARS_(\\d+)").matcher(tL_error2.text);
-                            if (matcher == null || !matcher.matches()) {
-                                return;
-                            }
-                            int parseInt = Integer.parseInt(matcher.group(1));
-                            int parseInt2 = Integer.parseInt(matcher.group(2));
-                            TLRPC.SearchPostsFlood searchPostsFlood = xh0Var2.d;
-                            if (searchPostsFlood != null) {
-                                searchPostsFlood.flags = 2 | searchPostsFlood.flags;
-                                searchPostsFlood.wait_till = connectionsManager.getCurrentTime() + parseInt;
-                                xh0Var2.d.stars_amount = parseInt2;
-                            }
-                            xh0Var2.d();
-                            s71Var.g3.O(true);
-                            return;
-                        }
-                        TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject2;
-                        ArrayList<TLRPC.User> arrayList = messages_messages.users;
-                        MessagesController messagesController2 = messagesController;
-                        messagesController2.putUsers(arrayList, false);
-                        messagesController2.putChats(messages_messages.chats, false);
-                        TLRPC.SearchPostsFlood searchPostsFlood2 = messages_messages.search_flood;
-                        if (searchPostsFlood2 != null) {
-                            xh0Var2.d = searchPostsFlood2;
-                        }
-                        boolean z14 = z10;
-                        ArrayList arrayList2 = z14 ? xh0Var2.e : xh0Var2.n;
-                        boolean isEmpty = arrayList2.isEmpty();
-                        ArrayList<TLRPC.Message> arrayList3 = messages_messages.messages;
-                        int size = arrayList3.size();
-                        int i11 = 0;
-                        while (i11 < size) {
-                            TLRPC.Message message = arrayList3.get(i11);
-                            i11++;
-                            MessageObject messageObject = new MessageObject(i10, message, false, false);
-                            if (!z14) {
-                                messageObject.setQuery(tL_channels_searchPosts.query);
-                            }
-                            arrayList2.add(messageObject);
-                        }
-                        if (z14) {
-                            z12 = true;
-                            if (messages_messages instanceof TLRPC.TL_messages_messagesSlice) {
-                                xh0Var2.f = messages_messages.next_rate;
-                                xh0Var2.h = (messages_messages.flags & 1) == 0;
-                            } else if (messages_messages instanceof TLRPC.TL_messages_messages) {
-                                xh0Var2.f = 0;
-                                xh0Var2.h = true;
-                            } else if (messages_messages instanceof TLRPC.TL_messages_channelMessages) {
-                                xh0Var2.f = 0;
-                                xh0Var2.h = true;
-                            }
-                        } else if (messages_messages instanceof TLRPC.TL_messages_messagesSlice) {
-                            xh0Var2.r = messages_messages.next_rate;
-                            xh0Var2.s = (messages_messages.flags & 1) == 0;
-                            z12 = true;
-                        } else if (messages_messages instanceof TLRPC.TL_messages_messages) {
-                            xh0Var2.r = 0;
-                            z12 = true;
-                            xh0Var2.s = true;
-                        } else {
-                            z12 = true;
-                            if (messages_messages instanceof TLRPC.TL_messages_channelMessages) {
-                                xh0Var2.r = 0;
-                                xh0Var2.s = true;
-                            }
-                        }
-                        xh0Var2.d();
-                        if (isEmpty) {
-                            s71Var.v0(0);
-                        }
-                        s71Var.g3.O(z12);
-                        if (!arrayList2.isEmpty() && (!z14 ? !xh0Var2.s : !xh0Var2.h)) {
-                            AndroidUtilities.runOnUIThread(new bi.u7(xh0Var2, z14, arrayList2, 24));
-                        }
-                        if (!z11 || j11 <= 0 || z14) {
-                            return;
-                        }
-                        wc.b0(xh0Var2.a).R(R.raw.stars_topup, 36, AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("SearchPaidStars", (int) j11))).j();
-                    }
-                });
+            case 8:
+                if (wbVar.a == 2 && (v2Var = ((th.g2) this.b).y.z1) != null) {
+                    th.o7 o7Var = ((th.f7) v2Var).d;
+                    o7Var.Y0 = true;
+                    o7Var.d0();
+                    break;
+                }
                 break;
         }
     }
 
-    public /* synthetic */ k7(xh0 xh0Var, MessagesController messagesController, boolean z10, TLRPC.TL_channels_searchPosts tL_channels_searchPosts, boolean z11, long j10, ConnectionsManager connectionsManager) {
-        this.e = xh0Var;
-        this.f = messagesController;
-        this.b = z10;
-        this.g = tL_channels_searchPosts;
-        this.c = z11;
-        this.d = j10;
-        this.h = connectionsManager;
+    @Override // org.telegram.ui.Components.ua
+    public final /* synthetic */ void c(float f7) {
+        int i10 = this.a;
+    }
+
+    @Override // org.telegram.ui.Components.ua
+    public final void d(wb wbVar) {
+        th.v2 v2Var;
+        switch (this.a) {
+            case 8:
+                if (wbVar.a == 2 && (v2Var = ((th.g2) this.b).y.z1) != null) {
+                    th.o7 o7Var = ((th.f7) v2Var).d;
+                    o7Var.Y0 = false;
+                    o7Var.d0();
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.ua
+    public final /* synthetic */ boolean e() {
+        switch (this.a) {
+        }
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.ua
+    public final int f(int i10) {
+        int L;
+        int R;
+        i0.c cVar;
+        switch (this.a) {
+            case 0:
+                return ((m7) this.b).e.u1.getHeight();
+            case 1:
+                ua uaVar = (ua) this.b;
+                if (uaVar == null) {
+                    return 0;
+                }
+                return uaVar.f(i10);
+            case 2:
+                L = org.telegram.messenger.i0.L(126.0f);
+                R = ((yl) this.b).c.b.R();
+                break;
+            case 3:
+                cVar = ((org.telegram.ui.ActionBar.k2) ((n90) this.b)).mSystemInsets;
+                L = cVar.d;
+                R = org.telegram.messenger.i0.L(72.0f);
+                break;
+            case 4:
+                FrameLayout frameLayout = ((cx0) this.b).s1;
+                if (frameLayout != null) {
+                    return frameLayout.getHeight();
+                }
+                return 0;
+            case 5:
+                org.telegram.ui.web.z0 z0Var = (org.telegram.ui.web.z0) this.b;
+                if (!(z0Var.getParent() instanceof xh.h3)) {
+                    return 0;
+                }
+                xh.h3 h3Var = (xh.h3) z0Var.getParent();
+                return (int) ((h3Var.getSwipeOffsetY() + h3Var.getOffsetY()) - h3Var.getTopActionBarOffsetY());
+            case 6:
+                return 0;
+            case 7:
+                return (int) ((sg.b0) ((ph.k) this.b).c).u;
+            case 8:
+                if (((th.g2) this.b).y.g2) {
+                    return 0;
+                }
+                return org.telegram.messenger.i0.L(64.0f);
+            case 9:
+                return ((th.y3) this.b).r.getPaddingBottom();
+            case 10:
+                return 0;
+            default:
+                L = ((vh.o8) this.b).c1.getEditTextHeight();
+                R = org.telegram.messenger.i0.L(12.0f);
+                break;
+        }
+        return R + L;
+    }
+
+    @Override // org.telegram.ui.Components.ua
+    public final boolean g(int i10) {
+        switch (this.a) {
+            case 1:
+                ua uaVar = (ua) this.b;
+                if (uaVar == null || !uaVar.g(i10)) {
+                }
+                break;
+            case 8:
+                if (i10 == 1 || i10 == 2 || i10 == 3) {
+                }
+                break;
+        }
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.ua
+    public final int h(int i10) {
+        switch (this.a) {
+            case 0:
+                return 0;
+            case 1:
+                ua uaVar = (ua) this.b;
+                return uaVar == null ? org.telegram.messenger.i0.m : uaVar.h(i10);
+            case 2:
+                return 0;
+            case 3:
+                return 0;
+            case 4:
+                return 0;
+            case 5:
+                return 0;
+            case 6:
+                return org.telegram.messenger.i0.m;
+            case 7:
+                return 0;
+            case 8:
+                return org.telegram.messenger.i0.L(58.0f);
+            case 9:
+                return 0;
+            case 10:
+                return (int) (((th.g4) this.b).a + org.telegram.messenger.i0.L(58.0f));
+            default:
+                return 0;
+        }
+    }
+
+    private final /* synthetic */ void A(wb wbVar) {
+    }
+
+    private final /* synthetic */ void B(wb wbVar) {
+    }
+
+    private final /* synthetic */ void C(wb wbVar) {
+    }
+
+    private final /* synthetic */ void D(wb wbVar) {
+    }
+
+    private final /* synthetic */ void E(wb wbVar) {
+    }
+
+    private final /* synthetic */ void F(wb wbVar) {
+    }
+
+    private final /* synthetic */ void G(wb wbVar) {
+    }
+
+    private final /* synthetic */ void H(wb wbVar) {
+    }
+
+    private final /* synthetic */ void I(wb wbVar) {
+    }
+
+    private final /* synthetic */ void J(wb wbVar) {
+    }
+
+    private final /* synthetic */ void K(wb wbVar) {
+    }
+
+    private final /* synthetic */ void L(wb wbVar) {
+    }
+
+    private final /* synthetic */ void M(wb wbVar) {
+    }
+
+    private final /* synthetic */ void N(wb wbVar) {
+    }
+
+    private final /* synthetic */ void O(wb wbVar) {
+    }
+
+    private final /* synthetic */ void i(float f7) {
+    }
+
+    private final /* synthetic */ void j(float f7) {
+    }
+
+    private final /* synthetic */ void k(float f7) {
+    }
+
+    private final /* synthetic */ void l(float f7) {
+    }
+
+    private final /* synthetic */ void m(float f7) {
+    }
+
+    private final /* synthetic */ void n(float f7) {
+    }
+
+    private final /* synthetic */ void o(float f7) {
+    }
+
+    private final /* synthetic */ void p(float f7) {
+    }
+
+    private final /* synthetic */ void q(float f7) {
+    }
+
+    private final /* synthetic */ void r(float f7) {
+    }
+
+    private final /* synthetic */ void s(float f7) {
+    }
+
+    private final /* synthetic */ void t(float f7) {
+    }
+
+    private final /* synthetic */ void u(wb wbVar) {
+    }
+
+    private final /* synthetic */ void v(wb wbVar) {
+    }
+
+    private final /* synthetic */ void w(wb wbVar) {
+    }
+
+    private final /* synthetic */ void x(wb wbVar) {
+    }
+
+    private final /* synthetic */ void y(wb wbVar) {
+    }
+
+    private final /* synthetic */ void z(wb wbVar) {
     }
 }

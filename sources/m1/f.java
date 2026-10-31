@@ -10,14 +10,12 @@ import androidx.datastore.preferences.protobuf.v;
 import androidx.datastore.preferences.protobuf.w;
 import androidx.datastore.preferences.protobuf.w0;
 import androidx.datastore.preferences.protobuf.y0;
-import androidx.datastore.preferences.protobuf.z;
 import j$.util.DesugarCollections;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.nio.charset.Charset;
 import java.util.Map;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class f extends w {
     private static final f DEFAULT_INSTANCE;
@@ -52,30 +50,26 @@ public final class f extends w {
             y0 y0Var = y0.c;
             y0Var.getClass();
             b1 a10 = y0Var.a(wVar.getClass());
-            e2.f fVar2 = hVar.b;
-            if (fVar2 == null) {
-                fVar2 = new e2.f();
-                fVar2.d = 0;
-                Charset charset = z.a;
-                fVar2.c = hVar;
-                hVar.b = fVar2;
+            a4.g gVar = hVar.b;
+            if (gVar == null) {
+                gVar = new a4.g(hVar);
             }
-            a10.f(wVar, fVar2, a2);
+            a10.d(wVar, gVar, a2);
             a10.c(wVar);
             if (wVar.g()) {
                 return (f) wVar;
             }
-            throw new b0(new androidx.car.app.j().getMessage());
+            throw new b0(new ad.d().getMessage());
         } catch (IOException e) {
             if (e.getCause() instanceof b0) {
                 throw ((b0) e.getCause());
             }
             throw new b0(e.getMessage());
-        } catch (RuntimeException e10) {
-            if (e10.getCause() instanceof b0) {
-                throw ((b0) e10.getCause());
+        } catch (RuntimeException e7) {
+            if (e7.getCause() instanceof b0) {
+                throw ((b0) e7.getCause());
             }
-            throw e10;
+            throw e7;
         }
     }
 

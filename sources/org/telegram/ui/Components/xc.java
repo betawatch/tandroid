@@ -1,82 +1,28 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.view.View;
-import android.view.animation.OvershootInterpolator;
+import android.text.InputFilter;
+import android.text.Spanned;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public class xc {
-    public View a;
-    public final float b;
-    public final float c;
-    public final float d;
-    public long e;
-    public Runnable f;
-    public ValueAnimator g;
-    public final float h;
-    public boolean i;
-    public float j;
-
-    public xc(View view) {
-        this(view, 1.0f, 5.0f);
-    }
-
-    public final float a(float f7) {
-        return c3.h0.z(1.0f, this.j, f7, 1.0f - f7) * this.h;
-    }
-
-    public void b() {
-        View view = this.a;
-        if (view != null) {
-            view.invalidate();
-        }
-        Runnable runnable = this.f;
-        if (runnable != null) {
-            runnable.run();
-        }
-    }
-
-    public final void c(boolean z10) {
-        if (this.i != z10) {
-            this.i = z10;
-            ValueAnimator valueAnimator = this.g;
-            this.g = null;
-            if (valueAnimator != null) {
-                valueAnimator.cancel();
+public final /* synthetic */ class xc implements InputFilter {
+    @Override // android.text.InputFilter
+    public final CharSequence filter(CharSequence charSequence, int i10, int i11, Spanned spanned, int i12, int i13) {
+        int i14 = ChatActivityEnterView.s5;
+        for (int i15 = i10; i15 < i11; i15++) {
+            char charAt = charSequence.charAt(i15);
+            if (charAt == '\n' || charAt == '\r') {
+                StringBuilder sb2 = new StringBuilder(i11 - i10);
+                while (i10 < i11) {
+                    char charAt2 = charSequence.charAt(i10);
+                    if (charAt2 != '\n' && charAt2 != '\r') {
+                        sb2.append(charAt2);
+                    }
+                    i10++;
+                }
+                return sb2;
             }
-            ValueAnimator ofFloat = ValueAnimator.ofFloat(this.j, z10 ? 1.0f : 0.0f);
-            this.g = ofFloat;
-            ofFloat.addUpdateListener(new n6(this, 7));
-            this.g.addListener(new org.telegram.ui.lo(2, this, z10));
-            if (this.i) {
-                this.g.setInterpolator(ds.f);
-                this.g.setDuration((long) (this.b * 60.0f));
-                this.g.setStartDelay(0L);
-            } else {
-                this.g.setInterpolator(new OvershootInterpolator(this.d));
-                this.g.setDuration((long) (this.c * 350.0f));
-                this.g.setStartDelay(this.e);
-            }
-            this.g.start();
         }
-    }
-
-    public xc(View view, float f7, float f10) {
-        this.e = 0L;
-        this.h = 1.0f;
-        this.a = view;
-        this.c = f7;
-        this.b = f7;
-        this.d = f10;
-    }
-
-    public xc(fi.c6 c6Var) {
-        this.e = 0L;
-        this.h = 1.0f;
-        this.a = c6Var;
-        this.b = 1.5f;
-        this.c = 1.0f;
-        this.d = 2.0f;
+        return null;
     }
 }

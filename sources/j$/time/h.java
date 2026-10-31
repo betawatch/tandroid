@@ -8,8 +8,6 @@ import java.io.DataOutput;
 import java.io.InvalidObjectException;
 import java.io.ObjectInputStream;
 import java.io.Serializable;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MediaDataController;
 
 /* loaded from: classes2.dex */
 public final class h implements Temporal, j$.time.temporal.m, Comparable, Serializable {
@@ -116,11 +114,11 @@ public final class h implements Temporal, j$.time.temporal.m, Comparable, Serial
             case 2:
                 throw new j$.time.temporal.r("Invalid field 'NanoOfDay' for get() method, use getLong() instead");
             case 3:
-                return this.d / MediaDataController.MAX_STYLE_RUNS_COUNT;
+                return this.d / 1000;
             case 4:
                 throw new j$.time.temporal.r("Invalid field 'MicroOfDay' for get() method, use getLong() instead");
             case 5:
-                return this.d / MediaController.VIDEO_BITRATE_480;
+                return this.d / 1000000;
             case 6:
                 return (int) (R() / 1000000);
             case 7:
@@ -174,11 +172,11 @@ public final class h implements Temporal, j$.time.temporal.m, Comparable, Serial
             case 2:
                 return K(j10);
             case 3:
-                return U(((int) j10) * MediaDataController.MAX_STYLE_RUNS_COUNT);
+                return U(((int) j10) * 1000);
             case 4:
                 return K(j10 * 1000);
             case 5:
-                return U(((int) j10) * MediaController.VIDEO_BITRATE_480);
+                return U(((int) j10) * 1000000);
             case 6:
                 return K(j10 * 1000000);
             case 7:
@@ -403,10 +401,10 @@ public final class h implements Temporal, j$.time.temporal.m, Comparable, Serial
             sb2.append((int) b12);
             if (i10 > 0) {
                 sb2.append('.');
-                if (i10 % MediaController.VIDEO_BITRATE_480 == 0) {
-                    sb2.append(Integer.toString((i10 / MediaController.VIDEO_BITRATE_480) + MediaDataController.MAX_STYLE_RUNS_COUNT).substring(1));
-                } else if (i10 % MediaDataController.MAX_STYLE_RUNS_COUNT == 0) {
-                    sb2.append(Integer.toString((i10 / MediaDataController.MAX_STYLE_RUNS_COUNT) + MediaController.VIDEO_BITRATE_480).substring(1));
+                if (i10 % 1000000 == 0) {
+                    sb2.append(Integer.toString((i10 / 1000000) + 1000).substring(1));
+                } else if (i10 % 1000 == 0) {
+                    sb2.append(Integer.toString((i10 / 1000) + 1000000).substring(1));
                 } else {
                     sb2.append(Integer.toString(i10 + 1000000000).substring(1));
                 }

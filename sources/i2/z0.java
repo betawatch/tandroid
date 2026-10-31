@@ -1,9 +1,9 @@
 package i2;
 
-import a8.yb;
 import j$.util.Objects;
+import v7.t6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class z0 {
     public final u2.g0 a;
@@ -20,12 +20,12 @@ public final class z0 {
 
     public z0(u2.g0 g0Var, long j10, long j11, long j12, long j13, long j14, boolean z10, boolean z11, boolean z12, boolean z13, boolean z14) {
         boolean z15 = true;
-        yb.g(!z14 || z12);
-        yb.g(!z13 || z12);
+        t6.f(!z14 || z12);
+        t6.f(!z13 || z12);
         if (z11 && (z12 || z13 || z14)) {
             z15 = false;
         }
-        yb.g(z15);
+        t6.f(z15);
         this.a = g0Var;
         this.b = j10;
         this.c = j11;

@@ -1,34 +1,52 @@
 package sg;
 
-import android.view.KeyEvent;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import org.telegram.ui.Cells.f1;
+import org.telegram.ui.Components.mj0;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class q implements org.telegram.ui.ActionBar.m1, Utilities.Callback3Return {
-    public final /* synthetic */ m0 a;
+public final class q extends mj0 {
+    public float m1;
+    public long n1;
 
-    public /* synthetic */ q(m0 m0Var) {
-        this.a = m0Var;
-    }
-
-    @Override // org.telegram.ui.ActionBar.m1
-    public void n(KeyEvent keyEvent) {
-        org.telegram.ui.ActionBar.o1 o1Var;
-        m0 m0Var = this.a;
-        m0Var.getClass();
-        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (o1Var = m0Var.G1) != null && o1Var.isShowing()) {
-            m0Var.G1.d(true);
+    @Override // android.view.View
+    public final void draw(Canvas canvas) {
+        long min = Math.min(16L, System.currentTimeMillis() - this.n1);
+        this.n1 = System.currentTimeMillis();
+        RectF rectF = org.telegram.messenger.i0.P;
+        rectF.set(0.0f, 0.0f, getWidth(), getHeight());
+        canvas.saveLayerAlpha(rectF, (int) (this.m1 * 255.0f), 31);
+        super.draw(canvas);
+        canvas.restore();
+        if (!isEnabled()) {
+            float f7 = this.m1;
+            if (f7 != 0.0f) {
+                this.m1 = f1.v(min, 150.0f, f7, 0.0f);
+                invalidate();
+                if (this.m1 == 0.0f) {
+                    setVisibility(8);
+                    return;
+                }
+                return;
+            }
+        }
+        if (isEnabled()) {
+            float f10 = this.m1;
+            if (f10 != 1.0f) {
+                this.m1 = f1.e(min, 150.0f, f10, 1.0f);
+                invalidate();
+            }
         }
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback3Return
-    public Object run(Object obj, Object obj2, Object obj3) {
-        z g02 = this.a.g0(obj, (TLRPC.Document) obj2, true);
-        if (((Boolean) obj3).booleanValue()) {
-            g02.setScale(1.5f);
+    @Override // android.view.View
+    public final void setVisibility(int i10) {
+        super.setVisibility(i10);
+        if (i10 != 8 || this.m1 == 0.0f) {
+            return;
         }
-        return Boolean.TRUE;
+        this.m1 = 0.0f;
     }
 }

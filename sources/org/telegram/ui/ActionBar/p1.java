@@ -1,121 +1,125 @@
 package org.telegram.ui.ActionBar;
 
-import android.animation.ValueAnimator;
-import android.os.SystemClock;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Rect;
 import android.view.View;
-import android.view.ViewTreeObserver;
-import android.widget.FrameLayout;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.LaunchActivity;
+import android.widget.ScrollView;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.us;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.m60;
+import org.telegram.ui.Components.qe0;
+import org.telegram.ui.UsersSelectActivity;
+import org.telegram.ui.hf0;
+import org.telegram.ui.ll0;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class p1 implements ViewTreeObserver.OnPreDrawListener {
-    public final /* synthetic */ q1 a;
+public final class p1 extends ScrollView {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public p1(q1 q1Var) {
-        this.a = q1Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ p1(us usVar, Context context, int i10) {
+        super(context);
+        this.a = i10;
+        this.b = usVar;
     }
 
-    @Override // android.view.ViewTreeObserver.OnPreDrawListener
-    public final boolean onPreDraw() {
-        q1 q1Var = this.a;
-        FrameLayout frameLayout = q1Var.a;
-        int height = frameLayout.getHeight();
-        int i10 = height - q1Var.i();
-        int i11 = q1Var.i;
-        if (i10 == i11 - q1Var.k || height == i11 || q1Var.m != null) {
-            if (q1Var.m == null) {
-                q1Var.i = height;
-                q1Var.j = q1Var.c.getHeight();
-                q1Var.k = q1Var.i();
-                q1Var.e = false;
-            }
-            return true;
+    @Override // android.view.ViewGroup
+    public boolean drawChild(Canvas canvas, View view, long j10) {
+        switch (this.a) {
+            case 0:
+                boolean drawChild = super.drawChild(canvas, view, j10);
+                x1 x1Var = (x1) this.b;
+                if (x1Var.D[0].getPaint().getAlpha() != 0) {
+                    x1Var.D[0].setBounds(0, getScrollY(), getMeasuredWidth(), org.telegram.messenger.i0.L(3.0f) + getScrollY());
+                    x1Var.D[0].draw(canvas);
+                }
+                if (x1Var.D[1].getPaint().getAlpha() != 0) {
+                    x1Var.D[1].setBounds(0, (getMeasuredHeight() + getScrollY()) - org.telegram.messenger.i0.L(3.0f), getMeasuredWidth(), getMeasuredHeight() + getScrollY());
+                    x1Var.D[1].draw(canvas);
+                }
+                return drawChild;
+            default:
+                return super.drawChild(canvas, view, j10);
         }
-        if (!q1Var.b() || Math.abs(q1Var.i - height) < AndroidUtilities.dp(20.0f)) {
-            q1Var.i = height;
-            q1Var.j = q1Var.c.getHeight();
-            q1Var.k = q1Var.i();
-            q1Var.e = false;
-            return true;
+    }
+
+    @Override // android.widget.ScrollView, android.widget.FrameLayout, android.view.View
+    public void onMeasure(int i10, int i11) {
+        switch (this.a) {
+            case 1:
+                m60 m60Var = (m60) this.b;
+                int size = View.MeasureSpec.getSize(i10);
+                int size2 = View.MeasureSpec.getSize(i11);
+                if (org.telegram.messenger.i0.Q1() || size2 > size) {
+                    m60Var.j2 = org.telegram.messenger.i0.L(144.0f);
+                } else {
+                    m60Var.j2 = org.telegram.messenger.i0.L(56.0f);
+                }
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(m60Var.j2, TLObject.FLAG_31));
+                break;
+            case 2:
+                super.onMeasure(i10, i11);
+                setMeasuredDimension(((qe0) this.b).getMeasuredWidth(), getMeasuredHeight());
+                break;
+            case 3:
+            default:
+                super.onMeasure(i10, i11);
+                break;
+            case 4:
+                ((ll0) this.b).s0 = View.MeasureSpec.getSize(i11) - org.telegram.messenger.i0.L(30.0f);
+                super.onMeasure(i10, i11);
+                break;
         }
-        if (q1Var.i == -1 || q1Var.j != q1Var.c.getHeight()) {
-            q1Var.i = height;
-            q1Var.j = q1Var.c.getHeight();
-            q1Var.k = q1Var.i();
-            return false;
+    }
+
+    @Override // android.widget.ScrollView, android.view.ViewGroup
+    public boolean onRequestFocusInDescendants(int i10, Rect rect) {
+        switch (this.a) {
+            case 4:
+                return false;
+            default:
+                return super.onRequestFocusInDescendants(i10, rect);
         }
-        boolean z10 = height < q1Var.c.getBottom();
-        q1Var.s = z10;
-        int i12 = q1Var.i;
-        if (q1Var.v) {
-            q1Var.v = false;
-        } else if (q1Var.u) {
-            ValueAnimator valueAnimator = q1Var.m;
-            if (valueAnimator != null) {
-                valueAnimator.cancel();
-            }
-            int i13 = q1Var.i();
-            ArrayList arrayList = q1Var.o;
-            arrayList.clear();
-            View view = frameLayout;
-            while (view != null) {
-                arrayList.add(view);
-                if (view == q1Var.d) {
+    }
+
+    @Override // android.widget.ScrollView, android.view.ViewGroup, android.view.ViewParent
+    public boolean requestChildRectangleOnScreen(View view, Rect rect, boolean z10) {
+        switch (this.a) {
+            case 3:
+                int i10 = ((hf0) this.b).a;
+                if (i10 == 1 || i10 == 2 || i10 == 4) {
+                    rect.bottom = org.telegram.messenger.i0.L(40.0f) + rect.bottom;
+                }
+                break;
+            case 4:
+                int i11 = ((ll0) this.b).I1;
+                if (i11 == 1 || i11 == 2 || i11 == 4) {
+                    rect.bottom = org.telegram.messenger.i0.L(40.0f) + rect.bottom;
+                }
+                break;
+            case 5:
+                UsersSelectActivity usersSelectActivity = (UsersSelectActivity) this.b;
+                if (!usersSelectActivity.w) {
+                    rect.offset(view.getLeft() - view.getScrollX(), view.getTop() - view.getScrollY());
+                    rect.top = org.telegram.messenger.m5.C(20.0f, usersSelectActivity.Q, rect.top);
+                    rect.bottom = org.telegram.messenger.m5.C(50.0f, usersSelectActivity.Q, rect.bottom);
+                    break;
+                } else {
+                    usersSelectActivity.w = false;
                     break;
                 }
-                view = view.getParent() instanceof View ? (View) view.getParent() : null;
-            }
-            LaunchActivity launchActivity = LaunchActivity.I1;
-            int expandedHeight = (launchActivity == null || launchActivity.P() == null) ? 0 : LaunchActivity.I1.P().getExpandedHeight();
-            boolean z11 = q1Var instanceof bh.o;
-            if (!z11) {
-                q1Var.h(Math.max(i12, height + expandedHeight));
-            }
-            q1Var.d.requestLayout();
-            q1Var.g(height, z10);
-            float f7 = height - i12;
-            Math.abs(f7);
-            q1Var.f = true;
-            if (height > i12) {
-                float f10 = f7 - i13;
-                if (!z11) {
-                    frameLayout.setTranslationY(-f10);
-                }
-                q1Var.e(f10, 1.0f, z10);
-                q1Var.p = -f10;
-                q1Var.q = -expandedHeight;
-                q1Var.r = true;
-            } else {
-                if (!z11) {
-                    frameLayout.setTranslationY(q1Var.k);
-                }
-                q1Var.e(-q1Var.k, 0.0f, z10);
-                q1Var.q = -q1Var.k;
-                q1Var.p = f7;
-                q1Var.r = false;
-            }
-            ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-            q1Var.m = ofFloat;
-            q1Var.e = false;
-            ofFloat.addUpdateListener(new x0(q1Var, 3));
-            q1Var.m.addListener(new h(q1Var, 2));
-            q1Var.m.setDuration(250L);
-            q1Var.m.setInterpolator(q1.w);
-            q1Var.n.lock();
-            if (q1Var.g) {
-                q1Var.g = false;
-                SystemClock.elapsedRealtime();
-                AndroidUtilities.runOnUIThread(q1Var.h, 100L);
-            } else {
-                q1Var.m.start();
-            }
         }
-        q1Var.i = height;
-        q1Var.j = q1Var.c.getHeight();
-        q1Var.k = q1Var.i();
-        return false;
+        return super.requestChildRectangleOnScreen(view, rect, z10);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public p1(Context context, qe0 qe0Var) {
+        super(context, null, 0, R.style.scrollbarShapeStyle);
+        this.a = 2;
+        this.b = qe0Var;
     }
 }

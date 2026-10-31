@@ -1,35 +1,25 @@
 package di;
 
-import org.telegram.ui.PremiumPreviewFragment;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class d implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ r b;
+public final class d {
+    public final String a;
+    public final String b;
 
-    public /* synthetic */ d(r rVar, int i10) {
-        this.a = i10;
-        this.b = rVar;
+    public d(String str, String str2) {
+        this.a = str;
+        this.b = str2;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.p(true, false);
-                break;
-            case 1:
-                r rVar = this.b;
-                fi.v3 v3Var = rVar.J;
-                if (v3Var != null) {
-                    v3Var.e(true);
-                }
-                rVar.e0.presentFragment(new PremiumPreviewFragment(0, "stories"));
-                break;
-            default:
-                this.b.c();
-                break;
+    public final boolean equals(Object obj) {
+        if (!(obj instanceof d)) {
+            return false;
         }
+        d dVar = (d) obj;
+        return this.a.equals(dVar.a) && this.b.equals(dVar.b);
+    }
+
+    public final int hashCode() {
+        return this.b.hashCode() + (this.a.hashCode() * 31);
     }
 }

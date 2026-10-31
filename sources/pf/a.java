@@ -1,49 +1,43 @@
 package pf;
 
-import com.google.firebase.messaging.d;
-import java.io.InputStream;
+import android.os.Bundle;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class a extends d {
-    public final long d;
+public final class a implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ b b;
 
-    public a(InputStream inputStream, long j10, long j11) {
-        super(inputStream, j10);
-        this.d = j10 + j11;
+    public /* synthetic */ a(b bVar, String str, Bundle bundle, int i10) {
+        this.a = i10;
+        this.b = bVar;
     }
 
-    public final long e() {
-        return this.d - this.b;
-    }
-
-    @Override // com.google.firebase.messaging.d, java.io.FilterInputStream, java.io.InputStream
-    public final int read() {
-        if (this.b == this.d) {
-            return -1;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.b.getClass();
+                break;
+            case 1:
+                this.b.b.getClass();
+                break;
+            case 2:
+                this.b.b.getClass();
+                break;
+            default:
+                this.b.b.getClass();
+                break;
         }
-        return super.read();
     }
 
-    @Override // com.google.firebase.messaging.d, java.io.FilterInputStream, java.io.InputStream
-    public final long skip(long j10) {
-        long j11 = this.b;
-        long j12 = j11 + j10;
-        long j13 = this.d;
-        if (j12 > j13) {
-            j10 = (int) (j13 - j11);
-        }
-        return super.skip(j10);
+    public a(b bVar, int i10, Bundle bundle) {
+        this.a = 0;
+        this.b = bVar;
     }
 
-    @Override // com.google.firebase.messaging.d, java.io.FilterInputStream, java.io.InputStream
-    public final int read(byte[] bArr, int i10, int i11) {
-        long j10 = this.b;
-        long j11 = i11 + j10;
-        long j12 = this.d;
-        if (j11 <= j12 || (i11 = (int) (j12 - j10)) != 0) {
-            return super.read(bArr, i10, i11);
-        }
-        return -1;
+    public a(b bVar, Bundle bundle) {
+        this.a = 2;
+        this.b = bVar;
     }
 }

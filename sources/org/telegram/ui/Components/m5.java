@@ -1,127 +1,20 @@
 package org.telegram.ui.Components;
 
-import android.os.Looper;
-import android.text.TextUtils;
+import android.text.Layout;
+import java.lang.ref.WeakReference;
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Locale;
-import org.telegram.SQLite.SQLiteCursor;
-import org.telegram.SQLite.SQLiteDatabase;
-import org.telegram.SQLite.SQLiteException;
-import org.telegram.SQLite.SQLitePreparedStatement;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.NativeByteBuffer;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class m5 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ p5 b;
-    public final /* synthetic */ ArrayList c;
+public final class m5 {
+    public Layout a;
+    public final ArrayList b = new ArrayList();
 
-    public /* synthetic */ m5(p5 p5Var, ArrayList arrayList, int i10) {
-        this.a = i10;
-        this.b = p5Var;
-        this.c = arrayList;
+    public m5(WeakReference weakReference, Layout layout) {
+        this.a = layout;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:18:0x0056 A[Catch: SQLiteException -> 0x005a, TryCatch #2 {SQLiteException -> 0x005a, blocks: (B:5:0x0013, B:6:0x001a, B:8:0x0020, B:10:0x0028, B:18:0x0056, B:25:0x0050, B:20:0x005c, B:29:0x005f), top: B:4:0x0013 }] */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x005c A[SYNTHETIC] */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        NativeByteBuffer nativeByteBuffer;
-        switch (this.a) {
-            case 0:
-                ArrayList arrayList = this.c;
-                p5 p5Var = this.b;
-                int i10 = p5Var.e;
-                MessagesStorage messagesStorage = MessagesStorage.getInstance(i10);
-                SQLiteDatabase database = messagesStorage.getDatabase();
-                if (database != null) {
-                    try {
-                        String join = TextUtils.join(",", arrayList);
-                        Locale locale = Locale.US;
-                        SQLiteCursor queryFinalized = database.queryFinalized("SELECT data FROM animated_emoji WHERE document_id IN (" + join + ")", new Object[0]);
-                        ArrayList arrayList2 = new ArrayList();
-                        HashSet hashSet = new HashSet(arrayList);
-                        while (queryFinalized.next()) {
-                            NativeByteBuffer byteBufferValue = queryFinalized.byteBufferValue(0);
-                            try {
-                                TLRPC.Document TLdeserialize = TLRPC.Document.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(true), true);
-                                if (TLdeserialize != null && TLdeserialize.id != 0) {
-                                    arrayList2.add(TLdeserialize);
-                                    hashSet.remove(Long.valueOf(TLdeserialize.id));
-                                }
-                            } catch (Exception e) {
-                                FileLog.e(e);
-                            }
-                            if (byteBufferValue != null) {
-                                byteBufferValue.reuse();
-                            }
-                        }
-                        if (Thread.currentThread() == Looper.getMainLooper().getThread()) {
-                            p5Var.d(arrayList2);
-                            if (!hashSet.isEmpty()) {
-                                ArrayList<Long> arrayList3 = new ArrayList<>(hashSet);
-                                TLRPC.TL_messages_getCustomEmojiDocuments tL_messages_getCustomEmojiDocuments = new TLRPC.TL_messages_getCustomEmojiDocuments();
-                                tL_messages_getCustomEmojiDocuments.document_id = arrayList3;
-                                ConnectionsManager.getInstance(i10).sendRequest(tL_messages_getCustomEmojiDocuments, new org.telegram.ui.z7(11, p5Var, arrayList3));
-                            }
-                        } else {
-                            NotificationCenter.getInstance(i10).doOnIdle(new n5(p5Var, arrayList2, hashSet, 0));
-                        }
-                        queryFinalized.dispose();
-                        break;
-                    } catch (SQLiteException e10) {
-                        messagesStorage.checkSQLException(e10);
-                        return;
-                    }
-                }
-                break;
-            default:
-                ArrayList arrayList4 = this.c;
-                try {
-                    SQLitePreparedStatement executeFast = MessagesStorage.getInstance(this.b.e).getDatabase().executeFast("REPLACE INTO animated_emoji VALUES(?, ?)");
-                    for (int i11 = 0; i11 < arrayList4.size(); i11++) {
-                        if (arrayList4.get(i11) instanceof TLRPC.Document) {
-                            TLRPC.Document document = (TLRPC.Document) arrayList4.get(i11);
-                            NativeByteBuffer nativeByteBuffer2 = null;
-                            try {
-                                nativeByteBuffer = new NativeByteBuffer(document.getObjectSize());
-                            } catch (Exception e11) {
-                                e = e11;
-                            }
-                            try {
-                                document.serializeToStream(nativeByteBuffer);
-                                executeFast.requery();
-                                executeFast.bindLong(1, document.id);
-                                executeFast.bindByteBuffer(2, nativeByteBuffer);
-                                executeFast.step();
-                            } catch (Exception e12) {
-                                e = e12;
-                                nativeByteBuffer2 = nativeByteBuffer;
-                                e.printStackTrace();
-                                nativeByteBuffer = nativeByteBuffer2;
-                                if (nativeByteBuffer == null) {
-                                }
-                            }
-                            if (nativeByteBuffer == null) {
-                                nativeByteBuffer.reuse();
-                            }
-                        }
-                    }
-                    executeFast.dispose();
-                    break;
-                } catch (SQLiteException e13) {
-                    FileLog.e(e13);
-                }
-        }
+    public final void a() {
+        this.b.size();
     }
 }

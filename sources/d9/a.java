@@ -1,25 +1,29 @@
 package d9;
 
-import android.app.Activity;
-import android.content.Intent;
-import android.os.Build;
-import android.os.Bundle;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public abstract class a extends Activity {
-    public abstract Class getServiceClass();
+public final class a extends i {
+    public final i a;
+    public final i b;
 
-    @Override // android.app.Activity
-    public final void onCreate(Bundle bundle) {
-        super.onCreate(bundle);
-        Intent intent = new Intent(this, (Class<?>) getServiceClass());
-        intent.putExtra(c.EXTRA_INTENT, getIntent());
-        if (Build.VERSION.SDK_INT >= 26) {
-            startForegroundService(intent);
-        } else {
-            startService(intent);
-        }
-        finish();
+    public a(i iVar, i iVar2) {
+        iVar.getClass();
+        this.a = iVar;
+        iVar2.getClass();
+        this.b = iVar2;
+    }
+
+    @Override // d9.l
+    public final boolean apply(Object obj) {
+        return c(((Character) obj).charValue());
+    }
+
+    @Override // d9.i
+    public final boolean c(char c10) {
+        return this.a.c(c10) && this.b.c(c10);
+    }
+
+    public final String toString() {
+        return "CharMatcher.and(" + this.a + ", " + this.b + ")";
     }
 }

@@ -1,11 +1,11 @@
 package com.google.android.gms.internal.play_billing;
 
-import a8.cb;
 import java.io.Serializable;
 import java.util.Iterator;
 import java.util.Locale;
+import v7.l6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public class l1 implements Iterable, Serializable {
     public static final l1 c = new l1(a2.b);
@@ -27,12 +27,12 @@ public class l1 implements Iterable, Serializable {
             return i13;
         }
         if (i10 < 0) {
-            throw new IndexOutOfBoundsException(ic.a.j(i10, "Beginning index: ", " < 0"));
+            throw new IndexOutOfBoundsException(i0.a.j(i10, "Beginning index: ", " < 0"));
         }
         if (i11 < i10) {
-            throw new IndexOutOfBoundsException(a1.g.l(i10, i11, "Beginning index larger than ending index: ", ", "));
+            throw new IndexOutOfBoundsException(a1.g.j(i10, i11, "Beginning index larger than ending index: ", ", "));
         }
-        throw new IndexOutOfBoundsException(a1.g.l(i11, i12, "End index: ", " >= "));
+        throw new IndexOutOfBoundsException(a1.g.j(i11, i12, "End index: ", " >= "));
     }
 
     public static l1 p(int i10, int i11, byte[] bArr) {
@@ -62,7 +62,7 @@ public class l1 implements Iterable, Serializable {
                     throw new IllegalArgumentException("Length too large: " + n10 + n());
                 }
                 if (n10 > l1Var.n()) {
-                    throw new IllegalArgumentException(a1.g.l(n10, l1Var.n(), "Ran off end of other: 0, ", ", "));
+                    throw new IllegalArgumentException(a1.g.j(n10, l1Var.n(), "Ran off end of other: 0, ", ", "));
                 }
                 byte[] bArr = l1Var.b;
                 int i12 = 0;
@@ -77,10 +77,6 @@ public class l1 implements Iterable, Serializable {
             }
         }
         return false;
-    }
-
-    public byte h(int i10) {
-        return this.b[i10];
     }
 
     public final int hashCode() {
@@ -105,6 +101,10 @@ public class l1 implements Iterable, Serializable {
         return new androidx.datastore.preferences.protobuf.e(this);
     }
 
+    public byte l(int i10) {
+        return this.b[i10];
+    }
+
     public byte m(int i10) {
         return this.b[i10];
     }
@@ -119,16 +119,16 @@ public class l1 implements Iterable, Serializable {
         String hexString = Integer.toHexString(System.identityHashCode(this));
         int n10 = n();
         if (n() <= 50) {
-            concat = cb.a(this);
+            concat = l6.a(this);
         } else {
             int o10 = o(0, 47, n());
-            concat = cb.a(o10 == 0 ? c : new k1(this.b, o10)).concat("...");
+            concat = l6.a(o10 == 0 ? c : new k1(this.b, o10)).concat("...");
         }
         StringBuilder sb2 = new StringBuilder("<ByteString@");
         sb2.append(hexString);
         sb2.append(" size=");
         sb2.append(n10);
         sb2.append(" contents=\"");
-        return a1.g.s(sb2, concat, "\">");
+        return a1.g.r(sb2, concat, "\">");
     }
 }

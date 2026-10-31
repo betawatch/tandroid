@@ -1,32 +1,21 @@
 package com.google.android.gms.common.api.internal;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+import com.google.android.gms.common.api.Status;
+import java.util.Map;
+
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class y extends k0 {
-    public final /* synthetic */ int b = 1;
-    public final /* synthetic */ Object c;
+public final class y implements com.google.android.gms.common.api.o {
+    public final /* synthetic */ BasePendingResult a;
+    public final /* synthetic */ h1 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public y(z zVar, z zVar2) {
-        super(zVar2);
-        this.c = zVar;
+    public y(h1 h1Var, BasePendingResult basePendingResult) {
+        this.b = h1Var;
+        this.a = basePendingResult;
     }
 
-    @Override // com.google.android.gms.common.api.internal.k0
-    public final void a() {
-        switch (this.b) {
-            case 0:
-                ((z) this.c).o(1);
-                break;
-            default:
-                ((o6.b) this.c).a(new l6.a(16, null));
-                break;
-        }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public y(j0 j0Var, o6.b bVar) {
-        super(j0Var);
-        this.c = bVar;
+    @Override // com.google.android.gms.common.api.o
+    public final void a(Status status) {
+        ((Map) this.b.a).remove(this.a);
     }
 }

@@ -1,40 +1,39 @@
 package k2;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class s implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ rf.b b;
-    public final /* synthetic */ i2.e c;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ Object e;
 
-    public /* synthetic */ s(rf.b bVar, i2.e eVar, int i10) {
-        this.a = i10;
-        this.b = bVar;
-        this.c = eVar;
+    public /* synthetic */ s(Object obj, int i10, long j10, long j11, int i11) {
+        this.a = i11;
+        this.e = obj;
+        this.b = i10;
+        this.c = j10;
+        this.d = j11;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        switch (this.a) {
+        int i10 = this.a;
+        Object obj = this.e;
+        switch (i10) {
             case 0:
-                rf.b bVar = this.b;
-                i2.e eVar = this.c;
-                synchronized (eVar) {
-                }
-                v vVar = (v) bVar.c;
-                String str = e2.n0.a;
-                j2.e eVar2 = ((i2.d0) vVar).a.s;
-                j2.a n10 = eVar2.n((u2.g0) eVar2.d.e);
-                eVar2.q(n10, 1013, new ig.g(n10, eVar, 28));
+                w wVar = (w) ((hf.b) obj).c;
+                String str = e2.l0.a;
+                j2.g gVar = ((i2.c0) wVar).a.s;
+                j2.a U = gVar.U();
+                gVar.V(U, 1011, new j2.e(U, this.b, this.c, this.d));
                 break;
             default:
-                rf.b bVar2 = this.b;
-                i2.e eVar3 = this.c;
-                v vVar2 = (v) bVar2.c;
-                String str2 = e2.n0.a;
-                j2.e eVar4 = ((i2.d0) vVar2).a.s;
-                j2.a p10 = eVar4.p();
-                eVar4.q(p10, 1007, new ig.g(p10, eVar3, 23));
+                j2.g gVar2 = ((y2.b) obj).b;
+                j2.f fVar = gVar2.d;
+                j2.a S = gVar2.S(((e9.n0) fVar.b).isEmpty() ? null : (u2.g0) e9.s.m((e9.n0) fVar.b));
+                gVar2.V(S, 1006, new j2.d(S, this.b, this.c, this.d));
                 break;
         }
     }

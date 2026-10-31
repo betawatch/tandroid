@@ -1,21 +1,21 @@
 package o2;
 
+import b2.v0;
 import b2.w;
-import b2.w0;
 import b2.x;
-import c3.h0;
 import c3.i0;
 import c3.j0;
+import c3.k0;
 import j$.util.Objects;
 import java.io.EOFException;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class o implements j0 {
+public final class o implements k0 {
     public static final x f;
     public static final x g;
-    public final j0 a;
+    public final k0 a;
     public final x b;
     public x c;
     public byte[] d;
@@ -23,20 +23,20 @@ public final class o implements j0 {
 
     static {
         w wVar = new w();
-        wVar.r = w0.n("application/id3");
+        wVar.r = v0.n("application/id3");
         f = new x(wVar);
         w wVar2 = new w();
-        wVar2.r = w0.n("application/x-emsg");
+        wVar2.r = v0.n("application/x-emsg");
         g = new x(wVar2);
     }
 
-    public o(j0 j0Var, int i10) {
-        this.a = j0Var;
+    public o(k0 k0Var, int i10) {
+        this.a = k0Var;
         if (i10 == 1) {
             this.b = f;
         } else {
             if (i10 != 3) {
-                throw new IllegalArgumentException(ic.a.i(i10, "Unknown metadataType: "));
+                throw new IllegalArgumentException(i0.a.i(i10, "Unknown metadataType: "));
             }
             this.b = g;
         }
@@ -44,19 +44,19 @@ public final class o implements j0 {
         this.e = 0;
     }
 
-    @Override // c3.j0
+    @Override // c3.k0
     public final int a(b2.p pVar, int i10, boolean z10) {
         return f(pVar, i10, z10);
     }
 
-    @Override // c3.j0
+    @Override // c3.k0
     public final void b(x xVar) {
         this.c = xVar;
         this.a.b(this.b);
     }
 
-    @Override // c3.j0
-    public final void c(long j10, int i10, int i11, int i12, i0 i0Var) {
+    @Override // c3.k0
+    public final void c(long j10, int i10, int i11, int i12, j0 j0Var) {
         this.c.getClass();
         int i13 = this.e - i12;
         e2.x xVar = new e2.x(Arrays.copyOfRange(this.d, i13 - i11, i13));
@@ -83,17 +83,17 @@ public final class o implements j0 {
             xVar = new e2.x(c11);
         }
         int a10 = xVar.a();
-        j0 j0Var = this.a;
-        j0Var.d(a10, xVar);
-        j0Var.c(j10, i10, a10, 0, i0Var);
+        k0 k0Var = this.a;
+        k0Var.d(a10, xVar);
+        k0Var.c(j10, i10, a10, 0, j0Var);
     }
 
-    @Override // c3.j0
+    @Override // c3.k0
     public final /* synthetic */ void d(int i10, e2.x xVar) {
-        h0.a(this, xVar, i10);
+        i0.a(this, xVar, i10);
     }
 
-    @Override // c3.j0
+    @Override // c3.k0
     public final int f(b2.p pVar, int i10, boolean z10) {
         int i11 = this.e + i10;
         byte[] bArr = this.d;
@@ -111,7 +111,7 @@ public final class o implements j0 {
         throw new EOFException();
     }
 
-    @Override // c3.j0
+    @Override // c3.k0
     public final void g(e2.x xVar, int i10, int i11) {
         int i12 = this.e + i10;
         byte[] bArr = this.d;
@@ -122,7 +122,7 @@ public final class o implements j0 {
         this.e += i10;
     }
 
-    @Override // c3.j0
+    @Override // c3.k0
     public final /* synthetic */ void e(long j10) {
     }
 }

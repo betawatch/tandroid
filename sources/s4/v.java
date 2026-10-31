@@ -1,90 +1,55 @@
 package s4;
 
-import android.animation.Animator;
-import android.animation.ValueAnimator;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
 import android.view.View;
-import di.u4;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class v implements Animator.AnimatorListener {
-    public final /* synthetic */ e1 E;
-    public final /* synthetic */ z F;
-    public final float a;
-    public final float b;
-    public final float c;
-    public final float d;
-    public final e1 e;
-    public final int f;
-    public final ValueAnimator h;
-    public boolean n;
-    public float r;
-    public float s;
-    public boolean v = false;
-    public boolean w = false;
-    public float x;
-    public final /* synthetic */ int y;
+public final class v extends GestureDetector.SimpleOnGestureListener {
+    public boolean a = true;
+    public final /* synthetic */ x b;
 
-    public v(z zVar, e1 e1Var, int i10, float f7, float f10, float f11, float f12, int i11, e1 e1Var2) {
-        this.F = zVar;
-        this.y = i11;
-        this.E = e1Var2;
-        this.f = i10;
-        this.e = e1Var;
-        this.a = f7;
-        this.b = f10;
-        this.c = f11;
-        this.d = f12;
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-        this.h = ofFloat;
-        ofFloat.addUpdateListener(new u4(this, 11));
-        ofFloat.setTarget(e1Var.a);
-        ofFloat.addListener(this);
-        this.x = 0.0f;
+    public v(x xVar) {
+        this.b = xVar;
     }
 
-    public final void a(Animator animator) {
-        if (!this.w) {
-            this.e.q(true);
-        }
-        this.w = true;
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onDown(MotionEvent motionEvent) {
+        return true;
     }
 
-    @Override // android.animation.Animator.AnimatorListener
-    public final void onAnimationCancel(Animator animator) {
-        this.x = 1.0f;
-    }
-
-    @Override // android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        a(animator);
-        if (this.v) {
-            return;
-        }
-        int i10 = this.y;
-        e1 e1Var = this.E;
-        z zVar = this.F;
-        if (i10 <= 0) {
-            zVar.x.a(zVar.H, e1Var);
-        } else {
-            zVar.a.add(e1Var.a);
-            this.n = true;
-            if (i10 > 0) {
-                zVar.H.post(new k9.u(zVar, this, i10));
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final void onLongPress(MotionEvent motionEvent) {
+        c1 T;
+        if (this.a) {
+            x xVar = this.b;
+            View m10 = xVar.m(motionEvent);
+            u uVar = xVar.y;
+            if (m10 == null || (T = xVar.H.T(m10)) == null) {
+                return;
+            }
+            RecyclerView recyclerView = xVar.H;
+            int e = uVar.e(recyclerView, T);
+            WeakHashMap weakHashMap = r0.h0.a;
+            if ((uVar.b(e, recyclerView.getLayoutDirection()) & 16711680) != 0) {
+                int pointerId = motionEvent.getPointerId(0);
+                int i10 = xVar.x;
+                if (pointerId == i10) {
+                    int findPointerIndex = motionEvent.findPointerIndex(i10);
+                    float x10 = motionEvent.getX(findPointerIndex);
+                    float y3 = motionEvent.getY(findPointerIndex);
+                    xVar.d = x10;
+                    xVar.e = y3;
+                    xVar.r = 0.0f;
+                    xVar.n = 0.0f;
+                    if (uVar.k()) {
+                        xVar.r(T, 2);
+                    }
+                }
             }
         }
-        View view = zVar.M;
-        View view2 = e1Var.a;
-        if (view == view2) {
-            zVar.q(view2);
-        }
-    }
-
-    @Override // android.animation.Animator.AnimatorListener
-    public final void onAnimationRepeat(Animator animator) {
-    }
-
-    @Override // android.animation.Animator.AnimatorListener
-    public final void onAnimationStart(Animator animator) {
     }
 }

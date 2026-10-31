@@ -1,31 +1,22 @@
 package z9;
 
-import li.h5;
-import org.json.JSONObject;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public abstract class l {
-    public static final h5 a;
+public final class l implements ja.d {
+    public static final l a = new l();
+    public static final ja.c b = ja.c.c("baseAddress");
+    public static final ja.c c = ja.c.c("size");
+    public static final ja.c d = ja.c.c("name");
+    public static final ja.c e = ja.c.c("uuid");
 
-    static {
-        ma.d dVar = new ma.d();
-        a aVar = a.a;
-        dVar.d(l.class, aVar);
-        dVar.d(b.class, aVar);
-        a = new h5(dVar);
-    }
-
-    public static b a(String str) {
-        JSONObject jSONObject = new JSONObject(str);
-        String string = jSONObject.getString("rolloutId");
-        String string2 = jSONObject.getString("parameterKey");
-        String string3 = jSONObject.getString("parameterValue");
-        String string4 = jSONObject.getString("variantId");
-        long j10 = jSONObject.getLong("templateVersion");
-        if (string3.length() > 256) {
-            string3 = string3.substring(0, 256);
-        }
-        return new b(string, string2, string3, string4, j10);
+    @Override // ja.a
+    public final void a(Object obj, Object obj2) {
+        ja.e eVar = (ja.e) obj2;
+        o0 o0Var = (o0) ((n1) obj);
+        eVar.f(b, o0Var.a);
+        eVar.f(c, o0Var.b);
+        eVar.d(d, o0Var.c);
+        String str = o0Var.d;
+        eVar.d(e, str != null ? str.getBytes(e2.a) : null);
     }
 }

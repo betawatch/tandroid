@@ -1,77 +1,16 @@
 package org.telegram.ui.ActionBar;
 
-import a8.ng;
-import android.graphics.Bitmap;
-import android.text.TextUtils;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserObject;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public class r3 {
-    public boolean A;
-    public boolean B;
-    public boolean C;
-    public boolean D;
-    public String E;
-    public Bitmap F;
-    public boolean G;
-    public String H;
-    public float I;
-    public org.telegram.ui.j4 J;
-    public hi.f1 K;
-    public boolean L;
-    public hi.c5 a;
-    public org.telegram.ui.web.x0 b;
-    public org.telegram.ui.m3 c;
-    public Object d;
-    public boolean e;
-    public String f;
-    public int g;
-    public int h;
-    public int i;
-    public boolean j;
-    public float k = Float.MAX_VALUE;
-    public boolean l = true;
-    public Bitmap m;
-    public boolean n;
-    public boolean o;
-    public int p;
-    public int q;
-    public int r;
-    public int s;
-    public boolean t;
-    public boolean u;
-    public boolean v;
-    public ng w;
-    public String x;
-    public boolean y;
-    public boolean z;
-
-    public final void a() {
-        try {
-            org.telegram.ui.web.x0 x0Var = this.b;
-            if (x0Var != null) {
-                x0Var.destroy();
-                this.b = null;
-            }
-            org.telegram.ui.j4 j4Var = this.J;
-            if (j4Var != null) {
-                j4Var.s();
-            }
-        } catch (Exception e) {
-            FileLog.e(e);
+public final class r3 extends x1 {
+    @Override // org.telegram.ui.ActionBar.x1
+    public final int f(int i10) {
+        if (i10 == t6.h5) {
+            return -14277082;
         }
-    }
-
-    public String b() {
-        if (this.J != null) {
-            return TextUtils.isEmpty(this.E) ? LocaleController.getString(R.string.WebEmpty) : this.E;
+        if (i10 == t6.j5 || i10 == t6.H5 || i10 == t6.A5) {
+            return -1;
         }
-        hi.c5 c5Var = this.a;
-        return c5Var == null ? "" : c5Var.g == 6 ? c5Var.e : UserObject.getUserName(MessagesController.getInstance(c5Var.a).getUser(Long.valueOf(this.a.c)));
+        return t6.w0(i10, this.T0);
     }
 }

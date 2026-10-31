@@ -1,50 +1,41 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.messenger.FileLog;
+import android.util.SparseArray;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class s6 extends org.telegram.ui.ActionBar.k3 {
-    public final /* synthetic */ int b = 1;
+public final class s6 {
+    public long a;
+    public int b;
+    public long c;
+    public final SparseArray d = new SparseArray();
 
-    public /* synthetic */ s6(int i10, Context context, org.telegram.ui.ActionBar.u6 u6Var, boolean z10) {
-        super(i10, context, u6Var, z10);
+    public s6(long j10) {
+        this.a = j10;
     }
 
-    @Override // org.telegram.ui.ActionBar.k3
-    public boolean canDismissWithTouchOutside() {
-        switch (this.b) {
-            case 0:
-                return false;
-            default:
-                return super.canDismissWithTouchOutside();
+    public final void a(sh.a aVar, int i10) {
+        SparseArray sparseArray = this.d;
+        t6 t6Var = (t6) sparseArray.get(i10, null);
+        if (t6Var == null) {
+            t6Var = new t6();
+            sparseArray.put(i10, t6Var);
         }
+        long j10 = aVar.c;
+        t6Var.a += j10;
+        this.c += j10;
+        this.b++;
+        t6Var.b.add(aVar);
     }
 
-    @Override // org.telegram.ui.ActionBar.k3
-    public void onThemeColorsChanged() {
-        switch (this.b) {
-            case 1:
-                super.onThemeColorsChanged();
-                try {
-                    int themedColor = getThemedColor(org.telegram.ui.ActionBar.y6.h5);
-                    if (this.navBarColor != themedColor) {
-                        fixNavigationBar(themedColor);
-                        break;
-                    }
-                } catch (Exception e) {
-                    FileLog.e(e);
-                    return;
-                }
-                break;
-            default:
-                super.onThemeColorsChanged();
-                break;
+    public final void b(sh.a aVar) {
+        t6 t6Var = (t6) this.d.get(aVar.d, null);
+        if (t6Var != null && t6Var.b.remove(aVar)) {
+            long j10 = t6Var.a;
+            long j11 = aVar.c;
+            t6Var.a = j10 - j11;
+            this.c -= j11;
+            this.b--;
         }
-    }
-
-    public /* synthetic */ s6(Context context, boolean z10) {
-        super(context, z10);
     }
 }

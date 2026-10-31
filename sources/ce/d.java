@@ -1,31 +1,84 @@
 package ce;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
+import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
+import td.e0;
+import td.m;
+import v7.w6;
+
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class d implements k {
-    public final c[] a;
+public final class d extends i implements a {
+    public static final /* synthetic */ AtomicReferenceFieldUpdater g = AtomicReferenceFieldUpdater.newUpdater(d.class, Object.class, "owner$volatile");
+    private volatile /* synthetic */ Object owner$volatile;
 
-    public d(c[] cVarArr) {
-        this.a = cVarArr;
+    public d(boolean z10) {
+        super(z10 ? 1 : 0);
+        this.owner$volatile = z10 ? null : e.a;
     }
 
-    @Override // ce.k
-    public final void a(Throwable th2) {
-        b();
+    public final boolean c() {
+        return Math.max(i.f.get(this), 0) == 0;
     }
 
-    public final void b() {
-        for (c cVar : this.a) {
-            p0 p0Var = cVar.f;
-            if (p0Var == null) {
-                kotlin.jvm.internal.i.h("handle");
-                throw null;
+    public final Object d(ed.c cVar) {
+        int i10;
+        while (true) {
+            AtomicIntegerFieldUpdater atomicIntegerFieldUpdater = i.f;
+            int i11 = atomicIntegerFieldUpdater.get(this);
+            if (i11 > 1) {
+                do {
+                    i10 = atomicIntegerFieldUpdater.get(this);
+                    if (i10 > 1) {
+                    }
+                } while (!atomicIntegerFieldUpdater.compareAndSet(this, i10, 1));
+            } else {
+                ad.j jVar = ad.j.a;
+                if (i11 <= 0) {
+                    m l4 = e0.l(w6.b(cVar));
+                    try {
+                        a(new c(this, l4));
+                        Object r10 = l4.r();
+                        dd.a aVar = dd.a.a;
+                        if (r10 != aVar) {
+                            r10 = jVar;
+                        }
+                        return r10 == aVar ? r10 : jVar;
+                    } catch (Throwable th2) {
+                        l4.A();
+                        throw th2;
+                    }
+                }
+                if (atomicIntegerFieldUpdater.compareAndSet(this, i11, i11 - 1)) {
+                    g.set(this, null);
+                    return jVar;
+                }
             }
-            p0Var.dispose();
         }
     }
 
+    public final void e(Object obj) {
+        while (c()) {
+            AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = g;
+            Object obj2 = atomicReferenceFieldUpdater.get(this);
+            ea.a aVar = e.a;
+            if (obj2 != aVar) {
+                if (obj2 == obj || obj == null) {
+                    while (!atomicReferenceFieldUpdater.compareAndSet(this, obj2, aVar)) {
+                        if (atomicReferenceFieldUpdater.get(this) != obj2) {
+                            break;
+                        }
+                    }
+                    b();
+                    return;
+                }
+                throw new IllegalStateException(("This mutex is locked by " + obj2 + ", but " + obj + " is expected").toString());
+            }
+        }
+        throw new IllegalStateException("This mutex is not locked");
+    }
+
     public final String toString() {
-        return "DisposeHandlersOnCancel[" + this.a + ']';
+        return "Mutex@" + e0.k(this) + "[isLocked=" + c() + ",owner=" + g.get(this) + ']';
     }
 }

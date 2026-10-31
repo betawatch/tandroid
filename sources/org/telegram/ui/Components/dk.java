@@ -1,27 +1,52 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import android.text.TextUtils;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class dk extends s4.d0 {
-    public final /* synthetic */ jg.e0 r;
+public final /* synthetic */ class dk implements org.telegram.messenger.j20 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ kk b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public dk(jg.e0 e0Var, Context context) {
-        super(context);
-        this.r = e0Var;
+    public /* synthetic */ dk(kk kkVar, int i10) {
+        this.a = i10;
+        this.b = kkVar;
     }
 
-    @Override // s4.d0
-    public final int k(int i10, View view) {
-        return org.telegram.messenger.t.B(56.0f, ((nk) this.r.V).r.getPaddingTop() - AndroidUtilities.statusBarHeight, super.k(i10, view));
-    }
-
-    @Override // s4.d0
-    public final int m(int i10) {
-        return super.m(i10) * 2;
+    @Override // org.telegram.messenger.j20
+    public final void a(Object obj, Object obj2) {
+        switch (this.a) {
+            case 0:
+                TL_wallet.walletUserAddress walletuseraddress = (TL_wallet.walletUserAddress) obj;
+                String str = (String) obj2;
+                kk kkVar = this.b;
+                TLRPC.User user = kkVar.r;
+                if (!kkVar.K) {
+                    kkVar.I = false;
+                    if (TextUtils.equals(str, "WALLET_USER_UNAVAILABLE")) {
+                        kkVar.J = true;
+                    }
+                    if (walletuseraddress != null && walletuseraddress.user_id == user.id) {
+                        kkVar.G = walletuseraddress.address;
+                        kkVar.H = walletuseraddress.public_key;
+                    }
+                    kkVar.w.a(kkVar.G, user);
+                    kkVar.g0();
+                    kkVar.Y();
+                    break;
+                }
+                break;
+            default:
+                TL_wallet.walletTransaction wallettransaction = (TL_wallet.walletTransaction) obj;
+                kk kkVar2 = this.b;
+                if (!kkVar2.K && wallettransaction != null) {
+                    kkVar2.g0 = wallettransaction.fee;
+                    kkVar2.h0();
+                    break;
+                }
+                break;
+        }
     }
 }

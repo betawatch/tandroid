@@ -13,18 +13,18 @@ import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class e extends MediaController.Callback {
     public final WeakReference a;
 
-    public e(androidx.mediarouter.app.r rVar) {
-        this.a = new WeakReference(rVar);
+    public e(androidx.mediarouter.app.q qVar) {
+        this.a = new WeakReference(qVar);
     }
 
     @Override // android.media.session.MediaController.Callback
     public final void onAudioInfoChanged(MediaController.PlaybackInfo playbackInfo) {
-        if (((androidx.mediarouter.app.r) this.a.get()) != null) {
+        if (((androidx.mediarouter.app.q) this.a.get()) != null) {
             playbackInfo.getPlaybackType();
             playbackInfo.getAudioAttributes();
             if (Build.VERSION.SDK_INT >= 26) {
@@ -37,14 +37,14 @@ public final class e extends MediaController.Callback {
 
     @Override // android.media.session.MediaController.Callback
     public final void onExtrasChanged(Bundle bundle) {
-        b0.a(bundle);
+        a0.k(bundle);
     }
 
     @Override // android.media.session.MediaController.Callback
     public final void onMetadataChanged(MediaMetadata mediaMetadata) {
         MediaMetadataCompat mediaMetadataCompat;
-        androidx.mediarouter.app.r rVar = (androidx.mediarouter.app.r) this.a.get();
-        if (rVar != null) {
+        androidx.mediarouter.app.q qVar = (androidx.mediarouter.app.q) this.a.get();
+        if (qVar != null) {
             a0.f fVar = MediaMetadataCompat.d;
             if (mediaMetadata != null) {
                 Parcel obtain = Parcel.obtain();
@@ -56,30 +56,30 @@ public final class e extends MediaController.Callback {
             } else {
                 mediaMetadataCompat = null;
             }
-            rVar.a(mediaMetadataCompat);
+            qVar.a(mediaMetadataCompat);
         }
     }
 
     @Override // android.media.session.MediaController.Callback
     public final void onPlaybackStateChanged(PlaybackState playbackState) {
-        androidx.mediarouter.app.r rVar = (androidx.mediarouter.app.r) this.a.get();
-        if (rVar == null || rVar.c != null) {
+        androidx.mediarouter.app.q qVar = (androidx.mediarouter.app.q) this.a.get();
+        if (qVar == null || qVar.c != null) {
             return;
         }
-        rVar.b(PlaybackStateCompat.a(playbackState));
+        qVar.b(PlaybackStateCompat.a(playbackState));
     }
 
     @Override // android.media.session.MediaController.Callback
     public final void onQueueChanged(List list) {
         MediaSessionCompat$QueueItem mediaSessionCompat$QueueItem;
-        if (((androidx.mediarouter.app.r) this.a.get()) == null || list == null) {
+        if (((androidx.mediarouter.app.q) this.a.get()) == null || list == null) {
             return;
         }
         ArrayList arrayList = new ArrayList(list.size());
         for (Object obj : list) {
             if (obj != null) {
                 MediaSession.QueueItem queueItem = (MediaSession.QueueItem) obj;
-                mediaSessionCompat$QueueItem = new MediaSessionCompat$QueueItem(queueItem, MediaDescriptionCompat.a(z.b(queueItem)), z.c(queueItem));
+                mediaSessionCompat$QueueItem = new MediaSessionCompat$QueueItem(queueItem, MediaDescriptionCompat.a(y.b(queueItem)), y.c(queueItem));
             } else {
                 mediaSessionCompat$QueueItem = null;
             }
@@ -93,14 +93,14 @@ public final class e extends MediaController.Callback {
 
     @Override // android.media.session.MediaController.Callback
     public final void onSessionDestroyed() {
-        androidx.mediarouter.app.r rVar = (androidx.mediarouter.app.r) this.a.get();
-        if (rVar != null) {
-            rVar.d();
+        androidx.mediarouter.app.q qVar = (androidx.mediarouter.app.q) this.a.get();
+        if (qVar != null) {
+            qVar.d();
         }
     }
 
     @Override // android.media.session.MediaController.Callback
     public final void onSessionEvent(String str, Bundle bundle) {
-        b0.a(bundle);
+        a0.k(bundle);
     }
 }

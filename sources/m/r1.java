@@ -15,7 +15,7 @@ import java.lang.reflect.InvocationTargetException;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public class r1 extends ListView {
     public final Rect a;
@@ -28,8 +28,8 @@ public class r1 extends ListView {
     public boolean n;
     public final boolean r;
     public boolean s;
-    public u0.d v;
-    public a5.d w;
+    public u0.e w;
+    public androidx.activity.i x;
 
     public r1(Context context, boolean z10) {
         super(context, null, R.attr.dropDownListViewStyle);
@@ -115,21 +115,21 @@ public class r1 extends ListView {
                         }
                     }
                     if (z10) {
-                        u0.d dVar = this.v;
-                        if (dVar != null) {
-                            if (dVar.F) {
-                                dVar.d();
+                        u0.e eVar = this.w;
+                        if (eVar != null) {
+                            if (eVar.F) {
+                                eVar.d();
                             }
-                            dVar.F = false;
+                            eVar.F = false;
                         }
                     } else {
-                        if (this.v == null) {
-                            this.v = new u0.d(this);
+                        if (this.w == null) {
+                            this.w = new u0.e(this);
                         }
-                        u0.d dVar2 = this.v;
-                        boolean z13 = dVar2.F;
-                        dVar2.F = true;
-                        dVar2.onTouch(this, motionEvent);
+                        u0.e eVar2 = this.w;
+                        boolean z13 = eVar2.F;
+                        eVar2.F = true;
+                        eVar2.onTouch(this, motionEvent);
                     }
                     return z10;
                 }
@@ -151,12 +151,12 @@ public class r1 extends ListView {
         }
         int findPointerIndex = motionEvent.findPointerIndex(i10);
         if (findPointerIndex >= 0) {
-            int x9 = (int) motionEvent.getX(findPointerIndex);
+            int x10 = (int) motionEvent.getX(findPointerIndex);
             int y3 = (int) motionEvent.getY(findPointerIndex);
-            int pointToPosition = pointToPosition(x9, y3);
+            int pointToPosition = pointToPosition(x10, y3);
             if (pointToPosition != -1) {
                 View childAt3 = getChildAt(pointToPosition - getFirstVisiblePosition());
-                float f7 = x9;
+                float f7 = x10;
                 float f10 = y3;
                 this.s = true;
                 m1.a(this, f7, f10);
@@ -210,8 +210,8 @@ public class r1 extends ListView {
                         if (field2 != null) {
                             try {
                                 field2.set(this, Boolean.valueOf(z15));
-                            } catch (IllegalAccessException e10) {
-                                e10.printStackTrace();
+                            } catch (IllegalAccessException e7) {
+                                e7.printStackTrace();
                             }
                         }
                     }
@@ -280,7 +280,7 @@ public class r1 extends ListView {
 
     @Override // android.widget.AbsListView, android.view.ViewGroup, android.view.View
     public final void drawableStateChanged() {
-        if (this.w != null) {
+        if (this.x != null) {
             return;
         }
         super.drawableStateChanged();
@@ -316,7 +316,7 @@ public class r1 extends ListView {
 
     @Override // android.widget.ListView, android.widget.AbsListView, android.widget.AdapterView, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
-        this.w = null;
+        this.x = null;
         super.onDetachedFromWindow();
     }
 
@@ -327,10 +327,10 @@ public class r1 extends ListView {
             return super.onHoverEvent(motionEvent);
         }
         int actionMasked = motionEvent.getActionMasked();
-        if (actionMasked == 10 && this.w == null) {
-            a5.d dVar = new a5.d(this, 29);
-            this.w = dVar;
-            post(dVar);
+        if (actionMasked == 10 && this.x == null) {
+            androidx.activity.i iVar = new androidx.activity.i(this, 27);
+            this.x = iVar;
+            post(iVar);
         }
         boolean onHoverEvent = super.onHoverEvent(motionEvent);
         if (actionMasked != 9 && actionMasked != 7) {
@@ -351,8 +351,8 @@ public class r1 extends ListView {
                         n1.c.invoke(this, Integer.valueOf(pointToPosition));
                     } catch (IllegalAccessException e) {
                         e.printStackTrace();
-                    } catch (InvocationTargetException e10) {
-                        e10.printStackTrace();
+                    } catch (InvocationTargetException e7) {
+                        e7.printStackTrace();
                     }
                 }
             }
@@ -369,11 +369,11 @@ public class r1 extends ListView {
         if (motionEvent.getAction() == 0) {
             this.f = pointToPosition((int) motionEvent.getX(), (int) motionEvent.getY());
         }
-        a5.d dVar = this.w;
-        if (dVar != null) {
-            r1 r1Var = (r1) dVar.b;
-            r1Var.w = null;
-            r1Var.removeCallbacks(dVar);
+        androidx.activity.i iVar = this.x;
+        if (iVar != null) {
+            r1 r1Var = (r1) iVar.b;
+            r1Var.x = null;
+            r1Var.removeCallbacks(iVar);
         }
         return super.onTouchEvent(motionEvent);
     }

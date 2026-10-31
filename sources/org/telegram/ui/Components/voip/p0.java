@@ -1,43 +1,26 @@
 package org.telegram.ui.Components.voip;
 
-import android.app.Activity;
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.view.View;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes4.dex */
-public final class p0 extends TextView {
-    public final RectF a;
-    public final r1 b;
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final class p0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ s0 a;
 
-    public p0(Activity activity, r1 r1Var) {
-        super(activity);
-        this.a = new RectF();
-        this.b = r1Var;
-        r1Var.a(this);
-        setText(LocaleController.getString(R.string.VoipHideEmoji));
-        setContentDescription(LocaleController.getString(R.string.VoipHideEmoji));
-        setTextColor(-1);
-        setTypeface(AndroidUtilities.bold());
-        setPadding(AndroidUtilities.dp(14.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(14.0f), AndroidUtilities.dp(4.0f));
+    public p0(s0 s0Var) {
+        this.a = s0Var;
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        float width = getWidth();
-        float height = getHeight();
-        RectF rectF = this.a;
-        rectF.set(0.0f, 0.0f, width, height);
-        float x9 = ((View) getParent()).getX() + getX();
-        float y3 = ((View) getParent()).getY() + getY();
-        r1 r1Var = this.b;
-        r1Var.d(x9, y3);
-        canvas.drawRoundRect(rectF, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), r1Var.b());
-        super.onDraw(canvas);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        s0 s0Var = this.a;
+        s0Var.b.removeViewImmediate(s0Var.d);
+        s0Var.f.d.release();
+        s0Var.w = null;
+        s0Var.x = true;
+        s0Var.y = false;
+        s0Var.J = null;
+        s0Var.H = false;
     }
 }

@@ -1,48 +1,53 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class j7 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ m8 b;
-    public final /* synthetic */ l80 c;
+import android.content.Context;
 
-    public /* synthetic */ j7(m8 m8Var, l80 l80Var, int i10) {
-        this.a = i10;
-        this.b = m8Var;
-        this.c = l80Var;
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final class j7 extends tk0 {
+    public boolean e3;
+    public final /* synthetic */ w7 f3;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public j7(w7 w7Var, Context context) {
+        super(context, null);
+        this.f3 = w7Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                m8 m8Var = this.b;
-                m8Var.getClass();
-                this.c.u();
-                m8Var.A0(1);
-                break;
-            case 1:
-                m8 m8Var2 = this.b;
-                m8Var2.getClass();
-                this.c.u();
-                m8Var2.A0(2);
-                break;
-            case 2:
-                m8 m8Var3 = this.b;
-                m8Var3.getClass();
-                this.c.u();
-                m8Var3.A0(4);
-                break;
-            case 3:
-                m8 m8Var4 = this.b;
-                m8Var4.getClass();
-                this.c.u();
-                m8Var4.A0(7);
-                break;
-            default:
-                m8.n(this.b, this.c);
-                break;
+    @Override // org.telegram.ui.Components.tk0
+    public final boolean E0(float f7) {
+        w7 w7Var = this.f3;
+        return f7 < w7Var.u1.getY() - ((float) w7Var.o1.getTop());
+    }
+
+    @Override // org.telegram.ui.Components.tk0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        w7 w7Var = this.f3;
+        int i14 = w7Var.i2;
+        if (i14 != -1 && !w7Var.j1.n0) {
+            this.e3 = true;
+            w7Var.p1.h1(i14, w7Var.j2 - w7Var.o1.getPaddingTop());
+            super.onLayout(false, i10, i11, i12, i13);
+            this.e3 = false;
+            w7Var.i2 = -1;
+            return;
         }
+        if (w7Var.h2) {
+            w7Var.h2 = false;
+            this.e3 = true;
+            if (w7Var.S0(true)) {
+                super.onLayout(false, i10, i11, i12, i13);
+            }
+            this.e3 = false;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.tk0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.e3) {
+            return;
+        }
+        super.requestLayout();
     }
 }

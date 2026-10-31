@@ -1,20 +1,20 @@
 package x2;
 
-import a8.ed;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.util.SparseArray;
 import android.util.SparseBooleanArray;
 import b2.t1;
 import b2.u1;
-import e2.n0;
+import e2.l0;
 import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.Map;
-import org.telegram.messenger.MediaDataController;
+import th.m1;
 import u2.r1;
+import v7.c8;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class j extends u1 {
     public static final j F0 = new j(new i());
@@ -48,8 +48,8 @@ public final class j extends u1 {
     public final boolean z0;
 
     static {
-        String str = n0.a;
-        G0 = Integer.toString(MediaDataController.MAX_STYLE_RUNS_COUNT, 36);
+        String str = l0.a;
+        G0 = Integer.toString(1000, 36);
         H0 = Integer.toString(1001, 36);
         I0 = Integer.toString(1002, 36);
         J0 = Integer.toString(1003, 36);
@@ -129,12 +129,12 @@ public final class j extends u1 {
                 arrayList2.add((r1) entry.getKey());
                 arrayList.add(Integer.valueOf(keyAt));
             }
-            c10.putIntArray(Q0, ed.f(arrayList));
-            c10.putParcelableArrayList(R0, e2.e.h(arrayList2, new vg.d(10)));
+            c10.putIntArray(Q0, c8.f(arrayList));
+            c10.putParcelableArrayList(R0, e2.e.h(arrayList2, new m1(19)));
             SparseArray<? extends Parcelable> sparseArray3 = new SparseArray<>(sparseArray.size());
             if (sparseArray.size() > 0) {
                 sparseArray.keyAt(0);
-                a1.g.B(sparseArray.valueAt(0));
+                a1.g.y(sparseArray.valueAt(0));
                 throw null;
             }
             c10.putSparseParcelableArray(S0, sparseArray3);

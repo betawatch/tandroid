@@ -1,61 +1,17 @@
 package hg;
 
-import android.text.TextUtils;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class b {
-    public final String a;
-    public final String b;
+public abstract class b {
+    public int a;
+    public boolean b;
 
-    public b(String str, String str2) {
-        this.a = str;
-        this.b = str2;
+    public b(int i10, boolean z10) {
+        this.a = i10;
+        this.b = z10;
     }
 
-    public static boolean a(b bVar, b bVar2) {
-        if (bVar == bVar2) {
-            return true;
-        }
-        if (bVar == null || bVar2 == null) {
-            return false;
-        }
-        return bVar.equals(bVar2);
-    }
-
-    public static b c(TLRPC.ChatTheme chatTheme) {
-        if (chatTheme instanceof TLRPC.TL_chatTheme) {
-            return new b(((TLRPC.TL_chatTheme) chatTheme).emoticon, null);
-        }
-        if (chatTheme instanceof TLRPC.TL_chatThemeUniqueGift) {
-            return new b(null, ((TLRPC.TL_chatThemeUniqueGift) chatTheme).gift.slug);
-        }
-        return null;
-    }
-
-    public static b d(String str) {
-        return new b(str, null);
-    }
-
-    public final boolean b() {
-        return TextUtils.isEmpty(this.a) && TextUtils.isEmpty(this.b);
-    }
-
-    public final boolean equals(Object obj) {
-        if (obj instanceof b) {
-            b bVar = (b) obj;
-            if (TextUtils.equals(this.a, bVar.a) && TextUtils.equals(this.b, bVar.b)) {
-                return true;
-            }
-        }
+    public boolean a(b bVar) {
         return false;
-    }
-
-    public final int hashCode() {
-        String str = this.a;
-        int hashCode = str != null ? str.hashCode() : 0;
-        String str2 = this.b;
-        return (str2 != null ? str2.hashCode() : 0) ^ hashCode;
     }
 }

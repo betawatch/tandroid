@@ -3,17 +3,17 @@ package m4;
 import android.os.Bundle;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class w {
-    public final n4.t a;
+    public final n4.r a;
     public final int b;
     public final int c;
     public final v d;
     public final Bundle e;
 
-    public w(n4.t tVar, int i10, int i11, boolean z10, v vVar, Bundle bundle) {
-        this.a = tVar;
+    public w(n4.r rVar, int i10, int i11, boolean z10, v vVar, Bundle bundle) {
+        this.a = rVar;
         this.b = i10;
         this.c = i11;
         this.d = vVar;
@@ -39,9 +39,9 @@ public final class w {
 
     public final String toString() {
         StringBuilder sb2 = new StringBuilder("ControllerInfo {pkg=");
-        n4.t tVar = this.a;
-        sb2.append(tVar.a.a);
+        n4.r rVar = this.a;
+        sb2.append(rVar.a.a);
         sb2.append(", uid=");
-        return a1.g.n(tVar.a.c, "}", sb2);
+        return a1.g.p(sb2, rVar.a.c, "}");
     }
 }

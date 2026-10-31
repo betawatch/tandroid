@@ -1,43 +1,94 @@
 package org.telegram.ui.web;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class y implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ a1 b;
-    public final /* synthetic */ String c;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
+import org.telegram.messenger.gs;
+import org.telegram.messenger.vp;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_keyboard;
+import org.telegram.ui.ay;
+import org.telegram.ui.pb1;
+import org.telegram.ui.ux;
+import org.telegram.ui.vh0;
 
-    public /* synthetic */ y(a1 a1Var, String str, int i10) {
-        this.a = i10;
-        this.b = a1Var;
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class y implements vh0, ux {
+    public final /* synthetic */ z0 a;
+    public final /* synthetic */ boolean[] b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ TL_keyboard.TL_buttonTypeRequestPeer d;
+    public final /* synthetic */ x0 e;
+
+    public /* synthetic */ y(z0 z0Var, boolean[] zArr, String str, TL_keyboard.TL_buttonTypeRequestPeer tL_buttonTypeRequestPeer, x0 x0Var) {
+        this.a = z0Var;
+        this.b = zArr;
         this.c = str;
+        this.d = tL_buttonTypeRequestPeer;
+        this.e = x0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                x0 x0Var = this.b.a;
-                if (x0Var != null) {
-                    x0Var.d(this.c);
-                    break;
-                }
-                break;
-            default:
-                a1 a1Var = this.b;
-                a1Var.N = false;
-                a1Var.P = 0L;
-                a1Var.T = false;
-                String str = this.c;
-                a1Var.b = str;
-                a1Var.c();
-                x0 x0Var2 = a1Var.a;
-                if (x0Var2 != null) {
-                    x0Var2.onResume();
-                    a1Var.a.loadUrl(str);
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.ux
+    public /* synthetic */ boolean G() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.ux
+    public /* synthetic */ boolean N(ay ayVar) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.vh0
+    public void a(ArrayList arrayList) {
+        if (arrayList.isEmpty()) {
+            return;
         }
+        int i10 = 0;
+        this.b[0] = true;
+        TLRPC.TL_messages_sendBotRequestedPeer tL_messages_sendBotRequestedPeer = new TLRPC.TL_messages_sendBotRequestedPeer();
+        z0 z0Var = this.a;
+        vp.r1(z0Var.M);
+        tL_messages_sendBotRequestedPeer.peer = vp.m1(z0Var.U);
+        String str = this.c;
+        tL_messages_sendBotRequestedPeer.webapp_req_id = str;
+        tL_messages_sendBotRequestedPeer.button_id = this.d.button_id;
+        int size = arrayList.size();
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            tL_messages_sendBotRequestedPeer.requested_peers.add(vp.r1(z0Var.M).i1(((Long) obj).longValue()));
+        }
+        ConnectionsManager.getInstance(z0Var.M).sendRequestTyped(tL_messages_sendBotRequestedPeer, new a3.b(1), new s(z0Var, this.e, str, 2));
+    }
+
+    @Override // org.telegram.ui.ux
+    public boolean y(ay ayVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, pb1 pb1Var) {
+        if (!arrayList.isEmpty()) {
+            int i12 = 0;
+            this.b[0] = true;
+            TLRPC.TL_messages_sendBotRequestedPeer tL_messages_sendBotRequestedPeer = new TLRPC.TL_messages_sendBotRequestedPeer();
+            z0 z0Var = this.a;
+            vp.r1(z0Var.M);
+            tL_messages_sendBotRequestedPeer.peer = vp.m1(z0Var.U);
+            String str = this.c;
+            tL_messages_sendBotRequestedPeer.webapp_req_id = str;
+            tL_messages_sendBotRequestedPeer.button_id = this.d.button_id;
+            HashSet hashSet = new HashSet();
+            int size = arrayList.size();
+            while (i12 < size) {
+                Object obj = arrayList.get(i12);
+                i12++;
+                hashSet.add(Long.valueOf(((gs) obj).a));
+            }
+            Iterator it = hashSet.iterator();
+            while (it.hasNext()) {
+                tL_messages_sendBotRequestedPeer.requested_peers.add(vp.r1(z0Var.M).i1(((Long) it.next()).longValue()));
+            }
+            ConnectionsManager.getInstance(z0Var.M).sendRequestTyped(tL_messages_sendBotRequestedPeer, new a3.b(1), new s(z0Var, this.e, str, 1));
+        }
+        ayVar.finishFragment();
+        return true;
     }
 }

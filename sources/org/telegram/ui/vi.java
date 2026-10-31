@@ -1,71 +1,26 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
+import android.app.Activity;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class vi extends qf.c {
-    public final /* synthetic */ int d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ org.telegram.ui.Cells.s1 f;
-    public final /* synthetic */ wn g;
+public final class vi extends org.telegram.ui.Components.xn {
+    public final /* synthetic */ un M;
 
-    public /* synthetic */ vi(wn wnVar, int i10, org.telegram.ui.Cells.s1 s1Var, int i11) {
-        this.d = i11;
-        this.g = wnVar;
-        this.e = i10;
-        this.f = s1Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public vi(un unVar, Activity activity, int i10, TLRPC.Document document, org.telegram.ui.ActionBar.p6 p6Var) {
+        super(activity, i10, document, p6Var);
+        this.M = unVar;
     }
 
-    @Override // qf.c
-    public final void c(boolean z10) {
-        switch (this.d) {
-            case 0:
-                if (!z10) {
-                    AndroidUtilities.runOnUIThread(new ag.r0(this, this.e, 23), 240L);
-                    break;
-                }
-                break;
-            case 1:
-                if (!z10) {
-                    AndroidUtilities.runOnUIThread(new ag.r0(this, this.e, 26), 240L);
-                    break;
-                }
-                break;
-            default:
-                if (!z10) {
-                    AndroidUtilities.runOnUIThread(new ag.r0(this, this.e, 27), 240L);
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // qf.c
-    public final void d() {
-        switch (this.d) {
-            case 0:
-                int i10 = this.e;
-                wn wnVar = this.g;
-                wnVar.Wb = i10;
-                wnVar.Xb = 6;
-                this.f.invalidate();
-                break;
-            case 1:
-                int i11 = this.e;
-                wn wnVar2 = this.g;
-                wnVar2.Wb = i11;
-                wnVar2.Xb = 5;
-                wnVar2.Zb = null;
-                this.f.invalidate();
-                break;
-            default:
-                int i12 = this.e;
-                wn wnVar3 = this.g;
-                wnVar3.Wb = i12;
-                wnVar3.Xb = 7;
-                this.f.invalidate();
-                break;
-        }
+    @Override // android.widget.LinearLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        float y3 = getY();
+        un unVar = this.M;
+        float y10 = unVar.f1.getY() + y3;
+        this.J = unVar.l1.getBackgroundSizeY();
+        this.I = y10;
     }
 }

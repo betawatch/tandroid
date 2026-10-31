@@ -5,37 +5,28 @@ import android.content.Context;
 import android.content.Intent;
 import android.telephony.TelephonyManager;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public class CallReceiver extends BroadcastReceiver {
-    public static void checkLastReceivedCall() {
-        String lastReceivedCall = getLastReceivedCall();
-        if (lastReceivedCall != null) {
-            NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didReceiveCall, lastReceivedCall);
-        }
-    }
+    public static final /* synthetic */ int a = 0;
 
-    public static void clearLastCall() {
-        SharedConfig.getPreferences().edit().remove("last_call_phone_number").remove("last_call_time").apply();
-    }
-
-    public static String getLastReceivedCall() {
-        String string = SharedConfig.getPreferences().getString("last_call_phone_number", null);
-        if (string == null) {
-            return null;
+    public static void a() {
+        String str = null;
+        String string = tz.q().getString("last_call_phone_number", null);
+        if (string != null && System.currentTimeMillis() - tz.q().getLong("last_call_time", 0L) < 54000000) {
+            str = string;
         }
-        if (System.currentTimeMillis() - SharedConfig.getPreferences().getLong("last_call_time", 0L) < 54000000) {
-            return string;
+        if (str != null) {
+            zs.e().k(zs.h4, str);
         }
-        return null;
     }
 
     @Override // android.content.BroadcastReceiver
-    public void onReceive(Context context, Intent intent) {
+    public final void onReceive(Context context, Intent intent) {
         if (intent.getAction().equals("android.intent.action.PHONE_STATE") && TelephonyManager.EXTRA_STATE_RINGING.equals(intent.getStringExtra("state"))) {
-            String d = kf.b.d(intent.getStringExtra("incoming_number"), false);
-            SharedConfig.getPreferences().edit().putString("last_call_phone_number", d).putLong("last_call_time", System.currentTimeMillis()).apply();
-            NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didReceiveCall, d);
+            String d = af.b.d(intent.getStringExtra("incoming_number"), false);
+            tz.q().edit().putString("last_call_phone_number", d).putLong("last_call_time", System.currentTimeMillis()).apply();
+            zs.e().k(zs.h4, d);
         }
     }
 }

@@ -1,20 +1,20 @@
 package t3;
 
 import a1.g;
-import a8.ed;
-import a8.wb;
 import b2.r0;
 import b2.t0;
 import b2.x;
+import v7.c8;
+import v7.r6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class a implements t0 {
     public final String a;
     public final String b;
 
     public a(String str, String str2) {
-        this.a = wb.d(str);
+        this.a = r6.d(str);
         this.b = str2;
     }
 
@@ -94,23 +94,23 @@ public final class a implements t0 {
         String str2 = this.b;
         switch (c10) {
             case 0:
-                Integer g7 = ed.g(str2);
-                if (g7 != null) {
-                    r0Var.p = g7;
+                Integer g10 = c8.g(str2);
+                if (g10 != null) {
+                    r0Var.p = g10;
                     break;
                 }
                 break;
             case 1:
-                Integer g10 = ed.g(str2);
-                if (g10 != null) {
-                    r0Var.D = g10;
+                Integer g11 = c8.g(str2);
+                if (g11 != null) {
+                    r0Var.D = g11;
                     break;
                 }
                 break;
             case 2:
-                Integer g11 = ed.g(str2);
-                if (g11 != null) {
-                    r0Var.o = g11;
+                Integer g12 = c8.g(str2);
+                if (g12 != null) {
+                    r0Var.o = g12;
                     break;
                 }
                 break;
@@ -127,9 +127,9 @@ public final class a implements t0 {
                 r0Var.g = str2;
                 break;
             case 7:
-                Integer g12 = ed.g(str2);
-                if (g12 != null) {
-                    r0Var.C = g12;
+                Integer g13 = c8.g(str2);
+                if (g13 != null) {
+                    r0Var.C = g13;
                     break;
                 }
                 break;

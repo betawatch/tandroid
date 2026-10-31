@@ -1,89 +1,87 @@
 package org.telegram.ui;
 
-import android.content.ActivityNotFoundException;
 import android.content.Context;
-import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.Point;
+import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
-import android.webkit.RenderProcessGoneDetail;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class bo0 extends WebViewClient {
-    public final /* synthetic */ Context a;
-    public final /* synthetic */ ro0 b;
+public final class bo0 extends org.telegram.ui.ActionBar.k2 {
+    public Bitmap a;
+    public BitmapDrawable b;
+    public ao0 c;
+    public zn0 d;
+    public boolean e;
+    public boolean f;
 
-    public bo0(ro0 ro0Var, Context context) {
-        this.b = ro0Var;
-        this.a = context;
+    @Override // org.telegram.ui.ActionBar.k2
+    public final View createView(Context context) {
+        this.actionBar.setBackgroundColor(-13421773);
+        this.actionBar.C(-12763843, false);
+        this.actionBar.setTitleColor(-1);
+        this.actionBar.D(-1, false);
+        this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
+        this.actionBar.setAllowOverlayTitle(true);
+        this.actionBar.setTitle(org.telegram.messenger.cd.L0(2131751699, null));
+        this.actionBar.setActionBarMenuOnItemClick(new t60(this, 14));
+        this.actionBar.p().h(1, R.drawable.ic_ab_done, org.telegram.messenger.cd.L0(2131751355, null), org.telegram.messenger.i0.L(56.0f));
+        zn0 zn0Var = new zn0(this, context);
+        this.d = zn0Var;
+        this.fragmentView = zn0Var;
+        zn0Var.G = getArguments().getBoolean("freeform", false);
+        this.fragmentView.setLayoutParams(new FrameLayout.LayoutParams(-1, -1));
+        return this.fragmentView;
     }
 
-    @Override // android.webkit.WebViewClient
-    public final void onPageFinished(WebView webView, String str) {
-        super.onPageFinished(webView, str);
-        ro0 ro0Var = this.b;
-        ro0Var.z0 = false;
-        ro0Var.I0(true, false);
-        ro0Var.L0();
+    @Override // org.telegram.ui.ActionBar.k2
+    public final boolean isSwipeBackEnabled(MotionEvent motionEvent) {
+        return false;
     }
 
-    @Override // android.webkit.WebViewClient
-    public final boolean onRenderProcessGone(WebView webView, RenderProcessGoneDetail renderProcessGoneDetail) {
-        ro0 ro0Var = this.b;
-        try {
-            if (!AndroidUtilities.isSafeToShow(ro0Var.getParentActivity())) {
-                return true;
+    @Override // org.telegram.ui.ActionBar.k2
+    public final boolean onFragmentCreate() {
+        int max;
+        if (this.a == null) {
+            String string = getArguments().getString("photoPath");
+            Uri uri = (Uri) getArguments().getParcelable("photoUri");
+            if (string == null && uri == null) {
+                return false;
             }
-            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(ro0Var.getParentActivity(), 0, ro0Var.Y0);
-            alertDialog$Builder.a.R = LocaleController.getString(R.string.ChromeCrashTitle);
-            alertDialog$Builder.a.T = AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.ChromeCrashMessage), new nj0(this, 9));
-            alertDialog$Builder.k(LocaleController.getString(R.string.OK), null);
-            alertDialog$Builder.p();
-            return true;
-        } catch (Exception e) {
-            FileLog.e(e);
-            return false;
-        }
-    }
-
-    @Override // android.webkit.WebViewClient
-    public final boolean shouldOverrideUrlLoading(WebView webView, String str) {
-        Uri parse;
-        boolean equals;
-        ro0 ro0Var;
-        try {
-            parse = Uri.parse(str);
-            equals = "t.me".equals(parse.getHost());
-            ro0Var = this.b;
-        } catch (Exception unused) {
-        }
-        if (equals) {
-            ro0Var.u0();
-            return true;
-        }
-        if (!ro0.h1.contains(parse.getScheme())) {
-            if (!ro0.g1.contains(parse.getScheme())) {
-                try {
-                    if (ro0Var.getParentActivity() != null) {
-                        ro0Var.getParentActivity().startActivityForResult(new Intent("android.intent.action.VIEW", parse), 210);
-                        return true;
-                    }
-                } catch (ActivityNotFoundException unused2) {
-                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(this.a);
-                    alertDialog$Builder.a.R = ro0Var.p0;
-                    alertDialog$Builder.a.T = LocaleController.getString(R.string.PaymentAppNotFoundForDeeplink);
-                    alertDialog$Builder.k(LocaleController.getString(R.string.OK), null);
-                    alertDialog$Builder.p();
-                }
+            if (string != null && !sc.e.x(string)) {
+                return false;
             }
-            return false;
+            if (org.telegram.messenger.i0.Q1()) {
+                max = org.telegram.messenger.i0.L(520.0f);
+            } else {
+                Point point = org.telegram.messenger.i0.q;
+                max = Math.max(point.x, point.y);
+            }
+            float f7 = max;
+            Bitmap K = org.telegram.messenger.hc.K(string, uri, f7, f7, true);
+            this.a = K;
+            if (K == null) {
+                return false;
+            }
         }
+        this.b = new BitmapDrawable(this.a);
+        super.onFragmentCreate();
         return true;
+    }
+
+    @Override // org.telegram.ui.ActionBar.k2
+    public final void onFragmentDestroy() {
+        super.onFragmentDestroy();
+        Bitmap bitmap = this.a;
+        if (bitmap != null && !this.e) {
+            bitmap.recycle();
+            this.a = null;
+        }
+        this.b = null;
     }
 }

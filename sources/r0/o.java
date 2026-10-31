@@ -1,7 +1,58 @@
 package r0;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+import android.view.View;
+import android.view.ViewTreeObserver;
+
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public interface o {
-    g a(g gVar);
+public final class o implements ViewTreeObserver.OnPreDrawListener, View.OnAttachStateChangeListener {
+    public final View a;
+    public ViewTreeObserver b;
+    public final Runnable c;
+
+    public o(View view, Runnable runnable) {
+        this.a = view;
+        this.b = view.getViewTreeObserver();
+        this.c = runnable;
+    }
+
+    public static void a(View view, Runnable runnable) {
+        if (view == null) {
+            throw new NullPointerException("view == null");
+        }
+        o oVar = new o(view, runnable);
+        view.getViewTreeObserver().addOnPreDrawListener(oVar);
+        view.addOnAttachStateChangeListener(oVar);
+    }
+
+    @Override // android.view.ViewTreeObserver.OnPreDrawListener
+    public final boolean onPreDraw() {
+        boolean isAlive = this.b.isAlive();
+        View view = this.a;
+        if (isAlive) {
+            this.b.removeOnPreDrawListener(this);
+        } else {
+            view.getViewTreeObserver().removeOnPreDrawListener(this);
+        }
+        view.removeOnAttachStateChangeListener(this);
+        this.c.run();
+        return true;
+    }
+
+    @Override // android.view.View.OnAttachStateChangeListener
+    public final void onViewAttachedToWindow(View view) {
+        this.b = view.getViewTreeObserver();
+    }
+
+    @Override // android.view.View.OnAttachStateChangeListener
+    public final void onViewDetachedFromWindow(View view) {
+        boolean isAlive = this.b.isAlive();
+        View view2 = this.a;
+        if (isAlive) {
+            this.b.removeOnPreDrawListener(this);
+        } else {
+            view2.getViewTreeObserver().removeOnPreDrawListener(this);
+        }
+        view2.removeOnAttachStateChangeListener(this);
+    }
 }

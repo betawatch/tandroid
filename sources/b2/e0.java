@@ -1,6 +1,6 @@
 package b2;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public class e0 {
     public static final e0 i = new e0(new d0());
@@ -22,8 +22,8 @@ public class e0 {
     public final boolean h;
 
     public e0(d0 d0Var) {
-        this.a = e2.n0.h0(d0Var.a);
-        this.c = e2.n0.h0(d0Var.b);
+        this.a = e2.l0.h0(d0Var.a);
+        this.c = e2.l0.h0(d0Var.b);
         this.b = d0Var.a;
         this.d = d0Var.b;
         this.e = d0Var.c;

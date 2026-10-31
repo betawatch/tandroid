@@ -1,52 +1,88 @@
 package bi;
 
-import org.telegram.tgnet.TLObject;
+import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.messenger.ef;
+import org.telegram.messenger.zs;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.TwoStepVerificationActivity;
+import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
+import org.telegram.ui.Components.ai;
+import org.telegram.ui.Components.bi;
+import org.telegram.ui.Components.mg;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class y1 implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ h7 b;
-    public final /* synthetic */ TLRPC.TL_error c;
-    public final /* synthetic */ TwoStepVerificationActivity d;
-    public final /* synthetic */ TLObject e;
-    public final /* synthetic */ boolean f;
+public final class y1 implements ai {
+    public final /* synthetic */ bi a;
+    public final /* synthetic */ k2 b;
 
-    public /* synthetic */ y1(h7 h7Var, TLObject tLObject, TwoStepVerificationActivity twoStepVerificationActivity, boolean z10, TLRPC.TL_error tL_error) {
-        this.b = h7Var;
-        this.e = tLObject;
-        this.d = twoStepVerificationActivity;
-        this.f = z10;
-        this.c = tL_error;
+    public y1(k2 k2Var, bi biVar) {
+        this.b = k2Var;
+        this.a = biVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        TwoStepVerificationActivity twoStepVerificationActivity;
-        switch (this.a) {
-            case 0:
-                h7.X0(this.b, this.e, this.d, this.f, this.c);
-                break;
-            default:
-                if (this.c == null && (twoStepVerificationActivity = this.d) != null) {
-                    TL_account.Password password = (TL_account.Password) this.e;
-                    twoStepVerificationActivity.I = password;
-                    TwoStepVerificationActivity.n0(password);
-                    this.b.I2(twoStepVerificationActivity.m0(), twoStepVerificationActivity, this.f);
+    @Override // org.telegram.ui.Components.ai
+    public final void C(mg mgVar) {
+        zs.f(this.b.getCurrentAccount()).d(mgVar);
+    }
+
+    @Override // org.telegram.ui.Components.ai
+    public final boolean D() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.ai
+    public final void H0(int i10, boolean z10, boolean z11, int i11, int i12, long j10, boolean z12, boolean z13, long j11) {
+        bi biVar = this.a;
+        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = biVar.a2;
+        k2 k2Var = this.b;
+        if (i10 == 7 || i10 == 8) {
+            HashMap<Object, Object> selectedPhotos = chatAttachAlertPhotoLayout.getSelectedPhotos();
+            ArrayList<Object> selectedPhotosOrder = chatAttachAlertPhotoLayout.getSelectedPhotosOrder();
+            d4 d4Var = k2Var.P;
+            a aVar = d4Var.i4;
+            d4Var.i4 = null;
+            int i13 = 0;
+            while (true) {
+                if (i13 >= selectedPhotosOrder.size()) {
                     break;
                 }
-                break;
+                Object obj = selectedPhotos.get(selectedPhotosOrder.get(i13));
+                if (!(obj instanceof ef)) {
+                    i13++;
+                } else if (aVar != null) {
+                    k2Var.P.W1(aVar, (ef) obj);
+                } else {
+                    k2Var.P.i2((ef) obj);
+                }
+            }
         }
+        k2Var.P.i4 = null;
+        biVar.a(true);
     }
 
-    public /* synthetic */ y1(h7 h7Var, TLRPC.TL_error tL_error, TwoStepVerificationActivity twoStepVerificationActivity, TLObject tLObject, boolean z10) {
-        this.b = h7Var;
-        this.c = tL_error;
-        this.d = twoStepVerificationActivity;
-        this.e = tLObject;
-        this.f = z10;
+    @Override // org.telegram.ui.Components.ai
+    public final /* synthetic */ boolean a1() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.ai
+    public final /* synthetic */ void N() {
+    }
+
+    @Override // org.telegram.ui.Components.ai
+    public final void j0() {
+    }
+
+    @Override // org.telegram.ui.Components.ai
+    public final /* synthetic */ void n0(Object obj) {
+    }
+
+    @Override // org.telegram.ui.Components.ai
+    public final void v0(TLRPC.User user) {
+    }
+
+    @Override // org.telegram.ui.Components.ai
+    public final /* synthetic */ void b1(ArrayList arrayList, CharSequence charSequence, boolean z10, int i10, int i11, long j10, boolean z11, long j11) {
     }
 }

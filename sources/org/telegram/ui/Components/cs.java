@@ -1,78 +1,57 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
+import android.content.Context;
+import android.text.SpannableStringBuilder;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class cs extends Drawable {
-    public final Drawable a;
-    public final Drawable b;
-    public float c;
-    public float d = 255.0f;
+public final /* synthetic */ class cs implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Context b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.p6 c;
 
-    public cs(Drawable drawable, Drawable drawable2) {
-        this.a = drawable;
-        this.b = drawable2;
-        if (drawable != null) {
-            drawable.setCallback(new bs(this, 0));
+    public /* synthetic */ cs(int i10, Context context, org.telegram.ui.ActionBar.p6 p6Var) {
+        this.a = i10;
+        this.b = context;
+        this.c = p6Var;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        org.telegram.ui.ActionBar.p6 p6Var = this.c;
+        Context context = this.b;
+        switch (i10) {
+            case 0:
+                org.telegram.ui.ActionBar.x1[] x1VarArr = new org.telegram.ui.ActionBar.x1[1];
+                SpannableStringBuilder U2 = org.telegram.messenger.i0.U2(org.telegram.messenger.i0.K2(org.telegram.messenger.cd.L0(2131754175, null), p6Var, new as(x1VarArr, 0)));
+                Matcher matcher = Pattern.compile("@([a-zA-Z0-9_-]+)").matcher(U2);
+                while (matcher.find()) {
+                    U2.setSpan(new org.telegram.messenger.w(x1VarArr, context, matcher.group(1)), matcher.start(), matcher.end(), 33);
+                }
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, context, p6Var);
+                String L0 = org.telegram.messenger.cd.L0(2131754174, null);
+                org.telegram.ui.ActionBar.x1 x1Var = alertDialog$Builder.a;
+                x1Var.R = L0;
+                x1Var.T = U2;
+                alertDialog$Builder.k(org.telegram.messenger.cd.L0(2131754176, null), null);
+                x1VarArr[0] = alertDialog$Builder.p();
+                break;
+            case 1:
+                org.telegram.ui.Wallet.b6.H0(context, p6Var);
+                break;
+            default:
+                new rh.y7(context, p6Var).show();
+                break;
         }
-        if (drawable2 != null) {
-            drawable2.setCallback(new bs(this, 1));
-        }
     }
 
-    public final void a(float f7) {
-        this.c = f7;
-        invalidateSelf();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        int i10 = (int) ((1.0f - this.c) * this.d);
-        Drawable drawable = this.a;
-        drawable.setAlpha(i10);
-        int i11 = (int) (this.d * this.c);
-        Drawable drawable2 = this.b;
-        drawable2.setAlpha(i11);
-        if (i10 > 0) {
-            drawable.draw(canvas);
-        }
-        if (i11 > 0) {
-            drawable2.draw(canvas);
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return this.a.getIntrinsicHeight();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return this.a.getIntrinsicWidth();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -3;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void onBoundsChange(Rect rect) {
-        this.a.setBounds(rect);
-        this.b.setBounds(rect);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        this.d = i10;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        this.a.setColorFilter(colorFilter);
+    public /* synthetic */ cs(gs gsVar, org.telegram.ui.ActionBar.p6 p6Var, Context context) {
+        this.a = 0;
+        this.c = p6Var;
+        this.b = context;
     }
 }

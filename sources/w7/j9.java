@@ -1,49 +1,31 @@
 package w7;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class j9 extends k9 {
-    public final transient int c;
-    public final transient int d;
-    public final /* synthetic */ k9 e;
+public final class j9 {
+    public final String a;
+    public final String b;
+    public final String c;
+    public final String d;
+    public final sa e;
+    public final String f;
+    public final Boolean g;
+    public final Boolean h;
+    public final Boolean i;
+    public final Integer j;
+    public final Integer k;
 
-    public j9(k9 k9Var, int i10, int i11) {
-        this.e = k9Var;
-        this.c = i10;
-        this.d = i11;
-    }
-
-    @Override // java.util.List
-    public final Object get(int i10) {
-        z.a(i10, this.d);
-        return this.e.get(i10 + this.c);
-    }
-
-    @Override // w7.h9
-    public final int m() {
-        return this.e.n() + this.c + this.d;
-    }
-
-    @Override // w7.h9
-    public final int n() {
-        return this.e.n() + this.c;
-    }
-
-    @Override // w7.h9
-    public final Object[] o() {
-        return this.e.o();
-    }
-
-    @Override // w7.k9, java.util.List
-    /* renamed from: p, reason: merged with bridge method [inline-methods] */
-    public final k9 subList(int i10, int i11) {
-        z.b(i10, i11, this.d);
-        int i12 = this.c;
-        return this.e.subList(i10 + i12, i11 + i12);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.d;
+    public /* synthetic */ j9(v7.a8 a8Var) {
+        this.a = a8Var.a;
+        this.b = a8Var.b;
+        this.c = a8Var.c;
+        this.d = a8Var.d;
+        this.e = (sa) a8Var.k;
+        this.f = a8Var.e;
+        this.g = (Boolean) a8Var.f;
+        this.h = (Boolean) a8Var.g;
+        this.i = (Boolean) a8Var.h;
+        this.j = a8Var.i;
+        this.k = (Integer) a8Var.j;
     }
 }

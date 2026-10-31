@@ -10,13 +10,13 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
 import java.util.logging.Logger;
-import k1.l;
+import k1.m;
 import kotlin.jvm.internal.i;
 import m1.h;
 import m1.j;
 import m1.k;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class g {
     public static final g a = new g();
@@ -41,13 +41,13 @@ public final class g {
                 k value = (k) entry.getValue();
                 i.d(name, "name");
                 i.d(value, "value");
-                int x9 = value.x();
-                switch (x9 == 0 ? -1 : f.a[j.c(x9)]) {
+                int x10 = value.x();
+                switch (x10 == 0 ? -1 : f.a[j.c(x10)]) {
                     case -1:
                         throw new k1.a("Value case is null.", null);
                     case 0:
                     default:
-                        throw new androidx.car.app.j();
+                        throw new ad.d();
                     case 1:
                         bVar.b(new d(name), Boolean.valueOf(value.p()));
                         break;
@@ -73,7 +73,7 @@ public final class g {
                         d dVar2 = new d(name);
                         y k10 = value.w().k();
                         i.d(k10, "value.stringSet.stringsList");
-                        bVar.b(dVar2, kd.g.p(k10));
+                        bVar.b(dVar2, bd.i.p(k10));
                         break;
                     case 8:
                         throw new k1.a("Value not set.", null);
@@ -87,7 +87,7 @@ public final class g {
         }
     }
 
-    public final void b(Object obj, l lVar) {
+    public final void b(Object obj, m mVar) {
         w a2;
         Map unmodifiableMap = DesugarCollections.unmodifiableMap(((b) obj).a);
         i.d(unmodifiableMap, "unmodifiableMap(preferencesMap)");
@@ -153,7 +153,7 @@ public final class g {
         if (a10 > 4096) {
             a10 = 4096;
         }
-        androidx.datastore.preferences.protobuf.j jVar = new androidx.datastore.preferences.protobuf.j(lVar, a10);
+        androidx.datastore.preferences.protobuf.j jVar = new androidx.datastore.preferences.protobuf.j(mVar, a10);
         fVar.c(jVar);
         if (jVar.f > 0) {
             jVar.B();

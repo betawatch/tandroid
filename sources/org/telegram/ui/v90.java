@@ -1,39 +1,18 @@
 package org.telegram.ui;
 
-import java.util.regex.Pattern;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
+import android.view.View;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class v90 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ LaunchActivity b;
+public final class v90 implements View.OnLayoutChangeListener {
+    public boolean a;
 
-    public /* synthetic */ v90(LaunchActivity launchActivity, int i10) {
-        this.a = i10;
-        this.b = launchActivity;
-    }
-
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        int i10 = this.a;
-        LaunchActivity launchActivity = this.b;
-        switch (i10) {
-            case 0:
-                Pattern pattern = LaunchActivity.D1;
-                if (tLObject != null) {
-                    AndroidUtilities.runOnUIThread(new kz(23, launchActivity, (TL_account.Password) tLObject));
-                    break;
-                }
-                break;
-            default:
-                Pattern pattern2 = LaunchActivity.D1;
-                AndroidUtilities.runOnUIThread(new kz(19, launchActivity, tLObject));
-                break;
+    @Override // android.view.View.OnLayoutChangeListener
+    public final void onLayoutChange(View view, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17) {
+        boolean z10 = i13 - i11 > i12 - i10;
+        if (z10 != this.a) {
+            org.telegram.messenger.i0.g3(new org.telegram.ui.Components.voip.m0(this, 8));
+            this.a = z10;
         }
     }
 }

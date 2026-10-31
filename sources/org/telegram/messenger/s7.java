@@ -1,34 +1,38 @@
 package org.telegram.messenger;
 
-import android.content.SharedPreferences;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final /* synthetic */ class s7 implements RequestDelegate {
+public final /* synthetic */ class s7 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MediaDataController b;
-    public final /* synthetic */ SharedPreferences c;
+    public final /* synthetic */ b8 b;
+    public final /* synthetic */ String c;
 
-    public /* synthetic */ s7(MediaDataController mediaDataController, SharedPreferences sharedPreferences, int i10) {
+    public /* synthetic */ s7(b8 b8Var, String str, int i10) {
         this.a = i10;
-        this.b = mediaDataController;
-        this.c = sharedPreferences;
+        this.b = b8Var;
+        this.c = str;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$loadSavedReactions$241(this.c, tLObject, tL_error);
-                break;
-            case 1:
-                this.b.lambda$loadReplyIcons$245(this.c, tLObject, tL_error);
+                b8 b8Var = this.b;
+                m7 m7Var = (m7) b8Var.w.remove(this.c);
+                if (m7Var != null && ((ArrayList) m7Var.e1.d).remove(m7Var)) {
+                    Utilities.d.c(new b7(m7Var, 7));
+                    break;
+                }
                 break;
             default:
-                this.b.lambda$loadRestrictedStatusEmojis$247(this.c, tLObject, tL_error);
+                b8 b8Var2 = this.b;
+                m7 m7Var2 = (m7) b8Var2.w.remove(this.c);
+                if (m7Var2 != null && ((ArrayList) m7Var2.e1.d).remove(m7Var2)) {
+                    Utilities.d.c(new b7(m7Var2, 7));
+                    break;
+                }
                 break;
         }
     }

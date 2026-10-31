@@ -1,19 +1,18 @@
 package v0;
 
 import android.os.Bundle;
-import m4.w1;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public abstract class b {
     public final Bundle a;
     public final Bundle b;
-    public final w1 c;
+    public final m5.e c;
 
-    public b(Bundle bundle, Bundle bundle2, w1 w1Var) {
+    public b(Bundle bundle, Bundle bundle2, m5.e eVar) {
         this.a = bundle;
         this.b = bundle2;
-        this.c = w1Var;
+        this.c = eVar;
         bundle.putBoolean("androidx.credentials.BUNDLE_KEY_IS_AUTO_SELECT_ALLOWED", false);
         bundle.putBoolean("androidx.credentials.BUNDLE_KEY_PREFER_IMMEDIATELY_AVAILABLE_CREDENTIALS", false);
         bundle2.putBoolean("androidx.credentials.BUNDLE_KEY_IS_AUTO_SELECT_ALLOWED", false);

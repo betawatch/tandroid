@@ -1,30 +1,57 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class ij implements MessagesStorage.BooleanCallback {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ jj b;
+public final class ij extends org.telegram.ui.Components.q30 {
+    public final /* synthetic */ int I;
 
-    public ij(jj jjVar, boolean z10) {
-        this.b = jjVar;
-        this.a = z10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ ij(int i10, int i11, Context context, org.telegram.ui.ActionBar.p6 p6Var, boolean z10) {
+        super(i10, context, p6Var, z10);
+        this.I = i11;
     }
 
-    @Override // org.telegram.messenger.MessagesStorage.BooleanCallback
-    public final void run(boolean z10) {
-        wn wnVar = this.b.b;
-        if (z10) {
-            TLRPC.User user = wnVar.f;
-            boolean z11 = this.a;
-            if (user != null || z11) {
-                wnVar.getMessagesStorage().getMessagesCount(wnVar.j6, new hj(1, this, z11));
-                return;
-            }
+    @Override // org.telegram.ui.Components.q30
+    public int c() {
+        switch (this.I) {
+            case 0:
+                return org.telegram.messenger.i0.L(56.0f) / 2;
+            default:
+                return super.c();
         }
-        wnVar.Da(wnVar.p4, z10);
+    }
+
+    @Override // android.view.View
+    public void setVisibility(int i10) {
+        switch (this.I) {
+            case 1:
+                super.setVisibility(i10);
+                if (i10 != 0) {
+                    try {
+                        ((ViewGroup) getParent()).removeView(this);
+                        break;
+                    } catch (Exception unused) {
+                        return;
+                    }
+                }
+                break;
+            case 2:
+                super.setVisibility(i10);
+                if (i10 != 0) {
+                    try {
+                        ((ViewGroup) getParent()).removeView(this);
+                        break;
+                    } catch (Exception unused2) {
+                        return;
+                    }
+                }
+                break;
+            default:
+                super.setVisibility(i10);
+                break;
+        }
     }
 }

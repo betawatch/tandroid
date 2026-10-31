@@ -1,33 +1,46 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class f4 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
+import java.util.Iterator;
+import java.util.List;
+import org.telegram.tgnet.ResultCallback;
+import org.telegram.tgnet.TLRPC;
 
-    public /* synthetic */ f4(int i10, boolean z10) {
-        this.a = i10;
-        this.b = z10;
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes.dex */
+public final class f4 implements ResultCallback {
+    public final /* synthetic */ yf.b a;
+    public final /* synthetic */ org.telegram.ui.re b;
+
+    public f4(yf.b bVar, org.telegram.ui.re reVar) {
+        this.a = bVar;
+        this.b = reVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        boolean z10 = this.b;
-        switch (i10) {
-            case 0:
-                FingerprintController.generateNewKey(z10);
-                break;
-            case 1:
-                FingerprintController.lambda$generateNewKey$0(z10);
-                break;
-            case 2:
-                LiteMode.lambda$onPowerSaverApplied$1(z10);
-                break;
-            default:
-                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didSetNewTheme, Boolean.FALSE, Boolean.valueOf(z10));
-                break;
-        }
+    @Override // org.telegram.tgnet.ResultCallback
+    public final void onComplete(Object obj) {
+        org.telegram.ui.re reVar;
+        org.telegram.ui.ActionBar.y3 y3Var;
+        Iterator it = ((List) obj).iterator();
+        do {
+            boolean hasNext = it.hasNext();
+            reVar = this.b;
+            if (!hasNext) {
+                reVar.onComplete(null);
+                return;
+            }
+            y3Var = (org.telegram.ui.ActionBar.y3) it.next();
+        } while (!this.a.equals(y3Var.c));
+        y3Var.k();
+        reVar.onComplete(y3Var);
+    }
+
+    @Override // org.telegram.tgnet.ResultCallback
+    public final /* synthetic */ void onError(Throwable th2) {
+        org.telegram.tgnet.l.a(this, th2);
+    }
+
+    @Override // org.telegram.tgnet.ResultCallback
+    public final void onError(TLRPC.TL_error tL_error) {
+        this.b.onComplete(null);
     }
 }

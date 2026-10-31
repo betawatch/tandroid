@@ -19,20 +19,22 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 import f.a;
 import java.util.WeakHashMap;
-import k6.c;
-import l.k;
-import l.m;
-import l.y;
+import l.l;
+import l.n;
+import l.z;
+import li.k;
 import org.telegram.messenger.beta.R;
-import r0.i0;
+import org.telegram.tgnet.TLObject;
+import r0.h0;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public class ListMenuItemView extends LinearLayout implements y, AbsListView.SelectionBoundsAdjuster {
+public class ListMenuItemView extends LinearLayout implements z, AbsListView.SelectionBoundsAdjuster {
+    public final Drawable D;
     public final boolean E;
     public LayoutInflater F;
     public boolean G;
-    public m a;
+    public n a;
     public ImageView b;
     public RadioButton c;
     public TextView d;
@@ -42,10 +44,9 @@ public class ListMenuItemView extends LinearLayout implements y, AbsListView.Sel
     public ImageView n;
     public LinearLayout r;
     public final Drawable s;
-    public final int v;
-    public final Context w;
-    public boolean x;
-    public final Drawable y;
+    public final int w;
+    public final Context x;
+    public boolean y;
 
     public ListMenuItemView(Context context, AttributeSet attributeSet) {
         this(context, attributeSet, R.attr.listMenuViewStyle);
@@ -82,30 +83,30 @@ public class ListMenuItemView extends LinearLayout implements y, AbsListView.Sel
     /* JADX WARN: Removed duplicated region for block: B:13:0x003b  */
     /* JADX WARN: Removed duplicated region for block: B:22:0x005b  */
     /* JADX WARN: Removed duplicated region for block: B:49:0x011b  */
-    @Override // l.y
+    @Override // l.z
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void b(m mVar) {
+    public final void b(n nVar) {
         boolean z10;
         String sb2;
         boolean z11;
-        this.a = mVar;
-        boolean isVisible = mVar.isVisible();
-        k kVar = mVar.n;
+        this.a = nVar;
+        boolean isVisible = nVar.isVisible();
+        l lVar = nVar.n;
         int i10 = 0;
         setVisibility(isVisible ? 0 : 8);
-        setTitle(mVar.e);
-        setCheckable(mVar.isCheckable());
-        if (kVar.o()) {
-            if ((kVar.n() ? mVar.j : mVar.h) != 0) {
+        setTitle(nVar.e);
+        setCheckable(nVar.isCheckable());
+        if (lVar.o()) {
+            if ((lVar.n() ? nVar.j : nVar.h) != 0) {
                 z10 = true;
-                kVar.n();
+                lVar.n();
                 if (z10) {
-                    m mVar2 = this.a;
-                    k kVar2 = mVar2.n;
-                    if (kVar2.o()) {
-                        if ((kVar2.n() ? mVar2.j : mVar2.h) != 0) {
+                    n nVar2 = this.a;
+                    l lVar2 = nVar2.n;
+                    if (lVar2.o()) {
+                        if ((lVar2.n() ? nVar2.j : nVar2.h) != 0) {
                             z11 = true;
                         }
                     }
@@ -114,10 +115,10 @@ public class ListMenuItemView extends LinearLayout implements y, AbsListView.Sel
                 i10 = 8;
                 if (i10 == 0) {
                     TextView textView = this.f;
-                    m mVar3 = this.a;
-                    k kVar3 = mVar3.n;
-                    Context context = kVar3.a;
-                    char c10 = kVar3.n() ? mVar3.j : mVar3.h;
+                    n nVar3 = this.a;
+                    l lVar3 = nVar3.n;
+                    Context context = lVar3.a;
+                    char c10 = lVar3.n() ? nVar3.j : nVar3.h;
                     if (c10 == 0) {
                         sb2 = "";
                     } else {
@@ -126,13 +127,13 @@ public class ListMenuItemView extends LinearLayout implements y, AbsListView.Sel
                         if (ViewConfiguration.get(context).hasPermanentMenuKey()) {
                             sb3.append(resources.getString(R.string.abc_prepend_shortcut_label));
                         }
-                        int i11 = kVar3.n() ? mVar3.k : mVar3.i;
-                        m.c(sb3, i11, 65536, resources.getString(R.string.abc_menu_meta_shortcut_label));
-                        m.c(sb3, i11, 4096, resources.getString(R.string.abc_menu_ctrl_shortcut_label));
-                        m.c(sb3, i11, 2, resources.getString(R.string.abc_menu_alt_shortcut_label));
-                        m.c(sb3, i11, 1, resources.getString(R.string.abc_menu_shift_shortcut_label));
-                        m.c(sb3, i11, 4, resources.getString(R.string.abc_menu_sym_shortcut_label));
-                        m.c(sb3, i11, 8, resources.getString(R.string.abc_menu_function_shortcut_label));
+                        int i11 = lVar3.n() ? nVar3.k : nVar3.i;
+                        n.c(sb3, i11, 65536, resources.getString(R.string.abc_menu_meta_shortcut_label));
+                        n.c(sb3, i11, TLObject.FLAG_12, resources.getString(R.string.abc_menu_ctrl_shortcut_label));
+                        n.c(sb3, i11, 2, resources.getString(R.string.abc_menu_alt_shortcut_label));
+                        n.c(sb3, i11, 1, resources.getString(R.string.abc_menu_shift_shortcut_label));
+                        n.c(sb3, i11, 4, resources.getString(R.string.abc_menu_sym_shortcut_label));
+                        n.c(sb3, i11, 8, resources.getString(R.string.abc_menu_function_shortcut_label));
                         if (c10 == '\b') {
                             sb3.append(resources.getString(R.string.abc_menu_delete_shortcut_label));
                         } else if (c10 == '\n') {
@@ -149,14 +150,14 @@ public class ListMenuItemView extends LinearLayout implements y, AbsListView.Sel
                 if (this.f.getVisibility() != i10) {
                     this.f.setVisibility(i10);
                 }
-                setIcon(mVar.getIcon());
-                setEnabled(mVar.isEnabled());
-                setSubMenuArrowVisible(mVar.hasSubMenu());
-                setContentDescription(mVar.q);
+                setIcon(nVar.getIcon());
+                setEnabled(nVar.isEnabled());
+                setSubMenuArrowVisible(nVar.hasSubMenu());
+                setContentDescription(nVar.q);
             }
         }
         z10 = false;
-        kVar.n();
+        lVar.n();
         if (z10) {
         }
         i10 = 8;
@@ -164,33 +165,33 @@ public class ListMenuItemView extends LinearLayout implements y, AbsListView.Sel
         }
         if (this.f.getVisibility() != i10) {
         }
-        setIcon(mVar.getIcon());
-        setEnabled(mVar.isEnabled());
-        setSubMenuArrowVisible(mVar.hasSubMenu());
-        setContentDescription(mVar.q);
+        setIcon(nVar.getIcon());
+        setEnabled(nVar.isEnabled());
+        setSubMenuArrowVisible(nVar.hasSubMenu());
+        setContentDescription(nVar.q);
     }
 
-    @Override // l.y
-    public m getItemData() {
+    @Override // l.z
+    public n getItemData() {
         return this.a;
     }
 
     @Override // android.view.View
     public final void onFinishInflate() {
         super.onFinishInflate();
-        WeakHashMap weakHashMap = i0.a;
+        WeakHashMap weakHashMap = h0.a;
         setBackground(this.s);
         TextView textView = (TextView) findViewById(R.id.title);
         this.d = textView;
-        int i10 = this.v;
+        int i10 = this.w;
         if (i10 != -1) {
-            textView.setTextAppearance(this.w, i10);
+            textView.setTextAppearance(this.x, i10);
         }
         this.f = (TextView) findViewById(R.id.shortcut);
         ImageView imageView = (ImageView) findViewById(R.id.submenuarrow);
         this.h = imageView;
         if (imageView != null) {
-            imageView.setImageDrawable(this.y);
+            imageView.setImageDrawable(this.D);
         }
         this.n = (ImageView) findViewById(R.id.group_divider);
         this.r = (LinearLayout) findViewById(R.id.content);
@@ -198,7 +199,7 @@ public class ListMenuItemView extends LinearLayout implements y, AbsListView.Sel
 
     @Override // android.widget.LinearLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
-        if (this.b != null && this.x) {
+        if (this.b != null && this.y) {
             ViewGroup.LayoutParams layoutParams = getLayoutParams();
             LinearLayout.LayoutParams layoutParams2 = (LinearLayout.LayoutParams) this.b.getLayoutParams();
             int i12 = layoutParams.height;
@@ -295,7 +296,7 @@ public class ListMenuItemView extends LinearLayout implements y, AbsListView.Sel
 
     public void setForceShowIcon(boolean z10) {
         this.G = z10;
-        this.x = z10;
+        this.y = z10;
     }
 
     public void setGroupDividerEnabled(boolean z10) {
@@ -306,11 +307,11 @@ public class ListMenuItemView extends LinearLayout implements y, AbsListView.Sel
     }
 
     public void setIcon(Drawable drawable) {
-        k kVar = this.a.n;
+        l lVar = this.a.n;
         boolean z10 = this.G;
-        if (z10 || this.x) {
+        if (z10 || this.y) {
             ImageView imageView = this.b;
-            if (imageView == null && drawable == null && !this.x) {
+            if (imageView == null && drawable == null && !this.y) {
                 return;
             }
             if (imageView == null) {
@@ -323,7 +324,7 @@ public class ListMenuItemView extends LinearLayout implements y, AbsListView.Sel
                     addView(imageView2, 0);
                 }
             }
-            if (drawable == null && !this.x) {
+            if (drawable == null && !this.y) {
                 this.b.setVisibility(8);
                 return;
             }
@@ -353,16 +354,16 @@ public class ListMenuItemView extends LinearLayout implements y, AbsListView.Sel
 
     public ListMenuItemView(Context context, AttributeSet attributeSet, int i10) {
         super(context, attributeSet);
-        c D = c.D(getContext(), attributeSet, a.r, i10);
-        this.s = D.w(5);
-        TypedArray typedArray = (TypedArray) D.c;
-        this.v = typedArray.getResourceId(1, -1);
-        this.x = typedArray.getBoolean(7, false);
-        this.w = context;
-        this.y = D.w(8);
+        k G = k.G(getContext(), attributeSet, a.r, i10);
+        this.s = G.w(5);
+        TypedArray typedArray = (TypedArray) G.c;
+        this.w = typedArray.getResourceId(1, -1);
+        this.y = typedArray.getBoolean(7, false);
+        this.x = context;
+        this.D = G.w(8);
         TypedArray obtainStyledAttributes = context.getTheme().obtainStyledAttributes(null, new int[]{android.R.attr.divider}, R.attr.dropDownListViewStyle, 0);
         this.E = obtainStyledAttributes.hasValue(0);
-        D.E();
+        G.I();
         obtainStyledAttributes.recycle();
     }
 }

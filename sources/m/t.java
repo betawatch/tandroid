@@ -1,19 +1,21 @@
 package m;
 
-import a8.nf;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.widget.TextView;
+import w7.r6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class t {
     public final TextView a;
-    public final li.e3 b;
+    public final k2.m0 b;
 
     public t(TextView textView) {
         this.a = textView;
-        this.b = new li.e3(textView);
+        k2.m0 m0Var = new k2.m0();
+        m0Var.a = new q1.g(textView);
+        this.b = m0Var;
     }
 
     public final void a(AttributeSet attributeSet, int i10) {
@@ -29,10 +31,10 @@ public final class t {
     }
 
     public final void b(boolean z10) {
-        ((nf) this.b.b).b(z10);
+        ((r6) this.b.a).b(z10);
     }
 
     public final void c(boolean z10) {
-        ((nf) this.b.b).c(z10);
+        ((r6) this.b.a).c(z10);
     }
 }

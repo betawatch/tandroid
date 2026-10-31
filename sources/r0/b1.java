@@ -1,255 +1,43 @@
 package r0;
 
-import a8.rf;
-import android.graphics.Rect;
-import android.os.Build;
-import android.util.Log;
-import android.view.View;
 import android.view.WindowInsets;
-import j$.util.Objects;
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public abstract class b1 extends h1 {
-    public static boolean i = false;
-    public static Method j;
-    public static Class k;
-    public static Field l;
-    public static Field m;
-    public final WindowInsets c;
-    public i0.b[] d;
-    public i0.b e;
-    public k1 f;
-    public i0.b g;
-    public int h;
+public class b1 extends a1 {
+    public i0.c n;
 
-    public b1(k1 k1Var, WindowInsets windowInsets) {
-        super(k1Var);
-        this.e = null;
-        this.c = windowInsets;
+    public b1(j1 j1Var, WindowInsets windowInsets) {
+        super(j1Var, windowInsets);
+        this.n = null;
     }
 
-    public static boolean B(int i10, int i11) {
-        return (i10 & 6) == (i11 & 6);
+    @Override // r0.g1
+    public j1 b() {
+        return j1.h(null, this.c.consumeStableInsets());
     }
 
-    private i0.b u(int i10, boolean z10) {
-        i0.b bVar = i0.b.e;
-        for (int i11 = 1; i11 <= 512; i11 <<= 1) {
-            if ((i10 & i11) != 0) {
-                bVar = i0.b.a(bVar, v(i11, z10));
-            }
-        }
-        return bVar;
+    @Override // r0.g1
+    public j1 c() {
+        return j1.h(null, this.c.consumeSystemWindowInsets());
     }
 
-    private i0.b w() {
-        k1 k1Var = this.f;
-        return k1Var != null ? k1Var.a.i() : i0.b.e;
-    }
-
-    private i0.b x(View view) {
-        if (Build.VERSION.SDK_INT >= 30) {
-            throw new UnsupportedOperationException("getVisibleInsets() should not be called on API >= 30. Use WindowInsets.isVisible() instead.");
-        }
-        if (!i) {
-            z();
-        }
-        Method method = j;
-        if (method != null && k != null && l != null) {
-            try {
-                Object invoke = method.invoke(view, null);
-                if (invoke == null) {
-                    Log.w("WindowInsetsCompat", "Failed to get visible insets. getViewRootImpl() returned null from the provided view. This means that the view is either not attached or the method has been overridden", new NullPointerException());
-                    return null;
-                }
-                Rect rect = (Rect) l.get(m.get(invoke));
-                if (rect != null) {
-                    return i0.b.b(rect.left, rect.top, rect.right, rect.bottom);
-                }
-            } catch (ReflectiveOperationException e) {
-                Log.e("WindowInsetsCompat", "Failed to get visible insets. (Reflection error). " + e.getMessage(), e);
-            }
-        }
-        return null;
-    }
-
-    private static void z() {
-        try {
-            j = View.class.getDeclaredMethod("getViewRootImpl", null);
-            Class<?> cls = Class.forName("android.view.View$AttachInfo");
-            k = cls;
-            l = cls.getDeclaredField("mVisibleInsets");
-            m = Class.forName("android.view.ViewRootImpl").getDeclaredField("mAttachInfo");
-            l.setAccessible(true);
-            m.setAccessible(true);
-        } catch (ReflectiveOperationException e) {
-            Log.e("WindowInsetsCompat", "Failed to get visible insets. (Reflection error). " + e.getMessage(), e);
-        }
-        i = true;
-    }
-
-    public void A(i0.b bVar) {
-        this.g = bVar;
-    }
-
-    @Override // r0.h1
-    public void d(View view) {
-        i0.b x9 = x(view);
-        if (x9 == null) {
-            x9 = i0.b.e;
-        }
-        A(x9);
-    }
-
-    @Override // r0.h1
-    public boolean equals(Object obj) {
-        if (!super.equals(obj)) {
-            return false;
-        }
-        b1 b1Var = (b1) obj;
-        return Objects.equals(this.g, b1Var.g) && B(this.h, b1Var.h);
-    }
-
-    @Override // r0.h1
-    public i0.b f(int i10) {
-        return u(i10, false);
-    }
-
-    @Override // r0.h1
-    public i0.b g(int i10) {
-        return u(i10, true);
-    }
-
-    @Override // r0.h1
-    public final i0.b k() {
-        if (this.e == null) {
+    @Override // r0.g1
+    public final i0.c i() {
+        if (this.n == null) {
             WindowInsets windowInsets = this.c;
-            this.e = i0.b.b(windowInsets.getSystemWindowInsetLeft(), windowInsets.getSystemWindowInsetTop(), windowInsets.getSystemWindowInsetRight(), windowInsets.getSystemWindowInsetBottom());
+            this.n = i0.c.b(windowInsets.getStableInsetLeft(), windowInsets.getStableInsetTop(), windowInsets.getStableInsetRight(), windowInsets.getStableInsetBottom());
         }
-        return this.e;
+        return this.n;
     }
 
-    @Override // r0.h1
-    public k1 m(int i10, int i11, int i12, int i13) {
-        k1 h = k1.h(null, this.c);
-        int i14 = Build.VERSION.SDK_INT;
-        a1 z0Var = i14 >= 34 ? new z0(h) : i14 >= 30 ? new y0(h) : i14 >= 29 ? new x0(h) : new w0(h);
-        z0Var.g(k1.e(k(), i10, i11, i12, i13));
-        z0Var.e(k1.e(i(), i10, i11, i12, i13));
-        return z0Var.b();
+    @Override // r0.g1
+    public boolean n() {
+        return this.c.isConsumed();
     }
 
-    @Override // r0.h1
-    public boolean o() {
-        return this.c.isRound();
-    }
-
-    @Override // r0.h1
-    public boolean p(int i10) {
-        for (int i11 = 1; i11 <= 512; i11 <<= 1) {
-            if ((i10 & i11) != 0 && !y(i11)) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    @Override // r0.h1
-    public void q(i0.b[] bVarArr) {
-        this.d = bVarArr;
-    }
-
-    @Override // r0.h1
-    public void r(k1 k1Var) {
-        this.f = k1Var;
-    }
-
-    @Override // r0.h1
-    public void t(int i10) {
-        this.h = i10;
-    }
-
-    public i0.b v(int i10, boolean z10) {
-        i0.b i11;
-        int i12;
-        i0.b bVar = i0.b.e;
-        if (i10 != 1) {
-            if (i10 != 2) {
-                if (i10 == 8) {
-                    i0.b[] bVarArr = this.d;
-                    i11 = bVarArr != null ? bVarArr[rf.a(8)] : null;
-                    if (i11 != null) {
-                        return i11;
-                    }
-                    i0.b k10 = k();
-                    i0.b w10 = w();
-                    int i13 = k10.d;
-                    if (i13 > w10.d) {
-                        return i0.b.b(0, 0, 0, i13);
-                    }
-                    i0.b bVar2 = this.g;
-                    if (bVar2 != null && !bVar2.equals(bVar) && (i12 = this.g.d) > w10.d) {
-                        return i0.b.b(0, 0, 0, i12);
-                    }
-                } else {
-                    if (i10 == 16) {
-                        return j();
-                    }
-                    if (i10 == 32) {
-                        return h();
-                    }
-                    if (i10 == 64) {
-                        return l();
-                    }
-                    if (i10 == 128) {
-                        k1 k1Var = this.f;
-                        i e = k1Var != null ? k1Var.a.e() : e();
-                        if (e != null) {
-                            int i14 = Build.VERSION.SDK_INT;
-                            return i0.b.b(i14 >= 28 ? c5.d.l(e.a) : 0, i14 >= 28 ? c5.d.n(e.a) : 0, i14 >= 28 ? c5.d.m(e.a) : 0, i14 >= 28 ? c5.d.k(e.a) : 0);
-                        }
-                    }
-                }
-            } else {
-                if (z10) {
-                    i0.b w11 = w();
-                    i0.b i15 = i();
-                    return i0.b.b(Math.max(w11.a, i15.a), 0, Math.max(w11.c, i15.c), Math.max(w11.d, i15.d));
-                }
-                if ((this.h & 2) == 0) {
-                    i0.b k11 = k();
-                    k1 k1Var2 = this.f;
-                    i11 = k1Var2 != null ? k1Var2.a.i() : null;
-                    int i16 = k11.d;
-                    if (i11 != null) {
-                        i16 = Math.min(i16, i11.d);
-                    }
-                    return i0.b.b(k11.a, 0, k11.c, i16);
-                }
-            }
-        } else {
-            if (z10) {
-                return i0.b.b(0, Math.max(w().b, k().b), 0, 0);
-            }
-            if ((this.h & 4) == 0) {
-                return i0.b.b(0, k().b, 0, 0);
-            }
-        }
-        return bVar;
-    }
-
-    public boolean y(int i10) {
-        if (i10 != 1 && i10 != 2) {
-            if (i10 == 4) {
-                return false;
-            }
-            if (i10 != 8 && i10 != 128) {
-                return true;
-            }
-        }
-        return !v(i10, false).equals(i0.b.e);
+    @Override // r0.g1
+    public void s(i0.c cVar) {
+        this.n = cVar;
     }
 }

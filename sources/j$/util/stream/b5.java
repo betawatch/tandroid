@@ -109,14 +109,14 @@ public abstract class b5 extends a implements Stream {
 
     @Override // j$.util.stream.a
     public final boolean L0(Spliterator spliterator, j5 j5Var) {
-        boolean q5;
+        boolean q6;
         do {
-            q5 = j5Var.q();
-            if (q5) {
+            q6 = j5Var.q();
+            if (q6) {
                 break;
             }
         } while (spliterator.tryAdvance(j5Var));
-        return q5;
+        return q6;
     }
 
     @Override // j$.util.stream.t3

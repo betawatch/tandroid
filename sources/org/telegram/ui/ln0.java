@@ -1,71 +1,61 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.webkit.WebView;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.widget.LinearLayout;
+import java.util.HashSet;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ln0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ro0 b;
-    public final /* synthetic */ TLObject c;
+public final class ln0 extends LinearLayout implements org.telegram.ui.ActionBar.k6 {
+    public final org.telegram.ui.Components.p80 a;
+    public final org.telegram.ui.Components.p80 b;
+    public final /* synthetic */ nn0 c;
 
-    public /* synthetic */ ln0(ro0 ro0Var, TLObject tLObject, int i10) {
-        this.a = i10;
-        this.b = ro0Var;
-        this.c = tLObject;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ln0(nn0 nn0Var, Context context) {
+        super(context);
+        org.telegram.ui.ActionBar.p6 p6Var;
+        org.telegram.ui.ActionBar.p6 p6Var2;
+        this.c = nn0Var;
+        setOrientation(1);
+        int i10 = org.telegram.ui.ActionBar.t6.d6;
+        tn0 tn0Var = nn0Var.p0;
+        org.telegram.ui.ActionBar.a7.i(i10, this, tn0Var.getResourceProvider());
+        org.telegram.ui.Components.g9 g9Var = new org.telegram.ui.Components.g9(getContext());
+        g9Var.setImageDrawable(new org.telegram.ui.Components.bi0(R.raw.utyan_draw, org.telegram.messenger.i0.L(120.0f), org.telegram.messenger.i0.L(120.0f)));
+        addView(g9Var, w7.b6.t(120, 120, 1, 0, 6, 0, 0));
+        Context context2 = getContext();
+        int i11 = org.telegram.ui.ActionBar.t6.y6;
+        p6Var = ((org.telegram.ui.ActionBar.k2) tn0Var).resourceProvider;
+        org.telegram.ui.Components.p80 a2 = w7.g6.a(context2, 14.0f, i11, false, p6Var);
+        this.a = a2;
+        a2.setGravity(17);
+        a2.setText(org.telegram.messenger.cd.L0(nn0Var.m0 == 0 ? 2131750092 : 2131750091, null));
+        addView(a2, w7.b6.t(-1, -2, 1, 64, 8, 64, 8));
+        Context context3 = getContext();
+        int i12 = org.telegram.ui.ActionBar.t6.Uc;
+        p6Var2 = ((org.telegram.ui.ActionBar.k2) tn0Var).resourceProvider;
+        org.telegram.ui.Components.p80 a10 = w7.g6.a(context3, 14.0f, i12, false, p6Var2);
+        this.b = a10;
+        a10.setGravity(17);
+        a10.setText(org.telegram.messenger.i0.I2(org.telegram.messenger.i0.T2(org.telegram.messenger.cd.L0(2131750093, null), new mg0(this, 14)), true, org.telegram.messenger.i0.L(2.6666667f), org.telegram.messenger.i0.L(1.33f), 1.0f, R.drawable.msg_mini_forumarrow));
+        addView(a10, w7.b6.t(-1, -2, 1, 32, 4, 32, 24));
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                ro0.f0(this.b, this.c);
-                break;
-            case 1:
-                ro0 ro0Var = this.b;
-                Utilities.Callback callback = ro0Var.d1;
-                TLObject tLObject = this.c;
-                if (callback != null) {
-                    callback.run((TLRPC.TL_payments_paymentVerificationNeeded) tLObject);
-                }
-                ro0Var.E0(false);
-                ro0Var.z0 = true;
-                ro0Var.I0(true, true);
-                org.telegram.ui.Components.er erVar = ro0Var.r;
-                if (erVar != null) {
-                    erVar.setVisibility(0);
-                }
-                org.telegram.ui.ActionBar.w0 w0Var = ro0Var.n;
-                if (w0Var != null) {
-                    w0Var.setEnabled(false);
-                    ro0Var.n.getContentView().setVisibility(4);
-                }
-                org.telegram.ui.ActionBar.j5 parentLayout = ro0Var.getParentLayout();
-                Activity parentActivity = ro0Var.getParentActivity();
-                ro0Var.getMessagesController().newMessageCallback = new e7(ro0Var, parentLayout, parentActivity, 17);
-                WebView webView = ro0Var.w;
-                if (webView != null) {
-                    webView.setVisibility(0);
-                    WebView webView2 = ro0Var.w;
-                    String str = ((TLRPC.TL_payments_paymentVerificationNeeded) tLObject).url;
-                    ro0Var.x = str;
-                    webView2.loadUrl(str);
-                }
-                ro0Var.a1 = true;
-                ro0Var.f1 = 3;
-                qo0 qo0Var = ro0Var.Z0;
-                if (qo0Var != null) {
-                    qo0Var.a(3);
-                    break;
-                }
-                break;
-            default:
-                ro0.d0(this.b, this.c);
-                break;
-        }
+    @Override // org.telegram.ui.ActionBar.k6
+    public final void updateColors() {
+        tn0 tn0Var = this.c.p0;
+        setBackgroundColor(tn0Var.getThemedColor(org.telegram.ui.ActionBar.t6.d6));
+        this.a.setTextColor(tn0Var.getThemedColor(org.telegram.ui.ActionBar.t6.y6));
+        int i10 = org.telegram.ui.ActionBar.t6.Uc;
+        int themedColor = tn0Var.getThemedColor(i10);
+        org.telegram.ui.Components.p80 p80Var = this.b;
+        p80Var.setTextColor(themedColor);
+        p80Var.setLinkTextColor(tn0Var.getThemedColor(i10));
+    }
+
+    @Override // org.telegram.ui.ActionBar.k6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

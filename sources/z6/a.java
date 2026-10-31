@@ -1,14 +1,10 @@
 package z6;
 
-import dalvik.system.DelegateLastClassLoader;
+import k6.c;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public abstract /* synthetic */ class a {
-    public static /* synthetic */ DelegateLastClassLoader a(ClassLoader classLoader, String str) {
-        return new DelegateLastClassLoader(str, classLoader);
-    }
-
-    public static /* synthetic */ void b() {
-    }
+public abstract class a {
+    public static final c a = new c("is_user_verifying_platform_authenticator_available_for_credential", 1);
+    public static final c b = new c("is_user_verifying_platform_authenticator_available", 1);
 }

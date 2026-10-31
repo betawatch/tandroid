@@ -9,9 +9,9 @@ import android.content.IntentSender;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
-import com.google.android.gms.internal.cast.y;
+import com.google.android.gms.internal.cast.z;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public class GoogleApiActivity extends Activity implements DialogInterface.OnCancelListener {
     public static final /* synthetic */ int b = 0;
@@ -25,12 +25,12 @@ public class GoogleApiActivity extends Activity implements DialogInterface.OnCan
             this.a = 0;
             setResult(i11, intent);
             if (booleanExtra) {
-                com.google.android.gms.common.api.internal.h g7 = com.google.android.gms.common.api.internal.h.g(this);
+                com.google.android.gms.common.api.internal.h g10 = com.google.android.gms.common.api.internal.h.g(this);
                 if (i11 == -1) {
-                    y yVar = g7.x;
-                    yVar.sendMessage(yVar.obtainMessage(3));
+                    z zVar = g10.y;
+                    zVar.sendMessage(zVar.obtainMessage(3));
                 } else if (i11 == 0) {
-                    g7.h(new l6.a(13, null), getIntent().getIntExtra("failing_client_id", -1));
+                    g10.h(new k6.a(13, null), getIntent().getIntExtra("failing_client_id", -1));
                 }
             }
         } else if (i10 == 2) {
@@ -54,55 +54,56 @@ public class GoogleApiActivity extends Activity implements DialogInterface.OnCan
         if (bundle != null) {
             this.a = bundle.getInt("resolution");
         }
-        if (this.a != 1) {
-            Bundle extras = getIntent().getExtras();
-            if (extras == null) {
-                Log.e("GoogleApiActivity", "Activity started without extras");
-                finish();
-                return;
-            }
-            PendingIntent pendingIntent = (PendingIntent) extras.get("pending_intent");
-            Integer num = (Integer) extras.get("error_code");
-            if (pendingIntent == null && num == null) {
-                Log.e("GoogleApiActivity", "Activity started without resolution");
-                finish();
-                return;
-            }
-            if (pendingIntent == null) {
-                o6.l.h(num);
-                l6.d.d.e(this, num.intValue(), this);
-                this.a = 1;
-                return;
-            }
-            try {
-                googleApiActivity = this;
-            } catch (ActivityNotFoundException e) {
-                e = e;
-                googleApiActivity = this;
-            } catch (IntentSender.SendIntentException e10) {
-                e = e10;
-            }
+        if (this.a == 1) {
+            return;
+        }
+        Bundle extras = getIntent().getExtras();
+        if (extras == null) {
+            Log.e("GoogleApiActivity", "Activity started without extras");
+            finish();
+            return;
+        }
+        PendingIntent pendingIntent = (PendingIntent) extras.get("pending_intent");
+        Integer num = (Integer) extras.get("error_code");
+        if (pendingIntent == null && num == null) {
+            Log.e("GoogleApiActivity", "Activity started without resolution");
+            finish();
+            return;
+        }
+        if (pendingIntent == null) {
+            n6.l.g(num);
+            k6.d.d.e(this, num.intValue(), this);
+            this.a = 1;
+            return;
+        }
+        try {
+            googleApiActivity = this;
             try {
                 googleApiActivity.startIntentSenderForResult(pendingIntent.getIntentSender(), 1, null, 0, 0, 0);
                 googleApiActivity.a = 1;
-            } catch (ActivityNotFoundException e11) {
-                e = e11;
+            } catch (ActivityNotFoundException e) {
+                e = e;
                 if (extras.getBoolean("notify_manager", true)) {
-                    com.google.android.gms.common.api.internal.h.g(this).h(new l6.a(22, null), getIntent().getIntExtra("failing_client_id", -1));
+                    com.google.android.gms.common.api.internal.h.g(this).h(new k6.a(22, null), getIntent().getIntExtra("failing_client_id", -1));
                 } else {
-                    String p10 = a1.g.p("Activity not found while launching ", pendingIntent.toString(), ".");
+                    String n10 = a1.g.n("Activity not found while launching ", pendingIntent.toString(), ".");
                     if (Build.FINGERPRINT.contains("generic")) {
-                        p10 = p10.concat(" This may occur when resolving Google Play services connection issues on emulators with Google APIs but not Google Play Store.");
+                        n10 = n10.concat(" This may occur when resolving Google Play services connection issues on emulators with Google APIs but not Google Play Store.");
                     }
-                    Log.e("GoogleApiActivity", p10, e);
+                    Log.e("GoogleApiActivity", n10, e);
                 }
                 googleApiActivity.a = 1;
                 finish();
-            } catch (IntentSender.SendIntentException e12) {
-                e = e12;
+            } catch (IntentSender.SendIntentException e7) {
+                e = e7;
                 Log.e("GoogleApiActivity", "Failed to launch pendingIntent", e);
                 finish();
             }
+        } catch (ActivityNotFoundException e10) {
+            e = e10;
+            googleApiActivity = this;
+        } catch (IntentSender.SendIntentException e11) {
+            e = e11;
         }
     }
 

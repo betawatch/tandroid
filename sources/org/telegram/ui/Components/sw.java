@@ -1,25 +1,30 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaDataController;
+import android.content.Context;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class sw implements View.OnFocusChangeListener {
-    public final /* synthetic */ sz a;
+public final class sw extends s4.b0 {
+    public final /* synthetic */ int r;
 
-    public sw(sz szVar) {
-        this.a = szVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public sw(Context context, int i10) {
+        super(context);
+        this.r = i10;
     }
 
-    @Override // android.view.View.OnFocusChangeListener
-    public final void onFocusChange(View view, boolean z10) {
-        if (z10) {
-            String[] currentKeyboardLanguage = AndroidUtilities.getCurrentKeyboardLanguage();
-            sz szVar = this.a;
-            szVar.W0 = currentKeyboardLanguage;
-            MediaDataController.getInstance(szVar.c1).fetchNewEmojiKeywords(szVar.W0);
-        }
+    @Override // s4.b0
+    public final int i(int i10, int i11, int i12, int i13, int i14) {
+        return super.i(i10, i11, i12, i13, i14) + this.r;
+    }
+
+    @Override // s4.b0
+    public final int m(int i10) {
+        return super.m(i10) * 16;
+    }
+
+    @Override // s4.b0
+    public final int p() {
+        return -1;
     }
 }

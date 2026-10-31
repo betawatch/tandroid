@@ -7,7 +7,7 @@ import j$.util.Objects;
 import java.io.InvalidObjectException;
 import java.io.ObjectInputStream;
 import java.io.Serializable;
-import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.zs;
 
 /* loaded from: classes2.dex */
 public final class LocalDate implements Temporal, j$.time.temporal.m, j$.time.chrono.b, Serializable {
@@ -56,9 +56,9 @@ public final class LocalDate implements Temporal, j$.time.temporal.m, j$.time.ch
             j15 = j12 - ((j14 / 400) + (((j14 / 4) + (365 * j14)) - (j14 / 100)));
         }
         int i10 = (int) j15;
-        int i11 = ((i10 * 5) + 2) / 153;
+        int i11 = ((i10 * 5) + 2) / zs.j2;
         int i12 = ((i11 + 2) % 12) + 1;
-        int i13 = (i10 - (((i11 * 306) + 5) / 10)) + 1;
+        int i13 = (i10 - (((i11 * zs.d5) + 5) / 10)) + 1;
         long j16 = j14 + j11 + (i11 / 10);
         j$.time.temporal.a aVar = j$.time.temporal.a.YEAR;
         return new LocalDate(aVar.b.a(j16, aVar), i12, i13);
@@ -334,7 +334,7 @@ public final class LocalDate implements Temporal, j$.time.temporal.m, j$.time.ch
             case 6:
                 return U(j$.com.android.tools.r8.a.S(j10, 100));
             case 7:
-                return U(j$.com.android.tools.r8.a.S(j10, MediaDataController.MAX_STYLE_RUNS_COUNT));
+                return U(j$.com.android.tools.r8.a.S(j10, 1000));
             case 8:
                 j$.time.temporal.a aVar = j$.time.temporal.a.ERA;
                 return c(j$.com.android.tools.r8.a.N(y(aVar), j10), aVar);
@@ -449,11 +449,11 @@ public final class LocalDate implements Temporal, j$.time.temporal.m, j$.time.ch
     }
 
     public ZonedDateTime atStartOfDay(ZoneId zoneId) {
-        j$.time.zone.b e10;
+        j$.time.zone.b e7;
         Objects.requireNonNull(zoneId, "zone");
         LocalDateTime J = LocalDateTime.J(this, h.g);
-        if (!(zoneId instanceof ZoneOffset) && (e10 = zoneId.getRules().e(J)) != null && e10.j()) {
-            J = e10.b.M(e10.d.getTotalSeconds() - e10.c.getTotalSeconds());
+        if (!(zoneId instanceof ZoneOffset) && (e7 = zoneId.getRules().e(J)) != null && e7.j()) {
+            J = e7.b.M(e7.d.getTotalSeconds() - e7.c.getTotalSeconds());
         }
         return ZonedDateTime.H(J, zoneId, null);
     }

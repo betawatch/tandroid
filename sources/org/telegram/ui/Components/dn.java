@@ -1,31 +1,42 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.Utilities;
+import android.view.KeyEvent;
+import android.view.View;
+import android.widget.ImageView;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class dn implements Utilities.Callback {
+public final /* synthetic */ class dn implements View.OnKeyListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ go b;
-    public final /* synthetic */ int c;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ dn(go goVar, int i10, int i11) {
-        this.a = i11;
-        this.b = goVar;
-        this.c = i10;
+    public /* synthetic */ dn(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
+    @Override // android.view.View.OnKeyListener
+    public final boolean onKey(View view, int i10, KeyEvent keyEvent) {
         switch (this.a) {
             case 0:
-                this.b.h0(this.c, (sh.e) obj);
-                break;
+                hn hnVar = (hn) this.b;
+                EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) view;
+                if (i10 != 67 || keyEvent.getAction() != 0 || editTextBoldCursor.length() != 0) {
+                    return false;
+                }
+                ImageView imageView = hnVar.f;
+                if (imageView != null) {
+                    imageView.callOnClick();
+                }
+                return true;
             default:
-                go goVar = this.b;
-                goVar.getClass();
-                goVar.h0(this.c, new th.e((String) obj));
-                break;
+                ju juVar = (ju) this.b;
+                juVar.getClass();
+                if (i10 != 82 || keyEvent.getRepeatCount() != 0 || keyEvent.getAction() != 1 || !juVar.isShowing()) {
+                    return false;
+                }
+                juVar.dismiss();
+                return true;
         }
     }
 }

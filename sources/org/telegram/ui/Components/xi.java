@@ -1,27 +1,35 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class xi implements Utilities.Callback5, Utilities.Callback5Return {
-    public final /* synthetic */ fj a;
+public final /* synthetic */ class xi implements cj {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ TLRPC.User b;
 
-    @Override // org.telegram.messenger.Utilities.Callback5
-    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        ((Integer) obj3).getClass();
-        ((Float) obj4).getClass();
-        ((Float) obj5).getClass();
-        this.a.P((u61) obj, (View) obj2);
+    public /* synthetic */ xi(int i10, TLRPC.User user) {
+        this.a = i10;
+        this.b = user;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback5Return
-    public Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        ((Integer) obj3).getClass();
-        ((Float) obj4).getClass();
-        ((Float) obj5).getClass();
-        this.a.P((u61) obj, (View) obj2);
-        return Boolean.TRUE;
+    @Override // org.telegram.ui.Components.cj
+    public final String run() {
+        af.b c10;
+        StringBuilder sb2;
+        String str;
+        switch (this.a) {
+            case 0:
+                c10 = af.b.c();
+                sb2 = new StringBuilder("+");
+                str = this.b.phone;
+                break;
+            default:
+                c10 = af.b.c();
+                sb2 = new StringBuilder("+");
+                str = this.b.phone;
+                break;
+        }
+        return org.telegram.messenger.m5.h(sb2, str, c10);
     }
 }

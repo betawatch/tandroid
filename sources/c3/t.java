@@ -1,8 +1,6 @@
 package c3;
 
-import e2.n0;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public class t implements b0 {
     public final /* synthetic */ int a;
@@ -40,10 +38,10 @@ public class t implements b0 {
             case 0:
                 u uVar = (u) this.c;
                 uVar.k.getClass();
-                rf.b bVar = uVar.k;
+                hf.b bVar = uVar.k;
                 long[] jArr = (long[]) bVar.b;
                 long[] jArr2 = (long[]) bVar.c;
-                int f7 = n0.f(jArr, n0.j((uVar.e * j10) / 1000000, 0L, uVar.j - 1), false);
+                int f7 = e2.l0.f(jArr, e2.l0.j((uVar.e * j10) / 1000000, 0L, uVar.j - 1), false);
                 long j11 = f7 == -1 ? 0L : jArr[f7];
                 long j12 = f7 != -1 ? jArr2[f7] : 0L;
                 int i10 = uVar.e;

@@ -1,43 +1,42 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.ImageLoader;
-import org.telegram.tgnet.TLObject;
+import java.util.HashMap;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d5 implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ Object f;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ i5 b;
+    public final /* synthetic */ HashMap c;
+    public final /* synthetic */ HashMap d;
 
-    public /* synthetic */ d5(int i10, String str, long j10, long j11, boolean z10) {
-        this.e = i10;
-        this.f = str;
-        this.c = j10;
-        this.d = j11;
-        this.b = z10;
+    public /* synthetic */ d5(i5 i5Var, HashMap hashMap, HashMap hashMap2, int i10) {
+        this.a = i10;
+        this.b = i5Var;
+        this.c = hashMap;
+        this.d = hashMap2;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                ImageLoader.5.lambda$fileUploadProgressChanged$0(this.e, (String) this.f, this.c, this.d, this.b);
+                i5 i5Var = this.b;
+                Utilities.e.c(new d5(i5Var, this.c, this.d, 1));
+                if (!i5Var.e) {
+                    i5Var.e = true;
+                    hs messagesStorage = i5Var.getMessagesStorage();
+                    messagesStorage.a.c(new kr(messagesStorage, false, 0));
+                    break;
+                }
                 break;
             default:
-                FileLog.lambda$dumpUnparsedMessage$2((TLObject) this.f, this.b, this.c, this.d, this.e);
+                i5 i5Var2 = this.b;
+                HashMap hashMap = this.c;
+                HashMap hashMap2 = this.d;
+                i5Var2.k0 = hashMap;
+                i5Var2.l0 = hashMap2;
                 break;
         }
-    }
-
-    public /* synthetic */ d5(TLObject tLObject, boolean z10, long j10, long j11, int i10) {
-        this.f = tLObject;
-        this.b = z10;
-        this.c = j10;
-        this.d = j11;
-        this.e = i10;
     }
 }

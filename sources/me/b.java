@@ -1,52 +1,33 @@
 package me;
 
-import a8.jd;
-import ce.m;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import v0.c;
-import v0.i;
-import w0.d;
+import android.os.Parcel;
+import android.os.Parcelable;
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Proxy;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class b implements OnCompleteListener, i {
-    public final /* synthetic */ m a;
-
-    public /* synthetic */ b(m mVar) {
-        this.a = mVar;
+public abstract class b {
+    public static Object a(Parcel parcel, Parcelable.Creator creator) {
+        if (parcel.readInt() != 0) {
+            return creator.createFromParcel(parcel);
+        }
+        return null;
     }
 
-    @Override // com.google.android.gms.tasks.OnCompleteListener
-    public void onComplete(Task task) {
-        Exception exception = task.getException();
-        m mVar = this.a;
-        if (exception != null) {
-            mVar.resumeWith(jd.a(exception));
-        } else if (task.isCanceled()) {
-            mVar.n(null);
+    public static Object b(Class cls, InvocationHandler invocationHandler) {
+        if (invocationHandler == null) {
+            return null;
+        }
+        return cls.cast(Proxy.newProxyInstance(b.class.getClassLoader(), new Class[]{cls}, invocationHandler));
+    }
+
+    public static void c(Parcel parcel, Parcelable parcelable) {
+        if (parcelable == null) {
+            parcel.writeInt(0);
         } else {
-            mVar.resumeWith(task.getResult());
-        }
-    }
-
-    @Override // v0.i
-    public void onError(Object obj) {
-        d e = (d) obj;
-        kotlin.jvm.internal.i.e(e, "e");
-        m mVar = this.a;
-        if (mVar.w()) {
-            mVar.resumeWith(jd.a(e));
-        }
-    }
-
-    @Override // v0.i
-    public void onResult(Object obj) {
-        c result = (c) obj;
-        kotlin.jvm.internal.i.e(result, "result");
-        m mVar = this.a;
-        if (mVar.w()) {
-            mVar.resumeWith(result);
+            parcel.writeInt(1);
+            parcelable.writeToParcel(parcel, 0);
         }
     }
 }

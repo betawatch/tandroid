@@ -1,20 +1,21 @@
 package j4;
 
 import android.util.Pair;
-import b2.w0;
-import c3.j0;
-import e2.n0;
+import b2.v0;
+import c3.k0;
+import e2.l0;
 import i2.p0;
 import java.util.Arrays;
 import java.util.Collections;
+import org.telegram.messenger.zs;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class k implements i {
     public static final double[] r = {23.976023976023978d, 24.0d, 25.0d, 29.97002997002997d, 30.0d, 50.0d, 59.94005994005994d, 60.0d};
     public String a;
-    public j0 b;
-    public final c0 c;
+    public k0 b;
+    public final d0 c;
     public final String d;
     public final e2.x e;
     public final p0 f;
@@ -30,14 +31,14 @@ public final class k implements i {
     public boolean p;
     public boolean q;
 
-    public k(c0 c0Var, String str) {
-        this.c = c0Var;
+    public k(d0 d0Var, String str) {
+        this.c = d0Var;
         this.d = str;
         j jVar = new j();
         jVar.d = new byte[128];
         this.h = jVar;
-        if (c0Var != null) {
-            this.f = new p0(178);
+        if (d0Var != null) {
+            this.f = new p0(zs.I2);
             this.e = new e2.x();
         } else {
             this.f = null;
@@ -47,16 +48,16 @@ public final class k implements i {
         this.o = -9223372036854775807L;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:44:0x01bb  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x01d5  */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x0204  */
-    /* JADX WARN: Removed duplicated region for block: B:54:0x0206  */
-    /* JADX WARN: Removed duplicated region for block: B:57:0x01ea  */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x01ba  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x01d4  */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x0203  */
+    /* JADX WARN: Removed duplicated region for block: B:54:0x0205  */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x01e9  */
     @Override // j4.i
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void a(e2.x xVar) {
+    public final void c(e2.x xVar) {
         j jVar;
         p0 p0Var;
         int i10;
@@ -122,8 +123,8 @@ public final class k implements i {
                             f10 = 1.0f;
                             b2.w wVar = new b2.w();
                             wVar.a = str;
-                            wVar.q = w0.n(this.d);
-                            wVar.r = w0.n("video/mpeg2");
+                            wVar.q = v0.n(this.d);
+                            wVar.r = v0.n("video/mpeg2");
                             wVar.y = i22;
                             wVar.z = i23;
                             wVar.E = f10;
@@ -146,14 +147,14 @@ public final class k implements i {
                             this.l = ((Long) create.second).longValue();
                             this.k = true;
                         } else {
-                            f7 = i23 * 121;
+                            f7 = i23 * zs.F1;
                             i12 = i22 * 100;
                         }
                         f10 = f7 / i12;
                         b2.w wVar2 = new b2.w();
                         wVar2.a = str;
-                        wVar2.q = w0.n(this.d);
-                        wVar2.r = w0.n("video/mpeg2");
+                        wVar2.q = v0.n(this.d);
+                        wVar2.r = v0.n("video/mpeg2");
                         wVar2.y = i22;
                         wVar2.z = i23;
                         wVar2.E = f10;
@@ -184,11 +185,11 @@ public final class k implements i {
                     i11 = -i18;
                 }
                 if (p0Var.e(i11)) {
-                    int p10 = f2.q.p(p0Var.e, (byte[]) p0Var.f);
-                    String str2 = n0.a;
+                    int p5 = f2.q.p(p0Var.e, (byte[]) p0Var.f);
+                    String str2 = l0.a;
                     byte[] bArr2 = (byte[]) p0Var.f;
                     e2.x xVar3 = this.e;
-                    xVar3.L(p10, bArr2);
+                    xVar3.L(p5, bArr2);
                     this.c.a(this.o, xVar3);
                 }
                 if (i17 == 178) {
@@ -279,7 +280,7 @@ public final class k implements i {
     }
 
     @Override // j4.i
-    public final void c() {
+    public final void e() {
         f2.q.b(this.g);
         j jVar = this.h;
         jVar.a = false;
@@ -296,20 +297,20 @@ public final class k implements i {
     }
 
     @Override // j4.i
-    public final void d(c3.q qVar, f0 f0Var) {
-        f0Var.b();
-        f0Var.c();
-        this.a = (String) f0Var.e;
-        f0Var.c();
-        this.b = qVar.F1(f0Var.c, 2);
-        c0 c0Var = this.c;
-        if (c0Var != null) {
-            c0Var.b(qVar, f0Var);
+    public final void f(c3.q qVar, g0 g0Var) {
+        g0Var.b();
+        g0Var.c();
+        this.a = (String) g0Var.e;
+        g0Var.c();
+        this.b = qVar.I1(g0Var.c, 2);
+        d0 d0Var = this.c;
+        if (d0Var != null) {
+            d0Var.b(qVar, g0Var);
         }
     }
 
     @Override // j4.i
-    public final void e(boolean z10) {
+    public final void g(boolean z10) {
         this.b.getClass();
         if (z10) {
             boolean z11 = this.p;
@@ -318,7 +319,7 @@ public final class k implements i {
     }
 
     @Override // j4.i
-    public final void f(int i10, long j10) {
+    public final void h(int i10, long j10) {
         this.m = j10;
     }
 }

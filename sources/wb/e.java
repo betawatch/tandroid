@@ -1,76 +1,97 @@
 package wb;
 
-import android.content.Context;
-import com.google.mlkit.nl.languageid.IdentifiedLanguage;
-import com.google.mlkit.nl.languageid.bundled.internal.ThickLanguageIdentifier;
-import java.util.ArrayList;
-import java.util.concurrent.atomic.AtomicReference;
-import o6.l;
-import org.telegram.messenger.TranslateController;
-import sb.i;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class e extends i {
-    public ThickLanguageIdentifier d;
-    public final Context e;
-    public final vb.a f;
-    public final boolean g;
+public class e {
+    public static final byte[] d = new byte[0];
+    public final vb.d a;
+    public byte[] b = d;
+    public final int[] c = new int[32];
 
-    public e(Context context, vb.a aVar) {
-        this.e = context;
-        this.f = aVar;
-        aVar.getClass();
-        this.g = true;
+    public e(vb.d dVar) {
+        this.a = dVar;
     }
 
-    @Override // sb.i
-    public final void b() {
-        l.k(Thread.currentThread().equals(((AtomicReference) this.a.d).get()));
-        if (this.d == null) {
-            this.f.getClass();
-            ThickLanguageIdentifier thickLanguageIdentifier = new ThickLanguageIdentifier(this.e);
-            this.d = thickLanguageIdentifier;
-            thickLanguageIdentifier.b();
+    public b a() {
+        int[] iArr;
+        vb.d dVar = this.a;
+        int i10 = dVar.a;
+        int i11 = dVar.b;
+        b bVar = new b(i10, i11);
+        if (this.b.length < i10) {
+            this.b = new byte[i10];
         }
-    }
-
-    @Override // sb.i
-    public final void c() {
-        l.k(Thread.currentThread().equals(((AtomicReference) this.a.d).get()));
-        ThickLanguageIdentifier thickLanguageIdentifier = this.d;
-        if (thickLanguageIdentifier != null) {
-            thickLanguageIdentifier.c();
-            this.d = null;
-        }
-    }
-
-    public final String e(String str) {
-        String str2;
-        if (this.d == null) {
-            b();
-        }
-        if (str.isEmpty()) {
-            return TranslateController.UNKNOWN_LANGUAGE;
-        }
-        ThickLanguageIdentifier thickLanguageIdentifier = this.d;
-        l.h(thickLanguageIdentifier);
-        ArrayList a2 = thickLanguageIdentifier.a(str);
-        int size = a2.size();
-        int i10 = 0;
+        int i12 = 0;
         while (true) {
-            if (i10 >= size) {
-                str2 = "";
+            iArr = this.c;
+            if (i12 >= 32) {
                 break;
             }
-            Object obj = a2.get(i10);
-            i10++;
-            IdentifiedLanguage identifiedLanguage = (IdentifiedLanguage) obj;
-            if (!"unknown".equals(identifiedLanguage.a)) {
-                str2 = identifiedLanguage.a;
-                break;
+            iArr[i12] = 0;
+            i12++;
+        }
+        for (int i13 = 1; i13 < 5; i13++) {
+            byte[] b10 = dVar.b((i11 * i13) / 5, this.b);
+            int i14 = (i10 * 4) / 5;
+            for (int i15 = i10 / 5; i15 < i14; i15++) {
+                int i16 = (b10[i15] & 255) >> 3;
+                iArr[i16] = iArr[i16] + 1;
             }
         }
-        return str2.isEmpty() ? TranslateController.UNKNOWN_LANGUAGE : "iw".equals(str2) ? "he" : str2;
+        int length = iArr.length;
+        int i17 = 0;
+        int i18 = 0;
+        int i19 = 0;
+        for (int i20 = 0; i20 < length; i20++) {
+            int i21 = iArr[i20];
+            if (i21 > i17) {
+                i19 = i20;
+                i17 = i21;
+            }
+            if (i21 > i18) {
+                i18 = i21;
+            }
+        }
+        int i22 = 0;
+        int i23 = 0;
+        for (int i24 = 0; i24 < length; i24++) {
+            int i25 = i24 - i19;
+            int i26 = iArr[i24] * i25 * i25;
+            if (i26 > i23) {
+                i22 = i24;
+                i23 = i26;
+            }
+        }
+        if (i19 <= i22) {
+            int i27 = i19;
+            i19 = i22;
+            i22 = i27;
+        }
+        if (i19 - i22 <= length / 16) {
+            throw vb.e.a();
+        }
+        int i28 = i19 - 1;
+        int i29 = -1;
+        int i30 = i28;
+        while (i28 > i22) {
+            int i31 = i28 - i22;
+            int i32 = (i18 - iArr[i28]) * (i19 - i28) * i31 * i31;
+            if (i32 > i29) {
+                i30 = i28;
+                i29 = i32;
+            }
+            i28--;
+        }
+        int i33 = i30 << 3;
+        byte[] a2 = dVar.a();
+        for (int i34 = 0; i34 < i11; i34++) {
+            int i35 = i34 * i10;
+            for (int i36 = 0; i36 < i10; i36++) {
+                if ((a2[i35 + i36] & 255) < i33) {
+                    bVar.c(i36, i34);
+                }
+            }
+        }
+        return bVar;
     }
 }

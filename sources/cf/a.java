@@ -1,79 +1,61 @@
 package cf;
 
-import bf.e;
-import ef.g;
-import ef.p;
-import ef.s;
+import android.graphics.Bitmap;
+import ef.l;
+import java.io.BufferedInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.RandomAccessFile;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class a implements hf.a {
-    public final char a;
+public abstract class a {
+    public String a;
+    public long b;
+    public String c;
+    public String d;
+    public String e;
+    public String f;
+    public short g;
+    public String h;
+    public String i;
+    public short j;
+    public short k;
+    public String l;
+    public String m;
+    public String n;
+    public Bitmap o;
+    public Bitmap p;
+    public File q;
 
-    /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
-    public a(int i10) {
-        this('*');
-        switch (i10) {
-            case 1:
-                this('_');
-                break;
-            default:
-                break;
-        }
-    }
-
-    @Override // hf.a
-    public final int a(e eVar, e eVar2) {
-        if (eVar.d || eVar2.c) {
-            int i10 = eVar2.h;
-            if (i10 % 3 != 0 && (eVar.h + i10) % 3 == 0) {
-                return 0;
+    public static a a(File file) {
+        byte b10;
+        try {
+            byte[] bArr = new byte[12];
+            RandomAccessFile randomAccessFile = new RandomAccessFile(file, "r");
+            randomAccessFile.readFully(bArr, 0, 8);
+            randomAccessFile.close();
+            BufferedInputStream bufferedInputStream = new BufferedInputStream(new FileInputStream(file));
+            if (bArr[4] == 102 && bArr[5] == 116 && bArr[6] == 121 && bArr[7] == 112) {
+                return new df.a(bufferedInputStream);
             }
+            if (bArr[0] == 102 && bArr[1] == 76 && bArr[2] == 97 && bArr[3] == 99) {
+                c cVar = new c(file);
+                if (cVar.s) {
+                    return null;
+                }
+                return cVar;
+            }
+            if (!file.getAbsolutePath().endsWith("mp3") && (((b10 = bArr[0]) != 73 || bArr[1] != 68 || bArr[2] != 51) && (b10 != 84 || bArr[1] != 65 || bArr[2] != 71))) {
+                c cVar2 = new c(file);
+                if (cVar2.s) {
+                    return null;
+                }
+                return cVar2;
+            }
+            return new l(bufferedInputStream, file.length());
+        } catch (Exception unused) {
+            return null;
         }
-        return (eVar.g < 2 || eVar2.g < 2) ? 1 : 2;
-    }
-
-    @Override // hf.a
-    public final char b() {
-        return this.a;
-    }
-
-    @Override // hf.a
-    public final int c() {
-        return 1;
-    }
-
-    @Override // hf.a
-    public final void d(s sVar, s sVar2, int i10) {
-        String.valueOf(this.a);
-        g gVar = i10 == 1 ? new g(0) : new g(3);
-        p pVar = (p) sVar.f;
-        while (pVar != null && pVar != sVar2) {
-            p pVar2 = (p) pVar.f;
-            gVar.b(pVar);
-            pVar = pVar2;
-        }
-        gVar.g();
-        p pVar3 = (p) sVar.f;
-        gVar.f = pVar3;
-        if (pVar3 != null) {
-            pVar3.e = gVar;
-        }
-        gVar.e = sVar;
-        sVar.f = gVar;
-        p pVar4 = (p) sVar.b;
-        gVar.b = pVar4;
-        if (((p) gVar.f) == null) {
-            pVar4.d = gVar;
-        }
-    }
-
-    @Override // hf.a
-    public final char e() {
-        return this.a;
-    }
-
-    public a(char c10) {
-        this.a = c10;
     }
 }

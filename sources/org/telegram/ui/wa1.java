@@ -1,76 +1,87 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.text.TextUtils;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ThemeActivity;
+import android.content.SharedPreferences;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class wa1 implements org.telegram.ui.Components.am0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
+public final class wa1 implements org.telegram.ui.Components.fo {
+    public final /* synthetic */ TLRPC.TL_forumTopic a;
+    public final /* synthetic */ pb1 b;
 
-    public /* synthetic */ wa1(Object obj, Object obj2, Object obj3, int i10) {
-        this.a = i10;
-        this.b = obj;
-        this.c = obj2;
-        this.d = obj3;
+    public wa1(pb1 pb1Var, TLRPC.TL_forumTopic tL_forumTopic) {
+        this.b = pb1Var;
+        this.a = tL_forumTopic;
     }
 
-    @Override // org.telegram.ui.Components.am0
-    public final void c(int i10, View view) {
-        switch (this.a) {
-            case 0:
-                db1 db1Var = (db1) this.b;
-                fb1 fb1Var = (fb1) this.c;
-                bb1 bb1Var = (bb1) this.d;
-                ThemeActivity themeActivity = db1Var.e;
-                int i11 = themeActivity.f;
-                org.telegram.ui.ActionBar.x6 C0 = i11 == 1 ? org.telegram.ui.ActionBar.y6.J : org.telegram.ui.ActionBar.y6.C0();
-                if (i10 == fb1Var.h() - 1) {
-                    themeActivity.presentFragment(new vc1(C0, false, 1, false, i11 == 1));
-                } else {
-                    org.telegram.ui.ActionBar.w6 w6Var = (org.telegram.ui.ActionBar.w6) fb1Var.e.get(i10);
-                    if (!TextUtils.isEmpty(w6Var.o) && w6Var.a != org.telegram.ui.ActionBar.y6.n) {
-                        org.telegram.ui.ActionBar.t6.a(false);
-                    }
-                    int i12 = C0.Y;
-                    int i13 = w6Var.a;
-                    if (i12 != i13) {
-                        org.telegram.ui.ActionBar.y6.H1(C0, i11 == 1, i13, view);
-                        org.telegram.ui.ActionBar.h4.p(C0, w6Var.a);
-                        org.telegram.ui.ActionBar.y6.J1(themeActivity);
-                    } else {
-                        themeActivity.presentFragment(new vc1(C0, false, 1, i13 >= 100, i11 == 1));
-                    }
-                }
-                int left = view.getLeft();
-                int right = view.getRight();
-                int dp = AndroidUtilities.dp(52.0f);
-                int i14 = left - dp;
-                if (i14 < 0) {
-                    bb1Var.w0(i14, 0, null);
-                } else {
-                    int i15 = right + dp;
-                    if (i15 > bb1Var.getMeasuredWidth()) {
-                        bb1Var.w0(i15 - bb1Var.getMeasuredWidth(), 0, null);
-                    }
-                }
-                int childCount = bb1Var.getChildCount();
-                for (int i16 = 0; i16 < childCount; i16++) {
-                    View childAt = bb1Var.getChildAt(i16);
-                    if (childAt instanceof ThemeActivity.InnerAccentView) {
-                        ((ThemeActivity.InnerAccentView) childAt).a(true);
-                    }
-                }
-                break;
-            default:
-                j11.W((j11) this.b, (Context) this.c, (String) this.d, view, i10);
-                break;
+    @Override // org.telegram.ui.Components.fo
+    public final void E(int i10) {
+        pb1 pb1Var = this.b;
+        long j10 = pb1Var.a;
+        pb1Var.finishPreviewFragment();
+        TLRPC.TL_forumTopic tL_forumTopic = this.a;
+        if (i10 != 0) {
+            pb1Var.getNotificationsController().H(-j10, i10, tL_forumTopic.id);
+            if (org.telegram.ui.Components.cc.a(pb1Var)) {
+                org.telegram.ui.Components.cc.z(pb1Var, 5, i10, pb1Var.getResourceProvider()).j();
+                return;
+            }
+            return;
         }
+        if (pb1Var.getMessagesController().q2(-j10, tL_forumTopic.id, null)) {
+            pb1Var.getNotificationsController().G(-j10, tL_forumTopic.id, false);
+        }
+        if (org.telegram.ui.Components.cc.a(pb1Var)) {
+            org.telegram.ui.Components.cc.z(pb1Var, 4, i10, pb1Var.getResourceProvider()).j();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.fo
+    public final void dismiss() {
+        this.b.finishPreviewFragment();
+    }
+
+    @Override // org.telegram.ui.Components.fo
+    public final void v() {
+        pb1 pb1Var = this.b;
+        pb1Var.finishPreviewFragment();
+        org.telegram.messenger.vp messagesController = pb1Var.getMessagesController();
+        long j10 = pb1Var.a;
+        TLRPC.TL_forumTopic tL_forumTopic = this.a;
+        boolean q22 = messagesController.q2(-j10, tL_forumTopic.id, null);
+        pb1Var.getNotificationsController().G(-j10, tL_forumTopic.id, !q22);
+        if (org.telegram.ui.Components.cc.a(pb1Var)) {
+            org.telegram.ui.Components.cc.z(pb1Var, !q22 ? 3 : 4, !q22 ? ConnectionsManager.DEFAULT_DATACENTER_ID : 0, pb1Var.getResourceProvider()).j();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.fo
+    public final void x() {
+        this.b.finishPreviewFragment();
+        org.telegram.messenger.i0.h3(new t11(12, this, this.a), 500L);
+    }
+
+    @Override // org.telegram.ui.Components.fo
+    public final void y() {
+        int i10;
+        pb1 pb1Var = this.b;
+        i10 = ((org.telegram.ui.ActionBar.k2) pb1Var).currentAccount;
+        SharedPreferences sharedPreferences = org.telegram.messenger.vp.r1(i10).e7;
+        StringBuilder sb2 = new StringBuilder("sound_enabled_");
+        long j10 = pb1Var.a;
+        TLRPC.TL_forumTopic tL_forumTopic = this.a;
+        sb2.append(org.telegram.messenger.ot.v(-j10, tL_forumTopic.id, false));
+        boolean z10 = sharedPreferences.getBoolean(sb2.toString(), true);
+        boolean z11 = !z10;
+        sharedPreferences.edit().putBoolean("sound_enabled_" + org.telegram.messenger.ot.v(-j10, tL_forumTopic.id, false), z11).apply();
+        pb1Var.finishPreviewFragment();
+        if (org.telegram.ui.Components.cc.a(pb1Var)) {
+            org.telegram.ui.Components.cc.S(z10 ? 1 : 0, pb1Var, pb1Var.getResourceProvider()).j();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.fo
+    public final /* synthetic */ void n() {
     }
 }

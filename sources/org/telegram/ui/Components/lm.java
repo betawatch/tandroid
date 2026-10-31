@@ -1,31 +1,30 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class lm extends s4.d0 {
-    public final /* synthetic */ ei.k r;
+public final /* synthetic */ class lm implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ jn b;
+    public final /* synthetic */ int c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public lm(ei.k kVar, Context context) {
-        super(context);
-        this.r = kVar;
+    public /* synthetic */ lm(jn jnVar, int i10, int i11) {
+        this.a = i11;
+        this.b = jnVar;
+        this.c = i10;
     }
 
-    @Override // s4.d0
-    public final int k(int i10, View view) {
-        int topScrollOffset;
-        int k10 = super.k(i10, view);
-        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = (ChatAttachAlertPhotoLayout) this.r.R;
-        int paddingTop = chatAttachAlertPhotoLayout.E.getPaddingTop();
-        topScrollOffset = chatAttachAlertPhotoLayout.getTopScrollOffset();
-        return k10 - (paddingTop - topScrollOffset);
-    }
-
-    @Override // s4.d0
-    public final int m(int i10) {
-        return super.m(i10) * 2;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.h0(this.c, null);
+                break;
+            case 1:
+                this.b.e0(this.c);
+                break;
+            default:
+                this.b.h0(this.c, null);
+                break;
+        }
     }
 }

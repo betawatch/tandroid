@@ -1,35 +1,49 @@
 package org.telegram.ui.Components;
 
-import java.util.Arrays;
-import java.util.Comparator;
+import android.app.Activity;
+import android.graphics.Point;
+import android.view.View;
+import android.widget.LinearLayout;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class gh0 implements Comparator {
-    public final /* synthetic */ oh0 a;
+public final class gh0 extends LinearLayout {
+    public boolean a;
+    public final /* synthetic */ jh0 b;
 
-    public gh0(oh0 oh0Var) {
-        this.a = oh0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public gh0(jh0 jh0Var, Activity activity) {
+        super(activity);
+        this.b = jh0Var;
+        this.a = false;
     }
 
-    public final int a(nh0 nh0Var) {
-        oh0 oh0Var = this.a;
-        int size = oh0Var.r.answers.size();
-        for (int i10 = 0; i10 < size; i10++) {
-            if (Arrays.equals(oh0Var.r.answers.get(i10).option, nh0Var.d)) {
-                return i10;
-            }
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        jh0 jh0Var = this.b;
+        ac0 ac0Var = jh0Var.H;
+        ac0 ac0Var2 = jh0Var.G;
+        this.a = true;
+        Point point = org.telegram.messenger.i0.q;
+        int i12 = point.x > point.y ? 3 : 5;
+        ac0Var2.setItemCount(i12);
+        ac0Var.setItemCount(i12);
+        ac0Var2.getLayoutParams().height = org.telegram.messenger.i0.L(54.0f) * i12;
+        ac0Var.getLayoutParams().height = org.telegram.messenger.i0.L(54.0f) * i12;
+        this.a = false;
+        int size = View.MeasureSpec.getSize(i10);
+        jh0Var.N = size;
+        if (size != 0) {
+            jh0Var.c(false);
         }
-        return 0;
+        super.onMeasure(i10, i11);
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        int a2 = a((nh0) obj);
-        int a10 = a((nh0) obj2);
-        if (a2 > a10) {
-            return 1;
+    @Override // android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.a) {
+            return;
         }
-        return a2 < a10 ? -1 : 0;
+        super.requestLayout();
     }
 }

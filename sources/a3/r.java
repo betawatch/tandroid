@@ -1,21 +1,21 @@
 package a3;
 
-import a8.yb;
 import android.content.Context;
 import android.os.Build;
 import android.os.Looper;
 import android.os.Trace;
 import android.util.Pair;
 import android.view.Surface;
-import f9.s1;
+import e9.x1;
 import java.util.List;
 import java.util.Locale;
 import java.util.concurrent.Executor;
+import v7.t6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class r implements p0 {
-    public f9.i0 a;
+    public e9.n0 a;
     public b2.x b;
     public long c;
     public long d;
@@ -25,9 +25,9 @@ public final class r implements p0 {
 
     public r(w wVar, Context context) {
         this.g = wVar;
-        e2.n0.N(context);
-        f9.g0 g0Var = f9.i0.b;
-        this.a = s1.e;
+        e2.l0.N(context);
+        e9.l0 l0Var = e9.n0.b;
+        this.a = x1.e;
         this.d = -9223372036854775807L;
         this.f = w.q;
     }
@@ -46,7 +46,7 @@ public final class r implements p0 {
 
     @Override // a3.p0
     public final Surface d() {
-        yb.p(false);
+        t6.p(false);
         throw null;
     }
 
@@ -54,7 +54,7 @@ public final class r implements p0 {
     public final boolean e(b2.x xVar) {
         w wVar = this.g;
         boolean z10 = true;
-        yb.p(wVar.n == 0);
+        t6.p(wVar.n == 0);
         b2.o oVar = xVar.I;
         if (oVar == null || !oVar.d()) {
             oVar = b2.o.h;
@@ -123,26 +123,31 @@ public final class r implements p0 {
     }
 
     @Override // a3.p0
-    public final void h(long j10) {
+    public final void h(a6.i iVar) {
+        this.f = j9.r.a;
+    }
+
+    @Override // a3.p0
+    public final void i(long j10) {
         this.c = j10;
     }
 
     @Override // a3.p0
-    public final void i() {
+    public final void j() {
         long j10 = this.d;
         w wVar = this.g;
         if (wVar.o >= j10) {
-            wVar.e.i();
+            wVar.e.j();
         }
     }
 
     @Override // a3.p0
-    public final void j(int i10) {
-        this.g.e.j(i10);
+    public final void k(int i10) {
+        this.g.e.k(i10);
     }
 
     @Override // a3.p0
-    public final void k() {
+    public final void l() {
         w wVar = this.g;
         wVar.getClass();
         int i10 = e2.y.c.a;
@@ -150,9 +155,9 @@ public final class r implements p0 {
     }
 
     @Override // a3.p0
-    public final void l(b2.x xVar, long j10, int i10, List list) {
-        yb.p(false);
-        this.a = f9.i0.u(list);
+    public final void m(b2.x xVar, long j10, int i10, List list) {
+        t6.p(false);
+        this.a = e9.n0.u(list);
         this.b = xVar;
         b2.w a2 = xVar.a();
         b2.o oVar = xVar.I;
@@ -165,11 +170,6 @@ public final class r implements p0 {
     }
 
     @Override // a3.p0
-    public final void m(b6.i iVar) {
-        this.f = k9.r.a;
-    }
-
-    @Override // a3.p0
     public final void n(boolean z10) {
         this.d = -9223372036854775807L;
         w wVar = this.g;
@@ -177,11 +177,11 @@ public final class r implements p0 {
         if (wVar.n == 1) {
             wVar.m++;
             fVar.n(z10);
-            while (wVar.j.j() > 1) {
-                wVar.j.f();
+            while (wVar.j.p() > 1) {
+                wVar.j.i();
             }
-            if (wVar.j.j() == 1) {
-                ((v) wVar.j.f()).getClass();
+            if (wVar.j.p() == 1) {
+                ((v) wVar.j.i()).getClass();
                 throw null;
             }
             wVar.o = -9223372036854775807L;
@@ -194,7 +194,7 @@ public final class r implements p0 {
     @Override // a3.p0
     public final boolean o(long j10, j jVar) {
         int i10;
-        yb.p(false);
+        t6.p(false);
         long j11 = j10 + this.c;
         w wVar = this.g;
         b0 b0Var = wVar.i;
@@ -207,7 +207,7 @@ public final class r implements p0 {
                 r2.l lVar = jVar.a;
                 int i11 = jVar.b;
                 Trace.beginSection("dropVideoBuffer");
-                lVar.f(i11);
+                lVar.c(i11);
                 Trace.endSection();
                 nVar.R0(0, 1);
                 return true;
@@ -225,7 +225,7 @@ public final class r implements p0 {
         if (this.a.equals(list)) {
             return;
         }
-        this.a = f9.i0.u(list);
+        this.a = e9.n0.u(list);
         b2.x xVar = this.b;
         if (xVar == null) {
             return;
@@ -296,15 +296,15 @@ public final class r implements p0 {
     @Override // a3.p0
     public final void x() {
         w wVar = this.g;
-        if (wVar.j.j() == 0) {
+        if (wVar.j.p() == 0) {
             wVar.e.x();
             return;
         }
         e2.j0 j0Var = new e2.j0();
-        if (wVar.j.j() <= 0) {
+        if (wVar.j.p() <= 0) {
             wVar.j = j0Var;
         } else {
-            ((v) wVar.j.f()).getClass();
+            ((v) wVar.j.i()).getClass();
             throw null;
         }
     }

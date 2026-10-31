@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicReference;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class v extends o {
     public final boolean a;
@@ -75,9 +75,9 @@ public final class v extends o {
         uVar.b = reflectiveGenericLifecycleObserver;
         uVar.a = nVar2;
         o.a aVar = this.b;
-        o.c h = aVar.h(sVar);
-        if (h != null) {
-            obj = h.b;
+        o.c l4 = aVar.l(sVar);
+        if (l4 != null) {
+            obj = l4.b;
         } else {
             HashMap hashMap2 = aVar.e;
             o.c cVar = new o.c(sVar, uVar);
@@ -135,7 +135,7 @@ public final class v extends o {
         o.c cVar = hashMap.containsKey(sVar) ? ((o.c) hashMap.get(sVar)).d : null;
         n nVar = (cVar == null || (uVar = (u) cVar.b) == null) ? null : uVar.a;
         ArrayList arrayList = this.h;
-        n nVar2 = arrayList.isEmpty() ? null : (n) ic.a.g(1, arrayList);
+        n nVar2 = arrayList.isEmpty() ? null : (n) i0.a.g(1, arrayList);
         n state1 = this.c;
         kotlin.jvm.internal.i.e(state1, "state1");
         if (nVar == null || nVar.compareTo(state1) >= 0) {
@@ -148,7 +148,7 @@ public final class v extends o {
         if (this.a) {
             n.a.a().a.getClass();
             if (Looper.getMainLooper().getThread() != Thread.currentThread()) {
-                throw new IllegalStateException(a1.g.p("Method ", str, " must be called on the main thread").toString());
+                throw new IllegalStateException(a1.g.n("Method ", str, " must be called on the main thread").toString());
             }
         }
     }

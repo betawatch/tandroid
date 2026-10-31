@@ -1,753 +1,221 @@
 package org.telegram.ui.Wallet;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.ColorMatrixColorFilter;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.graphics.Typeface;
-import android.os.Build;
-import android.text.SpannableString;
-import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
+import android.text.TextPaint;
+import android.text.style.ClickableSpan;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import java.math.BigDecimal;
-import java.text.DecimalFormat;
-import java.text.DecimalFormatSymbols;
-import java.util.ArrayList;
-import java.util.Locale;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BillingController;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.UserObject;
-import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.kb1;
-import org.telegram.ui.b20;
-import org.telegram.ui.ok;
+import org.telegram.messenger.cd;
+import org.telegram.ui.Components.z60;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes4.dex */
-public class w5 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
-    public static Typeface j0;
-    public static Typeface k0;
-    public final FrameLayout E;
-    public View.OnClickListener F;
-    public final ok G;
-    public final b20 H;
-    public final Paint I;
-    public float J;
-    public final org.telegram.ui.Components.h6 K;
-    public final View L;
-    public final LinearLayout M;
-    public final u5 N;
-    public final u5 O;
-    public final FrameLayout.LayoutParams P;
-    public String Q;
-    public int R;
-    public final int S;
-    public float T;
-    public float U;
-    public int V;
-    public l0 W;
-    public boolean a;
-    public float[] a0;
-    public float b;
-    public int b0;
-    public final Matrix c;
-    public int c0;
-    public final Matrix d;
-    public float d0;
-    public final Matrix e;
-    public float e0;
-    public final RectF f;
-    public final org.telegram.ui.Components.h6 f0;
-    public final org.telegram.ui.Components.h6 g0;
-    public float h;
-    public f6 h0;
-    public boolean i0;
-    public boolean n;
-    public float r;
-    public float s;
-    public final Matrix v;
-    public final Matrix w;
-    public final Matrix x;
-    public final r5 y;
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final class w5 extends ClickableSpan {
+    public final /* synthetic */ int a = 0;
+    public final int b;
+    public final Object c;
+    public final Object d;
 
-    public w5(Context context) {
-        this(context, R.drawable.wallet_card_qr, 46);
+    public w5(xh.z2 z2Var, int i10, rh.p pVar) {
+        this.d = z2Var;
+        this.b = i10;
+        this.c = pVar;
     }
 
-    public static void a(final w5 w5Var, final Canvas canvas, float f7) {
-        float width = w5Var.getFrontFace().getWidth();
-        float height = w5Var.getFrontFace().getHeight();
-        float f10 = width / 1640.0f;
-        Paint paint = w5Var.I;
-        Context context = w5Var.getContext();
-        if (j0 == null) {
-            if (Build.VERSION.SDK_INT >= 26) {
-                j0 = new Typeface.Builder(context.getAssets(), "fonts/rmono_var.ttf").setFontVariationSettings("'wght' 400").setWeight(400).build();
-            } else {
-                j0 = AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MONO);
-            }
-        }
-        paint.setTypeface(j0);
-        paint.setTextSize(47.345238f * f10);
-        paint.setTextAlign(Paint.Align.CENTER);
-        float[] fArr = w5Var.a0;
-        paint.setColor(i0.a.f((fArr == null || fArr.length < 18) ? 0.0f : fArr[8], h7.b(fArr, 0), h7.b(fArr, 1)));
-        Paint.FontMetrics fontMetrics = paint.getFontMetrics();
-        final float f11 = (-(fontMetrics.ascent + fontMetrics.descent)) * 0.5f;
-        final float f12 = f10 * 27.333332f;
-        final String[] split = f(w5Var.Q).split("\\n");
-        canvas.save();
-        canvas.translate(f10 * 1527.738f, 0.5002976f * height);
-        canvas.rotate(90.0f);
-        w5Var.c(f7, new n2(w5Var, 2), new Runnable() { // from class: org.telegram.ui.Wallet.t5
-            @Override // java.lang.Runnable
-            public final void run() {
-                w5 w5Var2 = w5.this;
-                w5Var2.getClass();
-                String[] strArr = split;
-                String str = strArr[0];
-                float f13 = f12;
-                float f14 = f11;
-                Paint paint2 = w5Var2.I;
-                Canvas canvas2 = canvas;
-                canvas2.drawText(str, 0.0f, (-f13) + f14, paint2);
-                if (strArr.length > 1) {
-                    canvas2.drawText(strArr[1], 0.0f, f13 + f14, paint2);
+    @Override // android.text.style.ClickableSpan
+    public final void onClick(View view) {
+        int i10 = this.a;
+        Object obj = this.d;
+        switch (i10) {
+            case 0:
+                Runnable runnable = (Runnable) obj;
+                if (runnable != null) {
+                    runnable.run();
+                    break;
                 }
-            }
-        });
-        canvas.restore();
-    }
-
-    public static String d(String str) {
-        StringBuilder sb2 = new StringBuilder((str.length() / 4) + str.length());
-        for (int i10 = 0; i10 < str.length(); i10++) {
-            if (i10 > 0 && i10 % 4 == 0) {
-                sb2.append(' ');
-            }
-            sb2.append(str.charAt(i10));
-        }
-        return sb2.toString();
-    }
-
-    public static SpannableStringBuilder e(long j10) {
-        return l0.q(new DecimalFormat("#,##0.#########", new DecimalFormatSymbols(Locale.US)).format(new BigDecimal(l0.p(j10, false))), 0.8f);
-    }
-
-    public static String f(String str) {
-        String[] split = str.split(" ");
-        if (split.length < 2) {
-            return str;
-        }
-        int length = split.length / 2;
-        StringBuilder sb2 = new StringBuilder(str.length() + 1);
-        int i10 = 0;
-        while (i10 < split.length) {
-            if (i10 > 0) {
-                sb2.append(i10 == length ? '\n' : ' ');
-            }
-            sb2.append(split[i10]);
-            i10++;
-        }
-        return sb2.toString();
-    }
-
-    public static void k(View view, Matrix matrix) {
-        if (!(view.getParent() instanceof View)) {
-            matrix.reset();
-            return;
-        }
-        k((View) view.getParent(), matrix);
-        matrix.preTranslate(view.getLeft() - r0.getScrollX(), view.getTop() - r0.getScrollY());
-        matrix.preConcat(view.getMatrix());
-    }
-
-    public final float b() {
-        float c10 = this.N.getDrawable().c();
-        float max = Math.max(0.0f, (((((336.0f - this.S) - 48.0f) * this.E.getWidth()) / 336.0f) - this.P.leftMargin) - AndroidUtilities.dp(8.0f));
-        if (c10 > 0.0f) {
-            return Math.min(1.0f, max / c10);
-        }
-        return 1.0f;
-    }
-
-    public final void c(float f7, n2 n2Var, Runnable runnable) {
-        n2Var.a(f7 > 0.0f ? AndroidUtilities.dp(5.0f) : 0.0f, AndroidUtilities.dp(1.0f), Color.argb((int) (89.0f * f7), 0, 0, 0));
-        runnable.run();
-        if (f7 <= 0.0f) {
-            return;
-        }
-        n2Var.a(AndroidUtilities.dpf2(1.5f), 0.0f, Color.argb((int) (f7 * 140.0f), 0, 0, 0));
-        this.i0 = true;
-        runnable.run();
-        this.i0 = false;
-    }
-
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if (i10 == NotificationCenter.walletUpdate) {
-            Object obj = objArr[0];
-            l0 l0Var = this.W;
-            if (obj == l0Var) {
-                l(l0Var);
-            }
-        }
-    }
-
-    public final boolean g(View view, Matrix matrix) {
-        if (!isAttachedToWindow() || !view.isAttachedToWindow() || getRootView() != view.getRootView()) {
-            return false;
-        }
-        View view2 = (View) ((View) this.E.getParent()).getParent();
-        r5 r5Var = this.y;
-        Matrix matrix2 = (Matrix) r5Var.e.c;
-        Matrix matrix3 = this.v;
-        matrix3.set(matrix2);
-        di.l1 l1Var = r5Var.f;
-        matrix3.preTranslate(l1Var.getLeft(), l1Var.getTop());
-        k(view2, matrix);
-        matrix.preConcat(matrix3);
-        matrix.preTranslate(this.E.getLeft() - r0.getScrollX(), this.E.getTop() - r0.getScrollY());
-        matrix.preConcat(this.E.getMatrix());
-        Matrix matrix4 = this.w;
-        k(view, matrix4);
-        Matrix matrix5 = this.x;
-        if (!matrix4.invert(matrix5)) {
-            return false;
-        }
-        matrix.postConcat(matrix5);
-        return true;
-    }
-
-    public View getBalanceAnchor() {
-        return this.L;
-    }
-
-    public LinearLayout getBalanceLayout() {
-        return this.M;
-    }
-
-    public org.telegram.ui.Components.s6 getBalanceView() {
-        return this.N;
-    }
-
-    public TextView getCardHolderView() {
-        return this.G;
-    }
-
-    public float getCardRotationX() {
-        return this.y.getCardRotationX();
-    }
-
-    public float getCardRotationY() {
-        return this.y.getCardRotationY();
-    }
-
-    public FrameLayout getFrontFace() {
-        return this.E;
-    }
-
-    public int getStickerLayerIndex() {
-        int indexOfChild = this.E.indexOfChild(this.G);
-        int indexOfChild2 = this.E.indexOfChild(this.M);
-        return indexOfChild < 0 ? indexOfChild2 < 0 ? this.E.getChildCount() : indexOfChild2 : indexOfChild2 < 0 ? indexOfChild : Math.min(indexOfChild, indexOfChild2);
-    }
-
-    public ArrayList<RectF> getStickerObstacles() {
-        ArrayList<RectF> arrayList = new ArrayList<>();
-        float width = this.E.getWidth() / 336.0f;
-        float b10 = b();
-        float c10 = this.N.getDrawable().c() * b10;
-        float c11 = this.O.getDrawable().c();
-        FrameLayout.LayoutParams layoutParams = this.P;
-        float f7 = layoutParams.leftMargin;
-        float f10 = layoutParams.topMargin;
-        float bottom = ((r3.getBottom() + r3.getTop()) / 2.0f) + f10;
-        float height = (r3.getHeight() * b10) / 2.0f;
-        arrayList.add(new RectF(f7, bottom - height, c10 + f7, bottom + height));
-        ok okVar = this.G;
-        arrayList.add(new RectF(okVar.getLeft(), okVar.getTop(), okVar.getLeft() + Math.min(okVar.getWidth(), okVar.getPaint().measureText(okVar.getText().toString())), okVar.getBottom()));
-        arrayList.add(new RectF(this.E.getWidth() - (34.0f * width), 18.0f * width, this.E.getWidth() - (12.0f * width), width * 187.0f));
-        Path path = new Path();
-        h(path, this.E.getWidth(), this.E.getHeight());
-        RectF rectF = new RectF();
-        path.computeBounds(rectF, true);
-        arrayList.add(rectF);
-        arrayList.add(new RectF(f7, r5.getTop() + f10, c11 + f7, f10 + r5.getBottom()));
-        arrayList.add(this.a ? new RectF(this.f) : new RectF());
-        return arrayList;
-    }
-
-    public float[] getStickerStyle() {
-        return this.a0;
-    }
-
-    public org.telegram.ui.Components.s6 getUsdBalanceView() {
-        return this.O;
-    }
-
-    public final void h(Path path, float f7, float f10) {
-        path.rewind();
-        float f11 = 336 - this.S;
-        path.addRoundRect(((f11 - 48.0f) * f7) / 336.0f, 0.36097562f * f10, (f11 * f7) / 336.0f, 0.5365854f * f10, (f7 * 8.0f) / 336.0f, 0.03902439f * f10, Path.Direction.CW);
-    }
-
-    public final void i(float f7, float f10) {
-        if (this.T == f7 && this.U == f10) {
-            return;
-        }
-        this.T = f7;
-        if (f7 == 0.0f) {
-            this.n = false;
-        }
-        this.U = f10;
-        this.N.invalidate();
-        this.O.invalidate();
-    }
-
-    public final void j(int i10, long j10) {
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-        SpannableString spannableString = new SpannableString("GRAM");
-        spannableString.setSpan(new v5(this, R.drawable.wallet_gram_large), 0, spannableString.length(), 33);
-        spannableStringBuilder.append((CharSequence) spannableString).append((CharSequence) " ");
-        spannableStringBuilder.append((CharSequence) e(j10));
-        spannableStringBuilder.append((CharSequence) " ");
-        int length = spannableStringBuilder.length();
-        spannableStringBuilder.append((CharSequence) LocaleController.getString(R.string.GramCurrency));
-        spannableStringBuilder.setSpan(new li.z5(this, 4), length, spannableStringBuilder.length(), 33);
-        this.N.setText(spannableStringBuilder);
-        long round = Math.round(MessagesController.getInstance(i10).config.tonUsdRate.get() * (j10 / 1.0E9d) * 100.0d);
-        this.O.setText(BillingController.getInstance().formatCurrency(round, "USD", 2, round % 100 == 0));
-    }
-
-    public final void l(l0 l0Var) {
-        if (l0Var == null) {
-            return;
-        }
-        int i10 = l0Var.a;
-        setCardHolder(UserObject.getUserName(UserConfig.getInstance(i10).getCurrentUser()).toUpperCase());
-        if (l0Var.t() != null) {
-            setCardNumber(d(l0Var.t().toUpperCase()));
-        }
-        if (l0Var.G()) {
-            j(i10, l0Var.v());
-        }
-    }
-
-    public final void m() {
-        int i10;
-        float f7;
-        if (this.h0 == null) {
-            return;
-        }
-        float[] fArr = this.a0;
-        char c10 = '\t';
-        int i11 = 2;
-        boolean z10 = true;
-        float f10 = 0.0f;
-        float f11 = 1.0f;
-        if (fArr == null) {
-            fArr = new float[]{0.0f, 1.0f, 1.0f, 0.0f, 1.0f, 1.0f, 0.5f, 0.5f, 1.0f, 1.0f};
-        }
-        float[] fArr2 = h7.c;
-        float[] fArr3 = new float[42];
-        int i12 = 0;
-        while (true) {
-            char c11 = c10;
-            if (i12 >= i11) {
                 break;
-            }
-            int i13 = i12 * 4;
-            int i14 = i13 + 10;
-            boolean z11 = z10;
-            if (fArr.length < 18 || fArr[i14] < f10) {
-                f7 = f10;
-                System.arraycopy(h7.b, 0, fArr3, i12 * 12, 12);
-                fArr3[i12 + 28] = 1.0f;
-                System.arraycopy(fArr2, 0, fArr3, (i12 * 3) + 30, 3);
-            } else {
-                fArr3[i12 + 28] = 0.6f;
-                int i15 = (int) fArr[i14];
-                int i16 = i12 * 3;
-                int i17 = i16 + 30;
-                float f12 = ((i15 >> 16) & 255) / 255.0f;
-                f7 = f10;
-                float f13 = ((i15 >> 8) & 255) / 255.0f;
-                float f14 = (i15 & 255) / 255.0f;
-                float min = Math.min(f12, Math.min(f13, f14));
-                float max = Math.max(f12, Math.max(f13, f14)) - min;
-                float f15 = (fArr2[i11] * 0.0722f) + (fArr2[z11 ? 1 : 0] * 0.7152f) + (fArr2[0] * 0.2126f);
-                float min2 = Math.min(1.0f, max / 0.15f);
-                fArr3[i17] = c3.h0.z(max > f7 ? (f12 - min) / max : f7, f15, min2, f15);
-                fArr3[i16 + 31] = c3.h0.z(max > f7 ? (f13 - min) / max : f7, f15, min2, f15);
-                fArr3[i16 + 32] = c3.h0.z(max > f7 ? (f14 - min) / max : f7, f15, min2, f15);
-                int i18 = (int) fArr[i14];
-                int i19 = (int) fArr[i13 + 11];
-                int n10 = h7.n(-16216082, i18, i19);
-                int n11 = h7.n(-15291399, i18, i19);
-                for (int i20 = 0; i20 < 3; i20++) {
-                    int i21 = 16 - (i20 * 8);
-                    float h = h7.h(n10, i21) * 0.73f;
-                    float h10 = h7.h(n11, i21) * 0.73f;
-                    int i22 = i12 * 12;
-                    fArr3[i22 + i20] = (h + h10) / 2.0f;
-                    fArr3[i22 + 3 + i20] = h;
-                    fArr3[i22 + 6 + i20] = h10;
-                    fArr3[i22 + 9 + i20] = h;
-                }
-            }
-            i12++;
-            c10 = c11;
-            z10 = z11 ? 1 : 0;
-            f10 = f7;
-            i11 = 2;
-        }
-        boolean z12 = z10;
-        float f16 = f10;
-        int i23 = 0;
-        for (int i24 = i11; i23 < i24; i24 = 2) {
-            int i25 = i23 * 4;
-            int f17 = (fArr.length < 18 || fArr[i25 + 10] < f16) ? i0.a.f(0.2f, -16611884, -16748084) : i0.a.f(0.2f, ((int) fArr[i25 + 12]) | (-16777216), ((int) fArr[i25 + 11]) | (-16777216));
-            int i26 = i23 * 3;
-            fArr3[i26 + 36] = ((f17 >> 16) & 255) / 255.0f;
-            fArr3[i26 + 37] = ((f17 >> 8) & 255) / 255.0f;
-            fArr3[i26 + 38] = (f17 & 255) / 255.0f;
-            i23++;
-        }
-        System.arraycopy(fArr, 6, fArr3, 24, 4);
-        float[] fArr4 = this.a0;
-        float max2 = (fArr4 == null || fArr4.length <= 8) ? 1.0f : Math.max(f16, Math.min(1.0f, fArr4[8]));
-        f6 f6Var = this.h0;
-        float lerp = AndroidUtilities.lerp(fArr3[30], fArr3[33], max2);
-        float lerp2 = AndroidUtilities.lerp(fArr3[31], fArr3[34], max2);
-        float lerp3 = AndroidUtilities.lerp(fArr3[32], fArr3[35], max2);
-        f6Var.getClass();
-        float[] fArr5 = f6.j;
-        float[] a2 = f6.a(lerp, lerp2, lerp3);
-        float f18 = a2[0];
-        float f19 = a2[z12 ? 1 : 0];
-        float f20 = a2[2];
-        if (f18 == f6Var.e && f19 == f6Var.f && f20 == f6Var.g) {
-            return;
-        }
-        f6Var.e = f18;
-        f6Var.f = f19;
-        f6Var.g = f20;
-        if (f6.k == null) {
-            f6.k = f6.a(0.0f, 0.47809f, 1.0f);
-        }
-        float[] fArr6 = f6.k;
-        double sqrt = (fArr6[0] - fArr6[z12 ? 1 : 0]) / Math.sqrt(2.0d);
-        double sqrt2 = ((fArr6[0] + fArr6[z12 ? 1 : 0]) - (fArr6[2] * 2.0f)) / Math.sqrt(6.0d);
-        double sqrt3 = (f18 - f19) / Math.sqrt(2.0d);
-        double sqrt4 = ((f18 + f19) - (f20 * 2.0f)) / Math.sqrt(6.0d);
-        double IEEEremainder = Math.IEEEremainder(Math.atan2(sqrt4, sqrt3) - Math.atan2(sqrt2, sqrt), 6.283185307179586d);
-        double min3 = ((Math.min(1.0d, Math.abs(IEEEremainder) / 1.0471975511965976d) * (-0.30000001192092896d)) + 1.0d) * (Math.hypot(sqrt3, sqrt4) / Math.hypot(sqrt, sqrt2));
-        double cos = Math.cos(IEEEremainder);
-        double sin = Math.sin(IEEEremainder) / Math.sqrt(3.0d);
-        double d = ((cos - (cos * 0.3333333333333333d)) * min3) + 0.3333333333333333d;
-        double d10 = 0.3333333333333333d - ((cos * min3) * 0.3333333333333333d);
-        float[] fArr7 = new float[20];
-        int i27 = 0;
-        while (true) {
-            i10 = 3;
-            if (i27 >= 3) {
+            default:
+                final rh.p pVar = (rh.p) this.c;
+                z60 H = z60.H((xh.z2) obj, view);
+                final int i11 = 0;
+                char c10 = 1;
+                int i12 = this.b;
+                H.i(new Runnable() { // from class: xh.t2
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i11) {
+                            case 0:
+                                rh.p pVar2 = pVar;
+                                if (pVar2.g != 3) {
+                                    pVar2.g = 3;
+                                    pVar2.c = 0;
+                                    pVar2.d = false;
+                                    pVar2.i = false;
+                                    pVar2.f = 0L;
+                                    pVar2.j = null;
+                                    pVar2.h = false;
+                                    pVar2.a();
+                                    break;
+                                }
+                                break;
+                            case 1:
+                                rh.p pVar3 = pVar;
+                                if (pVar3.g != 2) {
+                                    pVar3.g = 2;
+                                    pVar3.c = 0;
+                                    pVar3.d = false;
+                                    pVar3.i = false;
+                                    pVar3.f = 0L;
+                                    pVar3.j = null;
+                                    pVar3.h = false;
+                                    pVar3.a();
+                                    break;
+                                }
+                                break;
+                            default:
+                                rh.p pVar4 = pVar;
+                                if (pVar4.g != 1) {
+                                    pVar4.g = 1;
+                                    pVar4.c = 0;
+                                    pVar4.d = false;
+                                    pVar4.i = false;
+                                    pVar4.f = 0L;
+                                    pVar4.j = null;
+                                    pVar4.h = false;
+                                    pVar4.a();
+                                    break;
+                                }
+                                break;
+                        }
+                    }
+                }, cd.L0(2131752478, null), i12 == 3);
+                final int i13 = 2;
+                boolean z10 = i12 == 2;
+                String L0 = cd.L0(2131752476, null);
+                final char c11 = c10 == true ? 1 : 0;
+                H.i(new Runnable() { // from class: xh.t2
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (c11) {
+                            case 0:
+                                rh.p pVar2 = pVar;
+                                if (pVar2.g != 3) {
+                                    pVar2.g = 3;
+                                    pVar2.c = 0;
+                                    pVar2.d = false;
+                                    pVar2.i = false;
+                                    pVar2.f = 0L;
+                                    pVar2.j = null;
+                                    pVar2.h = false;
+                                    pVar2.a();
+                                    break;
+                                }
+                                break;
+                            case 1:
+                                rh.p pVar3 = pVar;
+                                if (pVar3.g != 2) {
+                                    pVar3.g = 2;
+                                    pVar3.c = 0;
+                                    pVar3.d = false;
+                                    pVar3.i = false;
+                                    pVar3.f = 0L;
+                                    pVar3.j = null;
+                                    pVar3.h = false;
+                                    pVar3.a();
+                                    break;
+                                }
+                                break;
+                            default:
+                                rh.p pVar4 = pVar;
+                                if (pVar4.g != 1) {
+                                    pVar4.g = 1;
+                                    pVar4.c = 0;
+                                    pVar4.d = false;
+                                    pVar4.i = false;
+                                    pVar4.f = 0L;
+                                    pVar4.j = null;
+                                    pVar4.h = false;
+                                    pVar4.a();
+                                    break;
+                                }
+                                break;
+                        }
+                    }
+                }, L0, z10);
+                H.i(new Runnable() { // from class: xh.t2
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i13) {
+                            case 0:
+                                rh.p pVar2 = pVar;
+                                if (pVar2.g != 3) {
+                                    pVar2.g = 3;
+                                    pVar2.c = 0;
+                                    pVar2.d = false;
+                                    pVar2.i = false;
+                                    pVar2.f = 0L;
+                                    pVar2.j = null;
+                                    pVar2.h = false;
+                                    pVar2.a();
+                                    break;
+                                }
+                                break;
+                            case 1:
+                                rh.p pVar3 = pVar;
+                                if (pVar3.g != 2) {
+                                    pVar3.g = 2;
+                                    pVar3.c = 0;
+                                    pVar3.d = false;
+                                    pVar3.i = false;
+                                    pVar3.f = 0L;
+                                    pVar3.j = null;
+                                    pVar3.h = false;
+                                    pVar3.a();
+                                    break;
+                                }
+                                break;
+                            default:
+                                rh.p pVar4 = pVar;
+                                if (pVar4.g != 1) {
+                                    pVar4.g = 1;
+                                    pVar4.c = 0;
+                                    pVar4.d = false;
+                                    pVar4.i = false;
+                                    pVar4.f = 0L;
+                                    pVar4.j = null;
+                                    pVar4.h = false;
+                                    pVar4.a();
+                                    break;
+                                }
+                                break;
+                        }
+                    }
+                }, cd.L0(2131752477, null), i12 == 1);
+                H.V(5);
+                H.t = false;
+                H.s = 0;
+                H.a0(org.telegram.messenger.i0.L(24.0f), -org.telegram.messenger.i0.L(24.0f));
+                H.Z();
                 break;
-            }
-            int i28 = 0;
-            while (i28 < i10) {
-                double d11 = i27 == i28 ? d : d10;
-                if (i28 == (i27 + 1) % 3) {
-                    d11 -= min3 * sin;
-                } else if (i28 == (i27 + 2) % 3) {
-                    d11 = (min3 * sin) + d11;
-                }
-                float f21 = f11;
-                double d12 = d10;
-                fArr7[(i27 * 5) + i28] = (float) d11;
-                i28++;
-                f11 = f21;
-                d10 = d12;
-                i10 = 3;
-            }
-            i27++;
-        }
-        float f22 = f11;
-        int i29 = 0;
-        while (i29 < i10) {
-            float f23 = (fArr5[2] * fArr7[i29 + 10]) + (fArr5[z12 ? 1 : 0] * fArr7[i29 + 5]) + (fArr5[0] * fArr7[i29]);
-            for (int i30 = 0; i30 < 3; i30++) {
-                int i31 = (i30 * 5) + i29;
-                fArr7[i31] = (fArr5[i29] - f23) + fArr7[i31];
-            }
-            i29++;
-            i10 = 3;
-        }
-        fArr7[18] = f22;
-        f6Var.d.setColorFilter(new ColorMatrixColorFilter(fArr7));
-        f6Var.invalidateSelf();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        View view = getParent() instanceof View ? (View) getParent() : null;
-        if (view != null) {
-            view.setTranslationZ(AndroidUtilities.dp(16.0f));
-            if (view instanceof ViewGroup) {
-                ViewGroup viewGroup = (ViewGroup) view;
-                viewGroup.setClipChildren(false);
-                viewGroup.setClipToPadding(false);
-            }
-        }
-        if (this.W != null) {
-            NotificationCenter.getInstance(this.V).addWeakObserver(this, NotificationCenter.walletUpdate);
         }
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        View view = getParent() instanceof View ? (View) getParent() : null;
-        if (view != null) {
-            view.setTranslationZ(0.0f);
-        }
-        super.onDetachedFromWindow();
-        if (this.W != null) {
-            NotificationCenter.getInstance(this.V).removeObserver(this, NotificationCenter.walletUpdate);
-        }
-    }
-
-    public void setAdditionalTilt(float f7) {
-        this.r = f7;
-        this.y.setAdditionalTilt(f7);
-    }
-
-    public void setCardHolder(CharSequence charSequence) {
-        this.G.setText(charSequence);
-    }
-
-    public void setCardIcon(int i10) {
-        this.R = i10;
-        this.y.setCardIcon(i10);
-    }
-
-    public void setCardNumber(String str) {
-        if (str == null || str.equals(this.Q)) {
-            return;
-        }
-        this.Q = str;
-        this.y.setHasCardNumber(true);
-        this.H.invalidate();
-    }
-
-    public void setCardOnClickListener(View.OnClickListener onClickListener) {
-        this.F = onClickListener;
-        this.y.setOnClickListener(onClickListener);
-    }
-
-    public void setDiamondOnCard(boolean z10) {
-        this.a = z10;
-        this.N.invalidate();
-    }
-
-    public void setOnFrontContentPresented(Runnable runnable) {
-        if (runnable != null) {
-            runnable.run();
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        switch (this.a) {
+            case 0:
+                super.updateDrawState(textPaint);
+                textPaint.setUnderlineText(false);
+                textPaint.setColor(org.telegram.ui.ActionBar.t6.w0(this.b, (org.telegram.ui.ActionBar.p6) this.c));
+                break;
+            default:
+                textPaint.setUnderlineText(false);
+                textPaint.setColor(textPaint.linkColor);
+                break;
         }
     }
 
-    public void setStickerImpact(float f7) {
-        this.y.setScaleX(f7);
-        this.y.setScaleY(f7);
-    }
-
-    public void setStickerStyle(float[] fArr) {
-        this.a0 = fArr;
-        m();
-        this.N.invalidate();
-        this.H.invalidate();
-        this.y.setStickerStyle(fArr);
-        this.O.setTextColor(i0.a.f(fArr[8], h7.p(fArr, -7868417, 0), h7.p(fArr, -7868417, 3)));
-        this.G.invalidate();
-    }
-
-    public void setUseGyroscope(float f7) {
-        this.s = f7;
-        this.y.setUseGyroscope(f7);
-    }
-
-    public w5(Context context, int i10, int i11) {
-        super(context);
-        this.b = 1.0f;
-        this.c = new Matrix();
-        this.d = new Matrix();
-        this.e = new Matrix();
-        new RectF();
-        this.f = new RectF();
-        this.s = 1.0f;
-        this.v = new Matrix();
-        this.w = new Matrix();
-        this.x = new Matrix();
-        this.I = new Paint(193);
-        final int i12 = 0;
-        Runnable runnable = new Runnable(this) { // from class: org.telegram.ui.Wallet.s5
-            public final /* synthetic */ w5 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // java.lang.Runnable
-            public final void run() {
-                switch (i12) {
-                    case 0:
-                        this.b.H.invalidate();
-                        break;
-                    case 1:
-                        w5 w5Var = this.b;
-                        w5Var.N.invalidate();
-                        w5Var.O.invalidate();
-                        break;
-                    default:
-                        this.b.G.invalidate();
-                        break;
-                }
-            }
-        };
-        ds dsVar = ds.h;
-        this.K = new org.telegram.ui.Components.h6(runnable, 240L, dsVar, 0);
-        this.V = UserConfig.selectedAccount;
-        final int i13 = 1;
-        this.f0 = new org.telegram.ui.Components.h6(new Runnable(this) { // from class: org.telegram.ui.Wallet.s5
-            public final /* synthetic */ w5 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // java.lang.Runnable
-            public final void run() {
-                switch (i13) {
-                    case 0:
-                        this.b.H.invalidate();
-                        break;
-                    case 1:
-                        w5 w5Var = this.b;
-                        w5Var.N.invalidate();
-                        w5Var.O.invalidate();
-                        break;
-                    default:
-                        this.b.G.invalidate();
-                        break;
-                }
-            }
-        }, 240L, dsVar, 0);
-        final int i14 = 2;
-        this.g0 = new org.telegram.ui.Components.h6(new Runnable(this) { // from class: org.telegram.ui.Wallet.s5
-            public final /* synthetic */ w5 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // java.lang.Runnable
-            public final void run() {
-                switch (i14) {
-                    case 0:
-                        this.b.H.invalidate();
-                        break;
-                    case 1:
-                        w5 w5Var = this.b;
-                        w5Var.N.invalidate();
-                        w5Var.O.invalidate();
-                        break;
-                    default:
-                        this.b.G.invalidate();
-                        break;
-                }
-            }
-        }, 240L, dsVar, 0);
-        this.R = i10;
-        this.S = i11;
-        setClipChildren(false);
-        setClipToPadding(false);
-        setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f));
-        r5 r5Var = new r5(getContext(), this.R, i11);
-        this.y = r5Var;
-        this.E = r5Var.getFrontFace();
-        float[] fArr = this.a0;
-        if (fArr != null) {
-            setStickerStyle(fArr);
-        }
-        setAdditionalTilt(this.r);
-        setUseGyroscope(this.s);
-        this.y.setOnClickListener(this.F);
-        addView(this.y, 0, kb1.g(-2.0f, -1));
-        ok okVar = new ok(this, context, 6);
-        this.G = okVar;
-        if (k0 == null) {
-            if (Build.VERSION.SDK_INT >= 26) {
-                k0 = new Typeface.Builder(context.getAssets(), "fonts/rmono_var.ttf").setFontVariationSettings("'wght' 500").setWeight(500).build();
-            } else {
-                k0 = AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MONO);
-            }
-        }
-        okVar.setTypeface(k0);
-        okVar.setTextColor(-1);
-        okVar.setTextSize(1, 13.0f);
-        okVar.setEllipsize(TextUtils.TruncateAt.END);
-        okVar.setMaxLines(1);
-        okVar.setSingleLine();
-        this.E.addView(okVar, kb1.h(-1, -2.0f, 83, 24.0f, 0.0f, 64.0f, 17.2f));
-        b20 b20Var = new b20(this, context, 11);
-        this.H = b20Var;
-        this.E.addView(b20Var, kb1.g(-1.0f, -1));
-        View view = new View(context);
-        this.L = view;
-        this.E.addView(view, kb1.h(1, 1.0f, 19, 24.0f, 0.0f, 0.0f, 0.0f));
-        LinearLayout linearLayout = new LinearLayout(context);
-        this.M = linearLayout;
-        linearLayout.setOrientation(1);
-        linearLayout.setClipChildren(false);
-        linearLayout.setClipToPadding(false);
-        FrameLayout.LayoutParams h = kb1.h(-1, -2.0f, 51, 24.0f, 71.0f, 24.0f, 0.0f);
-        this.P = h;
-        this.E.addView(linearLayout, h);
-        u5 u5Var = new u5(this, context, 0);
-        this.N = u5Var;
-        u5Var.getDrawable().M = AndroidUtilities.dp(4096.0f);
-        u5Var.c.m(0.35f, 320L, 3.5f, dsVar);
-        u5Var.setScaleProperty(0.6f);
-        u5Var.setTypeface(AndroidUtilities.getTypeface("fonts/gram.ttf"));
-        u5Var.setTextSize(AndroidUtilities.dp(23.0f));
-        u5Var.setTextColor(-1);
-        u5Var.setIgnoreRTL(true);
-        linearLayout.addView(u5Var, kb1.r(-1, 28));
-        u5 u5Var2 = new u5(this, context, 1);
-        this.O = u5Var2;
-        u5Var2.c.m(0.35f, 320L, 3.5f, dsVar);
-        u5Var2.setScaleProperty(0.6f);
-        u5Var2.setTypeface(AndroidUtilities.getTypeface("fonts/gram.ttf"));
-        u5Var2.setTextSize(AndroidUtilities.dp(14.0f));
-        u5Var2.setTextColor(-7868417);
-        u5Var2.setLayoutDirection(0);
-        u5Var2.setTextDirection(3);
-        u5Var2.setGravity(19);
-        u5Var2.setIgnoreRTL(true);
-        linearLayout.addView(u5Var2, kb1.o(0.0f, 2.0f, 0.0f, 0.0f, -1, 16));
+    public w5(int i10, org.telegram.ui.ActionBar.p6 p6Var, Runnable runnable) {
+        this.b = i10;
+        this.c = p6Var;
+        this.d = runnable;
     }
 }

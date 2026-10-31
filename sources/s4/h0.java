@@ -1,112 +1,41 @@
 package s4;
 
-import android.os.Trace;
-import android.view.ViewGroup;
-import java.util.List;
+import android.database.Observable;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public abstract class h0 {
-    public final i0 a = new i0();
-    public boolean b = false;
-
-    public void B(j0 j0Var) {
-        this.a.registerObserver(j0Var);
+public final class h0 extends Observable {
+    public final boolean a() {
+        return !((Observable) this).mObservers.isEmpty();
     }
 
-    public final void C(boolean z10) {
-        if (this.a.a()) {
-            throw new IllegalStateException("Cannot change whether this adapter has stable IDs while the adapter has registered observers.");
-        }
-        this.b = z10;
-    }
-
-    public final e1 g(ViewGroup viewGroup, int i10) {
-        try {
-            int i11 = n0.g.a;
-            Trace.beginSection("RV CreateView");
-            e1 x9 = x(viewGroup, i10);
-            if (x9.a.getParent() != null) {
-                throw new IllegalStateException("ViewHolder views must not be attached when created. Ensure that you are not passing 'true' to the attachToRoot parameter of LayoutInflater.inflate(..., boolean attachToRoot)");
-            }
-            x9.f = i10;
-            Trace.endSection();
-            return x9;
-        } catch (Throwable th2) {
-            int i12 = n0.g.a;
-            Trace.endSection();
-            throw th2;
+    public final void b() {
+        for (int size = ((Observable) this).mObservers.size() - 1; size >= 0; size--) {
+            ((i0) ((Observable) this).mObservers.get(size)).a();
         }
     }
 
-    public abstract int h();
-
-    public long i(int i10) {
-        return -1L;
+    public final void c(int i10, int i11) {
+        for (int size = ((Observable) this).mObservers.size() - 1; size >= 0; size--) {
+            ((i0) ((Observable) this).mObservers.get(size)).e(i10, i11);
+        }
     }
 
-    public int j(int i10) {
-        return 0;
+    public final void d(int i10, int i11, Object obj) {
+        for (int size = ((Observable) this).mObservers.size() - 1; size >= 0; size--) {
+            ((i0) ((Observable) this).mObservers.get(size)).c(i10, i11, obj);
+        }
     }
 
-    public int k() {
-        return h();
+    public final void e(int i10, int i11) {
+        for (int size = ((Observable) this).mObservers.size() - 1; size >= 0; size--) {
+            ((i0) ((Observable) this).mObservers.get(size)).d(i10, i11);
+        }
     }
 
-    public void l() {
-        this.a.b();
-    }
-
-    public void m(int i10) {
-        this.a.d(i10, 1, null);
-    }
-
-    public final void n(int i10, Object obj) {
-        this.a.d(i10, 1, obj);
-    }
-
-    public void o(int i10) {
-        this.a.e(i10, 1);
-    }
-
-    public void p(int i10, int i11) {
-        this.a.c(i10, i11);
-    }
-
-    public void q(int i10, int i11) {
-        this.a.d(i10, i11, null);
-    }
-
-    public void r(int i10, int i11, Object obj) {
-        this.a.d(i10, i11, obj);
-    }
-
-    public void s(int i10, int i11) {
-        this.a.e(i10, i11);
-    }
-
-    public void t(int i10, int i11) {
-        this.a.f(i10, i11);
-    }
-
-    public void u(int i10) {
-        this.a.f(i10, 1);
-    }
-
-    public abstract void v(e1 e1Var, int i10);
-
-    public void w(e1 e1Var, int i10, List list) {
-        v(e1Var, i10);
-    }
-
-    public abstract e1 x(ViewGroup viewGroup, int i10);
-
-    public void A(e1 e1Var) {
-    }
-
-    public void y(e1 e1Var) {
-    }
-
-    public void z(e1 e1Var) {
+    public final void f(int i10, int i11) {
+        for (int size = ((Observable) this).mObservers.size() - 1; size >= 0; size--) {
+            ((i0) ((Observable) this).mObservers.get(size)).f(i10, i11);
+        }
     }
 }

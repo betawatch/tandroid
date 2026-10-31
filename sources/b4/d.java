@@ -7,117 +7,130 @@ import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.util.Log;
 import android.util.SparseArray;
-import e2.n0;
+import e2.l0;
 import e2.x;
+import java.lang.reflect.Array;
 import java.util.List;
+import org.telegram.messenger.zs;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class d implements w3.b {
-    public int a;
+    public final /* synthetic */ int a;
     public int b;
-    public final Object c;
+    public int c;
+    public final Object d;
 
     public d(Context context) {
-        this.b = 0;
-        this.c = context;
+        this.a = 2;
+        this.c = 0;
+        this.d = context;
     }
 
     @Override // w3.b
     public int a() {
-        return this.a;
-    }
-
-    @Override // w3.b
-    public int b() {
         return this.b;
     }
 
     @Override // w3.b
+    public int b() {
+        return this.c;
+    }
+
+    @Override // w3.b
     public int c() {
-        int i10 = this.a;
-        return i10 == -1 ? ((x) this.c).E() : i10;
+        int i10 = this.b;
+        return i10 == -1 ? ((x) this.d).E() : i10;
     }
 
     public int d() {
-        return ((((byte[]) this.c).length - this.a) * 8) - this.b;
+        return ((((byte[]) this.d).length - this.b) * 8) - this.c;
     }
 
-    public int e(int i10) {
-        byte[] bArr = (byte[]) this.c;
+    public byte e(int i10, int i11) {
+        return ((byte[][]) this.d)[i11][i10];
+    }
+
+    public int f(int i10) {
+        byte[] bArr = (byte[]) this.d;
         if (i10 < 1 || i10 > 32 || i10 > d()) {
             throw new IllegalArgumentException(String.valueOf(i10));
         }
-        int i11 = this.b;
+        int i11 = this.c;
         int i12 = 0;
         if (i11 > 0) {
             int i13 = 8 - i11;
             int min = Math.min(i10, i13);
             int i14 = i13 - min;
-            int i15 = this.a;
-            int i16 = (((255 >> (8 - min)) << i14) & bArr[i15]) >> i14;
+            int i15 = (zs.e4 >> (8 - min)) << i14;
+            int i16 = this.b;
+            int i17 = (i15 & bArr[i16]) >> i14;
             i10 -= min;
-            int i17 = this.b + min;
-            this.b = i17;
-            if (i17 == 8) {
-                this.b = 0;
-                this.a = i15 + 1;
+            int i18 = this.c + min;
+            this.c = i18;
+            if (i18 == 8) {
+                this.c = 0;
+                this.b = i16 + 1;
             }
-            i12 = i16;
+            i12 = i17;
         }
         if (i10 > 0) {
             while (i10 >= 8) {
-                int i18 = i12 << 8;
-                int i19 = this.a;
-                int i20 = i18 | (bArr[i19] & 255);
-                this.a = i19 + 1;
+                int i19 = i12 << 8;
+                int i20 = this.b;
+                int i21 = i19 | (bArr[i20] & 255);
+                this.b = i20 + 1;
                 i10 -= 8;
-                i12 = i20;
+                i12 = i21;
             }
             if (i10 > 0) {
-                int i21 = 8 - i10;
-                int i22 = ((bArr[this.a] & ((255 >> i21) << i21)) >> i21) | (i12 << i10);
-                this.b += i10;
-                return i22;
+                int i22 = 8 - i10;
+                int i23 = ((bArr[this.b] & ((zs.e4 >> i22) << i22)) >> i22) | (i12 << i10);
+                this.c += i10;
+                return i23;
             }
         }
         return i12;
     }
 
-    public synchronized int f() {
+    public void g(int i10, int i11, int i12) {
+        ((byte[][]) this.d)[i11][i10] = (byte) i12;
+    }
+
+    public synchronized int h() {
         PackageInfo packageInfo;
-        if (this.a == 0) {
+        if (this.b == 0) {
             try {
-                packageInfo = x6.b.a((Context) this.c).b(0, "com.google.android.gms");
+                packageInfo = w6.b.a((Context) this.d).b(0, "com.google.android.gms");
             } catch (PackageManager.NameNotFoundException e) {
                 Log.w("Metadata", "Failed to find package ".concat(e.toString()));
                 packageInfo = null;
             }
             if (packageInfo != null) {
-                this.a = packageInfo.versionCode;
+                this.b = packageInfo.versionCode;
             }
         }
-        return this.a;
+        return this.b;
     }
 
-    public synchronized int g() {
-        int i10 = this.b;
+    public synchronized int i() {
+        int i10 = this.c;
         if (i10 != 0) {
             return i10;
         }
-        Context context = (Context) this.c;
+        Context context = (Context) this.d;
         PackageManager packageManager = context.getPackageManager();
-        if (((Context) x6.b.a(context).a).getPackageManager().checkPermission("com.google.android.c2dm.permission.SEND", "com.google.android.gms") == -1) {
+        if (w6.b.a(context).a.getPackageManager().checkPermission("com.google.android.c2dm.permission.SEND", "com.google.android.gms") == -1) {
             Log.e("Metadata", "Google Play services missing or without correct permission.");
             return 0;
         }
         int i11 = 1;
-        if (!v6.b.d()) {
+        if (!u6.b.d()) {
             Intent intent = new Intent("com.google.android.c2dm.intent.REGISTER");
             intent.setPackage("com.google.android.gms");
             List<ResolveInfo> queryIntentServices = packageManager.queryIntentServices(intent, 0);
             if (queryIntentServices != null && !queryIntentServices.isEmpty()) {
-                this.b = i11;
+                this.c = i11;
                 return i11;
             }
         }
@@ -126,40 +139,76 @@ public final class d implements w3.b {
         List<ResolveInfo> queryBroadcastReceivers = packageManager.queryBroadcastReceivers(intent2, 0);
         if (queryBroadcastReceivers != null && !queryBroadcastReceivers.isEmpty()) {
             i11 = 2;
-            this.b = i11;
+            this.c = i11;
             return i11;
         }
         Log.w("Metadata", "Failed to resolve IID implementation package, falling back");
-        if (true == v6.b.d()) {
+        if (true == u6.b.d()) {
             i11 = 2;
         }
-        this.b = i11;
+        this.c = i11;
         return i11;
     }
 
+    public String toString() {
+        switch (this.a) {
+            case 1:
+                int i10 = this.b;
+                int i11 = this.c;
+                StringBuilder sb2 = new StringBuilder((i10 * 2 * i11) + 2);
+                for (int i12 = 0; i12 < i11; i12++) {
+                    byte[] bArr = ((byte[][]) this.d)[i12];
+                    for (int i13 = 0; i13 < i10; i13++) {
+                        byte b10 = bArr[i13];
+                        if (b10 == 0) {
+                            sb2.append(" 0");
+                        } else if (b10 != 1) {
+                            sb2.append("  ");
+                        } else {
+                            sb2.append(" 1");
+                        }
+                    }
+                    sb2.append('\n');
+                }
+                return sb2.toString();
+            default:
+                return super.toString();
+        }
+    }
+
+    public d(int i10, int i11) {
+        this.a = 1;
+        this.d = (byte[][]) Array.newInstance((Class<?>) Byte.TYPE, i11, i10);
+        this.b = i10;
+        this.c = i11;
+    }
+
     public d(byte[] bArr) {
-        this.c = bArr;
+        this.a = 4;
+        this.d = bArr;
     }
 
     public d(int i10, int i11, SparseArray sparseArray) {
-        this.a = i10;
-        this.b = i11;
-        this.c = sparseArray;
+        this.a = 0;
+        this.b = i10;
+        this.c = i11;
+        this.d = sparseArray;
     }
 
     public d(f2.e eVar, b2.x xVar) {
+        this.a = 3;
         x xVar2 = eVar.c;
-        this.c = xVar2;
+        this.d = xVar2;
         xVar2.N(12);
         int E = xVar2.E();
         if ("audio/raw".equals(xVar.s)) {
-            int u10 = n0.u(xVar.M) * xVar.K;
+            int u10 = l0.u(xVar.M) * xVar.K;
             if (E % u10 != 0) {
                 e2.a.l("BoxParsers", "Audio sample size mismatch. stsd sample size: " + u10 + ", stsz sample size: " + E);
                 E = u10;
             }
         }
-        this.a = E == 0 ? -1 : E;
-        this.b = xVar2.E();
+        this.b = E == 0 ? -1 : E;
+        this.c = xVar2.E();
     }
 }

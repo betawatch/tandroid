@@ -1,63 +1,27 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class en0 extends FrameLayout {
-    public final Paint a;
-    public final r50 b;
-    public final RectF c;
-    public final float d;
-    public float e;
+public final class en0 extends s4.s0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ mg.s b;
 
-    public en0(Context context) {
-        super(context);
-        Paint paint = new Paint(1);
-        this.a = paint;
-        r50 r50Var = new r50(this, 1);
-        this.b = r50Var;
-        this.c = new RectF();
-        this.d = (AndroidUtilities.dp(3.0f) * 0.5f) + AndroidUtilities.dp(5.0f);
-        a(paint, 0.2f);
-        a(r50Var, 1.0f);
-        setWillNotDraw(false);
+    public /* synthetic */ en0(mg.s sVar, int i10) {
+        this.a = i10;
+        this.b = sVar;
     }
 
-    public static void a(Paint paint, float f7) {
-        paint.setColor(-1);
-        paint.setAlpha(Math.round(f7 * 255.0f));
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeWidth(AndroidUtilities.dp(3.0f));
-        paint.setStrokeCap(Paint.Cap.ROUND);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        float width = getWidth();
-        float f7 = this.d;
-        RectF rectF = this.c;
-        rectF.set(f7, f7, width - f7, getHeight() - f7);
-        canvas.drawOval(rectF, this.a);
-        canvas.drawArc(rectF, -90.0f, this.e * 360.0f, false, this.b);
-    }
-
-    public Paint getPaint() {
-        return this.b;
-    }
-
-    public void setProgress(float f7) {
-        float max = Math.max(0.0f, Math.min(1.0f, f7));
-        if (this.e == max) {
-            return;
+    @Override // s4.s0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        switch (this.a) {
+            case 0:
+                ((org.telegram.ui.kx) this.b.c).T();
+                break;
+            default:
+                ((org.telegram.ui.kx) this.b.c).T();
+                break;
         }
-        this.e = max;
-        invalidate();
     }
 }

@@ -1,11 +1,23 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes3.dex */
-public final class u30 implements nh.g {
-    public final /* synthetic */ x50 a;
+import android.graphics.Paint;
+import android.view.ViewGroup;
 
-    public u30(x50 x50Var) {
-        this.a = x50Var;
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final class u30 extends Paint {
+    public final /* synthetic */ b50 a;
+
+    public u30(b50 b50Var) {
+        this.a = b50Var;
+    }
+
+    @Override // android.graphics.Paint
+    public final void setAlpha(int i10) {
+        super.setAlpha(i10);
+        ViewGroup viewGroup = this.a.b;
+        if (viewGroup != null) {
+            viewGroup.invalidate();
+        }
     }
 }

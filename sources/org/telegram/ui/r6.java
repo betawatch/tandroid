@@ -1,43 +1,43 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.view.View;
+import java.util.HashSet;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class r6 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean[] b;
-    public final /* synthetic */ v6 c;
-    public final /* synthetic */ long[] d;
-    public final /* synthetic */ s6 e;
+public final class r6 extends View implements org.telegram.ui.ActionBar.k6 {
+    public Paint a;
+    public Paint b;
+    public float c;
+    public org.telegram.ui.Components.t5 d;
 
-    public /* synthetic */ r6(boolean[] zArr, v6 v6Var, long[] jArr, s6 s6Var, int i10) {
-        this.a = i10;
-        this.b = zArr;
-        this.c = v6Var;
-        this.d = jArr;
-        this.e = s6Var;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        RectF rectF = org.telegram.messenger.i0.P;
+        rectF.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
+        canvas.drawRoundRect(rectF, org.telegram.messenger.i0.L(3.0f), org.telegram.messenger.i0.L(3.0f), this.b);
+        rectF.set(0.0f, 0.0f, this.d.e(false, this.c) * getMeasuredWidth(), getMeasuredHeight());
+        canvas.drawRoundRect(rectF, org.telegram.messenger.i0.L(3.0f), org.telegram.messenger.i0.L(3.0f), this.a);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                AndroidUtilities.runOnUIThread(new r6(this.b, this.c, this.d, this.e, 1));
-                break;
-            default:
-                this.b[0] = true;
-                this.c.a(1.0f);
-                long[] jArr = this.d;
-                long j10 = jArr[0];
-                s6 s6Var = this.e;
-                if (j10 <= 0) {
-                    s6Var.dismiss();
-                    break;
-                } else {
-                    AndroidUtilities.runOnUIThread(new bu0(s6Var, 16), Math.max(0L, 1000 - (System.currentTimeMillis() - jArr[0])));
-                    break;
-                }
+    @Override // org.telegram.ui.ActionBar.k6
+    public final void updateColors() {
+        try {
+            Paint paint = this.a;
+            int i10 = org.telegram.ui.ActionBar.t6.N6;
+            paint.setColor(org.telegram.ui.ActionBar.t6.x0(null, i10, false));
+            this.b.setColor(org.telegram.ui.ActionBar.t6.r1(0.2f, org.telegram.ui.ActionBar.t6.x0(null, i10, false)));
+            invalidate();
+        } catch (Exception e) {
+            org.telegram.messenger.f8.g(e, true);
         }
+    }
+
+    @Override // org.telegram.ui.ActionBar.k6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

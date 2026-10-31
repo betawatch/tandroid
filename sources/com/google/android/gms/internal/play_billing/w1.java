@@ -7,7 +7,7 @@ import java.util.Collection;
 import java.util.RandomAccess;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class w1 extends f1 implements RandomAccess, y1 {
     public static final int[] d;
@@ -31,9 +31,9 @@ public final class w1 extends f1 implements RandomAccess, y1 {
     public final void add(int i10, Object obj) {
         int i11;
         int intValue = ((Integer) obj).intValue();
-        h();
+        l();
         if (i10 < 0 || i10 > (i11 = this.c)) {
-            throw new IndexOutOfBoundsException(a1.g.l(i10, this.c, "Index:", ", Size:"));
+            throw new IndexOutOfBoundsException(a1.g.j(i10, this.c, "Index:", ", Size:"));
         }
         int i12 = i10 + 1;
         int[] iArr = this.b;
@@ -53,7 +53,7 @@ public final class w1 extends f1 implements RandomAccess, y1 {
 
     @Override // com.google.android.gms.internal.play_billing.f1, java.util.AbstractCollection, java.util.Collection, java.util.List
     public final boolean addAll(Collection collection) {
-        h();
+        l();
         Charset charset = a2.a;
         collection.getClass();
         if (!(collection instanceof w1)) {
@@ -141,7 +141,7 @@ public final class w1 extends f1 implements RandomAccess, y1 {
     }
 
     public final void n(int i10) {
-        h();
+        l();
         int i11 = this.c;
         int length = this.b.length;
         if (i11 == length) {
@@ -157,13 +157,13 @@ public final class w1 extends f1 implements RandomAccess, y1 {
 
     public final void o(int i10) {
         if (i10 < 0 || i10 >= this.c) {
-            throw new IndexOutOfBoundsException(a1.g.l(i10, this.c, "Index:", ", Size:"));
+            throw new IndexOutOfBoundsException(a1.g.j(i10, this.c, "Index:", ", Size:"));
         }
     }
 
     @Override // com.google.android.gms.internal.play_billing.f1, java.util.AbstractList, java.util.List
     public final /* bridge */ /* synthetic */ Object remove(int i10) {
-        h();
+        l();
         o(i10);
         int[] iArr = this.b;
         int i11 = iArr[i10];
@@ -177,7 +177,7 @@ public final class w1 extends f1 implements RandomAccess, y1 {
 
     @Override // java.util.AbstractList
     public final void removeRange(int i10, int i11) {
-        h();
+        l();
         if (i11 < i10) {
             throw new IndexOutOfBoundsException("toIndex < fromIndex");
         }
@@ -190,7 +190,7 @@ public final class w1 extends f1 implements RandomAccess, y1 {
     @Override // java.util.AbstractList, java.util.List
     public final /* bridge */ /* synthetic */ Object set(int i10, Object obj) {
         int intValue = ((Integer) obj).intValue();
-        h();
+        l();
         o(i10);
         int[] iArr = this.b;
         int i11 = iArr[i10];

@@ -1,64 +1,129 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Paint;
 import android.graphics.RectF;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
+import android.os.SystemClock;
+import java.security.SecureRandom;
+import java.util.ArrayList;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class h11 extends ww0 {
-    public final org.telegram.ui.y10 l0;
-    public final /* synthetic */ org.telegram.ui.ActionBar.u6 m0;
-    public final /* synthetic */ f11 n0;
+public final class h11 {
+    public long a;
+    public boolean b;
+    public final ArrayList c;
+    public final ArrayList d;
+    public final int e;
+    public boolean f;
+    public float g;
+    public float h;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h11(Context context, org.telegram.ui.ActionBar.u6 u6Var, f11 f11Var) {
-        super(context, null);
-        this.m0 = u6Var;
-        this.n0 = f11Var;
-        this.l0 = new org.telegram.ui.y10();
+    public h11() {
+        this(40);
     }
 
-    @Override // org.telegram.ui.Components.ww0
-    public final boolean O() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.ww0
-    public final boolean P() {
-        return false;
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j10) {
-        if (view != this.n0) {
-            return super.drawChild(canvas, view, j10);
+    public final void a(float f7, float f10, Canvas canvas, Paint paint, RectF rectF) {
+        g11 g11Var;
+        ArrayList arrayList = this.c;
+        int size = arrayList.size();
+        int i10 = 0;
+        for (int i11 = 0; i11 < size; i11++) {
+            g11 g11Var2 = (g11) arrayList.get(i11);
+            paint.setAlpha((int) (g11Var2.f * 255.0f * f10));
+            canvas.drawPoint(g11Var2.a, g11Var2.b, paint);
         }
-        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), 255, 31);
-        boolean drawChild = super.drawChild(canvas, view, j10);
-        canvas.save();
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(0.0f, 0.0f, AndroidUtilities.dp(45.0f), getHeight());
-        this.l0.b(canvas, rectF, 0, 1.0f);
-        canvas.restore();
-        canvas.restore();
-        return drawChild;
+        double d = (f7 - 90.0f) * 0.017453292519943295d;
+        double sin = Math.sin(d);
+        double d10 = -Math.cos(d);
+        double width = rectF.width() / 2.0f;
+        float centerX = (float) (((-d10) * width) + rectF.centerX());
+        float centerY = (float) ((width * sin) + rectF.centerY());
+        ArrayList arrayList2 = this.d;
+        boolean z10 = true;
+        int j10 = Utilities.j(arrayList2.size() / 12, 3, 1);
+        int i12 = 0;
+        while (i12 < j10) {
+            if (arrayList2.isEmpty()) {
+                g11Var = new g11();
+            } else {
+                g11Var = (g11) arrayList2.get(i10);
+                arrayList2.remove(i10);
+            }
+            if (this.b && this.f) {
+                float f11 = (i12 + 1) / j10;
+                g11Var.a = org.telegram.messenger.i0.T1(this.g, centerX, f11);
+                g11Var.b = org.telegram.messenger.i0.T1(this.h, centerY, f11);
+            } else {
+                g11Var.a = centerX;
+                g11Var.b = centerY;
+            }
+            SecureRandom secureRandom = Utilities.b;
+            double d11 = sin;
+            double nextInt = (secureRandom.nextInt(org.telegram.messenger.zs.W1) - 70) * 0.017453292519943295d;
+            if (nextInt < 0.0d) {
+                nextInt += 6.283185307179586d;
+            }
+            g11Var.c = (float) ((Math.cos(nextInt) * d11) - (Math.sin(nextInt) * d10));
+            double sin2 = Math.sin(nextInt) * d11;
+            double d12 = nextInt;
+            g11 g11Var3 = g11Var;
+            g11Var3.d = (float) i0.a.c(d12, d10, sin2);
+            g11Var3.f = 1.0f;
+            g11Var3.h = 0.0f;
+            if (this.b) {
+                g11Var3.g = secureRandom.nextInt(org.telegram.messenger.zs.e3) + 600;
+                g11Var3.e = (secureRandom.nextFloat() * 20.0f) + 30.0f;
+            } else {
+                g11Var3.g = secureRandom.nextInt(100) + 400;
+                g11Var3.e = (secureRandom.nextFloat() * 4.0f) + 20.0f;
+            }
+            arrayList.add(g11Var3);
+            i12++;
+            sin = d11;
+            i10 = 0;
+            z10 = true;
+        }
+        this.f = z10;
+        this.g = centerX;
+        this.h = centerY;
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        long min = Math.min(20L, elapsedRealtime - this.a);
+        int size2 = arrayList.size();
+        int i13 = 0;
+        while (i13 < size2) {
+            g11 g11Var4 = (g11) arrayList.get(i13);
+            float f12 = g11Var4.h;
+            float f13 = g11Var4.g;
+            if (f12 >= f13) {
+                if (arrayList2.size() < this.e) {
+                    arrayList2.add(g11Var4);
+                }
+                arrayList.remove(i13);
+                i13--;
+                size2--;
+            } else {
+                g11Var4.f = 1.0f - org.telegram.messenger.i0.F.getInterpolation(f12 / f13);
+                float f14 = g11Var4.a;
+                float f15 = g11Var4.c;
+                float f16 = g11Var4.e;
+                float f17 = min;
+                g11Var4.a = a1.g.A(f15 * f16, f17, 200.0f, f14);
+                g11Var4.b = (((g11Var4.d * f16) * f17) / 200.0f) + g11Var4.b;
+                g11Var4.h += f17;
+            }
+            i13++;
+        }
+        this.a = elapsedRealtime;
     }
 
-    @Override // org.telegram.ui.Components.ww0
-    public final org.telegram.ui.ActionBar.u6 getResourceProvider() {
-        return this.m0;
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.x, TLObject.FLAG_30);
-        f11 f11Var = this.n0;
-        f11Var.measure(makeMeasureSpec, i11);
-        setMeasuredDimension(View.MeasureSpec.getSize(i10), f11Var.getMeasuredHeight() + AndroidUtilities.dp(24.0f));
+    public h11(int i10) {
+        this.c = new ArrayList();
+        this.d = new ArrayList();
+        this.e = i10;
+        for (int i11 = 0; i11 < i10; i11++) {
+            this.d.add(new g11());
+        }
     }
 }

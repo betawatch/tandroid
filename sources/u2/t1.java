@@ -1,6 +1,6 @@
 package u2;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public abstract class t1 extends l {
     public final a k;
@@ -9,7 +9,7 @@ public abstract class t1 extends l {
         this.k = aVar;
     }
 
-    public abstract void A(b2.p1 p1Var);
+    public abstract void A(b2.o1 o1Var);
 
     public final void B() {
         y(null, this.k);
@@ -25,7 +25,7 @@ public abstract class t1 extends l {
     }
 
     @Override // u2.a
-    public b2.p1 h() {
+    public b2.o1 h() {
         return this.k.h();
     }
 
@@ -40,9 +40,9 @@ public abstract class t1 extends l {
     }
 
     @Override // u2.a
-    public final void m(g2.c0 c0Var) {
-        this.j = c0Var;
-        this.i = e2.n0.q(null);
+    public final void m(g2.d0 d0Var) {
+        this.j = d0Var;
+        this.i = e2.l0.q(null);
         C();
     }
 
@@ -67,8 +67,8 @@ public abstract class t1 extends l {
     }
 
     @Override // u2.l
-    public final void x(Object obj, a aVar, b2.p1 p1Var) {
-        A(p1Var);
+    public final void x(Object obj, a aVar, b2.o1 o1Var) {
+        A(o1Var);
     }
 
     public g0 z(g0 g0Var) {

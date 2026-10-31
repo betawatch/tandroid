@@ -1,10 +1,8 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class s0 extends org.telegram.ui.Components.u6 {
+public final class s0 extends org.telegram.ui.Components.h6 {
     public final /* synthetic */ int b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -13,50 +11,53 @@ public final class s0 extends org.telegram.ui.Components.u6 {
         this.b = i10;
     }
 
-    @Override // org.telegram.ui.Components.u6
+    @Override // org.telegram.ui.Components.h6
     public final void c(Object obj, float f7) {
         switch (this.b) {
             case 0:
                 ((ArticleViewer$WindowView) obj).setInnerTranslationX(f7);
                 break;
             case 1:
-                wn.fd = (int) f7;
+                un.ad = (int) f7;
                 break;
             case 2:
-                ((org.telegram.ui.Cells.s1) obj).setTimeAlpha(f7);
+                ((org.telegram.ui.Cells.q1) obj).setTimeAlpha(f7);
                 break;
             case 3:
-                ((yz0) obj).setCrossfadeProgress(f7);
+                ((org.telegram.messenger.fj) obj).d = f7;
                 break;
             case 4:
-                ((SecretMediaViewer) obj).setVideoCrossfadeAlpha(f7);
+                ((jx0) obj).setCrossfadeProgress(f7);
                 break;
             case 5:
+                ((SecretMediaViewer) obj).setVideoCrossfadeAlpha(f7);
+                break;
+            case 6:
                 ((SecretMediaViewer) obj).setAnimationValue(f7);
                 break;
             default:
-                z31 z31Var = (z31) obj;
-                if (z31Var.a != f7) {
-                    z31Var.a = f7;
-                    SecretMediaViewer secretMediaViewer = z31Var.r;
-                    secretMediaViewer.S.setAlpha(f7);
-                    if (!z31Var.b) {
-                        if (z31Var.c) {
-                            z31Var.setTranslationY((1.0f - f7) * AndroidUtilities.dpf2(24.0f));
+                b11 b11Var = (b11) obj;
+                if (b11Var.a != f7) {
+                    b11Var.a = f7;
+                    SecretMediaViewer secretMediaViewer = b11Var.r;
+                    secretMediaViewer.Q.setAlpha(f7);
+                    if (!b11Var.b) {
+                        if (b11Var.c) {
+                            b11Var.setTranslationY((1.0f - f7) * org.telegram.messenger.i0.N(24.0f));
                         }
-                        secretMediaViewer.R.setAlpha(f7);
+                        secretMediaViewer.P.setAlpha(f7);
                         break;
                     } else {
-                        secretMediaViewer.S.setPivotX(r4.getWidth());
-                        secretMediaViewer.S.setPivotY(r4.getHeight());
+                        secretMediaViewer.Q.setPivotX(r4.getWidth());
+                        secretMediaViewer.Q.setPivotY(r4.getHeight());
                         float f10 = 1.0f - f7;
                         float f11 = 1.0f - (0.1f * f10);
-                        secretMediaViewer.S.setScaleX(f11);
-                        secretMediaViewer.S.setScaleY(f11);
-                        org.telegram.ui.Components.v81 v81Var = secretMediaViewer.Q;
-                        if (v81Var.y != f10) {
-                            v81Var.y = f10;
-                            v81Var.v.invalidate();
+                        secretMediaViewer.Q.setScaleX(f11);
+                        secretMediaViewer.Q.setScaleY(f11);
+                        org.telegram.ui.Components.w61 w61Var = secretMediaViewer.O;
+                        if (w61Var.y != f10) {
+                            w61Var.y = f10;
+                            w61Var.v.invalidate();
                             break;
                         }
                     }
@@ -71,17 +72,19 @@ public final class s0 extends org.telegram.ui.Components.u6 {
             case 0:
                 return Float.valueOf(((ArticleViewer$WindowView) obj).getInnerTranslationX());
             case 1:
-                return Float.valueOf(wn.fd);
+                return Float.valueOf(un.ad);
             case 2:
-                return Float.valueOf(((org.telegram.ui.Cells.s1) obj).getTimeAlpha());
+                return Float.valueOf(((org.telegram.ui.Cells.q1) obj).getTimeAlpha());
             case 3:
-                return Float.valueOf(((yz0) obj).S);
+                return Float.valueOf(((org.telegram.messenger.fj) obj).d);
             case 4:
-                return Float.valueOf(((SecretMediaViewer) obj).getVideoCrossfadeAlpha());
+                return Float.valueOf(((jx0) obj).S);
             case 5:
+                return Float.valueOf(((SecretMediaViewer) obj).getVideoCrossfadeAlpha());
+            case 6:
                 return Float.valueOf(((SecretMediaViewer) obj).getAnimationValue());
             default:
-                return Float.valueOf(((z31) obj).a);
+                return Float.valueOf(((b11) obj).a);
         }
     }
 }

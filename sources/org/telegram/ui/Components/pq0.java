@@ -1,32 +1,20 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class pq0 extends g.o {
-    public final /* synthetic */ int c;
-    public final /* synthetic */ nr0 d;
+public final /* synthetic */ class pq0 implements org.telegram.messenger.q20 {
+    public final /* synthetic */ org.telegram.ui.Cells.s7 a;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ float c;
 
-    public /* synthetic */ pq0(nr0 nr0Var, int i10) {
-        this.c = i10;
-        this.d = nr0Var;
+    public /* synthetic */ pq0(org.telegram.ui.Cells.s7 s7Var, float f7, float f10) {
+        this.a = s7Var;
+        this.b = f7;
+        this.c = f10;
     }
 
-    @Override // g.o
-    public final int i(int i10) {
-        switch (this.c) {
-            case 0:
-                if (i10 == 0) {
-                    return this.d.I.J;
-                }
-                return 1;
-            case 1:
-                jr0 jr0Var = this.d.N;
-                return (i10 == jr0Var.w || i10 == jr0Var.x || i10 == jr0Var.y || i10 == jr0Var.F || jr0Var.j(i10) == 0) ? 4 : 1;
-            default:
-                if (i10 == 0) {
-                    return this.d.J.J;
-                }
-                return 1;
-        }
+    @Override // org.telegram.messenger.q20
+    public final void a(Object obj) {
+        this.a.n(this.b, this.c);
     }
 }

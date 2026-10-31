@@ -1,36 +1,36 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.Utilities;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final /* synthetic */ class al implements Utilities.Callback2 {
+public final /* synthetic */ class al implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ TranslateController b;
-    public final /* synthetic */ Utilities.Callback4 c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ String f;
-    public final /* synthetic */ long g;
+    public final /* synthetic */ boolean[] b;
+    public final /* synthetic */ Runnable[] c;
 
-    public /* synthetic */ al(TranslateController translateController, Utilities.Callback4 callback4, boolean z10, int i10, String str, long j10, int i11) {
-        this.a = i11;
-        this.b = translateController;
-        this.c = callback4;
-        this.d = z10;
-        this.e = i10;
-        this.f = str;
-        this.g = j10;
+    public /* synthetic */ al(boolean[] zArr, Runnable[] runnableArr, int i10) {
+        this.a = i10;
+        this.b = zArr;
+        this.c = runnableArr;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback2
-    public final void run(Object obj, Object obj2) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$pushToTranslate$21(this.c, this.d, this.e, this.f, this.g, (String) obj, (Boolean) obj2);
+                this.b[0] = true;
+                Runnable runnable = this.c[0];
+                if (runnable != null) {
+                    runnable.run();
+                    break;
+                }
                 break;
             default:
-                this.b.lambda$pushToTranslate$20(this.c, this.d, this.e, this.f, this.g, (String) obj, (Boolean) obj2);
+                this.b[0] = true;
+                Runnable runnable2 = this.c[0];
+                if (runnable2 != null) {
+                    runnable2.run();
+                    break;
+                }
                 break;
         }
     }

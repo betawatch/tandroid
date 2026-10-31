@@ -1,56 +1,37 @@
 package bi;
 
-import android.os.Bundle;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.wn;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class j4 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
+public final class j4 {
+    public final ArrayList a;
 
-    public /* synthetic */ j4(long j10, int i10) {
-        this.a = i10;
-        this.b = j10;
+    public j4(ArrayList arrayList) {
+        this.a = arrayList;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                org.telegram.ui.ActionBar.r2 U = LaunchActivity.U();
-                if (U != null) {
-                    Bundle bundle = new Bundle();
-                    bundle.putLong("user_id", this.b);
-                    bundle.putBoolean("my_profile", true);
-                    bundle.putBoolean("open_gifts", true);
-                    U.presentFragment(new ProfileActivity(bundle, null));
-                    break;
-                }
-                break;
-            case 1:
-                org.telegram.ui.ActionBar.r2 U2 = LaunchActivity.U();
-                if (U2 != null) {
-                    U2.presentFragment(wn.ea(this.b));
-                    break;
-                }
-                break;
-            case 2:
-                org.telegram.ui.ActionBar.r2 U3 = LaunchActivity.U();
-                if (U3 != null) {
-                    U3.presentFragment(wn.ea(this.b));
-                    break;
-                }
-                break;
-            default:
-                org.telegram.ui.ActionBar.r2 U4 = LaunchActivity.U();
-                if (U4 != null) {
-                    U4.presentFragment(wn.ea(this.b));
-                    break;
-                }
-                break;
+    public void a(StringBuilder sb2) {
+        sb2.append(((Boolean) i0.a.v(1, this.a)).booleanValue() ? "</ol>" : "</ul>");
+    }
+
+    public void b(StringBuilder sb2) {
+        while (!this.a.isEmpty()) {
+            a(sb2);
         }
+    }
+
+    public hf.f c(int i10) {
+        return (hf.f) this.a.get(i10);
+    }
+
+    public j4(hf.f fVar) {
+        ArrayList arrayList = new ArrayList(1);
+        this.a = arrayList;
+        arrayList.add(fVar);
+    }
+
+    public j4() {
+        this.a = new ArrayList();
     }
 }

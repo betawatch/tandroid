@@ -1,35 +1,32 @@
 package bi;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class q2 implements RequestDelegate {
+public final /* synthetic */ class q2 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ h7 b;
-    public final /* synthetic */ TL_stars.TL_starGiftUnique c;
-    public final /* synthetic */ bg.a d;
-    public final /* synthetic */ Runnable e;
+    public final /* synthetic */ d4 b;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ q2(h7 h7Var, TL_stars.TL_starGiftUnique tL_starGiftUnique, bg.a aVar, Runnable runnable, int i10) {
-        this.a = i10;
-        this.b = h7Var;
-        this.c = tL_starGiftUnique;
-        this.d = aVar;
-        this.e = runnable;
+    public /* synthetic */ q2(d4 d4Var, int i10, int i11) {
+        this.a = i11;
+        this.b = d4Var;
+        this.c = i10;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                h7.D0(this.b, this.c, this.d, this.e, tLObject, tL_error);
+                this.b.g4(this.c);
+                break;
+            case 1:
+                this.b.i4(this.c);
+                break;
+            case 2:
+                this.b.scrollBy(0, this.c);
                 break;
             default:
-                h7.s0(this.b, this.c, this.d, this.e, tLObject, tL_error);
+                this.b.h4(this.c);
                 break;
         }
     }

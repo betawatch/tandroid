@@ -1,28 +1,26 @@
 package e3;
 
+import b2.v0;
 import b2.w;
-import b2.w0;
-import e2.n0;
+import e2.l0;
 import e2.x;
-import f9.c0;
-import f9.g0;
-import f9.i0;
-import f9.o;
-import f9.s1;
+import e9.h0;
+import e9.n0;
+import e9.s;
+import e9.x1;
 import java.nio.ByteOrder;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
-import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class f implements a {
-    public final i0 a;
+    public final n0 a;
     public final int b;
 
-    public f(int i10, s1 s1Var) {
+    public f(int i10, x1 x1Var) {
         this.b = i10;
-        this.a = s1Var;
+        this.a = x1Var;
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
@@ -30,7 +28,7 @@ public final class f implements a {
         a gVar;
         String str;
         int i11 = 4;
-        o.f(4, "initialCapacity");
+        s.f(4, "initialCapacity");
         Object[] objArr = new Object[4];
         int i12 = xVar.c;
         int i13 = -2;
@@ -62,7 +60,7 @@ public final class f implements a {
                                 case 826496577:
                                 case 828601953:
                                 case 875967048:
-                                    str = MediaController.VIDEO_MIME_TYPE;
+                                    str = "video/avc";
                                     break;
                                 case 842289229:
                                     str = "video/mp42";
@@ -82,45 +80,45 @@ public final class f implements a {
                                 w wVar = new w();
                                 wVar.y = o12;
                                 wVar.z = o13;
-                                wVar.r = w0.n(str);
+                                wVar.r = v0.n(str);
                                 gVar = new g(new b2.x(wVar));
                                 break;
                             } else {
-                                a1.g.z(o14, "Ignoring track with unsupported compression ", "StreamFormatChunk");
+                                a1.g.w(o14, "Ignoring track with unsupported compression ", "StreamFormatChunk");
                                 gVar = dVar;
                                 break;
                             }
                         } else {
                             if (i13 == 1) {
                                 int t10 = xVar.t();
-                                String str2 = t10 != 1 ? t10 != 85 ? t10 != 255 ? t10 != 8192 ? t10 != 8193 ? null : "audio/vnd.dts" : "audio/ac3" : MediaController.AUDIO_MIME_TYPE : "audio/mpeg" : "audio/raw";
+                                String str2 = t10 != 1 ? t10 != 85 ? t10 != 255 ? t10 != 8192 ? t10 != 8193 ? null : "audio/vnd.dts" : "audio/ac3" : "audio/mp4a-latm" : "audio/mpeg" : "audio/raw";
                                 if (str2 != null) {
                                     int t11 = xVar.t();
                                     int o15 = xVar.o();
                                     xVar.O(6);
                                     int t12 = xVar.t();
-                                    String str3 = n0.a;
-                                    int D = n0.D(t12, ByteOrder.LITTLE_ENDIAN);
+                                    String str3 = l0.a;
+                                    int D = l0.D(t12, ByteOrder.LITTLE_ENDIAN);
                                     int t13 = xVar.a() > 0 ? xVar.t() : 0;
                                     w wVar2 = new w();
-                                    wVar2.r = w0.n(str2);
+                                    wVar2.r = v0.n(str2);
                                     wVar2.J = t11;
                                     wVar2.K = o15;
                                     if (str2.equals("audio/raw") && D != 0) {
                                         wVar2.L = D;
                                     }
-                                    if (str2.equals(MediaController.AUDIO_MIME_TYPE) && t13 > 0) {
+                                    if (str2.equals("audio/mp4a-latm") && t13 > 0) {
                                         byte[] bArr = new byte[t13];
                                         xVar.k(0, t13, bArr);
-                                        wVar2.u = i0.y(bArr);
+                                        wVar2.u = n0.y(bArr);
                                     }
                                     gVar = new g(new b2.x(wVar2));
                                     break;
                                 } else {
-                                    a1.g.z(t10, "Ignoring track with unsupported format tag ", "StreamFormatChunk");
+                                    a1.g.w(t10, "Ignoring track with unsupported format tag ", "StreamFormatChunk");
                                 }
                             } else {
-                                e2.a.l("StreamFormatChunk", "Ignoring strf box for unsupported track type: " + n0.I(i13));
+                                e2.a.l("StreamFormatChunk", "Ignoring strf box for unsupported track type: " + l0.I(i13));
                             }
                             gVar = dVar;
                         }
@@ -162,7 +160,7 @@ public final class f implements a {
                     i13 = ((d) gVar).a();
                 }
                 int i15 = i14 + 1;
-                int b10 = c0.b(objArr.length, i15);
+                int b10 = h0.b(objArr.length, i15);
                 if (b10 > objArr.length) {
                     objArr = Arrays.copyOf(objArr, b10);
                 }
@@ -173,11 +171,11 @@ public final class f implements a {
             xVar.M(i12);
             i11 = 4;
         }
-        return new f(i10, i0.s(i14, objArr));
+        return new f(i10, n0.s(i14, objArr));
     }
 
     public final a a(Class cls) {
-        g0 listIterator = this.a.listIterator(0);
+        e9.l0 listIterator = this.a.listIterator(0);
         while (listIterator.hasNext()) {
             a aVar = (a) listIterator.next();
             if (aVar.getClass() == cls) {

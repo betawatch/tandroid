@@ -2,9 +2,9 @@ package org.telegram.messenger.time;
 
 import java.util.Calendar;
 import java.util.TimeZone;
-import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.zs;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public class SunDate {
     private static final double DEGRAD = 0.017453292519943295d;
@@ -28,7 +28,7 @@ public class SunDate {
         calendar.setTimeInMillis(System.currentTimeMillis());
         double[] dArr = new double[2];
         sunRiseSetForYear(calendar.get(1), calendar.get(2) + 1, calendar.get(5), d10, d, dArr);
-        int offset = (TimeZone.getDefault().getOffset(System.currentTimeMillis()) / MediaDataController.MAX_STYLE_RUNS_COUNT) / 60;
+        int offset = (TimeZone.getDefault().getOffset(System.currentTimeMillis()) / 1000) / 60;
         int i10 = ((int) (dArr[0] * 60.0d)) + offset;
         int i11 = ((int) (dArr[1] * 60.0d)) + offset;
         if (i10 < 0) {
@@ -47,7 +47,7 @@ public class SunDate {
     }
 
     private static long days_since_2000_Jan_0(int i10, int i11, int i12) {
-        return ((((i10 * 367) - (((((i11 + 9) / 12) + i10) * 7) / 4)) + ((i11 * 275) / 9)) + i12) - 730530;
+        return ((((i10 * 367) - (((((i11 + 9) / 12) + i10) * 7) / 4)) + ((i11 * zs.y4) / 9)) + i12) - 730530;
     }
 
     private static double rev180(double d) {

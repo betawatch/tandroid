@@ -1,77 +1,29 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class l9 extends FrameLayout {
-    public static final /* synthetic */ int e = 0;
-    public final TextView a;
-    public final TextView b;
-    public final View c;
-    public final org.telegram.ui.Components.bk0 d;
+public final /* synthetic */ class l9 implements o1.g {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ u9 b;
 
-    public l9(o9 o9Var, Context context, org.telegram.ui.Components.c10 c10Var) {
-        super(context);
-        addView(c10Var, org.telegram.ui.Components.kb1.g(-1.0f, -1));
-        this.c = c10Var;
-        org.telegram.ui.Components.bk0 bk0Var = new org.telegram.ui.Components.bk0(context);
-        this.d = bk0Var;
-        bk0Var.f(R.raw.utyan_call, 110, 110, null);
-        bk0Var.setAutoRepeat(false);
-        addView(bk0Var, org.telegram.ui.Components.kb1.h(110, 110.0f, 17, 52.0f, 17.0f, 52.0f, 60.0f));
-        bk0Var.setOnClickListener(new a(this, 9));
-        TextView textView = new TextView(context);
-        this.a = textView;
-        org.telegram.ui.ActionBar.f7.V(textView, org.telegram.ui.ActionBar.y6.G6, null);
-        textView.setText(LocaleController.getString(R.string.MakeYourFirstCall));
-        textView.setTextSize(1, 20.0f);
-        textView.setTypeface(AndroidUtilities.bold());
-        textView.setGravity(17);
-        addView(textView, org.telegram.ui.Components.kb1.h(-1, -2.0f, 17, 17.0f, 40.0f, 17.0f, 0.0f));
-        TextView textView2 = new TextView(context);
-        this.b = textView2;
-        String formatString = LocaleController.formatString(R.string.MakeYourFirstCallHint, Integer.valueOf(o9Var.getMessagesController().conferenceCallSizeLimit));
-        if (AndroidUtilities.isTablet() && !AndroidUtilities.isSmallTablet()) {
-            formatString = formatString.replace('\n', ' ');
+    public /* synthetic */ l9(u9 u9Var, int i10) {
+        this.a = i10;
+        this.b = u9Var;
+    }
+
+    @Override // o1.g
+    public final void a(o1.j jVar, float f7, float f10) {
+        switch (this.a) {
+            case 0:
+                u9 u9Var = this.b;
+                u9Var.E = f7 / 500.0f;
+                u9Var.fragmentView.invalidate();
+                break;
+            default:
+                u9 u9Var2 = this.b;
+                u9Var2.b0 = u9Var2.N ? f7 / 500.0f : 1.0f - (f7 / 500.0f);
+                u9Var2.fragmentView.invalidate();
+                break;
         }
-        textView2.setText(formatString);
-        org.telegram.ui.ActionBar.f7.V(textView2, org.telegram.ui.ActionBar.y6.c7, null);
-        textView2.setTextSize(1, 14.0f);
-        textView2.setGravity(17);
-        textView2.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
-        addView(textView2, org.telegram.ui.Components.kb1.h(-1, -2.0f, 17, 17.0f, 80.0f, 17.0f, 0.0f));
-        c10Var.setAlpha(0.0f);
-        bk0Var.setAlpha(0.0f);
-        textView.setAlpha(0.0f);
-        textView2.setAlpha(0.0f);
-        setOnTouchListener(new ei.d(4));
-    }
-
-    public final void a() {
-        this.d.animate().alpha(0.0f).setDuration(150L).start();
-        this.a.animate().alpha(0.0f).setDuration(150L).start();
-        this.b.animate().alpha(0.0f).setDuration(150L).start();
-        this.c.animate().alpha(1.0f).setDuration(150L).start();
-    }
-
-    public final void b() {
-        org.telegram.ui.Components.bk0 bk0Var = this.d;
-        bk0Var.animate().alpha(1.0f).setDuration(150L).start();
-        this.a.animate().alpha(1.0f).setDuration(150L).start();
-        this.b.animate().alpha(1.0f).setDuration(150L).start();
-        this.c.animate().alpha(0.0f).setDuration(150L).start();
-        bk0Var.d();
-    }
-
-    @Override // android.view.View
-    public final boolean hasOverlappingRendering() {
-        return false;
     }
 }

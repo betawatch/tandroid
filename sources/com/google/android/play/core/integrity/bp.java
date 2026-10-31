@@ -1,23 +1,23 @@
 package com.google.android.play.core.integrity;
 
+import a9.j0;
 import android.content.Context;
-import b9.h0;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class bp implements b9.o {
-    private final b9.s a;
-    private final b9.s b;
-    private final b9.s c;
+public final class bp implements a9.q {
+    private final a9.u a;
+    private final a9.u b;
+    private final a9.u c;
 
-    public bp(b9.s sVar, b9.s sVar2, b9.s sVar3, b9.s sVar4) {
-        this.a = sVar;
-        this.b = sVar2;
-        this.c = sVar3;
+    public bp(a9.u uVar, a9.u uVar2, a9.u uVar3, a9.u uVar4) {
+        this.a = uVar;
+        this.b = uVar2;
+        this.c = uVar3;
     }
 
-    @Override // b9.s
+    @Override // a9.u
     public final /* bridge */ /* synthetic */ Object a() {
-        return new bn((Context) this.a.a(), (h0) this.b.a(), ((au) this.c).a(), new j());
+        return new bn((Context) this.a.a(), (j0) this.b.a(), ((au) this.c).a(), new j());
     }
 }

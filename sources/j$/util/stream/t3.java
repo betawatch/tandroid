@@ -13,6 +13,7 @@ import java.util.function.IntFunction;
 import java.util.function.LongConsumer;
 import java.util.function.Predicate;
 import java.util.stream.Collector;
+import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes2.dex */
 public abstract class t3 implements b8 {
@@ -65,8 +66,8 @@ public abstract class t3 implements b8 {
                 try {
                     g gVar = (g) it.next();
                     hashSet.add(gVar == null ? null : gVar == g.CONCURRENT ? Collector.Characteristics.CONCURRENT : gVar == g.UNORDERED ? Collector.Characteristics.UNORDERED : Collector.Characteristics.IDENTITY_FINISH);
-                } catch (ClassCastException e10) {
-                    j$.util.g.a(e10, "java.util.stream.Collector.Characteristics");
+                } catch (ClassCastException e7) {
+                    j$.util.g.a(e7, "java.util.stream.Collector.Characteristics");
                     throw null;
                 }
             }
@@ -80,8 +81,8 @@ public abstract class t3 implements b8 {
                 try {
                     Collector.Characteristics characteristics = (Collector.Characteristics) it2.next();
                     hashSet.add(characteristics == null ? null : characteristics == Collector.Characteristics.CONCURRENT ? g.CONCURRENT : characteristics == Collector.Characteristics.UNORDERED ? g.UNORDERED : g.IDENTITY_FINISH);
-                } catch (ClassCastException e11) {
-                    j$.util.g.a(e11, "java.util.stream.Collector.Characteristics");
+                } catch (ClassCastException e10) {
+                    j$.util.g.a(e10, "java.util.stream.Collector.Characteristics");
                     throw null;
                 }
             }
@@ -298,7 +299,7 @@ public abstract class t3 implements b8 {
 
     public static e2 a0(t3 t3Var, Spliterator spliterator, boolean z10, IntFunction intFunction) {
         long k02 = t3Var.k0(spliterator);
-        if (k02 < 0 || !spliterator.hasCharacteristics(16384)) {
+        if (k02 < 0 || !spliterator.hasCharacteristics(TLObject.FLAG_14)) {
             k0 k0Var = new k0();
             k0Var.a = intFunction;
             e2 e2Var = (e2) new j2(t3Var, spliterator, k0Var, new a1(19), 3).invoke();
@@ -364,7 +365,7 @@ public abstract class t3 implements b8 {
 
     public static a2 c0(t3 t3Var, Spliterator spliterator, boolean z10) {
         long k02 = t3Var.k0(spliterator);
-        if (k02 < 0 || !spliterator.hasCharacteristics(16384)) {
+        if (k02 < 0 || !spliterator.hasCharacteristics(TLObject.FLAG_14)) {
             a2 a2Var = (a2) new j2(t3Var, spliterator, new a1(15), new a1(16), 1).invoke();
             return z10 ? o0(a2Var) : a2Var;
         }
@@ -378,7 +379,7 @@ public abstract class t3 implements b8 {
 
     public static c2 d0(t3 t3Var, Spliterator spliterator, boolean z10) {
         long k02 = t3Var.k0(spliterator);
-        if (k02 < 0 || !spliterator.hasCharacteristics(16384)) {
+        if (k02 < 0 || !spliterator.hasCharacteristics(TLObject.FLAG_14)) {
             c2 c2Var = (c2) new j2(t3Var, spliterator, new a1(17), new a1(18), 2).invoke();
             return z10 ? p0(c2Var) : c2Var;
         }
@@ -435,7 +436,7 @@ public abstract class t3 implements b8 {
 
     public static y1 b0(t3 t3Var, Spliterator spliterator, boolean z10) {
         long k02 = t3Var.k0(spliterator);
-        if (k02 < 0 || !spliterator.hasCharacteristics(16384)) {
+        if (k02 < 0 || !spliterator.hasCharacteristics(TLObject.FLAG_14)) {
             y1 y1Var = (y1) new j2(t3Var, spliterator, new a1(13), new a1(14), 0).invoke();
             return z10 ? n0(y1Var) : y1Var;
         }

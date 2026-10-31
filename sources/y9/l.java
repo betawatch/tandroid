@@ -1,33 +1,30 @@
 package y9;
 
-import android.content.ComponentName;
-import com.google.android.gms.tasks.SuccessContinuation;
-import com.google.android.gms.tasks.Task;
-import java.util.concurrent.atomic.AtomicInteger;
+import org.json.JSONObject;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class l implements SuccessContinuation {
-    public final Object a;
-    public final Object b;
+public abstract class l {
+    public static final a4.l a;
 
-    public l() {
-        this.a = new AtomicInteger();
-        this.b = new AtomicInteger();
+    static {
+        la.d dVar = new la.d();
+        a aVar = a.a;
+        dVar.e(l.class, aVar);
+        dVar.e(b.class, aVar);
+        a = new a4.l(dVar, 26);
     }
 
-    @Override // com.google.android.gms.tasks.SuccessContinuation
-    public Task then(Object obj) {
-        return ((n) this.b).e.G(new u4.f(1, this, (Boolean) obj));
-    }
-
-    public l(yf.b bVar, ComponentName componentName) {
-        this.a = bVar;
-        this.b = componentName;
-    }
-
-    public l(n nVar, Task task) {
-        this.b = nVar;
-        this.a = task;
+    public static b a(String str) {
+        JSONObject jSONObject = new JSONObject(str);
+        String string = jSONObject.getString("rolloutId");
+        String string2 = jSONObject.getString("parameterKey");
+        String string3 = jSONObject.getString("parameterValue");
+        String string4 = jSONObject.getString("variantId");
+        long j10 = jSONObject.getLong("templateVersion");
+        if (string3.length() > 256) {
+            string3 = string3.substring(0, 256);
+        }
+        return new b(string, string2, string3, string4, j10);
     }
 }

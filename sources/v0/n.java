@@ -1,28 +1,11 @@
 package v0;
 
-import java.util.Collection;
-import java.util.List;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class n {
-    public final List a;
-    public final boolean b;
+    public final b2.h a;
 
-    public n(List list, boolean z10) {
-        this.a = list;
-        this.b = z10;
-        if (list.isEmpty()) {
-            throw new IllegalArgumentException("credentialOptions should not be empty");
-        }
-        if (list.size() > 1) {
-            List<p> list2 = list;
-            if (!(list2 instanceof Collection) || !list2.isEmpty()) {
-                for (p pVar : list2) {
-                }
-            }
-            for (p pVar2 : this.a) {
-            }
-        }
+    public n(b2.h hVar) {
+        this.a = hVar;
     }
 }

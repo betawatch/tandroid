@@ -1,63 +1,87 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
-import android.graphics.Rect;
-import android.graphics.drawable.GradientDrawable;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import android.view.View;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class r9 implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ x9 b;
-    public final /* synthetic */ Runnable[] c;
-    public final /* synthetic */ w60 d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ kb1[] f;
+public abstract class r9 extends tk0 {
+    public int e3;
+    public int f3;
+    public boolean g3;
+    public int h3;
+    public boolean i3;
 
-    public /* synthetic */ r9(x9 x9Var, w60 w60Var, Runnable[] runnableArr, int i10, kb1[] kb1VarArr) {
-        this.b = x9Var;
-        this.d = w60Var;
-        this.c = runnableArr;
-        this.e = i10;
-        this.f = kb1VarArr;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                x9 x9Var = this.b;
-                w60 w60Var = this.d;
-                Runnable[] runnableArr = this.c;
-                int i10 = this.e;
-                kb1[] kb1VarArr = this.f;
-                try {
-                    GradientDrawable.Orientation orientation = x9Var.getOrientation();
-                    int[] iArr = x9Var.a;
-                    int i11 = w60Var.a;
-                    int i12 = w60Var.b;
-                    Rect e = x9.e(orientation, i11, i12);
-                    Bitmap createBitmap = Bitmap.createBitmap(i11, i12, Bitmap.Config.ARGB_8888);
-                    Utilities.drawDitheredGradient(createBitmap, iArr, e.left, e.top, e.right, e.bottom);
-                    AndroidUtilities.runOnUIThread(new ag.q0(x9Var, runnableArr, createBitmap, w60Var, i10, kb1VarArr, 10));
-                    return;
-                } catch (Throwable th2) {
-                    AndroidUtilities.runOnUIThread(new r9(x9Var, runnableArr, w60Var, i10, kb1VarArr));
-                    throw th2;
-                }
-            default:
-                x9.a(this.b, this.c, null, this.d, this.e, this.f);
-                return;
+    public final void A1() {
+        if (getLayoutParams() == null) {
+            return;
+        }
+        if (!org.telegram.messenger.tz.f()) {
+            this.e3 = 0;
+            ((ViewGroup.MarginLayoutParams) getLayoutParams()).topMargin = 0;
+        } else {
+            this.e3 = z1();
+            ((ViewGroup.MarginLayoutParams) getLayoutParams()).topMargin = -this.e3;
         }
     }
 
-    public /* synthetic */ r9(x9 x9Var, Runnable[] runnableArr, w60 w60Var, int i10, kb1[] kb1VarArr) {
-        this.b = x9Var;
-        this.c = runnableArr;
-        this.d = w60Var;
-        this.e = i10;
-        this.f = kb1VarArr;
+    @Override // org.telegram.ui.Components.tk0, ug.a
+    public final void d(Canvas canvas, RectF rectF) {
+        this.i3 = true;
+        super.d(canvas, rectF);
+        this.i3 = false;
+    }
+
+    @Override // org.telegram.ui.Components.tk0, android.view.ViewGroup, android.view.View
+    public void dispatchDraw(Canvas canvas) {
+        if (this.e3 == 0 || Y0()) {
+            super.dispatchDraw(canvas);
+        } else {
+            canvas.clipRect(0, this.e3, getMeasuredWidth(), getMeasuredHeight() + this.h3);
+            super.dispatchDraw(canvas);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.tk0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    public boolean drawChild(Canvas canvas, View view, long j10) {
+        if (view.getY() + view.getMeasuredHeight() >= this.e3 || this.i3 || Y0()) {
+            return super.drawChild(canvas, view, j10);
+        }
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.tk0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        A1();
+    }
+
+    @Override // org.telegram.ui.Components.tk0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public void onMeasure(int i10, int i11) {
+        this.g3 = true;
+        A1();
+        super.setPadding(getPaddingLeft(), this.f3 + this.e3, getPaddingRight(), getPaddingBottom());
+        this.g3 = false;
+        super.onMeasure(i10, i11);
+    }
+
+    @Override // org.telegram.ui.Components.tk0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
+    public void requestLayout() {
+        if (this.g3) {
+            return;
+        }
+        super.requestLayout();
+    }
+
+    @Override // android.view.View
+    public final void setPadding(int i10, int i11, int i12, int i13) {
+        this.f3 = i11;
+        super.setPadding(i10, i11 + this.e3, i12, i13);
+    }
+
+    public int z1() {
+        return org.telegram.messenger.i0.L(203.0f);
     }
 }

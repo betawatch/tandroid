@@ -1,25 +1,25 @@
 package v2;
 
-import a8.yb;
 import android.util.SparseArray;
 import b2.x;
 import c3.b0;
-import c3.j0;
+import c3.k0;
 import c3.o;
 import c3.q;
 import c3.s;
+import v7.t6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class e implements q {
-    public static final s v = new s();
+    public static final s w = new s();
     public final o a;
     public final int b;
     public final x c;
     public final SparseArray d = new SparseArray();
     public final d e = d.a;
     public boolean f;
-    public m4.c h;
+    public u9.b h;
     public long n;
     public b0 r;
     public x[] s;
@@ -31,28 +31,28 @@ public final class e implements q {
     }
 
     @Override // c3.q
-    public final void D1(b0 b0Var) {
+    public final void G1(b0 b0Var) {
         this.r = b0Var;
     }
 
     @Override // c3.q
-    public final j0 F1(int i10, int i11) {
+    public final k0 I1(int i10, int i11) {
         SparseArray sparseArray = this.d;
         c cVar = (c) sparseArray.get(i10);
         if (cVar == null) {
-            yb.p(this.s == null);
+            t6.p(this.s == null);
             cVar = new c(i10, i11, i11 == this.b ? this.c : null, this.e);
-            m4.c cVar2 = this.h;
+            u9.b bVar = this.h;
             long j10 = this.n;
-            if (cVar2 == null) {
+            if (bVar == null) {
                 cVar.f = cVar.c;
             } else {
                 cVar.g = j10;
-                j0 B0 = cVar2.B0(i11);
-                cVar.f = B0;
+                k0 c10 = bVar.c(i11);
+                cVar.f = c10;
                 x xVar = cVar.e;
                 if (xVar != null) {
-                    B0.b(xVar);
+                    c10.b(xVar);
                 }
             }
             sparseArray.put(i10, cVar);
@@ -83,8 +83,8 @@ public final class e implements q {
         return null;
     }
 
-    public final void b(m4.c cVar, long j10, long j11) {
-        this.h = cVar;
+    public final void b(u9.b bVar, long j10, long j11) {
+        this.h = bVar;
         this.n = j11;
         boolean z10 = this.f;
         o oVar = this.a;
@@ -106,16 +106,16 @@ public final class e implements q {
             if (i10 >= sparseArray.size()) {
                 return;
             }
-            c cVar2 = (c) sparseArray.valueAt(i10);
-            if (cVar == null) {
-                cVar2.f = cVar2.c;
+            c cVar = (c) sparseArray.valueAt(i10);
+            if (bVar == null) {
+                cVar.f = cVar.c;
             } else {
-                cVar2.g = j11;
-                j0 B0 = cVar.B0(cVar2.a);
-                cVar2.f = B0;
-                x xVar = cVar2.e;
+                cVar.g = j11;
+                k0 c10 = bVar.c(cVar.a);
+                cVar.f = c10;
+                x xVar = cVar.e;
                 if (xVar != null) {
-                    B0.b(xVar);
+                    c10.b(xVar);
                 }
             }
             i10++;

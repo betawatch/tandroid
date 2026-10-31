@@ -1,28 +1,36 @@
 package org.telegram.ui.Components;
 
-import android.text.InputFilter;
-import android.text.Spanned;
+import android.view.View;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class vd implements InputFilter {
-    @Override // android.text.InputFilter
-    public final CharSequence filter(CharSequence charSequence, int i10, int i11, Spanned spanned, int i12, int i13) {
-        int i14 = ChatActivityEnterView.r5;
-        for (int i15 = i10; i15 < i11; i15++) {
-            char charAt = charSequence.charAt(i15);
-            if (charAt == '\n' || charAt == '\r') {
-                StringBuilder sb2 = new StringBuilder(i11 - i10);
-                while (i10 < i11) {
-                    char charAt2 = charSequence.charAt(i10);
-                    if (charAt2 != '\n' && charAt2 != '\r') {
-                        sb2.append(charAt2);
-                    }
-                    i10++;
-                }
-                return sb2;
-            }
+public final class vd implements q4, ik0 {
+    public final /* synthetic */ ChatActivityEnterView a;
+
+    public /* synthetic */ vd(ChatActivityEnterView chatActivityEnterView) {
+        this.a = chatActivityEnterView;
+    }
+
+    @Override // org.telegram.ui.Components.q4
+    public void K(int i10, int i11, boolean z10) {
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        boolean R0 = chatActivityEnterView.R0(z10, i10, i11, 0L, true);
+        pe peVar = chatActivityEnterView.L0;
+        if (peVar != null) {
+            peVar.g(!R0);
+            chatActivityEnterView.L0 = null;
         }
-        return null;
+    }
+
+    @Override // org.telegram.ui.Components.ik0
+    public boolean f(int i10, View view) {
+        if (!(view instanceof xh.u)) {
+            return false;
+        }
+        String str = ((xh.u) view).getCommand() + " ";
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        chatActivityEnterView.setFieldText(str);
+        chatActivityEnterView.m0.c();
+        return true;
     }
 }

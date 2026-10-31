@@ -1,174 +1,146 @@
 package bi;
 
-import android.graphics.Bitmap;
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.Utilities;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Outline;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class j2 implements Utilities.Callback3 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate b;
+public final class j2 extends Drawable implements Drawable.Callback {
+    public final Drawable a;
+    public final Paint b;
+    public final Path c;
+    public final RectF d;
+    public final Outline e;
+    public boolean f;
+    public final boolean h;
+    public boolean n;
 
-    public /* synthetic */ j2(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, int i10) {
-        this.a = i10;
-        this.b = notificationCenterDelegate;
+    public j2(Drawable drawable) {
+        Paint paint = new Paint(1);
+        this.b = paint;
+        this.c = new Path();
+        this.d = new RectF();
+        this.e = new Outline();
+        this.f = true;
+        this.a = drawable;
+        drawable.setCallback(this);
+        paint.setColor(0);
+        this.h = true;
+        a(org.telegram.ui.ActionBar.t6.I.q());
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback3
-    public final void run(Object obj, Object obj2, Object obj3) {
-        int i10;
-        fi.t tVar;
-        switch (this.a) {
-            case 0:
-                ((h7) this.b).R2((View) obj2, (CharSequence) obj, ((Boolean) obj3).booleanValue());
-                break;
-            case 1:
-                h7.i0((h7) this.b, (ArrayList) obj, (Utilities.Callback2) obj2, (Runnable) obj3);
-                break;
-            default:
-                fi.sb sbVar = (fi.sb) this.b;
-                Boolean bool = (Boolean) obj;
-                ArrayList arrayList = (ArrayList) obj2;
-                ArrayList arrayList2 = (ArrayList) obj3;
-                if (sbVar.f0 == 0 && arrayList != null && !arrayList.isEmpty() && sbVar.p2 == null && !sbVar.W && sbVar.I()) {
-                    sbVar.H1 = null;
-                    sbVar.I1 = null;
-                    sbVar.J1 = null;
-                    if (bool.booleanValue()) {
-                        if (arrayList.size() + sbVar.A0.getFilledCount() > sbVar.A0.getTotalCount()) {
-                            int size = arrayList.size() + sbVar.A0.getFilledCount();
-                            ArrayList a2 = fi.t.a();
-                            int size2 = a2.size();
-                            int i11 = 0;
-                            while (true) {
-                                if (i11 < size2) {
-                                    Object obj4 = a2.get(i11);
-                                    i11++;
-                                    tVar = (fi.t) obj4;
-                                    if (tVar.e.size() >= size) {
-                                    }
-                                } else {
-                                    tVar = null;
-                                }
-                            }
-                            if (tVar == null) {
-                                sbVar.A0.o(null);
-                                sbVar.A0.e();
-                                sbVar.I0.setSelected((fi.t) null);
-                                fi.va vaVar = sbVar.B0;
-                                if (vaVar != null) {
-                                    vaVar.recordHevc = !sbVar.A0.j();
-                                }
-                                sbVar.I0.a(false, true);
-                                sbVar.l0(true);
-                                break;
-                            } else {
-                                fi.fb fbVar = sbVar.A0;
-                                sbVar.z0 = tVar;
-                                fbVar.o(tVar);
-                                sbVar.I0.setSelected(tVar);
-                                int indexOf = fi.t.a().indexOf(tVar);
-                                if (indexOf >= 0) {
-                                    sbVar.I0.a.v0(indexOf);
-                                }
-                                fi.va vaVar2 = sbVar.B0;
-                                if (vaVar2 != null) {
-                                    vaVar2.recordHevc = !sbVar.A0.j();
-                                }
-                                sbVar.G0.setDrawable(new fi.u(tVar, false));
-                                sbVar.b0(sbVar.H0, sbVar.I0.e, true);
-                                sbVar.O0.e(sbVar.A0.j() ? sbVar.A0.getFilledProgress() : 0.0f, true);
-                            }
-                        }
-                    }
-                    sbVar.L1 = true;
-                    int i12 = 0;
-                    while (true) {
-                        if (i12 < arrayList.size()) {
-                            fi.w7 l4 = fi.w7.l((MediaController.PhotoEntry) arrayList.get(i12));
-                            l4.M0 = (Bitmap) arrayList2.get(i12);
-                            l4.J0 = sbVar.v0;
-                            l4.K0 = sbVar.w0;
-                            l4.A();
-                            if (!bool.booleanValue()) {
-                                if (sbVar.K1 == null) {
-                                    sbVar.K1 = l4;
-                                } else {
-                                    if (sbVar.H1 == null) {
-                                        ArrayList arrayList3 = new ArrayList();
-                                        sbVar.H1 = arrayList3;
-                                        arrayList3.add(sbVar.K1);
-                                    }
-                                    if (sbVar.H1.size() < 10) {
-                                        sbVar.H1.add(l4);
-                                    }
-                                }
-                                i12++;
-                            } else if (sbVar.A0.l(l4)) {
-                                sbVar.K1 = fi.w7.a(sbVar.A0.getLayout(), sbVar.A0.getContent());
-                            } else {
-                                i12++;
-                            }
-                        }
-                    }
-                    if (sbVar.H1 != null) {
-                        sbVar.h0(false, true);
-                        sbVar.Q0.a(sbVar.O1);
-                        fi.w6 w6Var = sbVar.O0;
-                        boolean z10 = sbVar.O1 == 1;
-                        w6Var.n0 = -1.0f;
-                        w6Var.o0 = z10;
-                        w6Var.invalidate();
-                        sbVar.I1 = new ArrayList();
-                        sbVar.J1 = new ArrayList();
-                        for (int i13 = 0; i13 < sbVar.H1.size(); i13 = c3.h0.i(i13, i13, 1, sbVar.J1)) {
-                            sbVar.I1.add(Integer.valueOf(i13));
-                        }
-                        sbVar.A0.n(null);
-                        sbVar.I0.a(false, true);
-                        sbVar.l0(true);
-                        sbVar.e(false);
-                        sbVar.J(1, true);
-                        fi.ia iaVar = sbVar.d1;
-                        if (iaVar != null) {
-                            di.s8 s8Var = iaVar.h;
-                            if (!iaVar.I && !iaVar.M && (i10 = MessagesController.getGlobalMainSettings().getInt("multistorieshint", 0)) < 3) {
-                                MessagesController.getGlobalMainSettings().edit().putInt("multistorieshint", i10 + 1).apply();
-                                AndroidUtilities.cancelRunOnUIThread(s8Var);
-                                iaVar.I = true;
-                                iaVar.invalidate();
-                                AndroidUtilities.runOnUIThread(s8Var, 5500L);
-                            }
-                        }
-                        fi.qa qaVar = sbVar.M0;
-                        if (qaVar != null) {
-                            sbVar.l2 = qaVar.e.e0();
-                            sbVar.m2 = sbVar.M0.getSelectedAlbum();
-                            break;
-                        }
-                    } else {
-                        fi.w7 w7Var = sbVar.K1;
-                        if (w7Var != null) {
-                            w7Var.B();
-                        }
-                        sbVar.I0.a(false, true);
-                        sbVar.l0(true);
-                        sbVar.e(false);
-                        fi.qa qaVar2 = sbVar.M0;
-                        if (qaVar2 != null) {
-                            sbVar.l2 = qaVar2.e.e0();
-                            sbVar.m2 = sbVar.M0.getSelectedAlbum();
-                            break;
-                        }
-                    }
-                }
-                break;
+    public final void a(boolean z10) {
+        this.n = z10;
+        this.b.setShadowLayer(org.telegram.messenger.i0.L(12.0f), 0.0f, org.telegram.messenger.i0.L(4.0f), org.telegram.ui.ActionBar.t6.r1(z10 ? 0.3f : 0.1f, -16777216));
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:13:0x0040  */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x0046  */
+    @Override // android.graphics.drawable.Drawable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void draw(Canvas canvas) {
+        float radius;
+        if (this.h && this.n != org.telegram.ui.ActionBar.t6.I.q()) {
+            a(!this.n);
         }
+        boolean z10 = this.f;
+        Drawable drawable = this.a;
+        Path path = this.c;
+        if (z10) {
+            Outline outline = this.e;
+            path.reset();
+            Rect bounds = getBounds();
+            RectF rectF = this.d;
+            rectF.set(bounds);
+            if (Build.VERSION.SDK_INT >= 24) {
+                try {
+                    drawable.getOutline(outline);
+                    radius = outline.getRadius();
+                } catch (Throwable unused) {
+                }
+                if (radius <= 0.0f) {
+                    path.addRoundRect(rectF, radius, radius, Path.Direction.CW);
+                } else {
+                    path.addRect(rectF, Path.Direction.CW);
+                }
+                this.f = false;
+            }
+            radius = -1.0f;
+            if (radius <= 0.0f) {
+            }
+            this.f = false;
+        }
+        canvas.drawPath(path, this.b);
+        drawable.draw(canvas);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -3;
+    }
+
+    @Override // android.graphics.drawable.Drawable.Callback
+    public final void invalidateDrawable(Drawable drawable) {
+        invalidateSelf();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final boolean isStateful() {
+        return this.a.isStateful();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void jumpToCurrentState() {
+        this.a.jumpToCurrentState();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void onBoundsChange(Rect rect) {
+        this.a.setBounds(rect);
+        this.f = true;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final boolean onStateChange(int[] iArr) {
+        return this.a.setState(iArr);
+    }
+
+    @Override // android.graphics.drawable.Drawable.Callback
+    public final void scheduleDrawable(Drawable drawable, Runnable runnable, long j10) {
+        scheduleSelf(runnable, j10);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        this.a.setAlpha(i10);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        this.a.setColorFilter(colorFilter);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setHotspot(float f7, float f10) {
+        this.a.setHotspot(f7, f10);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setHotspotBounds(int i10, int i11, int i12, int i13) {
+        this.a.setHotspotBounds(i10, i11, i12, i13);
+    }
+
+    @Override // android.graphics.drawable.Drawable.Callback
+    public final void unscheduleDrawable(Drawable drawable, Runnable runnable) {
+        unscheduleSelf(runnable);
     }
 }

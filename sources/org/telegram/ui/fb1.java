@@ -1,80 +1,60 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.app.Activity;
 import android.view.View;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import org.telegram.ui.ThemeActivity;
+import java.util.HashMap;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class fb1 extends org.telegram.ui.Components.mm0 {
-    public final Context c;
-    public org.telegram.ui.ActionBar.x6 d;
-    public ArrayList e;
-    public final /* synthetic */ ThemeActivity f;
+public final class fb1 extends View {
+    public final HashMap a;
+    public final /* synthetic */ gb1 b;
 
-    public fb1(ThemeActivity themeActivity, Context context) {
-        this.f = themeActivity;
-        this.c = context;
-        l();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public fb1(gb1 gb1Var, Activity activity) {
+        super(activity);
+        this.b = gb1Var;
+        this.a = new HashMap();
     }
 
-    @Override // org.telegram.ui.Components.mm0
-    public final boolean D(s4.e1 e1Var) {
-        return false;
-    }
-
-    @Override // s4.h0
-    public final int h() {
-        if (this.e.isEmpty()) {
-            return 0;
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        int i12;
+        int L;
+        gb1 gb1Var = this.b;
+        pb1 pb1Var = gb1Var.d;
+        int size = View.MeasureSpec.getSize(i10);
+        int L2 = org.telegram.messenger.i0.L(64.0f);
+        int i13 = 0;
+        int i14 = 0;
+        for (int i15 = 0; i15 < gb1Var.F().size(); i15++) {
+            if (gb1Var.F().get(i15) != null && ((hb1) gb1Var.F().get(i15)).c != null) {
+                String str = ((hb1) gb1Var.F().get(i15)).c.title;
+                HashMap hashMap = this.a;
+                Boolean bool = (Boolean) hashMap.get(str);
+                if (bool == null) {
+                    int L3 = org.telegram.messenger.i0.L(org.telegram.messenger.cd.X ? 18.0f : (pb1Var.isInPreviewMode() ? 11 : 50) + 4);
+                    if (org.telegram.messenger.cd.X) {
+                        i12 = size - L3;
+                        L = org.telegram.messenger.i0.L((pb1Var.isInPreviewMode() ? 11 : 50) + 13);
+                    } else {
+                        i12 = size - L3;
+                        L = org.telegram.messenger.i0.L(22.0f);
+                    }
+                    bool = Boolean.valueOf(org.telegram.ui.ActionBar.t6.B0[0].measureText(str) <= ((float) ((i12 - L) - ((int) Math.ceil((double) org.telegram.ui.ActionBar.t6.I0.measureText("00:00"))))));
+                    hashMap.put(str, bool);
+                }
+                int L4 = org.telegram.messenger.i0.L((!bool.booleanValue() ? 20 : 0) + 64);
+                if (((hb1) gb1Var.F().get(i15)).c.id == 1) {
+                    L2 = L4;
+                }
+                if (((hb1) gb1Var.F().get(i15)).c.hidden) {
+                    i13++;
+                }
+                i14 += L4;
+            }
         }
-        return this.e.size() + 1;
-    }
-
-    @Override // s4.h0
-    public final int j(int i10) {
-        return i10 == h() - 1 ? 1 : 0;
-    }
-
-    @Override // s4.h0
-    public final void l() {
-        this.d = this.f.f == 1 ? org.telegram.ui.ActionBar.y6.J : org.telegram.ui.ActionBar.y6.C0();
-        this.e = new ArrayList(this.d.b0);
-        super.l();
-    }
-
-    @Override // s4.h0
-    public final void v(s4.e1 e1Var, int i10) {
-        View view = e1Var.a;
-        int j10 = j(i10);
-        if (j10 == 0) {
-            ThemeActivity.InnerAccentView innerAccentView = (ThemeActivity.InnerAccentView) view;
-            org.telegram.ui.ActionBar.x6 x6Var = this.d;
-            org.telegram.ui.ActionBar.w6 w6Var = (org.telegram.ui.ActionBar.w6) this.e.get(i10);
-            innerAccentView.d = x6Var;
-            innerAccentView.e = w6Var;
-            innerAccentView.a(false);
-            return;
-        }
-        if (j10 != 1) {
-            return;
-        }
-        va1 va1Var = (va1) view;
-        org.telegram.ui.ActionBar.x6 x6Var2 = this.d;
-        int i11 = va1.c;
-        va1Var.getClass();
-        if (x6Var2.W >= 8) {
-            va1Var.b = new int[]{x6Var2.l(6), x6Var2.l(4), x6Var2.l(7), x6Var2.l(2), x6Var2.l(0), x6Var2.l(5), x6Var2.l(3)};
-        } else {
-            va1Var.b = new int[7];
-        }
-    }
-
-    @Override // s4.h0
-    public final s4.e1 x(ViewGroup viewGroup, int i10) {
-        Context context = this.c;
-        return i10 != 0 ? new org.telegram.ui.Components.wl0(new va1(context)) : new org.telegram.ui.Components.wl0(new ThemeActivity.InnerAccentView(context));
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(Math.max(0, i13 > 0 ? (((pb1Var.N.getMeasuredHeight() - pb1Var.N.getPaddingTop()) - pb1Var.N.getPaddingBottom()) - i14) + L2 : 0), TLObject.FLAG_30));
     }
 }

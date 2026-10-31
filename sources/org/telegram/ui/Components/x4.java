@@ -1,35 +1,31 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.widget.LinearLayout;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class x4 extends LinearLayout {
-    public boolean a;
-    public final /* synthetic */ nd0 b;
+public final /* synthetic */ class x4 implements c5 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ f5 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x4(Context context, nd0 nd0Var) {
-        super(context);
-        this.b = nd0Var;
-        this.a = false;
+    public /* synthetic */ x4(f5 f5Var, int i10) {
+        this.a = i10;
+        this.b = f5Var;
     }
 
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        this.a = true;
-        this.b.getLayoutParams().height = AndroidUtilities.dp(42.0f) * 8;
-        this.a = false;
-        super.onMeasure(i10, i11);
-    }
-
-    @Override // android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.a) {
-            return;
+    @Override // org.telegram.ui.Components.c5
+    public final void a(TLRPC.Document document) {
+        switch (this.a) {
+            case 0:
+                f5 f5Var = this.b;
+                f5Var.e = document;
+                f5Var.i(false);
+                break;
+            default:
+                f5 f5Var2 = this.b;
+                f5Var2.e = document;
+                f5Var2.i(false);
+                break;
         }
-        super.requestLayout();
     }
 }

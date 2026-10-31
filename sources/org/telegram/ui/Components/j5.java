@@ -1,94 +1,40 @@
 package org.telegram.ui.Components;
 
-import android.animation.TimeInterpolator;
-import android.os.SystemClock;
+import android.graphics.Rect;
+import android.text.Layout;
 import android.view.View;
+import java.lang.ref.WeakReference;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class j5 {
-    public final View a;
-    public final Runnable b;
-    public int c;
-    public int d;
-    public boolean e;
-    public final long f;
-    public final TimeInterpolator g;
-    public boolean h;
-    public long i;
-    public int j;
+public final class j5 implements l5 {
+    public final WeakReference a;
+    public final boolean b;
+    public Layout c;
+    public o5 d;
+    public Rect e;
+    public f5 f;
+    public org.telegram.messenger.g6 h;
+    public boolean n;
+    public float r;
+    public float s;
+    public boolean w;
 
-    public j5(View view) {
-        this.f = 200L;
-        this.g = ds.f;
-        this.a = view;
-        this.e = true;
+    public j5(View view, boolean z10) {
+        this.a = new WeakReference(view);
+        this.b = z10;
     }
 
-    public final int a(int i10, boolean z10) {
-        long elapsedRealtime = SystemClock.elapsedRealtime();
-        long j10 = this.f;
-        if (z10 || j10 <= 0 || this.e) {
-            this.d = i10;
-            this.c = i10;
-            this.h = false;
-            this.e = false;
-        } else if (this.d != i10) {
-            this.h = true;
-            this.d = i10;
-            this.j = this.c;
-            this.i = elapsedRealtime;
+    @Override // org.telegram.ui.Components.l5
+    public final void invalidate() {
+        View view = (View) this.a.get();
+        if (view == null) {
+            return;
         }
-        if (this.h) {
-            float a2 = a8.ee.a((elapsedRealtime - this.i) / j10, 0.0f, 1.0f);
-            if (elapsedRealtime - this.i >= 0) {
-                TimeInterpolator timeInterpolator = this.g;
-                if (timeInterpolator == null) {
-                    this.c = i0.a.f(a2, this.j, this.d);
-                } else {
-                    this.c = i0.a.f(timeInterpolator.getInterpolation(a2), this.j, this.d);
-                }
-            }
-            if (a2 >= 1.0f) {
-                this.h = false;
-            } else {
-                View view = this.a;
-                if (view != null) {
-                    view.invalidate();
-                }
-                Runnable runnable = this.b;
-                if (runnable != null) {
-                    runnable.run();
-                }
-            }
+        if (!this.b || view.getParent() == null) {
+            view.invalidate();
+        } else {
+            ((View) view.getParent()).invalidate();
         }
-        return this.c;
-    }
-
-    public j5(View view, long j10, TimeInterpolator timeInterpolator) {
-        this.f = 200L;
-        ds dsVar = ds.f;
-        this.a = view;
-        this.f = j10;
-        this.g = timeInterpolator;
-        this.e = true;
-    }
-
-    public j5(View view, long j10, TimeInterpolator timeInterpolator, int i10) {
-        this.f = 200L;
-        ds dsVar = ds.f;
-        this.a = view;
-        this.f = j10;
-        this.g = timeInterpolator;
-        this.e = true;
-    }
-
-    public j5(Runnable runnable, long j10, TimeInterpolator timeInterpolator) {
-        this.f = 200L;
-        ds dsVar = ds.f;
-        this.b = runnable;
-        this.f = j10;
-        this.g = timeInterpolator;
-        this.e = true;
     }
 }

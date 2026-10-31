@@ -1,40 +1,22 @@
 package ta;
 
-import a1.g;
 import m1.j;
-import org.telegram.messenger.BuildConfig;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class a {
     public final String a;
-    public final int b;
+    public final String b;
     public final String c;
-    public final String d;
-    public final long e;
-    public final long f;
-    public final String g;
+    public final b d;
+    public final int e;
 
-    public a(String str, int i10, String str2, String str3, long j10, long j11, String str4) {
+    public a(String str, String str2, String str3, b bVar, int i10) {
         this.a = str;
-        this.b = i10;
-        this.c = str2;
-        this.d = str3;
-        this.e = j10;
-        this.f = j11;
-        this.g = str4;
-    }
-
-    public final s4.b a() {
-        s4.b bVar = new s4.b(1);
-        bVar.c = this.a;
-        bVar.b = this.b;
-        bVar.d = this.c;
-        bVar.e = this.d;
-        bVar.f = Long.valueOf(this.e);
-        bVar.g = Long.valueOf(this.f);
-        bVar.h = this.g;
-        return bVar;
+        this.b = str2;
+        this.c = str3;
+        this.d = bVar;
+        this.e = i10;
     }
 
     public final boolean equals(Object obj) {
@@ -45,74 +27,73 @@ public final class a {
             return false;
         }
         a aVar = (a) obj;
-        String str = aVar.g;
-        String str2 = aVar.d;
-        String str3 = aVar.c;
-        String str4 = aVar.a;
-        String str5 = this.a;
-        if (str5 == null) {
-            if (str4 != null) {
+        int i10 = aVar.e;
+        b bVar = aVar.d;
+        String str = aVar.c;
+        String str2 = aVar.b;
+        String str3 = aVar.a;
+        String str4 = this.a;
+        if (str4 == null) {
+            if (str3 != null) {
                 return false;
             }
-        } else if (!str5.equals(str4)) {
+        } else if (!str4.equals(str3)) {
             return false;
         }
-        if (!j.b(this.b, aVar.b)) {
+        String str5 = this.b;
+        if (str5 == null) {
+            if (str2 != null) {
+                return false;
+            }
+        } else if (!str5.equals(str2)) {
             return false;
         }
         String str6 = this.c;
         if (str6 == null) {
-            if (str3 != null) {
+            if (str != null) {
                 return false;
             }
-        } else if (!str6.equals(str3)) {
+        } else if (!str6.equals(str)) {
             return false;
         }
-        String str7 = this.d;
-        if (str7 == null) {
-            if (str2 != null) {
+        b bVar2 = this.d;
+        if (bVar2 == null) {
+            if (bVar != null) {
                 return false;
             }
-        } else if (!str7.equals(str2)) {
+        } else if (!bVar2.equals(bVar)) {
             return false;
         }
-        if (this.e != aVar.e || this.f != aVar.f) {
-            return false;
-        }
-        String str8 = this.g;
-        return str8 == null ? str == null : str8.equals(str);
+        int i11 = this.e;
+        return i11 == 0 ? i10 == 0 : j.b(i11, i10);
     }
 
     public final int hashCode() {
         String str = this.a;
-        int hashCode = ((((str == null ? 0 : str.hashCode()) ^ 1000003) * 1000003) ^ j.c(this.b)) * 1000003;
-        String str2 = this.c;
+        int hashCode = ((str == null ? 0 : str.hashCode()) ^ 1000003) * 1000003;
+        String str2 = this.b;
         int hashCode2 = (hashCode ^ (str2 == null ? 0 : str2.hashCode())) * 1000003;
-        String str3 = this.d;
+        String str3 = this.c;
         int hashCode3 = (hashCode2 ^ (str3 == null ? 0 : str3.hashCode())) * 1000003;
-        long j10 = this.e;
-        int i10 = (hashCode3 ^ ((int) (j10 ^ (j10 >>> 32)))) * 1000003;
-        long j11 = this.f;
-        int i11 = (i10 ^ ((int) (j11 ^ (j11 >>> 32)))) * 1000003;
-        String str4 = this.g;
-        return (str4 != null ? str4.hashCode() : 0) ^ i11;
+        b bVar = this.d;
+        int hashCode4 = (hashCode3 ^ (bVar == null ? 0 : bVar.hashCode())) * 1000003;
+        int i10 = this.e;
+        return (i10 != 0 ? j.c(i10) : 0) ^ hashCode4;
     }
 
     public final String toString() {
-        StringBuilder sb2 = new StringBuilder("PersistedInstallationEntry{firebaseInstallationId=");
+        StringBuilder sb2 = new StringBuilder("InstallationResponse{uri=");
         sb2.append(this.a);
-        sb2.append(", registrationStatus=");
-        int i10 = this.b;
-        sb2.append(i10 != 1 ? i10 != 2 ? i10 != 3 ? i10 != 4 ? i10 != 5 ? BuildConfig.BETA_URL : "REGISTER_ERROR" : "REGISTERED" : "UNREGISTERED" : "NOT_GENERATED" : "ATTEMPT_MIGRATION");
-        sb2.append(", authToken=");
-        sb2.append(this.c);
+        sb2.append(", fid=");
+        sb2.append(this.b);
         sb2.append(", refreshToken=");
+        sb2.append(this.c);
+        sb2.append(", authToken=");
         sb2.append(this.d);
-        sb2.append(", expiresInSecs=");
-        sb2.append(this.e);
-        sb2.append(", tokenCreationEpochInSecs=");
-        sb2.append(this.f);
-        sb2.append(", fisError=");
-        return g.s(sb2, this.g, "}");
+        sb2.append(", responseCode=");
+        int i10 = this.e;
+        sb2.append(i10 != 1 ? i10 != 2 ? "null" : "BAD_CONFIG" : "OK");
+        sb2.append("}");
+        return sb2.toString();
     }
 }

@@ -1,39 +1,30 @@
 package jg;
 
-import android.content.DialogInterface;
-import android.view.KeyEvent;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.voip.VoIPService;
-import org.telegram.ui.ActionBar.k3;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class o implements DialogInterface.OnShowListener {
+public final /* synthetic */ class o implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ KeyEvent.Callback b;
-    public final /* synthetic */ Object c;
+    public final /* synthetic */ r0 b;
 
-    public /* synthetic */ o(KeyEvent.Callback callback, Object obj, int i10) {
+    public /* synthetic */ o(r0 r0Var, int i10) {
         this.a = i10;
-        this.b = callback;
-        this.c = obj;
+        this.b = r0Var;
     }
 
-    @Override // android.content.DialogInterface.OnShowListener
-    public final void onShow(DialogInterface dialogInterface) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                View view = (View) this.b;
-                t tVar = (t) this.c;
-                if (view != null) {
-                    view.clearFocus();
-                }
-                tVar.requestFocus();
-                AndroidUtilities.showKeyboard(tVar);
+                r0 r0Var = this.b;
+                r0Var.getClass();
+                r0Var.O1.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
             default:
-                VoIPService.lambda$toggleSpeakerphoneOrShowRouteSheet$94((k3) this.b, (Integer) this.c, dialogInterface);
+                r0 r0Var2 = this.b;
+                r0Var2.getClass();
+                r0Var2.O1.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
         }
     }

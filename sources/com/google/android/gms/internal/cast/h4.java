@@ -1,8 +1,20 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+import java.util.concurrent.locks.AbstractOwnableSynchronizer;
+
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class h4 implements Runnable {
+public final class h4 extends AbstractOwnableSynchronizer implements Runnable {
+    public final p4 a;
+
+    public /* synthetic */ h4(p4 p4Var) {
+        this.a = p4Var;
+    }
+
+    public final String toString() {
+        return this.a.toString();
+    }
+
     @Override // java.lang.Runnable
     public final void run() {
     }

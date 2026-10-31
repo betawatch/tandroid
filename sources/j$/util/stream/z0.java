@@ -66,7 +66,7 @@ public abstract class z0 extends a implements IntStream {
     @Override // j$.util.stream.a
     public final boolean L0(Spliterator spliterator, j5 j5Var) {
         IntConsumer i0Var;
-        boolean q5;
+        boolean q6;
         j$.util.x0 U0 = U0(spliterator);
         if (j5Var instanceof IntConsumer) {
             i0Var = (IntConsumer) j5Var;
@@ -79,12 +79,12 @@ public abstract class z0 extends a implements IntStream {
             i0Var = new j$.util.i0(j5Var, 1);
         }
         do {
-            q5 = j5Var.q();
-            if (q5) {
+            q6 = j5Var.q();
+            if (q6) {
                 break;
             }
         } while (U0.tryAdvance(i0Var));
-        return q5;
+        return q6;
     }
 
     @Override // j$.util.stream.t3

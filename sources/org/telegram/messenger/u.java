@@ -1,34 +1,47 @@
 package org.telegram.messenger;
 
-import java.io.File;
-import org.telegram.messenger.AudioRecorderV2Controller;
+import android.text.TextPaint;
+import android.text.style.CharacterStyle;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final /* synthetic */ class u implements Runnable {
+public final class u extends CharacterStyle {
     public final /* synthetic */ int a;
-    public final /* synthetic */ AudioRecorderV2Controller.2 b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ AudioRecorderV2Controller.Listener d;
-    public final /* synthetic */ File e;
+    public int b;
 
-    public /* synthetic */ u(AudioRecorderV2Controller.2 r12, long j10, AudioRecorderV2Controller.Listener listener, File file, int i10) {
-        this.a = i10;
-        this.b = r12;
-        this.c = j10;
-        this.d = listener;
-        this.e = file;
+    public /* synthetic */ u(int i10, int i11) {
+        this.a = i11;
+        this.b = i10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
         switch (this.a) {
             case 0:
-                this.b.lambda$onOutputInvalidated$1(this.c, this.d, this.e);
+                textPaint.setUnderlineText(false);
+                textPaint.setTypeface(i0.o());
+                textPaint.setColor(this.b);
+                break;
+            case 1:
+                textPaint.setUnderlineText(false);
+                textPaint.setColor(this.b);
+                break;
+            case 2:
+                textPaint.setAlpha((int) ((this.b / 255.0f) * textPaint.getAlpha()));
                 break;
             default:
-                this.b.lambda$onOutputStarted$0(this.c, this.d, this.e);
+                textPaint.setColor(org.telegram.ui.ActionBar.t6.r1(textPaint.getAlpha() / 255.0f, this.b));
                 break;
         }
+    }
+
+    public /* synthetic */ u(int i10, int i11, boolean z10) {
+        this.a = i11;
+        this.b = i10;
+    }
+
+    public u() {
+        this.a = 2;
+        this.b = 0;
     }
 }

@@ -1,28 +1,34 @@
 package lg;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class c extends b {
-    public float[] l;
+public final /* synthetic */ class c implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ g b;
+    public final /* synthetic */ int c;
 
-    @Override // lg.b
-    public final void e() {
-        super.e();
-        int size = this.d.size();
-        long j10 = 0;
-        for (int i10 = 0; i10 < size; i10++) {
-            long j11 = ((a) this.d.get(i10)).e;
-            if (j11 > j10) {
-                j10 = j11;
-            }
-        }
-        this.l = new float[size];
-        for (int i11 = 0; i11 < size; i11++) {
-            if (j10 == ((a) this.d.get(i11)).e) {
-                this.l[i11] = 1.0f;
-            } else {
-                this.l[i11] = j10 / r4;
-            }
+    public /* synthetic */ c(g gVar, int i10, int i11) {
+        this.a = i11;
+        this.b = gVar;
+        this.c = i10;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                g gVar = this.b;
+                gVar.postOnAnimation(new c(gVar, this.c, 1));
+                break;
+            default:
+                g gVar2 = this.b;
+                int i10 = this.c;
+                if (gVar2.e && !gVar2.r && i10 == gVar2.E) {
+                    gVar2.y = true;
+                    gVar2.requestRender();
+                    break;
+                }
+                break;
         }
     }
 }

@@ -1,26 +1,53 @@
 package fe;
 
-import org.telegram.tgnet.TLObject;
+import android.graphics.RectF;
+import w7.u;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class h extends nd.c {
-    public i a;
-    public Object b;
-    public /* synthetic */ Object c;
-    public final /* synthetic */ i d;
-    public int e;
+public final class h implements Comparable {
+    public final Object a;
+    public int b;
+    public final n c;
+    public final n d;
+    public final o e;
+    public final n f;
+    public boolean h = false;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h(i iVar, nd.c cVar) {
-        super(cVar);
-        this.d = iVar;
+    public h(int i10, Object obj, boolean z10) {
+        this.a = obj;
+        this.b = i10;
+        this.d = new n(z10 ? 1.0f : 0.0f);
+        this.c = new n(i10);
+        this.e = new o();
+        this.f = new n(0.0f);
+        a(false);
     }
 
-    @Override // nd.a
-    public final Object invokeSuspend(Object obj) {
-        this.c = obj;
-        this.e |= TLObject.FLAG_31;
-        return this.d.b(null, this);
+    public final void a(boolean z10) {
+        this.c.c(z10);
+        this.d.c(z10);
+        this.e.c(z10);
+        this.f.c(z10);
+        Object obj = this.a;
+        if (obj instanceof o) {
+            ((o) obj).c(z10);
+        }
+    }
+
+    public final RectF b() {
+        o oVar = this.e;
+        RectF rectF = oVar.e;
+        rectF.set(oVar.a.a, oVar.b.a, oVar.c.a, oVar.d.a);
+        return rectF;
+    }
+
+    public final float c() {
+        return u.a(this.d.a, 0.0f, 1.0f);
+    }
+
+    @Override // java.lang.Comparable
+    public final int compareTo(Object obj) {
+        return Integer.compare(this.b, ((h) obj).b);
     }
 }

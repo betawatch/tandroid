@@ -1,39 +1,39 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.PremiumPreviewFragment;
+import android.content.Context;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class g3 implements View.OnClickListener {
+public final class g3 extends FrameLayout {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.k3 b;
+    public final /* synthetic */ org.telegram.ui.Cells.c2[] b;
 
-    public /* synthetic */ g3(org.telegram.ui.ActionBar.k3 k3Var, int i10) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ g3(Context context, org.telegram.ui.Cells.c2[] c2VarArr, int i10) {
+        super(context);
         this.a = i10;
-        this.b = k3Var;
+        this.b = c2VarArr;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
         switch (this.a) {
             case 0:
-                this.b.dismiss();
-                break;
-            case 1:
-                org.telegram.ui.ActionBar.r2 R = LaunchActivity.R();
-                if (R != null) {
-                    R.presentFragment(new PremiumPreviewFragment(0, "contact"));
-                    this.b.dismiss();
+                super.onMeasure(i10, i11);
+                org.telegram.ui.Cells.c2[] c2VarArr = this.b;
+                if (c2VarArr[0] != null) {
+                    setMeasuredDimension(getMeasuredWidth(), org.telegram.messenger.i0.L(7.0f) + c2VarArr[0].getMeasuredHeight() + getMeasuredHeight());
                     break;
                 }
                 break;
-            case 2:
-                this.b.dismiss();
-                break;
             default:
-                this.b.dismiss();
+                super.onMeasure(i10, i11);
+                org.telegram.ui.Cells.c2[] c2VarArr2 = this.b;
+                if (c2VarArr2[0] != null) {
+                    setMeasuredDimension(getMeasuredWidth(), org.telegram.messenger.i0.L(7.0f) + c2VarArr2[0].getMeasuredHeight() + getMeasuredHeight());
+                    break;
+                }
                 break;
         }
     }

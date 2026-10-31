@@ -1,39 +1,51 @@
 package n4;
 
+import android.os.Bundle;
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.text.TextUtils;
-import j$.util.Objects;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public class v {
+public final class v implements Parcelable {
+    public static final Parcelable.Creator<v> CREATOR = new m8.i(7);
     public final String a;
-    public final int b;
+    public final CharSequence b;
     public final int c;
+    public final Bundle d;
 
-    public v(String str, int i10, int i11) {
+    public v(String str, int i10, Bundle bundle) {
         this.a = str;
-        this.b = i10;
-        this.c = i11;
+        this.b = "";
+        this.c = i10;
+        this.d = bundle;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof v)) {
-            return false;
-        }
-        v vVar = (v) obj;
-        int i10 = vVar.c;
-        String str = vVar.a;
-        int i11 = vVar.b;
-        int i12 = this.c;
-        String str2 = this.a;
-        int i13 = this.b;
-        return (i13 < 0 || i11 < 0) ? TextUtils.equals(str2, str) && i12 == i10 : TextUtils.equals(str2, str) && i13 == i11 && i12 == i10;
+    @Override // android.os.Parcelable
+    public final int describeContents() {
+        return 0;
     }
 
-    public final int hashCode() {
-        return Objects.hash(this.a, Integer.valueOf(this.c));
+    public final String toString() {
+        return "Action:mName='" + ((Object) this.b) + ", mIcon=" + this.c + ", mExtras=" + this.d;
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i10) {
+        parcel.writeString(this.a);
+        TextUtils.writeToParcel(this.b, parcel, i10);
+        parcel.writeInt(this.c);
+        parcel.writeBundle(this.d);
+    }
+
+    public v(Parcel parcel) {
+        String readString = parcel.readString();
+        readString.getClass();
+        this.a = readString;
+        CharSequence charSequence = (CharSequence) TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
+        charSequence.getClass();
+        this.b = charSequence;
+        this.c = parcel.readInt();
+        this.d = parcel.readBundle(q.class.getClassLoader());
     }
 }

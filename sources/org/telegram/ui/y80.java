@@ -1,86 +1,38 @@
 package org.telegram.ui;
 
 import java.util.regex.Pattern;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class y80 implements RequestDelegate {
+public final /* synthetic */ class y80 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ LaunchActivity b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ kz d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object g;
-    public final /* synthetic */ Object h;
-    public final /* synthetic */ Object i;
+    public final /* synthetic */ un b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ TLRPC.Chat d;
 
-    public /* synthetic */ y80(LaunchActivity launchActivity, kz kzVar, int i10, TL_account.authorizationForm authorizationform, TL_account.getAuthorizationForm getauthorizationform, String str, String str2, String str3) {
-        this.a = 0;
-        this.b = launchActivity;
-        this.d = kzVar;
-        this.c = i10;
-        this.i = authorizationform;
-        this.e = getauthorizationform;
-        this.f = str;
-        this.g = str2;
-        this.h = str3;
+    public /* synthetic */ y80(un unVar, long j10, TLRPC.Chat chat, int i10) {
+        this.a = i10;
+        this.b = unVar;
+        this.c = j10;
+        this.d = chat;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         int i10 = this.a;
-        Object obj = this.h;
-        Object obj2 = this.g;
-        Object obj3 = this.f;
-        Object obj4 = this.e;
-        Object obj5 = this.i;
+        TLRPC.Chat chat = this.d;
+        long j10 = this.c;
+        un unVar = this.b;
         switch (i10) {
             case 0:
                 Pattern pattern = LaunchActivity.D1;
-                AndroidUtilities.runOnUIThread(new bi.y8(this.b, this.d, tLObject, this.c, (TL_account.authorizationForm) obj5, (TL_account.getAuthorizationForm) obj4, (String) obj3, (String) obj2, (String) obj, 3));
+                org.telegram.ui.Components.cc.a0(unVar).I(R.raw.stars_send, org.telegram.messenger.cd.L0(2131745012, null), org.telegram.messenger.i0.W2(org.telegram.messenger.cd.G((int) j10, "StarsSubscriptionCompletedText", chat.title))).k(true);
                 break;
-            case 1:
-                int[] iArr = (int[]) obj5;
-                TL_account.getAuthorizationForm getauthorizationform = (TL_account.getAuthorizationForm) obj4;
-                String str = (String) obj3;
-                String str2 = (String) obj2;
-                String str3 = (String) obj;
-                Pattern pattern2 = LaunchActivity.D1;
-                TL_account.authorizationForm authorizationform = (TL_account.authorizationForm) tLObject;
-                LaunchActivity launchActivity = this.b;
-                kz kzVar = this.d;
-                if (authorizationform == null) {
-                    AndroidUtilities.runOnUIThread(new pq(launchActivity, kzVar, tL_error, 15));
-                    break;
-                } else {
-                    TL_account.getPassword getpassword = new TL_account.getPassword();
-                    int i11 = this.c;
-                    iArr[0] = ConnectionsManager.getInstance(i11).sendRequest(getpassword, new y80(launchActivity, kzVar, i11, authorizationform, getauthorizationform, str, str2, str3));
-                    break;
-                }
             default:
-                Pattern pattern3 = LaunchActivity.D1;
-                AndroidUtilities.runOnUIThread(new bi.y8(this.b, tLObject, (int[]) obj5, this.c, this.d, (Integer) obj4, (Integer) obj3, (Long) obj2, (Integer) obj, 2));
+                org.telegram.ui.Components.cc.a0(unVar).I(R.raw.stars_send, org.telegram.messenger.cd.L0(2131745012, null), org.telegram.messenger.i0.W2(org.telegram.messenger.cd.G((int) j10, "StarsSubscriptionCompletedText", chat.title))).k(true);
                 break;
         }
-    }
-
-    public /* synthetic */ y80(LaunchActivity launchActivity, int[] iArr, int i10, kz kzVar, Object obj, Object obj2, Object obj3, Object obj4, int i11) {
-        this.a = i11;
-        this.b = launchActivity;
-        this.i = iArr;
-        this.c = i10;
-        this.d = kzVar;
-        this.e = obj;
-        this.f = obj2;
-        this.g = obj3;
-        this.h = obj4;
     }
 }

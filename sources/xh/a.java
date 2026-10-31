@@ -1,83 +1,35 @@
 package xh;
 
-import a8.ee;
-import android.animation.ValueAnimator;
-import android.graphics.Path;
-import android.text.Layout;
-import android.view.View;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Stack;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.ut;
+import org.telegram.messenger.q20;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes4.dex */
-public final class a extends Path {
-    public final /* synthetic */ View a;
-    public final /* synthetic */ Layout b;
-    public final /* synthetic */ Stack c;
-    public final /* synthetic */ List d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ int f;
-    public final /* synthetic */ ArrayList g;
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes.dex */
+public final /* synthetic */ class a implements q20 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ i b;
 
-    public a(View view, Layout layout, Stack stack, List list, int i10, int i11, ArrayList arrayList) {
-        this.a = view;
-        this.b = layout;
-        this.c = stack;
-        this.d = list;
-        this.e = i10;
-        this.f = i11;
-        this.g = arrayList;
+    public /* synthetic */ a(i iVar, int i10) {
+        this.a = i10;
+        this.b = iVar;
     }
 
-    @Override // android.graphics.Path
-    public final void addRect(float f7, float f10, float f11, float f12, Path.Direction direction) {
-        Stack stack = this.c;
-        int i10 = 0;
-        g gVar = (stack == null || stack.isEmpty()) ? new g() : (g) stack.remove(0);
-        gVar.y = false;
-        ArrayList arrayList = this.g;
-        if (arrayList != null) {
-            float f13 = (f10 + f12) / 2.0f;
-            while (true) {
-                if (i10 >= arrayList.size()) {
-                    break;
-                }
-                pj0 pj0Var = (pj0) arrayList.get(i10);
-                if (f13 >= pj0Var.b && f13 <= pj0Var.c) {
-                    gVar.y = true;
-                    break;
-                }
-                i10++;
-            }
+    @Override // org.telegram.messenger.q20
+    public final void a(Object obj) {
+        switch (this.a) {
+            case 0:
+                org.telegram.messenger.i0.g3(new vh.d1(22, this.b, (TLRPC.UserFull) obj));
+                break;
+            case 1:
+                i iVar = this.b;
+                iVar.a0.commission_permille = ((Integer) obj).intValue();
+                iVar.K0();
+                break;
+            default:
+                i iVar2 = this.b;
+                iVar2.a0.duration_months = ((Integer) iVar2.c0.get(((Integer) obj).intValue())).intValue();
+                iVar2.K0();
+                break;
         }
-        gVar.n = -1.0f;
-        ValueAnimator valueAnimator = gVar.r;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-        }
-        gVar.p = true;
-        int max = (int) Math.max(f7, this.e);
-        int i11 = (int) f10;
-        int i12 = this.f;
-        gVar.setBounds(max, i11, (int) Math.min(f11, i12 <= 0 ? 2.14748365E9f : i12), (int) f12);
-        gVar.h(this.b.getPaint().getColor());
-        gVar.t = ut.c;
-        int width = gVar.getBounds().width() / AndroidUtilities.dp(6.0f);
-        int i13 = g.B;
-        int b10 = ee.b(width * i13, i13, g.A);
-        Stack stack2 = gVar.c;
-        gVar.d = b10;
-        while (gVar.h.size() + stack2.size() < b10) {
-            stack2.push(new c());
-        }
-        View view = this.a;
-        if (view != null) {
-            gVar.i = view;
-        }
-        this.d.add(gVar);
     }
 }

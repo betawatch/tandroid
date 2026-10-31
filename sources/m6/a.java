@@ -1,32 +1,39 @@
 package m6;
 
-import com.google.android.gms.common.data.DataHolder;
+import android.net.Uri;
+import android.os.Parcel;
+import android.os.Parcelable;
+import g8.g;
 import java.util.Arrays;
-import o6.l;
+import java.util.Locale;
+import n6.l;
+import org.json.JSONException;
+import org.json.JSONObject;
+import w7.h0;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public abstract class a {
-    public final DataHolder a;
-    public final int b;
+public final class a extends o6.a {
+    public static final Parcelable.Creator<a> CREATOR = new g(25);
+    public final int a;
+    public final Uri b;
     public final int c;
+    public final int d;
 
-    public a(DataHolder dataHolder, int i10) {
-        l.h(dataHolder);
-        this.a = dataHolder;
-        boolean z10 = false;
-        if (i10 >= 0 && i10 < dataHolder.n) {
-            z10 = true;
-        }
-        l.k(z10);
-        this.b = i10;
-        this.c = dataHolder.b(i10);
+    public a(int i10, Uri uri, int i11, int i12) {
+        this.a = i10;
+        this.b = uri;
+        this.c = i11;
+        this.d = i12;
     }
 
     public final boolean equals(Object obj) {
-        if (obj instanceof a) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && (obj instanceof a)) {
             a aVar = (a) obj;
-            if (l.l(Integer.valueOf(aVar.b), Integer.valueOf(this.b)) && l.l(Integer.valueOf(aVar.c), Integer.valueOf(this.c)) && aVar.a == this.a) {
+            if (l.k(this.b, aVar.b) && this.c == aVar.c && this.d == aVar.d) {
                 return true;
             }
         }
@@ -34,6 +41,52 @@ public abstract class a {
     }
 
     public final int hashCode() {
-        return Arrays.hashCode(new Object[]{Integer.valueOf(this.b), Integer.valueOf(this.c), this.a});
+        return Arrays.hashCode(new Object[]{this.b, Integer.valueOf(this.c), Integer.valueOf(this.d)});
+    }
+
+    public final String toString() {
+        Locale locale = Locale.US;
+        String uri = this.b.toString();
+        StringBuilder m10 = i0.a.m("Image ", this.c, "x", this.d, " ");
+        m10.append(uri);
+        return m10.toString();
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i10) {
+        int q6 = h0.q(parcel, 20293);
+        h0.s(parcel, 1, 4);
+        parcel.writeInt(this.a);
+        h0.k(parcel, 2, this.b, i10);
+        h0.s(parcel, 3, 4);
+        parcel.writeInt(this.c);
+        h0.s(parcel, 4, 4);
+        parcel.writeInt(this.d);
+        h0.r(parcel, q6);
+    }
+
+    public a(Uri uri, int i10, int i11) {
+        this(1, uri, i10, i11);
+        if (uri == null) {
+            throw new IllegalArgumentException("url cannot be null");
+        }
+        if (i10 < 0 || i11 < 0) {
+            throw new IllegalArgumentException("width and height must not be negative");
+        }
+    }
+
+    /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public a(JSONObject jSONObject) {
+        this(r0, jSONObject.optInt("width", 0), jSONObject.optInt("height", 0));
+        Uri uri = Uri.EMPTY;
+        if (jSONObject.has("url")) {
+            try {
+                uri = Uri.parse(jSONObject.getString("url"));
+            } catch (JSONException unused) {
+            }
+        }
     }
 }

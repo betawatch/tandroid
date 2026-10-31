@@ -4,15 +4,15 @@ import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.view.ViewConfiguration;
 import android.view.ViewGroup;
-import org.telegram.ui.Components.tw0;
+import org.telegram.ui.Components.ru0;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public abstract class z extends ViewGroup implements tw0 {
+public abstract class z extends ViewGroup implements ru0 {
     public boolean a;
     public androidx.emoji2.text.j b;
     public int c;
-    public m.g3 d;
+    public mg.c2 d;
     public Runnable e;
 
     public z(Context context) {
@@ -26,7 +26,7 @@ public abstract class z extends ViewGroup implements tw0 {
         setHapticFeedbackEnabled(true);
     }
 
-    public static float m(Drawable drawable, float f7, float f10, float f11) {
+    public static float s(Drawable drawable, float f7, float f10, float f11) {
         float intrinsicWidth = (drawable.getIntrinsicWidth() * f11) / drawable.getIntrinsicHeight();
         int i10 = (int) f7;
         int i11 = (int) f10;
@@ -34,18 +34,18 @@ public abstract class z extends ViewGroup implements tw0 {
         return intrinsicWidth;
     }
 
-    public static void n(int i10, int i11, Drawable drawable) {
+    public static void t(int i10, int i11, Drawable drawable) {
         drawable.setBounds(i10, i11, drawable.getIntrinsicWidth() + i10, drawable.getIntrinsicHeight() + i11);
     }
 
-    public static void o(Drawable drawable, float f7, float f10) {
+    public static void u(Drawable drawable, float f7, float f10) {
         int i10 = (int) f7;
         int i11 = (int) f10;
         drawable.setBounds(i10, i11, drawable.getIntrinsicWidth() + i10, drawable.getIntrinsicHeight() + i11);
     }
 
-    @Override // org.telegram.ui.Components.tw0
-    public final void e(Runnable runnable) {
+    @Override // org.telegram.ui.Components.ru0
+    public final void f(Runnable runnable) {
         this.e = runnable;
     }
 
@@ -62,7 +62,7 @@ public abstract class z extends ViewGroup implements tw0 {
         return false;
     }
 
-    @Override // android.view.View
+    @Override // android.view.View, org.telegram.ui.Cells.r9
     public void invalidate() {
         Runnable runnable = this.e;
         if (runnable != null) {
@@ -71,33 +71,33 @@ public abstract class z extends ViewGroup implements tw0 {
         super.invalidate();
     }
 
-    public final void j() {
+    public final void m() {
         this.a = false;
         androidx.emoji2.text.j jVar = this.b;
         if (jVar != null) {
             removeCallbacks(jVar);
         }
-        m.g3 g3Var = this.d;
-        if (g3Var != null) {
-            removeCallbacks(g3Var);
+        mg.c2 c2Var = this.d;
+        if (c2Var != null) {
+            removeCallbacks(c2Var);
         }
     }
 
-    public void k() {
+    public void p() {
         super.invalidate();
     }
 
-    public boolean l() {
+    public boolean r() {
         return true;
     }
 
-    public final void p() {
+    public final void w() {
         if (this.a) {
             return;
         }
         this.a = true;
         if (this.d == null) {
-            this.d = new m.g3(this, 3);
+            this.d = new mg.c2(this, 17);
         }
         postDelayed(this.d, ViewConfiguration.getTapTimeout());
     }

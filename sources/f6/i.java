@@ -1,801 +1,732 @@
 package f6;
 
-import a8.bf;
+import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.content.ComponentName;
+import android.content.Context;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.media.MediaMetadata;
+import android.net.Uri;
 import android.os.Bundle;
-import android.os.IBinder;
+import android.os.Looper;
 import android.os.Parcel;
-import android.os.Parcelable;
-import android.os.ResultReceiver;
-import android.widget.RemoteViews;
-import com.google.android.gms.identity.intents.model.UserAddress;
-import com.google.android.gms.identitycredentials.GetCredentialRequest;
-import h6.x;
+import android.support.v4.media.MediaMetadataCompat;
+import android.support.v4.media.session.PlaybackStateCompat;
+import android.support.v4.media.session.a0;
+import android.support.v4.media.session.d0;
+import android.support.v4.media.session.u;
+import android.text.TextUtils;
+import android.util.Log;
+import com.google.android.gms.cast.CastDevice;
+import com.google.android.gms.cast.MediaInfo;
+import com.google.android.gms.cast.framework.ReconnectionService;
+import com.google.android.gms.cast.framework.media.MediaIntentReceiver;
+import com.google.android.gms.internal.cast.q;
+import com.google.android.gms.internal.cast.z;
+import d6.c0;
+import e6.o;
 import java.util.ArrayList;
-import org.telegram.messenger.MessageObject;
+import java.util.List;
+import n6.l;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class i implements Parcelable.Creator {
-    public final /* synthetic */ int a;
+public final class i {
+    public static final g6.b v = new g6.b("MediaSessionManager", null);
+    public final Context a;
+    public final d6.b b;
+    public final q c;
+    public final d6.g d;
+    public final e6.f e;
+    public final ComponentName f;
+    public final ComponentName g;
+    public final bh.d h;
+    public final bh.d i;
+    public final g j;
+    public final z k;
+    public final androidx.activity.i l;
+    public final c0 m;
+    public e6.h n;
+    public CastDevice o;
+    public a0 p;
+    public boolean q;
+    public PlaybackStateCompat.CustomAction r;
+    public PlaybackStateCompat.CustomAction s;
+    public PlaybackStateCompat.CustomAction t;
+    public PlaybackStateCompat.CustomAction u;
 
-    @Override // android.os.Parcelable.Creator
-    public final Object createFromParcel(Parcel parcel) {
-        switch (this.a) {
-            case 0:
-                int z10 = bf.z(parcel);
-                int i10 = 0;
-                int i11 = 0;
-                int i12 = 0;
-                int i13 = 0;
-                int i14 = 0;
-                int i15 = 0;
-                int i16 = 0;
-                int i17 = 0;
-                int i18 = 0;
-                int i19 = 0;
-                int i20 = 0;
-                int i21 = 0;
-                int i22 = 0;
-                int i23 = 0;
-                int i24 = 0;
-                int i25 = 0;
-                int i26 = 0;
-                int i27 = 0;
-                int i28 = 0;
-                int i29 = 0;
-                int i30 = 0;
-                int i31 = 0;
-                int i32 = 0;
-                int i33 = 0;
-                int i34 = 0;
-                int i35 = 0;
-                int i36 = 0;
-                boolean z11 = false;
-                boolean z12 = false;
-                ArrayList arrayList = null;
-                int[] iArr = null;
-                String str = null;
-                IBinder iBinder = null;
-                long j10 = 0;
-                while (parcel.dataPosition() < z10) {
-                    int readInt = parcel.readInt();
-                    switch ((char) readInt) {
-                        case 2:
-                            arrayList = bf.j(parcel, readInt);
+    public i(Context context, d6.b bVar, q qVar) {
+        e6.f fVar;
+        this.a = context;
+        this.b = bVar;
+        this.c = qVar;
+        g6.b bVar2 = d6.a.l;
+        l.d("Must be called from the main thread.");
+        d6.a aVar = d6.a.n;
+        g gVar = null;
+        this.d = aVar != null ? aVar.b() : null;
+        e6.a aVar2 = bVar.f;
+        this.e = aVar2 == null ? null : aVar2.d;
+        this.m = new c0(this, 2);
+        String str = aVar2 == null ? null : aVar2.b;
+        this.f = !TextUtils.isEmpty(str) ? new ComponentName(context, str) : null;
+        String str2 = aVar2 == null ? null : aVar2.a;
+        this.g = !TextUtils.isEmpty(str2) ? new ComponentName(context, str2) : null;
+        bh.d dVar = new bh.d(context);
+        this.h = dVar;
+        dVar.e = new a4.l(this, 15);
+        bh.d dVar2 = new bh.d(context);
+        this.i = dVar2;
+        dVar2.e = new k6.h(this, 23);
+        this.k = new z(Looper.getMainLooper(), 0);
+        g6.b bVar3 = g.u;
+        e6.a aVar3 = bVar.f;
+        if (aVar3 != null && (fVar = aVar3.d) != null) {
+            o oVar = fVar.V;
+            if (oVar != null) {
+                ArrayList a2 = j.a(oVar);
+                int[] b10 = j.b(oVar);
+                int size = a2 == null ? 0 : a2.size();
+                if (a2 == null || a2.isEmpty()) {
+                    Log.e(bVar3.a, bVar3.d(e6.e.class.getSimpleName().concat(" doesn't provide any action."), new Object[0]));
+                } else if (a2.size() > 5) {
+                    Log.e(bVar3.a, bVar3.d(e6.e.class.getSimpleName().concat(" provides more than 5 actions."), new Object[0]));
+                } else if (b10 == null || (b10.length) == 0) {
+                    Log.e(bVar3.a, bVar3.d(e6.e.class.getSimpleName().concat(" doesn't provide any actions for compact view."), new Object[0]));
+                } else {
+                    for (int i10 : b10) {
+                        if (i10 < 0 || i10 >= size) {
+                            Log.e(bVar3.a, bVar3.d(e6.e.class.getSimpleName().concat("provides a compact view action whose index is out of bounds."), new Object[0]));
                             break;
-                        case 3:
-                            iArr = bf.d(parcel, readInt);
-                            break;
-                        case 4:
-                            j10 = bf.w(parcel, readInt);
-                            break;
-                        case 5:
-                            str = bf.h(parcel, readInt);
-                            break;
-                        case 6:
-                            i10 = bf.u(parcel, readInt);
-                            break;
-                        case 7:
-                            i11 = bf.u(parcel, readInt);
-                            break;
-                        case '\b':
-                            i12 = bf.u(parcel, readInt);
-                            break;
-                        case '\t':
-                            i13 = bf.u(parcel, readInt);
-                            break;
-                        case '\n':
-                            i14 = bf.u(parcel, readInt);
-                            break;
-                        case 11:
-                            i15 = bf.u(parcel, readInt);
-                            break;
-                        case '\f':
-                            i16 = bf.u(parcel, readInt);
-                            break;
-                        case '\r':
-                            i17 = bf.u(parcel, readInt);
-                            break;
-                        case 14:
-                            i18 = bf.u(parcel, readInt);
-                            break;
-                        case 15:
-                            i19 = bf.u(parcel, readInt);
-                            break;
-                        case 16:
-                            i20 = bf.u(parcel, readInt);
-                            break;
-                        case 17:
-                            i21 = bf.u(parcel, readInt);
-                            break;
-                        case 18:
-                            i22 = bf.u(parcel, readInt);
-                            break;
-                        case 19:
-                            i23 = bf.u(parcel, readInt);
-                            break;
-                        case 20:
-                            i24 = bf.u(parcel, readInt);
-                            break;
-                        case 21:
-                            i25 = bf.u(parcel, readInt);
-                            break;
-                        case 22:
-                            i26 = bf.u(parcel, readInt);
-                            break;
-                        case 23:
-                            i27 = bf.u(parcel, readInt);
-                            break;
-                        case 24:
-                            i28 = bf.u(parcel, readInt);
-                            break;
-                        case 25:
-                            i29 = bf.u(parcel, readInt);
-                            break;
-                        case 26:
-                            i30 = bf.u(parcel, readInt);
-                            break;
-                        case 27:
-                            i31 = bf.u(parcel, readInt);
-                            break;
-                        case 28:
-                            i32 = bf.u(parcel, readInt);
-                            break;
-                        case 29:
-                            i33 = bf.u(parcel, readInt);
-                            break;
-                        case MessageObject.TYPE_GIFT_STARS /* 30 */:
-                            i34 = bf.u(parcel, readInt);
-                            break;
-                        case MessageObject.TYPE_GIFT_THEME_UPDATE /* 31 */:
-                            i35 = bf.u(parcel, readInt);
-                            break;
-                        case ' ':
-                            i36 = bf.u(parcel, readInt);
-                            break;
-                        case '!':
-                            iBinder = bf.t(parcel, readInt);
-                            break;
-                        case '\"':
-                            z11 = bf.n(parcel, readInt);
-                            break;
-                        case '#':
-                            z12 = bf.n(parcel, readInt);
-                            break;
-                        default:
-                            bf.y(parcel, readInt);
-                            break;
+                        }
                     }
                 }
-                bf.m(parcel, z10);
-                return new f(arrayList, iArr, j10, str, i10, i11, i12, i13, i14, i15, i16, i17, i18, i19, i20, i21, i22, i23, i24, i25, i26, i27, i28, i29, i30, i31, i32, i33, i34, i35, i36, iBinder, z11, z12);
-            case 1:
-                int z13 = bf.z(parcel);
-                int i37 = 0;
-                int i38 = 0;
-                int i39 = 0;
-                while (parcel.dataPosition() < z13) {
-                    int readInt2 = parcel.readInt();
-                    char c10 = (char) readInt2;
-                    if (c10 == 2) {
-                        i37 = bf.u(parcel, readInt2);
-                    } else if (c10 == 3) {
-                        i38 = bf.u(parcel, readInt2);
-                    } else if (c10 != 4) {
-                        bf.y(parcel, readInt2);
-                    } else {
-                        i39 = bf.u(parcel, readInt2);
+            }
+            gVar = new g(context);
+        }
+        this.j = gVar;
+        this.l = new androidx.activity.i(this, 18);
+    }
+
+    public final void a(e6.h hVar, CastDevice castDevice) {
+        ComponentName componentName;
+        d6.b bVar = this.b;
+        e6.a aVar = bVar == null ? null : bVar.f;
+        int i10 = 0;
+        if (this.q || bVar == null || aVar == null || this.e == null || hVar == null || castDevice == null || (componentName = this.g) == null) {
+            v.b("skip attaching media session", new Object[0]);
+            return;
+        }
+        this.n = hVar;
+        hVar.p(this.m);
+        this.o = castDevice;
+        Intent intent = new Intent("android.intent.action.MEDIA_BUTTON");
+        intent.setComponent(componentName);
+        Context context = this.a;
+        PendingIntent broadcast = PendingIntent.getBroadcast(context, 0, intent, 67108864);
+        if (aVar.f) {
+            a0 a0Var = new a0(context, "CastMediaSession", componentName, broadcast);
+            this.p = a0Var;
+            j(0, null);
+            CastDevice castDevice2 = this.o;
+            if (castDevice2 != null && !TextUtils.isEmpty(castDevice2.d)) {
+                Bundle bundle = new Bundle();
+                String string = context.getResources().getString(R.string.cast_casting_to_device, this.o.d);
+                a0.f fVar = MediaMetadataCompat.d;
+                if (fVar.containsKey("android.media.metadata.ALBUM_ARTIST") && ((Integer) fVar.get("android.media.metadata.ALBUM_ARTIST")).intValue() != 1) {
+                    throw new IllegalArgumentException("The android.media.metadata.ALBUM_ARTIST key cannot be used to put a String");
+                }
+                bundle.putCharSequence("android.media.metadata.ALBUM_ARTIST", string);
+                a0Var.B(new MediaMetadataCompat(bundle));
+            }
+            a0Var.z(new h(this, i10), null);
+            a0Var.x(true);
+            this.c.M0(a0Var);
+        }
+        this.q = true;
+        b();
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:44:0x00a5  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x00da  */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x0107  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x0120  */
+    /* JADX WARN: Removed duplicated region for block: B:71:0x00a8  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void b() {
+        MediaInfo d;
+        c6.l lVar;
+        boolean z10;
+        boolean z11;
+        f fVar;
+        Uri uri;
+        hf.b bVar;
+        c6.o c10;
+        MediaInfo mediaInfo;
+        e6.h hVar = this.n;
+        if (hVar == null) {
+            return;
+        }
+        int s10 = hVar.s();
+        MediaInfo d10 = hVar.d();
+        if (hVar.k() && (c10 = hVar.c()) != null && (mediaInfo = c10.a) != null) {
+            d10 = mediaInfo;
+        }
+        j(s10, d10);
+        if (!hVar.h()) {
+            h();
+            i();
+            return;
+        }
+        if (s10 != 0) {
+            g gVar = this.j;
+            if (gVar != null) {
+                v.b("Update media notification.", new Object[0]);
+                CastDevice castDevice = this.o;
+                e6.h hVar2 = this.n;
+                a0 a0Var = this.p;
+                if (castDevice != null && hVar2 != null && a0Var != null && (d = hVar2.d()) != null && (lVar = d.d) != null) {
+                    List list = lVar.a;
+                    c6.q e = hVar2.e();
+                    if (e != null) {
+                        int i10 = e.F;
+                        if (i10 == 1 || i10 == 2 || i10 == 3) {
+                            z10 = true;
+                            z11 = z10;
+                            boolean z12 = hVar2.f() == 2;
+                            int i11 = d.b;
+                            c6.l.c(1, "com.google.android.gms.cast.metadata.TITLE");
+                            String string = lVar.b.getString("com.google.android.gms.cast.metadata.TITLE");
+                            String str = castDevice.d;
+                            f fVar2 = new f(z12, i11, string, str, ((u) a0Var.b).c, z10, z11);
+                            boolean z13 = z12;
+                            boolean z14 = z10;
+                            boolean z15 = z11;
+                            fVar = gVar.k;
+                            if (fVar != null || z13 != fVar.b || i11 != fVar.a || !g6.a.d(string, (String) fVar.f) || !g6.a.d(str, (String) fVar.g) || z14 != fVar.c || z15 != fVar.d) {
+                                gVar.k = fVar2;
+                                gVar.b();
+                            }
+                            hf.b bVar2 = new hf.b((list != null || list.isEmpty()) ? null : (m6.a) list.get(0));
+                            uri = (Uri) bVar2.b;
+                            bVar = gVar.l;
+                            if (bVar != null || !g6.a.d(uri, (Uri) bVar.b)) {
+                                bh.d dVar = gVar.i;
+                                dVar.e = new n4.q(gVar, bVar2, false);
+                                dVar.M(uri);
+                            }
+                        } else {
+                            Integer num = (Integer) e.N.get(e.c);
+                            if (num != null) {
+                                boolean z16 = num.intValue() > 0;
+                                z10 = num.intValue() < e.G.size() + (-1);
+                                z11 = z16;
+                                if (hVar2.f() == 2) {
+                                }
+                                int i112 = d.b;
+                                c6.l.c(1, "com.google.android.gms.cast.metadata.TITLE");
+                                String string2 = lVar.b.getString("com.google.android.gms.cast.metadata.TITLE");
+                                String str2 = castDevice.d;
+                                f fVar22 = new f(z12, i112, string2, str2, ((u) a0Var.b).c, z10, z11);
+                                boolean z132 = z12;
+                                boolean z142 = z10;
+                                boolean z152 = z11;
+                                fVar = gVar.k;
+                                if (fVar != null) {
+                                }
+                                gVar.k = fVar22;
+                                gVar.b();
+                                hf.b bVar22 = new hf.b((list != null || list.isEmpty()) ? null : (m6.a) list.get(0));
+                                uri = (Uri) bVar22.b;
+                                bVar = gVar.l;
+                                if (bVar != null) {
+                                }
+                                bh.d dVar2 = gVar.i;
+                                dVar2.e = new n4.q(gVar, bVar22, false);
+                                dVar2.M(uri);
+                            }
+                        }
                     }
-                }
-                bf.m(parcel, z13);
-                return new b(i37, i38, i39);
-            case 2:
-                int z14 = bf.z(parcel);
-                String str2 = null;
-                int i40 = 0;
-                String str3 = null;
-                while (parcel.dataPosition() < z14) {
-                    int readInt3 = parcel.readInt();
-                    char c11 = (char) readInt3;
-                    if (c11 == 2) {
-                        str2 = bf.h(parcel, readInt3);
-                    } else if (c11 == 3) {
-                        i40 = bf.u(parcel, readInt3);
-                    } else if (c11 != 4) {
-                        bf.y(parcel, readInt3);
-                    } else {
-                        str3 = bf.h(parcel, readInt3);
+                    z10 = false;
+                    z11 = z10;
+                    if (hVar2.f() == 2) {
                     }
-                }
-                bf.m(parcel, z14);
-                return new d(str2, i40, str3);
-            case 3:
-                int z15 = bf.z(parcel);
-                byte[] bArr = null;
-                while (parcel.dataPosition() < z15) {
-                    int readInt4 = parcel.readInt();
-                    if (((char) readInt4) != 2) {
-                        bf.y(parcel, readInt4);
-                    } else {
-                        bArr = bf.b(parcel, readInt4);
+                    int i1122 = d.b;
+                    c6.l.c(1, "com.google.android.gms.cast.metadata.TITLE");
+                    String string22 = lVar.b.getString("com.google.android.gms.cast.metadata.TITLE");
+                    String str22 = castDevice.d;
+                    f fVar222 = new f(z12, i1122, string22, str22, ((u) a0Var.b).c, z10, z11);
+                    boolean z1322 = z12;
+                    boolean z1422 = z10;
+                    boolean z1522 = z11;
+                    fVar = gVar.k;
+                    if (fVar != null) {
                     }
-                }
-                bf.m(parcel, z15);
-                return new f8.d(bArr);
-            case 4:
-                int z16 = bf.z(parcel);
-                byte[] bArr2 = null;
-                while (parcel.dataPosition() < z16) {
-                    int readInt5 = parcel.readInt();
-                    if (((char) readInt5) != 2) {
-                        bf.y(parcel, readInt5);
-                    } else {
-                        bArr2 = bf.b(parcel, readInt5);
+                    gVar.k = fVar222;
+                    gVar.b();
+                    hf.b bVar222 = new hf.b((list != null || list.isEmpty()) ? null : (m6.a) list.get(0));
+                    uri = (Uri) bVar222.b;
+                    bVar = gVar.l;
+                    if (bVar != null) {
                     }
+                    bh.d dVar22 = gVar.i;
+                    dVar22.e = new n4.q(gVar, bVar222, false);
+                    dVar22.M(uri);
                 }
-                bf.m(parcel, z16);
-                return new f8.e(bArr2);
-            case 5:
-                int z17 = bf.z(parcel);
-                byte[] bArr3 = null;
-                while (parcel.dataPosition() < z17) {
-                    int readInt6 = parcel.readInt();
-                    if (((char) readInt6) != 1) {
-                        bf.y(parcel, readInt6);
-                    } else {
-                        bArr3 = bf.b(parcel, readInt6);
-                    }
-                }
-                bf.m(parcel, z17);
-                return new f8.f(bArr3);
-            case 6:
-                int z18 = bf.z(parcel);
-                PendingIntent pendingIntent = null;
-                while (parcel.dataPosition() < z18) {
-                    int readInt7 = parcel.readInt();
-                    if (((char) readInt7) != 1) {
-                        bf.y(parcel, readInt7);
-                    } else {
-                        pendingIntent = (PendingIntent) bf.g(parcel, readInt7, PendingIntent.CREATOR);
-                    }
-                }
-                bf.m(parcel, z18);
-                return new f8.g(pendingIntent);
-            case 7:
-                int z19 = bf.z(parcel);
-                String[] strArr = null;
-                int[] iArr2 = null;
-                RemoteViews remoteViews = null;
-                byte[] bArr4 = null;
-                while (parcel.dataPosition() < z19) {
-                    int readInt8 = parcel.readInt();
-                    char c12 = (char) readInt8;
-                    if (c12 == 1) {
-                        strArr = bf.i(parcel, readInt8);
-                    } else if (c12 == 2) {
-                        iArr2 = bf.d(parcel, readInt8);
-                    } else if (c12 == 3) {
-                        remoteViews = (RemoteViews) bf.g(parcel, readInt8, RemoteViews.CREATOR);
-                    } else if (c12 != 4) {
-                        bf.y(parcel, readInt8);
-                    } else {
-                        bArr4 = bf.b(parcel, readInt8);
-                    }
-                }
-                bf.m(parcel, z19);
-                f8.h hVar = new f8.h();
-                hVar.a = strArr;
-                hVar.b = iArr2;
-                hVar.c = remoteViews;
-                hVar.d = bArr4;
-                return hVar;
-            case 8:
-                int z20 = bf.z(parcel);
-                String str4 = null;
-                String str5 = null;
-                String str6 = null;
-                String str7 = null;
-                String str8 = null;
-                String str9 = null;
-                String str10 = null;
-                String str11 = null;
-                String str12 = null;
-                String str13 = null;
-                String str14 = null;
-                String str15 = null;
-                String str16 = null;
-                boolean z21 = false;
-                String str17 = null;
-                while (parcel.dataPosition() < z20) {
-                    int readInt9 = parcel.readInt();
-                    boolean z22 = z21;
-                    switch ((char) readInt9) {
-                        case 2:
-                            str4 = bf.h(parcel, readInt9);
-                            break;
-                        case 3:
-                            str17 = bf.h(parcel, readInt9);
-                            break;
-                        case 4:
-                            str5 = bf.h(parcel, readInt9);
-                            break;
-                        case 5:
-                            str6 = bf.h(parcel, readInt9);
-                            break;
-                        case 6:
-                            str7 = bf.h(parcel, readInt9);
-                            break;
-                        case 7:
-                            str8 = bf.h(parcel, readInt9);
-                            break;
-                        case '\b':
-                            str9 = bf.h(parcel, readInt9);
-                            break;
-                        case '\t':
-                            str10 = bf.h(parcel, readInt9);
-                            break;
-                        case '\n':
-                            str11 = bf.h(parcel, readInt9);
-                            break;
-                        case 11:
-                            str12 = bf.h(parcel, readInt9);
-                            break;
-                        case '\f':
-                            str13 = bf.h(parcel, readInt9);
-                            break;
-                        case '\r':
-                            str14 = bf.h(parcel, readInt9);
-                            break;
-                        case 14:
-                            z21 = bf.n(parcel, readInt9);
-                            continue;
-                        case 15:
-                            str16 = bf.h(parcel, readInt9);
-                            break;
-                        case 16:
-                            str15 = bf.h(parcel, readInt9);
-                            break;
-                        default:
-                            bf.y(parcel, readInt9);
-                            break;
-                    }
-                    z21 = z22;
-                }
-                boolean z23 = z21;
-                bf.m(parcel, z20);
-                UserAddress userAddress = new UserAddress();
-                userAddress.a = str4;
-                userAddress.b = str17;
-                userAddress.c = str5;
-                userAddress.d = str6;
-                userAddress.e = str7;
-                userAddress.f = str8;
-                userAddress.h = str9;
-                userAddress.n = str10;
-                userAddress.r = str11;
-                userAddress.s = str12;
-                userAddress.v = str13;
-                userAddress.w = str14;
-                userAddress.x = z23;
-                userAddress.y = str16;
-                userAddress.E = str15;
-                return userAddress;
-            case 9:
-                int z24 = bf.z(parcel);
-                int i41 = 0;
-                boolean z25 = false;
-                boolean z26 = false;
-                while (parcel.dataPosition() < z24) {
-                    int readInt10 = parcel.readInt();
-                    char c13 = (char) readInt10;
-                    if (c13 == 2) {
-                        i41 = bf.u(parcel, readInt10);
-                    } else if (c13 == 3) {
-                        z25 = bf.n(parcel, readInt10);
-                    } else if (c13 != 4) {
-                        bf.y(parcel, readInt10);
-                    } else {
-                        z26 = bf.n(parcel, readInt10);
-                    }
-                }
-                bf.m(parcel, z24);
-                return new x(i41, z25, z26);
-            case 10:
-                int z27 = bf.z(parcel);
-                double d = 0.0d;
-                d6.d dVar = null;
-                d6.x xVar = null;
-                boolean z28 = false;
-                int i42 = 0;
-                int i43 = 0;
-                double d10 = 0.0d;
-                while (parcel.dataPosition() < z27) {
-                    int readInt11 = parcel.readInt();
-                    switch ((char) readInt11) {
-                        case 2:
-                            d = bf.q(parcel, readInt11);
-                            break;
-                        case 3:
-                            z28 = bf.n(parcel, readInt11);
-                            break;
-                        case 4:
-                            i42 = bf.u(parcel, readInt11);
-                            break;
-                        case 5:
-                            dVar = (d6.d) bf.g(parcel, readInt11, d6.d.CREATOR);
-                            break;
-                        case 6:
-                            i43 = bf.u(parcel, readInt11);
-                            break;
-                        case 7:
-                            xVar = (d6.x) bf.g(parcel, readInt11, d6.x.CREATOR);
-                            break;
-                        case '\b':
-                            d10 = bf.q(parcel, readInt11);
-                            break;
-                        default:
-                            bf.y(parcel, readInt11);
-                            break;
-                    }
-                }
-                bf.m(parcel, z27);
-                h6.d dVar2 = new h6.d();
-                dVar2.a = d;
-                dVar2.b = z28;
-                dVar2.c = i42;
-                dVar2.d = dVar;
-                dVar2.e = i43;
-                dVar2.f = xVar;
-                dVar2.h = d10;
-                return dVar2;
-            case 11:
-                int z29 = bf.z(parcel);
-                String str18 = null;
-                while (parcel.dataPosition() < z29) {
-                    int readInt12 = parcel.readInt();
-                    if (((char) readInt12) != 2) {
-                        bf.y(parcel, readInt12);
-                    } else {
-                        str18 = bf.h(parcel, readInt12);
-                    }
-                }
-                bf.m(parcel, z29);
-                return new h6.c(str18);
-            case 12:
-                int z30 = bf.z(parcel);
-                boolean z31 = false;
-                while (parcel.dataPosition() < z30) {
-                    int readInt13 = parcel.readInt();
-                    if (((char) readInt13) != 1) {
-                        bf.y(parcel, readInt13);
-                    } else {
-                        z31 = bf.n(parcel, readInt13);
-                    }
-                }
-                bf.m(parcel, z30);
-                return new h7.a(z31);
-            case 13:
-                int z32 = bf.z(parcel);
-                while (parcel.dataPosition() < z32) {
-                    bf.y(parcel, parcel.readInt());
-                }
-                bf.m(parcel, z32);
-                return new h7.b();
-            case 14:
-                int z33 = bf.z(parcel);
-                boolean z34 = false;
-                while (parcel.dataPosition() < z33) {
-                    int readInt14 = parcel.readInt();
-                    if (((char) readInt14) != 1) {
-                        bf.y(parcel, readInt14);
-                    } else {
-                        z34 = bf.n(parcel, readInt14);
-                    }
-                }
-                bf.m(parcel, z33);
-                return new h7.c(z34);
-            case 15:
-                int z35 = bf.z(parcel);
-                boolean z36 = false;
-                while (parcel.dataPosition() < z35) {
-                    int readInt15 = parcel.readInt();
-                    if (((char) readInt15) != 1) {
-                        bf.y(parcel, readInt15);
-                    } else {
-                        z36 = bf.n(parcel, readInt15);
-                    }
-                }
-                bf.m(parcel, z35);
-                return new h7.d(z36);
-            case 16:
-                int z37 = bf.z(parcel);
-                PendingIntent pendingIntent2 = null;
-                h7.g gVar = null;
-                while (parcel.dataPosition() < z37) {
-                    int readInt16 = parcel.readInt();
-                    char c14 = (char) readInt16;
-                    if (c14 == 1) {
-                        pendingIntent2 = (PendingIntent) bf.g(parcel, readInt16, PendingIntent.CREATOR);
-                    } else if (c14 != 2) {
-                        bf.y(parcel, readInt16);
-                    } else {
-                        gVar = (h7.g) bf.g(parcel, readInt16, h7.g.CREATOR);
-                    }
-                }
-                bf.m(parcel, z37);
-                return new h7.e(pendingIntent2, gVar);
-            case 17:
-                int z38 = bf.z(parcel);
-                String str19 = null;
-                Bundle bundle = null;
-                Bundle bundle2 = null;
-                String str20 = null;
-                String str21 = null;
-                ResultReceiver resultReceiver = null;
-                while (parcel.dataPosition() < z38) {
-                    int readInt17 = parcel.readInt();
-                    switch ((char) readInt17) {
-                        case 1:
-                            str19 = bf.h(parcel, readInt17);
-                            break;
-                        case 2:
-                            bundle = bf.a(parcel, readInt17);
-                            break;
-                        case 3:
-                            bundle2 = bf.a(parcel, readInt17);
-                            break;
-                        case 4:
-                            str20 = bf.h(parcel, readInt17);
-                            break;
-                        case 5:
-                            str21 = bf.h(parcel, readInt17);
-                            break;
-                        case 6:
-                            resultReceiver = (ResultReceiver) bf.g(parcel, readInt17, ResultReceiver.CREATOR);
-                            break;
-                        default:
-                            bf.y(parcel, readInt17);
-                            break;
-                    }
-                }
-                bf.m(parcel, z38);
-                return new h7.f(str19, bundle, bundle2, str20, str21, resultReceiver);
-            case 18:
-                int z39 = bf.z(parcel);
-                String str22 = null;
-                Bundle bundle3 = null;
-                while (parcel.dataPosition() < z39) {
-                    int readInt18 = parcel.readInt();
-                    char c15 = (char) readInt18;
-                    if (c15 == 1) {
-                        str22 = bf.h(parcel, readInt18);
-                    } else if (c15 != 2) {
-                        bf.y(parcel, readInt18);
-                    } else {
-                        bundle3 = bf.a(parcel, readInt18);
-                    }
-                }
-                bf.m(parcel, z39);
-                return new h7.g(str22, bundle3);
-            case 19:
-                int z40 = bf.z(parcel);
-                String str23 = "";
-                String str24 = str23;
-                String str25 = str24;
-                Bundle bundle4 = null;
-                Bundle bundle5 = null;
-                String str26 = null;
-                while (parcel.dataPosition() < z40) {
-                    int readInt19 = parcel.readInt();
-                    switch ((char) readInt19) {
-                        case 1:
-                            str23 = bf.h(parcel, readInt19);
-                            break;
-                        case 2:
-                            bundle4 = bf.a(parcel, readInt19);
-                            break;
-                        case 3:
-                            bundle5 = bf.a(parcel, readInt19);
-                            break;
-                        case 4:
-                            str26 = bf.h(parcel, readInt19);
-                            break;
-                        case 5:
-                            str24 = bf.h(parcel, readInt19);
-                            break;
-                        case 6:
-                            str25 = bf.h(parcel, readInt19);
-                            break;
-                        default:
-                            bf.y(parcel, readInt19);
-                            break;
-                    }
-                }
-                bf.m(parcel, z40);
-                return new h7.h(str23, bundle4, bundle5, str26, str24, str25);
-            case 20:
-                int z41 = bf.z(parcel);
-                Bundle bundle6 = null;
-                while (parcel.dataPosition() < z41) {
-                    int readInt20 = parcel.readInt();
-                    if (((char) readInt20) != 1) {
-                        bf.y(parcel, readInt20);
-                    } else {
-                        bundle6 = bf.a(parcel, readInt20);
-                    }
-                }
-                bf.m(parcel, z41);
-                return new h7.i(bundle6);
-            case 21:
-                int z42 = bf.z(parcel);
-                Bundle bundle7 = null;
-                while (parcel.dataPosition() < z42) {
-                    int readInt21 = parcel.readInt();
-                    if (((char) readInt21) != 1) {
-                        bf.y(parcel, readInt21);
-                    } else {
-                        bundle7 = bf.a(parcel, readInt21);
-                    }
-                }
-                bf.m(parcel, z42);
-                return new h7.j(bundle7);
-            case 22:
-                int z43 = bf.z(parcel);
-                ArrayList arrayList2 = null;
-                Bundle bundle8 = null;
-                String str27 = null;
-                ResultReceiver resultReceiver2 = null;
-                while (parcel.dataPosition() < z43) {
-                    int readInt22 = parcel.readInt();
-                    char c16 = (char) readInt22;
-                    if (c16 == 1) {
-                        arrayList2 = bf.l(parcel, readInt22, h7.h.CREATOR);
-                    } else if (c16 == 2) {
-                        bundle8 = bf.a(parcel, readInt22);
-                    } else if (c16 == 3) {
-                        str27 = bf.h(parcel, readInt22);
-                    } else if (c16 != 4) {
-                        bf.y(parcel, readInt22);
-                    } else {
-                        resultReceiver2 = (ResultReceiver) bf.g(parcel, readInt22, ResultReceiver.CREATOR);
-                    }
-                }
-                bf.m(parcel, z43);
-                return new GetCredentialRequest(arrayList2, bundle8, str27, resultReceiver2);
-            case 23:
-                int z44 = bf.z(parcel);
-                Bundle bundle9 = null;
-                while (parcel.dataPosition() < z44) {
-                    int readInt23 = parcel.readInt();
-                    if (((char) readInt23) != 1) {
-                        bf.y(parcel, readInt23);
-                    } else {
-                        bundle9 = bf.a(parcel, readInt23);
-                    }
-                }
-                bf.m(parcel, z44);
-                return new h7.k(bundle9);
-            case 24:
-                int z45 = bf.z(parcel);
-                PendingIntent pendingIntent3 = null;
-                while (parcel.dataPosition() < z45) {
-                    int readInt24 = parcel.readInt();
-                    if (((char) readInt24) != 1) {
-                        bf.y(parcel, readInt24);
-                    } else {
-                        pendingIntent3 = (PendingIntent) bf.g(parcel, readInt24, PendingIntent.CREATOR);
-                    }
-                }
-                bf.m(parcel, z45);
-                return new h7.l(pendingIntent3);
-            case 25:
-                int z46 = bf.z(parcel);
-                PendingIntent pendingIntent4 = null;
-                while (parcel.dataPosition() < z46) {
-                    int readInt25 = parcel.readInt();
-                    if (((char) readInt25) != 1) {
-                        bf.y(parcel, readInt25);
-                    } else {
-                        pendingIntent4 = (PendingIntent) bf.g(parcel, readInt25, PendingIntent.CREATOR);
-                    }
-                }
-                bf.m(parcel, z46);
-                return new h7.m(pendingIntent4);
-            case 26:
-                int z47 = bf.z(parcel);
-                while (parcel.dataPosition() < z47) {
-                    bf.y(parcel, parcel.readInt());
-                }
-                bf.m(parcel, z47);
-                return new h7.n();
-            case 27:
-                int z48 = bf.z(parcel);
-                while (parcel.dataPosition() < z48) {
-                    bf.y(parcel, parcel.readInt());
-                }
-                bf.m(parcel, z48);
-                return new h7.o();
-            case 28:
-                int z49 = bf.z(parcel);
-                while (parcel.dataPosition() < z49) {
-                    bf.y(parcel, parcel.readInt());
-                }
-                bf.m(parcel, z49);
-                return new h7.p();
-            default:
-                int z50 = bf.z(parcel);
-                while (parcel.dataPosition() < z50) {
-                    bf.y(parcel, parcel.readInt());
-                }
-                bf.m(parcel, z50);
-                return new h7.q();
+            }
+            if (hVar.k()) {
+                return;
+            }
+            g(true);
         }
     }
 
-    @Override // android.os.Parcelable.Creator
-    public final Object[] newArray(int i10) {
-        switch (this.a) {
-            case 0:
-                return new f[i10];
-            case 1:
-                return new b[i10];
-            case 2:
-                return new d[i10];
-            case 3:
-                return new f8.d[i10];
-            case 4:
-                return new f8.e[i10];
-            case 5:
-                return new f8.f[i10];
-            case 6:
-                return new f8.g[i10];
-            case 7:
-                return new f8.h[i10];
-            case 8:
-                return new UserAddress[i10];
-            case 9:
-                return new x[i10];
-            case 10:
-                return new h6.d[i10];
-            case 11:
-                return new h6.c[i10];
-            case 12:
-                return new h7.a[i10];
-            case 13:
-                return new h7.b[i10];
-            case 14:
-                return new h7.c[i10];
-            case 15:
-                return new h7.d[i10];
-            case 16:
-                return new h7.e[i10];
-            case 17:
-                return new h7.f[i10];
-            case 18:
-                return new h7.g[i10];
-            case 19:
-                return new h7.h[i10];
-            case 20:
-                return new h7.i[i10];
-            case 21:
-                return new h7.j[i10];
-            case 22:
-                return new GetCredentialRequest[i10];
-            case 23:
-                return new h7.k[i10];
-            case 24:
-                return new h7.l[i10];
-            case 25:
-                return new h7.m[i10];
-            case 26:
-                return new h7.n[i10];
-            case 27:
-                return new h7.o[i10];
-            case 28:
-                return new h7.p[i10];
+    public final long c(String str, int i10, Bundle bundle) {
+        long j10;
+        int hashCode = str.hashCode();
+        if (hashCode != -945151566) {
+            if (hashCode != -945080078) {
+                if (hashCode == 235550565 && str.equals(MediaIntentReceiver.ACTION_TOGGLE_PLAYBACK)) {
+                    if (i10 == 3) {
+                        j10 = 514;
+                        i10 = 3;
+                    } else {
+                        j10 = 512;
+                    }
+                    if (i10 != 2) {
+                        return j10;
+                    }
+                    return 516L;
+                }
+            } else if (str.equals(MediaIntentReceiver.ACTION_SKIP_PREV)) {
+                e6.h hVar = this.n;
+                if (hVar != null && hVar.h()) {
+                    c6.q e = hVar.e();
+                    l.g(e);
+                    if ((128 & e.n) != 0 || e.F != 0) {
+                        return 16L;
+                    }
+                    Integer num = (Integer) e.N.get(e.c);
+                    if (num != null && num.intValue() > 0) {
+                        return 16L;
+                    }
+                }
+                bundle.putBoolean("android.media.playback.ALWAYS_RESERVE_SPACE_FOR.ACTION_SKIP_TO_PREVIOUS", true);
+                return 0L;
+            }
+        } else if (str.equals(MediaIntentReceiver.ACTION_SKIP_NEXT)) {
+            e6.h hVar2 = this.n;
+            if (hVar2 != null && hVar2.h()) {
+                c6.q e7 = hVar2.e();
+                l.g(e7);
+                if ((64 & e7.n) != 0 || e7.F != 0) {
+                    return 32L;
+                }
+                Integer num2 = (Integer) e7.N.get(e7.c);
+                if (num2 != null && num2.intValue() < e7.G.size() - 1) {
+                    return 32L;
+                }
+            }
+            bundle.putBoolean("android.media.playback.ALWAYS_RESERVE_SPACE_FOR.ACTION_SKIP_TO_NEXT", true);
+        }
+        return 0L;
+    }
+
+    public final Uri d(c6.l lVar) {
+        e6.a aVar = this.b.f;
+        if (aVar != null) {
+            aVar.b();
+        }
+        List list = lVar.a;
+        m6.a aVar2 = (list == null || list.isEmpty()) ? null : (m6.a) lVar.a.get(0);
+        if (aVar2 == null) {
+            return null;
+        }
+        return aVar2.b;
+    }
+
+    public final void e(Bitmap bitmap, int i10) {
+        MediaMetadata metadata;
+        a0 a0Var = this.p;
+        if (a0Var == null) {
+            return;
+        }
+        if (bitmap == null) {
+            bitmap = Bitmap.createBitmap(1, 1, Bitmap.Config.ARGB_8888);
+            bitmap.eraseColor(0);
+        }
+        a0 a0Var2 = this.p;
+        MediaMetadataCompat mediaMetadataCompat = null;
+        if (a0Var2 != null && (metadata = ((android.support.v4.media.session.h) ((hf.b) a0Var2.c).b).a.getMetadata()) != null) {
+            a0.f fVar = MediaMetadataCompat.d;
+            Parcel obtain = Parcel.obtain();
+            metadata.writeToParcel(obtain, 0);
+            obtain.setDataPosition(0);
+            MediaMetadataCompat createFromParcel = MediaMetadataCompat.CREATOR.createFromParcel(obtain);
+            obtain.recycle();
+            createFromParcel.b = metadata;
+            mediaMetadataCompat = createFromParcel;
+        }
+        a4.l lVar = mediaMetadataCompat == null ? new a4.l(1) : new a4.l(mediaMetadataCompat);
+        lVar.A(i10 == 0 ? "android.media.metadata.DISPLAY_ICON" : "android.media.metadata.ALBUM_ART", bitmap);
+        a0Var.B(new MediaMetadataCompat((Bundle) lVar.b));
+    }
+
+    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
+    /* JADX WARN: Removed duplicated region for block: B:105:0x016d  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x019a  */
+    /* JADX WARN: Removed duplicated region for block: B:37:? A[RETURN, SYNTHETIC] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void f(d0 d0Var, String str, e6.d dVar) {
+        int hashCode = str.hashCode();
+        Context context = this.a;
+        PlaybackStateCompat.CustomAction customAction = null;
+        e6.f fVar = this.e;
+        switch (hashCode) {
+            case -1699820260:
+                if (str.equals(MediaIntentReceiver.ACTION_REWIND)) {
+                    if (this.s == null && fVar != null) {
+                        long j10 = fVar.c;
+                        g6.b bVar = j.a;
+                        int i10 = fVar.R;
+                        if (j10 == 10000) {
+                            i10 = fVar.S;
+                        } else if (j10 == 30000) {
+                            i10 = fVar.T;
+                        }
+                        int i11 = fVar.D;
+                        if (j10 == 10000) {
+                            i11 = fVar.E;
+                        } else if (j10 == 30000) {
+                            i11 = fVar.F;
+                        }
+                        String string = context.getResources().getString(i10);
+                        if (TextUtils.isEmpty(MediaIntentReceiver.ACTION_REWIND)) {
+                            throw new IllegalArgumentException("You must specify an action to build a CustomAction");
+                        }
+                        if (TextUtils.isEmpty(string)) {
+                            throw new IllegalArgumentException("You must specify a name to build a CustomAction");
+                        }
+                        if (i11 == 0) {
+                            throw new IllegalArgumentException("You must specify an icon resource id to build a CustomAction");
+                        }
+                        this.s = new PlaybackStateCompat.CustomAction(MediaIntentReceiver.ACTION_REWIND, string, i11, null);
+                    }
+                    customAction = this.s;
+                    if (customAction != null) {
+                        d0Var.a(customAction);
+                        return;
+                    }
+                    return;
+                }
+                if (dVar != null) {
+                    String str2 = dVar.c;
+                    int i12 = dVar.b;
+                    if (TextUtils.isEmpty(str)) {
+                        throw new IllegalArgumentException("You must specify an action to build a CustomAction");
+                    }
+                    if (TextUtils.isEmpty(str2)) {
+                        throw new IllegalArgumentException("You must specify a name to build a CustomAction");
+                    }
+                    if (i12 == 0) {
+                        throw new IllegalArgumentException("You must specify an icon resource id to build a CustomAction");
+                    }
+                    customAction = new PlaybackStateCompat.CustomAction(str, str2, i12, null);
+                }
+                if (customAction != null) {
+                }
+            case -668151673:
+                if (str.equals(MediaIntentReceiver.ACTION_STOP_CASTING)) {
+                    if (this.t == null && fVar != null) {
+                        String string2 = context.getResources().getString(fVar.U);
+                        int i13 = fVar.G;
+                        if (TextUtils.isEmpty(MediaIntentReceiver.ACTION_STOP_CASTING)) {
+                            throw new IllegalArgumentException("You must specify an action to build a CustomAction");
+                        }
+                        if (TextUtils.isEmpty(string2)) {
+                            throw new IllegalArgumentException("You must specify a name to build a CustomAction");
+                        }
+                        if (i13 == 0) {
+                            throw new IllegalArgumentException("You must specify an icon resource id to build a CustomAction");
+                        }
+                        this.t = new PlaybackStateCompat.CustomAction(MediaIntentReceiver.ACTION_STOP_CASTING, string2, i13, null);
+                    }
+                    customAction = this.t;
+                    if (customAction != null) {
+                    }
+                }
+                if (dVar != null) {
+                }
+                if (customAction != null) {
+                }
+                break;
+            case -124479363:
+                if (str.equals(MediaIntentReceiver.ACTION_DISCONNECT)) {
+                    if (this.u == null && fVar != null) {
+                        String string3 = context.getResources().getString(fVar.U);
+                        int i14 = fVar.G;
+                        if (TextUtils.isEmpty(MediaIntentReceiver.ACTION_DISCONNECT)) {
+                            throw new IllegalArgumentException("You must specify an action to build a CustomAction");
+                        }
+                        if (TextUtils.isEmpty(string3)) {
+                            throw new IllegalArgumentException("You must specify a name to build a CustomAction");
+                        }
+                        if (i14 == 0) {
+                            throw new IllegalArgumentException("You must specify an icon resource id to build a CustomAction");
+                        }
+                        this.u = new PlaybackStateCompat.CustomAction(MediaIntentReceiver.ACTION_DISCONNECT, string3, i14, null);
+                    }
+                    customAction = this.u;
+                    if (customAction != null) {
+                    }
+                }
+                if (dVar != null) {
+                }
+                if (customAction != null) {
+                }
+                break;
+            case 1362116196:
+                if (str.equals(MediaIntentReceiver.ACTION_FORWARD)) {
+                    if (this.r == null && fVar != null) {
+                        long j11 = fVar.c;
+                        g6.b bVar2 = j.a;
+                        int i15 = fVar.O;
+                        if (j11 == 10000) {
+                            i15 = fVar.P;
+                        } else if (j11 == 30000) {
+                            i15 = fVar.Q;
+                        }
+                        int i16 = fVar.w;
+                        if (j11 == 10000) {
+                            i16 = fVar.x;
+                        } else if (j11 == 30000) {
+                            i16 = fVar.y;
+                        }
+                        String string4 = context.getResources().getString(i15);
+                        if (TextUtils.isEmpty(MediaIntentReceiver.ACTION_FORWARD)) {
+                            throw new IllegalArgumentException("You must specify an action to build a CustomAction");
+                        }
+                        if (TextUtils.isEmpty(string4)) {
+                            throw new IllegalArgumentException("You must specify a name to build a CustomAction");
+                        }
+                        if (i16 == 0) {
+                            throw new IllegalArgumentException("You must specify an icon resource id to build a CustomAction");
+                        }
+                        this.r = new PlaybackStateCompat.CustomAction(MediaIntentReceiver.ACTION_FORWARD, string4, i16, null);
+                    }
+                    customAction = this.r;
+                    if (customAction != null) {
+                    }
+                }
+                if (dVar != null) {
+                }
+                if (customAction != null) {
+                }
+                break;
             default:
-                return new h7.q[i10];
+                if (dVar != null) {
+                }
+                if (customAction != null) {
+                }
+                break;
+        }
+    }
+
+    public final void g(boolean z10) {
+        if (this.b.h) {
+            z zVar = this.k;
+            androidx.activity.i iVar = this.l;
+            if (iVar != null) {
+                zVar.removeCallbacks(iVar);
+            }
+            Context context = this.a;
+            Intent intent = new Intent(context, (Class<?>) ReconnectionService.class);
+            intent.setPackage(context.getPackageName());
+            try {
+                context.startService(intent);
+            } catch (IllegalStateException unused) {
+                if (z10) {
+                    zVar.postDelayed(iVar, 1000L);
+                }
+            }
+        }
+    }
+
+    public final void h() {
+        g gVar = this.j;
+        if (gVar != null) {
+            v.b("Stopping media notification.", new Object[0]);
+            bh.d dVar = gVar.i;
+            dVar.N();
+            dVar.e = null;
+            NotificationManager notificationManager = gVar.b;
+            if (notificationManager != null) {
+                notificationManager.cancel("castMediaNotification", 1);
+            }
+        }
+    }
+
+    public final void i() {
+        if (this.b.h) {
+            this.k.removeCallbacks(this.l);
+            Context context = this.a;
+            Intent intent = new Intent(context, (Class<?>) ReconnectionService.class);
+            intent.setPackage(context.getPackageName());
+            context.stopService(intent);
+        }
+    }
+
+    public final void j(int i10, MediaInfo mediaInfo) {
+        PlaybackStateCompat b10;
+        a0 a0Var;
+        c6.l lVar;
+        MediaMetadata metadata;
+        MediaMetadataCompat createFromParcel;
+        Bitmap bitmap;
+        PendingIntent activity;
+        int i11;
+        a0 a0Var2 = this.p;
+        if (a0Var2 == null) {
+            return;
+        }
+        u uVar = (u) a0Var2.b;
+        Bundle bundle = new Bundle();
+        d0 d0Var = new d0();
+        e6.h hVar = this.n;
+        e6.f fVar = this.e;
+        if (hVar == null || this.j == null) {
+            b10 = d0Var.b();
+        } else {
+            d0Var.c(i10, (hVar.s() == 0 || hVar.j()) ? 0L : hVar.a(), 1.0f);
+            if (i10 == 0) {
+                b10 = d0Var.b();
+            } else {
+                o oVar = fVar != null ? fVar.V : null;
+                e6.h hVar2 = this.n;
+                long j10 = (hVar2 == null || hVar2.j() || this.n.n()) ? 0L : 256L;
+                if (oVar != null) {
+                    ArrayList a2 = j.a(oVar);
+                    if (a2 != null) {
+                        int size = a2.size();
+                        int i12 = 0;
+                        while (i12 < size) {
+                            Object obj = a2.get(i12);
+                            i12++;
+                            ArrayList arrayList = a2;
+                            e6.d dVar = (e6.d) obj;
+                            int i13 = size;
+                            String str = dVar.a;
+                            if (TextUtils.equals(str, MediaIntentReceiver.ACTION_TOGGLE_PLAYBACK) || TextUtils.equals(str, MediaIntentReceiver.ACTION_SKIP_PREV) || TextUtils.equals(str, MediaIntentReceiver.ACTION_SKIP_NEXT)) {
+                                j10 = c(str, i10, bundle) | j10;
+                            } else {
+                                f(d0Var, str, dVar);
+                            }
+                            size = i13;
+                            a2 = arrayList;
+                        }
+                    }
+                } else if (fVar != null) {
+                    ArrayList arrayList2 = fVar.a;
+                    int size2 = arrayList2.size();
+                    int i14 = 0;
+                    while (i14 < size2) {
+                        Object obj2 = arrayList2.get(i14);
+                        i14++;
+                        ArrayList arrayList3 = arrayList2;
+                        String str2 = (String) obj2;
+                        if (TextUtils.equals(str2, MediaIntentReceiver.ACTION_TOGGLE_PLAYBACK) || TextUtils.equals(str2, MediaIntentReceiver.ACTION_SKIP_PREV) || TextUtils.equals(str2, MediaIntentReceiver.ACTION_SKIP_NEXT)) {
+                            i11 = size2;
+                            j10 = c(str2, i10, bundle) | j10;
+                        } else {
+                            i11 = size2;
+                            f(d0Var, str2, null);
+                        }
+                        size2 = i11;
+                        arrayList2 = arrayList3;
+                    }
+                }
+                d0Var.e = j10;
+                b10 = d0Var.b();
+            }
+        }
+        a0Var2.C(b10);
+        if (fVar != null && fVar.W) {
+            bundle.putBoolean("android.media.playback.ALWAYS_RESERVE_SPACE_FOR.ACTION_SKIP_TO_PREVIOUS", true);
+        }
+        if (fVar != null && fVar.X) {
+            bundle.putBoolean("android.media.playback.ALWAYS_RESERVE_SPACE_FOR.ACTION_SKIP_TO_NEXT", true);
+        }
+        if (bundle.containsKey("android.media.playback.ALWAYS_RESERVE_SPACE_FOR.ACTION_SKIP_TO_PREVIOUS") || bundle.containsKey("android.media.playback.ALWAYS_RESERVE_SPACE_FOR.ACTION_SKIP_TO_NEXT")) {
+            uVar.a.setExtras(bundle);
+        }
+        if (i10 == 0) {
+            a0Var2.B(new MediaMetadataCompat(new Bundle()));
+            return;
+        }
+        if (this.n != null) {
+            ComponentName componentName = this.f;
+            if (componentName == null) {
+                activity = null;
+            } else {
+                Intent intent = new Intent();
+                intent.setComponent(componentName);
+                activity = PendingIntent.getActivity(this.a, 0, intent, 201326592);
+            }
+            if (activity != null) {
+                uVar.a.setSessionActivity(activity);
+            }
+        }
+        e6.h hVar3 = this.n;
+        if (hVar3 == null || (a0Var = this.p) == null || mediaInfo == null || (lVar = mediaInfo.d) == null) {
+            return;
+        }
+        Bundle bundle2 = lVar.b;
+        long j11 = hVar3.j() ? 0L : mediaInfo.e;
+        c6.l.c(1, "com.google.android.gms.cast.metadata.TITLE");
+        String string = bundle2.getString("com.google.android.gms.cast.metadata.TITLE");
+        c6.l.c(1, "com.google.android.gms.cast.metadata.SUBTITLE");
+        String string2 = bundle2.getString("com.google.android.gms.cast.metadata.SUBTITLE");
+        a0 a0Var3 = this.p;
+        if (a0Var3 == null || (metadata = ((android.support.v4.media.session.h) ((hf.b) a0Var3.c).b).a.getMetadata()) == null) {
+            createFromParcel = null;
+        } else {
+            a0.f fVar2 = MediaMetadataCompat.d;
+            Parcel obtain = Parcel.obtain();
+            metadata.writeToParcel(obtain, 0);
+            obtain.setDataPosition(0);
+            createFromParcel = MediaMetadataCompat.CREATOR.createFromParcel(obtain);
+            obtain.recycle();
+            createFromParcel.b = metadata;
+        }
+        a4.l lVar2 = createFromParcel == null ? new a4.l(1) : new a4.l(createFromParcel);
+        lVar2.C(j11);
+        if (string != null) {
+            lVar2.D("android.media.metadata.TITLE", string);
+            lVar2.D("android.media.metadata.DISPLAY_TITLE", string);
+        }
+        if (string2 != null) {
+            lVar2.D("android.media.metadata.DISPLAY_SUBTITLE", string2);
+        }
+        a0Var.B(new MediaMetadataCompat((Bundle) lVar2.b));
+        Uri d = d(lVar);
+        if (d != null) {
+            this.h.M(d);
+            bitmap = null;
+        } else {
+            bitmap = null;
+            e(null, 0);
+        }
+        Uri d10 = d(lVar);
+        if (d10 != null) {
+            this.i.M(d10);
+        } else {
+            e(bitmap, 3);
         }
     }
 }

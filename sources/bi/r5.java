@@ -1,155 +1,109 @@
 package bi;
 
-import android.animation.ValueAnimator;
-import android.graphics.RectF;
-import android.opengl.Matrix;
-import android.view.View;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.text.Layout;
 import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.kb1;
+import java.util.HashSet;
+import org.telegram.messenger.cd;
+import org.telegram.messenger.tz;
+import org.telegram.tgnet.tl.TL_iv;
+import org.telegram.ui.Cells.j9;
+import org.telegram.ui.Cells.k9;
+import org.telegram.ui.Cells.u9;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes4.dex */
-public final class r5 {
-    public final s5 a;
-    public ai.e0 d;
-    public int f;
-    public int g;
-    public float j;
-    public float k;
-    public final ArrayList b = new ArrayList();
-    public int c = 0;
-    public boolean e = false;
-    public final float[] h = new float[16];
-    public float[] i = new float[16];
-    public boolean l = false;
+public final class r5 extends c0 implements org.telegram.ui.ActionBar.k6, j9 {
+    public final org.telegram.ui.ActionBar.p6 n;
+    public final n1 r;
+    public p5 s;
+    public final ArrayList w;
+    public boolean x;
 
-    public r5(s5 s5Var) {
-        this.a = s5Var;
+    public r5(Context context, org.telegram.ui.ActionBar.p6 p6Var) {
+        super(context);
+        this.w = new ArrayList();
+        this.n = p6Var;
+        f(org.telegram.messenger.i0.L(16.0f), org.telegram.messenger.i0.L(1.0f), org.telegram.messenger.i0.L(16.0f), org.telegram.messenger.i0.L(8.0f));
+        n1 n1Var = new n1(context, p6Var);
+        this.r = n1Var;
+        n1Var.setPadding(org.telegram.messenger.i0.L(2.0f), org.telegram.messenger.i0.L(1.0f), org.telegram.messenger.i0.L(2.0f), org.telegram.messenger.i0.L(1.0f));
+        n1Var.setAllowNewlines(false);
+        n1Var.setInputType(147457);
+        n1Var.setGravity(8388659);
+        n1Var.setTextSize(1, Math.max(8, tz.W0 - 2));
+        n1Var.setTypeface(org.telegram.messenger.i0.o1("fonts/rmedium.ttf"));
+        n1Var.setTextColorKey(org.telegram.ui.ActionBar.t6.Ci);
+        n1Var.setAccentHint(true);
+        n1Var.setHint(cd.L0(2131754020, null));
+        n1Var.setListener(new a4.l(this, 8));
+        n1Var.setDelegate(new a1.c(this, 13));
+        addView(n1Var, w7.b6.e(-1, -2, 51));
+        updateColors();
     }
 
-    public final void a(int i10) {
-        this.b.add(new q5(3, 0.0f, 0.0f, i10, -1, 0.0f, null, null));
+    @Override // org.telegram.ui.ActionBar.k6
+    public final void addColorKeys(HashSet hashSet) {
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.t6.Ci));
     }
 
-    public final void b() {
-        ai.e0 e0Var;
-        boolean z10 = this.e;
-        s5 s5Var = this.a;
-        if (!z10) {
-            int i10 = this.c;
-            ArrayList arrayList = this.b;
-            if (i10 < arrayList.size()) {
-                q5 q5Var = (q5) arrayList.get(this.c);
-                this.c++;
-                int i11 = q5Var.a;
-                int i12 = q5Var.e;
-                float f7 = q5Var.b;
-                int i13 = q5Var.d;
-                int c10 = m1.j.c(i11);
-                if (c10 == 0) {
-                    Runnable runnable = q5Var.h;
-                    if (runnable != null) {
-                        runnable.run();
-                    }
-                    b();
-                    return;
-                }
-                if (c10 == 1) {
-                    s5Var.d = (q5Var.c * 0.01f) + s5Var.d;
-                    s5Var.e = (f7 * 0.01f) + s5Var.e;
-                    this.f = 1;
-                    this.g = 1;
-                    return;
-                }
-                if (c10 == 2) {
-                    this.f = i13;
-                    this.g = i13;
-                    return;
-                }
-                int i14 = 4;
-                if (c10 == 3) {
-                    System.arraycopy(s5Var.c, 0, this.h, 0, 16);
-                    float f10 = q5Var.f;
-                    float[] fArr = new float[16];
-                    Matrix.setIdentityM(fArr, 0);
-                    if (f10 != 0.0f) {
-                        Matrix.rotateM(fArr, 0, -f10, 0.0f, 0.0f, 1.0f);
-                    }
-                    if (i12 == 0) {
-                        Matrix.rotateM(fArr, 0, 90.0f, 0.0f, 1.0f, 0.0f);
-                    } else if (i12 == 1) {
-                        Matrix.rotateM(fArr, 0, -90.0f, 0.0f, 1.0f, 0.0f);
-                    } else if (i12 == 2) {
-                        Matrix.rotateM(fArr, 0, 90.0f, 1.0f, 0.0f, 0.0f);
-                    } else if (i12 == 3) {
-                        Matrix.rotateM(fArr, 0, -90.0f, 1.0f, 0.0f, 0.0f);
-                    } else if (i12 == 4) {
-                        Matrix.rotateM(fArr, 0, 180.0f, 0.0f, 1.0f, 0.0f);
-                    }
-                    this.i = fArr;
-                    this.g = i13;
-                    this.f = i13;
-                    this.j = s5Var.d;
-                    this.k = s5Var.e;
-                    return;
-                }
-                int i15 = 5;
-                if (c10 != 4) {
-                    if (c10 != 5) {
-                        return;
-                    }
-                    s5Var.f = f7 > 0.0f;
-                    b();
-                    return;
-                }
-                this.l = true;
-                View view = q5Var.g;
-                ValueAnimator valueAnimator = s5Var.G;
-                if (valueAnimator != null) {
-                    valueAnimator.cancel();
-                    s5Var.G = null;
-                }
-                RectF rectF = new RectF();
-                rectF.left = view.getX() - s5Var.getX();
-                rectF.top = view.getY() - s5Var.getY();
-                rectF.right = rectF.left + view.getWidth();
-                rectF.bottom = rectF.top + view.getHeight();
-                AndroidUtilities.removeFromParent(view);
-                int childCount = s5Var.getChildCount();
-                s5Var.addView(view, kb1.i(64, 64, 17));
-                s5Var.v.add(Integer.valueOf(i12));
-                s5Var.w.put(Integer.valueOf(childCount), Integer.valueOf(i12));
-                s5Var.x.put(Integer.valueOf(childCount), rectF);
-                s5Var.F = childCount;
-                s5Var.E = 0.0f;
-                ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-                s5Var.G = ofFloat;
-                ofFloat.addUpdateListener(new ai.g0(s5Var, i15));
-                s5Var.G.addListener(new bh.b(s5Var, i14));
-                s5Var.G.setDuration(i13 * 16);
-                s5Var.G.setInterpolator(ds.h);
-                s5Var.G.start();
-                return;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        p5 p5Var = this.s;
+        k9 textSelectionHelper = p5Var != null ? ((j3) p5Var).a.getTextSelectionHelper() : null;
+        if (textSelectionHelper != null) {
+            ArrayList arrayList = this.w;
+            arrayList.clear();
+            h(arrayList);
+            for (int i10 = 0; i10 < arrayList.size(); i10++) {
+                u9 u9Var = (u9) arrayList.get(i10);
+                canvas.save();
+                canvas.translate(u9Var.getX(), u9Var.getY());
+                textSelectionHelper.Z(canvas, this, i10);
+                canvas.restore();
             }
         }
-        s5Var.H = null;
-        if (this.e || (e0Var = this.d) == null) {
+        super.dispatchDraw(canvas);
+    }
+
+    public final void g() {
+        a aVar;
+        p5 p5Var = this.s;
+        if (p5Var == null || (aVar = this.a) == null) {
             return;
         }
-        e0Var.run();
+        long j10 = aVar.t;
+        TL_iv.RichText f7 = s6.f(this.r.getText());
+        d4 d4Var = ((j3) p5Var).a;
+        if (f7 == null || (f7 instanceof TL_iv.textEmpty)) {
+            d4Var.t3.remove(Long.valueOf(j10));
+        } else {
+            d4Var.t3.put(Long.valueOf(j10), f7);
+        }
     }
 
-    public final void c(float f7, float f10) {
-        this.b.add(new q5(2, f7, f10, 0, -1, 0.0f, null, null));
+    public a getRow() {
+        return this.a;
     }
 
-    public final void d(boolean z10) {
-        this.b.add(new q5(6, z10 ? 1.0f : -1.0f, 0.0f, 0, -1, 0.0f, null, null));
+    @Override // org.telegram.ui.Cells.j9
+    public final void h(ArrayList arrayList) {
+        n1 n1Var = this.r;
+        Layout layout = n1Var.getLayout();
+        if (layout == null) {
+            return;
+        }
+        arrayList.add(new o5(layout, n1Var.getPaddingLeft() + n1Var.getLeft(), n1Var.getPaddingTop() + n1Var.getTop(), 0));
     }
 
-    public final void e(x5 x5Var, int i10, float f7) {
-        this.b.add(new q5(5, 0.0f, 0.0f, 32, i10, f7, x5Var, null));
+    @Override // org.telegram.ui.ActionBar.k6
+    public final void updateColors() {
+        n1 n1Var = this.r;
+        n1Var.updateColors();
+        int i10 = org.telegram.ui.ActionBar.t6.Ci;
+        org.telegram.ui.ActionBar.p6 p6Var = this.n;
+        n1Var.setTextColor(org.telegram.ui.ActionBar.t6.w0(i10, p6Var));
+        n1Var.setHintTextColor(org.telegram.ui.ActionBar.t6.r1(0.5f, org.telegram.ui.ActionBar.t6.w0(i10, p6Var)));
     }
 }

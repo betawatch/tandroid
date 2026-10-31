@@ -1,36 +1,105 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class x4 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ImageLoader b;
-    public final /* synthetic */ String c;
+import java.text.Collator;
+import java.util.Comparator;
+import org.telegram.tgnet.TLRPC;
 
-    public /* synthetic */ x4(ImageLoader imageLoader, String str, int i10) {
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes.dex */
+public final /* synthetic */ class x4 implements Comparator {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Collator b;
+
+    public /* synthetic */ x4(Collator collator, int i10) {
         this.a = i10;
-        this.b = imageLoader;
-        this.c = str;
+        this.b = collator;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        String str;
         switch (this.a) {
             case 0:
-                this.b.lambda$artworkLoadError$10(this.c);
-                break;
+                String str2 = (String) obj;
+                String str3 = (String) obj2;
+                char charAt = str2.charAt(0);
+                char charAt2 = str3.charAt(0);
+                if (charAt == '#') {
+                    return 1;
+                }
+                if (charAt2 == '#') {
+                    return -1;
+                }
+                return this.b.compare(str2, str3);
             case 1:
-                this.b.lambda$cancelForceLoadingForImageReceiver$6(this.c);
-                break;
+                f5 f5Var = (f5) obj;
+                f5 f5Var2 = (f5) obj2;
+                String str4 = f5Var.i;
+                if (str4.length() == 0) {
+                    str4 = f5Var.j;
+                }
+                String str5 = f5Var2.i;
+                if (str5.length() == 0) {
+                    str5 = f5Var2.j;
+                }
+                return this.b.compare(str4, str5);
             case 2:
-                this.b.lambda$preloadArtwork$8(this.c);
-                break;
+                String str6 = "";
+                if (obj instanceof TLRPC.User) {
+                    TLRPC.User user = (TLRPC.User) obj;
+                    str = i5.m(0, user.first_name, user.last_name);
+                } else if (obj instanceof f5) {
+                    f5 f5Var3 = (f5) obj;
+                    TLRPC.User user2 = f5Var3.m;
+                    str = user2 != null ? i5.m(0, user2.first_name, user2.last_name) : i5.m(0, f5Var3.i, f5Var3.j);
+                } else {
+                    str = "";
+                }
+                if (obj2 instanceof TLRPC.User) {
+                    TLRPC.User user3 = (TLRPC.User) obj2;
+                    str6 = i5.m(0, user3.first_name, user3.last_name);
+                } else if (obj2 instanceof f5) {
+                    f5 f5Var4 = (f5) obj2;
+                    TLRPC.User user4 = f5Var4.m;
+                    str6 = user4 != null ? i5.m(0, user4.first_name, user4.last_name) : i5.m(0, f5Var4.i, f5Var4.j);
+                }
+                return this.b.compare(str, str6);
             case 3:
-                this.b.lambda$httpFileLoadError$9(this.c);
-                break;
+                String str7 = (String) obj;
+                String str8 = (String) obj2;
+                char charAt3 = str7.charAt(0);
+                char charAt4 = str8.charAt(0);
+                if (charAt3 == '#') {
+                    return 1;
+                }
+                if (charAt4 == '#') {
+                    return -1;
+                }
+                return this.b.compare(str7, str8);
+            case 4:
+                String str9 = (String) obj;
+                String str10 = (String) obj2;
+                char charAt5 = str9.charAt(0);
+                char charAt6 = str10.charAt(0);
+                if (charAt5 == '#') {
+                    return 1;
+                }
+                if (charAt6 == '#') {
+                    return -1;
+                }
+                return this.b.compare(str9, str10);
             default:
-                this.b.lambda$fileDidFailedLoad$12(this.c);
-                break;
+                String str11 = (String) obj;
+                String str12 = (String) obj2;
+                char charAt7 = str11.charAt(0);
+                char charAt8 = str12.charAt(0);
+                if (charAt7 == '#') {
+                    return 1;
+                }
+                if (charAt8 == '#') {
+                    return -1;
+                }
+                return this.b.compare(str11, str12);
         }
     }
 }

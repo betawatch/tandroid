@@ -1,27 +1,38 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class yp0 extends s4.u0 {
-    public final /* synthetic */ ef a;
+public final /* synthetic */ class yp0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ zt0 b;
+    public final /* synthetic */ int c;
 
-    public yp0(ef efVar) {
-        this.a = efVar;
+    public /* synthetic */ yp0(zt0 zt0Var, int i10, int i11) {
+        this.a = i11;
+        this.b = zt0Var;
+        this.c = i10;
     }
 
-    @Override // s4.u0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        ef efVar = this.a;
-        View view = efVar.u;
-        boolean z10 = efVar.w.I0() != 0;
-        Boolean bool = efVar.x;
-        if (bool == null || z10 != bool.booleanValue()) {
-            view.animate().cancel();
-            view.animate().alpha(z10 ? 1.0f : 0.0f).setDuration(150L).start();
-            efVar.x = Boolean.valueOf(z10);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.n1(this.c);
+                break;
+            case 1:
+                zt0 zt0Var = this.b;
+                zt0Var.V0(zt0Var.x1, zt0Var.l1, this.c);
+                break;
+            case 2:
+                this.b.m1(this.c, false);
+                break;
+            case 3:
+                this.b.n1(this.c);
+                break;
+            default:
+                zt0 zt0Var2 = this.b;
+                zt0Var2.W0(zt0Var2.x1, zt0Var2.l1, this.c);
+                break;
         }
     }
 }

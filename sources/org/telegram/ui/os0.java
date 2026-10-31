@@ -1,11 +1,13 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.view.TextureView;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class os0 extends org.telegram.ui.Components.zt {
-    public os0(Context context, String str) {
-        super(context, str);
-    }
+public interface os0 {
+    void H0(org.telegram.messenger.jj jjVar);
+
+    void I(org.telegram.messenger.jj jjVar);
+
+    TextureView k0();
 }

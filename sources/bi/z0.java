@@ -1,13 +1,34 @@
 package bi;
 
-import android.view.MotionEvent;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import android.content.Context;
+import android.view.View;
+import org.telegram.ui.Components.a51;
+import org.telegram.ui.Components.p51;
+import org.telegram.ui.Components.tk0;
+import org.telegram.ui.Components.u51;
+import org.telegram.ui.Components.z41;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes4.dex */
-public final class z0 extends EditTextBoldCursor {
-    @Override // org.telegram.ui.Components.lu, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+public final class z0 extends z41 {
+    public static final /* synthetic */ int b = 0;
+
+    static {
+        z41.h(new z0());
+    }
+
+    @Override // org.telegram.ui.Components.z41
+    public final void b(View view, a51 a51Var, boolean z10, p51 p51Var, u51 u51Var) {
+        ((a1) view).c = (a) a51Var.G;
+    }
+
+    @Override // org.telegram.ui.Components.z41
+    public final View d(Context context, tk0 tk0Var, int i10, org.telegram.ui.ActionBar.p6 p6Var) {
+        return new a1(context, p6Var);
+    }
+
+    @Override // org.telegram.ui.Components.z41
+    public final boolean f() {
         return false;
     }
 }

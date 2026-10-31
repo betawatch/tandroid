@@ -1,68 +1,40 @@
 package ae;
 
-import java.util.Iterator;
-import java.util.NoSuchElementException;
+import v7.g7;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class b implements Iterator {
-    public final String a;
-    public int b;
-    public int c;
-    public int d;
-    public int e;
+public final class b {
+    public static final b a;
+    public static final b b;
+    public static final b c;
+    public static final b d;
+    public static final b e;
+    public static final /* synthetic */ b[] f;
 
-    public b(String str) {
-        this.a = str;
+    static {
+        b bVar = new b("CPU_ACQUIRED", 0);
+        a = bVar;
+        b bVar2 = new b("BLOCKING", 1);
+        b = bVar2;
+        b bVar3 = new b("PARKING", 2);
+        c = bVar3;
+        b bVar4 = new b("DORMANT", 3);
+        d = bVar4;
+        b bVar5 = new b("TERMINATED", 4);
+        e = bVar5;
+        b[] bVarArr = {bVar, bVar2, bVar3, bVar4, bVar5};
+        f = bVarArr;
+        g7.a(bVarArr);
     }
 
-    @Override // java.util.Iterator
-    public final boolean hasNext() {
-        int i10;
-        int i11;
-        int i12 = this.b;
-        if (i12 != 0) {
-            return i12 == 1;
-        }
-        if (this.e < 0) {
-            this.b = 2;
-            return false;
-        }
-        String str = this.a;
-        int length = str.length();
-        int length2 = str.length();
-        for (int i13 = this.c; i13 < length2; i13++) {
-            char charAt = str.charAt(i13);
-            if (charAt == '\n' || charAt == '\r') {
-                i10 = (charAt == '\r' && (i11 = i13 + 1) < str.length() && str.charAt(i11) == '\n') ? 2 : 1;
-                length = i13;
-                this.b = 1;
-                this.e = i10;
-                this.d = length;
-                return true;
-            }
-        }
-        i10 = -1;
-        this.b = 1;
-        this.e = i10;
-        this.d = length;
-        return true;
+    public static b valueOf(String str) {
+        return (b) Enum.valueOf(b.class, str);
     }
 
-    @Override // java.util.Iterator
-    public final Object next() {
-        if (!hasNext()) {
-            throw new NoSuchElementException();
-        }
-        this.b = 0;
-        int i10 = this.d;
-        int i11 = this.c;
-        this.c = this.e + i10;
-        return this.a.subSequence(i11, i10).toString();
-    }
-
-    @Override // java.util.Iterator
-    public final void remove() {
-        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
+    public static b[] values() {
+        return (b[]) f.clone();
     }
 }

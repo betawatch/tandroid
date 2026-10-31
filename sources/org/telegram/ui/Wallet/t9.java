@@ -1,30 +1,129 @@
 package org.telegram.ui.Wallet;
 
-import android.content.Context;
 import android.graphics.Canvas;
-import android.widget.FrameLayout;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.os.SystemClock;
+import java.util.ArrayList;
+import java.util.Random;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes4.dex */
-public final class t9 extends FrameLayout {
-    public final /* synthetic */ v9 a;
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final class t9 {
+    public static final int[] f = {-16106272, -16754689, -14779393, -13326081, -10235137, -6559233};
+    public final ArrayList a = new ArrayList();
+    public final Random b = new Random();
+    public final Paint c = new Paint(1);
+    public final Path d;
+    public long e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public t9(v9 v9Var, Context context) {
-        super(context);
-        this.a = v9Var;
+    public t9() {
+        Path path = new Path();
+        this.d = path;
+        path.moveTo(0.0f, -1.0f);
+        path.quadTo(0.12f, -0.12f, 1.0f, 0.0f);
+        path.quadTo(0.12f, 0.12f, 0.0f, 1.0f);
+        path.quadTo(-0.12f, 0.12f, -1.0f, 0.0f);
+        path.quadTo(-0.12f, -0.12f, 0.0f, -1.0f);
+        path.close();
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        canvas.save();
-        canvas.translate(-getLeft(), -getTop());
-        v9 v9Var = this.a;
-        v9Var.j.c(canvas);
-        canvas.restore();
-        super.dispatchDraw(canvas);
-        if (v9Var.j.d()) {
-            postInvalidateOnAnimation();
+    public final s9 a(float f7, float f10, float f11, float f12, float f13, float f14, float f15) {
+        ArrayList arrayList = this.a;
+        if (arrayList.isEmpty()) {
+            this.e = SystemClock.uptimeMillis();
         }
+        s9 s9Var = new s9();
+        s9Var.l = 1.0f;
+        s9Var.a = f7;
+        s9Var.b = f10;
+        double d = f11;
+        s9Var.c = ((float) Math.cos(d)) * f12;
+        s9Var.d = ((float) Math.sin(d)) * f12;
+        s9Var.e = f13;
+        s9Var.f = f14;
+        s9Var.g = f15;
+        s9Var.k = f[this.b.nextInt(6)];
+        s9Var.h = e(0.0f, 90.0f);
+        s9Var.i = e(-180.0f, 180.0f);
+        arrayList.add(s9Var);
+        return s9Var;
+    }
+
+    public final void b(float f7, float f10) {
+        float f11 = org.telegram.messenger.i0.p;
+        for (int i10 = 0; i10 < 28; i10++) {
+            a(f7, f10, e(0.0f, 6.2831855f), e(60.0f, 300.0f) * f11, e(2.5f, 6.0f) * f11, e(0.5f, 0.9f), 3.0f);
+        }
+    }
+
+    public final void c(Canvas canvas) {
+        long uptimeMillis = SystemClock.uptimeMillis();
+        float min = Math.min(0.033f, (uptimeMillis - this.e) / 1000.0f);
+        this.e = uptimeMillis;
+        ArrayList arrayList = this.a;
+        for (int size = arrayList.size() - 1; size >= 0; size--) {
+            s9 s9Var = (s9) arrayList.get(size);
+            float f7 = s9Var.j + min;
+            s9Var.j = f7;
+            if (f7 >= 0.0f) {
+                if (f7 >= s9Var.f) {
+                    arrayList.remove(size);
+                } else {
+                    float exp = (float) Math.exp((-s9Var.g) * min);
+                    float f10 = s9Var.c * exp;
+                    s9Var.c = f10;
+                    float f11 = s9Var.d * exp;
+                    s9Var.d = f11;
+                    s9Var.a = (f10 * min) + s9Var.a;
+                    s9Var.b = (f11 * min) + s9Var.b;
+                    s9Var.h = (s9Var.i * min) + s9Var.h;
+                    float f12 = s9Var.j / s9Var.f;
+                    float max = Math.max(0.0f, Math.min(1.0f, (f12 - 0.35f) / 0.65f));
+                    float min2 = (1.0f - ((3.0f - (max * 2.0f)) * (max * max))) * Math.min(1.0f, 8.0f * f12) * s9Var.l;
+                    float D = c3.i0.D(f12, 0.5f, 1.0f, s9Var.e);
+                    int save = canvas.save();
+                    canvas.translate(s9Var.a, s9Var.b);
+                    canvas.rotate(s9Var.h);
+                    canvas.scale(D, D);
+                    int i10 = s9Var.k;
+                    Paint paint = this.c;
+                    paint.setColor(i10);
+                    paint.setAlpha(Math.round(20.4f * min2));
+                    canvas.drawCircle(0.0f, 0.0f, 1.4f, paint);
+                    paint.setAlpha(Math.round(min2 * 255.0f));
+                    canvas.drawPath(this.d, paint);
+                    canvas.restoreToCount(save);
+                }
+            }
+        }
+    }
+
+    public final boolean d() {
+        return !this.a.isEmpty();
+    }
+
+    public final float e(float f7, float f10) {
+        return c3.i0.z(f10, f7, this.b.nextFloat(), f7);
+    }
+
+    public final void f() {
+        this.a.clear();
+        float f7 = org.telegram.messenger.i0.p;
+        for (int i10 = 0; i10 < 48; i10++) {
+            int i11 = -1;
+            while (i11 <= 1) {
+                s9 a2 = a(0.0f, (e(-3.0f, 3.0f) * f7) + 0.0f, e(-0.6f, 0.6f) + (i11 < 0 ? 3.1415927f : 0.0f), e(150.0f, 310.0f) * f7, e(1.3f, 3.2f) * f7, e(0.65f, 1.05f), 1.8f);
+                a2.k = -6562049;
+                a2.l = e(0.3f, 1.0f);
+                a2.j = (-i10) * 0.006f;
+                i11 += 2;
+            }
+        }
+    }
+
+    public final void g(float f7, float f10) {
+        float f11 = org.telegram.messenger.i0.p;
+        a(f7, f10, e(0.0f, 6.2831855f), e(0.0f, 28.0f) * f11, e(1.5f, 3.5f) * f11, e(0.35f, 0.6f), 2.0f);
     }
 }

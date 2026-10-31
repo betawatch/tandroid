@@ -1,36 +1,52 @@
 package b2;
 
-import android.os.Bundle;
+import java.util.Locale;
+import v7.t6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public abstract class z0 extends Exception {
-    public static final String d;
+public final class z0 {
+    public static final z0 d = new z0(1.0f, 1.0f);
     public static final String e;
     public static final String f;
-    public static final String h;
-    public static final String n;
-    public static final String r;
-    public final int a;
-    public final long b;
-    public final Bundle c;
+    public final float a;
+    public final float b;
+    public final int c;
 
     static {
-        String str = e2.n0.a;
-        d = Integer.toString(0, 36);
-        e = Integer.toString(1, 36);
-        f = Integer.toString(2, 36);
-        h = Integer.toString(3, 36);
-        n = Integer.toString(4, 36);
-        r = Integer.toString(5, 36);
+        String str = e2.l0.a;
+        e = Integer.toString(0, 36);
+        f = Integer.toString(1, 36);
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z0(String str, Throwable th2, int i10, long j10) {
-        super(str, th2);
-        Bundle bundle = Bundle.EMPTY;
-        this.a = i10;
-        this.c = bundle;
-        this.b = j10;
+    public z0(float f7, float f10) {
+        t6.f(f7 > 0.0f);
+        t6.f(f10 > 0.0f);
+        this.a = f7;
+        this.b = f10;
+        this.c = Math.round(f7 * 1000.0f);
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && z0.class == obj.getClass()) {
+            z0 z0Var = (z0) obj;
+            if (this.a == z0Var.a && this.b == z0Var.b) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        return Float.floatToRawIntBits(this.b) + ((Float.floatToRawIntBits(this.a) + 527) * 31);
+    }
+
+    public final String toString() {
+        Object[] objArr = {Float.valueOf(this.a), Float.valueOf(this.b)};
+        String str = e2.l0.a;
+        return String.format(Locale.US, "PlaybackParameters(speed=%.2f, pitch=%.2f)", objArr);
     }
 }

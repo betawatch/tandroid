@@ -1,12 +1,11 @@
 package c3;
 
 import b2.u0;
-import b2.w0;
-import e2.n0;
+import b2.v0;
 import java.nio.ByteOrder;
 import java.util.Collections;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class u {
     public final int a;
@@ -19,24 +18,24 @@ public final class u {
     public final int h;
     public final int i;
     public final long j;
-    public final rf.b k;
+    public final hf.b k;
     public final u0 l;
 
     public u(byte[] bArr, int i10) {
         a4.g gVar = new a4.g(bArr, bArr.length);
-        gVar.m(i10 * 8);
-        this.a = gVar.g(16);
-        this.b = gVar.g(16);
-        this.c = gVar.g(24);
-        this.d = gVar.g(24);
-        int g7 = gVar.g(20);
-        this.e = g7;
-        this.f = d(g7);
-        this.g = gVar.g(3) + 1;
-        int g10 = gVar.g(5) + 1;
-        this.h = g10;
-        this.i = a(g10);
-        this.j = gVar.i(36);
+        gVar.d0(i10 * 8);
+        this.a = gVar.i(16);
+        this.b = gVar.i(16);
+        this.c = gVar.i(24);
+        this.d = gVar.i(24);
+        int i11 = gVar.i(20);
+        this.e = i11;
+        this.f = d(i11);
+        this.g = gVar.i(3) + 1;
+        int i12 = gVar.i(5) + 1;
+        this.h = i12;
+        this.i = a(i12);
+        this.j = gVar.k(36);
         this.k = null;
         this.l = null;
     }
@@ -108,18 +107,18 @@ public final class u {
             u0Var = u0Var2.b(u0Var);
         }
         b2.w wVar = new b2.w();
-        wVar.r = w0.n("audio/flac");
+        wVar.r = v0.n("audio/flac");
         wVar.s = i10;
         wVar.J = this.g;
         wVar.K = this.e;
-        String str = n0.a;
-        wVar.L = n0.D(this.h, ByteOrder.LITTLE_ENDIAN);
+        String str = e2.l0.a;
+        wVar.L = e2.l0.D(this.h, ByteOrder.LITTLE_ENDIAN);
         wVar.u = Collections.singletonList(bArr);
         wVar.k = u0Var;
         return new b2.x(wVar);
     }
 
-    public u(int i10, int i11, int i12, int i13, int i14, int i15, int i16, long j10, rf.b bVar, u0 u0Var) {
+    public u(int i10, int i11, int i12, int i13, int i14, int i15, int i16, long j10, hf.b bVar, u0 u0Var) {
         this.a = i10;
         this.b = i11;
         this.c = i12;

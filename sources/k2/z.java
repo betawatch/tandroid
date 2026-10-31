@@ -1,16 +1,29 @@
 package k2;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class z extends Exception {
-    public final int a;
-    public final boolean b;
-    public final b2.x c;
+public interface z {
+    void H();
 
-    public z(int i10, b2.x xVar, boolean z10) {
-        super(ic.a.i(i10, "AudioTrack write failed: "));
-        this.b = z10;
-        this.a = i10;
-        this.c = xVar;
-    }
+    void P(Exception exc);
+
+    void S();
+
+    void a(int i10);
+
+    void a0(x0 x0Var);
+
+    void e(boolean z10);
+
+    void e0(x0 x0Var);
+
+    void f(long j10);
+
+    void f0();
+
+    void i0(long j10, int i10, long j11);
+
+    void n();
+
+    void o();
 }

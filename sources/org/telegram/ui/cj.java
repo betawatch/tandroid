@@ -1,36 +1,39 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes3.dex */
-public final class cj extends org.telegram.ui.ActionBar.o1 {
-    public final /* synthetic */ wn o;
+import android.animation.ValueAnimator;
+import android.view.View;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public cj(wn wnVar, aj ajVar) {
-        super(ajVar, -2, -2);
-        this.o = wnVar;
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
+public final class cj implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.k2 b;
+
+    public /* synthetic */ cj(int i10, org.telegram.ui.ActionBar.k2 k2Var) {
+        this.a = i10;
+        this.b = k2Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.o1, android.widget.PopupWindow
-    public final void dismiss() {
-        d(true);
-        wn wnVar = this.o;
-        if (wnVar.g9 != this) {
-            return;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                un unVar = (un) this.b;
+                unVar.Ea = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                unVar.l1.invalidate();
+                break;
+            case 1:
+                ay ayVar = (ay) this.b;
+                ayVar.H0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                View view = ayVar.fragmentView;
+                if (view != null) {
+                    view.invalidate();
+                    break;
+                }
+                break;
+            default:
+                ((m91) this.b).y0.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
         }
-        wnVar.g9 = null;
-        wnVar.j9 = null;
-        wnVar.i9 = null;
-        wnVar.z0.R = true;
-        if (wnVar.h9) {
-            wnVar.p8(false, true, 0.0f);
-        } else {
-            wnVar.h9 = true;
-        }
-        jk jkVar = wnVar.Y;
-        if (jkVar == null || jkVar.getEditField() == null) {
-            return;
-        }
-        wnVar.Y.getEditField().setAllowDrawCursor(true);
     }
 }

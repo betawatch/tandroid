@@ -1,217 +1,157 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Path;
-import android.graphics.drawable.Drawable;
-import android.text.Layout;
-import android.text.Spanned;
-import android.text.style.ClickableSpan;
 import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
+import java.util.Locale;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class fu0 extends xh.n {
-    public final org.telegram.ui.Cells.ca U;
-    public ArrayList V;
-    public boolean W;
-    public Layout a0;
-    public org.telegram.ui.Components.y5 b0;
-    public boolean c0;
-    public org.telegram.ui.Components.ea0 d0;
-    public Layout e0;
-    public Path f0;
+public final class fu0 {
+    public final TLRPC.TL_premiumSubscriptionOption a;
+    public int b;
+    public long c;
+    public long d;
+    public long e;
+    public c5.m f;
+    public c5.l g;
+    public int h;
 
-    public fu0(Context context, du0 du0Var, org.telegram.ui.Cells.ca caVar, final Utilities.Callback2 callback2, final Utilities.Callback3 callback3) {
-        super(context);
-        setClearLinkOnLongPress(false);
-        setDisablePaddingsOffsetY(false);
-        final int i10 = 0;
-        this.F = new org.telegram.ui.Components.z90(this) { // from class: org.telegram.ui.eu0
-            public final /* synthetic */ fu0 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // org.telegram.ui.Components.z90
-            public final void a(ClickableSpan clickableSpan) {
-                switch (i10) {
-                    case 0:
-                        Utilities.Callback2 callback22 = (Utilities.Callback2) callback2;
-                        fu0 fu0Var = this.b;
-                        fu0Var.getClass();
-                        callback22.run(clickableSpan, fu0Var);
-                        break;
-                    default:
-                        Utilities.Callback3 callback32 = (Utilities.Callback3) callback2;
-                        fu0 fu0Var2 = this.b;
-                        callback32.run(clickableSpan, fu0Var2, new nj0(fu0Var2, 24));
-                        break;
-                }
-            }
-        };
-        final int i11 = 1;
-        this.G = new org.telegram.ui.Components.z90(this) { // from class: org.telegram.ui.eu0
-            public final /* synthetic */ fu0 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // org.telegram.ui.Components.z90
-            public final void a(ClickableSpan clickableSpan) {
-                switch (i11) {
-                    case 0:
-                        Utilities.Callback2 callback22 = (Utilities.Callback2) callback3;
-                        fu0 fu0Var = this.b;
-                        fu0Var.getClass();
-                        callback22.run(clickableSpan, fu0Var);
-                        break;
-                    default:
-                        Utilities.Callback3 callback32 = (Utilities.Callback3) callback3;
-                        fu0 fu0Var2 = this.b;
-                        callback32.run(clickableSpan, fu0Var2, new nj0(fu0Var2, 24));
-                        break;
-                }
-            }
-        };
-        this.U = caVar;
-        org.telegram.ui.Components.kb1.U(this, 16.0f, 8.0f, 16.0f, 8.0f);
-        setLinkTextColor(-8796932);
-        setTextColor(-1);
-        setHighlightColor(872415231);
-        setGravity(org.telegram.ui.Components.kb1.E() | 16);
-        setTextSize(1, 16.0f);
-        setOnClickListener(new z50(du0Var, 21));
+    public fu0(TLRPC.TL_premiumSubscriptionOption tL_premiumSubscriptionOption) {
+        this.a = tL_premiumSubscriptionOption;
     }
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        if (this.c0) {
-            Layout layout = getLayout();
-            Path path = this.f0;
-            if (path == null || this.e0 != layout) {
-                if (path == null) {
-                    this.f0 = new Path();
-                } else {
-                    path.rewind();
-                }
-                if (layout != null) {
-                    float dp = AndroidUtilities.dp(16.0f);
-                    float dp2 = AndroidUtilities.dp(8.0f);
-                    float f7 = 0.0f;
-                    int i10 = 0;
-                    while (i10 < layout.getLineCount()) {
-                        float f10 = dp / 3.0f;
-                        float lineLeft = layout.getLineLeft(i10) - f10;
-                        float lineRight = layout.getLineRight(i10) + f10;
-                        if (i10 == 0) {
-                            f7 = layout.getLineTop(i10) - (dp2 / 3.0f);
-                        }
-                        float lineBottom = layout.getLineBottom(i10);
-                        float f11 = i10 >= layout.getLineCount() + (-1) ? (dp2 / 3.0f) + lineBottom : lineBottom;
-                        this.f0.addRect(getPaddingLeft() + lineLeft, getPaddingTop() + f7, getPaddingLeft() + lineRight, getPaddingTop() + f11, Path.Direction.CW);
-                        i10++;
-                        f7 = f11;
+    public final void a() {
+        c5.m mVar = this.f;
+        if (mVar != null && this.g == null) {
+            ArrayList arrayList = mVar.h;
+            int size = arrayList.size();
+            int i10 = 0;
+            while (i10 < size) {
+                Object obj = arrayList.get(i10);
+                i10++;
+                c5.l lVar = (c5.l) obj;
+                String str = ((c5.j) lVar.b.a.get(0)).d;
+                int i11 = this.a.months;
+                if (i11 != 12) {
+                    Locale locale = Locale.ROOT;
+                    if (str.equals("P" + i11 + "M")) {
+                        this.g = lVar;
+                        return;
                     }
+                } else if (str.equals("P1Y")) {
+                    this.g = lVar;
+                    return;
                 }
-                this.e0 = layout;
             }
-            if (this.d0 == null) {
-                org.telegram.ui.Components.ea0 ea0Var = new org.telegram.ui.Components.ea0();
-                this.d0 = ea0Var;
-                ea0Var.y = this.f0;
-                ea0Var.k(4.0f);
-                this.d0.g(org.telegram.ui.ActionBar.y6.o1(0.3f, -1), org.telegram.ui.ActionBar.y6.o1(0.1f, -1), org.telegram.ui.ActionBar.y6.o1(0.2f, -1), org.telegram.ui.ActionBar.y6.o1(0.7f, -1));
-                this.d0.setCallback(this);
+        }
+    }
+
+    public final String b() {
+        boolean b10 = org.telegram.messenger.v2.b();
+        TLRPC.TL_premiumSubscriptionOption tL_premiumSubscriptionOption = this.a;
+        if (b10 || tL_premiumSubscriptionOption.store_product == null) {
+            return tL_premiumSubscriptionOption.currency;
+        }
+        if (this.f == null) {
+            return "";
+        }
+        a();
+        c5.l lVar = this.g;
+        return lVar == null ? "" : ((c5.j) lVar.b.a.get(0)).c;
+    }
+
+    public final int c() {
+        if (this.b == 0) {
+            if (h() == 0) {
+                return 0;
             }
-            this.d0.setBounds(0, 0, getWidth(), getHeight());
-            this.d0.draw(canvas);
-        }
-        if (this.c0) {
-            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), 178, 31);
-        }
-        if (this.V != null && this.W) {
-            canvas.save();
-            canvas.translate(getPaddingLeft(), getPaddingTop());
-            for (int i11 = 0; i11 < this.V.size(); i11++) {
-                org.telegram.ui.Components.pj0 pj0Var = (org.telegram.ui.Components.pj0) this.V.get(i11);
-                int width = (getWidth() - getPaddingLeft()) - getPaddingRight();
-                int dp3 = this.W ? AndroidUtilities.dp(32.0f) : 0;
-                getPaint();
-                pj0Var.a(canvas, width + dp3, -1);
+            if (this.e != 0) {
+                int i10 = (int) ((1.0d - (i() / this.e)) * 100.0d);
+                this.b = i10;
+                if (i10 == 0) {
+                    this.b = -1;
+                }
             }
-            canvas.restore();
         }
-        super.dispatchDraw(canvas);
-        if (this.c0) {
-            canvas.restore();
-        }
-        canvas.save();
-        canvas.translate(getPaddingLeft(), getPaddingTop());
-        canvas.clipRect(0.0f, getScrollY(), getWidth() - getPaddingRight(), (getScrollY() + getHeight()) - (getPaddingBottom() * 0.75f));
-        org.telegram.ui.Components.c6.drawAnimatedEmojis(canvas, getLayout(), this.b0, 0.0f, null, 0.0f, 0.0f, 0.0f, 1.0f);
-        canvas.restore();
+        return this.b;
     }
 
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        org.telegram.ui.Components.c6.release(this, this.b0);
-        this.V = org.telegram.ui.Components.tj0.e(null, this.V);
+    public final String d() {
+        if (org.telegram.messenger.v2.b() || this.a.store_product == null) {
+            return org.telegram.messenger.u1.i().f(g(), b());
+        }
+        if (this.f == null) {
+            return "";
+        }
+        org.telegram.messenger.u1 i10 = org.telegram.messenger.u1.i();
+        long g10 = g();
+        String b10 = b();
+        i10.getClass();
+        return org.telegram.messenger.u1.g(b10, 6, g10, false);
     }
 
-    @Override // xh.n, android.widget.TextView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        org.telegram.ui.Cells.ca caVar = this.U;
-        if (caVar != null && caVar.x()) {
-            canvas.save();
-            canvas.translate(getPaddingLeft(), getPaddingTop());
-            if (caVar != null && getStaticTextLayout() != null && caVar.p0 == this) {
-                caVar.W(canvas);
+    public final String e() {
+        if (org.telegram.messenger.v2.b() || this.a.store_product == null) {
+            return org.telegram.messenger.u1.i().f(h(), b());
+        }
+        if (this.f == null) {
+            return "";
+        }
+        org.telegram.messenger.u1 i10 = org.telegram.messenger.u1.i();
+        long h = h();
+        String b10 = b();
+        i10.getClass();
+        return org.telegram.messenger.u1.g(b10, 6, h, false);
+    }
+
+    public final String f() {
+        if (org.telegram.messenger.v2.b() || this.a.store_product == null) {
+            return org.telegram.messenger.u1.i().f(i(), b());
+        }
+        if (this.f == null) {
+            return "";
+        }
+        org.telegram.messenger.u1 i10 = org.telegram.messenger.u1.i();
+        long i11 = i();
+        String b10 = b();
+        i10.getClass();
+        return org.telegram.messenger.u1.g(b10, 6, i11, false);
+    }
+
+    public final long g() {
+        boolean b10 = org.telegram.messenger.v2.b();
+        TLRPC.TL_premiumSubscriptionOption tL_premiumSubscriptionOption = this.a;
+        if (b10 || tL_premiumSubscriptionOption.store_product == null) {
+            return tL_premiumSubscriptionOption.amount;
+        }
+        if (this.f == null) {
+            return 0L;
+        }
+        a();
+        c5.l lVar = this.g;
+        if (lVar == null) {
+            return 0L;
+        }
+        return ((c5.j) lVar.b.a.get(0)).b;
+    }
+
+    public final long h() {
+        if (this.c == 0) {
+            long g10 = g();
+            if (g10 != 0) {
+                this.c = g10 / this.a.months;
             }
-            canvas.restore();
         }
-        super.onDraw(canvas);
-        if (this.a0 != getLayout()) {
-            this.b0 = org.telegram.ui.Components.c6.update(0, this, this.b0, getLayout());
-            this.V = org.telegram.ui.Components.tj0.e(getLayout(), this.V);
-            boolean z10 = getLayout() != null && (getLayout().getText() instanceof Spanned) && ((org.telegram.ui.Components.sj0[]) ((Spanned) getLayout().getText()).getSpans(0, getLayout().getText().length(), org.telegram.ui.Components.sj0.class)).length > 0;
-            this.W = z10;
-            org.telegram.ui.Components.kb1.U(this, 16.0f, 8.0f, (z10 ? 32 : 0) + 16, 8.0f);
-            this.a0 = getLayout();
-        }
+        return this.c;
     }
 
-    @Override // xh.n, android.widget.TextView
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        super.onTextChanged(charSequence, i10, i11, i12);
-        this.b0 = org.telegram.ui.Components.c6.update(0, this, this.b0, getLayout());
-        this.V = org.telegram.ui.Components.tj0.e(getLayout(), this.V);
-    }
-
-    public void setLoading(boolean z10) {
-        if (this.c0 == z10) {
-            return;
+    public final long i() {
+        if (this.d == 0) {
+            long g10 = g();
+            if (g10 != 0) {
+                this.d = (long) ((g10 / this.a.months) * 12.0d);
+            }
         }
-        this.c0 = z10;
-        invalidate();
-    }
-
-    @Override // android.view.View
-    public void setPressed(boolean z10) {
-        boolean z11 = z10 != isPressed();
-        super.setPressed(z10);
-        if (z11) {
-            invalidate();
-        }
-    }
-
-    @Override // android.widget.TextView, android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return drawable == this.d0 || super.verifyDrawable(drawable);
+        return this.d;
     }
 }

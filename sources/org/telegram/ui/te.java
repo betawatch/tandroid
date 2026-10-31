@@ -1,105 +1,88 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
+import android.app.Activity;
+import android.net.Uri;
+import android.text.TextUtils;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class te implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ wn b;
-    public final /* synthetic */ MessageObject c;
+    public final /* synthetic */ un b;
+    public final /* synthetic */ String c;
 
-    public /* synthetic */ te(wn wnVar, MessageObject messageObject, int i10) {
+    public /* synthetic */ te(un unVar, String str, int i10) {
         this.a = i10;
-        this.b = wnVar;
-        this.c = messageObject;
+        this.b = unVar;
+        this.c = str;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        TLRPC.WebPage webPage;
-        switch (this.a) {
+        int i10 = this.a;
+        String str = this.c;
+        un unVar = this.b;
+        switch (i10) {
             case 0:
-                MessageObject messageObject = this.c;
-                TLRPC.MessageMedia messageMedia = messageObject.messageOwner.media;
-                if (messageMedia != null && (webPage = messageMedia.webpage) != null && webPage.cached_page != null) {
-                    LaunchActivity launchActivity = LaunchActivity.I1;
-                    if (launchActivity == null || launchActivity.P() == null || LaunchActivity.I1.P().l(messageObject) == null) {
-                        this.b.createArticleViewer(false).N(messageObject, null, null, null);
+                un.F0(unVar, str);
+                break;
+            case 1:
+                un.x0(unVar, str);
+                break;
+            case 2:
+                h4.d(str, unVar.currentAccount, unVar.l1, null, unVar.xa);
+                break;
+            case 3:
+                if (str != null) {
+                    unVar.getClass();
+                    if (str.length() != 0) {
+                        unVar.getMessagesController().x4(str, unVar.f);
                         break;
                     }
                 }
-                break;
-            case 1:
-                wn wnVar = this.b;
-                wnVar.getClass();
-                MessageObject messageObject2 = this.c;
-                TLRPC.Message message = messageObject2.messageOwner;
-                int i10 = message.ttl;
-                boolean z10 = i10 != Integer.MAX_VALUE;
-                int i11 = i10 == Integer.MAX_VALUE ? 0 : i10;
-                message.destroyTime = wnVar.getConnectionsManager().getCurrentTime() + i11;
-                messageObject2.messageOwner.destroyTimeMillis = wnVar.getConnectionsManager().getCurrentTimeMillis() + (i11 * 1000);
-                if (wnVar.h == null) {
-                    wnVar.getMessagesController().markMessageAsRead2(wnVar.j6, messageObject2.getId(), null, i11, 0L, z10);
-                    break;
-                } else {
-                    wnVar.getMessagesController().markMessageAsRead(wnVar.j6, messageObject2.messageOwner.random_id, i11);
-                    break;
-                }
-            case 2:
-                int id2 = this.c.getId();
-                wn wnVar2 = this.b;
-                wnVar2.kb(id2, 0, true, 0, true, 0, null, null, new ig(wnVar2, 15));
-                if (wnVar2.x6.isEmpty()) {
-                    wnVar2.bc(false);
-                    break;
-                }
-                break;
-            case 3:
-                wn wnVar3 = this.b;
-                wnVar3.getClass();
-                MessageObject messageObject3 = this.c;
-                wnVar3.kb(messageObject3.getReplyMsgId(), messageObject3.messageOwner.id, true, messageObject3.getDialogId() == wnVar3.b7 ? 1 : 0, false, 0, null, ((TLRPC.TL_messageActionPollAppendAnswer) messageObject3.messageOwner.action).answer.option, null);
+                unVar.getSendMessagesHelper().r0(org.telegram.messenger.oz.b("/start", unVar.j6, null, null, null, false, null, null, null, true, 0, 0, null, false));
                 break;
             case 4:
-                wn wnVar4 = this.b;
-                wnVar4.getClass();
-                MessageObject messageObject4 = this.c;
-                wnVar4.kb(messageObject4.getReplyMsgId(), messageObject4.messageOwner.id, true, messageObject4.getDialogId() == wnVar4.b7 ? 1 : 0, false, 0, null, null, null);
+                unVar.Ba(str);
                 break;
             case 5:
-                wn wnVar5 = this.b;
-                wnVar5.getClass();
-                MessageObject messageObject5 = this.c;
-                wnVar5.j(messageObject5.getReplyMsgId(), messageObject5.messageOwner.id, true, messageObject5.getDialogId() == wnVar5.b7 ? 1 : 0, false, 0);
+                unVar.ta(str, false);
                 break;
             case 6:
-                wn wnVar6 = this.b;
-                wnVar6.getClass();
-                MessageObject messageObject6 = this.c;
-                if (!messageObject6.isVideo()) {
-                    MediaController.getInstance().playMessage(messageObject6);
-                    break;
-                } else {
-                    wnVar6.ua(null, messageObject6);
-                    break;
-                }
+                gf.f.r(unVar.getParentActivity(), "tel:" + str);
+                break;
             case 7:
-                wn wnVar7 = this.b;
-                wnVar7.getMessagesController().pinMessage(wnVar7.e, wnVar7.f, this.c.getId(), true, false, false);
-                wnVar7.M3 = null;
+                org.telegram.messenger.i0.g(str);
+                org.telegram.messenger.z20.r(null, 2131747311, org.telegram.ui.Components.cc.a0(unVar));
+                break;
+            case 8:
+                un.I0(unVar, str);
+                break;
+            case 9:
+                gf.f.r(unVar.getParentActivity(), "tel:" + str);
+                break;
+            case 10:
+                org.telegram.messenger.i0.g(str);
+                org.telegram.messenger.z20.r(null, 2131747311, org.telegram.ui.Components.cc.a0(unVar));
+                break;
+            case 11:
+                unVar.getClass();
+                unVar.presentFragment(new org.telegram.ui.Wallet.r9(str));
+                break;
+            case 12:
+                String str2 = unVar.getMessagesController().I6;
+                if (TextUtils.isEmpty(str2)) {
+                    str2 = "https://tonviewer.com/";
+                } else if (!str2.endsWith("/")) {
+                    str2 = str2.concat("/");
+                }
+                Activity parentActivity = unVar.getParentActivity();
+                StringBuilder t10 = a1.g.t(str2);
+                t10.append(Uri.encode(str));
+                gf.f.t(parentActivity, t10.toString());
                 break;
             default:
-                wn wnVar8 = this.b;
-                org.telegram.ui.Components.wc.b0(wnVar8).c(LocaleController.getString(R.string.AdHidden)).j();
-                MessageObject messageObject7 = this.c;
-                wnVar8.Ra(messageObject7);
-                wnVar8.Ta(messageObject7);
+                gf.f.r(unVar.getParentActivity(), "https://fragment.com/username/" + str);
                 break;
         }
     }

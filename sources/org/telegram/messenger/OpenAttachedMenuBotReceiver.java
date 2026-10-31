@@ -5,20 +5,20 @@ import android.content.Intent;
 import android.os.Bundle;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public class OpenAttachedMenuBotReceiver extends Activity {
-    public static String ACTION = "com.tmessages.openshortcutbot";
+    public static final /* synthetic */ int a = 0;
 
     @Override // android.app.Activity
-    public void onCreate(Bundle bundle) {
+    public final void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         Intent intent = getIntent();
         if (intent == null) {
             finish();
             return;
         }
-        if (intent.getAction() == null || !intent.getAction().startsWith(ACTION)) {
+        if (intent.getAction() == null || !intent.getAction().startsWith("com.tmessages.openshortcutbot")) {
             finish();
             return;
         }
@@ -32,7 +32,7 @@ public class OpenAttachedMenuBotReceiver extends Activity {
             startActivity(intent2);
             finish();
         } catch (Throwable th2) {
-            FileLog.e(th2);
+            f8.g(th2, true);
         }
     }
 }

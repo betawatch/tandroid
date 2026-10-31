@@ -1,229 +1,145 @@
 package org.telegram.ui.Cells;
 
-import android.animation.ObjectAnimator;
-import android.content.Context;
-import android.content.res.ColorStateList;
-import android.graphics.Canvas;
-import android.text.SpannableString;
-import android.text.TextUtils;
-import android.text.method.LinkMovementMethod;
-import android.text.style.AbsoluteSizeSpan;
-import android.util.Property;
+import android.graphics.Rect;
+import android.view.ActionMode;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import java.util.ArrayList;
-import java.util.HashSet;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.aa0;
-import org.telegram.ui.Components.kb1;
-import org.telegram.ui.Components.x90;
+import java.lang.reflect.Field;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public class i9 extends FrameLayout implements org.telegram.ui.ActionBar.p6 {
-    public final w1 a;
-    public final x90 b;
-    public int c;
-    public Integer d;
-    public int e;
-    public int f;
-    public int h;
-    public boolean n;
-    public CharSequence r;
-    public final org.telegram.ui.ActionBar.u6 s;
-    public int v;
+public final class i9 extends ActionMode.Callback2 {
+    public final /* synthetic */ int a = 2;
+    public final ActionMode.Callback b;
+    public final /* synthetic */ Object c;
 
-    public i9(Context context) {
-        this(context, 24, null);
+    public i9(EditTextBoldCursor editTextBoldCursor, ActionMode.Callback callback) {
+        this.c = editTextBoldCursor;
+        this.b = callback;
     }
 
-    public final void c(ArrayList arrayList, boolean z10) {
-        w1 w1Var = this.a;
-        if (arrayList != null) {
-            arrayList.add(ObjectAnimator.ofFloat(w1Var, (Property<w1, Float>) View.ALPHA, z10 ? 1.0f : 0.5f));
-        } else {
-            w1Var.setAlpha(z10 ? 1.0f : 0.5f);
+    @Override // android.view.ActionMode.Callback
+    public final boolean onActionItemClicked(ActionMode actionMode, MenuItem menuItem) {
+        switch (this.a) {
+            case 0:
+                ((h9) this.b).onActionItemClicked(actionMode, menuItem);
+                return true;
+            case 1:
+                return this.b.onActionItemClicked(actionMode, menuItem);
+            default:
+                return ((h9) this.b).onActionItemClicked(actionMode, menuItem);
         }
     }
 
-    public int getFixedSize() {
-        return this.h;
-    }
-
-    public CharSequence getText() {
-        return this.a.getText();
-    }
-
-    public aa0 getTextView() {
-        return this.a;
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        x90 x90Var = this.b;
-        if (x90Var != null) {
-            canvas.save();
-            w1 w1Var = this.a;
-            canvas.translate(w1Var.getLeft(), w1Var.getTop());
-            if (x90Var.f(canvas)) {
-                invalidate();
-            }
-            canvas.restore();
-        }
-        super.onDraw(canvas);
-    }
-
-    @Override // android.view.View
-    public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.setClassName(TextView.class.getName());
-        accessibilityNodeInfo.setText(this.r);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int i12 = this.h;
-        if (i12 == -1) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(0, TLObject.FLAG_30));
-        } else if (i12 != 0) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.h), TLObject.FLAG_30));
-        } else {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(0, 0));
+    @Override // android.view.ActionMode.Callback
+    public final boolean onCreateActionMode(ActionMode actionMode, Menu menu) {
+        switch (this.a) {
+            case 0:
+                ((h9) this.b).onCreateActionMode(actionMode, menu);
+                return true;
+            case 1:
+                return this.b.onCreateActionMode(actionMode, menu);
+            default:
+                return ((h9) this.b).onCreateActionMode(actionMode, menu);
         }
     }
 
-    public void setBottomPadding(int i10) {
-        this.f = i10;
-    }
-
-    public void setFixedSize(int i10) {
-        this.h = i10;
-    }
-
-    public void setLinkTextColorKey(int i10) {
-        this.c = i10;
-    }
-
-    public void setLinkTextRippleColor(Integer num) {
-        this.d = num;
-    }
-
-    public void setText(CharSequence charSequence) {
-        if (TextUtils.equals(charSequence, this.r)) {
-            return;
+    @Override // android.view.ActionMode.Callback
+    public final void onDestroyActionMode(ActionMode actionMode) {
+        int i10 = this.a;
+        ActionMode.Callback callback = this.b;
+        switch (i10) {
+            case 0:
+                break;
+            case 1:
+                callback.onDestroyActionMode(actionMode);
+                EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) this.c;
+                Field field = EditTextBoldCursor.y1;
+                editTextBoldCursor.m();
+                editTextBoldCursor.Y0 = null;
+                break;
+            default:
+                ((h9) callback).onDestroyActionMode(actionMode);
+                break;
         }
-        this.r = charSequence;
-        w1 w1Var = this.a;
-        if (charSequence == null) {
-            w1Var.setPadding(0, AndroidUtilities.dp(2.0f), 0, 0);
-        } else {
-            w1Var.setPadding(0, AndroidUtilities.dp(this.e), 0, AndroidUtilities.dp(this.f));
-        }
-        SpannableString spannableString = null;
-        if (charSequence != null) {
-            int length = charSequence.length();
-            for (int i10 = 0; i10 < length - 1; i10++) {
-                if (charSequence.charAt(i10) == '\n') {
-                    int i11 = i10 + 1;
-                    if (charSequence.charAt(i11) == '\n') {
-                        if (spannableString == null) {
-                            spannableString = new SpannableString(charSequence);
+    }
+
+    @Override // android.view.ActionMode.Callback2
+    public final void onGetContentRect(ActionMode actionMode, View view, Rect rect) {
+        int i10;
+        switch (this.a) {
+            case 0:
+                w9 w9Var = (w9) this.c;
+                if (w9Var.x()) {
+                    w9Var.O();
+                    int[] l4 = w9Var.l();
+                    int i11 = 1;
+                    if (w9Var.W != null) {
+                        int i12 = -w9Var.m();
+                        int[] B = w9Var.B(w9Var.u);
+                        i10 = B[0] + w9Var.a;
+                        int L = ((i12 / 2) + ((B[1] + w9Var.b) + l4[1])) - org.telegram.messenger.i0.L(4.0f);
+                        if (L >= 1) {
+                            i11 = L;
                         }
-                        spannableString.setSpan(new AbsoluteSizeSpan(10, true), i11, i10 + 2, 33);
+                    } else {
+                        i10 = 0;
                     }
+                    int width = w9Var.F.getWidth();
+                    w9Var.N();
+                    if (w9Var.W != null) {
+                        width = w9Var.B(w9Var.v)[0] + w9Var.a;
+                    }
+                    rect.set(Math.min(i10, width), i11, Math.max(i10, width), i11 + 1);
+                    break;
                 }
-            }
-        }
-        if (spannableString != null) {
-            charSequence = spannableString;
-        }
-        w1Var.setText(charSequence);
-    }
-
-    public void setTextColor(int i10) {
-        w1 w1Var = this.a;
-        ColorStateList linkTextColors = w1Var.getLinkTextColors();
-        org.telegram.ui.ActionBar.f7.r(w1Var);
-        org.telegram.ui.ActionBar.f7.H(w1Var, this.c, this.s);
-        if (linkTextColors != null) {
-            w1Var.setLinkTextColor(linkTextColors);
-        }
-        w1Var.setTextColor(i10);
-    }
-
-    public void setTextColorByKey(int i10) {
-        org.telegram.ui.ActionBar.u6 u6Var = this.s;
-        w1 w1Var = this.a;
-        org.telegram.ui.ActionBar.f7.V(w1Var, i10, u6Var);
-        w1Var.setTag(Integer.valueOf(i10));
-    }
-
-    public void setTextGravity(int i10) {
-        this.a.setGravity(i10);
-    }
-
-    public void setTopPadding(int i10) {
-        this.e = i10;
-    }
-
-    @Override // org.telegram.ui.ActionBar.p6
-    public void updateColors() {
-        try {
-            int w02 = org.telegram.ui.ActionBar.y6.w0(org.telegram.ui.ActionBar.y6.B6, this.s);
-            w1 w1Var = this.a;
-            if (w1Var == null || w02 == this.v) {
-                return;
-            }
-            this.v = w02;
-            w1Var.setEmojiColor(w02);
-        } catch (Exception e) {
-            FileLog.e(e);
+                break;
+            case 1:
+                ActionMode.Callback callback = this.b;
+                if (!(callback instanceof ActionMode.Callback2)) {
+                    super.onGetContentRect(actionMode, view, rect);
+                    break;
+                } else {
+                    ((ActionMode.Callback2) callback).onGetContentRect(actionMode, view, rect);
+                    break;
+                }
+            default:
+                ActionMode.Callback callback2 = (ActionMode.Callback) this.c;
+                if (!(callback2 instanceof ActionMode.Callback2)) {
+                    super.onGetContentRect(actionMode, view, rect);
+                    break;
+                } else {
+                    ((ActionMode.Callback2) callback2).onGetContentRect(actionMode, view, rect);
+                    break;
+                }
         }
     }
 
-    public i9(Context context, org.telegram.ui.ActionBar.u6 u6Var) {
-        this(context, 24, u6Var);
+    @Override // android.view.ActionMode.Callback
+    public final boolean onPrepareActionMode(ActionMode actionMode, Menu menu) {
+        switch (this.a) {
+            case 0:
+                ((h9) this.b).onPrepareActionMode(actionMode, menu);
+                return true;
+            case 1:
+                return this.b.onPrepareActionMode(actionMode, menu);
+            default:
+                return ((ActionMode.Callback) ((h9) this.b).b).onPrepareActionMode(actionMode, menu);
+        }
     }
 
-    public i9(Context context, int i10, org.telegram.ui.ActionBar.u6 u6Var) {
-        super(context);
-        this.c = org.telegram.ui.ActionBar.y6.J6;
-        this.e = 10;
-        this.f = 17;
-        this.s = u6Var;
-        x90 x90Var = new x90(this);
-        this.b = x90Var;
-        w1 w1Var = new w1(this, context, x90Var, u6Var);
-        this.a = w1Var;
-        w1Var.setTextSize(1, 14.0f);
-        w1Var.setGravity(LocaleController.isRTL ? 5 : 3);
-        w1Var.setPadding(0, AndroidUtilities.dp(10.0f), 0, AndroidUtilities.dp(17.0f));
-        w1Var.setMovementMethod(LinkMovementMethod.getInstance());
-        int i11 = org.telegram.ui.ActionBar.y6.B6;
-        org.telegram.ui.ActionBar.f7.V(w1Var, i11, u6Var);
-        int w02 = org.telegram.ui.ActionBar.y6.w0(i11, u6Var);
-        this.v = w02;
-        w1Var.setEmojiColor(w02);
-        org.telegram.ui.ActionBar.f7.H(w1Var, this.c, u6Var);
-        w1Var.setImportantForAccessibility(2);
-        float f7 = i10;
-        addView(w1Var, kb1.h(-1, -2.0f, (LocaleController.isRTL ? 5 : 3) | 48, f7, 0.0f, f7, 0.0f));
-        this.n = LocaleController.isRTL;
-        setWillNotDraw(false);
+    public i9(h9 h9Var, ActionMode.Callback callback) {
+        this.b = h9Var;
+        this.c = callback;
     }
 
-    public void a() {
+    public i9(w9 w9Var, h9 h9Var) {
+        this.c = w9Var;
+        this.b = h9Var;
     }
 
-    public void b() {
-    }
-
-    @Override // org.telegram.ui.ActionBar.p6
-    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
+    private final void a(ActionMode actionMode) {
     }
 }

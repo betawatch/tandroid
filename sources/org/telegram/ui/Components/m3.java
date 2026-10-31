@@ -1,26 +1,10 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class m3 extends FrameLayout {
-    public final /* synthetic */ org.telegram.ui.Cells.y1[] a;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m3(Activity activity, org.telegram.ui.Cells.y1[] y1VarArr) {
-        super(activity);
-        this.a = y1VarArr;
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        org.telegram.ui.Cells.y1[] y1VarArr = this.a;
-        if (y1VarArr[0] != null) {
-            setMeasuredDimension(getMeasuredWidth(), AndroidUtilities.dp(7.0f) + y1VarArr[0].getMeasuredHeight() + getMeasuredHeight());
-        }
+public final class m3 extends ac0 {
+    @Override // org.telegram.ui.Components.ac0
+    public final CharSequence d(int i10) {
+        return org.telegram.messenger.cd.G(i10, "Hours", new Object[0]);
     }
 }

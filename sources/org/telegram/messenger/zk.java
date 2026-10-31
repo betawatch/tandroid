@@ -1,76 +1,103 @@
 package org.telegram.messenger;
 
+import android.util.SparseArray;
 import java.util.ArrayList;
-import java.util.Set;
-import org.telegram.messenger.TranslateController;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class zk implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ boolean b;
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ vp b;
     public final /* synthetic */ long c;
-    public final /* synthetic */ BaseController d;
-    public final /* synthetic */ Object e;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ long e;
     public final /* synthetic */ Object f;
     public final /* synthetic */ Object h;
     public final /* synthetic */ Object n;
+    public final /* synthetic */ Object r;
 
-    public /* synthetic */ zk(long j10, Set set, TranslateController.PendingTranslation pendingTranslation, TranslateController translateController, TLObject tLObject, TLRPC.TL_error tL_error, boolean z10) {
-        this.d = translateController;
-        this.e = pendingTranslation;
-        this.f = tLObject;
-        this.b = z10;
-        this.h = tL_error;
+    public /* synthetic */ zk(vp vpVar, ArrayList arrayList, long j10, TLRPC.updates_ChannelDifference updates_channeldifference, TLRPC.Chat chat, a0.h hVar, int i10, long j11) {
+        this.b = vpVar;
+        this.f = arrayList;
         this.c = j10;
-        this.n = set;
+        this.h = updates_channeldifference;
+        this.n = chat;
+        this.r = hVar;
+        this.d = i10;
+        this.e = j11;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
+        TLRPC.Chat chat;
+        a0.h hVar;
         switch (this.a) {
             case 0:
-                TranslateController translateController = (TranslateController) this.d;
-                TranslateController.PendingTranslation pendingTranslation = (TranslateController.PendingTranslation) this.e;
-                TLObject tLObject = (TLObject) this.f;
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) this.h;
-                Set set = (Set) this.n;
-                translateController.lambda$pushToTranslate$22(pendingTranslation, tLObject, this.b, tL_error, this.c, set);
-                break;
-            case 1:
-                ((MediaDataController) this.d).lambda$broadcastReplyMessages$179((ArrayList) this.e, this.b, (ArrayList) this.f, (ArrayList) this.h, (a0.h) this.n, this.c);
+                vp vpVar = this.b;
+                boolean[] zArr = (boolean[]) this.f;
+                hs hsVar = (hs) this.h;
+                long j10 = this.c;
+                Runnable[] runnableArr = (Runnable[]) this.n;
+                long j11 = this.e;
+                int i10 = this.d;
+                jp jpVar = (jp) this.r;
+                if (!zArr[0]) {
+                    i0.g3(new qb(vpVar, zArr, hsVar.O(j10), runnableArr, j11, i10, jpVar));
+                    break;
+                }
                 break;
             default:
-                MemberRequestsController memberRequestsController = (MemberRequestsController) this.d;
-                TLRPC.TL_error tL_error2 = (TLRPC.TL_error) this.h;
-                TLObject tLObject2 = (TLObject) this.f;
-                TLRPC.TL_chatInviteImporter tL_chatInviteImporter = (TLRPC.TL_chatInviteImporter) this.e;
-                RequestDelegate requestDelegate = (RequestDelegate) this.n;
-                memberRequestsController.lambda$getImporters$0(tL_error2, tLObject2, tL_chatInviteImporter, this.b, this.c, requestDelegate);
+                vp vpVar2 = this.b;
+                ArrayList arrayList = (ArrayList) this.f;
+                long j12 = this.c;
+                TLRPC.updates_ChannelDifference updates_channeldifference = (TLRPC.updates_ChannelDifference) this.h;
+                TLRPC.Chat chat2 = (TLRPC.Chat) this.n;
+                a0.h hVar2 = (a0.h) this.r;
+                int i11 = this.d;
+                long j13 = this.e;
+                if (arrayList.isEmpty()) {
+                    chat = chat2;
+                    hVar = hVar2;
+                } else {
+                    SparseArray sparseArray = new SparseArray();
+                    int size = arrayList.size();
+                    int i12 = 0;
+                    while (i12 < size) {
+                        Object obj = arrayList.get(i12);
+                        i12++;
+                        TL_update.TL_updateMessageID tL_updateMessageID = (TL_update.TL_updateMessageID) obj;
+                        TLRPC.Chat chat3 = chat2;
+                        a0.h hVar3 = hVar2;
+                        ArrayList arrayList2 = arrayList;
+                        long[] a2 = vpVar2.getMessagesStorage().a2(tL_updateMessageID.random_id, -j12, null, tL_updateMessageID.id, 0, -1, 0);
+                        if (a2 != null) {
+                            sparseArray.put(tL_updateMessageID.id, a2);
+                        }
+                        chat2 = chat3;
+                        hVar2 = hVar3;
+                        arrayList = arrayList2;
+                    }
+                    chat = chat2;
+                    hVar = hVar2;
+                    if (sparseArray.size() != 0) {
+                        i0.g3(new tl(vpVar2, sparseArray, 1));
+                    }
+                }
+                Utilities.d.c(new zm(vpVar2, updates_channeldifference, j12, chat, hVar, i11, j13));
                 break;
         }
     }
 
-    public /* synthetic */ zk(long j10, MemberRequestsController memberRequestsController, RequestDelegate requestDelegate, TLObject tLObject, TLRPC.TL_chatInviteImporter tL_chatInviteImporter, TLRPC.TL_error tL_error, boolean z10) {
-        this.d = memberRequestsController;
-        this.h = tL_error;
-        this.f = tLObject;
-        this.e = tL_chatInviteImporter;
-        this.b = z10;
+    public /* synthetic */ zk(vp vpVar, boolean[] zArr, hs hsVar, long j10, Runnable[] runnableArr, long j11, int i10, jp jpVar) {
+        this.b = vpVar;
+        this.f = zArr;
+        this.h = hsVar;
         this.c = j10;
-        this.n = requestDelegate;
-    }
-
-    public /* synthetic */ zk(MediaDataController mediaDataController, ArrayList arrayList, boolean z10, ArrayList arrayList2, ArrayList arrayList3, a0.h hVar, long j10) {
-        this.d = mediaDataController;
-        this.e = arrayList;
-        this.b = z10;
-        this.f = arrayList2;
-        this.h = arrayList3;
-        this.n = hVar;
-        this.c = j10;
+        this.n = runnableArr;
+        this.e = j11;
+        this.d = i10;
+        this.r = jpVar;
     }
 }

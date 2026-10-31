@@ -1,26 +1,46 @@
 package org.telegram.ui;
 
-import android.app.Activity;
+import android.content.Context;
+import android.text.TextUtils;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class oi extends org.telegram.ui.Components.vo {
-    public final /* synthetic */ wn M;
+public final class oi extends lg0 {
+    public final /* synthetic */ un f;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public oi(wn wnVar, Activity activity, int i10, TLRPC.Document document, org.telegram.ui.ActionBar.u6 u6Var) {
-        super(activity, i10, document, u6Var);
-        this.M = wnVar;
-    }
-
-    @Override // android.widget.LinearLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        float y3 = getY();
-        wn wnVar = this.M;
-        float y10 = wnVar.d1.getY() + y3;
-        this.J = wnVar.j1.getBackgroundSizeY();
-        this.I = y10;
+    public oi(un unVar, Context context, int i10, org.telegram.messenger.jj jjVar) {
+        super(context);
+        this.f = unVar;
+        this.a = null;
+        if (!jjVar.h4()) {
+            jjVar.P4();
+        }
+        org.telegram.ui.Components.zz zzVar = new org.telegram.ui.Components.zz(context, null);
+        this.c = zzVar;
+        zzVar.e(org.telegram.ui.ActionBar.t6.G8, org.telegram.ui.ActionBar.t6.i6, -1);
+        zzVar.setViewType(13);
+        zzVar.setIsSingleCell(false);
+        addView(zzVar, w7.b6.c(-1.0f, -2));
+        org.telegram.ui.Components.p80 p80Var = new org.telegram.ui.Components.p80(context, null);
+        this.b = p80Var;
+        p80Var.setTextSize(1, 14.0f);
+        p80Var.setGravity(19);
+        org.telegram.ui.ActionBar.a7.V(p80Var, org.telegram.ui.ActionBar.t6.E8, null);
+        org.telegram.ui.ActionBar.a7.H(p80Var, org.telegram.ui.ActionBar.t6.Uc, null);
+        p80Var.setEllipsize(TextUtils.TruncateAt.END);
+        p80Var.setSingleLine();
+        p80Var.setLines(1);
+        p80Var.setMaxLines(1);
+        addView(p80Var, w7.b6.d(-1, -2.0f, 19, 12.0f, 0.0f, 12.0f, 0.0f));
+        TLRPC.TL_channels_getMessageAuthor tL_channels_getMessageAuthor = new TLRPC.TL_channels_getMessageAuthor();
+        tL_channels_getMessageAuthor.channel = org.telegram.messenger.vp.r1(i10).g1(-org.telegram.messenger.jj.B0(jjVar.k));
+        tL_channels_getMessageAuthor.id = jjVar.f1();
+        p80Var.setAlpha(0.0f);
+        ConnectionsManager.getInstance(i10).sendRequest(tL_channels_getMessageAuthor, new org.telegram.messenger.voip.g0(this, i10, 3));
+        setBackground(org.telegram.ui.ActionBar.t6.a0(org.telegram.ui.ActionBar.t6.x0(null, org.telegram.ui.ActionBar.t6.I5, false), 6, 0));
+        setEnabled(false);
     }
 }

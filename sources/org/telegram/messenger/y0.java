@@ -1,29 +1,36 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
+import android.content.SharedPreferences;
+import java.util.ArrayList;
+import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final /* synthetic */ class y0 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ChatMessagesMetadataController b;
-
-    public /* synthetic */ y0(ChatMessagesMetadataController chatMessagesMetadataController, int i10) {
-        this.a = i10;
-        this.b = chatMessagesMetadataController;
+public abstract class y0 {
+    public static void a() {
+        w0.b.getSharedPreferences("saved_tokens_login", 0).edit().clear().apply();
+        w0.b.getSharedPreferences("saved_tokens", 0).edit().clear().apply();
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                this.b.lambda$loadExtendedMediaForMessages$4(tLObject, tL_error);
-                break;
-            default:
-                this.b.lambda$loadReactionsForMessages$3(tLObject, tL_error);
-                break;
+    public static ArrayList b() {
+        SharedPreferences sharedPreferences = w0.b.getSharedPreferences("saved_tokens_login", 0);
+        int i10 = sharedPreferences.getInt("count", 0);
+        if (i10 == 0) {
+            return null;
         }
+        ArrayList arrayList = new ArrayList();
+        for (int i11 = 0; i11 < i10; i11++) {
+            try {
+                SerializedData serializedData = new SerializedData(Utilities.v(sharedPreferences.getString("log_in_token_" + i11, "")));
+                TLRPC.auth_Authorization TLdeserialize = TLRPC.auth_Authorization.TLdeserialize(serializedData, serializedData.readInt32(true), true);
+                if (TLdeserialize instanceof TLRPC.TL_auth_authorization) {
+                    arrayList.add((TLRPC.TL_auth_authorization) TLdeserialize);
+                }
+            } catch (Exception e) {
+                f8.g(e, true);
+            }
+        }
+        return arrayList;
     }
 }

@@ -1,114 +1,49 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.media.AudioRecord;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final /* synthetic */ class sd implements RequestDelegate {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ long e;
-    public final /* synthetic */ long f;
-    public final /* synthetic */ int g;
-    public final /* synthetic */ int h;
-    public final /* synthetic */ int i;
-    public final /* synthetic */ int j;
-    public final /* synthetic */ int k;
-    public final /* synthetic */ int l;
-    public final /* synthetic */ int m;
-    public final /* synthetic */ int n;
-    public final /* synthetic */ long o;
-    public final /* synthetic */ int p;
-    public final /* synthetic */ boolean q;
-    public final /* synthetic */ int r;
-    public final /* synthetic */ boolean s;
-    public final /* synthetic */ boolean t;
+public final /* synthetic */ class sd implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ MediaController b;
+    public final /* synthetic */ boolean c;
 
-    public /* synthetic */ sd(MessagesController messagesController, int i10, int i11, long j10, long j11, int i12, int i13, int i14, int i15, int i16, int i17, int i18, int i19, long j12, int i20, boolean z10, int i21, boolean z11, boolean z12) {
-        this.b = messagesController;
-        this.c = i10;
-        this.d = i11;
-        this.e = j10;
-        this.f = j11;
-        this.g = i12;
-        this.h = i13;
-        this.i = i14;
-        this.j = i15;
-        this.k = i16;
-        this.l = i17;
-        this.m = i18;
-        this.n = i19;
-        this.o = j12;
-        this.p = i20;
-        this.q = z10;
-        this.r = i21;
-        this.s = z11;
-        this.t = z12;
+    public /* synthetic */ sd(MediaController mediaController, boolean z10, int i10) {
+        this.a = i10;
+        this.b = mediaController;
+        this.c = z10;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                boolean z10 = this.s;
-                boolean z11 = this.t;
-                int i10 = this.c;
-                int i11 = this.d;
-                int i12 = this.g;
-                int i13 = this.h;
-                int i14 = this.i;
-                int i15 = this.j;
-                int i16 = this.k;
-                int i17 = this.l;
-                int i18 = this.m;
-                int i19 = this.n;
-                int i20 = this.p;
-                int i21 = this.r;
-                this.b.lambda$loadMessagesInternal$175(this.e, this.f, i10, i11, i12, i13, i14, i15, i16, i17, i18, i19, this.o, i20, this.q, i21, z10, z11, tLObject, tL_error);
+                MediaController mediaController = this.b;
+                r5 r5Var = mediaController.L1;
+                if (mediaController.e1 != null && mediaController.i1 != null) {
+                    boolean z10 = mediaController.c1;
+                    mediaController.c1 = !z10;
+                    if (!z10) {
+                        AudioRecord audioRecord = mediaController.d1;
+                        if (audioRecord != null) {
+                            mediaController.A1 = 4;
+                            audioRecord.stop();
+                            mediaController.d1.release();
+                            mediaController.d1 = null;
+                            r5Var.c(new sd(mediaController, this.c, 1));
+                            break;
+                        }
+                    } else {
+                        r5Var.a(mediaController.N1);
+                        r5Var.c(new qd(mediaController, 6));
+                        break;
+                    }
+                }
                 break;
             default:
-                boolean z12 = this.s;
-                boolean z13 = this.t;
-                int i22 = this.c;
-                int i23 = this.d;
-                int i24 = this.g;
-                int i25 = this.h;
-                int i26 = this.i;
-                int i27 = this.j;
-                int i28 = this.k;
-                int i29 = this.l;
-                int i30 = this.m;
-                int i31 = this.n;
-                int i32 = this.p;
-                int i33 = this.r;
-                this.b.lambda$loadMessagesInternal$180(i22, i23, this.e, this.f, i24, i25, i26, i27, i28, i29, i30, i31, this.o, i32, this.q, i33, z12, z13, tLObject, tL_error);
+                MediaController.a(this.b, this.c);
                 break;
         }
-    }
-
-    public /* synthetic */ sd(MessagesController messagesController, long j10, long j11, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17, int i18, int i19, long j12, int i20, boolean z10, int i21, boolean z11, boolean z12) {
-        this.b = messagesController;
-        this.e = j10;
-        this.f = j11;
-        this.c = i10;
-        this.d = i11;
-        this.g = i12;
-        this.h = i13;
-        this.i = i14;
-        this.j = i15;
-        this.k = i16;
-        this.l = i17;
-        this.m = i18;
-        this.n = i19;
-        this.o = j12;
-        this.p = i20;
-        this.q = z10;
-        this.r = i21;
-        this.s = z11;
-        this.t = z12;
     }
 }

@@ -1,28 +1,34 @@
 package org.telegram.messenger.voip;
 
+import android.graphics.Typeface;
 import android.text.TextUtils;
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.HashMap;
-import li.s2;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.FileLog;
+import java.util.zip.GZIPOutputStream;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.b8;
+import org.telegram.messenger.f8;
+import org.telegram.messenger.v2;
 import org.telegram.messenger.voip.Instance;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
-import org.telegram.ui.Components.voip.g2;
+import org.telegram.ui.Components.voip.m1;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public class VoIPDebugToSend {
     private final int currentAccount;
     private final HashMap<Long, Data> pending = new HashMap<>();
 
-    /* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+    /* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
     public final class Data {
         long access_hash;
         long callId;
@@ -50,25 +56,50 @@ public class VoIPDebugToSend {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$done$1(File file, TL_phone.saveCallDebug savecalldebug) {
-        FileLoader.getInstance(this.currentAccount).uploadFile(file.getAbsolutePath(), new s2(1, this, savecalldebug));
+        b8.G(this.currentAccount).g0(file.getAbsolutePath(), new ag.e0(7, this, savecalldebug));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$done$2(Data data, File file, TL_phone.saveCallDebug savecalldebug) {
-        if (AndroidUtilities.gzip(new File(data.logPath), file)) {
-            AndroidUtilities.runOnUIThread(new l(this, file, savecalldebug, 0));
+    public void lambda$done$2(Data data, File file, TL_phone.saveCallDebug savecalldebug) {
+        File file2 = new File(data.logPath);
+        Typeface typeface = org.telegram.messenger.i0.a;
+        try {
+            BufferedInputStream bufferedInputStream = new BufferedInputStream(new FileInputStream(file2));
+            try {
+                GZIPOutputStream gZIPOutputStream = new GZIPOutputStream(new BufferedOutputStream(new FileOutputStream(file)));
+                try {
+                    byte[] bArr = new byte[TLObject.FLAG_13];
+                    while (true) {
+                        int read = bufferedInputStream.read(bArr);
+                        int i10 = 0;
+                        if (read == -1) {
+                            gZIPOutputStream.close();
+                            bufferedInputStream.close();
+                            org.telegram.messenger.i0.g3(new o(this, file, savecalldebug, i10));
+                            return;
+                        }
+                        gZIPOutputStream.write(bArr, 0, read);
+                    }
+                } finally {
+                }
+            } finally {
+            }
+        } catch (FileNotFoundException e) {
+            f8.g(e, true);
+        } catch (IOException e7) {
+            f8.g(e7, true);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$done$3(Data data, TL_phone.saveCallDebug savecalldebug, TLObject tLObject, TLRPC.TL_error tL_error) {
-        if (BuildVars.LOGS_ENABLED) {
-            FileLog.d("Sent debug logs, response = " + tLObject);
+        if (v2.a) {
+            f8.b("Sent debug logs, response = " + tLObject);
         }
         if (!(tLObject instanceof TLRPC.TL_boolFalse) || TextUtils.isEmpty(data.logPath)) {
             return;
         }
-        Utilities.searchQueue.postRunnable(new k(this, data, new File(a1.g.s(new StringBuilder(), data.logPath, ".gzip")), savecalldebug, 0));
+        Utilities.g.c(new n(this, data, new File(a1.g.r(new StringBuilder(), data.logPath, ".gzip")), savecalldebug, 0));
     }
 
     public void done(long j10, boolean z10) {
@@ -84,13 +115,13 @@ public class VoIPDebugToSend {
         savecalldebug.peer = tL_inputPhoneCall;
         tL_inputPhoneCall.access_hash = remove.access_hash;
         tL_inputPhoneCall.id = remove.callId;
-        ConnectionsManager.getInstance(this.currentAccount).sendRequest(savecalldebug, new m(this, remove, savecalldebug, 0));
+        ConnectionsManager.getInstance(this.currentAccount).sendRequest(savecalldebug, new p(this, remove, savecalldebug, 0));
     }
 
     public void push(long j10, long j11, Instance.FinalState finalState, String str) {
         if (TextUtils.isEmpty(finalState.debugLog)) {
             try {
-                finalState.debugLog = VoIPService.getStringFromFile(g2.e("" + j10, true));
+                finalState.debugLog = VoIPService.getStringFromFile(m1.e("" + j10));
             } catch (Exception e) {
                 e.printStackTrace();
             }

@@ -1,27 +1,17 @@
 package l5;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class f implements ka.d {
+public final class f implements ja.d {
     public static final f a = new f();
-    public static final ka.c b = ka.c.c("requestTimeMs");
-    public static final ka.c c = ka.c.c("requestUptimeMs");
-    public static final ka.c d = ka.c.c("clientInfo");
-    public static final ka.c e = ka.c.c("logSource");
-    public static final ka.c f = ka.c.c("logSourceName");
-    public static final ka.c g = ka.c.c("logEvent");
-    public static final ka.c h = ka.c.c("qosTier");
+    public static final ja.c b = new ja.c("currentCacheSizeBytes", i0.a.o(i0.a.n(ma.e.class, new ma.a(1))));
+    public static final ja.c c = new ja.c("maxCacheSizeBytes", i0.a.o(i0.a.n(ma.e.class, new ma.a(2))));
 
-    @Override // ka.a
+    @Override // ja.a
     public final void a(Object obj, Object obj2) {
-        ka.e eVar = (ka.e) obj2;
-        l lVar = (l) ((s) obj);
-        eVar.f(b, lVar.a);
-        eVar.f(c, lVar.b);
-        eVar.a(d, lVar.c);
-        eVar.a(e, lVar.d);
-        eVar.a(f, lVar.e);
-        eVar.a(g, lVar.f);
-        eVar.a(h, w.a);
+        o5.f fVar = (o5.f) obj;
+        ja.e eVar = (ja.e) obj2;
+        eVar.f(b, fVar.a);
+        eVar.f(c, fVar.b);
     }
 }

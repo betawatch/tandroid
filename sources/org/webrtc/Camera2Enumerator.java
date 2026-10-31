@@ -14,11 +14,10 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import org.telegram.messenger.MediaDataController;
 import org.webrtc.CameraEnumerationAndroid;
 import org.webrtc.CameraVideoCapturer;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes4.dex */
 public class Camera2Enumerator implements CameraEnumerator {
     private static final double NANO_SECONDS_PER_SECOND = 1.0E9d;
@@ -61,10 +60,7 @@ public class Camera2Enumerator implements CameraEnumerator {
     }
 
     public static int getFpsUnitFactor(Range<Integer>[] rangeArr) {
-        if (rangeArr.length != 0 && rangeArr[0].getUpper().intValue() >= 1000) {
-            return 1;
-        }
-        return MediaDataController.MAX_STYLE_RUNS_COUNT;
+        return (rangeArr.length != 0 && rangeArr[0].getUpper().intValue() >= 1000) ? 1 : 1000;
     }
 
     public static List<Size> getSupportedSizes(CameraCharacteristics cameraCharacteristics) {
@@ -150,7 +146,7 @@ public class Camera2Enumerator implements CameraEnumerator {
                             } catch (Exception unused) {
                                 j10 = 0;
                             }
-                            int round = j10 == 0 ? i10 : ((int) Math.round(NANO_SECONDS_PER_SECOND / j10)) * MediaDataController.MAX_STYLE_RUNS_COUNT;
+                            int round = j10 == 0 ? i10 : ((int) Math.round(NANO_SECONDS_PER_SECOND / j10)) * 1000;
                             arrayList.add(new CameraEnumerationAndroid.CaptureFormat(size.width, size.height, 0, round));
                             Logging.d(TAG, "Format: " + size.width + "x" + size.height + "@" + round);
                         }

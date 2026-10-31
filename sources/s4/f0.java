@@ -1,244 +1,69 @@
 package s4;
 
-import android.graphics.Rect;
 import android.view.View;
-import android.view.ViewGroup;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class f0 extends androidx.emoji2.text.g {
-    public final /* synthetic */ int d;
+public final class f0 {
+    public final RecyclerView a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ f0(c0 c0Var, int i10) {
-        super(c0Var);
-        this.d = i10;
+    public /* synthetic */ f0(RecyclerView recyclerView) {
+        this.a = recyclerView;
     }
 
-    @Override // androidx.emoji2.text.g
-    public final int a(View view) {
-        int y3;
+    public void a(c1 c1Var, ac.g gVar, ac.g gVar2) {
+        boolean z10;
+        c1 T;
         int i10;
-        switch (this.d) {
-            case 0:
-                q0 q0Var = (q0) view.getLayoutParams();
-                ((c0) this.b).getClass();
-                y3 = p0.y(view);
-                i10 = ((ViewGroup.MarginLayoutParams) q0Var).rightMargin;
-                break;
-            default:
-                q0 q0Var2 = (q0) view.getLayoutParams();
-                ((c0) this.b).getClass();
-                y3 = p0.v(view);
-                i10 = ((ViewGroup.MarginLayoutParams) q0Var2).bottomMargin;
-                break;
-        }
-        return y3 + i10;
-    }
-
-    @Override // androidx.emoji2.text.g
-    public final int b(View view) {
-        int measuredWidth;
-        int i10;
-        switch (this.d) {
-            case 0:
-                q0 q0Var = (q0) view.getLayoutParams();
-                ((c0) this.b).getClass();
-                Rect rect = ((q0) view.getLayoutParams()).b;
-                measuredWidth = view.getMeasuredWidth() + rect.left + rect.right + ((ViewGroup.MarginLayoutParams) q0Var).leftMargin;
-                i10 = ((ViewGroup.MarginLayoutParams) q0Var).rightMargin;
-                break;
-            default:
-                q0 q0Var2 = (q0) view.getLayoutParams();
-                ((c0) this.b).getClass();
-                Rect rect2 = ((q0) view.getLayoutParams()).b;
-                measuredWidth = view.getMeasuredHeight() + rect2.top + rect2.bottom + ((ViewGroup.MarginLayoutParams) q0Var2).topMargin;
-                i10 = ((ViewGroup.MarginLayoutParams) q0Var2).bottomMargin;
-                break;
-        }
-        return measuredWidth + i10;
-    }
-
-    @Override // androidx.emoji2.text.g
-    public final int c(View view) {
-        int measuredHeight;
-        int i10;
-        switch (this.d) {
-            case 0:
-                q0 q0Var = (q0) view.getLayoutParams();
-                ((c0) this.b).getClass();
-                Rect rect = ((q0) view.getLayoutParams()).b;
-                measuredHeight = view.getMeasuredHeight() + rect.top + rect.bottom + ((ViewGroup.MarginLayoutParams) q0Var).topMargin;
-                i10 = ((ViewGroup.MarginLayoutParams) q0Var).bottomMargin;
-                break;
-            default:
-                q0 q0Var2 = (q0) view.getLayoutParams();
-                ((c0) this.b).getClass();
-                Rect rect2 = ((q0) view.getLayoutParams()).b;
-                measuredHeight = view.getMeasuredWidth() + rect2.left + rect2.right + ((ViewGroup.MarginLayoutParams) q0Var2).leftMargin;
-                i10 = ((ViewGroup.MarginLayoutParams) q0Var2).rightMargin;
-                break;
-        }
-        return measuredHeight + i10;
-    }
-
-    @Override // androidx.emoji2.text.g
-    public final int d(View view) {
-        int x9;
-        int i10;
-        switch (this.d) {
-            case 0:
-                q0 q0Var = (q0) view.getLayoutParams();
-                ((c0) this.b).getClass();
-                x9 = p0.x(view);
-                i10 = ((ViewGroup.MarginLayoutParams) q0Var).leftMargin;
-                break;
-            default:
-                q0 q0Var2 = (q0) view.getLayoutParams();
-                ((c0) this.b).getClass();
-                x9 = p0.z(view);
-                i10 = ((ViewGroup.MarginLayoutParams) q0Var2).topMargin;
-                break;
-        }
-        return x9 - i10;
-    }
-
-    @Override // androidx.emoji2.text.g
-    public final int e() {
-        switch (this.d) {
-            case 0:
-                return ((c0) this.b).m;
-            default:
-                return ((c0) this.b).n;
-        }
-    }
-
-    @Override // androidx.emoji2.text.g
-    public final int f() {
-        int i10;
-        int E;
-        switch (this.d) {
-            case 0:
-                c0 c0Var = (c0) this.b;
-                i10 = c0Var.m;
-                E = c0Var.E();
-                break;
-            default:
-                c0 c0Var2 = (c0) this.b;
-                i10 = c0Var2.n;
-                E = c0Var2.C();
-                break;
-        }
-        return i10 - E;
-    }
-
-    @Override // androidx.emoji2.text.g
-    public final int g() {
-        switch (this.d) {
-            case 0:
-                return ((c0) this.b).E();
-            default:
-                return ((c0) this.b).C();
-        }
-    }
-
-    @Override // androidx.emoji2.text.g
-    public final int h() {
-        switch (this.d) {
-            case 0:
-                return ((c0) this.b).k;
-            default:
-                return ((c0) this.b).l;
-        }
-    }
-
-    @Override // androidx.emoji2.text.g
-    public final int i() {
-        switch (this.d) {
-            case 0:
-                return ((c0) this.b).l;
-            default:
-                return ((c0) this.b).k;
-        }
-    }
-
-    @Override // androidx.emoji2.text.g
-    public final int j() {
-        switch (this.d) {
-            case 0:
-                return ((c0) this.b).D();
-            default:
-                return ((c0) this.b).J();
-        }
-    }
-
-    @Override // androidx.emoji2.text.g
-    public final int k() {
-        switch (this.d) {
-            case 0:
-                c0 c0Var = (c0) this.b;
-                return (c0Var.m - c0Var.D()) - c0Var.E();
-            default:
-                return ((c0) this.b).K();
-        }
-    }
-
-    @Override // androidx.emoji2.text.g
-    public final int l(View view) {
-        switch (this.d) {
-            case 0:
-                c0 c0Var = (c0) this.b;
-                Rect rect = (Rect) this.c;
-                c0Var.L(view, rect);
-                return rect.right;
-            default:
-                c0 c0Var2 = (c0) this.b;
-                Rect rect2 = (Rect) this.c;
-                c0Var2.L(view, rect2);
-                return rect2.bottom;
-        }
-    }
-
-    @Override // androidx.emoji2.text.g
-    public final int m(View view) {
-        switch (this.d) {
-            case 0:
-                c0 c0Var = (c0) this.b;
-                Rect rect = (Rect) this.c;
-                c0Var.L(view, rect);
-                return rect.left;
-            default:
-                c0 c0Var2 = (c0) this.b;
-                Rect rect2 = (Rect) this.c;
-                c0Var2.L(view, rect2);
-                return rect2.top;
-        }
-    }
-
-    @Override // androidx.emoji2.text.g
-    public final void n(int i10) {
-        switch (this.d) {
-            case 0:
-                RecyclerView recyclerView = ((c0) this.b).b;
-                if (recyclerView != null) {
-                    int k10 = recyclerView.e.k();
-                    for (int i11 = 0; i11 < k10; i11++) {
-                        recyclerView.e.j(i11).offsetLeftAndRight(i10);
+        RecyclerView recyclerView = this.a;
+        recyclerView.b.k(c1Var);
+        recyclerView.h(c1Var);
+        c1Var.q(false);
+        f1 f1Var = (f1) recyclerView.c0;
+        f1Var.getClass();
+        int i11 = gVar.a;
+        int i12 = gVar.b;
+        View view = c1Var.a;
+        int left = gVar2 == null ? view.getLeft() : gVar2.a;
+        int top = gVar2 == null ? view.getTop() : gVar2.b;
+        if (c1Var.j() || (i11 == left && i12 == top)) {
+            int i13 = c1Var.h;
+            int i14 = -1;
+            if (i13 != -1) {
+                for (int i15 = 0; i15 < recyclerView.getChildCount(); i15++) {
+                    View childAt = recyclerView.getChildAt(i15);
+                    if (childAt != null && (T = recyclerView.T(childAt)) != null && !T.j() && (i10 = T.h) >= 0 && i10 < i13 && i10 > i14) {
+                        i14 = i10;
                     }
-                    break;
                 }
-                break;
-            default:
-                RecyclerView recyclerView2 = ((c0) this.b).b;
-                if (recyclerView2 != null) {
-                    int k11 = recyclerView2.e.k();
-                    for (int i12 = 0; i12 < k11; i12++) {
-                        recyclerView2.e.j(i12).offsetTopAndBottom(i10);
-                    }
-                    break;
-                }
-                break;
+            }
+            c1Var.i = (c1Var.h - i14) + (i14 * 1000);
+            f1Var.s(c1Var, gVar);
+            z10 = true;
+        } else {
+            view.layout(left, top, view.getWidth() + left, view.getHeight() + top);
+            z10 = f1Var.r(c1Var, gVar, i11, i12, left, top);
         }
+        if (z10) {
+            recyclerView.m0();
+        }
+    }
+
+    public void b(c1 c1Var) {
+        RecyclerView recyclerView = this.a;
+        n0 n0Var = recyclerView.y;
+        View view = c1Var.a;
+        hf.e eVar = recyclerView.b;
+        q5.d dVar = n0Var.a;
+        m2.t tVar = (m2.t) dVar.b;
+        int indexOfChild = ((RecyclerView) tVar.b).indexOfChild(view);
+        if (indexOfChild >= 0) {
+            if (((c3.g0) dVar.c).H(indexOfChild)) {
+                dVar.y(view);
+            }
+            tVar.J(indexOfChild);
+        }
+        eVar.g(view);
     }
 }

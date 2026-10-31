@@ -1,23 +1,10 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class q90 extends m9 {
-    public final /* synthetic */ bi.t1 e;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public q90(bi.t1 t1Var, Context context) {
-        super(context, false);
-        this.e = t1Var;
-    }
-
-    @Override // org.telegram.ui.Components.m9, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(Math.min(3, ((s90) this.e.d).w) == 0 ? 0 : c3.h0.w(r4, 1, 20, 32)), TLObject.FLAG_30), i11);
+public final /* synthetic */ class q90 implements o1.f {
+    @Override // o1.f
+    public final void a(o1.j jVar, boolean z10, float f7, float f10) {
+        int i10 = y90.U;
     }
 }

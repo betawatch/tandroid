@@ -1,13 +1,14 @@
 package u2;
 
-import a8.yb;
 import android.net.Uri;
+import e9.x1;
 import java.util.Collections;
 import java.util.List;
+import v7.t6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class j1 extends b2.p1 {
+public final class j1 extends b2.o1 {
     public static final Object q = new Object();
     public final long e;
     public final long f;
@@ -26,20 +27,20 @@ public final class j1 extends b2.p1 {
         b2.d0 d0Var = new b2.d0();
         b2.g0 g0Var = new b2.g0();
         List list = Collections.EMPTY_LIST;
-        f9.s1 s1Var = f9.s1.e;
+        x1 x1Var = x1.e;
         b2.i0 i0Var = new b2.i0();
         b2.l0 l0Var = b2.l0.d;
         Uri uri = Uri.EMPTY;
-        yb.p(g0Var.b == null || g0Var.a != null);
+        t6.p(g0Var.b == null || g0Var.a != null);
         if (uri != null) {
-            new b2.k0(uri, null, g0Var.a != null ? new b2.h0(g0Var) : null, null, list, null, s1Var, -9223372036854775807L);
+            new b2.k0(uri, null, g0Var.a != null ? new b2.h0(g0Var) : null, null, list, null, x1Var, -9223372036854775807L);
         }
         new b2.f0(d0Var);
         new b2.j0(i0Var);
         b2.s0 s0Var = b2.s0.L;
     }
 
-    public j1(long j10, long j11, long j12, long j13, long j14, long j15, boolean z10, boolean z11, boolean z12, sb.b bVar, b2.p0 p0Var, b2.j0 j0Var) {
+    public j1(long j10, long j11, long j12, long j13, long j14, long j15, boolean z10, boolean z11, boolean z12, kb.a aVar, b2.p0 p0Var, b2.j0 j0Var) {
         this.e = j10;
         this.f = j11;
         this.g = j12;
@@ -49,35 +50,35 @@ public final class j1 extends b2.p1 {
         this.k = z10;
         this.l = z11;
         this.m = z12;
-        this.n = bVar;
+        this.n = aVar;
         p0Var.getClass();
         this.o = p0Var;
         this.p = j0Var;
     }
 
-    @Override // b2.p1
+    @Override // b2.o1
     public final int b(Object obj) {
         return q.equals(obj) ? 0 : -1;
     }
 
-    @Override // b2.p1
-    public final b2.m1 f(int i10, b2.m1 m1Var, boolean z10) {
-        yb.j(i10, 1);
+    @Override // b2.o1
+    public final b2.l1 f(int i10, b2.l1 l1Var, boolean z10) {
+        t6.j(i10, 1);
         Object obj = z10 ? q : null;
         long j10 = -this.i;
-        m1Var.getClass();
-        m1Var.h(null, obj, 0, this.g, j10, b2.c.c, false);
-        return m1Var;
+        l1Var.getClass();
+        l1Var.h(null, obj, 0, this.g, j10, b2.c.c, false);
+        return l1Var;
     }
 
-    @Override // b2.p1
+    @Override // b2.o1
     public final int h() {
         return 1;
     }
 
-    @Override // b2.p1
+    @Override // b2.o1
     public final Object l(int i10) {
-        yb.j(i10, 1);
+        t6.j(i10, 1);
         return q;
     }
 
@@ -85,13 +86,13 @@ public final class j1 extends b2.p1 {
     
         if (r1 > r3) goto L10;
      */
-    @Override // b2.p1
+    @Override // b2.o1
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final b2.o1 m(int i10, b2.o1 o1Var, long j10) {
+    public final b2.n1 m(int i10, b2.n1 n1Var, long j10) {
         long j11;
-        yb.j(i10, 1);
+        t6.j(i10, 1);
         long j12 = this.j;
         boolean z10 = this.l;
         if (z10 && !this.m && j10 != 0) {
@@ -100,15 +101,15 @@ public final class j1 extends b2.p1 {
                 j12 += j10;
             }
             j11 = -9223372036854775807L;
-            o1Var.b(b2.o1.q, this.o, this.n, this.e, this.f, -9223372036854775807L, this.k, z10, this.p, j11, this.h, 0, 0, this.i);
-            return o1Var;
+            n1Var.b(b2.n1.q, this.o, this.n, this.e, this.f, -9223372036854775807L, this.k, z10, this.p, j11, this.h, 0, 0, this.i);
+            return n1Var;
         }
         j11 = j12;
-        o1Var.b(b2.o1.q, this.o, this.n, this.e, this.f, -9223372036854775807L, this.k, z10, this.p, j11, this.h, 0, 0, this.i);
-        return o1Var;
+        n1Var.b(b2.n1.q, this.o, this.n, this.e, this.f, -9223372036854775807L, this.k, z10, this.p, j11, this.h, 0, 0, this.i);
+        return n1Var;
     }
 
-    @Override // b2.p1
+    @Override // b2.o1
     public final int o() {
         return 1;
     }

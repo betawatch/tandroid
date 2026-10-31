@@ -1,15 +1,32 @@
 package y9;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes.dex */
-public final class e {
-    public final String a;
-    public final String b;
-    public final String c;
+import t7.u;
 
-    public e(String str, String str2, String str3) {
-        this.a = str;
-        this.b = str2;
-        this.c = str3;
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes.dex */
+public final class e implements i {
+    public static final u c = new u(27);
+    public final Object a;
+    public Object b;
+
+    public e(ca.c cVar) {
+        this.a = cVar;
+        this.b = c;
+    }
+
+    @Override // y9.i
+    public void a(h hVar, int i10) {
+        int[] iArr = (int[]) this.b;
+        try {
+            hVar.read((byte[]) this.a, iArr[0], i10);
+            iArr[0] = iArr[0] + i10;
+        } finally {
+            hVar.close();
+        }
+    }
+
+    public e(byte[] bArr, int[] iArr) {
+        this.a = bArr;
+        this.b = iArr;
     }
 }

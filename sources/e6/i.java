@@ -1,43 +1,104 @@
 package e6;
 
-import a8.me;
-import a8.ng;
-import android.os.Parcel;
-import android.os.RemoteException;
-import com.google.android.gms.internal.cast.l4;
-import com.google.android.gms.internal.cast.t6;
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class i {
-    public final /* synthetic */ c a;
+public final class i extends n {
+    public final /* synthetic */ int r;
+    public final /* synthetic */ h s;
 
-    public i(c cVar) {
-        this.a = cVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ i(h hVar, int i10) {
+        super(hVar, false);
+        this.r = i10;
+        this.s = hVar;
     }
 
-    public final void a() {
-        c cVar = this.a;
-        q qVar = cVar.e;
-        if (qVar == null) {
-            return;
+    @Override // e6.n
+    public final void n() {
+        switch (this.r) {
+            case 0:
+                g6.m mVar = this.s.c;
+                g6.n o10 = o();
+                mVar.getClass();
+                JSONObject jSONObject = new JSONObject();
+                long b10 = mVar.b();
+                try {
+                    jSONObject.put("requestId", b10);
+                    jSONObject.put(TeXSymbolParser.TYPE_ATTR, "GET_STATUS");
+                    c6.q qVar = mVar.f;
+                    if (qVar != null) {
+                        jSONObject.put("mediaSessionId", qVar.b);
+                    }
+                } catch (JSONException unused) {
+                }
+                mVar.c(b10, jSONObject.toString());
+                mVar.p.a(b10, o10);
+                break;
+            case 1:
+                this.s.c.d(o(), -1, null);
+                break;
+            case 2:
+                this.s.c.d(o(), 1, null);
+                break;
+            case 3:
+                this.s.c.d(o(), 0, 2);
+                break;
+            case 4:
+                g6.m mVar2 = this.s.c;
+                g6.n o11 = o();
+                mVar2.getClass();
+                JSONObject jSONObject2 = new JSONObject();
+                long b11 = mVar2.b();
+                try {
+                    jSONObject2.put("requestId", b11);
+                    jSONObject2.put(TeXSymbolParser.TYPE_ATTR, "QUEUE_GET_ITEM_IDS");
+                    jSONObject2.put("mediaSessionId", mVar2.p());
+                } catch (JSONException unused2) {
+                }
+                mVar2.c(b11, jSONObject2.toString());
+                mVar2.r.a(b11, o11);
+                break;
+            case 5:
+                g6.m mVar3 = this.s.c;
+                g6.n o12 = o();
+                mVar3.getClass();
+                JSONObject jSONObject3 = new JSONObject();
+                long b12 = mVar3.b();
+                try {
+                    jSONObject3.put("requestId", b12);
+                    jSONObject3.put(TeXSymbolParser.TYPE_ATTR, "PAUSE");
+                    jSONObject3.put("mediaSessionId", mVar3.p());
+                } catch (JSONException unused3) {
+                }
+                mVar3.c(b12, jSONObject3.toString());
+                mVar3.k.a(b12, o12);
+                break;
+            default:
+                g6.m mVar4 = this.s.c;
+                g6.n o13 = o();
+                mVar4.getClass();
+                JSONObject jSONObject4 = new JSONObject();
+                long b13 = mVar4.b();
+                try {
+                    jSONObject4.put("requestId", b13);
+                    jSONObject4.put(TeXSymbolParser.TYPE_ATTR, "PLAY");
+                    jSONObject4.put("mediaSessionId", mVar4.p());
+                } catch (JSONException unused4) {
+                }
+                mVar4.c(b13, jSONObject4.toString());
+                mVar4.l.a(b13, o13);
+                break;
         }
-        try {
-            f6.h hVar = cVar.j;
-            if (hVar != null) {
-                hVar.u();
-            }
-            o oVar = (o) qVar;
-            Parcel N0 = oVar.N0();
-            int i10 = com.google.android.gms.internal.cast.t.a;
-            N0.writeInt(0);
-            oVar.R0(N0, 1);
-        } catch (RemoteException e) {
-            c.m.a(e, "Unable to call %s on %s.", "onConnected", q.class.getSimpleName());
-        }
-        l4 l4Var = cVar.l;
-        if (l4Var != null) {
-            me.D(l4Var.a, new t6(new ng(3, 4)));
-        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public i(h hVar) {
+        super(hVar, true);
+        this.r = 4;
+        this.s = hVar;
     }
 }

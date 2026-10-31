@@ -1,6 +1,6 @@
 package androidx.datastore.preferences.protobuf;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class t0 implements b1 {
     public final a a;
@@ -22,7 +22,7 @@ public final class t0 implements b1 {
     @Override // androidx.datastore.preferences.protobuf.b1
     public final void b(Object obj, k0 k0Var) {
         this.c.getClass();
-        a1.g.B(obj);
+        a1.g.y(obj);
         throw null;
     }
 
@@ -31,12 +31,24 @@ public final class t0 implements b1 {
         this.b.getClass();
         ((w) obj).unknownFields.e = false;
         this.c.getClass();
-        a1.g.B(obj);
+        a1.g.y(obj);
         throw null;
     }
 
     @Override // androidx.datastore.preferences.protobuf.b1
-    public final int d(a aVar) {
+    public final void d(Object obj, a4.g gVar, m mVar) {
+        this.b.getClass();
+        w wVar = (w) obj;
+        if (wVar.unknownFields == i1.f) {
+            wVar.unknownFields = i1.b();
+        }
+        this.c.getClass();
+        obj.getClass();
+        throw new ClassCastException();
+    }
+
+    @Override // androidx.datastore.preferences.protobuf.b1
+    public final int e(a aVar) {
         this.b.getClass();
         i1 i1Var = ((w) aVar).unknownFields;
         int i10 = i1Var.d;
@@ -53,22 +65,10 @@ public final class t0 implements b1 {
     }
 
     @Override // androidx.datastore.preferences.protobuf.b1
-    public final boolean e(Object obj) {
+    public final boolean f(Object obj) {
         this.c.getClass();
-        a1.g.B(obj);
+        a1.g.y(obj);
         throw null;
-    }
-
-    @Override // androidx.datastore.preferences.protobuf.b1
-    public final void f(Object obj, e2.f fVar, m mVar) {
-        this.b.getClass();
-        w wVar = (w) obj;
-        if (wVar.unknownFields == i1.f) {
-            wVar.unknownFields = i1.b();
-        }
-        this.c.getClass();
-        obj.getClass();
-        throw new ClassCastException();
     }
 
     @Override // androidx.datastore.preferences.protobuf.b1

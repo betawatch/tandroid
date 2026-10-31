@@ -1,32 +1,36 @@
 package bi;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.ui.Components.k71;
-import org.telegram.ui.Components.nm0;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes4.dex */
-public final class q1 extends k71 {
-    public final /* synthetic */ x1 P;
+public final /* synthetic */ class q1 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ k2 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public q1(x1 x1Var, nm0 nm0Var, Context context, int i10, ai.e eVar, org.telegram.ui.ActionBar.u6 u6Var) {
-        super(nm0Var, context, i10, 0, true, eVar, u6Var);
-        this.P = x1Var;
+    public /* synthetic */ q1(k2 k2Var, int i10) {
+        this.a = i10;
+        this.b = k2Var;
     }
 
-    @Override // org.telegram.ui.Components.k71, s4.h0
-    public final void v(s4.e1 e1Var, int i10) {
-        super.v(e1Var, i10);
-        View view = e1Var.a;
-        if (view instanceof v1) {
-            v1 v1Var = (v1) view;
-            s1 s1Var = v1Var.v;
-            boolean S = this.P.S(s1Var);
-            v1Var.c.f(S, false);
-            v1Var.r.a(S, false);
-            v1Var.setOnClickListener(new q(4, this, s1Var));
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                k2 k2Var = this.b;
+                k2Var.getClass();
+                k2Var.Q0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                k2Var.j0();
+                break;
+            default:
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                k2 k2Var2 = this.b;
+                k2Var2.I = floatValue;
+                k2Var2.z0();
+                k2Var2.P.setTranslationX(org.telegram.messenger.i0.W1(k2Var2.I, k2Var2.G[0] - k2Var2.H[0], 0));
+                k2Var2.P.setTranslationY(org.telegram.messenger.i0.W1(k2Var2.I, k2Var2.G[1] - k2Var2.H[1], 0));
+                k2Var2.O.invalidate();
+                break;
         }
     }
 }

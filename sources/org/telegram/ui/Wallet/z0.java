@@ -2,45 +2,40 @@ package org.telegram.ui.Wallet;
 
 import android.os.SystemClock;
 import android.text.TextUtils;
-import androidx.car.app.navigation.model.Maneuver;
 import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BuildConfig;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.j20;
+import org.telegram.messenger.zs;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_toncenter;
-import org.telegram.ui.Components.b10;
-import org.telegram.ui.Components.dy0;
+import org.telegram.ui.Components.ew;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes4.dex */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes3.dex */
 public final class z0 {
     public final int a;
     public final String b;
-    public final l0 c;
+    public final k0 c;
     public boolean d;
     public boolean e;
     public String f;
     public int g;
     public int h;
     public int j;
-    public uc.u k;
+    public lc.v k;
     public long l;
-    public final w0 m;
-    public final w0 n;
-    public final w0 o;
+    public final v0 m;
+    public final v0 n;
+    public final v0 o;
     public int i = -1;
-    public final dy0 p = new dy0(this, 5);
+    public final ew p = new ew(this, 17);
 
-    /* JADX WARN: Type inference failed for: r0v1, types: [org.telegram.ui.Wallet.w0] */
-    /* JADX WARN: Type inference failed for: r0v2, types: [org.telegram.ui.Wallet.w0] */
-    /* JADX WARN: Type inference failed for: r0v3, types: [org.telegram.ui.Wallet.w0] */
-    public z0(int i10, String str, l0 l0Var) {
+    /* JADX WARN: Type inference failed for: r0v1, types: [org.telegram.ui.Wallet.v0] */
+    /* JADX WARN: Type inference failed for: r0v2, types: [org.telegram.ui.Wallet.v0] */
+    /* JADX WARN: Type inference failed for: r0v3, types: [org.telegram.ui.Wallet.v0] */
+    public z0(int i10, String str, k0 k0Var) {
         final int i11 = 0;
-        this.m = new Runnable(this) { // from class: org.telegram.ui.Wallet.w0
+        this.m = new Runnable(this) { // from class: org.telegram.ui.Wallet.v0
             public final /* synthetic */ z0 b;
 
             {
@@ -69,7 +64,7 @@ public final class z0 {
             }
         };
         final int i12 = 1;
-        this.n = new Runnable(this) { // from class: org.telegram.ui.Wallet.w0
+        this.n = new Runnable(this) { // from class: org.telegram.ui.Wallet.v0
             public final /* synthetic */ z0 b;
 
             {
@@ -98,7 +93,7 @@ public final class z0 {
             }
         };
         final int i13 = 2;
-        this.o = new Runnable(this) { // from class: org.telegram.ui.Wallet.w0
+        this.o = new Runnable(this) { // from class: org.telegram.ui.Wallet.v0
             public final /* synthetic */ z0 b;
 
             {
@@ -128,13 +123,13 @@ public final class z0 {
         };
         this.a = i10;
         this.b = str;
-        this.c = l0Var;
+        this.c = k0Var;
     }
 
-    public static String a(uc.v vVar) {
+    public static String a(lc.w wVar) {
         String str;
-        ca.a aVar;
-        switch (vVar.a) {
+        ba.a aVar;
+        switch (wVar.a) {
             case 1:
                 str = "NOT_IN_CREATED_STATE";
                 break;
@@ -222,10 +217,10 @@ public final class z0 {
             case 29:
                 str = "UNEXPECTED_RESERVED_BIT";
                 break;
-            case MessageObject.TYPE_GIFT_STARS /* 30 */:
+            case zs.T /* 30 */:
                 str = "FRAME_MASKED";
                 break;
-            case MessageObject.TYPE_GIFT_THEME_UPDATE /* 31 */:
+            case zs.U /* 31 */:
                 str = "UNKNOWN_OPCODE";
                 break;
             case 32:
@@ -249,49 +244,49 @@ public final class z0 {
             case 38:
                 str = "UNEXPECTED_ERROR_IN_READING_THREAD";
                 break;
-            case Maneuver.TYPE_DESTINATION /* 39 */:
+            case 39:
                 str = "UNEXPECTED_ERROR_IN_WRITING_THREAD";
                 break;
-            case Maneuver.TYPE_DESTINATION_STRAIGHT /* 40 */:
+            case 40:
                 str = "PERMESSAGE_DEFLATE_UNSUPPORTED_PARAMETER";
                 break;
-            case Maneuver.TYPE_DESTINATION_LEFT /* 41 */:
+            case 41:
                 str = "PERMESSAGE_DEFLATE_INVALID_MAX_WINDOW_BITS";
                 break;
-            case Maneuver.TYPE_DESTINATION_RIGHT /* 42 */:
+            case 42:
                 str = "COMPRESSION_ERROR";
                 break;
-            case Maneuver.TYPE_ROUNDABOUT_ENTER_CW /* 43 */:
+            case 43:
                 str = "DECOMPRESSION_ERROR";
                 break;
-            case Maneuver.TYPE_ROUNDABOUT_EXIT_CW /* 44 */:
+            case 44:
                 str = "SOCKET_CONNECT_ERROR";
                 break;
-            case Maneuver.TYPE_ROUNDABOUT_ENTER_CCW /* 45 */:
+            case 45:
                 str = "PROXY_HANDSHAKE_ERROR";
                 break;
-            case Maneuver.TYPE_ROUNDABOUT_EXIT_CCW /* 46 */:
+            case 46:
                 str = "SOCKET_OVERLAY_ERROR";
                 break;
-            case Maneuver.TYPE_FERRY_BOAT_LEFT /* 47 */:
+            case 47:
                 str = "SSL_HANDSHAKE_ERROR";
                 break;
             case 48:
                 str = "NO_MORE_FRAME";
                 break;
-            case Maneuver.TYPE_FERRY_TRAIN_LEFT /* 49 */:
+            case 49:
                 str = "HOSTNAME_UNVERIFIED";
                 break;
             default:
-                str = BuildConfig.BETA_URL;
+                str = "null";
                 break;
         }
-        if (!(vVar instanceof uc.n) || (aVar = ((uc.n) vVar).b) == null) {
+        if (!(wVar instanceof lc.n) || (aVar = ((lc.n) wVar).b) == null) {
             return str;
         }
-        StringBuilder l4 = b10.l(str, ", HTTP ");
-        l4.append(aVar.c);
-        return l4.toString();
+        StringBuilder i10 = sc.e.i(str, ", HTTP ");
+        i10.append(aVar.c);
+        return i10.toString();
     }
 
     public final void b() {
@@ -304,40 +299,40 @@ public final class z0 {
         d(sb2.toString());
         this.h++;
         this.e = false;
-        AndroidUtilities.cancelRunOnUIThread(this.m);
-        AndroidUtilities.cancelRunOnUIThread(this.n);
-        AndroidUtilities.cancelRunOnUIThread(this.o);
-        AndroidUtilities.cancelRunOnUIThread(this.p);
+        org.telegram.messenger.i0.r(this.m);
+        org.telegram.messenger.i0.r(this.n);
+        org.telegram.messenger.i0.r(this.o);
+        org.telegram.messenger.i0.r(this.p);
         if (this.i >= 0) {
             ConnectionsManager.getInstance(this.a).cancelRequest(this.i, true);
             this.i = -1;
         }
-        uc.u uVar = this.k;
+        lc.v vVar = this.k;
         this.k = null;
-        if (uVar != null) {
-            uVar.c();
+        if (vVar != null) {
+            vVar.c();
         }
     }
 
-    public final boolean c(uc.u uVar, int i10) {
-        return this.d && this.k == uVar && this.h == i10;
+    public final boolean c(lc.v vVar, int i10) {
+        return this.d && this.k == vVar && this.h == i10;
     }
 
     public final void d(String str) {
-        FileLog.d("[gram-wallet-streaming] account=" + this.a + " generation=" + this.h + " " + str);
+        org.telegram.messenger.f8.b("[gram-wallet-streaming] account=" + this.a + " generation=" + this.h + " " + str);
     }
 
     public final void e() {
         if (this.d) {
-            AndroidUtilities.cancelRunOnUIThread(this.m);
+            org.telegram.messenger.i0.r(this.m);
             final int i10 = this.h + 1;
             this.h = i10;
             final long elapsedRealtime = SystemClock.elapsedRealtime();
             d("requesting streaming URL; retry=" + this.j);
-            AndroidUtilities.runOnUIThread(this.o, 30000L);
-            this.i = ConnectionsManager.getInstance(this.a).sendRequestTyped(new TL_toncenter.getStreamingUrl(), new org.telegram.messenger.a(), new Utilities.Callback2() { // from class: org.telegram.ui.Wallet.x0
-                @Override // org.telegram.messenger.Utilities.Callback2
-                public final void run(Object obj, Object obj2) {
+            org.telegram.messenger.i0.h3(this.o, 30000L);
+            this.i = ConnectionsManager.getInstance(this.a).sendRequestTyped(new TL_toncenter.getStreamingUrl(), new a3.b(1), new j20() { // from class: org.telegram.ui.Wallet.w0
+                @Override // org.telegram.messenger.j20
+                public final void a(Object obj, Object obj2) {
                     z0 z0Var = z0.this;
                     int i11 = i10;
                     long j10 = elapsedRealtime;
@@ -353,7 +348,7 @@ public final class z0 {
                     sb2.append(tL_error == null ? "none" : Integer.valueOf(tL_error.code));
                     z0Var.d(sb2.toString());
                     z0Var.i = -1;
-                    AndroidUtilities.cancelRunOnUIThread(z0Var.o);
+                    org.telegram.messenger.i0.r(z0Var.o);
                     if (streamingurl == null || TextUtils.isEmpty(streamingurl.url)) {
                         z0Var.f("could not obtain streaming URL");
                         return;
@@ -364,28 +359,28 @@ public final class z0 {
                         z0Var.f("received expired streaming URL");
                         return;
                     }
-                    AndroidUtilities.runOnUIThread(z0Var.n, currentTime);
+                    org.telegram.messenger.i0.h3(z0Var.n, currentTime);
                     String str = streamingurl.url;
                     long elapsedRealtime2 = SystemClock.elapsedRealtime();
                     z0Var.d("opening websocket; attempt=" + i11);
                     try {
-                        d5.z zVar = new d5.z(14, (short) 0);
-                        zVar.b = 10000;
-                        uc.u g7 = zVar.g(str);
-                        z0Var.k = g7;
+                        c5.x xVar = new c5.x(9, (short) 0);
+                        xVar.b = 10000;
+                        lc.v h = xVar.h(str);
+                        z0Var.k = h;
                         y0 y0Var = new y0(z0Var, i11, elapsedRealtime2);
-                        c2.b bVar = g7.d;
-                        synchronized (((ArrayList) bVar.c)) {
-                            ((ArrayList) bVar.c).add(y0Var);
-                            bVar.a = true;
+                        ac.a aVar = h.d;
+                        synchronized (((ArrayList) aVar.c)) {
+                            ((ArrayList) aVar.c).add(y0Var);
+                            aVar.a = true;
                         }
-                        AndroidUtilities.runOnUIThread(z0Var.o, 30000L);
-                        uc.u uVar = z0Var.k;
-                        uVar.getClass();
-                        uc.b bVar2 = new uc.b("ConnectThread", uVar, 3, 0);
-                        c2.b bVar3 = uVar.d;
-                        if (bVar3 != null) {
-                            ArrayList arrayList = (ArrayList) bVar3.n();
+                        org.telegram.messenger.i0.h3(z0Var.o, 30000L);
+                        lc.v vVar = z0Var.k;
+                        vVar.getClass();
+                        lc.b bVar = new lc.b("ConnectThread", vVar, 3, 0);
+                        ac.a aVar2 = vVar.d;
+                        if (aVar2 != null) {
+                            ArrayList arrayList = (ArrayList) aVar2.o();
                             int size = arrayList.size();
                             int i12 = 0;
                             while (i12 < size) {
@@ -402,7 +397,7 @@ public final class z0 {
                                 }
                             }
                         }
-                        bVar2.start();
+                        bVar.start();
                     } catch (Exception e) {
                         z0Var.f("could not open websocket: ".concat(e.getClass().getSimpleName()));
                     }
@@ -418,23 +413,23 @@ public final class z0 {
             this.j = i10 + 1;
             long min = Math.min(30000L, 1000 << Math.min(i10, 5)) + ((long) (Math.random() * 500.0d));
             d(str + "; retrying in " + min + " ms");
-            AndroidUtilities.runOnUIThread(this.m, min);
+            org.telegram.messenger.i0.h3(this.m, min);
         }
     }
 
     public final void g(String str) {
         d("send -> " + str);
-        uc.u uVar = this.k;
-        uVar.getClass();
-        uc.x xVar = new uc.x();
-        xVar.a = true;
-        xVar.e = 1;
+        lc.v vVar = this.k;
+        vVar.getClass();
+        lc.y yVar = new lc.y();
+        yVar.a = true;
+        yVar.e = 1;
         if (str == null || str.length() == 0) {
-            xVar.g = null;
+            yVar.g = null;
         } else {
-            xVar.c(uc.k.a(str));
+            yVar.c(lc.k.a(str));
         }
-        uVar.g(xVar);
+        vVar.g(yVar);
     }
 
     public final void h() {

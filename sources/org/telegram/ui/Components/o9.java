@@ -1,204 +1,158 @@
 package org.telegram.ui.Components;
 
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.app.Activity;
 import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.TLObject;
+import android.graphics.drawable.GradientDrawable;
+import android.util.Property;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ScrollView;
+import android.widget.TextView;
+import java.util.HashSet;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class o9 extends Drawable {
-    public final ViewGroup a;
-    public final int b;
-    public boolean d;
-    public final int e;
-    public final int f;
-    public final float g;
-    public final oe.j c = new oe.j(new jg.i(this), ds.h, 380);
-    public final ArrayList h = new ArrayList();
-    public int i = 255;
+public final class o9 extends FrameLayout implements org.telegram.messenger.us, org.telegram.ui.ActionBar.k6 {
+    public boolean D;
+    public int E;
+    public int F;
+    public TextView a;
+    public TextView b;
+    public jg.l0 c;
+    public jg.l0 d;
+    public fi0 e;
+    public ScrollView f;
+    public AnimatorSet h;
+    public TLRPC.TL_help_appUpdate n;
+    public String r;
+    public int s;
+    public int w;
+    public GradientDrawable x;
+    public GradientDrawable y;
 
-    public o9(int i10, ViewGroup viewGroup, int i11, int i12, float f7) {
-        this.b = i10;
-        this.a = viewGroup;
-        this.e = i11;
-        this.f = i12;
-        this.g = f7;
+    public final void a(boolean z10) {
+        jg.l0 l0Var = this.d;
+        TextView textView = this.b;
+        jg.l0 l0Var2 = this.c;
+        AnimatorSet animatorSet = this.h;
+        if (animatorSet != null) {
+            animatorSet.cancel();
+        }
+        this.h = new AnimatorSet();
+        Property property = View.ALPHA;
+        Property property2 = View.SCALE_Y;
+        Property property3 = View.SCALE_X;
+        if (z10) {
+            l0Var2.setVisibility(0);
+            l0Var.setEnabled(false);
+            this.h.playTogether(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property3, 0.1f), ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property2, 0.1f), ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, 0.0f), ObjectAnimator.ofFloat(l0Var2, (Property<jg.l0, Float>) property3, 1.0f), ObjectAnimator.ofFloat(l0Var2, (Property<jg.l0, Float>) property2, 1.0f), ObjectAnimator.ofFloat(l0Var2, (Property<jg.l0, Float>) property, 1.0f));
+        } else {
+            textView.setVisibility(0);
+            l0Var.setEnabled(true);
+            this.h.playTogether(ObjectAnimator.ofFloat(l0Var2, (Property<jg.l0, Float>) property3, 0.1f), ObjectAnimator.ofFloat(l0Var2, (Property<jg.l0, Float>) property2, 0.1f), ObjectAnimator.ofFloat(l0Var2, (Property<jg.l0, Float>) property, 0.0f), ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property3, 1.0f), ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property2, 1.0f), ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, 1.0f));
+        }
+        this.h.addListener(new eg.m(16, this, z10));
+        this.h.setDuration(150L);
+        this.h.start();
     }
 
-    public final void a() {
-        if (this.d) {
+    @Override // org.telegram.messenger.us
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        if (i10 == org.telegram.messenger.zs.Y1) {
+            String str = (String) objArr[0];
+            String str2 = this.r;
+            if (str2 == null || !str2.equals(str)) {
+                return;
+            }
+            a(false);
+            org.telegram.messenger.w0.a.v((Activity) getContext(), this.n.document);
             return;
         }
-        this.d = true;
-        ArrayList arrayList = this.h;
-        int size = arrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
-            n9 n9Var = (n9) obj;
-            if (n9Var.c != 0 && !n9Var.d) {
-                n9Var.d = true;
-                n9Var.a.onAttachedToWindow();
+        if (i10 == org.telegram.messenger.zs.Z1) {
+            String str3 = (String) objArr[0];
+            String str4 = this.r;
+            if (str4 == null || !str4.equals(str3)) {
+                return;
             }
-        }
-    }
-
-    public final void b() {
-        if (this.d) {
-            this.d = false;
-            ArrayList arrayList = this.h;
-            int size = arrayList.size();
-            int i10 = 0;
-            while (i10 < size) {
-                Object obj = arrayList.get(i10);
-                i10++;
-                n9 n9Var = (n9) obj;
-                if (n9Var.d) {
-                    n9Var.d = false;
-                    n9Var.a.onDetachedFromWindow();
-                }
-            }
-        }
-    }
-
-    public final void c(Canvas canvas) {
-        Rect bounds = getBounds();
-        if (bounds.isEmpty() || this.i == 0) {
+            a(false);
             return;
         }
-        float f7 = bounds.left;
-        float f10 = bounds.top;
-        oe.j jVar = this.c;
-        canvas.saveLayer(f7, f10, f7 + jVar.d.f.a, f10 + this.e, null);
-        for (int size = jVar.b.size() - 1; size >= 0; size--) {
-            oe.g m10 = jVar.m(size);
-            RectF b10 = m10.b();
-            Object obj = m10.a;
-            float f11 = m10.f.a;
-            float c10 = m10.c();
-            float f12 = b10.left + f11;
-            float width = b10.width() - f11;
-            float f13 = f7 + f12;
-            float f14 = width / 2.0f;
-            float f15 = f13 + f14;
-            float f16 = f10 + f14;
-            canvas.save();
-            canvas.scale(c10, c10, f15, f16);
-            canvas.drawCircle(f15, f16, f14 + this.g, org.telegram.ui.ActionBar.y6.Nl);
-            n9 n9Var = (n9) obj;
-            n9Var.a.setImageCoords(f13, f10, width, width);
-            n9Var.a.setAlpha((this.i / 255.0f) * m10.c());
-            n9Var.a.draw(canvas);
-            canvas.restore();
+        if (i10 == org.telegram.messenger.zs.X1) {
+            String str5 = (String) objArr[0];
+            String str6 = this.r;
+            if (str6 == null || !str6.equals(str5)) {
+                return;
+            }
+            this.e.e(true, Math.min(1.0f, ((Long) objArr[1]).longValue() / ((Long) objArr[2]).longValue()));
         }
-        canvas.restore();
     }
 
-    public final void d(List list, boolean z10) {
-        n9 n9Var;
-        oe.j jVar = this.c;
-        if (list == null || list.isEmpty()) {
-            jVar.q(null, z10);
-            return;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        GradientDrawable gradientDrawable = this.x;
+        ScrollView scrollView = this.f;
+        gradientDrawable.setBounds(scrollView.getLeft(), scrollView.getTop(), scrollView.getRight(), org.telegram.messenger.i0.L(16.0f) + scrollView.getTop());
+        gradientDrawable.draw(canvas);
+        GradientDrawable gradientDrawable2 = this.y;
+        gradientDrawable2.setBounds(scrollView.getLeft(), scrollView.getBottom() - org.telegram.messenger.i0.L(18.0f), scrollView.getRight(), scrollView.getBottom());
+        gradientDrawable2.draw(canvas);
+    }
+
+    @Override // android.view.View
+    public void setVisibility(int i10) {
+        super.setVisibility(i10);
+        if (i10 == 8) {
+            org.telegram.messenger.zs.f(this.s).n(this, org.telegram.messenger.zs.Y1);
+            org.telegram.messenger.zs.f(this.s).n(this, org.telegram.messenger.zs.Z1);
+            org.telegram.messenger.zs.f(this.s).n(this, org.telegram.messenger.zs.X1);
         }
-        if (!z10) {
-            jVar.q(null, false);
+    }
+
+    @Override // org.telegram.ui.ActionBar.k6
+    public final void updateColors() {
+        int x02;
+        ScrollView scrollView;
+        GradientDrawable gradientDrawable = this.y;
+        GradientDrawable gradientDrawable2 = this.x;
+        try {
+            int x03 = org.telegram.ui.ActionBar.t6.x0(null, org.telegram.ui.ActionBar.t6.d6, false);
+            if (this.D) {
+                if (x03 != this.E) {
+                }
+                x02 = org.telegram.ui.ActionBar.t6.x0(null, org.telegram.ui.ActionBar.t6.s8, false);
+                scrollView = this.f;
+                if (scrollView != null && (!this.D || x02 != this.F)) {
+                    this.F = x02;
+                    org.telegram.messenger.i0.y3(scrollView, x02);
+                }
+                this.D = true;
+                invalidate();
+            }
+            this.E = x03;
+            if (gradientDrawable2 != null) {
+                gradientDrawable2.setColors(new int[]{x03, 0});
+            }
+            if (gradientDrawable != null) {
+                gradientDrawable.setColors(new int[]{x03, 0});
+            }
+            x02 = org.telegram.ui.ActionBar.t6.x0(null, org.telegram.ui.ActionBar.t6.s8, false);
+            scrollView = this.f;
+            if (scrollView != null) {
+                this.F = x02;
+                org.telegram.messenger.i0.y3(scrollView, x02);
+            }
+            this.D = true;
+            invalidate();
+        } catch (Exception e) {
+            org.telegram.messenger.f8.g(e, true);
         }
-        ArrayList arrayList = new ArrayList(list.size());
-        Iterator it = list.iterator();
-        while (it.hasNext()) {
-            long peerDialogId = DialogObject.getPeerDialogId((TLRPC.Peer) it.next());
-            ArrayList arrayList2 = this.h;
-            int size = arrayList2.size();
-            int i10 = 0;
-            while (true) {
-                if (i10 >= size) {
-                    n9Var = null;
-                    break;
-                }
-                Object obj = arrayList2.get(i10);
-                i10++;
-                n9Var = (n9) obj;
-                if (n9Var.c == peerDialogId) {
-                    break;
-                }
-            }
-            if (n9Var == null) {
-                int size2 = arrayList2.size();
-                int i11 = 0;
-                while (true) {
-                    if (i11 >= size2) {
-                        n9Var = null;
-                        break;
-                    }
-                    Object obj2 = arrayList2.get(i11);
-                    i11++;
-                    n9Var = (n9) obj2;
-                    if (n9Var.c == 0) {
-                        break;
-                    }
-                }
-            }
-            if (n9Var == null) {
-                n9Var = new n9(this, this.a);
-                arrayList2.add(n9Var);
-            }
-            ImageReceiver imageReceiver = n9Var.a;
-            j9 j9Var = n9Var.b;
-            if (n9Var.c != peerDialogId) {
-                n9Var.c = peerDialogId;
-                int i12 = this.b;
-                TLObject userOrChat = MessagesController.getInstance(i12).getUserOrChat(peerDialogId);
-                if (userOrChat != null) {
-                    j9Var.j(i12, userOrChat);
-                    imageReceiver.setForUserOrChat(userOrChat, j9Var);
-                } else {
-                    j9Var.n(peerDialogId, "", "");
-                    imageReceiver.clearImage();
-                }
-            }
-            arrayList.add(n9Var);
-            if (this.d && !n9Var.d) {
-                n9Var.d = true;
-                imageReceiver.onAttachedToWindow();
-            }
-        }
-        jVar.q(arrayList, z10);
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        c(canvas);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getAlpha() {
-        return this.i;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return 0;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        this.i = i10;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    @Override // org.telegram.ui.ActionBar.k6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

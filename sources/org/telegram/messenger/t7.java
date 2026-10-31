@@ -1,76 +1,49 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+import java.util.concurrent.CountDownLatch;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class t7 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ MediaDataController b;
+    public final /* synthetic */ b8 a;
+    public final /* synthetic */ m7[] b;
+    public final /* synthetic */ TLRPC.Document c;
+    public final /* synthetic */ ic d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ int f;
+    public final /* synthetic */ n7 h;
+    public final /* synthetic */ long n;
+    public final /* synthetic */ boolean r;
+    public final /* synthetic */ int s;
+    public final /* synthetic */ CountDownLatch w;
 
-    public /* synthetic */ t7(MediaDataController mediaDataController, int i10) {
-        this.a = i10;
-        this.b = mediaDataController;
+    public /* synthetic */ t7(b8 b8Var, m7[] m7VarArr, TLRPC.Document document, ic icVar, Object obj, int i10, n7 n7Var, long j10, boolean z10, int i11, CountDownLatch countDownLatch) {
+        this.a = b8Var;
+        this.b = m7VarArr;
+        this.c = document;
+        this.d = icVar;
+        this.e = obj;
+        this.f = i10;
+        this.h = n7Var;
+        this.n = j10;
+        this.r = z10;
+        this.s = i11;
+        this.w = countDownLatch;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.lambda$processLoadedMenuBots$5();
-                break;
-            case 1:
-                this.b.lambda$addRecentSticker$20();
-                break;
-            case 2:
-                this.b.lambda$processLoadedReactions$15();
-                break;
-            case 3:
-                this.b.lambda$fetchNewEmojiKeywords$211();
-                break;
-            case 4:
-                this.b.lambda$clearRecentEmojiStatuses$230();
-                break;
-            case 5:
-                this.b.lambda$clearRecentStickers$17();
-                break;
-            case 6:
-                this.b.lambda$loadReactions$12();
-                break;
-            case 7:
-                this.b.lambda$loadPremiumPromo$7();
-                break;
-            case 8:
-                this.b.lambda$processLoadedPremiumPromo$9();
-                break;
-            case 9:
-                this.b.lambda$cleanupStickerSetCache$39();
-                break;
-            case 10:
-                this.b.lambda$cleanup$2();
-                break;
-            case 11:
-                this.b.lambda$fetchEmojiStatuses$231();
-                break;
-            case 12:
-                this.b.lambda$loadDraftsIfNeed$186();
-                break;
-            case 13:
-                this.b.lambda$loadHints$145();
-                break;
-            case 14:
-                this.b.lambda$loadDraftsIfNeed$187();
-                break;
-            case 15:
-                this.b.lambda$loadAttachMenuBots$3();
-                break;
-            case 16:
-                this.b.lambda$loadHints$146();
-                break;
-            case 17:
-                this.b.lambda$clearTopPeers$149();
-                break;
-            default:
-                this.b.lambda$fetchEmojiStatuses$233();
-                break;
+        b8 b8Var = this.a;
+        b8Var.getClass();
+        TLRPC.Document document = this.c;
+        ic icVar = this.d;
+        String str = null;
+        TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated = (document != null || icVar == null) ? null : icVar.f;
+        if (document == null && icVar != null) {
+            str = "mp4";
         }
+        this.b[0] = b8Var.Z(document, null, null, tL_fileLocationToBeDeprecated, icVar, this.e, str, (document != null || icVar == null) ? 0L : icVar.r, this.f, this.h, this.n, this.r, this.s);
+        this.w.countDown();
     }
 }

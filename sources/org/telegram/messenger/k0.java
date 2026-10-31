@@ -1,51 +1,29 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
+import android.content.SharedPreferences;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final /* synthetic */ class k0 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class k0 implements m0 {
+    public double a;
 
-    public /* synthetic */ k0(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    @Override // org.telegram.messenger.m0
+    public final boolean a(SharedPreferences.Editor editor, TLRPC.JSONValue jSONValue) {
+        if (!(jSONValue instanceof TLRPC.TL_jsonNumber)) {
+            return false;
+        }
+        double d = ((TLRPC.TL_jsonNumber) jSONValue).value;
+        if (d == this.a) {
+            return false;
+        }
+        this.a = d;
+        editor.putFloat("ton_usd_rate", (float) d);
+        return true;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                ((BirthdayController) this.b).lambda$check$3(tLObject, tL_error);
-                break;
-            case 1:
-                ((DownloadController) this.b).lambda$loadAutoDownloadConfig$2(tLObject, tL_error);
-                break;
-            case 2:
-                ((FileLoadOperation) this.b).lambda$requestFileOffsets$22(tLObject, tL_error);
-                break;
-            case 3:
-                MessagesController.lambda$unblockPeer$110((Runnable) this.b, tLObject, tL_error);
-                break;
-            case 4:
-                MessagesController.lambda$checkIsInChat$479((MessagesController.IsInChatCheckedCallback) this.b, tLObject, tL_error);
-                break;
-            case 5:
-                ((MessagesController.SavedMusicIds) this.b).lambda$load$1(tLObject, tL_error);
-                break;
-            case 6:
-                ((MessagesController.SavedMusicList) this.b).lambda$load$1(tLObject, tL_error);
-                break;
-            case 7:
-                ((TopicsController) this.b).lambda$toggleViewForumAsMessages$18(tLObject, tL_error);
-                break;
-            default:
-                ((UserConfig) this.b).lambda$loadGlobalTTl$4(tLObject, tL_error);
-                break;
-        }
+    @Override // org.telegram.messenger.m0
+    public final void b(SharedPreferences sharedPreferences) {
+        this.a = sharedPreferences.getFloat("ton_usd_rate", (float) 3.0d);
     }
 }

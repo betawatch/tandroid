@@ -1,27 +1,26 @@
 package bb;
 
-import a8.jd;
 import android.util.Log;
 import j$.util.Objects;
 import java.util.Collection;
 import java.util.Map;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class v extends nd.i implements ud.p {
+public final class v extends ed.j implements ld.p {
     public final /* synthetic */ int a;
     public int b;
     public final /* synthetic */ Object c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ v(Object obj, ld.c cVar, int i10) {
+    public /* synthetic */ v(Object obj, cd.c cVar, int i10) {
         super(2, cVar);
         this.a = i10;
         this.c = obj;
     }
 
-    @Override // nd.a
-    public final ld.c create(Object obj, ld.c cVar) {
+    @Override // ed.a
+    public final cd.c create(Object obj, cd.c cVar) {
         switch (this.a) {
             case 0:
                 return new v((c0) this.c, cVar, 0);
@@ -30,42 +29,42 @@ public final class v extends nd.i implements ud.p {
         }
     }
 
-    @Override // ud.p
+    @Override // ld.p
     public final Object invoke(Object obj, Object obj2) {
-        ce.c0 c0Var = (ce.c0) obj;
-        ld.c cVar = (ld.c) obj2;
+        td.c0 c0Var = (td.c0) obj;
+        cd.c cVar = (cd.c) obj2;
         switch (this.a) {
         }
-        return ((v) create(c0Var, cVar)).invokeSuspend(jd.i.a);
+        return ((v) create(c0Var, cVar)).invokeSuspend(ad.j.a);
     }
 
-    @Override // nd.a
+    @Override // ed.a
     public final Object invokeSuspend(Object obj) {
         switch (this.a) {
             case 0:
-                md.a aVar = md.a.a;
+                dd.a aVar = dd.a.a;
                 int i10 = this.b;
                 if (i10 == 0) {
-                    jd.b(obj);
+                    l9.b.b(obj);
                     c0 c0Var = (c0) this.c;
-                    rf.b bVar = c0Var.d;
+                    hf.b bVar = c0Var.d;
                     u uVar = new u(c0Var, 0);
                     this.b = 1;
-                    if (bVar.C(uVar, this) == aVar) {
+                    if (bVar.p(uVar, this) == aVar) {
                         return aVar;
                     }
                 } else {
                     if (i10 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    jd.b(obj);
+                    l9.b.b(obj);
                 }
-                return jd.i.a;
+                return ad.j.a;
             default:
-                md.a aVar2 = md.a.a;
+                dd.a aVar2 = dd.a.a;
                 int i11 = this.b;
                 if (i11 == 0) {
-                    jd.b(obj);
+                    l9.b.b(obj);
                     cb.c cVar = cb.c.a;
                     this.b = 1;
                     obj = cVar.b(this);
@@ -76,27 +75,27 @@ public final class v extends nd.i implements ud.p {
                     if (i11 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    jd.b(obj);
+                    l9.b.b(obj);
                 }
-                Collection<y9.j> values = ((Map) obj).values();
+                Collection<x9.j> values = ((Map) obj).values();
                 String str = (String) this.c;
-                for (y9.j jVar : values) {
+                for (x9.j jVar : values) {
                     cb.e eVar = new cb.e(str);
                     jVar.getClass();
                     String str2 = "App Quality Sessions session changed: " + eVar;
                     if (Log.isLoggable("FirebaseCrashlytics", 3)) {
                         Log.d("FirebaseCrashlytics", str2, null);
                     }
-                    y9.i iVar = jVar.b;
+                    x9.i iVar = jVar.b;
                     synchronized (iVar) {
                         if (!Objects.equals(iVar.c, str)) {
-                            y9.i.a(iVar.a, iVar.b, str);
+                            x9.i.a(iVar.a, iVar.b, str);
                             iVar.c = str;
                         }
                     }
                     Log.d("SessionLifecycleClient", "Notified " + cb.d.a + " of new session " + str);
                 }
-                return jd.i.a;
+                return ad.j.a;
         }
     }
 }

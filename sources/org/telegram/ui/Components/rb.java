@@ -1,13 +1,49 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+import android.content.Context;
+import android.graphics.Typeface;
+import android.widget.LinearLayout;
+
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public interface rb {
-    void a();
+public final class rb extends ta {
+    public final g9 a;
+    public final p80 b;
+    public final p80 c;
 
-    void b();
+    public rb(Context context, org.telegram.ui.ActionBar.p6 p6Var) {
+        super(context, p6Var);
+        int i10 = org.telegram.ui.ActionBar.t6.vj;
+        getThemedColor(i10);
+        setBackground(getThemedColor(org.telegram.ui.ActionBar.t6.tj));
+        g9 g9Var = new g9(context);
+        this.a = g9Var;
+        addView(g9Var, w7.b6.i(32.0f, 32.0f, 8388627, 12.0f, 0.0f, 12.0f, 0.0f));
+        getThemedColor(i10);
+        int i11 = org.telegram.ui.ActionBar.t6.uj;
+        getThemedColor(i11);
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setOrientation(1);
+        addView(linearLayout, w7.b6.i(-2.0f, -2.0f, 8388627, 52.0f, 8.0f, 8.0f, 8.0f));
+        p80 p80Var = new p80(context, null);
+        this.b = p80Var;
+        p80Var.setPadding(org.telegram.messenger.i0.L(4.0f), 0, org.telegram.messenger.i0.L(4.0f), 0);
+        org.telegram.ui.ActionBar.a7.V(p80Var, i10, p6Var);
+        p80Var.setTextSize(1, 14.0f);
+        p80Var.setTypeface(org.telegram.messenger.i0.o());
+        linearLayout.addView(p80Var);
+        p80 p80Var2 = new p80(context, null);
+        this.c = p80Var2;
+        p80Var2.setPadding(org.telegram.messenger.i0.L(4.0f), 0, org.telegram.messenger.i0.L(4.0f), 0);
+        org.telegram.ui.ActionBar.a7.V(p80Var2, i10, p6Var);
+        org.telegram.ui.ActionBar.a7.H(p80Var2, i11, p6Var);
+        p80Var2.setTypeface(Typeface.SANS_SERIF);
+        p80Var2.setTextSize(1, 13.0f);
+        linearLayout.addView(p80Var2);
+    }
 
-    void c(qc qcVar);
-
-    void d();
+    @Override // org.telegram.ui.Components.bb
+    public CharSequence getAccessibilityText() {
+        return ((Object) this.b.getText()) + ".\n" + ((Object) this.c.getText());
+    }
 }

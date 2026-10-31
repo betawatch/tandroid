@@ -2,6 +2,7 @@ package j$.util.stream;
 
 import j$.util.Spliterator;
 import java.util.function.IntFunction;
+import org.telegram.tgnet.TLObject;
 
 /* loaded from: classes2.dex */
 public final class n5 extends x0 {
@@ -18,7 +19,7 @@ public final class n5 extends x0 {
     @Override // j$.util.stream.a
     public final Spliterator O0(a aVar, Spliterator spliterator) {
         long k02 = aVar.k0(spliterator);
-        if (k02 > 0 && spliterator.hasCharacteristics(16384)) {
+        if (k02 > 0 && spliterator.hasCharacteristics(TLObject.FLAG_14)) {
             j$.util.x0 x0Var = (j$.util.x0) aVar.H0(spliterator);
             long j10 = this.s;
             return new m7(x0Var, j10, t3.Z(j10, this.t));
@@ -45,7 +46,7 @@ public final class n5 extends x0 {
         long j10;
         long j11;
         long k02 = t3Var.k0(spliterator);
-        if (k02 > 0 && spliterator.hasCharacteristics(16384)) {
+        if (k02 > 0 && spliterator.hasCharacteristics(TLObject.FLAG_14)) {
             a aVar = (a) t3Var;
             while (aVar.l > 0) {
                 aVar = aVar.i;

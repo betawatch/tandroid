@@ -1,79 +1,37 @@
 package org.telegram.ui.ActionBar;
 
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import android.widget.TextView;
-import org.telegram.ui.ph;
-import org.telegram.ui.rh;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class u0 {
-    public final int a;
-    public int b;
-    public int c;
-    public Drawable d;
-    public CharSequence e;
-    public boolean f;
-    public View g;
-    public rh h;
-    public int i;
-    public View j;
-    public ph k;
-    public int l = 0;
-    public int m = 0;
-    public Integer n;
-    public Integer o;
+public final class u0 extends org.telegram.ui.Components.e6 {
+    public final /* synthetic */ int d0;
+    public final /* synthetic */ Object e0;
 
-    public u0(int i10) {
-        this.a = i10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ u0(y0 y0Var, int i10) {
+        super(false, true, true);
+        this.d0 = i10;
+        this.e0 = y0Var;
     }
 
-    public final void a(int i10, int i11) {
-        Integer num = this.n;
-        if (num == null || this.o == null || num.intValue() != i10 || this.o.intValue() != i11) {
-            this.n = Integer.valueOf(i10);
-            this.o = Integer.valueOf(i11);
-            View view = this.j;
-            if (view instanceof g1) {
-                ((g1) view).d(i10, i11);
-            }
+    @Override // android.graphics.drawable.Drawable
+    public final void invalidateSelf() {
+        switch (this.d0) {
+            case 0:
+                ((y0) this.e0).invalidate();
+                break;
+            case 1:
+                ((y0) this.e0).invalidate();
+                break;
+            default:
+                ((Runnable) this.e0).run();
+                break;
         }
     }
 
-    public final void b(int i10) {
-        if (i10 != this.c) {
-            this.c = i10;
-            View view = this.j;
-            if (view instanceof g1) {
-                ((g1) view).setIcon(i10);
-            }
-        }
-    }
-
-    public final void c(ph phVar) {
-        this.k = phVar;
-        View view = this.j;
-        if (view != null) {
-            view.setOnClickListener(phVar);
-        }
-    }
-
-    public final void d(CharSequence charSequence) {
-        this.e = charSequence;
-        View view = this.j;
-        if (view instanceof g1) {
-            ((g1) view).setText(charSequence);
-        } else if (view instanceof TextView) {
-            ((TextView) view).setText(charSequence);
-        }
-    }
-
-    public final void e(int i10) {
-        this.l = i10;
-        View view = this.j;
-        if (view != null) {
-            view.setVisibility(i10);
-        }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public u0(Runnable runnable) {
+        super(false, true, true, true, false);
+        this.d0 = 2;
+        this.e0 = runnable;
     }
 }

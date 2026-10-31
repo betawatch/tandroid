@@ -1,43 +1,34 @@
 package org.telegram.ui.Cells;
 
-import android.animation.ValueAnimator;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.text.style.ReplacementSpan;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class t2 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ v2 b;
+public final class t2 extends ReplacementSpan {
+    public final int a;
 
-    public /* synthetic */ t2(v2 v2Var, int i10) {
+    public t2(int i10) {
         this.a = i10;
-        this.b = v2Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                v2 v2Var = this.b;
-                v2Var.getClass();
-                v2Var.a = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                v2Var.requestLayout();
-                q0.a aVar = v2Var.c;
-                if (aVar != null) {
-                    aVar.accept(Float.valueOf(v2Var.a));
-                    break;
-                }
-                break;
-            default:
-                v2 v2Var2 = this.b;
-                v2Var2.getClass();
-                v2Var2.a = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                v2Var2.requestLayout();
-                q0.a aVar2 = v2Var2.c;
-                if (aVar2 != null) {
-                    aVar2.accept(Float.valueOf(v2Var2.a));
-                    break;
-                }
-                break;
+    @Override // android.text.style.ReplacementSpan
+    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
+        if (fontMetricsInt == null) {
+            fontMetricsInt = paint.getFontMetricsInt();
         }
+        if (fontMetricsInt != null) {
+            int i12 = 1 - (fontMetricsInt.descent - fontMetricsInt.ascent);
+            fontMetricsInt.descent = i12;
+            fontMetricsInt.bottom = i12;
+            fontMetricsInt.ascent = -1;
+            fontMetricsInt.top = -1;
+        }
+        return this.a;
+    }
+
+    @Override // android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
     }
 }

@@ -1,17 +1,17 @@
 package m4;
 
-import a8.fd;
 import java.util.List;
+import v7.d8;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class x {
-    public final f9.i0 a;
+    public final e9.n0 a;
     public final int b;
     public final long c;
 
-    public x(long j10, int i10, List list) {
-        this.a = f9.i0.u(list);
+    public x(List list, int i10, long j10) {
+        this.a = e9.n0.u(list);
         this.b = i10;
         this.c = j10;
     }
@@ -28,6 +28,6 @@ public final class x {
     }
 
     public final int hashCode() {
-        return fd.b(this.c) + (((this.a.hashCode() * 31) + this.b) * 31);
+        return d8.b(this.c) + (((this.a.hashCode() * 31) + this.b) * 31);
     }
 }

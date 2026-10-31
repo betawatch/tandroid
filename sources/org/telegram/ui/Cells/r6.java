@@ -2,37 +2,72 @@ package org.telegram.ui.Cells;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.view.MotionEvent;
-import org.telegram.ui.Components.tc0;
+import android.text.TextUtils;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.messenger.cd;
+import org.telegram.ui.Components.CheckBoxSquare;
+import org.telegram.ui.Components.p80;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final class r6 extends org.telegram.ui.Components.y9 {
-    public final /* synthetic */ int G;
-    public final /* synthetic */ s6 H;
+public final class r6 extends FrameLayout {
+    public final ji.a a;
+    public final p80 b;
+    public final CheckBoxSquare c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public r6(s6 s6Var, Context context, int i10) {
+    public r6(Context context, org.telegram.ui.ActionBar.p6 p6Var) {
         super(context);
-        this.H = s6Var;
-        this.G = i10;
+        CheckBoxSquare checkBoxSquare = new CheckBoxSquare(context, null, false);
+        this.c = checkBoxSquare;
+        checkBoxSquare.setDuplicateParentStateEnabled(false);
+        checkBoxSquare.setFocusable(false);
+        checkBoxSquare.setFocusableInTouchMode(false);
+        checkBoxSquare.setClickable(false);
+        addView(checkBoxSquare, w7.b6.d(18, 18.0f, (cd.X ? 5 : 3) | 16, 21.0f, 0.0f, 21.0f, 0.0f));
+        ji.a aVar = new ji.a(this);
+        this.a = aVar;
+        p80 p80Var = new p80(context, aVar, p6Var);
+        this.b = p80Var;
+        org.telegram.ui.ActionBar.a7.V(p80Var, org.telegram.ui.ActionBar.t6.G6, p6Var);
+        org.telegram.ui.ActionBar.a7.H(p80Var, org.telegram.ui.ActionBar.t6.J6, p6Var);
+        p80Var.setTextSize(1, 15.0f);
+        p80Var.setMaxLines(2);
+        p80Var.setGravity((cd.X ? 5 : 3) | 16);
+        p80Var.setEllipsize(TextUtils.TruncateAt.END);
+        boolean z10 = cd.X;
+        addView(p80Var, w7.b6.d(-1, -1.0f, (z10 ? 5 : 3) | 48, z10 ? 16.0f : 58.0f, 21.0f, z10 ? 58.0f : 16.0f, 21.0f));
+        setWillNotDraw(false);
     }
 
-    @Override // org.telegram.ui.Components.y9, android.view.View
-    public final void onDraw(Canvas canvas) {
-        s6 s6Var = this.H;
-        q6 q6Var = s6Var.E;
-        tc0 tc0Var = s6.H;
-        if (this.G != 1) {
-            super.onDraw(canvas);
-        } else {
-            q6Var.F.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
-            di.a8.h(s6Var.y, canvas, getImageReceiver(), q6Var);
-        }
+    public CheckBoxSquare getCheckBox() {
+        return this.c;
+    }
+
+    public TextView getTextView() {
+        return this.b;
     }
 
     @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        return this.H.E.a(motionEvent, this);
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        ji.a aVar = this.a;
+        if (aVar != null) {
+            canvas.save();
+            p80 p80Var = this.b;
+            canvas.translate(p80Var.getLeft(), p80Var.getTop());
+            if (aVar.h(canvas)) {
+                invalidate();
+            }
+            canvas.restore();
+        }
+    }
+
+    public void setChecked(boolean z10) {
+        this.c.a(z10, true);
+    }
+
+    public void setText(CharSequence charSequence) {
+        this.b.setText(charSequence);
     }
 }

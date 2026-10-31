@@ -1,30 +1,30 @@
 package j3;
 
-import a8.ad;
-import a8.lg;
 import b2.u0;
+import b2.v0;
 import b2.w;
-import b2.w0;
-import c3.j0;
+import c3.g0;
+import c3.k0;
 import c3.o;
 import c3.p;
 import c3.q;
 import c3.s;
 import c3.t;
 import e2.x;
-import f9.g0;
-import f9.i0;
-import f9.s1;
+import e9.l0;
+import e9.n0;
+import e9.x1;
 import java.util.List;
+import v7.j8;
 import w3.l;
 import z3.k;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class a implements o {
     public q b;
     public p c;
-    public lg d;
+    public g0 d;
     public l e;
     public int g;
     public long h;
@@ -35,7 +35,7 @@ public final class a implements o {
 
     @Override // c3.o
     public final boolean a(p pVar) {
-        return ad.a((c3.l) pVar, true);
+        return j8.a((c3.l) pVar, true);
     }
 
     @Override // c3.o
@@ -64,8 +64,8 @@ public final class a implements o {
 
     @Override // c3.o
     public final List e() {
-        g0 g0Var = i0.b;
-        return s1.e;
+        l0 l0Var = n0.b;
+        return x1.e;
     }
 
     @Override // c3.o
@@ -76,11 +76,11 @@ public final class a implements o {
                 int i11 = this.i;
                 x xVar = this.a;
                 if (i11 == 0) {
-                    if (!pVar.c(xVar.a, 0, 8, true)) {
+                    if (!pVar.d(xVar.a, 0, 8, true)) {
                         q qVar = this.b;
                         qVar.getClass();
                         qVar.Q0();
-                        this.b.D1(new t(-9223372036854775807L));
+                        this.b.G1(new t(-9223372036854775807L));
                         this.f = 4;
                         return -1;
                     }
@@ -101,17 +101,17 @@ public final class a implements o {
                     l3.b bVar = new l3.b(0L, position - j10, -9223372036854775807L, position, this.h - j10);
                     q qVar2 = this.b;
                     qVar2.getClass();
-                    j0 F1 = qVar2.F1(1024, 4);
+                    k0 I1 = qVar2.I1(1024, 4);
                     w wVar = new w();
-                    wVar.q = w0.n("image/heic");
+                    wVar.q = v0.n("image/heic");
                     wVar.k = new u0(bVar);
-                    ic.a.u(wVar, F1);
+                    i0.a.r(wVar, I1);
                     this.f = 2;
                 } else {
                     this.f = 1;
                 }
             } else if (i10 == 1) {
-                pVar.r((int) (this.h - this.i));
+                pVar.q((int) (this.h - this.i));
                 this.i = 0;
                 this.f = 0;
             } else {
@@ -124,7 +124,7 @@ public final class a implements o {
                     }
                     if (this.d == null || pVar != this.c) {
                         this.c = pVar;
-                        this.d = new lg(pVar, this.j);
+                        this.d = new g0(pVar, this.j);
                     }
                     l lVar = this.e;
                     lVar.getClass();
@@ -135,22 +135,22 @@ public final class a implements o {
                     return f7;
                 }
                 if (this.e == null) {
-                    this.e = new l(k.D, 8);
+                    this.e = new l(k.C, 8);
                 }
-                lg lgVar = new lg(pVar, this.j);
-                this.d = lgVar;
-                if (this.e.a(lgVar)) {
+                g0 g0Var = new g0(pVar, this.j);
+                this.d = g0Var;
+                if (this.e.a(g0Var)) {
                     l lVar2 = this.e;
                     long j11 = this.j;
                     q qVar3 = this.b;
                     qVar3.getClass();
-                    lVar2.c(new lg(j11, qVar3, 3));
+                    lVar2.c(new g0(j11, qVar3, 1));
                     this.f = 3;
                 } else {
                     q qVar4 = this.b;
                     qVar4.getClass();
                     qVar4.Q0();
-                    this.b.D1(new t(-9223372036854775807L));
+                    this.b.G1(new t(-9223372036854775807L));
                     this.f = 4;
                 }
             }

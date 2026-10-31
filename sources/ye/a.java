@@ -1,53 +1,18 @@
 package ye;
 
-import bf.e;
-import ef.p;
-import ef.s;
+import se.b;
+import ve.r;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class a implements hf.a {
-    @Override // hf.a
-    public final int a(e eVar, e eVar2) {
-        return (eVar.g < 2 || eVar2.g < 2) ? 0 : 2;
-    }
+public interface a {
+    int a(b bVar, b bVar2);
 
-    @Override // hf.a
-    public final char b() {
-        return '~';
-    }
+    char b();
 
-    @Override // hf.a
-    public final int c() {
-        return 2;
-    }
+    void c(r rVar, r rVar2, int i10);
 
-    @Override // hf.a
-    public final void d(s sVar, s sVar2, int i10) {
-        xe.a aVar = new xe.a();
-        p pVar = (p) sVar.f;
-        while (pVar != null && pVar != sVar2) {
-            p pVar2 = (p) pVar.f;
-            aVar.b(pVar);
-            pVar = pVar2;
-        }
-        aVar.g();
-        p pVar3 = (p) sVar.f;
-        aVar.f = pVar3;
-        if (pVar3 != null) {
-            pVar3.e = aVar;
-        }
-        aVar.e = sVar;
-        sVar.f = aVar;
-        p pVar4 = (p) sVar.b;
-        aVar.b = pVar4;
-        if (((p) aVar.f) == null) {
-            pVar4.d = aVar;
-        }
-    }
+    int d();
 
-    @Override // hf.a
-    public final char e() {
-        return '~';
-    }
+    char e();
 }

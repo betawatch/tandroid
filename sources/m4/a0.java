@@ -1,8 +1,8 @@
 package m4;
 
-import m.d3;
+import m.c3;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a0 implements e0, o0 {
     public final /* synthetic */ boolean a;
@@ -17,21 +17,21 @@ public final /* synthetic */ class a0 implements e0, o0 {
         this.b = z11;
     }
 
-    @Override // m4.e0
-    public void d(v vVar, int i10) {
-        vVar.f(i10, (s1) this.c, this.a, this.b, ((w) this.d).c);
+    @Override // m4.o0
+    public void b(w wVar) {
+        p0 p0Var = (p0) this.c;
+        j9.e0 q6 = p0Var.h.q(wVar, e9.n0.y((b2.p0) this.d), -1, -9223372036854775807L);
+        c3 c3Var = new c3();
+        c3Var.d = p0Var;
+        c3Var.c = wVar;
+        c3Var.a = this.a;
+        c3Var.b = this.b;
+        q6.a(new j9.u(0, q6, c3Var), j9.r.a);
     }
 
-    @Override // m4.o0
-    public void i(w wVar) {
-        p0 p0Var = (p0) this.c;
-        k9.e0 q5 = p0Var.g.q(wVar, f9.i0.y((b2.p0) this.d), -1, -9223372036854775807L);
-        d3 d3Var = new d3();
-        d3Var.d = p0Var;
-        d3Var.c = wVar;
-        d3Var.a = this.a;
-        d3Var.b = this.b;
-        q5.a(new k9.u(0, q5, d3Var), k9.r.a);
+    @Override // m4.e0
+    public void e(v vVar, int i10) {
+        vVar.f(i10, (s1) this.c, this.a, this.b, ((w) this.d).c);
     }
 
     public /* synthetic */ a0(s1 s1Var, boolean z10, boolean z11, w wVar) {

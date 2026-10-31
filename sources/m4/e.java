@@ -1,13 +1,14 @@
 package m4;
 
-import a8.yb;
 import android.os.Bundle;
 import android.text.TextUtils;
+import e9.x1;
 import j$.util.Objects;
 import java.util.Arrays;
 import java.util.List;
+import v7.t6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class e {
     public static final String h;
@@ -21,12 +22,12 @@ public final class e {
     public final int b;
     public final int c;
     public final Bundle d;
-    public final j9.a e;
+    public final i9.a e;
     public final boolean f;
     public final Object g;
 
     static {
-        String str = e2.n0.a;
+        String str = e2.l0.a;
         h = Integer.toString(0, 36);
         i = Integer.toString(1, 36);
         j = Integer.toString(2, 36);
@@ -39,7 +40,7 @@ public final class e {
         n = Integer.toString(9, 36);
     }
 
-    public e(p1 p1Var, int i10, int i11, Bundle bundle, boolean z10, j9.a aVar, Object obj) {
+    public e(p1 p1Var, int i10, int i11, Bundle bundle, boolean z10, i9.a aVar, Object obj) {
         this.a = p1Var;
         this.b = i10;
         this.c = i11;
@@ -58,31 +59,31 @@ public final class e {
                 if (obj instanceof Integer) {
                     obj = Long.valueOf(((Integer) obj).longValue());
                 }
-                yb.f("Parameter has incorrect type.", obj instanceof Long);
+                t6.e("Parameter has incorrect type.", obj instanceof Long);
                 break;
             case 2:
-                yb.f("Parameter has incorrect type.", obj instanceof Integer);
+                t6.e("Parameter has incorrect type.", obj instanceof Integer);
                 break;
             case 3:
-                yb.f("Parameter has incorrect type.", obj instanceof Boolean);
+                t6.e("Parameter has incorrect type.", obj instanceof Boolean);
                 break;
             case 4:
                 if (obj instanceof Double) {
                     obj = Float.valueOf(((Double) obj).floatValue());
                 }
-                yb.f("Parameter has incorrect type.", obj instanceof Float);
+                t6.e("Parameter has incorrect type.", obj instanceof Float);
                 break;
             case 5:
-                yb.f("Parameter has incorrect type.", obj instanceof b2.h1);
+                t6.e("Parameter has incorrect type.", obj instanceof b2.g1);
                 break;
             case 6:
-                yb.f("Parameter has incorrect type.", obj instanceof b2.p0);
+                t6.e("Parameter has incorrect type.", obj instanceof b2.p0);
                 break;
             case 7:
-                yb.f("Parameter has incorrect type.", obj instanceof b2.s0);
+                t6.e("Parameter has incorrect type.", obj instanceof b2.s0);
                 break;
             case 8:
-                yb.f("Parameter has incorrect type.", obj instanceof b2.u1);
+                t6.e("Parameter has incorrect type.", obj instanceof b2.u1);
                 break;
         }
         return obj;
@@ -104,7 +105,7 @@ public final class e {
             int parseInt = Integer.parseInt(str.substring(39));
             Object h10 = h(i(parseInt), bundle);
             d dVar = new d();
-            yb.f("sessionCommand is already set. Only one of sessionCommand and playerCommand should be set.", ((p1) dVar.d) == null);
+            t6.e("sessionCommand is already set. Only one of sessionCommand and playerCommand should be set.", ((p1) dVar.d) == null);
             dVar.a = parseInt;
             dVar.g = a(i(parseInt), h10);
             return dVar.a();
@@ -113,24 +114,24 @@ public final class e {
         Object h11 = h(parseInt2 == 40010 ? 5 : 0, bundle);
         d dVar2 = new d();
         p1 p1Var2 = new p1(parseInt2);
-        yb.f("playerCommands is already set. Only one of sessionCommand and playerCommand should be set.", dVar2.a == -1);
+        t6.e("playerCommands is already set. Only one of sessionCommand and playerCommand should be set.", dVar2.a == -1);
         dVar2.d = p1Var2;
         dVar2.g = a(p1Var2.a == 40010 ? 5 : 0, h11);
         return dVar2.a();
     }
 
-    public static f9.s1 g(List list) {
+    public static x1 g(List list) {
         int b10;
         if (list.isEmpty()) {
-            f9.g0 g0Var = f9.i0.b;
-            return f9.s1.e;
+            e9.l0 l0Var = e9.n0.b;
+            return x1.e;
         }
         int i10 = -1;
         int i11 = -1;
         for (int i12 = 0; i12 < list.size(); i12++) {
             e eVar = (e) list.get(i12);
             boolean z10 = eVar.f;
-            j9.a aVar = eVar.e;
+            i9.a aVar = eVar.e;
             if (z10 && eVar.b()) {
                 int i13 = 0;
                 while (true) {
@@ -148,7 +149,7 @@ public final class e {
                 }
             }
         }
-        f9.f0 t10 = f9.i0.t();
+        e9.k0 t10 = e9.n0.t();
         if (i10 != -1) {
             t10.c(((e) list.get(i10)).e(2));
         }
@@ -180,7 +181,7 @@ public final class e {
             case 5:
                 Bundle bundle2 = bundle.getBundle("androidx.media3.session.CUSTOM_COMMAND_PARAMETER");
                 bundle2.getClass();
-                return b2.h1.a(bundle2);
+                return b2.g1.a(bundle2);
             case 6:
                 Bundle bundle3 = bundle.getBundle("androidx.media3.session.CUSTOM_COMMAND_PARAMETER");
                 bundle3.getClass();
@@ -282,7 +283,7 @@ public final class e {
         String str;
         p1 p1Var = this.a;
         if (p1Var != null && p1Var.a == 0) {
-            j9.a aVar = new j9.a(new int[]{i10});
+            i9.a aVar = new i9.a(new int[]{i10});
             if (this.e.equals(aVar)) {
                 return this;
             }
@@ -298,7 +299,7 @@ public final class e {
         } else {
             str = "androidx.media3.session.PLAYER_COMMAND_" + this.b;
         }
-        return new e(new p1(str, bundle), -1, this.c, this.d, this.f, new j9.a(new int[]{i10}), null);
+        return new e(new p1(str, bundle), -1, this.c, this.d, this.f, new i9.a(new int[]{i10}), null);
     }
 
     public final boolean equals(Object obj) {
@@ -312,39 +313,39 @@ public final class e {
         return Objects.equals(this.a, eVar.a) && this.b == eVar.b && this.c == eVar.c && TextUtils.equals("", "") && this.f == eVar.f && this.e.equals(eVar.e) && Objects.equals(this.g, eVar.g);
     }
 
-    public final void f(b2.g1 g1Var) {
+    public final void f(b2.f1 f1Var) {
         if (this.f) {
             Object obj = this.g;
             int i10 = this.b;
             if (i10 == 19) {
                 if (obj != null) {
-                    g1Var.B((b2.s0) obj);
+                    f1Var.B((b2.s0) obj);
                     return;
                 }
                 return;
             }
             if (i10 == 24) {
                 if (obj != null) {
-                    g1Var.U(((Float) obj).floatValue());
+                    f1Var.S(((Float) obj).floatValue());
                     return;
-                } else if (g1Var.F() == 0.0f) {
-                    g1Var.c0();
+                } else if (f1Var.F() == 0.0f) {
+                    f1Var.b0();
                     return;
                 } else {
-                    g1Var.B0();
+                    f1Var.B0();
                     return;
                 }
             }
             if (i10 == 29) {
                 if (obj != null) {
-                    g1Var.p((b2.u1) obj);
+                    f1Var.p((b2.u1) obj);
                     return;
                 }
                 return;
             }
             if (i10 == 31) {
                 if (obj != null) {
-                    g1Var.r0((b2.p0) obj);
+                    f1Var.s0((b2.p0) obj);
                     return;
                 }
                 return;
@@ -352,68 +353,68 @@ public final class e {
             switch (i10) {
                 case 1:
                     if (obj == null) {
-                        g1Var.X(!g1Var.t());
+                        f1Var.W(!f1Var.t());
                         break;
                     } else {
-                        g1Var.X(((Boolean) obj).booleanValue());
+                        f1Var.W(((Boolean) obj).booleanValue());
                         break;
                     }
                 case 2:
-                    g1Var.a();
+                    f1Var.a();
                     break;
                 case 3:
-                    g1Var.stop();
+                    f1Var.stop();
                     break;
                 case 4:
-                    g1Var.G();
+                    f1Var.G();
                     break;
                 case 5:
                     if (obj != null) {
-                        g1Var.g(((Long) obj).longValue());
+                        f1Var.f(((Long) obj).longValue());
                         break;
                     }
                     break;
                 case 6:
-                    g1Var.E();
+                    f1Var.E();
                     break;
                 case 7:
-                    g1Var.V();
+                    f1Var.T();
                     break;
                 case 8:
-                    g1Var.f0();
+                    f1Var.e0();
                     break;
                 case 9:
-                    g1Var.H0();
+                    f1Var.H0();
                     break;
                 case 10:
                     if (obj != null) {
-                        g1Var.Y(((Integer) obj).intValue());
+                        f1Var.X(((Integer) obj).intValue());
                         break;
                     }
                     break;
                 case 11:
-                    g1Var.J0();
+                    f1Var.J0();
                     break;
                 case 12:
-                    g1Var.I0();
+                    f1Var.I0();
                     break;
                 case 13:
                     if (obj != null) {
-                        g1Var.b(((Float) obj).floatValue());
+                        f1Var.b(((Float) obj).floatValue());
                         break;
                     }
                     break;
                 case 14:
                     if (obj == null) {
-                        g1Var.w(!g1Var.D0());
+                        f1Var.w(!f1Var.D0());
                         break;
                     } else {
-                        g1Var.w(((Boolean) obj).booleanValue());
+                        f1Var.w(((Boolean) obj).booleanValue());
                         break;
                     }
                 case 15:
                     if (obj != null) {
-                        g1Var.j(((Integer) obj).intValue());
+                        f1Var.k(((Integer) obj).intValue());
                         break;
                     }
                     break;
@@ -447,7 +448,7 @@ public final class e {
         if (!z10) {
             bundle.putBoolean(l, z10);
         }
-        j9.a aVar = this.e;
+        i9.a aVar = this.e;
         if (aVar.b != 1 || aVar.b(0) != 6) {
             bundle.putIntArray(m, Arrays.copyOfRange(aVar.a, 0, aVar.b));
         }
@@ -475,7 +476,7 @@ public final class e {
                 bundle.putFloat(str, ((Float) obj).floatValue());
                 break;
             case 5:
-                bundle.putBundle(str, ((b2.h1) obj).c());
+                bundle.putBundle(str, ((b2.g1) obj).c());
                 break;
             case 6:
                 bundle.putBundle(str, ((b2.p0) obj).c(i10, false));

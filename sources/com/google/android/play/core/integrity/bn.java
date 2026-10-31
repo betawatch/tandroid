@@ -1,48 +1,47 @@
 package com.google.android.play.core.integrity;
 
-import a8.r9;
+import a9.j0;
+import a9.n0;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.os.IInterface;
-import b9.h0;
-import b9.l0;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.play.core.integrity.StandardIntegrityManager;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 final class bn {
-    final b9.d a;
-    private final h0 b;
+    final a9.e a;
+    private final j0 b;
     private final String c;
     private final TaskCompletionSource d;
     private final at e;
     private final k f;
 
-    public bn(Context context, h0 h0Var, at atVar, k kVar) {
+    public bn(Context context, j0 j0Var, at atVar, k kVar) {
         TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
         this.d = taskCompletionSource;
         this.c = context.getPackageName();
-        this.b = h0Var;
+        this.b = j0Var;
         this.e = atVar;
         this.f = kVar;
-        b9.d dVar = new b9.d(context, h0Var, "ExpressIntegrityService", bo.a, new l0() { // from class: com.google.android.play.core.integrity.bd
-            @Override // b9.l0
+        a9.e eVar = new a9.e(context, j0Var, "ExpressIntegrityService", bo.a, new n0() { // from class: com.google.android.play.core.integrity.bd
+            @Override // a9.n0
             public final Object a(IBinder iBinder) {
-                int i10 = b9.w.i;
+                int i10 = a9.y.i;
                 if (iBinder == null) {
                     return null;
                 }
                 IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.play.core.integrity.protocol.IExpressIntegrityService");
-                return queryLocalInterface instanceof b9.x ? (b9.x) queryLocalInterface : new b9.v(iBinder, "com.google.android.play.core.integrity.protocol.IExpressIntegrityService", 1);
+                return queryLocalInterface instanceof a9.z ? (a9.z) queryLocalInterface : new a9.x(iBinder, "com.google.android.play.core.integrity.protocol.IExpressIntegrityService", 0);
             }
         });
-        this.a = dVar;
-        dVar.a().post(new be(this, taskCompletionSource, context));
+        this.a = eVar;
+        eVar.a().post(new be(this, taskCompletionSource, context));
     }
 
     public static Bundle a(bn bnVar, StandardIntegrityManager.StandardIntegrityTokenRequest standardIntegrityTokenRequest, long j10, long j11, int i10) {
@@ -57,8 +56,8 @@ final class bn {
         bundle.putInt("webview.request.mode", 0);
         bundle.putIntegerArrayList("request.verdict.opt.out", new ArrayList<>(standardIntegrityTokenRequest.verdictOptOut()));
         ArrayList arrayList = new ArrayList();
-        arrayList.add(new b9.u(5, System.currentTimeMillis()));
-        bundle.putParcelableArrayList("event_timestamps", new ArrayList<>(r9.a(arrayList)));
+        arrayList.add(new a9.w(5, System.currentTimeMillis()));
+        bundle.putParcelableArrayList("event_timestamps", new ArrayList<>(h8.a.a(arrayList)));
         return bundle;
     }
 
@@ -71,8 +70,8 @@ final class bn {
         bundle.putInt("playcore.integrity.version.patch", 0);
         bundle.putInt("webview.request.mode", 0);
         ArrayList arrayList = new ArrayList();
-        arrayList.add(new b9.u(4, System.currentTimeMillis()));
-        bundle.putParcelableArrayList("event_timestamps", new ArrayList<>(r9.a(arrayList)));
+        arrayList.add(new a9.w(4, System.currentTimeMillis()));
+        bundle.putParcelableArrayList("event_timestamps", new ArrayList<>(h8.a.a(arrayList)));
         return bundle;
     }
 

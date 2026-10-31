@@ -1,35 +1,40 @@
 package k1;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
-/* loaded from: classes.dex */
-public final class m extends kotlin.jvm.internal.j implements ud.l {
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
+import java.io.FileOutputStream;
+import java.io.OutputStream;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ m(Object obj, int i10) {
-        super(1);
-        this.b = i10;
-        this.c = obj;
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
+/* loaded from: classes.dex */
+public final class m extends OutputStream {
+    public final FileOutputStream a;
+
+    public m(FileOutputStream fileOutputStream) {
+        this.a = fileOutputStream;
     }
 
-    @Override // ud.l
-    public final Object invoke(Object obj) {
-        switch (this.b) {
-            case 0:
-                Throwable th2 = (Throwable) obj;
-                if (th2 != null) {
-                    ((z) this.c).f.d(new g(th2));
-                }
-                Object obj2 = z.s;
-                z zVar = (z) this.c;
-                synchronized (obj2) {
-                    z.r.remove(zVar.b().getAbsolutePath());
-                }
-                return jd.i.a;
-            default:
-                ((le.h) this.c).b();
-                return jd.i.a;
-        }
+    @Override // java.io.OutputStream, java.io.Flushable
+    public final void flush() {
+        this.a.flush();
+    }
+
+    @Override // java.io.OutputStream
+    public final void write(int i10) {
+        this.a.write(i10);
+    }
+
+    @Override // java.io.OutputStream
+    public final void write(byte[] b10) {
+        kotlin.jvm.internal.i.e(b10, "b");
+        this.a.write(b10);
+    }
+
+    @Override // java.io.OutputStream
+    public final void write(byte[] bytes, int i10, int i11) {
+        kotlin.jvm.internal.i.e(bytes, "bytes");
+        this.a.write(bytes, i10, i11);
+    }
+
+    @Override // java.io.OutputStream, java.io.Closeable, java.lang.AutoCloseable
+    public final void close() {
     }
 }

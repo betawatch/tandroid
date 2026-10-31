@@ -7,9 +7,10 @@ import java.security.AccessController;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import libcore.io.Memory;
+import org.telegram.messenger.zs;
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 final class zzvc {
     static final long zza;
@@ -21,9 +22,9 @@ final class zzvc {
     private static final boolean zzg;
     private static final boolean zzh;
 
-    /* JADX WARN: Removed duplicated region for block: B:15:0x011e  */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0130  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x006d  */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x011a  */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x012c  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x006c  */
     static {
         boolean z10;
         zzvb zzvbVar;
@@ -181,7 +182,7 @@ final class zzvc {
         long j11 = (-4) & j10;
         int i10 = unsafe.getInt(obj, j11);
         int i11 = ((~((int) j10)) & 3) << 3;
-        unsafe.putInt(obj, j11, ((255 & b10) << i11) | (i10 & (~(255 << i11))));
+        unsafe.putInt(obj, j11, ((255 & b10) << i11) | (i10 & (~(zs.e4 << i11))));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -189,7 +190,7 @@ final class zzvc {
         Unsafe unsafe = zzf.zza;
         long j11 = (-4) & j10;
         int i10 = (((int) j10) & 3) << 3;
-        unsafe.putInt(obj, j11, ((255 & b10) << i10) | (unsafe.getInt(obj, j11) & (~(255 << i10))));
+        unsafe.putInt(obj, j11, ((255 & b10) << i10) | (unsafe.getInt(obj, j11) & (~(zs.e4 << i10))));
     }
 
     public static double zza(Object obj, long j10) {
@@ -261,11 +262,11 @@ final class zzvc {
     }
 
     public static /* bridge */ /* synthetic */ boolean zzt(Object obj, long j10) {
-        return ((byte) ((zzf.zza.getInt(obj, (-4) & j10) >>> ((int) (((~j10) & 3) << 3))) & 255)) != 0;
+        return ((byte) ((zzf.zza.getInt(obj, (-4) & j10) >>> ((int) (((~j10) & 3) << 3))) & zs.e4)) != 0;
     }
 
     public static /* bridge */ /* synthetic */ boolean zzu(Object obj, long j10) {
-        return ((byte) ((zzf.zza.getInt(obj, (-4) & j10) >>> ((int) ((j10 & 3) << 3))) & 255)) != 0;
+        return ((byte) ((zzf.zza.getInt(obj, (-4) & j10) >>> ((int) ((j10 & 3) << 3))) & zs.e4)) != 0;
     }
 
     /* JADX WARN: Multi-variable type inference failed */

@@ -1,17 +1,16 @@
 package androidx.mediarouter.app;
 
-import a8.p1;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import org.telegram.messenger.beta.R;
-import s4.e1;
+import s4.c1;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class h0 extends e1 {
-    public p4.v A;
+public final class h0 extends c1 {
+    public p4.w A;
     public final /* synthetic */ m0 B;
     public final View v;
     public final ImageView w;
@@ -28,8 +27,8 @@ public final class h0 extends e1 {
         ProgressBar progressBar = (ProgressBar) view.findViewById(R.id.mr_cast_group_progress_bar);
         this.x = progressBar;
         this.y = (TextView) view.findViewById(R.id.mr_cast_group_name);
-        o0 o0Var = m0Var.w;
-        this.z = p1.c(o0Var.y);
-        p1.i(o0Var.y, progressBar);
+        o0 o0Var = m0Var.x;
+        this.z = v7.a0.c(o0Var.D);
+        v7.a0.i(o0Var.D, progressBar);
     }
 }

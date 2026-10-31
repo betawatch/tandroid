@@ -1,7 +1,22 @@
 package w7;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Rect;
+
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class h6 {
-    public Float a;
+public abstract class h6 {
+    public static int a(hb.a aVar) {
+        aVar.getClass();
+        return Math.max(1, (int) Math.ceil(0.5f * org.telegram.messenger.i0.p)) + (((int) Math.ceil(1.9f * org.telegram.messenger.i0.p)) * 2);
+    }
+
+    public static void b(Canvas canvas, Bitmap bitmap, int i10, float f7, float f10, int i11, int i12, Paint paint) {
+        int min = Math.min(i10, bitmap.getWidth());
+        int i13 = (int) f7;
+        int i14 = (int) f10;
+        canvas.drawBitmap(bitmap, new Rect(0, i11, min, i11 + i12), new Rect(i13, i14, min + i13, i12 + i14), paint);
+    }
 }

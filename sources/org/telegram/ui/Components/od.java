@@ -1,61 +1,89 @@
 package org.telegram.ui.Components;
 
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.Space;
-import android.widget.TextView;
+import android.util.Property;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public abstract class od extends LinearLayout {
-    public ImageView a;
-    public TextView b;
-    public Space c;
-    public boolean d;
+public final class od extends Property {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ChatActivityEnterView b;
 
-    public final void a(ImageView imageView, LinearLayout.LayoutParams layoutParams) {
-        if (this.a == null) {
-            this.a = imageView;
-            addView(imageView, layoutParams);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public od(ChatActivityEnterView chatActivityEnterView, int i10) {
+        super(Float.class, "emoji_button_scale");
+        this.a = i10;
+        switch (i10) {
+            case 1:
+                this.b = chatActivityEnterView;
+                super(Float.class, "attach_scale");
+                break;
+            case 2:
+                this.b = chatActivityEnterView;
+                super(Float.class, "emoji_button_alpha");
+                break;
+            case 3:
+                this.b = chatActivityEnterView;
+                super(Float.class, "attach_layout_translation_x");
+                break;
+            case 4:
+                this.b = chatActivityEnterView;
+                super(Float.class, "message_text_translation_x");
+                break;
+            default:
+                this.b = chatActivityEnterView;
+                break;
         }
     }
 
-    public final void b(Space space, LinearLayout.LayoutParams layoutParams) {
-        if (this.c == null) {
-            this.c = space;
-            addView(space, layoutParams);
+    @Override // android.util.Property
+    public final Object get(Object obj) {
+        switch (this.a) {
+            case 0:
+                return Float.valueOf(this.b.h);
+            case 1:
+                return Float.valueOf(this.b.E);
+            case 2:
+                return Float.valueOf(this.b.n);
+            case 3:
+                return Float.valueOf(this.b.y);
+            default:
+                return Float.valueOf(this.b.G);
         }
     }
 
-    public final void c(TextView textView, LinearLayout.LayoutParams layoutParams) {
-        if (this.b == null) {
-            this.b = textView;
-            addView(textView, layoutParams);
-        }
-    }
-
-    public abstract void d();
-
-    public ImageView getImageView() {
-        return this.a;
-    }
-
-    public TextView getTextView() {
-        return this.b;
-    }
-
-    public void setEditButton(boolean z10) {
-        this.d = z10;
-    }
-
-    public void setOnlyIconMode(boolean z10) {
-        TextView textView = this.b;
-        if (textView != null) {
-            textView.setVisibility(z10 ? 8 : 0);
-        }
-        Space space = this.c;
-        if (space != null) {
-            space.setVisibility(z10 ? 8 : 0);
+    @Override // android.util.Property
+    public final void set(Object obj, Object obj2) {
+        switch (this.a) {
+            case 0:
+                float floatValue = ((Float) obj2).floatValue();
+                ChatActivityEnterView chatActivityEnterView = this.b;
+                chatActivityEnterView.h = floatValue;
+                chatActivityEnterView.E1();
+                break;
+            case 1:
+                float floatValue2 = ((Float) obj2).floatValue();
+                ChatActivityEnterView chatActivityEnterView2 = this.b;
+                chatActivityEnterView2.E = floatValue2;
+                chatActivityEnterView2.z1();
+                break;
+            case 2:
+                float floatValue3 = ((Float) obj2).floatValue();
+                ChatActivityEnterView chatActivityEnterView3 = this.b;
+                chatActivityEnterView3.n = floatValue3;
+                chatActivityEnterView3.E1();
+                break;
+            case 3:
+                float floatValue4 = ((Float) obj2).floatValue();
+                ChatActivityEnterView chatActivityEnterView4 = this.b;
+                chatActivityEnterView4.y = floatValue4;
+                chatActivityEnterView4.z1();
+                break;
+            default:
+                float floatValue5 = ((Float) obj2).floatValue();
+                ChatActivityEnterView chatActivityEnterView5 = this.b;
+                chatActivityEnterView5.G = floatValue5;
+                chatActivityEnterView5.I1();
+                break;
         }
     }
 }

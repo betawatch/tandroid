@@ -6,9 +6,10 @@ import java.nio.ByteOrder;
 import java.security.AccessController;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.telegram.messenger.zs;
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public abstract class r1 {
     public static final Logger a = Logger.getLogger(r1.class.getName());
@@ -20,11 +21,11 @@ public abstract class r1 {
     public static final long g;
     public static final boolean h;
 
-    /* JADX WARN: Removed duplicated region for block: B:15:0x0112  */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x0260  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x0270  */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x0273  */
-    /* JADX WARN: Removed duplicated region for block: B:29:0x0118 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x010d  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x0257  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0267  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x026a  */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x0113 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     static {
         Class<?> cls;
         boolean z10;
@@ -38,16 +39,16 @@ public abstract class r1 {
         b = i10;
         c = c.a;
         Class<?> cls3 = Long.TYPE;
-        boolean e10 = e(cls3);
+        boolean e7 = e(cls3);
         Class<?> cls4 = Integer.TYPE;
-        boolean e11 = e(cls4);
+        boolean e10 = e(cls4);
         q1 q1Var2 = null;
         if (i10 != null) {
             if (!c.a()) {
                 q1Var2 = new p1(i10);
-            } else if (e10) {
+            } else if (e7) {
                 q1Var2 = new o1(i10, 1);
-            } else if (e11) {
+            } else if (e10) {
                 q1Var2 = new o1(i10, 0);
             }
         }
@@ -244,8 +245,8 @@ public abstract class r1 {
     public static Object a(Class cls) {
         try {
             return b.allocateInstance(cls);
-        } catch (InstantiationException e10) {
-            throw new IllegalStateException(e10);
+        } catch (InstantiationException e7) {
+            throw new IllegalStateException(e7);
         }
     }
 
@@ -314,11 +315,11 @@ public abstract class r1 {
     }
 
     public static byte g(Object obj, long j10) {
-        return (byte) ((d.g(obj, (-4) & j10) >>> ((int) (((~j10) & 3) << 3))) & 255);
+        return (byte) ((d.g(obj, (-4) & j10) >>> ((int) (((~j10) & 3) << 3))) & zs.e4);
     }
 
     public static byte h(Object obj, long j10) {
-        return (byte) ((d.g(obj, (-4) & j10) >>> ((int) ((j10 & 3) << 3))) & 255);
+        return (byte) ((d.g(obj, (-4) & j10) >>> ((int) ((j10 & 3) << 3))) & zs.e4);
     }
 
     public static Unsafe i() {
@@ -335,15 +336,15 @@ public abstract class r1 {
 
     public static void k(Object obj, long j10, byte b10) {
         long j11 = (-4) & j10;
-        int g7 = d.g(obj, j11);
+        int g10 = d.g(obj, j11);
         int i10 = ((~((int) j10)) & 3) << 3;
-        m(j11, obj, ((255 & b10) << i10) | (g7 & (~(255 << i10))));
+        m(j11, obj, ((255 & b10) << i10) | (g10 & (~(zs.e4 << i10))));
     }
 
     public static void l(Object obj, long j10, byte b10) {
         long j11 = (-4) & j10;
         int i10 = (((int) j10) & 3) << 3;
-        m(j11, obj, ((255 & b10) << i10) | (d.g(obj, j11) & (~(255 << i10))));
+        m(j11, obj, ((255 & b10) << i10) | (d.g(obj, j11) & (~(zs.e4 << i10))));
     }
 
     public static void m(long j10, Object obj, int i10) {

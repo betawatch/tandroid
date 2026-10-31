@@ -1,45 +1,58 @@
 package ue;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+import c3.i0;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.nio.charset.Charset;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final class b {
-    public static final b e;
-    public boolean a;
-    public boolean b;
-    public boolean c;
-    public boolean d;
+public abstract class b {
+    public static final Map a;
+    public static final Pattern b;
 
     static {
-        b bVar = new b();
-        bVar.a = true;
-        bVar.b = true;
-        bVar.c = false;
-        bVar.d = false;
-        e = bVar;
-        bVar.a = true;
-        bVar.b = true;
-        bVar.c = false;
-        bVar.d = false;
+        HashMap hashMap = new HashMap();
+        try {
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(b.class.getResourceAsStream("/org/commonmark/internal/util/entities.properties"), Charset.forName("UTF-8")));
+            while (true) {
+                try {
+                    String readLine = bufferedReader.readLine();
+                    if (readLine == null) {
+                        bufferedReader.close();
+                        hashMap.put("NewLine", "\n");
+                        a = hashMap;
+                        b = Pattern.compile("^&#[Xx]?");
+                        return;
+                    }
+                    if (readLine.length() != 0) {
+                        int indexOf = readLine.indexOf("=");
+                        hashMap.put(readLine.substring(0, indexOf), readLine.substring(indexOf + 1));
+                    }
+                } finally {
+                }
+            }
+        } catch (IOException e) {
+            throw new IllegalStateException("Failed reading data for HTML named character references", e);
+        }
     }
 
-    public static String a(String str, Class cls, boolean z10) {
-        if (cls == null) {
-            return "ANONYMOUS";
+    public static String a(String str) {
+        Matcher matcher = b.matcher(str);
+        if (!matcher.find()) {
+            String str2 = (String) a.get(i0.m(1, 1, str));
+            return str2 != null ? str2 : str;
         }
-        if (cls.isArray()) {
-            Class<?> componentType = cls.getComponentType();
-            StringBuffer stringBuffer = new StringBuffer();
-            stringBuffer.append(a(componentType.getName(), componentType, z10));
-            stringBuffer.append("[]");
-            return stringBuffer.toString();
+        try {
+            int parseInt = Integer.parseInt(str.substring(matcher.end(), str.length() - 1), matcher.end() == 2 ? 10 : 16);
+            return parseInt == 0 ? "�" : new String(Character.toChars(parseInt));
+        } catch (IllegalArgumentException unused) {
+            return "�";
         }
-        if (!z10) {
-            return str.replace('$', '.');
-        }
-        int lastIndexOf = str.lastIndexOf(46);
-        if (lastIndexOf != -1) {
-            str = str.substring(lastIndexOf + 1);
-        }
-        return str.replace('$', '.');
     }
 }

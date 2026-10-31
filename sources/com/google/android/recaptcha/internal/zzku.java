@@ -1,32 +1,32 @@
 package com.google.android.recaptcha.internal;
 
+import bd.h;
+import bd.o;
+import bd.q;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
-import kd.f;
-import kd.m;
-import kd.o;
 import kotlin.jvm.internal.i;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public final class zzku {
-    private List zza = o.a;
+    private List zza = q.a;
 
     public final long zza(long[] jArr) {
         ArrayList arrayList;
         List list = this.zza;
-        List g7 = f.g(jArr);
+        List g10 = h.g(jArr);
         i.e(list, "<this>");
-        if (g7 instanceof Collection) {
-            List list2 = g7;
+        if (g10 instanceof Collection) {
+            List list2 = g10;
             arrayList = new ArrayList(list2.size() + list.size());
             arrayList.addAll(list);
             arrayList.addAll(list2);
         } else {
             arrayList = new ArrayList(list);
-            m.e(arrayList, g7);
+            o.e(arrayList, g10);
         }
         Iterator it = arrayList.iterator();
         if (!it.hasNext()) {
@@ -40,6 +40,6 @@ public final class zzku {
     }
 
     public final void zzb(long[] jArr) {
-        this.zza = f.g(jArr);
+        this.zza = h.g(jArr);
     }
 }

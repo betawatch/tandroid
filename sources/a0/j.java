@@ -6,12 +6,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
 public class j {
     public final int a;
-    public final b6.i b;
-    public final pa.d c;
+    public final a6.i b;
+    public final hb.a c;
     public int d;
     public int e;
     public int f;
@@ -21,14 +21,14 @@ public class j {
         if (i10 <= 0) {
             throw new IllegalArgumentException("maxSize <= 0");
         }
-        this.b = new b6.i(5);
-        this.c = new pa.d();
+        this.b = new a6.i(6);
+        this.c = new hb.a(3);
     }
 
     public final Object a(Object key) {
         kotlin.jvm.internal.i.e(key, "key");
         synchronized (this.c) {
-            b6.i iVar = this.b;
+            a6.i iVar = this.b;
             iVar.getClass();
             Object obj = ((LinkedHashMap) iVar.b).get(key);
             if (obj != null) {
@@ -45,7 +45,7 @@ public class j {
         kotlin.jvm.internal.i.e(key, "key");
         synchronized (this.c) {
             this.d++;
-            b6.i iVar = this.b;
+            a6.i iVar = this.b;
             iVar.getClass();
             put = ((LinkedHashMap) iVar.b).put(key, obj);
             if (put != null) {
@@ -56,7 +56,7 @@ public class j {
         return put;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:13:0x0095, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:13:0x0094, code lost:
     
         throw new java.lang.IllegalStateException("LruCache.sizeOf() is reporting inconsistent results!");
      */
@@ -93,7 +93,7 @@ public class j {
                     }
                     Object key = entry.getKey();
                     Object value = entry.getValue();
-                    b6.i iVar = this.b;
+                    a6.i iVar = this.b;
                     iVar.getClass();
                     kotlin.jvm.internal.i.e(key, "key");
                     ((LinkedHashMap) iVar.b).remove(key);

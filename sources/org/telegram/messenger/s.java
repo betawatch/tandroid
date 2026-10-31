@@ -1,150 +1,173 @@
 package org.telegram.messenger;
 
-import java.util.Comparator;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.AutoDeleteMediaTask;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.FileLoadOperation;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.RichMessageLayout;
-import org.telegram.messenger.SavedMessagesController;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_update;
+import android.net.Uri;
+import android.text.SpannableStringBuilder;
+import android.text.TextUtils;
+import android.text.style.URLSpan;
+import android.text.util.Linkify;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import org.telegram.ui.Components.g51;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes.dex */
-public final /* synthetic */ class s implements Comparator {
-    public final /* synthetic */ int a;
+public final /* synthetic */ class s implements i20 {
+    public final /* synthetic */ SpannableStringBuilder a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ boolean d;
 
-    public /* synthetic */ s(int i10) {
-        this.a = i10;
+    public /* synthetic */ s(SpannableStringBuilder spannableStringBuilder, int i10, boolean z10, boolean z11) {
+        this.a = spannableStringBuilder;
+        this.b = i10;
+        this.c = z10;
+        this.d = z11;
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        int lambda$pruneOverlaps$10;
-        int lambda$run$0;
-        int lambda$processUpdatesQueue$7;
-        int lambda$getContactsHash$26;
-        int lambda$sortEmoji$3;
-        int lambda$removePart$2;
-        int lambda$loadGalleryPhotosAlbums$59;
-        int lambda$sortPlaylist$13;
-        int lambda$getTextStyleRunsLegacy$181;
-        int lambda$static$160;
-        int lambda$increasePeerRaiting$155;
-        int lambda$increaseWebappRating$151;
-        int lambda$increaseInlineRating$150;
-        int lambda$getTextStyleRunsSafe$180;
-        int lambda$handleFoundWords$3;
-        int lambda$addEntitiesToText$2;
-        int lambda$processUpdatesQueue$329;
-        int lambda$processUpdatesQueue$330;
-        int lambda$processChannelsUpdatesQueue$327;
-        int lambda$processLoadedDialogFilters$21;
-        int lambda$processLoadedMessages$189;
-        int lambda$processLoadedMessages$190;
-        int lambda$processLoadedMessages$191;
-        int lambda$getMessagesInternal$163;
-        int lambda$processLoadedFilterPeersInternal$73;
-        int lambda$loadDialogFilters$69;
-        int lambda$localSearch$264;
-        int lambda$switchToAvailable$3;
-        int lambda$quotesFor$0;
-        int lambda$updatePinnedOrder$4;
-        switch (this.a) {
-            case 0:
-                lambda$pruneOverlaps$10 = AndroidUtilities.lambda$pruneOverlaps$10((AndroidUtilities.LinkSpec) obj, (AndroidUtilities.LinkSpec) obj2);
-                return lambda$pruneOverlaps$10;
-            case 1:
-                lambda$run$0 = AutoDeleteMediaTask.lambda$run$0((AutoDeleteMediaTask.FileInfoInternal) obj, (AutoDeleteMediaTask.FileInfoInternal) obj2);
-                return lambda$run$0;
-            case 2:
-                lambda$processUpdatesQueue$7 = ChatObject.Call.lambda$processUpdatesQueue$7((TL_update.TL_updateGroupCallParticipants) obj, (TL_update.TL_updateGroupCallParticipants) obj2);
-                return lambda$processUpdatesQueue$7;
-            case 3:
-                lambda$getContactsHash$26 = ContactsController.lambda$getContactsHash$26((TLRPC.TL_contact) obj, (TLRPC.TL_contact) obj2);
-                return lambda$getContactsHash$26;
-            case 4:
-                lambda$sortEmoji$3 = Emoji.lambda$sortEmoji$3((String) obj, (String) obj2);
-                return lambda$sortEmoji$3;
-            case 5:
-                lambda$removePart$2 = FileLoadOperation.lambda$removePart$2((FileLoadOperation.Range) obj, (FileLoadOperation.Range) obj2);
-                return lambda$removePart$2;
-            case 6:
-                lambda$loadGalleryPhotosAlbums$59 = MediaController.lambda$loadGalleryPhotosAlbums$59((MediaController.PhotoEntry) obj, (MediaController.PhotoEntry) obj2);
-                return lambda$loadGalleryPhotosAlbums$59;
-            case 7:
-                lambda$sortPlaylist$13 = MediaController.lambda$sortPlaylist$13((MessageObject) obj, (MessageObject) obj2);
-                return lambda$sortPlaylist$13;
-            case 8:
-                lambda$getTextStyleRunsLegacy$181 = MediaDataController.lambda$getTextStyleRunsLegacy$181((TLRPC.MessageEntity) obj, (TLRPC.MessageEntity) obj2);
-                return lambda$getTextStyleRunsLegacy$181;
-            case 9:
-                lambda$static$160 = MediaDataController.lambda$static$160((TLRPC.MessageEntity) obj, (TLRPC.MessageEntity) obj2);
-                return lambda$static$160;
-            case 10:
-                lambda$increasePeerRaiting$155 = MediaDataController.lambda$increasePeerRaiting$155((TLRPC.TL_topPeer) obj, (TLRPC.TL_topPeer) obj2);
-                return lambda$increasePeerRaiting$155;
-            case 11:
-                lambda$increaseWebappRating$151 = MediaDataController.lambda$increaseWebappRating$151((TLRPC.TL_topPeer) obj, (TLRPC.TL_topPeer) obj2);
-                return lambda$increaseWebappRating$151;
-            case 12:
-                lambda$increaseInlineRating$150 = MediaDataController.lambda$increaseInlineRating$150((TLRPC.TL_topPeer) obj, (TLRPC.TL_topPeer) obj2);
-                return lambda$increaseInlineRating$150;
-            case 13:
-                lambda$getTextStyleRunsSafe$180 = MediaDataController.lambda$getTextStyleRunsSafe$180((TLRPC.MessageEntity) obj, (TLRPC.MessageEntity) obj2);
-                return lambda$getTextStyleRunsSafe$180;
-            case 14:
-                lambda$handleFoundWords$3 = MessageObject.lambda$handleFoundWords$3((String) obj, (String) obj2);
-                return lambda$handleFoundWords$3;
-            case 15:
-                lambda$addEntitiesToText$2 = MessageObject.lambda$addEntitiesToText$2((TLRPC.MessageEntity) obj, (TLRPC.MessageEntity) obj2);
-                return lambda$addEntitiesToText$2;
-            case 16:
-                lambda$processUpdatesQueue$329 = MessagesController.lambda$processUpdatesQueue$329((TLRPC.Updates) obj, (TLRPC.Updates) obj2);
-                return lambda$processUpdatesQueue$329;
-            case 17:
-                lambda$processUpdatesQueue$330 = MessagesController.lambda$processUpdatesQueue$330((TLRPC.Updates) obj, (TLRPC.Updates) obj2);
-                return lambda$processUpdatesQueue$330;
-            case 18:
-                lambda$processChannelsUpdatesQueue$327 = MessagesController.lambda$processChannelsUpdatesQueue$327((TLRPC.Updates) obj, (TLRPC.Updates) obj2);
-                return lambda$processChannelsUpdatesQueue$327;
-            case 19:
-                lambda$processLoadedDialogFilters$21 = MessagesController.lambda$processLoadedDialogFilters$21((MessagesController.DialogFilter) obj, (MessagesController.DialogFilter) obj2);
-                return lambda$processLoadedDialogFilters$21;
-            case 20:
-                lambda$processLoadedMessages$189 = MessagesController.lambda$processLoadedMessages$189((MessageObject) obj, (MessageObject) obj2);
-                return lambda$processLoadedMessages$189;
-            case 21:
-                lambda$processLoadedMessages$190 = MessagesController.lambda$processLoadedMessages$190((MessageObject) obj, (MessageObject) obj2);
-                return lambda$processLoadedMessages$190;
-            case 22:
-                lambda$processLoadedMessages$191 = MessagesController.lambda$processLoadedMessages$191((MessageObject) obj, (MessageObject) obj2);
-                return lambda$processLoadedMessages$191;
-            case 23:
-                lambda$getMessagesInternal$163 = MessagesStorage.lambda$getMessagesInternal$163((TLRPC.Message) obj, (TLRPC.Message) obj2);
-                return lambda$getMessagesInternal$163;
-            case 24:
-                lambda$processLoadedFilterPeersInternal$73 = MessagesStorage.lambda$processLoadedFilterPeersInternal$73((MessagesController.DialogFilter) obj, (MessagesController.DialogFilter) obj2);
-                return lambda$processLoadedFilterPeersInternal$73;
-            case 25:
-                lambda$loadDialogFilters$69 = MessagesStorage.lambda$loadDialogFilters$69((MessagesController.DialogFilter) obj, (MessagesController.DialogFilter) obj2);
-                return lambda$loadDialogFilters$69;
-            case 26:
-                lambda$localSearch$264 = MessagesStorage.lambda$localSearch$264((ig.c0) obj, (ig.c0) obj2);
-                return lambda$localSearch$264;
-            case 27:
-                lambda$switchToAvailable$3 = ProxyRotationController.lambda$switchToAvailable$3((SharedConfig.ProxyInfo) obj, (SharedConfig.ProxyInfo) obj2);
-                return lambda$switchToAvailable$3;
-            case 28:
-                lambda$quotesFor$0 = RichMessageLayout.lambda$quotesFor$0((RichMessageLayout.QuoteBackground) obj, (RichMessageLayout.QuoteBackground) obj2);
-                return lambda$quotesFor$0;
-            default:
-                lambda$updatePinnedOrder$4 = SavedMessagesController.lambda$updatePinnedOrder$4((SavedMessagesController.SavedDialog) obj, (SavedMessagesController.SavedDialog) obj2);
-                return lambda$updatePinnedOrder$4;
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // org.telegram.messenger.i20
+    public final Object run() {
+        boolean z10;
+        int i10;
+        boolean z11;
+        int i11;
+        int i12;
+        int i13;
+        int i14;
+        String str;
+        int i15;
+        SpannableStringBuilder spannableStringBuilder = this.a;
+        String obj = spannableStringBuilder.toString();
+        int i16 = 0;
+        if (!obj.contains("\u202c") && !obj.contains("\u202d") && !obj.contains("\u202e")) {
+            if (!i0.T.matcher(obj).find()) {
+                URLSpan[] uRLSpanArr = (URLSpan[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), URLSpan.class);
+                boolean z12 = true;
+                int length = uRLSpanArr.length - 1;
+                while (true) {
+                    z10 = this.d;
+                    if (length < 0) {
+                        break;
+                    }
+                    URLSpan uRLSpan = uRLSpanArr[length];
+                    if (!(uRLSpan instanceof g51) || z10) {
+                        spannableStringBuilder.removeSpan(uRLSpan);
+                    }
+                    length--;
+                }
+                ArrayList arrayList = new ArrayList();
+                boolean z13 = this.c;
+                int i17 = 4;
+                if (!z13 && (this.b & 4) != 0) {
+                    Linkify.addLinks(spannableStringBuilder, 4);
+                }
+                Pattern pattern = rc.a;
+                String[] strArr = {"http://", "https://", "tg://", "tonsite://"};
+                f fVar = i0.c0;
+                SpannableStringBuilder spannableStringBuilder2 = TextUtils.indexOf((CharSequence) spannableStringBuilder, (char) 9472) >= 0 ? new SpannableStringBuilder(spannableStringBuilder.toString().replace((char) 9472, ' ')) : spannableStringBuilder;
+                if (!TextUtils.isEmpty(spannableStringBuilder2) && TextUtils.lastIndexOf(spannableStringBuilder2, '_') == spannableStringBuilder2.length() - 1) {
+                    spannableStringBuilder2 = new SpannableStringBuilder(spannableStringBuilder2.toString()).replace(spannableStringBuilder2.length() - 1, spannableStringBuilder2.length(), (CharSequence) "a");
+                }
+                Matcher matcher = pattern.matcher(spannableStringBuilder2);
+                while (matcher.find()) {
+                    int start = matcher.start();
+                    int end = matcher.end();
+                    if (fVar == null || fVar.acceptMatch(spannableStringBuilder2, start, end)) {
+                        f0 f0Var = new f0();
+                        String group = matcher.group(i16);
+                        i14 = i16;
+                        while (true) {
+                            if (i16 >= i17) {
+                                str = group;
+                                i15 = i14;
+                                break;
+                            }
+                            String str2 = strArr[i16];
+                            if (group.regionMatches(true, 0, str2, 0, str2.length())) {
+                                String str3 = strArr[i16];
+                                str = group;
+                                if (!group.regionMatches(false, 0, str3, 0, str3.length())) {
+                                    str = strArr[i16] + str.substring(strArr[i16].length());
+                                }
+                                i15 = 1;
+                            } else {
+                                i16++;
+                                i17 = 4;
+                            }
+                        }
+                        if (i15 == 0) {
+                            str = a1.g.r(new StringBuilder(), strArr[i14], str);
+                        }
+                        if (z13) {
+                            z12 = true;
+                            if (!gf.f.e(Uri.parse(str), true, null)) {
+                            }
+                        } else {
+                            z12 = true;
+                        }
+                        f0Var.a = str;
+                        f0Var.b = start;
+                        f0Var.c = end;
+                        arrayList.add(f0Var);
+                    } else {
+                        i14 = i16;
+                    }
+                    i16 = i14;
+                    i17 = 4;
+                }
+                i10 = i16;
+                Collections.sort(arrayList, new a4.d(13));
+                int size = arrayList.size();
+                int i18 = i10;
+                while (i18 < size - 1) {
+                    f0 f0Var2 = (f0) arrayList.get(i18);
+                    int i19 = i18 + 1;
+                    f0 f0Var3 = (f0) arrayList.get(i19);
+                    int i20 = f0Var2.b;
+                    int i21 = f0Var3.b;
+                    if (i20 <= i21 && (i11 = f0Var2.c) > i21) {
+                        int i22 = f0Var3.c;
+                        int i23 = (i22 > i11 && (i12 = i11 - i20) <= (i13 = i22 - i21)) ? i12 < i13 ? i18 : -1 : i19;
+                        if (i23 != -1) {
+                            arrayList.remove(i23);
+                            size--;
+                        }
+                    }
+                    i18 = i19;
+                }
+                if (arrayList.size() != 0) {
+                    int size2 = arrayList.size();
+                    for (int i24 = i10; i24 < size2; i24++) {
+                        f0 f0Var4 = (f0) arrayList.get(i24);
+                        URLSpan[] uRLSpanArr2 = (URLSpan[]) spannableStringBuilder.getSpans(f0Var4.b, f0Var4.c, URLSpan.class);
+                        if (uRLSpanArr2 != null && uRLSpanArr2.length > 0) {
+                            for (int i25 = i10; i25 < uRLSpanArr2.length; i25++) {
+                                URLSpan uRLSpan2 = uRLSpanArr2[i25];
+                                spannableStringBuilder.removeSpan(uRLSpan2);
+                                if (!(uRLSpan2 instanceof g51) || z10) {
+                                    spannableStringBuilder.removeSpan(uRLSpan2);
+                                }
+                            }
+                        }
+                        String str4 = f0Var4.a;
+                        if (str4 != null) {
+                            str4 = str4.replaceAll("∕|⁄|%E2%81%84|%E2%88%95", "/");
+                        }
+                        if (!gf.f.i(str4)) {
+                            spannableStringBuilder.setSpan(new URLSpan(str4), f0Var4.b, f0Var4.c, 33);
+                        }
+                    }
+                    z11 = z12;
+                    return Boolean.valueOf(z11);
+                }
+                z11 = i10;
+                return Boolean.valueOf(z11);
+            }
         }
+        i10 = 0;
+        z11 = i10;
+        return Boolean.valueOf(z11);
     }
 }

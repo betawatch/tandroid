@@ -1,40 +1,122 @@
 package jg;
 
-import android.view.View;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.u61;
+import android.animation.ValueAnimator;
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.view.MotionEvent;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import org.telegram.messenger.beta.R;
+import org.telegram.ui.ActionBar.a7;
+import org.telegram.ui.ActionBar.t6;
+import org.telegram.ui.Components.gr;
+import w7.b6;
 
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class p0 implements org.telegram.ui.ActionBar.b2, Utilities.Callback5 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ t0 b;
+public final class p0 extends LinearLayout {
+    public final TextView a;
+    public final fg.i b;
+    public ImageView c;
+    public ImageView d;
+    public float e;
+    public boolean f;
+    public ValueAnimator h;
+    public final ImageView n;
+    public final /* synthetic */ r0 r;
 
-    public /* synthetic */ p0(t0 t0Var, int i10) {
-        this.a = i10;
-        this.b = t0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public p0(r0 r0Var, Context context) {
+        super(context);
+        this.r = r0Var;
+        setOrientation(0);
+        int i10 = t6.i6;
+        b0 b0Var = r0Var.z1;
+        setBackground(t6.h0(t6.w0(i10, b0Var), 2, -1));
+        fg.i iVar = new fg.i(this, context);
+        this.b = iVar;
+        addView(iVar, b6.t(-2, -2, 19, 16, 0, 16, 0));
+        ImageView imageView = new ImageView(context);
+        this.c = imageView;
+        ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
+        imageView.setScaleType(scaleType);
+        ImageView imageView2 = this.c;
+        int i11 = t6.E8;
+        PorterDuff.Mode mode = PorterDuff.Mode.SRC_ATOP;
+        a7.t(imageView2, i11, b0Var, mode);
+        iVar.addView(this.c, b6.e(-2, -2, 17));
+        ImageView imageView3 = new ImageView(context);
+        this.d = imageView3;
+        imageView3.setScaleType(scaleType);
+        a7.t(this.d, i11, b0Var, mode);
+        this.d.setVisibility(8);
+        iVar.addView(this.d, b6.e(-2, -2, 17));
+        TextView textView = new TextView(context);
+        this.a = textView;
+        a7.V(textView, i11, b0Var);
+        textView.setTextSize(1, 16.0f);
+        addView(textView, b6.t(-2, -2, 19, 0, 0, 16, 0));
+        ImageView imageView4 = new ImageView(context);
+        this.n = imageView4;
+        imageView4.setImageResource(R.drawable.msg_text_check);
+        imageView4.setScaleType(scaleType);
+        a7.t(imageView4, t6.h7, b0Var, PorterDuff.Mode.MULTIPLY);
+        imageView4.setVisibility(8);
+        addView(imageView4, b6.o(50, -1));
     }
 
-    @Override // org.telegram.ui.ActionBar.b2
-    public void h(org.telegram.ui.ActionBar.e2 e2Var, int i10) {
-        switch (this.a) {
-            case 0:
-                this.b.b0();
-                break;
-            case 1:
-                this.b.finishFragment();
-                break;
-            default:
-                this.b.b0();
-                break;
+    public final void a(int i10, boolean z10, boolean z11) {
+        if (!z11) {
+            this.c.setImageResource(i10);
+            return;
         }
+        ValueAnimator valueAnimator = this.h;
+        int i11 = 0;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+            this.h = null;
+            a(i10, false, false);
+            return;
+        }
+        this.f = z10;
+        this.d.setImageResource(i10);
+        this.d.setVisibility(0);
+        this.d.setAlpha(1.0f);
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+        this.h = ofFloat;
+        ofFloat.addUpdateListener(new o0(i11, this, z10));
+        this.h.addListener(new bg.e(this, 5));
+        this.h.setInterpolator(gr.h);
+        this.h.setDuration(420L);
+        this.h.start();
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback5
-    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        ((Integer) obj3).getClass();
-        ((Float) obj4).getClass();
-        ((Float) obj5).getClass();
-        t0.X(this.b, (u61) obj, (View) obj2);
+    @Override // android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        return true;
+    }
+
+    @Override // android.view.View
+    public final boolean performClick() {
+        r0 r0Var = this.r;
+        org.telegram.ui.ActionBar.k1 k1Var = r0Var.A1;
+        if (k1Var != null && k1Var.isShowing()) {
+            r0Var.A1.d(true);
+        }
+        return super.performClick();
+    }
+
+    public void setIcon(int i10) {
+        a(i10, true, false);
+    }
+
+    @Override // android.view.View
+    public void setSelected(boolean z10) {
+        this.n.setVisibility(z10 ? 0 : 8);
+    }
+
+    public void setText(CharSequence charSequence) {
+        this.a.setText(charSequence);
     }
 }

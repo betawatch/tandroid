@@ -1,18 +1,29 @@
 package org.telegram.ui.Components;
 
-import android.view.animation.Interpolator;
-
-/* compiled from: r8-map-id-369b18558ee44d7c02da03749698f243834c4dc18c963f2fca12b131da0d4d06 */
+/* compiled from: r8-map-id-bb1e18cc956ebcca5abc3b5ecd775be1420d1605c8f463ed7550ade4eefd26ab */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class rs0 implements Interpolator {
-    public final /* synthetic */ int a;
+public class rs0 extends tk0 implements th.l5 {
+    public int e3;
+    public int f3;
+    public int g3;
+    public int h3;
+    public boolean i3;
 
-    /* JADX WARN: Failed to find 'out' block for switch in B:2:0x0002. Please report as an issue. */
-    @Override // android.animation.TimeInterpolator
-    public final float getInterpolation(float f7) {
-        switch (this.a) {
+    @Override // th.l5
+    public final void a(int[] iArr) {
+        if (this.i3) {
+            iArr[0] = getPaddingTop() - org.telegram.messenger.i0.L(2.0f);
+            iArr[1] = getMeasuredHeight() - getPaddingBottom();
+        } else {
+            iArr[0] = (getPaddingTop() - org.telegram.messenger.i0.L(2.0f)) - this.g3;
+            iArr[1] = (getMeasuredHeight() - getPaddingBottom()) - this.h3;
         }
-        float f10 = f7 - 1.0f;
-        return (f10 * f10 * f10 * f10 * f10) + 1.0f;
+    }
+
+    @Override // android.view.View
+    public final void setPadding(int i10, int i11, int i12, int i13) {
+        this.e3 = i11;
+        this.f3 = i13;
+        super.setPadding(i10, i11, i12, i13);
     }
 }
